@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
     
     
       
@@ -25571,28 +25571,6 @@
 <a id="__codelineno-1-37" name="__codelineno-1-37" href="#__codelineno-1-37"></a>total=count()
 </code></pre></div>
 <p>Results:</p>
-<p>bank_card</p>
-<p>bank_cardPer</p>
-<p>apple_pay</p>
-<p>apple_payPerc</p>
-<p>paypal</p>
-<p>paypalPerc</p>
-<p>google_pay</p>
-<p>google_payPerc</p>
-<p>unpaid_booking</p>
-<p>unpaid_bookingPerc</p>
-<p>total</p>
-<p>345</p>
-<p>0.19425675675675674</p>
-<p>353</p>
-<p>0.19876126126126126</p>
-<p>360</p>
-<p>0.20270270270270271</p>
-<p>364</p>
-<p>0.20495495495495494</p>
-<p>354</p>
-<p>0.19932432432432431</p>
-<p>1776</p>
 <h3 id="extract-the-first-n-characters-from-the-field">Extract the first 'n' characters from the field.<a class="headerlink" href="#extract-the-first-n-characters-from-the-field" title="Permanent link">&para;</a></h3>
 <p>In this example, you have a field called <code>kiosk</code> and need to extract the first three characters to identify the location abbreviation of the kiosk.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>{
@@ -25616,10 +25594,6 @@
 <a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>| fields kiosk, kioskLoc
 </code></pre></div>
 <p>Results:</p>
-<p>kiosk</p>
-<p>kioskLoc</p>
-<p>LAOBAUA729</p>
-<p>LAO</p>
 <h3 id="extract-information-from-an-xml-element">Extract information from an XML element<a class="headerlink" href="#extract-information-from-an-xml-element" title="Permanent link">&para;</a></h3>
 <p>In this use case, an API gateway creates logs in XML format and you want to extract some information from it.</p>
 <p>The XML field for every record looks as below:</p>
@@ -25709,16 +25683,6 @@
 <a id="__codelineno-5-25" name="__codelineno-5-25" href="#__codelineno-5-25"></a>code = xml[code]
 </code></pre></div>
 <p>Results:</p>
-<p>domain</p>
-<p>serial</p>
-<p>object</p>
-<p>transaction</p>
-<p>code</p>
-<p>bca_icas_soa</p>
-<p>1467</p>
-<p>example-Firewall</p>
-<p>6187</p>
-<p>0x01130007</p>
 <h3 id="investigate-security-incidents-in-kubernetes-clusters-threat-hunting">Investigate security incidents in Kubernetes clusters Threat hunting<a class="headerlink" href="#investigate-security-incidents-in-kubernetes-clusters-threat-hunting" title="Permanent link">&para;</a></h3>
 <p>Application Security</p>
 <p>In this use case, you perform queries using <a href="/docs/secure/investigations" title="Combine Grail functionalities for evidence-driven investigations, including incident resolution, root cause analysis, and threat hunting."><img alt="Investigations" src="https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png" title="Investigations" /> <strong>Investigations</strong></a> to analyze unauthorized requests in your Kubernetes audit logs. Follow different investigation paths, navigate between executed queries, and get a detailed overview of your results in the original format.</p>

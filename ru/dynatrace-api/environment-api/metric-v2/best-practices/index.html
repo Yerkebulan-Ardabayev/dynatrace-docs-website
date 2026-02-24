@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
     
     
       
@@ -25540,19 +25540,6 @@ metric ingestion protocol:</p>
 <h3 id="whats-a-cardinality-limit">What's a cardinality limit?<a class="headerlink" href="#whats-a-cardinality-limit" title="Permanent link">&para;</a></h3>
 <p>A cardinality limit is a limit to the number of dimension tuples you can ingest.</p>
 <p>In Dynatrace, classic metrics have multiple dimension tuple limits:</p>
-<p>Limit</p>
-<p>Value</p>
-<p>Note</p>
-<p>Built-in metric pool dimension limit</p>
-<p>20 million</p>
-<p>(This was increased from 10 million in Dynatrace version 1.277+.)</p>
-<p>All built-in metrics share the same dimension tuple space.</p>
-<p>Custom metric pool dimension limit</p>
-<p>50 million</p>
-<p>All custom metrics share a dimension tuple space (for example, Prometheus metrics).</p>
-<p>Per-metric dimension limit</p>
-<p>1 million</p>
-<p>Each metric has its own dimension tuples limit. This applies to all metrics.</p>
 <p>The limits are applied against the dimension tuples of the last 30 days (a 30-day sliding window). If a limit is reached, data points having new and as yet unseen dimension tuples are rejected. The limits apply to the tenant.</p>
 <h3 id="identify-high-cardinality-situations">Identify high-cardinality situations<a class="headerlink" href="#identify-high-cardinality-situations" title="Permanent link">&para;</a></h3>
 <p>Dynatrace provides self-monitoring metrics to get insights into the current dimension tuple space usage. These metrics are charted on the <strong>Metric &amp; Dimension Usage + Rejections</strong> preset dashboard.</p>

@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../../../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
     
     
       
@@ -25479,7 +25479,7 @@
 <ul>
 <li>How-to guide</li>
 <li>10-min read</li>
-<li>Updated on Oct 23, 2025</li>
+<li>Updated on Feb 11, 2026</li>
 </ul>
 <p><a href="/docs/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/create-a-private-synthetic-location#add" title="Learn how to create a private location for synthetic monitoring.">Add a private Synthetic location</a> as well as analyze and manage capacity usage in the <strong>Private synthetic locations</strong> global settings page (select the <strong>Private synthetic locations</strong> settings page from search results).</p>
 <p>Early Adopter</p>
@@ -25495,30 +25495,6 @@
 <p>For usage calculations on each ActiveGate, Dynatrace allocates CPU and RAM resources for running each type of monitor. Resource allocation per monitor type is resolved into the maximum number of simultaneous monitor executions that may take place at any given point in time. Actual capacity usage calculation per monitor type (see <a href="#location-details">Location details</a> below) is based on the number of concurrently executed monitors compared to the maximum allowed simultaneous executions over the preceding 30 minutes.</p>
 <p>For example, an ActiveGate might support two simultaneous browser monitor executions at a given point. However, depending on the duration of the monitors being executed, this could equate to more than two monitors being executed within a given timeframe. For example, one 55-second monitor and three 10-second monitors could be executed within a single minute with no more than two simultaneous executions at any given point.</p>
 <p>Metrics for capacity usage per monitor type provide an accurate view of Synthetic location health and can be used for charting and alertingâbe sure to split these metrics by location (see <a href="#location-details">Location details</a> below).</p>
-<p>Status icon</p>
-<p>Description</p>
-<p><img alt="Green circle" src="https://dt-cdn.net/images/green-96ff8e506c.svg" title="Green circle" /></p>
-<p>The capacity usage of each type of synthetic monitor is below 80%, which is desirable.</p>
-<p><img alt="Yellow circle" src="https://dt-cdn.net/images/yellow-379afa433f.svg" title="Yellow circle" /></p>
-<p>This icon can mean any of the following:</p>
-<ul>
-<li>The capacity usage of a least one type of synthetic monitor is more than 80%.</li>
-<li>
-<p>There is no failover because:</p>
-</li>
-<li>
-<p>Failure of any ActiveGate or <a href="/docs/manage/credential-vault#security-arch" title="Store and manage credentials in the credential vault.">Synthetic engine</a> can cause usage requirements to exceed maximum capacity.</p>
-</li>
-<li>There is only one ActiveGate assigned to the location.</li>
-</ul>
-<p><img alt="Red circle" src="https://dt-cdn.net/images/red-a092f67573.svg" title="Red circle" /></p>
-<ul>
-<li>Capacity usage of at least one type of synthetic monitor at this location is greater than 90%. Or, not all synthetic monitors assigned to this location are being executed. Note that some monitor executions may be dropped when there are spikes in capacity usage for a monitor type, for example, when multiple monitors are updated at the same time.</li>
-<li>This icon is also displayed when all ActiveGates or all Synthetic engines at the location are down.</li>
-</ul>
-<p>If a location is down or a Synthetic engine/ActiveGate is offline, synthetic monitors assigned to that location won't be executed.</p>
-<p><img alt="Grey circle" src="https://dt-cdn.net/images/grey-870accb943.svg" title="Grey circle" /></p>
-<p>There is no data, as when ActiveGate versions are lower than 1.217 and capacity usage data cannot be gathered.</p>
 <h2 id="location-details">Location details<a class="headerlink" href="#location-details" title="Permanent link">&para;</a></h2>
 <p>Location details in latest Dynatrace</p>
 <p>The instructions below describe how to view location details in the previous Dynatrace. To learn how to view location details in the latest Dynatrace, see <a href="/docs/observe/digital-experience/synthetic-on-grail/synthetic-app/private-locations#location-details" title="Learn how to manage private locations in the Synthetic app.">Private synthetic locations on Grail</a>.</p>
@@ -25534,18 +25510,18 @@
 <p><img alt="Private location details in previous Dynatrace" src="https://dt-cdn.net/images/screenshot-2025-10-22-171901-1356-64e2b3b050.png" /></p>
 <p>Metrics for the health status of each monitor type are available for charting and alerting. For example, choose the <strong>Synthetic - Browser - Engine Utilization</strong> metric in the <a href="/docs/analyze-explore-automate/dashboards-classic/metrics-browser" title="Browse metrics with the Dynatrace metrics browser.">Metrics browser</a> or <a href="/docs/analyze-explore-automate/explorer" title="Query for metrics and transform results to gain desired insights.">Data Explorer</a>. We strongly recommend splitting these metrics by location to get an accurate view of location health.</p>
 <p><img alt="Synthetic monitors metrics in Data Explorer Classic" src="https://dt-cdn.net/images/screenshot-2025-10-22-174729-1400-717532af10.png" /></p>
-<h3 id="chromium-autoupdate">Chromium autoupdate<a class="headerlink" href="#chromium-autoupdate" title="Permanent link">&para;</a></h3>
-<p>You can <strong>Enable Chromium auto-update</strong> at the location level, that is, for all ActiveGates assigned to a private location. Chromium autoupdate takes place during manual as well as automatic ActiveGate and Synthetic engine updates.</p>
-<p>As we recommend using the <a href="/docs/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/system-and-hardware-requirements-for-private-synthetic#chromium-linux" title="Supported operating systems, Chromium versions, and hardware requirements for running synthetic monitors from private locations">latest supported Chromium version</a> for the smooth and secure execution of browser monitors from your private location, Chromium autoupdate is turned on by default for locations with Linux-based ActiveGates. If you don't want Chromium to be updated automatically, for example, to use a specific version of Chromium, or if you have offline environments, turn off the switch <strong>before triggering an ActiveGate update</strong>.</p>
-<p>This setting only applies to Linux-based ActiveGates; on Windows-based ActiveGates, Chromium is always updated during Synthetic engine updates. If your location has only Windows-based ActiveGates, the toggle is turned on but grayed out.</p>
-<p>Successful Chromium autoupdate requires access to OS (system) repositories for Chromium dependencies and access to <code>https://synthetic-packages.s3.amazonaws.com</code> for Chromium components. If you've enabled a <a href="/docs/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/create-a-private-synthetic-location#custom-repo" title="Learn how to create a private location for synthetic monitoring.">custom local repository</a>, Chromium components (but not dependencies) need to be available at the specified HTTP server address. See <a href="/docs/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/manage-private-synthetic-locations#autoupdate-custom-repo" title="Analyze and manage capacity usage at your private Synthetic locations.">Chromium autoupdate from a custom repository</a>.</p>
-<p>You will see a message if Chromium autoupdate fails for this or other reasonsâwe recommend either meeting the requirements for autoupdate (such as access to repositories) or disabling Chromium autoupdate for your private location.</p>
+<h3 id="browser-autoupdate">Browser autoupdate<a class="headerlink" href="#browser-autoupdate" title="Permanent link">&para;</a></h3>
+<p>You can <strong>Enable Chrome(-ium) auto-update</strong> at the location level, that is, for all ActiveGates assigned to a private location. The browser autoupdate takes place during manual as well as automatic ActiveGate and Synthetic engine updates.</p>
+<p>As we recommend using the <a href="/docs/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/system-and-hardware-requirements-for-private-synthetic#browser-linux" title="Supported operating systems, Chromium versions, and hardware requirements for running synthetic monitors from private locations">latest supported browser version</a> for the smooth and secure execution of browser monitors from your private location, the browser autoupdate is turned on by default for locations with Linux-based ActiveGates. If you don't want the browser to be updated automatically, for example, to use a specific browser version, or if you have offline environments, turn off the switch <strong>before triggering an ActiveGate update</strong>.</p>
+<p>This setting only applies to Linux-based ActiveGates; on Windows-based ActiveGates, the browser is always updated during Synthetic engine updates. If your location has only Windows-based ActiveGates, the toggle is turned on but grayed out.</p>
+<p>Successful browser autoupdate requires access to OS (system) repositories for browser dependencies and access to <code>https://synthetic-packages.s3.amazonaws.com</code> for browser packages. If you've enabled a <a href="/docs/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/create-a-private-synthetic-location#custom-repo" title="Learn how to create a private location for synthetic monitoring.">custom local repository</a>, browser packages (but not dependencies) need to be available at the specified HTTP server address. See <a href="/docs/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/manage-private-synthetic-locations#autoupdate-custom-repo" title="Analyze and manage capacity usage at your private Synthetic locations.">Browser autoupdate from a custom repository</a>.</p>
+<p>You will see a message if the browser autoupdate fails for this or other reasonsâwe recommend either meeting the requirements for autoupdate (such as access to repositories) or disabling browser autoupdate for your private location.</p>
 <ul>
-<li>We strongly recommend that you keep your Linux-based Synthetic-enabled ActiveGates and Chromium versions updatedâDynatrace supports Chromium versions that are no more than two versions behind the <a href="/docs/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/system-and-hardware-requirements-for-private-synthetic#chromium-linux" title="Supported operating systems, Chromium versions, and hardware requirements for running synthetic monitors from private locations">latest Dynatrace-supported version</a> for a specific ActiveGate release. If you don't opt for Chromium autoupdate, you can <a href="/docs/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/manage-private-synthetic-locations#chromium-manual" title="Analyze and manage capacity usage at your private Synthetic locations.">update Chromium manually</a>.</li>
-<li>If you disable Chromium autoupdate, you can <a href="/docs/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/manage-private-synthetic-locations#chromium-manual" title="Analyze and manage capacity usage at your private Synthetic locations.">manually update Chromium</a> per ActiveGate. However, Chromium autoupdate is required when using <a href="/docs/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/create-a-private-synthetic-location#custom-repo" title="Learn how to create a private location for synthetic monitoring.">custom repositories</a>. See <a href="/docs/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/manage-private-synthetic-locations#autoupdate-custom-repo" title="Analyze and manage capacity usage at your private Synthetic locations.">Chromium autoupdate from a custom repository</a>.</li>
-<li>Autoupdate works to update Chromium to the latest version that Dynatrace provides for an ActiveGate release. In some cases, this might be different from the <a href="/docs/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/system-and-hardware-requirements-for-private-synthetic#chromium-linux" title="Supported operating systems, Chromium versions, and hardware requirements for running synthetic monitors from private locations">latest Dynatrace-supported Chromium version</a> for the ActiveGate release.</li>
+<li>We strongly recommend that you keep your Linux-based Synthetic-enabled ActiveGates and browser versions updatedâDynatrace supports browser versions that are no more than two versions behind the <a href="/docs/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/system-and-hardware-requirements-for-private-synthetic#browser-linux" title="Supported operating systems, Chromium versions, and hardware requirements for running synthetic monitors from private locations">latest Dynatrace-supported version</a> for a specific ActiveGate release. If you don't opt for the browser autoupdate, you can <a href="/docs/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/manage-private-synthetic-locations#browser-manual" title="Analyze and manage capacity usage at your private Synthetic locations.">update browser manually</a>.</li>
+<li>If you disable the browser autoupdate, you can <a href="/docs/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/manage-private-synthetic-locations#browser-manual" title="Analyze and manage capacity usage at your private Synthetic locations.">manually update the browser</a> per ActiveGate. However, browser autoupdate is required when using <a href="/docs/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/create-a-private-synthetic-location#custom-repo" title="Learn how to create a private location for synthetic monitoring.">custom repositories</a>. See <a href="/docs/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/manage-private-synthetic-locations#autoupdate-custom-repo" title="Analyze and manage capacity usage at your private Synthetic locations.">Browser autoupdate from a custom repository</a>.</li>
+<li>Autoupdate works to update the browser to the latest version that Dynatrace provides for an ActiveGate release. In some cases, this might be different from the <a href="/docs/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/system-and-hardware-requirements-for-private-synthetic#browser-linux" title="Supported operating systems, Chromium versions, and hardware requirements for running synthetic monitors from private locations">latest Dynatrace-supported browser version</a> for the ActiveGate release.</li>
 </ul>
-<p>Also, check our information on <a href="/docs/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/create-a-private-synthetic-location#manual" title="Learn how to create a private location for synthetic monitoring.">installing Chromium and other dependencies manually (Linux only)</a>.</p>
+<p>Also, check our information on <a href="/docs/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/create-a-private-synthetic-location#manual" title="Learn how to create a private location for synthetic monitoring.">installing the browser and other dependencies manually (Linux only)</a>.</p>
 <h3 id="location-outage-handling">Location outage handling<a class="headerlink" href="#location-outage-handling" title="Permanent link">&para;</a></h3>
 <p>Location outage handling in latest Dynatrace</p>
 <p>The instructions below describe how to handle outages in the previous Dynatrace. To learn how to handle outages in the latest Dynatrace, see <a href="/docs/observe/digital-experience/synthetic-on-grail/synthetic-app/private-locations#location-outage-handling" title="Learn how to manage private locations in the Synthetic app.">Private synthetic locations on Grail</a>.</p>
@@ -25567,29 +25543,32 @@
 4. Enable/disable the switch below the checkbox. This will overwrite the corresponding setting for the selected locations.</p>
 <p><img alt="Bulk edit location outage handling" src="https://dt-cdn.net/images/pvtsyntheticlocationbulkedit2-1296-3e4a8e3646.png" />
 5. <strong>Save changes</strong>.</p>
-<h2 id="update-chromium-manually-from-s3">Update Chromium manually from S3<a class="headerlink" href="#update-chromium-manually-from-s3" title="Permanent link">&para;</a></h2>
-<p>You might want to update Chromium and dependencies manually if you have an offline environment. If you've installed an ActiveGate manually, say, for manual dependency management because of constraints in accessing the Amazon S3 service, you'll want to update Chromium manually.</p>
-<p>You need to update Chromium manually per ActiveGate, and the process varies slightly based on the operating system. Note that manual update of Chromium only applies to Linux-based ActiveGates; on Windows-based ActiveGates, Chromium is automatically updated during Synthetic engine updates.</p>
+<h2 id="update-the-browser-manually-from-s3">Update the browser manually from S3<a class="headerlink" href="#update-the-browser-manually-from-s3" title="Permanent link">&para;</a></h2>
+<p>If you have an offline environment or you installed an ActiveGate manually for dependency management or due to limited access to Amazon S3, you need to update the browser and dependencies manually.</p>
+<p>You need to update the browser manually per ActiveGate, and the process varies slightly based on the operating system. Note that manual update of the browser only applies to Linux-based ActiveGates; on Windows-based ActiveGates, the browser is automatically updated during Synthetic engine updates.</p>
 <p>Prerequisites:</p>
 <ul>
-<li>Ensure that <strong>Enable Chromium auto-update</strong> is turned off for your private location in <strong>Settings</strong> &gt; <strong>Web and Mobile monitoring</strong> &gt; <strong>Private Synthetic locations</strong>. If you disable autoupdate for a location, you need to update Chromium manually on every ActiveGate assigned to that location.</li>
+<li>Ensure that <strong>Enable Chrome(-ium) auto-update</strong> is turned off for your private location in <strong>Settings</strong> &gt; <strong>Web and Mobile monitoring</strong> &gt; <strong>Private Synthetic locations</strong>. If you disable autoupdate for a location, you need to update the browser manually on every ActiveGate assigned to that location.</li>
 <li>
-<p>Ensure that you can connect to <code>https://synthetic-packages.s3.amazonaws.com</code> to access Chromium and dependencies.</p>
+<p>Ensure that you can connect to <code>https://synthetic-packages.s3.amazonaws.com</code> to access browser packages.</p>
 </li>
 <li>
-<p>The Synthetic engine will use the new Chromium version after the update is completeânote that the status is updated once every hour, so it may take up to an hour to refresh the Chromium version displayed for your ActiveGate in <strong>Deployment Status</strong>.</p>
+<p>The Synthetic engine will use the new browser version after the update is completeânote that the status is updated once every hour, so it may take up to an hour to refresh the browser version displayed for your ActiveGate in <strong>Deployment Status</strong>.</p>
 </li>
-<li>We strongly recommend that you keep your Linux-based Synthetic-enabled ActiveGates and Chromium versions updatedâDynatrace supports Chromium versions that are no more than two versions behind the <a href="/docs/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/system-and-hardware-requirements-for-private-synthetic#chromium-linux" title="Supported operating systems, Chromium versions, and hardware requirements for running synthetic monitors from private locations">latest Dynatrace-supported version</a> for a specific ActiveGate release. (See also <a href="#chromium">Chromium update</a>.)</li>
+<li>We strongly recommend that you keep your Linux-based Synthetic-enabled ActiveGates and browser versions updatedâDynatrace supports browser versions that are no more than two versions behind the <a href="/docs/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/system-and-hardware-requirements-for-private-synthetic#browser-linux" title="Supported operating systems, Chromium versions, and hardware requirements for running synthetic monitors from private locations">latest Dynatrace-supported version</a> for a specific ActiveGate release. (See also <a href="#browser">browser update</a>.)</li>
 <li>We strongly recommend updating all ActiveGates per location to the same version.</li>
-<li>See also <a href="#chromium">Chromium update</a> and <a href="#autoupdate-custom-repo">Chromium autoupdate from a custom repository</a>.</li>
+<li>See also <a href="#browser">Browser update</a> and <a href="#autoupdate-custom-repo">Browser autoupdate from a custom repository</a>.</li>
 </ul>
-<p>Ubuntu Server</p>
+<p>Since ActiveGate 1.331, on Ubuntu Server 20.04 and 22.04 we use Chrome for Testing. Chromium snap distribution is no longer supported.
+If you are using any automation for updating the browser, convert it to use Chrome for Testing. Please refer to <a href="https://dt-url.net/il0363p">community guideï»¿</a> for details.</p>
+<p>Ubuntu (snap)</p>
 <p>Red Hat Enterprise Linux and CentOS</p>
-<p>Amazon Linux 2023, Ubuntu 24, and Oracle Linux 9 (Chrome for Testing)</p>
+<p>Amazon Linux 2023, Ubuntu, and Oracle Linux 9 (Chrome for Testing)</p>
+<p>This section is only relevant for releases 1.329 and earlier for Ubuntu Server 20.04 and 22.04.</p>
 <ol>
-<li>If your ActiveGate and Chromium versions haven't been updated in a while, you might want to check and install Synthetic engine and Chromium dependencies again. See the <a href="/docs/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/create-a-private-synthetic-location#ubuntu" title="Learn how to create a private location for synthetic monitoring.">manual installation instructions for Ubuntu Server</a> in <a href="/docs/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/create-a-private-synthetic-location" title="Learn how to create a private location for synthetic monitoring.">Create a private Synthetic location</a>.</li>
-<li>Download the snap (Ubuntu 20.04 and 22.04) package archive. This is a safe and verified archive hosted by Dynatrace at <code>https://synthetic-packages.s3.amazonaws.com</code>. Be sure to use the specific command provided for your ActiveGate and Ubuntu Server versions in the <a href="/docs/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/create-a-private-synthetic-location#ubuntu" title="Learn how to create a private location for synthetic monitoring.">manual installation instructions for Ubuntu Server</a>.</li>
-<li>Extract and install the downloaded packages. Be sure to use the correct installation command for your Ubuntu Server version (check the <a href="/docs/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/create-a-private-synthetic-location#ubuntu" title="Learn how to create a private location for synthetic monitoring.">manual installation instructions for Ubuntu Server</a>).</li>
+<li>If your ActiveGate and Chromium versions are out of support or have not been updated for several releases, review the Synthetic Engine and Chromium dependencies, and reinstall them if necessary. See the <a href="/docs/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/create-a-private-synthetic-location#ubuntu20_22" title="Learn how to create a private location for synthetic monitoring.">manual installation instructions for Ubuntu Server</a> in <a href="/docs/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/create-a-private-synthetic-location" title="Learn how to create a private location for synthetic monitoring.">Create a private Synthetic location</a>.</li>
+<li>Download the snap (Ubuntu Server 20.04 and 22.04) package archive. This is a safe and verified archive hosted by Dynatrace at <code>https://synthetic-packages.s3.amazonaws.com</code>. Be sure to use the specific command provided for your ActiveGate and Ubuntu Server versions in the <a href="/docs/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/create-a-private-synthetic-location#ubuntu20_22" title="Learn how to create a private location for synthetic monitoring.">manual installation instructions for Ubuntu Server</a>.</li>
+<li>Extract and install the downloaded packages. Be sure to use the correct installation command for your Ubuntu Server version (check the <a href="/docs/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/create-a-private-synthetic-location#ubuntu20_22" title="Learn how to create a private location for synthetic monitoring.">manual installation instructions for Ubuntu Server</a>).</li>
 <li>Verify Chromium update by running the following command from the default installation directory. Command output should match the Chromium version you installed.</li>
 </ol>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>/opt/dynatrace/synthetic/browser --version
@@ -25615,8 +25594,10 @@
 5. Verify Chromium update by running the following command from the default installation directory. Command output should match the Chromium version you installed.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>/opt/dynatrace/synthetic/browser --version
 </code></pre></div>
-<p>Chrome for Testing is managed differently than Chromium. Manual updates are performed by downloading and extracting the new version to the Chrome for Testing directory.</p>
+<p>Chrome for Testing is managed differently from Chromium. To update manually, download the new version and extract it to the Chrome for Testing directory.</p>
 <p>Unlike Chromium on other distributions, Chrome for Testing updates do not use package managers. You manually manage the Chrome binaries while dependencies are managed by the system package manager.</p>
+<p>Ubuntu Server 20.04 and 22.04</p>
+<p>When migrating from the snap Chromium distribution, first update ActiveGate, then install Chrome for Testing and optionally remove the Chromium snap installation.</p>
 <ol>
 <li>If your ActiveGate and Chrome for Testing versions haven't been updated in a while, you might want to check and install Synthetic engine and Chrome for Testing dependencies again. See the <a href="/docs/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/create-a-private-synthetic-location#chrome-for-testing" title="Learn how to create a private location for synthetic monitoring.">manual installation instructions for Chrome for Testing</a> in <a href="/docs/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/create-a-private-synthetic-location" title="Learn how to create a private location for synthetic monitoring.">Create a private Synthetic location</a>.</li>
 <li>Download the Chrome for Testing package archive to a temporary location. This is a safe and verified archive hosted by Dynatrace at <code>https://synthetic-packages.s3.amazonaws.com</code>. Be sure to use the specific command provided for your ActiveGate version in the <a href="/docs/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/create-a-private-synthetic-location#chrome-for-testing" title="Learn how to create a private location for synthetic monitoring.">manual installation instructions for Chrome for Testing</a>, but modify the output path to <code>/tmp/chrome.zip</code>.</li>
@@ -25637,10 +25618,10 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>/usr/lib/chrome_for_testing/chrome-linux64/chrome --version
 </code></pre></div>
 <p>The Synthetic engine will use the new Chrome for Testing version immediately. Note that the status is updated once every hour, so it may take up to an hour to refresh the Chrome version displayed for your ActiveGate in <strong>Deployment Status</strong>.</p>
-<h2 id="chromium-autoupdate-from-a-custom-repository">Chromium autoupdate from a custom repository<a class="headerlink" href="#chromium-autoupdate-from-a-custom-repository" title="Permanent link">&para;</a></h2>
-<p>If you've enabled a <a href="/docs/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/create-a-private-synthetic-location#custom-repo" title="Learn how to create a private location for synthetic monitoring.">custom, local repository for Chromium installation</a>, Chromium can only be autoupdated. Follow this procedure to autoupdate Chromium via the same custom repository.</p>
+<h2 id="browser-autoupdate-from-a-custom-repository">Browser autoupdate from a custom repository<a class="headerlink" href="#browser-autoupdate-from-a-custom-repository" title="Permanent link">&para;</a></h2>
+<p>If you've enabled a <a href="/docs/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/create-a-private-synthetic-location#custom-repo" title="Learn how to create a private location for synthetic monitoring.">custom, local repository for the browser installation</a>, the browser can only be autoupdated. Follow this procedure to autoupdate the browser via the same custom repository.</p>
 <ol>
-<li>After ActiveGate installation, specify the custom repository of the ActiveGate in the <a href="/docs/ingest-from/dynatrace-activegate/configuration/configure-activegate#synth_mod" title="Learn which ActiveGate properties you can configure based on your needs and requirements."><code>[synthetic]</code> section of the <code>custom.properties</code> file</a> in the <code>/var/lib/dynatrace/gateway/config</code> directory. This allows for automatic Chromium updates from the custom repository during manual or automatic Synthetic engine updates.</li>
+<li>After ActiveGate installation, specify the custom repository of the ActiveGate in the <a href="/docs/ingest-from/dynatrace-activegate/configuration/configure-activegate#synth_mod" title="Learn which ActiveGate properties you can configure based on your needs and requirements."><code>[synthetic]</code> section of the <code>custom.properties</code> file</a> in the <code>/var/lib/dynatrace/gateway/config</code> directory. This allows for automatic browser updates from the custom repository during manual or automatic Synthetic engine updates.</li>
 </ol>
 <p><div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>[synthetic]
 <a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
@@ -25648,11 +25629,11 @@
 <a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>
 <a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>chromium_repo = https://172.18.0.100/chromium-repo
 </code></pre></div>
-2. Turn on <strong>Enable Chromium auto-update</strong> for your private location in global settingsâgo to <strong>Settings</strong> &gt; <strong>Web and mobile monitoring</strong> &gt; <strong>Private Synthetic locations</strong>. Then select your location and enable the toggle in <strong>Chromium update</strong> section.</p>
-<p>Note that the Chromium autoupdate UI setting applies to all ActiveGates assigned to your private location.
-3. Ensure that the Chromium components required for update are available at the custom repository location. Chromium is then automatically updated from the custom repository during ActiveGate and Synthetic engine updates.</p>
-<p>Chromium autoupdate option</p>
-<p>If you do not specify the custom repository in <code>custom.properties</code>, Chromium is downloaded and updated from S3 during a manual or automatic ActiveGate and Synthetic engine update.</p>
+2. Turn on <strong>Enable Chrome(-ium) auto-update</strong> for your private location in global settingsâgo to <strong>Settings</strong> &gt; <strong>Web and mobile monitoring</strong> &gt; <strong>Private Synthetic locations</strong>. Then select your location and enable the toggle in <strong>Chrome(-ium) update</strong> section.</p>
+<p>Note that the browser autoupdate UI setting applies to all ActiveGates assigned to your private location.
+3. Ensure that the browser packages required for update are available at the custom repository location. The browser is then automatically updated from the custom repository during ActiveGate and Synthetic engine updates.</p>
+<p>Browser autoupdate option</p>
+<p>If you do not specify the custom repository in <code>custom.properties</code>, the browser is downloaded and updated from S3 during a manual or automatic ActiveGate and Synthetic engine update.</p>
 
 
 

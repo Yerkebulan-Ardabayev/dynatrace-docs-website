@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
     
     
       
@@ -25480,7 +25480,7 @@
 <li>Latest Dynatrace</li>
 <li>How-to guide</li>
 <li>16-min read</li>
-<li>Updated on Feb 09, 2026</li>
+<li>Updated on Feb 20, 2026</li>
 </ul>
 <p>Cost Allocation is exclusively available for Dynatrace SaaS environments with a Dynatrace Platform Subscription (DPS) licensing agreement that was signed after April 2023.</p>
 <p>Dynatrace Cost Allocation lets you allocate Dynatrace DPS usage to customer-defined cost centers, products, or both.
@@ -25563,89 +25563,6 @@ The actual policy statement is provided in the code block below.</p>
 <h2 id="supported-capabilities">Supported capabilities<a class="headerlink" href="#supported-capabilities" title="Permanent link">&para;</a></h2>
 <p>The table below describes the <a href="https://www.dynatrace.com/pricing/">rate card capabilitiesï»¿</a> for which Cost Allocation is available.</p>
 <p>In the case that Cost Allocation isn't available for the given capability, an alternative best practice is recommended.</p>
-<p>Category</p>
-<p>Capability</p>
-<p>DPS Cost Allocation</p>
-<p>Alternative best practice</p>
-<p>Application &amp; Infrastructure Observability</p>
-<p>Full-Stack Monitoring</p>
-<p>â</p>
-<p>Infrastructure Monitoring</p>
-<p>â</p>
-<p>Foundation &amp; Discovery</p>
-<p>â</p>
-<p>Mainframe Monitoring</p>
-<p>Classic metrics</p>
-<p>Container Observability</p>
-<p>Kubernetes Monitoring</p>
-<p>Classic metrics</p>
-<p>Application Security Protection</p>
-<p>Runtime Vulnerability Analytics</p>
-<p>â</p>
-<p>Runtime Application Protection</p>
-<p>â</p>
-<p>Security Posture Management</p>
-<p>Notebook available via Account Management</p>
-<p>Digital Experience Monitoring</p>
-<p>Real User Monitoring</p>
-<p>Classic metrics</p>
-<p>Real User Monitoring with Session Replay</p>
-<p>Classic metrics</p>
-<p>Real User Monitoring Property</p>
-<p>Classic metrics</p>
-<p>Browser Monitor or Clickpath</p>
-<p>Classic metrics</p>
-<p>Third-Party Synthetic API Ingestion</p>
-<p>Classic metrics</p>
-<p>HTTP Monitor</p>
-<p>Classic metrics</p>
-<p>Metrics powered by Grail</p>
-<p>Metrics - Ingest</p>
-<p>Notebook available via Account Management</p>
-<p>Metrics - Retain</p>
-<p>Notebook available via Account Management</p>
-<p>Metrics - Query</p>
-<p>Notebook available via Account Management</p>
-<p>Log Analytics</p>
-<p>Log - Ingest</p>
-<p>â</p>
-<p>Log - Retain</p>
-<p>â</p>
-<p>Logs - Retain with Included Queries</p>
-<p>â</p>
-<p>Log - Query</p>
-<p>See <a href="#user-based">Configure user-based Cost Allocation for queries, Automation Workflow, and AppEngine Functions</a>.</p>
-<p>Traces powered by Grail</p>
-<p>Traces - Ingest</p>
-<p>â</p>
-<p>Traces - Retain</p>
-<p>Notebook available via Account Management</p>
-<p>Traces - Query</p>
-<p>See <a href="#user-based">Configure user-based Cost Allocation for queries, Automation Workflow, and AppEngine Functions</a>.</p>
-<p>Events powered by Grail</p>
-<p>Events - Ingest</p>
-<p>Notebook available via Account Management</p>
-<p>Events - Retain</p>
-<p>Notebook available via Account Management</p>
-<p>Events - Query</p>
-<p>See <a href="#user-based">Configure user-based Cost Allocation for queries, Automation Workflow, and AppEngine Functions</a>.</p>
-<p>AppEngine Functions</p>
-<p>AppEngine Functions - Small</p>
-<p>See <a href="#user-based">Configure user-based Cost Allocation for queries, Automation Workflow, and AppEngine Functions</a>.</p>
-<p>Automation</p>
-<p>AutomationWorkflow</p>
-<p>See <a href="#user-based">Configure user-based Cost Allocation for queries, Automation Workflow, and AppEngine Functions</a>.</p>
-<p>Platform extensions</p>
-<p>Custom Metrics Classic</p>
-<p>Please switch to <a href="/docs/license/capabilities/metrics" title="Learn how Dynatrace Metrics powered by Grail consumption is calculated using the Dynatrace Platform Subscription model.">Metrics powered by Grail</a></p>
-<p>Log Monitoring Classic</p>
-<p>Please switch to <a href="/docs/license/capabilities/log-analytics" title="Learn how Dynatrace Log Analytics consumption is calculated using the Dynatrace Platform Subscription model.">Log Analytics</a></p>
-<p>Custom Traces Classic</p>
-<p>Please switch to <a href="/docs/license/capabilities/traces" title="Learn how Dynatrace Traces powered by Grail consumption is calculated using the Dynatrace Platform Subscription (DPS) model.">Traces powered by Grail</a></p>
-<p>Custom Events Classic</p>
-<p>Please switch to <a href="/docs/license/capabilities/events" title="Learn how Dynatrace Events powered by Grail consumption is calculated using the Dynatrace Platform Subscription model.">Events powered by Grail</a></p>
-<p>Serverless Functions Classic</p>
-<p>Please switch to <a href="/docs/license/capabilities/appengine-functions" title="Learn how AppEngine Function consumption is calculated using the Dynatrace Platform Subscription model.">AppEngine Functions</a></p>
 <p>We're continuously extending Cost Allocation support to cover additional Dynatrace capabilities.
 For complete details regarding your licensing agreement, please contact your Dynatrace account manager.
 For more details about specific capabilities, see <a href="/docs/license#monitoring-consumption-per-dynatrace-capability" title="About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.">Monitoring consumption per capability</a>.</p>
@@ -30937,18 +30854,6 @@ We recommend:</p>
 If you have both, we recommend to use both the text-based name and the ID, separated by a comma (<code>,</code>) or slash (<code>/</code>).
 This lets you separate the name and ID after a data export.</p>
 <p>Examples:</p>
-<p>Host</p>
-<p>Cost center</p>
-<p>Product</p>
-<p>Host 1</p>
-<p><code>dt.cost.costcenter=BusinessUnit1/Bu1</code></p>
-<p><code>dt.cost.product=AppName/AppID</code></p>
-<p>Host 2</p>
-<p><code>dt.cost.costcenter=BusinessUnit2/Bu2</code></p>
-<p><code>dt.cost.product=AppName/AppID</code></p>
-<p>Host 3</p>
-<p><code>dt.cost.costcenter=BusinessUnit2/Bu2</code></p>
-<p><code>dt.cost.product=AppName/AppID</code></p>
 <h3 id="handling-shared-costs">Handling shared costs<a class="headerlink" href="#handling-shared-costs" title="Permanent link">&para;</a></h3>
 <p>If your host shares services, Cost Allocation doesn't support costs billed to separate cost centers or products.
 However, you can create a cost center or product for that host and then allocate its costs outside of Dynatrace.</p>

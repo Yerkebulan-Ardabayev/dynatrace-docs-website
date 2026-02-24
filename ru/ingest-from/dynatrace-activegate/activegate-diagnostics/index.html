@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
     
     
       
@@ -25748,26 +25748,6 @@ After collecting data, you can:</p>
 <p>We recommend that you delete the file after use.</p>
 <h2 id="contents-of-diagnostic-data">Contents of diagnostic data<a class="headerlink" href="#contents-of-diagnostic-data" title="Permanent link">&para;</a></h2>
 <p>All the collected diagnostic data is compressed into a <code>SupportArchive&lt;ID number&gt;</code> (for <code>agctl</code> - <code>support_archive_&lt;timestamp&gt;</code>) ZIP file that includes the following folders and files:</p>
-<p>Folder or file</p>
-<p>Description</p>
-<p><code>details.txt</code> (file)</p>
-<p>Contains general information on when and where the diagnostic data was collected and archive statistics.</p>
-<p><code>config</code> (folder)</p>
-<p>Contains a snapshot of the ActiveGate <a href="/docs/ingest-from/dynatrace-activegate/configuration/where-can-i-find-activegate-files" title="Find out where ActiveGate files are stored on Windows and Linux systems.">configuration directory</a>.</p>
-<p><code>debugui</code> (folder)</p>
-<p>Contains a snapshot of the internal environment configuration related to the ActiveGate.</p>
-<p><code>log</code> (folder)</p>
-<p>Contains a snapshot of the ActiveGate <a href="/docs/ingest-from/dynatrace-activegate/configuration/where-can-i-find-activegate-files" title="Find out where ActiveGate files are stored on Windows and Linux systems.">log directory</a>.</p>
-<p><code>autoupdater</code> (folder)</p>
-<p>Contains AutoUpdater service logs and RPM, Synthetic, zRemote installer modules.</p>
-<p><code>install</code> (folder)</p>
-<p>Contains ActiveGate installer logs.</p>
-<p><code>zremote</code> (folder)</p>
-<p>Contains zRemote, watchdog logs and agent configuration files.</p>
-<p><code>synthetic</code> (folder)</p>
-<p>Contains ActiveGate Synthetic monitors configuration files and logs.</p>
-<p><code>remotepluginmodule</code> (folder)</p>
-<p>Contains logs for Extensions and agent executing them.</p>
 <h2 id="data-privacy">Data privacy<a class="headerlink" href="#data-privacy" title="Permanent link">&para;</a></h2>
 <p>To comply with regional data protection and privacy regulations, Dynatrace automatically deletes all diagnostic data 30 days after its collection. This applies to the data in your Dynatrace environment and on the Dynatrace Cluster.</p>
 <p>You can choose to delete collected diagnostic data earlier. To ensure transparency, Dynatrace keeps only a small set of information about who, when, where, and why the diagnostic data was collected.</p>

@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../../../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
     
     
       
@@ -25518,25 +25518,6 @@
 <p><a href="/docs/observe/digital-experience/mobile-applications/instrument-android-app/instrumentation-via-oneagent-sdk/oneagent-sdk-for-android#data-privacy">Android SDK</a> <a href="/docs/observe/digital-experience/mobile-applications/instrument-ios-app/customization/oneagent-sdk-for-ios#privacy">iOS SDK</a> <a href="https://www.npmjs.com/package/@dynatrace/cordova-plugin#user-privacy-options">Cordova</a> <a href="https://pub.dev/packages/dynatrace_flutter_plugin#useroptin">Flutter</a> <a href="https://www.npmjs.com/package/@dynatrace/react-native-plugin#user-opt-in-mode">React Native</a> <a href="/docs/observe/digital-experience/mobile-applications/cross-platform-frameworks/xamarin-nuget#useroptin">Xamarin</a> <a href="/docs/observe/digital-experience/mobile-applications/cross-platform-frameworks/maui#useroptin"><img alt=".NET MAUI" src="https://dt-cdn.net/images/dotnetmaui-aea483621e.svg" title=".NET MAUI" />.NET MAUI</a> </p>
 <h3 id="data-collection-levels">Data collection levels<a class="headerlink" href="#data-collection-levels" title="Permanent link">&para;</a></h3>
 <p>The table below describes the available data collection levels and shows whether <a href="/docs/observe/digital-experience/rum-concepts/user-and-error-events#user-tagging" title="Learn about user and error events and the types of user and error events captured by Dynatrace.">user tags</a> and custom user actions, events, values, and errors are reported for a particular level.</p>
-<p>Level</p>
-<p>Description</p>
-<p>User tags, custom events, and custom values</p>
-<p>Custom user actions and errors</p>
-<p><strong>Off</strong></p>
-<p>Monitoring data is not sent</p>
-<p>No personal data is sent; all identifiers are randomized on every launch.<a href="#fn-1-1-def">1</a></p>
-<p><img alt="Not applicable" src="https://dt-cdn.net/images/icon-red-cross-1f1142a5dc.svg" title="Not applicable" /></p>
-<p><img alt="Not applicable" src="https://dt-cdn.net/images/icon-red-cross-1f1142a5dc.svg" title="Not applicable" /></p>
-<p><strong>Performance</strong></p>
-<p>Only performance, automatically captured data is sent</p>
-<p>No personal data is sent; all identifiers are randomized on every launch.</p>
-<p><img alt="Not applicable" src="https://dt-cdn.net/images/icon-red-cross-1f1142a5dc.svg" title="Not applicable" /></p>
-<p><img alt="Applicable" src="https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg" title="Applicable" /></p>
-<p><strong>User behavior</strong></p>
-<p>Performance data and user data is sent</p>
-<p>Personal data is sent; OneAgent recognizes and reports users who revisit in the future.<a href="#fn-1-2-def">2</a></p>
-<p><img alt="Applicable" src="https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg" title="Applicable" /></p>
-<p><img alt="Applicable" src="https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg" title="Applicable" /></p>
 <p>1</p>
 <p>A single <code>Loading &lt;App&gt;</code> event is sent to track the number of users that opted out.</p>
 <p>2</p>

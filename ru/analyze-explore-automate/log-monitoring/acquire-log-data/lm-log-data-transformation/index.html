@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
     
     
       
@@ -25487,49 +25487,9 @@
 <h2 id="transform-the-api-ingested-logs">Transform the API-ingested logs<a class="headerlink" href="#transform-the-api-ingested-logs" title="Permanent link">&para;</a></h2>
 <p>Log ingestion API automatically transforms <code>status</code>, <code>severity</code>, <code>level</code>, and <code>syslog.severity</code> severity keys to the <code>loglevel</code> attribute.</p>
 <p>The input values for the <code>status</code>, <code>severity</code>, <code>level</code>, and <code>syslog.severity</code> severity keys are transformed (transformation is not case sensitive) into output values for the <code>loglevel</code> attribute based on the mapping below:</p>
-<p>Input value</p>
-<p>Output value</p>
-<p>Example value</p>
-<p>Begins with <code>emerg</code> or <code>f</code></p>
-<p><code>EMERGENCY</code></p>
-<p><code>Emergency</code>, <code>fail</code>, <code>Failure</code></p>
-<p>Begins with <code>e</code> excluding <code>emerg</code></p>
-<p><code>ERROR</code></p>
-<p><code>Error</code>, <code>error</code></p>
-<p>Begins with <code>a</code></p>
-<p><code>ALERT</code></p>
-<p><code>alarm</code>, <code>Alert</code></p>
-<p>Begins with <code>c</code></p>
-<p><code>CRITICAL</code></p>
-<p><code>Critical</code>, <code>crucial</code></p>
-<p>Begins with <code>s</code></p>
-<p><code>SEVERE</code></p>
-<p><code>Severe</code>, <code>serious</code></p>
-<p>Begins with <code>w</code></p>
-<p><code>WARN</code></p>
-<p><code>warn</code>, <code>Warning</code></p>
-<p>Begins with <code>n</code></p>
-<p><code>NOTICE</code></p>
-<p><code>note</code>, <code>Notice</code></p>
-<p>Begins with <code>i</code></p>
-<p><code>INFO</code></p>
-<p><code>Info</code>, <code>information</code></p>
-<p>Begins with <code>d</code> or <code>trace</code> or <code>verbose</code></p>
-<p><code>DEBUG</code></p>
-<p><code>debug</code>, <code>TRACE</code>, <code>Verbose</code></p>
 <h2 id="transform-all-types-of-logs">Transform all types of logs<a class="headerlink" href="#transform-all-types-of-logs" title="Permanent link">&para;</a></h2>
 <p>This transformation applies both to OneAgent-ingested logs and API-ingested logs.</p>
 <p>Additionally, for each log event, a <code>status</code> attribute is created with a value that is a sum of <code>loglevel</code> values based on the following grouping:</p>
-<p>Included <code>loglevel</code> values</p>
-<p>Combined <code>status</code> attribute value</p>
-<p><code>SEVERE</code>, <code>ERROR</code>, <code>CRITICAL</code>, <code>ALERT</code>, <code>FATAL</code>, <code>EMERGENCY</code></p>
-<p><code>ERROR</code></p>
-<p><code>WARN</code></p>
-<p><code>WARN</code></p>
-<p><code>INFO</code>, <code>TRACE</code>, <code>DEBUG</code>, <code>NOTICE</code></p>
-<p><code>INFO</code></p>
-<p><code>NONE</code></p>
-<p><code>NONE</code></p>
 <p>For example:
 The <code>level</code> severity key in the Log ingestion API request parameter contains the value <code>serious</code>.</p>
 <ol>

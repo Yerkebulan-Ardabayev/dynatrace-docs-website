@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
     
     
       
@@ -25509,180 +25509,24 @@
 <li><strong>Syntax</strong><br />
 <code>matchesPhrase(expression, phrase [, caseSensitive])</code></li>
 <li><strong>Parameters</strong></li>
+<li><strong>Example</strong><br />
+  In this example, you add a filter that matches log records that contain <code>error</code> phrase in their content.</li>
 </ul>
-<p>Name</p>
-<p>Type</p>
-<p>Mandatory</p>
-<p>Default</p>
-<p>Constraints</p>
-<p>Description</p>
-<p>expression</p>
-<p>string, array</p>
-<p>yes</p>
-<p>The expression (string or array of strings) that should be checked.</p>
-<p>phrase</p>
-<p>string</p>
-<p>yes</p>
-<p>The phrase to search for.</p>
-<p>caseSensitive</p>
-<p>boolean</p>
-<p>no</p>
-<p>false</p>
-<p>This optional parameter (<code>caseSensitive</code>) is not supported by the matcher. The <code>matchesPhrase</code> function in the matcher performs only case insensitive search.</p>
-<p>Whether the match should be done case-sensitive.
-* <strong>Example</strong><br />
-  In this example, you add a filter that matches log records that contain <code>error</code> phrase in their content.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>matchesPhrase(content, &quot;error&quot;)
 </code></pre></div>
 <p>### Examples of event processing using DQL matchesPhrase function</p>
-<p>Part of the input event</p>
-<p>Processing query</p>
-<p>Match result</p>
-<p>Description</p>
-<p><code>attribute="User 'kÃ¤Ã¤rmanÃ¼' failed to login from 192.168.0.1"</code></p>
-<p><code>matchesPhrase(attribute, "192.168.0.1")</code></p>
-<p><img alt="Applicable" src="https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg" title="Applicable" /></p>
-<p>Exact match by single term.</p>
-<p><code>attribute="User 'kÃ¤Ã¤rmanÃ¼' failed to login from 192.168.0.123"</code></p>
-<p><code>matchesPhrase(attribute, "192.168.0.1")</code></p>
-<p><img alt="Not applicable" src="https://dt-cdn.net/images/icon-red-cross-1f1142a5dc.svg" title="Not applicable" /></p>
-<p>Non-word character is expected after character <code>1</code>.</p>
-<p><code>attribute="User 'kÃ¤Ã¤rmanÃ¼' failed to login from 192.168.0.123"</code></p>
-<p><code>matchesPhrase(attribute, "192.168.0.1*")</code></p>
-<p><img alt="Applicable" src="https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg" title="Applicable" /></p>
-<p>The query would match all IPs with the last octet between <code>100</code> and <code>199</code>.</p>
-<p><code>attribute="User 'kÃ¤Ã¤rmanÃ¼' failed to login from 192.168.0.1"</code></p>
-<p><code>matchesPhrase(attribute, "failed to login")</code></p>
-<p><img alt="Applicable" src="https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg" title="Applicable" /></p>
-<p>Exact phrase match.</p>
-<p><code>attribute="User 'kÃ¤Ã¤rmanÃ¼' failed to login from 192.168.0.1"</code></p>
-<p><code>matchesPhrase(attribute, "failed to log")</code></p>
-<p><img alt="Not applicable" src="https://dt-cdn.net/images/icon-red-cross-1f1142a5dc.svg" title="Not applicable" /></p>
-<p><code>log</code> is not a full word, non-word character is expected after <code>log</code>.</p>
-<p><code>attribute="User 'kÃ¤Ã¤rmanÃ¼' failed to login from 192.168.0.1"</code></p>
-<p><code>matchesPhrase(attribute, "failed to log*")</code></p>
-<p><img alt="Applicable" src="https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg" title="Applicable" /></p>
-<p>If the query ends with a wildcard character, the validation of the succeeding character is skipped.</p>
-<p><code>attribute="User 'kÃ¤Ã¤rmanÃ¼' failed to login from 192.168.0.1"</code></p>
-<p><code>matchesPhrase(attribute, "ed to login")</code></p>
-<p><img alt="Not applicable" src="https://dt-cdn.net/images/icon-red-cross-1f1142a5dc.svg" title="Not applicable" /></p>
-<p><code>ed</code> is not a full word, the preceding character <code>l</code> is a part of the word.</p>
-<p><code>attribute="User 'kÃ¤Ã¤rmanÃ¼' failed to login from 192.168.0.1"</code></p>
-<p><code>matchesPhrase(attribute, "*ed to login")</code></p>
-<p><img alt="Applicable" src="https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg" title="Applicable" /></p>
-<p>If the query starts with a wildcard character, the validation of the preceding character is skipped.</p>
-<p><code>attribute="User 'kÃ¤Ã¤rmanÃ¼' failed to login from 192.168.0.1"</code></p>
-<p><code>matchesPhrase(attribute, "*ed to log*")</code></p>
-<p><img alt="Applicable" src="https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg" title="Applicable" /></p>
-<p>If the query starts and ends with a wildcard character, the validation of the preceding and succeeding characters is skipped.</p>
-<p><code>attribute="User 'kÃ¤Ã¤rmanÃ¼' failed to login from 192.168.0.1"</code></p>
-<p><code>matchesPhrase(attribute, "kÃ¤Ã¤rmanÃ¼ failed")</code></p>
-<p><img alt="Not applicable" src="https://dt-cdn.net/images/icon-red-cross-1f1142a5dc.svg" title="Not applicable" /></p>
-<p>There should be an apostrophe (<code>'</code>) character between <code>kÃ¤Ã¤rmanÃ¼</code> and <code>failed</code>.</p>
-<p><code>attribute="User 'kÃ¤Ã¤rmanÃ¼' failed to login from 192.168.0.1"</code></p>
-<p><code>matchesPhrase(attribute, "rmanÃ¼' failed")</code></p>
-<p><img alt="Applicable" src="https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg" title="Applicable" /></p>
-<p>Non-ASCII character <code>Ã¤</code> is treated as non-word character.</p>
-<p><code>attribute="User 'kÃ¤Ã¤rmanÃ¼' failed to login from 192.168.0.1"</code></p>
-<p><code>matchesPhrase(attribute, " 'kÃ¤Ã¤rmanÃ¼' failed")</code></p>
-<p><img alt="Applicable" src="https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg" title="Applicable" /></p>
-<p>If the query starts with non-word character, the validation of the preceding character is skipped.</p>
-<p><code>attribute="Failed to assign monitoring configuration for com.dynatrace.extension"</code></p>
-<p><code>matchesPhrase(attribute, "configuration for")</code></p>
-<p><img alt="Not applicable" src="https://dt-cdn.net/images/icon-red-cross-1f1142a5dc.svg" title="Not applicable" /></p>
-<p>There is a space in the query and a tabulator in the attribute value.</p>
-<p><code>attribute="Failed to assign monitoring configuration for com.dynatrace.extension"</code></p>
-<p><code>matchesPhrase(attribute, "failed to")</code></p>
-<p><img alt="Not applicable" src="https://dt-cdn.net/images/icon-red-cross-1f1142a5dc.svg" title="Not applicable" /></p>
-<p>There is a single space in the query and a double space in the attribute value</p>
-<p><code>attribute="Failed to assign monitoring configuration for com.dynatrace.extension"</code></p>
-<p><code>matchesPhrase(attribute, "failed to")</code></p>
-<p><img alt="Applicable" src="https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg" title="Applicable" /></p>
-<p>It is possible to search with multiple spaces.</p>
-<p><code>attribute=["Gdansk, Poland", "Linz, Austria", "Klagenfurt, Austria"]</code></p>
-<p><code>matchesPhrase(attribute, "Austria")</code></p>
-<p><img alt="Applicable" src="https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg" title="Applicable" /></p>
-<p>The function handles multi-value attributes in "any-match" manner, in this case <code>Austria</code> is matched in second and third value.</p>
-<p><code>attribute=["Gdansk, Poland", "Linz, Austria", "Klagenfurt, Austria"]</code></p>
-<p><code>matchesPhrase(attribute, "Pol*")</code></p>
-<p><img alt="Applicable" src="https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg" title="Applicable" /></p>
-<p>Wildcard can be used also when dealing with multi-value attributes.</p>
 <h3 id="matchesvalue">matchesValue<a class="headerlink" href="#matchesvalue" title="Permanent link">&para;</a></h3>
 <p>Searches the records for a specific value in a given attribute. Returns only matching records. This function is case insensitive for ASCII characters, it works with multi-value attributes (matching any of the values), and it doesn't support mid-value wildcards.</p>
 <ul>
 <li><strong>Syntax</strong><br />
 <code>matchesValue(expression, value [, caseSensitive])</code></li>
 <li><strong>Parameters</strong></li>
+<li><strong>Example</strong><br />
+  In this example, you add a filter record where <code>process.technology</code> attribute contains <code>nginx</code> value.</li>
 </ul>
-<p>Name</p>
-<p>Type</p>
-<p>Mandatory</p>
-<p>Default</p>
-<p>Constraints</p>
-<p>Description</p>
-<p>expression</p>
-<p>string, array</p>
-<p>yes</p>
-<p>The expression (value or array of values) that should be checked.</p>
-<p>value</p>
-<p>string</p>
-<p>yes</p>
-<p>The value to search for.</p>
-<p>caseSensitive</p>
-<p>boolean</p>
-<p>no</p>
-<p>false</p>
-<p>This optional parameter (<code>caseSensitive</code>) is not supported by the matcher. The <code>matchesValue</code> function in the matcher performs only case insensitive search.</p>
-<p>Whether the match should be done case-sensitive.
-* <strong>Example</strong><br />
-  In this example, you add a filter record where <code>process.technology</code> attribute contains <code>nginx</code> value.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>matchesValue(process.technology, &quot;nginx&quot;)
 </code></pre></div>
 <p>### Examples of event processing using DQL matchesValue function</p>
-<p>Part of the input event</p>
-<p>Processing query</p>
-<p>Match result</p>
-<p>Description</p>
-<p><code>attribute="Dynatrace"</code></p>
-<p><code>matchesValue(attribute, "dynaTrace")</code></p>
-<p><img alt="Applicable" src="https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg" title="Applicable" /></p>
-<p>Case insensitive equality.</p>
-<p><code>attribute="User 'kÃ¤Ã¤rmanÃ¼' failed to login from 192.168.0.1"</code></p>
-<p><code>matchesValue(attribute, "192.168.0.1")</code></p>
-<p><img alt="Not applicable" src="https://dt-cdn.net/images/icon-red-cross-1f1142a5dc.svg" title="Not applicable" /></p>
-<p>The whole attribute value is considered.</p>
-<p><code>attribute="User 'kÃ¤Ã¤rmanÃ¼' failed to login from 192.168.0.1"</code></p>
-<p><code>matchesValue(attribute, "*192.168.0.1")</code></p>
-<p><img alt="Applicable" src="https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg" title="Applicable" /></p>
-<p>The value ends with <code>192.168.0.1</code>.</p>
-<p><code>attribute="User 'kÃ¤Ã¤rmanÃ¼' failed to login from 192.168.0.1"</code></p>
-<p><code>matchesValue(attribute, "user*")</code></p>
-<p><img alt="Applicable" src="https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg" title="Applicable" /></p>
-<p>The value starts with <code>user</code> (case-insensitively).</p>
-<p><code>attribute="User 'kÃ¤Ã¤rmanÃ¼' failed to login from 192.168.0.1"</code></p>
-<p><code>matchesValue(attribute, "*failed to log*")</code></p>
-<p><img alt="Applicable" src="https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg" title="Applicable" /></p>
-<p>The value contains the string <code>failed to log</code>.</p>
-<p><code>attribute="Ãsterreich"</code></p>
-<p><code>matchesValue(attribute, "Ã¶sterreich")</code></p>
-<p><img alt="Not applicable" src="https://dt-cdn.net/images/icon-red-cross-1f1142a5dc.svg" title="Not applicable" /></p>
-<p>Case insensitive only for ASCII characters.</p>
-<p><code>attribute="Ãsterreich"</code></p>
-<p><code>matchesValue(attribute, "Ãsterreich")</code></p>
-<p><img alt="Applicable" src="https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg" title="Applicable" /></p>
-<p>Exact match.</p>
-<p><code>attribute=["Java", "DOCKER", "k8s"]</code></p>
-<p><code>matchesValue(attribute, "docker")</code></p>
-<p><img alt="Applicable" src="https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg" title="Applicable" /></p>
-<p>The function handles multi-value attributes in "any-match" manner, in this case, <code>docker</code> is matched in the second value.</p>
-<p><code>attribute=["Java11", "java17"]</code></p>
-<p><code>matchesValue(attribute, "java")</code></p>
-<p><img alt="Not applicable" src="https://dt-cdn.net/images/icon-red-cross-1f1142a5dc.svg" title="Not applicable" /></p>
-<p>None of the values is equal to string java.</p>
-<p><code>attribute=["Java11", "java17"]</code></p>
-<p><code>matchesValue(attribute, "java*")</code></p>
-<p><img alt="Applicable" src="https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg" title="Applicable" /></p>
-<p>Both values start with a string <code>java</code>.</p>
 <h3 id="isnotnull">isNotNull<a class="headerlink" href="#isnotnull" title="Permanent link">&para;</a></h3>
 <p>Tests if a value is not NULL.</p>
 <ul>
@@ -25693,58 +25537,7 @@
 </ul>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>isNotNull(`host.name`)
 </code></pre></div>
-<p>timestamp</p>
-<p>content</p>
-<p>event.type</p>
-<p>host.name</p>
-<p><code>2022-08-03 11:27:19</code></p>
-<p><code>2022-08-03 09:27:19.836 [QueueProcessor] RemoteReporter...</code></p>
-<p><code>LOG</code></p>
-<p><code>HOST-AF-710319</code></p>
 <p><strong>Examples of event processing using DQL isNotNull function.</strong></p>
-<p>Part of the input event</p>
-<p>Processing query</p>
-<p>Match result</p>
-<p>Description</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>{
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>
-<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>attribute=&quot;Dynatrace&quot;
-<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>
-<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>
-<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>
-<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>}
-</code></pre></div>
-<p><code>isNotNull(other)</code></p>
-<p><img alt="Not applicable" src="https://dt-cdn.net/images/icon-red-cross-1f1142a5dc.svg" title="Not applicable" /></p>
-<p>The <code>other</code> attribute does not exists</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>{
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
-<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>
-<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>attribute=&quot;Dynatrace&quot;
-<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>
-<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>
-<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>
-<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>}
-</code></pre></div>
-<p><code>isNotNull(attribute)</code></p>
-<p><img alt="Applicable" src="https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg" title="Applicable" /></p>
-<p>The <code>attribute</code> has non-null value.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>{
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>
-<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>
-<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>attribute=null
-<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>
-<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>
-<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>
-<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>}
-</code></pre></div>
-<p><code>isNotNull(attribute)</code></p>
-<p><img alt="Not applicable" src="https://dt-cdn.net/images/icon-red-cross-1f1142a5dc.svg" title="Not applicable" /></p>
-<p>The <code>attribute</code> has null value.</p>
 <h3 id="isnull">isNull<a class="headerlink" href="#isnull" title="Permanent link">&para;</a></h3>
 <p>Tests if a value is NULL.</p>
 <ul>
@@ -25753,59 +25546,9 @@
 <li><strong>Example</strong><br />
   In this example, we filter (select) data where the <code>host.name</code> field doesn't contain a value.</li>
 </ul>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>filter isNull(`host.name`)
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>filter isNull(`host.name`)
 </code></pre></div>
-<p>timestamp</p>
-<p>content</p>
-<p>event.type</p>
-<p>host.name</p>
-<p><code>2022-08-03 12:53:26</code></p>
-<p><code>2022-08-03T10:52:31Z localhost haproxy[12529]: 192.168.19.100:38440</code></p>
-<p><code>LOG</code></p>
 <p>### Examples of event processing using DQL isNull function.</p>
-<p>Part of the input event</p>
-<p>Processing query</p>
-<p>Match result</p>
-<p>Description</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>{
-<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>
-<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>
-<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>
-<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>attribute=&quot;Dynatrace&quot;
-<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>
-<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>
-<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>
-<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>}
-</code></pre></div>
-<p><code>isNull(other)</code></p>
-<p><img alt="Applicable" src="https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg" title="Applicable" /></p>
-<p>The <code>other</code> attribute does not exists.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>{
-<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>
-<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>
-<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>
-<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>attribute=&quot;Dynatrace&quot;
-<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>
-<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>
-<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>
-<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>}
-</code></pre></div>
-<p><code>isNull(attribute)</code></p>
-<p><img alt="Not applicable" src="https://dt-cdn.net/images/icon-red-cross-1f1142a5dc.svg" title="Not applicable" /></p>
-<p>The <code>attribute</code> has non-null value.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>{
-<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>
-<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>
-<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>
-<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>attribute=null
-<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>
-<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>
-<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>
-<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>}
-</code></pre></div>
-<p><code>isNull(attribute)</code></p>
-<p><img alt="Applicable" src="https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg" title="Applicable" /></p>
-<p>The <code>attribute</code> has null value.</p>
 <h2 id="operators">Operators<a class="headerlink" href="#operators" title="Permanent link">&para;</a></h2>
 <p>Logical operators can be used to connect two or more expressions. Check out <a href="/docs/platform/grail/dynatrace-query-language/operators#dql-logical-or-equality-operators" title="A list of DQL Operators.">Logical or equality operators</a> to find out more about the behavior of logical operators in DQL.</p>
 <h3 id="or">OR<a class="headerlink" href="#or" title="Permanent link">&para;</a></h3>
@@ -25816,7 +25559,7 @@
 <li><strong>Example</strong><br />
   In this example, you add a matcher to filter records where the content contains either <code>timestamp</code> phrase or <code>trigger</code> phrase.</li>
 </ul>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>matchesPhrase(content, &quot;timestamp&quot;) or matchesPhrase(content, &quot;trigger&quot;)
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>matchesPhrase(content, &quot;timestamp&quot;) or matchesPhrase(content, &quot;trigger&quot;)
 </code></pre></div>
 <h3 id="and">AND<a class="headerlink" href="#and" title="Permanent link">&para;</a></h3>
 <p>Logical multiplication.</p>
@@ -25826,7 +25569,7 @@
 <li><strong>Example</strong><br />
   In this example, you add a matcher to filter records where the content contains <code>timestamp</code> phrase and <code>trigger</code> phrase.</li>
 </ul>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>matchesPhrase(content, &quot;timestamp&quot;) and matchesPhrase(content, &quot;trigger&quot;)
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>matchesPhrase(content, &quot;timestamp&quot;) and matchesPhrase(content, &quot;trigger&quot;)
 </code></pre></div>
 <h3 id="not">NOT<a class="headerlink" href="#not" title="Permanent link">&para;</a></h3>
 <p>Logical negation.</p>
@@ -25836,7 +25579,7 @@
 <li><strong>Example</strong><br />
   In this example, you add a matcher to filter records where the content doesn't contain <code>timestamp</code> phrase.</li>
 </ul>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>not matchesPhrase(content, &quot;timestamp&quot;)
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>not matchesPhrase(content, &quot;timestamp&quot;)
 </code></pre></div>
 <h3 id="strict-equality">Strict equality<a class="headerlink" href="#strict-equality" title="Permanent link">&para;</a></h3>
 <p><a href="/docs/platform/grail/dynatrace-query-language/operators" title="A list of DQL Operators.">Logical operator</a> (<code>==</code>) indicating an exact match.</p>
@@ -25849,78 +25592,9 @@ For strings, the search is case-sensitive.</p>
 <li><strong>Examples</strong></li>
 </ul>
 <p>Examples of using the strict equality operator.</p>
-<p>Part of the input event</p>
-<p>Processing query</p>
-<p>Match result</p>
-<p>Description</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>{
-<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>
-<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>
-<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>
-<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>attribute=&quot;Dynatrace&quot;
-<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>
-<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a>
-<a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a>
-<a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a>}
-</code></pre></div>
-<p><code>attribute == "Dynatrace"</code></p>
-<p><img alt="Applicable" src="https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg" title="Applicable" /></p>
-<p>The attribute is of the string type and has the same value.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>{
-<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>
-<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>
-<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>
-<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>attribute=&quot;Dynatrace&quot;
-<a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>
-<a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a>
-<a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a>
-<a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a>}
-</code></pre></div>
-<p><code>attribute == "dynatrace"</code></p>
-<p><img alt="Not applicable" src="https://dt-cdn.net/images/icon-red-cross-1f1142a5dc.svg" title="Not applicable" /></p>
-<p>The strict equality is case-sensitive.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>{
-<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>
-<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>
-<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>
-<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a>attribute=&quot;1&quot;
-<a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a>
-<a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a>
-<a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a>
-<a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a>}
-</code></pre></div>
-<p><code>attribute == 1</code></p>
-<p><img alt="Not applicable" src="https://dt-cdn.net/images/icon-red-cross-1f1142a5dc.svg" title="Not applicable" /></p>
-<p>The attributes have different data types</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>{
-<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>
-<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>
-<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>
-<a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a>attribute=&quot;1.0&quot;
-<a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a>
-<a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a>
-<a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a>
-<a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a>}
-</code></pre></div>
-<p><code>attribute == 1</code></p>
-<p><img alt="Applicable" src="https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg" title="Applicable" /></p>
-<p>Floating numbers can be compared to integer values if their decimals equal 0</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>{
-<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>
-<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>
-<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a>
-<a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a>attribute=[&quot;Java&quot;, &quot;DOCKER&quot;, &quot;k8s&quot;]
-<a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a>
-<a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a>
-<a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a>
-<a id="__codelineno-17-9" name="__codelineno-17-9" href="#__codelineno-17-9"></a>}
-</code></pre></div>
-<p><code>attribute == "Java"</code></p>
-<p><img alt="Not applicable" src="https://dt-cdn.net/images/icon-red-cross-1f1142a5dc.svg" title="Not applicable" /></p>
-<p>The attributes have different data types.</p>
 <h2 id="grouping">Grouping<a class="headerlink" href="#grouping" title="Permanent link">&para;</a></h2>
 <p>You can create conditional grouping with brackets <code>( )</code>.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>matchesValue(process.technology, &quot;nginx&quot;) and ( matchesPhrase(content, &quot;error&quot;) or matchesPhrase(content, &quot;warn&quot;) )
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>matchesValue(process.technology, &quot;nginx&quot;) and ( matchesPhrase(content, &quot;error&quot;) or matchesPhrase(content, &quot;warn&quot;) )
 </code></pre></div>
 <h2 id="reuse-expressions">Reuse expressions<a class="headerlink" href="#reuse-expressions" title="Permanent link">&para;</a></h2>
 <p>All the matcher expressions used in either log events, metrics, processing or bucket configurations are valid DQL. That means you can also use these expressions together with DQL filter command, for example, in the <a href="/docs/analyze-explore-automate/log-monitoring/analyze-log-data/log-viewer" title="Learn how to use Dynatrace log viewer to analyze log data.">log viewer</a>.</p>

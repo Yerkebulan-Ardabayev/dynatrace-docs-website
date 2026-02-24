@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../../../../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
     
     
       
@@ -25501,24 +25501,6 @@ The same rules are also applied to log and metric ingest which allows Dynatrace 
 <p>Dynatrace provides several default service detection rules.
 Additionally, custom rules can be created as described in <a href="/docs/observe/application-observability/services/service-detection/service-detection-v2/service-detection-v2#create-new-rule" title="Find out how to detect services based on OpenTelemetry resource attributes.">Create new rule</a>.</p>
 <p>Any future default rule changes will be opt-in: new rules will be shipped as disabled; you can choose whether to activate them.</p>
-<p>Priority</p>
-<p>Condition</p>
-<p>Service name</p>
-<p>1</p>
-<p><code>adobe.em.tier</code>, <code>adobe.em.env_type</code>, <code>adobe.em.program</code> attributes present</p>
-<p><code>aem-{adobe.em.tier}-{adobe.em.env_type}-{adobe.em.program}</code></p>
-<p>2</p>
-<p><code>k8s.workload.name</code> attribute present</p>
-<p><code>{k8s.workload.name}</code></p>
-<p>3</p>
-<p><code>dt.kubernetes.workload.name</code> attribute present</p>
-<p><code>{dt.kubernetes.workload.name}</code></p>
-<p>4</p>
-<p><code>istio.canonical_service</code> attribute present</p>
-<p><code>{istio.canonical_service}</code></p>
-<p>5</p>
-<p><code>service.name</code> attribute present</p>
-<p><code>{service.name}</code></p>
 <p>The service ID is a unique identifier, such as <code>SERVICE-649B4E44CBA804F4</code>, that is the result of hashing the attribute values that are used as part of the name pattern, additional service detection attributes, and <a href="/docs/observe/application-observability/services/service-detection/service-detection-v2/service-splitting-v2" title="Find out how to split detected services based on resource attributes.">service splitting attributes</a>, when applicable.</p>
 <h2 id="steps">Steps<a class="headerlink" href="#steps" title="Permanent link">&para;</a></h2>
 <p>Detection rules are customized in <img alt="Settings" src="https://dt-cdn.net/images/settings-icon-256-38e1321b51.webp" title="Settings" /> <strong>Settings</strong> &gt; <strong>Process and contextualize</strong> &gt; <strong>Services</strong> &gt; <strong>Service detection</strong>.</p>

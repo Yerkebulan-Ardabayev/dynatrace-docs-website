@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../../../../../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
     
     
       
@@ -25518,15 +25518,6 @@
 <li>Generate an <a href="/docs/dynatrace-api/basics/dynatrace-api-authentication#create-token" title="Find out how to get authenticated to use the Dynatrace API.">Access token</a> with the scope <strong>PaaS integration - Installer download</strong> (<code>InstallerDownload</code>).</li>
 <li>Download the latest PAX file via <a href="/docs/dynatrace-api/environment-api/deployment/oneagent/download-oneagent-latest" title="Download the latest OneAgent installer via Dynatrace API.">Deployment API - Download latest OneAgent</a>:</li>
 </ol>
-<p>HTTP method</p>
-<p>Dynatrace environment</p>
-<p>Endpoint</p>
-<p>GET</p>
-<p>SaaS</p>
-<p><code>https://{your-environment-id}.live.dynatrace.com/api/v1/deployment/installer/agent/zos/mainframe/latest</code></p>
-<p>GET</p>
-<p>Managed</p>
-<p><code>https://{your-domain}/e/{your-environment-id}/api/v1/deployment/installer/agent/zos/mainframe/latest</code></p>
 <p>Below is a sample <code>curl</code> command for a SaaS environment that uses the Deployment API to download the latest PAX file version:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>curl -X GET &quot;https://&lt;environment&gt;.live.dynatrace.com/api/v1/deployment/installer/agent/zos/mainframe/latest&quot; -H &quot;accept: */*&quot; -H &quot;Authorization: Api-Token &lt;accessToken&gt;&quot; --output dynatrace-zos.pax
 </code></pre></div>
@@ -25537,29 +25528,11 @@
 <li>Generate an <a href="/docs/dynatrace-api/basics/dynatrace-api-authentication#create-token" title="Find out how to get authenticated to use the Dynatrace API.">Access token</a> with the scope <strong>PaaS integration - Installer download</strong> (<code>InstallerDownload</code>).</li>
 <li>List all available PAX file versions via <a href="/docs/dynatrace-api/environment-api/deployment/oneagent/get-available-versions" title="List available versions of OneAgent via Dynatrace API.">Deployment API - List available versions of OneAgent</a>.</li>
 </ol>
-<p>HTTP method</p>
-<p>Dynatrace environment</p>
-<p>Endpoint</p>
-<p>GET</p>
-<p>SaaS</p>
-<p><code>https://{your-environment-id}.live.dynatrace.com/api/v1/deployment/installer/agent/versions/zos/mainframe</code></p>
-<p>GET</p>
-<p>Managed</p>
-<p><code>https://{your-domain}/e/{your-environment-id}/api/v1/deployment/installer/agent/versions/zos/mainframe</code></p>
 <p>Below is a sample <code>curl</code> command for a SaaS environment that uses the Deployment API to list all available PAX file versions:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>curl -X GET &quot;https://&lt;environment&gt;.live.dynatrace.com/api/v1/deployment/installer/agent/versions/zos/mainframe&quot; -H &quot;accept: */*&quot; -H &quot;Authorization: Api-Token &lt;accessToken&gt;&quot;
 </code></pre></div>
 <p>Replace <code>&lt;environment&gt;</code> with your Dynatrace environment ID and <code>&lt;accessToken&gt;</code> with your generated access token.
 3. Download a specific PAX file version via <a href="/docs/dynatrace-api/environment-api/deployment/oneagent/download-oneagent-version" title="Download the OneAgent installer of the specific version via Dynatrace API.">Deployment API - Download OneAgent of specific version</a>:</p>
-<p>HTTP method</p>
-<p>Dynatrace environment</p>
-<p>Endpoint</p>
-<p>GET</p>
-<p>SaaS</p>
-<p><code>https://{your-environment-id}.live.dynatrace.com/api/v1/deployment/installer/agent/zos/mainframe/version/{version}</code></p>
-<p>GET</p>
-<p>Managed</p>
-<p><code>https://{your-domain}/e/{your-environment-id}/api/v1/deployment/installer/agent/zos/mainframe/version/{version}</code></p>
 <p>Below is a sample <code>curl</code> command for a SaaS environment that uses the Deployment API to download a specific PAX file version:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>curl -X GET &quot;https://&lt;environment&gt;.live.dynatrace.com/api/v1/deployment/installer/agent/zos/mainframe/version/&lt;version&gt;&quot; -H &quot;accept: */*&quot; -H &quot;Authorization: Api-Token &lt;accessToken&gt;&quot; --output dynatrace-zos.pax
 </code></pre></div>

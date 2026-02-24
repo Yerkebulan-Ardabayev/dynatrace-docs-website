@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../../../../../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
     
     
       
@@ -25490,14 +25490,6 @@
 <p>Example: Instrument AWS SDK for Java to monitor a DynamoDB database</p>
 <p>Dynatrace version 1.277+ The following example shows how the <a href="https://github.com/open-telemetry/opentelemetry-java-instrumentation/tree/main/instrumentation/aws-sdk">OpenTelemetry AWS SDK instrumentationï»¿</a> packages can be used to monitor calls to a DynamoDB database.</p>
 <p>Depending on the AWS SDK version you use, add one of the following packages to your package manager configuration (for example, Maven or Gradle).</p>
-<p>AWS SDK version</p>
-<p>Package to add</p>
-<p>Notes</p>
-<p>v1</p>
-<p><a href="https://central.sonatype.com/artifact/io.opentelemetry.instrumentation/opentelemetry-aws-sdk-1.11-autoconfigure">opentelemetry-aws-sdk-1.11-autoconfigureï»¿</a></p>
-<p>Experimental span attributes must be enabled via system property (<code>otel.instrumentation.aws-sdk.experimental-span-attributes=true</code>) or environment variable (<code>OTEL_INSTRUMENTATION_AWS_SDK_EXPERIMENTAL_SPAN_ATTRIBUTES=true</code>).</p>
-<p>v2</p>
-<p><a href="https://central.sonatype.com/artifact/io.opentelemetry.instrumentation/opentelemetry-aws-sdk-2.2-autoconfigure">opentelemetry-aws-sdk-2.2-autoconfigureï»¿</a></p>
 <p>Once the package has been added as a dependency, instrumentation is automatically added to capture requests to DynamoDB.</p>
 <p>For the instrumentation to capture an item, query the item from DynamoDB using the AWS SDK, as in the code example below.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>import java.util.Map;

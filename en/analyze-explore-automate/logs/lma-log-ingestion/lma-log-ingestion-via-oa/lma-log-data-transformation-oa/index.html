@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../../../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
     
     
       
@@ -25500,59 +25500,9 @@
 <li><strong>Severity search lines limit</strong> is the number lines in each log entry, starting from the first line, to search for severity.</li>
 </ol>
 <p>There are 19 keywords that correspond with 9 severity levels as per the table below:</p>
-<p>Keyword</p>
-<p>Severity level</p>
-<p>trace</p>
-<p>DEBUG</p>
-<p>debug</p>
-<p>DEBUG</p>
-<p>fine</p>
-<p>DEBUG</p>
-<p>finer</p>
-<p>DEBUG</p>
-<p>finest</p>
-<p>DEBUG</p>
-<p>notice</p>
-<p>NOTICE</p>
-<p>info</p>
-<p>INFO</p>
-<p>information</p>
-<p>INFO</p>
-<p>warn</p>
-<p>WARN</p>
-<p>warning</p>
-<p>WARN</p>
-<p>severe_warning</p>
-<p>WARN</p>
-<p>severe</p>
-<p>SEVERE</p>
-<p>err</p>
-<p>ERROR</p>
-<p>error</p>
-<p>ERROR</p>
-<p>crit</p>
-<p>CRITICAL</p>
-<p>critical</p>
-<p>CRITICAL</p>
-<p>alert</p>
-<p>ALERT</p>
-<p>fatal</p>
-<p>EMERGENCY</p>
-<p>emerg</p>
-<p>EMERGENCY</p>
 <p>A match occurs and severity is determined when the keyword found is a single word/phrase from the above list, and it is preceded and followed any non-alphanumeric symbol other than <code>/</code> or <code>_</code>.</p>
 <h2 id="transform-all-types-of-logs">Transform all types of logs<a class="headerlink" href="#transform-all-types-of-logs" title="Permanent link">&para;</a></h2>
 <p>Additionally, for each log event, a <code>status</code> attribute is created with a value that is a sum of <code>loglevel</code> values based on the following grouping:</p>
-<p>Included <code>loglevel</code> values</p>
-<p>Combined <code>status</code> attribute value</p>
-<p><code>SEVERE</code>, <code>ERROR</code>, <code>CRITICAL</code>, <code>ALERT</code>, <code>FATAL</code>, <code>EMERGENCY</code></p>
-<p><code>ERROR</code></p>
-<p><code>WARN</code></p>
-<p><code>WARN</code></p>
-<p><code>INFO</code>, <code>TRACE</code>, <code>DEBUG</code>, <code>NOTICE</code></p>
-<p><code>INFO</code></p>
-<p><code>NONE</code></p>
-<p><code>NONE</code></p>
 <p>For example:
 The <code>level</code> severity key in the generic log ingestion API request parameter contains the value <code>serious</code>.</p>
 <ol>

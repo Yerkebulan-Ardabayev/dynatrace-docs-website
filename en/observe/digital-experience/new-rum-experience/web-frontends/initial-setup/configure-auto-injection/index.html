@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../../../../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
     
     
       
@@ -25491,99 +25491,6 @@ To configure the format used for automatic injection, refer to <a href="#configu
 <p>OneAgent detects responses that contain HTML content and injects the RUM JavaScript into the <code>&lt;head&gt;</code> element of each page. It does not modify other resources such as images, CSS files, JSON or XML documents, or plain text.</p>
 <p>OneAgent tries to inject the RUM JavaScript as the first script on the page, which helps to ensure reliable monitoring results. Injection only works with valid HTML that follows basic best practicesâfor example, ensuring all elements are properly opened and closed. OneAgent follows the built-in rules specified below to determine the most suitable location within an HTML document for injecting the RUM JavaScript.</p>
 <h3 id="automatic-injection-rules-specification">Automatic injection rules specification<a class="headerlink" href="#automatic-injection-rules-specification" title="Permanent link">&para;</a></h3>
-<p>Name</p>
-<p>Condition</p>
-<p>Action</p>
-<p>Overrules</p>
-<p><code>&lt;!DOCTYPE&gt;</code></p>
-<p>The <code>&lt;!DOCTYPE&gt;</code> tag is not <code>&lt;!DOCTYPE html&gt;</code>.</p>
-<p>Abort and do not inject. Note that only a single Doctype declaration is allowed.</p>
-<p>initial tag</p>
-<p>A tag appears before <code>&lt;html&gt;</code> that is not one of the following:</p>
-<ul>
-<li><code>&lt;!DOCTYPE ...&gt;</code></li>
-<li><code>&lt;html&gt;</code></li>
-<li><code>&lt;link&gt;</code></li>
-<li><code>&lt;meta&gt;</code></li>
-<li><code>&lt;script&gt;</code></li>
-<li><code>&lt;style&gt;</code></li>
-</ul>
-<p>Abort without injecting.</p>
-<p><code>&lt;?xml?&gt;</code></p>
-<p>An <code>&lt;?xml ...?&gt;</code> specification is encountered.</p>
-<p>Ignore and continue to scan the document.</p>
-<p>non-<code>&lt;meta&gt;</code> tag</p>
-<p>non-<code>&lt;head&gt;</code> tag</p>
-<p>initial tag</p>
-<p><code>&lt;html&gt;</code> tag</p>
-<p>The <code>&lt;html&gt;</code> tag is encountered.</p>
-<p>If a potential injection point is found earlier, inject there, and do not scan further. If there are multiple potential injection points, the earliest one is used.</p>
-<p>Otherwise, continue to scan the document</p>
-<p><code>&lt;script src&gt;</code> tag</p>
-<p>A <code>&lt;script src="..."&gt;</code> tag is found within <code>&lt;head&gt;</code>.</p>
-<p>If a potential injection point is found earlier, inject there, and do not scan further. If there are multiple potential injection points, the earliest one is used.</p>
-<p>Otherwise, inject before this <code>&lt;script&gt;</code> tag and do not scan further.</p>
-<p>non-<code>&lt;meta&gt;</code> tag</p>
-<p><code>&lt;base&gt;</code>/<code>&lt;meta&gt;</code> tag</p>
-<p><code>&lt;title&gt;</code>/<code>&lt;noscript&gt;</code> tag</p>
-<p>The <code>&lt;title&gt;</code> or the <code>&lt;noscript&gt;</code> tag is encountered.</p>
-<p>Ignore everything until the <code>&lt;/title&gt;</code> or the <code>&lt;/noscript&gt;</code> tag, then continue to scan the document.</p>
-<p><code>&lt;body&gt;</code> tag</p>
-<p><code>&lt;base&gt;</code>/<code>&lt;meta&gt;</code> tag</p>
-<p>Either the <code>&lt;base&gt;</code> or the <code>&lt;meta&gt;</code> tag is encountered.</p>
-<p>Discard any conditional injection point found earlier. Continue to scan the document.</p>
-<p>Any conditional injection point found earlier by:</p>
-<p>non-<code>&lt;meta&gt;</code> tag</p>
-<p>unclosed <code>&lt;meta&gt;</code></p>
-<p>non-<code>&lt;head&gt;</code> tag</p>
-<p>non-<code>&lt;meta&gt;</code> tag</p>
-<p>A tag is found within <code>&lt;head&gt;</code> that is neither <code>&lt;meta&gt;</code> nor <code>&lt;title&gt;</code>.</p>
-<p>Inject before it (conditional injection).</p>
-<p>Continue to scan the document, in case this injection choice is overruled.</p>
-<p>unclosed <code>&lt;meta&gt;</code></p>
-<p>The <code>&lt;/head&gt;</code> tag arrives after a <code>&lt;meta&gt;</code> tag that isn't closed either by the closing <code>&lt;/meta&gt;</code> tag or by the XML-style <code>&lt;meta ... /&gt;</code> tag.</p>
-<p>Add <code>&lt;/meta&gt;</code> followed by the injection, both before the <code>&lt;/head&gt;</code> (conditional injection).</p>
-<p>Continue to scan the document, in case this injection choice is overruled.</p>
-<p>comment</p>
-<p>The <code>&lt;!- comment -&gt;</code> tag is encountered.</p>
-<p>Ignore and continue to scan the document.</p>
-<p>non-<code>&lt;meta&gt;</code> tag</p>
-<p>non-<code>&lt;head&gt;</code> tag</p>
-<p>non-<code>&lt;head&gt;</code> tag</p>
-<p>A tag is found after <code>&lt;html&gt;</code> but before <code>&lt;head&gt;</code> that is neither <code>&lt;head&gt;</code> nor <code>&lt;body&gt;</code>.</p>
-<p>Inject before it (conditional injection).</p>
-<p>Continue to scan the document, in case this injection choice is overruled.</p>
-<p><code>&lt;/head&gt;</code> tag</p>
-<p>The <code>&lt;/head&gt;</code> tag encountered.</p>
-<p>If a potential injection point is found earlier, inject there and do not scan further. If there are multiple potential injection points, the earliest is used.</p>
-<p>Otherwise, continue to scan the document.</p>
-<p>flush</p>
-<p>Java only</p>
-<p>Flush is called on the injecting stream/writer outside of the <code>&lt;head&gt;&lt;/head&gt;</code> section and a conditional injection awaits confirmation.</p>
-<p>Discard the conditional injection point, propagate the flush, and continue to scan the document for a new injection point.</p>
-<p>Any conditional injection point found before by:</p>
-<p>non-<code>&lt;head&gt;</code> tag</p>
-<p>flush in <code>&lt;head&gt;</code></p>
-<p>Java only</p>
-<p>Flush is called on the injecting stream/writer inside <code>&lt;head&gt;&lt;/head&gt;</code> and conditional injection awaits confirmation.</p>
-<p>Keep the injection point and continue to scan the document.</p>
-<p>Disregard the flush.</p>
-<p><code>&lt;body&gt;</code> tag</p>
-<p>The <code>&lt;body&gt;</code> tag is encountered.</p>
-<p>Document scan stops. Any potential injection point found earlier is used. If there are multiple potential injection points, the earliest one is used.</p>
-<p>If no rule matched earlier, inject after the <code>&lt;body&gt;</code>.</p>
-<p>end of file</p>
-<p>End of file is reached and scanning didn't terminate before that.</p>
-<p>Don't perform an injection.</p>
-<p>Any conditional injection point found before by:</p>
-<p>non-<code>&lt;meta&gt;</code> tag</p>
-<p>unclosed <code>&lt;meta&gt;</code></p>
-<p>non-<code>&lt;head&gt;</code> tag</p>
-<p>parse error</p>
-<p>The document's contents don't appear to exhibit the basic structure expected from HTML tags and attributes.</p>
-<p>Document scan stops.</p>
-<p>If a potential injection point is found earlier, inject there, and do not scan further. If there are multiple potential injection points, the earliest one is used.</p>
-<p>If no rule provides an earlier injection point, don't perform an injection.</p>
 <h2 id="explicitly-specify-where-the-rum-javascript-should-be-injected">Explicitly specify where the RUM JavaScript should be injected<a class="headerlink" href="#explicitly-specify-where-the-rum-javascript-should-be-injected" title="Permanent link">&para;</a></h2>
 <p>In some cases, OneAgent may be unable to perform injection using the built-in rules. This is typically due to malformed HTML, though other rare conditions may also prevent the ruleset from identifying a suitable injection point. In such scenarios, you can achieve automatic injection by defining a custom injection rule that explicitly specifies where the RUM JavaScript should be injected within the HTML document.</p>
 <p>To create a custom injection rule that specifies the injection point in the HTML document</p>

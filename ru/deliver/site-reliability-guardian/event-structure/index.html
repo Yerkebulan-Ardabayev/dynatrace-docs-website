@@ -25,7 +25,7 @@
       
       
       <link rel="icon" href="../../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
     
     
       
@@ -25635,21 +25635,6 @@ Any data that is related to guardian internals is stored with a prefix of <code>
 The structure of the other event fields aligns with the <a href="/docs/semantic-dictionary/model/sdlc-events#sdlc-validation-events" title="Get to know the Semantic Dictionary models related to Software development lifecycle (SDLC) events.">Semantic Dictionary for Software Development Lifecycle Validation Events</a>.</p>
 <h3 id="lifecycle-guardian-event-fields">Lifecycle guardian event fields<a class="headerlink" href="#lifecycle-guardian-event-fields" title="Permanent link">&para;</a></h3>
 <p>When you want to integrate Lifecycle guardian validation results with a <a href="/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new" title="Create interactive, customizable views to visualize, analyze, and share your observability data in real time.">dashboard</a> or other tooling that you have created, the event fields below is a good starting point for your queries.</p>
-<p><strong>Field name</strong></p>
-<p><strong>Description</strong></p>
-<p><strong>Event type / status</strong></p>
-<p><code>validation.result</code></p>
-<p>A text indicating the result of the validation. Any value of <code>pass</code>, <code>warning</code>, <code>fail</code>, <code>error</code>, or <code>info</code> is possible.</p>
-<p><code>validation</code>, <code>finished</code></p>
-<p><code>dt.srg.id</code></p>
-<p>The ID of the guardian. It could be used to filter for specific guardian events or as part of a backlink to the guardian.</p>
-<p>all</p>
-<p><code>dt.srg.tags</code></p>
-<p>All the tags that have been defined for a guardian. It could be used to filter for specific guardian events.</p>
-<p>all</p>
-<p><code>task.id</code></p>
-<p>The ID of the guardian validation. It could be used as part of a backlink to the analysis page of the guardian.</p>
-<p>all</p>
 <h2 id="business-guardian-business-events">Business guardian (Business events)<a class="headerlink" href="#business-guardian-business-events" title="Permanent link">&para;</a></h2>
 <p>To query business guardian events with DQL, use the following query:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>fetch bizevents
@@ -25698,21 +25683,6 @@ The structure of the other event fields aligns with the <a href="/docs/semantic-
 <p>The above business events share several common fields.</p>
 <h3 id="business-guardian-event-fields">Business guardian event fields<a class="headerlink" href="#business-guardian-event-fields" title="Permanent link">&para;</a></h3>
 <p>When you want to integrate business guardian validation results with a <a href="/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new" title="Create interactive, customizable views to visualize, analyze, and share your observability data in real time.">dashboard</a> or other tooling that you have created, the event fields below is a good starting point for your queries.</p>
-<p><strong>Field name</strong></p>
-<p><strong>Description</strong></p>
-<p><strong>Event type / status</strong></p>
-<p><code>validation.status</code></p>
-<p>A text indicating the status of the validation. Any value of <code>pass</code>, <code>warning</code>, <code>fail</code>, <code>error</code>, or <code>info</code> is possible.</p>
-<p><code>guardian.validation.finished</code></p>
-<p><code>guardian.id</code></p>
-<p>The ID of the guardian. It could be used to filter for specific guardian events or as part of a backlink to the guardian.</p>
-<p>all</p>
-<p><code>guardian.tags</code></p>
-<p>All the tags that have been defined for a guardian. It could be used to filter for specific guardian events.</p>
-<p>all</p>
-<p><code>validation.id</code></p>
-<p>The ID of the guardian validation. It could be used as part of a backlink to the analysis page of the guardian.</p>
-<p>all</p>
 
 
 

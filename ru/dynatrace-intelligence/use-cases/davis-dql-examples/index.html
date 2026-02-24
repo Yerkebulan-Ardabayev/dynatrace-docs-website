@@ -25,7 +25,7 @@
       
       
       <link rel="icon" href="../../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
     
     
       
@@ -25597,8 +25597,6 @@
 <a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>| summarize {problemCount = countDistinct(event.id)}
 </code></pre></div>
 <p><strong>Query result</strong></p>
-<p>problemCount</p>
-<p>415</p>
 <h2 id="count-the-current-number-of-distinct-active-problems">Count the current number of distinct active problems<a class="headerlink" href="#count-the-current-number-of-distinct-active-problems" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Fetches table <code>dt.davis.problems</code>.</li>
@@ -25616,8 +25614,6 @@
 <a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>| summarize {activeProblems = countDistinct(event.id)}
 </code></pre></div>
 <p><strong>Query result</strong></p>
-<p>activeProblems</p>
-<p>15</p>
 <h2 id="chart-the-number-of-problems-from-the-last-7-days">Chart the number of problems from the last 7 days<a class="headerlink" href="#chart-the-number-of-problems-from-the-last-7-days" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Fetches table <code>dt.davis.problems</code>.</li>
@@ -25632,12 +25628,6 @@
 <a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>| makeTimeseries count(default:0)
 </code></pre></div>
 <p><strong>Query result</strong></p>
-<p>timeframe</p>
-<p>interval</p>
-<p>count</p>
-<p>start: 20/11/2024, 12:00 end: 27/11/2024, 13:00</p>
-<p>60 min</p>
-<p>0.00, 55.00, 143.00, 703.00, 504.00, 120.00, 117.00, 692.00, 534.00</p>
 <h2 id="identify-the-top-3-problem-affected-entities-within-your-environment">Identify the top 3 problem-affected entities within your environment<a class="headerlink" href="#identify-the-top-3-problem-affected-entities-within-your-environment" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Fetches table <code>dt.davis.problems</code>.</li>
@@ -25665,14 +25655,6 @@
 <a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>| limit 3
 </code></pre></div>
 <p><strong>Query result</strong></p>
-<p>affected_entity_ids</p>
-<p>count</p>
-<p>HOST-A9449CACDE12B2BF</p>
-<p>10</p>
-<p>SERVICE-5624DD59D74FF453</p>
-<p>5</p>
-<p>PROCESS_GROUP_INSTANCE-3184C659684130C7</p>
-<p>3</p>
 <h2 id="fetch-all-problems-for-a-host-with-the-name-myhost">Fetch all problems for a host with the name "myhost"<a class="headerlink" href="#fetch-all-problems-for-a-host-with-the-name-myhost" title="Permanent link">&para;</a></h2>
 <p>This example joins entity attributes in order to filter all problems with a given host name.</p>
 <ul>
@@ -25697,16 +25679,6 @@
 <a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>| filter host.name == &quot;myhost&quot;
 </code></pre></div>
 <p><strong>Query result</strong></p>
-<p>timestamp</p>
-<p>affected_entity_ids</p>
-<p>host.id</p>
-<p>host.name</p>
-<p>display_id</p>
-<p>5/31/2023, 1:31:39 PM</p>
-<p>HOST-27D70086952122CF</p>
-<p>HOST-27D70086952122CF</p>
-<p>myhost</p>
-<p>P-23054243</p>
 <h2 id="load-the-last-state-of-a-given-problem">Load the last state of a given problem<a class="headerlink" href="#load-the-last-state-of-a-given-problem" title="Permanent link">&para;</a></h2>
 <p>This example shows you how to filter problems by a unique ID.</p>
 <ul>
@@ -25721,16 +25693,6 @@
 <a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>| filter display_id == &quot;P-24051200&quot;
 </code></pre></div>
 <p><strong>Query result</strong></p>
-<p>timestamp</p>
-<p>affected_entity_ids</p>
-<p>host.id</p>
-<p>host.name</p>
-<p>display_id</p>
-<p>5/31/2023, 1:31:39 PM</p>
-<p>HOST-27D70086952122CF</p>
-<p>HOST-27D70086952122CF</p>
-<p>myhost</p>
-<p>P-23053506</p>
 <h2 id="load-all-active-problems-and-exclude-all-those-that-are-marked-as-duplicates">Load all active problems and exclude all those that are marked as duplicates<a class="headerlink" href="#load-all-active-problems-and-exclude-all-those-that-are-marked-as-duplicates" title="Permanent link">&para;</a></h2>
 <p>This example shows you how to fetch all active problems that weren't marked as duplicates.</p>
 <p>Since the duplicate flag appears during the lifecycle of a problem, the update events need to be sorted by timestamp. Then, the events need to be summarized by taking the last state of the duplicate and status fields. It's possible to correctly apply the filter only after you sort the events by the timestamp.</p>
@@ -25746,14 +25708,6 @@
 <a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>| filter event.status == &quot;ACTIVE&quot; and not dt.davis.is_duplicate == &quot;true&quot;
 </code></pre></div>
 <p><strong>Query result</strong></p>
-<p>display_id</p>
-<p>status</p>
-<p>id</p>
-<p>duplicate</p>
-<p>P-230910385</p>
-<p>ACTIVE</p>
-<p>P-230910385</p>
-<p>false</p>
 <h2 id="calculate-the-mean-time-of-resolving-problems-over-time">Calculate the mean time of resolving problems over time<a class="headerlink" href="#calculate-the-mean-time-of-resolving-problems-over-time" title="Permanent link">&para;</a></h2>
 <p>This example shows you how to calculate the mean time that was needed to resolve all the reported problems by summarizing the delta between start and end of each problem over time.</p>
 <ul>
@@ -25810,14 +25764,6 @@
 <a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a>| makeTimeseries count =  count(default: 0)
 </code></pre></div>
 <p><strong>Query result</strong></p>
-<p>60min interval</p>
-<p>count</p>
-<p>5/25/2023, 3:00 PM</p>
-<p>146</p>
-<p>5/25/2023, 4:00 PM</p>
-<p>312</p>
-<p>5/25/2023, 5:00 PM</p>
-<p>201</p>
 
 
 

@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
     
     
       
@@ -25489,95 +25489,6 @@
 <li>MH: <a href="/docs/observe/application-observability/services-classic/service-response-time-hotspots" title="Identify the activities that consume the most response time for each service.">Method hotspots</a>.</li>
 </ul>
 <p>Regardless of which analysis you're running, it is not guaranteed that you'll see all of the timings listed here. The actual timings you see depend completely on how you're running your services. For example, if the distributed trace runs completely on one host without any networking involved, you won't see any network-related times.</p>
-<p>Time</p>
-<p>Appears in</p>
-<p>Description</p>
-<p>Response time</p>
-<p>DT<br />
-SF</p>
-<p>The total execution time of the first node of a distributed trace.</p>
-<ul>
-<li>Server side The time between moments when the distributed trace is started on the server side and when the response is sent back to the client.</li>
-<li>Client side The time between moments when the client triggers the request and receives the response.</li>
-</ul>
-<p>Response time</p>
-<p>RT</p>
-<p>The total execution time of the method.</p>
-<ul>
-<li>Server side The processing time of the method.</li>
-<li>Client side The time between moments when the client triggers the request and receives the response.</li>
-</ul>
-<p>Processing time</p>
-<p>DT<br />
-RT</p>
-<p>The duration of the distributed trace from start to end.</p>
-<p>It is the <em>wall-clock time</em> (difference between start and end time), not the sum of all asynchronous executions.</p>
-<p>Execution time</p>
-<p>RT</p>
-<p>The total time taken to execute the code.</p>
-<p>It is the <strong>sum of all asynchronous executions</strong>, so it might be longer than the processing time.</p>
-<p>Suspension</p>
-<p>DT<br />
-RT</p>
-<p>The time during which any code execution is halted. It is usually caused by garbage collection.</p>
-<p>Wait time</p>
-<p>DT</p>
-<p>The time during which the code actively waits for something (for example, <code>Object.wait()</code> or a similar functionality).</p>
-<p>Lock wait</p>
-<p>RT</p>
-<p>The time during which the code is blocked. It usually caused by wait time prior to entry into a synchronized code block or by wait time to acquire a spinlock.</p>
-<p>Active wait</p>
-<p>RT</p>
-<p>The time during which the code in <em>this node</em> is waiting for something. The wait caused by child calls is not included.</p>
-<p>Lock time</p>
-<p>DT</p>
-<p>The time during which the code is blocked by waiting for a synchronous code block.</p>
-<p>Network I/O</p>
-<p>DT<br />
-RT</p>
-<p>The time during which the code is actively waiting for <em>native</em> network functions (for example, <code>java.net.SocketInputStream.socketRead0</code>).</p>
-<p>For response time analysis, the wait caused by child calls is not included.</p>
-<p>Disk I/O</p>
-<p>DT<br />
-RT</p>
-<p>The time during which the code is actively reading from or writing to a disk or waiting for disk input/output.</p>
-<p>For response time analysis, the wait caused by child calls is not included.</p>
-<p>Total I/O</p>
-<p>-</p>
-<p>In a node, this is <strong>the sum of Network I/O and Disk I/O</strong>.</p>
-<p>When these metrics aren't available, and if the node is the direct parent of a synchronously invoked child service that isn't a custom service, the node Total I/O can be estimated as <strong>the node Duration minus the node CPU Self time</strong>.</p>
-<p>CPU time</p>
-<p>DT<br />
-RT</p>
-<p>The time during which the CPU executes code related to the distributed trace. The measurement is provided by OneAgent.</p>
-<p>Self time</p>
-<p>DT<br />
-RT</p>
-<p>The processing time of a particular node in the distributed trace.</p>
-<p>Other</p>
-<p>DT</p>
-<p>Any unclassified fraction of the self time.</p>
-<p>Elapsed time</p>
-<p>DT</p>
-<p>The time between executions, from when the distributed trace is created to when the method enters.</p>
-<p>Duration</p>
-<p>DT</p>
-<p>Timeframe that represents the duration of a node, including its synchronous children nodes, from its start time to its end time.</p>
-<p>Code execution</p>
-<p>MH</p>
-<p>Percentage of measured samples in which the method code is actively executed.</p>
-<p>Disk I/O</p>
-<p>MH</p>
-<p>Percentage of measured samples in which the method is actively reading from or writing to a disk or waiting for disk input/output.</p>
-<p>Network I/O</p>
-<p>MH</p>
-<p>Percentage of measured samples in which the method is actively waiting for <em>native</em> network functions.</p>
-<p>Waiting</p>
-<p>MH</p>
-<p>Percentage of measured samples in which the method is actively waiting for something (for example, <code>Object.wait()</code> or a similar functionality).</p>
-<p>Locking</p>
-<p>MH</p>
-<p>Percentage of measured samples in which the method is blocked by waiting for a synchronous code block.</p>
 <h2 id="related-topics">Related topics<a class="headerlink" href="#related-topics" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="/docs/observe/application-observability/distributed-traces" title="Gain observability into highly distributed, cloud-native architectures to effectively trace and analyze transactions in real time.">Distributed Traces Classic</a></li>

@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
     
     
       
@@ -25571,42 +25571,6 @@ This condition has two possible values.</p>
 </code></pre></div>
 <h2 id="table-permissions">Table permissions<a class="headerlink" href="#table-permissions" title="Permanent link">&para;</a></h2>
 <p>Besides granting access to buckets, you also need to configure table permissions.</p>
-<p>Table name</p>
-<p>Permission</p>
-<p>Affected DQL functions/commands</p>
-<p>logs</p>
-<p>storage:logs:read</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/commands/data-source-commands#fetch" title="DQL data source commands">fetch</a></p>
-<p>events</p>
-<p>storage:events:read</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/commands/data-source-commands#fetch" title="DQL data source commands">fetch</a></p>
-<p>security.events</p>
-<p>storage:security.events:read</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/commands/data-source-commands#fetch" title="DQL data source commands">fetch</a></p>
-<p>metrics</p>
-<p>storage:metrics:read</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/commands/metric-commands#timeseries" title="DQL metric commands">timeseries</a></p>
-<p>bizevents</p>
-<p>storage:bizevents:read</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/commands/data-source-commands#fetch" title="DQL data source commands">fetch</a></p>
-<p>spans</p>
-<p>storage:spans:read</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/commands/data-source-commands#fetch" title="DQL data source commands">fetch</a></p>
-<p>entities</p>
-<p>storage:entities:read</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/commands/data-source-commands#fetch" title="DQL data source commands">fetch</a>, <a href="/docs/platform/grail/dynatrace-query-language/functions/general-functions#classic-entity-selector" title="A list of DQL general functions.">classicEntitySelector</a>, <a href="/docs/platform/grail/dynatrace-query-language/functions/general-functions#entity-attr" title="A list of DQL general functions.">entityAttr</a>, <a href="/docs/platform/grail/dynatrace-query-language/functions/general-functions#entity-name" title="A list of DQL general functions.">entityName</a></p>
-<p>smartscape</p>
-<p>storage:smartscape:read</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/commands/smartscape-commands#smartscapeNodes" title="DQL Smartscape commands">smartscapeNodes</a>, <a href="/docs/platform/grail/dynatrace-query-language/commands/smartscape-commands#smartscapeEdges" title="DQL Smartscape commands">smartscapeEdges</a>, <a href="/docs/platform/grail/dynatrace-query-language/functions/join-functions#getNodeName" title="A list of DQL join functions.">getNodeName()</a>, <a href="/docs/platform/grail/dynatrace-query-language/functions/join-functions#getNodeField" title="A list of DQL join functions.">getNodeField()</a></p>
-<p>dt.system.events</p>
-<p>storage:system:read</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/commands/data-source-commands#fetch" title="DQL data source commands">fetch</a></p>
-<p>user.events</p>
-<p>storage:user.events:read</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/commands/data-source-commands#fetch" title="DQL data source commands">fetch</a></p>
-<p>user.sessions</p>
-<p>storage:user.sessions:read</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/commands/data-source-commands#fetch" title="DQL data source commands">fetch</a></p>
 <p>For more information, see <a href="/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies/advanced/iam-policystatements#storage" title="Complete reference of IAM policies and corresponding conditions across all Dynatrace services.">IAM policy reference</a>.</p>
 <h3 id="bucket-level-permissions">Bucket level permissions<a class="headerlink" href="#bucket-level-permissions" title="Permanent link">&para;</a></h3>
 <p>You can restrict table permissions to certain buckets using the <code>WHERE</code> clause. For example:</p>
@@ -25617,54 +25581,6 @@ This condition has two possible values.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>ALLOW storage:logs:read WHERE storage:dt.security_context=&quot;TeamA&quot;;
 </code></pre></div>
 <p>Supported fields:</p>
-<p>Field name</p>
-<p>IAM condition</p>
-<p>Supported IAM tables</p>
-<p><code>event.kind</code></p>
-<p><code>storage:event.kind</code></p>
-<p><code>events</code>, <code>security.events</code>, <code>bizevents</code>, <code>system</code></p>
-<p><code>event.type</code></p>
-<p><code>storage:event.type</code></p>
-<p><code>events</code>, <code>security.events</code>, <code>bizevents</code>, <code>system</code></p>
-<p><code>event.provider</code></p>
-<p><code>storage:event.provider</code></p>
-<p><code>events</code>, <code>security.events</code>, <code>bizevents</code>, <code>system</code></p>
-<p><code>k8s.namespace.name</code></p>
-<p><code>storage:k8s.namespace.name</code></p>
-<p><code>events</code>, <code>security.events</code>, <code>bizevents</code>, <code>logs</code>, <code>metrics</code>, <code>spans</code>, <code>smartscape</code></p>
-<p><code>k8s.cluster.name</code></p>
-<p><code>storage:k8s.cluster.name</code></p>
-<p><code>events</code>, <code>security.events</code>, <code>bizevents</code>, <code>logs</code>, <code>metrics</code>, <code>spans</code>, <code>smartscape</code></p>
-<p><code>host.name</code></p>
-<p><code>storage:host.name</code></p>
-<p><code>events</code>, <code>security.events</code>, <code>bizevents</code>, <code>logs</code>, <code>metrics</code>, <code>spans</code>, <code>smartscape</code></p>
-<p><code>dt.host_group.id</code></p>
-<p><code>storage:dt.host_group.id</code></p>
-<p><code>events</code>, <code>security.events</code>, <code>bizevents</code>, <code>logs</code>, <code>metrics</code>, <code>spans</code>, <code>smartscape</code></p>
-<p><code>metric.key</code></p>
-<p><code>storage:metric.key</code></p>
-<p><code>metrics</code></p>
-<p><code>log.source</code></p>
-<p><code>storage:log.source</code></p>
-<p><code>logs</code></p>
-<p><code>dt.security_context</code></p>
-<p><code>storage:dt.security_context</code></p>
-<p><code>events</code>, <code>security.events</code>, <code>bizevents</code>, <code>system</code>, <code>logs</code>, <code>metrics</code>, <code>spans</code>, <code>entities</code>, <code>smartscape</code>, <code>user.events</code>, <code>user.sessions</code></p>
-<p><code>gcp.project.id</code></p>
-<p><code>storage:gcp.project.id</code></p>
-<p><code>events</code>, <code>security.events</code>, <code>bizevents</code>, <code>logs</code>, <code>metrics</code>, <code>spans</code>, <code>smartscape</code></p>
-<p><code>aws.account.id</code></p>
-<p><code>storage:aws.account.id</code></p>
-<p><code>events</code>, <code>security.events</code>, <code>bizevents</code>, <code>logs</code>, <code>metrics</code>, <code>spans</code>, <code>smartscape</code></p>
-<p><code>azure.subscription</code></p>
-<p><code>storage:azure.subscription</code></p>
-<p><code>events</code>, <code>security.events</code>, <code>bizevents</code>, <code>logs</code>, <code>metrics</code>, <code>spans</code>, <code>smartscape</code></p>
-<p><code>azure.resource.group</code></p>
-<p><code>storage:azure.resource.group</code></p>
-<p><code>events</code>, <code>security.events</code>, <code>bizevents</code>, <code>logs</code>, <code>metrics</code>, <code>spans</code>, <code>smartscape</code></p>
-<p><code>frontend.name</code></p>
-<p><code>storage:frontend.name</code></p>
-<p><code>user.events</code>, <code>user.sessions</code>, <code>metrics</code>, <code>smartscape</code></p>
 <p>For details that are not available as a dedicated field, set the <code>dt.security_context</code> field either at the data source or in the processing pipeline.</p>
 <h3 id="combining-bucket-and-record-level-permissions">Combining bucket and record level permissions<a class="headerlink" href="#combining-bucket-and-record-level-permissions" title="Permanent link">&para;</a></h3>
 <p>You can combine both bucket and record level in your table permissions. For example this statement will provide access to all logs in the <code>unrestricted_logs</code> bucket and only specific records in the <code>default_logs</code> bucket:</p>
@@ -25772,18 +25688,6 @@ This condition has two possible values.</p>
    For details, see <a href="/docs/manage/identity-access-management/access-tokens-and-oauth-clients/platform-tokens" title="Create personalised platform tokens to access Dynatrace services via the API in your user context.">Authentication</a>.</li>
 <li>Perform one of the following actions.</li>
 </ol>
-<p>To do this</p>
-<p>Go to <strong>Fieldsets</strong> and select this</p>
-<p>Get all fieldsets</p>
-<p><strong>GET /fieldsets</strong></p>
-<p>Create a new fieldset</p>
-<p><strong>POST /fieldsets</strong></p>
-<p>Get fieldsets by UID</p>
-<p><strong>GET /fieldsets/{fieldsetUid}</strong></p>
-<p>Update a fieldset. All fields will be overwritten.</p>
-<p><strong>PUT /fieldsets/{fieldsetUid}</strong></p>
-<p>Delete a fieldset</p>
-<p><strong>DELETE /fieldsets/{fieldsetUid}</strong></p>
 <h4 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h4>
 <p>This call creates the fieldset <code>sensitive-fields-retail</code>, removing the <code>credit_card</code> and <code>DOB</code> fields from DQL query results in the <code>logs_retail</code> bucket.</p>
 <h5 id="request-url">Request URL<a class="headerlink" href="#request-url" title="Permanent link">&para;</a></h5>

@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
     
     
       
@@ -25495,8 +25495,8 @@
 
 <h1 id="dynatrace-observeinfrastructure-observability">Документация Dynatrace: observe/infrastructure-observability<a class="headerlink" href="#dynatrace-observeinfrastructure-observability" title="Permanent link">&para;</a></h1>
 <p>Язык: Русский (RU)
-Сгенерировано: 2026-02-23
-Файлов в разделе: 87</p>
+Сгенерировано: 2026-02-24
+Файлов в разделе: 88</p>
 <hr />
 <h2 id="observeinfrastructure-observabilitycloud-platform-monitoringaws-monitoringmd">observe/infrastructure-observability/cloud-platform-monitoring/aws-monitoring.md<a class="headerlink" href="#observeinfrastructure-observabilitycloud-platform-monitoringaws-monitoringmd" title="Permanent link">&para;</a></h2>
 <hr />
@@ -25609,7 +25609,7 @@ scraped: 2026-02-23T21:28:14.957893</p>
 <hr />
 <p>title: Clouds app
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/cloud-platform-monitoring/clouds-app
-scraped: 2026-02-23T21:19:32.052264</p>
+scraped: 2026-02-24T21:15:22.365272</p>
 <hr />
 <h1 id="clouds-app">Clouds app<a class="headerlink" href="#clouds-app" title="Permanent link">&para;</a></h1>
 <h1 id="clouds-app_1">Clouds app<a class="headerlink" href="#clouds-app_1" title="Permanent link">&para;</a></h1>
@@ -25617,7 +25617,7 @@ scraped: 2026-02-23T21:19:32.052264</p>
 <li>Latest Dynatrace</li>
 <li>App</li>
 <li>4-min read</li>
-<li>Updated on Jan 21, 2026</li>
+<li>Updated on Feb 20, 2026</li>
 </ul>
 <p>The new <a href="https://www.dynatrace.com/platform/cloud-monitoring/">cloud experienceï»¿</a> is optimized for Cloud (Platform) Operation teams and Site Reliability Engineers (SREs) and focuses on health, troubleshooting, and performance optimization use cases of (multi-)cloud environments.</p>
 <p>The centerpiece of this experience is <img alt="Clouds" src="https://dt-cdn.net/images/clouds-1025-170946931c.png" title="Clouds" /> <strong>Clouds</strong>.</p>
@@ -25656,8 +25656,6 @@ scraped: 2026-02-23T21:19:32.052264</p>
 <p>See <a href="#concepts">concepts</a> for the comparison between classic and new cloud connections.</p>
 <h3 id="permissions">Permissions<a class="headerlink" href="#permissions" title="Permanent link">&para;</a></h3>
 <p>The following table describes the required permissions.</p>
-<p>Permission</p>
-<p>Description</p>
 <p>settings:objects:read</p>
 <p>Read settings of ownership (settings:schemaIds = builtin:ownership.config) - required by Ownership tab in details panel.</p>
 <p>unified-analysis:screen-definition:read</p>
@@ -25678,11 +25676,6 @@ scraped: 2026-02-23T21:19:32.052264</p>
 <p>Storing per-user app state.</p>
 <p>document:documents:read</p>
 <p>Read documents. Required by filter presets feature. Required for ready-made dashboards (Overview).</p>
-<p>10</p>
-<p>rows per page</p>
-<p>Page</p>
-<p>1</p>
-<p>of 1</p>
 <h2 id="get-started">Get started<a class="headerlink" href="#get-started" title="Permanent link">&para;</a></h2>
 <p><img alt="Clouds" src="https://dt-cdn.net/images/clouds-1025-170946931c.png" title="Clouds" /> <strong>Clouds</strong> has an integrated onboarding flow that guides you through all the required steps to get started. The exact steps you need to take depend on your cloud provider and the type of cloud connection (new or classic).</p>
 <p>If you're new to Dynatrace AWS Cloud Platform Monitoring, we recommend starting with the new AWS connections instead of the classic ones.</p>
@@ -25797,28 +25790,7 @@ scraped: 2026-02-23T21:19:32.052264</p>
 <p><strong>Problem mode</strong> is always active when you navigate from a specific problem in <a href="/docs/dynatrace-intelligence/davis-problems-app" title="Use the Problems app to quickly get to the root cause of incidents in your environment."><img alt="Problems app - new" src="https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp" title="Problems app - new" /> <strong>Problems</strong></a> to <img alt="Clouds" src="https://dt-cdn.net/images/clouds-1025-170946931c.png" title="Clouds" /> <strong>Clouds</strong>.</p>
 <p><img alt="Clouds" src="https://dt-cdn.net/images/clouds-1025-170946931c.png" title="Clouds" /> <strong>Clouds</strong> operates in <strong>Problem mode</strong> whenever a problem is highlighted next to the filter bar at the top of the app.</p>
 <h3 id="ready-made-dashboards-new-connections">Ready-made dashboards (New connections)<a class="headerlink" href="#ready-made-dashboards-new-connections" title="Permanent link">&para;</a></h3>
-<p>You have access to the following ready-made dashboards for the new AWS Cloud Platform Monitoring:</p>
-<ul>
-<li>AWS Overview</li>
-<li>AWS API (API Gateway and REST APIs)</li>
-<li>AWS Bedrock</li>
-<li>AWS Dynamo DB</li>
-<li>AWS EC2 (EC2, EBS, AutoScaling)</li>
-<li>AWS ECS (including ECS Container Insights)</li>
-<li>AWS Edge Networking (Route 53, CloudFront)</li>
-<li>AWS EFS</li>
-<li>AWS ElastiCache (Redis, Memcached)</li>
-<li>AWS ELB (Application, Classic, Network Load Balancing)</li>
-<li>AWS EventBridge</li>
-<li>AWS Foundation Networking (NAT Gateway, PrivateLink)</li>
-<li>AWS Health Events</li>
-<li>AWS Lambda</li>
-<li>AWS MSK (Kafka)</li>
-<li>AWS RDS (including Aurora)</li>
-<li>AWS S3</li>
-<li>AWS SNS</li>
-<li>AWS SQS</li>
-</ul>
+<p>You have access to the ready-made dashboards for the new AWS Cloud Platform Monitoring and Azure Cloud Platform Monitoring (Preview).</p>
 <p>The ready-made dashboards can be accessed through:</p>
 <ul>
 <li><img alt="Dashboards" src="https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png" title="Dashboards" /> <strong>Dashboards</strong></li>
@@ -25939,7 +25911,7 @@ scraped: 2026-02-06T16:28:51.845671</p>
 <hr />
 <p>title: Monitor container groups
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/container-platform-monitoring/container-groups
-scraped: 2026-02-22T21:18:19.180560</p>
+scraped: 2026-02-24T21:31:08.262777</p>
 <hr />
 <h1 id="monitor-container-groups">Monitor container groups<a class="headerlink" href="#monitor-container-groups" title="Permanent link">&para;</a></h1>
 <h1 id="monitor-container-groups_1">Monitor container groups<a class="headerlink" href="#monitor-container-groups_1" title="Permanent link">&para;</a></h1>
@@ -26569,7 +26541,7 @@ scraped: 2026-02-06T16:18:49.950622</p>
 <hr />
 <p>title: Alert on common Kubernetes/OpenShift issues
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/alert-on-kubernetes-issues
-scraped: 2026-02-22T21:15:00.499328</p>
+scraped: 2026-02-24T21:27:31.984651</p>
 <hr />
 <h1 id="alert-on-common-kubernetesopenshift-issues">Alert on common Kubernetes/OpenShift issues<a class="headerlink" href="#alert-on-common-kubernetesopenshift-issues" title="Permanent link">&para;</a></h1>
 <h1 id="alert-on-common-kubernetesopenshift-issues_1">Alert on common Kubernetes/OpenShift issues<a class="headerlink" href="#alert-on-common-kubernetesopenshift-issues_1" title="Permanent link">&para;</a></h1>
@@ -26621,53 +26593,6 @@ scraped: 2026-02-22T21:15:00.499328</p>
 <h2 id="available-alerts">Available alerts<a class="headerlink" href="#available-alerts" title="Permanent link">&para;</a></h2>
 <p>See below for a list of available alerts.</p>
 <h3 id="cluster-alerts">Cluster alerts<a class="headerlink" href="#cluster-alerts" title="Permanent link">&para;</a></h3>
-<p>Alert name</p>
-<p>Dynatrace version</p>
-<p>Problem type</p>
-<p>Problem title</p>
-<p>Problem description</p>
-<p>De-alerts after</p>
-<p>Calculation</p>
-<p>Supported in</p>
-<p><a href="#detect-cluster-cpu-request-saturation">Detect cluster CPU-request saturation</a></p>
-<p>1.254</p>
-<p>Resource</p>
-<p>CPU-request saturation on cluster</p>
-<p>CPU-request saturation exceeds the specified threshold.</p>
-<p>10 minutes</p>
-<p>Node CPU requests / Node CPU allocatable</p>
-<p>Kubernetes Classic, Kubernetes app</p>
-<p><a href="#detect-cluster-memory-request-saturation">Detect cluster memory-request saturation</a></p>
-<p>1.254</p>
-<p>Resource</p>
-<p>Memory-request saturation on cluster</p>
-<p>Memory-request saturation exceeds the specified threshold.</p>
-<p>10 minutes</p>
-<p>Node memory requests / Node memory allocatable</p>
-<p>Kubernetes Classic, Kubernetes app</p>
-<p><a href="#detect-cluster-pod-saturation">Detect cluster pod-saturation</a></p>
-<p>1.258</p>
-<p>Resource</p>
-<p>Pod saturation on cluster</p>
-<p>Cluster pod-saturation exceeds the specified threshold.</p>
-<p>10 minutes</p>
-<p>Sum of ready pods / Sum of allocatable pods</p>
-<p>Kubernetes Classic, Kubernetes app</p>
-<p><a href="#detect-cluster-readiness-issues">Detect cluster readiness issues</a></p>
-<p>1.254</p>
-<p>Availability</p>
-<p>Cluster not ready</p>
-<p>Readyz endpoint indicates that this cluster is not ready.</p>
-<p>10 minutes</p>
-<p>Cluster readyz metric</p>
-<p>Kubernetes Classic, Kubernetes app</p>
-<p><a href="#detect-monitoring-issues">Detect monitoring issues</a></p>
-<p>1.258</p>
-<p>Availability</p>
-<p>Monitoring not available</p>
-<p>Dynatrace API monitoring is not available.</p>
-<p>10 minutes</p>
-<p>Kubernetes Classic, Kubernetes app</p>
 <p>Cluster metric and DQL expressions</p>
 <h4 id="detect-cluster-cpu-request-saturation">Detect cluster CPU-request saturation<a class="headerlink" href="#detect-cluster-cpu-request-saturation" title="Permanent link">&para;</a></h4>
 <table>
@@ -26765,70 +26690,7 @@ scraped: 2026-02-22T21:15:00.499328</p>
 </tbody>
 </table>
 <p>Default alerts for new tenants</p>
-<p>Alert</p>
-<p>Setting</p>
-<p>Value</p>
-<p>Readiness Issues</p>
-<p>sample period in minutes</p>
-<p>3</p>
-<p>Readiness Issues</p>
-<p>observation period in minutes</p>
-<p>5</p>
-<p>Monitoring Issues</p>
-<p>sample period in minutes</p>
-<p>15</p>
-<p>Monitoring Issues</p>
-<p>observation period in minutes</p>
-<p>30</p>
 <h3 id="namespace-alerts">Namespace alerts<a class="headerlink" href="#namespace-alerts" title="Permanent link">&para;</a></h3>
-<p>Alert name</p>
-<p>Dynatrace version</p>
-<p>Problem type</p>
-<p>Problem title</p>
-<p>Problem description</p>
-<p>De-alerts after</p>
-<p>Calculation</p>
-<p>Supported in</p>
-<p><a href="#detect-namespace-cpu-limit-quota-saturation">Detect namespace CPU-limit quota saturation</a></p>
-<p>1.254</p>
-<p>Resource</p>
-<p>CPU-limit quota saturation</p>
-<p>CPU-limit quota saturation exceeds the specified threshold.</p>
-<p>10 minutes</p>
-<p>Sum of resource quota CPU used / Sum of resource quota CPU limits</p>
-<p>Kubernetes Classic, Kubernetes app</p>
-<p><a href="#detect-namespace-cpu-request-quota-saturation">Detect namespace CPU-request quota saturation</a></p>
-<p>1.254</p>
-<p>Resource</p>
-<p>CPU-request quota saturation</p>
-<p>CPU-request quota saturation exceeds the specified threshold.</p>
-<p>10 minutes</p>
-<p>Sum of resource quota CPU used / Sum of resource quota CPU requests</p>
-<p>Kubernetes Classic, Kubernetes app</p>
-<p><a href="#detect-namespace-memory-limit-quota-saturation">Detect namespace memory-limit quota saturation</a></p>
-<p>1.254</p>
-<p>Resource</p>
-<p>Memory-limit quota saturation</p>
-<p>Memory-limit quota saturation exceeds the specified threshold.</p>
-<p>10 minutes</p>
-<p>Sum of resource quota memory used / Sum of resource quota memory limits</p>
-<p>Kubernetes Classic, Kubernetes app</p>
-<p><a href="#detect-namespace-memory-request-quota-saturation">Detect namespace memory-request quota saturation</a></p>
-<p>1.254</p>
-<p>Resource</p>
-<p>Memory-request quota saturation</p>
-<p>Memory-request quota saturation exceeds the specified threshold.</p>
-<p>10 minutes</p>
-<p>Sum of resource quota memory used / Sum of resource quota memory requests</p>
-<p>Kubernetes Classic, Kubernetes app</p>
-<p><a href="#detect-namespace-pod-quota-saturation">Detect namespace pod quota saturation</a></p>
-<p>1.254</p>
-<p>Resource</p>
-<p>Pod quota saturation</p>
-<p>Pod quota saturation exceeds the specified threshold.</p>
-<p>10 minutes</p>
-<p>Sum of resource quota pods used / Sum of resource quota pods limit</p>
-<p>Kubernetes Classic, Kubernetes app</p>
 <p>Namespace metric and DQL expressions</p>
 <h4 id="detect-namespace-cpu-limit-quota-saturation">Detect namespace CPU-limit quota saturation<a class="headerlink" href="#detect-namespace-cpu-limit-quota-saturation" title="Permanent link">&para;</a></h4>
 <table>
@@ -26926,54 +26788,6 @@ scraped: 2026-02-22T21:15:00.499328</p>
 </tbody>
 </table>
 <h3 id="node-alerts">Node alerts<a class="headerlink" href="#node-alerts" title="Permanent link">&para;</a></h3>
-<p>Alert name</p>
-<p>Dynatrace version</p>
-<p>Problem type</p>
-<p>Problem title</p>
-<p>Problem description</p>
-<p>De-alerts after</p>
-<p>Calculation</p>
-<p>Supported in</p>
-<p><a href="#detect-node-cpu-request-saturation">Detect node CPU-request saturation</a></p>
-<p>1.254</p>
-<p>Resource</p>
-<p>CPU-request saturation on node</p>
-<p>CPU-request saturation exceeds the specified threshold.</p>
-<p>10 minutes</p>
-<p>Sum of node CPU requests / Sum of node CPU allocatable</p>
-<p>Kubernetes Classic, Kubernetes app</p>
-<p><a href="#detect-node-memory-request-saturation">Detect node memory-request saturation</a></p>
-<p>1.254</p>
-<p>Resource</p>
-<p>Memory-request saturation on node</p>
-<p>Memory-request saturation exceeds the specified threshold.</p>
-<p>10 minutes</p>
-<p>Sum of node memory requests / Sum of node memory allocatable</p>
-<p>Kubernetes Classic, Kubernetes app</p>
-<p><a href="#detect-node-pod-saturation">Detect node pod-saturation</a></p>
-<p>1.254</p>
-<p>Resource</p>
-<p>Pod saturation on node</p>
-<p>Pod saturation exceeds the specified threshold.</p>
-<p>10 minutes</p>
-<p>Sum of running pods on node / Node pod limit</p>
-<p>Kubernetes Classic, Kubernetes app</p>
-<p><a href="#detect-node-readiness-issues">Detect node readiness issues</a></p>
-<p>1.254</p>
-<p>Availability</p>
-<p>Node not ready</p>
-<p>Node is not ready.</p>
-<p>10 minutes</p>
-<p>Node condition metric filtered by 'not ready'</p>
-<p>Kubernetes Classic, Kubernetes app</p>
-<p><a href="#detect-problematic-node-conditions">Detect problematic node conditions</a></p>
-<p>1.264</p>
-<p>Error</p>
-<p>Problematic node condition</p>
-<p>Node has one or more problematic conditions out of the following: <code>ContainerRuntimeProblem</code>, <code>ContainerRuntimeUnhealthy</code>, <code>CorruptDockerOverlay2</code>, <code>DiskPressure</code>, <code>FilesystemCorruptionProblem</code>, <code>FrequentContainerdRestart</code>, <code>FrequentDockerRestart</code>, <code>FrequentGcfsSnapshotterRestart</code>, <code>FrequentGcfsdRestart</code>, <code>FrequentKubeletRestart</code>, <code>FrequentUnregisterNetDevice</code>, <code>GcfsSnapshotterMissingLayer</code>, <code>GcfsSnapshotterUnhealthy</code>, <code>GcfsdUnhealthy</code>, <code>KernelDeadlock</code>, <code>KubeletProblem</code>, <code>KubeletUnhealthy</code>, <code>MemoryPressure</code>, <code>NetworkUnavailable</code>, <code>OutOfDisk</code>, <code>PIDPressure</code>, <code>ReadonlyFilesystem</code></p>
-<p>10 minutes</p>
-<p>Nodes condition metric</p>
-<p>Kubernetes Classic, Kubernetes app</p>
 <p>Node metric and DQL expressions</p>
 <h4 id="detect-node-cpu-request-saturation">Detect node CPU-request saturation<a class="headerlink" href="#detect-node-cpu-request-saturation" title="Permanent link">&para;</a></h4>
 <table>
@@ -27071,46 +26885,7 @@ scraped: 2026-02-22T21:15:00.499328</p>
 </tbody>
 </table>
 <p>Default alerts for new tenants</p>
-<p>Alert</p>
-<p>Setting</p>
-<p>Value</p>
-<p>Readiness Issues</p>
-<p>Readiness Issues</p>
-<p>sample period in minutes</p>
-<p>3</p>
-<p>observation period in minutes</p>
-<p>5</p>
-<p>Node Problematic Condition</p>
-<p>Node Problematic Condition</p>
-<p>sample period in minutes</p>
-<p>3</p>
-<p>observation period in minutes</p>
-<p>5</p>
 <h3 id="persistent-volume-claims-alerts">Persistent volume claims alerts<a class="headerlink" href="#persistent-volume-claims-alerts" title="Permanent link">&para;</a></h3>
-<p>Alert name</p>
-<p>Dynatrace version</p>
-<p>Problem type</p>
-<p>Problem title</p>
-<p>Problem description</p>
-<p>De-alerts after</p>
-<p>Calculation</p>
-<p>Supported in</p>
-<p><a href="#detect-low-disk-space">Detect low disk space (%)</a></p>
-<p>1.262</p>
-<p>Resource</p>
-<p>Kubernetes PVC: Low disk space %</p>
-<p>Available disk space for a persistent volume claim is below the threshold.</p>
-<p>10 minutes</p>
-<p>Volume stats available bytes / Volume stats capacity bytes</p>
-<p>Kubernetes Classic, Kubernetes app</p>
-<p><a href="#detect-low-disk-space-mb">Detect low disk space (MiB)</a></p>
-<p>1.262</p>
-<p>Resource</p>
-<p>Kubernetes PVC: Low disk space</p>
-<p>Available disk space for a persistent volume claim is below the threshold.</p>
-<p>10 minutes</p>
-<p>Kubelet volume stats available bytes metric</p>
-<p>Kubernetes Classic, Kubernetes app</p>
 <p>Persistent volume claims metric and DQL expressions</p>
 <h4 id="detect-low-disk-space">Detect low disk space (%)<a class="headerlink" href="#detect-low-disk-space" title="Permanent link">&para;</a></h4>
 <table>
@@ -27151,126 +26926,6 @@ scraped: 2026-02-22T21:15:00.499328</p>
 </tbody>
 </table>
 <h3 id="workload-alerts">Workload alerts<a class="headerlink" href="#workload-alerts" title="Permanent link">&para;</a></h3>
-<p>Alert name</p>
-<p>Dynatrace version</p>
-<p>Problem type</p>
-<p>Problem title</p>
-<p>Problem description</p>
-<p>De-alerts after</p>
-<p>Calculation</p>
-<p>Supported in</p>
-<p><a href="#detect-cpu-usage-saturation">Detect CPU usage saturation</a></p>
-<p>1.264</p>
-<p>Resource</p>
-<p>CPU usage close to limits</p>
-<p>The CPU usage exceeds the threshold in terms of the defined CPU limit.</p>
-<p>10 minutes</p>
-<p>Sum of workload CPU usage / Sum of workload CPU limits</p>
-<p>Kubernetes Classic, Kubernetes app</p>
-<p><a href="#detect-container-restarts">Detect container restarts</a></p>
-<p>1.254</p>
-<p>Error</p>
-<p>Container restarts</p>
-<p>Observed container restarts exceed the specified threshold.</p>
-<p>15 minutes</p>
-<p>Container restarts metric</p>
-<p>Kubernetes Classic, Kubernetes app</p>
-<p><a href="#detect-high-cpu-throttling">Detect high CPU throttling</a></p>
-<p>1.264</p>
-<p>Resource</p>
-<p>High CPU throttling</p>
-<p>The CPU throttling to limits ratio exceeds the specified threshold.</p>
-<p>10 minutes</p>
-<p>Sum of workload CPU throttled / Sum of workload CPU limits</p>
-<p>Kubernetes Classic, Kubernetes app</p>
-<p><a href="#detect-job-failure-events">Detect job failure events</a></p>
-<p>1.268</p>
-<p>Error</p>
-<p>Job failure event</p>
-<p>Events with reason 'BackoffLimitExceeded', 'DeadlineExceeded', or 'PodFailurePolicy' have been detected.</p>
-<p>60 minutes</p>
-<p>Event metric filtered by reason and workload kind</p>
-<p>Kubernetes Classic, Kubernetes app</p>
-<p><a href="#detect-memory-usage-saturation">Detect memory usage saturation</a></p>
-<p>1.264</p>
-<p>Resource</p>
-<p>Memory usage close to limits</p>
-<p>The memory usage (working set memory) exceeds the threshold in terms of the defined memory limit.</p>
-<p>10 minutes</p>
-<p>Sum of workload working set memory / Sum of workload memory limits</p>
-<p>Kubernetes Classic, Kubernetes app</p>
-<p><a href="#detect-out-of-memory-kills">Detect out-of-memory kills</a></p>
-<p>1.268</p>
-<p>Error</p>
-<p>Out-of-memory kills</p>
-<p>Out-of-memory kills have been observed for pods of this workload.</p>
-<p>15 minutes</p>
-<p>Out-of-memory kills metric</p>
-<p>Kubernetes Classic, Kubernetes app</p>
-<p><a href="#detect-pod-backoff-events">Detect pod backoff events</a></p>
-<p>1.268</p>
-<p>Error</p>
-<p>Backoff event</p>
-<p>Events with reason 'BackOff' have been detected for pods of this workload. Check for pods with status 'ImagePullBackOff' or 'CrashLoopBackOff'.</p>
-<p>15 minutes</p>
-<p>Event metric filtered by reason</p>
-<p>Kubernetes Classic, Kubernetes app</p>
-<p><a href="#detect-pod-eviction-events">Detect pod eviction events</a></p>
-<p>1.268</p>
-<p>Error</p>
-<p>Pod eviction event</p>
-<p>Events with reason 'Evicted' have been detected for pods of this workload.</p>
-<p>60 minutes</p>
-<p>Event metric filtered by reason</p>
-<p>Kubernetes Classic, Kubernetes app</p>
-<p><a href="#detect-pod-preemption-events">Detect pod preemption events</a></p>
-<p>1.268</p>
-<p>Error</p>
-<p>Preemption event</p>
-<p>Events with reasons 'Preempted' or 'Preempting' have been detected for pods of this workload.</p>
-<p>60 minutes</p>
-<p>Event metric filtered by reason</p>
-<p>Kubernetes Classic, Kubernetes app</p>
-<p><a href="#detect-pods-stuck-in-pending">Detect pods stuck in pending</a></p>
-<p>1.254</p>
-<p>Resource</p>
-<p>Pods stuck in pending</p>
-<p>Workload has pending pods.</p>
-<p>10 minutes</p>
-<p>Pods metric filtered by phase 'Pending'</p>
-<p>Kubernetes Classic, Kubernetes app</p>
-<p><a href="#detect-pods-stuck-in-terminating">Detect pods stuck in terminating</a></p>
-<p>1.260</p>
-<p>Resource</p>
-<p>Pods stuck in terminating</p>
-<p>Workload has pods stuck in terminating.</p>
-<p>10 minutes</p>
-<p>Pods metric filtered by status 'Terminating'</p>
-<p>Kubernetes Classic, Kubernetes app</p>
-<p><a href="#detect-stuck-deployments">Detect stuck deployments</a></p>
-<p>1.260</p>
-<p>Error</p>
-<p>Deployment stuck</p>
-<p>Deployment is stuck and therefore is no longer progressing.</p>
-<p>10 minutes</p>
-<p>Workload condition metric filtered by 'not progressing'</p>
-<p>Kubernetes Classic, Kubernetes app</p>
-<p><a href="#detect-workloads-with-non-ready-pods">Detect workloads with non-ready pods</a></p>
-<p>1.258</p>
-<p>Error</p>
-<p>Not all pods ready</p>
-<p>Workload has pods that are not ready.</p>
-<p>10 minutes</p>
-<p>Sum of all pending or running pods â Sum of ready pending or running pods. Pods of Jobs and CronJob are excluded.</p>
-<p>Kubernetes Classic, Kubernetes app</p>
-<p><a href="#detect-workloads-without-ready-pods">Detect workloads without ready pods</a></p>
-<p>1.254</p>
-<p>Error</p>
-<p>No pod ready</p>
-<p>Workload does not have any ready pods.</p>
-<p>10 minutes</p>
-<p>Sum of all pending or running pods â Sum of non-ready pending or running pods. Pods of Jobs and CronJob are excluded.</p>
-<p>Kubernetes Classic, Kubernetes app</p>
 <p>Workload metric and DQL expressions</p>
 <h4 id="detect-cpu-usage-saturation">Detect CPU usage saturation<a class="headerlink" href="#detect-cpu-usage-saturation" title="Permanent link">&para;</a></h4>
 <table>
@@ -27541,60 +27196,6 @@ scraped: 2026-02-22T21:15:00.499328</p>
 </tbody>
 </table>
 <h4 id="default-alerts-for-new-tenants">Default alerts for new tenants<a class="headerlink" href="#default-alerts-for-new-tenants" title="Permanent link">&para;</a></h4>
-<p>Alert</p>
-<p>Setting</p>
-<p>Value</p>
-<p>Container Restarts</p>
-<p>threshold</p>
-<p>1</p>
-<p>Container Restarts</p>
-<p>sample period in minutes</p>
-<p>3</p>
-<p>Container Restarts</p>
-<p>observation period in minutes</p>
-<p>5</p>
-<p>Deployment Stuck</p>
-<p>sample period in minutes</p>
-<p>3</p>
-<p>Deployment Stuck</p>
-<p>observation period in minutes</p>
-<p>5</p>
-<p>Pending Pods</p>
-<p>threshold</p>
-<p>1</p>
-<p>Pending Pods</p>
-<p>sample period in minutes</p>
-<p>10</p>
-<p>Pending Pods</p>
-<p>observation period in minutes</p>
-<p>15</p>
-<p>Pod Stuck In Terminating</p>
-<p>sample period in minutes</p>
-<p>10</p>
-<p>Pod Stuck In Terminating</p>
-<p>observation period in minutes</p>
-<p>15</p>
-<p>Workload Without Ready Pods</p>
-<p>sample period in minutes</p>
-<p>10</p>
-<p>Workload Without Ready Pods</p>
-<p>observation period in minutes</p>
-<p>15</p>
-<p>Oom Kills</p>
-<p>alert</p>
-<p>always</p>
-<p>Job Failure Events</p>
-<p>alert</p>
-<p>always</p>
-<p>Pod Backoff Events</p>
-<p>alert</p>
-<p>always</p>
-<p>Pod Eviction Events</p>
-<p>alert</p>
-<p>always</p>
-<p>Pod Preemption Events</p>
-<p>alert</p>
-<p>always</p>
 <h2 id="related-topics_4">Related topics<a class="headerlink" href="#related-topics_4" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="/docs/ingest-from/setup-on-k8s" title="Ways to deploy and configure Dynatrace on Kubernetes">Set up Dynatrace on Kubernetes</a></li>
@@ -28095,7 +27696,7 @@ scraped: 2026-02-22T21:14:52.087381</p>
 <hr />
 <p>title: Istio/Envoy proxy metrics
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-istio-metrics
-scraped: 2026-02-22T21:15:01.857430</p>
+scraped: 2026-02-24T21:23:24.875607</p>
 <hr />
 <h1 id="istioenvoy-proxy-metrics">Istio/Envoy proxy metrics<a class="headerlink" href="#istioenvoy-proxy-metrics" title="Permanent link">&para;</a></h1>
 <h1 id="istioenvoy-proxy-metrics_1">Istio/Envoy proxy metrics<a class="headerlink" href="#istioenvoy-proxy-metrics_1" title="Permanent link">&para;</a></h1>
@@ -28137,7 +27738,7 @@ scraped: 2026-02-22T21:15:01.857430</p>
 <hr />
 <p>title: Monitor Kubernetes/OpenShift metrics
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-metrics-kubernetes
-scraped: 2026-02-23T21:29:36.477055</p>
+scraped: 2026-02-24T21:25:12.263320</p>
 <hr />
 <h1 id="monitor-kubernetesopenshift-metrics">Monitor Kubernetes/OpenShift metrics<a class="headerlink" href="#monitor-kubernetesopenshift-metrics" title="Permanent link">&para;</a></h1>
 <h1 id="monitor-kubernetesopenshift-metrics_1">Monitor Kubernetes/OpenShift metrics<a class="headerlink" href="#monitor-kubernetesopenshift-metrics_1" title="Permanent link">&para;</a></h1>
@@ -28182,7 +27783,7 @@ scraped: 2026-02-23T21:29:36.477055</p>
 <hr />
 <p>title: Monitor Prometheus metrics
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-prometheus-metrics
-scraped: 2026-02-23T21:27:09.688253</p>
+scraped: 2026-02-24T21:31:29.729725</p>
 <hr />
 <h1 id="monitor-prometheus-metrics">Monitor Prometheus metrics<a class="headerlink" href="#monitor-prometheus-metrics" title="Permanent link">&para;</a></h1>
 <h1 id="monitor-prometheus-metrics_1">Monitor Prometheus metrics<a class="headerlink" href="#monitor-prometheus-metrics_1" title="Permanent link">&para;</a></h1>
@@ -28217,14 +27818,6 @@ current memory usage or number of users online. In Dynatrace, the <a href="/docs
 <p>Histograms<a href="#fn-3-1-def">1</a> provide visual insights into the distribution and frequency of numerical data.
 For a base metric name of <code>&lt;basename&gt;</code>, Dynatrace will ingest the data according to the
 following table.</p>
-<p>Prometheus Metric</p>
-<p>Dynatrace Ingest Type</p>
-<p><code>&lt;basename&gt;_bucket{le="&lt;upper inclusive bound&gt;"}</code></p>
-<p><a href="/docs/ingest-from/extend-dynatrace/extend-metrics/reference/metric-ingestion-protocol#count-metric" title="Learn how the data ingestion protocol for Dynatrace Metrics API works."><code>COUNT</code></a></p>
-<p><code>&lt;basename&gt;_bucket_sum</code></p>
-<p><a href="/docs/ingest-from/extend-dynatrace/extend-metrics/reference/metric-ingestion-protocol#count-metric" title="Learn how the data ingestion protocol for Dynatrace Metrics API works."><code>COUNT</code></a></p>
-<p><code>&lt;basename&gt;_bucket_count</code></p>
-<p><a href="/docs/ingest-from/extend-dynatrace/extend-metrics/reference/metric-ingestion-protocol#count-metric" title="Learn how the data ingestion protocol for Dynatrace Metrics API works."><code>COUNT</code></a></p>
 <p>Additional flexibility and control is provided via the <a href="https://dt-url.net/ne02rlq"><code>builtin:histogram-metrics</code>ï»¿</a> settings schema.
 This schema allows to configure the ingestion of <code>&lt;basename&gt;_bucket{le="&lt;upper inclusive bound&gt;"}</code> metrics.</p>
 <p>1</p>
@@ -28233,14 +27826,6 @@ This schema allows to configure the ingestion of <code>&lt;basename&gt;_bucket{l
 <p>Like a <a href="#histogram">Histogram</a>, the summary metric<a href="#fn-4-1-def">1</a> samples observations. In contrast to the histogram metric, a summary's buckets are
 represented by Ï-quantiles where 0 â¤ Ï â¤ 1. For a base metric name of <code>&lt;basename&gt;</code>, Dynatrace will ingest the data according to the
 following table.</p>
-<p>Prometheus Metric</p>
-<p>Dynatrace Ingest Type</p>
-<p><code>&lt;basename&gt;{quantile="&lt;Ï&gt;"}</code></p>
-<p><a href="/docs/ingest-from/extend-dynatrace/extend-metrics/reference/metric-ingestion-protocol#gauge-metric" title="Learn how the data ingestion protocol for Dynatrace Metrics API works."><code>GAUGE</code></a></p>
-<p><code>&lt;basename&gt;_sum</code></p>
-<p><a href="/docs/ingest-from/extend-dynatrace/extend-metrics/reference/metric-ingestion-protocol#count-metric" title="Learn how the data ingestion protocol for Dynatrace Metrics API works."><code>COUNT</code></a></p>
-<p><code>&lt;basename&gt;_count</code></p>
-<p><a href="/docs/ingest-from/extend-dynatrace/extend-metrics/reference/metric-ingestion-protocol#count-metric" title="Learn how the data ingestion protocol for Dynatrace Metrics API works."><code>COUNT</code></a></p>
 <p>1</p>
 <p><a href="https://dt-url.net/7g234n1">Prometheus official documentation: Summaryï»¿</a>.</p>
 <h3 id="unsupported">Unsupported<a class="headerlink" href="#unsupported" title="Permanent link">&para;</a></h3>
@@ -28882,7 +28467,7 @@ that selects the pod. If no such service exists, you can create a new service ju
 <hr />
 <p>title: Monitor persistent volume claims on Kubernetes/OpenShift
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-pvc-metrics
-scraped: 2026-02-23T21:30:40.392215</p>
+scraped: 2026-02-24T21:32:38.869795</p>
 <hr />
 <h1 id="monitor-persistent-volume-claims-on-kubernetesopenshift">Monitor persistent volume claims on Kubernetes/OpenShift<a class="headerlink" href="#monitor-persistent-volume-claims-on-kubernetesopenshift" title="Permanent link">&para;</a></h1>
 <h1 id="monitor-persistent-volume-claims-on-kubernetesopenshift_1">Monitor persistent volume claims on Kubernetes/OpenShift<a class="headerlink" href="#monitor-persistent-volume-claims-on-kubernetesopenshift_1" title="Permanent link">&para;</a></h1>
@@ -29046,7 +28631,7 @@ scraped: 2026-02-22T21:14:48.462298</p>
 <hr />
 <p>title: Monitor vulnerabilities in Kubernetes/OpenShift
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-vulnerabilities-kubernetes
-scraped: 2026-02-23T21:28:43.929997</p>
+scraped: 2026-02-24T21:22:27.931993</p>
 <hr />
 <h1 id="monitor-vulnerabilities-in-kubernetesopenshift">Monitor vulnerabilities in Kubernetes/OpenShift<a class="headerlink" href="#monitor-vulnerabilities-in-kubernetesopenshift" title="Permanent link">&para;</a></h1>
 <h1 id="monitor-vulnerabilities-in-kubernetesopenshift_1">Monitor vulnerabilities in Kubernetes/OpenShift<a class="headerlink" href="#monitor-vulnerabilities-in-kubernetesopenshift_1" title="Permanent link">&para;</a></h1>
@@ -29160,7 +28745,7 @@ Metrics for the number of running and desired pods are also available under the 
 <hr />
 <p>title: Kubernetes Classic
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring
-scraped: 2026-02-23T21:21:07.265161</p>
+scraped: 2026-02-24T21:15:41.080457</p>
 <hr />
 <h1 id="kubernetes-classic">Kubernetes Classic<a class="headerlink" href="#kubernetes-classic" title="Permanent link">&para;</a></h1>
 <h1 id="kubernetes-classic_1">Kubernetes Classic<a class="headerlink" href="#kubernetes-classic_1" title="Permanent link">&para;</a></h1>
@@ -29273,7 +28858,7 @@ scraped: 2026-02-22T21:18:16.673277</p>
 <hr />
 <p>title: Data collected with Dynatrace database monitoring
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/databases/database-app/data-collected
-scraped: 2026-02-23T21:33:52.660581</p>
+scraped: 2026-02-24T21:32:02.092932</p>
 <hr />
 <h1 id="data-collected-with-dynatrace-database-monitoring">Data collected with Dynatrace database monitoring<a class="headerlink" href="#data-collected-with-dynatrace-database-monitoring" title="Permanent link">&para;</a></h1>
 <h1 id="data-collected-with-dynatrace-database-monitoring_1">Data collected with Dynatrace database monitoring<a class="headerlink" href="#data-collected-with-dynatrace-database-monitoring_1" title="Permanent link">&para;</a></h1>
@@ -29386,7 +28971,7 @@ scraped: 2026-02-23T21:25:33.090406</p>
 <hr />
 <p>title: Monitor MariaDB database
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/databases/database-app/get-started/mariadb
-scraped: 2026-02-23T21:31:50.529472</p>
+scraped: 2026-02-24T21:31:49.678179</p>
 <hr />
 <h1 id="monitor-mariadb-database">Monitor MariaDB database<a class="headerlink" href="#monitor-mariadb-database" title="Permanent link">&para;</a></h1>
 <h1 id="monitor-mariadb-database_1">Monitor MariaDB database<a class="headerlink" href="#monitor-mariadb-database_1" title="Permanent link">&para;</a></h1>
@@ -29420,7 +29005,7 @@ scraped: 2026-02-23T21:31:50.529472</p>
 <hr />
 <p>title: Monitor Microsoft SQL database
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/databases/database-app/get-started/microsoft-sql
-scraped: 2026-02-23T21:34:20.042733</p>
+scraped: 2026-02-24T21:29:39.863604</p>
 <hr />
 <h1 id="monitor-microsoft-sql-database">Monitor Microsoft SQL database<a class="headerlink" href="#monitor-microsoft-sql-database" title="Permanent link">&para;</a></h1>
 <h1 id="monitor-microsoft-sql-database_1">Monitor Microsoft SQL database<a class="headerlink" href="#monitor-microsoft-sql-database_1" title="Permanent link">&para;</a></h1>
@@ -29483,7 +29068,7 @@ Refer to the sections below to learn more about each feature set.</p>
 <hr />
 <p>title: Monitor MySQL database
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/databases/database-app/get-started/mysql
-scraped: 2026-02-23T21:33:42.008002</p>
+scraped: 2026-02-24T21:31:51.022608</p>
 <hr />
 <h1 id="monitor-mysql-database">Monitor MySQL database<a class="headerlink" href="#monitor-mysql-database" title="Permanent link">&para;</a></h1>
 <h1 id="monitor-mysql-database_1">Monitor MySQL database<a class="headerlink" href="#monitor-mysql-database_1" title="Permanent link">&para;</a></h1>
@@ -29535,7 +29120,7 @@ scraped: 2026-02-22T21:22:21.573779</p>
 <hr />
 <p>title: Monitor SAP HANA database
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/databases/database-app/get-started/sap-hana
-scraped: 2026-02-20T21:26:23.598228</p>
+scraped: 2026-02-24T21:29:13.922147</p>
 <hr />
 <h1 id="monitor-sap-hana-database">Monitor SAP HANA database<a class="headerlink" href="#monitor-sap-hana-database" title="Permanent link">&para;</a></h1>
 <h1 id="monitor-sap-hana-database_1">Monitor SAP HANA database<a class="headerlink" href="#monitor-sap-hana-database_1" title="Permanent link">&para;</a></h1>
@@ -29571,7 +29156,7 @@ scraped: 2026-02-20T21:26:23.598228</p>
 <hr />
 <p>title: Monitor Snowflake database
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/databases/database-app/get-started/snowflake
-scraped: 2026-02-22T21:26:13.385955</p>
+scraped: 2026-02-24T21:24:29.725543</p>
 <hr />
 <h1 id="monitor-snowflake-database">Monitor Snowflake database<a class="headerlink" href="#monitor-snowflake-database" title="Permanent link">&para;</a></h1>
 <h1 id="monitor-snowflake-database_1">Monitor Snowflake database<a class="headerlink" href="#monitor-snowflake-database_1" title="Permanent link">&para;</a></h1>
@@ -29605,7 +29190,7 @@ scraped: 2026-02-22T21:26:13.385955</p>
 <hr />
 <p>title: Get started with database monitoring
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/databases/database-app/get-started
-scraped: 2026-02-22T21:20:40.439932</p>
+scraped: 2026-02-24T21:24:59.302446</p>
 <hr />
 <h1 id="get-started-with-database-monitoring">Get started with database monitoring<a class="headerlink" href="#get-started-with-database-monitoring" title="Permanent link">&para;</a></h1>
 <h1 id="get-started-with-database-monitoring_1">Get started with database monitoring<a class="headerlink" href="#get-started-with-database-monitoring_1" title="Permanent link">&para;</a></h1>
@@ -29656,7 +29241,7 @@ scraped: 2026-02-23T21:36:09.557295</p>
 <hr />
 <p>title: Databases app
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/databases/database-app
-scraped: 2026-02-23T21:19:33.404095</p>
+scraped: 2026-02-24T21:15:18.487727</p>
 <hr />
 <h1 id="databases-app">Databases app<a class="headerlink" href="#databases-app" title="Permanent link">&para;</a></h1>
 <h1 id="databases-app_1">Databases app<a class="headerlink" href="#databases-app_1" title="Permanent link">&para;</a></h1>
@@ -29693,8 +29278,6 @@ scraped: 2026-02-23T21:19:33.404095</p>
 </ul>
 <h3 id="permissions_2">Permissions<a class="headerlink" href="#permissions_2" title="Permanent link">&para;</a></h3>
 <p>The following table describes the required permissions.</p>
-<p>Permission</p>
-<p>Description</p>
 <p>davis:analyzers:execute</p>
 <p>Execute Davis analyzer for entity problems</p>
 <p>settings:objects:read</p>
@@ -29715,11 +29298,6 @@ scraped: 2026-02-23T21:19:33.404095</p>
 <p>Read logs from Grail</p>
 <p>storage:metrics:read</p>
 <p>Read metrics from Grail</p>
-<p>10</p>
-<p>rows per page</p>
-<p>Page</p>
-<p>1</p>
-<p>of 1</p>
 <h3 id="installation-steps">Installation steps<a class="headerlink" href="#installation-steps" title="Permanent link">&para;</a></h3>
 <ol>
 <li>Install <img alt="Databases" src="https://dt-cdn.net/images/dynatrace-database-256-1afe08286e.webp" title="Databases" /> <strong>Databases</strong> from the Dynatrace  <strong>Hub</strong>.</li>
@@ -29847,7 +29425,7 @@ scraped: 2026-02-23T21:19:33.404095</p>
 <hr />
 <p>title: Analyze database services (new page)
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/databases/database-services-classic/analyze-database-services-new
-scraped: 2026-02-23T21:30:53.915802</p>
+scraped: 2026-02-24T21:30:07.703878</p>
 <hr />
 <h1 id="analyze-database-services-new-page">Analyze database services (new page)<a class="headerlink" href="#analyze-database-services-new-page" title="Permanent link">&para;</a></h1>
 <h1 id="analyze-database-services-new-page_1">Analyze database services (new page)<a class="headerlink" href="#analyze-database-services-new-page_1" title="Permanent link">&para;</a></h1>
@@ -31479,11 +31057,107 @@ scraped: 2026-02-22T21:13:03.324774</p>
 <h3 id="explore-in-dynatrace-hub_3">Explore in Dynatrace Hub<a class="headerlink" href="#explore-in-dynatrace-hub_3" title="Permanent link">&para;</a></h3>
 <p>Gain detailed visibility into Linux host local datastores where OneAgent is installed.](https://www.dynatrace.com/hub/detail/disk-analytics/)</p>
 <hr />
+<h2 id="observeinfrastructure-observabilityextensionsopentelemetry-host-monitoringmd">observe/infrastructure-observability/extensions/opentelemetry-host-monitoring.md<a class="headerlink" href="#observeinfrastructure-observabilityextensionsopentelemetry-host-monitoringmd" title="Permanent link">&para;</a></h2>
+<hr />
+<p>title: OpenTelemetry Host Monitoring extension
+source: https://www.dynatrace.com/docs/observe/infrastructure-observability/extensions/opentelemetry-host-monitoring
+scraped: 2026-02-24T21:31:53.484173</p>
+<hr />
+<h1 id="opentelemetry-host-monitoring-extension">OpenTelemetry Host Monitoring extension<a class="headerlink" href="#opentelemetry-host-monitoring-extension" title="Permanent link">&para;</a></h1>
+<h1 id="opentelemetry-host-monitoring-extension_1">OpenTelemetry Host Monitoring extension<a class="headerlink" href="#opentelemetry-host-monitoring-extension_1" title="Permanent link">&para;</a></h1>
+<ul>
+<li>Latest Dynatrace</li>
+<li>Extension</li>
+<li>Published Feb 20, 2026</li>
+</ul>
+<p>Generate topology and screens for your OpenTelemetry host data for quicker display and easier analysis of the data.</p>
+<h2 id="get-started_4">Get started<a class="headerlink" href="#get-started_4" title="Permanent link">&para;</a></h2>
+<h3 id="overview_2">Overview<a class="headerlink" href="#overview_2" title="Permanent link">&para;</a></h3>
+<p>Monitor your hosts with OpenTelemetry using integrated metric visualizations, topology, and alerts. This extension automatically generates entities for hosts and their running processes, presenting telemetry data through intuitive interfaces designed for quick analysis. By correlating metrics, logs, and spans to host and process entities, you gain full context and a comprehensive view of your infrastructure.</p>
+<h3 id="requirements_2">Requirements<a class="headerlink" href="#requirements_2" title="Permanent link">&para;</a></h3>
+<p>This extension depends on the telemetry data that is pushed to Dynatrace from OpenTelemetry, using the <a href="/docs/ingest-from/opentelemetry/collector" title="Learn about the Dynatrace OTel Collector.">OpenTelemetry Collector</a>.</p>
+<h2 id="activation-and-setup_1">Activation and setup<a class="headerlink" href="#activation-and-setup_1" title="Permanent link">&para;</a></h2>
+<p>In order to use this extension, you need to:</p>
+<ul>
+<li><a href="/docs/ingest-from/opentelemetry/collector/deployment" title="How to deploy Dynatrace OTel Collector.">Deploy the OpenTelemetry Collector</a>, following the instructions for the relevant deployment option.</li>
+<li>Activate this extension in Dynatrace environment to report on the metrics in context. This extension doesn't need an ActiveGate or a OneAgent.</li>
+</ul>
+<h3 id="use-cases_11">Use cases<a class="headerlink" href="#use-cases_11" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Track performance, health, and availability of OpenTelemetry-monitored infrastructure.</li>
+<li>Analyze trends and baselines for capacity planning.</li>
+<li>Raise alerts on resource saturation, network errors, and other infrastructure issues.</li>
+<li>Get a dedicated, pre-configured view for infrastructure monitoring.</li>
+</ul>
+<p>This extension uses telemetry data collected by the OpenTelemetry Collector. To monitor the health of your Collectors, see <a href="/docs/ingest-from/opentelemetry/collector/self-monitoring" title="How to monitor OpenTelemetry Collectors with Dynatrace dashboards.">Collector self-monitoring</a>.</p>
+<h2 id="activation-and-setup_2">Activation and setup<a class="headerlink" href="#activation-and-setup_2" title="Permanent link">&para;</a></h2>
+<h3 id="deploy-the-opentelemetry-collector">Deploy the OpenTelemetry Collector<a class="headerlink" href="#deploy-the-opentelemetry-collector" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Follow the instructions on the <a href="/docs/ingest-from/opentelemetry/collector/deployment" title="How to deploy Dynatrace OTel Collector.">OpenTelemetry Collector</a> to deploy the Collector.</li>
+<li>Use the <a href="https://github.com/Dynatrace/dynatrace-otel-collector/blob/main/config_examples/host-metrics.yaml">reference configurationï»¿</a>.</li>
+<li>Ensure the Collector is running and telemetry data is reported to Dynatrace correctly.</li>
+</ol>
+<h3 id="activate-the-opentelemetry-host-monitoring-extension">Activate the OpenTelemetry Host Monitoring extension<a class="headerlink" href="#activate-the-opentelemetry-host-monitoring-extension" title="Permanent link">&para;</a></h3>
+<p>Activate the OpenTelemetry Host Monitoring extension to enable <a href="#topology">topology</a>, <a href="#screens">Unified Analysis screens</a>, and <a href="#alert-templates">alert templates</a>.</p>
+<h2 id="details_2">Details<a class="headerlink" href="#details_2" title="Permanent link">&para;</a></h2>
+<p>The <a href="/docs/ingest-from/opentelemetry/collector" title="Learn about the Dynatrace OTel Collector.">OpenTelemetry Collector</a> captures telemetry data from your infrastructure and pushes metrics to Dynatrace via the OTel API.</p>
+<p>The extension displays telemetry data captured by the OpenTelemetry Collector and provides quick analysis and clear understanding of the data, adding Dynatrace-specific context to all signals (metrics, logs, and spans).</p>
+<h3 id="topology_1">Topology<a class="headerlink" href="#topology_1" title="Permanent link">&para;</a></h3>
+<p>This extension automatically generates topology for infrastructure monitored via the OpenTelemetry Collector. Specifically, it creates the following entity types based on metadata extracted from metrics, logs, and traces:</p>
+<table>
+<thead>
+<tr>
+<th>Entity type</th>
+<th>Entity ID</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>OpenTelemetry Host</td>
+<td>dt.entity.otel:host</td>
+</tr>
+<tr>
+<td>OpenTelemetry Process</td>
+<td>dt.entity.otel:process</td>
+</tr>
+</tbody>
+</table>
+<p>These entities enable Dynatrace to correlate your metrics, logs, and spans and provide unified context across your monitored environment.</p>
+<h3 id="screens">Screens<a class="headerlink" href="#screens" title="Permanent link">&para;</a></h3>
+<p>The extension provides screens and dashboards that display entity information, metrics, and more. The data is displayed in a smart and structured way for easier navigation and a clearer understanding of the insights.</p>
+<p>To find a list of your OTel hosts and processes, go to <img alt="Infrastructure &amp; Operations" src="https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png" title="Infrastructure &amp; Operations" /> <strong>Infrastructure &amp; Operations</strong> &gt; <strong>Technologies</strong>.</p>
+<h3 id="alert-templates_1">Alert templates<a class="headerlink" href="#alert-templates_1" title="Permanent link">&para;</a></h3>
+<p>This extension provides alert templates that you can use to create alerts based on the imported data. To use these templates and set up alerts:</p>
+<ol>
+<li>Go to <img alt="Extensions" src="https://dt-cdn.net/images/dynatrace-extensions-256-9cb05e0f55.png" title="Extensions" /> <strong>Extensions</strong> &gt; <strong>OpenTelemetry Host Monitoring</strong> &gt; <strong>Extension content</strong>.</li>
+<li>Find any alert template you're interested in and select  <strong>New Alert</strong>.</li>
+<li>Configure the alert according to the available options.</li>
+</ol>
+<h3 id="licensing-and-cost_1">Licensing and cost<a class="headerlink" href="#licensing-and-cost_1" title="Permanent link">&para;</a></h3>
+<p>All ingested OpenTelemetry data (logs, metrics, and spans) is charged according to your rate card, see <a href="/docs/license/capabilities" title="How different DPS capabilities work and how consumption is calculated and billed.">Dynatrace Platform Subscription</a> or <a href="/docs/license/monitoring-consumption-classic" title="Understand how Dynatrace monitoring consumption is calculated for classic licensing.">Dynatrace classic licensing</a>.</p>
+<p>The use of this extension does not itself incur any additional costs.</p>
+<p>Based on our measurements using <a href="https://github.com/Dynatrace/dynatrace-otel-collector/blob/main/config_examples/host-metrics.yaml">the reference configurationï»¿</a>, we estimate the following metrics ingest volume:</p>
+<ul>
+<li>Approximately 4400 metric data points per host per hour.</li>
+<li>Approximately 400 datapoints per process per hour.</li>
+</ul>
+<p>Both these numbers will vary depending on the available metrics. For more details, see <a href="#limitations">Limitations</a>.</p>
+<h3 id="limitations_3">Limitations<a class="headerlink" href="#limitations_3" title="Permanent link">&para;</a></h3>
+<ul>
+<li>The metric <code>system.processes.created</code> is currently available only on Linux and BSD operating systems.</li>
+<li>The metric <code>process.disk.io</code> requires running the Collector with privileged access. Not doing so will prevent the metric from being captured.</li>
+</ul>
+<h2 id="feature-sets_9">Feature sets<a class="headerlink" href="#feature-sets_9" title="Permanent link">&para;</a></h2>
+<p>This extension does not include any feature sets. Users are in control of what data will be sent to Dynatrace based on the Collector configuration.</p>
+<p>[<img alt="Hub" src="https://dt-cdn.net/images/hub-512-82db3c583e.png" title="Hub" /></p>
+<h3 id="explore-in-dynatrace-hub_4">Explore in Dynatrace Hub<a class="headerlink" href="#explore-in-dynatrace-hub_4" title="Permanent link">&para;</a></h3>
+<p>Generate topology and screens for your OpenTelemetry host data for quicker display and easier analysis of the data.](https://www.dynatrace.com/hub/detail/opentelemetry-host-monitoring-extension/)</p>
+<hr />
 <h2 id="observeinfrastructure-observabilityextensionsradware-alteon-load-balancermd">observe/infrastructure-observability/extensions/radware-alteon-load-balancer.md<a class="headerlink" href="#observeinfrastructure-observabilityextensionsradware-alteon-load-balancermd" title="Permanent link">&para;</a></h2>
 <hr />
 <p>title: Radware Alteon Load Balancer extension
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/extensions/radware-alteon-load-balancer
-scraped: 2026-02-23T21:32:33.951086</p>
+scraped: 2026-02-24T21:25:56.387205</p>
 <hr />
 <h1 id="radware-alteon-load-balancer-extension">Radware Alteon Load Balancer extension<a class="headerlink" href="#radware-alteon-load-balancer-extension" title="Permanent link">&para;</a></h1>
 <h1 id="radware-alteon-load-balancer-extension_1">Radware Alteon Load Balancer extension<a class="headerlink" href="#radware-alteon-load-balancer-extension_1" title="Permanent link">&para;</a></h1>
@@ -31493,13 +31167,13 @@ scraped: 2026-02-23T21:32:33.951086</p>
 <li>Published Dec 15, 2025</li>
 </ul>
 <p>Monitor your Radware Alteon Network Load Balancers through SNMP.</p>
-<h2 id="get-started_4">Get started<a class="headerlink" href="#get-started_4" title="Permanent link">&para;</a></h2>
-<h3 id="overview_2">Overview<a class="headerlink" href="#overview_2" title="Permanent link">&para;</a></h3>
+<h2 id="get-started_5">Get started<a class="headerlink" href="#get-started_5" title="Permanent link">&para;</a></h2>
+<h3 id="overview_3">Overview<a class="headerlink" href="#overview_3" title="Permanent link">&para;</a></h3>
 <p>Monitor your Radware Alteon Network Load Balancer devices and interfaces through SNMP.</p>
 <p>This extension collects infrastructure metrics to monitor the health and performance of your Radware Alteon Load Balancer devices.</p>
 <p><img alt="radware-1" src="https://dt-cdn.net/images/radware-dashboard-resized-2107-7e41f877d2.png" /></p>
 <p><img alt="radware-2" src="https://dt-cdn.net/images/radware-device-resized-2085-dbb5255a5b.png" /></p>
-<h3 id="use-cases_11">Use cases<a class="headerlink" href="#use-cases_11" title="Permanent link">&para;</a></h3>
+<h3 id="use-cases_12">Use cases<a class="headerlink" href="#use-cases_12" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Monitor important device metrics such as uptime, CPU and memory usage, as well as additional hardware status metrics for temperature, fan, and power supply.</li>
 <li>Monitor device interfaces to report metrics including bytes, discards, and errors in/out.</li>
@@ -31511,10 +31185,10 @@ scraped: 2026-02-23T21:32:33.951086</p>
 <li>SNMP v2c or SNMP v3</li>
 <li>Dynatrace version 1.318+</li>
 </ul>
-<h2 id="activation-and-setup_1">Activation and setup<a class="headerlink" href="#activation-and-setup_1" title="Permanent link">&para;</a></h2>
+<h2 id="activation-and-setup_3">Activation and setup<a class="headerlink" href="#activation-and-setup_3" title="Permanent link">&para;</a></h2>
 <p>Activate the extension in your environment using the in-product Hub, provide the necessary device configuration, and you're all set up.</p>
 <p>For details, see the <a href="/docs/ingest-from/extensions/develop-your-extensions/data-sources/snmp-extensions" title="Learn how to create an SNMP extension using the Extensions framework.">SNMP extension data source documentation</a>.</p>
-<h2 id="details_2">Details<a class="headerlink" href="#details_2" title="Permanent link">&para;</a></h2>
+<h2 id="details_3">Details<a class="headerlink" href="#details_3" title="Permanent link">&para;</a></h2>
 <p>The extension package contains:</p>
 <ul>
 <li>SNMP Data Source configuration</li>
@@ -31557,8 +31231,8 @@ scraped: 2026-02-23T21:30:07.595383</p>
 <li>Published Dec 12, 2025</li>
 </ul>
 <p>Monitor Stonebranch Universal Automation Center (UAC) via OpenTelemetry.</p>
-<h2 id="get-started_5">Get started<a class="headerlink" href="#get-started_5" title="Permanent link">&para;</a></h2>
-<h3 id="overview_3">Overview<a class="headerlink" href="#overview_3" title="Permanent link">&para;</a></h3>
+<h2 id="get-started_6">Get started<a class="headerlink" href="#get-started_6" title="Permanent link">&para;</a></h2>
+<h3 id="overview_4">Overview<a class="headerlink" href="#overview_4" title="Permanent link">&para;</a></h3>
 <p>This extension collects UAC metrics via Dynatrace ActiveGate and turns them into a UC-aware view inside Dynatrace. It discovers Universal Controllers, OMS servers, Universal Agents, workflows, and business services from metric labels and maps them into a topology with dedicated Unified Analysis Screens and example dashboards.</p>
 <p>IT Ops, SREs, and platform teams can use this extension to:</p>
 <ul>
@@ -31568,7 +31242,7 @@ scraped: 2026-02-23T21:30:07.595383</p>
 <li>Receive UAC-specific alerts when OMS, agents, or licenses are in trouble.</li>
 </ul>
 <p>All of this is done through metric scrapingâno custom scripting is required.</p>
-<h3 id="use-cases_12">Use cases<a class="headerlink" href="#use-cases_12" title="Permanent link">&para;</a></h3>
+<h3 id="use-cases_13">Use cases<a class="headerlink" href="#use-cases_13" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Overview of your entire UAC environment: Get an overview of one or more Universal Controllers with an all-in-one view inside of Dynatrace.</li>
 <li>Controller and OMS health monitoring: Detect controller node or OMS issues early using status and connection metrics.</li>
@@ -31582,7 +31256,7 @@ scraped: 2026-02-23T21:30:07.595383</p>
 <li>Universal Controller: 7.9.0.0+</li>
 <li>Universal Agent: 7.9.0.0+</li>
 </ul>
-<h2 id="activation-and-setup_2">Activation and setup<a class="headerlink" href="#activation-and-setup_2" title="Permanent link">&para;</a></h2>
+<h2 id="activation-and-setup_4">Activation and setup<a class="headerlink" href="#activation-and-setup_4" title="Permanent link">&para;</a></h2>
 <ol>
 <li>Install and activate the extension from the Dynatrace Hub.</li>
 <li>Configure the metric endpoint. Point the extension to your Universal Controller Prometheus metrics endpoint.</li>
@@ -31602,7 +31276,7 @@ scraped: 2026-02-23T21:30:07.595383</p>
 <li>The Stonebranch documentation for properties: <a href="https://stonebranchdocs.atlassian.net/wiki/spaces/UC79/pages/1614542260/Properties">Propertiesï»¿</a>.</li>
 <li>Implementation details and examples: <a href="https://stonebranchdocs.atlassian.net/wiki/spaces/UE/pages/1949892609/Dynatrace+Observability+for+UAC+-+Implementation+Guide">Dynatrace Observability for UAC â Implementation Guideï»¿</a>.</li>
 </ul>
-<h2 id="details_3">Details<a class="headerlink" href="#details_3" title="Permanent link">&para;</a></h2>
+<h2 id="details_4">Details<a class="headerlink" href="#details_4" title="Permanent link">&para;</a></h2>
 <h3 id="metric-ingestion">Metric ingestion<a class="headerlink" href="#metric-ingestion" title="Permanent link">&para;</a></h3>
 <p>The extension uses Dynatrace ActiveGate to scrape Prometheus-format metrics from one or more Universal Controllers. Metrics are grouped into feature sets, including</p>
 <ul>
@@ -31696,7 +31370,7 @@ scraped: 2026-02-23T21:30:07.595383</p>
 <li>Various alerts relating to the UC license</li>
 </ul>
 <p>These alerts are based purely on metrics and can be adjusted or extended in Dynatrace as needed.</p>
-<h3 id="licensing-and-cost_1">Licensing and cost<a class="headerlink" href="#licensing-and-cost_1" title="Permanent link">&para;</a></h3>
+<h3 id="licensing-and-cost_2">Licensing and cost<a class="headerlink" href="#licensing-and-cost_2" title="Permanent link">&para;</a></h3>
 <p>There is no charge to use the extension. You are only charged for the data that the extension ingests. The license consumption details depend on which licensing model you're using. This can either be <a href="/docs/license/monitoring-consumption-classic" title="Understand how Dynatrace monitoring consumption is calculated for classic licensing.">Dynatrace classic licensing</a> or the <a href="/docs/license" title="About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.">Dynatrace Platform Subscription (DPS)</a> model.</p>
 <h4 id="metrics_1">Metrics<a class="headerlink" href="#metrics_1" title="Permanent link">&para;</a></h4>
 <p>License consumption is based on the number of metric data points ingested. A rough annual estimate, assuming all feature sets are enabled, is shown below.</p>
@@ -31766,7 +31440,7 @@ scraped: 2026-02-22T21:18:17.941374</p>
 <p>Type to filter</p>
 <p>Unable to render DataTable. Check configuration.</p>
 <p>[<img alt="Hub" src="https://dt-cdn.net/images/hub-512-82db3c583e.png" title="Hub" /></p>
-<h3 id="explore-in-dynatrace-hub_4">Explore in Dynatrace Hub<a class="headerlink" href="#explore-in-dynatrace-hub_4" title="Permanent link">&para;</a></h3>
+<h3 id="explore-in-dynatrace-hub_5">Explore in Dynatrace Hub<a class="headerlink" href="#explore-in-dynatrace-hub_5" title="Permanent link">&para;</a></h3>
 <p>Unlock the full potential of Dynatrace by finding, activating, and running extensions that address your specific observability needs.</p>
 <p>Use the top search bar to find an extension by entering its name, technology, or words related to it. Then, select an extension tile to view its details.](https://www.dynatrace.com/hub/?filter=all&amp;type=extension)[<img alt="Extensions" src="https://dt-cdn.net/images/dynatrace-extensions-256-9cb05e0f55.png" title="Extensions" /></p>
 <h3 id="extensions-app">Extensions app<a class="headerlink" href="#extensions-app" title="Permanent link">&para;</a></h3>
@@ -31777,7 +31451,7 @@ scraped: 2026-02-22T21:18:17.941374</p>
 <hr />
 <p>title: Exclude disks and network traffic from host monitoring
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/hosts/configuration/exclude-disks-and-network-traffic
-scraped: 2026-02-22T21:26:59.663176</p>
+scraped: 2026-02-24T21:21:16.384409</p>
 <hr />
 <h1 id="exclude-disks-and-network-traffic-from-host-monitoring">Exclude disks and network traffic from host monitoring<a class="headerlink" href="#exclude-disks-and-network-traffic-from-host-monitoring" title="Permanent link">&para;</a></h1>
 <h1 id="exclude-disks-and-network-traffic-from-host-monitoring_1">Exclude disks and network traffic from host monitoring<a class="headerlink" href="#exclude-disks-and-network-traffic-from-host-monitoring_1" title="Permanent link">&para;</a></h1>
@@ -31872,47 +31546,6 @@ scraped: 2026-02-22T21:26:59.663176</p>
 </ol>
 <h2 id="disks-not-monitored-by-oneagent">Disks not monitored by OneAgent<a class="headerlink" href="#disks-not-monitored-by-oneagent" title="Permanent link">&para;</a></h2>
 <p>The following disks are not monitored by OneAgent. To exclude an additional filesystem type or mount point name, see <a href="#disk-options">Exclude disks</a>.</p>
-<p>Operating system</p>
-<p>Type</p>
-<p>Excluded disks</p>
-<p>All supported OS</p>
-<p>File systems</p>
-<p><code>hsfs</code></p>
-<p><code>devtmpfs</code></p>
-<p><code>sysfs</code></p>
-<p><code>rootfs</code></p>
-<p><code>ramfs</code></p>
-<p><code>proc</code></p>
-<p><code>procfs</code></p>
-<p><code>devpts</code></p>
-<p><code>securityfs</code></p>
-<p><code>cgroup</code></p>
-<p><code>cpuset</code></p>
-<p><code>pstore</code></p>
-<p><code>mqueue</code></p>
-<p><code>debugfs</code></p>
-<p><code>autofs</code></p>
-<p><code>hugetlbfs</code></p>
-<p><code>fusectl</code></p>
-<p><code>fuse.gvfsd-fuse</code></p>
-<p><code>binfmt_misc</code></p>
-<p><code>iso9660</code></p>
-<p><code>none</code></p>
-<p><code>rpc_pipefs</code></p>
-<p>Linux</p>
-<p>File systems</p>
-<p><code>tmpfs</code></p>
-<p><code>udf</code></p>
-<p><code>squashfs</code></p>
-<p>Linux</p>
-<p>Mount point</p>
-<p><code>/dev</code></p>
-<p>AIX</p>
-<p>File systems</p>
-<p><code>cdrfs</code></p>
-<p>Solaris</p>
-<p>Network interface</p>
-<p><code>mac</code></p>
 <hr />
 <h2 id="observeinfrastructure-observabilityhostsconfigurationorganize-your-environment-using-host-groupsmd">observe/infrastructure-observability/hosts/configuration/organize-your-environment-using-host-groups.md<a class="headerlink" href="#observeinfrastructure-observabilityhostsconfigurationorganize-your-environment-using-host-groupsmd" title="Permanent link">&para;</a></h2>
 <hr />
@@ -31989,7 +31622,7 @@ scraped: 2026-02-23T21:32:10.768248</p>
 <hr />
 <p>title: Host-level settings
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/hosts/configuration
-scraped: 2026-02-23T21:19:22.114756</p>
+scraped: 2026-02-24T21:15:30.697715</p>
 <hr />
 <h1 id="host-level-settings">Host-level settings<a class="headerlink" href="#host-level-settings" title="Permanent link">&para;</a></h1>
 <h1 id="host-level-settings_1">Host-level settings<a class="headerlink" href="#host-level-settings_1" title="Permanent link">&para;</a></h1>
@@ -32301,7 +31934,7 @@ scraped: 2026-02-23T21:19:22.114756</p>
 <hr />
 <p>title: Host availability
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/hosts/monitoring/host-monitoring/host-availability
-scraped: 2026-02-23T21:33:13.946532</p>
+scraped: 2026-02-24T21:28:33.548715</p>
 <hr />
 <h1 id="host-availability">Host availability<a class="headerlink" href="#host-availability" title="Permanent link">&para;</a></h1>
 <h1 id="host-availability_1">Host availability<a class="headerlink" href="#host-availability_1" title="Permanent link">&para;</a></h1>
@@ -32325,26 +31958,6 @@ scraped: 2026-02-23T21:33:13.946532</p>
 <p>In this example, the legend indicates the three different host availability states that occurred during the selected timeframe.</p>
 <p><img alt="Host page detail - online availability" src="https://dt-cdn.net/images/image-3-757-d2642a2b5d.png" /></p>
 <h2 id="host-availability-states">Host availability states<a class="headerlink" href="#host-availability-states" title="Permanent link">&para;</a></h2>
-<p>Availability state</p>
-<p>Description</p>
-<p><strong>up</strong></p>
-<p>The host is working; OneAgent is active and sending data. If the connectivity to the host is lost, OneAgent sends all cached metrics when the connection is restored.</p>
-<p><strong>no_data</strong></p>
-<p>The host is working and OneAgent is active, but no data is being sent. This state is also set when collecting monitoring data takes too long (for example, OneAgent freezes).</p>
-<p><strong>no_data_agent_inactive</strong></p>
-<p>The host is working, OneAgent is inactive, and no data is being sent because OneAgent has been manually disabled in the configuration.</p>
-<p><strong>shutdown_host</strong></p>
-<p>The host has been shut down due to an expected operating system shutdown or reboot.</p>
-<p><strong>unmonitored_agent_stopped</strong></p>
-<p>The host is not monitored because OneAgent is inactive. For details, refer to <a href="#check-monitoring-settings">Check OneAgent monitoring settings per host</a>.</p>
-<p><strong>unmonitored_agent_upgrade</strong></p>
-<p>The host is not monitored because OneAgent is being upgraded.</p>
-<p><strong>unmonitored_agent_uninstalled</strong></p>
-<p>The host is not monitored because OneAgent has been uninstalled.</p>
-<p><strong>reboot_graceful</strong></p>
-<p>The host was rebooted following a graceful shutdown, which means an expected operating system shutdown has occurred.</p>
-<p><strong>reboot_ungraceful</strong></p>
-<p>The host was rebooted following an ungraceful shutdown, which means an unexpected operating system shutdown has occurred. This may be caused by events, such as power loss or a system crash.</p>
 <h3 id="check-oneagent-monitoring-settings-per-host">Check OneAgent monitoring settings per host<a class="headerlink" href="#check-oneagent-monitoring-settings-per-host" title="Permanent link">&para;</a></h3>
 <p>To check or change the monitoring settings per host:</p>
 <ol>
@@ -32405,7 +32018,7 @@ scraped: 2026-02-22T21:13:02.073732</p>
 </ul>
 <p>Dynatrace provides out-of-the-box availability monitoring of OS services.</p>
 <p>You can monitor hosts in full-stack monitoring mode or use lightweight monitoring modes. For more information, see <a href="/docs/platform/oneagent/monitoring-modes/monitoring-modes" title="Find out more about the available monitoring modes when using OneAgent.">OneAgent monitoring modes</a>.</p>
-<h2 id="requirements_2">Requirements<a class="headerlink" href="#requirements_2" title="Permanent link">&para;</a></h2>
+<h2 id="requirements_3">Requirements<a class="headerlink" href="#requirements_3" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Linux systemd version 230+ is required on the monitored host to monitor relations between processes and OS services.</li>
 <li>Linux systemd version 250+ is required on the monitored host for improved OS service detection performance by less frequent refreshes.</li>
@@ -32752,7 +32365,7 @@ Also, <code>Auto-start Windows OS Services</code> and <code>Auto-start Linux OS 
 <li>Based on the <code>builtin:os-services-monitoring</code> schema, create your configuration object.</li>
 <li>To create your configuration, use <a href="/docs/dynatrace-api/environment-api/settings/objects/post-object" title="Create or validate a settings object via the Dynatrace API.">POST an object</a>.</li>
 </ol>
-<h2 id="limitations_3">Limitations<a class="headerlink" href="#limitations_3" title="Permanent link">&para;</a></h2>
+<h2 id="limitations_4">Limitations<a class="headerlink" href="#limitations_4" title="Permanent link">&para;</a></h2>
 <p>On Linux, systemd OS services with the following startup types are supported:</p>
 <ul>
 <li><code>enabled</code></li>
@@ -32766,7 +32379,7 @@ Also, <code>Auto-start Windows OS Services</code> and <code>Auto-start Linux OS 
 <hr />
 <p>title: Process availability
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/hosts/monitoring/process-availability
-scraped: 2026-02-23T21:38:01.175767</p>
+scraped: 2026-02-24T21:20:17.460002</p>
 <hr />
 <h1 id="process-availability_1">Process availability<a class="headerlink" href="#process-availability_1" title="Permanent link">&para;</a></h1>
 <h1 id="process-availability_2">Process availability<a class="headerlink" href="#process-availability_2" title="Permanent link">&para;</a></h1>
@@ -33462,7 +33075,7 @@ scraped: 2026-02-06T16:20:45.488376</p>
 <hr />
 <p>title: Host metrics
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/hosts/reference/metrics
-scraped: 2026-02-23T21:39:03.415742</p>
+scraped: 2026-02-24T21:33:07.904820</p>
 <hr />
 <h1 id="host-metrics">Host metrics<a class="headerlink" href="#host-metrics" title="Permanent link">&para;</a></h1>
 <h1 id="host-metrics_1">Host metrics<a class="headerlink" href="#host-metrics_1" title="Permanent link">&para;</a></h1>
@@ -34192,7 +33805,7 @@ scraped: 2026-02-22T21:12:45.133179</p>
 </ul>
 <p>The  <strong>Containers</strong> view in <img alt="Infrastructure &amp; Operations" src="https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png" title="Infrastructure &amp; Operations" /> <strong>Infrastructure &amp; Operations</strong> provides a dedicated inventory for viewing, filtering, and inspecting containers independently or in relation to hosts and processes. Navigate between entities to see how they are interconnected.</p>
 <p>This view supports containerized workloads orchestrated by <img alt="Kubernetes (new)" src="https://dt-cdn.net/images/kubernetes-new-1024-45d3de15d1.webp" title="Kubernetes (new)" /> <strong>Kubernetes</strong> or running on a standalone host. Each container displays detailed information, including metadata, logs, events, and time-series charts for CPU, memory, and network traffic.</p>
-<h2 id="overview_4">Overview<a class="headerlink" href="#overview_4" title="Permanent link">&para;</a></h2>
+<h2 id="overview_5">Overview<a class="headerlink" href="#overview_5" title="Permanent link">&para;</a></h2>
 <p>The  <strong>Containers</strong> view provides different perspectives for viewing your containers (<strong>Health</strong>, <strong>Utilization</strong>, and <strong>Metadata</strong>).</p>
 <p>The <strong>Health</strong> perspective includes the following default columns:</p>
 <ul>
@@ -34201,7 +33814,7 @@ scraped: 2026-02-22T21:12:45.133179</p>
 <li><strong>Custom alerts</strong>: Lists any active custom alerts associated with the container.</li>
 </ul>
 <p>Other perspectives provide additional columns, including <strong>Containerization type</strong> (the containerization technology in use) and <strong>Container host name</strong> (the host machine on which the container operates).</p>
-<h2 id="use-cases_13">Use cases<a class="headerlink" href="#use-cases_13" title="Permanent link">&para;</a></h2>
+<h2 id="use-cases_14">Use cases<a class="headerlink" href="#use-cases_14" title="Permanent link">&para;</a></h2>
 <ul>
 <li>View containers within a host</li>
 </ul>
@@ -34237,7 +33850,7 @@ scraped: 2026-02-22T21:12:43.887802</p>
 </ul>
 <p>The  <strong>Data centers</strong> view in <img alt="Infrastructure &amp; Operations" src="https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png" title="Infrastructure &amp; Operations" /> <strong>Infrastructure &amp; Operations</strong> monitors the health and performance of your data centers and availability zones.</p>
 <p>Select a data center to view all monitored hosts within it.</p>
-<h2 id="overview_5">Overview<a class="headerlink" href="#overview_5" title="Permanent link">&para;</a></h2>
+<h2 id="overview_6">Overview<a class="headerlink" href="#overview_6" title="Permanent link">&para;</a></h2>
 <p>Here's what each column in the  <strong>Data centers</strong> view stands for.</p>
 <ul>
 <li><strong>Data center</strong>: The name or identifier of the data center or availability zone.</li>
@@ -34260,7 +33873,7 @@ scraped: 2026-02-22T21:12:43.887802</p>
 <li><strong>Monitored</strong>: The percentage of hosts actively monitored within the data center. Lower than 100% means Dynatrace identified unmonitored instances based on host connections.</li>
 <li><strong>Location</strong>: The geographic name of the data center location.</li>
 </ul>
-<h2 id="use-cases_14">Use cases<a class="headerlink" href="#use-cases_14" title="Permanent link">&para;</a></h2>
+<h2 id="use-cases_15">Use cases<a class="headerlink" href="#use-cases_15" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Identify critical issues</li>
 </ul>
@@ -34284,7 +33897,7 @@ scraped: 2026-02-22T21:12:37.453642</p>
 </ul>
 <p>The  <strong>Hosts</strong> view in <img alt="Infrastructure &amp; Operations" src="https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png" title="Infrastructure &amp; Operations" /> <strong>Infrastructure &amp; Operations</strong> provides comprehensive monitoring of your infrastructure hosts across physical machines, virtual machines, and cloud instances. Use this tool to track host health, performance metrics, and resource utilization to ensure optimal infrastructure operation.</p>
 <p>Full-stack infrastructure monitoring begins automatically as soon as Dynatrace OneAgent starts operation and begins capturing performance and event-related information on your hosts.</p>
-<h2 id="overview_6">Overview<a class="headerlink" href="#overview_6" title="Permanent link">&para;</a></h2>
+<h2 id="overview_7">Overview<a class="headerlink" href="#overview_7" title="Permanent link">&para;</a></h2>
 <p>Here's what each column in the  <strong>Hosts</strong> view stands for.</p>
 <ul>
 <li><strong>Host</strong>: The host's unique name or identifier. Select the name for a comprehensive, full-page view with in-depth details.</li>
@@ -34294,7 +33907,7 @@ scraped: 2026-02-22T21:12:37.453642</p>
 <li><strong>Resource usage</strong>: Provides metrics on CPU, memory, disk, and network consumption.</li>
 <li><strong>Host groups</strong>: The logical grouping assigned to organize hosts across data centers and applications.</li>
 </ul>
-<h2 id="use-cases_15">Use cases<a class="headerlink" href="#use-cases_15" title="Permanent link">&para;</a></h2>
+<h2 id="use-cases_16">Use cases<a class="headerlink" href="#use-cases_16" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Identify critical issues</li>
 </ul>
@@ -34333,7 +33946,7 @@ scraped: 2026-02-22T21:12:33.509962</p>
 <li>Published Nov 25, 2025</li>
 </ul>
 <p>The  <strong>Network devices</strong> view in <img alt="Infrastructure &amp; Operations" src="https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png" title="Infrastructure &amp; Operations" /> <strong>Infrastructure &amp; Operations</strong> provides insights into networking components and their availability, with analytics powered by <a href="/docs/dynatrace-intelligence" title="Get familiar with the capabilities of Dynatrace Intelligence.">Dynatrace Intelligence</a>. Dynatrace offers flexible network device observability, allowing you to choose the level of monitoring and onboarding process that fits your needs.</p>
-<h2 id="overview_7">Overview<a class="headerlink" href="#overview_7" title="Permanent link">&para;</a></h2>
+<h2 id="overview_8">Overview<a class="headerlink" href="#overview_8" title="Permanent link">&para;</a></h2>
 <p>The  <strong>Network devices</strong> view provides different perspectives for viewing your network devices (<strong>Health</strong>, <strong>Utilization</strong>, and <strong>Metadata</strong>).</p>
 <p>The <strong>Health</strong> perspective includes the following default columns:</p>
 <ul>
@@ -34345,7 +33958,7 @@ scraped: 2026-02-22T21:12:33.509962</p>
 <li><strong>Interface status</strong>: The availability status of network interfaces.</li>
 <li><strong>Saturated interfaces</strong>: Interfaces experiencing high utilization or congestion.</li>
 </ul>
-<h2 id="use-cases_16">Use cases<a class="headerlink" href="#use-cases_16" title="Permanent link">&para;</a></h2>
+<h2 id="use-cases_17">Use cases<a class="headerlink" href="#use-cases_17" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Monitor device health</li>
 </ul>
@@ -34371,7 +33984,7 @@ scraped: 2026-02-22T21:12:36.186417</p>
 </ul>
 <p>The  <strong>Processes</strong> view in <img alt="Infrastructure &amp; Operations" src="https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png" title="Infrastructure &amp; Operations" /> <strong>Infrastructure &amp; Operations</strong> provides a dedicated inventory for viewing, filtering, and inspecting processes independently or in relation to hosts and containers. Navigate between entities to see how they are interconnected.</p>
 <p>Filter processes by host, container, process group, and other fields to analyze and compare across your environment. Each process displays detailed insights, including CPU and memory usage trends, logs, events, and time-series charts.</p>
-<h2 id="overview_8">Overview<a class="headerlink" href="#overview_8" title="Permanent link">&para;</a></h2>
+<h2 id="overview_9">Overview<a class="headerlink" href="#overview_9" title="Permanent link">&para;</a></h2>
 <p>The  <strong>Processes</strong> view provides different perspectives for viewing your processes (<strong>Health</strong>, <strong>Utilization</strong>, and <strong>Metadata</strong>).</p>
 <p>The <strong>Health</strong> perspective includes the following default columns:</p>
 <ul>
@@ -34382,7 +33995,7 @@ scraped: 2026-02-22T21:12:36.186417</p>
 <li><strong>Availability</strong>: Shows the current availability status of the process.</li>
 <li><strong>Technologies</strong>: The technologies detected for this process.</li>
 </ul>
-<h2 id="use-cases_17">Use cases<a class="headerlink" href="#use-cases_17" title="Permanent link">&para;</a></h2>
+<h2 id="use-cases_18">Use cases<a class="headerlink" href="#use-cases_18" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Filter and inspect processes across multiple hosts and containers</li>
 </ul>
@@ -34404,7 +34017,7 @@ scraped: 2026-02-22T21:12:36.186417</p>
 <hr />
 <p>title: Infrastructure &amp; Operations
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/infrastructure-and-operations
-scraped: 2026-02-23T21:19:27.207238</p>
+scraped: 2026-02-24T21:15:25.133136</p>
 <hr />
 <h1 id="infrastructure-operations">Infrastructure &amp; Operations<a class="headerlink" href="#infrastructure-operations" title="Permanent link">&para;</a></h1>
 <h1 id="infrastructure-operations_1">Infrastructure &amp; Operations<a class="headerlink" href="#infrastructure-operations_1" title="Permanent link">&para;</a></h1>
@@ -34427,8 +34040,6 @@ scraped: 2026-02-23T21:19:27.207238</p>
 </ol>
 <h3 id="permissions_3">Permissions<a class="headerlink" href="#permissions_3" title="Permanent link">&para;</a></h3>
 <p>The following table describes the required permissions.</p>
-<p>Permission</p>
-<p>Description</p>
 <p>storage:logs:read</p>
 <p>Query logs from GRAIL</p>
 <p>storage:events:read</p>
@@ -34449,12 +34060,7 @@ scraped: 2026-02-23T21:19:27.207238</p>
 <p>Read settings configurations from Settings 2.0</p>
 <p>settings:objects:write</p>
 <p>Write settings configurations to Settings 2.0</p>
-<p>10</p>
-<p>rows per page</p>
-<p>Page</p>
-<p>1</p>
-<p>of 1</p>
-<h2 id="get-started_6">Get started<a class="headerlink" href="#get-started_6" title="Permanent link">&para;</a></h2>
+<h2 id="get-started_7">Get started<a class="headerlink" href="#get-started_7" title="Permanent link">&para;</a></h2>
 <p><img alt="Infrastructure &amp; Operations" src="https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png" title="Infrastructure &amp; Operations" /> <strong>Infrastructure &amp; Operations</strong> provides an up-to-date and comprehensive view of your monitored environments. Use the app to quickly identify areas that require attention and drill down to the exact root cause of issues.</p>
 <p><img alt="List view of all data centers, automatically sorted by Davis Intelligence identified problems." src="https://dt-cdn.net/hub/Screenshot_2025-07-07_at_13.47.23.png" /><img alt="Hosts view for a selected data center helps to quickly identify the most problematic hosts within the data center.  Drill down to host details." src="https://dt-cdn.net/hub/Screenshot_2025-07-07_at_13.48.54.png" /><img alt="View host health overview, properties, tags, and ownership information. Drill down to all host details." src="https://dt-cdn.net/hub/Screenshot_2025-07-07_at_13.51.12.png" /><img alt="Host health overview, technologies and all host entities such as disks and network interfaces. Drill down to process details and entity metrics." src="https://dt-cdn.net/hub/Screenshot_2025-07-07_at_13.51.24.png" /><img alt="Detailed process analysis. Drill down to process details." src="https://dt-cdn.net/hub/Screenshot_2025-07-07_at_13.52.09.png" /><img alt="Network device metrics overview." src="https://dt-cdn.net/hub/Screenshot_2025-07-07_at_13.52.34.png" /></p>
 <p>1 of 6List view of all data centers, automatically sorted by Davis Intelligence identified problems.</p>
@@ -34667,7 +34273,7 @@ scraped: 2026-02-23T21:19:27.207238</p>
 <li>The process side panel shows information about technologies, host, process group, container (if applicable), and deep monitoring details.</li>
 <li>The process full-page view includes an <strong>Overview</strong> tab with links to the host, process group, and container (if applicable). Selecting the host navigates to the host details. Selecting the process group filters the process list to show all processes in that group. Selecting the container navigates to the container details.</li>
 </ul>
-<h2 id="use-cases_18">Use cases<a class="headerlink" href="#use-cases_18" title="Permanent link">&para;</a></h2>
+<h2 id="use-cases_19">Use cases<a class="headerlink" href="#use-cases_19" title="Permanent link">&para;</a></h2>
 <ul>
 <li>View and identify the status of all data centers, hosts and network devices.</li>
 <li>Quickly identify the root cause of infrastructure problems</li>
@@ -34683,14 +34289,14 @@ scraped: 2026-02-23T21:19:27.207238</p>
 <li>Assess the network reachability of hosts and network devices by integrating with synthetic Network Availability Monitors (NAM).</li>
 </ul>
 <p>[<img alt="Hub" src="https://dt-cdn.net/images/hub-512-82db3c583e.png" title="Hub" /></p>
-<h3 id="explore-in-dynatrace-hub_5">Explore in Dynatrace Hub<a class="headerlink" href="#explore-in-dynatrace-hub_5" title="Permanent link">&para;</a></h3>
+<h3 id="explore-in-dynatrace-hub_6">Explore in Dynatrace Hub<a class="headerlink" href="#explore-in-dynatrace-hub_6" title="Permanent link">&para;</a></h3>
 <p>View the status of all data centers and hosts and identify the root cause of infrastructure problems.](https://www.dynatrace.com/hub/?filter=infrastructure-monitoring&amp;internal_source=doc&amp;internal_medium=link&amp;internal_campaign=cross)</p>
 <hr />
 <h2 id="observeinfrastructure-observabilitykubernetes-appenable-k8s-experienceexisting-clustersmd">observe/infrastructure-observability/kubernetes-app/enable-k8s-experience/existing-clusters.md<a class="headerlink" href="#observeinfrastructure-observabilitykubernetes-appenable-k8s-experienceexisting-clustersmd" title="Permanent link">&para;</a></h2>
 <hr />
 <p>title: Enable Kubernetes experience for existing clusters
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/kubernetes-app/enable-k8s-experience/existing-clusters
-scraped: 2026-02-23T21:21:08.424783</p>
+scraped: 2026-02-24T21:15:39.805961</p>
 <hr />
 <h1 id="enable-kubernetes-experience-for-existing-clusters">Enable Kubernetes experience for existing clusters<a class="headerlink" href="#enable-kubernetes-experience-for-existing-clusters" title="Permanent link">&para;</a></h1>
 <h1 id="enable-kubernetes-experience-for-existing-clusters_1">Enable Kubernetes experience for existing clusters<a class="headerlink" href="#enable-kubernetes-experience-for-existing-clusters_1" title="Permanent link">&para;</a></h1>
@@ -34721,7 +34327,7 @@ scraped: 2026-02-23T21:21:08.424783</p>
 <hr />
 <p>title: Kubernetes Enhanced Object Visibility Preview
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/kubernetes-app/preview/enhanced-object-vis-preview
-scraped: 2026-02-23T21:31:25.324420</p>
+scraped: 2026-02-24T21:27:59.067677</p>
 <hr />
 <h1 id="kubernetes-enhanced-object-visibility-preview">Kubernetes Enhanced Object Visibility Preview<a class="headerlink" href="#kubernetes-enhanced-object-visibility-preview" title="Permanent link">&para;</a></h1>
 <h1 id="kubernetes-enhanced-object-visibility-preview_1">Kubernetes Enhanced Object Visibility Preview<a class="headerlink" href="#kubernetes-enhanced-object-visibility-preview_1" title="Permanent link">&para;</a></h1>
@@ -34928,7 +34534,7 @@ Please note, that labels and annotation are not part of this field, but are stor
 <hr />
 <p>title: Permissions
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/kubernetes-app/reference/permissions
-scraped: 2026-02-23T21:21:06.110814</p>
+scraped: 2026-02-24T21:15:42.412043</p>
 <hr />
 <h1 id="permissions_4">Permissions<a class="headerlink" href="#permissions_4" title="Permanent link">&para;</a></h1>
 <h1 id="permissions_5">Permissions<a class="headerlink" href="#permissions_5" title="Permanent link">&para;</a></h1>
@@ -34970,7 +34576,7 @@ scraped: 2026-02-23T21:21:06.110814</p>
 <hr />
 <p>title: Alert on common Kubernetes misconfigurations and detect anomalies with Kubernetes metrics
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/kubernetes-app/use-cases/alert-use-case
-scraped: 2026-02-23T21:32:20.064602</p>
+scraped: 2026-02-24T21:28:00.172296</p>
 <hr />
 <h1 id="alert-on-common-kubernetes-misconfigurations-and-detect-anomalies-with-kubernetes-metrics">Alert on common Kubernetes misconfigurations and detect anomalies with Kubernetes metrics<a class="headerlink" href="#alert-on-common-kubernetes-misconfigurations-and-detect-anomalies-with-kubernetes-metrics" title="Permanent link">&para;</a></h1>
 <h1 id="alert-on-common-kubernetes-misconfigurations-and-detect-anomalies-with-kubernetes-metrics_1">Alert on common Kubernetes misconfigurations and detect anomalies with Kubernetes metrics<a class="headerlink" href="#alert-on-common-kubernetes-misconfigurations-and-detect-anomalies-with-kubernetes-metrics_1" title="Permanent link">&para;</a></h1>
@@ -35607,7 +35213,7 @@ scraped: 2026-02-21T21:17:23.612576</p>
 <hr />
 <p>title: Kubernetes
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/kubernetes-app
-scraped: 2026-02-23T21:19:01.783571</p>
+scraped: 2026-02-24T21:13:42.601516</p>
 <hr />
 <h1 id="kubernetes_4">Kubernetes<a class="headerlink" href="#kubernetes_4" title="Permanent link">&para;</a></h1>
 <h1 id="kubernetes_5">Kubernetes<a class="headerlink" href="#kubernetes_5" title="Permanent link">&para;</a></h1>
@@ -35633,7 +35239,7 @@ scraped: 2026-02-23T21:19:01.783571</p>
 </ul>
 <p>For more details, see <a href="/docs/observe/infrastructure-observability/kubernetes-app/enable-k8s-experience#k8s-app-getting-started-faq" title="Enable Kubernetes experience for existing clusters or start monitoring new clusters.">getting started FAQ</a>.</p>
 <p>The new Kubernetes experience is not available for Managed or SaaS on non-Grail environmentsâyou can continue to use <a href="/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring" title="Monitor Kubernetes/OpenShift with Dynatrace."><strong>Kubernetes Classic</strong></a> (accessible from the previous Dynatrace via <strong>Kubernetes</strong>).</p>
-<h2 id="get-started_7">Get started<a class="headerlink" href="#get-started_7" title="Permanent link">&para;</a></h2>
+<h2 id="get-started_8">Get started<a class="headerlink" href="#get-started_8" title="Permanent link">&para;</a></h2>
 <p><img alt="Kubernetes (new)" src="https://dt-cdn.net/images/kubernetes-new-1024-45d3de15d1.webp" title="Kubernetes (new)" /> <strong>Kubernetes</strong> provides a comprehensive view of your environment, enabling you to automate monitoring and optimize the health and performance of your Kubernetes clusters and workloads. This page walks you through the main concepts underlying <img alt="Kubernetes (new)" src="https://dt-cdn.net/images/kubernetes-new-1024-45d3de15d1.webp" title="Kubernetes (new)" /> <strong>Kubernetes</strong>.</p>
 <p>With <img alt="Kubernetes (new)" src="https://dt-cdn.net/images/kubernetes-new-1024-45d3de15d1.webp" title="Kubernetes (new)" /> <strong>Kubernetes</strong>, you can:</p>
 <ul>
@@ -35785,7 +35391,7 @@ scraped: 2026-02-23T21:19:01.783571</p>
 <li>Access to YAML definitions to debug and validate configurations in real time.</li>
 <li>Ability to query YAMLs across all clusters and namespaces using Dynatrace Query Language (DQL) to instantly surface misconfigurations, missing references, or policy violations across your Kubernetes environment.</li>
 </ul>
-<h2 id="use-cases_19">Use cases<a class="headerlink" href="#use-cases_19" title="Permanent link">&para;</a></h2>
+<h2 id="use-cases_20">Use cases<a class="headerlink" href="#use-cases_20" title="Permanent link">&para;</a></h2>
 <h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permanent link">&para;</a></h2>
 <p>Go to the following reference pages for more information about permissions, available alerts, and default settings for new environments.</p>
 <h2 id="learn-more_1">Learn more<a class="headerlink" href="#learn-more_1" title="Permanent link">&para;</a></h2>
@@ -35796,7 +35402,7 @@ scraped: 2026-02-23T21:19:01.783571</p>
 <li><a href="https://www.dynatrace.com/news/blog/kubernetes-platform-engineering/">Blog post: Unlock the Power of DevSecOps with Newly Released Kubernetes Experience for Platform Engineeringï»¿</a></li>
 </ul>
 <p><img alt="Hub" src="https://dt-cdn.net/images/hub-512-82db3c583e.png" title="Hub" /></p>
-<h3 id="explore-in-dynatrace-hub_6">Explore in Dynatrace Hub<a class="headerlink" href="#explore-in-dynatrace-hub_6" title="Permanent link">&para;</a></h3>
+<h3 id="explore-in-dynatrace-hub_7">Explore in Dynatrace Hub<a class="headerlink" href="#explore-in-dynatrace-hub_7" title="Permanent link">&para;</a></h3>
 <p>Automated change impact analysis for your deployment and release processes.</p>
 <p><a href="https://www.dynatrace.com/hub/?filter=kubernetes&amp;internal_source=doc&amp;internal_medium=link&amp;internal_campaign=cross">Dynatrace Hubï»¿</a></p>
 <hr />
@@ -35804,7 +35410,7 @@ scraped: 2026-02-23T21:19:01.783571</p>
 <hr />
 <p>title: Ingest NetFlow records into Dynatrace
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/networks/ingest-netflow-records
-scraped: 2026-02-23T21:31:49.211008</p>
+scraped: 2026-02-24T21:20:20.254013</p>
 <hr />
 <h1 id="ingest-netflow-records-into-dynatrace">Ingest NetFlow records into Dynatrace<a class="headerlink" href="#ingest-netflow-records-into-dynatrace" title="Permanent link">&para;</a></h1>
 <h1 id="ingest-netflow-records-into-dynatrace_1">Ingest NetFlow records into Dynatrace<a class="headerlink" href="#ingest-netflow-records-into-dynatrace_1" title="Permanent link">&para;</a></h1>
@@ -36235,7 +35841,7 @@ scraped: 2026-02-23T21:38:42.193306</p>
 <hr />
 <p>title: Troubleshooting network monitoring
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/networks/troubleshoot-network-monitoring
-scraped: 2026-02-23T21:32:15.046762</p>
+scraped: 2026-02-24T21:31:00.215306</p>
 <hr />
 <h1 id="troubleshooting-network-monitoring">Troubleshooting network monitoring<a class="headerlink" href="#troubleshooting-network-monitoring" title="Permanent link">&para;</a></h1>
 <h1 id="troubleshooting-network-monitoring_1">Troubleshooting network monitoring<a class="headerlink" href="#troubleshooting-network-monitoring_1" title="Permanent link">&para;</a></h1>
@@ -36309,7 +35915,7 @@ scraped: 2026-02-06T16:29:04.150090</p>
 <hr />
 <p>title: Which are the most important processes?
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/process-groups/basic-concepts/which-are-the-most-important-processes
-scraped: 2026-02-23T21:19:11.945440</p>
+scraped: 2026-02-24T21:16:12.708401</p>
 <hr />
 <h1 id="which-are-the-most-important-processes">Which are the most important processes?<a class="headerlink" href="#which-are-the-most-important-processes" title="Permanent link">&para;</a></h1>
 <h1 id="which-are-the-most-important-processes_1">Which are the most important processes?<a class="headerlink" href="#which-are-the-most-important-processes_1" title="Permanent link">&para;</a></h1>
@@ -36377,7 +35983,7 @@ scraped: 2026-02-23T21:19:11.945440</p>
 <hr />
 <p>title: Process group detection
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/process-groups/configuration/pg-detection
-scraped: 2026-02-23T21:24:03.884175</p>
+scraped: 2026-02-24T21:19:02.290574</p>
 <hr />
 <h1 id="process-group-detection">Process group detection<a class="headerlink" href="#process-group-detection" title="Permanent link">&para;</a></h1>
 <h1 id="process-group-detection_1">Process group detection<a class="headerlink" href="#process-group-detection_1" title="Permanent link">&para;</a></h1>
@@ -36966,7 +36572,7 @@ scraped: 2026-02-22T21:12:55.407074</p>
 <p>Process group settings at the host level override the corresponding settings at the host group and environment levels.</p>
 <p><strong>Default</strong></p>
 <p>Monitoring state is inherited from the previous level settings.</p>
-<h2 id="limitations_4">Limitations<a class="headerlink" href="#limitations_4" title="Permanent link">&para;</a></h2>
+<h2 id="limitations_5">Limitations<a class="headerlink" href="#limitations_5" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Deep monitoring rules only affect service- and code-level monitoring.</li>
 <li>Deep monitoring rules are only effective when you install OneAgent on your hosts or images.</li>
@@ -38005,7 +37611,7 @@ scraped: 2026-02-23T21:35:16.530424</p>
 <hr />
 <p>title: Message queues
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/queues
-scraped: 2026-02-23T21:34:08.252769</p>
+scraped: 2026-02-24T21:27:20.072251</p>
 <hr />
 <h1 id="message-queues">Message queues<a class="headerlink" href="#message-queues" title="Permanent link">&para;</a></h1>
 <h1 id="message-queues_1">Message queues<a class="headerlink" href="#message-queues_1" title="Permanent link">&para;</a></h1>
@@ -38030,7 +37636,6 @@ scraped: 2026-02-23T21:34:08.252769</p>
 </ul>
 <p><img alt="Message queues table" src="https://dt-cdn.net/images/queues-table-1857-49308cb749.png" /></p>
 <h2 id="extensions_2">Extensions<a class="headerlink" href="#extensions_2" title="Permanent link">&para;</a></h2>
-<p>Unable to render DataTable. Check configuration.</p>
 <h2 id="faq_7">FAQ<a class="headerlink" href="#faq_7" title="Permanent link">&para;</a></h2>
 <p>What is the difference between a queue and a topic?</p>
 <ul>
@@ -38067,7 +37672,7 @@ scraped: 2026-02-23T21:34:08.252769</p>
 <hr />
 <p>title: Limit VMware infrastructure monitoring using permissions
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/vmware-vsphere-monitoring/limit-infrastructure-monitoring-using-permissions
-scraped: 2026-02-23T21:26:15.113795</p>
+scraped: 2026-02-24T21:29:46.666059</p>
 <hr />
 <h1 id="limit-vmware-infrastructure-monitoring-using-permissions">Limit VMware infrastructure monitoring using permissions<a class="headerlink" href="#limit-vmware-infrastructure-monitoring-using-permissions" title="Permanent link">&para;</a></h1>
 <h1 id="limit-vmware-infrastructure-monitoring-using-permissions_1">Limit VMware infrastructure monitoring using permissions<a class="headerlink" href="#limit-vmware-infrastructure-monitoring-using-permissions_1" title="Permanent link">&para;</a></h1>
@@ -38208,7 +37813,7 @@ For <strong>Dynatrace Managed</strong> you can use the embedded ActiveGate runni
 <hr />
 <p>title: Infrastructure Observability
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability
-scraped: 2026-02-23T21:21:15.729119</p>
+scraped: 2026-02-24T21:16:01.053148</p>
 <hr />
 <h1 id="infrastructure-observability">Infrastructure Observability<a class="headerlink" href="#infrastructure-observability" title="Permanent link">&para;</a></h1>
 <h1 id="infrastructure-observability_1">Infrastructure Observability<a class="headerlink" href="#infrastructure-observability_1" title="Permanent link">&para;</a></h1>

@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
     
     
       
@@ -25503,8 +25503,6 @@ Together, these are designed to provide endâtoâend visibility across s
 <p>Some out-of-the-box <img alt="AI Observability" src="https://dt-cdn.net/images/ai-obs-1024-c755ef8af6.png" title="AI Observability" /> AI Observability dashboards use span queries, which consume DPS trace query capacity even if AI Observability isnât fully configured yet or dashboards show no data. To control this, use the sampling variable on these dashboards (where available) to reduce the queried span volume, and prefer metrics-based tiles and views when possibl.</p>
 <h3 id="permissions">Permissions<a class="headerlink" href="#permissions" title="Permanent link">&para;</a></h3>
 <p>The following table describes the required permissions.</p>
-<p>Permission</p>
-<p>Description</p>
 <p>storage:events:read</p>
 <p>Query events from GRAIL</p>
 <p>storage:entities:read</p>
@@ -25525,11 +25523,6 @@ Together, these are designed to provide endâtoâend visibility across s
 <p>Run Davis Analyzers</p>
 <p>hub:catalog:read</p>
 <p>Read Hub catalog</p>
-<p>10</p>
-<p>rows per page</p>
-<p>Page</p>
-<p>1</p>
-<p>of 1</p>
 <p>Get started</p>
 <p>Use cases</p>
 <p><img alt="AI Observability app - Overview" src="https://dt-cdn.net/images/overview-page-1920-e8cd84ac11.png" /><img alt="AI Observability app - Service Health - Main" src="https://dt-cdn.net/images/service-health-filtered-1920-b489f056a8.png" /><img alt="AI Observability app - Onboarding" src="https://dt-cdn.net/images/onboarding-app-1920-bedbc4f9f7.png" /><img alt="AI Observability - Service Health - Error" src="https://dt-cdn.net/images/errors-latencies-1920-0a6fb8f618.png" /><img alt="AI Observability - Service Health - Latency" src="https://dt-cdn.net/images/traffic-and-latency-1920-a3b9e3514e.png" /><img alt="AI Observability -  Service Health - Cost" src="https://dt-cdn.net/images/cost-overview-1920-7969004915.png" /><img alt="AI Observability -  Service Health - Guardrails" src="https://dt-cdn.net/images/app-guardrails-1920-6da2e86ebc.png" /><img alt="AI Observability - Debug traces)" src="https://dt-cdn.net/images/debug-traces-1920-2d540b770b.png" /></p>
@@ -25545,7 +25538,7 @@ Together, these are designed to provide endâtoâend visibility across s
 </ul>
 <p><img alt="AI Observability app - Overview" src="https://dt-cdn.net/images/overview-page-1920-e8cd84ac11.png" /></p>
 <h3 id="service-health">Service Health<a class="headerlink" href="#service-health" title="Permanent link">&para;</a></h3>
-<p>Get a unified view of the operational state of your AI services. **Service Health ** is organized into focused tabs so you can move from a high-level pulse to root cause in a couple of clicks.</p>
+<p>Get a unified view of the operational state of your AI services. <strong>Service Health</strong> is organized into focused tabs so you can move from a high-level pulse to root cause in a couple of clicks.</p>
 <p>Filter your results:</p>
 <ul>
 <li>In the sidebar on the left, you can select a specific service category (such as  <strong>Containers</strong> or  <strong>Functions</strong>) or analyze all services. In addition, you can quickly filter by predefined attributes that are relevant for the selected category. Select any attribute in the facets sidebar and select <strong>Update</strong> to get results. The filter field is updated with your selection. This allows you to keep the same scoped context when switching between tabs (<strong>Overview</strong>, <strong>Errors</strong>, <strong>Traffic and Latency</strong>, <strong>Cost</strong>, <strong>Guardrails</strong>).</li>
@@ -25558,7 +25551,6 @@ Together, these are designed to provide endâtoâend visibility across s
 </ul>
 <p><img alt="AI Observability - Service Health - Error" src="https://dt-cdn.net/images/errors-latencies-1920-0a6fb8f618.png" /></p>
 <p><img alt="AI Observability -  Service Health - Guardrails" src="https://dt-cdn.net/images/app-guardrails-1920-6da2e86ebc.png" /></p>
-<p>â&gt;</p>
 <h3 id="create-and-manage-alerts">Create and manage Alerts<a class="headerlink" href="#create-and-manage-alerts" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Create new alerts: Select <strong>New alert</strong> on metrics-based tiles (for example, Invocation error count, Invocation latency, Token count, Token usage forecast, Overall guardrail activation). The alert wizard is preâfilled with the current scope (time range, provider/model/service/agent filters) so you can fineâtune thresholds and notifications. Alerts appear in <strong>Manage all alerts</strong> for review and muting.</li>

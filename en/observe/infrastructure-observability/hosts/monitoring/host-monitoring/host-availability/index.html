@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../../../../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
     
     
       
@@ -25496,26 +25496,6 @@
 <p>In this example, the legend indicates the three different host availability states that occurred during the selected timeframe.</p>
 <p><img alt="Host page detail - online availability" src="https://dt-cdn.net/images/image-3-757-d2642a2b5d.png" /></p>
 <h2 id="host-availability-states">Host availability states<a class="headerlink" href="#host-availability-states" title="Permanent link">&para;</a></h2>
-<p>Availability state</p>
-<p>Description</p>
-<p><strong>up</strong></p>
-<p>The host is working; OneAgent is active and sending data. If the connectivity to the host is lost, OneAgent sends all cached metrics when the connection is restored.</p>
-<p><strong>no_data</strong></p>
-<p>The host is working and OneAgent is active, but no data is being sent. This state is also set when collecting monitoring data takes too long (for example, OneAgent freezes).</p>
-<p><strong>no_data_agent_inactive</strong></p>
-<p>The host is working, OneAgent is inactive, and no data is being sent because OneAgent has been manually disabled in the configuration.</p>
-<p><strong>shutdown_host</strong></p>
-<p>The host has been shut down due to an expected operating system shutdown or reboot.</p>
-<p><strong>unmonitored_agent_stopped</strong></p>
-<p>The host is not monitored because OneAgent is inactive. For details, refer to <a href="#check-monitoring-settings">Check OneAgent monitoring settings per host</a>.</p>
-<p><strong>unmonitored_agent_upgrade</strong></p>
-<p>The host is not monitored because OneAgent is being upgraded.</p>
-<p><strong>unmonitored_agent_uninstalled</strong></p>
-<p>The host is not monitored because OneAgent has been uninstalled.</p>
-<p><strong>reboot_graceful</strong></p>
-<p>The host was rebooted following a graceful shutdown, which means an expected operating system shutdown has occurred.</p>
-<p><strong>reboot_ungraceful</strong></p>
-<p>The host was rebooted following an ungraceful shutdown, which means an unexpected operating system shutdown has occurred. This may be caused by events, such as power loss or a system crash.</p>
 <h3 id="check-oneagent-monitoring-settings-per-host">Check OneAgent monitoring settings per host<a class="headerlink" href="#check-oneagent-monitoring-settings-per-host" title="Permanent link">&para;</a></h3>
 <p>To check or change the monitoring settings per host:</p>
 <ol>

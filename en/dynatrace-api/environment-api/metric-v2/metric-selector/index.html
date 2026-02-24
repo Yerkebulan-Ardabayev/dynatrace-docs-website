@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
     
     
       
@@ -26229,34 +26229,7 @@
 </tbody>
 </table>
 <p>Specifies the aggregation of the returned data points. The following aggregation types are available:</p>
-<p>Syntax</p>
-<p>Description</p>
-<p><code>:auto</code></p>
-<p>Applies the default aggregation. To check the default aggregation, query a metric with the <a href="/docs/dynatrace-api/environment-api/metric-v2/get-descriptor" title="View the descriptor of a metric via Metrics v2 API.">GET metric descriptors</a> call and check the <strong>defaultAggregation</strong> field.</p>
-<p><code>:avg</code></p>
-<p>Calculates the arithmetic mean of all values from the time slot. All <code>null</code> values are ignored.</p>
-<p><code>:count</code></p>
-<p>Takes the count of the values in the time slot. All <code>null</code> values are ignored.</p>
-<p><code>:histogram</code></p>
-<p>Exposes the buckets of a histogram metric as dimensions. The value of the <code>le</code> dimension denotes the upper boundary (less than or equal to) of each bucket.</p>
-<p><code>:max</code></p>
-<p>Selects the highest value from the time slot. All <code>null</code> values are ignored.</p>
-<p><code>:min</code></p>
-<p>Selects the lowest value from the time slot. All <code>null</code> values are ignored.</p>
-<p><code>:percentile(99.9)</code></p>
-<p>Calculates the Nth percentile, where N is between <code>0</code> and <code>100</code> (inclusive).</p>
-<p><code>:sum</code></p>
-<p>Sums all values from the time slot. All <code>null</code> values are ignored.</p>
-<p><code>:value</code></p>
-<p>Takes a single value as is. Only applicable to previously aggregated values and metrics that support the <code>value</code> aggregation.</p>
 <h2 id="default-transformation">Default transformation<a class="headerlink" href="#default-transformation" title="Permanent link">&para;</a></h2>
-<p>Syntax</p>
-<p><code>:default(&lt;number&gt;, always)</code></p>
-<p>Arguments</p>
-<ul>
-<li>The value (floating-point number) to replace <code>null</code> values in the result.</li>
-<li>Optional Whether to replace an empty result with default values. This argument is only valid when preceded by <strong>an empty</strong> <a href="#splitby"><strong>splitBy</strong> transformation</a>.</li>
-</ul>
 <p>The <strong>default</strong> transformation replaces <code>null</code> values in the payload with the specified value.</p>
 <p>When <code>always</code> is not specified, a pre-transformed time series must have at least one data point for the transformation to work; if the time series doesn't have any data points, it remains empty after transformation.</p>
 <p>Show examples</p>
@@ -26859,14 +26832,6 @@
 </ul>
 <h3 id="compound-condition">Compound condition<a class="headerlink" href="#compound-condition" title="Permanent link">&para;</a></h3>
 <p>Each condition can be a combination of subconditions.</p>
-<p>Syntax</p>
-<p>Description</p>
-<p><code>and(&lt;subcondition1&gt;,&lt;subcondition2&gt;,&lt;subconditionN&gt;)</code></p>
-<p><strong>All</strong> subconditions must be fulfilled.</p>
-<p><code>or(&lt;subcondition1&gt;,&lt;subcondition2&gt;,&lt;subconditionN&gt;)</code></p>
-<p><strong>At least one</strong> subcondition must be fulfilled.</p>
-<p><code>not(&lt;subcondition&gt;)</code></p>
-<p>Reverses the subcondition. For example, it turns <strong>contains</strong> into <strong>does not contain</strong>.</p>
 <h3 id="syntax-examples">Syntax examples<a class="headerlink" href="#syntax-examples" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>:filter(or(eq(&quot;k8s.cluster.name&quot;,&quot;Server ~&quot;North~&quot;&quot;),eq(&quot;k8s.cluster.name&quot;,&quot;Server ~&quot;West~&quot;&quot;)))
 </code></pre></div>
@@ -28003,14 +27968,6 @@
 <a id="__codelineno-29-25" name="__codelineno-29-25" href="#__codelineno-29-25"></a>}
 </code></pre></div>
 <h2 id="partition-transformation">Partition transformation<a class="headerlink" href="#partition-transformation" title="Permanent link">&para;</a></h2>
-<p>Syntax</p>
-<p><code>:partition("&lt;partition dimension key&gt;",&lt;partition1&gt;,&lt;partitionN&gt;)</code></p>
-<p>Arguments</p>
-<ul>
-<li>The key of the partition dimensionâthis is <strong>not</strong> an existing dimension, but a new one that the transformation will create.</li>
-</ul>
-<p>Quotes (<code>"</code>) and tildes (<code>~</code>) that are part of the dimension key must be escaped with a tilde (<code>~</code>).
-* A list of partitions to be appliedâto learn how to specify them, see the <a href="#partition-syntax">Partition syntax</a> section below.</p>
 <p>The <strong>partition</strong> transformation splits data points of a series based on the specified criteria. It introduces a new dimension (the partition dimension), with the value determined by a partition criterion. Data points from the original series are distributed between one or several new series according to partition criteria. In each new series, data points that don't pass the criterion or are already taken by another criterion are replaced with <code>null</code>.</p>
 <h3 id="partition-syntax">Partition syntax<a class="headerlink" href="#partition-syntax" title="Permanent link">&para;</a></h3>
 <p>A single transformation can contain several partitions. These are evaluated from top to bottom; the first matching partition applies.</p>
@@ -28482,17 +28439,6 @@
 <a id="__codelineno-35-229" name="__codelineno-35-229" href="#__codelineno-35-229"></a>}
 </code></pre></div>
 <h2 id="rate-transformation">Rate transformation<a class="headerlink" href="#rate-transformation" title="Permanent link">&para;</a></h2>
-<p>Syntax</p>
-<p><code>:rate(5m)</code></p>
-<p>Argument</p>
-<p>The base of the rate. The following values are supported:</p>
-<p><code>s</code>: per second<br />
-<code>m</code>: per minute<br />
-<code>h</code>: per hour<br />
-<code>d</code>: per day<br />
-<code>w</code>: per week<br />
-<code>M</code>: per month<br />
-<code>y</code>: per year</p>
 <p>The <strong>rate</strong> transformation converts a count-based metric (for example, bytes) into a rate-based metric (for example, bytes per minute).</p>
 <p>Any argument can be modified by an integer factor. For example, <code>5m</code> means <strong>per 5 minutes</strong> rate. If no argument is specified, the <strong>per 1 minute</strong> rate is used.</p>
 <p>You can use the rate transformation with any metric that supports the <code>VALUE</code> aggregation. Query a metric with the <a href="/docs/dynatrace-api/environment-api/metric-v2/get-descriptor" title="View the descriptor of a metric via Metrics v2 API.">GET metric descriptors</a> call to obtain information about available aggregations. If the metric doesn't support the <code>VALUE</code> aggregation, apply the <a href="#aggregation">aggregation transformation</a> first and then the rate transformation.</p>
@@ -28501,25 +28447,6 @@
 <li>You can use the rate transformation only once in a single transformation chain.</li>
 </ul>
 <h2 id="rollup-transformation">Rollup transformation<a class="headerlink" href="#rollup-transformation" title="Permanent link">&para;</a></h2>
-<p>Syntax</p>
-<p><code>:rollup(avg,15m)</code></p>
-<p>Arguments</p>
-<ul>
-<li>
-<p>The required aggregation of the rollup. Supported aggregations are:</p>
-</li>
-<li>
-<p><code>avg</code></p>
-</li>
-<li><code>count</code></li>
-<li><code>max</code></li>
-<li><code>median</code></li>
-<li><code>min</code></li>
-<li><code>percentile(N)</code>, with N in the <code>0</code> to <code>100</code> range.</li>
-<li><code>sum</code></li>
-<li><code>value</code></li>
-<li>The duration of the rollup window in minutes. The duration must be a multiple of the query resolution. For example, if the resolution is five minutes, the rollup can be <code>5m</code>, <code>10m</code>, <code>15m</code>, and so on.</li>
-</ul>
 <p>The <strong>rollup</strong> transformation smoothes data points, removing any spikes from the requested timeframe.</p>
 <p>The transformation takes each data point from the query timeframe, forms a rollup window by looking into past data points (so the initial data point becomes the <em>last</em> point of the window), calculates the requested aggregation of all original values, and then replaces each data point in the window with the result of the calculation.</p>
 <p>For example, if you specify <code>:rollup(avg,5m)</code> and the resolution of the query is one minute, the transformation takes a data point, adds the four previous data point to form a rollup window, and then uses the average of these five datapoints to calculate the final datapoint value.</p>
@@ -29618,15 +29545,6 @@
 <a id="__codelineno-41-105" name="__codelineno-41-105" href="#__codelineno-41-105"></a>}
 </code></pre></div>
 <h2 id="time-shift-transformation">Time shift transformation<a class="headerlink" href="#time-shift-transformation" title="Permanent link">&para;</a></h2>
-<p>Syntax</p>
-<p><code>:timeshift(5m)</code></p>
-<p>Argument</p>
-<p>The period of the shift. The following values are supported:</p>
-<p><code>s</code>: seconds<br />
-<code>m</code>: minutes<br />
-<code>h</code>: hours<br />
-<code>d</code>: days<br />
-<code>w</code>: weeks</p>
 <p>The <strong>time shift</strong> transformation shifts the timeframe specified by the <strong>from</strong> and <strong>to</strong> query parameters and maps the resulting data points to timestamps from the original timeframe. It can help you hand data from different time zones or put yesterday's and today's data on the same chart for visual comparison.</p>
 <p>A positive argument shifts the timeframe into the future; a negative argument shifts the timeframe into the past. In either case, there's a limit of <strong>5 years</strong>.</p>
 <p>You can use this transformation to handle data from different time zones.</p>

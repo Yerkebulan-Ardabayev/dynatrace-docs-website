@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../../../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
     
     
       
@@ -25763,75 +25763,7 @@
 <ol>
 <li>The Helm deployment package contains a <code>values.yaml</code> file with the necessary configuration for this deployment. Go to <code>helm-deployment-package/dynatrace-gcp-monitor</code>and edit the <code>values.yaml</code> file, setting the required and optional parameter values as follows.</li>
 </ol>
-<p>You might want to store this file somewhere for future updates, since it will be needed in case of redeployments. Also, keep in mind that its schema can change. In such case, you should use the new file and only copy over the parameter values.</p>
-<p><strong>Parameter name</strong></p>
-<p><strong>Description</strong></p>
-<p><strong>Default value</strong></p>
-<p><code>gcpProjectId</code></p>
-<p>Required The ID of the Google Cloud project you've selected for deployment.</p>
-<p>Your current project ID</p>
-<p><code>deploymentType</code></p>
-<p>Required Set to <code>metrics</code>.</p>
-<p><code>all</code></p>
-<p><code>dynatraceAccessKey</code></p>
-<p>Required Your <a href="/docs/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens#create-api-token" title="Learn the concept of an access token and its scopes.">Dynatrace API token</a> with the <a href="/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/deploy-k8#api" title="Set up log and metric monitoring for GCP services on a new GKE Autopilot cluster.">required permissions</a>.</p>
-<p><code>dynatraceAccessKeySecretName</code></p>
-<p>Optional You can specify the key to fetch the endpoint from Google Cloud Secret Manager, instead of using <code>dynatraceAccessKey</code>.</p>
-<p><code>dynatraceUrlSecretName</code></p>
-<p>Optional You can specify the key to fetch the endpoint from Google Cloud Secret Manager, instead of using <code>dynatraceUrl</code>.</p>
-<p><code>dtSecurityContext</code></p>
-<p>Optional Assign the attribute value used for data segmentation, analysis, and permission mapping within the Dynatrace platform. Refer to <a href="/docs/manage/identity-access-management/use-cases/access-security-context" title="Grant access to entities with security context">Grant access to entities with security context</a> for more information. If left empty, the value of <code>gcpProjectId</code> will be assigned automatically.</p>
-<p>Value of <code>gcpProjectId</code></p>
-<p><code>dynatraceUrl</code></p>
-<p>Required For SaaS log ingestion, it's your environment URL (<code>https://&lt;your-environment-id&gt;.live.dynatrace.com</code>).</p>
-<p><code>requireValidCertificate</code></p>
-<p>Optional If set to <code>true</code>, Dynatrace requires the SSL certificate of your Dynatrace environment.<br />
-   For SaaS log ingestion, we recommend leaving the default value.</p>
-<p><code>true</code></p>
-<p><code>selfMonitoringEnabled</code></p>
-<p>Optional Send custom metrics to Google Cloud to quickly diagnose if <code>dynatrace-gcp-monitor</code> processes and sends logs to Dynatrace properly.For details, see <a href="/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/deploy-k8/self-monitoring-gcp" title="Determine if your self-monitoring function is properly processing and sending logs to Dynatrace.">Self-monitoring metrics for the Dynatrace Google Cloud integration</a>.</p>
-<p><code>false</code></p>
-<p><code>serviceAccount</code></p>
-<p>Optional Name of the service account to be created.</p>
-<p><code>dockerImage</code></p>
-<p>OptionalDynatrace Google Cloud Monitor Docker image. We recommend using the default value, but you can adapt it if needed.</p>
-<p><code>dynatrace/dynatrace-gcp-monitor:v1-latest</code></p>
-<p><code>printMetricIngestInput</code></p>
-<p>Optional If set to <code>true</code>, the Google Cloud Monitor outputs the lines of metrics to stdout.</p>
-<p><code>false</code></p>
-<p><code>serviceUsageBooking</code></p>
-<p>Optional Service usage booking is used for metrics and determines a caller-specified project for quota and billing purposes.If set to <code>source</code>, monitoring API calls are booked in the project where the Kubernetes container is running.If set to <code>destination</code>, monitoring API calls are booked in the project that is monitored.For details, see <a href="/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/monitor-multiple-projects" title="Push metrics to Dynatrace from multiple Google Cloud projects.">Monitor multiple Google Cloud projects - Standard environments - Step 4</a>.</p>
-<p><code>source</code></p>
-<p><code>useProxy</code></p>
-<p>Optional Depending on the value you set for this flag, the Google Cloud Monitor will use the following proxy settings: Dynatrace (set to <code>DT_ONLY</code>), Google Cloud API (set to <code>GCP_ONLY</code>), or both (set to <code>ALL</code>).</p>
-<p>By default, proxy settings are not used.</p>
-<p><code>httpProxy</code></p>
-<p>Optional The proxy HTTP address; use this flag in conjunction with <code>USE_PROXY</code>.</p>
-<p><code>httpsProxy</code></p>
-<p>Optional The proxy HTTPS address; use this flag in conjunction with <code>USE_PROXY</code>.</p>
-<p><code>gcpServicesYaml</code></p>
-<p>Optional Configuration file for Google Cloud services.</p>
-<p><code>queryInterval</code></p>
-<p>Optional Metrics polling interval in minutes. Allowed values: <code>1</code> - <code>6</code></p>
-<p><code>3</code></p>
-<p><code>scopingProjectSupportEnabled</code></p>
-<p>Optional Set to <code>true</code> when metrics scope is configured, so metrics will be collected from all projects added to the metrics scope. For details, see <a href="/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/monitor-multiple-projects" title="Push metrics to Dynatrace from multiple Google Cloud projects.">Monitor multiple Google Cloud projects - Large environments</a>.</p>
-<p><code>false</code></p>
-<p><code>excludedProjects</code></p>
-<p>Optional Comma-separated list of projects to be excluded from monitoring (for example, <code>&lt;project_A&gt;,&lt;project_B&gt;</code>)</p>
-<p><code>excludedMetricsAndDimensions</code></p>
-<p>Optional Yaml formatted list of metrics and their dimensions to be excluded for monitoring.</p>
-<p><code>metricAutodiscovery</code></p>
-<p>Optional If set to <code>true</code>, the Google Cloud Monitor will run in metric auto-discovery mode, expanding your options for selecting metrics to monitor. For more information, see <a href="/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/deploy-k8/gcp-autodiscovery" title="Push any metrics to Dynatrace from Google Cloud projects.">Monitor Google Cloud projects using auto-discovery</a>.</p>
-<p><code>clusterIpv4Cidr</code></p>
-<p>Optional Set the IP address range for the pods in this cluster in CIDR notation, if you want to use a custom range.</p>
-<p><code>servicesIpv4Cidr</code></p>
-<p>Optional Set the IP range for the services IPs. It can be specified as a netmask size or as in the CIDR notion.</p>
-<p><code>useCustomMasterCidr</code></p>
-<p>Optional If set to <code>true</code>, you can specify the IPv4 CIDR range to use for the master network.</p>
-<p><code>false</code></p>
-<p><code>masterIpv4Cidr</code></p>
-<p>Optional IPv4 CIDR range to use for the master network requires the <code>useCustomMasterCidr</code> value to be true.
+<p>You might want to store this file somewhere for future updates, since it will be needed in case of redeployments. Also, keep in mind that its schema can change. In such case, you should use the new file and only copy over the parameter values.
 2. Choose which services you want Dynatrace to monitor.</p>
 <p>By default, the Dynatrace Google Cloud integration starts monitoring a set of selected services. Go to <a href="/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new" title="Monitor Google Cloud services with Dynatrace and view available metrics.">Google Cloud supported services</a> for a list of supported services.</p>
 <p>For DDU consumption information, see <a href="#ddu">Monitoring consumption</a>.</p>

@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
     
     
       
@@ -25490,45 +25490,21 @@
 <h3 id="communication-endpoints">Communication endpoints<a class="headerlink" href="#communication-endpoints" title="Permanent link">&para;</a></h3>
 <p>This is a comma-separated list of the communication endpoints to be used by ActiveGate to send data to your Dynatrace environment.</p>
 <p>To determine the endpoints, use <a href="/docs/dynatrace-api/environment-api/deployment/activegate/get-activegate-connectivity" title="View the connectivity information for ActiveGate via Dynatrace API.">GET connectivity information for ActiveGate</a> in the Dynatrace API.</p>
-<p>Environment variable</p>
-<p><code>DT_SERVER</code></p>
-<p>Mandatory?</p>
 <h3 id="environment-id">Environment ID<a class="headerlink" href="#environment-id" title="Permanent link">&para;</a></h3>
 <p>The Dynatrace <a href="/docs/discover-dynatrace/get-started/monitoring-environment" title="Understand and learn how to work with monitoring environments.">environment ID</a>.</p>
-<p>Environment variable</p>
-<p><code>DT_TENANT</code></p>
-<p>Mandatory?</p>
 <h3 id="token">Token<a class="headerlink" href="#token" title="Permanent link">&para;</a></h3>
 <p>The <a href="/docs/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens/rotate-tenant-token" title="Learn what a tenant token is and how to change it.">tenant token</a> is used by OneAgents and ActiveGates to report data to Dynatrace. Dynatrace automatically generates the tenant token for your ActiveGate.</p>
 <p>To determine the token, use <a href="/docs/dynatrace-api/environment-api/deployment/activegate/get-activegate-connectivity" title="View the connectivity information for ActiveGate via Dynatrace API.">GET connectivity information for ActiveGate</a> in the Dynatrace API.</p>
-<p>Secret as a file</p>
-<p><code>/var/lib/dynatrace/secrets/tokens/tenant-token</code></p>
-<p>Mandatory?</p>
 <h3 id="activegate-token">ActiveGate token<a class="headerlink" href="#activegate-token" title="Permanent link">&para;</a></h3>
 <p>ActiveGate requires a unique ActiveGate token to authorize in the Dynatrace Cluster.</p>
 <p>For instructions, see <a href="/docs/ingest-from/dynatrace-activegate/activegate-security#generate-individual" title="Secure ActiveGates with dedicated tokens.">Generate ActiveGate token</a>.</p>
-<p>Secret as a file</p>
-<p><code>/var/lib/dynatrace/secrets/tokens/auth-token</code></p>
-<p>Mandatory?</p>
 <h2 id="deployment-settings">Deployment settings<a class="headerlink" href="#deployment-settings" title="Permanent link">&para;</a></h2>
 <h3 id="activation-group">Activation group<a class="headerlink" href="#activation-group" title="Permanent link">&para;</a></h3>
 <p>Defines the ActiveGate group to which the ActiveGate belongs. An ActiveGate can belong to only one group. The name of an ActiveGate group is a string of alphanumeric characters, hyphens (<code>-</code>), underscores (<code>_</code>), and dots (<code>.</code>). Dots are used as separators, so you must not use a dot as the first character of a group name. The length of the string is limited to 256 characters. You can use ActiveGate groups to perform bulk actions on your ActiveGates, such as managing <a href="/docs/ingest-from/extensions" title="Learn how to create and manage Dynatrace Extensions.">Extensions</a> running on ActiveGates. If you want to assign your ActiveGate to a group, see <a href="/docs/ingest-from/dynatrace-activegate/activegate-group" title="Understand the basic concepts of ActiveGate groups.">ActiveGate group</a>.</p>
-<p>Environment variable</p>
-<p>Example</p>
-<p><code>DT_GROUP</code></p>
-<p><code>myGroup</code></p>
 <h3 id="network-zone">Network zone<a class="headerlink" href="#network-zone" title="Permanent link">&para;</a></h3>
 <p>Defines the <a href="/docs/manage/network-zones" title="Find out how network zones work in Dynatrace.">network zone</a> to which the ActiveGate belongs. An ActiveGate can belong to only one network zone. The name of a network zone is a string of alphanumeric characters, hyphens (<code>-</code>), underscores (<code>_</code>), and dots (<code>.</code>). Dots are used as separators, so you must not use a dot as the first character of a network zone name. The length of the string is limited to 256 characters.</p>
-<p>Environment variable</p>
-<p>Example</p>
-<p><code>DT_NETWORK_ZONE</code></p>
-<p><code>myNetworkZone</code></p>
 <h2 id="enabled-modules">Enabled modules<a class="headerlink" href="#enabled-modules" title="Permanent link">&para;</a></h2>
 <p>Containerized ActiveGate does not enable any functionalities by default. Enabled modules need to be specified using the <code>DT_CAPABILITIES</code> environment variable. Add a comma-separated list of module names as the variable value.</p>
-<p>Environment variable</p>
-<p>Example</p>
-<p><code>DT_CAPABILITIES</code></p>
-<p><code>azure_monitoring,MSGrouter</code></p>
 <p>See <a href="/docs/ingest-from/dynatrace-activegate/configuration/configure-activegate#modules" title="Learn which ActiveGate properties you can configure based on your needs and requirements.">ActiveGate modules</a> for a complete list. Generally, you should refer to the <code>custom.properties</code> section names as the module names, for example, <code>cloudfoundry_monitoring</code>.</p>
 <p>The exceptions to this rule are the following modules that are stored in the <code>[collector]</code> section.</p>
 <ul>
@@ -25541,20 +25517,6 @@
 <h2 id="network-settings">Network settings<a class="headerlink" href="#network-settings" title="Permanent link">&para;</a></h2>
 <h3 id="proxy">Proxy<a class="headerlink" href="#proxy" title="Permanent link">&para;</a></h3>
 <p>The proxy used for communication with the Dynatrace Cluster to which ActiveGate sends data.</p>
-<p>Secret as a file</p>
-<p>Description</p>
-<p><code>/var/lib/dynatrace/secrets/internal-proxy/host</code></p>
-<p>Server address.</p>
-<p><code>/var/lib/dynatrace/secrets/internal-proxy/port</code></p>
-<p>Optional Port. If left empty, the default 8080 port is used.</p>
-<p><code>/var/lib/dynatrace/secrets/internal-proxy/scheme</code></p>
-<p>ActiveGate version 1.289+</p>
-<p>Optional Scheme. If left empty, the default <code>http</code> scheme is used. This applies the most common setup, where the connection to the proxy is initiated using HTTP and automatically upgraded to a secure one. All further ActiveGate communication through the proxy is secured by SSL/TLS.</p>
-<p>Must be set to <code>https</code> for proxies that do not support HTTP at all.</p>
-<p><code>/var/lib/dynatrace/secrets/internal-proxy/username</code></p>
-<p>Optional User name.</p>
-<p><code>/var/lib/dynatrace/secrets/internal-proxy/password</code></p>
-<p>Optional Password, see <a href="#proxy-password-requirements">Proxy password requirements</a>.</p>
 <h4 id="advanced-scenarios">Advanced scenarios<a class="headerlink" href="#advanced-scenarios" title="Permanent link">&para;</a></h4>
 <p>For more advanced scenarios where one or more proxies are used for means other than communication with the Dynatrace Cluster, see <a href="/docs/ingest-from/dynatrace-activegate/configuration/set-up-proxy-authentication-for-activegate" title="Learn how to configure ActiveGate properties to set up a proxy.">Proxy for ActiveGate</a>. Once you have crafted the required configuration, you can provide it to the ActiveGate container as a <a href="#advanced-configuration">custom.properties</a> file.</p>
 <h4 id="rules-for-the-proxy-password">Rules for the proxy password<a class="headerlink" href="#rules-for-the-proxy-password" title="Permanent link">&para;</a></h4>
@@ -25579,10 +25541,6 @@
 </table>
 <h3 id="load-balancer-between-activegate-and-oneagents">Load balancer between ActiveGate and OneAgents<a class="headerlink" href="#load-balancer-between-activegate-and-oneagents" title="Permanent link">&para;</a></h3>
 <p>Dynatrace OneAgent accesses the ActiveGate via an auto-detected endpoint list. If a load balancer is placed on the path from OneAgent to the ActiveGate, such as Kubernetes <a href="https://kubernetes.io/docs/concepts/services-networking/service/">Serviceï»¿</a>, you need to explicitly set the endpoint to be used by OneAgents.</p>
-<p>Environment variable</p>
-<p>Example value</p>
-<p><code>DT_DNS_ENTRY_POINT</code></p>
-<p><code>https://sg1.mydomain.com:9999</code></p>
 <h3 id="load-balancer-between-activegate-and-the-dynatrace-cluster">Load balancer between ActiveGate and the Dynatrace Cluster<a class="headerlink" href="#load-balancer-between-activegate-and-the-dynatrace-cluster" title="Permanent link">&para;</a></h3>
 <p>A reverse proxy or a load balancer can be placed on the path from an ActiveGate to the Dynatrace Cluster. This allows your ActiveGate to connect to any available node of the Cluster, spreading the load between the nodes.<br />
 To do this, you need to:</p>
@@ -25592,35 +25550,13 @@ To do this, you need to:</p>
 </ul>
 <p><img alt="ActiveGate connecting to Dynatrace Cluster via reverse proxy/load balancer" src="https://dt-cdn.net/images/rev-proxy-001-1000-f7d875625b.png" /></p>
 <p>In this scenario, you need to set the following environment variables.</p>
-<p>Environment variable</p>
-<p>Example value</p>
-<p><code>DT_SERVER</code></p>
-<p><code>https://load.balancer.com:9999</code></p>
-<p><code>DT_IGNORE_CLUSTER_RUNTIME_INFO</code></p>
-<p><code>true</code></p>
 <h2 id="ssl-settings">SSL settings<a class="headerlink" href="#ssl-settings" title="Permanent link">&para;</a></h2>
 <h3 id="custom-ssl-certificate">Custom SSL certificate<a class="headerlink" href="#custom-ssl-certificate" title="Permanent link">&para;</a></h3>
 <p>ActiveGate will serve a custom certificate instead of the default one. To configure this, you need a file in <code>PKCS#12</code> format that contains a private key and its corresponding certificate chain. For more information, see <a href="/docs/ingest-from/dynatrace-activegate/configuration/configure-custom-ssl-certificate-on-activegate" title="Learn how to configure the SSL certificate on your ActiveGate.">Custom SSL certificate for ActiveGate</a>.</p>
-<p>Secret as a file</p>
-<p>Description</p>
-<p><code>/var/lib/dynatrace/secrets/tls/server.p12</code></p>
-<p>Certificate file</p>
-<p><code>/var/lib/dynatrace/secrets/tls/password</code></p>
-<p>Optional Certificate password</p>
-<p><code>/var/lib/dynatrace/secrets/tls/alias</code></p>
-<p>Optional Certificate alias. The value must be specified in lower case.</p>
 <h3 id="trusted-root-certificates">Trusted root certificates<a class="headerlink" href="#trusted-root-certificates" title="Permanent link">&para;</a></h3>
 <p>Additional trusted root certificates can be used by ActiveGate. To configure this, you need a file in the <code>PEM</code> format that contains a list of certificates to be included in the trust store. For more information, see <a href="/docs/ingest-from/dynatrace-activegate/configuration/configure-trusted-root-certificates-on-activegate" title="Learn how to specify a custom truststore file that is merged with Java's root certificates and used as a default on all connections.">Trusted root certificates for ActiveGate</a>.</p>
-<p>Secret as a file</p>
-<p>Description</p>
-<p><code>/var/lib/dynatrace/secrets/rootca/rootca.pem</code></p>
-<p>Certificate file</p>
 <h3 id="http-port">HTTP port<a class="headerlink" href="#http-port" title="Permanent link">&para;</a></h3>
 <p>An ActiveGate container by default opens HTTPS port <code>9999</code>. If you require your ActiveGate to communicate over plain HTTP, you need to explicitly specify the HTTP port.</p>
-<p>Environment variable</p>
-<p>Example</p>
-<p><code>DT_HTTP_PORT</code></p>
-<p><code>8888</code></p>
 <h2 id="advanced-configuration">Advanced configuration<a class="headerlink" href="#advanced-configuration" title="Permanent link">&para;</a></h2>
 <p>In addition to the configuration settings passed via environment variables or files, you can configure all other <a href="/docs/ingest-from/dynatrace-activegate/configuration/configure-activegate" title="Learn which ActiveGate properties you can configure based on your needs and requirements.">configuration settings</a> by providing the contents of the <code>custom.properties</code> file.</p>
 <ol>

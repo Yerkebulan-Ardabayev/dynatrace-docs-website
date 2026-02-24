@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../../../../../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
     
     
       
@@ -25621,14 +25621,6 @@
 <a id="__codelineno-1-49" name="__codelineno-1-49" href="#__codelineno-1-49"></a>};
 </code></pre></div>
 <p>Logs created by some commonly used Node.js logging frameworks are automatically associated with traces by using the corresponding OpenTelemetry instrumentations.</p>
-<p>Node.js logging framework</p>
-<p>OpenTelemetry instrumentation</p>
-<p><a href="https://www.npmjs.com/package/winston">winstonï»¿</a></p>
-<p><a href="https://www.npmjs.com/package/@opentelemetry/instrumentation-winston">@opentelemetry/instrumentation-winstonï»¿</a></p>
-<p><a href="https://www.npmjs.com/package/pino">pinoï»¿</a></p>
-<p><a href="https://www.npmjs.com/package/@opentelemetry/instrumentation-pino">@opentelemetry/instrumentation-pinoï»¿</a></p>
-<p><a href="https://www.npmjs.com/package/bunyan">bunyanï»¿</a></p>
-<p><a href="https://www.npmjs.com/package/@opentelemetry/instrumentation-bunyan">@opentelemetry/instrumentation-bunyanï»¿</a></p>
 <p>In the example below, the winston instrumentation is used to enrich a winston info log with TraceId and SpanId. The created log is associated with the currently active span in Dynatrace.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>const otelApi = require(&#39;@opentelemetry/api&#39;);
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>

@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../../../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
     
     
       
@@ -25565,22 +25565,6 @@
 <p>For details on startup commands, see the Azure App Service for Linux documentation on <a href="https://docs.microsoft.com/en-us/troubleshoot/azure/app-service/faqs-app-service-linux#what-are-the-expected-values-for-the-startup-file-section-when-i-configure-the-runtime-stack-">What are the expected values for the Startup File section when I configure the runtime stack?ï»¿</a></p>
 <h3 id="integrate-dynatrace-using-a-startup-scriptcommand">Integrate Dynatrace using a startup script/command<a class="headerlink" href="#integrate-dynatrace-using-a-startup-scriptcommand" title="Permanent link">&para;</a></h3>
 <p>To integrate Dynatrace, the startup script/command needs to have access to a few variables.</p>
-<p>Parameter</p>
-<p>Description</p>
-<p><code>$DT_ENDPOINT</code></p>
-<p>Your Dynatrace API server endpointâuse either your environment <a href="/docs/discover-dynatrace/get-started/monitoring-environment" title="Understand and learn how to work with monitoring environments.">cluster endpoint</a> or an <a href="/docs/ingest-from/dynatrace-activegate" title="Understand the basic concepts related to ActiveGate.">ActiveGate address</a>.</p>
-<p><code>$DT_API_TOKEN</code></p>
-<p>API Token to access the Dynatrace REST APIâ<a href="/docs/dynatrace-api/basics/dynatrace-api-authentication" title="Find out how to get authenticated to use the Dynatrace API.">create an API Token</a> with the <strong>InstallerDownload</strong> scope.</p>
-<p><code>$DT_INCLUDE</code></p>
-<p>Configure required code modules, depending on the used technology stack.</p>
-<ul>
-<li><code>all</code> includes all available OneAgent code modules (<code>java</code>, <code>apache</code>, <code>nginx</code>, <code>nodejs</code>, <code>dotnet</code>, <code>php</code>, <code>go</code>, <code>sdk</code>), but it increases download package size.</li>
-<li>Alternatively, choose identifiers appropriate to your application stack, such as <code>java</code>, <code>dotnet</code>, <code>nodejs</code>, or <code>php</code>.</li>
-</ul>
-<p>For details, see <a href="/docs/dynatrace-api/environment-api/deployment/oneagent/download-oneagent-latest" title="Download the latest OneAgent installer via Dynatrace API.">API documentation</a>.</p>
-<p><code>$START_APP_CMD</code></p>
-<p>The command to start your application</p>
-<p><a href="https://docs.microsoft.com/en-us/troubleshoot/azure/app-service/faqs-app-service-linux#what-are-the-expected-values-for-the-startup-file-section-when-i-configure-the-runtime-stack-">What are the expected values for the Startup File section when I configure the runtime stack?ï»¿</a></p>
 <p>If you use a shell other than bash, make sure to adapt the script appropriately to the shell's character escape requirements.</p>
 <p>You can do this in two ways.</p>
 <ul>
@@ -25711,17 +25695,6 @@
 <a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>ENV LD_PRELOAD /opt/dynatrace/oneagent/agent/lib64/liboneagentproc.so
 </code></pre></div>
 <p>Replace the following placeholders in the template.</p>
-<p>Parameter</p>
-<p>Description</p>
-<p><code>&lt;ADDRESS&gt;</code></p>
-<p>Your Dynatrace registry endpointâuse either your environment <a href="/docs/discover-dynatrace/get-started/monitoring-environment" title="Understand and learn how to work with monitoring environments.">cluster endpoint</a> or an <a href="/docs/ingest-from/dynatrace-activegate" title="Understand the basic concepts related to ActiveGate.">ActiveGate address</a>.</p>
-<p><code>&lt;TECHNOLOGY&gt;</code></p>
-<p>Configure required code modules, depending on the used technology stack.</p>
-<ul>
-<li><code>all</code> includes all available OneAgent code modules (<code>java</code>, <code>apache</code>, <code>nginx</code>, <code>nodejs</code>, <code>dotnet</code>, <code>php</code>, <code>go</code>, <code>sdk</code>), but it increases download package size.</li>
-<li>Alternatively, choose identifiers appropriate to your application stack, such as <code>java</code>, <code>dotnet</code>, <code>nodejs</code>, or <code>php</code>.</li>
-</ul>
-<p>For details, see the <a href="/docs/dynatrace-api/environment-api/deployment/oneagent/download-oneagent-latest" title="Download the latest OneAgent installer via Dynatrace API.">API documentation</a>.</p>
 <p><strong>What if my Docker image is based on Alpine Linux?</strong></p>
 <p>Dynatrace OneAgent supports Alpine Linuxâbased environments. To use an Alpine Linux compatible OneAgent, use image name <code>oneagent-codemodules-musl</code> (as shown in the adapted template below) instead of <code>oneagent-codemodules</code>.</p>
 <p><div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>COPY --from=&lt;ADDRESS&gt;/linux/oneagent-codemodules-musl:&lt;TECHNOLOGY&gt; / /
@@ -25749,26 +25722,7 @@
 <a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>
 <a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>ENV LD_PRELOAD /opt/dynatrace/oneagent/agent/lib64/liboneagentproc.so
 </code></pre></div>
-<p>Replace the following parameters in the template above.</p>
-<p>Parameter</p>
-<p>Description</p>
-<p><code>&lt;DT_ENDPOINT&gt;</code></p>
-<p>Your Dynatrace API endpointâuse either your environment <a href="/docs/discover-dynatrace/get-started/monitoring-environment" title="Understand and learn how to work with monitoring environments.">cluster endpoint</a> or an <a href="/docs/ingest-from/dynatrace-activegate" title="Understand the basic concepts related to ActiveGate.">ActiveGate address</a>.</p>
-<p><code>&lt;DT_API_TOKEN&gt;</code></p>
-<p>API Token to access the Dynatrace REST APIâ<a href="/docs/dynatrace-api/basics/dynatrace-api-authentication" title="Find out how to get authenticated to use the Dynatrace API.">create an API Token</a> with the <strong>InstallerDownload</strong> scope.</p>
-<p><code>&lt;DT_FLAVOR&gt;</code></p>
-<p>Configure the required architecture.</p>
-<ul>
-<li><code>default</code> for standard, glibc-based Linux images</li>
-<li><code>musl</code> for Alpine Linuxâbased images</li>
-</ul>
-<p><code>&lt;DT_INCLUDE&gt;</code></p>
-<p>Configure required code modules, depending on the used technology stack.</p>
-<ul>
-<li><code>all</code> includes all available OneAgent code modules (<code>java</code>, <code>apache</code>, <code>nginx</code>, <code>nodejs</code>, <code>dotnet</code>, <code>php</code>, <code>go</code>, <code>sdk</code>), but it increases download package size.</li>
-<li>Alternatively, choose identifiers appropriate to your application stack, such as <code>java</code>, <code>dotnet</code>, <code>nodejs</code>, or <code>php</code>.</li>
-</ul>
-<p>For details, see the <a href="/docs/dynatrace-api/environment-api/deployment/oneagent/download-oneagent-latest" title="Download the latest OneAgent installer via Dynatrace API.">API documentation</a>.
+<p>Replace the following parameters in the template above.
 2. Build your application image.</p>
 <p>Build the Docker image from your Dockerfile to use it in your Kubernetes environment.</p>
 <p><div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>docker build -t yourapp .
@@ -25781,37 +25735,9 @@
 <h2 id="additional-configuration-optional">Additional configuration Optional<a class="headerlink" href="#additional-configuration-optional" title="Permanent link">&para;</a></h2>
 <p>Use additional environment variables to configure OneAgent for troubleshooting or advanced networking. You can either set them via your App Service Application settings or, when using a custom container image, configure them within your application image Dockerfile.</p>
 <h3 id="networking-variables">Networking variables<a class="headerlink" href="#networking-variables" title="Permanent link">&para;</a></h3>
-<p>Parameter</p>
-<p>Description</p>
-<p><code>DT_NETWORK_ZONE</code></p>
-<p>Specifies to use a network zone. For more information, see <a href="/docs/manage/network-zones" title="Find out how network zones work in Dynatrace.">network zones</a>.</p>
-<p><code>DT_PROXY</code></p>
-<p>When using a proxy, use this environment variable to pass proxy credentials. For more information, see <a href="/docs/ingest-from/setup-on-container-platforms/docker/set-up-oneagent-on-containers-for-application-only-monitoring" title="Install, update, and uninstall OneAgent on containers for application-only monitoring.">Set up OneAgent on containers for application-only monitoring</a>.</p>
 <h3 id="additional-metadata-for-process-grouping-and-service-detection">Additional metadata for process grouping and service detection<a class="headerlink" href="#additional-metadata-for-process-grouping-and-service-detection" title="Permanent link">&para;</a></h3>
 <p>When listing multiple tags, you need to put them in double quotes, for example: DT_TAGS="Tag1=Value1 Tag2=Value2".</p>
-<p>Parameter</p>
-<p>Description</p>
-<p><code>DT_LOCALTOVIRTUALHOSTNAME</code></p>
-<p>Multiple containers are sometimes detected as a single instance (localhost), leading to various problems in, for example, service detection or availability alerts. Use this environment variable to define a unique name for your container instance. For details, see <a href="/docs/observe/application-observability/services/service-detection/service-detection-v1#adjusting-service-detection" title="Find out how Dynatrace Service Detection v1 detects and names different types of services.">Service Detection v1</a></p>
-<p><code>DT_APPLICATIONID</code></p>
-<p>Some technologies don't provide unique application names. In such cases, use this environment variable to provide a unique name. For more information, see <a href="/docs/observe/application-observability/services/service-detection/service-detection-v1#web-server-naming-issues" title="Find out how Dynatrace Service Detection v1 detects and names different types of services.">Web server naming issues</a>.</p>
-<p><code>DT_TAGS</code></p>
-<p>Applies <a href="/docs/manage/tags-and-metadata/setup/define-tags-based-on-environment-variables" title="Find out how Dynatrace enables you to define tags based on environment variables.">custom tags</a> to your process group.</p>
-<p><code>DT_CUSTOM_PROP</code></p>
-<p>Applies <a href="/docs/observe/infrastructure-observability/process-groups/configuration/define-your-own-process-group-metadata" title="Configure your own process-related metadata based on the unique needs of your organization or environment.">custom metadata</a> to your process group.</p>
-<p><code>DT_CLUSTER_ID</code></p>
-<p>If the <a href="/docs/observe/infrastructure-observability/process-groups/configuration/pg-detection" title="Ways to customize process-group detection">process group detection rules</a> won't work for your use case, use this environment variable to <strong>group all processes with the same value</strong>.</p>
-<p><code>DT_NODE_ID</code></p>
-<p>If the <a href="/docs/observe/infrastructure-observability/process-groups/configuration/pg-detection" title="Ways to customize process-group detection">process group detection rules</a> won't work for your use case, use this environment variable to <strong>separate process group instances</strong>.</p>
 <h3 id="validating-variables">Validating variables<a class="headerlink" href="#validating-variables" title="Permanent link">&para;</a></h3>
-<p>Parameter</p>
-<p>Description</p>
-<p><code>DT_LOGSTREAM</code></p>
-<p>Set this variable with <code>stdout</code> to configure the OneAgent to log errors to the console. To see additional OneAgent logs, set the log level with <code>DT_LOGLEVELCON</code> as follows.</p>
-<p><code>DT_LOGLEVELCON</code></p>
-<p>Use this environment variable to define the console log level. Valid options are: <code>NONE</code>, <code>SEVERE</code>, and <code>INFO</code>.</p>
-<p><code>DT_AGENTACTIVE</code></p>
-<p>Set to <code>true</code> or <code>false</code> to enable or disable OneAgent.</p>
 <h2 id="update-oneagent">Update OneAgent<a class="headerlink" href="#update-oneagent" title="Permanent link">&para;</a></h2>
 <p>Built-in image</p>
 <p>Custom image</p>

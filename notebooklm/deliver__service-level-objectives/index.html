@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
     
     
       
@@ -25495,14 +25495,14 @@
 
 <h1 id="dynatrace-deliverservice-level-objectives">Документация Dynatrace: deliver/service-level-objectives<a class="headerlink" href="#dynatrace-deliverservice-level-objectives" title="Permanent link">&para;</a></h1>
 <p>Язык: Русский (RU)
-Сгенерировано: 2026-02-23
+Сгенерировано: 2026-02-24
 Файлов в разделе: 7</p>
 <hr />
 <h2 id="deliverservice-level-objectivescreate-slomd">deliver/service-level-objectives/create-slo.md<a class="headerlink" href="#deliverservice-level-objectivescreate-slomd" title="Permanent link">&para;</a></h2>
 <hr />
 <p>title: Create service-level objectives
 source: https://www.dynatrace.com/docs/deliver/service-level-objectives/create-slo
-scraped: 2026-02-21T21:24:11.789761</p>
+scraped: 2026-02-24T21:35:39.211489</p>
 <hr />
 <h1 id="create-service-level-objectives">Create service-level objectives<a class="headerlink" href="#create-service-level-objectives" title="Permanent link">&para;</a></h1>
 <h1 id="create-service-level-objectives_1">Create service-level objectives<a class="headerlink" href="#create-service-level-objectives_1" title="Permanent link">&para;</a></h1>
@@ -25594,7 +25594,7 @@ You can also define your SLOs based on a custom <a href="/docs/platform/grail/dy
 <hr />
 <p>title: Permissions for service-level objective (SLO) tiles in a dashboard
 source: https://www.dynatrace.com/docs/deliver/service-level-objectives/service-level-objective-permissions
-scraped: 2026-02-21T21:26:58.982170</p>
+scraped: 2026-02-24T21:27:10.616364</p>
 <hr />
 <h1 id="permissions-for-service-level-objective-slo-tiles-in-a-dashboard">Permissions for service-level objective (SLO) tiles in a dashboard<a class="headerlink" href="#permissions-for-service-level-objective-slo-tiles-in-a-dashboard" title="Permanent link">&para;</a></h1>
 <h1 id="permissions-for-service-level-objective-slo-tiles-in-a-dashboard_1">Permissions for service-level objective (SLO) tiles in a dashboard<a class="headerlink" href="#permissions-for-service-level-objective-slo-tiles-in-a-dashboard_1" title="Permanent link">&para;</a></h1>
@@ -25623,7 +25623,7 @@ scraped: 2026-02-21T21:26:58.982170</p>
 <hr />
 <p>title: Add a service-level objective (SLO) tile to a dashboard
 source: https://www.dynatrace.com/docs/deliver/service-level-objectives/service-level-objective-tile-add-to-dashboard
-scraped: 2026-02-23T21:36:35.331467</p>
+scraped: 2026-02-24T21:25:26.939381</p>
 <hr />
 <h1 id="add-a-service-level-objective-slo-tile-to-a-dashboard">Add a service-level objective (SLO) tile to a dashboard<a class="headerlink" href="#add-a-service-level-objective-slo-tile-to-a-dashboard" title="Permanent link">&para;</a></h1>
 <h1 id="add-a-service-level-objective-slo-tile-to-a-dashboard_1">Add a service-level objective (SLO) tile to a dashboard<a class="headerlink" href="#add-a-service-level-objective-slo-tile-to-a-dashboard_1" title="Permanent link">&para;</a></h1>
@@ -25687,7 +25687,7 @@ scraped: 2026-02-23T21:36:35.331467</p>
 <hr />
 <p>title: Edit a service-level objective (SLO) tile in a dashboard
 source: https://www.dynatrace.com/docs/deliver/service-level-objectives/service-level-objective-tile-edit-in-dashboard
-scraped: 2026-02-23T21:29:53.367567</p>
+scraped: 2026-02-24T21:36:01.562205</p>
 <hr />
 <h1 id="edit-a-service-level-objective-slo-tile-in-a-dashboard">Edit a service-level objective (SLO) tile in a dashboard<a class="headerlink" href="#edit-a-service-level-objective-slo-tile-in-a-dashboard" title="Permanent link">&para;</a></h1>
 <h1 id="edit-a-service-level-objective-slo-tile-in-a-dashboard_1">Edit a service-level objective (SLO) tile in a dashboard<a class="headerlink" href="#edit-a-service-level-objective-slo-tile-in-a-dashboard_1" title="Permanent link">&para;</a></h1>
@@ -25817,7 +25817,7 @@ scraped: 2026-02-23T21:26:39.575621</p>
 <hr />
 <p>title: Upgrade Classic SLOs
 source: https://www.dynatrace.com/docs/deliver/service-level-objectives/service-level-objective-upgrade-classic
-scraped: 2026-02-18T21:31:03.900611</p>
+scraped: 2026-02-24T21:25:02.060353</p>
 <hr />
 <h1 id="upgrade-classic-slos">Upgrade Classic SLOs<a class="headerlink" href="#upgrade-classic-slos" title="Permanent link">&para;</a></h1>
 <h1 id="upgrade-classic-slos_1">Upgrade Classic SLOs<a class="headerlink" href="#upgrade-classic-slos_1" title="Permanent link">&para;</a></h1>
@@ -25961,32 +25961,6 @@ It's flexible and uses contextual data to represent the objectives.</p>
 <p>For complex metric expressions, you might need to adapt the DQL queries manually.
 2. Convert the entity selectors to the corresponding <a href="/docs/platform/grail/dynatrace-query-language" title="How to use Dynatrace Query Language.">DQL statement</a>. For more information, see <a href="/docs/platform/grail/dynatrace-query-language/dql-best-practices" title="Best practices for using Dynatrace Query Language.">DQL best practices</a>.</p>
 <p>The following table shows the typical entity selectors for Classic SLOs and their equivalent in DQL.</p>
-<p>Entity selector classic</p>
-<p>DQL representation</p>
-<p><code>type("SERVICE")</code></p>
-<p><code>by: {dt.entity.service}</code></p>
-<p><code>tag("myTag")</code></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>| fieldsAdd tags=entityAttr(dt.entity.service, &quot;tags&quot;)
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>
-<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>
-<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>| filter in(tags, &quot;myTag&quot;)
-</code></pre></div>
-<p><code>entityId("SERVICE-XY")</code></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>| filter in(dt.entity.service, &quot;SERVICE-XY&quot;)
-</code></pre></div>
-<p><code>entityName.contains/equals/in/startsWith("ENTITY-NAME")</code></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>| fieldsAdd name = entityName(dt.entity.service)
-<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>
-<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>
-<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>
-<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>| filter in/contains/startsWith/endsWith(name, &quot;ENTITY-NAME&quot;)
-</code></pre></div>
-<p><code>mzId</code> / <code>mzName</code></p>
-<p>Use <a href="/docs/manage/segments" title="Segments logically structure monitoring data in Grail and function as convenient filters for data that users are allowed to access based on permissions.">Segments</a>.</p>
-<p>Segments aren't related to permissions or access control.</p>
-<p><code>toRelationship</code> / <code>fromRelationship</code></p>
-<p>See the relationship mapping table in Grail: <a href="/docs/platform/grail/querying-monitored-entities#relationship-mapping-table" title="Find out how to query monitored entities in Grail.">Query monitored entities in Grail</a>.</p>
 <p>If you use management zones for permissions and access control, see <a href="/docs/manage/identity-access-management/use-cases/access-security-context" title="Grant access to entities with security context">Grant access to entities with security context</a>.
 3. Enhance your SLI definition.</p>
 <p>While you can upgrade most Classic SLOs to a one-to-one match in Grail, consider enhancing your SLI definitions by leveraging options that are not available with traditional metric expressions.</p>
@@ -26001,10 +25975,6 @@ It's flexible and uses contextual data to represent the objectives.</p>
 </ul>
 <h2 id="upgrade-api-integration">Upgrade API integration<a class="headerlink" href="#upgrade-api-integration" title="Permanent link">&para;</a></h2>
 <p>To automate SLO management and evaluation, use the dedicated API endpoints. Reference the table below to upgrade your API integration for Classic SLO to SLO leveraging the SLO Service Public API.</p>
-<p><img alt="SLOs Classic" src="https://dt-cdn.net/images/service-level-objectives-256-3d3d62c9a8.png" title="SLOs Classic" /> <strong>Service-Level Objectives Classic</strong></p>
-<p><img alt="SLOs" src="https://dt-cdn.net/images/service-level-objectives-256-3d3d62c9a8.png" title="SLOs" /> <strong>Service-Level Objectives</strong></p>
-<p><a href="/docs/dynatrace-api/environment-api/service-level-objectives-classic" title="Find out what the Dynatrace SLO API classic offers.">Service-level Objectives API classic</a></p>
-<p><a href="/docs/dynatrace-api/environment-api/service-level-objectives" title="Discover the API functionalities of the new Service-Level Objectives powered by Grail.">SLO Service Public API</a></p>
 <h2 id="upgrade-via-configuration-as-code">Upgrade via Configuration as Code<a class="headerlink" href="#upgrade-via-configuration-as-code" title="Permanent link">&para;</a></h2>
 <p>For scalable SLO management and evaluation, use <a href="/docs/deliver/configuration-as-code" title="Use Dynatrace configuration as code via Monaco or Terraform.">Configuration as Code overview</a> on top of the SLO Service Public API.</p>
 <p>To access the SLO Service Public API on your tenant</p>
@@ -26036,7 +26006,7 @@ Use this opportunity to reassess and improve your SLIs, rather than simply copyi
 <hr />
 <p>title: Service-Level Objectives
 source: https://www.dynatrace.com/docs/deliver/service-level-objectives
-scraped: 2026-02-23T21:38:29.243883</p>
+scraped: 2026-02-24T21:28:59.282528</p>
 <hr />
 <h1 id="service-level-objectives">Service-Level Objectives<a class="headerlink" href="#service-level-objectives" title="Permanent link">&para;</a></h1>
 <h1 id="service-level-objectives_1">Service-Level Objectives<a class="headerlink" href="#service-level-objectives_1" title="Permanent link">&para;</a></h1>
@@ -26049,8 +26019,6 @@ scraped: 2026-02-23T21:38:29.243883</p>
 <p>Prerequisites</p>
 <h3 id="permissions">Permissions<a class="headerlink" href="#permissions" title="Permanent link">&para;</a></h3>
 <p>The following table describes the required permissions.</p>
-<p>Permission</p>
-<p>Description</p>
 <p>slo:slos:read</p>
 <p>Read service-level objectives</p>
 <p>slo:slos:write</p>
@@ -26071,11 +26039,6 @@ scraped: 2026-02-23T21:38:29.243883</p>
 <p>Read security events from Grail</p>
 <p>storage:user.events:read</p>
 <p>Read user events from Grail</p>
-<p>10</p>
-<p>rows per page</p>
-<p>Page</p>
-<p>1</p>
-<p>of 1</p>
 <p>To read and write SLOs, you need the following <a href="/docs/manage/identity-access-management" title="Configure users, groups and permissions.">IAM</a> permissions:</p>
 <ul>
 <li><code>ALLOW slo:slos:read, slo:objective-templates:read;</code></li>
@@ -26166,45 +26129,45 @@ This period is typically significantly shorter than the SLO evaluation period, e
 <ol>
 <li>Calculate the error budget burn rate of an SLO by adding one additional line to the SLI definition:</li>
 </ol>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>| fieldsAdd sli = &quot;YOUR SLI&quot;
-<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>
-<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>
-<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>
-<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>| fieldsAdd target= &quot;YOUR SLO-target&quot; in percentage
-<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>
-<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>
-<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>
-<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>// Add the next line to calculate the error budget burn rate
-<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a>
-<a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a>
-<a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a>
-<a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a>| fieldsAdd burnRate = ((100 - sli[]) / (100 - target))
-<a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a>
-<a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a>
-<a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a>
-<a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a>| fieldsRemove sli
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>| fieldsAdd sli = &quot;YOUR SLI&quot;
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>| fieldsAdd target= &quot;YOUR SLO-target&quot; in percentage
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>// Add the next line to calculate the error budget burn rate
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>
+<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>
+<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>| fieldsAdd burnRate = ((100 - sli[]) / (100 - target))
+<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>
+<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>
+<a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>
+<a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a>| fieldsRemove sli
 </code></pre></div>
 <p>These two lines return your SLO's error budget burn rates for each service entity contributing to the SLO and ensure that <img alt="Anomaly Detection - new" src="https://dt-cdn.net/images/davis-anomalydetection-256-105da91594.png" title="Anomaly Detection - new" /> <strong>Anomaly Detection</strong> only alerts on the burn rate metrics.
 2. Optional If you need an aggregated burn-rate value, for example, returning one burn-rate value for all contributing service entities, you need an additional aggregation.</p>
 <p>When you use an aggregation function, the context of individual entities is lost.
    This means you'll no longer see which specific services contributed to the burn rate, only the overall aggregated result.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>| fieldsAdd sli = &quot;YOUR SLI&quot;
-<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>
-<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>
-<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>
-<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>| fieldsAdd target= &quot;YOUR SLO-target&quot; in percentage
-<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>
-<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>
-<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>
-<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>// Add the next line to calculate the error budget burn rate
-<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>
-<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a>
-<a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a>
-<a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a>| fieldsAdd burnRate = ((100 - sli[]) / (100 - target))
-<a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a>
-<a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a>
-<a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a>
-<a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a>| summarize sloBurnRate = avg(burnRate[]), timeframe = takeFirst(timeframe), interval = takeFirst(interval)
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>| fieldsAdd sli = &quot;YOUR SLI&quot;
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>| fieldsAdd target= &quot;YOUR SLO-target&quot; in percentage
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>// Add the next line to calculate the error budget burn rate
+<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>
+<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>
+<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a>
+<a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a>| fieldsAdd burnRate = ((100 - sli[]) / (100 - target))
+<a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a>
+<a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a>
+<a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a>
+<a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a>| summarize sloBurnRate = avg(burnRate[]), timeframe = takeFirst(timeframe), interval = takeFirst(interval)
 </code></pre></div>
 <p>You can see the burn rates in <img alt="Dashboards" src="https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png" title="Dashboards" /> Dashboards, where you can use it as input for regularly scheduled evaluations via <img alt="Site Reliability Guardian" src="https://dt-cdn.net/images/site-reliability-guardian-ec19b393a6.svg" title="Site Reliability Guardian" /> Site-Reliability Guardian, or you can set up automatic alerts using <img alt="Anomaly Detection - new" src="https://dt-cdn.net/images/davis-anomalydetection-256-105da91594.png" title="Anomaly Detection - new" /> <strong>Anomaly Detection</strong>.</p>
 <h3 id="raise-slo-burn-rate-events-alerts-automatically-via-the-anomaly-detection">Raise SLO burn-rate events (alerts) automatically via the Anomaly Detection<a class="headerlink" href="#raise-slo-burn-rate-events-alerts-automatically-via-the-anomaly-detection" title="Permanent link">&para;</a></h3>

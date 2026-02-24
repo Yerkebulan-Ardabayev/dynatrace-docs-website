@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../../../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
     
     
       
@@ -25524,53 +25524,6 @@
 <h2 id="available-alerts">Available alerts<a class="headerlink" href="#available-alerts" title="Permanent link">&para;</a></h2>
 <p>See below for a list of available alerts.</p>
 <h3 id="cluster-alerts">Cluster alerts<a class="headerlink" href="#cluster-alerts" title="Permanent link">&para;</a></h3>
-<p>Alert name</p>
-<p>Dynatrace version</p>
-<p>Problem type</p>
-<p>Problem title</p>
-<p>Problem description</p>
-<p>De-alerts after</p>
-<p>Calculation</p>
-<p>Supported in</p>
-<p><a href="#detect-cluster-cpu-request-saturation">Detect cluster CPU-request saturation</a></p>
-<p>1.254</p>
-<p>Resource</p>
-<p>CPU-request saturation on cluster</p>
-<p>CPU-request saturation exceeds the specified threshold.</p>
-<p>10 minutes</p>
-<p>Node CPU requests / Node CPU allocatable</p>
-<p>Kubernetes Classic, Kubernetes app</p>
-<p><a href="#detect-cluster-memory-request-saturation">Detect cluster memory-request saturation</a></p>
-<p>1.254</p>
-<p>Resource</p>
-<p>Memory-request saturation on cluster</p>
-<p>Memory-request saturation exceeds the specified threshold.</p>
-<p>10 minutes</p>
-<p>Node memory requests / Node memory allocatable</p>
-<p>Kubernetes Classic, Kubernetes app</p>
-<p><a href="#detect-cluster-pod-saturation">Detect cluster pod-saturation</a></p>
-<p>1.258</p>
-<p>Resource</p>
-<p>Pod saturation on cluster</p>
-<p>Cluster pod-saturation exceeds the specified threshold.</p>
-<p>10 minutes</p>
-<p>Sum of ready pods / Sum of allocatable pods</p>
-<p>Kubernetes Classic, Kubernetes app</p>
-<p><a href="#detect-cluster-readiness-issues">Detect cluster readiness issues</a></p>
-<p>1.254</p>
-<p>Availability</p>
-<p>Cluster not ready</p>
-<p>Readyz endpoint indicates that this cluster is not ready.</p>
-<p>10 minutes</p>
-<p>Cluster readyz metric</p>
-<p>Kubernetes Classic, Kubernetes app</p>
-<p><a href="#detect-monitoring-issues">Detect monitoring issues</a></p>
-<p>1.258</p>
-<p>Availability</p>
-<p>Monitoring not available</p>
-<p>Dynatrace API monitoring is not available.</p>
-<p>10 minutes</p>
-<p>Kubernetes Classic, Kubernetes app</p>
 <p>Cluster metric and DQL expressions</p>
 <h4 id="detect-cluster-cpu-request-saturation">Detect cluster CPU-request saturation<a class="headerlink" href="#detect-cluster-cpu-request-saturation" title="Permanent link">&para;</a></h4>
 <table>
@@ -25668,70 +25621,7 @@
 </tbody>
 </table>
 <p>Default alerts for new tenants</p>
-<p>Alert</p>
-<p>Setting</p>
-<p>Value</p>
-<p>Readiness Issues</p>
-<p>sample period in minutes</p>
-<p>3</p>
-<p>Readiness Issues</p>
-<p>observation period in minutes</p>
-<p>5</p>
-<p>Monitoring Issues</p>
-<p>sample period in minutes</p>
-<p>15</p>
-<p>Monitoring Issues</p>
-<p>observation period in minutes</p>
-<p>30</p>
 <h3 id="namespace-alerts">Namespace alerts<a class="headerlink" href="#namespace-alerts" title="Permanent link">&para;</a></h3>
-<p>Alert name</p>
-<p>Dynatrace version</p>
-<p>Problem type</p>
-<p>Problem title</p>
-<p>Problem description</p>
-<p>De-alerts after</p>
-<p>Calculation</p>
-<p>Supported in</p>
-<p><a href="#detect-namespace-cpu-limit-quota-saturation">Detect namespace CPU-limit quota saturation</a></p>
-<p>1.254</p>
-<p>Resource</p>
-<p>CPU-limit quota saturation</p>
-<p>CPU-limit quota saturation exceeds the specified threshold.</p>
-<p>10 minutes</p>
-<p>Sum of resource quota CPU used / Sum of resource quota CPU limits</p>
-<p>Kubernetes Classic, Kubernetes app</p>
-<p><a href="#detect-namespace-cpu-request-quota-saturation">Detect namespace CPU-request quota saturation</a></p>
-<p>1.254</p>
-<p>Resource</p>
-<p>CPU-request quota saturation</p>
-<p>CPU-request quota saturation exceeds the specified threshold.</p>
-<p>10 minutes</p>
-<p>Sum of resource quota CPU used / Sum of resource quota CPU requests</p>
-<p>Kubernetes Classic, Kubernetes app</p>
-<p><a href="#detect-namespace-memory-limit-quota-saturation">Detect namespace memory-limit quota saturation</a></p>
-<p>1.254</p>
-<p>Resource</p>
-<p>Memory-limit quota saturation</p>
-<p>Memory-limit quota saturation exceeds the specified threshold.</p>
-<p>10 minutes</p>
-<p>Sum of resource quota memory used / Sum of resource quota memory limits</p>
-<p>Kubernetes Classic, Kubernetes app</p>
-<p><a href="#detect-namespace-memory-request-quota-saturation">Detect namespace memory-request quota saturation</a></p>
-<p>1.254</p>
-<p>Resource</p>
-<p>Memory-request quota saturation</p>
-<p>Memory-request quota saturation exceeds the specified threshold.</p>
-<p>10 minutes</p>
-<p>Sum of resource quota memory used / Sum of resource quota memory requests</p>
-<p>Kubernetes Classic, Kubernetes app</p>
-<p><a href="#detect-namespace-pod-quota-saturation">Detect namespace pod quota saturation</a></p>
-<p>1.254</p>
-<p>Resource</p>
-<p>Pod quota saturation</p>
-<p>Pod quota saturation exceeds the specified threshold.</p>
-<p>10 minutes</p>
-<p>Sum of resource quota pods used / Sum of resource quota pods limit</p>
-<p>Kubernetes Classic, Kubernetes app</p>
 <p>Namespace metric and DQL expressions</p>
 <h4 id="detect-namespace-cpu-limit-quota-saturation">Detect namespace CPU-limit quota saturation<a class="headerlink" href="#detect-namespace-cpu-limit-quota-saturation" title="Permanent link">&para;</a></h4>
 <table>
@@ -25829,54 +25719,6 @@
 </tbody>
 </table>
 <h3 id="node-alerts">Node alerts<a class="headerlink" href="#node-alerts" title="Permanent link">&para;</a></h3>
-<p>Alert name</p>
-<p>Dynatrace version</p>
-<p>Problem type</p>
-<p>Problem title</p>
-<p>Problem description</p>
-<p>De-alerts after</p>
-<p>Calculation</p>
-<p>Supported in</p>
-<p><a href="#detect-node-cpu-request-saturation">Detect node CPU-request saturation</a></p>
-<p>1.254</p>
-<p>Resource</p>
-<p>CPU-request saturation on node</p>
-<p>CPU-request saturation exceeds the specified threshold.</p>
-<p>10 minutes</p>
-<p>Sum of node CPU requests / Sum of node CPU allocatable</p>
-<p>Kubernetes Classic, Kubernetes app</p>
-<p><a href="#detect-node-memory-request-saturation">Detect node memory-request saturation</a></p>
-<p>1.254</p>
-<p>Resource</p>
-<p>Memory-request saturation on node</p>
-<p>Memory-request saturation exceeds the specified threshold.</p>
-<p>10 minutes</p>
-<p>Sum of node memory requests / Sum of node memory allocatable</p>
-<p>Kubernetes Classic, Kubernetes app</p>
-<p><a href="#detect-node-pod-saturation">Detect node pod-saturation</a></p>
-<p>1.254</p>
-<p>Resource</p>
-<p>Pod saturation on node</p>
-<p>Pod saturation exceeds the specified threshold.</p>
-<p>10 minutes</p>
-<p>Sum of running pods on node / Node pod limit</p>
-<p>Kubernetes Classic, Kubernetes app</p>
-<p><a href="#detect-node-readiness-issues">Detect node readiness issues</a></p>
-<p>1.254</p>
-<p>Availability</p>
-<p>Node not ready</p>
-<p>Node is not ready.</p>
-<p>10 minutes</p>
-<p>Node condition metric filtered by 'not ready'</p>
-<p>Kubernetes Classic, Kubernetes app</p>
-<p><a href="#detect-problematic-node-conditions">Detect problematic node conditions</a></p>
-<p>1.264</p>
-<p>Error</p>
-<p>Problematic node condition</p>
-<p>Node has one or more problematic conditions out of the following: <code>ContainerRuntimeProblem</code>, <code>ContainerRuntimeUnhealthy</code>, <code>CorruptDockerOverlay2</code>, <code>DiskPressure</code>, <code>FilesystemCorruptionProblem</code>, <code>FrequentContainerdRestart</code>, <code>FrequentDockerRestart</code>, <code>FrequentGcfsSnapshotterRestart</code>, <code>FrequentGcfsdRestart</code>, <code>FrequentKubeletRestart</code>, <code>FrequentUnregisterNetDevice</code>, <code>GcfsSnapshotterMissingLayer</code>, <code>GcfsSnapshotterUnhealthy</code>, <code>GcfsdUnhealthy</code>, <code>KernelDeadlock</code>, <code>KubeletProblem</code>, <code>KubeletUnhealthy</code>, <code>MemoryPressure</code>, <code>NetworkUnavailable</code>, <code>OutOfDisk</code>, <code>PIDPressure</code>, <code>ReadonlyFilesystem</code></p>
-<p>10 minutes</p>
-<p>Nodes condition metric</p>
-<p>Kubernetes Classic, Kubernetes app</p>
 <p>Node metric and DQL expressions</p>
 <h4 id="detect-node-cpu-request-saturation">Detect node CPU-request saturation<a class="headerlink" href="#detect-node-cpu-request-saturation" title="Permanent link">&para;</a></h4>
 <table>
@@ -25974,46 +25816,7 @@
 </tbody>
 </table>
 <p>Default alerts for new tenants</p>
-<p>Alert</p>
-<p>Setting</p>
-<p>Value</p>
-<p>Readiness Issues</p>
-<p>Readiness Issues</p>
-<p>sample period in minutes</p>
-<p>3</p>
-<p>observation period in minutes</p>
-<p>5</p>
-<p>Node Problematic Condition</p>
-<p>Node Problematic Condition</p>
-<p>sample period in minutes</p>
-<p>3</p>
-<p>observation period in minutes</p>
-<p>5</p>
 <h3 id="persistent-volume-claims-alerts">Persistent volume claims alerts<a class="headerlink" href="#persistent-volume-claims-alerts" title="Permanent link">&para;</a></h3>
-<p>Alert name</p>
-<p>Dynatrace version</p>
-<p>Problem type</p>
-<p>Problem title</p>
-<p>Problem description</p>
-<p>De-alerts after</p>
-<p>Calculation</p>
-<p>Supported in</p>
-<p><a href="#detect-low-disk-space">Detect low disk space (%)</a></p>
-<p>1.262</p>
-<p>Resource</p>
-<p>Kubernetes PVC: Low disk space %</p>
-<p>Available disk space for a persistent volume claim is below the threshold.</p>
-<p>10 minutes</p>
-<p>Volume stats available bytes / Volume stats capacity bytes</p>
-<p>Kubernetes Classic, Kubernetes app</p>
-<p><a href="#detect-low-disk-space-mb">Detect low disk space (MiB)</a></p>
-<p>1.262</p>
-<p>Resource</p>
-<p>Kubernetes PVC: Low disk space</p>
-<p>Available disk space for a persistent volume claim is below the threshold.</p>
-<p>10 minutes</p>
-<p>Kubelet volume stats available bytes metric</p>
-<p>Kubernetes Classic, Kubernetes app</p>
 <p>Persistent volume claims metric and DQL expressions</p>
 <h4 id="detect-low-disk-space">Detect low disk space (%)<a class="headerlink" href="#detect-low-disk-space" title="Permanent link">&para;</a></h4>
 <table>
@@ -26054,126 +25857,6 @@
 </tbody>
 </table>
 <h3 id="workload-alerts">Workload alerts<a class="headerlink" href="#workload-alerts" title="Permanent link">&para;</a></h3>
-<p>Alert name</p>
-<p>Dynatrace version</p>
-<p>Problem type</p>
-<p>Problem title</p>
-<p>Problem description</p>
-<p>De-alerts after</p>
-<p>Calculation</p>
-<p>Supported in</p>
-<p><a href="#detect-cpu-usage-saturation">Detect CPU usage saturation</a></p>
-<p>1.264</p>
-<p>Resource</p>
-<p>CPU usage close to limits</p>
-<p>The CPU usage exceeds the threshold in terms of the defined CPU limit.</p>
-<p>10 minutes</p>
-<p>Sum of workload CPU usage / Sum of workload CPU limits</p>
-<p>Kubernetes Classic, Kubernetes app</p>
-<p><a href="#detect-container-restarts">Detect container restarts</a></p>
-<p>1.254</p>
-<p>Error</p>
-<p>Container restarts</p>
-<p>Observed container restarts exceed the specified threshold.</p>
-<p>15 minutes</p>
-<p>Container restarts metric</p>
-<p>Kubernetes Classic, Kubernetes app</p>
-<p><a href="#detect-high-cpu-throttling">Detect high CPU throttling</a></p>
-<p>1.264</p>
-<p>Resource</p>
-<p>High CPU throttling</p>
-<p>The CPU throttling to limits ratio exceeds the specified threshold.</p>
-<p>10 minutes</p>
-<p>Sum of workload CPU throttled / Sum of workload CPU limits</p>
-<p>Kubernetes Classic, Kubernetes app</p>
-<p><a href="#detect-job-failure-events">Detect job failure events</a></p>
-<p>1.268</p>
-<p>Error</p>
-<p>Job failure event</p>
-<p>Events with reason 'BackoffLimitExceeded', 'DeadlineExceeded', or 'PodFailurePolicy' have been detected.</p>
-<p>60 minutes</p>
-<p>Event metric filtered by reason and workload kind</p>
-<p>Kubernetes Classic, Kubernetes app</p>
-<p><a href="#detect-memory-usage-saturation">Detect memory usage saturation</a></p>
-<p>1.264</p>
-<p>Resource</p>
-<p>Memory usage close to limits</p>
-<p>The memory usage (working set memory) exceeds the threshold in terms of the defined memory limit.</p>
-<p>10 minutes</p>
-<p>Sum of workload working set memory / Sum of workload memory limits</p>
-<p>Kubernetes Classic, Kubernetes app</p>
-<p><a href="#detect-out-of-memory-kills">Detect out-of-memory kills</a></p>
-<p>1.268</p>
-<p>Error</p>
-<p>Out-of-memory kills</p>
-<p>Out-of-memory kills have been observed for pods of this workload.</p>
-<p>15 minutes</p>
-<p>Out-of-memory kills metric</p>
-<p>Kubernetes Classic, Kubernetes app</p>
-<p><a href="#detect-pod-backoff-events">Detect pod backoff events</a></p>
-<p>1.268</p>
-<p>Error</p>
-<p>Backoff event</p>
-<p>Events with reason 'BackOff' have been detected for pods of this workload. Check for pods with status 'ImagePullBackOff' or 'CrashLoopBackOff'.</p>
-<p>15 minutes</p>
-<p>Event metric filtered by reason</p>
-<p>Kubernetes Classic, Kubernetes app</p>
-<p><a href="#detect-pod-eviction-events">Detect pod eviction events</a></p>
-<p>1.268</p>
-<p>Error</p>
-<p>Pod eviction event</p>
-<p>Events with reason 'Evicted' have been detected for pods of this workload.</p>
-<p>60 minutes</p>
-<p>Event metric filtered by reason</p>
-<p>Kubernetes Classic, Kubernetes app</p>
-<p><a href="#detect-pod-preemption-events">Detect pod preemption events</a></p>
-<p>1.268</p>
-<p>Error</p>
-<p>Preemption event</p>
-<p>Events with reasons 'Preempted' or 'Preempting' have been detected for pods of this workload.</p>
-<p>60 minutes</p>
-<p>Event metric filtered by reason</p>
-<p>Kubernetes Classic, Kubernetes app</p>
-<p><a href="#detect-pods-stuck-in-pending">Detect pods stuck in pending</a></p>
-<p>1.254</p>
-<p>Resource</p>
-<p>Pods stuck in pending</p>
-<p>Workload has pending pods.</p>
-<p>10 minutes</p>
-<p>Pods metric filtered by phase 'Pending'</p>
-<p>Kubernetes Classic, Kubernetes app</p>
-<p><a href="#detect-pods-stuck-in-terminating">Detect pods stuck in terminating</a></p>
-<p>1.260</p>
-<p>Resource</p>
-<p>Pods stuck in terminating</p>
-<p>Workload has pods stuck in terminating.</p>
-<p>10 minutes</p>
-<p>Pods metric filtered by status 'Terminating'</p>
-<p>Kubernetes Classic, Kubernetes app</p>
-<p><a href="#detect-stuck-deployments">Detect stuck deployments</a></p>
-<p>1.260</p>
-<p>Error</p>
-<p>Deployment stuck</p>
-<p>Deployment is stuck and therefore is no longer progressing.</p>
-<p>10 minutes</p>
-<p>Workload condition metric filtered by 'not progressing'</p>
-<p>Kubernetes Classic, Kubernetes app</p>
-<p><a href="#detect-workloads-with-non-ready-pods">Detect workloads with non-ready pods</a></p>
-<p>1.258</p>
-<p>Error</p>
-<p>Not all pods ready</p>
-<p>Workload has pods that are not ready.</p>
-<p>10 minutes</p>
-<p>Sum of all pending or running pods â Sum of ready pending or running pods. Pods of Jobs and CronJob are excluded.</p>
-<p>Kubernetes Classic, Kubernetes app</p>
-<p><a href="#detect-workloads-without-ready-pods">Detect workloads without ready pods</a></p>
-<p>1.254</p>
-<p>Error</p>
-<p>No pod ready</p>
-<p>Workload does not have any ready pods.</p>
-<p>10 minutes</p>
-<p>Sum of all pending or running pods â Sum of non-ready pending or running pods. Pods of Jobs and CronJob are excluded.</p>
-<p>Kubernetes Classic, Kubernetes app</p>
 <p>Workload metric and DQL expressions</p>
 <h4 id="detect-cpu-usage-saturation">Detect CPU usage saturation<a class="headerlink" href="#detect-cpu-usage-saturation" title="Permanent link">&para;</a></h4>
 <table>
@@ -26444,60 +26127,6 @@
 </tbody>
 </table>
 <h4 id="default-alerts-for-new-tenants">Default alerts for new tenants<a class="headerlink" href="#default-alerts-for-new-tenants" title="Permanent link">&para;</a></h4>
-<p>Alert</p>
-<p>Setting</p>
-<p>Value</p>
-<p>Container Restarts</p>
-<p>threshold</p>
-<p>1</p>
-<p>Container Restarts</p>
-<p>sample period in minutes</p>
-<p>3</p>
-<p>Container Restarts</p>
-<p>observation period in minutes</p>
-<p>5</p>
-<p>Deployment Stuck</p>
-<p>sample period in minutes</p>
-<p>3</p>
-<p>Deployment Stuck</p>
-<p>observation period in minutes</p>
-<p>5</p>
-<p>Pending Pods</p>
-<p>threshold</p>
-<p>1</p>
-<p>Pending Pods</p>
-<p>sample period in minutes</p>
-<p>10</p>
-<p>Pending Pods</p>
-<p>observation period in minutes</p>
-<p>15</p>
-<p>Pod Stuck In Terminating</p>
-<p>sample period in minutes</p>
-<p>10</p>
-<p>Pod Stuck In Terminating</p>
-<p>observation period in minutes</p>
-<p>15</p>
-<p>Workload Without Ready Pods</p>
-<p>sample period in minutes</p>
-<p>10</p>
-<p>Workload Without Ready Pods</p>
-<p>observation period in minutes</p>
-<p>15</p>
-<p>Oom Kills</p>
-<p>alert</p>
-<p>always</p>
-<p>Job Failure Events</p>
-<p>alert</p>
-<p>always</p>
-<p>Pod Backoff Events</p>
-<p>alert</p>
-<p>always</p>
-<p>Pod Eviction Events</p>
-<p>alert</p>
-<p>always</p>
-<p>Pod Preemption Events</p>
-<p>alert</p>
-<p>always</p>
 <h2 id="related-topics">Related topics<a class="headerlink" href="#related-topics" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="/docs/ingest-from/setup-on-k8s" title="Ways to deploy and configure Dynatrace on Kubernetes">Set up Dynatrace on Kubernetes</a></li>

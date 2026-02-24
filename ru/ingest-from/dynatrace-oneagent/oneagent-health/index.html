@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
     
     
       
@@ -25504,66 +25504,8 @@
 <p>Select a specific data point in the area chart to see the contributing OneAgent modules in the data table.</p>
 <h2 id="health-state-metric">Health state metric<a class="headerlink" href="#health-state-metric" title="Permanent link">&para;</a></h2>
 <p>The <strong>Health state</strong> metric (<code>dsfm:cluster.oneagent.agent_modules</code>) indicates the health state of your deployed OneAgent modules. It is divided into four classesâCritical, Warning, Info, and Healthy. Each class has different implications.</p>
-<p>Health state</p>
-<p>Implications</p>
-<p>Critical</p>
-<ul>
-<li>A OneAgent module struggles with problems that might result in monitoring outage.</li>
-<li>Corrective action is required.</li>
-</ul>
-<p>Warning</p>
-<ul>
-<li>A OneAgent module struggles with anomalies that might impact monitoring availability.</li>
-<li>Corrective action is recommended.</li>
-</ul>
-<p>Info</p>
-<ul>
-<li>The health of a OneAgent module could be improved to ensure monitoring availability.</li>
-<li>Corrective action is not necessary.</li>
-</ul>
-<p>Healthy</p>
-<ul>
-<li>A OneAgent module is healthy without monitoring disturbances.</li>
-<li>No action is required.</li>
-</ul>
 <h3 id="health-state-examples">Health state examples<a class="headerlink" href="#health-state-examples" title="Permanent link">&para;</a></h3>
 <p>The following conditions are applied to your OneAgent modules and result in specific recommendations.</p>
-<p>Health state</p>
-<p>Condition</p>
-<p>Recommendation</p>
-<p>Critical</p>
-<p>Installer version date older than 11 months</p>
-<p>Update OneAgent to a newer version to maintain full Dynatrace support.</p>
-<p>Critical</p>
-<p>Module heartbeat is 180 seconds overdue</p>
-<p>Dynatrace hasnât received data from this module for 180 seconds. There might be communication problems, or your process might have exited unexpectedly.</p>
-<p>Critical</p>
-<p>Host ID conflict</p>
-<p>Multiple monitored hosts report that theyâre using the same host identifier. This unexpected situation might be the result of machine cloning. Please contact a Dynatrace product expert via live chat within your environment.</p>
-<p>Critical</p>
-<p>Host quota exceeded</p>
-<p>Monitoring is currently disabled. Please contact a Dynatrace product expert via live chat within your environment.</p>
-<p>Critical</p>
-<p>Installer version marked as faulty by Dynatrace</p>
-<p>Update OneAgent to a newer version. Processes might also need to be restarted.</p>
-<p>Critical</p>
-<p>Module version marked as faulty by Dynatrace</p>
-<p>Update OneAgent to a newer version. A process restart might also be required.</p>
-<p>Warning</p>
-<p>Installer version is between 9 and 11 months old</p>
-<p>Update to a newer OneAgent version to stay current.</p>
-<p>Warning</p>
-<p>Minimum OneAgent version incompatible</p>
-<p>Update OneAgent to a newer version. A process restart might also be required, even if youâve already updated your module.</p>
-<p>Warning</p>
-<p>Maximum OneAgent version incompatible</p>
-<p>Only OneAgent versions that are equal to or lower than the Dynatrace cluster version can be connected. Download a compatible OneAgent version from this cluster.</p>
-<p>Info</p>
-<p>Process restart needed</p>
-<p>Your module version is outdated. Restart your process to update the module to a newer OneAgent version.</p>
-<p>Info</p>
-<p>Auto-update suppressed</p>
-<p>Enable auto-update to stay current.</p>
 <h3 id="limitations">Limitations<a class="headerlink" href="#limitations" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Only the <strong>Health state</strong> metric includes the z/OS Java module and AWS Lambda, Azure, and Google Cloud integrations.</li>

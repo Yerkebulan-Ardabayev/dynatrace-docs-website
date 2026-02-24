@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
     
     
       
@@ -25485,8 +25485,6 @@
 <p>Prerequisites</p>
 <h3 id="permissions">Permissions<a class="headerlink" href="#permissions" title="Permanent link">&para;</a></h3>
 <p>The following table describes the required permissions.</p>
-<p>Permission</p>
-<p>Description</p>
 <p>app-engine:apps:run</p>
 <p>Allows the user to run functions</p>
 <p>app-engine:functions:run</p>
@@ -25507,11 +25505,6 @@
 <p>Allows the user to access shared notebooks</p>
 <p>document:direct-shares:read</p>
 <p>Allows the user to access shared notebooks</p>
-<p>10</p>
-<p>rows per page</p>
-<p>Page</p>
-<p>1</p>
-<p>of 1</p>
 <p>Get started</p>
 <p>Concepts</p>
 <p>Use cases</p>
@@ -25551,71 +25544,6 @@
 <li>The <code>label</code> is freeform text to display on the link in your Markdown tile or section</li>
 <li>The <code>address</code> specifies what to open when someone selects the link, such as a website or a Dynatrace app</li>
 </ul>
-<p>Link to</p>
-<p>Syntax and examples</p>
-<p>Website</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>[My label](https://www.example.com/)
-</code></pre></div>
-<p>Notebooks app</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>[My label](/ui/apps/dynatrace.notebooks/notebooks)
-</code></pre></div>
-<p>Specific notebook</p>
-<p><strong>Syntax</strong>:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>[label](/ui/apps/dynatrace.notebooks/notebook/&lt;notebookid&gt;)
-</code></pre></div>
-<p><strong>Example</strong>:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>[My label](/ui/apps/dynatrace.notebooks/notebook/274edae4-dfe8-41fb-aced-5020fb1270bc)
-</code></pre></div>
-<p>To get the address</p>
-<ol>
-<li>Display the target notebook.</li>
-<li>Copy everything on the browser address line starting from <code>/ui/</code>.</li>
-<li>Paste it into your Markdown as the address of a link.</li>
-</ol>
-<p>Specific notebook section</p>
-<p><strong>Syntax</strong>:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>[label](/ui/apps/dynatrace.notebooks/notebook/&lt;notebookid&gt;#&lt;sectionid&gt;)
-</code></pre></div>
-<p><strong>Example</strong>:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>[My label](/ui/apps/dynatrace.notebooks/notebook/274edae4-dfe8-41fb-aced-5020fb1270bc#cb69caf1-52ed-4e73-8a3e-120e8cd7e8f8)
-</code></pre></div>
-<p>To get the address</p>
-<ol>
-<li>Display the target notebook.</li>
-<li>Select the target section of the notebook.</li>
-<li>Copy everything on the browser address line starting from <code>/ui/</code>.</li>
-<li>Paste it into your Markdown as the address of a link.</li>
-</ol>
-<p>Dashboards app</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>[My label](/ui/apps/dynatrace.dashboards/)
-</code></pre></div>
-<p>Specific dashboard</p>
-<p><strong>Syntax</strong>:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>[label](/ui/apps/dynatrace.dashboards/&lt;dashboardid&gt;)
-</code></pre></div>
-<p><strong>Example</strong>:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>[My label](/ui/apps/dynatrace.dashboards/dashboard/9f24c36e-ca5f-401c-8e00-5e4b05c46bd2)
-</code></pre></div>
-<p>To get the address</p>
-<ol>
-<li>Display the target dashboard.</li>
-<li>Copy everything on the browser address line starting from <code>/ui/</code>.</li>
-<li>Paste it into your Markdown as the address of a link.</li>
-</ol>
-<p>Specific dashboard tile</p>
-<p><strong>Syntax</strong>:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>[label](/ui/apps/dynatrace.dashboards/dashboard/&lt;dashboardid&gt;#tileIds=n)
-</code></pre></div>
-<p><strong>Example</strong>:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>[My label](/ui/apps/dynatrace.dashboards/dashboard/9f24c36e-ca5f-401c-8e00-5e4b05c46bd2#from=now%28%29-2h&amp;to=now%28%29&amp;tileIds=6)
-</code></pre></div>
-<p>To include a specific tile ID in the link</p>
-<ol>
-<li>Display the target dashboard.</li>
-<li>Select the target tile in the target dashboard.</li>
-<li>Copy everything on the browser address line starting from <code>/ui/</code>.</li>
-<li>Paste it into your Markdown as the address of a link.</li>
-</ol>
 <h2 id="use-cases">Use cases<a class="headerlink" href="#use-cases" title="Permanent link">&para;</a></h2>
 <p>Notebooks enables you to:</p>
 <ul>
@@ -25975,41 +25903,41 @@
 <li><strong>Horizontal line</strong>: to visually separate sections of your annotation, add a horizontal line with three dashes (<code>---</code>).</li>
 <li><strong>Lists</strong>: each line of an unordered (bulleted) list starts with an asterisk (<code>*</code>):</li>
 </ul>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>* Line 1
-<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>
-<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>
-<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>
-<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>* Line 2
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>* Line 1
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>* Line 2
 </code></pre></div>
 <p>Alternatively, you can use a dash (<code>-</code>):</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>- Line 1
-<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>
-<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>
-<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>
-<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>- Line 2
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>- Line 1
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>- Line 2
 </code></pre></div>
 <p>An ordered (numbered) list starts with a number and a period (<code>1.</code>) followed by a space and then your text:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>1. The first line of my procedure.
-<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>
-<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>
-<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>
-<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>2. The second line of my procedure.
-<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>
-<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a>
-<a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a>
-<a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a>3. The third line of my procedure.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>1. The first line of my procedure.
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>2. The second line of my procedure.
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>3. The third line of my procedure.
 </code></pre></div>
 <p>If you use <code>1.</code> for each line number, the lines are renumbered automatically when you display the notebook.
 * <strong>Tables</strong>: to add a table, define the headers, the column formatting row, and then the rows of data you want to display</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>| Header 1 | Header2
-<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>
-<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>
-<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>
-<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>--- | ---
-<a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>
-<a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a>
-<a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a>
-<a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a>content2 | content2
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>| Header 1 | Header2
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>--- | ---
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>content2 | content2
 </code></pre></div>
 <table>
 <thead>
@@ -26037,79 +25965,14 @@
 <ul>
 <li>The <code>label</code> is freeform text to display on the link in your Markdown tile or section</li>
 <li>The <code>address</code> specifies what to open when someone selects the link, such as a website or a Dynatrace app</li>
-</ul>
-<p>Link to</p>
-<p>Syntax and examples</p>
-<p>Website</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>[My label](https://www.example.com/)
-</code></pre></div>
-<p>Notebooks app</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>[My label](/ui/apps/dynatrace.notebooks/notebooks)
-</code></pre></div>
-<p>Specific notebook</p>
-<p><strong>Syntax</strong>:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>[label](/ui/apps/dynatrace.notebooks/notebook/&lt;notebookid&gt;)
-</code></pre></div>
-<p><strong>Example</strong>:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>[My label](/ui/apps/dynatrace.notebooks/notebook/274edae4-dfe8-41fb-aced-5020fb1270bc)
-</code></pre></div>
-<p>To get the address</p>
-<ol>
-<li>Display the target notebook.</li>
-<li>Copy everything on the browser address line starting from <code>/ui/</code>.</li>
-<li>Paste it into your Markdown as the address of a link.</li>
-</ol>
-<p>Specific notebook section</p>
-<p><strong>Syntax</strong>:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>[label](/ui/apps/dynatrace.notebooks/notebook/&lt;notebookid&gt;#&lt;sectionid&gt;)
-</code></pre></div>
-<p><strong>Example</strong>:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>[My label](/ui/apps/dynatrace.notebooks/notebook/274edae4-dfe8-41fb-aced-5020fb1270bc#cb69caf1-52ed-4e73-8a3e-120e8cd7e8f8)
-</code></pre></div>
-<p>To get the address</p>
-<ol>
-<li>Display the target notebook.</li>
-<li>Select the target section of the notebook.</li>
-<li>Copy everything on the browser address line starting from <code>/ui/</code>.</li>
-<li>Paste it into your Markdown as the address of a link.</li>
-</ol>
-<p>Dashboards app</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>[My label](/ui/apps/dynatrace.dashboards/)
-</code></pre></div>
-<p>Specific dashboard</p>
-<p><strong>Syntax</strong>:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>[label](/ui/apps/dynatrace.dashboards/&lt;dashboardid&gt;)
-</code></pre></div>
-<p><strong>Example</strong>:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>[My label](/ui/apps/dynatrace.dashboards/dashboard/9f24c36e-ca5f-401c-8e00-5e4b05c46bd2)
-</code></pre></div>
-<p>To get the address</p>
-<ol>
-<li>Display the target dashboard.</li>
-<li>Copy everything on the browser address line starting from <code>/ui/</code>.</li>
-<li>Paste it into your Markdown as the address of a link.</li>
-</ol>
-<p>Specific dashboard tile</p>
-<p><strong>Syntax</strong>:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>[label](/ui/apps/dynatrace.dashboards/dashboard/&lt;dashboardid&gt;#tileIds=n)
-</code></pre></div>
-<p><strong>Example</strong>:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>[My label](/ui/apps/dynatrace.dashboards/dashboard/9f24c36e-ca5f-401c-8e00-5e4b05c46bd2#from=now%28%29-2h&amp;to=now%28%29&amp;tileIds=6)
-</code></pre></div>
-<p>To include a specific tile ID in the link</p>
-<ol>
-<li>Display the target dashboard.</li>
-<li>Select the target tile in the target dashboard.</li>
-<li>Copy everything on the browser address line starting from <code>/ui/</code>.</li>
-<li>Paste it into your Markdown as the address of a link.</li>
 <li><strong>Images</strong>: to link to a picture, use this format:</li>
-</ol>
+</ul>
 <p><code>![alternate text](https://www.example.com/file-name.jpg)</code></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>Here are some of the people who started [Dynatrace](https://www.dynatrace.com).
-<a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a>
-<a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a>
-<a id="__codelineno-26-4" name="__codelineno-26-4" href="#__codelineno-26-4"></a>
-<a id="__codelineno-26-5" name="__codelineno-26-5" href="#__codelineno-26-5"></a>![Dynatrace founders](https://dt-cdn.net/images/original-dynatrace-team-1500-7334dbe9a8.jpg)
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>Here are some of the people who started [Dynatrace](https://www.dynatrace.com).
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>![Dynatrace founders](https://dt-cdn.net/images/original-dynatrace-team-1500-7334dbe9a8.jpg)
 </code></pre></div>
 <h3 id="start-with-a-snippet">Start with a snippet<a class="headerlink" href="#start-with-a-snippet" title="Permanent link">&para;</a></h3>
 <p>Several data and code snippets are available out of the box. Use our predefined DQL or code snippets to quickly start your data analytics journey.</p>

@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../../../../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
     
     
       
@@ -25479,7 +25479,7 @@
 <ul>
 <li>How-to guide</li>
 <li>7-min read</li>
-<li>Updated on Jan 21, 2026</li>
+<li>Updated on Feb 24, 2026</li>
 </ul>
 <p>You can use request naming rules to adjust how your requests are tracked and to define service entry and endpoints in your customer-facing workflow. With such end-to-end tracing, you can easily recognize and monitor important business transactions that are critical to the success of your digital business.</p>
 <p>By using request attributes in combination with naming rules, you can capture even more context around your requests and use these additional details to slice and dice your monitoring data.</p>
@@ -25504,10 +25504,30 @@
 </ul>
 <h2 id="create-a-request-naming-rule-for-a-service">Create a request naming rule for a service<a class="headerlink" href="#create-a-request-naming-rule-for-a-service" title="Permanent link">&para;</a></h2>
 <p>The first step in setting up clear naming for your service (web) requests is to create request naming rules with conditions that define how they appear in your environment.</p>
+<p>To create a request naming rule for your service</p>
 <ol>
-<li>Go to <img alt="Services Classic" src="https://dt-cdn.net/images/services-classic-f58502bd22.svg" title="Services Classic" /> <strong>Services Classic</strong> and select the service you want to configure.</li>
-<li>Select <strong>More</strong> (<strong>â¦</strong>) &gt; <strong>Settings</strong>.</li>
-<li>On the <strong>Service settings</strong> page, go to the <strong>Request naming rules</strong> (or <strong>Web request naming rules</strong>) and select <strong>Add rule</strong>.</li>
+<li>Navigate to the (web) request naming settings page:</li>
+</ol>
+<p>Latest Dynatrace, option 1</p>
+<p>Latest Dynatrace, option 2</p>
+<p>Dynatrace Classic</p>
+<ol>
+<li>Go to <img alt="Services" src="https://dt-cdn.net/hub/logos/services.png" title="Services" /> <strong>Services</strong> and select the service you want to configure.</li>
+<li>
+<p>In the upper-right corner of the service overview pane, select  (<strong>Actions menu</strong>) &gt;  <strong>Settings</strong>, and go to <strong>Request naming</strong> or <strong>Web request naming</strong>.</p>
+</li>
+<li>
+<p>Go to <img alt="Services" src="https://dt-cdn.net/hub/logos/services.png" title="Services" /> <strong>Services</strong> and select the service you want to configure.</p>
+</li>
+<li>On the <strong>Overview</strong> tab, scroll down to the <strong>Endpoints</strong> section.</li>
+<li>
+<p>In the <strong>Endpoints</strong> section header, select  (<strong>Actions menu</strong>) &gt;  <strong>Configure request naming</strong>.</p>
+</li>
+<li>
+<p>Go to <img alt="Services Classic" src="https://dt-cdn.net/images/services-classic-f58502bd22.svg" title="Services Classic" /> <strong>Services Classic</strong> and select the service you want to configure.</p>
+</li>
+<li>Select <strong>More</strong> (<strong>â¦</strong>) &gt; <strong>Settings</strong>, and go to <strong>Request naming</strong> or <strong>Web request naming</strong>.</li>
+<li>Select <strong>Add rule</strong>.</li>
 <li>Define a set of conditions that represent the criteria of your service operations.</li>
 </ol>
 <p>You can use anything from request headers to code-level method argument values to identify specific requests. All requests that match the specified criteria will be named based on the defined naming pattern.</p>
@@ -25520,7 +25540,7 @@
 </ul>
 <p>All requests matching <strong>all</strong> the specified criteria will be named based on the defined naming pattern <code>PAYMENT</code>.</p>
 <p><img alt="Add request naming rule - example" src="https://dt-cdn.net/images/example-naming-rule-2006-1ef0fc7a46.png" />
-5. Select <strong>Save</strong>.</p>
+4. Select <strong>Save</strong>.</p>
 <h2 id="global-request-naming-rules">Global request naming rules<a class="headerlink" href="#global-request-naming-rules" title="Permanent link">&para;</a></h2>
 <p><a href="/docs/dynatrace-api/configuration-api/service-api/request-naming-api" title="Learn what the Dynatrace request naming config API offers.">Service request naming API</a> enables you to consolidate or refine requests across multiple services. Additionally, you can synchronize these rules across multiple Dynatrace environments. To learn how to create a global request naming rule via API, see <a href="/docs/dynatrace-api/configuration-api/service-api/request-naming-api/create-a-new-request-naming-rule" title="Learn how to create a request naming rule via the Dynatrace API.">this use case</a>.</p>
 <h2 id="configure-resource-request-detection">Configure resource request detection<a class="headerlink" href="#configure-resource-request-detection" title="Permanent link">&para;</a></h2>
@@ -25531,7 +25551,7 @@
 <li>JavaScript</li>
 <li>Binaries</li>
 </ul>
-<p>When the <strong>Enhanced endpoints for SDv1</strong> feature is turned on, all static resource requests are grouped into a single <strong>Static resources</strong> endpoint. See <a href="/docs/observe/application-observability/services/enhanced-endpoints-sdv1#resource-requests" title="Utilize the Enhanced endpoints for SDv1 feature to gain deeper insights into your application's performance and improve your ability to monitor and troubleshoot service interactions.">Static resource requests</a> for more details.</p>
+<p>When the <strong>Enhanced endpoints for SDv1</strong> feature is turned on, all static resource requests are grouped into a single <strong>Static resources</strong> endpoint. See <a href="/docs/observe/application-observability/services/service-detection/service-detection-v1/enhanced-endpoints-sdv1#resource-requests" title="Utilize the Enhanced endpoints for SDv1 feature to gain deeper insights into your application's performance and improve your ability to monitor and troubleshoot service interactions.">Static resource requests</a> for more details.</p>
 <p>If Dynatrace doesn't automatically detect one of your application's images or binaries, you can add the missing filename extensions. You can configure these settings for the entire environment or for a specific service.</p>
 <p>Environment</p>
 <ol>
@@ -25583,7 +25603,7 @@
 <li><strong>Remove UUIDs, IP addresses and IBANs from URLs</strong>.</li>
 </ul>
 <p>This action normalizes URL paths containing UUIDs, IP addresses, and IBANs by replacing specific values with content-related static strings, such as <code>UUID</code>, <code>IPv4</code>, and <code>IBAN</code>.</p>
-<p>This option is not available for environments where the <a href="/docs/observe/application-observability/services/enhanced-endpoints-sdv1" title="Utilize the Enhanced endpoints for SDv1 feature to gain deeper insights into your application's performance and improve your ability to monitor and troubleshoot service interactions."><strong>Enhanced endpoints for SDv1</strong> feature</a> is enabled.
+<p>This option is not available for environments where the <a href="/docs/observe/application-observability/services/service-detection/service-detection-v1/enhanced-endpoints-sdv1" title="Utilize the Enhanced endpoints for SDv1 feature to gain deeper insights into your application's performance and improve your ability to monitor and troubleshoot service interactions."><strong>Enhanced endpoints for SDv1</strong> feature</a> is enabled.
 * <strong>Create clean URL rule</strong>.</p>
 <p>Define the <a href="/docs/manage/tags-and-metadata/reference/regular-expressions-in-dynatrace" title="Learn how to use regular expressions in the context of Dynatrace.">regular expressions</a> to remove parts of a web request service URL path, such as IDs.</p>
 <p>Custom service request names are never masked.</p>

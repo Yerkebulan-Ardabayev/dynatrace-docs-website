@@ -25,7 +25,7 @@
       
       
       <link rel="icon" href="../../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
     
     
       
@@ -25612,30 +25612,6 @@ Latest Dynatrace also offers OpenPipeline for your ingestion purposes. For more 
 <p>Deduplication of events based on the causal topology is a highly sophisticated process that, due to its nature, already belongs to the <a href="#root-cause">root cause analysis</a> step.</p>
 <h3 id="custom-defined-event-correlation">Custom-defined event correlation<a class="headerlink" href="#custom-defined-event-correlation" title="Permanent link">&para;</a></h3>
 <p>While event correlation and deduplication are fully automatic, some use cases require more fine-grained control of deduplication. To achieve that, you can use Dynatrace Intelligence control properties of ingested events. For example, <strong>dt.event.allow_davis_merge</strong> defines whether Dynatrace Intelligence can merge events into a larger problem. Such properties are agnostic to the ingestion channel. See the list of available properties below.</p>
-<p>Property</p>
-<p>Type</p>
-<p>Description</p>
-<p><strong>dt.event.allow_davis_merge</strong></p>
-<p>Boolean</p>
-<p>The event can be merged into an existing problem (<code>true</code>), or a new problem must be created for it (<code>false</code>).</p>
-<p><strong>dt.event.allow_frequent_issue_detection</strong></p>
-<p>Boolean</p>
-<p>Dynatrace Intelligence frequent issue detection is active (<code>true</code>) or inactive (<code>false</code>).</p>
-<p>If frequent issue detection is active, Dynatrace Intelligence can mute frequently occurring events, preventing event noise.</p>
-<p><strong>dt.event.allow_entity_remapping</strong></p>
-<p>Boolean</p>
-<p>Event remapping is active (<code>true</code>) or inactive (<code>false</code>).</p>
-<p>If remapping is active, Dynatrace Intelligence can remap the incoming event to a new entity type extracted from event properties.</p>
-<p><strong>dt.event.is_rootcause_relevant</strong></p>
-<p>Boolean</p>
-<p>Dynatrace Intelligence can (<code>true</code>) or can't (<code>false</code>) consider the event in root cause analysis.</p>
-<p><strong>dt.event.suppress_problem</strong></p>
-<p>Boolean</p>
-<p>Problems suppression is active (<code>true</code>) or (<code>false</code>) inactive.</p>
-<p>If suppression is active, Dynatrace Intelligence doesn't raise a problem and doesn't trigger event correlation and deduplication for the event. The event is stored and visualized in Dynatrace, but no problem is raised and analyzed based on it.</p>
-<p><strong>dt.event.timeout</strong></p>
-<p>String</p>
-<p>The timeout (in minutes) of the event. It defines the time period until a refresh must arrive from the event source. If no refresh is received, the event is closed with the change reason <code>TIMED_OUT</code>.</p>
 <p>Additionally, the processing of events can be influenced by the event sender or the source using <code>event.davis</code> field defined in the Semantic Dictionary. For more information, see <a href="/docs/semantic-dictionary/model/davis#davis-ai-events" title="Get to know the Semantic Dictionary models related to Davis AI.">Semantic Dictionary</a>.</p>
 <h2 id="root-cause-analysis">Root cause analysis<a class="headerlink" href="#root-cause-analysis" title="Permanent link">&para;</a></h2>
 <p>Root cause analysis automatically evaluates all captured and ingested information and highlights entities within the causal topology identified as the root cause of a complex situation.</p>

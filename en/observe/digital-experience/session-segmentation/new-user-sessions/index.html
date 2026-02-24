@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
     
     
       
@@ -25477,7 +25477,7 @@
 <hr />
 <p>title: New: User session analysis
 source: https://www.dynatrace.com/docs/observe/digital-experience/session-segmentation/new-user-sessions
-scraped: 2026-02-23T21:24:48.181410</p>
+scraped: 2026-02-24T21:29:36.130565</p>
 <hr />
 <h1 id="new-user-session-analysis">New: User session analysis<a class="headerlink" href="#new-user-session-analysis" title="Permanent link">&para;</a></h1>
 <h1 id="new-user-session-analysis_1">New: User session analysis<a class="headerlink" href="#new-user-session-analysis_1" title="Permanent link">&para;</a></h1>
@@ -25789,48 +25789,6 @@ scraped: 2026-02-23T21:24:48.181410</p>
 <li>If there is no explicit end time, the <code>to</code> and <code>now</code> are implied. For example, <code>-2h</code> is the same <code>-2h to now</code>.</li>
 <li>Supported units: <code>s</code>, <code>m</code>, <code>h</code>, <code>d</code>, <code>w</code>, <code>M</code>, <code>q</code>, <code>y</code> (you can also use whole words such as <code>minutes</code> and <code>quarter</code>)</li>
 </ul>
-<p><strong>Example timeframe expressions</strong></p>
-<p><strong>Meaning</strong></p>
-<p><code>today</code></p>
-<p>From the beginning of today to the beginning of tomorrow.</p>
-<p><code>yesterday</code></p>
-<p>From the beginning of yesterday to the beginning of today. Like <code>-1d/d to today</code>.</p>
-<p><code>yesterday to now</code></p>
-<p>From the beginning of yesterday to the current time today.</p>
-<p><code>previous week</code></p>
-<p>The previous seven whole days. If today is Monday, you get the previous Monday through the previous Sunday (yesterday).</p>
-<p><code>this year</code></p>
-<p>The current calendar year, from January 1 of this year at <code>00:00</code> through January 1 of next year at <code>00:00</code>.</p>
-<p><code>last 6 weeks</code></p>
-<p>The last 42 days (6 weeks * 7 days) ending now. Equivalent to <code>-6w to now</code>.</p>
-<p><code>-2h</code></p>
-<p>From 2 hours (120 minutes) ago to the current time (<code>now</code> is implied). Equivalent to <code>Last 2 hours</code> and <code>-2h to now</code>.</p>
-<p><code>-4d to -1h30m</code></p>
-<p>From 4 days (96 hours) ago to 1.5 hours ago.</p>
-<p><code>-1w</code></p>
-<p>The last 7 days (168 hours), from this time 7 days ago to the current time (<code>now</code>). Equivalent to <code>-7d</code> and <code>-168h</code>.</p>
-<p><code>-1w/w</code></p>
-<p>From the beginning of the previous calendar week to the current time (now).</p>
-<ul>
-<li>If you used <code>-1w/w</code> on a Friday afternoon at 3:00, you would get a range of 11 days 15 hours, starting with the beginning of the previous week's Monday, because <code>/w</code> rounds down to the beginning of the week.</li>
-<li>If you used <code>-1w</code> without <code>/w</code> on a Friday afternoon at 3:00, the start time would be exactly 7 days (168 hours) earlier: the previous Friday at 3:00 in the afternoon.</li>
-</ul>
-<p>In general, <code>/</code> used in combination with a unit (such as <code>/d</code>, <code>/w</code>, <code>/M</code>, and <code>/y</code>) means to round down the date or time to the beginning of the specified time unit. For example, <code>-3d</code> means exactly 72 hours ago, whereas <code>-3d/d</code> means three days ago rounded down to the nearest day (starting at time <code>00:00</code>, the beginning of the day). Use <code>now/d</code> to mean the start of today.</p>
-<p><code>-1w/w + 8h</code></p>
-<p>Starting from the beginning of last week plus 8 hours (8:00 AM Monday).</p>
-<ul>
-<li>Note that you can use the <code>+</code> and <code>-</code> operators with units, timestamps, and <code>now</code>.</li>
-</ul>
-<p><code>-1d/d+9h00m to -1d/d+17h00m</code></p>
-<p>Business hours yesterday, from 09:00 - 17:00 (9 AM to 5 PM).</p>
-<p><code>2020-08-16 21:28 to 2020-08-19 10:02</code></p>
-<p>An absolute range consisting of absolute start and end dates and times in <code>YYYY-MM-DD hh:mm</code> format.</p>
-<ul>
-<li>If you provide a date but omit the time (for example, just <code>2020-08-16</code>), the time is assumed to be the beginning of day (<code>00:00</code>)</li>
-<li>If you provide a time but omit the date (for example, just <code>21:28</code>), the date is assumed to be today</li>
-</ul>
-<p><code>1598545932346 to 1598837052346</code></p>
-<p>Unix epoch millisecond timestamps.</p>
 <p>User sessions that are <a href="/docs/observe/digital-experience/rum-concepts/user-session#live-vs-completed-sessions" title="Learn how a user session is defined, when a user session starts or ends, how user session duration is calculated, and more.">live</a> within the timeframe set in the timeframe selector are shown in the session list. The <strong>Analysis over time</strong> <a href="#drill-down-using-findings">finding</a>, on the contrary, shows only those sessions that started within the set timeframe.</p>
 <p>For instance, if the timeframe is set for 12:00â12:05, and a session that started at 11:55 is still live during that timeframe, that session is shown in the session list but isn't considered for the <strong>Analysis over time</strong> finding. This is because the session started before the set timeframe.</p>
 <h2 id="drill-down-using-findings">Drill down using findings<a class="headerlink" href="#drill-down-using-findings" title="Permanent link">&para;</a></h2>

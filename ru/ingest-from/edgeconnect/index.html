@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
     
     
       
@@ -25697,59 +25697,6 @@ Refer to the table below for environment variable names of each field.</p>
 <h4 id="field-descriptions">Field descriptions<a class="headerlink" href="#field-descriptions" title="Permanent link">&para;</a></h4>
 <p>The <code>edgeConnect.yaml</code> fields and the names of the corresponding environment variables are described in the table below.
 Please note that some environment variable names use both single (<code>_</code>) and double underscore symbols (<code>__</code>).</p>
-<p>Field</p>
-<p>Environment Variable</p>
-<p>Description</p>
-<p><code>name</code></p>
-<p><code>EDGE_CONNECT_NAME</code></p>
-<p>The technical identifier of the EdgeConnect.</p>
-<p>This has to match the name that was specified in the <a href="#appconfigurations">configuration added in the app</a>.</p>
-<p><code>api_endpoint_host</code></p>
-<p><code>EDGE_CONNECT_API_ENDPOINT_HOST</code></p>
-<p>Your environment base URL.</p>
-<p><code>oauth.endpoint</code></p>
-<p><code>EDGE_CONNECT_OAUTH__ENDPOINT</code></p>
-<p>The token endpoint URL of Dynatrace SSO.</p>
-<p><code>oauth.client_id</code></p>
-<p><code>EDGE_CONNECT_OAUTH__CLIENT_ID</code></p>
-<p>The ID of the OAuth client that was created along with the <a href="#appconfigurations">EdgeConnect configuration</a>.</p>
-<p><code>oauth.client_secret</code></p>
-<p><code>EDGE_CONNECT_OAUTH__CLIENT_SECRET</code></p>
-<p>The secret of the OAuth client that was created along with the <a href="#appconfigurations">EdgeConnect configuration</a>.</p>
-<p><code>oauth.resource</code></p>
-<p><code>EDGE_CONNECT_OAUTH__RESOURCE</code></p>
-<p>The URN identifying your tenant.</p>
-<p><code>restrict_hosts_to</code> Optional</p>
-<p><code>EDGE_CONNECT_RESTRICT_HOSTS_TO</code></p>
-<p>Restricts outgoing HTTP requests to specified hosts.</p>
-<ul>
-<li>You can use a wildcard to replace the first parts of the host domain. For example, <code>*.myapp.org</code> will match <code>staging.myapp.org</code> and <code>prod.myapp.org</code>. Use a YAML list or separate multiple entries with commas.</li>
-<li>If <code>restrict_hosts_to</code> is configured, any other requests are rejected, including host patterns specified in <a href="#appconfigurations">host pattern mapping</a> that don't match this configuration.</li>
-<li><code>restrict_hosts_to</code> is only used to additionally restrict connections. You still need to create <a href="#appconfigurations">host pattern mapping</a> for EdgeConnect to be able to connect to your internal resources.</li>
-</ul>
-<p><code>certificate_paths</code> Optional</p>
-<p><code>EDGE_CONNECT_CERTIFICATE_PATHS</code></p>
-<p>For communication over TLS-encrypted channels (HTTPS and secure WebSockets), EdgeConnect verifies the identity of a host based on its certificate. The parameter lists such certificates. You must mount these certificates into the EdgeConnect container. The parameter lists the paths to certificates in the container itself. For more information, see <a href="#run-certificates">certificates</a> instructions.</p>
-<p>EdgeConnect supports certificate files in the PEM (<code>.pem</code>, <code>.crt</code>, or <code>.cer</code>) and DER (<code>.der</code>) formats.</p>
-<p><code>proxy.server</code> Optional</p>
-<p><code>EDGE_CONNECT_PROXY__SERVER</code></p>
-<p>Server address (hostname or IP address) of the proxy.</p>
-<p><code>proxy.port</code> Optional</p>
-<p><code>EDGE_CONNECT_PROXY__PORT</code></p>
-<p>Port of the proxy.</p>
-<p><code>proxy.exceptions</code> Optional</p>
-<p><code>EDGE_CONNECT_PROXY__EXCEPTIONS</code></p>
-<p>A list of hosts for which EdgeConnect should <em>not</em> use the configured proxy for communication.</p>
-<p>You can use a wildcard to replace the first parts of a host domain. For example, <code>*.myapp.org</code> will match <code>staging.myapp.org</code> and <code>prod.myapp.org</code>. Use a YAML list or separate multiple entries with commas.</p>
-<p><code>proxy.auth.user</code> Optional</p>
-<p><code>EDGE_CONNECT_PROXY__AUTH__USER</code></p>
-<p>User name for authentication with the proxy, using the "Basic" HTTP authentication scheme.</p>
-<p><code>proxy.auth.password</code> Optional</p>
-<p><code>EDGE_CONNECT_PROXY__AUTH__PASSWORD</code></p>
-<p>Password for authentication with the proxy, using the "Basic" HTTP authentication scheme.</p>
-<p><code>secrets</code> Optional</p>
-<p>N/A</p>
-<p>An optional list of secrets. Refer to <a href="#edgeconnect-yaml-secrets-fields">the table below</a> for details on how the list items are structured.</p>
 <h5 id="secrets">Secrets<a class="headerlink" href="#secrets" title="Permanent link">&para;</a></h5>
 <p>Whenever requests are sent to services outside the Dynatrace platform, secrets are likely required to authenticate these service interactions (e.g., API tokens or secrets within webhook URLs).
 However, your apps and workflows should never contain plain secret values to avoid unintended leakage.</p>
@@ -25757,50 +25704,6 @@ However, your apps and workflows should never contain plain secret values to avo
 EdgeConnect then securely replaces occurrences of these tokens on the fly with actual secret values that you configure in your <code>edgeConnect.yaml</code> file.</p>
 <p>This section explains how to configure such secrets.
 EdgeConnect can read secrets from two sources: from environment variables or from files mounted into your EdgeConnect container.</p>
-<p>Field</p>
-<p>Environment Variable</p>
-<p>Description</p>
-<p><code>name</code></p>
-<p>N/A</p>
-<p>A human-readable name that identifies your secret. Used for logging purposes.</p>
-<p><code>token</code></p>
-<p>N/A</p>
-<p>A placeholder for secrets that you can include in your requests. EdgeConnect will replace occurrences of <code>token</code> in query parameters, headers, and bodies by the secret's actual value.</p>
-<p>Secret tokens need to adhere to the following format: <code>dt0e01.&lt;token_name&gt;.&lt;token_secret&gt;</code>, where <code>&lt;token_name&gt;</code> has to be a base-32 string of length 15 and <code>&lt;token_secret&gt;</code> has to be a base-32 string of length 40.</p>
-<p>On Linux, you can use the following command to generate a cryptographically secure token:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>echo &quot;dt0e01.`openssl rand -out /dev/stdout 15 \
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
-<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>
-<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>
-<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>| base32 \
-<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>
-<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>
-<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>
-<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>| tr &#39;[:lower:]&#39; &#39;[:upper:]&#39;`.`\
-<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>
-<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>
-<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a>
-<a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a>openssl rand -out /dev/stdout 40 \
-<a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a>
-<a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a>
-<a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a>
-<a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a>| base32 \
-<a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a>
-<a id="__codelineno-6-19" name="__codelineno-6-19" href="#__codelineno-6-19"></a>
-<a id="__codelineno-6-20" name="__codelineno-6-20" href="#__codelineno-6-20"></a>
-<a id="__codelineno-6-21" name="__codelineno-6-21" href="#__codelineno-6-21"></a>| tr &#39;[:lower:]&#39; &#39;[:upper:]&#39;`&quot;
-</code></pre></div>
-<p>Note that this command requires <code>openssl</code> to be available on your system as well as the <code>base32</code> utility (which is part of GNU coreutils and is typically pre-installed on popular distributions).</p>
-<p><code>from_env</code> Optional</p>
-<p>N/A</p>
-<p>The environment variable that holds the actual secret value. Note that exactly one of <code>from_env</code> or <code>from_file</code> must be configured.</p>
-<p><code>from_file</code> Optional</p>
-<p>N/A</p>
-<p>The file that contains the actual secret value. Note that exactly one of <code>from_env</code> or <code>from_file</code> must be configured.</p>
-<p><code>restrict_hosts_to</code></p>
-<p>N/A</p>
-<p>The hosts that this secret is restricted to. Only if a request targets one of the hosts in this list, its query parameters, headers and body will be scanned for occurrences of <code>token</code> which will be replaced by the actual secret value.
-Requests to hosts that aren't covered by <code>restrict_hosts_to</code> will fail if they contain the given <code>token</code> to avoid its accidental leakage to mistrusted hosts.</p>
 <p>If you run <a href="#kubernetes">EdgeConnect in Kubernetes via Dynatrace Operator</a>, the above fields are configured using the parameters of a custom Kubernetes resource as explained in <a href="/docs/ingest-from/setup-on-k8s/reference/edgeconnect-parameters" title="List of configuration parameters for EdgeConnect.">EdgeConnect parameters for Dynatrace Operator</a>.</p>
 <h3 id="step-3-get-edgeconnect-container-image">Step 3 Get EdgeConnect container image<a class="headerlink" href="#step-3-get-edgeconnect-container-image" title="Permanent link">&para;</a></h3>
 <p>To run the EdgeConnect container, you first need to get the image.</p>
@@ -25808,34 +25711,34 @@ Requests to hosts that aren't covered by <code>restrict_hosts_to</code> will fai
 <p>Dynatrace provides signed container images to ensure authenticity and integrity, along with a Software Bill of Materials (SBOM) that lists all included software components.
 Verifying the signatures and reviewing the SBOMs enables effective vulnerability management and risk mitigation.
 For verification details, see <a href="/docs/ingest-from/setup-on-k8s/guides/container-registries/verify-image-signature#sbom-attestation-verification" title="Verify Dynatrace image signatures">Verify Software Bill of Materials (SBOM) Attestation</a>.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>docker pull dynatrace/edgeconnect:latest
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>docker pull dynatrace/edgeconnect:latest
 </code></pre></div>
 <p>We recommend that you always run (and regularly upgrade to) the latest available version of EdgeConnect.</p>
 <p>You'll be notified on a successful download.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>Status: Downloaded image for dynatrace/edgeconnect:latest
-<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>
-<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>
-<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>
-<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>docker.io/dynatrace/edgeconnect:latest
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>Status: Downloaded image for dynatrace/edgeconnect:latest
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>docker.io/dynatrace/edgeconnect:latest
 </code></pre></div>
 <h3 id="step-4-run-the-container">Step 4 Run the container<a class="headerlink" href="#step-4-run-the-container" title="Permanent link">&para;</a></h3>
 <ol>
 <li>Go to the directory with the <code>edgeConnect.yaml</code> file you created.</li>
 <li>Run the container.</li>
 </ol>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>docker run \
-<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>
-<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>
-<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>
-<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>--mount type=bind,src=${PWD}/edgeConnect.yaml,dst=/edgeConnect.yaml \
-<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>
-<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>
-<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>
-<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>-d --restart always \
-<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>
-<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a>
-<a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a>
-<a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a>dynatrace/edgeconnect \
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>docker run \
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>--mount type=bind,src=${PWD}/edgeConnect.yaml,dst=/edgeConnect.yaml \
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>
+<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>-d --restart always \
+<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a>
+<a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a>
+<a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a>
+<a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a>dynatrace/edgeconnect \
 </code></pre></div>
 <p>Customizing the location of the <code>edgeConnect.yaml</code> config file</p>
 <p>You can customize the location from where the configuration file is loaded via the environment variable <code>EDGE_CONNECT_CONFIG_PATH</code>.</p>
@@ -25848,30 +25751,30 @@ Certificates are usually mounted in <code>/etc/edge_connect_certs</code> per con
 <ol>
 <li>Edit the <code>edgeConnect.yaml</code> file and add the target path in your EdgeConnect container where the certificates are stored. For example:</li>
 </ol>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>certificate_paths:
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>certificate_paths:
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>- &quot;/etc/edge_connect_certs/certificate.pem&quot;
+</code></pre></div>
+2. Mount a custom certificate into the EdgeConnect container. You can use the <code>-v</code> parameter when running the container. For example:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>docker run \
 <a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>
 <a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>
 <a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>
-<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>- &quot;/etc/edge_connect_certs/certificate.pem&quot;
-</code></pre></div>
-2. Mount a custom certificate into the EdgeConnect container. You can use the <code>-v</code> parameter when running the container. For example:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>docker run \
-<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>
-<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>
-<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>
-<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>--mount type=bind,src=${PWD}/edgeConnect.yaml,dst=/edgeConnect.yaml \
-<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>
-<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>
-<a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a>
-<a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a>-d --restart always \
-<a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a>
-<a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a>
-<a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a>
-<a id="__codelineno-11-13" name="__codelineno-11-13" href="#__codelineno-11-13"></a>-v /host/path/to/certificate.pem:/etc/edge_connect_certs/certificate.pem
-<a id="__codelineno-11-14" name="__codelineno-11-14" href="#__codelineno-11-14"></a>
-<a id="__codelineno-11-15" name="__codelineno-11-15" href="#__codelineno-11-15"></a>
-<a id="__codelineno-11-16" name="__codelineno-11-16" href="#__codelineno-11-16"></a>
-<a id="__codelineno-11-17" name="__codelineno-11-17" href="#__codelineno-11-17"></a>dynatrace/edgeconnect \
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>--mount type=bind,src=${PWD}/edgeConnect.yaml,dst=/edgeConnect.yaml \
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>
+<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>
+<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a>-d --restart always \
+<a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a>
+<a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a>
+<a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a>
+<a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a>-v /host/path/to/certificate.pem:/etc/edge_connect_certs/certificate.pem
+<a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a>
+<a id="__codelineno-10-15" name="__codelineno-10-15" href="#__codelineno-10-15"></a>
+<a id="__codelineno-10-16" name="__codelineno-10-16" href="#__codelineno-10-16"></a>
+<a id="__codelineno-10-17" name="__codelineno-10-17" href="#__codelineno-10-17"></a>dynatrace/edgeconnect \
 </code></pre></div>
 <p>Where,</p>
 <ul>
@@ -25882,91 +25785,75 @@ Certificates are usually mounted in <code>/etc/edge_connect_certs</code> per con
 <p>If you are using EdgeConnect behind an HTTP proxy that performs TLS interception, it is necessary to add the proxy's certificate to the <code>certificate_paths</code> field, to ensure that EdgeConnect can verify the proxy's identity.</p>
 <h5 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h5>
 <p>If EdgeConnect aborts an HTTPS connection due to a certificate verification failure, this can be caused by incomplete configuration or invalid SSL certificates. The table below lists common certificate verification errors that might appear as part of the EdgeConnect container logs.</p>
-<p>Error Message</p>
-<p>Explanation</p>
-<p>Suggested Action</p>
-<p>"self-signed certificate"</p>
-<p>"self-signed certificate in certificate chain"</p>
-<p>"unable to get issuer certificate"</p>
-<p>"unable to get local issuer certificate"</p>
-<p>These errors point out that EdgeConnect fails to verify the CA certificates involved in signing the certificate of the target host EdgeConnect is connecting to.</p>
-<p>Please make sure that all certificates that either directly or indirectly sign the target server's certificate are listed in the <code>certificate_paths</code> configuration field, as described in the <a href="#edgeconnect-yaml-fields">table above</a>.</p>
-<p>"hostname mismatch"</p>
-<p>This error is raised when a server presents a certificate that does not match the host name EdgeConnect is trying to connect to.
-This can happen, for example, if a TLS connection is intercepted within your network or redirected to a different host.</p>
-<p>Please make sure that EdgeConnect's network traffic isn't subject to undesired interception or redirection.</p>
-<p>"certificate has expired"</p>
-<p>This error indicates that the certificate of the target host, or one of the CA certificates used to sign it, has expired.</p>
-<p>Please make sure that all certificates involved in the certificate chain are still valid and renew any expired ones.</p>
 <h4 id="secrets_1">Secrets<a class="headerlink" href="#secrets_1" title="Permanent link">&para;</a></h4>
 <p>Follow these steps to make EdgeConnect replace secret tokens in your requests:</p>
 <ol>
 <li>Edit the <code>edgeConnect.yaml</code> file and add the corresponding configuration for your secrets (see the <a href="#edgeconnect-yaml-secrets-fields">table above</a> for field descriptions). The following example illustrates a configuration covering a secret loaded from an environment variable as well as a secret loaded from a file:</li>
 </ol>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>secrets:
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>secrets:
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>- name: My secret
+<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>
+<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>
+<a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a>
+<a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a>token: &lt;DYNATRACE_TOKEN_PLACEHOLDER&gt;.some-token-secret
+<a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a>
+<a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a>
+<a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a>
+<a id="__codelineno-11-13" name="__codelineno-11-13" href="#__codelineno-11-13"></a>from_env: MY_SECRET
+<a id="__codelineno-11-14" name="__codelineno-11-14" href="#__codelineno-11-14"></a>
+<a id="__codelineno-11-15" name="__codelineno-11-15" href="#__codelineno-11-15"></a>
+<a id="__codelineno-11-16" name="__codelineno-11-16" href="#__codelineno-11-16"></a>
+<a id="__codelineno-11-17" name="__codelineno-11-17" href="#__codelineno-11-17"></a>restrict_hosts_to:
+<a id="__codelineno-11-18" name="__codelineno-11-18" href="#__codelineno-11-18"></a>
+<a id="__codelineno-11-19" name="__codelineno-11-19" href="#__codelineno-11-19"></a>
+<a id="__codelineno-11-20" name="__codelineno-11-20" href="#__codelineno-11-20"></a>
+<a id="__codelineno-11-21" name="__codelineno-11-21" href="#__codelineno-11-21"></a>- dynatrace.com
+<a id="__codelineno-11-22" name="__codelineno-11-22" href="#__codelineno-11-22"></a>
+<a id="__codelineno-11-23" name="__codelineno-11-23" href="#__codelineno-11-23"></a>
+<a id="__codelineno-11-24" name="__codelineno-11-24" href="#__codelineno-11-24"></a>
+<a id="__codelineno-11-25" name="__codelineno-11-25" href="#__codelineno-11-25"></a>- name: My other secret
+<a id="__codelineno-11-26" name="__codelineno-11-26" href="#__codelineno-11-26"></a>
+<a id="__codelineno-11-27" name="__codelineno-11-27" href="#__codelineno-11-27"></a>
+<a id="__codelineno-11-28" name="__codelineno-11-28" href="#__codelineno-11-28"></a>
+<a id="__codelineno-11-29" name="__codelineno-11-29" href="#__codelineno-11-29"></a>token: &lt;DYNATRACE_TOKEN_PLACEHOLDER&gt;.another-token-secret
+<a id="__codelineno-11-30" name="__codelineno-11-30" href="#__codelineno-11-30"></a>
+<a id="__codelineno-11-31" name="__codelineno-11-31" href="#__codelineno-11-31"></a>
+<a id="__codelineno-11-32" name="__codelineno-11-32" href="#__codelineno-11-32"></a>
+<a id="__codelineno-11-33" name="__codelineno-11-33" href="#__codelineno-11-33"></a>from_file: /path/to/my/other/secret
+<a id="__codelineno-11-34" name="__codelineno-11-34" href="#__codelineno-11-34"></a>
+<a id="__codelineno-11-35" name="__codelineno-11-35" href="#__codelineno-11-35"></a>
+<a id="__codelineno-11-36" name="__codelineno-11-36" href="#__codelineno-11-36"></a>
+<a id="__codelineno-11-37" name="__codelineno-11-37" href="#__codelineno-11-37"></a>restrict_hosts_to:
+<a id="__codelineno-11-38" name="__codelineno-11-38" href="#__codelineno-11-38"></a>
+<a id="__codelineno-11-39" name="__codelineno-11-39" href="#__codelineno-11-39"></a>
+<a id="__codelineno-11-40" name="__codelineno-11-40" href="#__codelineno-11-40"></a>
+<a id="__codelineno-11-41" name="__codelineno-11-41" href="#__codelineno-11-41"></a>- internal.example.com
+</code></pre></div>
+2. Provide the value for secret environment variables and secret files into your EdgeConnect container. For that purpose, you can use the <code>-e</code> parameter to configure values for environment variables passed to the container and the <code>-v</code> parameter for mounting secret files. For example:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>docker run \
 <a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>
 <a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>
 <a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>
-<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>- name: My secret
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>--mount type=bind,src=${PWD}/edgeConnect.yaml,dst=/edgeConnect.yaml \
 <a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>
 <a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a>
 <a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a>
-<a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a>token: &lt;DYNATRACE_TOKEN_PLACEHOLDER&gt;.some-token-secret
+<a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a>-d --restart always \
 <a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a>
 <a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a>
 <a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a>
-<a id="__codelineno-12-13" name="__codelineno-12-13" href="#__codelineno-12-13"></a>from_env: MY_SECRET
+<a id="__codelineno-12-13" name="__codelineno-12-13" href="#__codelineno-12-13"></a>-e MY_SECRET=******* \
 <a id="__codelineno-12-14" name="__codelineno-12-14" href="#__codelineno-12-14"></a>
 <a id="__codelineno-12-15" name="__codelineno-12-15" href="#__codelineno-12-15"></a>
 <a id="__codelineno-12-16" name="__codelineno-12-16" href="#__codelineno-12-16"></a>
-<a id="__codelineno-12-17" name="__codelineno-12-17" href="#__codelineno-12-17"></a>restrict_hosts_to:
+<a id="__codelineno-12-17" name="__codelineno-12-17" href="#__codelineno-12-17"></a>-v /host/path/to/my/other/secret:/container/path/to/mounted/secret
 <a id="__codelineno-12-18" name="__codelineno-12-18" href="#__codelineno-12-18"></a>
 <a id="__codelineno-12-19" name="__codelineno-12-19" href="#__codelineno-12-19"></a>
 <a id="__codelineno-12-20" name="__codelineno-12-20" href="#__codelineno-12-20"></a>
-<a id="__codelineno-12-21" name="__codelineno-12-21" href="#__codelineno-12-21"></a>- dynatrace.com
-<a id="__codelineno-12-22" name="__codelineno-12-22" href="#__codelineno-12-22"></a>
-<a id="__codelineno-12-23" name="__codelineno-12-23" href="#__codelineno-12-23"></a>
-<a id="__codelineno-12-24" name="__codelineno-12-24" href="#__codelineno-12-24"></a>
-<a id="__codelineno-12-25" name="__codelineno-12-25" href="#__codelineno-12-25"></a>- name: My other secret
-<a id="__codelineno-12-26" name="__codelineno-12-26" href="#__codelineno-12-26"></a>
-<a id="__codelineno-12-27" name="__codelineno-12-27" href="#__codelineno-12-27"></a>
-<a id="__codelineno-12-28" name="__codelineno-12-28" href="#__codelineno-12-28"></a>
-<a id="__codelineno-12-29" name="__codelineno-12-29" href="#__codelineno-12-29"></a>token: &lt;DYNATRACE_TOKEN_PLACEHOLDER&gt;.another-token-secret
-<a id="__codelineno-12-30" name="__codelineno-12-30" href="#__codelineno-12-30"></a>
-<a id="__codelineno-12-31" name="__codelineno-12-31" href="#__codelineno-12-31"></a>
-<a id="__codelineno-12-32" name="__codelineno-12-32" href="#__codelineno-12-32"></a>
-<a id="__codelineno-12-33" name="__codelineno-12-33" href="#__codelineno-12-33"></a>from_file: /path/to/my/other/secret
-<a id="__codelineno-12-34" name="__codelineno-12-34" href="#__codelineno-12-34"></a>
-<a id="__codelineno-12-35" name="__codelineno-12-35" href="#__codelineno-12-35"></a>
-<a id="__codelineno-12-36" name="__codelineno-12-36" href="#__codelineno-12-36"></a>
-<a id="__codelineno-12-37" name="__codelineno-12-37" href="#__codelineno-12-37"></a>restrict_hosts_to:
-<a id="__codelineno-12-38" name="__codelineno-12-38" href="#__codelineno-12-38"></a>
-<a id="__codelineno-12-39" name="__codelineno-12-39" href="#__codelineno-12-39"></a>
-<a id="__codelineno-12-40" name="__codelineno-12-40" href="#__codelineno-12-40"></a>
-<a id="__codelineno-12-41" name="__codelineno-12-41" href="#__codelineno-12-41"></a>- internal.example.com
-</code></pre></div>
-2. Provide the value for secret environment variables and secret files into your EdgeConnect container. For that purpose, you can use the <code>-e</code> parameter to configure values for environment variables passed to the container and the <code>-v</code> parameter for mounting secret files. For example:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>docker run \
-<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>
-<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>
-<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>
-<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>--mount type=bind,src=${PWD}/edgeConnect.yaml,dst=/edgeConnect.yaml \
-<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>
-<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a>
-<a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a>
-<a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a>-d --restart always \
-<a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a>
-<a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a>
-<a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a>
-<a id="__codelineno-13-13" name="__codelineno-13-13" href="#__codelineno-13-13"></a>-e MY_SECRET=******* \
-<a id="__codelineno-13-14" name="__codelineno-13-14" href="#__codelineno-13-14"></a>
-<a id="__codelineno-13-15" name="__codelineno-13-15" href="#__codelineno-13-15"></a>
-<a id="__codelineno-13-16" name="__codelineno-13-16" href="#__codelineno-13-16"></a>
-<a id="__codelineno-13-17" name="__codelineno-13-17" href="#__codelineno-13-17"></a>-v /host/path/to/my/other/secret:/container/path/to/mounted/secret
-<a id="__codelineno-13-18" name="__codelineno-13-18" href="#__codelineno-13-18"></a>
-<a id="__codelineno-13-19" name="__codelineno-13-19" href="#__codelineno-13-19"></a>
-<a id="__codelineno-13-20" name="__codelineno-13-20" href="#__codelineno-13-20"></a>
-<a id="__codelineno-13-21" name="__codelineno-13-21" href="#__codelineno-13-21"></a>dynatrace/edgeconnect \
+<a id="__codelineno-12-21" name="__codelineno-12-21" href="#__codelineno-12-21"></a>dynatrace/edgeconnect \
 </code></pre></div>
 <p>Where,</p>
 <ul>
@@ -26008,331 +25895,331 @@ This can happen, for example, if a TLS connection is intercepted within your net
 <h3 id="step-2-configure-edgeconnect-deployment">Step 2 Configure EdgeConnect deployment<a class="headerlink" href="#step-2-configure-edgeconnect-deployment" title="Permanent link">&para;</a></h3>
 <p>Download the <code>edgeConnect.yaml</code> config when you <a href="#createconfiguration">create the configuration</a>, it contains all configuration values necessary for setting up EdgeConnect.
 Save the example below in a file called <code>deployment.yaml</code> and replace the values surrounded by <code>&lt; &gt;</code> with the values in your <code>edgeConnect.yaml</code>.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>apiVersion: v1
-<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>
-<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>
-<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>
-<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>kind: Secret
-<a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>
-<a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a>
-<a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a>
-<a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a>metadata:
-<a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a>
-<a id="__codelineno-14-11" name="__codelineno-14-11" href="#__codelineno-14-11"></a>
-<a id="__codelineno-14-12" name="__codelineno-14-12" href="#__codelineno-14-12"></a>
-<a id="__codelineno-14-13" name="__codelineno-14-13" href="#__codelineno-14-13"></a>name: edge-connect-oauth
-<a id="__codelineno-14-14" name="__codelineno-14-14" href="#__codelineno-14-14"></a>
-<a id="__codelineno-14-15" name="__codelineno-14-15" href="#__codelineno-14-15"></a>
-<a id="__codelineno-14-16" name="__codelineno-14-16" href="#__codelineno-14-16"></a>
-<a id="__codelineno-14-17" name="__codelineno-14-17" href="#__codelineno-14-17"></a>namespace: dynatrace
-<a id="__codelineno-14-18" name="__codelineno-14-18" href="#__codelineno-14-18"></a>
-<a id="__codelineno-14-19" name="__codelineno-14-19" href="#__codelineno-14-19"></a>
-<a id="__codelineno-14-20" name="__codelineno-14-20" href="#__codelineno-14-20"></a>
-<a id="__codelineno-14-21" name="__codelineno-14-21" href="#__codelineno-14-21"></a>stringData:
-<a id="__codelineno-14-22" name="__codelineno-14-22" href="#__codelineno-14-22"></a>
-<a id="__codelineno-14-23" name="__codelineno-14-23" href="#__codelineno-14-23"></a>
-<a id="__codelineno-14-24" name="__codelineno-14-24" href="#__codelineno-14-24"></a>
-<a id="__codelineno-14-25" name="__codelineno-14-25" href="#__codelineno-14-25"></a>oauth-client-id: &lt;oauth.client_id from edgeConnect.yaml&gt;
-<a id="__codelineno-14-26" name="__codelineno-14-26" href="#__codelineno-14-26"></a>
-<a id="__codelineno-14-27" name="__codelineno-14-27" href="#__codelineno-14-27"></a>
-<a id="__codelineno-14-28" name="__codelineno-14-28" href="#__codelineno-14-28"></a>
-<a id="__codelineno-14-29" name="__codelineno-14-29" href="#__codelineno-14-29"></a>oauth-client-secret: &lt;oauth.client_secret from edgeConnect.yaml&gt;
-<a id="__codelineno-14-30" name="__codelineno-14-30" href="#__codelineno-14-30"></a>
-<a id="__codelineno-14-31" name="__codelineno-14-31" href="#__codelineno-14-31"></a>
-<a id="__codelineno-14-32" name="__codelineno-14-32" href="#__codelineno-14-32"></a>
-<a id="__codelineno-14-33" name="__codelineno-14-33" href="#__codelineno-14-33"></a>---
-<a id="__codelineno-14-34" name="__codelineno-14-34" href="#__codelineno-14-34"></a>
-<a id="__codelineno-14-35" name="__codelineno-14-35" href="#__codelineno-14-35"></a>
-<a id="__codelineno-14-36" name="__codelineno-14-36" href="#__codelineno-14-36"></a>
-<a id="__codelineno-14-37" name="__codelineno-14-37" href="#__codelineno-14-37"></a>apiVersion: v1
-<a id="__codelineno-14-38" name="__codelineno-14-38" href="#__codelineno-14-38"></a>
-<a id="__codelineno-14-39" name="__codelineno-14-39" href="#__codelineno-14-39"></a>
-<a id="__codelineno-14-40" name="__codelineno-14-40" href="#__codelineno-14-40"></a>
-<a id="__codelineno-14-41" name="__codelineno-14-41" href="#__codelineno-14-41"></a>kind: Secret
-<a id="__codelineno-14-42" name="__codelineno-14-42" href="#__codelineno-14-42"></a>
-<a id="__codelineno-14-43" name="__codelineno-14-43" href="#__codelineno-14-43"></a>
-<a id="__codelineno-14-44" name="__codelineno-14-44" href="#__codelineno-14-44"></a>
-<a id="__codelineno-14-45" name="__codelineno-14-45" href="#__codelineno-14-45"></a>metadata:
-<a id="__codelineno-14-46" name="__codelineno-14-46" href="#__codelineno-14-46"></a>
-<a id="__codelineno-14-47" name="__codelineno-14-47" href="#__codelineno-14-47"></a>
-<a id="__codelineno-14-48" name="__codelineno-14-48" href="#__codelineno-14-48"></a>
-<a id="__codelineno-14-49" name="__codelineno-14-49" href="#__codelineno-14-49"></a>name: edge-connect-config
-<a id="__codelineno-14-50" name="__codelineno-14-50" href="#__codelineno-14-50"></a>
-<a id="__codelineno-14-51" name="__codelineno-14-51" href="#__codelineno-14-51"></a>
-<a id="__codelineno-14-52" name="__codelineno-14-52" href="#__codelineno-14-52"></a>
-<a id="__codelineno-14-53" name="__codelineno-14-53" href="#__codelineno-14-53"></a>namespace: dynatrace
-<a id="__codelineno-14-54" name="__codelineno-14-54" href="#__codelineno-14-54"></a>
-<a id="__codelineno-14-55" name="__codelineno-14-55" href="#__codelineno-14-55"></a>
-<a id="__codelineno-14-56" name="__codelineno-14-56" href="#__codelineno-14-56"></a>
-<a id="__codelineno-14-57" name="__codelineno-14-57" href="#__codelineno-14-57"></a>stringData:
-<a id="__codelineno-14-58" name="__codelineno-14-58" href="#__codelineno-14-58"></a>
-<a id="__codelineno-14-59" name="__codelineno-14-59" href="#__codelineno-14-59"></a>
-<a id="__codelineno-14-60" name="__codelineno-14-60" href="#__codelineno-14-60"></a>
-<a id="__codelineno-14-61" name="__codelineno-14-61" href="#__codelineno-14-61"></a>edge-connect-config-file: |
-<a id="__codelineno-14-62" name="__codelineno-14-62" href="#__codelineno-14-62"></a>
-<a id="__codelineno-14-63" name="__codelineno-14-63" href="#__codelineno-14-63"></a>
-<a id="__codelineno-14-64" name="__codelineno-14-64" href="#__codelineno-14-64"></a>
-<a id="__codelineno-14-65" name="__codelineno-14-65" href="#__codelineno-14-65"></a>certificate_paths:
-<a id="__codelineno-14-66" name="__codelineno-14-66" href="#__codelineno-14-66"></a>
-<a id="__codelineno-14-67" name="__codelineno-14-67" href="#__codelineno-14-67"></a>
-<a id="__codelineno-14-68" name="__codelineno-14-68" href="#__codelineno-14-68"></a>
-<a id="__codelineno-14-69" name="__codelineno-14-69" href="#__codelineno-14-69"></a>- &quot;/etc/edge_connect_certs/some_certificate.cer&quot;
-<a id="__codelineno-14-70" name="__codelineno-14-70" href="#__codelineno-14-70"></a>
-<a id="__codelineno-14-71" name="__codelineno-14-71" href="#__codelineno-14-71"></a>
-<a id="__codelineno-14-72" name="__codelineno-14-72" href="#__codelineno-14-72"></a>
-<a id="__codelineno-14-73" name="__codelineno-14-73" href="#__codelineno-14-73"></a>- &quot;/etc/edge_connect_certs/another_certificate.pem&quot;
-<a id="__codelineno-14-74" name="__codelineno-14-74" href="#__codelineno-14-74"></a>
-<a id="__codelineno-14-75" name="__codelineno-14-75" href="#__codelineno-14-75"></a>
-<a id="__codelineno-14-76" name="__codelineno-14-76" href="#__codelineno-14-76"></a>
-<a id="__codelineno-14-77" name="__codelineno-14-77" href="#__codelineno-14-77"></a>secrets:
-<a id="__codelineno-14-78" name="__codelineno-14-78" href="#__codelineno-14-78"></a>
-<a id="__codelineno-14-79" name="__codelineno-14-79" href="#__codelineno-14-79"></a>
-<a id="__codelineno-14-80" name="__codelineno-14-80" href="#__codelineno-14-80"></a>
-<a id="__codelineno-14-81" name="__codelineno-14-81" href="#__codelineno-14-81"></a>- name: My secret
-<a id="__codelineno-14-82" name="__codelineno-14-82" href="#__codelineno-14-82"></a>
-<a id="__codelineno-14-83" name="__codelineno-14-83" href="#__codelineno-14-83"></a>
-<a id="__codelineno-14-84" name="__codelineno-14-84" href="#__codelineno-14-84"></a>
-<a id="__codelineno-14-85" name="__codelineno-14-85" href="#__codelineno-14-85"></a>token: &lt;DYNATRACE_TOKEN_PLACEHOLDER&gt;.some-token-secret
-<a id="__codelineno-14-86" name="__codelineno-14-86" href="#__codelineno-14-86"></a>
-<a id="__codelineno-14-87" name="__codelineno-14-87" href="#__codelineno-14-87"></a>
-<a id="__codelineno-14-88" name="__codelineno-14-88" href="#__codelineno-14-88"></a>
-<a id="__codelineno-14-89" name="__codelineno-14-89" href="#__codelineno-14-89"></a>from_env: MY_SECRET
-<a id="__codelineno-14-90" name="__codelineno-14-90" href="#__codelineno-14-90"></a>
-<a id="__codelineno-14-91" name="__codelineno-14-91" href="#__codelineno-14-91"></a>
-<a id="__codelineno-14-92" name="__codelineno-14-92" href="#__codelineno-14-92"></a>
-<a id="__codelineno-14-93" name="__codelineno-14-93" href="#__codelineno-14-93"></a>restrict_hosts_to:
-<a id="__codelineno-14-94" name="__codelineno-14-94" href="#__codelineno-14-94"></a>
-<a id="__codelineno-14-95" name="__codelineno-14-95" href="#__codelineno-14-95"></a>
-<a id="__codelineno-14-96" name="__codelineno-14-96" href="#__codelineno-14-96"></a>
-<a id="__codelineno-14-97" name="__codelineno-14-97" href="#__codelineno-14-97"></a>- dynatrace.com
-<a id="__codelineno-14-98" name="__codelineno-14-98" href="#__codelineno-14-98"></a>
-<a id="__codelineno-14-99" name="__codelineno-14-99" href="#__codelineno-14-99"></a>
-<a id="__codelineno-14-100" name="__codelineno-14-100" href="#__codelineno-14-100"></a>
-<a id="__codelineno-14-101" name="__codelineno-14-101" href="#__codelineno-14-101"></a>- name: My other secret
-<a id="__codelineno-14-102" name="__codelineno-14-102" href="#__codelineno-14-102"></a>
-<a id="__codelineno-14-103" name="__codelineno-14-103" href="#__codelineno-14-103"></a>
-<a id="__codelineno-14-104" name="__codelineno-14-104" href="#__codelineno-14-104"></a>
-<a id="__codelineno-14-105" name="__codelineno-14-105" href="#__codelineno-14-105"></a>token: &lt;DYNATRACE_TOKEN_PLACEHOLDER&gt;.another-token-secret
-<a id="__codelineno-14-106" name="__codelineno-14-106" href="#__codelineno-14-106"></a>
-<a id="__codelineno-14-107" name="__codelineno-14-107" href="#__codelineno-14-107"></a>
-<a id="__codelineno-14-108" name="__codelineno-14-108" href="#__codelineno-14-108"></a>
-<a id="__codelineno-14-109" name="__codelineno-14-109" href="#__codelineno-14-109"></a>from_file: /path/to/my/other/secret
-<a id="__codelineno-14-110" name="__codelineno-14-110" href="#__codelineno-14-110"></a>
-<a id="__codelineno-14-111" name="__codelineno-14-111" href="#__codelineno-14-111"></a>
-<a id="__codelineno-14-112" name="__codelineno-14-112" href="#__codelineno-14-112"></a>
-<a id="__codelineno-14-113" name="__codelineno-14-113" href="#__codelineno-14-113"></a>restrict_hosts_to:
-<a id="__codelineno-14-114" name="__codelineno-14-114" href="#__codelineno-14-114"></a>
-<a id="__codelineno-14-115" name="__codelineno-14-115" href="#__codelineno-14-115"></a>
-<a id="__codelineno-14-116" name="__codelineno-14-116" href="#__codelineno-14-116"></a>
-<a id="__codelineno-14-117" name="__codelineno-14-117" href="#__codelineno-14-117"></a>- internal.example.com
-<a id="__codelineno-14-118" name="__codelineno-14-118" href="#__codelineno-14-118"></a>
-<a id="__codelineno-14-119" name="__codelineno-14-119" href="#__codelineno-14-119"></a>
-<a id="__codelineno-14-120" name="__codelineno-14-120" href="#__codelineno-14-120"></a>
-<a id="__codelineno-14-121" name="__codelineno-14-121" href="#__codelineno-14-121"></a>---
-<a id="__codelineno-14-122" name="__codelineno-14-122" href="#__codelineno-14-122"></a>
-<a id="__codelineno-14-123" name="__codelineno-14-123" href="#__codelineno-14-123"></a>
-<a id="__codelineno-14-124" name="__codelineno-14-124" href="#__codelineno-14-124"></a>
-<a id="__codelineno-14-125" name="__codelineno-14-125" href="#__codelineno-14-125"></a>apiVersion: apps/v1
-<a id="__codelineno-14-126" name="__codelineno-14-126" href="#__codelineno-14-126"></a>
-<a id="__codelineno-14-127" name="__codelineno-14-127" href="#__codelineno-14-127"></a>
-<a id="__codelineno-14-128" name="__codelineno-14-128" href="#__codelineno-14-128"></a>
-<a id="__codelineno-14-129" name="__codelineno-14-129" href="#__codelineno-14-129"></a>kind: Deployment
-<a id="__codelineno-14-130" name="__codelineno-14-130" href="#__codelineno-14-130"></a>
-<a id="__codelineno-14-131" name="__codelineno-14-131" href="#__codelineno-14-131"></a>
-<a id="__codelineno-14-132" name="__codelineno-14-132" href="#__codelineno-14-132"></a>
-<a id="__codelineno-14-133" name="__codelineno-14-133" href="#__codelineno-14-133"></a>metadata:
-<a id="__codelineno-14-134" name="__codelineno-14-134" href="#__codelineno-14-134"></a>
-<a id="__codelineno-14-135" name="__codelineno-14-135" href="#__codelineno-14-135"></a>
-<a id="__codelineno-14-136" name="__codelineno-14-136" href="#__codelineno-14-136"></a>
-<a id="__codelineno-14-137" name="__codelineno-14-137" href="#__codelineno-14-137"></a>name: example-edge-connect
-<a id="__codelineno-14-138" name="__codelineno-14-138" href="#__codelineno-14-138"></a>
-<a id="__codelineno-14-139" name="__codelineno-14-139" href="#__codelineno-14-139"></a>
-<a id="__codelineno-14-140" name="__codelineno-14-140" href="#__codelineno-14-140"></a>
-<a id="__codelineno-14-141" name="__codelineno-14-141" href="#__codelineno-14-141"></a>namespace: dynatrace
-<a id="__codelineno-14-142" name="__codelineno-14-142" href="#__codelineno-14-142"></a>
-<a id="__codelineno-14-143" name="__codelineno-14-143" href="#__codelineno-14-143"></a>
-<a id="__codelineno-14-144" name="__codelineno-14-144" href="#__codelineno-14-144"></a>
-<a id="__codelineno-14-145" name="__codelineno-14-145" href="#__codelineno-14-145"></a>spec:
-<a id="__codelineno-14-146" name="__codelineno-14-146" href="#__codelineno-14-146"></a>
-<a id="__codelineno-14-147" name="__codelineno-14-147" href="#__codelineno-14-147"></a>
-<a id="__codelineno-14-148" name="__codelineno-14-148" href="#__codelineno-14-148"></a>
-<a id="__codelineno-14-149" name="__codelineno-14-149" href="#__codelineno-14-149"></a>replicas: 1
-<a id="__codelineno-14-150" name="__codelineno-14-150" href="#__codelineno-14-150"></a>
-<a id="__codelineno-14-151" name="__codelineno-14-151" href="#__codelineno-14-151"></a>
-<a id="__codelineno-14-152" name="__codelineno-14-152" href="#__codelineno-14-152"></a>
-<a id="__codelineno-14-153" name="__codelineno-14-153" href="#__codelineno-14-153"></a>selector:
-<a id="__codelineno-14-154" name="__codelineno-14-154" href="#__codelineno-14-154"></a>
-<a id="__codelineno-14-155" name="__codelineno-14-155" href="#__codelineno-14-155"></a>
-<a id="__codelineno-14-156" name="__codelineno-14-156" href="#__codelineno-14-156"></a>
-<a id="__codelineno-14-157" name="__codelineno-14-157" href="#__codelineno-14-157"></a>matchLabels:
-<a id="__codelineno-14-158" name="__codelineno-14-158" href="#__codelineno-14-158"></a>
-<a id="__codelineno-14-159" name="__codelineno-14-159" href="#__codelineno-14-159"></a>
-<a id="__codelineno-14-160" name="__codelineno-14-160" href="#__codelineno-14-160"></a>
-<a id="__codelineno-14-161" name="__codelineno-14-161" href="#__codelineno-14-161"></a>app: edge-connect
-<a id="__codelineno-14-162" name="__codelineno-14-162" href="#__codelineno-14-162"></a>
-<a id="__codelineno-14-163" name="__codelineno-14-163" href="#__codelineno-14-163"></a>
-<a id="__codelineno-14-164" name="__codelineno-14-164" href="#__codelineno-14-164"></a>
-<a id="__codelineno-14-165" name="__codelineno-14-165" href="#__codelineno-14-165"></a>template:
-<a id="__codelineno-14-166" name="__codelineno-14-166" href="#__codelineno-14-166"></a>
-<a id="__codelineno-14-167" name="__codelineno-14-167" href="#__codelineno-14-167"></a>
-<a id="__codelineno-14-168" name="__codelineno-14-168" href="#__codelineno-14-168"></a>
-<a id="__codelineno-14-169" name="__codelineno-14-169" href="#__codelineno-14-169"></a>metadata:
-<a id="__codelineno-14-170" name="__codelineno-14-170" href="#__codelineno-14-170"></a>
-<a id="__codelineno-14-171" name="__codelineno-14-171" href="#__codelineno-14-171"></a>
-<a id="__codelineno-14-172" name="__codelineno-14-172" href="#__codelineno-14-172"></a>
-<a id="__codelineno-14-173" name="__codelineno-14-173" href="#__codelineno-14-173"></a>labels:
-<a id="__codelineno-14-174" name="__codelineno-14-174" href="#__codelineno-14-174"></a>
-<a id="__codelineno-14-175" name="__codelineno-14-175" href="#__codelineno-14-175"></a>
-<a id="__codelineno-14-176" name="__codelineno-14-176" href="#__codelineno-14-176"></a>
-<a id="__codelineno-14-177" name="__codelineno-14-177" href="#__codelineno-14-177"></a>app: edge-connect
-<a id="__codelineno-14-178" name="__codelineno-14-178" href="#__codelineno-14-178"></a>
-<a id="__codelineno-14-179" name="__codelineno-14-179" href="#__codelineno-14-179"></a>
-<a id="__codelineno-14-180" name="__codelineno-14-180" href="#__codelineno-14-180"></a>
-<a id="__codelineno-14-181" name="__codelineno-14-181" href="#__codelineno-14-181"></a>spec:
-<a id="__codelineno-14-182" name="__codelineno-14-182" href="#__codelineno-14-182"></a>
-<a id="__codelineno-14-183" name="__codelineno-14-183" href="#__codelineno-14-183"></a>
-<a id="__codelineno-14-184" name="__codelineno-14-184" href="#__codelineno-14-184"></a>
-<a id="__codelineno-14-185" name="__codelineno-14-185" href="#__codelineno-14-185"></a>containers:
-<a id="__codelineno-14-186" name="__codelineno-14-186" href="#__codelineno-14-186"></a>
-<a id="__codelineno-14-187" name="__codelineno-14-187" href="#__codelineno-14-187"></a>
-<a id="__codelineno-14-188" name="__codelineno-14-188" href="#__codelineno-14-188"></a>
-<a id="__codelineno-14-189" name="__codelineno-14-189" href="#__codelineno-14-189"></a>- name: edge-connect
-<a id="__codelineno-14-190" name="__codelineno-14-190" href="#__codelineno-14-190"></a>
-<a id="__codelineno-14-191" name="__codelineno-14-191" href="#__codelineno-14-191"></a>
-<a id="__codelineno-14-192" name="__codelineno-14-192" href="#__codelineno-14-192"></a>
-<a id="__codelineno-14-193" name="__codelineno-14-193" href="#__codelineno-14-193"></a>image: dynatrace/edgeconnect:latest
-<a id="__codelineno-14-194" name="__codelineno-14-194" href="#__codelineno-14-194"></a>
-<a id="__codelineno-14-195" name="__codelineno-14-195" href="#__codelineno-14-195"></a>
-<a id="__codelineno-14-196" name="__codelineno-14-196" href="#__codelineno-14-196"></a>
-<a id="__codelineno-14-197" name="__codelineno-14-197" href="#__codelineno-14-197"></a>imagePullPolicy: IfNotPresent
-<a id="__codelineno-14-198" name="__codelineno-14-198" href="#__codelineno-14-198"></a>
-<a id="__codelineno-14-199" name="__codelineno-14-199" href="#__codelineno-14-199"></a>
-<a id="__codelineno-14-200" name="__codelineno-14-200" href="#__codelineno-14-200"></a>
-<a id="__codelineno-14-201" name="__codelineno-14-201" href="#__codelineno-14-201"></a>env:
-<a id="__codelineno-14-202" name="__codelineno-14-202" href="#__codelineno-14-202"></a>
-<a id="__codelineno-14-203" name="__codelineno-14-203" href="#__codelineno-14-203"></a>
-<a id="__codelineno-14-204" name="__codelineno-14-204" href="#__codelineno-14-204"></a>
-<a id="__codelineno-14-205" name="__codelineno-14-205" href="#__codelineno-14-205"></a>- name: EDGE_CONNECT_NAME
-<a id="__codelineno-14-206" name="__codelineno-14-206" href="#__codelineno-14-206"></a>
-<a id="__codelineno-14-207" name="__codelineno-14-207" href="#__codelineno-14-207"></a>
-<a id="__codelineno-14-208" name="__codelineno-14-208" href="#__codelineno-14-208"></a>
-<a id="__codelineno-14-209" name="__codelineno-14-209" href="#__codelineno-14-209"></a>value: &lt;name from edgeConnect.yaml&gt;
-<a id="__codelineno-14-210" name="__codelineno-14-210" href="#__codelineno-14-210"></a>
-<a id="__codelineno-14-211" name="__codelineno-14-211" href="#__codelineno-14-211"></a>
-<a id="__codelineno-14-212" name="__codelineno-14-212" href="#__codelineno-14-212"></a>
-<a id="__codelineno-14-213" name="__codelineno-14-213" href="#__codelineno-14-213"></a>- name: EDGE_CONNECT_API_ENDPOINT_HOST
-<a id="__codelineno-14-214" name="__codelineno-14-214" href="#__codelineno-14-214"></a>
-<a id="__codelineno-14-215" name="__codelineno-14-215" href="#__codelineno-14-215"></a>
-<a id="__codelineno-14-216" name="__codelineno-14-216" href="#__codelineno-14-216"></a>
-<a id="__codelineno-14-217" name="__codelineno-14-217" href="#__codelineno-14-217"></a>value: &lt;api_endpoint_host from edgeConnect.yaml&gt;
-<a id="__codelineno-14-218" name="__codelineno-14-218" href="#__codelineno-14-218"></a>
-<a id="__codelineno-14-219" name="__codelineno-14-219" href="#__codelineno-14-219"></a>
-<a id="__codelineno-14-220" name="__codelineno-14-220" href="#__codelineno-14-220"></a>
-<a id="__codelineno-14-221" name="__codelineno-14-221" href="#__codelineno-14-221"></a>- name: EDGE_CONNECT_OAUTH__ENDPOINT
-<a id="__codelineno-14-222" name="__codelineno-14-222" href="#__codelineno-14-222"></a>
-<a id="__codelineno-14-223" name="__codelineno-14-223" href="#__codelineno-14-223"></a>
-<a id="__codelineno-14-224" name="__codelineno-14-224" href="#__codelineno-14-224"></a>
-<a id="__codelineno-14-225" name="__codelineno-14-225" href="#__codelineno-14-225"></a>value: &lt;oauth.endpoint from edgeConnect.yaml&gt;
-<a id="__codelineno-14-226" name="__codelineno-14-226" href="#__codelineno-14-226"></a>
-<a id="__codelineno-14-227" name="__codelineno-14-227" href="#__codelineno-14-227"></a>
-<a id="__codelineno-14-228" name="__codelineno-14-228" href="#__codelineno-14-228"></a>
-<a id="__codelineno-14-229" name="__codelineno-14-229" href="#__codelineno-14-229"></a>- name: EDGE_CONNECT_OAUTH__RESOURCE
-<a id="__codelineno-14-230" name="__codelineno-14-230" href="#__codelineno-14-230"></a>
-<a id="__codelineno-14-231" name="__codelineno-14-231" href="#__codelineno-14-231"></a>
-<a id="__codelineno-14-232" name="__codelineno-14-232" href="#__codelineno-14-232"></a>
-<a id="__codelineno-14-233" name="__codelineno-14-233" href="#__codelineno-14-233"></a>value: &lt;oauth.resource from edgeConnect.yaml&gt;
-<a id="__codelineno-14-234" name="__codelineno-14-234" href="#__codelineno-14-234"></a>
-<a id="__codelineno-14-235" name="__codelineno-14-235" href="#__codelineno-14-235"></a>
-<a id="__codelineno-14-236" name="__codelineno-14-236" href="#__codelineno-14-236"></a>
-<a id="__codelineno-14-237" name="__codelineno-14-237" href="#__codelineno-14-237"></a>volumeMounts:
-<a id="__codelineno-14-238" name="__codelineno-14-238" href="#__codelineno-14-238"></a>
-<a id="__codelineno-14-239" name="__codelineno-14-239" href="#__codelineno-14-239"></a>
-<a id="__codelineno-14-240" name="__codelineno-14-240" href="#__codelineno-14-240"></a>
-<a id="__codelineno-14-241" name="__codelineno-14-241" href="#__codelineno-14-241"></a>- name: secrets
-<a id="__codelineno-14-242" name="__codelineno-14-242" href="#__codelineno-14-242"></a>
-<a id="__codelineno-14-243" name="__codelineno-14-243" href="#__codelineno-14-243"></a>
-<a id="__codelineno-14-244" name="__codelineno-14-244" href="#__codelineno-14-244"></a>
-<a id="__codelineno-14-245" name="__codelineno-14-245" href="#__codelineno-14-245"></a>mountPath: &quot;/etc/edge_connect&quot;
-<a id="__codelineno-14-246" name="__codelineno-14-246" href="#__codelineno-14-246"></a>
-<a id="__codelineno-14-247" name="__codelineno-14-247" href="#__codelineno-14-247"></a>
-<a id="__codelineno-14-248" name="__codelineno-14-248" href="#__codelineno-14-248"></a>
-<a id="__codelineno-14-249" name="__codelineno-14-249" href="#__codelineno-14-249"></a>readOnly: true
-<a id="__codelineno-14-250" name="__codelineno-14-250" href="#__codelineno-14-250"></a>
-<a id="__codelineno-14-251" name="__codelineno-14-251" href="#__codelineno-14-251"></a>
-<a id="__codelineno-14-252" name="__codelineno-14-252" href="#__codelineno-14-252"></a>
-<a id="__codelineno-14-253" name="__codelineno-14-253" href="#__codelineno-14-253"></a>- name: config
-<a id="__codelineno-14-254" name="__codelineno-14-254" href="#__codelineno-14-254"></a>
-<a id="__codelineno-14-255" name="__codelineno-14-255" href="#__codelineno-14-255"></a>
-<a id="__codelineno-14-256" name="__codelineno-14-256" href="#__codelineno-14-256"></a>
-<a id="__codelineno-14-257" name="__codelineno-14-257" href="#__codelineno-14-257"></a>mountPath: &quot;/edgeConnect.yaml&quot;
-<a id="__codelineno-14-258" name="__codelineno-14-258" href="#__codelineno-14-258"></a>
-<a id="__codelineno-14-259" name="__codelineno-14-259" href="#__codelineno-14-259"></a>
-<a id="__codelineno-14-260" name="__codelineno-14-260" href="#__codelineno-14-260"></a>
-<a id="__codelineno-14-261" name="__codelineno-14-261" href="#__codelineno-14-261"></a>subPath: &quot;edgeConnect.yaml&quot;
-<a id="__codelineno-14-262" name="__codelineno-14-262" href="#__codelineno-14-262"></a>
-<a id="__codelineno-14-263" name="__codelineno-14-263" href="#__codelineno-14-263"></a>
-<a id="__codelineno-14-264" name="__codelineno-14-264" href="#__codelineno-14-264"></a>
-<a id="__codelineno-14-265" name="__codelineno-14-265" href="#__codelineno-14-265"></a>readOnly: true
-<a id="__codelineno-14-266" name="__codelineno-14-266" href="#__codelineno-14-266"></a>
-<a id="__codelineno-14-267" name="__codelineno-14-267" href="#__codelineno-14-267"></a>
-<a id="__codelineno-14-268" name="__codelineno-14-268" href="#__codelineno-14-268"></a>
-<a id="__codelineno-14-269" name="__codelineno-14-269" href="#__codelineno-14-269"></a>volumes:
-<a id="__codelineno-14-270" name="__codelineno-14-270" href="#__codelineno-14-270"></a>
-<a id="__codelineno-14-271" name="__codelineno-14-271" href="#__codelineno-14-271"></a>
-<a id="__codelineno-14-272" name="__codelineno-14-272" href="#__codelineno-14-272"></a>
-<a id="__codelineno-14-273" name="__codelineno-14-273" href="#__codelineno-14-273"></a>- name: secrets
-<a id="__codelineno-14-274" name="__codelineno-14-274" href="#__codelineno-14-274"></a>
-<a id="__codelineno-14-275" name="__codelineno-14-275" href="#__codelineno-14-275"></a>
-<a id="__codelineno-14-276" name="__codelineno-14-276" href="#__codelineno-14-276"></a>
-<a id="__codelineno-14-277" name="__codelineno-14-277" href="#__codelineno-14-277"></a>secret:
-<a id="__codelineno-14-278" name="__codelineno-14-278" href="#__codelineno-14-278"></a>
-<a id="__codelineno-14-279" name="__codelineno-14-279" href="#__codelineno-14-279"></a>
-<a id="__codelineno-14-280" name="__codelineno-14-280" href="#__codelineno-14-280"></a>
-<a id="__codelineno-14-281" name="__codelineno-14-281" href="#__codelineno-14-281"></a>secretName: edge-connect-oauth
-<a id="__codelineno-14-282" name="__codelineno-14-282" href="#__codelineno-14-282"></a>
-<a id="__codelineno-14-283" name="__codelineno-14-283" href="#__codelineno-14-283"></a>
-<a id="__codelineno-14-284" name="__codelineno-14-284" href="#__codelineno-14-284"></a>
-<a id="__codelineno-14-285" name="__codelineno-14-285" href="#__codelineno-14-285"></a>items:
-<a id="__codelineno-14-286" name="__codelineno-14-286" href="#__codelineno-14-286"></a>
-<a id="__codelineno-14-287" name="__codelineno-14-287" href="#__codelineno-14-287"></a>
-<a id="__codelineno-14-288" name="__codelineno-14-288" href="#__codelineno-14-288"></a>
-<a id="__codelineno-14-289" name="__codelineno-14-289" href="#__codelineno-14-289"></a>- key: oauth-client-id
-<a id="__codelineno-14-290" name="__codelineno-14-290" href="#__codelineno-14-290"></a>
-<a id="__codelineno-14-291" name="__codelineno-14-291" href="#__codelineno-14-291"></a>
-<a id="__codelineno-14-292" name="__codelineno-14-292" href="#__codelineno-14-292"></a>
-<a id="__codelineno-14-293" name="__codelineno-14-293" href="#__codelineno-14-293"></a>path: oauth/client_id
-<a id="__codelineno-14-294" name="__codelineno-14-294" href="#__codelineno-14-294"></a>
-<a id="__codelineno-14-295" name="__codelineno-14-295" href="#__codelineno-14-295"></a>
-<a id="__codelineno-14-296" name="__codelineno-14-296" href="#__codelineno-14-296"></a>
-<a id="__codelineno-14-297" name="__codelineno-14-297" href="#__codelineno-14-297"></a>- key: oauth-client-secret
-<a id="__codelineno-14-298" name="__codelineno-14-298" href="#__codelineno-14-298"></a>
-<a id="__codelineno-14-299" name="__codelineno-14-299" href="#__codelineno-14-299"></a>
-<a id="__codelineno-14-300" name="__codelineno-14-300" href="#__codelineno-14-300"></a>
-<a id="__codelineno-14-301" name="__codelineno-14-301" href="#__codelineno-14-301"></a>path: oauth/client_secret
-<a id="__codelineno-14-302" name="__codelineno-14-302" href="#__codelineno-14-302"></a>
-<a id="__codelineno-14-303" name="__codelineno-14-303" href="#__codelineno-14-303"></a>
-<a id="__codelineno-14-304" name="__codelineno-14-304" href="#__codelineno-14-304"></a>
-<a id="__codelineno-14-305" name="__codelineno-14-305" href="#__codelineno-14-305"></a>- name: config
-<a id="__codelineno-14-306" name="__codelineno-14-306" href="#__codelineno-14-306"></a>
-<a id="__codelineno-14-307" name="__codelineno-14-307" href="#__codelineno-14-307"></a>
-<a id="__codelineno-14-308" name="__codelineno-14-308" href="#__codelineno-14-308"></a>
-<a id="__codelineno-14-309" name="__codelineno-14-309" href="#__codelineno-14-309"></a>secret:
-<a id="__codelineno-14-310" name="__codelineno-14-310" href="#__codelineno-14-310"></a>
-<a id="__codelineno-14-311" name="__codelineno-14-311" href="#__codelineno-14-311"></a>
-<a id="__codelineno-14-312" name="__codelineno-14-312" href="#__codelineno-14-312"></a>
-<a id="__codelineno-14-313" name="__codelineno-14-313" href="#__codelineno-14-313"></a>secretName: edge-connect-config
-<a id="__codelineno-14-314" name="__codelineno-14-314" href="#__codelineno-14-314"></a>
-<a id="__codelineno-14-315" name="__codelineno-14-315" href="#__codelineno-14-315"></a>
-<a id="__codelineno-14-316" name="__codelineno-14-316" href="#__codelineno-14-316"></a>
-<a id="__codelineno-14-317" name="__codelineno-14-317" href="#__codelineno-14-317"></a>items:
-<a id="__codelineno-14-318" name="__codelineno-14-318" href="#__codelineno-14-318"></a>
-<a id="__codelineno-14-319" name="__codelineno-14-319" href="#__codelineno-14-319"></a>
-<a id="__codelineno-14-320" name="__codelineno-14-320" href="#__codelineno-14-320"></a>
-<a id="__codelineno-14-321" name="__codelineno-14-321" href="#__codelineno-14-321"></a>- key: edge-connect-config-file
-<a id="__codelineno-14-322" name="__codelineno-14-322" href="#__codelineno-14-322"></a>
-<a id="__codelineno-14-323" name="__codelineno-14-323" href="#__codelineno-14-323"></a>
-<a id="__codelineno-14-324" name="__codelineno-14-324" href="#__codelineno-14-324"></a>
-<a id="__codelineno-14-325" name="__codelineno-14-325" href="#__codelineno-14-325"></a>path: edgeConnect.yaml
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>apiVersion: v1
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>kind: Secret
+<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>
+<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a>
+<a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a>
+<a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a>metadata:
+<a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a>
+<a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a>
+<a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a>
+<a id="__codelineno-13-13" name="__codelineno-13-13" href="#__codelineno-13-13"></a>name: edge-connect-oauth
+<a id="__codelineno-13-14" name="__codelineno-13-14" href="#__codelineno-13-14"></a>
+<a id="__codelineno-13-15" name="__codelineno-13-15" href="#__codelineno-13-15"></a>
+<a id="__codelineno-13-16" name="__codelineno-13-16" href="#__codelineno-13-16"></a>
+<a id="__codelineno-13-17" name="__codelineno-13-17" href="#__codelineno-13-17"></a>namespace: dynatrace
+<a id="__codelineno-13-18" name="__codelineno-13-18" href="#__codelineno-13-18"></a>
+<a id="__codelineno-13-19" name="__codelineno-13-19" href="#__codelineno-13-19"></a>
+<a id="__codelineno-13-20" name="__codelineno-13-20" href="#__codelineno-13-20"></a>
+<a id="__codelineno-13-21" name="__codelineno-13-21" href="#__codelineno-13-21"></a>stringData:
+<a id="__codelineno-13-22" name="__codelineno-13-22" href="#__codelineno-13-22"></a>
+<a id="__codelineno-13-23" name="__codelineno-13-23" href="#__codelineno-13-23"></a>
+<a id="__codelineno-13-24" name="__codelineno-13-24" href="#__codelineno-13-24"></a>
+<a id="__codelineno-13-25" name="__codelineno-13-25" href="#__codelineno-13-25"></a>oauth-client-id: &lt;oauth.client_id from edgeConnect.yaml&gt;
+<a id="__codelineno-13-26" name="__codelineno-13-26" href="#__codelineno-13-26"></a>
+<a id="__codelineno-13-27" name="__codelineno-13-27" href="#__codelineno-13-27"></a>
+<a id="__codelineno-13-28" name="__codelineno-13-28" href="#__codelineno-13-28"></a>
+<a id="__codelineno-13-29" name="__codelineno-13-29" href="#__codelineno-13-29"></a>oauth-client-secret: &lt;oauth.client_secret from edgeConnect.yaml&gt;
+<a id="__codelineno-13-30" name="__codelineno-13-30" href="#__codelineno-13-30"></a>
+<a id="__codelineno-13-31" name="__codelineno-13-31" href="#__codelineno-13-31"></a>
+<a id="__codelineno-13-32" name="__codelineno-13-32" href="#__codelineno-13-32"></a>
+<a id="__codelineno-13-33" name="__codelineno-13-33" href="#__codelineno-13-33"></a>---
+<a id="__codelineno-13-34" name="__codelineno-13-34" href="#__codelineno-13-34"></a>
+<a id="__codelineno-13-35" name="__codelineno-13-35" href="#__codelineno-13-35"></a>
+<a id="__codelineno-13-36" name="__codelineno-13-36" href="#__codelineno-13-36"></a>
+<a id="__codelineno-13-37" name="__codelineno-13-37" href="#__codelineno-13-37"></a>apiVersion: v1
+<a id="__codelineno-13-38" name="__codelineno-13-38" href="#__codelineno-13-38"></a>
+<a id="__codelineno-13-39" name="__codelineno-13-39" href="#__codelineno-13-39"></a>
+<a id="__codelineno-13-40" name="__codelineno-13-40" href="#__codelineno-13-40"></a>
+<a id="__codelineno-13-41" name="__codelineno-13-41" href="#__codelineno-13-41"></a>kind: Secret
+<a id="__codelineno-13-42" name="__codelineno-13-42" href="#__codelineno-13-42"></a>
+<a id="__codelineno-13-43" name="__codelineno-13-43" href="#__codelineno-13-43"></a>
+<a id="__codelineno-13-44" name="__codelineno-13-44" href="#__codelineno-13-44"></a>
+<a id="__codelineno-13-45" name="__codelineno-13-45" href="#__codelineno-13-45"></a>metadata:
+<a id="__codelineno-13-46" name="__codelineno-13-46" href="#__codelineno-13-46"></a>
+<a id="__codelineno-13-47" name="__codelineno-13-47" href="#__codelineno-13-47"></a>
+<a id="__codelineno-13-48" name="__codelineno-13-48" href="#__codelineno-13-48"></a>
+<a id="__codelineno-13-49" name="__codelineno-13-49" href="#__codelineno-13-49"></a>name: edge-connect-config
+<a id="__codelineno-13-50" name="__codelineno-13-50" href="#__codelineno-13-50"></a>
+<a id="__codelineno-13-51" name="__codelineno-13-51" href="#__codelineno-13-51"></a>
+<a id="__codelineno-13-52" name="__codelineno-13-52" href="#__codelineno-13-52"></a>
+<a id="__codelineno-13-53" name="__codelineno-13-53" href="#__codelineno-13-53"></a>namespace: dynatrace
+<a id="__codelineno-13-54" name="__codelineno-13-54" href="#__codelineno-13-54"></a>
+<a id="__codelineno-13-55" name="__codelineno-13-55" href="#__codelineno-13-55"></a>
+<a id="__codelineno-13-56" name="__codelineno-13-56" href="#__codelineno-13-56"></a>
+<a id="__codelineno-13-57" name="__codelineno-13-57" href="#__codelineno-13-57"></a>stringData:
+<a id="__codelineno-13-58" name="__codelineno-13-58" href="#__codelineno-13-58"></a>
+<a id="__codelineno-13-59" name="__codelineno-13-59" href="#__codelineno-13-59"></a>
+<a id="__codelineno-13-60" name="__codelineno-13-60" href="#__codelineno-13-60"></a>
+<a id="__codelineno-13-61" name="__codelineno-13-61" href="#__codelineno-13-61"></a>edge-connect-config-file: |
+<a id="__codelineno-13-62" name="__codelineno-13-62" href="#__codelineno-13-62"></a>
+<a id="__codelineno-13-63" name="__codelineno-13-63" href="#__codelineno-13-63"></a>
+<a id="__codelineno-13-64" name="__codelineno-13-64" href="#__codelineno-13-64"></a>
+<a id="__codelineno-13-65" name="__codelineno-13-65" href="#__codelineno-13-65"></a>certificate_paths:
+<a id="__codelineno-13-66" name="__codelineno-13-66" href="#__codelineno-13-66"></a>
+<a id="__codelineno-13-67" name="__codelineno-13-67" href="#__codelineno-13-67"></a>
+<a id="__codelineno-13-68" name="__codelineno-13-68" href="#__codelineno-13-68"></a>
+<a id="__codelineno-13-69" name="__codelineno-13-69" href="#__codelineno-13-69"></a>- &quot;/etc/edge_connect_certs/some_certificate.cer&quot;
+<a id="__codelineno-13-70" name="__codelineno-13-70" href="#__codelineno-13-70"></a>
+<a id="__codelineno-13-71" name="__codelineno-13-71" href="#__codelineno-13-71"></a>
+<a id="__codelineno-13-72" name="__codelineno-13-72" href="#__codelineno-13-72"></a>
+<a id="__codelineno-13-73" name="__codelineno-13-73" href="#__codelineno-13-73"></a>- &quot;/etc/edge_connect_certs/another_certificate.pem&quot;
+<a id="__codelineno-13-74" name="__codelineno-13-74" href="#__codelineno-13-74"></a>
+<a id="__codelineno-13-75" name="__codelineno-13-75" href="#__codelineno-13-75"></a>
+<a id="__codelineno-13-76" name="__codelineno-13-76" href="#__codelineno-13-76"></a>
+<a id="__codelineno-13-77" name="__codelineno-13-77" href="#__codelineno-13-77"></a>secrets:
+<a id="__codelineno-13-78" name="__codelineno-13-78" href="#__codelineno-13-78"></a>
+<a id="__codelineno-13-79" name="__codelineno-13-79" href="#__codelineno-13-79"></a>
+<a id="__codelineno-13-80" name="__codelineno-13-80" href="#__codelineno-13-80"></a>
+<a id="__codelineno-13-81" name="__codelineno-13-81" href="#__codelineno-13-81"></a>- name: My secret
+<a id="__codelineno-13-82" name="__codelineno-13-82" href="#__codelineno-13-82"></a>
+<a id="__codelineno-13-83" name="__codelineno-13-83" href="#__codelineno-13-83"></a>
+<a id="__codelineno-13-84" name="__codelineno-13-84" href="#__codelineno-13-84"></a>
+<a id="__codelineno-13-85" name="__codelineno-13-85" href="#__codelineno-13-85"></a>token: &lt;DYNATRACE_TOKEN_PLACEHOLDER&gt;.some-token-secret
+<a id="__codelineno-13-86" name="__codelineno-13-86" href="#__codelineno-13-86"></a>
+<a id="__codelineno-13-87" name="__codelineno-13-87" href="#__codelineno-13-87"></a>
+<a id="__codelineno-13-88" name="__codelineno-13-88" href="#__codelineno-13-88"></a>
+<a id="__codelineno-13-89" name="__codelineno-13-89" href="#__codelineno-13-89"></a>from_env: MY_SECRET
+<a id="__codelineno-13-90" name="__codelineno-13-90" href="#__codelineno-13-90"></a>
+<a id="__codelineno-13-91" name="__codelineno-13-91" href="#__codelineno-13-91"></a>
+<a id="__codelineno-13-92" name="__codelineno-13-92" href="#__codelineno-13-92"></a>
+<a id="__codelineno-13-93" name="__codelineno-13-93" href="#__codelineno-13-93"></a>restrict_hosts_to:
+<a id="__codelineno-13-94" name="__codelineno-13-94" href="#__codelineno-13-94"></a>
+<a id="__codelineno-13-95" name="__codelineno-13-95" href="#__codelineno-13-95"></a>
+<a id="__codelineno-13-96" name="__codelineno-13-96" href="#__codelineno-13-96"></a>
+<a id="__codelineno-13-97" name="__codelineno-13-97" href="#__codelineno-13-97"></a>- dynatrace.com
+<a id="__codelineno-13-98" name="__codelineno-13-98" href="#__codelineno-13-98"></a>
+<a id="__codelineno-13-99" name="__codelineno-13-99" href="#__codelineno-13-99"></a>
+<a id="__codelineno-13-100" name="__codelineno-13-100" href="#__codelineno-13-100"></a>
+<a id="__codelineno-13-101" name="__codelineno-13-101" href="#__codelineno-13-101"></a>- name: My other secret
+<a id="__codelineno-13-102" name="__codelineno-13-102" href="#__codelineno-13-102"></a>
+<a id="__codelineno-13-103" name="__codelineno-13-103" href="#__codelineno-13-103"></a>
+<a id="__codelineno-13-104" name="__codelineno-13-104" href="#__codelineno-13-104"></a>
+<a id="__codelineno-13-105" name="__codelineno-13-105" href="#__codelineno-13-105"></a>token: &lt;DYNATRACE_TOKEN_PLACEHOLDER&gt;.another-token-secret
+<a id="__codelineno-13-106" name="__codelineno-13-106" href="#__codelineno-13-106"></a>
+<a id="__codelineno-13-107" name="__codelineno-13-107" href="#__codelineno-13-107"></a>
+<a id="__codelineno-13-108" name="__codelineno-13-108" href="#__codelineno-13-108"></a>
+<a id="__codelineno-13-109" name="__codelineno-13-109" href="#__codelineno-13-109"></a>from_file: /path/to/my/other/secret
+<a id="__codelineno-13-110" name="__codelineno-13-110" href="#__codelineno-13-110"></a>
+<a id="__codelineno-13-111" name="__codelineno-13-111" href="#__codelineno-13-111"></a>
+<a id="__codelineno-13-112" name="__codelineno-13-112" href="#__codelineno-13-112"></a>
+<a id="__codelineno-13-113" name="__codelineno-13-113" href="#__codelineno-13-113"></a>restrict_hosts_to:
+<a id="__codelineno-13-114" name="__codelineno-13-114" href="#__codelineno-13-114"></a>
+<a id="__codelineno-13-115" name="__codelineno-13-115" href="#__codelineno-13-115"></a>
+<a id="__codelineno-13-116" name="__codelineno-13-116" href="#__codelineno-13-116"></a>
+<a id="__codelineno-13-117" name="__codelineno-13-117" href="#__codelineno-13-117"></a>- internal.example.com
+<a id="__codelineno-13-118" name="__codelineno-13-118" href="#__codelineno-13-118"></a>
+<a id="__codelineno-13-119" name="__codelineno-13-119" href="#__codelineno-13-119"></a>
+<a id="__codelineno-13-120" name="__codelineno-13-120" href="#__codelineno-13-120"></a>
+<a id="__codelineno-13-121" name="__codelineno-13-121" href="#__codelineno-13-121"></a>---
+<a id="__codelineno-13-122" name="__codelineno-13-122" href="#__codelineno-13-122"></a>
+<a id="__codelineno-13-123" name="__codelineno-13-123" href="#__codelineno-13-123"></a>
+<a id="__codelineno-13-124" name="__codelineno-13-124" href="#__codelineno-13-124"></a>
+<a id="__codelineno-13-125" name="__codelineno-13-125" href="#__codelineno-13-125"></a>apiVersion: apps/v1
+<a id="__codelineno-13-126" name="__codelineno-13-126" href="#__codelineno-13-126"></a>
+<a id="__codelineno-13-127" name="__codelineno-13-127" href="#__codelineno-13-127"></a>
+<a id="__codelineno-13-128" name="__codelineno-13-128" href="#__codelineno-13-128"></a>
+<a id="__codelineno-13-129" name="__codelineno-13-129" href="#__codelineno-13-129"></a>kind: Deployment
+<a id="__codelineno-13-130" name="__codelineno-13-130" href="#__codelineno-13-130"></a>
+<a id="__codelineno-13-131" name="__codelineno-13-131" href="#__codelineno-13-131"></a>
+<a id="__codelineno-13-132" name="__codelineno-13-132" href="#__codelineno-13-132"></a>
+<a id="__codelineno-13-133" name="__codelineno-13-133" href="#__codelineno-13-133"></a>metadata:
+<a id="__codelineno-13-134" name="__codelineno-13-134" href="#__codelineno-13-134"></a>
+<a id="__codelineno-13-135" name="__codelineno-13-135" href="#__codelineno-13-135"></a>
+<a id="__codelineno-13-136" name="__codelineno-13-136" href="#__codelineno-13-136"></a>
+<a id="__codelineno-13-137" name="__codelineno-13-137" href="#__codelineno-13-137"></a>name: example-edge-connect
+<a id="__codelineno-13-138" name="__codelineno-13-138" href="#__codelineno-13-138"></a>
+<a id="__codelineno-13-139" name="__codelineno-13-139" href="#__codelineno-13-139"></a>
+<a id="__codelineno-13-140" name="__codelineno-13-140" href="#__codelineno-13-140"></a>
+<a id="__codelineno-13-141" name="__codelineno-13-141" href="#__codelineno-13-141"></a>namespace: dynatrace
+<a id="__codelineno-13-142" name="__codelineno-13-142" href="#__codelineno-13-142"></a>
+<a id="__codelineno-13-143" name="__codelineno-13-143" href="#__codelineno-13-143"></a>
+<a id="__codelineno-13-144" name="__codelineno-13-144" href="#__codelineno-13-144"></a>
+<a id="__codelineno-13-145" name="__codelineno-13-145" href="#__codelineno-13-145"></a>spec:
+<a id="__codelineno-13-146" name="__codelineno-13-146" href="#__codelineno-13-146"></a>
+<a id="__codelineno-13-147" name="__codelineno-13-147" href="#__codelineno-13-147"></a>
+<a id="__codelineno-13-148" name="__codelineno-13-148" href="#__codelineno-13-148"></a>
+<a id="__codelineno-13-149" name="__codelineno-13-149" href="#__codelineno-13-149"></a>replicas: 1
+<a id="__codelineno-13-150" name="__codelineno-13-150" href="#__codelineno-13-150"></a>
+<a id="__codelineno-13-151" name="__codelineno-13-151" href="#__codelineno-13-151"></a>
+<a id="__codelineno-13-152" name="__codelineno-13-152" href="#__codelineno-13-152"></a>
+<a id="__codelineno-13-153" name="__codelineno-13-153" href="#__codelineno-13-153"></a>selector:
+<a id="__codelineno-13-154" name="__codelineno-13-154" href="#__codelineno-13-154"></a>
+<a id="__codelineno-13-155" name="__codelineno-13-155" href="#__codelineno-13-155"></a>
+<a id="__codelineno-13-156" name="__codelineno-13-156" href="#__codelineno-13-156"></a>
+<a id="__codelineno-13-157" name="__codelineno-13-157" href="#__codelineno-13-157"></a>matchLabels:
+<a id="__codelineno-13-158" name="__codelineno-13-158" href="#__codelineno-13-158"></a>
+<a id="__codelineno-13-159" name="__codelineno-13-159" href="#__codelineno-13-159"></a>
+<a id="__codelineno-13-160" name="__codelineno-13-160" href="#__codelineno-13-160"></a>
+<a id="__codelineno-13-161" name="__codelineno-13-161" href="#__codelineno-13-161"></a>app: edge-connect
+<a id="__codelineno-13-162" name="__codelineno-13-162" href="#__codelineno-13-162"></a>
+<a id="__codelineno-13-163" name="__codelineno-13-163" href="#__codelineno-13-163"></a>
+<a id="__codelineno-13-164" name="__codelineno-13-164" href="#__codelineno-13-164"></a>
+<a id="__codelineno-13-165" name="__codelineno-13-165" href="#__codelineno-13-165"></a>template:
+<a id="__codelineno-13-166" name="__codelineno-13-166" href="#__codelineno-13-166"></a>
+<a id="__codelineno-13-167" name="__codelineno-13-167" href="#__codelineno-13-167"></a>
+<a id="__codelineno-13-168" name="__codelineno-13-168" href="#__codelineno-13-168"></a>
+<a id="__codelineno-13-169" name="__codelineno-13-169" href="#__codelineno-13-169"></a>metadata:
+<a id="__codelineno-13-170" name="__codelineno-13-170" href="#__codelineno-13-170"></a>
+<a id="__codelineno-13-171" name="__codelineno-13-171" href="#__codelineno-13-171"></a>
+<a id="__codelineno-13-172" name="__codelineno-13-172" href="#__codelineno-13-172"></a>
+<a id="__codelineno-13-173" name="__codelineno-13-173" href="#__codelineno-13-173"></a>labels:
+<a id="__codelineno-13-174" name="__codelineno-13-174" href="#__codelineno-13-174"></a>
+<a id="__codelineno-13-175" name="__codelineno-13-175" href="#__codelineno-13-175"></a>
+<a id="__codelineno-13-176" name="__codelineno-13-176" href="#__codelineno-13-176"></a>
+<a id="__codelineno-13-177" name="__codelineno-13-177" href="#__codelineno-13-177"></a>app: edge-connect
+<a id="__codelineno-13-178" name="__codelineno-13-178" href="#__codelineno-13-178"></a>
+<a id="__codelineno-13-179" name="__codelineno-13-179" href="#__codelineno-13-179"></a>
+<a id="__codelineno-13-180" name="__codelineno-13-180" href="#__codelineno-13-180"></a>
+<a id="__codelineno-13-181" name="__codelineno-13-181" href="#__codelineno-13-181"></a>spec:
+<a id="__codelineno-13-182" name="__codelineno-13-182" href="#__codelineno-13-182"></a>
+<a id="__codelineno-13-183" name="__codelineno-13-183" href="#__codelineno-13-183"></a>
+<a id="__codelineno-13-184" name="__codelineno-13-184" href="#__codelineno-13-184"></a>
+<a id="__codelineno-13-185" name="__codelineno-13-185" href="#__codelineno-13-185"></a>containers:
+<a id="__codelineno-13-186" name="__codelineno-13-186" href="#__codelineno-13-186"></a>
+<a id="__codelineno-13-187" name="__codelineno-13-187" href="#__codelineno-13-187"></a>
+<a id="__codelineno-13-188" name="__codelineno-13-188" href="#__codelineno-13-188"></a>
+<a id="__codelineno-13-189" name="__codelineno-13-189" href="#__codelineno-13-189"></a>- name: edge-connect
+<a id="__codelineno-13-190" name="__codelineno-13-190" href="#__codelineno-13-190"></a>
+<a id="__codelineno-13-191" name="__codelineno-13-191" href="#__codelineno-13-191"></a>
+<a id="__codelineno-13-192" name="__codelineno-13-192" href="#__codelineno-13-192"></a>
+<a id="__codelineno-13-193" name="__codelineno-13-193" href="#__codelineno-13-193"></a>image: dynatrace/edgeconnect:latest
+<a id="__codelineno-13-194" name="__codelineno-13-194" href="#__codelineno-13-194"></a>
+<a id="__codelineno-13-195" name="__codelineno-13-195" href="#__codelineno-13-195"></a>
+<a id="__codelineno-13-196" name="__codelineno-13-196" href="#__codelineno-13-196"></a>
+<a id="__codelineno-13-197" name="__codelineno-13-197" href="#__codelineno-13-197"></a>imagePullPolicy: IfNotPresent
+<a id="__codelineno-13-198" name="__codelineno-13-198" href="#__codelineno-13-198"></a>
+<a id="__codelineno-13-199" name="__codelineno-13-199" href="#__codelineno-13-199"></a>
+<a id="__codelineno-13-200" name="__codelineno-13-200" href="#__codelineno-13-200"></a>
+<a id="__codelineno-13-201" name="__codelineno-13-201" href="#__codelineno-13-201"></a>env:
+<a id="__codelineno-13-202" name="__codelineno-13-202" href="#__codelineno-13-202"></a>
+<a id="__codelineno-13-203" name="__codelineno-13-203" href="#__codelineno-13-203"></a>
+<a id="__codelineno-13-204" name="__codelineno-13-204" href="#__codelineno-13-204"></a>
+<a id="__codelineno-13-205" name="__codelineno-13-205" href="#__codelineno-13-205"></a>- name: EDGE_CONNECT_NAME
+<a id="__codelineno-13-206" name="__codelineno-13-206" href="#__codelineno-13-206"></a>
+<a id="__codelineno-13-207" name="__codelineno-13-207" href="#__codelineno-13-207"></a>
+<a id="__codelineno-13-208" name="__codelineno-13-208" href="#__codelineno-13-208"></a>
+<a id="__codelineno-13-209" name="__codelineno-13-209" href="#__codelineno-13-209"></a>value: &lt;name from edgeConnect.yaml&gt;
+<a id="__codelineno-13-210" name="__codelineno-13-210" href="#__codelineno-13-210"></a>
+<a id="__codelineno-13-211" name="__codelineno-13-211" href="#__codelineno-13-211"></a>
+<a id="__codelineno-13-212" name="__codelineno-13-212" href="#__codelineno-13-212"></a>
+<a id="__codelineno-13-213" name="__codelineno-13-213" href="#__codelineno-13-213"></a>- name: EDGE_CONNECT_API_ENDPOINT_HOST
+<a id="__codelineno-13-214" name="__codelineno-13-214" href="#__codelineno-13-214"></a>
+<a id="__codelineno-13-215" name="__codelineno-13-215" href="#__codelineno-13-215"></a>
+<a id="__codelineno-13-216" name="__codelineno-13-216" href="#__codelineno-13-216"></a>
+<a id="__codelineno-13-217" name="__codelineno-13-217" href="#__codelineno-13-217"></a>value: &lt;api_endpoint_host from edgeConnect.yaml&gt;
+<a id="__codelineno-13-218" name="__codelineno-13-218" href="#__codelineno-13-218"></a>
+<a id="__codelineno-13-219" name="__codelineno-13-219" href="#__codelineno-13-219"></a>
+<a id="__codelineno-13-220" name="__codelineno-13-220" href="#__codelineno-13-220"></a>
+<a id="__codelineno-13-221" name="__codelineno-13-221" href="#__codelineno-13-221"></a>- name: EDGE_CONNECT_OAUTH__ENDPOINT
+<a id="__codelineno-13-222" name="__codelineno-13-222" href="#__codelineno-13-222"></a>
+<a id="__codelineno-13-223" name="__codelineno-13-223" href="#__codelineno-13-223"></a>
+<a id="__codelineno-13-224" name="__codelineno-13-224" href="#__codelineno-13-224"></a>
+<a id="__codelineno-13-225" name="__codelineno-13-225" href="#__codelineno-13-225"></a>value: &lt;oauth.endpoint from edgeConnect.yaml&gt;
+<a id="__codelineno-13-226" name="__codelineno-13-226" href="#__codelineno-13-226"></a>
+<a id="__codelineno-13-227" name="__codelineno-13-227" href="#__codelineno-13-227"></a>
+<a id="__codelineno-13-228" name="__codelineno-13-228" href="#__codelineno-13-228"></a>
+<a id="__codelineno-13-229" name="__codelineno-13-229" href="#__codelineno-13-229"></a>- name: EDGE_CONNECT_OAUTH__RESOURCE
+<a id="__codelineno-13-230" name="__codelineno-13-230" href="#__codelineno-13-230"></a>
+<a id="__codelineno-13-231" name="__codelineno-13-231" href="#__codelineno-13-231"></a>
+<a id="__codelineno-13-232" name="__codelineno-13-232" href="#__codelineno-13-232"></a>
+<a id="__codelineno-13-233" name="__codelineno-13-233" href="#__codelineno-13-233"></a>value: &lt;oauth.resource from edgeConnect.yaml&gt;
+<a id="__codelineno-13-234" name="__codelineno-13-234" href="#__codelineno-13-234"></a>
+<a id="__codelineno-13-235" name="__codelineno-13-235" href="#__codelineno-13-235"></a>
+<a id="__codelineno-13-236" name="__codelineno-13-236" href="#__codelineno-13-236"></a>
+<a id="__codelineno-13-237" name="__codelineno-13-237" href="#__codelineno-13-237"></a>volumeMounts:
+<a id="__codelineno-13-238" name="__codelineno-13-238" href="#__codelineno-13-238"></a>
+<a id="__codelineno-13-239" name="__codelineno-13-239" href="#__codelineno-13-239"></a>
+<a id="__codelineno-13-240" name="__codelineno-13-240" href="#__codelineno-13-240"></a>
+<a id="__codelineno-13-241" name="__codelineno-13-241" href="#__codelineno-13-241"></a>- name: secrets
+<a id="__codelineno-13-242" name="__codelineno-13-242" href="#__codelineno-13-242"></a>
+<a id="__codelineno-13-243" name="__codelineno-13-243" href="#__codelineno-13-243"></a>
+<a id="__codelineno-13-244" name="__codelineno-13-244" href="#__codelineno-13-244"></a>
+<a id="__codelineno-13-245" name="__codelineno-13-245" href="#__codelineno-13-245"></a>mountPath: &quot;/etc/edge_connect&quot;
+<a id="__codelineno-13-246" name="__codelineno-13-246" href="#__codelineno-13-246"></a>
+<a id="__codelineno-13-247" name="__codelineno-13-247" href="#__codelineno-13-247"></a>
+<a id="__codelineno-13-248" name="__codelineno-13-248" href="#__codelineno-13-248"></a>
+<a id="__codelineno-13-249" name="__codelineno-13-249" href="#__codelineno-13-249"></a>readOnly: true
+<a id="__codelineno-13-250" name="__codelineno-13-250" href="#__codelineno-13-250"></a>
+<a id="__codelineno-13-251" name="__codelineno-13-251" href="#__codelineno-13-251"></a>
+<a id="__codelineno-13-252" name="__codelineno-13-252" href="#__codelineno-13-252"></a>
+<a id="__codelineno-13-253" name="__codelineno-13-253" href="#__codelineno-13-253"></a>- name: config
+<a id="__codelineno-13-254" name="__codelineno-13-254" href="#__codelineno-13-254"></a>
+<a id="__codelineno-13-255" name="__codelineno-13-255" href="#__codelineno-13-255"></a>
+<a id="__codelineno-13-256" name="__codelineno-13-256" href="#__codelineno-13-256"></a>
+<a id="__codelineno-13-257" name="__codelineno-13-257" href="#__codelineno-13-257"></a>mountPath: &quot;/edgeConnect.yaml&quot;
+<a id="__codelineno-13-258" name="__codelineno-13-258" href="#__codelineno-13-258"></a>
+<a id="__codelineno-13-259" name="__codelineno-13-259" href="#__codelineno-13-259"></a>
+<a id="__codelineno-13-260" name="__codelineno-13-260" href="#__codelineno-13-260"></a>
+<a id="__codelineno-13-261" name="__codelineno-13-261" href="#__codelineno-13-261"></a>subPath: &quot;edgeConnect.yaml&quot;
+<a id="__codelineno-13-262" name="__codelineno-13-262" href="#__codelineno-13-262"></a>
+<a id="__codelineno-13-263" name="__codelineno-13-263" href="#__codelineno-13-263"></a>
+<a id="__codelineno-13-264" name="__codelineno-13-264" href="#__codelineno-13-264"></a>
+<a id="__codelineno-13-265" name="__codelineno-13-265" href="#__codelineno-13-265"></a>readOnly: true
+<a id="__codelineno-13-266" name="__codelineno-13-266" href="#__codelineno-13-266"></a>
+<a id="__codelineno-13-267" name="__codelineno-13-267" href="#__codelineno-13-267"></a>
+<a id="__codelineno-13-268" name="__codelineno-13-268" href="#__codelineno-13-268"></a>
+<a id="__codelineno-13-269" name="__codelineno-13-269" href="#__codelineno-13-269"></a>volumes:
+<a id="__codelineno-13-270" name="__codelineno-13-270" href="#__codelineno-13-270"></a>
+<a id="__codelineno-13-271" name="__codelineno-13-271" href="#__codelineno-13-271"></a>
+<a id="__codelineno-13-272" name="__codelineno-13-272" href="#__codelineno-13-272"></a>
+<a id="__codelineno-13-273" name="__codelineno-13-273" href="#__codelineno-13-273"></a>- name: secrets
+<a id="__codelineno-13-274" name="__codelineno-13-274" href="#__codelineno-13-274"></a>
+<a id="__codelineno-13-275" name="__codelineno-13-275" href="#__codelineno-13-275"></a>
+<a id="__codelineno-13-276" name="__codelineno-13-276" href="#__codelineno-13-276"></a>
+<a id="__codelineno-13-277" name="__codelineno-13-277" href="#__codelineno-13-277"></a>secret:
+<a id="__codelineno-13-278" name="__codelineno-13-278" href="#__codelineno-13-278"></a>
+<a id="__codelineno-13-279" name="__codelineno-13-279" href="#__codelineno-13-279"></a>
+<a id="__codelineno-13-280" name="__codelineno-13-280" href="#__codelineno-13-280"></a>
+<a id="__codelineno-13-281" name="__codelineno-13-281" href="#__codelineno-13-281"></a>secretName: edge-connect-oauth
+<a id="__codelineno-13-282" name="__codelineno-13-282" href="#__codelineno-13-282"></a>
+<a id="__codelineno-13-283" name="__codelineno-13-283" href="#__codelineno-13-283"></a>
+<a id="__codelineno-13-284" name="__codelineno-13-284" href="#__codelineno-13-284"></a>
+<a id="__codelineno-13-285" name="__codelineno-13-285" href="#__codelineno-13-285"></a>items:
+<a id="__codelineno-13-286" name="__codelineno-13-286" href="#__codelineno-13-286"></a>
+<a id="__codelineno-13-287" name="__codelineno-13-287" href="#__codelineno-13-287"></a>
+<a id="__codelineno-13-288" name="__codelineno-13-288" href="#__codelineno-13-288"></a>
+<a id="__codelineno-13-289" name="__codelineno-13-289" href="#__codelineno-13-289"></a>- key: oauth-client-id
+<a id="__codelineno-13-290" name="__codelineno-13-290" href="#__codelineno-13-290"></a>
+<a id="__codelineno-13-291" name="__codelineno-13-291" href="#__codelineno-13-291"></a>
+<a id="__codelineno-13-292" name="__codelineno-13-292" href="#__codelineno-13-292"></a>
+<a id="__codelineno-13-293" name="__codelineno-13-293" href="#__codelineno-13-293"></a>path: oauth/client_id
+<a id="__codelineno-13-294" name="__codelineno-13-294" href="#__codelineno-13-294"></a>
+<a id="__codelineno-13-295" name="__codelineno-13-295" href="#__codelineno-13-295"></a>
+<a id="__codelineno-13-296" name="__codelineno-13-296" href="#__codelineno-13-296"></a>
+<a id="__codelineno-13-297" name="__codelineno-13-297" href="#__codelineno-13-297"></a>- key: oauth-client-secret
+<a id="__codelineno-13-298" name="__codelineno-13-298" href="#__codelineno-13-298"></a>
+<a id="__codelineno-13-299" name="__codelineno-13-299" href="#__codelineno-13-299"></a>
+<a id="__codelineno-13-300" name="__codelineno-13-300" href="#__codelineno-13-300"></a>
+<a id="__codelineno-13-301" name="__codelineno-13-301" href="#__codelineno-13-301"></a>path: oauth/client_secret
+<a id="__codelineno-13-302" name="__codelineno-13-302" href="#__codelineno-13-302"></a>
+<a id="__codelineno-13-303" name="__codelineno-13-303" href="#__codelineno-13-303"></a>
+<a id="__codelineno-13-304" name="__codelineno-13-304" href="#__codelineno-13-304"></a>
+<a id="__codelineno-13-305" name="__codelineno-13-305" href="#__codelineno-13-305"></a>- name: config
+<a id="__codelineno-13-306" name="__codelineno-13-306" href="#__codelineno-13-306"></a>
+<a id="__codelineno-13-307" name="__codelineno-13-307" href="#__codelineno-13-307"></a>
+<a id="__codelineno-13-308" name="__codelineno-13-308" href="#__codelineno-13-308"></a>
+<a id="__codelineno-13-309" name="__codelineno-13-309" href="#__codelineno-13-309"></a>secret:
+<a id="__codelineno-13-310" name="__codelineno-13-310" href="#__codelineno-13-310"></a>
+<a id="__codelineno-13-311" name="__codelineno-13-311" href="#__codelineno-13-311"></a>
+<a id="__codelineno-13-312" name="__codelineno-13-312" href="#__codelineno-13-312"></a>
+<a id="__codelineno-13-313" name="__codelineno-13-313" href="#__codelineno-13-313"></a>secretName: edge-connect-config
+<a id="__codelineno-13-314" name="__codelineno-13-314" href="#__codelineno-13-314"></a>
+<a id="__codelineno-13-315" name="__codelineno-13-315" href="#__codelineno-13-315"></a>
+<a id="__codelineno-13-316" name="__codelineno-13-316" href="#__codelineno-13-316"></a>
+<a id="__codelineno-13-317" name="__codelineno-13-317" href="#__codelineno-13-317"></a>items:
+<a id="__codelineno-13-318" name="__codelineno-13-318" href="#__codelineno-13-318"></a>
+<a id="__codelineno-13-319" name="__codelineno-13-319" href="#__codelineno-13-319"></a>
+<a id="__codelineno-13-320" name="__codelineno-13-320" href="#__codelineno-13-320"></a>
+<a id="__codelineno-13-321" name="__codelineno-13-321" href="#__codelineno-13-321"></a>- key: edge-connect-config-file
+<a id="__codelineno-13-322" name="__codelineno-13-322" href="#__codelineno-13-322"></a>
+<a id="__codelineno-13-323" name="__codelineno-13-323" href="#__codelineno-13-323"></a>
+<a id="__codelineno-13-324" name="__codelineno-13-324" href="#__codelineno-13-324"></a>
+<a id="__codelineno-13-325" name="__codelineno-13-325" href="#__codelineno-13-325"></a>path: edgeConnect.yaml
 </code></pre></div>
 <h4 id="configuring-edgeconnect-in-kubernetes">Configuring EdgeConnect in Kubernetes<a class="headerlink" href="#configuring-edgeconnect-in-kubernetes" title="Permanent link">&para;</a></h4>
 <p>There are three ways of configuring EdgeConnect in Kubernetes.
@@ -26356,7 +26243,7 @@ Note that some settings can only be configured this way, for example <code>secre
 <li>Go to the directory containing the <code>deployment.yaml</code> file you created.</li>
 <li>Apply the deployment.</li>
 </ol>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>kubectl apply -f ./deployment.yaml
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>kubectl apply -f ./deployment.yaml
 </code></pre></div>
 <h3 id="step-4-validate-the-connection">Step 4 Validate the connection<a class="headerlink" href="#step-4-validate-the-connection" title="Permanent link">&para;</a></h3>
 <p>Validate EdgeConnect successfully connected to the platform.</p>

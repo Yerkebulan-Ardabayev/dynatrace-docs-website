@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../../../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
     
     
       
@@ -25495,18 +25495,6 @@
 <h4 id="syntax">Syntax<a class="headerlink" href="#syntax" title="Permanent link">&para;</a></h4>
 <p><code>concat(expression, â¦ [, delimiter: ])</code></p>
 <h4 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h4>
-<p>Parameter</p>
-<p>Type</p>
-<p>Description</p>
-<p>Required</p>
-<p>expression</p>
-<p>double, long, string</p>
-<p>A numeric or string expressions that should be concatenated with others.</p>
-<p>Required</p>
-<p>delimiter</p>
-<p>string</p>
-<p>Constant string to be inserted between each concatenated value. Default: <code>""</code> (empty string).</p>
-<p>Optional</p>
 <h4 id="returns">Returns<a class="headerlink" href="#returns" title="Permanent link">&para;</a></h4>
 <p>The data type of the returned value is <code>string</code>.</p>
 <h4 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h4>
@@ -25519,35 +25507,11 @@
 </code></pre></div>
 <p>Run in Playground</p>
 <p>Query result:</p>
-<p>a</p>
-<p>b</p>
-<p>c</p>
-<p>concat(a, b, c, delimiter: " ")</p>
-<p><code>DQL</code></p>
-<p><code>is</code></p>
-<p><code>awesome!</code></p>
-<p><code>DQL is awesome!</code></p>
 <h2 id="contains">contains<a class="headerlink" href="#contains" title="Permanent link">&para;</a></h2>
 <p>Searches the string expression for a substring. Returns <code>true</code> if the substring was found, <code>false</code> otherwise.</p>
 <h4 id="syntax_1">Syntax<a class="headerlink" href="#syntax_1" title="Permanent link">&para;</a></h4>
 <p><code>contains(expression, substring [, caseSensitive])</code></p>
 <h4 id="parameters_1">Parameters<a class="headerlink" href="#parameters_1" title="Permanent link">&para;</a></h4>
-<p>Parameter</p>
-<p>Type</p>
-<p>Description</p>
-<p>Required</p>
-<p>expression</p>
-<p>string</p>
-<p>The field or expression to check.</p>
-<p>Required</p>
-<p>substring</p>
-<p>string</p>
-<p>The substring that should be contained.</p>
-<p>Required</p>
-<p>caseSensitive</p>
-<p>boolean</p>
-<p>Whether the search should be done in a case-sensitive way. The default value is <code>true</code>.</p>
-<p>Optional</p>
 <h4 id="returns_1">Returns<a class="headerlink" href="#returns_1" title="Permanent link">&para;</a></h4>
 <p>The data type of the returned value is <code>boolean</code>.</p>
 <h4 id="examples_1">Examples<a class="headerlink" href="#examples_1" title="Permanent link">&para;</a></h4>
@@ -25572,31 +25536,11 @@
 </code></pre></div>
 <p>Run in Playground</p>
 <p>Query result:</p>
-<p>content</p>
-<p>contains(content, "DQL")</p>
-<p>contains(content, "dql", caseSensitive:FALSE)</p>
-<p>contains(content, "Query")</p>
-<p><code>DQL is awesome!</code></p>
-<p><code>true</code></p>
-<p><code>true</code></p>
-<p><code>false</code></p>
-<p><code>Dynatrace Query Language</code></p>
-<p><code>false</code></p>
-<p><code>false</code></p>
-<p><code>true</code></p>
 <h2 id="decodeurl">decodeUrl<a class="headerlink" href="#decodeurl" title="Permanent link">&para;</a></h2>
 <p>Returns a URL-decoded string.</p>
 <h4 id="syntax_2">Syntax<a class="headerlink" href="#syntax_2" title="Permanent link">&para;</a></h4>
 <p><code>decodeUrl(expression)</code></p>
 <h4 id="parameters_2">Parameters<a class="headerlink" href="#parameters_2" title="Permanent link">&para;</a></h4>
-<p>Parameter</p>
-<p>Type</p>
-<p>Description</p>
-<p>Required</p>
-<p>expression</p>
-<p>string</p>
-<p>The string expression that will be decoded.</p>
-<p>Required</p>
 <h4 id="returns_2">Returns<a class="headerlink" href="#returns_2" title="Permanent link">&para;</a></h4>
 <p>The data type of the returned value is <code>string</code>.</p>
 <h4 id="examples_2">Examples<a class="headerlink" href="#examples_2" title="Permanent link">&para;</a></h4>
@@ -25613,25 +25557,11 @@
 </code></pre></div>
 <p>Run in Playground</p>
 <p>Query result:</p>
-<p>content</p>
-<p>decodeUrl(content)</p>
-<p><code>https%3A%2F%2Fwww.dynatrace.com%2Fplatform%2Fgrail</code></p>
-<p><code>https://www.dynatrace.com/platform/grail</code></p>
-<p><code>https://www.dynatrace.com/platform/grail</code></p>
-<p><code>https://www.dynatrace.com/platform/grail</code></p>
 <h2 id="encodeurl">encodeUrl<a class="headerlink" href="#encodeurl" title="Permanent link">&para;</a></h2>
 <p>Encodes a URL string by replacing characters that aren't numbers or letters with percentage symbols and hexadecimal numbers.</p>
 <h4 id="syntax_3">Syntax<a class="headerlink" href="#syntax_3" title="Permanent link">&para;</a></h4>
 <p><code>encodeUrl(expression)</code></p>
 <h4 id="parameters_3">Parameters<a class="headerlink" href="#parameters_3" title="Permanent link">&para;</a></h4>
-<p>Parameter</p>
-<p>Type</p>
-<p>Description</p>
-<p>Required</p>
-<p>expression</p>
-<p>string</p>
-<p>The string expression that will be encoded.</p>
-<p>Required</p>
 <h4 id="returns_3">Returns<a class="headerlink" href="#returns_3" title="Permanent link">&para;</a></h4>
 <p>The data type of the returned value is <code>string</code>.</p>
 <h4 id="examples_3">Examples<a class="headerlink" href="#examples_3" title="Permanent link">&para;</a></h4>
@@ -25644,31 +25574,11 @@
 </code></pre></div>
 <p>Run in Playground</p>
 <p>Query result:</p>
-<p>content</p>
-<p>encodeUrl(content)</p>
-<p><code>https://www.dynatrace.com/platform/grail</code></p>
-<p><code>https%3A%2F%2Fwww.dynatrace.com%2Fplatform%2Fgrail</code></p>
 <h2 id="endswith">endsWith<a class="headerlink" href="#endswith" title="Permanent link">&para;</a></h2>
 <p>Checks if a string expression ends with a suffix. Returns <code>true</code> if does, <code>false</code> otherwise.</p>
 <h4 id="syntax_4">Syntax<a class="headerlink" href="#syntax_4" title="Permanent link">&para;</a></h4>
 <p><code>endsWith(expression, suffix [, caseSensitive])</code></p>
 <h4 id="parameters_4">Parameters<a class="headerlink" href="#parameters_4" title="Permanent link">&para;</a></h4>
-<p>Parameter</p>
-<p>Type</p>
-<p>Description</p>
-<p>Required</p>
-<p>expression</p>
-<p>string</p>
-<p>The string expression that will be checked.</p>
-<p>Required</p>
-<p>suffix</p>
-<p>string</p>
-<p>The suffix string with which the expression should end.</p>
-<p>Required</p>
-<p>caseSensitive</p>
-<p>boolean</p>
-<p>Whether the check should be done in a case-sensitive way.</p>
-<p>Optional</p>
 <h4 id="returns_4">Returns<a class="headerlink" href="#returns_4" title="Permanent link">&para;</a></h4>
 <p>The data type of the returned value is <code>boolean</code>.</p>
 <h4 id="examples_4">Examples<a class="headerlink" href="#examples_4" title="Permanent link">&para;</a></h4>
@@ -25693,62 +25603,22 @@
 </code></pre></div>
 <p>Run in Playground</p>
 <p>Query result:</p>
-<p>content</p>
-<p>endsWith(content, "awesome!")</p>
-<p>endsWith(content, "AWESOME!", caseSensitive:FALSE)</p>
-<p>endsWith(content, "Language")</p>
-<p><code>DQL is awesome!</code></p>
-<p><code>true</code></p>
-<p><code>true</code></p>
-<p><code>false</code></p>
-<p><code>Dynatrace Query Language</code></p>
-<p><code>false</code></p>
-<p><code>false</code></p>
-<p><code>true</code></p>
 <h2 id="escape">escape<a class="headerlink" href="#escape" title="Permanent link">&para;</a></h2>
 <p>Returns an escaped string.</p>
 <p>Escaping rules</p>
 <ol>
-<li>Single and double quotes are escaped. Backticks are not escaped.</li>
-</ol>
-<p>Input</p>
-<p>Output</p>
-<p><code>"</code></p>
-<p><code>\"</code></p>
-<p><code>'</code></p>
-<p><code>\'</code></p>
-<ol>
-<li>Backslashes are escaped.</li>
-</ol>
-<p>Input</p>
-<p>Output</p>
-<p><code>\</code></p>
-<p><code>\\</code></p>
-<ol>
-<li>ASCII characters backspace, form feed, new line, carriage return, horizontal tabs are escaped.</li>
-</ol>
-<p>Input</p>
-<p>Output</p>
-<p><code>&lt;backspace&gt;</code></p>
-<p><code>\b</code></p>
-<p><code>&lt;form feed&gt;</code></p>
-<p><code>\f</code></p>
-<p><code>&lt;new line&gt;</code></p>
-<p><code>\n</code></p>
-<p><code>&lt;carriage return&gt;</code></p>
-<p><code>\r</code></p>
-<p><code>&lt;horizontal tab&gt;</code></p>
-<p><code>\t</code></p>
-<ol>
-<li>ASCII characters within the range 0x20 - 0x7e (printable ASCII characters), that are not covered by any of the above rules, stay as they are.</li>
-</ol>
-<p>Input</p>
-<p>Output</p>
-<p><code>a</code></p>
-<p><code>a</code></p>
-<p><code>1</code></p>
-<p><code>1</code></p>
-<ol>
+<li>
+<p>Single and double quotes are escaped. Backticks are not escaped.</p>
+</li>
+<li>
+<p>Backslashes are escaped.</p>
+</li>
+<li>
+<p>ASCII characters backspace, form feed, new line, carriage return, horizontal tabs are escaped.</p>
+</li>
+<li>
+<p>ASCII characters within the range 0x20 - 0x7e (printable ASCII characters), that are not covered by any of the above rules, stay as they are.</p>
+</li>
 <li>
 <p>All other ASCII characters are represented as <code>\xhh</code>. This applies to the following characters</p>
 </li>
@@ -25757,30 +25627,16 @@
 </li>
 <li>character 0x0b (vertical tab)</li>
 <li>characters within the range 0x0e - 0x1f</li>
-<li>character 0x7f</li>
+<li>
+<p>character 0x7f</p>
+</li>
+<li>
+<p>All characters in extended ASCII space (0x80-0xff) and Unicode characters outside of the ASCII space are represented as <code>\uhhhh</code>.</p>
+</li>
 </ol>
-<p>Input</p>
-<p>Output</p>
-<p><code>&lt;vertical tab&gt;</code></p>
-<p><code>\x0b</code></p>
-<ol>
-<li>All characters in extended ASCII space (0x80-0xff) and Unicode characters outside of the ASCII space are represented as <code>\uhhhh</code>.</li>
-</ol>
-<p>Input</p>
-<p>Output</p>
-<p><code>Ã¶</code></p>
-<p><code>\u00f6</code></p>
 <h4 id="syntax_5">Syntax<a class="headerlink" href="#syntax_5" title="Permanent link">&para;</a></h4>
 <p><code>escape(expression)</code></p>
 <h4 id="parameters_5">Parameters<a class="headerlink" href="#parameters_5" title="Permanent link">&para;</a></h4>
-<p>Parameter</p>
-<p>Type</p>
-<p>Description</p>
-<p>Required</p>
-<p>expression</p>
-<p>string expression</p>
-<p>The string expression that will be escaped.</p>
-<p>Required</p>
 <h4 id="returns_5">Returns<a class="headerlink" href="#returns_5" title="Permanent link">&para;</a></h4>
 <p>The data type of the returned value is <code>string</code>.</p>
 <h4 id="examples_5">Examples<a class="headerlink" href="#examples_5" title="Permanent link">&para;</a></h4>
@@ -25812,17 +25668,6 @@
 <h4 id="syntax_6">Syntax<a class="headerlink" href="#syntax_6" title="Permanent link">&para;</a></h4>
 <p><code>getCharacter(expression, position)</code></p>
 <h4 id="parameters_6">Parameters<a class="headerlink" href="#parameters_6" title="Permanent link">&para;</a></h4>
-<p>Parameter</p>
-<p>Type</p>
-<p>Description</p>
-<p>Required</p>
-<p>expression</p>
-<p>string</p>
-<p>Required</p>
-<p>position</p>
-<p>long</p>
-<p>The position at which to get the character.</p>
-<p>Required</p>
 <h4 id="returns_6">Returns<a class="headerlink" href="#returns_6" title="Permanent link">&para;</a></h4>
 <p>The data type of the returned value is <code>string</code>.</p>
 <h4 id="examples_6">Examples<a class="headerlink" href="#examples_6" title="Permanent link">&para;</a></h4>
@@ -25847,18 +25692,6 @@
 </code></pre></div>
 <p>Run in Playground</p>
 <p>Query result:</p>
-<p>content</p>
-<p>getCharacter(content, 1)</p>
-<p>getCharacter(content, 17)</p>
-<p>getCharacter(content, -1)</p>
-<p><code>DQL is awesome!</code></p>
-<p><code>Q</code></p>
-<p><em>null</em></p>
-<p><code>!</code></p>
-<p><code>Dynatrace Query Language</code></p>
-<p><code>y</code></p>
-<p><code>a</code></p>
-<p><code>e</code></p>
 <h2 id="indexof">indexOf<a class="headerlink" href="#indexof" title="Permanent link">&para;</a></h2>
 <p>Returns the index of the first occurrence of a substring in a string expression.
 Starts to search forward from a given index. Negative values for the <code>from</code> parameter are counted from the end of the string.
@@ -25868,22 +25701,6 @@ If the defined substring is not found, the function returns <code>-1</code>.</p>
 <h4 id="syntax_7">Syntax<a class="headerlink" href="#syntax_7" title="Permanent link">&para;</a></h4>
 <p><code>indexOf(expression, substring [, from])</code></p>
 <h4 id="parameters_7">Parameters<a class="headerlink" href="#parameters_7" title="Permanent link">&para;</a></h4>
-<p>Parameter</p>
-<p>Type</p>
-<p>Description</p>
-<p>Required</p>
-<p>expression</p>
-<p>string</p>
-<p>The string expression in which the substring is searched for.</p>
-<p>Required</p>
-<p>substring</p>
-<p>string</p>
-<p>The substring expression to search for in the expression.</p>
-<p>Required</p>
-<p>from</p>
-<p>long</p>
-<p>The index from which to start the forward search for the first occurrence of the substring within the expression. Negative values are counted from the end of the string.</p>
-<p>Optional</p>
 <h4 id="returns_7">Returns<a class="headerlink" href="#returns_7" title="Permanent link">&para;</a></h4>
 <p>The data type of the returned value is <code>long</code>.</p>
 <h4 id="examples_7">Examples<a class="headerlink" href="#examples_7" title="Permanent link">&para;</a></h4>
@@ -25908,39 +25725,11 @@ If the defined substring is not found, the function returns <code>-1</code>.</p>
 </code></pre></div>
 <p>Run in Playground</p>
 <p>Query result:</p>
-<p>content</p>
-<p>indexOf(content, "a")</p>
-<p>indexOf(content, "a", from:10)</p>
-<p>indexOf(content, "Query")</p>
-<p><code>DQL is awesome!</code></p>
-<p><code>7</code></p>
-<p><code>-1</code></p>
-<p><code>-1</code></p>
-<p><code>Dynatrace Query Language</code></p>
-<p><code>3</code></p>
-<p><code>17</code></p>
-<p><code>10</code></p>
 <h2 id="jsonfield">jsonField<a class="headerlink" href="#jsonfield" title="Permanent link">&para;</a></h2>
 <p>Parses a JSON string and extracts one value selected by its name.</p>
 <h4 id="syntax_8">Syntax<a class="headerlink" href="#syntax_8" title="Permanent link">&para;</a></h4>
 <p><code>jsonField(expression, fieldName [, seek])</code></p>
 <h4 id="parameters_8">Parameters<a class="headerlink" href="#parameters_8" title="Permanent link">&para;</a></h4>
-<p>Parameter</p>
-<p>Type</p>
-<p>Description</p>
-<p>Required</p>
-<p>expression</p>
-<p>string</p>
-<p>The JSON string that should be parsed.</p>
-<p>Required</p>
-<p>fieldName</p>
-<p>string</p>
-<p>The string literal with the key to be extracted.</p>
-<p>Required</p>
-<p>seek</p>
-<p>boolean</p>
-<p>Flag indicating if the function should search for the first valid JSON object in the expression. The default value is <code>false</code>.</p>
-<p>Optional</p>
 <h4 id="returns_8">Returns<a class="headerlink" href="#returns_8" title="Permanent link">&para;</a></h4>
 <p>The data type of the returned value is <code>long</code>, <code>double</code>, <code>boolean</code>, <code>string</code>, <code>array</code> or <code>record</code>.</p>
 <h4 id="examples_8">Examples<a class="headerlink" href="#examples_8" title="Permanent link">&para;</a></h4>
@@ -25969,10 +25758,6 @@ If the defined substring is not found, the function returns <code>-1</code>.</p>
 </code></pre></div>
 <p>Run in Playground</p>
 <p>Query result:</p>
-<p>content</p>
-<p>jsonField(content, "name")</p>
-<p><code>{"name":"John", "children":["Mallory", "Mary"], "address":{"city":"Boston", "zip":"02210"}}</code></p>
-<p><code>John</code></p>
 <h5 id="example-2">Example 2<a class="headerlink" href="#example-2" title="Permanent link">&para;</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>data record(content = &quot;&quot;&quot;JSON: {&quot;name&quot;: &quot;John&quot;} ...&quot;&quot;&quot;)
 <a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>
@@ -25986,33 +25771,11 @@ If the defined substring is not found, the function returns <code>-1</code>.</p>
 </code></pre></div>
 <p>Run in Playground</p>
 <p>Query result:</p>
-<p>content</p>
-<p>jsonField(content, "name", seek:FALSE)</p>
-<p>jsonField(content, "name", seek:TRUE)</p>
-<p><code>JSON: {"name": "John"} ...</code></p>
-<p><code>null</code></p>
-<p><code>John</code></p>
 <h2 id="jsonpath">jsonPath<a class="headerlink" href="#jsonpath" title="Permanent link">&para;</a></h2>
 <p>Parses a JSON string and extracts one value selected by a JSONPath expression.</p>
 <h4 id="syntax_9">Syntax<a class="headerlink" href="#syntax_9" title="Permanent link">&para;</a></h4>
 <p><code>jsonPath(expression, jsonPath [, seek])</code></p>
 <h4 id="parameters_9">Parameters<a class="headerlink" href="#parameters_9" title="Permanent link">&para;</a></h4>
-<p>Parameter</p>
-<p>Type</p>
-<p>Description</p>
-<p>Required</p>
-<p>expression</p>
-<p>string</p>
-<p>The JSON string that should be parsed.</p>
-<p>Required</p>
-<p>jsonPath</p>
-<p>string</p>
-<p>The string literal with the JSONPath expression of the value to be extracted.</p>
-<p>Required</p>
-<p>seek</p>
-<p>boolean</p>
-<p>Flag indicating if the function should search for the first valid JSON object in the expression. The default value is <code>false</code>.</p>
-<p>Optional</p>
 <h4 id="returns_9">Returns<a class="headerlink" href="#returns_9" title="Permanent link">&para;</a></h4>
 <p>The data type of the returned value is <code>long</code>, <code>double</code>, <code>boolean</code>, <code>string</code>, <code>array</code> or <code>record</code>.</p>
 <h4 id="examples_9">Examples<a class="headerlink" href="#examples_9" title="Permanent link">&para;</a></h4>
@@ -26049,14 +25812,6 @@ If the defined substring is not found, the function returns <code>-1</code>.</p>
 </code></pre></div>
 <p>Run in Playground</p>
 <p>Query result:</p>
-<p>content</p>
-<p>jsonPath(content, "$.children[0]")</p>
-<p>jsonPath(content, "$.address.city")</p>
-<p>jsonPath(content, "$['address']['zip']")</p>
-<p><code>{"name":"John", "children":["Mallory", "Mary"], "address":{"city":"Boston", "zip":"02210"}}</code></p>
-<p><code>Mallory</code></p>
-<p><code>Boston</code></p>
-<p><code>02210</code></p>
 <h5 id="example-2_1">Example 2<a class="headerlink" href="#example-2_1" title="Permanent link">&para;</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>data record(content = &quot;&quot;&quot;JSON: {&quot;name&quot;: &quot;John&quot;} ...&quot;&quot;&quot;)
 <a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>
@@ -26070,32 +25825,11 @@ If the defined substring is not found, the function returns <code>-1</code>.</p>
 </code></pre></div>
 <p>Run in Playground</p>
 <p>Query result:</p>
-<p>content</p>
-<p>jsonPath(content, "$.name", seek:FALSE)</p>
-<p>jsonPath(content, "$.name", seek:TRUE)</p>
-<p><code>JSON: {"name": "John"} ...</code></p>
-<p><code>null</code></p>
-<p><code>John</code></p>
 <h2 id="lastindexof">lastIndexOf<a class="headerlink" href="#lastindexof" title="Permanent link">&para;</a></h2>
 <p>Returns the index of the last occurrence of a substring in a string expression. Starts to search backward from a given index. Negative values for the from parameter are counted from the end of the string. The default value for from is -1 (search from the end of the string). The search is case-sensitive. If the substring is not found, the function returns <code>-1</code>.</p>
 <h4 id="syntax_10">Syntax<a class="headerlink" href="#syntax_10" title="Permanent link">&para;</a></h4>
 <p><code>lastIndexOf(expression, substring [, from])</code></p>
 <h4 id="parameters_10">Parameters<a class="headerlink" href="#parameters_10" title="Permanent link">&para;</a></h4>
-<p>Parameter</p>
-<p>Type</p>
-<p>Description</p>
-<p>Required</p>
-<p>expression</p>
-<p>string</p>
-<p>The string expression in which the substring is searched for.</p>
-<p>Required</p>
-<p>substring</p>
-<p>string</p>
-<p>The substring expression to search for in the expression.</p>
-<p>Required</p>
-<p>from</p>
-<p>long</p>
-<p>Optional</p>
 <h4 id="returns_10">Returns<a class="headerlink" href="#returns_10" title="Permanent link">&para;</a></h4>
 <p>The data type of the returned value is <code>long</code>.</p>
 <h4 id="examples_10">Examples<a class="headerlink" href="#examples_10" title="Permanent link">&para;</a></h4>
@@ -26120,35 +25854,11 @@ If the defined substring is not found, the function returns <code>-1</code>.</p>
 </code></pre></div>
 <p>Run in Playground</p>
 <p>Query result:</p>
-<p>content</p>
-<p>lastIndexOf(content, "a")</p>
-<p>lastIndexOf(content, "a", from:10)</p>
-<p>lastIndexOf(content, "Query")</p>
-<p><code>DQL is awesome!</code></p>
-<p><code>7</code></p>
-<p><code>7</code></p>
-<p><code>-1</code></p>
-<p><code>Dynatrace Query Language</code></p>
-<p><code>21</code></p>
-<p><code>6</code></p>
-<p><code>10</code></p>
 <h2 id="levenshteindistance">levenshteinDistance<a class="headerlink" href="#levenshteindistance" title="Permanent link">&para;</a></h2>
 <p>Computes the Levenshtein distance between two input strings.</p>
 <h4 id="syntax_11">Syntax<a class="headerlink" href="#syntax_11" title="Permanent link">&para;</a></h4>
 <p><code>levenshteinDistance(expression, expression)</code></p>
 <h4 id="parameters_11">Parameters<a class="headerlink" href="#parameters_11" title="Permanent link">&para;</a></h4>
-<p>Parameter</p>
-<p>Type</p>
-<p>Description</p>
-<p>Required</p>
-<p>first expression</p>
-<p>string</p>
-<p>The first string expression to compute the Levenshtein distance from.</p>
-<p>Required</p>
-<p>second</p>
-<p>string</p>
-<p>The second string expression to compute the Levenshtein distance from.</p>
-<p>Required</p>
 <h4 id="returns_11">Returns<a class="headerlink" href="#returns_11" title="Permanent link">&para;</a></h4>
 <p>The data type of the returned value is <code>long</code>.</p>
 <h4 id="examples_11">Examples<a class="headerlink" href="#examples_11" title="Permanent link">&para;</a></h4>
@@ -26169,33 +25879,11 @@ If the defined substring is not found, the function returns <code>-1</code>.</p>
 </code></pre></div>
 <p>Run in Playground</p>
 <p>Query result:</p>
-<p>a</p>
-<p>b</p>
-<p>levenshteinDistance(a, b)</p>
-<p><code>DQL is awesome!</code></p>
-<p><code>Grail is awesome!</code></p>
-<p><code>5</code></p>
-<p><code>Dynatrace Query Language</code></p>
-<p><code>DQL</code></p>
-<p><code>21</code></p>
-<p><code>Dynatrace Query Language</code></p>
-<p><code>dynatrace query language</code></p>
-<p><code>3</code></p>
 <h2 id="like">like<a class="headerlink" href="#like" title="Permanent link">&para;</a></h2>
 <p>Tests if a string expression matches a pattern. If the pattern does not contain percent signs, <code>like()</code> acts as the <code>==</code> operator (equality check). A percent character in the pattern <code>(%)</code> matches any sequence of zero or more characters. An underscore in the pattern <code>(\_)</code> matches a single character.</p>
 <h4 id="syntax_12">Syntax<a class="headerlink" href="#syntax_12" title="Permanent link">&para;</a></h4>
 <p><code>like(expression, pattern)</code></p>
 <h4 id="parameters_12">Parameters<a class="headerlink" href="#parameters_12" title="Permanent link">&para;</a></h4>
-<p>Parameter</p>
-<p>Type</p>
-<p>Description</p>
-<p>Required</p>
-<p>expression</p>
-<p>string</p>
-<p>Required</p>
-<p>pattern</p>
-<p>string</p>
-<p>Required</p>
 <h4 id="returns_12">Returns<a class="headerlink" href="#returns_12" title="Permanent link">&para;</a></h4>
 <p>The data type of the returned value is <code>boolean</code>.</p>
 <h4 id="examples_12">Examples<a class="headerlink" href="#examples_12" title="Permanent link">&para;</a></h4>
@@ -26220,31 +25908,11 @@ If the defined substring is not found, the function returns <code>-1</code>.</p>
 </code></pre></div>
 <p>Run in Playground</p>
 <p>Query result:</p>
-<p>content</p>
-<p>like(content, "%DQL%")</p>
-<p>like(content, "D%L%")</p>
-<p>like(content, "D_L%")</p>
-<p><code>DQL is awesome!</code></p>
-<p><code>true</code></p>
-<p><code>true</code></p>
-<p><code>true</code></p>
-<p><code>Dynatrace Query Language</code></p>
-<p><code>false</code></p>
-<p><code>true</code></p>
-<p><code>false</code></p>
 <h2 id="lower">lower<a class="headerlink" href="#lower" title="Permanent link">&para;</a></h2>
 <p>Converts a string to lowercase.</p>
 <h4 id="syntax_13">Syntax<a class="headerlink" href="#syntax_13" title="Permanent link">&para;</a></h4>
 <p><code>lower(expression)</code></p>
 <h4 id="parameters_13">Parameters<a class="headerlink" href="#parameters_13" title="Permanent link">&para;</a></h4>
-<p>Parameter</p>
-<p>Type</p>
-<p>Description</p>
-<p>Required</p>
-<p>expression</p>
-<p>string</p>
-<p>The string expression to convert to lowercase.</p>
-<p>Required</p>
 <h4 id="returns_13">Returns<a class="headerlink" href="#returns_13" title="Permanent link">&para;</a></h4>
 <p>The data type of the returned value is <code>string</code>.</p>
 <h4 id="examples_13">Examples<a class="headerlink" href="#examples_13" title="Permanent link">&para;</a></h4>
@@ -26261,29 +25929,11 @@ If the defined substring is not found, the function returns <code>-1</code>.</p>
 </code></pre></div>
 <p>Run in Playground</p>
 <p>Query result:</p>
-<p>content</p>
-<p>lower(content)</p>
-<p><code>DQL is awesome!</code></p>
-<p><code>dql is awesome!</code></p>
-<p><code>Dynatrace Query Language</code></p>
-<p><code>dynatrace query language</code></p>
 <h2 id="matchespattern">matchesPattern<a class="headerlink" href="#matchespattern" title="Permanent link">&para;</a></h2>
 <p>Tests if a string expression matches the DPL pattern and returns <code>true</code> if it does, otherwise, returns <code>false</code>.</p>
 <h4 id="syntax_14">Syntax<a class="headerlink" href="#syntax_14" title="Permanent link">&para;</a></h4>
 <p><code>matchesPattern(expression, pattern)</code></p>
 <h4 id="parameters_14">Parameters<a class="headerlink" href="#parameters_14" title="Permanent link">&para;</a></h4>
-<p>Parameter</p>
-<p>Type</p>
-<p>Description</p>
-<p>Required</p>
-<p>expression</p>
-<p>string</p>
-<p>A field or string expression to test.</p>
-<p>Required</p>
-<p>pattern</p>
-<p>string</p>
-<p>The matching pattern.</p>
-<p>Required</p>
 <h4 id="returns_14">Returns<a class="headerlink" href="#returns_14" title="Permanent link">&para;</a></h4>
 <p>The data type of the returned value is <code>boolean</code>.</p>
 <h4 id="examples_14">Examples<a class="headerlink" href="#examples_14" title="Permanent link">&para;</a></h4>
@@ -26339,22 +25989,6 @@ If the defined substring is not found, the function returns <code>-1</code>.</p>
 <h4 id="syntax_15">Syntax<a class="headerlink" href="#syntax_15" title="Permanent link">&para;</a></h4>
 <p><code>matchesPhrase(expression, phrase [, caseSensitive])</code></p>
 <h4 id="parameters_15">Parameters<a class="headerlink" href="#parameters_15" title="Permanent link">&para;</a></h4>
-<p>Parameter</p>
-<p>Type</p>
-<p>Description</p>
-<p>Required</p>
-<p>expression</p>
-<p>string, array</p>
-<p>The expression (string or array of strings) that should be checked.</p>
-<p>Required</p>
-<p>phrase</p>
-<p>string</p>
-<p>The phrase to search for.</p>
-<p>Required</p>
-<p>caseSensitive</p>
-<p>boolean</p>
-<p>Whether the match should be done case-sensitive. Default: <code>false</code>.</p>
-<p>Optional</p>
 <h4 id="returns_15">Returns<a class="headerlink" href="#returns_15" title="Permanent link">&para;</a></h4>
 <p>The data type of the returned value is <code>boolean</code>.</p>
 <h4 id="examples_15">Examples<a class="headerlink" href="#examples_15" title="Permanent link">&para;</a></h4>
@@ -26387,47 +26021,11 @@ If the defined substring is not found, the function returns <code>-1</code>.</p>
 </code></pre></div>
 <p>Run in Playground</p>
 <p>Query result:</p>
-<p>content</p>
-<p>matchesPhrase(content, "DQL")</p>
-<p>matchesPhrase(content, "Dyna")</p>
-<p>matchesPhrase(content, "query")</p>
-<p>matchesPhrase(content, "query", caseSensitive:TRUE)</p>
-<p><code>DQL is awesome!</code></p>
-<p><code>true</code></p>
-<p><code>false</code></p>
-<p><code>false</code></p>
-<p><code>false</code></p>
-<p><code>Dynatrace Query Language</code></p>
-<p><code>false</code></p>
-<p><code>false</code></p>
-<p><code>true</code></p>
-<p><code>false</code></p>
-<p><code>[DQL, is, awesome, !, Dynatrace Query Language]</code></p>
-<p><code>true</code></p>
-<p><code>false</code></p>
-<p><code>true</code></p>
-<p><code>false</code></p>
 <h2 id="matchesvalue">matchesValue<a class="headerlink" href="#matchesvalue" title="Permanent link">&para;</a></h2>
 <p>Searches records for a specific value in a given attribute. Returns <code>true</code> or <code>false</code>.</p>
 <h4 id="syntax_16">Syntax<a class="headerlink" href="#syntax_16" title="Permanent link">&para;</a></h4>
 <p><code>matchesValue(expression, value, â¦ [, caseSensitive])</code></p>
 <h4 id="parameters_16">Parameters<a class="headerlink" href="#parameters_16" title="Permanent link">&para;</a></h4>
-<p>Parameter</p>
-<p>Type</p>
-<p>Description</p>
-<p>Required</p>
-<p>expression</p>
-<p>string, array</p>
-<p>The expression (string or array of strings) that should be checked.</p>
-<p>Required</p>
-<p>value</p>
-<p>string, array</p>
-<p>The value to search for using patterns (supports an array of patterns or a list of patterns).</p>
-<p>Required</p>
-<p>caseSensitive</p>
-<p>boolean</p>
-<p>Whether the match should be done case-sensitive. Default: <code>false</code>.</p>
-<p>Optional</p>
 <h4 id="returns_16">Returns<a class="headerlink" href="#returns_16" title="Permanent link">&para;</a></h4>
 <p>The data type of the returned value is <code>boolean</code>.</p>
 <h4 id="examples_16">Examples<a class="headerlink" href="#examples_16" title="Permanent link">&para;</a></h4>
@@ -26449,14 +26047,6 @@ If the defined substring is not found, the function returns <code>-1</code>.</p>
 </code></pre></div>
 <p>Run in Playground</p>
 <p>Query result:</p>
-<p>content</p>
-<p>matchesValue(content, "User*")</p>
-<p>matchesValue(content, "user*")</p>
-<p>matchesValue(content, "user*", caseSensitive:TRUE)</p>
-<p><code>User 'kÃ¤Ã¤rmanÃ¼' failed to login from 192.168.0.1</code></p>
-<p><code>true</code></p>
-<p><code>true</code></p>
-<p><code>false</code></p>
 <h5 id="example-2_2">Example 2<a class="headerlink" href="#example-2_2" title="Permanent link">&para;</a></h5>
 <p>Values are matched from the beginning. To match parts of the value, use <code>*</code> as wildcard symbol:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>data record(content = &quot;User &#39;kÃ¤Ã¤rmanÃ¼&#39; failed to login from 192.168.0.1&quot;)
@@ -26475,14 +26065,6 @@ If the defined substring is not found, the function returns <code>-1</code>.</p>
 </code></pre></div>
 <p>Run in Playground</p>
 <p>Query result:</p>
-<p>content</p>
-<p>matchesValue(content, "192.168.0.1")</p>
-<p>matchesValue(content, "*192.168.0.1")</p>
-<p>matchesValue(content, "*failed to log*")</p>
-<p><code>User 'kÃ¤Ã¤rmanÃ¼' failed to login from 192.168.0.1</code></p>
-<p><code>false</code></p>
-<p><code>true</code></p>
-<p><code>true</code></p>
 <h5 id="example-3">Example 3<a class="headerlink" href="#example-3" title="Permanent link">&para;</a></h5>
 <p>Only ASCII characters are matched case-insensitive:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>data record(content = &quot;Ãsterreich&quot;)
@@ -26497,12 +26079,6 @@ If the defined substring is not found, the function returns <code>-1</code>.</p>
 </code></pre></div>
 <p>Run in Playground</p>
 <p>Query result:</p>
-<p>content</p>
-<p>matchesValue(content, "Ã¶sterreich")</p>
-<p>matchesValue(content, "Ãsterreich")</p>
-<p><code>Ãsterreich</code></p>
-<p><code>false</code></p>
-<p><code>true</code></p>
 <h5 id="example-4">Example 4<a class="headerlink" href="#example-4" title="Permanent link">&para;</a></h5>
 <p>The function handles values of arrays in "any-match" manner.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>data record(technologies = array(&quot;Java11&quot;, &quot;java17&quot;))
@@ -26521,14 +26097,6 @@ If the defined substring is not found, the function returns <code>-1</code>.</p>
 </code></pre></div>
 <p>Run in Playground</p>
 <p>Query result:</p>
-<p>technologies</p>
-<p>matchesValue(technologies, "Java11")</p>
-<p>matchesValue(technologies, "java")</p>
-<p>matchesValue(technologies, "java*")</p>
-<p><code>[Java11, java17]</code></p>
-<p><code>true</code></p>
-<p><code>false</code></p>
-<p><code>true</code></p>
 <h4 id="multi-pattern-comparison">Multi-pattern comparison<a class="headerlink" href="#multi-pattern-comparison" title="Permanent link">&para;</a></h4>
 <p>The <code>matchesValue()</code> function supports matching against multiple patterns. You can use it by either providing an array or a list of patterns with the <code>value</code> parameter. Only strings are supported as patterns. Other datatypes don't produce a match and are ignored. The <code>matchesValue()</code> function returns true if any of the patterns matches. In case none of the patterns produce a match, <code>false</code> is returned.</p>
 <h4 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h4>
@@ -26552,33 +26120,11 @@ If the defined substring is not found, the function returns <code>-1</code>.</p>
 </code></pre></div>
 <p>Run in Playground</p>
 <p>Query result:</p>
-<p>content</p>
-<p>matchesValue(content, array("Grail", "dql"))</p>
-<p>matchesValue(content, {"Grail", "dql"})</p>
-<p>matchesValue(content, {"Grail", "dq*"})</p>
-<p>matchesValue(caseSensitive:TRUE, content, {"Grail", "dq*"})</p>
-<p><code>DQL, is, awesome, !</code></p>
-<p><code>true</code></p>
-<p><code>true</code></p>
-<p><code>true</code></p>
-<p><code>false</code></p>
 <h2 id="parse">parse<a class="headerlink" href="#parse" title="Permanent link">&para;</a></h2>
 <p>Extracts a single value from a string as specified in the pattern or a record if there are multiple named matchers.</p>
 <h4 id="syntax_17">Syntax<a class="headerlink" href="#syntax_17" title="Permanent link">&para;</a></h4>
 <p><code>parse(expression, pattern)</code></p>
 <h4 id="parameters_17">Parameters<a class="headerlink" href="#parameters_17" title="Permanent link">&para;</a></h4>
-<p>Parameter</p>
-<p>Type</p>
-<p>Description</p>
-<p>Required</p>
-<p>expression</p>
-<p>string</p>
-<p>A field or string expression to parse.</p>
-<p>Required</p>
-<p>pattern</p>
-<p>string</p>
-<p>The parse pattern. Must conform with patterns (see <a href="/docs/platform/grail/dynatrace-pattern-language" title="Use Dynatrace Pattern Language to describe patterns using matchers.">DPL</a>).</p>
-<p>Required</p>
 <h4 id="returns_17">Returns<a class="headerlink" href="#returns_17" title="Permanent link">&para;</a></h4>
 <p>The <code>parse</code> function returns a single value, which can be either of primitive type or a record. The result is of primitive type in case of a single named matcher in the DPL pattern. If there are multiple named matchers in the pattern, then the result is a record containing fields corresponding to the names of the matchers.
 Fields created from the output of the <code>parse</code> function by default get the name of the named matcher in the DPL pattern. In case of multiple named matchers in the pattern, the default field name is <code>parsed_record</code>. You can also define alternative field names using an alias expression.</p>
@@ -26634,18 +26180,6 @@ Unlike the <a href="/docs/platform/grail/dynatrace-query-language/functions/stri
 <h4 id="syntax_18">Syntax<a class="headerlink" href="#syntax_18" title="Permanent link">&para;</a></h4>
 <p><code>parseAll(expression, pattern)</code></p>
 <h4 id="parameters_18">Parameters<a class="headerlink" href="#parameters_18" title="Permanent link">&para;</a></h4>
-<p>Parameter</p>
-<p>Type</p>
-<p>Description</p>
-<p>Required</p>
-<p>expression</p>
-<p>string</p>
-<p>A field or string expression to parse.</p>
-<p>Required</p>
-<p>pattern</p>
-<p>string</p>
-<p>The parse pattern. Must conform with <a href="/docs/platform/grail/dynatrace-pattern-language" title="Use Dynatrace Pattern Language to describe patterns using matchers.">DPL patterns</a>.</p>
-<p>Required</p>
 <h4 id="returns_18">Returns<a class="headerlink" href="#returns_18" title="Permanent link">&para;</a></h4>
 <p>The data type of the returned value is <code>array</code>.</p>
 <h4 id="examples_18">Examples<a class="headerlink" href="#examples_18" title="Permanent link">&para;</a></h4>
@@ -26699,22 +26233,6 @@ Unlike the <a href="/docs/platform/grail/dynatrace-query-language/functions/stri
 <h4 id="syntax_19">Syntax<a class="headerlink" href="#syntax_19" title="Permanent link">&para;</a></h4>
 <p><code>punctuation(expression, [, count] [, withSpace])</code></p>
 <h4 id="parameters_19">Parameters<a class="headerlink" href="#parameters_19" title="Permanent link">&para;</a></h4>
-<p>Parameter</p>
-<p>Type</p>
-<p>Description</p>
-<p>Required</p>
-<p>expression</p>
-<p>string</p>
-<p>The string expression from which the punctuation characters are extracted.</p>
-<p>Required</p>
-<p>count</p>
-<p>positive integer</p>
-<p>The maximum number of returned punctuation characters. Default: <code>32</code>.</p>
-<p>Optional</p>
-<p>withSpace</p>
-<p>boolean</p>
-<p>Whether space characters should be included. Default: <code>false</code>.</p>
-<p>Optional</p>
 <h4 id="returns_19">Returns<a class="headerlink" href="#returns_19" title="Permanent link">&para;</a></h4>
 <p>The data type of the returned value is <code>string</code>.</p>
 <h4 id="examples_19">Examples<a class="headerlink" href="#examples_19" title="Permanent link">&para;</a></h4>
@@ -26744,43 +26262,11 @@ Unlike the <a href="/docs/platform/grail/dynatrace-query-language/functions/stri
 </code></pre></div>
 <p>Run in Playground</p>
 <p>Query result:</p>
-<p>content</p>
-<p>punctuation(content)</p>
-<p>punctuation(content, count:2)</p>
-<p>punctuation(content, count:2, withSpace:TRUE)</p>
-<p><code>DQL is awesome!</code></p>
-<p><code>!</code></p>
-<p><code>!</code></p>
-<p><code>__</code></p>
-<p><code>Dynatrace Query Language</code></p>
-<p><em>empty string</em></p>
-<p><em>empty string</em></p>
-<p><code>__</code></p>
-<p><code>${placeholder}</code></p>
-<p><code>${}</code></p>
-<p><code>${</code></p>
-<p><code>${</code></p>
 <h2 id="replacepattern">replacePattern<a class="headerlink" href="#replacepattern" title="Permanent link">&para;</a></h2>
 <p>Replaces each substring of a string that matches the DPL pattern with the given string. The pattern must be defined as a constant string expression. For additional details about pattern syntax, see the <a href="/docs/platform/grail/dynatrace-pattern-language" title="Use Dynatrace Pattern Language to describe patterns using matchers.">DPL documentation</a>.</p>
 <h4 id="syntax_20">Syntax<a class="headerlink" href="#syntax_20" title="Permanent link">&para;</a></h4>
 <p><code>replacePattern(expression, pattern, replacement)</code></p>
 <h4 id="parameters_20">Parameters<a class="headerlink" href="#parameters_20" title="Permanent link">&para;</a></h4>
-<p>Parameter</p>
-<p>Type</p>
-<p>Description</p>
-<p>Required</p>
-<p>expression</p>
-<p>string</p>
-<p>A field or string expression to replace.</p>
-<p>Required</p>
-<p>pattern</p>
-<p>string</p>
-<p>The replacing pattern.</p>
-<p>Required</p>
-<p>replacement</p>
-<p>string</p>
-<p>The string that should replace the found substrings.</p>
-<p>Required</p>
 <h4 id="returns_20">Returns<a class="headerlink" href="#returns_20" title="Permanent link">&para;</a></h4>
 <p>The data type of the returned value is <code>string</code>.</p>
 <h4 id="examples_20">Examples<a class="headerlink" href="#examples_20" title="Permanent link">&para;</a></h4>
@@ -26827,22 +26313,6 @@ Unlike the <a href="/docs/platform/grail/dynatrace-query-language/functions/stri
 <h4 id="syntax_21">Syntax<a class="headerlink" href="#syntax_21" title="Permanent link">&para;</a></h4>
 <p><code>replaceString(expression, substring, replacement)</code></p>
 <h4 id="parameters_21">Parameters<a class="headerlink" href="#parameters_21" title="Permanent link">&para;</a></h4>
-<p>Parameter</p>
-<p>Type</p>
-<p>Description</p>
-<p>Required</p>
-<p>expression</p>
-<p>string</p>
-<p>The field or expression where substrings should be replaced.</p>
-<p>Required</p>
-<p>substring</p>
-<p>string</p>
-<p>The substring that should be replaced.</p>
-<p>Required</p>
-<p>replacement</p>
-<p>string</p>
-<p>The string that should replace the found substrings.</p>
-<p>Required</p>
 <h4 id="returns_21">Returns<a class="headerlink" href="#returns_21" title="Permanent link">&para;</a></h4>
 <p>The data type of the returned value is <code>string</code>.</p>
 <h4 id="examples_21">Examples<a class="headerlink" href="#examples_21" title="Permanent link">&para;</a></h4>
@@ -26867,35 +26337,11 @@ Unlike the <a href="/docs/platform/grail/dynatrace-query-language/functions/stri
 </code></pre></div>
 <p>Run in Playground</p>
 <p>Query result:</p>
-<p>content</p>
-<p>replaceString(content, "awesome", "simple")</p>
-<p>replaceString(content, "abca", "xyz")</p>
-<p><code>DQL is awesome!</code></p>
-<p><code>DQL is simple!</code></p>
-<p><code>DQL is awesome!</code></p>
-<p><code>Dynatrace Query Language</code></p>
-<p><code>Dynatrace Query Language</code></p>
-<p><code>Dynatrace Query Language</code></p>
-<p><code>abcabca</code></p>
-<p><code>abcabca</code></p>
-<p><code>xyzbca</code></p>
 <h2 id="splitbypattern">splitByPattern<a class="headerlink" href="#splitbypattern" title="Permanent link">&para;</a></h2>
 <p>Splits a string into an array at each occurrence of the DPL pattern.</p>
 <h4 id="syntax_22">Syntax<a class="headerlink" href="#syntax_22" title="Permanent link">&para;</a></h4>
 <p><code>splitByPattern(expression, pattern)</code></p>
 <h4 id="parameters_22">Parameters<a class="headerlink" href="#parameters_22" title="Permanent link">&para;</a></h4>
-<p>Parameter</p>
-<p>Type</p>
-<p>Description</p>
-<p>Required</p>
-<p>expression</p>
-<p>string</p>
-<p>A field or string expression to split.</p>
-<p>Required</p>
-<p>pattern</p>
-<p>string</p>
-<p>The splitting pattern. Must conform with <a href="/docs/platform/grail/dynatrace-pattern-language" title="Use Dynatrace Pattern Language to describe patterns using matchers.">DPL patterns</a>.</p>
-<p>Required</p>
 <h4 id="returns_22">Returns<a class="headerlink" href="#returns_22" title="Permanent link">&para;</a></h4>
 <p>The data type of the returned value is <code>array</code>.</p>
 <h4 id="examples_22">Examples<a class="headerlink" href="#examples_22" title="Permanent link">&para;</a></h4>
@@ -26959,18 +26405,6 @@ Using an empty string as a pattern splits the string into one-byte substrings. F
 <h4 id="syntax_23">Syntax<a class="headerlink" href="#syntax_23" title="Permanent link">&para;</a></h4>
 <p><code>splitString(expression, pattern)</code></p>
 <h4 id="parameters_23">Parameters<a class="headerlink" href="#parameters_23" title="Permanent link">&para;</a></h4>
-<p>Parameter</p>
-<p>Type</p>
-<p>Description</p>
-<p>Required</p>
-<p>expression</p>
-<p>string</p>
-<p>The string expression to split up into an array.</p>
-<p>Required</p>
-<p>pattern</p>
-<p>string</p>
-<p>The pattern to split the string expression at, or the empty string to split into one-byte strings.</p>
-<p>Required</p>
 <h4 id="returns_23">Returns<a class="headerlink" href="#returns_23" title="Permanent link">&para;</a></h4>
 <p>The data type of the returned value is <code>array</code>.</p>
 <h4 id="examples_23">Examples<a class="headerlink" href="#examples_23" title="Permanent link">&para;</a></h4>
@@ -26999,42 +26433,11 @@ Using an empty string as a pattern splits the string into one-byte substrings. F
 </code></pre></div>
 <p>Run in Playground</p>
 <p>Query result:</p>
-<p>content</p>
-<p>splitString(content, " ")</p>
-<p>splitString(content, "is")</p>
-<p>splitString(content, "")</p>
-<p>splitString(content, "XYZ")</p>
-<p><code>DQL is awesome!</code></p>
-<p><code>[DQL, is, awesome!]</code></p>
-<p><code>[DQL , awesome!]</code></p>
-<p><code>[D, Q, L, , i, s, , a, w, e, s, o, m, e, !]</code></p>
-<p><code>[DQL is awesome!]</code></p>
-<p><code>Dynatrace Query Language</code></p>
-<p><code>[Dynatrace, Query, Language]</code></p>
-<p><code>[Dynatrace Query Language]</code></p>
-<p><code>[D, y, n, a, t, r, a, c, e, , Q, u, e, r, y, , L, a, n, g, u, a, g, e]</code></p>
-<p><code>[Dynatrace Query Language]</code></p>
 <h2 id="startswith">startsWith<a class="headerlink" href="#startswith" title="Permanent link">&para;</a></h2>
 <p>Checks if a string expression starts with a prefix. Returns <code>true</code> if does, <code>false</code> otherwise.</p>
 <h4 id="syntax_24">Syntax<a class="headerlink" href="#syntax_24" title="Permanent link">&para;</a></h4>
 <p><code>startsWith(expression, prefix [, caseSensitive])</code></p>
 <h4 id="parameters_24">Parameters<a class="headerlink" href="#parameters_24" title="Permanent link">&para;</a></h4>
-<p>Parameter</p>
-<p>Type</p>
-<p>Description</p>
-<p>Required</p>
-<p>expression</p>
-<p>string</p>
-<p>The string expression that will be checked.</p>
-<p>Required</p>
-<p>prefix</p>
-<p>string</p>
-<p>The prefix string with which the expression should start.</p>
-<p>Required</p>
-<p>caseSensitive</p>
-<p>boolean</p>
-<p>Whether the check should be done in a case-sensitive way.</p>
-<p>Optional</p>
 <h4 id="returns_24">Returns<a class="headerlink" href="#returns_24" title="Permanent link">&para;</a></h4>
 <p>The data type of the returned value is <code>boolean</code>.</p>
 <h4 id="examples_24">Examples<a class="headerlink" href="#examples_24" title="Permanent link">&para;</a></h4>
@@ -27055,15 +26458,6 @@ Using an empty string as a pattern splits the string into one-byte substrings. F
 </code></pre></div>
 <p>Run in Playground</p>
 <p>Query result:</p>
-<p>content</p>
-<p>startsWith(content, "D")</p>
-<p>startsWith(content, "dql", caseSensitive:FALSE)</p>
-<p><code>DQL is awesome!</code></p>
-<p><code>true</code></p>
-<p><code>true</code></p>
-<p><code>Dynatrace Query Language</code></p>
-<p><code>true</code></p>
-<p><code>false</code></p>
 <h2 id="stringlength">stringLength<a class="headerlink" href="#stringlength" title="Permanent link">&para;</a></h2>
 <p>Returns the length of a string expression. Length is defined as the number of UTF-16 code units, which is often the same as the number of characters in the string. In some cases, the number of characters is smaller than the number of UTF-16 code units, for example when Combining Diacritical Marks are used, or if characters outside the Basic Multilingual Plane (BMP), such as Emoji, are present.</p>
 <p>If your use case requires consistent length for the same characters, consider ingesting strings after Unicode normalization.</p>
@@ -27071,14 +26465,6 @@ Using an empty string as a pattern splits the string into one-byte substrings. F
 <h4 id="syntax_25">Syntax<a class="headerlink" href="#syntax_25" title="Permanent link">&para;</a></h4>
 <p><code>stringLength(expression)</code></p>
 <h4 id="parameters_25">Parameters<a class="headerlink" href="#parameters_25" title="Permanent link">&para;</a></h4>
-<p>Parameter</p>
-<p>Type</p>
-<p>Description</p>
-<p>Required</p>
-<p>expression</p>
-<p>string</p>
-<p>The string expression to get the number of UTF-16 code units for.</p>
-<p>Required</p>
 <h4 id="returns_25">Returns<a class="headerlink" href="#returns_25" title="Permanent link">&para;</a></h4>
 <p>The data type of the returned value is <code>long</code>.</p>
 <h4 id="examples_25">Examples<a class="headerlink" href="#examples_25" title="Permanent link">&para;</a></h4>
@@ -27099,14 +26485,6 @@ Using an empty string as a pattern splits the string into one-byte substrings. F
 </code></pre></div>
 <p>Run in Playground</p>
 <p>Query result:</p>
-<p>content</p>
-<p>stringLength(content)</p>
-<p><code>DQL is awesome!</code></p>
-<p><code>15</code></p>
-<p><code>Dynatrace Query Language</code></p>
-<p><code>24</code></p>
-<p><code>ðâð¦º</code></p>
-<p><code>5</code></p>
 <h2 id="substring">substring<a class="headerlink" href="#substring" title="Permanent link">&para;</a></h2>
 <p>Gets a code unit range using a start index (inclusive) and an end index (exclusive).</p>
 <p>Returns an empty string if from <code>&gt;=</code> to.</p>
@@ -27118,22 +26496,6 @@ Using an empty string as a pattern splits the string into one-byte substrings. F
 <h4 id="syntax_26">Syntax<a class="headerlink" href="#syntax_26" title="Permanent link">&para;</a></h4>
 <p><code>substring(expression [, from] [, to])</code></p>
 <h4 id="parameters_26">Parameters<a class="headerlink" href="#parameters_26" title="Permanent link">&para;</a></h4>
-<p>Parameter</p>
-<p>Type</p>
-<p>Description</p>
-<p>Required</p>
-<p>expression</p>
-<p>string</p>
-<p>The string expression to get a substring of.</p>
-<p>Required</p>
-<p>from</p>
-<p>long</p>
-<p>Index of first code unit to include in sub-string, inclusive, relative to start of <code>expression</code> if positive, relative to end if negative. Clamped at string bounds.</p>
-<p>Optional</p>
-<p>to</p>
-<p>long</p>
-<p>Index of last code unit to include in sub-string, exclusive, relative to start of <code>expression</code> if positive, relative to end if negative. Clamped at string bounds.</p>
-<p>Optional</p>
 <h4 id="returns_26">Returns<a class="headerlink" href="#returns_26" title="Permanent link">&para;</a></h4>
 <p>The data type of the returned value is <code>string</code>.</p>
 <h4 id="examples_26">Examples<a class="headerlink" href="#examples_26" title="Permanent link">&para;</a></h4>
@@ -27162,34 +26524,11 @@ Using an empty string as a pattern splits the string into one-byte substrings. F
 </code></pre></div>
 <p>Run in Playground</p>
 <p>Query result:</p>
-<p>content</p>
-<p>substring(content, from:4)</p>
-<p>substring(content, from:-2)</p>
-<p>substring(content, from:4, to:9)</p>
-<p>substring(content, from:-42, to:42)</p>
-<p><code>DQL is awesome!</code></p>
-<p><code>is awesome!</code></p>
-<p><code>e!</code></p>
-<p><code>is aw</code></p>
-<p><code>DQL is awesome!</code></p>
-<p><code>Dynatrace Query Language</code></p>
-<p><code>trace Query Language</code></p>
-<p><code>ge</code></p>
-<p><code>trace</code></p>
-<p><code>Dynatrace Query Language</code></p>
 <h2 id="trim">trim<a class="headerlink" href="#trim" title="Permanent link">&para;</a></h2>
 <p>Removes leading and trailing whitespaces. Any code point &lt;= ASCII 32 in decimal is considered a whitespace, where ASCII 32 is a blank space.</p>
 <h4 id="syntax_27">Syntax<a class="headerlink" href="#syntax_27" title="Permanent link">&para;</a></h4>
 <p><code>trim(expression)</code></p>
 <h4 id="parameters_27">Parameters<a class="headerlink" href="#parameters_27" title="Permanent link">&para;</a></h4>
-<p>Parameter</p>
-<p>Type</p>
-<p>Description</p>
-<p>Required</p>
-<p>expression</p>
-<p>string</p>
-<p>The string expression to remove leading and trailing white-space from.</p>
-<p>Required</p>
 <h4 id="returns_27">Returns<a class="headerlink" href="#returns_27" title="Permanent link">&para;</a></h4>
 <p>The data type of the returned value is <code>string</code>.</p>
 <h4 id="examples_27">Examples<a class="headerlink" href="#examples_27" title="Permanent link">&para;</a></h4>
@@ -27206,88 +26545,32 @@ Using an empty string as a pattern splits the string into one-byte substrings. F
 </code></pre></div>
 <p>Run in Playground</p>
 <p>Query result:</p>
-<p>content</p>
-<p>trim(content)</p>
-<p><code>" DQL is awesome!"</code></p>
-<p><code>DQL is awesome!</code></p>
-<p><code>" Dynatrace Query Language "</code></p>
-<p><code>Dynatrace Query Language</code></p>
 <h2 id="unescape">unescape<a class="headerlink" href="#unescape" title="Permanent link">&para;</a></h2>
 <p>Returns an unescaped string.</p>
 <p>Unescaping rules</p>
 <ol>
-<li>Single quotes, double quotes and backticks are unescaped.</li>
+<li>
+<p>Single quotes, double quotes and backticks are unescaped.</p>
+</li>
+<li>
+<p>Backslashes are unescaped.</p>
+</li>
+<li>
+<p>ASCII characters bell, backspace, form feed, new line, carriage return, horizontal tab and vertical tab are unescaped.</p>
+</li>
+<li>
+<p><code>\xhh</code> within standard ASCII space (0x00 - 0x7f) is replaced by the related character.</p>
+</li>
+<li>
+<p><code>\xhh</code> within extended ASCII space (0x80 - 0xff) is interpreted as <code>\u00hh</code> and replaced by the related Unicode character.</p>
+</li>
+<li>
+<p><code>\uhhhh</code> is replaced by the related Unicode character.</p>
+</li>
 </ol>
-<p>Input</p>
-<p>Output</p>
-<p><code>\"</code></p>
-<p><code>"</code></p>
-<p><code>\'</code></p>
-<p><code>'</code></p>
-<p><code>\`</code></p>
-<p><code>`</code></p>
-<ol>
-<li>Backslashes are unescaped.</li>
-</ol>
-<p>Input</p>
-<p>Output</p>
-<p><code>\\</code></p>
-<p><code>\</code></p>
-<ol>
-<li>ASCII characters bell, backspace, form feed, new line, carriage return, horizontal tab and vertical tab are unescaped.</li>
-</ol>
-<p>Input</p>
-<p>Output</p>
-<p><code>\a</code></p>
-<p><code>&lt;bell&gt;</code></p>
-<p><code>\b</code></p>
-<p><code>&lt;backspace&gt;</code></p>
-<p><code>\f</code></p>
-<p><code>&lt;form feed&gt;</code></p>
-<p><code>\n</code></p>
-<p><code>&lt;new line&gt;</code></p>
-<p><code>\r</code></p>
-<p><code>&lt;carriage return&gt;</code></p>
-<p><code>\t</code></p>
-<p><code>&lt;horizontal tab&gt;</code></p>
-<p><code>\v</code></p>
-<p><code>&lt;vertical tab&gt;</code></p>
-<ol>
-<li><code>\xhh</code> within standard ASCII space (0x00 - 0x7f) is replaced by the related character.</li>
-</ol>
-<p>Input</p>
-<p>Output</p>
-<p><code>\x40</code></p>
-<p><code>@</code></p>
-<p><code>\x64</code></p>
-<p><code>d</code></p>
-<ol>
-<li><code>\xhh</code> within extended ASCII space (0x80 - 0xff) is interpreted as <code>\u00hh</code> and replaced by the related Unicode character.</li>
-</ol>
-<p>Input</p>
-<p>Output</p>
-<p><code>\xff</code></p>
-<p><code>Ã¿</code></p>
-<ol>
-<li><code>\uhhhh</code> is replaced by the related Unicode character.</li>
-</ol>
-<p>Input</p>
-<p>Output</p>
-<p><code>\u002e</code></p>
-<p><code>.</code></p>
-<p><code>\u0064</code></p>
-<p><code>d</code></p>
 <h4 id="syntax_28">Syntax<a class="headerlink" href="#syntax_28" title="Permanent link">&para;</a></h4>
 <p><code>unescape(expression)</code></p>
 <h4 id="parameters_28">Parameters<a class="headerlink" href="#parameters_28" title="Permanent link">&para;</a></h4>
-<p>Parameter</p>
-<p>Type</p>
-<p>Description</p>
-<p>Required</p>
-<p>expression</p>
-<p>string expression</p>
-<p>The string expression that will be unescaped.</p>
-<p>Required</p>
 <h4 id="returns_28">Returns<a class="headerlink" href="#returns_28" title="Permanent link">&para;</a></h4>
 <p>The data type of the returned value is <code>string</code>.</p>
 <h4 id="examples_28">Examples<a class="headerlink" href="#examples_28" title="Permanent link">&para;</a></h4>
@@ -27319,14 +26602,6 @@ Using an empty string as a pattern splits the string into one-byte substrings. F
 <h4 id="syntax_29">Syntax<a class="headerlink" href="#syntax_29" title="Permanent link">&para;</a></h4>
 <p><code>unescapeHtml(expression)</code></p>
 <h4 id="parameters_29">Parameters<a class="headerlink" href="#parameters_29" title="Permanent link">&para;</a></h4>
-<p>Parameter</p>
-<p>Type</p>
-<p>Description</p>
-<p>Required</p>
-<p>expression</p>
-<p>string</p>
-<p>The string expression that will be unescaped.</p>
-<p>Required</p>
 <h4 id="returns_29">Returns<a class="headerlink" href="#returns_29" title="Permanent link">&para;</a></h4>
 <p>The data type of the returned value is <code>string</code>.</p>
 <h4 id="examples_29">Examples<a class="headerlink" href="#examples_29" title="Permanent link">&para;</a></h4>
@@ -27343,25 +26618,11 @@ Using an empty string as a pattern splits the string into one-byte substrings. F
 </code></pre></div>
 <p>Run in Playground</p>
 <p>Query result:</p>
-<p>content</p>
-<p>unescapeHtml(content)</p>
-<p><code>DQL is &amp;lt;bold&amp;gt;awesome&amp;lt;/bold&amp;gt;!</code></p>
-<p><code>DQL is &lt;bold&gt;awesome&lt;/bold&gt;!</code></p>
-<p><code>&amp;lt;a href=&amp;quot;https://www.dynatrace.com/platform/grail&amp;quot;&amp;gt;Dynatrace Query Language&amp;lt;/a&amp;gt;</code></p>
-<p><code>&lt;a href="https://www.dynatrace.com/platform/grail"&gt;Dynatrace Query Language&lt;/a&gt;</code></p>
 <h2 id="upper">upper<a class="headerlink" href="#upper" title="Permanent link">&para;</a></h2>
 <p>Converts a string to uppercase.</p>
 <h4 id="syntax_30">Syntax<a class="headerlink" href="#syntax_30" title="Permanent link">&para;</a></h4>
 <p><code>upper(expression)</code></p>
 <h4 id="parameters_30">Parameters<a class="headerlink" href="#parameters_30" title="Permanent link">&para;</a></h4>
-<p>Parameter</p>
-<p>Type</p>
-<p>Description</p>
-<p>Required</p>
-<p>expression</p>
-<p>string</p>
-<p>The string expression to convert to uppercase.</p>
-<p>Required</p>
 <h4 id="returns_30">Returns<a class="headerlink" href="#returns_30" title="Permanent link">&para;</a></h4>
 <p>The data type of the returned value is <code>string</code>.</p>
 <h4 id="examples_30">Examples<a class="headerlink" href="#examples_30" title="Permanent link">&para;</a></h4>
@@ -27378,12 +26639,6 @@ Using an empty string as a pattern splits the string into one-byte substrings. F
 </code></pre></div>
 <p>Run in Playground</p>
 <p>Query result:</p>
-<p>content</p>
-<p>upper(content)</p>
-<p><code>DQL is awesome!</code></p>
-<p><code>DQL IS AWESOME!</code></p>
-<p><code>Dynatrace Query Language</code></p>
-<p><code>DYNATRACE QUERY LANGUAGE</code></p>
 <h2 id="related-topics">Related topics<a class="headerlink" href="#related-topics" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="/docs/platform/grail/dynatrace-query-language" title="How to use Dynatrace Query Language.">Dynatrace Query Language</a></li>

@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../../../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
     
     
       
@@ -25634,16 +25634,6 @@
 <p>You can add token credentials to the header value. Use the format <code>{&lt;credential ID&gt;|token}</code>, <code>{&lt;credential ID&gt;|username}</code>, or <code>{&lt;credential ID&gt;|password}</code>, for example <code>{CREDENTIALS_VAULT-0000000000000000|token}</code> as appropriate for the type of credential you're inserting. You can only copy and paste credentials to which you have access.</p>
 <p>Default HTTP headers</p>
 <p>These are the default headers Dynatrace creates per request.</p>
-<p>Name</p>
-<p>Value</p>
-<p><code>Accept</code></p>
-<p><code>*/*</code></p>
-<p><code>Connection</code></p>
-<p><code>close</code></p>
-<p><code>Host</code></p>
-<p><code>&lt;hostname&gt;</code></p>
-<p><code>User-Agent</code></p>
-<p><code>DynatraceSynthetic/{version}</code><a href="#fn-1-1-def">1</a></p>
 <p>1</p>
 <p><code>{version}</code> is the current version of the Synthetic engine executing the monitor. Even if you <a href="#basic-settings">define a custom user agent</a>, Dynatrace always automatically adds <code>DynatraceSynthetic/{version}</code> to the user agent to make sure that synthetic monitoring traffic can be identified.</p>
 <p>Dynatrace also creates the <code>x-Dynatrace-Tenant</code>, and <code>x-Dynatrace-Test</code> headers for internal administrative purposes.

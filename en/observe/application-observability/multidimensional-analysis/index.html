@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
     
     
       
@@ -25505,42 +25505,12 @@
 <p>Unlike <a href="/docs/analyze-explore-automate/explorer#limitations" title="Query for metrics and transform results to gain desired insights.">Data Explorer</a>, multidimensional analysis uses trace and request data, not metric data, so values on multidimensional analysis charts might differ from values on custom charts.</p>
 <h2 id="configure-view">Configure view<a class="headerlink" href="#configure-view" title="Permanent link">&para;</a></h2>
 <p>In <strong>Configure view</strong>, you can set up multiple filtering capabilities. The view updates automatically as you change the parameters.</p>
-<p>Parameter</p>
-<p>Description</p>
-<p>Metric</p>
-<p>The metric to be analyzed.</p>
-<p>Aggregation</p>
-<p>How the metric values are aggregated. Available aggregations depend on the selected metric.</p>
-<p>Split mode</p>
-<p>How dimensions specified in <strong>Split by dimension</strong> are treated.</p>
-<ul>
-<li><strong>Split by services</strong>âeach dimension is displayed separately for each service.</li>
-<li><strong>Merge by services</strong>âsame dimensions from different services are merged into one.</li>
-</ul>
-<p>Split by dimension</p>
-<p>A list of dimensions by which the requests are split.</p>
-<p>You can specify several dimensions. Place your cursor in the input field to see the available options. The requests are split by dimension in the specified order.</p>
-<p>Filter requests</p>
-<p>Filter the requests to be included to the view. Place your cursor in the input field to see the available options.</p>
-<p>Criteria of the same type are grouped by <strong>OR</strong> logic. Criteria of different types are grouped by <strong>AND</strong> logic.</p>
 <p>You can export the table data in a comma-separated values (CSV) file.</p>
 <ol>
 <li>In the lower-right corner of the page, select <strong>Show export menu</strong> <img alt="More" src="https://dt-cdn.net/images/more-icon-01c8b008ca.svg" title="More" />.</li>
 </ol>
 <p><img alt="Show export menu" src="https://dt-cdn.net/images/show-export-menu-107-2a8a76c9a2.png" />
 2. Select <strong>Export visible data</strong> or <strong>Export table data</strong>.</p>
-<p>Option</p>
-<p>Exported data</p>
-<p>Fields</p>
-<p>Number of entries</p>
-<p><strong>Export visible data</strong></p>
-<p>The currently displayed area of the table, taking into account applied filters</p>
-<p>Only visible data</p>
-<p>Up to 100 top dimensions</p>
-<p><strong>Export table data</strong></p>
-<p>All table data</p>
-<p>All the available data related to top dimensions</p>
-<p>Up to 100 top dimensions</p>
 <h2 id="view">View<a class="headerlink" href="#view" title="Permanent link">&para;</a></h2>
 <p><img alt="Top database statements page" src="https://dt-cdn.net/images/top-database-statements-3564-3bd08ea1b1.png" /></p>
 <p>The chart shows the top 15 dimensions (all other dimensions are aggregated into a single dimension) and the table beneath contains up to 85 more dimensions, bringing the total number of chartable dimensions to 100. The view instantly adapts to the changes you make in the <strong>Configure view</strong> pane.</p>

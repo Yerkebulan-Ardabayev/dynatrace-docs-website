@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../../../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
     
     
       
@@ -25582,83 +25582,18 @@
 <li>The <code>label</code> is freeform text to display on the link in your Markdown tile or section</li>
 <li>The <code>address</code> specifies what to open when someone selects the link, such as a website or a Dynatrace app</li>
 </ul>
-<p>Link to</p>
-<p>Syntax and examples</p>
-<p>Website</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>[My label](https://www.example.com/)
-</code></pre></div>
-<p>Notebooks app</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>[My label](/ui/apps/dynatrace.notebooks/notebooks)
-</code></pre></div>
-<p>Specific notebook</p>
-<p><strong>Syntax</strong>:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>[label](/ui/apps/dynatrace.notebooks/notebook/&lt;notebookid&gt;)
-</code></pre></div>
-<p><strong>Example</strong>:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>[My label](/ui/apps/dynatrace.notebooks/notebook/274edae4-dfe8-41fb-aced-5020fb1270bc)
-</code></pre></div>
-<p>To get the address</p>
-<ol>
-<li>Display the target notebook.</li>
-<li>Copy everything on the browser address line starting from <code>/ui/</code>.</li>
-<li>Paste it into your Markdown as the address of a link.</li>
-</ol>
-<p>Specific notebook section</p>
-<p><strong>Syntax</strong>:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>[label](/ui/apps/dynatrace.notebooks/notebook/&lt;notebookid&gt;#&lt;sectionid&gt;)
-</code></pre></div>
-<p><strong>Example</strong>:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>[My label](/ui/apps/dynatrace.notebooks/notebook/274edae4-dfe8-41fb-aced-5020fb1270bc#cb69caf1-52ed-4e73-8a3e-120e8cd7e8f8)
-</code></pre></div>
-<p>To get the address</p>
-<ol>
-<li>Display the target notebook.</li>
-<li>Select the target section of the notebook.</li>
-<li>Copy everything on the browser address line starting from <code>/ui/</code>.</li>
-<li>Paste it into your Markdown as the address of a link.</li>
-</ol>
-<p>Dashboards app</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>[My label](/ui/apps/dynatrace.dashboards/)
-</code></pre></div>
-<p>Specific dashboard</p>
-<p><strong>Syntax</strong>:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>[label](/ui/apps/dynatrace.dashboards/&lt;dashboardid&gt;)
-</code></pre></div>
-<p><strong>Example</strong>:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>[My label](/ui/apps/dynatrace.dashboards/dashboard/9f24c36e-ca5f-401c-8e00-5e4b05c46bd2)
-</code></pre></div>
-<p>To get the address</p>
-<ol>
-<li>Display the target dashboard.</li>
-<li>Copy everything on the browser address line starting from <code>/ui/</code>.</li>
-<li>Paste it into your Markdown as the address of a link.</li>
-</ol>
-<p>Specific dashboard tile</p>
-<p><strong>Syntax</strong>:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>[label](/ui/apps/dynatrace.dashboards/dashboard/&lt;dashboardid&gt;#tileIds=n)
-</code></pre></div>
-<p><strong>Example</strong>:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>[My label](/ui/apps/dynatrace.dashboards/dashboard/9f24c36e-ca5f-401c-8e00-5e4b05c46bd2#from=now%28%29-2h&amp;to=now%28%29&amp;tileIds=6)
-</code></pre></div>
-<p>To include a specific tile ID in the link</p>
-<ol>
-<li>Display the target dashboard.</li>
-<li>Select the target tile in the target dashboard.</li>
-<li>Copy everything on the browser address line starting from <code>/ui/</code>.</li>
-<li>Paste it into your Markdown as the address of a link.</li>
-</ol>
 <h3 id="images">Images<a class="headerlink" href="#images" title="Permanent link">&para;</a></h3>
 <p>To link to a picture, use this format:</p>
 <p><code>![alternate text](https://www.example.com/file-name.jpg)</code></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>Here are some of the people who started [Dynatrace](https://www.dynatrace.com).
-<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>
-<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>
-<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>
-<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a>![Dynatrace founders](https://dt-cdn.net/images/original-dynatrace-team-1500-7334dbe9a8.jpg)
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>Here are some of the people who started [Dynatrace](https://www.dynatrace.com).
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>![Dynatrace founders](https://dt-cdn.net/images/original-dynatrace-team-1500-7334dbe9a8.jpg)
 </code></pre></div>
 <h3 id="variables">Variables<a class="headerlink" href="#variables" title="Permanent link">&para;</a></h3>
 <p>To reference a <a href="/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new/components/dashboard-component-variable" title="Add variables to your Dynatrace dashboards.">variable</a> in an annotation, use the variable name prefixed by a <code>$</code> character. For example:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>The status is $Status.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>The status is $Status.
 </code></pre></div>
 <p>If the dashboard has a variable named <code>Status</code> and the current value of <code>Status</code> is <code>Good</code>, the above example would appear in your tile as "The status is Good." and it would be updated when the value of <code>Status</code> changes.</p>
 <p>For details on variables, see <a href="/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new/components/dashboard-component-variable" title="Add variables to your Dynatrace dashboards.">Add a variable to a dashboard</a>.</p>

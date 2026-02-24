@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
     
     
       
@@ -25557,43 +25557,6 @@
 <li>Adjust settings and <strong>Save changes</strong>.</li>
 </ol>
 <h2 id="default-oneagent-settings">Default OneAgent settings<a class="headerlink" href="#default-oneagent-settings" title="Permanent link">&para;</a></h2>
-<p>Setting</p>
-<p>Description</p>
-<p>Default</p>
-<p><strong>Detect open log files</strong></p>
-<p>This option automatically detects logs written by important processes.</p>
-<p>enabled</p>
-<p><strong>Detect IIS logs</strong></p>
-<p>This option allows the detection of logs and event logs written by the Microsoft IIS server.</p>
-<p>enabled</p>
-<p><strong>Detect system logs</strong></p>
-<p>Linux: Detects syslogs, and message logs.
-Windows: Detects system, application, and security event logs.</p>
-<p>enabled</p>
-<p><strong>Detect logs on network file systems</strong></p>
-<p>This option detects logs stored on the Network File System server. This applies for Linux only</p>
-<p>disabled</p>
-<p><strong>Allow OneAgent to monitor OneAgent logs</strong></p>
-<p>This option allows OneAgent to monitor own logs.</p>
-<p>disabled</p>
-<p><strong>Detect logs of containerized applications</strong></p>
-<p>This option allows the detection of log messages written to the containerized application's stdout/stderr streams. It also detects Kubernetes pod logs.</p>
-<p>enabled</p>
-<p><strong>Set UTC as default timezone in containers</strong></p>
-<p>This sets the default timezone of the containers as UTC.</p>
-<p>enabled</p>
-<p><strong>Timestamp search limit</strong></p>
-<p>Set the timestamp search.</p>
-<p><code>64</code> bytes</p>
-<p><strong>Severity search chars limit</strong></p>
-<p>Set the severity search characters limit.</p>
-<p><code>100</code> bytes</p>
-<p><strong>Severity search lines limit</strong></p>
-<p>Set the severity search lines limit.</p>
-<p><code>2</code></p>
-<p><strong>Maximum of log group instances per entity limit - count</strong></p>
-<p>Set the upper limit for log group instances per entry.</p>
-<p><code>200</code></p>
 <h2 id="configuration-file-optional">Configuration file Optional<a class="headerlink" href="#configuration-file-optional" title="Permanent link">&para;</a></h2>
 <p>The configuration file located on each OneAgent is used to set three options. For security reasons, these options can only be set on the host level and are available only by creating a JSON file in a specific location:</p>
 <ul>

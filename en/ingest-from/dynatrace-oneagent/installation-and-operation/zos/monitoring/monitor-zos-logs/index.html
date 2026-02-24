@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../../../../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
     
     
       
@@ -25504,17 +25504,6 @@
 <h3 id="step-1-activate-log-ingest-rule">Step 1 Activate log ingest rule<a class="headerlink" href="#step-1-activate-log-ingest-rule" title="Permanent link">&para;</a></h3>
 <p>Go to <strong>Settings</strong> and select <strong>Log Monitoring</strong> &gt; <strong>Log ingest rules</strong>.</p>
 <p>Activate one of the following built-in rules to ingest discovered logs from your IBM CICS regions and IBM IMS subsystems to Dynatrace.</p>
-<p>Rule</p>
-<p>Condition</p>
-<p>Scope</p>
-<p><strong>z/OS CICS message user</strong></p>
-<p><strong>Log source</strong> is: <code>z/OS CICS message user</code></p>
-<p><strong>Log record level</strong> is any of: <code>ERROR</code> or <code>WARN</code></p>
-<p>Environment</p>
-<p><strong>z/OS IMS master terminal</strong></p>
-<p><strong>Log source</strong> is any of: <code>z/OS IMS primary master</code> or <code>z/OS IMS secondary master</code></p>
-<p><strong>Log record level</strong> is any of: <code>ERROR</code> or <code>WARN</code></p>
-<p>Environment</p>
 <p><img alt="z/OS log settings" src="https://dt-cdn.net/images/zos-log-settings-1651-077ed26fb6.png" /></p>
 <h4 id="limit-the-scope-of-rules">Limit the scope of rules<a class="headerlink" href="#limit-the-scope-of-rules" title="Permanent link">&para;</a></h4>
 <p>If necessary, you can limit the scope of a log ingest rule to a specific group of LPARs (hosts group) or LPAR (host) so that logs are ingested only for those.</p>
@@ -25522,21 +25511,6 @@
 <h4 id="control-which-logs-are-ingested">Control which logs are ingested<a class="headerlink" href="#control-which-logs-are-ingested" title="Permanent link">&para;</a></h4>
 <p>If necessary, you can use attributes to precisely control which logs are ingested.</p>
 <p>To do this, define a <a href="/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-log-storage-configuration" title="Include and exclude specific log sources already known to OneAgent for storage and analysis.">Log ingest rule</a> with specific attributes so that only logs that match those attributes are ingested. For example, you can use the following attributes.</p>
-<p>Attribute</p>
-<p>Description</p>
-<p>Search dropdown logic</p>
-<p><strong>Log source</strong></p>
-<p>Matching is based on a <strong>Log source</strong> attribute. For CICS, select the <code>z/OS CICS message user</code>. For IMS, select either or both of <code>z/OS IMS primary master</code> or <code>z/OS IMS secondary master</code>.</p>
-<p>Can be entered manually. No time limit.</p>
-<p><strong>Log record level</strong><a href="#fn-1-1-def">1</a></p>
-<p>Matching is based on the level of the log record. It supports the following values: <code>alert</code>, <code>critical</code>, <code>debug</code>, <code>emergency</code>, <code>error</code>, <code>info</code>, <code>none</code>, <code>notice</code>, <code>severe</code>, <code>warn</code>.</p>
-<p>Can be entered manually. No time limit.</p>
-<p><strong>Log content</strong></p>
-<p>Matching is based on the content of the log; wildcards are supported in the form of an asterisk.</p>
-<p>Can be entered manually. No time limit.</p>
-<p><strong>Process group</strong></p>
-<p>Matching is based on the process group ID.</p>
-<p>Entities visible in the last 3 days are listed.</p>
 <p>1</p>
 <p>Log record level attribute, transformed by OneAgent, is different than the log <code>status</code> attribute transformed by the Dynatrace server. Learn more by accessing the <a href="/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-log-data-transformation-oa#transform-all-types-of-logs" title="Generic log ingestion automatically transforms log data into output values for the loglevel attribute.">Automatic log enrichment</a> page.</p>
 <h3 id="step-2-optional-mask-sensitive-log-data">Step 2 optional Mask sensitive log data<a class="headerlink" href="#step-2-optional-mask-sensitive-log-data" title="Permanent link">&para;</a></h3>

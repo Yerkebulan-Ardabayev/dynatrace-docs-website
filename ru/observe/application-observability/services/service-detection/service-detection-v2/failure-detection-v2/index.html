@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../../../../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
     
     
       
@@ -25504,16 +25504,6 @@ You can use the default Dynatrace detection rules and also define your own custo
 <h3 id="default-failure-detection-rulesets-and-rules">Default failure detection rulesets and rules<a class="headerlink" href="#default-failure-detection-rulesets-and-rules" title="Permanent link">&para;</a></h3>
 <p>Dynatrace provides default failure detection rulesets and rules.
 Additionally, you can add custom rulesets and rules as described in <a href="/docs/observe/application-observability/services/service-detection/service-detection-v2/failure-detection-v2#create-new-ruleset" title="Find out how to detect failed requests within services.">Create new ruleset</a>.</p>
-<p>Condition</p>
-<p>Failure reason</p>
-<p><code>span.status_code</code> is <code>ERROR</code></p>
-<p>Based on span status</p>
-<p><code>http.response.status_code</code> is <code>5xx</code> (server-side error)</p>
-<p>The HTTP error status code</p>
-<p><code>rpc.grpc.status_code</code> is <code>2</code>, <code>4</code>, <code>12</code>, <code>13</code>, <code>14</code>, or <code>15</code> (that is, a server-side error code).</p>
-<p>The gRPC error status code</p>
-<p>Exited by exception</p>
-<p>The exception itself</p>
 <p>A request is considered successful if no failure detection rule matches.</p>
 <h2 id="steps">Steps<a class="headerlink" href="#steps" title="Permanent link">&para;</a></h2>
 <p>Failure detection is customized in <img alt="Settings" src="https://dt-cdn.net/images/settings-icon-256-38e1321b51.webp" title="Settings" /> <strong>Settings</strong> &gt; <strong>Process and contextualize</strong> &gt; <strong>Services</strong> &gt; <strong>Failure detection</strong>.</p>

@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
     
     
       
@@ -25489,72 +25489,11 @@
 </ul>
 <h2 id="identity">Identity<a class="headerlink" href="#identity" title="Permanent link">&para;</a></h2>
 <p>Classic Metrics and Grail Metrics have the same level of detail and dimensions available. The only difference is the metric key.</p>
-<p>Metric key (Grail)</p>
-<p>Metric key (Classic)</p>
-<p>dt.kubernetes.cluster.readyz</p>
-<p>builtin:kubernetes.cluster.readyz</p>
-<p>dt.kubernetes.container.oom_kills</p>
-<p>builtin:kubernetes.container.oom_kills</p>
-<p>dt.kubernetes.container.restarts</p>
-<p>builtin:kubernetes.container.restarts</p>
-<p>dt.kubernetes.node.conditions</p>
-<p>builtin:kubernetes.node.conditions</p>
-<p>dt.kubernetes.node.cpu_allocatable</p>
-<p>builtin:kubernetes.node.cpu_allocatable</p>
-<p>dt.kubernetes.node.memory_allocatable</p>
-<p>builtin:kubernetes.node.memory_allocatable</p>
-<p>dt.kubernetes.node.pods_allocatable</p>
-<p>builtin:kubernetes.node.pods_allocatable</p>
-<p>dt.kubernetes.nodes</p>
-<p>builtin:kubernetes.nodes</p>
-<p>dt.kubernetes.persistentvolumeclaim.available</p>
-<p>builtin:kubernetes.persistentvolumeclaim.available</p>
-<p>dt.kubernetes.persistentvolumeclaim.capacity</p>
-<p>builtin:kubernetes.persistentvolumeclaim.capacity</p>
-<p>dt.kubernetes.persistentvolumeclaim.used</p>
-<p>builtin:kubernetes.persistentvolumeclaim.used</p>
-<p>dt.kubernetes.resourcequota.limits_cpu</p>
-<p>builtin:kubernetes.resourcequota.limits_cpu</p>
-<p>dt.kubernetes.resourcequota.limits_cpu_used</p>
-<p>builtin:kubernetes.resourcequota.limits_cpu_used</p>
-<p>dt.kubernetes.resourcequota.limits_memory</p>
-<p>builtin:kubernetes.resourcequota.limits_memory</p>
-<p>dt.kubernetes.resourcequota.limits_memory_used</p>
-<p>builtin:kubernetes.resourcequota.limits_memory_used</p>
-<p>dt.kubernetes.resourcequota.pods</p>
-<p>builtin:kubernetes.resourcequota.pods</p>
-<p>dt.kubernetes.resourcequota.pods_used</p>
-<p>builtin:kubernetes.resourcequota.pods_used</p>
-<p>dt.kubernetes.resourcequota.requests_cpu</p>
-<p>builtin:kubernetes.resourcequota.requests_cpu</p>
-<p>dt.kubernetes.resourcequota.requests_cpu_used</p>
-<p>builtin:kubernetes.resourcequota.requests_cpu_used</p>
-<p>dt.kubernetes.resourcequota.requests_memory</p>
-<p>builtin:kubernetes.resourcequota.requests_memory</p>
-<p>dt.kubernetes.resourcequota.requests_memory_used</p>
-<p>builtin:kubernetes.resourcequota.requests_memory_used</p>
-<p>dt.kubernetes.workload.conditions</p>
-<p>builtin:kubernetes.workload.conditions</p>
-<p>dt.kubernetes.workload.pods_desired</p>
-<p>builtin:kubernetes.workload.pods_desired</p>
-<p>dt.kubernetes.workloads</p>
-<p>builtin:kubernetes.workloads</p>
 <h2 id="convergent-metrics">Convergent metrics<a class="headerlink" href="#convergent-metrics" title="Permanent link">&para;</a></h2>
 <p>The following metrics have been consolidated. The Grail metrics that supersede the Classic metrics offer an increased level of detail compared to the Classic metrics.</p>
 <p>To achieve this decreased level of detail, the Grail metrics are first aggregated to the granularity of the Classic metric. From there the same set of filters can be applied and the output between Classic metrics and Grail metrics is identical.</p>
 <p>The following list of metrics contains the pod and container count metrics and the Kubernetes event count metric that was available at a lower level of detail as Classic metric.</p>
 <p>Kubernetes events and container/pod count metrics</p>
-<p>Metric key (Grail)</p>
-<p>Metric key (Classic)</p>
-<p>dt.kubernetes.containers</p>
-<p>builtin:kubernetes.containers</p>
-<p>dt.kubernetes.pod.containers_desired</p>
-<p>builtin:kubernetes.workload.containers_desired</p>
-<p>dt.kubernetes.events</p>
-<p>builtin:kubernetes.events</p>
-<p>dt.kubernetes.pods</p>
-<p>builtin:kubernetes.node.pods<br />
-builtin:kubernetes.pods</p>
 <p>The following table contains the workload and node resource metrics that have been available as separate workload- and node- level Classic metrics.
 With Grail, there is a single metric at the container level.</p>
 <p><strong>Example:</strong> The following DQL query returns the amount of memory consumed on the workload level based on aggregated container-level data.</p>
@@ -25581,42 +25520,10 @@ With Grail, there is a single metric at the container level.</p>
 <a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>}
 </code></pre></div>
 <p>Workload- and node- level resource consumption metrics</p>
-<p>Metric key (Grail)</p>
-<p>Metric key (Classic)</p>
-<p>dt.kubernetes.container.cpu_usage</p>
-<p>builtin:kubernetes.node.cpu_usage<br />
-builtin:kubernetes.workload.cpu_usage</p>
-<p>dt.kubernetes.container.cpu_throttled</p>
-<p>builtin:kubernetes.node.cpu_throttled<br />
-builtin:kubernetes.workload.cpu_throttled</p>
-<p>dt.kubernetes.container.requests_cpu</p>
-<p>builtin:kubernetes.node.requests_cpu<br />
-builtin:kubernetes.workload.requests_cpu</p>
-<p>dt.kubernetes.container.limits_cpu</p>
-<p>builtin:kubernetes.node.limits_cpu<br />
-builtin:kubernetes.workload.limits_cpu</p>
-<p>dt.kubernetes.container.memory_working_set</p>
-<p>builtin:kubernetes.node.memory_working_set<br />
-builtin:kubernetes.workload.memory_working_set</p>
-<p>dt.kubernetes.container.requests_memory</p>
-<p>builtin:kubernetes.node.requests_memory<br />
-builtin:kubernetes.workload.requests_memory</p>
-<p>dt.kubernetes.container.limits_memory</p>
-<p>builtin:kubernetes.node.limits_memory<br />
-builtin:kubernetes.workload.limits_memory</p>
 <h2 id="replaced-metrics">Replaced metrics<a class="headerlink" href="#replaced-metrics" title="Permanent link">&para;</a></h2>
 <p>This group of metrics consists of Classic metric keys that have never been made available as Grail metrics.
 Instead the most similar Classic metric is used to then determine the Grail metric replacement for these deprecated metrics.
 The reason for the deprecation is a cleanup of duplicate metric keys. In the case of the following metrics, a complete identity of the values between the Classic Metric and Grail Metric is not feasible, but they are closely related and do not deviate very much.</p>
-<p>Metric key (Grail)</p>
-<p>Metric key (Classic)</p>
-<p>Superseding Classic Metric</p>
-<p>dt.kubernetes.container.limits_cpu</p>
-<p>builtin:containers.cpu.limit</p>
-<p>n.a.</p>
-<p>dt.kubernetes.container.oom_kills</p>
-<p>builtin:kubernetes.container.outOfMemoryKills</p>
-<p>builtin:kubernetes.container.oom_kills</p>
 <h2 id="calculated-metrics">Calculated metrics<a class="headerlink" href="#calculated-metrics" title="Permanent link">&para;</a></h2>
 <p>The following set of Classic container metrics is superseded by Grail container metrics.
 For most of the CPU metrics in this section the Classic metrics have the unit millicores, while the Grail metrics have the unit nanoseconds/minute. To get

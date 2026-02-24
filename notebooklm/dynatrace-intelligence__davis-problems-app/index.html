@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
     
     
       
@@ -25495,14 +25495,14 @@
 
 <h1 id="dynatrace-dynatrace-intelligencedavis-problems-app">Документация Dynatrace: dynatrace-intelligence/davis-problems-app<a class="headerlink" href="#dynatrace-dynatrace-intelligencedavis-problems-app" title="Permanent link">&para;</a></h1>
 <p>Язык: Русский (RU)
-Сгенерировано: 2026-02-23
+Сгенерировано: 2026-02-24
 Файлов в разделе: 2</p>
 <hr />
 <h2 id="dynatrace-intelligencedavis-problems-appproblems-app-custom-problem-field-examplesmd">dynatrace-intelligence/davis-problems-app/problems-app-custom-problem-field-examples.md<a class="headerlink" href="#dynatrace-intelligencedavis-problems-appproblems-app-custom-problem-field-examplesmd" title="Permanent link">&para;</a></h2>
 <hr />
 <p>title: Dynatrace Intelligence causal AI use cases
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/davis-problems-app/problems-app-custom-problem-field-examples
-scraped: 2026-02-23T21:21:04.953046</p>
+scraped: 2026-02-24T21:15:51.928778</p>
 <hr />
 <h1 id="dynatrace-intelligence-causal-ai-use-cases">Dynatrace Intelligence causal AI use cases<a class="headerlink" href="#dynatrace-intelligence-causal-ai-use-cases" title="Permanent link">&para;</a></h1>
 <h1 id="dynatrace-intelligence-causal-ai-use-cases_1">Dynatrace Intelligence causal AI use cases<a class="headerlink" href="#dynatrace-intelligence-causal-ai-use-cases_1" title="Permanent link">&para;</a></h1>
@@ -25537,24 +25537,12 @@ scraped: 2026-02-23T21:21:04.953046</p>
 </ol>
 <p>Event properties</p>
 <ol>
-<li>Set the following <strong>Event properties</strong>:</li>
-</ol>
-<p>Event property</p>
-<p>Value</p>
-<p><strong>dt.source_entity</strong></p>
-<p><code>{dims.dt.source_entity}</code></p>
-<p><strong>event.type</strong></p>
-<p><code>ERROR_EVENT</code></p>
-<p><strong>event.name</strong></p>
-<p><code>Abnormally high network traffic</code></p>
-<p><strong>event.description</strong></p>
-<p><code>Abnormally high network traffic was detected for cluster 23</code></p>
-<p><strong>dt.owner</strong></p>
-<p><code>app-team-us-23</code></p>
-<p><strong>app-id</strong></p>
-<p><code>app-23</code></p>
-<ol>
-<li>Select <strong>Create</strong>.</li>
+<li>
+<p>Set the following <strong>Event properties</strong>:</p>
+</li>
+<li>
+<p>Select <strong>Create</strong>.</p>
+</li>
 </ol>
 <p>After you add the fields <code>dt.owner</code> and <code>app-id</code> to your custom alert configuration, each resulting violation event will be tagged with these new fields. The next step is to propagate these fields from the single violation events to problems.</p>
 <p>To add a new field mapping</p>
@@ -25615,7 +25603,7 @@ scraped: 2026-02-23T21:21:04.953046</p>
 <hr />
 <p>title: Problems app
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/davis-problems-app
-scraped: 2026-02-23T21:19:00.341164</p>
+scraped: 2026-02-24T21:13:44.106277</p>
 <hr />
 <h1 id="problems-app">Problems app<a class="headerlink" href="#problems-app" title="Permanent link">&para;</a></h1>
 <h1 id="problems-app_1">Problems app<a class="headerlink" href="#problems-app_1" title="Permanent link">&para;</a></h1>
@@ -25630,8 +25618,6 @@ scraped: 2026-02-23T21:19:00.341164</p>
 <p>Prerequisites</p>
 <h3 id="permissions">Permissions<a class="headerlink" href="#permissions" title="Permanent link">&para;</a></h3>
 <p>The following table describes the required permissions.</p>
-<p>Permission</p>
-<p>Description</p>
 <p>business-analytics:business-flows:read</p>
 <p>Read evaluation of affected Business Flows</p>
 <p>davis-copilot:conversations:execute</p>
@@ -25652,11 +25638,6 @@ scraped: 2026-02-23T21:19:00.341164</p>
 <p>Save notifications for alerting on saved filters</p>
 <p>settings:objects:read</p>
 <p>Read settings objects from Environment API</p>
-<p>10</p>
-<p>rows per page</p>
-<p>Page</p>
-<p>1</p>
-<p>of 1</p>
 <h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h2>
 <p>Make sure the app is <a href="/docs/manage/hub#install" title="See the information about Dynatrace Hub.">installed in your environment</a>.</p>
 <p>Get started</p>
@@ -25924,16 +25905,6 @@ scraped: 2026-02-23T21:19:00.341164</p>
 <p><strong>Example</strong>:</p>
 <p><img alt="Example problem details Overview tab" src="https://dt-cdn.net/images/problems-screenshot-with-overview-1920-6c68de3f34.png" /></p>
 <p>The <strong>Overview</strong> has four sections:</p>
-<p>Section</p>
-<p>Description</p>
-<p><a href="#overview-impact">Impact</a></p>
-<p>Displays all impacted Smartscape entities (for example, services, processes, and hosts) along with brief issue details for each entity.</p>
-<p><a href="#overview-root-cause">Root cause</a></p>
-<p>Focuses on the root cause of the issue, including detailed information about the affected deployment stack.</p>
-<p><a href="#overview-visual-resolution-path">Visual resolution path</a></p>
-<p>Graphically illustrates the relationships between frontends, services, and backends involved in the issue.</p>
-<p><a href="#overview-automation-and-remediation">Automation and remediation</a></p>
-<p>Lists all automation workflows triggered by the problem, such as notifications, remediations, and external integrations.</p>
 <p>Customize the layout</p>
 <p>You can move these sections around to personalize your view of the <strong>Overview</strong>.</p>
 <ol>

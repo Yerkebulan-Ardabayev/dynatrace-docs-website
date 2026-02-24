@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../../../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
     
     
       
@@ -25479,7 +25479,7 @@
 <ul>
 <li>How-to guide</li>
 <li>26-min read</li>
-<li>Updated on Oct 22, 2025</li>
+<li>Updated on Feb 11, 2026</li>
 </ul>
 <p>Dynatrace version 1.264+</p>
 <p><strong>Containerized, auto-scalable private Synthetic locations on Kubernetes and its commercial distribution OpenShift</strong> are an alternative to deploying Synthetic-enabled ActiveGates on separate hosts or virtual machines and then assigning them to private locations for the execution of synthetic monitors.</p>
@@ -26631,7 +26631,7 @@ To learn more about it, see <a href="https://learn.microsoft.com/en-us/azure/ope
 </code></pre></div>
 <h2 id="browserless-private-synthetic-locations">Browserless private Synthetic locations<a class="headerlink" href="#browserless-private-synthetic-locations" title="Permanent link">&para;</a></h2>
 <p>In general, we recommend the deployment of complete synthetic private locations to support the execution of all types synthetic monitors (HTTP, browser, NAM).</p>
-<p>If you don't need to execute browser monitors, however, you might want to consider deploying your private location in a special browserless mode. Such a location (or ActiveGate belonging to it) will be deployed without the browser. The resulting deployment requires less hardware resources, but browser monitors cannot be executed from such a location.</p>
+<p>If you don't need to run browser monitors, consider deploying your location in browserless mode. This mode deploys the location (or ActiveGate belonging to it) without a browser, reducing hardware requirements. However, browser monitors can't run on a browserless location.</p>
 <p>Consider browserless locations as an alternative to synthetic private locations with browser monitor support when youâre focused purely on:</p>
 <ul>
 <li>Network and infrastructure use cases (using NAM monitors)</li>

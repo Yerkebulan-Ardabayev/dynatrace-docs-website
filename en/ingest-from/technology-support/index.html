@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
     
     
       
@@ -25569,12 +25569,12 @@
 </tr>
 <tr>
 <td><a href="/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux" title="Learn how to install OneAgent on Linux, how to customize installation, and more.">Debian</a></td>
-<td>11, 12</td>
+<td>11, 12, 13</td>
 <td>ARM64 (AArch64), x86-64</td>
 </tr>
 <tr>
 <td><a href="/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux" title="Learn how to install OneAgent on Linux, how to customize installation, and more.">Fedora</a></td>
-<td>41, 42</td>
+<td>41, 42, 43</td>
 <td>x86-64</td>
 </tr>
 <tr>
@@ -26678,11 +26678,11 @@
 </tr>
 <tr>
 <td><a href="https://docs.spring.io/spring/docs/current/spring-framework-reference/web-reactive.html">Spring WebFluxï»¿</a></td>
-<td>5, 6</td>
+<td>5, 6, 7</td>
 </tr>
 <tr>
 <td><a href="https://docs.spring.io/spring/docs/current/spring-framework-reference/web-reactive.html#webflux-client">Spring WebFlux WebClientï»¿</a></td>
-<td>5, 6</td>
+<td>5, 6, 7</td>
 </tr>
 <tr>
 <td><a href="https://undertow.io/">Undertowï»¿</a></td>
@@ -26732,7 +26732,7 @@
 </tr>
 <tr>
 <td>Spring Integration</td>
-<td>2<a href="#fn-threading-1-def">1</a>, 3<a href="#fn-threading-1-def">1</a>, 4<a href="#fn-threading-1-def">1</a>, 5<a href="#fn-threading-1-def">1</a>, 6<a href="#fn-threading-1-def">1</a></td>
+<td>2<a href="#fn-threading-1-def">1</a>, 3<a href="#fn-threading-1-def">1</a>, 4<a href="#fn-threading-1-def">1</a>, 5<a href="#fn-threading-1-def">1</a>, 6<a href="#fn-threading-1-def">1</a>, 7<a href="#fn-threading-1-def">1</a></td>
 </tr>
 <tr>
 <td><a href="https://github.com/reactor/reactor-core">reactor-coreï»¿</a></td>
@@ -26843,6 +26843,10 @@
 <tr>
 <td><a href="https://docs.mongodb.com/ecosystem/drivers/java/">MongoDB synchronous driver ï»¿</a></td>
 <td>2<a href="#fn-database-frameworks-1-def">1</a>, 3.0 - 3.6<a href="#fn-database-frameworks-1-def">1</a>, 3.7 - 3.11<a href="#fn-database-frameworks-1-def">1</a>, 3.12 - 4.11<a href="#fn-database-frameworks-1-def">1</a>, 5.0<a href="#fn-database-frameworks-1-def">1</a></td>
+</tr>
+<tr>
+<td><a href="https://redisson.pro/">Redissonï»¿</a></td>
+<td>3+</td>
 </tr>
 <tr>
 <td>Spring Boot Starter Data MongoDB</td>
@@ -27667,7 +27671,7 @@
 </tr>
 <tr>
 <td><a href="https://github.com/confluentinc/confluent-kafka-go">Kafka (confluentinc/confluent-kafka-go)ï»¿</a></td>
-<td>1.9 - 2.8, 2.10, 2.11, 2.12</td>
+<td>1.9 - 2.8, 2.10, 2.11, 2.12, 2.13.0</td>
 </tr>
 </tbody>
 </table>
@@ -27683,7 +27687,7 @@
 <tbody>
 <tr>
 <td><a href="https://github.com/aws/aws-sdk-go-v2">Amazon AWS SDKï»¿</a></td>
-<td>1.13.0 - 1.39.0<a href="#fn-remoting-frameworks-1-def">1</a></td>
+<td>1.13.0 - 1.39.0<a href="#fn-remoting-frameworks-1-def">1</a>, 1.39.1 - 1.41.1<a href="#fn-remoting-frameworks-1-def">1</a></td>
 </tr>
 <tr>
 <td><a href="https://godoc.org/google.golang.org/grpc">gRPCï»¿</a></td>
@@ -27748,7 +27752,7 @@
 <tbody>
 <tr>
 <td><a href="/docs/ingest-from/technology-support/application-software/nodejs" title="Read about Dynatrace support for Node.js applications.">Node.js</a></td>
-<td>18, 20, 22, 24</td>
+<td>18, 20, 22, 24, 25</td>
 <td>Alpine Linux 64-bit (x86-64), Linux (ARM64 (AArch64), PPCLE, s390, x86-64), Windows (x86-64)</td>
 </tr>
 </tbody>
@@ -27903,10 +27907,16 @@
 <td><a href="https://www.dynatrace.com/hub/detail/graphql/">GraphQLï»¿</a></td>
 <td>15+<a href="#fn-api-querying-frameworks-1-def">1</a></td>
 </tr>
+<tr>
+<td><a href="https://www.npmjs.com/package/graphql-yoga">GraphQL Yogaï»¿</a></td>
+<td>5.7+<a href="#fn-api-querying-frameworks-2-def">2</a></td>
+</tr>
 </tbody>
 </table>
 <p>1</p>
 <p>Supported in <a href="/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration" title="AWS Lambda capabilities and integration options">AWS Lambda</a>. Requires Dynatrace Cluster version 1.262+. Service failure detection is not supported.</p>
+<p>2</p>
+<p>Supported in <a href="/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration" title="AWS Lambda capabilities and integration options">AWS Lambda</a>. Requires Dynatrace Cluster version 1.334+. Service failure detection is not supported.</p>
 <table>
 <thead>
 <tr>
@@ -28617,7 +28627,7 @@
 </tr>
 <tr>
 <td><a href="/docs/ingest-from/technology-support/application-software/nginx#nginx-versions" title="Learn the details of Dynatrace support for NGINX.">NGINX</a></td>
-<td>1.11.5 - 1.13.8<a href="#fn-servers-1-def">1</a>, 1.13.9 - 1.14.0<a href="#fn-servers-1-def">1</a>, 1.14.1 - 1.15.8<a href="#fn-servers-1-def">1</a>, 1.15.9 - 1.15.10<a href="#fn-servers-1-def">1</a>, 1.15.11 - 1.16.0<a href="#fn-servers-1-def">1</a>, 1.16.1 - 1.17.3<a href="#fn-servers-1-def">1</a>, 1.17.4 - 1.17.6<a href="#fn-servers-1-def">1</a>, 1.17.7<a href="#fn-servers-1-def">1</a>, 1.17.8<a href="#fn-servers-1-def">1</a>, 1.17.9<a href="#fn-servers-1-def">1</a>, 1.17.10 - 1.18.0, 1.19.0, 1.19.1, 1.19.2, 1.19.3, 1.19.4, 1.19.5, 1.19.6, 1.19.7, 1.19.8, 1.19.9, 1.19.10, 1.20.0, 1.20.1, 1.20.2, 1.21.0, 1.21.1, 1.21.2, 1.21.3, 1.21.4, 1.21.5, 1.21.6, 1.22.0, 1.22.1, 1.23.0, 1.23.1, 1.23.2, 1.23.3, 1.23.4, 1.24.0, 1.25.0, 1.25.1, 1.25.2, 1.25.3, 1.25.4, 1.25.5, 1.26.0, 1.26.1, 1.26.2, 1.26.3, 1.27.0, 1.27.1, 1.27.2, 1.27.3, 1.27.4, 1.27.5, 1.28.0, 1.29.0, 1.29.1, 1.29.2, 1.29.3, 1.29.4</td>
+<td>1.11.5 - 1.13.8<a href="#fn-servers-1-def">1</a>, 1.13.9 - 1.14.0<a href="#fn-servers-1-def">1</a>, 1.14.1 - 1.15.8<a href="#fn-servers-1-def">1</a>, 1.15.9 - 1.15.10<a href="#fn-servers-1-def">1</a>, 1.15.11 - 1.16.0<a href="#fn-servers-1-def">1</a>, 1.16.1 - 1.17.3<a href="#fn-servers-1-def">1</a>, 1.17.4 - 1.17.6<a href="#fn-servers-1-def">1</a>, 1.17.7<a href="#fn-servers-1-def">1</a>, 1.17.8<a href="#fn-servers-1-def">1</a>, 1.17.9<a href="#fn-servers-1-def">1</a>, 1.17.10 - 1.18.0, 1.19.0, 1.19.1, 1.19.2, 1.19.3, 1.19.4, 1.19.5, 1.19.6, 1.19.7, 1.19.8, 1.19.9, 1.19.10, 1.20.0, 1.20.1, 1.20.2, 1.21.0, 1.21.1, 1.21.2, 1.21.3, 1.21.4, 1.21.5, 1.21.6, 1.22.0, 1.22.1, 1.23.0, 1.23.1, 1.23.2, 1.23.3, 1.23.4, 1.24.0, 1.25.0, 1.25.1, 1.25.2, 1.25.3, 1.25.4, 1.25.5, 1.26.0, 1.26.1, 1.26.2, 1.26.3, 1.27.0, 1.27.1, 1.27.2, 1.27.3, 1.27.4, 1.27.5, 1.28.0, 1.28.1, 1.29.0, 1.29.1, 1.29.2, 1.29.3, 1.29.4</td>
 <td>Alpine Linux 64-bit (ARM64 (AArch64), x86-64), Linux (ARM64 (AArch64), x86-64, PPCLE)</td>
 </tr>
 <tr>

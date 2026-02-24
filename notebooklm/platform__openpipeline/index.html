@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
     
     
       
@@ -25495,14 +25495,14 @@
 
 <h1 id="dynatrace-platformopenpipeline">Документация Dynatrace: platform/openpipeline<a class="headerlink" href="#dynatrace-platformopenpipeline" title="Permanent link">&para;</a></h1>
 <p>Язык: Русский (RU)
-Сгенерировано: 2026-02-23
+Сгенерировано: 2026-02-24
 Файлов в разделе: 18</p>
 <hr />
 <h2 id="platformopenpipelineconceptsaccess-controlmd">platform/openpipeline/concepts/access-control.md<a class="headerlink" href="#platformopenpipelineconceptsaccess-controlmd" title="Permanent link">&para;</a></h2>
 <hr />
 <p>title: Owner-based access control in OpenPipeline
 source: https://www.dynatrace.com/docs/platform/openpipeline/concepts/access-control
-scraped: 2026-02-23T21:32:26.646258</p>
+scraped: 2026-02-24T21:22:33.585177</p>
 <hr />
 <h1 id="owner-based-access-control-in-openpipeline">Owner-based access control in OpenPipeline<a class="headerlink" href="#owner-based-access-control-in-openpipeline" title="Permanent link">&para;</a></h1>
 <h1 id="owner-based-access-control-in-openpipeline_1">Owner-based access control in OpenPipeline<a class="headerlink" href="#owner-based-access-control-in-openpipeline_1" title="Permanent link">&para;</a></h1>
@@ -25786,7 +25786,7 @@ scraped: 2026-02-22T21:19:26.870436</p>
 <hr />
 <p>title: Processing in OpenPipeline
 source: https://www.dynatrace.com/docs/platform/openpipeline/concepts/processing
-scraped: 2026-02-22T21:15:24.441536</p>
+scraped: 2026-02-24T21:17:35.658460</p>
 <hr />
 <h1 id="processing-in-openpipeline">Processing in OpenPipeline<a class="headerlink" href="#processing-in-openpipeline" title="Permanent link">&para;</a></h1>
 <h1 id="processing-in-openpipeline_1">Processing in OpenPipeline<a class="headerlink" href="#processing-in-openpipeline_1" title="Permanent link">&para;</a></h1>
@@ -25887,100 +25887,6 @@ scraped: 2026-02-22T21:15:24.441536</p>
 <p><img alt="Stages in a pipeline" src="https://dt-cdn.net/images/stages-2497-7cb2c914ee.png" /></p>
 <p>The following table is a comprehensive list of stages, ordered in the pipeline sequence of execution, specifying which processors are available and executed for each stage, for the supported configuration scopes.</p>
 <p>Specific fields are excluded from matching and processing or restricted. To learn more, see <a href="/docs/platform/openpipeline/reference/limits#fields" title="Reference limits of Dynatrace OpenPipeline.">Limits specific to fields</a>.</p>
-<p>Stage</p>
-<p>Description</p>
-<p>Processors in the stage</p>
-<p>Executed processors</p>
-<p>Supported data types</p>
-<p>Processing</p>
-<p>Prepare data for analysis and storage by parsing values into fields, transforming the schema, and filtering the data records. Fields are edited, and sensitive data is masked.</p>
-<ul>
-<li>DQL</li>
-<li>Add fields</li>
-<li>Remove fields</li>
-<li>Rename fields</li>
-<li>Drop record</li>
-</ul>
-<p>All matches</p>
-<p>Logs, EventsâGeneric, EventsâDavis events, EventsâDavis, EventsâSDLC events, EventsâSecurity events (legacy), Security events (new) <a href="#fn-2-1-def">1</a>, Business events, Spans<a href="#fn-2-1-def">1</a> , Metrics, User events, User sessions</p>
-<p>Metric extraction</p>
-<p>Extract metrics from the records that match the query.</p>
-<ul>
-<li>Counter metric</li>
-<li>Preview Histogram metric<a href="#fn-2-2-def">2</a></li>
-<li>Value metric</li>
-</ul>
-<p>All matches</p>
-<p>Logs, EventsâGeneric, EventsâSDLC events, EventsâSecurity events (legacy), Security events (new)<a href="#fn-2-1-def">1</a>, Business events, System events, User events, User sessions</p>
-<p>Smartscape Node Extraction</p>
-<p>Extract Smartscape nodes for the records that match the query.</p>
-<ul>
-<li>Smartscape node</li>
-</ul>
-<p>All matches</p>
-<p>Logs, EventsâGeneric, EventsâSDLC events, EventsâSecurity events (legacy), Security events (new)<a href="#fn-2-1-def">1</a>, Business events, System events, Spans<a href="#fn-2-1-def">1</a>, User events, User sessions</p>
-<p>Smartscape Edge Extraction</p>
-<p>Extract Smartscape edges for the records that match the query.</p>
-<ul>
-<li>Smartscape edge</li>
-</ul>
-<p>All matches</p>
-<p>Logs, EventsâGeneric, EventsâSDLC events, EventsâSecurity events (legacy), Security events (new)<a href="#fn-2-1-def">1</a>, Business events, System events, Spans<a href="#fn-2-1-def">1</a>, User events, User sessions</p>
-<p>Metric extraction</p>
-<p>Extract metrics from the records that match the query.</p>
-<ul>
-<li>Sampling aware counter metric</li>
-<li>Preview Sampling aware histogram metric<a href="#fn-2-2-def">2</a></li>
-<li>Sampling aware value metric</li>
-</ul>
-<p>All matches</p>
-<p>Spans</p>
-<p>Data extraction</p>
-<p>Extract a new record from a pipeline and re-ingest it as a different data type into another pipeline.</p>
-<ul>
-<li>Business event</li>
-<li>Software developement lifecycle event</li>
-</ul>
-<p>All matches</p>
-<p>Logs, EventsâGeneric, EventsâSDLC events, EventsâSecurity events (legacy), Security events (new)<a href="#fn-2-1-def">1</a>, Business events, System events, Spans<a href="#fn-2-1-def">1</a>, User events, User sessions</p>
-<p>Davis</p>
-<p>Extract a new record from a pipeline and re-ingest it as a Davis events into another pipeline.</p>
-<ul>
-<li>Davis event</li>
-</ul>
-<p>All matches</p>
-<p>Logs, EventsâGeneric, EventsâSDLC events, EventsâSecurity events (legacy), Security events (new)<a href="#fn-2-1-def">1</a>, Business events, System events, Spans<a href="#fn-2-1-def">1</a></p>
-<p>Cost allocation</p>
-<p>Advanced option to assign cost center usage to specific records that match a query.</p>
-<p>Make sure to review <a href="/docs/license/cost-allocation" title="Learn how to allocate costs to cost centers and products.">Cost Allocation documentation</a> when choosing the best approach for your environment.</p>
-<ul>
-<li>DPS Cost Allocation - Cost Center</li>
-</ul>
-<p>First match only</p>
-<p>Logs, Spans<a href="#fn-2-1-def">1</a></p>
-<p>Product allocation</p>
-<p>Advanced option to assign product or application usage to specific records that match a query.</p>
-<p>Make sure to review <a href="/docs/license/cost-allocation" title="Learn how to allocate costs to cost centers and products.">Cost Allocation documentation</a> when choosing the best approach for your environment.</p>
-<ul>
-<li>DPS Cost Allocation - Product</li>
-</ul>
-<p>First match only</p>
-<p>Logs, Spans<a href="#fn-2-1-def">1</a></p>
-<p>Permissions</p>
-<p>Apply security context to the records that match the query.</p>
-<ul>
-<li>Set dt.security_context</li>
-</ul>
-<p>First match only</p>
-<p>Logs, EventsâGeneric, EventsâDavis events, EventsâDavis, EventsâSDLC events, EventsâSecurity events (legacy), Security events (new)<a href="#fn-2-1-def">1</a>, Business events, Spans<a href="#fn-2-1-def">1</a>, Metrics, User events, User sessions</p>
-<p>Storage</p>
-<p>Assign records to the best-fit bucket.</p>
-<ul>
-<li>Bucket assignment</li>
-<li>No storage assignment</li>
-</ul>
-<p>First match only</p>
-<p>Logs, EventsâGeneric, EventsâDavis events, EventsâDavis, EventsâSDLC events, EventsâSecurity events (legacy), Security events (new)<a href="#fn-2-1-def">1</a>, Business events, Spans<a href="#fn-2-1-def">1</a></p>
 <p>1</p>
 <p>The data remains in its original, structured form. This is important for detailed analysis and troubleshooting, as it ensures that no information is lost or altered.</p>
 <p>2</p>
@@ -25993,60 +25899,6 @@ scraped: 2026-02-22T21:15:24.441536</p>
 <li>The processing definition instructs Dynatrace on how to transform or modify the data filtered by the matcher.</li>
 </ul>
 <p>The following table lists alphabetically all available processors in a pipeline.</p>
-<p>Processor</p>
-<p>Description</p>
-<p>Add fields</p>
-<p>Adds fields with name and value.</p>
-<p>Bucket assignment</p>
-<p>Assigns a Grail bucket.</p>
-<p>Business event</p>
-<p>Extracts fields into a new record and sends it to the business event table.</p>
-<p>Counter metric</p>
-<p>Returns the number of occurrences of a metric, from the records that match the query.</p>
-<p>Davis event</p>
-<p>Extracts fields into a new record and sends it to an event table.</p>
-<p>DQL</p>
-<p>Processes a subset of DQL. The output is formatted to string, number, bool, duration, timestamp, and respective arrays of those.</p>
-<p>DPS Cost Allocation - Cost Center</p>
-<p>Assigns cost center usage to a record via <a href="/docs/semantic-dictionary/fields#dynatrace" title="Get to know the list of global fields that have a well defined semantic meaning in Dynatrace and can be used across different monitoring types."><code>dt.cost.costcenter</code></a> by either copying the value from a field or setting it as a static string.</p>
-<p>DPS Cost Allocation - Product</p>
-<p>Assigns product or application usage to a record via <a href="/docs/semantic-dictionary/fields#dynatrace" title="Get to know the list of global fields that have a well defined semantic meaning in Dynatrace and can be used across different monitoring types."><code>dt.cost.product</code></a> by either copying the value from a field or setting it as a static string.</p>
-<p>Drop record</p>
-<p>Drops a record. The record is not retained.</p>
-<p>Preview Histogram metric</p>
-<p>Produces histogram metrics that capture a distribution. Histogram metrics can be used to calculate percentiles using the <a href="/docs/platform/grail/dynatrace-query-language/commands/metric-commands#timeseries" title="DQL metric commands"><code>timeseries percentile</code> aggregation</a>, which are useful to analyze latencies and payload sizes.</p>
-<p>The Histogram metric processor is currently in <a href="/docs/whats-new/preview-releases" title="Learn about our Preview releases and how you can participate in them.">Preview</a> and only accessible to selected customers. To get started, contact a Dynatrace product expert.</p>
-<p>To start a conversation with a Dynatrace product expert, use live chat within your Dynatrace environment.</p>
-<p>No storage assignment</p>
-<p>Skips storage assignment. The record is not retained.</p>
-<p>Sampling aware counter metric</p>
-<p>Sampling might be applied to trace data before it's processed, according to <a href="/docs/ingest-from/dynatrace-oneagent/adaptive-traffic-management" title="Dynatrace Adaptive Traffic Management provides dynamic sampling to ensure that the amount of capture traces stays within the Full-Stack Monitoring included trace volume.">Adaptive Traffic Management for distributed tracing</a>. This span-specific processor supports sampling awareness when returning the number of metric occurrences, from the span records that match the query. Span aggregation and sampling awareness are configurable for all fields available in field extraction, except durationâaggregation of duration is automatically detected and handled.</p>
-<p>Preview Sampling aware histogram metric</p>
-<p>Sampling might be applied to trace data before it's processed, according to <a href="/docs/ingest-from/dynatrace-oneagent/adaptive-traffic-management" title="Dynatrace Adaptive Traffic Management provides dynamic sampling to ensure that the amount of capture traces stays within the Full-Stack Monitoring included trace volume.">Adaptive Traffic Management for distributed tracing</a>. This span-specific processor supports sampling awareness when producing histogram metrics that capture a distribution. Span aggregation and sampling awareness are configurable for all fields available in field extraction, except durationâaggregation of duration is automatically detected and handled. Histogram metrics can be used to calculate percentiles using the <a href="/docs/platform/grail/dynatrace-query-language/commands/metric-commands#timeseries" title="DQL metric commands"><code>timeseries percentile</code> aggregation</a>, which are useful to analyze latencies and payload sizes.</p>
-<p>The Sampling aware histogram metric processor is currently in <a href="/docs/whats-new/preview-releases" title="Learn about our Preview releases and how you can participate in them.">Preview</a> and only accessible to selected customers. To get started, contact a Dynatrace product expert.</p>
-<p>To start a conversation with a Dynatrace product expert, use live chat within your Dynatrace environment.</p>
-<p>Sampling aware value metric</p>
-<p>Sampling might be applied to trace data before it's processed, according to <a href="/docs/ingest-from/dynatrace-oneagent/adaptive-traffic-management" title="Dynatrace Adaptive Traffic Management provides dynamic sampling to ensure that the amount of capture traces stays within the Full-Stack Monitoring included trace volume.">Adaptive Traffic Management for distributed tracing</a>. This span-specific processor supports sampling awareness when returning the aggregated values of a metric, from the span records that match the query. Span aggregation and sampling awareness are configurable for all fields available in field extraction, except durationâaggregation of duration is automatically detected and handled.</p>
-<p>Set dt.security_context</p>
-<p>Sets the proper record-level access via <a href="/docs/semantic-dictionary/fields#dynatrace" title="Get to know the list of global fields that have a well defined semantic meaning in Dynatrace and can be used across different monitoring types."><code>dt.security_context</code></a> by either copying it from a field, setting it as a static string, or a static array that allows multiple values.</p>
-<p>Smartscape node</p>
-<ul>
-<li>Calculates and enriches a Smartscape ID. The Smartscape ID is calculated based on specified ordered ID components. The ID components support the <code>String</code> type; their values are taken from reference fields and the specified node type. The Smartscape ID is then enriched on the signal. The default enriched field is <code>dt.smartscape.&lt;type&gt;</code> and can be renamed.</li>
-<li>If configured and if the signal contains details to store on the node, it creates a Smartscape event to update the Smartscape storage. This includes any fields and stable static edges extracted from the signal.
-  To learn more about Smartscape nodes, see <a href="/docs/platform/grail/smartscape-on-grail" title="Learn about Smartscape on Grail features and how Smartscape uses the power of DQL.">Smartscape on Grail</a>.</li>
-</ul>
-<p>Smartscape edge</p>
-<p>Extracts Smartscape edges and assigns specified key-value pairs for the fields: source type, source ID, edge type (pre-defined or custom), target type, and target ID. To learn more about Smartscape edges, see <a href="/docs/platform/grail/smartscape-on-grail" title="Learn about Smartscape on Grail features and how Smartscape uses the power of DQL.">Smartscape on Grail</a>.</p>
-<p>Software developement lifecycle event</p>
-<p>Extracts fields into a new record and sends it to the SDLC event table.</p>
-<p>Technology bundle</p>
-<p>Matches records for the selected technology and processes them according to predefined context-sensitive processing statements.</p>
-<p>Remove fields</p>
-<p>Removes fields from the record.</p>
-<p>Rename fields</p>
-<p>Changes the name of fields.</p>
-<p>Value metric</p>
-<p>Returns the aggregated values of a metric from the records that match the query.</p>
 <h2 id="related-topics_1">Related topics<a class="headerlink" href="#related-topics_1" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="/docs/platform/openpipeline/reference/openpipeline-dql-functions" title="A list of DQL functions available in OpenPipeline.">DQL Functions in OpenPipeline</a></li>
@@ -27762,7 +27614,7 @@ For strings, the search is case-sensitive.</p>
 <hr />
 <p>title: OpenPipeline limits
 source: https://www.dynatrace.com/docs/platform/openpipeline/reference/limits
-scraped: 2026-02-23T21:27:33.318718</p>
+scraped: 2026-02-24T21:16:48.637674</p>
 <hr />
 <h1 id="openpipeline-limits">OpenPipeline limits<a class="headerlink" href="#openpipeline-limits" title="Permanent link">&para;</a></h1>
 <h1 id="openpipeline-limits_1">OpenPipeline limits<a class="headerlink" href="#openpipeline-limits_1" title="Permanent link">&para;</a></h1>
@@ -27872,12 +27724,6 @@ scraped: 2026-02-23T21:27:33.318718</p>
 <h3 id="record-maximum-timestamp">Record maximum timestamp<a class="headerlink" href="#record-maximum-timestamp" title="Permanent link">&para;</a></h3>
 <p>If the timestamp is more than 10 minutes in the future, it's adjusted to the ingest server time plus 10 minutes.</p>
 <h3 id="record-minimum-timestamp">Record minimum timestamp<a class="headerlink" href="#record-minimum-timestamp" title="Permanent link">&para;</a></h3>
-<p>Item</p>
-<p>Earliest timestamp</p>
-<p>Logs, Events, Business Events, System events</p>
-<p>The ingest time minus 24 hours</p>
-<p>Metrics, extracted metrics, and Davis events</p>
-<p>The ingest time minus 1 hour</p>
 <p>Records outside of these timeframes are dropped.</p>
 <h2 id="ingest-api">Ingest API<a class="headerlink" href="#ingest-api" title="Permanent link">&para;</a></h2>
 <h3 id="timestamp-value">Timestamp value<a class="headerlink" href="#timestamp-value" title="Permanent link">&para;</a></h3>
@@ -27943,40 +27789,6 @@ When log attributes are added to the event template, the size of each attribute 
 <p>The Smartscape ID calculation supports <code>string</code> only. The ID components must be of type <code>string</code>.</p>
 <p><a href="/docs/platform/openpipeline/concepts/data-flow#pre-processing" title="Learn how data flows in Dynatrace Platform, from ingestion to storage, via Dynatrace OpenPipeline.">Pre-process</a> records to convert the values you need to the <code>string</code> data type.</p>
 <h2 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">&para;</a></h2>
-<p>Item</p>
-<p>Maximum limit</p>
-<p>Early Adopter program maximum limit</p>
-<p>Request payload size (per configuration scope)</p>
-<p>10 MB</p>
-<ul>
-<li>Total pipeline schemas: 70 MB</li>
-<li>Total route schemas: 10 MB</li>
-<li>Total ingest source schemas: 30 MB</li>
-</ul>
-<p>Pipeline number (per configuration scope)</p>
-<p>100</p>
-<p>2,000</p>
-<p>Size of a stage</p>
-<p>512 KB</p>
-<p>512 KB</p>
-<p>Processor number (per pipeline)</p>
-<p>1,000</p>
-<p>1,000</p>
-<p>Endpoint number (per configuration scope)</p>
-<p>100</p>
-<p>100</p>
-<p>Routes number (per configuration scope)</p>
-<p>100</p>
-<p>3,000</p>
-<p>Ingest sources number (per configuration scope)</p>
-<p>100</p>
-<p>2,000</p>
-<p>Length of a matching condition</p>
-<p>1,000 UTF-8 encoded bytes</p>
-<p>1,000 UTF-8 encoded bytes</p>
-<p>Length of a DQL processor script</p>
-<p>8,192 UTF-8 encoded bytes</p>
-<p>8,192 UTF-8 encoded bytes</p>
 <h3 id="allowed-characters-in-the-endpoint-path">Allowed characters in the endpoint path<a class="headerlink" href="#allowed-characters-in-the-endpoint-path" title="Permanent link">&para;</a></h3>
 <p>The endpoint path is a unique name starting with a literal that defines the endpoint. It's case-insensitive and supports alphanumeric characters and dot (<code>.</code>). For example: <code>Endpoint.1</code>.</p>
 <p>Endpoint path doesn't support:</p>
@@ -28902,7 +28714,7 @@ scraped: 2026-02-22T21:15:16.728303</p>
 <hr />
 <p>title: Reduce span-based and metric-based cardinality
 source: https://www.dynatrace.com/docs/platform/openpipeline/use-cases/reduce-span-metric-cardinality
-scraped: 2026-02-23T21:19:45.423543</p>
+scraped: 2026-02-24T21:14:38.734726</p>
 <hr />
 <h1 id="reduce-span-based-and-metric-based-cardinality">Reduce span-based and metric-based cardinality<a class="headerlink" href="#reduce-span-based-and-metric-based-cardinality" title="Permanent link">&para;</a></h1>
 <h1 id="reduce-span-based-and-metric-based-cardinality_1">Reduce span-based and metric-based cardinality<a class="headerlink" href="#reduce-span-based-and-metric-based-cardinality_1" title="Permanent link">&para;</a></h1>
@@ -30292,7 +30104,7 @@ scraped: 2026-02-22T21:15:18.033235</p>
 <hr />
 <p>title: OpenPipeline
 source: https://www.dynatrace.com/docs/platform/openpipeline
-scraped: 2026-02-23T21:19:38.009881</p>
+scraped: 2026-02-24T21:15:23.700298</p>
 <hr />
 <h1 id="openpipeline">OpenPipeline<a class="headerlink" href="#openpipeline" title="Permanent link">&para;</a></h1>
 <h1 id="openpipeline_1">OpenPipeline<a class="headerlink" href="#openpipeline_1" title="Permanent link">&para;</a></h1>

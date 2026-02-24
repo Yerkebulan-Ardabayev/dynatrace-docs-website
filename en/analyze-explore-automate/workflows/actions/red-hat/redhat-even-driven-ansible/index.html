@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../../../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
     
     
       
@@ -25515,20 +25515,6 @@ You don't need to build a custom decision environment when using event streams.<
 <li>Select <strong>Create credential</strong>.</li>
 <li>Enter the following credential details.</li>
 </ol>
-<p>Field</p>
-<p>Description</p>
-<p><strong>Name</strong></p>
-<p>Enter a name.</p>
-<p><strong>Description</strong></p>
-<p>Enter a short description.</p>
-<p><strong>Organization</strong></p>
-<p>From the list, select your organization or <code>Default</code>.</p>
-<p><strong>Credential type</strong></p>
-<p>From the list, select <code>Token Event Stream</code>.</p>
-<p><strong>Token</strong></p>
-<p>Enter a token. This token is used later for the connection of the workflow action.</p>
-<p><strong>HTTP Header Key</strong></p>
-<p>Enter <code>Authorization</code>.</p>
 <p>For more information on how to set up a credential, see <a href="https://dt-url.net/6c23znj">Setting up a credentialï»¿</a> in the Red Hat documentation.</p>
 <h5 id="event-stream-configuration">Event stream configuration<a class="headerlink" href="#event-stream-configuration" title="Permanent link">&para;</a></h5>
 <p>After the credential is configured, you can create an event stream.</p>
@@ -25537,16 +25523,6 @@ You don't need to build a custom decision environment when using event streams.<
 <li>Select <strong>Create event stream</strong>.</li>
 <li>Enter the following event stream details.</li>
 </ol>
-<p>Field</p>
-<p>Description</p>
-<p><strong>Name</strong></p>
-<p>Enter a name.</p>
-<p><strong>Organization</strong></p>
-<p>From the list, select your organization or <code>Default</code>.</p>
-<p><strong>Event stream type</strong></p>
-<p>Select the event stream type <code>Token Event Stream</code>.</p>
-<p><strong>Credential</strong></p>
-<p>From the list, select the credential you created earlier.</p>
 <p>For more information on how to set up an event stream, see <a href="https://dt-url.net/sv63zyi">Simplified event routingï»¿</a> in the Red Hat documentation.</p>
 <h5 id="rulebook-activation">Rulebook activation<a class="headerlink" href="#rulebook-activation" title="Permanent link">&para;</a></h5>
 <p>The final step is to attach the created event stream to a rulebook activation.</p>
@@ -25713,13 +25689,6 @@ If this is impossible, you can use <a href="https://dt-url.net/at03rhn">EdgeConn
 </ol>
 <h2 id="available-action">Available action<a class="headerlink" href="#available-action" title="Permanent link">&para;</a></h2>
 <p>The following workflow action is available for the Red Hat Event-Driven Ansible controller.</p>
-<p>Action</p>
-<p>Description</p>
-<p>Red Hat Ansible API endpoint</p>
-<p>Send event to Event-Driven Ansible</p>
-<p>Send an event to the Red Hat Event-Driven Ansible Controller via Event Source Plugin</p>
-<p><code>POST /event</code> <br />
-Send an event</p>
 <h2 id="send-event-to-event-driven-ansible">Send event to Event-Driven Ansible<a class="headerlink" href="#send-event-to-event-driven-ansible" title="Permanent link">&para;</a></h2>
 <p>To send an event to Event-Driven Ansible in your workflow, you need to provide the information listed below.</p>
 <table>

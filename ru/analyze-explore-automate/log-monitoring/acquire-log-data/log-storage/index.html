@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
     
     
       
@@ -25497,86 +25497,6 @@
 </ol>
 <p>Other than the <strong>Log source</strong> attribute in Windows (due to file paths being case insensitive), matchers are case-sensitive.
 4. Select the matching attribute:</p>
-<p>Attribute</p>
-<p>Description</p>
-<p>Search dropdown logic</p>
-<p><strong>Process group</strong></p>
-<p>Matching is based on the process group ID. The process group is determined by the detection rules described in <a href="/docs/observe/infrastructure-observability/process-groups/configuration/pg-detection" title="Ways to customize process-group detection">Process group detection</a>. If a process changes its process group, log ingestion for that process may start or stop based on the changes made.</p>
-<p>Attributes visible in the last 3 days are listed.</p>
-<p><strong>Log source</strong></p>
-<p>Matching is based on a log path or a Windows event log full name; wildcards are supported in form of an asterisk. Autocompletion for <strong>Log source</strong> is only partial. You can either choose one of the predefined values or enter your log source.</p>
-<p>Can be entered manually. No time limit.</p>
-<p><strong>Log source origin</strong><a href="#fn-1-1-def">1</a></p>
-<p>Matching is based on the detector used by the log agent to discover the log file. Available options include:</p>
-<ul>
-<li><strong>Custom log source configuration</strong>: Log source provided by the user through custom configuration.</li>
-<li><strong>Open log file detector</strong>: Logs discovered automatically by the log module's autodetection mechanism.</li>
-<li><strong>System log detector</strong>: Includes Windows application log or <code>/var/log/syslog</code> for Linux.</li>
-<li><strong>Container output</strong>: Autodetected Kubernetes or Docker logs.</li>
-<li><strong>IIS log detector</strong>: Logs detected by the IIS detector.</li>
-</ul>
-<p>Can be entered manually. No time limit.</p>
-<p><strong>Log content</strong></p>
-<p>Matching is based on the content of the log; wildcards are supported in form of an asterisk.</p>
-<p>Can be entered manually. No time limit.</p>
-<p><strong>Log record level</strong><a href="#fn-1-2-def">2</a><a href="#fn-1-3-def">3</a></p>
-<p>Matching is based on the level of the log record. It supports the following values: <code>alert</code>, <code>critical</code>, <code>debug</code>, <code>emergency</code>, <code>error</code>, <code>info</code>, <code>none</code>, <code>notice</code>, <code>severe</code>, <code>warn</code>.</p>
-<p>Can be entered manually. No time limit.</p>
-<p><strong>journald unit</strong><a href="#fn-1-4-def">4</a></p>
-<p>Matching is based on any of the selected journald units. Unless you enrich other log sources with a <code>journald.unit</code> attribute, you should also add a <code>log.source</code> or <code>log.source.origin</code> matcher to the ingest rule to boost the Log Module performance.</p>
-<p>Can be entered manually. No time limit.</p>
-<p><strong>Host tag</strong><a href="#fn-1-5-def">5</a><a href="#fn-1-6-def">6</a></p>
-<p>Matching is based on the host tag. The attribute only supports the tags set with the <a href="/docs/observe/infrastructure-observability/hosts/configuration/define-tags-and-metadata-for-hosts" title="Learn how to tag and set additional properties for a monitored host.">OneAgent command line tool</a> or with the <a href="/docs/ingest-from/bulk-configuration" title="Perform OneAgent and ActiveGate configuration on hosts from the Deployment status page or at scale using the Dynatrace API.">Remote configuration</a> in a <code>key=value</code> pair format. They can be distinguished by the <code>[Environment]</code> prefix on the UI, but you should use the value without the prefix.
-Multiple tags can be specified in a single matcher, but each tag needs to have the same key, such as <code>logscope=frontend</code>, <code>logscope=backend</code>.</p>
-<p>Can be entered manually. No time limit.</p>
-<p><strong>Kubernetes container name</strong></p>
-<p>Matching is based on the name of the Kubernetes container.</p>
-<p>Attributes visible in the last 90 days are listed.</p>
-<p><strong>Kubernetes namespace name</strong></p>
-<p>Matching is based on the name of the Kubernetes namespace.</p>
-<p>Attributes visible in the last 90 days are listed.</p>
-<p><strong>Kubernetes deployment name</strong></p>
-<p>Matching is based on any of the selected deployments. It is deprecated for the OneAgent Log Module managed by Dynatrace Operator or when the <strong>Collect all container logs</strong> feature flag is enabled.</p>
-<p>Can be entered manually.</p>
-<p><strong>Kubernetes pod annotation</strong><a href="#fn-1-4-def">4</a><a href="#fn-1-7-def">7</a></p>
-<p>Matching is based on any of the selected pod annotations. The correct format is <code>key=value</code>. It requires either the OneAgent Log Module managed by Dynatrace Operator or the <strong>Collect all container</strong> logs feature flag to be enabled.</p>
-<p>Can be entered manually.</p>
-<p><strong>Kubernetes pod label</strong><a href="#fn-1-4-def">4</a><a href="#fn-1-7-def">7</a></p>
-<p>Matching is based on any of the selected pod labels. The correct format is <code>key=value</code>. It requires either the OneAgent Log Module managed by Dynatrace Operator or the <strong>Collect all container logs</strong> feature flag to be enabled.</p>
-<p>Can be entered manually.</p>
-<p><strong>Kubernetes workload name</strong><a href="#fn-1-4-def">4</a><a href="#fn-1-7-def">7</a></p>
-<p>Matching is based on any of the selected workload names. It requires either the OneAgent Log Module managed by Dynatrace Operator or the <strong>Collect all container logs</strong> feature flag to be enabled.</p>
-<p>Attributes visible in the last 90 days are listed.</p>
-<p><strong>Kubernetes workload kind</strong><a href="#fn-1-4-def">4</a><a href="#fn-1-7-def">7</a></p>
-<p>Matching is based on any of the selected workload kinds. It requires either the OneAgent Log Module managed by Dynatrace Operator or the <strong>Collect all container logs</strong> feature flag to be enabled.</p>
-<p>Can be entered manually.</p>
-<p><strong>Docker container name</strong></p>
-<p>Matching is based on the name of the container.</p>
-<p>Attributes visible in the last 90 days are listed.</p>
-<p><strong>DT entity container group ID</strong></p>
-<p>Matching is based on any of the selected container groups.</p>
-<p>Can be entered manually. No time limit.</p>
-<p><strong>Process technology</strong></p>
-<p>Matching is based on the technology name.</p>
-<p>Can be entered manually. No time limit.</p>
-<p><strong>Windows log record event ID</strong><a href="#fn-1-3-def">3</a></p>
-<p>Matching is based on any of the selected event ID attribute.</p>
-<p>Can be entered manually. No time limit.</p>
-<p><strong>Windows log record source</strong><a href="#fn-1-3-def">3</a></p>
-<p>Matching is based on any of the selected source attributes.</p>
-<p>Can be entered manually. No time limit.</p>
-<p><strong>Windows log record task category</strong><a href="#fn-1-3-def">3</a></p>
-<p>Matching is based on any of the selected task category attributes.</p>
-<p>Can be entered manually. No time limit.</p>
-<p><strong>Windows log record operational code</strong><a href="#fn-1-3-def">3</a></p>
-<p>Matching is based on any of the selected operational code attribute.</p>
-<p>Can be entered manually. No time limit.</p>
-<p><strong>Windows log record user name</strong><a href="#fn-1-8-def">8</a></p>
-<p>Matching is based on any of the selected user name attributes.</p>
-<p>Can be entered manually. No time limit.</p>
-<p><strong>Windows log record keywords</strong><a href="#fn-1-8-def">8</a></p>
-<p>Matching is based on any of the selected keywords attributes.</p>
-<p>Can be entered manually. No time limit.</p>
 <p>1</p>
 <p>OneAgent version 1.295+</p>
 <p>2</p>

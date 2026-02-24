@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
     
     
       
@@ -25495,7 +25495,7 @@
 
 <h1 id="dynatrace-licensemonitoring-consumption-classic">Документация Dynatrace: license/monitoring-consumption-classic<a class="headerlink" href="#dynatrace-licensemonitoring-consumption-classic" title="Permanent link">&para;</a></h1>
 <p>Язык: Русский (RU)
-Сгенерировано: 2026-02-23
+Сгенерировано: 2026-02-24
 Файлов в разделе: 5</p>
 <hr />
 <h2 id="licensemonitoring-consumption-classicapplication-and-infrastructure-monitoringmd">license/monitoring-consumption-classic/application-and-infrastructure-monitoring.md<a class="headerlink" href="#licensemonitoring-consumption-classicapplication-and-infrastructure-monitoringmd" title="Permanent link">&para;</a></h2>
@@ -25779,7 +25779,7 @@ Examples of host unit calculations are shown at <a href="#application-only-host-
 <hr />
 <p>title: DDUs for custom traces (Trace API)
 source: https://www.dynatrace.com/docs/license/monitoring-consumption-classic/davis-data-units/custom-traces
-scraped: 2026-02-23T21:36:27.441289</p>
+scraped: 2026-02-24T21:22:43.221542</p>
 <hr />
 <h1 id="ddus-for-custom-traces-trace-api">DDUs for custom traces (Trace API)<a class="headerlink" href="#ddus-for-custom-traces-trace-api" title="Permanent link">&para;</a></h1>
 <h1 id="ddus-for-custom-traces-trace-api_1">DDUs for custom traces (Trace API)<a class="headerlink" href="#ddus-for-custom-traces-trace-api_1" title="Permanent link">&para;</a></h1>
@@ -25808,7 +25808,7 @@ scraped: 2026-02-23T21:36:27.441289</p>
 <hr />
 <p>title: DDUs for custom Davis events
 source: https://www.dynatrace.com/docs/license/monitoring-consumption-classic/davis-data-units/ddu-events
-scraped: 2026-02-23T21:31:44.231868</p>
+scraped: 2026-02-24T21:20:45.465414</p>
 <hr />
 <h1 id="ddus-for-custom-davis-events">DDUs for custom Davis events<a class="headerlink" href="#ddus-for-custom-davis-events" title="Permanent link">&para;</a></h1>
 <h1 id="ddus-for-custom-davis-events_1">DDUs for custom Davis events<a class="headerlink" href="#ddus-for-custom-davis-events_1" title="Permanent link">&para;</a></h1>
@@ -25839,7 +25839,7 @@ scraped: 2026-02-23T21:31:44.231868</p>
 <hr />
 <p>title: DDUs for Log Management and Analytics
 source: https://www.dynatrace.com/docs/license/monitoring-consumption-classic/davis-data-units/log-management-and-analytics
-scraped: 2026-02-22T21:25:27.790582</p>
+scraped: 2026-02-24T21:22:29.279195</p>
 <hr />
 <h1 id="ddus-for-log-management-and-analytics">DDUs for Log Management and Analytics<a class="headerlink" href="#ddus-for-log-management-and-analytics" title="Permanent link">&para;</a></h1>
 <h1 id="ddus-for-log-management-and-analytics_1">DDUs for Log Management and Analytics<a class="headerlink" href="#ddus-for-log-management-and-analytics_1" title="Permanent link">&para;</a></h1>
@@ -25852,79 +25852,13 @@ scraped: 2026-02-22T21:25:27.790582</p>
 <h2 id="ddu-consumption-model-for-log-management-and-analytics">DDU consumption model for Log Management and Analytics<a class="headerlink" href="#ddu-consumption-model-for-log-management-and-analytics" title="Permanent link">&para;</a></h2>
 <p>The DDU consumption model for Log Management and Analytics is based on three dimensions of data usage (Ingest &amp; Process, Retain, and Query). The unit of measure for consumed data volume is gigabytes (GB). Each of the three data usage dimensions consumes DDUs based on a different weight (see the "DDU consumption" row in the table below for details).</p>
 <p>Total DDU consumption for Log Management and Analytics is calculated by multiplying the DDU weight of each of the three data-usage dimensions with the data volume in GB.</p>
-<p>Unit of measure</p>
-<p>Ingest &amp; Process</p>
-<p>Retain</p>
-<p>Query</p>
-<p>Definition</p>
-<p>Ingested data is the amount of raw data in bytes (logs and events) sent to Dynatrace after decompression and before enrichment and transformation.</p>
-<p>Retained data is the amount of data saved to storage after data parsing, enrichment, transformation, and filtering but before compression.</p>
-<p>Queried data is the data read during the execution of a DQL query, including sampled data.</p>
-<p>DDU consumption</p>
-<p>100.00 DDUs per GB</p>
-<p>0.30 DDUs per GB retained per day</p>
-<p>1.70 DDUs per GB read</p>
 <h2 id="ingest-process">Ingest &amp; Process<a class="headerlink" href="#ingest-process" title="Permanent link">&para;</a></h2>
 <p>Whatâs included with the Ingest &amp; Process data-usage dimension?</p>
-<p>Concept</p>
-<p>Explanation</p>
-<p>Data delivery</p>
-<ul>
-<li>Delivery of log data via OneAgent or the Log ingestion API (via ActiveGate)</li>
-</ul>
-<p>Topology enrichment</p>
-<ul>
-<li>Enrichment of log events with data source and topology metadata</li>
-</ul>
-<p>Data transformation</p>
-<ul>
-<li>Add, edit, or drop any log attribute</li>
-<li>Perform mathematical transformations on numerical values (for example, creating new attributes based on calculations of existing attributes)</li>
-<li>Extract business, infrastructure, application, or other data from raw logs. This can be a single character, string, number, array of values, or other. Extracted data can be turned into a new attribute allowing additional querying, filtering, etc. Metrics can be created from newly extracted attributes (see "Conversion to time series" below), or extracted attributes can be queried for ad-hoc analysis</li>
-<li>Mask sensitive data by replacing either the whole log record, one specific log record attribute, or certain text with a masked string</li>
-</ul>
-<p>Data-retention control</p>
-<ul>
-<li>Filter incoming logs based on content, topology, or metadata to reduce noise. Log filtering consumes DDUs during Ingest &amp; Process, but not for Retain.</li>
-<li>Manage data retention periods of incoming logs based on data-retention rules</li>
-</ul>
-<p>Conversion to time series</p>
-<ul>
-<li>Create metrics from log records or attributes (note that creating <a href="/docs/license/monitoring-consumption-classic/davis-data-units/metric-cost-calculation" title="Understand how to calculate Davis data unit consumption and costs related to monitored metrics.">custom metrics consumes additional DDUs</a> beyond those consumed for ingestion and processing.)</li>
-</ul>
 <p>Apply the following calculation to determine your DDU consumption for the Ingest &amp; Process data-usage dimension:<br />
 <code>(number of GBs ingested) Ã (100.00 DDU weight) = DDUs consumed</code></p>
 <p>Be aware that data enrichment and processing can increase your data volume significantly. Depending on the source of the data, the technology, the attributes, and metadata added during processing, the total data volume after processing can increase by a factor of 2 or more.</p>
 <h2 id="retain">Retain<a class="headerlink" href="#retain" title="Permanent link">&para;</a></h2>
 <p>Whatâs included with the Retain data-usage dimension?</p>
-<p>Concept</p>
-<p>Explanation</p>
-<p>Data availability</p>
-<ul>
-<li>Retained data is accessible for analysis and querying until the end of the retention period.</li>
-</ul>
-<p>Retention periods</p>
-<ul>
-<li>
-<p>Choose a desired retention period</p>
-</li>
-<li>
-<p>10 days (10 days)</p>
-</li>
-<li>2 weeks (15 days)</li>
-<li>1 month (35 days) default</li>
-<li>3 months (95 days)</li>
-<li>
-<p>1 year (372 days)</p>
-</li>
-<li>
-<p>15 months (462 days)</p>
-</li>
-<li>3 years (1,102 days)</li>
-<li>5 years (1,832 days)</li>
-<li>7 years (2,562 days)</li>
-<li>10 years (3,657 days)</li>
-</ul>
 <p>Apply the following calculation to determine your DDU consumption for the Retain data-usage dimension:<br />
 <code>(number of GB of processed data ingested) Ã (retention period in days) Ã (0.30 DDU weight) Ã (number of days that data is stored) = DDUs consumed</code></p>
 <h2 id="query">Query<a class="headerlink" href="#query" title="Permanent link">&para;</a></h2>
@@ -25938,86 +25872,19 @@ scraped: 2026-02-22T21:25:27.790582</p>
 </ul>
 <p>Dynatrace Query Language (DQL) queries consume Davis data units (DDUs) while they are active, even when the results of such queries are not returned. To avoid unnecessary consumption of DDUs, cancel ongoing queries for logs and aggregations that are no longer necessary. Otherwise, you might be billed for incomplete queries.</p>
 <p>Whatâs included with the Query data-usage dimension?</p>
-<p>Concept</p>
-<p>Explanation</p>
-<p>On-read parsing</p>
-<ul>
-<li>Use DQL to query historical logs in storage and extract business, infrastructure, or other data across any timeframe, and use extracted data for follow-up analysis.</li>
-<li>No upfront indexes or schema required for on-read parsing</li>
-</ul>
-<p>Aggregation</p>
-<ul>
-<li>Perform aggregation, summarization, or statistical analysis of data in logs across specific timeframes or time patterns (for example, data occurrences in 30-second or 10-minute intervals), mathematical, or logical functions.</li>
-</ul>
-<p>Reporting</p>
-<ul>
-<li>Create reports or summaries with customized fields (columns) by adding, modifying, or dropping existing log attributes.</li>
-</ul>
-<p>Context</p>
-<ul>
-<li>Use DQL to analyze log data in context with relevant data on the Dynatrace platform, for example, user sessions or distributed traces.</li>
-</ul>
 <p>Apply the following calculation to determine your DDU consumption for the Query data-usage dimension:<br />
 <code>(number of GB of uncompressed data read during query execution) Ã (1.70 DDU weight) = DDUs consumed</code></p>
 <h2 id="calculate-ddu-consumption-across-data-usage-dimensions">Calculate DDU consumption across data-usage dimensions<a class="headerlink" href="#calculate-ddu-consumption-across-data-usage-dimensions" title="Permanent link">&para;</a></h2>
 <p>Following are example DDU calculations which show how each data-usage dimension contributes to overall DDU consumption.</p>
 <h3 id="step-1-a-ingest-process">Step 1 â Ingest &amp; Process<a class="headerlink" href="#step-1-a-ingest-process" title="Permanent link">&para;</a></h3>
 <p>For example, say that you produce 500 GB of log data per day which you ingest into Log Management and Analytics for processing. The monthly DDU consumption for Ingest &amp; Process in this case would be 1,500,000 DDUs:</p>
-<p>Ingest volume per day</p>
-<p>500 GB</p>
-<p>Ingest volume per month</p>
-<p>15,000 GB</p>
-<p><code>500 (GB data per day) Ã 30 (days)</code></p>
-<p>DDU consumption per month</p>
-<p>1,500,000 DDUs</p>
-<p><code>15,000 (GB per month) Ã 100.00 (DDUs per GB)</code></p>
 <h3 id="step-2-retain">Step 2 - Retain<a class="headerlink" href="#step-2-retain" title="Permanent link">&para;</a></h3>
 <p>Following the Ingest &amp; Process step, your data is retained and enriched on an on-going basis. If you ingested 500 GB of raw data in step 1, 900 GB of enriched data (<code>500 GB Ã 1.8 for enrichment</code>) is added to your storage daily. In this example, your enriched data is retained for 35 days. The monthly DDU consumption (after a ramp-up period of 35 days) for Retain in this case is 283,500 DDUs:</p>
-<p>Retained volume for 1 day</p>
-<p>900 GB</p>
-<p><code>500 (GB data per day) Ã 1.8 (enrichment)</code></p>
-<p>Retained volume for 35 days</p>
-<p>31,500 GB</p>
-<p><code>900 (GB data per day) Ã 35 (days)</code></p>
-<p>DDU consumption per day</p>
-<p>9,450 DDUs</p>
-<p><code>31,500 (GB) Ã 0.3 (DDUs per GB per day)</code></p>
-<p>DDU consumption per month</p>
-<p>283,500 DDUs</p>
-<p><code>9,450 (DDUs) Ã 30 (days)</code></p>
 <p>If the same amount of processed data is to be retained for a year, the monthly DDU consumption (after a ramp-up of 365 days in this case) for Retain is 2,956,500 DDUs.</p>
-<p>Retained volume for 1 day</p>
-<p>900 GB</p>
-<p><code>500 (GB data per day) Ã 1.8 (enrichment)</code></p>
-<p>Retained volume for 365 days</p>
-<p>328,500 GB</p>
-<p><code>900 (GB data per day) Ã 365 (days)</code></p>
-<p>DDU consumption per day</p>
-<p>98,550 DDUs</p>
-<p>328,500 (GB) Ã 0.3 (DDUs per GB per day)</p>
-<p>DDU consumption per month</p>
-<p>2,956,500 DDUs</p>
-<p><code>98,550 (DDUs) Ã 30 (days)</code></p>
 <h3 id="step-3-query">Step 3 - Query<a class="headerlink" href="#step-3-query" title="Permanent link">&para;</a></h3>
 <p>Letâs assume that to resolve incidents and analyze performance issues your team executes DQL queries with a total of 25 TB of data read per day. The monthly DDU consumption for Query in this case is 1,275,000 DDUs.</p>
-<p>Data volume read per day</p>
-<p>25,000 GB</p>
-<p>Data volume read per month</p>
-<p>750,000 GB</p>
-<p><code>25,000 (GB data per day) Ã 30 (days)</code></p>
-<p>DDU consumption per month</p>
-<p>1,275,000 DDUs</p>
-<p><code>750,000 (GB per month) Ã 1.70 (DDUs per GB)</code></p>
 <h3 id="step-4-a-total-ddu-consumption">Step 4 â Total DDU consumption<a class="headerlink" href="#step-4-a-total-ddu-consumption" title="Permanent link">&para;</a></h3>
 <p>The total monthly DDU consumption for this example scenario of 35 days of data retention is 3,058,500 DDUs.</p>
-<p>Ingest â DDU consumption per month</p>
-<p>1,500,000 DDUs</p>
-<p>Retain â DDU consumption per month</p>
-<p>283,500 DDUs</p>
-<p>Query â DDU consumption per month</p>
-<p>1,275,000 DDUs</p>
-<p>Total DDU consumption per month</p>
-<p>3,058,500 DDUs</p>
 <h2 id="faq_1">FAQ<a class="headerlink" href="#faq_1" title="Permanent link">&para;</a></h2>
 <h3 id="can-i-change-the-retention-period-for-log-management-and-analytics">Can I change the retention period for Log Management and Analytics?<a class="headerlink" href="#can-i-change-the-retention-period-for-log-management-and-analytics" title="Permanent link">&para;</a></h3>
 <p>Yes. The following retention periods apply to log buckets:</p>
@@ -26078,7 +25945,7 @@ scraped: 2026-02-22T21:25:27.790582</p>
 <hr />
 <p>title: Dynatrace classic licensing
 source: https://www.dynatrace.com/docs/license/monitoring-consumption-classic
-scraped: 2026-02-22T21:14:43.352417</p>
+scraped: 2026-02-24T21:18:02.347881</p>
 <hr />
 <h1 id="dynatrace-classic-licensing">Dynatrace classic licensing<a class="headerlink" href="#dynatrace-classic-licensing" title="Permanent link">&para;</a></h1>
 <h1 id="dynatrace-classic-licensing_1">Dynatrace classic licensing<a class="headerlink" href="#dynatrace-classic-licensing_1" title="Permanent link">&para;</a></h1>

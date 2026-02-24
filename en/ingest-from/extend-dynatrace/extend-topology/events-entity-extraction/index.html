@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
     
     
       
@@ -25495,20 +25495,6 @@
 <p>You can't extract entities of predefined types and re-map events to them.</p>
 <h3 id="step-2-provide-event-metadata">Step 2 Provide event metadata<a class="headerlink" href="#step-2-provide-event-metadata" title="Permanent link">&para;</a></h3>
 <p>To be able to extract generic entities from events, you need to provide the relevant information in the event configuration. The following elements of event properties control the feature. You can find descriptions on all event configuration fields in <a href="/docs/dynatrace-api/environment-api/events-v2/post-event" title="Ingests an event via the Dynatrace API."><strong>POST an event</strong></a>.</p>
-<p>Name</p>
-<p>ID</p>
-<p>Description</p>
-<p>Allow entity remapping</p>
-<p><code>dt.event.allow_entity_remapping</code></p>
-<p>Defines whether the remapping is allowed. Set to <code>"true"</code> to allow remapping to extracted entities.</p>
-<p>If set to <code>"false"</code>, no remapping will happen, even if there's a matching extraction rule. However, if there <strong>is</strong> a matching rule, the extracted entity will still be created/updated. You can use such incoming events to keep your custom entities up-to-date.</p>
-<p>Note that the values of the property must be of the <code>String</code> type.</p>
-<p>Preferred entity type for remapping</p>
-<p><code>dt.event.preferred_entity_type</code></p>
-<p>Defines the generic entity type to which the event should be mapped. Use this property if your event metadata contains multiple entities of different types. If no entity of the specified type is extracted, no remapping is applied. If not set, Dynatrace Intelligence automatically decides on the appropriate entity type.</p>
-<p>Entity identification</p>
-<p>User-defined</p>
-<p>Defines the ID of your entity. Since generic entities are user-defined, so is the ID of this property. As an illustration, for our <a href="/docs/ingest-from/extend-dynatrace/extend-topology#custom-topology-model-in-action" title="Ensure that all incoming observations are context-rich and analyzed in the context of the monitored entities they relate to.">Easy Shipping LTD logistics example</a>, this property could use the key <strong>trucknr</strong>.</p>
 <p>Show an example JSON</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>{
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>

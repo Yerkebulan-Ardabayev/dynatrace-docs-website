@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
     
     
       
@@ -25574,20 +25574,6 @@
 <p>Occasionally, a higher latency might occur by data loss prevention mechanisms like retransmissions, buffering, or other factors that can introduce delays.</p>
 <h2 id="log-record-accepted-time-range">Log record accepted time range<a class="headerlink" href="#log-record-accepted-time-range" title="Permanent link">&para;</a></h2>
 <p>The following rules apply to all log event sources, such as OneAgent and the generic log ingestion API.</p>
-<p>Log record timestamp</p>
-<p>Description</p>
-<p>The current time minus 24 hours for log records.</p>
-<p>The event is dropped if the log event contains a timestamp before the current time minus 24 hours.
-If the record is ingested via the generic Log Ingestion API, it can return the following:</p>
-<p><code>400</code> - if all log events in the payload have timestamps earlier than the current time minus 24 hours.
-Message in response: <code>All logs are out of correct time range.</code></p>
-<p><code>200</code> - in case some of the events in the payload have timestamps earlier than the current time minus 24 hours.
-Example message in response: <code>2 events were not ingested because of timestamp out of correct time range</code>.</p>
-<p><code>204</code> - (No Content) in case of success.</p>
-<p>The current time minus two hours for log metrics and events.</p>
-<p>The data point is dropped if the log metric data point timestamp is before the current time minus two hours.</p>
-<p>Current time plus ten minutes</p>
-<p>The time stamp is reset to current time.</p>
 <h2 id="log-metrics">Log metrics<a class="headerlink" href="#log-metrics" title="Permanent link">&para;</a></h2>
 <p>Number of metrics is limited to:</p>
 <ul>
@@ -25598,20 +25584,9 @@ Example message in response: <code>2 events were not ingested because of timesta
 <h2 id="log-ingestion-api-request-objects">Log ingestion API request objects<a class="headerlink" href="#log-ingestion-api-request-objects" title="Permanent link">&para;</a></h2>
 <p>In addition to generic Dynatrace API limitations (<a href="/docs/dynatrace-api/basics/access-limit" title="Find out about payload limits and request throttling that may affect your use of the Dynatrace API.">Dynatrace API - Access limit</a>) the following log ingestion API specific limits apply:</p>
 <ul>
-<li><code>LogMessageJson</code> JSON object.<br />
-  The object might contain the following types of keys (the possible key values are listed below):</li>
+<li><code>LogMessageJson</code> JSON object. See <a href="/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-api/lma-ingest-json-txt-logs" title="Understand how JSON and TXT logs are processed, whether in flattened or raw mode.">Ingest JSON and TXT logs</a> for the complete list of keys and their descriptions.</li>
+<li><code>LogMessageOTLP</code> OpenTelemetry Protocol object. See <a href="/docs/ingest-from/opentelemetry/otlp-api/ingest-logs" title="Learn how Dynatrace ingests OpenTelemetry log records and what limitations apply.">Ingest OTLP logs</a>.</li>
 </ul>
-<p>Type</p>
-<p>Description</p>
-<p>Timestamp</p>
-<p>The following formats are supported: UTC milliseconds, RFC3339, and RFC3164. If not set, the current timestamp is used.</p>
-<p>Severity</p>
-<p>If not set or not recognized, NONE is used.</p>
-<p>Content</p>
-<p>If the content key is not set, the whole JSON is parsed as the content.</p>
-<p>Attributes</p>
-<p>Only values of the string type are supported; numbers and boolean values will be converted to string. Semantic attributes are also displayed in attribute filters, suggested in query edit or when creating metrics or alerts.
-* <code>LogMessageOTLP</code> OpenTelemetry Protocol object. See <a href="/docs/ingest-from/opentelemetry/otlp-api/ingest-logs" title="Learn how Dynatrace ingests OpenTelemetry log records and what limitations apply.">Ingest OTLP logs</a>.</p>
 <h2 id="limits-for-your-log-autodiscovery-when-using-oneagent">Limits for your log autodiscovery when using OneAgent<a class="headerlink" href="#limits-for-your-log-autodiscovery-when-using-oneagent" title="Permanent link">&para;</a></h2>
 <p>Log files in OneAgent:</p>
 <ul>
@@ -25627,14 +25602,6 @@ Example message in response: <code>2 events were not ingested because of timesta
 <p>In special cases, such as very poor hardware performance, the OneAgent log module's limitations might be more strict.</p>
 <h2 id="log-rotation-limits">Log rotation limits<a class="headerlink" href="#log-rotation-limits" title="Permanent link">&para;</a></h2>
 <p>Scenarios that are not supported in the rotated log monitoring process include:</p>
-<p>Type</p>
-<p>Description</p>
-<p>Rotated log generation with a directory change</p>
-<p>The potential consequence is the creation of duplicates and/or incomplete logs.</p>
-<p>Rotated log generation with immediate compression</p>
-<p>If a rotation criterion is met (for example, the required file size is reached), the file is moved to another location and immediately compressed. Example: <code>/var/log/application.log -&gt; /var/log/application.log.1.gz -&gt; /var/log/application.log.2.gz -&gt; /var/log/application.log.3.gz</code>. This process might again lead to incomplete log ingest. There should be at least one uncompressed rotated file.</p>
-<p>Rotated log generation with queue logic</p>
-<p>The oldest log records are removed whenever new content is added to a file, resulting in a relatively constant log file size. This scenario can be easily replaced with a supported rotation scheme by, for example, starting a new file when the current file reaches a predefined size.</p>
 <h2 id="sensitive-data-masking-limits">Sensitive data masking limits<a class="headerlink" href="#sensitive-data-masking-limits" title="Permanent link">&para;</a></h2>
 <p>Be aware of the following limitations to sensitive data masking:</p>
 <ul>

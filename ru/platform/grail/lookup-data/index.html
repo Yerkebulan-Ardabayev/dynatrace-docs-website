@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
     
     
       
@@ -25570,14 +25570,6 @@
 <li>Optional Authenticate with your API token if you want to use Swagger to execute your requests. For details, see <a href="/docs/manage/identity-access-management/access-tokens-and-oauth-clients/platform-tokens" title="Create personalised platform tokens to access Dynatrace services via the API in your user context.">Authentication</a>. Select the <strong>Try it out</strong> button to interact with the API directly from the documentation.</li>
 <li>Perform one of the following actions.</li>
 </ol>
-<p>To do this</p>
-<p>Go to <strong>Lookup Data</strong> and select this</p>
-<p>Test parsing your to-be-uploaded lookup data without storing the result in Grail.</p>
-<p><strong>POST/platform/storage/resource-store/v1/files/tabular/lookup:test-pattern</strong></p>
-<p>Upload your lookup data and store it as a new tabular file in Grail or replace an existing one.</p>
-<p><strong>POST/platform/storage/resource-store/v1/files/tabular/lookup:upload</strong></p>
-<p>Delete the file from the Resource Store.</p>
-<p><strong>POST/platform/storage/resource-store/v1/files:delete</strong></p>
 <h3 id="parse-lookup-data">Parse lookup data<a class="headerlink" href="#parse-lookup-data" title="Permanent link">&para;</a></h3>
 <p>The API provides the <code>/platform/storage/resource-store/v1/files/tabular/lookup:test-pattern</code> endpoint, which previews the uploaded results without persisting them as a file in Grail. The endpoint helps you define the DPL pattern that fits the format of your data.</p>
 <p>The endpoint accepts input as <code>multipart/form-data</code> with a <code>content</code> part for the uploaded data and a <code>request</code> part for additional parameters. The only required parameter in the request part is the <code>parsePattern</code> parameter, which provides the DPL pattern to parse the uploaded text-based data. For more details, see the Swagger API documentation.</p>

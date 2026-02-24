@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
     
     
       
@@ -25483,44 +25483,6 @@
 <li>Updated on Oct 28, 2025</li>
 </ul>
 <p>The following table shows a list of all the DQL operators.</p>
-<p>Operator</p>
-<p>Description</p>
-<p><code>+</code></p>
-<p>Addition</p>
-<p><code>-</code></p>
-<p>Subtraction or arithmetic negation</p>
-<p><code>*</code></p>
-<p>Multiplication</p>
-<p><code>/</code></p>
-<p>Division</p>
-<p><code>%</code></p>
-<p>Modulo</p>
-<p><code>&lt;</code></p>
-<p>Less than</p>
-<p><code>&lt;=</code></p>
-<p>Less than or equal to</p>
-<p><code>&gt;</code></p>
-<p>Greater than</p>
-<p><code>&gt;=</code></p>
-<p>Greater than or equal to</p>
-<p><code>==</code></p>
-<p>Equals</p>
-<p><code>!=</code></p>
-<p>Does not equal</p>
-<p><code>not</code></p>
-<p>Logical NOT (negation)</p>
-<p><code>and</code></p>
-<p>Logical AND</p>
-<p><code>or</code></p>
-<p>Logical OR</p>
-<p><code>xor</code></p>
-<p>Logical XOR (exclusive or)</p>
-<p><code>in</code></p>
-<p>Subquery comparison</p>
-<p><code>@</code></p>
-<p>Time alignment</p>
-<p><code>~</code></p>
-<p>Search</p>
 <p>The precedence for the operators is as follows (from strongest to weakest):</p>
 <ul>
 <li><code>-</code> (arithmetic negation)</li>
@@ -25537,27 +25499,6 @@
 </ul>
 <h2 id="arithmetic-operators">Arithmetic operators<a class="headerlink" href="#arithmetic-operators" title="Permanent link">&para;</a></h2>
 <p>You can use arithmetic operators with numbers, represented by both the types <code>long</code> or <code>double</code>. In addition, some operators support the types <code>timestamp</code>, <code>timeframe</code>, <code>duration</code> or <code>ip</code>.</p>
-<p>Operator</p>
-<p>Description</p>
-<p>Example</p>
-<p><code>+</code></p>
-<p>Addition</p>
-<p><code>2 + 2.5</code></p>
-<p><code>-</code></p>
-<p>Subtraction</p>
-<p><code>0.2 - 0.11</code></p>
-<p><code>*</code></p>
-<p>Multiplication</p>
-<p><code>4 * 5</code>, <code>60 * 1s</code></p>
-<p><code>/</code></p>
-<p>Division</p>
-<p><code>10 / 2</code>, <code>1h / 60</code></p>
-<p><code>%</code></p>
-<p>Modulo</p>
-<p><code>4 % 2</code></p>
-<p><code>-</code></p>
-<p>Arithmetic negation</p>
-<p><code>-1</code></p>
 <h3 id="addition">ADDITION<a class="headerlink" href="#addition" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
@@ -26609,21 +26550,6 @@
 </tbody>
 </table>
 <h2 id="comparison-operators">Comparison operators<a class="headerlink" href="#comparison-operators" title="Permanent link">&para;</a></h2>
-<p>Operator</p>
-<p>Description</p>
-<p>Example</p>
-<p><code>&lt;</code></p>
-<p>Less than</p>
-<p><code>8 &lt; 9</code>, <code>now()-1m &lt; now()</code></p>
-<p><code>&lt;=</code></p>
-<p>Less than or equal to</p>
-<p><code>4 &lt;= 5</code></p>
-<p><code>&gt;</code></p>
-<p>Greater than</p>
-<p><code>5 &gt; 4</code>, <code>"a" &gt; "A"</code></p>
-<p><code>&gt;=</code></p>
-<p>Greater than or equal to</p>
-<p><code>4 &gt;=4</code></p>
 <h3 id="comparison-operators_1">Comparison operators (&lt;, &lt;=, &gt;, &gt;=)<a class="headerlink" href="#comparison-operators_1" title="Permanent link">&para;</a></h3>
 <ul>
 <li>( <img alt="Applicable" src="https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg" title="Applicable" /> ) - <code>true</code> or <code>false</code> based on the result of the operator</li>
@@ -26831,15 +26757,6 @@
 </tbody>
 </table>
 <h2 id="equality-operators">Equality operators<a class="headerlink" href="#equality-operators" title="Permanent link">&para;</a></h2>
-<p>Operator</p>
-<p>Description</p>
-<p>Example</p>
-<p><code>==</code></p>
-<p>Equals</p>
-<p><code>2 == 2</code></p>
-<p><code>!=</code></p>
-<p>Does not equal</p>
-<p><code>1 != 2</code></p>
 <p>Equality comparisons (<code>==</code>, <code>!=</code>) use a tri-state boolean algebra (<code>true</code>, <code>false</code>, <code>null</code>). This means that if any side of the equality comparison is <code>null</code>, the overall result of the comparison is <code>null</code>.
 There are four DQL functions that cover scenarios where missing or <code>null</code> records need to be retrieved:</p>
 <ul>
@@ -27071,21 +26988,6 @@ There are four DQL functions that cover scenarios where missing or <code>null</c
 </tbody>
 </table>
 <h2 id="logical-operators">Logical operators<a class="headerlink" href="#logical-operators" title="Permanent link">&para;</a></h2>
-<p>Operator</p>
-<p>Description</p>
-<p>Example (yields true)</p>
-<p><code>not</code></p>
-<p>Logical NOT (negation) - Negates a logical state</p>
-<p><code>not 2==1</code></p>
-<p><code>and</code></p>
-<p>Logical AND (multiplication) - Yields <code>true</code> if both operands are <code>true</code>.</p>
-<p><code>not 2==1 and 1&lt;2</code></p>
-<p><code>or</code></p>
-<p>Logical OR (addition) - Yields <code>true</code> if one of the operands is <code>true</code>, regardless of the other operand.</p>
-<p><code>1 &lt; 2 or 1 &gt; 2</code></p>
-<p><code>xor</code></p>
-<p>Logical XOR (exclusive OR) - Yields <code>true</code> if one of the operands is <code>true</code>, but <code>false</code> in case both are <code>true</code>.</p>
-<p><code>1 &lt; 2 xor 1 &gt; 2</code></p>
 <p>The behavior of logical operators follows the tri-state boolean logic.</p>
 <ul>
 <li>
@@ -27174,21 +27076,6 @@ There are four DQL functions that cover scenarios where missing or <code>null</c
 <p><strong>Syntax</strong></p>
 <p><code>expression in [execution block]</code></p>
 <p><strong>Usage and constraints</strong></p>
-<p>Name</p>
-<p>Type</p>
-<p>Mandatory</p>
-<p>Constraints</p>
-<p>Description</p>
-<p>left side</p>
-<p>expression</p>
-<p>yes</p>
-<p>Either a field identifier or an expression.</p>
-<p>The element to be found in the list returned by the right side's subquery.</p>
-<p>right side</p>
-<p>execution block</p>
-<p>yes</p>
-<p>It has to return a single field providing a list of values.</p>
-<p>The DQL Subquery which returns the list of values to compare against.</p>
 <p><strong>Example</strong></p>
 <p>This example shows how to use the <code>in</code> keyword for filtering a host metric for the host's attribute:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>timeseries avg(dt.host.cpu.usage), filter:dt.entity.host in [fetch dt.entity.host
@@ -27237,36 +27124,6 @@ To explicitly specify the first day of the week, you can use the following time 
 <p>For example, <code>@w1</code> means midnight of Monday of the current week.</p>
 <h5 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h5>
 <p>For the following examples, the current time is Wednesday, 04 September 2024, 14:47:05+0200.</p>
-<p>Time modifier</p>
-<p>Description</p>
-<p>Resulting time</p>
-<p><code>-2h@h</code></p>
-<p>2 hours ago, aligned to the hour</p>
-<p>Wednesday, 04 September 2024, 12:00:00+0200</p>
-<p><code>-1d@d</code></p>
-<p>Yesterday, aligned to the day</p>
-<p>Tuesday, 03 September 2024, 00:00:00+0200</p>
-<p><code>-7d@d</code></p>
-<p>7 days ago, aligned to the day</p>
-<p>Wednesday, 28 August 2024, 00:00:00+0200</p>
-<p><code>@w0</code></p>
-<p>Start of this week, from Sunday</p>
-<p>Sunday, 01 September 2024, 00:00:00+0200</p>
-<p><code>@w1</code></p>
-<p>Start of this week, from Monday</p>
-<p>Monday, 02 September 2024, 00:00:00+0200</p>
-<p><code>@M</code></p>
-<p>Start of this month</p>
-<p>Sunday, 01 September 2024, 00:00:00+0200</p>
-<p><code>-1M@M</code></p>
-<p>Start of last month</p>
-<p>Thursday, 01 August 2024, 00:00:00+0200</p>
-<p><code>@q</code></p>
-<p>Start of this quarter</p>
-<p>Monday, 01 July 2024, 00:00:00+0200</p>
-<p><code>@y</code></p>
-<p>Start of this year</p>
-<p>Monday, 01 January 2024, 00:00:00+0100</p>
 <h2 id="search">Search<a class="headerlink" href="#search" title="Permanent link">&para;</a></h2>
 <p>You can use the <code>~</code> operator in expressions to match the value of an expression against a given search string. The performed comparison is case-insensitive and supports pattern matching using wildcards. The <code>~</code> operator returns a <code>boolean</code> value: <code>true</code> in case of a match, and <code>false</code> otherwise.</p>
 <h4 id="syntax_1">Syntax<a class="headerlink" href="#syntax_1" title="Permanent link">&para;</a></h4>
@@ -27293,95 +27150,6 @@ To explicitly specify the first day of the week, you can use the following time 
 <li>If the expression is of type <code>record</code>, the operator matches if any field name or value matches.</li>
 <li>If the expression is of type <code>boolean</code>, <code>timestamp</code>, <code>duration</code>, or <code>binary</code>, the result is always false.</li>
 </ul>
-<p>Expression type</p>
-<p>Expression value</p>
-<p>Operation</p>
-<p>Result</p>
-<p>Note</p>
-<p>String</p>
-<p><code>"Hello WORLD!"</code></p>
-<p><code>~"world"</code></p>
-<p><code>true</code></p>
-<p>String</p>
-<p><code>"helloWorld"</code></p>
-<p><code>~"World"</code></p>
-<p><code>false</code></p>
-<p><code>helloWorld</code> is one token since there are no separators.</p>
-<p>String</p>
-<p><code>"192.168.0.7"</code></p>
-<p><code>~"192"</code></p>
-<p><code>true</code></p>
-<p>As itâs a string, the field has four tokens.</p>
-<p>IP</p>
-<p><code>192.168.0.7</code></p>
-<p><code>~"192"</code></p>
-<p><code>false</code></p>
-<p>Only strings are tokenized.</p>
-<p>IP</p>
-<p><code>192.168.0.7</code></p>
-<p><code>~"192.168.0.7"</code></p>
-<p><code>true</code></p>
-<p>The value is auto-converted, so there's an exact match.</p>
-<p>Long</p>
-<p><code>12</code></p>
-<p><code>~"12"</code></p>
-<p><code>true</code></p>
-<p>The value is auto-converted, so there's an exact match.</p>
-<p>UID</p>
-<p><code>uuid(1,2)</code></p>
-<p><code>~"00000000-0000-0001-0000-000000000002"</code></p>
-<p><code>true</code></p>
-<p>The value is not tokenized, but can be auto-converted.</p>
-<p>Smartscape ID</p>
-<p><code>smartscapeId("HOST", 1)</code></p>
-<p><code>~"HOST-0000000000000001"</code></p>
-<p><code>true</code></p>
-<p>The value is auto-converted.</p>
-<p>Smartscape ID</p>
-<p><code>smartscapeId("HOST", 1)</code></p>
-<p><code>~"host-0000000000000001"</code></p>
-<p><code>false</code></p>
-<p>For a Smartscape ID, the check is case-sensitive.</p>
-<p>Smartscape ID</p>
-<p><code>smartscapeId("HOST", 1)</code></p>
-<p><code>~"HOST"</code></p>
-<p><code>false</code></p>
-<p>The value isn't tokenized.</p>
-<p>Record</p>
-<p><code>record(firstName="John",lastName="Doe")</code></p>
-<p><code>~"john"</code></p>
-<p><code>true</code></p>
-<p>Search also works in nested fields.</p>
-<p>Record</p>
-<p><code>record(firstName="John",lastName="Doe")</code></p>
-<p><code>~"lastName"</code></p>
-<p><code>true</code></p>
-<p>Search also works in the names of nested fields.</p>
-<p>Record</p>
-<p><code>record(firstName="John",lastName="Doe")</code></p>
-<p><code>~"name"</code></p>
-<p><code>false</code></p>
-<p><code>firstName</code> and <code>lastName</code> are one token since they don't contain separators.</p>
-<p>Record</p>
-<p><code>record(first name="John",last name="Doe")</code></p>
-<p><code>~"name"</code></p>
-<p><code>true</code></p>
-<p>Search also works in the names of nested fields.</p>
-<p>Array</p>
-<p><code>array(1,2,3,5,8,13)</code></p>
-<p><code>~"3"</code></p>
-<p><code>true</code></p>
-<p>One element of the array is 3, which can be auto-converted to match <code>~"3"</code>.</p>
-<p>Boolean</p>
-<p><code>true</code></p>
-<p><code>~"true"</code></p>
-<p><code>false</code></p>
-<p>Booleans aren't supported.</p>
-<p>Duration</p>
-<p><code>1h</code></p>
-<p><code>~"1h"</code></p>
-<p><code>false</code></p>
-<p>Durations aren't supported.</p>
 <h5 id="search-strings-with-wildcards">Search strings with wildcards<a class="headerlink" href="#search-strings-with-wildcards" title="Permanent link">&para;</a></h5>
 <p>The operator searches the pattern in the tokens of a string. Its behavior depends on the data type of the expression on the left side:</p>
 <ul>
@@ -27390,76 +27158,6 @@ To explicitly specify the first day of the week, you can use the following time 
 <li>If the expression is of type <code>record</code>, the result is true if the name or value of a nested field matches the pattern.</li>
 <li>If the expression is of any other type (<code>long</code>, <code>double</code>, <code>smartscape ID</code>, <code>IP address</code>, <code>UID</code>, <code>boolean</code>, <code>timestamp</code>, <code>duration</code>, or <code>binary</code>) patterns aren't supported and the result is always <code>false</code>.</li>
 </ul>
-<p>Expression type</p>
-<p>Expression value</p>
-<p>Operation</p>
-<p>Result</p>
-<p>Note</p>
-<p>String</p>
-<p><code>"AuthenticationError"</code></p>
-<p><code>~"*error"</code></p>
-<p><code>true</code></p>
-<p>String</p>
-<p><code>"There was an AuthenticationError"</code></p>
-<p><code>~"authentication*"</code></p>
-<p><code>true</code></p>
-<p>String</p>
-<p><code>"There was an NoAuthenticationError"</code></p>
-<p><code>~"authentication*"</code></p>
-<p><code>false</code></p>
-<p>String</p>
-<p><code>"helloWorld"</code></p>
-<p><code>~"*ow*"</code></p>
-<p><code>true</code></p>
-<p>String</p>
-<p><code>"hello world"</code></p>
-<p><code>~"*ow*"</code></p>
-<p><code>false</code></p>
-<p>String</p>
-<p><code>"192.168.0.7"</code></p>
-<p><code>~"192.168.*"</code></p>
-<p><code>true</code></p>
-<p>It matches as it's a string and not an IP address.</p>
-<p>Record</p>
-<p><code>record(firstName="John",lastName="Doe")</code></p>
-<p><code>~"*name"</code></p>
-<p><code>true</code></p>
-<p>The string matches the name of the nested field in the record.</p>
-<p>Record</p>
-<p><code>record(firstName="John",lastName="Doe")</code></p>
-<p><code>~"*do*"</code></p>
-<p><code>true</code></p>
-<p>The string matches the record.</p>
-<p>Array</p>
-<p><code>array("hello", "world", "myCustomName")</code></p>
-<p><code>~"my*"</code></p>
-<p><code>true</code></p>
-<p>The string matches within the array.</p>
-<p>IP</p>
-<p><code>192.168.0.7</code></p>
-<p><code>~"192*"</code></p>
-<p><code>false</code></p>
-<p>Only strings allow patterns.</p>
-<p>Long</p>
-<p><code>192</code></p>
-<p><code>~"1*"</code></p>
-<p><code>false</code></p>
-<p>Only strings allow patterns.</p>
-<p>Smartscape ID</p>
-<p><code>smartscapeId("HOST", 1)</code></p>
-<p><code>~"HOST*"</code></p>
-<p><code>false</code></p>
-<p>Only strings allow patterns.</p>
-<p>Boolean</p>
-<p><code>true</code></p>
-<p><code>~"t*"</code></p>
-<p><code>false</code></p>
-<p>Only strings allow patterns.</p>
-<p>Duration</p>
-<p><code>1h</code></p>
-<p><code>~"*h"</code></p>
-<p><code>false</code></p>
-<p>Only strings allow patterns.</p>
 <h2 id="related-topics">Related topics<a class="headerlink" href="#related-topics" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="/docs/platform/grail/dynatrace-query-language" title="How to use Dynatrace Query Language.">Dynatrace Query Language</a></li>

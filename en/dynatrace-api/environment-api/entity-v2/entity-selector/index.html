@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
     
     
       
@@ -25872,19 +25872,6 @@
 </table>
 <h2 id="first-seen">First seen<a class="headerlink" href="#first-seen" title="Permanent link">&para;</a></h2>
 <p>The timestamp (UTC milliseconds) when the entity was seen for the first time.</p>
-<p>Syntax</p>
-<p><code>firstSeenTms.&lt;operator&gt;(timestamp)</code></p>
-<p>Multiple values</p>
-<p><img alt="Not applicable" src="https://dt-cdn.net/images/icon-red-cross-1f1142a5dc.svg" title="Not applicable" /></p>
-<p>Value operator</p>
-<ul>
-<li><code>lte</code>: earlier than or at the specified time</li>
-<li><code>lt</code>: earlier than the specified time</li>
-<li><code>gte</code>: later than or at the specified time</li>
-<li><code>gt</code>: later than the specified time</li>
-</ul>
-<p>Case-sensitive value</p>
-<p>n/a</p>
 <h2 id="inclusion-of-deleted-entities">Inclusion of deleted entities<a class="headerlink" href="#inclusion-of-deleted-entities" title="Permanent link">&para;</a></h2>
 <p>Include or exclude entities marked as deleted. Those are limited to the following entity types:</p>
 <ul>
@@ -25898,34 +25885,9 @@
 <li><code>DCRUM_APPLICATION</code></li>
 <li><code>CUSTOM_DEVICE</code></li>
 </ul>
-<p>Syntax</p>
-<p><code>deletedEntities.&lt;operator&gt;()</code></p>
-<p>Operator</p>
-<ul>
-<li><code>include</code>: include deleted entities</li>
-<li><code>exclude</code>: exclude deleted entities</li>
-</ul>
-<p>Values</p>
-<p><img alt="Not applicable" src="https://dt-cdn.net/images/icon-red-cross-1f1142a5dc.svg" title="Not applicable" /></p>
-<p>Example</p>
-<p><code>type(HTTP_CHECK), deletedEntities.include()</code>: Select all entities of type <code>HTTP_CHECK</code> and include the ones marked as deleted.</p>
-<p>Note</p>
-<ul>
-<li>By default, deleted entities are excluded from all results.</li>
-<li>This is not supported in <a href="/docs/manage/identity-access-management/permission-management/management-zones/management-zone-rules#text" title="Define rules to limit the entities accessible within a management zone.">management zone rules</a> and <a href="/docs/manage/tags-and-metadata/setup/how-to-define-tags#automatic" title="Find out how to define and apply tags manually and automatically.">automatic tagging</a>.</li>
-</ul>
 <h2 id="relationships">Relationships<a class="headerlink" href="#relationships" title="Permanent link">&para;</a></h2>
 <p>Relationships that the requested entity should have.</p>
 <p>To fetch the list of available relationships, issue the <a href="/docs/dynatrace-api/environment-api/entity-v2/get-entity-type" title="View the details of a monitored entity type via Dynatrace API.">GET entity type</a> call and check the <strong>fromRelationships</strong> and <strong>toRelationships</strong> fields.</p>
-<p>Syntax</p>
-<ul>
-<li><code>fromRelationships.&lt;relationship&gt;(&lt;entitySelector&gt;)</code></li>
-<li><code>toRelationships.&lt;relationship&gt;(&lt;entitySelector&gt;)</code></li>
-</ul>
-<p>Multiple arguments</p>
-<p><img alt="Not applicable" src="https://dt-cdn.net/images/icon-red-cross-1f1142a5dc.svg" title="Not applicable" /></p>
-<p>Note</p>
-<p>Takes an entity selector as an attribute.</p>
 <h2 id="negate-criterion">Negate criterion<a class="headerlink" href="#negate-criterion" title="Permanent link">&para;</a></h2>
 <p>You can use the <code>not</code> modification to invert any criterion except for <strong>type</strong>. It takes a criterion as an argument and inverts the condition. For example, the <code>not(tag("Infrastructure:Linux"))</code> criterion selects entities that do <em>not</em> have the <strong>Infrastructure:Linux</strong> tag.</p>
 <p>You can use the negated criteria as part of complicated selectors, just like any other criteria.</p>

@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
     
     
       
@@ -25561,30 +25561,6 @@ If you don't see any snapshots arriving, this may be due to any of the following
 <li><strong>Collection width</strong>: how many elements to collect from vectors, arrays, lists, etc.</li>
 </ul>
 <p>Three collection levels are available:</p>
-<p>Level\Language</p>
-<p>JVM</p>
-<p>Node.js</p>
-<p>Low</p>
-<p>Collection depth: 2</p>
-<p>String width: 128</p>
-<p>Collection width: 10</p>
-<p>Collection depth: 2</p>
-<p>String width: 128</p>
-<p>Collection width: 5</p>
-<p>Medium</p>
-<p>Collection depth: 5</p>
-<p>String width: 512</p>
-<p>Collection width: 15</p>
-<p>Collection depth: 3</p>
-<p>String width: 512</p>
-<p>Collection width: 10</p>
-<p>High</p>
-<p>Collection depth: 8</p>
-<p>String width: 4096</p>
-<p>Collection width: 25</p>
-<p>Collection depth: 5</p>
-<p>String width: 4096</p>
-<p>Collection width: 20</p>
 <p>For example, if an object has a deeply nested field, we will stop when we reach the maximum collection depth (as in the following example). Note that <code>l5</code> has more fields, but they werenât collected because they were too deep.</p>
 <p><img alt="Example of an object with deeply nested fields" src="https://dt-cdn.net/images/2025-01-30-22-13-44-1200-5eed210010-640-cfbd29135d.jpg" /></p>
 <h2 id="breakpoint-limits">Breakpoint limits<a class="headerlink" href="#breakpoint-limits" title="Permanent link">&para;</a></h2>
@@ -25611,45 +25587,6 @@ To set a condition, right-click a breakpoint and select <strong>Edit</strong>.</
   Using an advanced condition, you can define a more complex condition using logical parameters. Use <code>&amp;&amp;</code> for an AND statement, <code>||</code> for an OR statement, and <code>(</code> and <code>)</code> for encapsulation.</li>
 </ul>
 <p>Advanced conditions support the following operators and functions:</p>
-<p>Operator</p>
-<p>Example</p>
-<p>Description</p>
-<p><code>==</code></p>
-<p><code>a==1</code>, <code>b=='bbb'</code>, <code>x==y</code></p>
-<p>If the values of two operands are equal, the condition is true.</p>
-<p><code>!=</code></p>
-<p><code>a!=1</code>, <code>b!='bbb'</code>, <code>x!=y</code></p>
-<p>If values of two operands are not equal, the condition is true.</p>
-<p><code>&gt;</code></p>
-<p><code>a&gt;1</code>, <code>x&gt;y</code></p>
-<p>If the value of the left operand is greater than the value of the right operand, the condition is true.</p>
-<p><code>&gt;=</code></p>
-<p><code>a&gt;=1</code>, <code>x&gt;=y</code></p>
-<p>If the value of the left operand is greater than or equal to the value of the right operand, the condition is true.</p>
-<p><code>&lt;</code></p>
-<p><code>a&lt;1</code>, <code>x&lt;y</code></p>
-<p>If the value of left operand is less than the value of right operand, then condition becomes true.</p>
-<p><code>&lt;=</code></p>
-<p><code>a&lt;=1</code>, <code>x&lt;=y</code></p>
-<p>If the value of the left operand is less than or equal to the value of the right operand, the condition is true.</p>
-<p><code>in</code></p>
-<p><code>'bbb' in a</code></p>
-<p>If the value of the left operand is included in the right operand, the condition is true.</p>
-<p><code>&amp;&amp;</code></p>
-<p><code>a&lt;=1 &amp;&amp; b!='bbb'</code></p>
-<p>If both operands are true, the condition is true.</p>
-<p><code>||</code></p>
-<p><code>a&lt;=1 || b=='bbb'</code></p>
-<p>If any of the two operands are non-zero, the condition is true.</p>
-<p><code>()</code></p>
-<p><code>(a&lt;=1``||``b=='bbb') &amp;&amp; (x&lt;y)</code></p>
-<p>You can use parentheses to change the precedence when evaluating the condition.</p>
-<p><code>[]</code></p>
-<p><code>arr[4]!=4</code>, <code>dict['a']!=4</code></p>
-<p>Set conditions regarding to a specific sequenceâs element - list, dict, etc.</p>
-<p><code>size</code></p>
-<p><code>arr.size() &gt;= 32</code></p>
-<p>Use size instead of len or length on any platform.</p>
 
 
 

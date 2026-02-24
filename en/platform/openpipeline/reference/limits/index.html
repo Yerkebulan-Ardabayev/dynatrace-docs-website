@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
     
     
       
@@ -25582,12 +25582,6 @@
 <h3 id="record-maximum-timestamp">Record maximum timestamp<a class="headerlink" href="#record-maximum-timestamp" title="Permanent link">&para;</a></h3>
 <p>If the timestamp is more than 10 minutes in the future, it's adjusted to the ingest server time plus 10 minutes.</p>
 <h3 id="record-minimum-timestamp">Record minimum timestamp<a class="headerlink" href="#record-minimum-timestamp" title="Permanent link">&para;</a></h3>
-<p>Item</p>
-<p>Earliest timestamp</p>
-<p>Logs, Events, Business Events, System events</p>
-<p>The ingest time minus 24 hours</p>
-<p>Metrics, extracted metrics, and Davis events</p>
-<p>The ingest time minus 1 hour</p>
 <p>Records outside of these timeframes are dropped.</p>
 <h2 id="ingest-api">Ingest API<a class="headerlink" href="#ingest-api" title="Permanent link">&para;</a></h2>
 <h3 id="timestamp-value">Timestamp value<a class="headerlink" href="#timestamp-value" title="Permanent link">&para;</a></h3>
@@ -25653,40 +25647,6 @@ When log attributes are added to the event template, the size of each attribute 
 <p>The Smartscape ID calculation supports <code>string</code> only. The ID components must be of type <code>string</code>.</p>
 <p><a href="/docs/platform/openpipeline/concepts/data-flow#pre-processing" title="Learn how data flows in Dynatrace Platform, from ingestion to storage, via Dynatrace OpenPipeline.">Pre-process</a> records to convert the values you need to the <code>string</code> data type.</p>
 <h2 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">&para;</a></h2>
-<p>Item</p>
-<p>Maximum limit</p>
-<p>Early Adopter program maximum limit</p>
-<p>Request payload size (per configuration scope)</p>
-<p>10 MB</p>
-<ul>
-<li>Total pipeline schemas: 70 MB</li>
-<li>Total route schemas: 10 MB</li>
-<li>Total ingest source schemas: 30 MB</li>
-</ul>
-<p>Pipeline number (per configuration scope)</p>
-<p>100</p>
-<p>2,000</p>
-<p>Size of a stage</p>
-<p>512 KB</p>
-<p>512 KB</p>
-<p>Processor number (per pipeline)</p>
-<p>1,000</p>
-<p>1,000</p>
-<p>Endpoint number (per configuration scope)</p>
-<p>100</p>
-<p>100</p>
-<p>Routes number (per configuration scope)</p>
-<p>100</p>
-<p>3,000</p>
-<p>Ingest sources number (per configuration scope)</p>
-<p>100</p>
-<p>2,000</p>
-<p>Length of a matching condition</p>
-<p>1,000 UTF-8 encoded bytes</p>
-<p>1,000 UTF-8 encoded bytes</p>
-<p>Length of a DQL processor script</p>
-<p>8,192 UTF-8 encoded bytes</p>
-<p>8,192 UTF-8 encoded bytes</p>
 <h3 id="allowed-characters-in-the-endpoint-path">Allowed characters in the endpoint path<a class="headerlink" href="#allowed-characters-in-the-endpoint-path" title="Permanent link">&para;</a></h3>
 <p>The endpoint path is a unique name starting with a literal that defines the endpoint. It's case-insensitive and supports alphanumeric characters and dot (<code>.</code>). For example: <code>Endpoint.1</code>.</p>
 <p>Endpoint path doesn't support:</p>

@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../../../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
     
     
       
@@ -25500,67 +25500,16 @@
 <p>An exception applies for the OneAgent image for Classic Full-Stack, where the respective image <strong>must</strong> be copied from the built-in registry to work properly.</p>
 <h3 id="observability-options">Observability options<a class="headerlink" href="#observability-options" title="Permanent link">&para;</a></h3>
 <p>Depending on the <a href="/docs/ingest-from/setup-on-k8s/deployment#observability-options-for-kubernetes" title="Deploy Dynatrace Operator on Kubernetes">observability options</a> you choose, you might want to only copy required images. The following table outlines the relations between Dynatrace images and observability options.</p>
-<p>Observability option</p>
-<p>Dynatrace Operator</p>
-<p>Dynatrace ActiveGate</p>
-<p>Dynatrace Code Module</p>
-<p>Dynatrace OneAgent</p>
-<p>Full observability</p>
-<p>(Classic Full-Stack)</p>
-<p>required</p>
-<p>required</p>
-<p>-</p>
-<p>required <a href="#fn-1-1-def">1</a></p>
-<p>Full observability</p>
-<p>(Cloud-Native Full-Stack)</p>
-<p>required</p>
-<p>required</p>
-<p>required</p>
-<p>required</p>
-<p>Kubernetes Observability</p>
-<p>required</p>
-<p>required</p>
-<p>-</p>
-<p>-</p>
-<p>Application Observability</p>
-<p>required</p>
-<p>required</p>
-<p>required</p>
-<p>-</p>
 <p>1</p>
 <p>Must be replicated from Dynatrace built-in registry. See <a href="#classic-full-stack">Support for Classic Full-Stack monitoring</a> for further details.</p>
 <h3 id="image-tags">Image tags<a class="headerlink" href="#image-tags" title="Permanent link">&para;</a></h3>
 <p>To show how versioning directly relates to image tagging, the following table lists real examples of image tags for Dynatrace container images.</p>
 <p>Note how Dynatrace ActiveGate, Code Modules, and OneAgent share a similar versioning approach, while Dynatrace Operator, which follows a distinct release cadence, uses a different versioning approach.</p>
 <p>In all cases, version-based image tagging is employed with container images. Mutable image tags like 'latest' are not used.</p>
-<p>Container image</p>
-<p>Image tag</p>
-<p>dynatrace-operator</p>
-<p><code>docker.io/dynatrace/dynatrace-operator:v1.5.0</code></p>
-<p>dynatrace-activegate</p>
-<p><code>public.ecr.aws/dynatrace/dynatrace-activegate:1.301.70.20241127-162512</code></p>
-<p>dynatrace-codemodules</p>
-<p><code>public.ecr.aws/dynatrace/dynatrace-codemodules:1.301.70.20241127-162512</code></p>
-<p>dynatrace-oneagent</p>
-<p><code>public.ecr.aws/dynatrace/dynatrace-oneagent:1.301.70.20241127-162512</code></p>
-<p>dynatrace-k8s-node-config-collector</p>
-<p><code>public.ecr.aws/dynatrace/dynatrace-k8s-node-config-collector:1.0.0</code></p>
 <h3 id="image-signature-verification">Image signature verification<a class="headerlink" href="#image-signature-verification" title="Permanent link">&para;</a></h3>
 <p>All of our immutable and signed container images adhere to best practices, enhancing security and shielding against supply chain attacks. To learn how to verify signatures and guarantee software integrity, see <a href="/docs/ingest-from/setup-on-k8s/guides/container-registries/verify-image-signature" title="Verify Dynatrace image signatures">Verify Dynatrace image signatures</a>.</p>
 <h2 id="copy-dynatrace-container-images">Copy Dynatrace container images<a class="headerlink" href="#copy-dynatrace-container-images" title="Permanent link">&para;</a></h2>
 <p>The following guide describes how to copy Dynatrace container images from public Amazon ECR to our private registry with the following example attributes.</p>
-<p>Private container registry address</p>
-<p><code>registry.my-company.com</code></p>
-<p>Dynatrace Operator repository</p>
-<p><code>dynatrace-operator</code></p>
-<p>Dynatrace ActiveGate repository</p>
-<p><code>dynatrace-activegate</code></p>
-<p>Dynatrace Code Modules repository</p>
-<p><code>dynatrace-codemodules</code></p>
-<p>Dynatrace OneAgent repository</p>
-<p><code>dynatrace-oneagent</code></p>
-<p>Dynatrace K8s Node Config Collector repository</p>
-<p><code>dynatrace-k8s-node-config-collector</code></p>
 <p>The instructions below to copy container images to your private registry:</p>
 <p>Skopeo (recommended)</p>
 <p>Docker CLI</p>
@@ -25648,12 +25597,6 @@
 <li><a href="/docs/dynatrace-api/environment-api/deployment/oneagent/get-version-latest" title="View the latest version of OneAgent via Dynatrace API.">View the latest version of OneAgent</a>, if you want to understand the OneAgent version behind <code>latest</code> or automate OneAgent image replication.</li>
 </ul>
 <p>The following examples show how OneAgent versions translate to image tags available in the Dynatrace built-in registry:</p>
-<p>OneAgent version</p>
-<p>OneAgent image tag</p>
-<p>latest</p>
-<p><strong>latest-raw</strong></p>
-<p>1.283.114.20240129-173640</p>
-<p><strong>1.283.114-raw</strong></p>
 <p>Before executing the following command, be sure to replace <code>&lt;tag-with-raw-suffix&gt;</code> and <code>&lt;environment-id&gt;</code>:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>skopeo copy --override-arch amd64 --override-os linux
 <a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>

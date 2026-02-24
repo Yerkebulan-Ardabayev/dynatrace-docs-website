@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
     
     
       
@@ -25564,18 +25564,6 @@
 <h3 id="step-3-configure-saml">Step 3 Configure SAML<a class="headerlink" href="#step-3-configure-saml" title="Permanent link">&para;</a></h3>
 <p>Go to <a href="https://myaccount.dynatrace.com/"><strong>Account Management</strong>ï»¿</a> &gt; your account &gt; <strong>Identity &amp; access management</strong> &gt; <strong>SAML configuration</strong> to list all SAML configurations for the selected account. This is your starting point for managing SAML configurations.</p>
 <p>What can I do from the SAML configuration page?</p>
-<p>Action</p>
-<p>How to do it</p>
-<p>Find</p>
-<p>To find a SAML configuration, use the filter controls above the table. You can filter by <strong>Search table</strong> (text), <strong>Scope</strong>, and <strong>Domain</strong>.</p>
-<p>Create</p>
-<p>To create a new SAML configuration, select the <strong>New configuration</strong> button above the table.</p>
-<p>Edit</p>
-<p>To edit an existing SAML configuration, find the configuration in the table and, in the <strong>Actions</strong> column, select  &gt; <strong>Edit configuration</strong>. The steps are the same as for creating a new configuration.</p>
-<p>Disable</p>
-<p>To disable an existing SAML configuration, find the configuration in the table and, in the <strong>Actions</strong> column, select  &gt; <strong>Disable configuration</strong>.</p>
-<p>Delete</p>
-<p>To delete an existing SAML configuration, find the configuration in the table and, in the <strong>Actions</strong> column, select  &gt; <strong>Delete configuration</strong>.</p>
 <p>After you <a href="#create-fallback">create a fallback user account</a> and <a href="#verify-ownership">verify your ownership of the domain</a>, go to <strong>Identity &amp; access management</strong> &gt; <strong>SAML configuration</strong> and select <strong>New configuration</strong> to create a new SAML configuration.</p>
 <ol>
 <li><strong>Federation type</strong>: select one of the three federation types and then select <strong>Next</strong>.</li>
@@ -25862,7 +25850,7 @@
 </li>
 <li>
 <p><strong>SAML Group Attribute Value</strong>âA list of one or more federated group names returned by your IdP and mapped to this Dynatrace group.<br />
-     Select ** +SAML Group Attribute Value** if you need to match to an incoming SAML group claim.<br />
+     Select  <strong>SAML Group Attribute Value</strong> if you need to match to an incoming SAML group claim.<br />
      This typically isn't a group display name. It can be, for example, an LDAP ID.</p>
 <p>Note that when adding SAML Group Attribute Values to a local group:</p>
 <ul>
@@ -26056,48 +26044,6 @@ In group mapping, you should use one of these values.</p>
 </ul>
 <p>For details, see the <a href="https://dt-url.net/0602ymq">Microsoft documentationï»¿</a>.</p>
 <h2 id="glossary">Glossary<a class="headerlink" href="#glossary" title="Permanent link">&para;</a></h2>
-<p><strong>Term</strong></p>
-<p><strong>Definition</strong></p>
-<p><strong>account</strong></p>
-<p>In the account scope, a customer can manage their federations, account verified domains, federated domains, and account default federation. An account is identified by UUID, which is typical for all Dynatrace applications.</p>
-<p><strong>account domain</strong></p>
-<p>When the customer confirms their ownership of a given domain in the process of domain verification in the account, this domain becomes an account verified domain. An account can own multiple verified domains, and multiple accounts can own the same verified domain.</p>
-<p><strong>account default federation</strong></p>
-<p>The default federation for a user who doesn't belong to any of the account federated domains. It's used in <a href="#sp-initiated-authentication-federation-discovery">federation discovery</a>.</p>
-<p><strong>account federated guest</strong></p>
-<p>An account federated guest is created whenever a user logs in through account/environment-specific federation, but does not belong to any verified domain within the account. In this case, SSO creates a new user with a very specific identifier to make sure that this user is tied to a single account and does not interfere with the global user, who may freely be assigned to multiple accounts.</p>
-<p>The username of an account federated guest is remapped on the fly as follows:</p>
-<p><code>&lt;login_part&gt;_&lt;domain_part&gt;@a.&lt;account_uuid&gt;.sso.dynatrace.com</code></p>
-<p>For example, user <code>mary.smith@example.com</code>, in an account with IDM UUID <code>7f5bab5a-9620-11ee-960a-2fcdafd38a3b</code>, would become the following account federated guest:</p>
-<p><code>mary.smith_example.com@a.7f5bab5a-9620-11ee-960a-2fcdafd38a3b.sso.dynatrace.com</code></p>
-<p>The mapping from the original login to the account federated guest stamp is automatic.</p>
-<ul>
-<li>The user is free to use either their regular or mapped email in the login field.</li>
-<li>In the Account Management <strong>People</strong> list, however, account federated guests are displayed with the mapped value.</li>
-<li>The account UUID, which is part of the mapped login, is not parsed and does not influence the process of environment discovery.</li>
-</ul>
-<p><strong>environment</strong></p>
-<p>Identified by ID, which is unique across Dynatrace (usually called tenantId). The environment belongs to one account. The environment defines how users sign into it. It can have a user-friendly alias. The alias is unique and the environment can have at least one alias.</p>
-<p><strong>environment discovery</strong></p>
-<p>The process used to resolve the environment from the sign-in context. For details, see the <a href="#sp-initiated-authentication-environment-discovery">Environment resolution</a> section.</p>
-<p><strong>federated domain</strong></p>
-<p>Association between domain and federation. When a user signs in to the account and belongs to a federated domain, they are redirected to federated domain's federation. It can be set on the account or environment scope. It's used in <a href="#sp-initiated-authentication-federation-discovery">federation discovery</a>.</p>
-<p><strong>federation</strong></p>
-<p>Defines Dynatrace as a Service Provider (SP), which delegates sign-in, manages sessions, and manages user groups to the customer's Identity Provider (IdP). This configuration enables linking identities (users) to Dynatrace SSO. It has a unique UUID. The federation IdP ID corresponds to the entity ID from the SAML 2.0 specification. Federation belongs to the account.</p>
-<p><strong>federation discovery</strong></p>
-<p>The process used to choose the federation for signing in users in the SP-initiated authentication. For details, see the <a href="#sp-initiated-authentication-federation-discovery">Federation discovery</a> section.</p>
-<p><strong>global federation</strong></p>
-<p>Bound to the account verified domain and shared between all accounts having this domain.</p>
-<p><strong>global user</strong></p>
-<p>The user for which, in the current setup, the username, login, and email are synonymous.</p>
-<p><strong>IdP-initiated authentication</strong></p>
-<p>Sign-in process initiated by the federated IDP. For example, when the user wants to open Dynatrace application in the Azure Portal. For details, see the <a href="#idp-initiated-authentication">IdP-initiated authentication</a> section.</p>
-<p><strong>last used environment cookie</strong></p>
-<p>An optional cookie that contains the environment ID. For details, see the <a href="#sp-initiated-authentication-environment-discovery">Environment discovery</a></p>
-<p><strong>SP-initiated authentication</strong></p>
-<p>Sign-in process initiated by Dynatrace. For example, when the user wants to sign into the environment. For details, see the <a href="#sp-initiated-authentication">SP-initiated authentication</a> section.</p>
-<p><strong>username</strong></p>
-<p>The user enters their username on the SSO sign-in page to sign in. It's in email address format.</p>
 
 
 

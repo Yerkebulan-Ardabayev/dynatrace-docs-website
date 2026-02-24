@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
     
     
       
@@ -25511,38 +25511,6 @@ This works automatically, unless there are networking devices (proxies, load bal
 <p><img alt="Proxy and load balancer placements for ActiveGate deployments" src="https://dt-cdn.net/images/proxy-rev-proxy-005-1018-c916f384ca.png" /></p>
 <h2 id="activegate-headers">ActiveGate headers<a class="headerlink" href="#activegate-headers" title="Permanent link">&para;</a></h2>
 <p>You can configure the ActiveGate headers in your firewall.</p>
-<p>Header</p>
-<p>Value</p>
-<p><code>User-Agent</code></p>
-<ul>
-<li>Environment ActiveGate:</li>
-</ul>
-<p><code>ruxit/&lt;dynatrace-version&gt; &lt;activegate-instance-id&gt; &lt;environment-id&gt;</code></p>
-<p>Example values</p>
-<p>Environment and Multi-environment ActiveGate:<br />
-<code>ruxit/1.229.163.20211109-103203 0x37badd8e c04442b4-7ea6-4ec4-a5c4-7f94c7cf25fa</code></p>
-<p>Cluster ActiveGate:<br />
-<code>ruxit/1.229.163.20211109-103203 0x37badd8e</code>
-* HTTP monitors:</p>
-<p><code>DynatraceSynthetic/&lt;dynatrace-version&gt;</code></p>
-<p>Example value</p>
-<p><code>DynatraceSynthetic/1.258.0.20221207-142354</code>
-* Browser monitors:</p>
-<p><code>RuxitSynthetic/&lt;dynatrace-version&gt;</code></p>
-<p>Example value</p>
-<p><code>Mozilla/5.0 (Windows NT 6.3;WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36 RuxitSynthetic/1.258.0.20221207-142354</code></p>
-<p><code>dynatrace-gateway-type</code></p>
-<ul>
-<li>Environment ActiveGate: <code>PRIVATE</code></li>
-<li>
-<p>Managed or SaaS ActiveGate: <code>PUBLIC</code></p>
-</li>
-<li>
-<p>Multi-environment ActiveGate: <code>MULTI_TENANT</code></p>
-</li>
-</ul>
-<p><code>Authorization</code></p>
-<p><code>Basic &lt;TOKEN&gt;</code></p>
 <h2 id="related-topics">Related topics<a class="headerlink" href="#related-topics" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="/docs/manage/network-zones" title="Find out how network zones work in Dynatrace.">Network zones</a></li>

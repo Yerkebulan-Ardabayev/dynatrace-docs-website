@@ -25,7 +25,7 @@
       
       
       <link rel="icon" href="../../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
     
     
       
@@ -25563,8 +25563,6 @@
 </ul>
 <h3 id="permissions">Permissions<a class="headerlink" href="#permissions" title="Permanent link">&para;</a></h3>
 <p>The following table describes the required permissions.</p>
-<p>Permission</p>
-<p>Description</p>
 <p>storage:buckets:read</p>
 <p>Read buckets data</p>
 <p>storage:spans:read</p>
@@ -25585,11 +25583,6 @@
 <p>Read filter-segments</p>
 <p>storage:smartscape:read</p>
 <p>Read smartscape nodes and edges</p>
-<p>10</p>
-<p>rows per page</p>
-<p>Page</p>
-<p>1</p>
-<p>of 1</p>
 <h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h2>
 <p>Make sure the app is <a href="/docs/manage/hub#install" title="See the information about Dynatrace Hub.">installed in your environment</a>.</p>
 <h2 id="get-started">Get started<a class="headerlink" href="#get-started" title="Permanent link">&para;</a></h2>
@@ -25696,21 +25689,6 @@
 <p>You can integrate OpenTelemetry and OneAgent to collect trace dataâlike request status, response time, versions, infrastructure information, and other relevant metadata as attributes. The trace context, including the unique trace ID, is then propagated across your apps and microservices.</p>
 <h4 id="best-practices_1">Best practices<a class="headerlink" href="#best-practices_1" title="Permanent link">&para;</a></h4>
 <p>Before getting started with distributed tracing, understand how setup and trace data collection differs between OpenTelemetry and OneAgent. The following is an overview of the key differences.</p>
-<p>OpenTelemetry</p>
-<p>OneAgent</p>
-<p>Set up</p>
-<p>Automatic or manual</p>
-<p>Automatic</p>
-<p>Capturing</p>
-<p>Automatic collection of allowed span attributes.</p>
-<p>Automatic collection of several request attributes, including HTTP method, URL, response codes, topology data, and details about the underlying technologies.</p>
-<p>Context</p>
-<p>Automatically or manually contextualized log entries, depending on the instrumentation library.</p>
-<p>Automatically contextualized</p>
-<ul>
-<li>Log entries produced by prominent log frameworks.</li>
-<li>Traces in Smartscape and Dynatrace Intelligence.</li>
-</ul>
 <p>To get started see</p>
 <ul>
 <li><a href="/docs/ingest-from/dynatrace-oneagent" title="Understand the important concepts related to OneAgent and find out how to install and operate OneAgent on different platforms.">Automatic setup with OneAgent</a></li>

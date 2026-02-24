@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../../../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
     
     
       
@@ -25660,22 +25660,6 @@ After collecting data, you can:</p>
 <p>The <strong>Dynatrace OneAgent diagnostics overview</strong> page lists all OneAgent diagnostics activity in your environment. Expand any entry to see details. If the data has not been deleted (all diagnostic data is deleted automatically after 30 days), you can download it or delete it.</p>
 <h2 id="contents-of-diagnostic-data">Contents of diagnostic data<a class="headerlink" href="#contents-of-diagnostic-data" title="Permanent link">&para;</a></h2>
 <p>All the collected diagnostic data is compressed into a <code>SupportArchive&lt;ID number&gt;</code> ZIP file that includes the following folders and files:</p>
-<p>Folder or file</p>
-<p>Description</p>
-<p><code>host</code> (folder)</p>
-<p>Contains a snapshot of the topology information of the host entity including any relationships to other hosts.</p>
-<p><code>monitored_entities</code> (folder)</p>
-<p>Contains a snapshot of the topology information of all involved process groups, process group instances, services, and service instances.</p>
-<p><code>agent_registration_entries</code> (JSON)</p>
-<p>Contains information about which OneAgent code modules are connected to Dynatrace.</p>
-<p><code>archive</code> (JSON)</p>
-<p>Contains information about who, when, where, and why the diagnostic data was collected.</p>
-<p><code>monitoring_state</code> (JSON)</p>
-<p>Contains information about the monitoring state of processes and related problems.</p>
-<p><code>support_archive</code> (ZIP)</p>
-<p>Contains the local configuration of the OneAgent installed on the host or process where youâve run the troubleshooting, as well as the OneAgent-related log files.</p>
-<p><code>diagnostic_files</code> ZIP</p>
-<p>Contains information about the process group detection, auto-injection problems, and extension configuration.</p>
 <h2 id="data-privacy">Data privacy<a class="headerlink" href="#data-privacy" title="Permanent link">&para;</a></h2>
 <p>To comply with regional data protection and privacy regulations, Dynatrace does the following:</p>
 <ul>

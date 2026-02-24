@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
     
     
       
@@ -25530,27 +25530,6 @@
 </ol>
 <h2 id="user-permissions-for-distributed-tracing">User permissions for Distributed Tracing<a class="headerlink" href="#user-permissions-for-distributed-tracing" title="Permanent link">&para;</a></h2>
 <p>When working with the <img alt="Distributed Tracing" src="https://dt-cdn.net/images/distributed-tracing-4ed13d1274.svg" title="Distributed Tracing" /> <strong>Distributed Tracing</strong>, make sure that you've read and set all the necessary permissions:</p>
-<p>Policy scope</p>
-<p>Table permission</p>
-<p>Read buckets data</p>
-<p><code>storage:buckets:read</code></p>
-<p>Read span data</p>
-<p><code>storage:spans:read</code></p>
-<p>Read entities data</p>
-<p><code>storage:entities:read</code></p>
-<p>Read log data</p>
-<p><code>storage:logs:read</code></p>
-<p>Read filter-segments data</p>
-<p><code>storage:filter-segments:read</code></p>
-<p>View sensitive fields trace data <a href="#fn-1-1-def">1</a> <a href="#fn-1-2-def">2</a></p>
-<p><code>storage:fieldsets:read WHERE storage:fieldset-name="builtin-sensitive-spans</code></p>
-<p><code>storage:fieldsets:read WHERE storage:fieldset-name="builtin-request-attributes-spans</code></p>
-<p>Read user app states</p>
-<p><code>state:user-app-states:read</code></p>
-<p>Write user app states</p>
-<p><code>state:user-app-states:write</code></p>
-<p>Delete user app states</p>
-<p><code>state:user-app-states:delete</code></p>
 <p>1</p>
 <p>Sensitive attributes for spans are tagged as <code>sensitive-spans</code> in <a href="/docs/semantic-dictionary/fields" title="Get to know the list of global fields that have a well defined semantic meaning in Dynatrace and can be used across different monitoring types.">Global field reference</a>.</p>
 <p>2</p>

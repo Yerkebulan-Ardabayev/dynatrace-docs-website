@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../../../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
     
     
       
@@ -25507,14 +25507,6 @@ current memory usage or number of users online. In Dynatrace, the <a href="/docs
 <p>Histograms<a href="#fn-3-1-def">1</a> provide visual insights into the distribution and frequency of numerical data.
 For a base metric name of <code>&lt;basename&gt;</code>, Dynatrace will ingest the data according to the
 following table.</p>
-<p>Prometheus Metric</p>
-<p>Dynatrace Ingest Type</p>
-<p><code>&lt;basename&gt;_bucket{le="&lt;upper inclusive bound&gt;"}</code></p>
-<p><a href="/docs/ingest-from/extend-dynatrace/extend-metrics/reference/metric-ingestion-protocol#count-metric" title="Learn how the data ingestion protocol for Dynatrace Metrics API works."><code>COUNT</code></a></p>
-<p><code>&lt;basename&gt;_bucket_sum</code></p>
-<p><a href="/docs/ingest-from/extend-dynatrace/extend-metrics/reference/metric-ingestion-protocol#count-metric" title="Learn how the data ingestion protocol for Dynatrace Metrics API works."><code>COUNT</code></a></p>
-<p><code>&lt;basename&gt;_bucket_count</code></p>
-<p><a href="/docs/ingest-from/extend-dynatrace/extend-metrics/reference/metric-ingestion-protocol#count-metric" title="Learn how the data ingestion protocol for Dynatrace Metrics API works."><code>COUNT</code></a></p>
 <p>Additional flexibility and control is provided via the <a href="https://dt-url.net/ne02rlq"><code>builtin:histogram-metrics</code>ï»¿</a> settings schema.
 This schema allows to configure the ingestion of <code>&lt;basename&gt;_bucket{le="&lt;upper inclusive bound&gt;"}</code> metrics.</p>
 <p>1</p>
@@ -25523,14 +25515,6 @@ This schema allows to configure the ingestion of <code>&lt;basename&gt;_bucket{l
 <p>Like a <a href="#histogram">Histogram</a>, the summary metric<a href="#fn-4-1-def">1</a> samples observations. In contrast to the histogram metric, a summary's buckets are
 represented by Ï-quantiles where 0 â¤ Ï â¤ 1. For a base metric name of <code>&lt;basename&gt;</code>, Dynatrace will ingest the data according to the
 following table.</p>
-<p>Prometheus Metric</p>
-<p>Dynatrace Ingest Type</p>
-<p><code>&lt;basename&gt;{quantile="&lt;Ï&gt;"}</code></p>
-<p><a href="/docs/ingest-from/extend-dynatrace/extend-metrics/reference/metric-ingestion-protocol#gauge-metric" title="Learn how the data ingestion protocol for Dynatrace Metrics API works."><code>GAUGE</code></a></p>
-<p><code>&lt;basename&gt;_sum</code></p>
-<p><a href="/docs/ingest-from/extend-dynatrace/extend-metrics/reference/metric-ingestion-protocol#count-metric" title="Learn how the data ingestion protocol for Dynatrace Metrics API works."><code>COUNT</code></a></p>
-<p><code>&lt;basename&gt;_count</code></p>
-<p><a href="/docs/ingest-from/extend-dynatrace/extend-metrics/reference/metric-ingestion-protocol#count-metric" title="Learn how the data ingestion protocol for Dynatrace Metrics API works."><code>COUNT</code></a></p>
 <p>1</p>
 <p><a href="https://dt-url.net/7g234n1">Prometheus official documentation: Summaryï»¿</a>.</p>
 <h3 id="unsupported">Unsupported<a class="headerlink" href="#unsupported" title="Permanent link">&para;</a></h3>

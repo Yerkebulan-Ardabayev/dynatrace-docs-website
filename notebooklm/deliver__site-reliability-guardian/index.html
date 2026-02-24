@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
     
     
       
@@ -25495,14 +25495,14 @@
 
 <h1 id="dynatrace-deliversite-reliability-guardian">Документация Dynatrace: deliver/site-reliability-guardian<a class="headerlink" href="#dynatrace-deliversite-reliability-guardian" title="Permanent link">&para;</a></h1>
 <p>Язык: Русский (RU)
-Сгенерировано: 2026-02-23
+Сгенерировано: 2026-02-24
 Файлов в разделе: 4</p>
 <hr />
 <h2 id="deliversite-reliability-guardianevent-structuremd">deliver/site-reliability-guardian/event-structure.md<a class="headerlink" href="#deliversite-reliability-guardianevent-structuremd" title="Permanent link">&para;</a></h2>
 <hr />
 <p>title: Site Reliability guardian event structure
 source: https://www.dynatrace.com/docs/deliver/site-reliability-guardian/event-structure
-scraped: 2026-02-22T21:22:26.967414</p>
+scraped: 2026-02-24T21:26:58.458201</p>
 <hr />
 <h1 id="site-reliability-guardian-event-structure">Site Reliability guardian event structure<a class="headerlink" href="#site-reliability-guardian-event-structure" title="Permanent link">&para;</a></h1>
 <h1 id="site-reliability-guardian-event-structure_1">Site Reliability guardian event structure<a class="headerlink" href="#site-reliability-guardian-event-structure_1" title="Permanent link">&para;</a></h1>
@@ -25590,21 +25590,6 @@ Any data that is related to guardian internals is stored with a prefix of <code>
 The structure of the other event fields aligns with the <a href="/docs/semantic-dictionary/model/sdlc-events#sdlc-validation-events" title="Get to know the Semantic Dictionary models related to Software development lifecycle (SDLC) events.">Semantic Dictionary for Software Development Lifecycle Validation Events</a>.</p>
 <h3 id="lifecycle-guardian-event-fields">Lifecycle guardian event fields<a class="headerlink" href="#lifecycle-guardian-event-fields" title="Permanent link">&para;</a></h3>
 <p>When you want to integrate Lifecycle guardian validation results with a <a href="/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new" title="Create interactive, customizable views to visualize, analyze, and share your observability data in real time.">dashboard</a> or other tooling that you have created, the event fields below is a good starting point for your queries.</p>
-<p><strong>Field name</strong></p>
-<p><strong>Description</strong></p>
-<p><strong>Event type / status</strong></p>
-<p><code>validation.result</code></p>
-<p>A text indicating the result of the validation. Any value of <code>pass</code>, <code>warning</code>, <code>fail</code>, <code>error</code>, or <code>info</code> is possible.</p>
-<p><code>validation</code>, <code>finished</code></p>
-<p><code>dt.srg.id</code></p>
-<p>The ID of the guardian. It could be used to filter for specific guardian events or as part of a backlink to the guardian.</p>
-<p>all</p>
-<p><code>dt.srg.tags</code></p>
-<p>All the tags that have been defined for a guardian. It could be used to filter for specific guardian events.</p>
-<p>all</p>
-<p><code>task.id</code></p>
-<p>The ID of the guardian validation. It could be used as part of a backlink to the analysis page of the guardian.</p>
-<p>all</p>
 <h2 id="business-guardian-business-events">Business guardian (Business events)<a class="headerlink" href="#business-guardian-business-events" title="Permanent link">&para;</a></h2>
 <p>To query business guardian events with DQL, use the following query:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>fetch bizevents
@@ -25653,27 +25638,12 @@ The structure of the other event fields aligns with the <a href="/docs/semantic-
 <p>The above business events share several common fields.</p>
 <h3 id="business-guardian-event-fields">Business guardian event fields<a class="headerlink" href="#business-guardian-event-fields" title="Permanent link">&para;</a></h3>
 <p>When you want to integrate business guardian validation results with a <a href="/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new" title="Create interactive, customizable views to visualize, analyze, and share your observability data in real time.">dashboard</a> or other tooling that you have created, the event fields below is a good starting point for your queries.</p>
-<p><strong>Field name</strong></p>
-<p><strong>Description</strong></p>
-<p><strong>Event type / status</strong></p>
-<p><code>validation.status</code></p>
-<p>A text indicating the status of the validation. Any value of <code>pass</code>, <code>warning</code>, <code>fail</code>, <code>error</code>, or <code>info</code> is possible.</p>
-<p><code>guardian.validation.finished</code></p>
-<p><code>guardian.id</code></p>
-<p>The ID of the guardian. It could be used to filter for specific guardian events or as part of a backlink to the guardian.</p>
-<p>all</p>
-<p><code>guardian.tags</code></p>
-<p>All the tags that have been defined for a guardian. It could be used to filter for specific guardian events.</p>
-<p>all</p>
-<p><code>validation.id</code></p>
-<p>The ID of the guardian validation. It could be used as part of a backlink to the analysis page of the guardian.</p>
-<p>all</p>
 <hr />
 <h2 id="deliversite-reliability-guardianexecution-contextmd">deliver/site-reliability-guardian/execution-context.md<a class="headerlink" href="#deliversite-reliability-guardianexecution-contextmd" title="Permanent link">&para;</a></h2>
 <hr />
 <p>title: Guardian execution context
 source: https://www.dynatrace.com/docs/deliver/site-reliability-guardian/execution-context
-scraped: 2026-02-22T21:24:02.124333</p>
+scraped: 2026-02-24T21:20:41.430318</p>
 <hr />
 <h1 id="guardian-execution-context">Guardian execution context<a class="headerlink" href="#guardian-execution-context" title="Permanent link">&para;</a></h1>
 <h1 id="guardian-execution-context_1">Guardian execution context<a class="headerlink" href="#guardian-execution-context_1" title="Permanent link">&para;</a></h1>
@@ -25796,7 +25766,7 @@ scraped: 2026-02-22T21:24:02.124333</p>
 <hr />
 <p>title: List and work with your guardians
 source: https://www.dynatrace.com/docs/deliver/site-reliability-guardian/guardian-list
-scraped: 2026-02-23T21:38:35.710894</p>
+scraped: 2026-02-24T21:21:38.620151</p>
 <hr />
 <h1 id="list-and-work-with-your-guardians">List and work with your guardians<a class="headerlink" href="#list-and-work-with-your-guardians" title="Permanent link">&para;</a></h1>
 <h1 id="list-and-work-with-your-guardians_1">List and work with your guardians<a class="headerlink" href="#list-and-work-with-your-guardians_1" title="Permanent link">&para;</a></h1>
@@ -25833,7 +25803,7 @@ You can compare or bulk delete your guardians in the  <strong>Table</strong>.</p
 <hr />
 <p>title: Site Reliability Guardian
 source: https://www.dynatrace.com/docs/deliver/site-reliability-guardian
-scraped: 2026-02-22T21:19:47.795078</p>
+scraped: 2026-02-24T21:23:46.945189</p>
 <hr />
 <h1 id="site-reliability-guardian">Site Reliability Guardian<a class="headerlink" href="#site-reliability-guardian" title="Permanent link">&para;</a></h1>
 <h1 id="site-reliability-guardian_1">Site Reliability Guardian<a class="headerlink" href="#site-reliability-guardian_1" title="Permanent link">&para;</a></h1>
@@ -25843,16 +25813,9 @@ scraped: 2026-02-22T21:19:47.795078</p>
 <li>15-min read</li>
 <li>Updated on Jan 28, 2026</li>
 </ul>
-<p>In this tutorial</p>
-<ul>
-<li>Create and use guardians</li>
-<li>Use guardians at scale with Site Reliability Guardian as code</li>
-</ul>
-<p>Prerequisites</p>
+<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
 <h3 id="permissions">Permissions<a class="headerlink" href="#permissions" title="Permanent link">&para;</a></h3>
 <p>The following table describes the required permissions.</p>
-<p>Permission</p>
-<p>Description</p>
 <p>app-settings:objects:read</p>
 <p>Read guardian configurations</p>
 <p>app-settings:objects:write</p>
@@ -25873,16 +25836,9 @@ scraped: 2026-02-22T21:19:47.795078</p>
 <p>Read spans during validations</p>
 <p>storage:entities:read</p>
 <p>Read entities during validations</p>
-<p>10</p>
-<p>rows per page</p>
-<p>Page</p>
-<p>1</p>
-<p>of 1</p>
 <h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h2>
 <p>Make sure the app is <a href="/docs/manage/hub#install" title="See the information about Dynatrace Hub.">installed in your environment</a>.</p>
-<p>Get started</p>
-<p>Concepts</p>
-<p>Use cases</p>
+<h2 id="get-started">Get started<a class="headerlink" href="#get-started" title="Permanent link">&para;</a></h2>
 <p>The Site Reliability Guardian is a Dynatrace app that automates change impact analysis to validate service availability, performance, and capacity objectives across various systems. It enables DevOps platform engineers to make the right release decisions and empowers SREs to apply Service-Level Objectives (SLOs) for their critical services.</p>
 <p><img alt="Guardians overview" src="https://dt-cdn.net/images/overview-screen-light-1920-fkjm7jk-1920-9ee2115a3a.png" /><img alt="The details of a Guardian in a failure state" src="https://dt-cdn.net/images/screenshot-2023-09-19-150559-1915-0a8661d7f2.png" /><img alt="Get started quickly by using predefined templates to guard your critical services." src="https://dt-cdn.net/images/1-3-0-templates-light-1920-zvwdsns-1920-cbc918b08d.png" /></p>
 <p>1 of 3</p>
@@ -25904,38 +25860,44 @@ scraped: 2026-02-22T21:19:47.795078</p>
 <p>Reference</p>
 </li>
 <li>
-<p>Add a new Site Reliability Guardian objective.](/docs/deliver/site-reliability-guardian/reference)[04Guardian execution context</p>
+<p>Add a new Site Reliability Guardian objective.](/docs/deliver/site-reliability-guardian/reference)[04Add and access validation insight links</p>
 </li>
 <li>
 <p>How-to guide</p>
 </li>
 <li>
-<p>Filter Site Reliability Guardian validation events triggered by an external tool using the context information provided by the tool.](/docs/deliver/site-reliability-guardian/execution-context)[05Site Reliability Guardian as code</p>
+<p>Add and access validation insight links to provide contextual information and resources for an objective.](/docs/deliver/site-reliability-guardian/validation-insight-link)[05Guardian execution context</p>
 </li>
 <li>
 <p>How-to guide</p>
 </li>
 <li>
-<p>See configuration as code examples for a guardian and its workflow.](/docs/deliver/site-reliability-guardian/config-as-code-srg)[06Site Reliability Guardian Role Permissions</p>
+<p>Filter Site Reliability Guardian validation events triggered by an external tool using the context information provided by the tool.](/docs/deliver/site-reliability-guardian/execution-context)[06Site Reliability Guardian as code</p>
+</li>
+<li>
+<p>How-to guide</p>
+</li>
+<li>
+<p>See configuration as code examples for a guardian and its workflow.](/docs/deliver/site-reliability-guardian/config-as-code-srg)[07Site Reliability Guardian Role Permissions</p>
 </li>
 <li>
 <p>Reference</p>
 </li>
 <li>
-<p>Configure role permissions to use the Site Reliability Guardian.](/docs/deliver/site-reliability-guardian/role-permissions)[07Site Reliability guardian event structure</p>
+<p>Configure role permissions to use the Site Reliability Guardian.](/docs/deliver/site-reliability-guardian/role-permissions)[08Site Reliability guardian event structure</p>
 </li>
 <li>
 <p>Reference</p>
 </li>
 <li>
-<p>Details about the event structure of the Site Reliability Guardian.](/docs/deliver/site-reliability-guardian/event-structure)[08Validate a Site Reliability guardian</p>
+<p>Details about the event structure of the Site Reliability Guardian.](/docs/deliver/site-reliability-guardian/event-structure)[09Validate a Site Reliability guardian</p>
 </li>
 <li>
 <p>Tutorial</p>
 </li>
 <li>Trigger a guardian validation either manually or automatically using a workflow to evaluate service reliability.](/docs/deliver/site-reliability-guardian/trigger-srg)</li>
 </ul>
-<h2 id="site-reliability-guardian-concepts">Site Reliability Guardian concepts<a class="headerlink" href="#site-reliability-guardian-concepts" title="Permanent link">&para;</a></h2>
+<h2 id="concepts">Concepts<a class="headerlink" href="#concepts" title="Permanent link">&para;</a></h2>
 <p>Site Reliability Guardian is based on the following concepts:</p>
 <h3 id="1-guardian">1. Guardian<a class="headerlink" href="#1-guardian" title="Permanent link">&para;</a></h3>
 <p>A guardian is the grouping of objectives. It is built around a set of entities reflecting a service or application you want to safeguard.</p>
@@ -26070,31 +26032,6 @@ For more details on the structural differences, see <a href="/docs/deliver/site-
 <li>The only action of the workflow is the respective guardian validation action.</li>
 </ul>
 <p>The guardian validation action generates the following output and passes it to the subsequent actions of the workflow.</p>
-<p>Parameter</p>
-<p>Description</p>
-<p><code>guardian_id</code></p>
-<p>The ID of the validated guardian</p>
-<p><code>guardian_name</code></p>
-<p>The name of the validated guardian</p>
-<p><code>guardian_tags</code></p>
-<p>An array of tags assigned to the validated guardian</p>
-<p><code>execution_context</code></p>
-<p>The execution context property of the trigger, if it was set</p>
-<p><code>validation_id</code></p>
-<p>The ID of all events generated by the validation</p>
-<p><code>validation_url</code></p>
-<p>The URL with the full validation details</p>
-<p><code>validation_status</code></p>
-<p>The status of the validation, indicating the overall result. The following values are possible:</p>
-<ul>
-<li><code>info</code></li>
-<li><code>pass</code></li>
-<li><code>warning</code></li>
-<li><code>fail</code></li>
-<li><code>error</code></li>
-</ul>
-<p><code>validation_summary</code></p>
-<p>The number of objectives for each status</p>
 <p>To learn more about workflows for a guardian, select  &gt;  <strong>Get started with Automation</strong>.</p>
 <h3 id="9-validation">9. Validation<a class="headerlink" href="#9-validation" title="Permanent link">&para;</a></h3>
 <p>If a workflow is created, your guardian can be validated automatically, depending on the <a href="/docs/analyze-explore-automate/workflows/trigger" title="Introduction to workflow automation triggers for workflows.">trigger</a> you chose. You can also perform the validation manually.</p>
@@ -26155,10 +26092,11 @@ For more details on the structural differences, see <a href="/docs/deliver/site-
 </ul>
 <h3 id="10-segments">10. Segments<a class="headerlink" href="#10-segments" title="Permanent link">&para;</a></h3>
 <p>Leverage <a href="/docs/manage/segments" title="Segments logically structure monitoring data in Grail and function as convenient filters for data that users are allowed to access based on permissions.">Segments</a> in DQL-based objectives to logically structure and conveniently filter observability data.</p>
-<p><img alt="Hub" src="https://dt-cdn.net/images/hub-512-82db3c583e.png" title="Hub" /></p>
-<h3 id="explore-in-dynatrace-hub">Explore in Dynatrace Hub<a class="headerlink" href="#explore-in-dynatrace-hub" title="Permanent link">&para;</a></h3>
-<p>Automated change impact analysis for your deployment and release processes</p>
-<p><a href="https://www.dynatrace.com/hub/detail/site-reliability-guardian/?internal_source=doc&amp;internal_medium=link&amp;internal_campaign=cross">Dynatrace Hubï»¿</a></p>
+<h2 id="use-cases">Use cases<a class="headerlink" href="#use-cases" title="Permanent link">&para;</a></h2>
+<h2 id="related-topics">Related topics<a class="headerlink" href="#related-topics" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="/docs/deliver/site-reliability-guardian/validation-insight-link" title="Add and access validation insight links to provide contextual information and resources for an objective.">Add and access validation insight links</a></li>
+</ul>
 <hr />
 
 

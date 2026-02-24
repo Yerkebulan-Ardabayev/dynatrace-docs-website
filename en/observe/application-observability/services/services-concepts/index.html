@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
     
     
       
@@ -25506,7 +25506,7 @@ root cause analysis for cause-and-effect relationships.</p>
 <h2 id="key-requests">Key requests<a class="headerlink" href="#key-requests" title="Permanent link">&para;</a></h2>
 <p>Key requests are requests requiring special attention (critical business measures or vital technical functionality). This legacy approach requires manual configuration with limits of 500 per environment and 100 per service.</p>
 <p>Switch to Enhanced endpoints for SDv1</p>
-<p>Instead of <a href="/docs/observe/application-observability/services-classic/monitor-key-requests" title="Discover how to closely monitor requests that are critical to your business.">defining key requests</a> for SDv1 services, we strongly recommend enabling the <a href="/docs/observe/application-observability/services/enhanced-endpoints-sdv1" title="Utilize the Enhanced endpoints for SDv1 feature to gain deeper insights into your application's performance and improve your ability to monitor and troubleshoot service interactions."><strong>Enhanced endpoints for SDv1</strong> feature</a> that allows showing all endpoints in <img alt="Services" src="https://dt-cdn.net/hub/logos/services.png" title="Services" /> <strong>Services</strong>, not just key requests.</p>
+<p>Instead of <a href="/docs/observe/application-observability/services-classic/monitor-key-requests" title="Discover how to closely monitor requests that are critical to your business.">defining key requests</a> for SDv1 services, we strongly recommend enabling the <a href="/docs/observe/application-observability/services/service-detection/service-detection-v1/enhanced-endpoints-sdv1" title="Utilize the Enhanced endpoints for SDv1 feature to gain deeper insights into your application's performance and improve your ability to monitor and troubleshoot service interactions."><strong>Enhanced endpoints for SDv1</strong> feature</a> that allows showing all endpoints in <img alt="Services" src="https://dt-cdn.net/hub/logos/services.png" title="Services" /> <strong>Services</strong>, not just key requests.</p>
 <h2 id="errors-exceptions-and-failures">Errors, exceptions, and failures<a class="headerlink" href="#errors-exceptions-and-failures" title="Permanent link">&para;</a></h2>
 <p><strong>Errors and exceptions</strong> are captured as attributes on spans (for example, span events) within distributed traces. They provide details about request processing problems, including an error type, message, stack traces, timestamp, and associated span context. Errors and exceptions are automatically captured from OneAgent-monitored applications and OpenTelemetry instrumentation.</p>
 <p><strong>Failures</strong> are determined by failure detection, typically based on error and exception data. Note that the existence of errors doesn't necessarily mean the associated request is considered failed. Configuration differs between Service Detection v1 (global or per-service settings) and Service Detection v2 (rule sets based on span attributes).</p>

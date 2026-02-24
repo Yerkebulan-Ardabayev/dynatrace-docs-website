@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
     
     
       
@@ -25508,30 +25508,6 @@
 </ul>
 <h3 id="annotate-your-kubernetes-deployments">Annotate your Kubernetes Deployments<a class="headerlink" href="#annotate-your-kubernetes-deployments" title="Permanent link">&para;</a></h3>
 <p>The workflows that provide the predictive scaling suggestions will only operate on Kubernetes Deployments annotated with use-caseâspecific metadata. You need to add the following annotations to your Deployment.</p>
-<p>Annotation</p>
-<p>Value</p>
-<p>Comment</p>
-<p><code>predictive-kubernetes-scaling.observability-labs.dynatrace.com/enabled</code></p>
-<p><code>true</code> or <code>false</code></p>
-<p><code>true</code> to enable for this workload.</p>
-<p><code>predictive-kubernetes-scaling.observability-labs.dynatrace.com/managed-by-repo:</code></p>
-<p><code>yourgithub/yourreponame</code></p>
-<p>Reference to the target repo.</p>
-<p><code>predictive-kubernetes-scaling.observability-labs.dynatrace.com/uuid</code></p>
-<p>For example, <code>4bc1299a-58ae-4c19-9533-b19c1b8ca57f</code></p>
-<p>Any unique GUID in your repo.</p>
-<p><code>predictive-kubernetes-scaling.observability-labs.dynatrace.com/target-utilization</code></p>
-<p>For example, <code>80-90</code>.</p>
-<p>Target utilization.</p>
-<p><code>predictive-kubernetes-scaling.observability-labs.dynatrace.com/target-cpu-utilization</code></p>
-<p>For example, <code>80-90</code>.</p>
-<p>Target CPU utilization.</p>
-<p><code>predictive-kubernetes-scaling.observability-labs.dynatrace.com/target-memory-utilization</code></p>
-<p>For example, <code>80-90</code>.</p>
-<p>Target memory utilization.</p>
-<p><code>predictive-kubernetes-scaling.observability-labs.dynatrace.com/scale-down</code></p>
-<p><code>true</code></p>
-<p><code>true</code> will also scale down and not just up.</p>
 <p>For a complete example, see the <a href="https://dt-url.net/d723u3m">horizontal scalingï»¿</a> and <a href="https://dt-url.net/vf43uri">vertical scalingï»¿</a> deployment example from the <a href="https://dt-url.net/ms63uam">Observability Lab GitHub Tutorialï»¿</a>.</p>
 <h2 id="steps">Steps<a class="headerlink" href="#steps" title="Permanent link">&para;</a></h2>
 <p>You're going to create two workflows.</p>

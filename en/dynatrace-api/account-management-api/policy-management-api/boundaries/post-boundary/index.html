@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../../../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
     
     
       
@@ -25483,8 +25483,6 @@
 </ul>
 <p>Creates a new policy boundary within a level. You can't create a global-level boundary, as these are managed by Dynatrace.</p>
 <p>The request consumes and produces an <code>application/json</code> payload.</p>
-<p>POST</p>
-<p><code>https://api.dynatrace.com/iam/v1/repo/account/{accountId}/boundaries</code></p>
 <h2 id="authentication">Authentication<a class="headerlink" href="#authentication" title="Permanent link">&para;</a></h2>
 <p>To execute this request, you need the <strong>Allow IAM policy configuration for environments</strong> (<code>iam-policies-management</code>) permission assigned to your token. To learn how to obtain and use it, see <a href="/docs/manage/identity-access-management/access-tokens-and-oauth-clients/oauth-clients" title="Manage authentication and user permissions using OAuth clients.">OAuth clients</a>.</p>
 <h2 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h2>
@@ -25787,8 +25785,6 @@
 <h2 id="validate-payload">Validate payload<a class="headerlink" href="#validate-payload" title="Permanent link">&para;</a></h2>
 <p>We recommend that you validate the payload before submitting it with an actual request. A response code of <strong>200</strong> indicates a valid payload.</p>
 <p>The request consumes an <code>application/json</code> payload.</p>
-<p>POST</p>
-<p><code>https://api.dynatrace.com/iam/v1/repo/account/{accountId}/boundaries/validation</code></p>
 <h3 id="authentication_1">Authentication<a class="headerlink" href="#authentication_1" title="Permanent link">&para;</a></h3>
 <p>To execute this request, you need the <strong>Allow IAM policy configuration for environments</strong> (<code>iam-policies-management</code>) permission assigned to your token. To learn how to obtain and use it, see <a href="/docs/manage/identity-access-management/access-tokens-and-oauth-clients/oauth-clients" title="Manage authentication and user permissions using OAuth clients.">OAuth clients</a>.</p>
 <h3 id="parameters_1">Parameters<a class="headerlink" href="#parameters_1" title="Permanent link">&para;</a></h3>

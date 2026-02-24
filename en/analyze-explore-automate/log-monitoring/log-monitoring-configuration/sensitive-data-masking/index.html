@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
     
     
       
@@ -25541,27 +25541,9 @@ The hierarchy is as follows:</p>
 <li>If you select <strong>SHA-1</strong>, your data will be replaced by the 40-character hash string.</li>
 <li>Select <strong>Add matcher</strong> to create a specific match for this rule and narrow down the scope for that rule. You can include multiple matchers in one rule. For example, the masking rule can be applied to logs from a specific container, namespace, or log source.</li>
 <li>Select the matching attribute.</li>
+<li>Select <strong>Add value</strong> and, from the <strong>Values</strong> list, select the detected log data items (log files or process groups that contain log data). Multiple values can be added to the selected operator. You can have one matcher that indicates log source and matches values <strong>/var/log/syslog</strong> and <strong>Windows Application Log</strong>.</li>
+<li>Select <strong>Save changes</strong>.</li>
 </ol>
-<p>Attribute</p>
-<p>Description</p>
-<p><strong>Container name</strong></p>
-<p>Matching is based on the name of the container.</p>
-<p><strong>DT entity container group ID</strong></p>
-<p>Matching is based on the DT entity container group ID.</p>
-<p><strong>K8s container name</strong></p>
-<p>Matching is based on the name of the Kubernetes container.</p>
-<p><strong>K8s deployment name</strong></p>
-<p>Matching is based on the name of the Kubernetes deployment.</p>
-<p><strong>K8s namespace name</strong></p>
-<p>Matching is based on the name of the Kubernetes namespace.</p>
-<p><strong>Log source</strong></p>
-<p>Matching is based on a log path; wildcards are supported in form of an asterisk.</p>
-<p><strong>Process group</strong></p>
-<p>Matching is based on the process group ID.</p>
-<p><strong>Process technology</strong></p>
-<p>Matching is based on the technology name.
-7. Select <strong>Add value</strong> and, from the <strong>Values</strong> list, select the detected log data items (log files or process groups that contain log data). Multiple values can be added to the selected operator. You can have one matcher that indicates log source and matches values <strong>/var/log/syslog</strong> and <strong>Windows Application Log</strong>.
-8. Select <strong>Save changes</strong>.</p>
 <p>Defined rules can be reordered, and they are executed in the order in which they appear on the <strong>Sensitive data masking</strong> page.</p>
 <p>The <strong>Active</strong> toggle</p>
 <p>Starting with OneAgent version 1.249, you can activate/inactivate your rules by turning on/off the <strong>Active</strong> toggle. To manage your rules effectively, we recommend that you upgrade your OneAgent to version 1.249. If you have any rules set on the host with OneAgent version earlier than 249, you will not be able to inactivate them, in which case you need to remove such rules by selecting <strong>Delete</strong> on the rule level or via the REST API.</p>
@@ -26366,16 +26348,6 @@ The hierarchy is as follows:</p>
 </code></pre></div>
 <h2 id="regex-examples">Regex examples<a class="headerlink" href="#regex-examples" title="Permanent link">&para;</a></h2>
 <p>The common regex formats for sensitive data include:</p>
-<p>Sensitive data type</p>
-<p>ReGEx</p>
-<p>IPv4</p>
-<p><code>\b\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}\b</code></p>
-<p>Email address</p>
-<p><code>\b[\w\-\._]+?@[\w\-\._]+?\.\w{2,10}?\b</code></p>
-<p>Credit card number</p>
-<p><code>\b[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{4}\b</code></p>
-<p>Phone number</p>
-<p><code>\+?[0-9]{3}-?[0-9]{6,12}\b</code></p>
 <h3 id="unsupported-regular-expressions">Unsupported regular expressions<a class="headerlink" href="#unsupported-regular-expressions" title="Permanent link">&para;</a></h3>
 <p>Data masking occurs within the entire expression or a capturing group. An expression has to match the regular expression engine syntax, and it cannot:</p>
 <ul>

@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
     
     
       
@@ -25851,130 +25851,14 @@ By omitting attributes containing personal data, you can meet your organization'
 <p>OneAgent version 1.259+</p>
 <p>To avoid possible span duplicates for areas covered by OpenTelemetry and OneAgent, OneAgent skips spans from the following automatic instrumentation Java libraries if OneAgent is configured to instrument your Java application and ingest OpenTelemetry spans.</p>
 <p>Such spans are skipped only by OneAgent. Exports to third parties (for example, other backends or the Collector) remain unaffected.</p>
-<p>io.opentelemetry.akka-http-10.0</p>
-<p>io.opentelemetry.apache-dbcp-2.0</p>
-<p>io.opentelemetry.apache-httpasyncclient-4.1</p>
-<p>io.opentelemetry.apache-httpclient-2.0</p>
-<p>io.opentelemetry.apache-httpclient-4.0</p>
-<p>io.opentelemetry.apache-httpclient-4.3</p>
-<p>io.opentelemetry.apache-httpclient-5.0</p>
-<p>io.opentelemetry.async-http-client-1.9</p>
-<p>io.opentelemetry.async-http-client-2.0</p>
-<p>io.opentelemetry.c3p0-0.9</p>
-<p>io.opentelemetry.cassandra-3.0</p>
-<p>io.opentelemetry.cassandra-4.0</p>
-<p>io.opentelemetry.cassandra-4.4</p>
-<p>io.opentelemetry.cxf-jaxrs-3.2</p>
-<p>io.opentelemetry.google-http-client-1.19</p>
-<p>io.opentelemetry.grpc-1.6</p>
-<p>io.opentelemetry.http-url-connection</p>
-<p>io.opentelemetry.java-http-client</p>
-<p>io.opentelemetry.jaxrs-1.0</p>
-<p>io.opentelemetry.jaxrs-1.0-common</p>
-<p>io.opentelemetry.jaxrs-2.0-annotations</p>
-<p>io.opentelemetry.jaxrs-2.0-common</p>
-<p>io.opentelemetry.jaxrs-2.0-cxf-3.2</p>
-<p>io.opentelemetry.jaxrs-2.0-jersey-2.0</p>
-<p>io.opentelemetry.jaxrs-2.0-resteasy-3.0</p>
-<p>io.opentelemetry.jaxrs-2.0-resteasy-3.1</p>
-<p>io.opentelemetry.jaxrs-3.0-annotations</p>
-<p>io.opentelemetry.jaxrs-3.0-jersey-3.0</p>
-<p>io.opentelemetry.jaxrs-3.0-resteasy-6.0</p>
-<p>io.opentelemetry.jaxrs-annotations-2.0</p>
-<p>io.opentelemetry.jaxrs-annotations-3.0</p>
-<p>io.opentelemetry.jaxrs-client-1.1</p>
-<p>io.opentelemetry.jaxrs-client-2.0</p>
-<p>io.opentelemetry.jaxrs-client-2.0-resteasy-3.0</p>
-<p>io.opentelemetry.jaxws-2.0</p>
-<p>io.opentelemetry.jaxws-2.0-axis2-1.6</p>
-<p>io.opentelemetry.jaxws-2.0-cxf-3.0</p>
-<p>io.opentelemetry.jaxws-2.0-metro-2.2</p>
-<p>io.opentelemetry.jaxws-cxf-3.0</p>
-<p>io.opentelemetry.jaxws-common</p>
-<p>io.opentelemetry.jaxws-jws-api-1.1</p>
-<p>io.opentelemetry.jdbc</p>
-<p>io.opentelemetry.jedis-1.4</p>
-<p>io.opentelemetry.jedis-3.0</p>
-<p>io.opentelemetry.jedis-4.0</p>
-<p>io.opentelemetry.jersey-2.0</p>
-<p>io.opentelemetry.jetty-11.0</p>
-<p>io.opentelemetry.jetty-8.0</p>
-<p>io.opentelemetry.jetty-httpclient-9.2</p>
-<p>io.opentelemetry.jms-1.1</p>
-<p>io.opentelemetry.jms-3.0</p>
-<p>io.opentelemetry.jsp-2.3</p>
-<p>io.opentelemetry.kafka-clients</p>
-<p>io.opentelemetry.kafka-clients-0.11</p>
-<p>io.opentelemetry.kafka-clients-2.6</p>
-<p>io.opentelemetry.kafka-streams-0.11</p>
-<p>io.opentelemetry.lettuce-5.1</p>
-<p>io.opentelemetry.liberty</p>
-<p>io.opentelemetry.liberty-20.0</p>
-<p>io.opentelemetry.mongo-3.1</p>
-<p>io.opentelemetry.netty-3.8</p>
-<p>io.opentelemetry.netty-4.0</p>
-<p>io.opentelemetry.netty-4.1</p>
-<p>io.opentelemetry.okhttp-2.2</p>
-<p>io.opentelemetry.okhttp-3.0</p>
-<p>io.opentelemetry.orcale-ucp-11.2 (<a href="https://github.com/open-telemetry/opentelemetry-java-instrumentation/blob/4fd52c5a7c73e8186a575cd08a20c55ccb8a0419/instrumentation/oracle-ucp-11.2/library/src/main/java/io/opentelemetry/instrumentation/oracleucp/v11_2/ConnectionPoolMetrics.java#L18">sic!ï»¿</a>)</p>
-<p>io.opentelemetry.rabbitmq-2.7</p>
-<p>io.opentelemetry.reactor-kafka-1.0</p>
-<p>io.opentelemetry.reactor-netty-1.0</p>
-<p>io.opentelemetry.resteasy-3.0</p>
-<p>io.opentelemetry.resteasy-3.1</p>
-<p>io.opentelemetry.resteasy-6.0</p>
-<p>io.opentelemetry.rmi</p>
-<p>io.opentelemetry.servlet-2.2</p>
-<p>io.opentelemetry.servlet-3.0</p>
-<p>io.opentelemetry.servlet-5.0</p>
-<p>io.opentelemetry.servlet-javax-common</p>
-<p>io.opentelemetry.spring-jms-2.0</p>
-<p>io.opentelemetry.spring-jms-6.0</p>
-<p>io.opentelemetry.spring-kafka-2.7</p>
-<p>io.opentelemetry.spring-rabbit-1.0</p>
-<p>io.opentelemetry.spring-rmi-4.0</p>
-<p>io.opentelemetry.spring-webflux-5.0</p>
-<p>io.opentelemetry.spring-webflux-5.3</p>
-<p>io.opentelemetry.spring-ws-2.0</p>
-<p>io.opentelemetry.tomcat-10.0</p>
-<p>io.opentelemetry.tomcat-7.0</p>
-<p>io.opentelemetry.tomcat-jdbc</p>
-<p>io.opentelemetry.undertow-1.4</p>
-<p>io.opentelemetry.vibur-dbcp-11.0</p>
 <h2 id="prevention-of-span-duplication-in-nodejs">Prevention of span duplication in Node.js<a class="headerlink" href="#prevention-of-span-duplication-in-nodejs" title="Permanent link">&para;</a></h2>
 <p>OneAgent version 1.331+</p>
 <p>To avoid possible span duplicates for areas covered by OpenTelemetry and OneAgent, OneAgent skips spans from the following automatic instrumentation Node.js libraries if OneAgent is configured to instrument your Node.js application and ingest OpenTelemetry spans.</p>
 <p>Such spans are skipped only by OneAgent. Exports to third parties (for example, other backends or the Collector) remain unaffected.</p>
-<p>@opentelemetry/instrumentation-http</p>
-<p>@opentelemetry/instrumentation-undici</p>
-<p>@opentelemetry/instrumentation-aws-sdk</p>
-<p>@opentelemetry/instrumentation-aws-lambda</p>
-<p>@opentelemetry/instrumentation-connect</p>
-<p>@opentelemetry/instrumentation-graphql</p>
-<p>@opentelemetry/instrumentation-grpc</p>
-<p>@opentelemetry/instrumentation-ioredis</p>
-<p>@opentelemetry/instrumentation-redis</p>
-<p>@opentelemetry/instrumentation-kafkajs</p>
-<p>@opentelemetry/instrumentation-memcached</p>
-<p>@opentelemetry/instrumentation-mongodb</p>
-<p>@opentelemetry/instrumentation-tedious</p>
-<p>@opentelemetry/instrumentation-mysql</p>
-<p>@opentelemetry/instrumentation-mysql2</p>
-<p>@opentelemetry/instrumentation-oracledb</p>
-<p>@opentelemetry/instrumentation-pg</p>
-<p>@opentelemetry/instrumentation-amqplib</p>
 <h2 id="prevention-of-span-duplication-in-php">Prevention of span duplication in PHP<a class="headerlink" href="#prevention-of-span-duplication-in-php" title="Permanent link">&para;</a></h2>
 <p>OneAgent version 1.313+</p>
 <p>To avoid possible span duplicates for areas covered by OpenTelemetry and OneAgent, OneAgent skips spans from the following automatic instrumentation PHP libraries if OneAgent is configured to instrument your PHP application and ingest OpenTelemetry spans.</p>
 <p>Such spans are skipped only by OneAgent. Exports to third parties (for example, other backends or the Collector) remain unaffected.</p>
-<p>io.opentelemetry.contrib.php.curl</p>
-<p>io.opentelemetry.contrib.php.laravel</p>
-<p>io.opentelemetry.contrib.php.mongodb</p>
-<p>io.opentelemetry.contrib.php.mysqli</p>
-<p>io.opentelemetry.contrib.php.pdo</p>
-<p>io.opentelemetry.contrib.php.slim</p>
-<p>io.opentelemetry.contrib.php.symfony</p>
-<p>io.opentelemetry.contrib.php.wordpress</p>
 
 
 

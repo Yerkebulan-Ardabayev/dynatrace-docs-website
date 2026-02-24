@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../../../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
     
     
       
@@ -25499,23 +25499,6 @@
 <h2 id="rum-status">RUM status<a class="headerlink" href="#rum-status" title="Permanent link">&para;</a></h2>
 <p>In the <strong>RUM status</strong> section, you can see if RUM is activated for your application, related process groups, and hosts. Moreover, this section explains why Dynatrace doesn't capture RUM data for certain user sessions.</p>
 <p>The following configuration-related RUM issues and warnings might be shown in this section:</p>
-<p>Issue or warning</p>
-<p>Explanation</p>
-<p><img alt="Not applicable" src="https://dt-cdn.net/images/icon-red-cross-1f1142a5dc.svg" title="Not applicable" /> RUM disabled for application</p>
-<p>If RUM is disabled for your application, follow the provided link to enable RUM.</p>
-<p><img alt="Not applicable" src="https://dt-cdn.net/images/icon-red-cross-1f1142a5dc.svg" title="Not applicable" /> RUM disabled for process groups</p>
-<p>If RUM is disabled for process groups related to your application, follow the provided links to configure these process groups.</p>
-<p><img alt="Not applicable" src="https://dt-cdn.net/images/icon-red-cross-1f1142a5dc.svg" title="Not applicable" /> RUM disabled for hosts</p>
-<p>If RUM is disabled for hosts related to your application, follow the provided links to configure these hosts.</p>
-<p><img alt="Not applicable" src="https://dt-cdn.net/images/icon-red-cross-1f1142a5dc.svg" title="Not applicable" /> Not enough DEM units</p>
-<p>If you've run out of <a href="/docs/license/monitoring-consumption-classic/digital-experience-monitoring-units" title="Understand how Dynatrace Digital Experience Monitoring consumption is calculated based on DEM units.">DEM units</a>, RUM is disabled and Dynatrace receives no data from your application.</p>
-<p>Increase the DEM unit quota or enable <a href="/docs/license/monitoring-consumption-classic/digital-experience-monitoring-units#dem-overages" title="Understand how Dynatrace Digital Experience Monitoring consumption is calculated based on DEM units.">DEM overages</a>.</p>
-<p><img alt="Information" src="https://dt-cdn.net/images/information-turquoise-500-5531844321.svg" title="Information" /> Opt-in mode enabled</p>
-<p>When <a href="/docs/observe/digital-experience/web-applications/additional-configuration/configure-real-user-monitoring-according-to-gdpr#user-opt-in-mode-gdpr" title="Learn about the privacy settings that Dynatrace provides to ensure that your web applications comply with the data-privacy regulations of your region.">Data-collection and opt-in mode</a> is enabled, Dynatrace doesn't capture any data until a special API method is called for specific user sessions.</p>
-<p>If you want Dynatrace to capture data for all user sessions, disable this mode.</p>
-<p><img alt="Information" src="https://dt-cdn.net/images/information-turquoise-500-5531844321.svg" title="Information" /> Do Not Track mode enabled</p>
-<p>When the <a href="/docs/observe/digital-experience/web-applications/additional-configuration/configure-real-user-monitoring-according-to-gdpr#do-not-track-gdpr" title="Learn about the privacy settings that Dynatrace provides to ensure that your web applications comply with the data-privacy regulations of your region.">Comply with "Do Not Track" browser settings</a> mode is enabled with the <strong>Turn Real User Monitoring off for "Do Not Track"-enabled browsers</strong> option, Dynatrace doesn't capture any data when a user has the "Do Not Track" setting turned on in their browser.</p>
-<p>If you want to ignore the "Do Not Track" browser setting and capture RUM data from all browsers, disable the Do Not Track mode. Alternatively, you can select the <strong>Capture anonymous user sessions for "Do Not Track"-enabled browsers</strong> option to send anonymized data from such browsers.</p>
 <h2 id="rum-javascript-injection-diagnostics">RUM JavaScript injection diagnostics<a class="headerlink" href="#rum-javascript-injection-diagnostics" title="Permanent link">&para;</a></h2>
 <p>Examine this section to get information on the RUM JavaScript injection status. You can check the number of injection attempts, learn the ratio of failed to successful injections, and view the injection failure reasons.</p>
 <p>Select <strong>Run injection diagnostics</strong> to check the RUM JavaScript injection status.</p>

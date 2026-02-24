@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
     
     
       
@@ -25483,21 +25483,13 @@
 </ul>
 <p>Switch to Enhanced endpoints for SDv1</p>
 <p>Setting up key requests is not available for environments created in Dynatrace version 1.330+.</p>
-<p>Instead of defining key requests as described on this page, we strongly recommend enabling the <a href="/docs/observe/application-observability/services/enhanced-endpoints-sdv1" title="Utilize the Enhanced endpoints for SDv1 feature to gain deeper insights into your application's performance and improve your ability to monitor and troubleshoot service interactions."><strong>Enhanced endpoints for SDv1</strong> feature</a> that allows showing all endpoints in <a href="/docs/observe/application-observability/services/services-app" title="Maintain centralized control over service health, performance, and resources with the Services app."><img alt="Services" src="https://dt-cdn.net/hub/logos/services.png" title="Services" /> <strong>Services</strong></a>, not just key requests.</p>
+<p>Instead of defining key requests as described on this page, we strongly recommend enabling the <a href="/docs/observe/application-observability/services/service-detection/service-detection-v1/enhanced-endpoints-sdv1" title="Utilize the Enhanced endpoints for SDv1 feature to gain deeper insights into your application's performance and improve your ability to monitor and troubleshoot service interactions."><strong>Enhanced endpoints for SDv1</strong> feature</a> that allows showing all endpoints in <a href="/docs/observe/application-observability/services/services-app" title="Maintain centralized control over service health, performance, and resources with the Services app."><img alt="Services" src="https://dt-cdn.net/hub/logos/services.png" title="Services" /> <strong>Services</strong></a>, not just key requests.</p>
 <p><em>Key requests</em> are requests that need special attention, either because they're a critical measure of the success of your business (for example, a login request or a shopping-cart checkout request) or because they provide vital technical functionality that your application relies on.</p>
 <ul>
 <li>Key requests feature <a href="/docs/analyze-explore-automate/metrics-classic/built-in-metrics#key-requests" title="Explore the complete list of built-in Dynatrace metrics.">dedicated metrics</a> that you can manage via the web UI or <a href="#manage-api">API</a>. You can create dedicated dashboard tiles for charting key requests, with direct access from your dashboard, and analyze key request long-term metric history in <a href="/docs/observe/application-observability/services-classic#request-charting" title="Learn about Dynatrace's classic service monitoring">request charts</a>.</li>
 <li>Alerting is always enabled for key requests, even when they contribute less than 1% of throughput. They also provide custom thresholds.</li>
 <li>Data retention periods of key requests are maintained as follows:</li>
 </ul>
-<p>Data type</p>
-<p>Retention period</p>
-<p><a href="/docs/manage/data-privacy-and-security/data-privacy/data-retention-periods#purepath" title="Check retention times for various data types.">Detailed code-level data</a></p>
-<p>10 days</p>
-<p><a href="/docs/manage/data-privacy-and-security/data-privacy/data-retention-periods#request-attributes" title="Check retention times for various data types.">Aggregated code-level data</a></p>
-<p>35 days</p>
-<p><a href="/docs/manage/data-privacy-and-security/data-privacy/data-retention-periods#metrics-classic" title="Check retention times for various data types.">Long-term metric history</a></p>
-<p>5 years</p>
 <p>Key requests are highlighted in <strong>Key requests/endpoints</strong> of each service overview page. This visibility is particularly valuable for low-volume, high-importance requests that would otherwise appear at the bottom of <strong>Top requests</strong>.</p>
 <p>The number of key requests is limited:</p>
 <ul>

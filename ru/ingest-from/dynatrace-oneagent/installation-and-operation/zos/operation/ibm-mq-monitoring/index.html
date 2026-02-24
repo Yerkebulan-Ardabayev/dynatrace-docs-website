@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../../../../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
     
     
       
@@ -25490,18 +25490,6 @@
 <p>Dynatrace can automatically create a continuous <a href="/docs/observe/application-observability/services-classic/service-flow" title="Find out how Dynatrace can help you trace the sequence of service calls that are triggered by each service request in your environment.">service flow</a> for IBM MQ when the producer and consumer services use the same queue or topic name. If the producer and consumer services refer to different queue or topic names, IBM MQ configuration might be required to create a continuous service flow.</p>
 <p>Without IBM MQ configuration, Dynatrace can still trace all messages, but the service flow will be broken.</p>
 <p>The table lists the available IBM MQ configuration items for queues and topics.</p>
-<p>Item</p>
-<p>Description</p>
-<p>Your action</p>
-<p>Queue manager</p>
-<p>Queue manager with its queues</p>
-<p>Define your queue managers, including alias queues, remote queues, and cluster queues within a single configuration item.</p>
-<p>z/OS Queue sharing group</p>
-<p>Group of queue managers that access the same shared queues</p>
-<p>Specify which queue managers and shared queues belong to a queue-sharing group within a single configuration item.</p>
-<p>z/OS IMS bridge</p>
-<p>The IBM MQ component that allows direct access to the IMS system</p>
-<p>Specify which queue managers and queues belong to an IMS bridge within a single configuration item.</p>
 <h2 id="manage-ibm-mq-configuration">Manage IBM MQ configuration<a class="headerlink" href="#manage-ibm-mq-configuration" title="Permanent link">&para;</a></h2>
 <p>You can manage an IBM MQ configuration automatically by installing an <a href="/docs/ingest-from/extensions" title="Learn how to create and manage Dynatrace Extensions.">IBM MQ extension</a> and activating <strong>Retrieve topology for improved transaction tracing</strong> to retrieve the IBM MQ configuration of your environment and send it to the Settings API. This can also be done manually via the web UI or the Settings API.</p>
 <h3 id="manual-configuration-via-web-ui">Manual configuration via web UI<a class="headerlink" href="#manual-configuration-via-web-ui" title="Permanent link">&para;</a></h3>

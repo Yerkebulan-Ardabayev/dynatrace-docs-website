@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../../../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
     
     
       
@@ -25539,37 +25539,6 @@
 </ol>
 <h2 id="attributes-selected-in-windows-event-logs">Attributes selected in Windows event logs<a class="headerlink" href="#attributes-selected-in-windows-event-logs" title="Permanent link">&para;</a></h2>
 <p>For Windows event logs, Log Monitoring detects the following fields and sends them as custom attributes:</p>
-<p>Semantic attribute name</p>
-<p>Configuration matcher name</p>
-<p>Event property</p>
-<p>Description</p>
-<p><code>winlog.keywords</code></p>
-<p>Windows log record keywords</p>
-<p><code>Event.RenderingInfo.Keywords</code></p>
-<p>A bitmask of the keywords defined in the event. Keywords are used to classify types of events (for example, events associated with reading data).</p>
-<p><code>winlog.username</code></p>
-<p>Windows log record user name</p>
-<p><code>Event.System.Security.UserID</code></p>
-<p>The user name of the event provider that logged the event.</p>
-<p><code>winlog.level</code></p>
-<p><code>Event.RenderingInfo.Level</code></p>
-<p>The severity level defined in the event. This attribute is not available in the configuration matchers, but you can use the <strong>Log record level</strong> instead.</p>
-<p><code>winlog.eventid</code></p>
-<p>Windows log record event ID</p>
-<p><code>Event.System.EventID</code></p>
-<p>The identifier that the provider used to identify the event.</p>
-<p><code>winlog.provider</code></p>
-<p>Windows log record source</p>
-<p><code>Event.System.Provider.Name</code></p>
-<p>Identifies the provider that logged the event.</p>
-<p><code>winlog.task</code></p>
-<p>Windows log record task category</p>
-<p><code>Event.System.Task</code></p>
-<p>The task defined in the event. Task and opcode are typically used to identify the location in the application from where the event was logged.</p>
-<p><code>winlog.opcode</code></p>
-<p>Windows log record operational code</p>
-<p><code>Event.RenderingInfo.Opcode</code></p>
-<p>The opcode defined in the event. Task and opcode are typcially used to identify the location in the application from where the event was logged.</p>
 <h2 id="support-for-structured-data">Support for structured data<a class="headerlink" href="#support-for-structured-data" title="Permanent link">&para;</a></h2>
 <p>This feature enables the collection of structured data from Windows Event Logs in the <strong>User Data</strong> or <strong>Event Data</strong> branches (depending on the availability), along with their sub-branches. The collected data is transmitted along with the record content in the form of attributes.</p>
 <p>To enable this feature, go to <strong>Settings</strong> &gt; <strong>Log Monitoring</strong> &gt; <strong>Log module feature flags</strong>, and enable the <strong>Support for structured data in Windows Event Logs</strong> feature flag.</p>

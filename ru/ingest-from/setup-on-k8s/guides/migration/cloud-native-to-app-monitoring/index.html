@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../../../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
     
     
       
@@ -25641,42 +25641,6 @@
 <p>Restart all application workloads promptly to trigger OneAgent injection and enable deep monitoring minimizing monitoring outages.</p>
 <h2 id="changes-in-kubernetes-resources">Changes in Kubernetes resources<a class="headerlink" href="#changes-in-kubernetes-resources" title="Permanent link">&para;</a></h2>
 <p>The migration impacts several Kubernetes resources, altering their functions or introducing new components to support the application monitoring monitoring mode. Key changes include:</p>
-<p>Component</p>
-<p>cloud-native full-stack</p>
-<p>Application monitoring</p>
-<p>Dynatrace OneAgent</p>
-<ul>
-<li>Deployed as a DaemonSet</li>
-<li>
-<p>Collect host metrics on nodes</p>
-</li>
-<li>
-<p>Not present</p>
-</li>
-</ul>
-<p>Dynatrace Webhook Server</p>
-<ul>
-<li>Validates DynaKube definitions</li>
-<li>
-<p>Inject code modules into application pods by modifying pod definitions</p>
-</li>
-<li>
-<p>Validates DynaKube definitions</p>
-</li>
-<li>Inject code modules into application pods by modifying pod definitions</li>
-</ul>
-<p><a href="/docs/ingest-from/setup-on-k8s/how-it-works#csi-driver" title="In-depth description on how the deployment on Kubernetes works.">Dynatrace Operator CSI driver</a></p>
-<p>Required</p>
-<ul>
-<li>Deployed as a DaemonSet</li>
-<li>Provides volume storage for OneAgents</li>
-<li>Manages and provides code modules used for pod injection and optimizes storage consumption</li>
-</ul>
-<p>Optional</p>
-<ul>
-<li>Deployed as a DaemonSet</li>
-<li>Manages and provides code modules used for pod injection and optimizes storage consumption</li>
-</ul>
 
 
 

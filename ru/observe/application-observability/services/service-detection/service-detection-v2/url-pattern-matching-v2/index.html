@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../../../../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
     
     
       
@@ -25522,12 +25522,6 @@
 <li>Copied as-is to the output.</li>
 <li>Use for fixed path parts that never change.</li>
 </ul>
-<p>URL pattern</p>
-<p>URL path</p>
-<p>Resulting endpoint</p>
-<p><code>/api/orders</code></p>
-<p><code>/api/orders</code></p>
-<p><code>/api/orders</code></p>
 <h3 id="placeholder-placeholder-name">Placeholder <code>{placeholder-name}</code><a class="headerlink" href="#placeholder-placeholder-name" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Represented by a placeholder name in curly braces, for example, <code>{id}</code> or <code>{date}</code>.</li>
@@ -25535,14 +25529,6 @@
 <li>Replaced with a placeholder name in curly braces.</li>
 <li>Use to hide dynamic path values, for example, IDs, UUIDs, or timestamps.</li>
 </ul>
-<p>URL pattern</p>
-<p>URL path</p>
-<p>Resulting endpoint</p>
-<p><code>/api/orders/{id}</code></p>
-<p><code>/api/orders/1234</code></p>
-<p><code>/api/orders/abcd</code></p>
-<p><code>/api/orders/{id}</code></p>
-<p><code>/api/orders/{id}</code></p>
 <h3 id="variable-segments-_">Variable segments <code>_</code><a class="headerlink" href="#variable-segments-_" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Represented by an underscore <code>_</code>.</li>
@@ -25550,14 +25536,6 @@
 <li>Replaced with the original segment value.</li>
 <li>Use when the segment should remain visible, for example, for versioned APIs where the version should remain visible.</li>
 </ul>
-<p>URL pattern</p>
-<p>URL path</p>
-<p>Resulting endpoint</p>
-<p><code>/api/_/orders</code></p>
-<p><code>/api/v1/orders</code></p>
-<p><code>/api/v2/orders</code></p>
-<p><code>/api/v1/orders</code></p>
-<p><code>/api/v2/orders</code></p>
 <h3 id="catch-all">Catch-all <code>*</code><a class="headerlink" href="#catch-all" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Represented by an asterisk <code>*</code>.</li>
@@ -25565,14 +25543,6 @@
 <li>Replaced with <code>*</code>.</li>
 <li>Use when matching any remaining path segments.</li>
 </ul>
-<p>URL pattern</p>
-<p>URL path</p>
-<p>Resulting endpoint</p>
-<p><code>/internal/*</code></p>
-<p><code>/internal/service</code></p>
-<p><code>/internal/service/operation/extra</code></p>
-<p><code>/internal/*</code></p>
-<p><code>/internal/*</code></p>
 <h2 id="configure-url-pattern-matching">Configure URL pattern matching<a class="headerlink" href="#configure-url-pattern-matching" title="Permanent link">&para;</a></h2>
 <p>The sections below describe how to create and manage URL pattern matching rules.</p>
 <h3 id="create-a-url-pattern-matching-rule">Create a URL pattern matching rule<a class="headerlink" href="#create-a-url-pattern-matching-rule" title="Permanent link">&para;</a></h3>
@@ -25626,32 +25596,6 @@
 <li>Internal APIs with deep paths</li>
 <li>Mixed depth paths</li>
 </ul>
-<p>Use case</p>
-<p>URL pattern</p>
-<p>URL path</p>
-<p>Resulting endpoint</p>
-<p>Nginx reverse proxy routing</p>
-<p><code>/api/_/_/{id}</code></p>
-<p><code>/api/v1/users/john</code></p>
-<p><code>/api/v2/users/jack</code></p>
-<p><code>/api/v1/users/{id}</code></p>
-<p><code>/api/v2/users/{id}</code></p>
-<p>API versioning patterns</p>
-<p><code>/api/_/_/{id}</code></p>
-<p><code>/api/v1/orders/123456789</code></p>
-<p><code>/api/v2/orders/987654321</code></p>
-<p><code>/api/v1/orders/{id}</code></p>
-<p><code>/api/v2/orders/{id}</code></p>
-<p>Mixed depth paths</p>
-<p><code>/blog/_/_/*</code></p>
-<p><code>/blog/2024/11/my-post.md</code></p>
-<p><code>/blog/2024/12/my-holiday.md</code></p>
-<p><code>/blog/2026/01/15/my-thoughts.md</code></p>
-<p><code>/blog/2026/02/05/my-memories.md</code></p>
-<p><code>/blog/2024/11/*</code></p>
-<p><code>/blog/2024/12/*</code></p>
-<p><code>/blog/2026/01/*</code></p>
-<p><code>/blog/2026/02/*</code></p>
 <h2 id="related-topics">Related topics<a class="headerlink" href="#related-topics" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="/docs/observe/application-observability/services/service-detection/service-detection-v2/endpoint-detection-v2" title="Find out how to detect endpoints that are entry points into your service.">Customize endpoint detection in Service Detection v2</a></li>

@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
     
     
       
@@ -25484,97 +25484,6 @@
 <p>Starting December 8, 2020, Apple requires you to provide information about your app's privacy practices, including the practices of third-party partners like Dynatrace.</p>
 <p>On this page, you'll find information about what kind of data <a href="/docs/observe/digital-experience/mobile-applications/instrument-ios-app" title="Instrument mobile application monitoring for iOS apps, customize the auto-instrumentation, and capture additional data via manual instrumentation.">Dynatrace OneAgent for iOS</a> captures by default. The data categories and types reflect the Apple questionnaire, but note that the answers reflect the out-of-the-box, default state. For a detailed description of individual data types, see <a href="https://developer.apple.com/app-store/app-privacy-details/">App privacy details on the App Storeï»¿</a> on the Apple developer portal.</p>
 <p>OneAgent may capture additional data through your <a href="/docs/observe/digital-experience/mobile-applications/instrument-ios-app/customization/oneagent-sdk-for-ios" title="Enrich mobile user experience monitoring using OneAgent SDK for iOS.">manual instrumentation</a>. If you instrument your app to capture additional data, make sure you reflect it in your app privacy questionnaire.</p>
-<p>Category</p>
-<p>Data type</p>
-<p>Captured by default?</p>
-<p>Notes</p>
-<p>Contact Info</p>
-<p><img alt="Not applicable" src="https://dt-cdn.net/images/icon-red-cross-1f1142a5dc.svg" title="Not applicable" /> No</p>
-<p>Health &amp; Fitness</p>
-<p><img alt="Not applicable" src="https://dt-cdn.net/images/icon-red-cross-1f1142a5dc.svg" title="Not applicable" /> No</p>
-<p>Financial Info</p>
-<p><img alt="Not applicable" src="https://dt-cdn.net/images/icon-red-cross-1f1142a5dc.svg" title="Not applicable" /> No</p>
-<p>Location</p>
-<p>Precise Location</p>
-<p><img alt="Not applicable" src="https://dt-cdn.net/images/icon-red-cross-1f1142a5dc.svg" title="Not applicable" /> No</p>
-<p>By default, <a href="/docs/observe/digital-experience/mobile-applications/instrument-ios-app/instrumentation/ios-auto-instrumentation-features#location" title="Explore the list of features that are available after you instrument your application with OneAgent.">location monitoring</a> is disabled.</p>
-<p>If you've set the <a href="/docs/observe/digital-experience/mobile-applications/instrument-ios-app/customization/ios-configuration-keys#privacy-and-security" title="With configuration keys, you can fine-tune the auto-instrumentation of your iOS apps."><code>DTXInstrumentGPSLocation</code> configuration key</a> to <code>true</code>, select this data type.</p>
-<p>Precise Location</p>
-<p>Coarse Location</p>
-<p><img alt="Not applicable" src="https://dt-cdn.net/images/icon-red-cross-1f1142a5dc.svg" title="Not applicable" /> No</p>
-<p>Sensitive Info</p>
-<p><img alt="Not applicable" src="https://dt-cdn.net/images/icon-red-cross-1f1142a5dc.svg" title="Not applicable" /> No</p>
-<p>Contacts</p>
-<p><img alt="Not applicable" src="https://dt-cdn.net/images/icon-red-cross-1f1142a5dc.svg" title="Not applicable" /> No</p>
-<p>User Content</p>
-<p><img alt="Not applicable" src="https://dt-cdn.net/images/icon-red-cross-1f1142a5dc.svg" title="Not applicable" /> No</p>
-<p>Browsing History</p>
-<p><img alt="Not applicable" src="https://dt-cdn.net/images/icon-red-cross-1f1142a5dc.svg" title="Not applicable" /> No</p>
-<p>Search History</p>
-<p><img alt="Not applicable" src="https://dt-cdn.net/images/icon-red-cross-1f1142a5dc.svg" title="Not applicable" /> No</p>
-<p>Identifiers</p>
-<p><img alt="Not applicable" src="https://dt-cdn.net/images/icon-red-cross-1f1142a5dc.svg" title="Not applicable" /> No</p>
-<p>Purchases</p>
-<p><img alt="Not applicable" src="https://dt-cdn.net/images/icon-red-cross-1f1142a5dc.svg" title="Not applicable" /> No</p>
-<p>Usage Data</p>
-<p>Product Interaction</p>
-<p><img alt="Applicable" src="https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg" title="Applicable" /> Yes</p>
-<p>If you use auto-instrumentation for iOS, taps and clicks the users perform in your mobile app are reported as <a href="/docs/observe/digital-experience/mobile-applications/instrument-ios-app/instrumentation/ios-auto-instrumentation-features#user-actions" title="Explore the list of features that are available after you instrument your application with OneAgent.">user actions</a>. Also, Dynatrace captures <a href="/docs/observe/digital-experience/mobile-applications/instrument-ios-app/instrumentation/ios-auto-instrumentation-features#rage-taps" title="Explore the list of features that are available after you instrument your application with OneAgent.">rage taps</a>. You can configure the capturing of product interaction data via the <a href="/docs/observe/digital-experience/mobile-applications/instrument-ios-app/customization/ios-configuration-keys#user-actions" title="With configuration keys, you can fine-tune the auto-instrumentation of your iOS apps.">configuration keys related to user actions</a>.</p>
-<p>If you've set the <a href="/docs/observe/digital-experience/mobile-applications/instrument-ios-app/customization/ios-configuration-keys#user-actions" title="With configuration keys, you can fine-tune the auto-instrumentation of your iOS apps."><code>DTXInstrumentAutoUserAction</code></a> and <a href="/docs/observe/digital-experience/mobile-applications/instrument-ios-app/customization/ios-configuration-keys#user-actions" title="With configuration keys, you can fine-tune the auto-instrumentation of your iOS apps."><code>DTXDetectRageTaps</code></a> configuration keys to <code>false</code>, don't select this data type.</p>
-<p>Usage Data</p>
-<p>Advertising Data</p>
-<p><img alt="Not applicable" src="https://dt-cdn.net/images/icon-red-cross-1f1142a5dc.svg" title="Not applicable" /> No</p>
-<p>Usage Data</p>
-<p>Other Usage Data</p>
-<p><img alt="Not applicable" src="https://dt-cdn.net/images/icon-red-cross-1f1142a5dc.svg" title="Not applicable" /> No</p>
-<p>Diagnostics</p>
-<p>Crash Data</p>
-<p><img alt="Applicable" src="https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg" title="Applicable" /> Yes</p>
-<p>By default, <a href="/docs/observe/digital-experience/mobile-applications/instrument-ios-app/instrumentation/ios-auto-instrumentation-features#crashes" title="Explore the list of features that are available after you instrument your application with OneAgent.">crash reposting</a> is enabled. If you use <a href="/docs/observe/digital-experience/session-replay/session-replay-ios" title="Prerequisites and the procedure for enabling Session Replay for your iOS apps.">Session Replay</a>, OneAgent also captures masked screenshots and reports several screenshots captured before the crash.</p>
-<p>If you've set the <a href="/docs/observe/digital-experience/mobile-applications/instrument-ios-app/customization/ios-configuration-keys#privacy-and-security" title="With configuration keys, you can fine-tune the auto-instrumentation of your iOS apps."><code>DTXCrashReportingEnabled</code> configuration key</a> to <code>false</code> and disabled Session Replay, don't select this data type.</p>
-<p>Diagnostics</p>
-<p>Performance Data</p>
-<p><img alt="Applicable" src="https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg" title="Applicable" /> Yes</p>
-<p>By default, monitoring of <a href="/docs/observe/digital-experience/mobile-applications/instrument-ios-app/instrumentation/ios-auto-instrumentation-features#lifecycle" title="Explore the list of features that are available after you instrument your application with OneAgent.">lifecycle events</a>, <a href="/docs/observe/digital-experience/mobile-applications/instrument-ios-app/instrumentation/ios-auto-instrumentation-features#web-requests" title="Explore the list of features that are available after you instrument your application with OneAgent.">web requests</a>, and <a href="/docs/observe/digital-experience/mobile-applications/instrument-ios-app/instrumentation/ios-auto-instrumentation-features#user-actions" title="Explore the list of features that are available after you instrument your application with OneAgent.">user actions</a> is enabled. You can configure the capturing of performance data data via the configuration keys related to <a href="/docs/observe/digital-experience/mobile-applications/instrument-ios-app/customization/ios-configuration-keys#user-actions" title="With configuration keys, you can fine-tune the auto-instrumentation of your iOS apps.">user actions</a>, <a href="/docs/observe/digital-experience/mobile-applications/instrument-ios-app/customization/ios-configuration-keys#web-requests" title="With configuration keys, you can fine-tune the auto-instrumentation of your iOS apps.">web requests</a>, and
-<a href="/docs/observe/digital-experience/mobile-applications/instrument-ios-app/customization/ios-configuration-keys#lifecycle-monitoring" title="With configuration keys, you can fine-tune the auto-instrumentation of your iOS apps.">lifecycle monitoring</a>.</p>
-<p>If you've set all of the following <a href="/docs/observe/digital-experience/mobile-applications/instrument-ios-app/customization/ios-configuration-keys" title="With configuration keys, you can fine-tune the auto-instrumentation of your iOS apps.">configuration keys</a> to <code>false</code>, don't select this data type.</p>
-<ul>
-<li><code>DTXInstrumentLifecycleMonitoring</code></li>
-<li><code>DTXInstrumentWebRequestTiming</code></li>
-<li><code>DTXInstrumentWebViewTiming</code></li>
-<li><code>DTXInstrumentAutoUserAction</code></li>
-</ul>
-<p>Diagnostics</p>
-<p>Other Diagnostic Data</p>
-<p><img alt="Applicable" src="https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg" title="Applicable" /> Yes</p>
-<p>OneAgent captures the following diagnostic data:</p>
-<ul>
-<li>Battery level</li>
-<li>Built-in RAM</li>
-<li>Free RAM</li>
-<li>Device model</li>
-<li>CPU type</li>
-<li>Carrier name</li>
-<li>Network connection type, for example, mobile, WiFi, or LAN</li>
-<li>Network technology, for example, 2G, 3G, 4G, 5G, 802.11x</li>
-<li>Screen resolution</li>
-<li>Orientation (portrait or landscape)</li>
-<li>App version</li>
-<li>App name</li>
-<li>User language</li>
-<li>iOS version</li>
-<li>New user (on the first session)</li>
-</ul>
-<p>Diagnostics</p>
-<p><code>shareLogsFile</code></p>
-<p><img alt="Not applicable" src="https://dt-cdn.net/images/icon-red-cross-1f1142a5dc.svg" title="Not applicable" /> No</p>
-<p>The <code>shareLogsFile</code> API allows you to share locally stored log files via an iOS sharing sheet (<code>UIActivityViewController</code>). For more information, see <a href="/docs/manage/data-privacy-and-security/data-privacy/personal-data-captured-by-dynatrace#log-sharing" title="Find out what types of end-user data may be captured during Dynatrace monitoring and the methods that are available for masking personal end-user data.">Log sharing</a>.</p>
-<p>Surroundings</p>
-<p><img alt="Not applicable" src="https://dt-cdn.net/images/icon-red-cross-1f1142a5dc.svg" title="Not applicable" /> No</p>
-<p>Body</p>
-<p><img alt="Not applicable" src="https://dt-cdn.net/images/icon-red-cross-1f1142a5dc.svg" title="Not applicable" /> No</p>
-<p>Other Data</p>
-<p><img alt="Not applicable" src="https://dt-cdn.net/images/icon-red-cross-1f1142a5dc.svg" title="Not applicable" /> No</p>
 
 
 

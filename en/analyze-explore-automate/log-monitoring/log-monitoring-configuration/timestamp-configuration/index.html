@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
     
     
       
@@ -25588,25 +25588,7 @@ See the code block below for an example.</p>
    This setting is not enabled if you have already specified the timezone in the timestamp pattern (<code>%z</code>).</p>
 <p>You can select <code>Local time zone</code> to use the time zone of the host on which the OneAgent is running.
 6. Select <strong>Add matcher</strong> to create a specific match for this rule and narrow down the scope for that rule.</p>
-<p>You can include multiple matchers in one rule. For example, the timestamp configuration rule can be applied to logs from a specific container, namespace, or log source. Multiple matchers with the same attribute use AND logic between matchers, while matchers with multiple values assigned to them use OR logic.</p>
-<p>Matcher attribute</p>
-<p>Matching is based on</p>
-<p><strong>Process group</strong></p>
-<p>The process group ID.</p>
-<p><strong>Log source</strong></p>
-<p>A log path; wildcards are supported in form of an asterisk.</p>
-<p><strong>K8s container name</strong></p>
-<p>The name of the Kubernetes container.</p>
-<p><strong>K8s namespace name</strong></p>
-<p>The name of the Kubernetes namespace.</p>
-<p><strong>K8s deployment name</strong></p>
-<p>The name of the Kubernetes deployment.</p>
-<p><strong>Container name</strong></p>
-<p>The name of the container.</p>
-<p><strong>DT entity container group ID</strong></p>
-<p>The DT entity container group ID.</p>
-<p><strong>Process technology</strong></p>
-<p>The technology name.
+<p>You can include multiple matchers in one rule. For example, the timestamp configuration rule can be applied to logs from a specific container, namespace, or log source. Multiple matchers with the same attribute use AND logic between matchers, while matchers with multiple values assigned to them use OR logic.
 7. Select the matching attribute.
 8. Select <strong>Value</strong> and, from the <strong>Value</strong> list, select the detected log data items.</p>
 <p>You can add multiple values to the selected attribute. You can have one matcher that indicates the <code>Log source</code> and matches values <code>/var/log/syslog</code> and <code>Windows Application Log</code>. Use asterisks (<code>*</code>) as wildcards to get a partial match.

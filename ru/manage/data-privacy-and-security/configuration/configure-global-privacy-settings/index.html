@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
     
     
       
@@ -25563,21 +25563,6 @@ OneAgent version 1.285+ for exception messages</p>
 <p>Dynatrace captures full URIs of requests that are sent from desktop and mobile browsers, as well as URIs of requests that are sent and received within monitored server-side processes. URIs may contain personal data, such as user names, passwords, or IDs.</p>
 <p>When <strong>Mask personal data in URIs</strong> is turned on, Dynatrace detects personal dataâemail addresses, IBANs, payment card numbers, IP addresses, UUIDs, and other IDsâin URIs, headers, exception messages, and data captured for request attributes. It masks this data at storage by replacing it with the <code>&lt;masked&gt;</code> string. It also replaces query parameter values with the <code>&lt;masked&gt;</code> string. IDs and numbers must have at least 5 decimal or hexadecimal digits to be masked.</p>
 <p>URI masking examples</p>
-<p>Type of personal data</p>
-<p>Example before masking</p>
-<p>Example after masking</p>
-<p>Email address</p>
-<p><code>https://example.com/user/john.doe@example.com/profile</code></p>
-<p><code>https://example.com/user/&lt;masked&gt;/profile</code></p>
-<p>Query parameter value</p>
-<p><code>https://example.com?country=Austria&amp;city=Linz</code></p>
-<p><code>https://example.com?country=&lt;masked&gt;&amp;city=&lt;masked&gt;</code></p>
-<p>Payment card number</p>
-<p><code>https://example.com/checkout?card=4111111111111111</code></p>
-<p><code>https://example.com/checkout?card=&lt;masked&gt;</code></p>
-<p>IP address</p>
-<p><code>https://192.168.10.25/dashboard</code></p>
-<p><code>https://&lt;masked&gt;/dashboard</code></p>
 <p>As a result, the personal data is masked in the distributed trace analysis, error analysis, user action names for RUM, and elsewhere in Dynatrace.</p>
 <p>Note that there is a difference between the data masked out with asterisks <code>*****</code> and data replaced with <code>&lt;masked&gt;</code>. For more details, see <a href="/docs/manage/data-privacy-and-security/configuration/configure-global-privacy-settings#masking-at-display" title="Learn how to set up data privacy masking for end user IP addresses, geolocations, and user action names.">Masking at display</a>.</p>
 <h2 id="masking-at-display">Masking at display<a class="headerlink" href="#masking-at-display" title="Permanent link">&para;</a></h2>

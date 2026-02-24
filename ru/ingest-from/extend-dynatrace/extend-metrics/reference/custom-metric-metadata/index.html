@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../../../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
     
     
       
@@ -25488,73 +25488,10 @@
 <p>The following parameters are available for metric metadata.</p>
 <p>Parameters</p>
 <p>Example JSON</p>
-<p>Parameter</p>
-<p>Type</p>
-<p>Description</p>
-<p>displayName</p>
-<p>string</p>
-<p>The name of the metric in the user interface.</p>
-<p>description</p>
-<p>string</p>
-<p>A short description of the metric.</p>
-<p>unit</p>
-<p>string</p>
-<p>The unit of the metric.</p>
-<p>Find the possible values in the description of the <strong>unit</strong> field for <a href="/docs/dynatrace-api/environment-api/metric-v2/get-descriptor" title="View the descriptor of a metric via Metrics v2 API.">built-in metrics</a>.</p>
-<p>sourceEntityType</p>
-<p>string</p>
-<p>The entity type of the metric. Used for management zone filtering.</p>
-<p>For details, see <a href="/docs/analyze-explore-automate/metrics-classic/metrics-mz#entity-based-rules" title="How to filter metrics by management zone and related security considerations">Metric entity type</a>.</p>
-<p>tags</p>
-<p>string[]</p>
-<p>A list of tags applied to the metric.</p>
-<p>metricProperties</p>
-<p><a href="#properties">MetricProperties</a></p>
-<p>A list of the metric's properties.</p>
-<p>dimensions</p>
-<p><a href="#dimensions">MetricDimensions</a>[]</p>
-<p>A list of the metric's dimensions.</p>
 <h4 id="the-metricproperties-object">The <code>MetricProperties</code> object<a class="headerlink" href="#the-metricproperties-object" title="Permanent link">&para;</a></h4>
 <p>Properties of a metric.</p>
-<p>Parameter</p>
-<p>Type</p>
-<p>Description</p>
-<p>minValue</p>
-<p>integer</p>
-<p>The minimum allowed value of the metric.</p>
-<p>maxValue</p>
-<p>integer</p>
-<p>The maximum allowed value of the metric.</p>
-<p>rootCauseRelevant</p>
-<p>boolean</p>
-<p>Whether (<code>true</code> or <code>false</code>) the metric is related to a root cause of a problem.</p>
-<p>A root-cause relevant metric represents a strong indicator for a faulty component.</p>
-<p>impactRelevant</p>
-<p>boolean</p>
-<p>Whether (<code>true</code> or <code>false</code>) the metric is relevant to a problem's impact.</p>
-<p>An impact-relevant metric is highly dependent on other metrics and changes because an underlying root-cause metric has changed.</p>
-<p>valueType</p>
-<p>string</p>
-<p>The type of the metric's value. You have these options:</p>
-<ul>
-<li><code>score</code>: A score metric is a metric where high values indicate a good situation, while low values indicate trouble. An example of such a metric is a success rate.</li>
-<li><code>error</code>: An error metric is a metric where high values indicate trouble, while low values indicate a good situation. An example of such a metric is an error count.</li>
-</ul>
-<p>latency</p>
-<p>integer</p>
-<p>The reporting delay of the metrics, in minutes.</p>
-<p>The delay caused by constraints of cloud vendors or other third-party data sources that leads to a latency in data ingest on the Dynatrace side.</p>
 <h4 id="the-metricdimensions-object">The <code>MetricDimensions</code> object<a class="headerlink" href="#the-metricdimensions-object" title="Permanent link">&para;</a></h4>
 <p>A dimension of the metric.</p>
-<p>Parameter</p>
-<p>Type</p>
-<p>Description</p>
-<p>key</p>
-<p>string</p>
-<p>The key of the dimension to be used in the <a href="/docs/ingest-from/extend-dynatrace/extend-metrics/reference/metric-ingestion-protocol" title="Learn how the data ingestion protocol for Dynatrace Metrics API works.">ingestion protocol</a>.</p>
-<p>displayName</p>
-<p>string</p>
-<p>The name of the dimension in the user interface.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>{
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>

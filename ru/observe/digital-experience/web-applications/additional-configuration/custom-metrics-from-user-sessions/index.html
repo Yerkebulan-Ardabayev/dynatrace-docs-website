@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../../../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
     
     
       
@@ -25788,42 +25788,6 @@
 </code></pre></div>
 3. Use the <a href="/docs/dynatrace-api/environment-api/settings/objects/post-object" title="Create or validate a settings object via the Dynatrace API.">POST an object</a> endpoint to send your configuration.</p>
 <p>The table below explains all configuration properties required to create or update a USQL custom metric via API.</p>
-<p>Property</p>
-<p>Description</p>
-<p>Possible values</p>
-<p><code>enabled</code></p>
-<p>Defines if the USQL custom metric is enabled or not. Set to <code>false</code> to temporarily disable the metric.</p>
-<p><code>true</code> or <code>false</code></p>
-<p><code>metricKey</code></p>
-<p>The metric key used when ingesting the metric. Use this key when requesting the metric data via <a href="/docs/analyze-explore-automate/explorer" title="Query for metrics and transform results to gain desired insights.">Data Explorer</a>.</p>
-<ul>
-<li>For user session metric events, the metric key must start with the <code>uscm.</code> prefix.</li>
-<li>For user action metric events, the metric key must start with the <code>uacm.</code> prefix.</li>
-</ul>
-<p><code>value</code></p>
-<p>The source of the metric value.</p>
-<p><code>value.type</code></p>
-<ul>
-<li>To count the number of user sessions or user actions, which is similar to <code>COUNT(*)</code> when using <a href="/docs/observe/digital-experience/session-segmentation/custom-queries-segmentation-and-aggregation-of-session-data" title="Learn how you can access and query user session data based on keywords, syntax, functions, and more.">USQL</a>, set to <code>COUNTER</code>.</li>
-<li>To extract a value of a user session or user action field, set to <code>FIELD</code>.</li>
-</ul>
-<p><code>COUNTER</code> or <code>FIELD</code></p>
-<p><code>value.fieldName</code></p>
-<p>If <code>value.type</code>=<code>FIELD</code>, specifies the name of the user session or user action field.</p>
-<p>See <a href="#values-uscm">Values for user session metric events</a> and <a href="#values-uacm">Values for user action metric events</a>.</p>
-<p><code>dimensions</code></p>
-<p>Lists the fields used as dimensions.</p>
-<p>See <a href="#dimensions-uscm">Dimensions for user session metric events</a> and <a href="#dimensions-uacm">Dimensions for user action metric events</a>.</p>
-<p><code>filters</code></p>
-<p>Specifies filters.</p>
-<p><code>filter.fieldName</code></p>
-<p>Specifies the name of the filter field.</p>
-<p>See <a href="#filters-uscm">Filters for user session metric events</a> and <a href="#filters-uacm">Filters for user action metric events</a>.</p>
-<p><code>filter.operator</code></p>
-<p>Specifies the operator.</p>
-<p><code>EQUALS</code>, <code>NOT_EQUAL</code>, <code>IS_NULL</code>, <code>IS_NOT_NULL</code>, <code>LIKE</code>, <code>LESS_THAN</code>, <code>LESS_THAN_OR_EQUAL_TO</code>, <code>GREATER_THAN</code>, <code>GREATER_THAN_OR_EQUAL_TO</code></p>
-<p><code>filter.value</code></p>
-<p>Provides the second argument for binary operators (such as <code>EQUALS</code> or <code>GREATER_THAN</code>).</p>
 <h2 id="supported-values-dimensions-and-filters">Supported values, dimensions, and filters<a class="headerlink" href="#supported-values-dimensions-and-filters" title="Permanent link">&para;</a></h2>
 <p>Check the sections below to view the lists of supported values, dimensions, and filters for user session metric events.</p>
 <p>Values for user session metric events</p>

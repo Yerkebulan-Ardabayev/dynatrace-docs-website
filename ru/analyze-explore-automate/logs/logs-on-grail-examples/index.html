@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
     
     
       
@@ -25511,27 +25511,7 @@
 <a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
 <a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>| filter dt.entity.process_group==&quot;PROCESS_GROUP-123F4A56BCDA0EA9&quot;
 </code></pre></div>
-<p><strong>Results table</strong></p>
-<p>timestamp</p>
-<p>content</p>
-<p>log.source</p>
-<p>dt.entity.host</p>
-<p>â¦</p>
-<p>2022-08-10 14:05:42</p>
-<p>2022-08-10T11:05:42Z localhost haproxy[12529]: 123.45.67.891:23456 http-in~ individual_servers/abcde1 123/0/0/1/456 HTTP_STATUS 200 284 - - âNN 5749/5745/0/1/0â¦</p>
-<p>/var/abcde/abc/defrghytji/HOST-1â¦</p>
-<p>HOST-AB-12-34567</p>
-<p>â¦</p>
-<p>2022-08-10 14:05:46</p>
-<p>2022-08-10T11:05:46Z localhost haproxy[12528]: 12.345.67.123:12345 http-in~ local/local1 5432/0/0/103/1234 HTTP_STATUS 200 138 - - â 7416/7413/407/408/0 0/â¦</p>
-<p>/var/abcde/abc/defrghytji/HOST-A2â¦</p>
-<p>HOST-CD-76-54321</p>
-<p>â¦</p>
-<p>2022-08-10 14:05:50</p>
-<p>2022-08-10T11:05:50Z localhost haproxy[12529]: 11.222.33.123:45678 http-in~ local/local1 19/0/1/110/123 HTTP_STATUS 204 64 - - â 5753/5749/358/359/0 0/0â¦</p>
-<p>/var/abcde/abc/defrghytji/HOST-A23â¦</p>
-<p>HOST-AR-78-12345</p>
-<p>â¦
+<p><strong>Results table</strong>
 2. Extract your metric from the content field.<br />
    The log content field includes the HTTP_STATUS codes you need. Now let's use the <code>parse</code> command to create a <a href="/docs/platform/grail/dynatrace-pattern-language" title="Use Dynatrace Pattern Language to describe patterns using matchers.">Dynatrace Pattern Language</a> pattern with the following elements:</p>
 <ul>
@@ -25549,19 +25529,7 @@
 <a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>
 <a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>| parse content, &quot;LD &#39;HTTP_STATUS &#39; INT:httpstatus&quot;
 </code></pre></div>
-<p><strong>Results table</strong></p>
-<p>timestamp</p>
-<p>content</p>
-<p>httpstatus</p>
-<p>2022-08-10 14:05:42</p>
-<p>2022-08-10T11:05:42Z localhost haproxy[12529]: 123.45.67.891:23456 http-in~ individual_servers/abcde1 123/0/0/1/456 HTTP_STATUS 200 284 - - âNN 5749/5745/0/1/ 0â¦</p>
-<p>200</p>
-<p>2022-08-10 14:05:46</p>
-<p>2022-08-10T11:05:46Z localhost haproxy[12528]: 12.345.67.123:12345 http-in~ local/local1 5432/0/0/103/1234 HTTP_STATUS 200 138 - - â 7416/7413/407/408/0 0/â¦</p>
-<p>200</p>
-<p>2022-08-10 14:05:50</p>
-<p>2022-08-10T11:05:50Z localhost haproxy[12529]: 11.222.33.123:45678 http-in~ local/local1 19/0/1/110/123 HTTP_STATUS 204 64 - - â 5753/5749/358/359/0 0/0â¦</p>
-<p>204
+<p><strong>Results table</strong>
 3. Filter a range of values.<br />
    You can select a range of values for further analysis using DQL. We select only the HTTP status codes that begin with 400 and higher, as those include client side and server side errors.</p>
 <p><div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>fetch logs
@@ -25599,16 +25567,6 @@
 <a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a>| summarize count(), by:{httpstatus}
 </code></pre></div>
 <p><strong>Results table</strong></p>
-<p>count()</p>
-<p>httpstatus</p>
-<p>4</p>
-<p>403</p>
-<p>779</p>
-<p>404</p>
-<p>1</p>
-<p>500</p>
-<p>9</p>
-<p>503</p>
 <h3 id="example-2-average-cart-size">Example 2: Average cart size<a class="headerlink" href="#example-2-average-cart-size" title="Permanent link">&para;</a></h3>
 <p>In this example, you will define an average cart size based on logs.</p>
 <p>Your application logs context data that is relevant to your business. You need to retrieve that data from logs and create a report for a specific timeframe.</p>
@@ -25622,32 +25580,7 @@
 <a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>
 <a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>| filter dt.process.name==&quot;cartservice cartservice-*&quot;
 </code></pre></div>
-<p><strong>Results table</strong></p>
-<p>timestamp</p>
-<p>content</p>
-<p>log.source</p>
-<p>dt.process.name</p>
-<p>â¦</p>
-<p>2022-08-05 11:29:57</p>
-<p>{"@t":"2022-08-05T08:29:57.6864969Z","@m":"Slow GetCartAsync request detected for userId=a433448b-c38d-4144-9591-f510829d4gh2","@i":"abc0f94a"}</p>
-<p>/var/log/pods/prod_cartservice-74c8d7d674-7dqf</p>
-<p>cartservice cartservice-*</p>
-<p>â¦</p>
-<p>2022-08-05 11:29:57</p>
-<p>{"@t":"2022-08-05T08:29:57.8068740Z","@m":"No carts for user ab51dc18-7724-44fb-cdf8-8bda633f0022","@i":"c9315217"}</p>
-<p>/var/log/pods/prod_cartservice-74c8d7d674-7dqf</p>
-<p>cartservice cartservice-*</p>
-<p>â¦</p>
-<p>2022-08-05 11:29:58</p>
-<p>{"@t":"2022-08-05T08:29:57.6864541Z","@m":"GetCartAsync called with userId=z433448a-c38d-4123-9591-f510829d4ab2","@i":"1feab40c"}</p>
-<p>/var/log/pods/prod_cartservice-74c8d7d674-7dqf</p>
-<p>cartservice cartservice-*</p>
-<p>â¦</p>
-<p>2022-08-05 11:30:01</p>
-<p>{"@t":"2022-08-05T08:30:01.1058085Z","@m":"Checking CartService Health","@i":"a01f1123"}</p>
-<p>/var/log/pods/prod_cartservice-74c8d7d674-7dqf</p>
-<p>cartservice cartservice-*</p>
-<p>â¦
+<p><strong>Results table</strong>
 2. Check the types and counts of products added to carts.<br />
    You need to get an overview of the type and quantity of products users added to their carts. Since logs contain various events, you need to specify the events where items were added to carts, using the <code>contains()</code> function. To clean up the results table, it is a good idea to leave only timestamp and log content.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>fetch logs, from:now()-3h
@@ -25664,17 +25597,7 @@
 <a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a>
 <a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a>| fields timestamp, content
 </code></pre></div>
-<p><strong>Results table</strong></p>
-<p>timestamp</p>
-<p>content</p>
-<p>2022-08-05 11:55:04</p>
-<p>{"@t":"2022-08-05T08:55:04.9934166Z","@m":"AddItemAsync called with userId=a332eabc-f52f-40d5-a09f-51bb96f5d119, productId=1ZYFJ3GM2N, quantity=1","@i":"18b35248"}</p>
-<p>2022-08-05 11:55:07</p>
-<p>{"@t":"2022-08-05T08:55:07.1405993Z","@m":"AddItemAsync called with userId=5ddcdd66-f0fd-4608-839e-0cd7841a3bbc, productId=L2ECAV7KIM, quantity=5","@i":"04fe325f"}</p>
-<p>2022-08-05 11:55:32</p>
-<p>{"@t":"2022-08-05T08:55:32.5027148Z","@m":"AddItemAsync called with userId=66734557-683c-4864-b3c7-8f08b52f0b17, productId=LS3PSXUNUM, quantity=5","@i":"987426bd"}</p>
-<p>2022-08-05 11:30:01</p>
-<p>{"@t":"2022-08-05T08:55:58.6888309Z","@m":"AddItemAsync called with userId=c673ca76-3966-4174-b950-4c3f3aa22dfe, productId=4SIQT8TOJO, quantity=2","@i":"99a07cd5"}
+<p><strong>Results table</strong>
 3. Extract the products and corresponding quantities.<br />
    You need to extract the product identifiers and quantities from logs with the <code>parse</code> command.<br />
    Using the <a href="/docs/platform/grail/dynatrace-pattern-language" title="Use Dynatrace Pattern Language to describe patterns using matchers.">Dynatrace Pattern Language</a>, create a pattern and match the following parts of the <code>content</code> field:</p>
@@ -25706,32 +25629,7 @@
 <a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a>
 <a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a>| parse content, &quot;LD &#39;userId=&#39; LD:userId &#39;, productId=&#39; LD:productId &#39;, quantity=&#39; INT:productQuantity&quot;
 </code></pre></div>
-<p><strong>Results table</strong></p>
-<p>timestamp</p>
-<p>content</p>
-<p>userId</p>
-<p>productId</p>
-<p>productQuantity</p>
-<p>2022-08-05 11:55:04</p>
-<p>{"@t":"2022-08-05T08:55:04.9934166Z","@m":"AddItemAsync called with userId=a332efea-f52f-40d5-a09f-51bb96f5d119, productId=1ZYFJ3GM2N, quantity=1","@i":"18b35248"}</p>
-<p>a332efea-f52f-40d5-a09f-51bb96f5d119</p>
-<p>1ZYFJ3GM2N</p>
-<p>1</p>
-<p>2022-08-05 11:55:07</p>
-<p>{"@t":"2022-08-05T08:55:07.1405993Z","@m":"AddItemAsync called with userId=5bdcdd66-f0fd-4608-839e-0cd7841a3bbc, productId=L2ECAV7KIM, quantity=5","@i":"04fe325f"}</p>
-<p>5bdcdd66-f0fd-4608-839e-0cd7841a3bbc</p>
-<p>L2ECAV7KIM</p>
-<p>5</p>
-<p>2022-08-05 11:55:32</p>
-<p>{"@t":"2022-08-05T08:55:32.5027148Z","@m":"AddItemAsync called with userId=66734557-683c-4864-c3c7-8f08b52f0b17, productId=LS3PSXUNUM, quantity=5","@i":"987426bd"}</p>
-<p>66734557-683c-4864-c3c7-8f08b52f0b17</p>
-<p>LS3PSXUNUM</p>
-<p>5</p>
-<p>2022-08-05 11:30:01</p>
-<p>{"@t":"2022-08-05T08:55:58.6888309Z","@m":"AddItemAsync called with userId=d673ca76-3966-4174-b950-4c3f3aa22dfe, productId=4SIQT8TOJO, quantity=2","@i":"99a07cd5"}</p>
-<p>d673ca76-3966-4174-b950-4c3f3aa22dfe</p>
-<p>4SIQT8TOJO</p>
-<p>2
+<p><strong>Results table</strong>
 4. Clean the data.<br />
    As the user ID and the original log record are no longer relevant, let's clean up the result table using the <code>fields</code> command.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>fetch logs, from:now()-3h
@@ -25756,17 +25654,7 @@
 <a id="__codelineno-8-20" name="__codelineno-8-20" href="#__codelineno-8-20"></a>
 <a id="__codelineno-8-21" name="__codelineno-8-21" href="#__codelineno-8-21"></a>| fields productId , productQuantity
 </code></pre></div>
-<p><strong>Results table</strong></p>
-<p>productId</p>
-<p>productQuantity</p>
-<p>1ZYFJ3GM2N</p>
-<p>1</p>
-<p>L2ECAV7KIM</p>
-<p>5</p>
-<p>LS3PSXUNUM</p>
-<p>5</p>
-<p>4SIQT8TOJO</p>
-<p>2
+<p><strong>Results table</strong>
 5. Summarize events per product.<br />
    To see the total amount of each product added to a cart, use the <code>sum()</code> function.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>fetch logs, from:now()-3h
@@ -25795,17 +25683,7 @@
 <a id="__codelineno-9-24" name="__codelineno-9-24" href="#__codelineno-9-24"></a>
 <a id="__codelineno-9-25" name="__codelineno-9-25" href="#__codelineno-9-25"></a>| summarize sum(productQuantity), by:{productId}
 </code></pre></div>
-<p><strong>Results table</strong></p>
-<p>productId</p>
-<p>sum(productQuantity)</p>
-<p>APUK6V6EV0</p>
-<p>61</p>
-<p>B9ECA1YMWWN1N4OV7KIM</p>
-<p>47</p>
-<p>66CDHSJNUP</p>
-<p>38</p>
-<p>9DIQT8TOJO</p>
-<p>32
+<p><strong>Results table</strong>
 6. Find the most popular products.<br />
    To understand the behavior of an average user, we want to determine the average size of the cart for each product. To do that, we use the <code>avg()</code> function and name the new field <code>averageProductQuantity</code>. Then we sort the average values from highest to lowest, and we limit the results so that we see the five most popular products.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>fetch logs, from:now()-3h
@@ -25843,18 +25721,6 @@
 <a id="__codelineno-10-33" name="__codelineno-10-33" href="#__codelineno-10-33"></a>| limit 5
 </code></pre></div>
 <p><strong>Results table</strong></p>
-<p>averageProductQuantity</p>
-<p>productId</p>
-<p>4.746268656716418</p>
-<p>1ZYFJ3GM2N</p>
-<p>4.4375</p>
-<p>26VCHSJNUP</p>
-<p>4.415584415584416</p>
-<p>LS3PSXUNUM</p>
-<p>4.3604651162790695</p>
-<p>L4ECAV7KIM</p>
-<p>4.2682926829268295</p>
-<p>1YMWWN1N4O</p>
 <h3 id="example-3-track-user-changes">Example 3: Track user changes<a class="headerlink" href="#example-3-track-user-changes" title="Permanent link">&para;</a></h3>
 <p>In this example, you track user changes with audit logs. You want to track the type and quantity of actions performed by users.</p>
 <ol>
@@ -25872,27 +25738,7 @@
 <a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>
 <a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>| filter endsWith(log.source,&quot;change.log&quot;)
 </code></pre></div>
-<p><strong>Results table</strong></p>
-<p>content</p>
-<p>timestamp</p>
-<p>dt.entity.host</p>
-<p>dt.entity.process_group</p>
-<p>2022-07-15 09:08:00 UTC {"eventType":"UPDATE","tenantId":"abc","useâ¦</p>
-<p>15.7.2022 12:08</p>
-<p>HOST-1</p>
-<p>PROCESS_GROUP-12ED48520DB559D1</p>
-<p>2022-07-15 09:08:07 UTC {"eventType":"CREATE","tenantId":"efg","useâ¦</p>
-<p>15.7.2022 12:08:07</p>
-<p>HOST-2</p>
-<p>PROCESS_GROUP-34ED48520DB559D2</p>
-<p>2022-07-15 09:11:19 UTC {"eventType":"UPDATE","tenantId":"hij","useâ¦</p>
-<p>15.7.2022 12:11:19</p>
-<p>HOST-3</p>
-<p>PROCESS_GROUP-56ED48520DB559D3</p>
-<p>2022-07-15 09:11:19 UTC {"eventType":"DELETE","tenantId":"klm","useâ¦</p>
-<p>15.7.2022 12:11:19</p>
-<p>HOST-4</p>
-<p>PROCESS_GROUP-78ED48520DB559D4
+<p><strong>Results table</strong>
 2. Extract relevant fields for a single user.</p>
 <ul>
 <li>The retrieved table includes record updates, deletions, and creations.</li>
@@ -25931,15 +25777,7 @@
 <a id="__codelineno-12-24" name="__codelineno-12-24" href="#__codelineno-12-24"></a>
 <a id="__codelineno-12-25" name="__codelineno-12-25" href="#__codelineno-12-25"></a>| fieldsRemove settings
 </code></pre></div>
-<p><strong>Results table</strong></p>
-<p>ts</p>
-<p>type</p>
-<p>tenant</p>
-<p>user</p>
-<p>2022-07-14 09:19:34</p>
-<p>UPDATE</p>
-<p>abc</p>
-<p>1aae042c-ab34-4f01-8d46-128971703d5a
+<p><strong>Results table</strong>
 3. Get the users who performed updates and deletions.<br />
    To get users who made updates or deletions only:</p>
 <ul>
@@ -25972,27 +25810,7 @@
 <a id="__codelineno-13-24" name="__codelineno-13-24" href="#__codelineno-13-24"></a>
 <a id="__codelineno-13-25" name="__codelineno-13-25" href="#__codelineno-13-25"></a>| filter in(type,array(&quot;UPDATE&quot;,&quot;DELETE&quot;))
 </code></pre></div>
-<p><strong>Results table</strong></p>
-<p>ts</p>
-<p>type</p>
-<p>tenant</p>
-<p>user</p>
-<p>2022-07-14 09:19:34</p>
-<p>UPDATE</p>
-<p>abc</p>
-<p>2aae042c-ab34-4f01-8d46-128971703d5b</p>
-<p>2022-07-14 05:11:04</p>
-<p>UPDATE</p>
-<p>abc</p>
-<p>386b63fc-1516-4b46-9714-ee53dd76c99c</p>
-<p>2022-07-14 05:00:49</p>
-<p>DELETE</p>
-<p>abc</p>
-<p>486b63fc-1516-4b46-9714-ee53dd76c99d</p>
-<p>2022-07-14 04:21:43</p>
-<p>DELETE</p>
-<p>abc</p>
-<p>586b63fc-1516-4b46-9714-ee53dd76c99e
+<p><strong>Results table</strong>
 4. Find out the change types and the number of changes performed by each user.<br />
    You can count the records using the <code>summarize</code> command.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>fetch logs, from:now()-5m
@@ -26025,22 +25843,7 @@
 <a id="__codelineno-14-28" name="__codelineno-14-28" href="#__codelineno-14-28"></a>
 <a id="__codelineno-14-29" name="__codelineno-14-29" href="#__codelineno-14-29"></a>| summarize count(), by:{user,type}
 </code></pre></div>
-<p><strong>Results table</strong></p>
-<p>user</p>
-<p>type</p>
-<p>count()</p>
-<p>686b63fc-1516-4b46-9714-ee53dd76c99f</p>
-<p>DELETE</p>
-<p>78</p>
-<p>786b63fc-1516-4b46-9714-ee53dd76c99g</p>
-<p>UPDATE</p>
-<p>34</p>
-<p>8aae042c-ab34-4f01-8d46-128971703d5h</p>
-<p>UPDATE</p>
-<p>20</p>
-<p>9d4a7ac8-e451-6469-cced-6f4358ef343i</p>
-<p>UPDATE</p>
-<p>17
+<p><strong>Results table</strong>
 5. Count the events per user, split by action type (create, update, delete).<br />
    You can perform the calculation by combining the <code>summarize</code> commmand with the <code>countIf</code> function.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>fetch logs, from:now()-5m
@@ -26074,26 +25877,6 @@
 <a id="__codelineno-15-29" name="__codelineno-15-29" href="#__codelineno-15-29"></a>| summarize {countIf(type==&quot;CREATE&quot;), countIf(type==&quot;UPDATE&quot;), countIf(type==&quot;DELETE&quot;)}, by:{tenant, user}
 </code></pre></div>
 <p><strong>Results table</strong></p>
-<p>tenant</p>
-<p>user</p>
-<p>countIf(type=="CREATE")</p>
-<p>countIf(type=="UPDATE")</p>
-<p>countIf(type=="DELETE")</p>
-<p>def</p>
-<p>186b63fc-1516-4b46-9714-ee53dd76c99a</p>
-<p>0</p>
-<p>34</p>
-<p>78</p>
-<p>ghi</p>
-<p>2aae042c-ab34-4f01-8d46-128971703d5b</p>
-<p>19</p>
-<p>20</p>
-<p>8</p>
-<p>jkl</p>
-<p>3d4a7ac8-e451-6469-cced-6f4358ef343c</p>
-<p>2</p>
-<p>17</p>
-<p>11</p>
 <h3 id="example-4-create-a-log-metric">Example 4: Create a log metric<a class="headerlink" href="#example-4-create-a-log-metric" title="Permanent link">&para;</a></h3>
 <p>In this example, you need to count how many refused connections are recorded in your log data. For that, filter the correct logs and turn the number of occurrences into a log metric.</p>
 <ul>

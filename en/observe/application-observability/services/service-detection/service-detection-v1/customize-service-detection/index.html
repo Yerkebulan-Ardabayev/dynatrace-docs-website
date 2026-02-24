@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../../../../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
     
     
       
@@ -25523,17 +25523,7 @@
 <ol>
 <li>Query the settings schema via the <a href="/docs/dynatrace-api/environment-api/settings/schemas/get-schema" title="View a settings schema via the Dynatrace API.">GET a schema</a> callâit contains the information about parameters included in the settings object.</li>
 </ol>
-<p>The ID of schema depends on the request type, as summarized in the following table.</p>
-<p>Request type</p>
-<p>Schema ID</p>
-<p>Full web request</p>
-<p><a href="/docs/dynatrace-api/environment-api/settings/schemas/builtin-service-detection-full-web-request" title="View builtin:service-detection.full-web-request settings schema table of your monitoring environment via the Dynatrace API."><code>builtin:service-detection.full-web-request</code></a></p>
-<p>Full web service</p>
-<p><a href="/docs/dynatrace-api/environment-api/settings/schemas/builtin-service-detection-full-web-service" title="View builtin:service-detection.full-web-service settings schema table of your monitoring environment via the Dynatrace API."><code>builtin:service-detection.full-web-service</code></a></p>
-<p>External web request</p>
-<p><a href="/docs/dynatrace-api/environment-api/settings/schemas/builtin-service-detection-external-web-request" title="View builtin:service-detection.external-web-request settings schema table of your monitoring environment via the Dynatrace API."><code>builtin:service-detection.external-web-request</code></a></p>
-<p>External web service</p>
-<p><a href="/docs/dynatrace-api/environment-api/settings/schemas/builtin-service-detection-external-web-service" title="View builtin:service-detection.external-web-service settings schema table of your monitoring environment via the Dynatrace API."><code>builtin:service-detection.external-web-service</code></a>
+<p>The ID of schema depends on the request type, as summarized in the following table.
 2. Create a JSON object for your settings.</p>
 <p>Example JSON for a full web request rule</p>
 <p><div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>[
@@ -25715,17 +25705,7 @@
 <ol>
 <li>Query the settings schema via the <a href="/docs/dynatrace-api/environment-api/settings/schemas/get-schema" title="View a settings schema via the Dynatrace API.">GET a schema</a> callâit contains the information about parameters included in the settings object.</li>
 </ol>
-<p>The ID of schema depends on the request type, as summarized in the following table.</p>
-<p>Request type</p>
-<p>Schema ID</p>
-<p>Full web request</p>
-<p><a href="/docs/dynatrace-api/environment-api/settings/schemas/builtin-service-detection-full-web-request" title="View builtin:service-detection.full-web-request settings schema table of your monitoring environment via the Dynatrace API."><code>builtin:service-detection.full-web-request</code></a></p>
-<p>Full web service</p>
-<p><a href="/docs/dynatrace-api/environment-api/settings/schemas/builtin-service-detection-full-web-service" title="View builtin:service-detection.full-web-service settings schema table of your monitoring environment via the Dynatrace API."><code>builtin:service-detection.full-web-service</code></a></p>
-<p>External web request</p>
-<p><a href="/docs/dynatrace-api/environment-api/settings/schemas/builtin-service-detection-external-web-request" title="View builtin:service-detection.external-web-request settings schema table of your monitoring environment via the Dynatrace API."><code>builtin:service-detection.external-web-request</code></a></p>
-<p>External web service</p>
-<p><a href="/docs/dynatrace-api/environment-api/settings/schemas/builtin-service-detection-external-web-service" title="View builtin:service-detection.external-web-service settings schema table of your monitoring environment via the Dynatrace API."><code>builtin:service-detection.external-web-service</code></a>
+<p>The ID of schema depends on the request type, as summarized in the following table.
 2. Query the current configuration via the <a href="/docs/dynatrace-api/environment-api/settings/objects/get-objects" title="View multiple settings objects via the Dynatrace API.">GET objects</a> call.
 3. Create a JSON object for your update. We recommend to use <strong>updateToken</strong> from previous objectâit ensures proper versioning of your settings.</p>
 <p>Example JSON for a full web request rule</p>
@@ -25906,19 +25886,9 @@
 <ol>
 <li>Query the list of existing rules via the <a href="/docs/dynatrace-api/environment-api/settings/objects/get-objects" title="View multiple settings objects via the Dynatrace API.">GET objects</a> call. Specify the schema of your request type in the <strong>schemaIds</strong> query parameter.
    The ID of schema depends on the request type, as summarized in the following table.</li>
+<li>Find the rule you want to delete, and copy its <strong>objectId</strong>.</li>
+<li>Delete the rule via the <a href="/docs/dynatrace-api/environment-api/settings/objects/del-object" title="Delete a settings object via the Dynatrace API.">DELETE an object</a> call. Use the object ID obtained in the previous step.</li>
 </ol>
-<p>Request type</p>
-<p>Schema ID</p>
-<p>Full web request</p>
-<p><a href="/docs/dynatrace-api/environment-api/settings/schemas/builtin-service-detection-full-web-request" title="View builtin:service-detection.full-web-request settings schema table of your monitoring environment via the Dynatrace API."><code>builtin:service-detection.full-web-request</code></a></p>
-<p>Full web service</p>
-<p><a href="/docs/dynatrace-api/environment-api/settings/schemas/builtin-service-detection-full-web-service" title="View builtin:service-detection.full-web-service settings schema table of your monitoring environment via the Dynatrace API."><code>builtin:service-detection.full-web-service</code></a></p>
-<p>External web request</p>
-<p><a href="/docs/dynatrace-api/environment-api/settings/schemas/builtin-service-detection-external-web-request" title="View builtin:service-detection.external-web-request settings schema table of your monitoring environment via the Dynatrace API."><code>builtin:service-detection.external-web-request</code></a></p>
-<p>External web service</p>
-<p><a href="/docs/dynatrace-api/environment-api/settings/schemas/builtin-service-detection-external-web-service" title="View builtin:service-detection.external-web-service settings schema table of your monitoring environment via the Dynatrace API."><code>builtin:service-detection.external-web-service</code></a>
-2. Find the rule you want to delete, and copy its <strong>objectId</strong>.
-3. Delete the rule via the <a href="/docs/dynatrace-api/environment-api/settings/objects/del-object" title="Delete a settings object via the Dynatrace API.">DELETE an object</a> call. Use the object ID obtained in the previous step.</p>
 <h3 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h3>
 <h4 id="separate-fully-monitored-web-request-services-based-on-url-or-superimposed-context-root">Separate fully monitored web request services based on URL or superimposed context root<a class="headerlink" href="#separate-fully-monitored-web-request-services-based-on-url-or-superimposed-context-root" title="Permanent link">&para;</a></h4>
 <p>For some technologies monitored by Dynatrace, the context root is not supported. A single service per process group is detected by default. You can change service detection by imposing a context root on a fully monitored web request.</p>

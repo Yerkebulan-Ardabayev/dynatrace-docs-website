@@ -25,7 +25,7 @@
       
       
       <link rel="icon" href="../../../../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
     
     
       
@@ -25573,53 +25573,7 @@
 <p>The most straightforward way to use deploy is to run it without any flags and pass the file name of your deployment manifest.
 This way, all configurations in the project section of the deployment manifest file are applied to all environments defined in the environments section of the file.</p>
 <h3 id="arguments">Arguments<a class="headerlink" href="#arguments" title="Permanent link">&para;</a></h3>
-<p>Argument</p>
-<p>Description</p>
-<p>Required</p>
-<p><code>&lt;manifest.yaml&gt;</code></p>
-<p>The manifest file defining projects to deploy and the environments to deploy them to.</p>
-<p>Required</p>
 <h3 id="options">Options<a class="headerlink" href="#options" title="Permanent link">&para;</a></h3>
-<p>Option</p>
-<p>Description</p>
-<p>Required</p>
-<p><code>--continue-on-error</code>, <code>-c</code></p>
-<p>Proceed with deployment even if an error is encountered.</p>
-<p>This can be used to ensure that all valid configurations are applied to your environments, even if other configurations are invalid or failed to deploy.</p>
-<p>Using this flag might lead to follow-up errors for configurations that depend on each other.</p>
-<p>Optional</p>
-<p><code>--dry-run</code>, <code>-d</code></p>
-<p>Validate the configuration file structure without deploying it.</p>
-<p>With this flag set, <code>monaco deploy</code> checks whether your templates are valid JSON and whether your configuration YAML files can be parsed and used.</p>
-<p>A <code>dry-run</code> doesn't connect to Dynatrace and can't validate the content of the JSON sent to Dynatrace.
-A deployment may still fail with <code>HTTP 400 Bad Request</code> errors after a successful <code>dry-run</code> if the content of a JSON template is incorrect.</p>
-<p>Optional</p>
-<p><code>--environment &lt;name&gt;</code>, <code>-e &lt;name&gt;</code></p>
-<p>Apply your configurations to specific environments within your deployment manifest file.
-To set multiple environments, either repeat this flag or separate them using a comma (<code>,</code>).</p>
-<p>This flag is mutually exclusive with <code>--group</code>:</p>
-<ul>
-<li>If this flag is specified, configurations are deployed to each specified environment.</li>
-<li>If neither <code>--group</code> nor <code>--environment</code> is present, all environments are used.</li>
-</ul>
-<p>Optional</p>
-<p><code>--group &lt;name&gt;</code>, <code>-g &lt;name&gt;</code></p>
-<p>Apply your configurations to specific <a href="/docs/deliver/configuration-as-code/monaco/configuration#environment-groups" title="Manage the Dynatrace configuration files using Monaco with a set of projects and a deployment manifest.">environment groups</a> within your deployment manifest file.
-To set multiple groups, either repeat this flag or separate them using a comma (<code>,</code>).</p>
-<p>This flag is mutually exclusive with <code>--environment</code>:</p>
-<ul>
-<li>If this flag is specified, configurations are deployed to each environment within the specified groups.</li>
-<li>If neither <code>--group</code> nor <code>--environment</code> is present, all environments are used.</li>
-</ul>
-<p>Optional</p>
-<p><code>--project &lt;name&gt;</code>, <code>-p &lt;name&gt;</code></p>
-<p>Specify one or more projects to be deployed.
-To set multiple projects, either repeat this flag or separate them using a comma (<code>,</code>).</p>
-<ul>
-<li>If this flag is specified, configurations from the specified projects are deployed.</li>
-<li>Without this flag, configurations from all projects defined in the manifest are deployed.</li>
-</ul>
-<p>Optional</p>
 <h3 id="additional-configuration-via-environment-variables">Additional configuration via environment variables<a class="headerlink" href="#additional-configuration-via-environment-variables" title="Permanent link">&para;</a></h3>
 <p>You can use environment variables to set additional configuration options.</p>
 <h4 id="specify-proxy-server">Specify proxy server<a class="headerlink" href="#specify-proxy-server" title="Permanent link">&para;</a></h4>
@@ -25667,93 +25621,10 @@ To set multiple projects, either repeat this flag or separate them using a comma
 <p>The available options depend on the download method.</p>
 <h4 id="arguments-to-download-via-manifest">Arguments to download via manifest<a class="headerlink" href="#arguments-to-download-via-manifest" title="Permanent link">&para;</a></h4>
 <p>These arguments are used when you want to download via a manifest YAML file.</p>
-<p>Argument</p>
-<p>Description</p>
-<p>Required</p>
-<p><code>--manifest &lt;filepath&gt;</code>, <code>-m &lt;filepath&gt;</code></p>
-<p>The path to the manifest file to use for connection information.</p>
-<p>If not specified, Monaco searches for a file named <code>manifest.yaml</code> in the current directory.</p>
-<p>Required</p>
-<p><code>--environment &lt;name&gt;</code>, <code>-e &lt;name&gt;</code></p>
-<p>Specify an environment defined in the manifest from which the configuration is to be downloaded.</p>
-<p>Required</p>
-<p><code>--force</code>, <code>-f</code></p>
-<p>Used in combination with <code>--manifest</code>.
-Force overwrites any existing <code>manifest.yaml</code> file.</p>
-<p>Never append the source environment name to the project folder name.</p>
-<p>Optional</p>
 <h4 id="arguments-to-download-via-url">Arguments to download via URL<a class="headerlink" href="#arguments-to-download-via-url" title="Permanent link">&para;</a></h4>
 <p>These arguments are used when you want to download via the Dynatrace environment URL.</p>
-<p>Argument</p>
-<p>Description</p>
-<p>Required</p>
-<p><code>--url &lt;url&gt;</code></p>
-<p>The URL of the Dynatrace environment from which to download the configuration.</p>
-<p>This flag is mutually exclusive with <code>--manifest</code> or <code>--environment</code>.</p>
-<p>Required</p>
-<p><code>--platform-token &lt;environment variable name&gt;</code></p>
-<p>The name of the environment variable that contains the Dynatrace platform token.</p>
-<p>This is mutually exclusive with <code>--oauth-client-id</code> and <code>--oauth-client-secret</code>.</p>
-<p>Required</p>
-<p><code>--token &lt;environment variable name&gt;</code></p>
-<p>The name of the environment variable that contains the API token (classic Dynatrace only).</p>
-<p>Required</p>
-<p><code>--oauth-client-id &lt;environment variable name&gt;</code></p>
-<p>The name of the environment variable that contains the OAuth client ID.</p>
-<p>This must be used together with <code>--oauth-client-secret</code>.
-This is mutually exclusive with <code>--platform-token</code>.</p>
-<p>Required</p>
-<p><code>--oauth-client-secret &lt;environment-variable-name&gt;</code></p>
-<p>The name of the environment variable that contains the OAuth client secret.</p>
-<p>This must be used together with <code>--oauth-client-id</code>.
-This is mutually exclusive with <code>--platform-token</code>.</p>
-<p>Required</p>
 <h4 id="options_2">Options<a class="headerlink" href="#options_2" title="Permanent link">&para;</a></h4>
 <p>These options can be used with either download method (whether via manifest or URL).</p>
-<p>Option</p>
-<p>Description</p>
-<p>Required</p>
-<p><code>--output-folder &lt;filepath&gt;</code>, <code>-o &lt;filepath&gt;</code></p>
-<p>Specifies the name of the output folder in which downloaded configurations will be stored.</p>
-<p>By default, the folder name will be <code>download</code> with the current timestamp appended.</p>
-<p>Optional</p>
-<p><code>--project &lt;name&gt;</code>, <code>-p &lt;name&gt;</code></p>
-<p>The name of the project (which contains all downloaded configurations) that will be generated.</p>
-<p>By default, the project name is <code>project</code>.</p>
-<p>Optional</p>
-<p><code>--api &lt;name&gt;</code>, <code>-a &lt;name&gt;</code></p>
-<p>Download one or more classic Configuration APIs, including deprecated ones.
-You can specify multiple APIs by repeating the flag, or by using comma-separated values.</p>
-<p>Optional</p>
-<p><code>--settings-schema &lt;name&gt;</code>, <code>-s &lt;name&gt;</code></p>
-<p>Download Settings 2.0 objects for one or more Settings 2.0 schemas.
-You can specify multiple APIs by repeating the flag, or by using comma-separated values.</p>
-<p>Optional</p>
-<p><code>--only-apis</code></p>
-<p>Download only <a href="/docs/deliver/configuration-as-code/monaco/configuration/yaml-configuration-saas-type-fields#API-type-field" title="This is a list of type fields in the Monaco configuration YAML file.">classic Configuration APIs</a>.
-Deprecated configuration APIs will not be included.</p>
-<p>Optional</p>
-<p><code>--only-automation</code></p>
-<p>Download only <a href="/docs/deliver/configuration-as-code/monaco/configuration/yaml-configuration-saas-type-fields#automation-type-field" title="This is a list of type fields in the Monaco configuration YAML file.">automation</a> configurations.</p>
-<p>Optional</p>
-<p><code>--only-settings</code></p>
-<p>Download only <a href="/docs/deliver/configuration-as-code/monaco/configuration/yaml-configuration-saas-type-fields#settings-type-field" title="This is a list of type fields in the Monaco configuration YAML file.">Settings 2.0</a> configuration objects.</p>
-<p>Optional</p>
-<p><code>--only-buckets</code></p>
-<p>Download only <a href="/docs/deliver/configuration-as-code/monaco/configuration/yaml-configuration-saas-type-fields#bucket-type-field" title="This is a list of type fields in the Monaco configuration YAML file.">bucket</a> configurations.</p>
-<p>Optional</p>
-<p><code>--only-documents</code></p>
-<p>Download only <a href="/docs/deliver/configuration-as-code/monaco/configuration/yaml-configuration-saas-type-fields#document-type-field" title="This is a list of type fields in the Monaco configuration YAML file.">document</a> configurations.</p>
-<p>Optional</p>
-<p><code>--only-openpipeline</code> Deprecated</p>
-<p>Download only <a href="/docs/deliver/configuration-as-code/monaco/configuration/yaml-configuration-saas-type-fields#openpipeline-type-field" title="This is a list of type fields in the Monaco configuration YAML file.">openpipeline</a> configurations.</p>
-<p>Optional</p>
-<p><code>--only-segments</code></p>
-<p>Download only <a href="/docs/deliver/configuration-as-code/monaco/configuration/yaml-configuration-saas-type-fields#segment-type-field" title="This is a list of type fields in the Monaco configuration YAML file.">segment</a> configurations.</p>
-<p>Optional</p>
-<p><code>--only-slo-v2</code></p>
-<p>Download only <a href="/docs/deliver/configuration-as-code/monaco/configuration/yaml-configuration-saas-type-fields#slo-v2-type-field" title="This is a list of type fields in the Monaco configuration YAML file.">slo-v2</a> configurations.</p>
-<p>Optional</p>
 <p>You can combine multiple <code>--only-&lt;type&gt;</code> flags in a single <code>monaco download</code> command to download several types at once.</p>
 <h3 id="additional-configuration-via-environment-variables_1">Additional configuration via environment variables<a class="headerlink" href="#additional-configuration-via-environment-variables_1" title="Permanent link">&para;</a></h3>
 <p>You can use environment variables to set additional configuration options.</p>
@@ -25926,32 +25797,6 @@ Monaco resolves these dependencies automatically:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>monaco delete [--manifest &lt;file&gt;] [--file &lt;file&gt;] [OPTIONS]
 </code></pre></div>
 <h3 id="arguments_1">Arguments<a class="headerlink" href="#arguments_1" title="Permanent link">&para;</a></h3>
-<p>Argument</p>
-<p>Description</p>
-<p>Required</p>
-<p><code>--manifest &lt;file&gt;</code>, <code>-m &lt;file&gt;</code></p>
-<p>The manifest file that specifies the relevant Dynatrace environments.</p>
-<p>If not specified, Monaco will look for the file named <code>manifest.yaml</code>.</p>
-<p>Optional</p>
-<p><code>--file &lt;file&gt;</code></p>
-<p>The delete file that specifies the relevant configurations.</p>
-<p>If not specified, Monaco will look for the file named <code>delete.yaml</code>.</p>
-<p>Optional</p>
-<p>Option</p>
-<p>Description</p>
-<p>Required</p>
-<p><code>--environment &lt;name&gt;</code>, <code>-e &lt;name&gt;</code></p>
-<p>The environment(s) from which the configurations should be deleted.
-To delete from multiple environments in a single call, either repeat this flag or use comma-separated variables.</p>
-<p>This flag is mutually exclusive with <code>--group</code>.
-If neither <code>--group</code> nor <code>--environment</code> is present, all environments are used.</p>
-<p>Optional</p>
-<p><code>--group &lt;name&gt;</code>, <code>-g &lt;name&gt;</code></p>
-<p>The environment group(s) from which the configurations should be deleted.
-To delete from multiple groups in a single call, either repeat this flag or use comma-separated variables.</p>
-<p>This flag is mutually exclusive with <code>--environment</code>.
-If neither <code>--group</code> nor <code>--environment</code> is present, all environments are used.</p>
-<p>Optional</p>
 <h2 id="generate">Generate<a class="headerlink" href="#generate" title="Permanent link">&para;</a></h2>
 <p>The <code>monaco generate</code> command lets you generate various auxiliary files, based on your configuration:</p>
 <ul>
@@ -25963,44 +25808,10 @@ If neither <code>--group</code> nor <code>--environment</code> is present, all e
 <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>monaco generate [ARGS] [OPTIONS]
 </code></pre></div>
 <h3 id="arguments_2">Arguments<a class="headerlink" href="#arguments_2" title="Permanent link">&para;</a></h3>
-<p>Argument</p>
-<p>Description</p>
-<p>Supported from version</p>
-<p>Required</p>
-<p><code>deletefile</code></p>
-<p>Generates a deletefile.</p>
-<p>Dynatrace Monaco 2.6.0</p>
-<p>Optional</p>
-<p><code>graph</code></p>
-<p>Generates a DOT representation of the dependencies between configurations defined in a manifest's projects.</p>
-<p>The <a href="https://graphviz.org/doc/info/lang.html">DOT formatï»¿</a> is a standardized text-based format for representing graphs.
-You can create visual representations with tools such as Graphviz.</p>
-<p>Dynatrace Monaco 2.6.0</p>
-<p>Optional</p>
-<p><code>schema</code></p>
-<p>Creates JSON schema files for Monaco's YAML files, such as the manifest, configuration, and delete files.</p>
-<p>Dynatrace Monaco 2.10.0</p>
-<p>Optional</p>
 <h3 id="options_3">Options<a class="headerlink" href="#options_3" title="Permanent link">&para;</a></h3>
 <p>The available options depend on the specific argument that is used.</p>
 <h4 id="deletefile">deletefile<a class="headerlink" href="#deletefile" title="Permanent link">&para;</a></h4>
 <p>These options are used with the <code>monaco generate deletefile</code> command.</p>
-<p>Option</p>
-<p>Description</p>
-<p>Required</p>
-<p><code>--file &lt;file&gt;</code></p>
-<p>Specify the name of the generated delete file.
-If a file of this name already exists, a timestamp is appended.
-By default, the file is named <code>delete.yaml</code>.</p>
-<p>Optional</p>
-<p><code>--output-folder &lt;path&gt;</code>, <code>-o &lt;path&gt;</code></p>
-<p>Specify the path/name of the output folder where the deletefile will be saved.</p>
-<p>If not specified, the file is generated in the directory from which you run the command.</p>
-<p>Optional</p>
-<p><code>--project &lt;name&gt;</code>, <code>-p &lt;name&gt;</code></p>
-<p>Specify the project(s) for which deletefile entries are generated.</p>
-<p>If not specified, all projects in the manifest are used.</p>
-<p>Optional</p>
 <p>The <code>generate deletefile</code> command can't process configurations that contain references in their name field and will fail when encountering such configurations.</p>
 <p><strong>Example of a problematic configuration:</strong></p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>configs:
@@ -26052,160 +25863,28 @@ By default, the file is named <code>delete.yaml</code>.</p>
 <p><strong>Workaround:</strong> Create the delete file manually or update the generated file to set the configuration name without references. See the <a href="/docs/deliver/configuration-as-code/monaco/configuration#file-structure-for-direct-reference" title="Manage the Dynatrace configuration files using Monaco with a set of projects and a deployment manifest.">delete file format</a> for the correct syntax.</p>
 <h4 id="graph">graph<a class="headerlink" href="#graph" title="Permanent link">&para;</a></h4>
 <p>These options are used with the <code>monaco generate graph</code> command.</p>
-<p>Option</p>
-<p>Description</p>
-<p>Required</p>
-<p><code>--output-folder &lt;path&gt;</code>, <code>-o &lt;path&gt;</code></p>
-<p>Specify the path/name of the output folder where the graph will be saved.</p>
-<p>If not specified, the file is generated in the directory from which you run the command.</p>
-<p>Optional</p>
-<p><code>--environment &lt;name&gt;</code>, <code>-e &lt;name&gt;</code></p>
-<p>Generate dependency graphs for one or more environment(s) within your deployment manifest file.
-To set multiple environments, either repeat this flag or separate them using a comma (<code>,</code>).</p>
-<p>This flag is mutually exclusive with <code>--group</code>:</p>
-<ul>
-<li>If this flag is specified, graphs are generated for each specified environment.</li>
-<li>If neither <code>--group</code> nor <code>--environment</code> is present, all environments are used.</li>
-</ul>
-<p>Optional</p>
-<p><code>--group &lt;name&gt;</code>, <code>-g &lt;name&gt;</code></p>
-<p>Generate dependency graphs for one or more specific <a href="/docs/deliver/configuration-as-code/monaco/configuration#environment-groups" title="Manage the Dynatrace configuration files using Monaco with a set of projects and a deployment manifest.">environment groups</a> within your deployment manifest file.
-To set multiple groups, either repeat this flag or separate them using a comma (<code>,</code>).</p>
-<p>This flag is mutually exclusive with <code>--environment</code>:</p>
-<ul>
-<li>If this flag is specified, graphs are generated for each environment within the specified groups.</li>
-<li>If neither <code>--group</code> nor <code>--environment</code> is present, all environments are used.</li>
-</ul>
-<p>Optional</p>
-<p><code>--id-encoding [default,json]</code></p>
-<p>Starting with Dynatrace Monaco 2.12.0, you can choose the encoding format:</p>
-<ul>
-<li>The default string representation.</li>
-<li>JSON.</li>
-</ul>
-<p>JSON encoding can be useful when processing generated DOT files automatically.</p>
-<p>Optional</p>
 <h4 id="schema">schema<a class="headerlink" href="#schema" title="Permanent link">&para;</a></h4>
 <p>These options are used with the <code>monaco generate schema</code> command.</p>
-<p>Option</p>
-<p>Description</p>
-<p>Required</p>
-<p><code>--output-folder &lt;filepath&gt;</code>, <code>-o &lt;filepath&gt;</code></p>
-<p>Specifies the name of the output folder in which the JSON schema files will be saved.</p>
-<p>If not specified, the files will be saved in a <code>./schemas/</code> directory, which is within the directory where you ran the command.</p>
-<p>Optional</p>
 <h2 id="account">Account<a class="headerlink" href="#account" title="Permanent link">&para;</a></h2>
 <p>The <code>account</code> command is used for operations that affect Account Management resources.</p>
 <h3 id="usage_4">Usage<a class="headerlink" href="#usage_4" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>monaco account [ARGS] [OPTIONS]
 </code></pre></div>
 <h3 id="arguments_3">Arguments<a class="headerlink" href="#arguments_3" title="Permanent link">&para;</a></h3>
-<p>Argument</p>
-<p>Description</p>
-<p>Required</p>
-<p><code>deploy</code></p>
-<p>Deploy Account Management resources.</p>
-<p>Optional</p>
-<p><code>download</code></p>
-<p>Download Account Management resources.</p>
-<p>Optional</p>
-<p><code>delete</code></p>
-<p>Delete Account Management resources.</p>
-<p>Optional</p>
 <h3 id="options_4">Options<a class="headerlink" href="#options_4" title="Permanent link">&para;</a></h3>
 <p>The available options depend on the specific argument that is used.</p>
 <h4 id="deploy_1">deploy<a class="headerlink" href="#deploy_1" title="Permanent link">&para;</a></h4>
 <p>These options are used with the <code>monaco account deploy</code> command.</p>
-<p>Option</p>
-<p>Description</p>
-<p>Required</p>
-<p><code>--account &lt;name&gt;</code>, <code>-a &lt;name&gt;</code></p>
-<p>The account name to deploy to, as specified in the manifest file.</p>
-<p>Optional</p>
-<p><code>--dry-run</code>, <code>-d</code></p>
-<p>Validate the structure of your manifest, projects, and configurations.
-A dry run resolves all configuration parameters, but it can't verify if the Dynatrace APIs will accept the content.</p>
-<p>Optional</p>
-<p><code>--manifest &lt;file&gt;</code>, <code>-m &lt;file&gt;</code></p>
-<p>The name of the manifest file.</p>
-<p>If not specified, Monaco searches for the <code>./manifest.yaml</code> file in the folder where the command is executed from.</p>
-<p>Optional</p>
-<p><code>--project &lt;name&gt;</code>, <code>-p &lt;name&gt;</code></p>
-<p>Specify one or more projects to be deployed.
-To set multiple projects, either repeat this flag or separate them using a comma (<code>,</code>).</p>
-<ul>
-<li>If this flag is specified, configurations from the specified projects are deployed.</li>
-<li>Without this flag, configurations from all projects defined in the manifest are deployed.</li>
-</ul>
-<p>Optional</p>
 <h4 id="download_1">download<a class="headerlink" href="#download_1" title="Permanent link">&para;</a></h4>
 <p>These options are used with the <code>monaco account download</code> command.</p>
 <h5 id="options-to-download-via-manifest">Options to download via manifest<a class="headerlink" href="#options-to-download-via-manifest" title="Permanent link">&para;</a></h5>
 <p>These options are used when you want to download via a manifest YAML file.</p>
-<p>Option</p>
-<p>Description</p>
-<p>Required</p>
-<p><code>--manifest &lt;file&gt;</code>, <code>-m &lt;file&gt;</code></p>
-<p>The name of the manifest file.</p>
-<p>If the file name is not specified, Monaco searches for the <code>./manifest.yaml</code> file in the folder where the command is executed from.</p>
-<p>Optional</p>
-<p><code>--account &lt;name&gt;</code>, <code>-a &lt;name&gt;</code></p>
-<p>The account name(s) to download from, as specified in the manifest file.
-To set multiple accounts, either repeat this flag or separate them using a comma (<code>,</code>).</p>
-<ul>
-<li>If this flag is specified, configurations from the specified accounts are downloaded.</li>
-<li>Without this flag, configurations from all projects defined in the manifest are downloaded.</li>
-</ul>
-<p>Optional</p>
-<p><code>--force</code>, <code>-f</code></p>
-<p>Used in combination with <code>--manifest</code>.
-Force overwrites any existing <code>manifest.yaml</code> file.</p>
-<p>Optional</p>
 <h5 id="options-to-download-via-uuid">Options to download via UUID<a class="headerlink" href="#options-to-download-via-uuid" title="Permanent link">&para;</a></h5>
 <p>These options are used when you want to download via a Dynatrace account UUID</p>
-<p>Option</p>
-<p>Description</p>
-<p>Required</p>
-<p><code>--oauth-client-id &lt;environment variable name&gt;</code></p>
-<p>The name of the environment variable that contains the OAuth client ID.</p>
-<p>Required</p>
-<p><code>--oauth-client-secret &lt;environment-variable-name&gt;</code></p>
-<p>The name of the environment variable that contains the OAuth client secret.</p>
-<p>Required</p>
-<p><code>--uuid &lt;account UUID&gt;</code>, <code>-u &lt;account UUID&gt;</code></p>
-<p>Account UUID from which the account management resources should be downloaded.</p>
-<p>You can find the UUID on the <strong>Account Management</strong> &gt; <strong>Identity &amp; access management</strong> &gt; <strong>OAuth clients</strong> page, during creation of an OAuth client.</p>
-<p>Required</p>
 <h5 id="additional-options">Additional options<a class="headerlink" href="#additional-options" title="Permanent link">&para;</a></h5>
 <p>These options can be used with either download method (whether via manifest or UUID).</p>
-<p>Option</p>
-<p>Description</p>
-<p>Required</p>
-<p><code>--output-folder &lt;filepath&gt;</code>, <code>-o &lt;filepath&gt;</code></p>
-<p>Specifies the name of the output folder in which downloaded configurations will be stored.</p>
-<p>By default, the folder name will be <code>download</code> with the current timestamp appended.</p>
-<p>Optional</p>
 <h4 id="delete_1">delete<a class="headerlink" href="#delete_1" title="Permanent link">&para;</a></h4>
 <p>These options are used with the <code>monaco account delete</code> command.</p>
-<p>Option</p>
-<p>Description</p>
-<p>Required</p>
-<p><code>--account &lt;name&gt;</code>, <code>-a &lt;name&gt;</code></p>
-<p>The account name(s) account whose resources should be deleted, as specified in the manifest file.
-To set multiple accounts, either repeat this flag or separate them using a comma (<code>,</code>).</p>
-<ul>
-<li>If this flag is specified, configurations from the specified accounts are deleted.</li>
-<li>Without this flag, configurations from all projects defined in the manifest are deleted.</li>
-</ul>
-<p>Optional</p>
-<p><code>--file &lt;file&gt;</code></p>
-<p>The delete file that specifies the relevant configurations.</p>
-<p>If not specified, Monaco will look for the file named <code>delete.yaml</code>.</p>
-<p>Optional</p>
-<p><code>--manifest &lt;file&gt;</code>, <code>-m &lt;file&gt;</code></p>
-<p>The manifest file that specifies the relevant Dynatrace environments.</p>
-<p>If not specified, Monaco will look for the file named <code>manifest.yaml</code>.</p>
-<p>Optional</p>
 <h5 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h5>
 <p>In this example, we delete a user, service user, group, policy, and boundary using respective entries in a <code>delete.yaml</code> file.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>delete:
@@ -26261,15 +25940,6 @@ To set multiple accounts, either repeat this flag or separate them using a comma
 <h2 id="global-options">Global options<a class="headerlink" href="#global-options" title="Permanent link">&para;</a></h2>
 <p>These options can be used with any <code>monaco</code> argument.
 They are useful for troubleshooting any errors that you might encounter.</p>
-<p>Option</p>
-<p>Description</p>
-<p>Required</p>
-<p><code>--support-archive</code></p>
-<p>Create a <a href="/docs/deliver/configuration-as-code/monaco/reference/logging#support-archive" title="Logging reference for Dynatrace Configuration as Code via Monaco">support archive for troubleshooting</a>.</p>
-<p>Optional</p>
-<p><code>--verbose</code>, <code>-v</code></p>
-<p>Enable <a href="/docs/deliver/configuration-as-code/monaco/reference/logging" title="Logging reference for Dynatrace Configuration as Code via Monaco">verbose debugging logs</a>.</p>
-<p>Optional</p>
 
 
 

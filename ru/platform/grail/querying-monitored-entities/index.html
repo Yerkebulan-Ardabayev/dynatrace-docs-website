@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
     
     
       
@@ -25490,22 +25490,6 @@
 <p>For example, executing the <code>fetch dt.entity.host</code> query retrieves all host entities. By default, entity records include the ID and entity name.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>fetch dt.entity.host
 </code></pre></div>
-<p><code>entity.name</code></p>
-<p><code>id</code></p>
-<p>HOST-1</p>
-<p>HOST-123</p>
-<p>HOST-2</p>
-<p>HOST-456</p>
-<p>HOST-3</p>
-<p>HOST-789</p>
-<p>HOST-4</p>
-<p>HOST-101</p>
-<p>HOST-5</p>
-<p>HOST-111</p>
-<p>HOST-6</p>
-<p>HOST-131</p>
-<p>HOST-7</p>
-<p>HOST-141</p>
 <p>To include additional details, you can use the <code>fieldsAdd</code> command. As you start typing, the auto-complete feature suggests available fields for the entity type.</p>
 <p>Another way to get started is to use one of the built-in topology query snippets.</p>
 <p><img alt="Example of how to get started by using built-in topology query snippets." src="https://dt-cdn.net/images/topology-1447-687b6417ca.png" /></p>
@@ -25517,18 +25501,6 @@
 <a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
 <a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>| fieldsAdd runs
 </code></pre></div>
-<p><code>entity.name</code></p>
-<p><code>id</code></p>
-<p><code>runs</code></p>
-<p>HOST-1</p>
-<p>HOST-123</p>
-<p>runs: Complex record</p>
-<p>HOST-2</p>
-<p>HOST-456</p>
-<p>runs: Complex record</p>
-<p>HOST-3</p>
-<p>HOST-789</p>
-<p>runs: Complex record</p>
 <p>The <code>runs</code> field is a nested record that contains a field for each entity type running on a specific host. Depending on the cardinality, these fields are either strings representing a single entity ID or arrays of strings representing a list of entity IDs. In notebooks, select a nested record in the results list to see its contents.</p>
 <p>If you only want to see process groups running on that host, you can specify this in the <code>fieldsAdd</code> command. The auto-complete feature will provide a list of possible identifier types.</p>
 <p>Selecting a type refines the query to only return an array containing the process group IDs.</p>
@@ -25538,18 +25510,6 @@
 <a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
 <a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>| fieldsAdd runs[dt.entity.process_group]
 </code></pre></div>
-<p><code>entity.name</code></p>
-<p><code>id</code></p>
-<p><code>runs[dt.entity.process_group]</code></p>
-<p>HOST-1</p>
-<p>HOST-123</p>
-<p>runs: PROCESS_GROUP-D123, PROCESS_GROUP-567, PROCESS_GROUP-012</p>
-<p>HOST-2</p>
-<p>HOST-456</p>
-<p>runs: PROCESS_GROUP-D234, PROCESS_GROUP-234, PROCESS_GROUP-F10</p>
-<p>HOST-3</p>
-<p>HOST-789</p>
-<p>runs: PROCESS_GROUP-D567, PROCESS_GROUP-789, PROCESS_GROUP-123</p>
 <p>The field names for relationships differ from the original relationship names in the previous Dynatrace. Instead of using a single name prefixed with <code>fromRelationship</code> and <code>toRelationship</code>, the fields have different names on both sides.</p>
 <p>See the <a href="#relationship-mapping-table">relationship mapping table</a> below to understand how second-generation relationships are represented as DQL fields.</p>
 <p>Note that 1:n relationships only return 100 entity IDs per type, per record. In such cases, we recommend using <code>classicEntitySelector()</code> instead.</p>
@@ -25562,15 +25522,6 @@
 <a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>
 <a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>| fieldsAdd runs_on[dt.entity.host]
 </code></pre></div>
-<p><code>entity.name</code></p>
-<p><code>id</code></p>
-<p><code>runs_on[dt.entity.host]</code></p>
-<p>Mapped Instance for answer_queue on ActiveMQ Artemis</p>
-<p>SERVICE_INSTANCE-1AB2</p>
-<p>HOST-1</p>
-<p>Mapped Instance for Requests executed in the background threads of eT-demo-1-BussinessBackend</p>
-<p>SERVICE_INSTANCE-A123</p>
-<p>HOST-2</p>
 <p>It's important to note that service instances always run on a single host, which means that you obtain a single host ID per service instance record. This allows you to use the <code>lookup</code> command to add the hostname to your records. The hostname is added as the <code>lookup.entity.name</code> field.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>fetch dt.entity.service_instance
 <a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
@@ -25582,26 +25533,6 @@
 <a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>
 <a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>| lookup sourceField:`runs_on[dt.entity.host]`, lookupField:id, [ fetch dt.entity.host ]
 </code></pre></div>
-<p><code>entity.name</code></p>
-<p><code>id</code></p>
-<p><code>runs_on[dt.entity.host]</code></p>
-<p><code>lookup.entity.name</code></p>
-<p><code>lookup.id</code></p>
-<p>Mapped Instance for answer_queue on ActiveMQ Artemis</p>
-<p>SERVICE_INSTANCE-2AB1</p>
-<p>HOST-1</p>
-<p>AB1-abc</p>
-<p>HOST-1</p>
-<p>Mapped Instance for Requests executed in the background threads of eT-demo-1-BussinessBackend</p>
-<p>SERVICE_INSTANCE-B123</p>
-<p>HOST-2</p>
-<p>BA1-cba</p>
-<p>HOST-2</p>
-<p>Mapped Instance for :80</p>
-<p>SERVICE_INSTANCE-C321</p>
-<p>HOST-3</p>
-<p>BA1-cba</p>
-<p>HOST-2</p>
 <h2 id="expand-relationships">Expand relationships<a class="headerlink" href="#expand-relationships" title="Permanent link">&para;</a></h2>
 <p>Hosts can run multiple service instances, so the <code>runs[dt.entity.service_instance]</code> field is an array of entity IDs.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>fetch dt.entity.host
@@ -25610,21 +25541,6 @@
 <a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>
 <a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>| fieldsAdd runs[dt.entity.service_instance]
 </code></pre></div>
-<p><code>entity.name</code></p>
-<p><code>id</code></p>
-<p><code>runs[dt.entity.service_instance]</code></p>
-<p>dw123</p>
-<p>HOST-1</p>
-<p>SERVICE_INSTANCE-AB123</p>
-<p>dw123</p>
-<p>HOST-1</p>
-<p>SERVICE_INSTANCE-CB123</p>
-<p>dw123</p>
-<p>HOST-1</p>
-<p>SERVICE_INSTANCE-DB123</p>
-<p>abc/123</p>
-<p>HOST-2</p>
-<p>SERVICE_INSTANCE-AB902</p>
 <p>The <code>lookup</code> command doesn't apply to arrays of IDs, so you need to use the <code>expand</code> command first to retrieve individual records per service instance ID.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>fetch dt.entity.host
 <a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
@@ -25636,21 +25552,6 @@
 <a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>
 <a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>| expand runs[dt.entity.service_instance]
 </code></pre></div>
-<p><code>entity.name</code></p>
-<p><code>id</code></p>
-<p><code>runs[dt.entity.service_instance]</code></p>
-<p>dw123</p>
-<p>HOST-1</p>
-<p>SERVICE_INSTANCE-DB123</p>
-<p>dw456</p>
-<p>HOST-2</p>
-<p>SERVICE_INSTANCE-BA987</p>
-<p>dw789</p>
-<p>HOST-3</p>
-<p>SERVICE_INSTANCE-CA687</p>
-<p>dw652</p>
-<p>HOST-4</p>
-<p>SERVICE_INSTANCE-1AB2</p>
 <p>In this example, the first record expands into three. Now you can use the <code>lookup</code> command to get the service instance details that you include in the <code>lookup</code> field.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>fetch dt.entity.host
 <a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>
@@ -25666,31 +25567,6 @@
 <a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a>
 <a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a>| lookup sourceField:`runs[dt.entity.service_instance]`, lookupField:id, [ fetch dt.entity.service_instance]
 </code></pre></div>
-<p><code>entity.name</code></p>
-<p><code>id</code></p>
-<p><code>runs[dt.entity.service_instance]</code></p>
-<p><code>lookup.entity.name</code></p>
-<p><code>lookup.id</code></p>
-<p>dw123</p>
-<p>HOST-1</p>
-<p>SERVICE_INSTANCE-AB123</p>
-<p>Mapped instance for easytravelazure-weather-service</p>
-<p>SERVICE_INSTANCE-AB123</p>
-<p>dw123</p>
-<p>HOST-1</p>
-<p>SERVICE_INSTANCE-CB123</p>
-<p>Mapped Instance for weather-service-restify</p>
-<p>SERVICE_INSTANCE-CB123</p>
-<p>dw123</p>
-<p>HOST-1</p>
-<p>SERVICE_INSTANCE-DB123</p>
-<p>Mapped Instance for easytravelazure-weather-express</p>
-<p>SERVICE_INSTANCE-DB123</p>
-<p>abc/123</p>
-<p>HOST-2</p>
-<p>SERVICE_INSTANCE-AB902</p>
-<p>Mapped Instance for easytravel-frontend</p>
-<p>SERVICE_INSTANCE-AB902</p>
 <h2 id="entity-tags">Entity tags<a class="headerlink" href="#entity-tags" title="Permanent link">&para;</a></h2>
 <p>Entity tags consist of up to three values: context, key, and value. Dynatrace creates a string representation of these values in the following format:</p>
 <p><code>[&lt;context&gt;]&lt;key&gt;:&lt;value&gt;</code></p>
@@ -25709,13 +25585,6 @@
 <a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>
 <a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>| fields tag
 </code></pre></div>
-<p><code>tag</code></p>
-<p>AppSec:Node.js</p>
-<p>[Azure]tenant:CustomerA</p>
-<p>HostName:dw123</p>
-<p>AppSec:.NET</p>
-<p>[AWS]created_at:2023-07-07T12:20:10Z</p>
-<p>[Environment]tema:cpn</p>
 <p>You can use the <code>expand</code> command to optimize tag filtering. This example filters hosts based on a specific cluster name.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>fetch dt.entity.host
 <a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>
@@ -25727,24 +25596,6 @@
 <a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>
 <a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>| filter contains(tags, &quot;[Environment]Cluster.Name:prod-eu-west-6-ireland&quot;)
 </code></pre></div>
-<p><code>entity.name</code></p>
-<p><code>id</code></p>
-<p><code>tags</code></p>
-<p>HOST-1</p>
-<p>HOST-C2</p>
-<p>tags:[Environment]Cluster.Name:prod-eu-west-6-ireland</p>
-<p>HOST-2</p>
-<p>HOST-C3</p>
-<p>tags:[Environment]Cluster.Name:prod-eu-west-6-ireland</p>
-<p>HOST-3</p>
-<p>HOST-C4</p>
-<p>tags:[Environment]Cluster.Name:prod-eu-west-6-ireland</p>
-<p>HOST-4</p>
-<p>HOST-C5</p>
-<p>tags:[Environment]Cluster.Name:prod-eu-west-6-ireland</p>
-<p>HOST-5</p>
-<p>HOST-C6</p>
-<p>tags:[Environment]Cluster.Name:prod-eu-west-6-ireland</p>
 <p>If you need structured access to the key, context, or value, you can use the following DPL parse expression to split the string representation into individual fields.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>fetch dt.entity.host
 <a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>
@@ -25756,30 +25607,6 @@
 <a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>
 <a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a>| parse tag_string, &quot;&quot;&quot;((&#39;[&#39;LD:tag_context &#39;]&#39; LD:tag_key (!&lt;&lt;&#39;\\&#39; &#39;:&#39;) LD:tag_value)|(LD:tag_key (!&lt;&lt;&#39;\\&#39; &#39;:&#39;) LD:tag_value)|LD:tag_key)&quot;&quot;&quot;
 </code></pre></div>
-<p><code>entity.name</code></p>
-<p><code>id</code></p>
-<p><code>tag_string</code></p>
-<p><code>tag_context</code></p>
-<p><code>tag_key</code></p>
-<p><code>tag_value</code></p>
-<p>HOST-1</p>
-<p>HOST-73</p>
-<p>Maxk:WebService2-ABC</p>
-<p>undefined</p>
-<p>Maxk:WebService2-ABC</p>
-<p>undefined</p>
-<p>HOST-1</p>
-<p>HOST-73</p>
-<p>testtests:testspreiser</p>
-<p>undefined</p>
-<p>testtests:testspreiser</p>
-<p>undefined</p>
-<p>HOST-1</p>
-<p>HOST-73</p>
-<p>Maxk:WebService3-ABC</p>
-<p>undefined</p>
-<p>Maxk:WebService3-ABC</p>
-<p>undefined</p>
 <h2 id="list-fields-and-relationships">List fields and relationships<a class="headerlink" href="#list-fields-and-relationships" title="Permanent link">&para;</a></h2>
 <p>Use the <code>describe</code> command to obtain a list of fields and relationships for each entity view.</p>
 <p>For example, to retrieve a list of all fields and relationships for the <code>service_instance</code> entity view, enter <code>describe dt.entity.service_instance</code>:</p>
@@ -25799,20 +25626,6 @@
 <a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>
 <a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>| filter in(data_types, &quot;record&quot;)
 </code></pre></div>
-<p><code>field</code></p>
-<p><code>data_types</code></p>
-<p>belongs_to</p>
-<p>record</p>
-<p>runs_on</p>
-<p>record</p>
-<p>sends_to</p>
-<p>record</p>
-<p>icon</p>
-<p>record</p>
-<p>receives_from</p>
-<p>record</p>
-<p>instance_of</p>
-<p>record</p>
 <h2 id="permissions">Permissions<a class="headerlink" href="#permissions" title="Permanent link">&para;</a></h2>
 <p>You need the <code>storage:entities:read</code> permission to query entities.</p>
 <p>Grail doesn't apply management zone filters. Users having the <code>storage:entities:read</code> permission can query all entities.</p>
@@ -25825,18 +25638,6 @@
 <a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>
 <a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>| filter in(id, classicEntitySelector(&quot;type(service), fromRelationship.runsOnHost(type(host), tag([AWS]Category:ABC))&quot;))
 </code></pre></div>
-<p><code>entity.name</code></p>
-<p><code>id</code></p>
-<p>123</p>
-<p>123</p>
-<p>123</p>
-<p>123</p>
-<p>123</p>
-<p>123</p>
-<p>123</p>
-<p>123</p>
-<p>123</p>
-<p>123</p>
 <p>You can also obtain this result using native DQL with the following query.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>fetch dt.entity.service
 <a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>
@@ -25860,26 +25661,6 @@
 <a id="__codelineno-14-20" name="__codelineno-14-20" href="#__codelineno-14-20"></a>
 <a id="__codelineno-14-21" name="__codelineno-14-21" href="#__codelineno-14-21"></a>| filter host.tags == &quot;[AWS]Category:ABC&quot;
 </code></pre></div>
-<p><code>entity.name</code></p>
-<p><code>id</code></p>
-<p><code>host.id</code></p>
-<p><code>host.tags</code></p>
-<p>123</p>
-<p>123</p>
-<p>123</p>
-<p>123</p>
-<p>123</p>
-<p>123</p>
-<p>123</p>
-<p>123</p>
-<p>123</p>
-<p>123</p>
-<p>123</p>
-<p>123</p>
-<p>123</p>
-<p>123</p>
-<p>123</p>
-<p>123</p>
 <p>This query has limitations, such as returning only 100 hosts per service entity, and is generally more complex than the previous example using the <code>classicEntitySelector</code> function.</p>
 <h3 id="filtering-along-relationships">Filtering along relationships<a class="headerlink" href="#filtering-along-relationships" title="Permanent link">&para;</a></h3>
 <p>When your query evaluates relationships, we recommend using the <a href="/docs/platform/grail/dynatrace-query-language/functions/general-functions#classic-entity-selector" title="A list of DQL general functions."><code>classicEntitySelector</code></a> function instead of native DQL queries.</p>
@@ -25976,312 +25757,6 @@
 </code></pre></div>
 <h2 id="relationship-mapping-table">Relationship mapping table<a class="headerlink" href="#relationship-mapping-table" title="Permanent link">&para;</a></h2>
 <p>Entity relationships in the previous Dynatrace (for example, the environment API v2) are mapped to the new names in DQL records according to the following table.</p>
-<p>Relationship name</p>
-<p>From &gt; To</p>
-<p>To &gt; From</p>
-<p>belongsTo</p>
-<p>belongs_to</p>
-<p>contains</p>
-<p>calls</p>
-<p>calls</p>
-<p>called_by</p>
-<p>candidateTalksWith</p>
-<p>called_by</p>
-<p>calls</p>
-<p>hostsComputeNode</p>
-<p>hosts</p>
-<p>hosted_by</p>
-<p>indirectlySendsToQueue</p>
-<p>indirectly_sends_to</p>
-<p>indirectly_receives_from</p>
-<p>isAccessibleBy</p>
-<p>accessible_by</p>
-<p>can_access</p>
-<p>isApplicationMethodOf</p>
-<p>belongs_to</p>
-<p>contains</p>
-<p>isApplicationMethodOfGroup</p>
-<p>belongs_to</p>
-<p>contains</p>
-<p>isApplicationOfSyntheticTest</p>
-<p>monitored_by</p>
-<p>monitors</p>
-<p>isAzrAppServicePlanOf</p>
-<p>contains</p>
-<p>belongs_to</p>
-<p>isAzrEventHubNamespaceOfEventHub</p>
-<p>contains</p>
-<p>belongs_to</p>
-<p>isAzrMgmtGroupOfAzrTenant</p>
-<p>belongs_to</p>
-<p>contains</p>
-<p>isAzrServiceBusNamespaceOfQueue</p>
-<p>contains</p>
-<p>belongs_to</p>
-<p>isAzrServiceBusNamespaceOfTopic</p>
-<p>contains</p>
-<p>belongs_to</p>
-<p>isAzrSQLDatabaseOfElasticPool</p>
-<p>belongs_to</p>
-<p>contains</p>
-<p>isAzrSqlServerOfDatabase</p>
-<p>contains</p>
-<p>belongs_to</p>
-<p>isAzrSqlServerOfElasticPool</p>
-<p>belongs_to</p>
-<p>contains</p>
-<p>isAzrStorageAccountOfAzrEventHub</p>
-<p>contains</p>
-<p>belongs_to</p>
-<p>isAzrSubscriptionOfAzrMgmtGroup</p>
-<p>belongs_to</p>
-<p>contains</p>
-<p>isAzrSubscriptionOfAzrTenant</p>
-<p>belongs_to</p>
-<p>contains</p>
-<p>isAzrSubscriptionOfCredentials</p>
-<p>contains</p>
-<p>belongs_to</p>
-<p>isBalancedBy</p>
-<p>balanced_by</p>
-<p>balances</p>
-<p>isBoshDeploymentOfHost</p>
-<p>contains</p>
-<p>belongs_to</p>
-<p>isCfFoundationOfHost</p>
-<p>contains</p>
-<p>belongs_to</p>
-<p>isCgiOfCa</p>
-<p>belongs_to</p>
-<p>contains</p>
-<p>isCgiOfCai</p>
-<p>belongs_to</p>
-<p>contains</p>
-<p>isCgiOfCluster</p>
-<p>belongs_to</p>
-<p>contains</p>
-<p>isCgiOfHost</p>
-<p>belongs_to</p>
-<p>contains</p>
-<p>isCgiOfNamespace</p>
-<p>belongs_to</p>
-<p>contains</p>
-<p>isChildOf</p>
-<p>child_of</p>
-<p>parent_of</p>
-<p>isClusterOfCa</p>
-<p>cluster_of</p>
-<p>clustered_by</p>
-<p>isClusterOfCai</p>
-<p>cluster_of</p>
-<p>clustered_by</p>
-<p>isClusterOfCni</p>
-<p>cluster_of</p>
-<p>clustered_by</p>
-<p>isClusterOfHost</p>
-<p>cluster_of</p>
-<p>clustered_by</p>
-<p>isClusterOfKubernetesSvc</p>
-<p>cluster_of</p>
-<p>clustered_by</p>
-<p>isClusterOfNamespace</p>
-<p>cluster_of</p>
-<p>clustered_by</p>
-<p>isClusterOfNode</p>
-<p>cluster_of</p>
-<p>isClusterOfPg</p>
-<p>clustered_by</p>
-<p>cluster_of</p>
-<p>clustered_by</p>
-<p>isCnpOfCai</p>
-<p>belongs_to</p>
-<p>contains</p>
-<p>isDatastoreOf</p>
-<p>belongs_to</p>
-<p>contains</p>
-<p>isDeviceApplicationMethodOf</p>
-<p>belongs_to</p>
-<p>contains</p>
-<p>isDeviceApplicationMethodOfGroup</p>
-<p>belongs_to</p>
-<p>contains</p>
-<p>isDiskOf</p>
-<p>belongs_to</p>
-<p>contains</p>
-<p>isDockerContainerOf</p>
-<p>contains</p>
-<p>belongs_to</p>
-<p>isDockerContainerOfPg</p>
-<p>contains</p>
-<p>belongs_to</p>
-<p>isEbsVolumeOf</p>
-<p>belongs_to</p>
-<p>contains</p>
-<p>isGroupOf</p>
-<p>group_of</p>
-<p>groups</p>
-<p>isHostGroupOf</p>
-<p>group_of</p>
-<p>groups</p>
-<p>isHostOfContainer</p>
-<p>hosts</p>
-<p>hosted_by</p>
-<p>isInstanceOf</p>
-<p>instance_of</p>
-<p>instantiates</p>
-<p>isKubernetesSvcOfCa</p>
-<p>balances</p>
-<p>balanced_by</p>
-<p>isKubernetesSvcOfCai</p>
-<p>balances</p>
-<p>balanced_by</p>
-<p>isLocatedIn</p>
-<p>belongs_to</p>
-<p>contains</p>
-<p>isMainPgiOfCgi</p>
-<p>belongs_to</p>
-<p>contains</p>
-<p>isMemberOf</p>
-<p>belongs_to</p>
-<p>contains</p>
-<p>isMemberOfScalingGroup</p>
-<p>belongs_to</p>
-<p>contains</p>
-<p>isNamespaceOfCa</p>
-<p>contains</p>
-<p>belongs_to</p>
-<p>isNamespaceOfCai</p>
-<p>contains</p>
-<p>belongs_to</p>
-<p>isNamespaceOfCni</p>
-<p>contains</p>
-<p>belongs_to</p>
-<p>isNamespaceOfCnp</p>
-<p>contains</p>
-<p>belongs_to</p>
-<p>isNamespaceOfKubernetesSvc</p>
-<p>contains</p>
-<p>belongs_to</p>
-<p>isNamespaceOfPg</p>
-<p>contains</p>
-<p>belongs_to</p>
-<p>isNamespaceOfService</p>
-<p>contains</p>
-<p>belongs_to</p>
-<p>isNetworkClientOf</p>
-<p>calls</p>
-<p>called_by</p>
-<p>isNetworkClientOfHost</p>
-<p>calls</p>
-<p>called_by</p>
-<p>isNetworkClientOfProcessGroup</p>
-<p>calls</p>
-<p>called_by</p>
-<p>isNetworkInterfaceOf</p>
-<p>belongs_to</p>
-<p>contains</p>
-<p>isNodeOfHost</p>
-<p>belongs_to</p>
-<p>contains</p>
-<p>isOpenstackAvZoneOf</p>
-<p>belongs_to</p>
-<p>contains</p>
-<p>isPartOf</p>
-<p>belongs_to</p>
-<p>contains</p>
-<p>isPgAppOf</p>
-<p>belongs_to</p>
-<p>contains</p>
-<p>isPgiOfCgi</p>
-<p>belongs_to</p>
-<p>contains</p>
-<p>isPgOfCa</p>
-<p>belongs_to</p>
-<p>contains</p>
-<p>isPgOfCai</p>
-<p>belongs_to</p>
-<p>contains</p>
-<p>isPgOfCg</p>
-<p>belongs_to</p>
-<p>contains</p>
-<p>isProcessOf</p>
-<p>belongs_to</p>
-<p>contains</p>
-<p>isProcessRunningOpenstackVm</p>
-<p>belongs_to</p>
-<p>contains</p>
-<p>isRuntimeComponentOf</p>
-<p>belongs_to</p>
-<p>contains</p>
-<p>isSameAs</p>
-<p>same_as</p>
-<p>same_as</p>
-<p>isServedByDcrumService</p>
-<p>served_by</p>
-<p>serves</p>
-<p>isServiceMethodOf</p>
-<p>belongs_to</p>
-<p>contains</p>
-<p>isServiceMethodOfService</p>
-<p>belongs_to</p>
-<p>contains</p>
-<p>isServiceOf</p>
-<p>belongs_to</p>
-<p>contains</p>
-<p>isServiceOfProcessGroup</p>
-<p>belongs_to</p>
-<p>contains</p>
-<p>isSiteOf</p>
-<p>contains</p>
-<p>belongs_to</p>
-<p>isSoftwareComponentOfPgi</p>
-<p>belongs_to</p>
-<p>contains</p>
-<p>isStepOf</p>
-<p>belongs_to</p>
-<p>contains</p>
-<p>isUserActionOf</p>
-<p>belongs_to</p>
-<p>contains</p>
-<p>listensOnQueue</p>
-<p>belongs_to</p>
-<p>contains</p>
-<p>manages</p>
-<p>manages</p>
-<p>managed_by</p>
-<p>monitors</p>
-<p>monitors</p>
-<p>monitored_by</p>
-<p>propagatesTo</p>
-<p>propagates_to</p>
-<p>propagated_from</p>
-<p>receivesFromQueue</p>
-<p>receives_from</p>
-<p>sends_to</p>
-<p>runsOn</p>
-<p>runs_on</p>
-<p>runs</p>
-<p>runsOnHost</p>
-<p>runs_on</p>
-<p>runs</p>
-<p>runsOnProcessGroupInstance</p>
-<p>runs_on</p>
-<p>runs</p>
-<p>runsOnResource</p>
-<p>runs_on</p>
-<p>runs</p>
-<p>sendsToQueue</p>
-<p>sends_to</p>
-<p>receives_from</p>
-<p>talksWithCandidate</p>
-<p>calls</p>
-<p>called_by</p>
-<p>affects</p>
-<p>affects</p>
-<p>affected_by</p>
-<p>isRelatedTo</p>
-<p>related_to</p>
-<p>related_to</p>
 <h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h2>
 <ul>
 <li><strong>The DQL query returns different or fewer entities than API v2 environment</strong>

@@ -21,11 +21,11 @@
       
       
       <link rel="icon" href="../../../../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
     
     
       
-        <title>Dynatrace Платформа Подписки API - управление распределением затрат - Dynatrace Managed - Документация</title>
+        <title>Dynatrace Platform Subscription API - управление распределением затрат - Dynatrace Managed - Документация</title>
       
     
     
@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#dynatrace-api-" class="md-skip">
+        <a href="#dynatrace-platform-subscription-api-" class="md-skip">
           Перейти к содержанию
         </a>
       
@@ -114,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Dynatrace Платформа Подписки API - управление распределением затрат
+              Dynatrace Platform Subscription API - управление распределением затрат
             
           </span>
         </div>
@@ -25474,22 +25474,20 @@
 
 
 
-<h1 id="dynatrace-api-">Dynatrace Платформа Подписки API - управление распределением затрат<a class="headerlink" href="#dynatrace-api-" title="Permanent link">&para;</a></h1>
-<h1 id="dynatrace-api-_1">Dynatrace Платформа Подписки API - управление распределением затрат<a class="headerlink" href="#dynatrace-api-_1" title="Permanent link">&para;</a></h1>
+<h1 id="dynatrace-platform-subscription-api-">Dynatrace Platform Subscription API - управление распределением затрат<a class="headerlink" href="#dynatrace-platform-subscription-api-" title="Permanent link">&para;</a></h1>
+<h1 id="dynatrace-platform-subscription-api-_1">Dynatrace Platform Subscription API - управление распределением затрат<a class="headerlink" href="#dynatrace-platform-subscription-api-_1" title="Permanent link">&para;</a></h1>
 <ul>
-<li>Последнее Dynatrace</li>
-<li>Справка</li>
-<li>Опубликовано 18 октября 2024 г.</li>
+<li>Latest Dynatrace</li>
+<li>Reference</li>
+<li>Published Oct 18, 2024</li>
 </ul>
-<p>Функция распределения затрат Dynatrace включает два поля для центров затрат и продуктов. Вы можете использовать одно или оба поля. Эти поля отражают структуру распределения затрат вашей компании, что позволяет вам развивать две разные перспективы: одну на основе ваших центров затрат (например, отделов) и другую на основе ваших продуктов или услуг (например, Applicationname или ApplicationID). Конечно, вы можете настроить использование этих полей в соответствии с организационной структурой вашей компании.</p>
-<p>Используйте Dynatrace Платформу Подписки API, чтобы управлять вашими продуктами и центрами затрат в большом масштабе.</p>
+<p>Функция распределения затрат Dynatrace включает в себя два поля для центров затрат и продуктов. Вы можете использовать одно или оба поля. Эти поля отражают структуру распределения затрат вашей компании, что позволяет вам разработать две различные перспективы: одну на основе ваших центров затрат (например, отделов) и другую на основе ваших продуктов или услуг (например, Applicationname или ApplicationID). Конечно, вы можете настроить использование этих полей в соответствии с организационной структурой вашей компании.</p>
+<p>Используйте Dynatrace Platform Subscription API, чтобы управлять вашими продуктами и центрами затрат в крупном масштабе.</p>
 <h2 id="get">GET центры затрат<a class="headerlink" href="#get" title="Permanent link">&para;</a></h2>
 <p>Отображает все определенные центры затрат.</p>
 <p>Запрос производит полезную нагрузку <code>application/json</code>.</p>
-<p>GET</p>
-<p><code>https://api.dynatrace.com//v1/accounts/{accountUuid}/settings/costcenters</code></p>
 <h3 id="_1">Аутентификация<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
-<p>Чтобы выполнить этот запрос, вам необходимо назначить область <strong>Разрешить чтение для ресурсов использования и потребления</strong> (<code>account-uac-read</code>) вашему токену. Чтобы узнать, как получить и использовать его, см. <a href="/docs/manage/identity-access-management/access-tokens-and-oauth-clients/oauth-clients" title="Управление аутентификацией и разрешениями пользователей с помощью клиентов OAuth.">Клиенты OAuth</a>.</p>
+<p>Чтобы выполнить этот запрос, вам необходимо назначить область <strong>Allow read access for usage and consumption resources</strong> (<code>account-uac-read</code>) вашему токену. Чтобы узнать, как получить и использовать его, см. <a href="/docs/manage/identity-access-management/access-tokens-and-oauth-clients/oauth-clients" title="Управление аутентификацией и разрешениями пользователей с помощью OAuth-клиентов.">OAuth-клиенты</a>.</p>
 <h3 id="_2">Параметры<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
@@ -25504,23 +25502,23 @@
 <tbody>
 <tr>
 <td>accountUuid</td>
-<td>строка</td>
-<td>Идентификатор необходимой учетной записи.  Вы можете найти UUID на странице <strong>Управление учетной записью</strong> &gt; <strong>Идентификация и управление доступом</strong> &gt; <strong>Клиенты OAuth</strong>, во время создания клиента OAuth.</td>
-<td>путь</td>
+<td>string</td>
+<td>Идентификатор необходимой учетной записи.  Вы можете найти UUID на странице <strong>Управление учетной записью</strong> &gt; <strong>Идентификация и управление доступом</strong> &gt; <strong>OAuth-клиенты</strong> во время создания OAuth-клиента.</td>
+<td>path</td>
 <td>Обязательный</td>
 </tr>
 <tr>
 <td>page</td>
-<td>число</td>
-<td>Номер запрошенной страницы. Можно увеличивать, пока <strong>hasNextPage</strong> равен true в ответе.</td>
-<td>запрос</td>
+<td>number</td>
+<td>Номер запрошенной страницы. Можно увеличивать до тех пор, пока <strong>hasNextPage</strong> равен true в ответе.</td>
+<td>query</td>
 <td>Необязательный</td>
 </tr>
 <tr>
 <td>page-size</td>
-<td>число</td>
+<td>number</td>
 <td>Определяет количество запрошенных записей для следующей страницы.</td>
-<td>запрос</td>
+<td>query</td>
 <td>Необязательный</td>
 </tr>
 </tbody>
@@ -25539,7 +25537,7 @@
 <tr>
 <td><strong>200</strong></td>
 <td><a href="#openapi-definition-PaginatedFieldValueDto">PaginatedFieldValueDto</a></td>
-<td>Успех. Ответ содержит страницу разрешенных значений распределения затрат для поля costcenter.</td>
+<td>Успех. Ответ содержит страницу разрешенных значений распределения затрат для поля центра затрат.</td>
 </tr>
 <tr>
 <td><strong>400</strong></td>
@@ -25549,7 +25547,7 @@
 <tr>
 <td><strong>401</strong></td>
 <td>-</td>
-<td>Нет действительной сессии</td>
+<td>Не предоставлена действительная сессия</td>
 </tr>
 <tr>
 <td><strong>403</strong></td>
@@ -25559,11 +25557,11 @@
 <tr>
 <td><strong>500</strong></td>
 <td>-</td>
-<td>Что-то пошло не так на стороне Управления учетной записью</td>
+<td>Что-то пошло не так на стороне управления учетной записью</td>
 </tr>
 </tbody>
 </table>
-<h3 id="_5">Объекты тела ответа<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<h3 id="_5">Объекты ответа<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
 <h4 id="paginatedfieldvaluedto">Объект <code>PaginatedFieldValueDto</code><a class="headerlink" href="#paginatedfieldvaluedto" title="Permanent link">&para;</a></h4>
 <table>
 <thead>
@@ -25581,8 +25579,8 @@
 </tr>
 <tr>
 <td>hasNextPage</td>
-<td>логический</td>
-<td>Указывает, есть ли другая страница для загрузки.</td>
+<td>boolean</td>
+<td>Указывает, есть ли еще страница для загрузки.</td>
 </tr>
 </tbody>
 </table>
@@ -25598,12 +25596,12 @@
 <tbody>
 <tr>
 <td>key</td>
-<td>строка</td>
+<td>string</td>
 <td>Ключ этого значения.</td>
 </tr>
 </tbody>
 </table>
-<h3 id="json">Тело ответа JSON модели<a class="headerlink" href="#json" title="Permanent link">&para;</a></h3>
+<h3 id="json">Модель ответа JSON<a class="headerlink" href="#json" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>{
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
@@ -25616,7 +25614,7 @@
 <a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>
 <a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>
 <a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>
-<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>&quot;key&quot;: &quot;строка&quot;
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>&quot;key&quot;: &quot;string&quot;
 <a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>
 <a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>
 <a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>
@@ -25635,12 +25633,10 @@
 <a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a>}
 </code></pre></div>
 <h2 id="post">POST центры затрат<a class="headerlink" href="#post" title="Permanent link">&para;</a></h2>
-<p>Добавьте предоставленное значение в поле центра затрат.</p>
+<p>Добавляет указанное значение в поле центра затрат.</p>
 <p>Запрос производит полезную нагрузку <code>application/json</code>.</p>
-<p>POST</p>
-<p><code>https://api.dynatrace.com//v1/accounts/{accountUuid}/settings/costcenters</code></p>
 <h2 id="_6">Аутентификация<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
-<p>Чтобы выполнить этот запрос, вам необходимо назначить разрешение <strong>Разрешить запись для ресурсов использования и потребления</strong> (<code>account-uac-write</code>) вашему токену. Чтобы узнать, как получить и использовать его, см. <a href="/docs/manage/identity-access-management/access-tokens-and-oauth-clients/oauth-clients" title="Управление аутентификацией и разрешениями пользователей с помощью клиентов OAuth.">Клиенты OAuth</a>.</p>
+<p>Чтобы выполнить этот запрос, вам необходимо назначить разрешение <strong>Allow write access for usage and consumption resources</strong> (<code>account-uac-write</code>) вашему токену. Чтобы узнать, как получить и использовать его, см. <a href="/docs/manage/identity-access-management/access-tokens-and-oauth-clients/oauth-clients" title="Управление аутентификацией и разрешениями пользователей с помощью OAuth-клиентов.">OAuth-клиенты</a>.</p>
 <h3 id="_7">Параметры<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
@@ -25655,21 +25651,21 @@
 <tbody>
 <tr>
 <td>accountUuid</td>
-<td>строка</td>
-<td>Идентификатор необходимой учетной записи.  Вы можете найти UUID на странице <strong>Управление учетной записью</strong> &gt; <strong>Идентификация и управление доступом</strong> &gt; <strong>Клиенты OAuth</strong>, во время создания клиента OAuth.</td>
-<td>путь</td>
+<td>string</td>
+<td>Идентификатор необходимой учетной записи.  Вы можете найти UUID на странице <strong>Управление учетной записью</strong> &gt; <strong>Идентификация и управление доступом</strong> &gt; <strong>OAuth-клиенты</strong> во время создания OAuth-клиента.</td>
+<td>path</td>
 <td>Обязательный</td>
 </tr>
 <tr>
 <td>body</td>
 <td><a href="#openapi-definition-FieldValuesRequestDto">FieldValuesRequestDto</a></td>
 <td>-</td>
-<td>тело</td>
+<td>body</td>
 <td>Обязательный</td>
 </tr>
 </tbody>
 </table>
-<h3 id="_8">Объекты тела запроса<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<h3 id="_8">Объекты запроса<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
 <h4 id="fieldvaluesrequestdto">Объект <code>FieldValuesRequestDto</code><a class="headerlink" href="#fieldvaluesrequestdto" title="Permanent link">&para;</a></h4>
 <table>
 <thead>
@@ -25702,13 +25698,13 @@
 <tbody>
 <tr>
 <td>key</td>
-<td>строка</td>
+<td>string</td>
 <td>Ключ этого значения.</td>
 <td>Обязательный</td>
 </tr>
 </tbody>
 </table>
-<h3 id="json_1">Тело запроса JSON модель<a class="headerlink" href="#json_1" title="Permanent link">&para;</a></h3>
+<h3 id="json_1">Модель запроса JSON<a class="headerlink" href="#json_1" title="Permanent link">&para;</a></h3>
 <p>Это модель тела запроса, показывающая возможные элементы. Ее необходимо скорректировать для использования в фактическом запросе.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>{
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
@@ -25722,7 +25718,7 @@
 <a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>
 <a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>
 <a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>
-<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>&quot;key&quot;: &quot;строка&quot;
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>&quot;key&quot;: &quot;string&quot;
 <a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>
 <a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>
 <a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>
@@ -25748,15 +25744,15 @@
 <tbody>
 <tr>
 <td><strong>204</strong></td>
-<td>Ответ не имеет тела. Значения были добавлены в поле.</td>
+<td>Ответ не содержит тела. Значения были добавлены в поле.</td>
 </tr>
 <tr>
 <td><strong>400</strong></td>
-<td>Существующие и предоставленные значения в совокупности не должны содержать дубликаты ключей.</td>
+<td>Существующие и предоставленные значения в совокупности не должны содержать дублирующиеся ключи.</td>
 </tr>
 <tr>
 <td><strong>401</strong></td>
-<td>Нет действительной сессии</td>
+<td>Не предоставлена действительная сессия</td>
 </tr>
 <tr>
 <td><strong>403</strong></td>
@@ -25764,17 +25760,15 @@
 </tr>
 <tr>
 <td><strong>500</strong></td>
-<td>Что-то пошло не так на стороне Управления учетной записью</td>
+<td>Что-то пошло не так на стороне управления учетной записью</td>
 </tr>
 </tbody>
 </table>
 <h2 id="put">PUT центры затрат<a class="headerlink" href="#put" title="Permanent link">&para;</a></h2>
-<p>Замените текущие значения поля центра затрат.</p>
+<p>Заменяет текущие значения поля центра затрат.</p>
 <p>Запрос производит полезную нагрузку <code>application/json</code>.</p>
-<p>PUT</p>
-<p><code>https://api.dynatrace.com//v1/accounts/{accountUuid}/settings/costcenters</code></p>
 <h2 id="_11">Аутентификация<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h2>
-<p>Чтобы выполнить этот запрос, вам необходимо назначить разрешение <strong>Разрешить запись для ресурсов использования и потребления</strong> (<code>account-uac-write</code>) вашему токену. Чтобы узнать, как получить и использовать его, см. <a href="/docs/manage/identity-access-management/access-tokens-and-oauth-clients/oauth-clients" title="Управление аутентификацией и разрешениями пользователей с помощью клиентов OAuth.">Клиенты OAuth</a>.</p>
+<p>Чтобы выполнить этот запрос, вам необходимо назначить разрешение <strong>Allow write access for usage and consumption resources</strong> (<code>account-uac-write</code>) вашему токену. Чтобы узнать, как получить и использовать его, см. <a href="/docs/manage/identity-access-management/access-tokens-and-oauth-clients/oauth-clients" title="Управление аутентификацией и разрешениями пользователей с помощью OAuth-клиентов.">OAuth-клиенты</a>.</p>
 <h3 id="_12">Параметры<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
@@ -25789,21 +25783,21 @@
 <tbody>
 <tr>
 <td>accountUuid</td>
-<td>строка</td>
-<td>Идентификатор необходимой учетной записи.  Вы можете найти UUID на странице <strong>Управление учетной записью</strong> &gt; <strong>Идентификация и управление доступом</strong> &gt; <strong>Клиенты OAuth</strong>, во время создания клиента OAuth.</td>
-<td>путь</td>
+<td>string</td>
+<td>Идентификатор необходимой учетной записи.  Вы можете найти UUID на странице <strong>Управление учетной записью</strong> &gt; <strong>Идентификация и управление доступом</strong> &gt; <strong>OAuth-клиенты</strong> во время создания OAuth-клиента.</td>
+<td>path</td>
 <td>Обязательный</td>
 </tr>
 <tr>
 <td>body</td>
 <td><a href="#openapi-definition-FieldValuesRequestDto">FieldValuesRequestDto</a></td>
 <td>-</td>
-<td>тело</td>
+<td>body</td>
 <td>Обязательный</td>
 </tr>
 </tbody>
 </table>
-<h3 id="_13">Объекты тела запроса<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h3>
+<h3 id="_13">Объекты запроса<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h3>
 <h4 id="fieldvaluesrequestdto_1">Объект <code>FieldValuesRequestDto</code><a class="headerlink" href="#fieldvaluesrequestdto_1" title="Permanent link">&para;</a></h4>
 <table>
 <thead>
@@ -25836,13 +25830,13 @@
 <tbody>
 <tr>
 <td>key</td>
-<td>строка</td>
+<td>string</td>
 <td>Ключ этого значения.</td>
 <td>Обязательный</td>
 </tr>
 </tbody>
 </table>
-<h3 id="json_2">Тело запроса JSON модель<a class="headerlink" href="#json_2" title="Permanent link">&para;</a></h3>
+<h3 id="json_2">Модель запроса JSON<a class="headerlink" href="#json_2" title="Permanent link">&para;</a></h3>
 <p>Это модель тела запроса, показывающая возможные элементы. Ее необходимо скорректировать для использования в фактическом запросе.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>{
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
@@ -25856,7 +25850,7 @@
 <a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>
 <a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>
 <a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>
-<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>&quot;key&quot;: &quot;строка&quot;
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>&quot;key&quot;: &quot;string&quot;
 <a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>
 <a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>
 <a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>
@@ -25882,15 +25876,15 @@
 <tbody>
 <tr>
 <td><strong>204</strong></td>
-<td>Ответ не имеет тела. Значения поля были заменены.</td>
+<td>Ответ не содержит тела. Значения поля были заменены.</td>
 </tr>
 <tr>
 <td><strong>400</strong></td>
-<td>Предоставленные значения не должны содержать дубликаты ключей.</td>
+<td>Предоставленные значения не должны содержать дублирующиеся ключи.</td>
 </tr>
 <tr>
 <td><strong>401</strong></td>
-<td>Нет действительной сессии</td>
+<td>Не предоставлена действительная сессия</td>
 </tr>
 <tr>
 <td><strong>403</strong></td>
@@ -25898,17 +25892,15 @@
 </tr>
 <tr>
 <td><strong>500</strong></td>
-<td>Что-то пошло не так на стороне Управления учетной записью</td>
+<td>Что-то пошло не так на стороне управления учетной записью</td>
 </tr>
 </tbody>
 </table>
 <h2 id="delete">DELETE центры затрат<a class="headerlink" href="#delete" title="Permanent link">&para;</a></h2>
-<p>Удалите значение по ключу в поле центра затрат.</p>
+<p>Удаляет значение по ключу в поле центра затрат.</p>
 <p>Запрос производит полезную нагрузку <code>application/json</code>.</p>
-<p>DELETE</p>
-<p><code>https://api.dynatrace.com//v1/accounts/{accountUuid}/settings/costcenters/{key}</code></p>
 <h2 id="_16">Аутентификация<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h2>
-<p>Чтобы выполнить этот запрос, вам необходимо назначить разрешение <strong>Разрешить запись для ресурсов использования и потребления</strong> (<code>account-uac-write</code>) вашему токену. Чтобы узнать, как получить и использовать его, см. <a href="/docs/manage/identity-access-management/access-tokens-and-oauth-clients/oauth-clients" title="Управление аутентификацией и разрешениями пользователей с помощью клиентов OAuth.">Клиенты OAuth</a>.</p>
+<p>Чтобы выполнить этот запрос, вам необходимо назначить разрешение <strong>Allow write access for usage and consumption resources</strong> (<code>account-uac-write</code>) вашему токену. Чтобы узнать, как получить и использовать его, см. <a href="/docs/manage/identity-access-management/access-tokens-and-oauth-clients/oauth-clients" title="Управление аутентификацией и разрешениями пользователей с помощью OAuth-клиентов.">OAuth-клиенты</a>.</p>
 <h3 id="_17">Параметры<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
@@ -25923,16 +25915,16 @@
 <tbody>
 <tr>
 <td>accountUuid</td>
-<td>строка</td>
-<td>Идентификатор необходимой учетной записи.  Вы можете найти UUID на странице <strong>Управление учетной записью</strong> &gt; <strong>Идентификация и управление доступом</strong> &gt; <strong>Клиенты OAuth</strong>, во время создания клиента OAuth.</td>
-<td>путь</td>
+<td>string</td>
+<td>Идентификатор необходимой учетной записи.  Вы можете найти UUID на странице <strong>Управление учетной записью</strong> &gt; <strong>Идентификация и управление доступом</strong> &gt; <strong>OAuth-клиенты</strong> во время создания OAuth-клиента.</td>
+<td>path</td>
 <td>Обязательный</td>
 </tr>
 <tr>
 <td>key</td>
-<td>строка</td>
-<td>Ключ значения поля.</td>
-<td>путь</td>
+<td>string</td>
+<td>Ключ для значения поля.</td>
+<td>path</td>
 <td>Обязательный</td>
 </tr>
 </tbody>
@@ -25949,7 +25941,7 @@
 <tbody>
 <tr>
 <td><strong>204</strong></td>
-<td>Указанное значение в поле costcenter было удалено.</td>
+<td>Указанное значение в поле центра затрат было удалено.</td>
 </tr>
 <tr>
 <td><strong>400</strong></td>
@@ -25957,7 +25949,7 @@
 </tr>
 <tr>
 <td><strong>401</strong></td>
-<td>Нет действительной сессии</td>
+<td>Не предоставлена действительная сессия</td>
 </tr>
 <tr>
 <td><strong>403</strong></td>
@@ -25965,17 +25957,15 @@
 </tr>
 <tr>
 <td><strong>500</strong></td>
-<td>Что-то пошло не так на стороне Управления учетной записью</td>
+<td>Что-то пошло не так на стороне управления учетной записью</td>
 </tr>
 </tbody>
 </table>
 <h2 id="get_1">GET продукты<a class="headerlink" href="#get_1" title="Permanent link">&para;</a></h2>
 <p>Отображает все определенные продукты.</p>
 <p>Запрос производит полезную нагрузку <code>application/json</code>.</p>
-<p>GET</p>
-<p><code>https://api.dynatrace.com//v1/accounts/{accountUuid}/settings/products</code></p>
 <h3 id="_20">Аутентификация<a class="headerlink" href="#_20" title="Permanent link">&para;</a></h3>
-<p>Чтобы выполнить этот запрос, вам необходимо назначить область <strong>Разрешить чтение для ресурсов использования и потребления</strong> (<code>account-uac-read</code>) вашему токену. Чтобы узнать, как получить и использовать его, см. <a href="/docs/manage/identity-access-management/access-tokens-and-oauth-clients/oauth-clients" title="Управление аутентификацией и разрешениями пользователей с помощью клиентов OAuth.">Клиенты OAuth</a>.</p>
+<p>Чтобы выполнить этот запрос, вам необходимо назначить область <strong>Allow read access for usage and consumption resources</strong> (<code>account-uac-read</code>) вашему токену. Чтобы узнать, как получить и использовать его, см. <a href="/docs/manage/identity-access-management/access-tokens-and-oauth-clients/oauth-clients" title="Управление аутентификацией и разрешениями пользователей с помощью OAuth-клиентов.">OAuth-клиенты</a>.</p>
 <h3 id="_21">Параметры<a class="headerlink" href="#_21" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
@@ -25990,23 +25980,23 @@
 <tbody>
 <tr>
 <td>accountUuid</td>
-<td>строка</td>
-<td>Идентификатор необходимой учетной записи.  Вы можете найти UUID на странице <strong>Управление учетной записью</strong> &gt; <strong>Идентификация и управление доступом</strong> &gt; <strong>Клиенты OAuth</strong>, во время создания клиента OAuth.</td>
-<td>путь</td>
+<td>string</td>
+<td>Идентификатор необходимой учетной записи.  Вы можете найти UUID на странице <strong>Управление учетной записью</strong> &gt; <strong>Идентификация и управление доступом</strong> &gt; <strong>OAuth-клиенты</strong> во время создания OAuth-клиента.</td>
+<td>path</td>
 <td>Обязательный</td>
 </tr>
 <tr>
 <td>page</td>
-<td>число</td>
-<td>Номер запрошенной страницы. Можно увеличивать, пока <strong>hasNextPage</strong> равен true в ответе.</td>
-<td>запрос</td>
+<td>number</td>
+<td>Номер запрошенной страницы. Можно увеличивать до тех пор, пока <strong>hasNextPage</strong> равен true в ответе.</td>
+<td>query</td>
 <td>Необязательный</td>
 </tr>
 <tr>
 <td>page-size</td>
-<td>число</td>
+<td>number</td>
 <td>Определяет количество запрошенных записей для следующей страницы.</td>
-<td>запрос</td>
+<td>query</td>
 <td>Необязательный</td>
 </tr>
 </tbody>
@@ -26030,7 +26020,7 @@
 <tr>
 <td><strong>400</strong></td>
 <td>-</td>
-<td>Запрос был недопустим, часто из-за отсутствия обязательного параметра</td>
+<td>Запрос был неприемлемым, часто из-за отсутствия обязательного параметра</td>
 </tr>
 <tr>
 <td><strong>401</strong></td>
@@ -26049,7 +26039,7 @@
 </tr>
 </tbody>
 </table>
-<h3 id="_24">Объекты тела ответа<a class="headerlink" href="#_24" title="Permanent link">&para;</a></h3>
+<h3 id="_24">Объекты ответа<a class="headerlink" href="#_24" title="Permanent link">&para;</a></h3>
 <h4 id="paginatedfieldvaluedto_1">Объект <code>PaginatedFieldValueDto</code><a class="headerlink" href="#paginatedfieldvaluedto_1" title="Permanent link">&para;</a></h4>
 <table>
 <thead>
@@ -26106,7 +26096,7 @@
 <a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>
 <a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>
 <a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>
-<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>}
+<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>)
 <a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a>
 <a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a>
 <a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a>
@@ -26120,13 +26110,11 @@
 <a id="__codelineno-3-28" name="__codelineno-3-28" href="#__codelineno-3-28"></a>
 <a id="__codelineno-3-29" name="__codelineno-3-29" href="#__codelineno-3-29"></a>}
 </code></pre></div>
-<h2 id="post_1">POST продукты<a class="headerlink" href="#post_1" title="Permanent link">&para;</a></h2>
-<p>Добавьте предоставленное значение в поле продукта.</p>
+<h2 id="post-products">POST products<a class="headerlink" href="#post-products" title="Permanent link">&para;</a></h2>
+<p>Добавляет указанное значение в поле продукта.</p>
 <p>Запрос производит полезную нагрузку <code>application/json</code>.</p>
-<p>POST</p>
-<p><code>https://api.dynatrace.com//v1/accounts/{accountUuid}/settings/products</code></p>
 <h2 id="_25">Аутентификация<a class="headerlink" href="#_25" title="Permanent link">&para;</a></h2>
-<p>Чтобы выполнить этот запрос, вам необходимо разрешение <strong>Разрешить запись для ресурсов использования и потребления</strong> (<code>account-uac-write</code>) назначенное вашему токену. Чтобы узнать, как получить и использовать его, см. <a href="/docs/manage/identity-access-management/access-tokens-and-oauth-clients/oauth-clients" title="Управление аутентификацией и разрешениями пользователей с помощью клиентов OAuth.">Клиенты OAuth</a>.</p>
+<p>Чтобы выполнить этот запрос, вам необходимо иметь разрешение <strong>Разрешить запись для ресурсов использования и потребления</strong> (<code>account-uac-write</code>) в вашем токене. Чтобы узнать, как получить и использовать его, см. <a href="/docs/manage/identity-access-management/access-tokens-and-oauth-clients/oauth-clients" title="Управление аутентификацией и разрешениями пользователей с помощью клиентов OAuth.">Клиенты OAuth</a>.</p>
 <h3 id="_26">Параметры<a class="headerlink" href="#_26" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
@@ -26142,7 +26130,7 @@
 <tr>
 <td>accountUuid</td>
 <td>string</td>
-<td>Идентификатор необходимой учетной записи.  Вы можете найти UUID на странице <strong>Управление учетной записью</strong> &gt; <strong>Управление идентификацией и доступом</strong> &gt; <strong>Клиенты OAuth</strong>, во время создания клиента OAuth.</td>
+<td>Идентификатор требуемой учетной записи.  Вы можете найти UUID на странице <strong>Управление учетной записью</strong> &gt; <strong>Идентификация и управление доступом</strong> &gt; <strong>Клиенты OAuth</strong> во время создания клиента OAuth.</td>
 <td>path</td>
 <td>Обязательный</td>
 </tr>
@@ -26212,7 +26200,7 @@
 <a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>
 <a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a>
 <a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a>
-<a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a>}
+<a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a>)
 <a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a>
 <a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a>
 <a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a>
@@ -26238,7 +26226,7 @@
 </tr>
 <tr>
 <td><strong>400</strong></td>
-<td>Существующие и предоставленные значения, объединенные, не должны содержать дублирующиеся ключи.</td>
+<td>Существующие и предоставленные значения в совокупности не должны содержать дублирующиеся ключи.</td>
 </tr>
 <tr>
 <td><strong>401</strong></td>
@@ -26254,13 +26242,11 @@
 </tr>
 </tbody>
 </table>
-<h2 id="put_1">PUT продукты<a class="headerlink" href="#put_1" title="Permanent link">&para;</a></h2>
+<h2 id="put-products">PUT products<a class="headerlink" href="#put-products" title="Permanent link">&para;</a></h2>
 <p>Замените текущие значения поля продукта.</p>
 <p>Запрос производит полезную нагрузку <code>application/json</code>.</p>
-<p>PUT</p>
-<p><code>https://api.dynatrace.com//v1/accounts/{accountUuid}/settings/products</code></p>
 <h2 id="_30">Аутентификация<a class="headerlink" href="#_30" title="Permanent link">&para;</a></h2>
-<p>Чтобы выполнить этот запрос, вам необходимо разрешение <strong>Разрешить запись для ресурсов использования и потребления</strong> (<code>account-uac-write</code>) назначенное вашему токену. Чтобы узнать, как получить и использовать его, см. <a href="/docs/manage/identity-access-management/access-tokens-and-oauth-clients/oauth-clients" title="Управление аутентификацией и разрешениями пользователей с помощью клиентов OAuth.">Клиенты OAuth</a>.</p>
+<p>Чтобы выполнить этот запрос, вам необходимо иметь разрешение <strong>Разрешить запись для ресурсов использования и потребления</strong> (<code>account-uac-write</code>) в вашем токене. Чтобы узнать, как получить и использовать его, см. <a href="/docs/manage/identity-access-management/access-tokens-and-oauth-clients/oauth-clients" title="Управление аутентификацией и разрешениями пользователей с помощью клиентов OAuth.">Клиенты OAuth</a>.</p>
 <h3 id="_31">Параметры<a class="headerlink" href="#_31" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
@@ -26276,7 +26262,7 @@
 <tr>
 <td>accountUuid</td>
 <td>string</td>
-<td>Идентификатор необходимой учетной записи.  Вы можете найти UUID на странице <strong>Управление учетной записью</strong> &gt; <strong>Управление идентификацией и доступом</strong> &gt; <strong>Клиенты OAuth</strong>, во время создания клиента OAuth.</td>
+<td>Идентификатор требуемой учетной записи.  Вы можете найти UUID на странице <strong>Управление учетной записью</strong> &gt; <strong>Идентификация и управление доступом</strong> &gt; <strong>Клиенты OAuth</strong> во время создания клиента OAuth.</td>
 <td>path</td>
 <td>Обязательный</td>
 </tr>
@@ -26346,7 +26332,7 @@
 <a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>
 <a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>
 <a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>
-<a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a>}
+<a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a>)
 <a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a>
 <a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a>
 <a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a>
@@ -26388,13 +26374,11 @@
 </tr>
 </tbody>
 </table>
-<h2 id="delete_1">DELETE продукты<a class="headerlink" href="#delete_1" title="Permanent link">&para;</a></h2>
-<p>Удалите значение по ключу в поле продукта.</p>
+<h2 id="delete-products">DELETE products<a class="headerlink" href="#delete-products" title="Permanent link">&para;</a></h2>
+<p>Удалить значение по ключу в поле продукта.</p>
 <p>Запрос производит полезную нагрузку <code>application/json</code>.</p>
-<p>DELETE</p>
-<p><code>https://api.dynatrace.com//v1/accounts/{accountUuid}/settings/products/{key}</code></p>
 <h2 id="_35">Аутентификация<a class="headerlink" href="#_35" title="Permanent link">&para;</a></h2>
-<p>Чтобы выполнить этот запрос, вам необходимо разрешение <strong>Разрешить запись для ресурсов использования и потребления</strong> (<code>account-uac-write</code>) назначенное вашему токену. Чтобы узнать, как получить и использовать его, см. <a href="/docs/manage/identity-access-management/access-tokens-and-oauth-clients/oauth-clients" title="Управление аутентификацией и разрешениями пользователей с помощью клиентов OAuth.">Клиенты OAuth</a>.</p>
+<p>Чтобы выполнить этот запрос, вам необходимо иметь разрешение <strong>Разрешить запись для ресурсов использования и потребления</strong> (<code>account-uac-write</code>) в вашем токене. Чтобы узнать, как получить и использовать его, см. <a href="/docs/manage/identity-access-management/access-tokens-and-oauth-clients/oauth-clients" title="Управление аутентификацией и разрешениями пользователей с помощью клиентов OAuth.">Клиенты OAuth</a>.</p>
 <h3 id="_36">Параметры<a class="headerlink" href="#_36" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
@@ -26410,7 +26394,7 @@
 <tr>
 <td>accountUuid</td>
 <td>string</td>
-<td>Идентификатор необходимой учетной записи.  Вы можете найти UUID на странице <strong>Управление учетной записью</strong> &gt; <strong>Управление идентификацией и доступом</strong> &gt; <strong>Клиенты OAuth</strong>, во время создания клиента OAuth.</td>
+<td>Идентификатор требуемой учетной записи.  Вы можете найти UUID на странице <strong>Управление учетной записью</strong> &gt; <strong>Идентификация и управление доступом</strong> &gt; <strong>Клиенты OAuth</strong> во время создания клиента OAuth.</td>
 <td>path</td>
 <td>Обязательный</td>
 </tr>
@@ -26435,11 +26419,11 @@
 <tbody>
 <tr>
 <td><strong>204</strong></td>
-<td>Значение в поле продукта было удалено.</td>
+<td>Указанное значение в поле продукта было удалено.</td>
 </tr>
 <tr>
 <td><strong>400</strong></td>
-<td>Запрос был недопустим, часто из-за отсутствия обязательного параметра</td>
+<td>Запрос был неприемлемым, часто из-за отсутствия обязательного параметра</td>
 </tr>
 <tr>
 <td><strong>401</strong></td>
@@ -26457,7 +26441,7 @@
 </table>
 <h2 id="_39">Связанные темы<a class="headerlink" href="#_39" title="Permanent link">&para;</a></h2>
 <ul>
-<li><a href="/docs/license/cost-allocation" title="Узнайте, как распределить затраты на центры затрат и продукты.">Распределите затраты DPS</a></li>
+<li><a href="/docs/license/cost-allocation" title="Узнайте, как распределить затраты на центры затрат и продукты.">Распределите ваши затраты DPS</a></li>
 </ul>
 
 

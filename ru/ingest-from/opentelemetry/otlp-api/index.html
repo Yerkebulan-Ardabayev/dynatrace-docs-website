@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
     
     
       
@@ -25485,8 +25485,8 @@
 <p>The <a href="https://opentelemetry.io/docs/specs/otlp/">OpenTelemetry Protocol (OTLP)ï»¿</a> is the principal network protocol for the exchange of telemetry data between OpenTelemetry-backed services and applications.</p>
 <p>Dynatrace provides native OTLP endpoints with the following services:</p>
 <ul>
-<li>The Dynatrace SaaS platform</li>
-<li>ActiveGate instances</li>
+<li>The Dynatrace SaaS platform.</li>
+<li>ActiveGate instances.</li>
 </ul>
 <p>Alternatively, you can deploy the <a href="/docs/ingest-from/opentelemetry/collector" title="Learn about the Dynatrace OTel Collector.">Dynatrace Collector</a> as an intermediary service application to batch requests and improve network performance, or to transform requests before forwarding them to Dynatrace (for example, <a href="/docs/ingest-from/opentelemetry/collector/use-cases/redact" title="Configure the OpenTelemetry Collector to mask sensitive data before forwarding to Dynatrace.">mask sensitive data</a>).</p>
 <h2 id="default-ingest-paths">Default ingest paths<a class="headerlink" href="#default-ingest-paths" title="Permanent link">&para;</a></h2>
@@ -25555,23 +25555,7 @@ You will also use the base URL if you define the <code>OTEL_EXPORTER_OTLP_ENDPOI
 <h3 id="url-examples">URL examples<a class="headerlink" href="#url-examples" title="Permanent link">&para;</a></h3>
 <p>The following example URLs illustrate combinations of base URLs and paths for signal types.</p>
 <h4 id="dynatrace-saas">Dynatrace SaaS<a class="headerlink" href="#dynatrace-saas" title="Permanent link">&para;</a></h4>
-<p>Signal type</p>
-<p>URL</p>
-<p>Traces</p>
-<p><code>https://{your-environment-id}.live.dynatrace.com/api/v2/otlp/v1/traces</code></p>
-<p>Metrics</p>
-<p><code>https://{your-environment-id}.live.dynatrace.com/api/v2/otlp/v1/metrics</code></p>
-<p>Logs</p>
-<p><code>https://{your-environment-id}.live.dynatrace.com/api/v2/otlp/v1/logs</code></p>
 <h4 id="environment-activegate">Environment ActiveGate<a class="headerlink" href="#environment-activegate" title="Permanent link">&para;</a></h4>
-<p>Signal type</p>
-<p>URL</p>
-<p>Traces</p>
-<p><code>https://{your-activegate-domain}:9999/e/{your-environment-id}/api/v2/otlp/v1/traces</code></p>
-<p>Metrics</p>
-<p><code>https://{your-activegate-domain}:9999/e/{your-environment-id}/api/v2/otlp/v1/metrics</code></p>
-<p>Logs</p>
-<p><code>https://{your-activegate-domain}:9999/e/{your-environment-id}/api/v2/otlp/v1/logs</code></p>
 <p>Information enrichment</p>
 <p>Vanilla OTLP exports to ActiveGate require manual enrichment of Dynatrace host information to have the proper topology information.</p>
 <p>To do so, make sure your traces have the correct mapping resource attributes set. The list of applicable attributes can be found in (or imported from) the <a href="/docs/ingest-from/extend-dynatrace/extend-data" title="Learn how to automatically enrich your telemetry data with Dynatrace-specific dimensions.">enrichment files</a>.</p>
@@ -25579,7 +25563,8 @@ You will also use the base URL if you define the <code>OTEL_EXPORTER_OTLP_ENDPOI
 <p>Calls to Dynatrace API endpoints have the following limitations.</p>
 <ul>
 <li>gRPC is not supported.
-  API calls need to use HTTP.</li>
+  API calls need to use HTTP.
+  You can use a Collector to transform a gRPC OTLP request to its HTTP counterpart, see <a href="/docs/ingest-from/opentelemetry/collector/use-cases/grpc" title="Configure the OpenTelemetry Collector to transform a gRPC OTLP request to HTTP.">Transform OTLP gRPC to HTTP with the OpenTelemetry Collector</a>.</li>
 <li>JSON is not supported for Protocol Buffers.
   Binary format must be used.</li>
 </ul>

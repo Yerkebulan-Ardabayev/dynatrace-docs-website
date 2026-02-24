@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../../../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
     
     
       
@@ -25686,123 +25686,9 @@ You can create NAM monitors in <a href="#monitor-configuration"><img alt="Synthe
 <li>5 minutes = <code>PT5M</code></li>
 </ul>
 <h3 id="icmp">ICMP<a class="headerlink" href="#icmp" title="Permanent link">&para;</a></h3>
-<p>Name</p>
-<p>Type</p>
-<p>Description</p>
-<p>Values</p>
-<p>Default value</p>
-<p><code>EXECUTION_TIMEOUT</code></p>
-<p>string:duration</p>
-<p>Timeout for the execution of a single request.</p>
-<p>Valid duration, for example, <code>PT1S</code>.</p>
-<p>Range = <code>0</code>â<code>PT2M</code></p>
-<p><code>ICMP_NUMBER_OF_PACKETS</code> Ã <code>ICMP_TIMEOUT_FOR_REPLY</code> + <code>1s</code></p>
-<p><code>ICMP_NUMBER_OF_PACKETS</code></p>
-<p>integer</p>
-<p>Number of echo requests. The equivalent of the ping process are the <code>-c</code> (Linux) and <code>-n</code> (Windows) parameters.</p>
-<p>Range = <code>1</code>â<code>10</code></p>
-<p><code>1</code></p>
-<p><code>ICMP_PACKET_SIZE</code></p>
-<p>integer</p>
-<p>Data length. The equivalent of the ping process are the <code>-s</code> (Linux) and <code>-l</code> (Windows) parameters.</p>
-<p>Range = <code>0</code>â<code>65500</code></p>
-<p><code>32</code></p>
-<p><code>ICMP_TIME_TO_LIVE</code></p>
-<p>integer</p>
-<p>Time to live (TTL). The equivalent of the ping process are the <code>-t</code> (Linux) and <code>-i</code> (Windows) parameters.</p>
-<p>Range = <code>1</code>â<code>255</code></p>
-<p><code>ICMP_TYPE_OF_SERVICE</code></p>
-<p>integer</p>
-<p>Type of service. The equivalent of the ping process are the <code>-Q</code> (Linux) and <code>-v</code> (Windows) parameters.</p>
-<p>Range = <code>0</code>â<code>255</code></p>
-<p><code>ICMP_DO_NOT_FRAGMENT_DATA</code></p>
-<p>boolean</p>
-<p>Do not fragment. The equivalent of the ping process are the <code>-M do</code> (Linux) and <code>-f</code> (Windows) parameters.</p>
-<p><code>true</code> or <code>false</code></p>
-<p><code>ICMP_TIMEOUT_FOR_REPLY</code></p>
-<p>string:duration</p>
-<p>Wait for the echo reply message.</p>
-<p>The equivalent of the ping process are the <code>-W</code> (Linux) and <code>-w</code> (Windows) parameters.</p>
-<p>Valid duration, for example, <code>PT1S</code>. On Windows values like <code>PT1.1S</code> are accepted (granularity in milliseconds).</p>
-<p>On Linux, values like <code>PT1S</code> are required (granularity in seconds).</p>
-<p>Range = <code>PT1S</code>â<code>PT2S</code></p>
-<p><code>PT1S</code></p>
 <p>The packet transmission interval is hardcoded to <code>200ms</code>, which corresponds to the minimum value allowed for the <code>-i</code> option of the Linux ping command without requiring elevated privileges.</p>
 <h3 id="tcp">TCP<a class="headerlink" href="#tcp" title="Permanent link">&para;</a></h3>
-<p>Name</p>
-<p>Type</p>
-<p>Description</p>
-<p>Values</p>
-<p>Default value</p>
-<p><code>TCP_PORT_RANGES</code></p>
-<p>string</p>
-<p>Comma-separated list of port ranges</p>
-<p>A single range can be either a single port number or a range of ports, defined as two port numbers with a hyphen.</p>
-<p>The final list of requests to be executed is the product of all defined ports and target hosts. For example, if a step has two target hosts (<code>1.1.1.1</code> and <code>2.2.2.2</code>) and a range of two ports (<code>80-81</code>), four requests are executed within such a step.</p>
-<ul>
-<li>Request to <code>1.1.1.1</code> on port <code>80</code></li>
-<li>Request to <code>1.1.1.1</code> on port <code>81</code></li>
-<li>Request to <code>2.2.2.2</code> on port <code>80</code></li>
-<li>Request to <code>2.2.2.2</code> on port <code>81</code></li>
-</ul>
-<p>Sample values</p>
-<ul>
-<li><code>8080</code></li>
-<li><code>8000-9000</code></li>
-<li><code>80,443,90-100</code></li>
-</ul>
-<p><code>EXECUTION_TIMEOUT</code></p>
-<p>string:duration</p>
-<p>Connection timeout</p>
-<p>Valid duration, for example, <code>PT1S</code></p>
-<p>Range = <code>0</code>â<code>PT2M</code></p>
-<p><code>1s</code></p>
 <h3 id="dns">DNS<a class="headerlink" href="#dns" title="Permanent link">&para;</a></h3>
-<p>Name</p>
-<p>Type</p>
-<p>Description</p>
-<p>Values</p>
-<p>Default value</p>
-<p><code>DNS_RECORD_TYPES</code></p>
-<p>string</p>
-<p>Comma-separated list of DNS record types.</p>
-<p>The final list of requests executed is the product of all defined record types and target hosts. For example, if a step has two record types (<code>A,AAAA</code>) and two target hosts (<code>host1.domain.com</code> and <code>host2.domain.com</code>), four requests are executed within such a step.</p>
-<ul>
-<li>Request for <code>A</code> record contents for <code>host1.domain.com</code></li>
-<li>Request for <code>AAAA</code> record contents for <code>host1.domain.com</code></li>
-<li>Request for <code>A</code> record contents for <code>host2.domain.com</code></li>
-<li>Request or <code>AAAA</code> record contents for <code>host2.domain.com</code></li>
-</ul>
-<p>Sample values</p>
-<ul>
-<li><code>A</code></li>
-<li><code>A,AAAA</code></li>
-<li><code>A,AAAA,CNAME</code></li>
-</ul>
-<p><code>EXECUTION_TIMEOUT</code></p>
-<p>string:duration</p>
-<p>Connection timeout</p>
-<p>Valid duration, for example, <code>PT1S</code></p>
-<p>Range = <code>0</code>â<code>PT2M</code></p>
-<p><code>2s</code></p>
-<p><code>DNS_SERVER</code></p>
-<p>string</p>
-<p>Address of the DNS server to query, with optional port</p>
-<p>If a hostname is provided, it's resolved to an IP address using the system default DNS server.</p>
-<p>Valid address, such as:</p>
-<ul>
-<li><code>1.1.1.1</code></li>
-<li><code>8.4.4.8:53</code></li>
-<li><code>dns.google</code></li>
-<li><code>dns9.quad9.net:53</code></li>
-</ul>
-<p>If only host is provided, the default port <code>53</code> is used.</p>
-<p>If no value is provided, the system default DNS server and port are used.</p>
-<p><code>DNS_FORCE_TCP</code></p>
-<p>boolean</p>
-<p>By default, the DNS server is queried over a UDP connection, unless the message is too large to fit the UDP datagram. This option allows you to specify a TCP connection instead.</p>
-<p><code>true</code> or <code>false</code></p>
-<p><code>false</code></p>
 <h2 id="script-configuration-constraints">Script configuration constraints<a class="headerlink" href="#script-configuration-constraints" title="Permanent link">&para;</a></h2>
 <p>Constraints are conditions that need to be met to consider monitorâs execution successful. You need to define constraints for each monitor.</p>
 <h3 id="step-level-constraints">Step-level constraints<a class="headerlink" href="#step-level-constraints" title="Permanent link">&para;</a></h3>

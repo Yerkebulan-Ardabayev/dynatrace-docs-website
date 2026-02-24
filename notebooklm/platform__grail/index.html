@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
     
     
       
@@ -25495,14 +25495,14 @@
 
 <h1 id="dynatrace-platformgrail">Документация Dynatrace: platform/grail<a class="headerlink" href="#dynatrace-platformgrail" title="Permanent link">&para;</a></h1>
 <p>Язык: Русский (RU)
-Сгенерировано: 2026-02-23
+Сгенерировано: 2026-02-24
 Файлов в разделе: 23</p>
 <hr />
 <h2 id="platformgraildynatrace-grailmd">platform/grail/dynatrace-grail.md<a class="headerlink" href="#platformgraildynatrace-grailmd" title="Permanent link">&para;</a></h2>
 <hr />
 <p>title: What is Dynatrace Grail?
 source: https://www.dynatrace.com/docs/platform/grail/dynatrace-grail
-scraped: 2026-02-23T21:20:42.580969</p>
+scraped: 2026-02-24T21:13:53.659146</p>
 <hr />
 <h1 id="what-is-dynatrace-grail">What is Dynatrace Grail?<a class="headerlink" href="#what-is-dynatrace-grail" title="Permanent link">&para;</a></h1>
 <h1 id="what-is-dynatrace-grail_1">What is Dynatrace Grail?<a class="headerlink" href="#what-is-dynatrace-grail_1" title="Permanent link">&para;</a></h1>
@@ -25585,25 +25585,6 @@ scraped: 2026-02-23T21:20:42.580969</p>
 </ul>
 <h2 id="guidance-using-grail-vs-conventional-databases">Guidance: using Grail vs. conventional databases<a class="headerlink" href="#guidance-using-grail-vs-conventional-databases" title="Permanent link">&para;</a></h2>
 <p>Grail is optimized for extreme throughput and extreme volumes of immutable data converged into one unified place for cost-effective storage and high-performance query. It incorporates elements of ACID and BASE providing full flexibility and contextual analytics.</p>
-<p>Scenario</p>
-<p>Grail</p>
-<p>Conventional DBs</p>
-<p>From tera- to exabyte scale of immutable data</p>
-<p><img alt="Applicable" src="https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg" title="Applicable" /></p>
-<p>For heterogeneous data in context</p>
-<p><img alt="Applicable" src="https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg" title="Applicable" /></p>
-<p>For real-time instant query any-question any-time</p>
-<p><img alt="Applicable" src="https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg" title="Applicable" /></p>
-<p>Observability, security data, and business data from digital systems</p>
-<p><img alt="Applicable" src="https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg" title="Applicable" /></p>
-<p>For cost-effectiveness as a data lake</p>
-<p><img alt="Applicable" src="https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg" title="Applicable" /></p>
-<p>Minimize data interfaces and data flow</p>
-<p><img alt="Applicable" src="https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg" title="Applicable" /></p>
-<p>ACID transactional guarantees</p>
-<p><img alt="Applicable" src="https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg" title="Applicable" /></p>
-<p>When you need highly frequent updates to data records</p>
-<p><img alt="Applicable" src="https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg" title="Applicable" /></p>
 <p>Conventional databases are either built to handle transactional data in low volume following the ACID paradigm, or implement the BASE paradigm known from NoSQL databases.</p>
 <p>ACID stands for:</p>
 <ul>
@@ -25802,7 +25783,7 @@ For faster access, preset patterns are logically divided into a folder structure
 <hr />
 <p>title: DPL Positional Matchers
 source: https://www.dynatrace.com/docs/platform/grail/dynatrace-pattern-language/log-processing-positional-matchers
-scraped: 2026-02-20T21:18:12.035766</p>
+scraped: 2026-02-24T21:22:52.281142</p>
 <hr />
 <h1 id="dpl-positional-matchers">DPL Positional Matchers<a class="headerlink" href="#dpl-positional-matchers" title="Permanent link">&para;</a></h1>
 <h1 id="dpl-positional-matchers_1">DPL Positional Matchers<a class="headerlink" href="#dpl-positional-matchers_1" title="Permanent link">&para;</a></h1>
@@ -25814,12 +25795,6 @@ scraped: 2026-02-20T21:18:12.035766</p>
 <h2 id="beginning-of-string">Beginning of string<a class="headerlink" href="#beginning-of-string" title="Permanent link">&para;</a></h2>
 <p><strong>BOS, BOF</strong></p>
 <p>Matches beginning of string</p>
-<p>output type</p>
-<p>quantifier</p>
-<p>configuration</p>
-<p>none</p>
-<p>none</p>
-<p>none</p>
 <h4 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h4>
 <p>Extracting the first line in the string:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>&quot;name&quot;;&quot;age&quot;
@@ -25853,12 +25828,6 @@ scraped: 2026-02-20T21:18:12.035766</p>
 <h2 id="middle-of-string">Middle of string<a class="headerlink" href="#middle-of-string" title="Permanent link">&para;</a></h2>
 <p><strong>MOS, MOF</strong></p>
 <p>Matches any bytes in the middle of string</p>
-<p>output type</p>
-<p>quantifier</p>
-<p>configuration</p>
-<p>none</p>
-<p>none</p>
-<p>none</p>
 <h4 id="example_1">Example<a class="headerlink" href="#example_1" title="Permanent link">&para;</a></h4>
 <p>Extracting records after the first row in the string</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>&quot;name&quot;;&quot;age&quot;
@@ -25899,12 +25868,6 @@ scraped: 2026-02-20T21:18:12.035766</p>
 <h2 id="end-of-string">End of string<a class="headerlink" href="#end-of-string" title="Permanent link">&para;</a></h2>
 <p><strong>EOS, EOF</strong></p>
 <p>Matches end of string</p>
-<p>output type</p>
-<p>quantifier</p>
-<p>configuration</p>
-<p>none</p>
-<p>none</p>
-<p>none</p>
 <h4 id="example_2">Example<a class="headerlink" href="#example_2" title="Permanent link">&para;</a></h4>
 <p>Extracting the last line of the string:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>&quot;name&quot;;&quot;age&quot;
@@ -25945,7 +25908,7 @@ scraped: 2026-02-20T21:18:12.035766</p>
 <hr />
 <p>title: DPL Universally Unique Identifiers
 source: https://www.dynatrace.com/docs/platform/grail/dynatrace-pattern-language/log-processing-uuid-numbers
-scraped: 2026-02-23T21:33:47.287258</p>
+scraped: 2026-02-24T21:26:25.783665</p>
 <hr />
 <h1 id="dpl-universally-unique-identifiers">DPL Universally Unique Identifiers<a class="headerlink" href="#dpl-universally-unique-identifiers" title="Permanent link">&para;</a></h1>
 <h1 id="dpl-universally-unique-identifiers_1">DPL Universally Unique Identifiers<a class="headerlink" href="#dpl-universally-unique-identifiers_1" title="Permanent link">&para;</a></h1>
@@ -25955,12 +25918,6 @@ scraped: 2026-02-23T21:33:47.287258</p>
 <li>Published Jan 17, 2023</li>
 </ul>
 <p>Matches valid Universally Unique Identifiers (UUIDs), such as social security numbers. Creates a UUID string parser.</p>
-<p>output type</p>
-<p>quantifier</p>
-<p>configuration</p>
-<p>STRING</p>
-<p>none</p>
-<p>none</p>
 <h3 id="example_3">Example<a class="headerlink" href="#example_3" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>This is a string with UUID b79cb3ba-745e-5d9a-8903-4a02327a7e09 somewhere in the middle
 </code></pre></div>
@@ -25968,8 +25925,6 @@ scraped: 2026-02-23T21:33:47.287258</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>UUIDSTRING:uuid LD
 </code></pre></div>
 <p>Parsing results: UUID is extracted from the string.</p>
-<p>uuid</p>
-<p>b79cb3ba-745e-5d9a-8903-4a02327a7e09</p>
 <hr />
 <h2 id="platformgraildynatrace-pattern-languagemd">platform/grail/dynatrace-pattern-language.md<a class="headerlink" href="#platformgraildynatrace-pattern-languagemd" title="Permanent link">&para;</a></h2>
 <hr />
@@ -26153,7 +26108,7 @@ Suppose we have a comma-separated record (terminated with the line feed characte
 <hr />
 <p>title: DQL commands
 source: https://www.dynatrace.com/docs/platform/grail/dynatrace-query-language/commands
-scraped: 2026-02-23T21:35:55.204280</p>
+scraped: 2026-02-24T21:18:36.158763</p>
 <hr />
 <h1 id="dql-commands">DQL commands<a class="headerlink" href="#dql-commands" title="Permanent link">&para;</a></h1>
 <h1 id="dql-commands_1">DQL commands<a class="headerlink" href="#dql-commands_1" title="Permanent link">&para;</a></h1>
@@ -26164,95 +26119,15 @@ scraped: 2026-02-23T21:35:55.204280</p>
 </ul>
 <p>This page provides a list of DQL commands grouped by categories. To get more in-depth information on a specific command, click on its name.</p>
 <h2 id="data-source-commands"><a href="/docs/platform/grail/dynatrace-query-language/commands/data-source-commands" title="DQL data source commands">Data source commands</a><a class="headerlink" href="#data-source-commands" title="Permanent link">&para;</a></h2>
-<p>Name</p>
-<p>Description</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/commands/data-source-commands#data" title="DQL data source commands">data</a></p>
-<p>Generates sample data during query runtime.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/commands/data-source-commands#describe" title="DQL data source commands">describe</a></p>
-<p>Describes the on-read schema extraction definition for a given data object.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/commands/data-source-commands#fetch" title="DQL data source commands">fetch</a></p>
-<p>Loads data from the specified resource.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/commands/data-source-commands#load" title="DQL data source commands">load</a></p>
-<p>Loads data from the specified resource. It's used with <a href="/docs/platform/grail/lookup-data" title="Learn about lookup data in Grail.">lookup data</a>.</p>
 <h2 id="metric-commands"><a href="/docs/platform/grail/dynatrace-query-language/commands/metric-commands" title="DQL metric commands">Metric commands</a><a class="headerlink" href="#metric-commands" title="Permanent link">&para;</a></h2>
-<p>Name</p>
-<p>Description</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/commands/metric-commands#timeseries" title="DQL metric commands">timeseries</a></p>
-<p>Combines loading, filtering and aggregating metrics data into a time series output.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/commands/metric-commands#metrics" title="DQL metric commands">metrics</a></p>
-<p>Retrieves metric series.</p>
 <h2 id="filter-and-search-commands"><a href="/docs/platform/grail/dynatrace-query-language/commands/filtering-commands" title="DQL filter and search commands">Filter and search commands</a><a class="headerlink" href="#filter-and-search-commands" title="Permanent link">&para;</a></h2>
-<p>Name</p>
-<p>Description</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/commands/filtering-commands#dedup" title="DQL filter and search commands">dedup</a></p>
-<p>Removes duplicates from a list of records.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/commands/filtering-commands#filter" title="DQL filter and search commands">filter</a></p>
-<p>Reduces the number of records in a list by keeping only those records that match the specified condition.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/commands/filtering-commands#filterOut" title="DQL filter and search commands">filterOut</a></p>
-<p>Removes records that match a specific condition.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/commands/filtering-commands#search" title="DQL filter and search commands">search</a></p>
-<p>Searches for records that match the specified search condition.</p>
 <h2 id="selection-and-modification-commands"><a href="/docs/platform/grail/dynatrace-query-language/commands/selection-and-modification-commands" title="DQL selection and modification commands">Selection and modification commands</a><a class="headerlink" href="#selection-and-modification-commands" title="Permanent link">&para;</a></h2>
-<p>Name</p>
-<p>Description</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/commands/selection-and-modification-commands#fields" title="DQL selection and modification commands">fields</a></p>
-<p>Keeps only specified fields.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/commands/selection-and-modification-commands#fieldsAdd" title="DQL selection and modification commands">fieldsAdd</a></p>
-<p>Evaluates an expression and appends or replaces a field.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/commands/selection-and-modification-commands#fieldsKeep" title="DQL selection and modification commands">fieldsKeep</a></p>
-<p>Keeps selected fields.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/commands/selection-and-modification-commands#fieldsRemove" title="DQL selection and modification commands">fieldsRemove</a></p>
-<p>Removes fields from the result.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/commands/selection-and-modification-commands#fieldsRename" title="DQL selection and modification commands">fieldsRename</a></p>
-<p>Renames a field.</p>
 <h2 id="extraction-and-parsing-commands"><a href="/docs/platform/grail/dynatrace-query-language/commands/extraction-and-parsing-commands" title="DQL extraction commands">Extraction and parsing commands</a><a class="headerlink" href="#extraction-and-parsing-commands" title="Permanent link">&para;</a></h2>
-<p>Name</p>
-<p>Description</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/commands/extraction-and-parsing-commands#parse" title="DQL extraction commands">parse</a></p>
-<p>Parses a record field and puts the result into one or more fields as specified in the pattern.</p>
 <h2 id="ordering-commands"><a href="/docs/platform/grail/dynatrace-query-language/commands/ordering-commands" title="DQL ordering commands">Ordering commands</a><a class="headerlink" href="#ordering-commands" title="Permanent link">&para;</a></h2>
-<p>Name</p>
-<p>Description</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/commands/ordering-commands#limit" title="DQL ordering commands">limit</a></p>
-<p>Limits the number of returned records.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/commands/ordering-commands#sort" title="DQL ordering commands">sort</a></p>
-<p>Sorts the records.</p>
 <h2 id="structuring-commands"><a href="/docs/platform/grail/dynatrace-query-language/commands/structuring-commands" title="DQL structuring commands">Structuring commands</a><a class="headerlink" href="#structuring-commands" title="Permanent link">&para;</a></h2>
-<p>Name</p>
-<p>Description</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/commands/structuring-commands#expand" title="DQL structuring commands">expand</a></p>
-<p>Expands an array into separate records.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/commands/structuring-commands#fieldsFlatten" title="DQL structuring commands">fieldsFlatten</a></p>
-<p>Extracts/flattens fields from a nested record.</p>
 <h2 id="aggregation-commands"><a href="/docs/platform/grail/dynatrace-query-language/commands/aggregation-commands" title="DQL aggregation commands">Aggregation commands</a><a class="headerlink" href="#aggregation-commands" title="Permanent link">&para;</a></h2>
-<p>Name</p>
-<p>Description</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/commands/aggregation-commands#fieldsSummary" title="DQL aggregation commands">fieldsSummary</a></p>
-<p>Calculates the cardinality of field values that the specified fields have.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/commands/aggregation-commands#makeTimeseries" title="DQL aggregation commands">makeTimeseries</a></p>
-<p>Creates timeseries from the data in the stream.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/commands/aggregation-commands#summarize" title="DQL aggregation commands">summarize</a></p>
-<p>Groups together records that have the same values for a given field and aggregates them.</p>
 <h2 id="correlation-and-join-commands"><a href="/docs/platform/grail/dynatrace-query-language/commands/correlation-and-join-commands" title="DQL correlation and join commands">Correlation and join commands</a><a class="headerlink" href="#correlation-and-join-commands" title="Permanent link">&para;</a></h2>
-<p>Name</p>
-<p>Description</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/commands/correlation-and-join-commands#append" title="DQL correlation and join commands">append</a></p>
-<p>Appends a given list of records by the records returned by a sub-query.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/commands/correlation-and-join-commands#join" title="DQL correlation and join commands">join</a></p>
-<p>Joins all records from the source and the sub-query as long as they fulfill the join condition.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/commands/correlation-and-join-commands#join-nested" title="DQL correlation and join commands">joinNested</a></p>
-<p>Adds matching results from the sub-query as an array of nested records.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/commands/correlation-and-join-commands#lookup" title="DQL correlation and join commands">lookup</a></p>
-<p>Adds fields from a subquery to the source table by finding a match between a field in the source table and the lookup table.</p>
 <h2 id="smartscape-commands"><a href="/docs/platform/grail/dynatrace-query-language/commands/smartscape-commands" title="DQL Smartscape commands">Smartscape commands</a><a class="headerlink" href="#smartscape-commands" title="Permanent link">&para;</a></h2>
-<p>Name</p>
-<p>Description</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/commands/smartscape-commands#smartscapeNodes" title="DQL Smartscape commands">smartscapeNodes</a></p>
-<p>Loads Smartscape nodes using a type pattern (use <code>*</code> for all types).</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/commands/smartscape-commands#smartscapeEdges" title="DQL Smartscape commands">smartscapeEdges</a></p>
-<p>Loads Smartscape edges using an edge type pattern (use <code>*</code> for all types).</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/commands/smartscape-commands#traverse" title="DQL Smartscape commands">traverse</a></p>
-<p>Traverses source nodes to target nodes in the specified direction, following edge types defined by edgeTypes.</p>
 <h2 id="related-topics_3">Related topics<a class="headerlink" href="#related-topics_3" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="/docs/platform/grail/dynatrace-query-language/dql-guide" title="Find out how DQL works and what are DQL key concepts.">Use DQL queries</a></li>
@@ -26267,7 +26142,7 @@ scraped: 2026-02-23T21:35:55.204280</p>
 <hr />
 <p>title: DQL data types
 source: https://www.dynatrace.com/docs/platform/grail/dynatrace-query-language/data-types
-scraped: 2026-02-23T21:36:57.509291</p>
+scraped: 2026-02-24T21:18:30.271421</p>
 <hr />
 <h1 id="dql-data-types">DQL data types<a class="headerlink" href="#dql-data-types" title="Permanent link">&para;</a></h1>
 <h1 id="dql-data-types_1">DQL data types<a class="headerlink" href="#dql-data-types_1" title="Permanent link">&para;</a></h1>
@@ -26605,7 +26480,7 @@ To execute the full query result including nanoseconds, change the visualization
 <hr />
 <p>title: DQL best practices
 source: https://www.dynatrace.com/docs/platform/grail/dynatrace-query-language/dql-best-practices
-scraped: 2026-02-21T21:25:22.193670</p>
+scraped: 2026-02-24T21:18:57.246518</p>
 <hr />
 <h1 id="dql-best-practices">DQL best practices<a class="headerlink" href="#dql-best-practices" title="Permanent link">&para;</a></h1>
 <h1 id="dql-best-practices_1">DQL best practices<a class="headerlink" href="#dql-best-practices_1" title="Permanent link">&para;</a></h1>
@@ -26812,7 +26687,7 @@ scraped: 2026-02-21T21:25:22.193670</p>
 <hr />
 <p>title: DQL compared to SQL and more
 source: https://www.dynatrace.com/docs/platform/grail/dynatrace-query-language/dql-comparison
-scraped: 2026-02-22T21:14:14.260118</p>
+scraped: 2026-02-24T21:18:26.127806</p>
 <hr />
 <h1 id="dql-compared-to-sql-and-more">DQL compared to SQL and more<a class="headerlink" href="#dql-compared-to-sql-and-more" title="Permanent link">&para;</a></h1>
 <h1 id="dql-compared-to-sql-and-more_1">DQL compared to SQL and more<a class="headerlink" href="#dql-compared-to-sql-and-more_1" title="Permanent link">&para;</a></h1>
@@ -27103,7 +26978,7 @@ scraped: 2026-02-22T21:14:14.260118</p>
 <hr />
 <p>title: Use DQL queries
 source: https://www.dynatrace.com/docs/platform/grail/dynatrace-query-language/dql-guide
-scraped: 2026-02-22T21:14:05.514143</p>
+scraped: 2026-02-24T21:18:34.803188</p>
 <hr />
 <h1 id="use-dql-queries">Use DQL queries<a class="headerlink" href="#use-dql-queries" title="Permanent link">&para;</a></h1>
 <h1 id="use-dql-queries_1">Use DQL queries<a class="headerlink" href="#use-dql-queries_1" title="Permanent link">&para;</a></h1>
@@ -27154,8 +27029,6 @@ scraped: 2026-02-22T21:14:05.514143</p>
 <a id="__codelineno-80-4" name="__codelineno-80-4" href="#__codelineno-80-4"></a>
 <a id="__codelineno-80-5" name="__codelineno-80-5" href="#__codelineno-80-5"></a>| summarize Total_amount = sum(amount)
 </code></pre></div>
-<p>Total_amount</p>
-<p><code>1,064,497</code></p>
 <h2 id="specify-timeframe">Specify timeframe<a class="headerlink" href="#specify-timeframe" title="Permanent link">&para;</a></h2>
 <p>We suggest using the controls offered by the user interface to select your query time frame.</p>
 <p>However, the DQL statement allows you to override the UI selection by using the <code>from</code> or <code>to</code> parameter to specify your intended time range.
@@ -27254,7 +27127,7 @@ Unless specified in the application or in the API, the default timeframe is 2 ho
 <hr />
 <p>title: DQL language reference
 source: https://www.dynatrace.com/docs/platform/grail/dynatrace-query-language/dql-reference
-scraped: 2026-02-23T21:39:47.237084</p>
+scraped: 2026-02-24T21:18:24.946470</p>
 <hr />
 <h1 id="dql-language-reference">DQL language reference<a class="headerlink" href="#dql-language-reference" title="Permanent link">&para;</a></h1>
 <h1 id="dql-language-reference_1">DQL language reference<a class="headerlink" href="#dql-language-reference_1" title="Permanent link">&para;</a></h1>
@@ -27408,7 +27281,7 @@ scraped: 2026-02-23T21:39:47.237084</p>
 <hr />
 <p>title: DQL use cases
 source: https://www.dynatrace.com/docs/platform/grail/dynatrace-query-language/dql-use-cases
-scraped: 2026-02-23T21:37:22.369772</p>
+scraped: 2026-02-24T21:20:14.888458</p>
 <hr />
 <h1 id="dql-use-cases">DQL use cases<a class="headerlink" href="#dql-use-cases" title="Permanent link">&para;</a></h1>
 <h1 id="dql-use-cases_1">DQL use cases<a class="headerlink" href="#dql-use-cases_1" title="Permanent link">&para;</a></h1>
@@ -27507,28 +27380,6 @@ scraped: 2026-02-23T21:37:22.369772</p>
 <a id="__codelineno-103-37" name="__codelineno-103-37" href="#__codelineno-103-37"></a>total=count()
 </code></pre></div>
 <p>Results:</p>
-<p>bank_card</p>
-<p>bank_cardPer</p>
-<p>apple_pay</p>
-<p>apple_payPerc</p>
-<p>paypal</p>
-<p>paypalPerc</p>
-<p>google_pay</p>
-<p>google_payPerc</p>
-<p>unpaid_booking</p>
-<p>unpaid_bookingPerc</p>
-<p>total</p>
-<p>345</p>
-<p>0.19425675675675674</p>
-<p>353</p>
-<p>0.19876126126126126</p>
-<p>360</p>
-<p>0.20270270270270271</p>
-<p>364</p>
-<p>0.20495495495495494</p>
-<p>354</p>
-<p>0.19932432432432431</p>
-<p>1776</p>
 <h3 id="extract-the-first-n-characters-from-the-field">Extract the first 'n' characters from the field.<a class="headerlink" href="#extract-the-first-n-characters-from-the-field" title="Permanent link">&para;</a></h3>
 <p>In this example, you have a field called <code>kiosk</code> and need to extract the first three characters to identify the location abbreviation of the kiosk.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-104-1" name="__codelineno-104-1" href="#__codelineno-104-1"></a>{
@@ -27552,10 +27403,6 @@ scraped: 2026-02-23T21:37:22.369772</p>
 <a id="__codelineno-105-9" name="__codelineno-105-9" href="#__codelineno-105-9"></a>| fields kiosk, kioskLoc
 </code></pre></div>
 <p>Results:</p>
-<p>kiosk</p>
-<p>kioskLoc</p>
-<p>LAOBAUA729</p>
-<p>LAO</p>
 <h3 id="extract-information-from-an-xml-element">Extract information from an XML element<a class="headerlink" href="#extract-information-from-an-xml-element" title="Permanent link">&para;</a></h3>
 <p>In this use case, an API gateway creates logs in XML format and you want to extract some information from it.</p>
 <p>The XML field for every record looks as below:</p>
@@ -27645,16 +27492,6 @@ scraped: 2026-02-23T21:37:22.369772</p>
 <a id="__codelineno-107-25" name="__codelineno-107-25" href="#__codelineno-107-25"></a>code = xml[code]
 </code></pre></div>
 <p>Results:</p>
-<p>domain</p>
-<p>serial</p>
-<p>object</p>
-<p>transaction</p>
-<p>code</p>
-<p>bca_icas_soa</p>
-<p>1467</p>
-<p>example-Firewall</p>
-<p>6187</p>
-<p>0x01130007</p>
 <h3 id="investigate-security-incidents-in-kubernetes-clusters-threat-hunting">Investigate security incidents in Kubernetes clusters Threat hunting<a class="headerlink" href="#investigate-security-incidents-in-kubernetes-clusters-threat-hunting" title="Permanent link">&para;</a></h3>
 <p>Application Security</p>
 <p>In this use case, you perform queries using <a href="/docs/secure/investigations" title="Combine Grail functionalities for evidence-driven investigations, including incident resolution, root cause analysis, and threat hunting."><img alt="Investigations" src="https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png" title="Investigations" /> <strong>Investigations</strong></a> to analyze unauthorized requests in your Kubernetes audit logs. Follow different investigation paths, navigate between executed queries, and get a detailed overview of your results in the original format.</p>
@@ -27677,7 +27514,7 @@ scraped: 2026-02-23T21:37:22.369772</p>
 <hr />
 <p>title: String functions
 source: https://www.dynatrace.com/docs/platform/grail/dynatrace-query-language/functions/string-functions
-scraped: 2026-02-19T21:18:08.972644</p>
+scraped: 2026-02-24T21:17:57.597577</p>
 <hr />
 <h1 id="string-functions">String functions<a class="headerlink" href="#string-functions" title="Permanent link">&para;</a></h1>
 <h1 id="string-functions_1">String functions<a class="headerlink" href="#string-functions_1" title="Permanent link">&para;</a></h1>
@@ -27700,18 +27537,6 @@ scraped: 2026-02-19T21:18:08.972644</p>
 <h4 id="syntax">Syntax<a class="headerlink" href="#syntax" title="Permanent link">&para;</a></h4>
 <p><code>concat(expression, â¦ [, delimiter: ])</code></p>
 <h4 id="parameters_1">Parameters<a class="headerlink" href="#parameters_1" title="Permanent link">&para;</a></h4>
-<p>Parameter</p>
-<p>Type</p>
-<p>Description</p>
-<p>Required</p>
-<p>expression</p>
-<p>double, long, string</p>
-<p>A numeric or string expressions that should be concatenated with others.</p>
-<p>Required</p>
-<p>delimiter</p>
-<p>string</p>
-<p>Constant string to be inserted between each concatenated value. Default: <code>""</code> (empty string).</p>
-<p>Optional</p>
 <h4 id="returns">Returns<a class="headerlink" href="#returns" title="Permanent link">&para;</a></h4>
 <p>The data type of the returned value is <code>string</code>.</p>
 <h4 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h4>
@@ -27724,35 +27549,11 @@ scraped: 2026-02-19T21:18:08.972644</p>
 </code></pre></div>
 <p>Run in Playground</p>
 <p>Query result:</p>
-<p>a</p>
-<p>b</p>
-<p>c</p>
-<p>concat(a, b, c, delimiter: " ")</p>
-<p><code>DQL</code></p>
-<p><code>is</code></p>
-<p><code>awesome!</code></p>
-<p><code>DQL is awesome!</code></p>
 <h2 id="contains">contains<a class="headerlink" href="#contains" title="Permanent link">&para;</a></h2>
 <p>Searches the string expression for a substring. Returns <code>true</code> if the substring was found, <code>false</code> otherwise.</p>
 <h4 id="syntax_1">Syntax<a class="headerlink" href="#syntax_1" title="Permanent link">&para;</a></h4>
 <p><code>contains(expression, substring [, caseSensitive])</code></p>
 <h4 id="parameters_2">Parameters<a class="headerlink" href="#parameters_2" title="Permanent link">&para;</a></h4>
-<p>Parameter</p>
-<p>Type</p>
-<p>Description</p>
-<p>Required</p>
-<p>expression</p>
-<p>string</p>
-<p>The field or expression to check.</p>
-<p>Required</p>
-<p>substring</p>
-<p>string</p>
-<p>The substring that should be contained.</p>
-<p>Required</p>
-<p>caseSensitive</p>
-<p>boolean</p>
-<p>Whether the search should be done in a case-sensitive way. The default value is <code>true</code>.</p>
-<p>Optional</p>
 <h4 id="returns_1">Returns<a class="headerlink" href="#returns_1" title="Permanent link">&para;</a></h4>
 <p>The data type of the returned value is <code>boolean</code>.</p>
 <h4 id="examples_1">Examples<a class="headerlink" href="#examples_1" title="Permanent link">&para;</a></h4>
@@ -27777,31 +27578,11 @@ scraped: 2026-02-19T21:18:08.972644</p>
 </code></pre></div>
 <p>Run in Playground</p>
 <p>Query result:</p>
-<p>content</p>
-<p>contains(content, "DQL")</p>
-<p>contains(content, "dql", caseSensitive:FALSE)</p>
-<p>contains(content, "Query")</p>
-<p><code>DQL is awesome!</code></p>
-<p><code>true</code></p>
-<p><code>true</code></p>
-<p><code>false</code></p>
-<p><code>Dynatrace Query Language</code></p>
-<p><code>false</code></p>
-<p><code>false</code></p>
-<p><code>true</code></p>
 <h2 id="decodeurl">decodeUrl<a class="headerlink" href="#decodeurl" title="Permanent link">&para;</a></h2>
 <p>Returns a URL-decoded string.</p>
 <h4 id="syntax_2">Syntax<a class="headerlink" href="#syntax_2" title="Permanent link">&para;</a></h4>
 <p><code>decodeUrl(expression)</code></p>
 <h4 id="parameters_3">Parameters<a class="headerlink" href="#parameters_3" title="Permanent link">&para;</a></h4>
-<p>Parameter</p>
-<p>Type</p>
-<p>Description</p>
-<p>Required</p>
-<p>expression</p>
-<p>string</p>
-<p>The string expression that will be decoded.</p>
-<p>Required</p>
 <h4 id="returns_2">Returns<a class="headerlink" href="#returns_2" title="Permanent link">&para;</a></h4>
 <p>The data type of the returned value is <code>string</code>.</p>
 <h4 id="examples_2">Examples<a class="headerlink" href="#examples_2" title="Permanent link">&para;</a></h4>
@@ -27818,25 +27599,11 @@ scraped: 2026-02-19T21:18:08.972644</p>
 </code></pre></div>
 <p>Run in Playground</p>
 <p>Query result:</p>
-<p>content</p>
-<p>decodeUrl(content)</p>
-<p><code>https%3A%2F%2Fwww.dynatrace.com%2Fplatform%2Fgrail</code></p>
-<p><code>https://www.dynatrace.com/platform/grail</code></p>
-<p><code>https://www.dynatrace.com/platform/grail</code></p>
-<p><code>https://www.dynatrace.com/platform/grail</code></p>
 <h2 id="encodeurl">encodeUrl<a class="headerlink" href="#encodeurl" title="Permanent link">&para;</a></h2>
 <p>Encodes a URL string by replacing characters that aren't numbers or letters with percentage symbols and hexadecimal numbers.</p>
 <h4 id="syntax_3">Syntax<a class="headerlink" href="#syntax_3" title="Permanent link">&para;</a></h4>
 <p><code>encodeUrl(expression)</code></p>
 <h4 id="parameters_4">Parameters<a class="headerlink" href="#parameters_4" title="Permanent link">&para;</a></h4>
-<p>Parameter</p>
-<p>Type</p>
-<p>Description</p>
-<p>Required</p>
-<p>expression</p>
-<p>string</p>
-<p>The string expression that will be encoded.</p>
-<p>Required</p>
 <h4 id="returns_3">Returns<a class="headerlink" href="#returns_3" title="Permanent link">&para;</a></h4>
 <p>The data type of the returned value is <code>string</code>.</p>
 <h4 id="examples_3">Examples<a class="headerlink" href="#examples_3" title="Permanent link">&para;</a></h4>
@@ -27849,31 +27616,11 @@ scraped: 2026-02-19T21:18:08.972644</p>
 </code></pre></div>
 <p>Run in Playground</p>
 <p>Query result:</p>
-<p>content</p>
-<p>encodeUrl(content)</p>
-<p><code>https://www.dynatrace.com/platform/grail</code></p>
-<p><code>https%3A%2F%2Fwww.dynatrace.com%2Fplatform%2Fgrail</code></p>
 <h2 id="endswith">endsWith<a class="headerlink" href="#endswith" title="Permanent link">&para;</a></h2>
 <p>Checks if a string expression ends with a suffix. Returns <code>true</code> if does, <code>false</code> otherwise.</p>
 <h4 id="syntax_4">Syntax<a class="headerlink" href="#syntax_4" title="Permanent link">&para;</a></h4>
 <p><code>endsWith(expression, suffix [, caseSensitive])</code></p>
 <h4 id="parameters_5">Parameters<a class="headerlink" href="#parameters_5" title="Permanent link">&para;</a></h4>
-<p>Parameter</p>
-<p>Type</p>
-<p>Description</p>
-<p>Required</p>
-<p>expression</p>
-<p>string</p>
-<p>The string expression that will be checked.</p>
-<p>Required</p>
-<p>suffix</p>
-<p>string</p>
-<p>The suffix string with which the expression should end.</p>
-<p>Required</p>
-<p>caseSensitive</p>
-<p>boolean</p>
-<p>Whether the check should be done in a case-sensitive way.</p>
-<p>Optional</p>
 <h4 id="returns_4">Returns<a class="headerlink" href="#returns_4" title="Permanent link">&para;</a></h4>
 <p>The data type of the returned value is <code>boolean</code>.</p>
 <h4 id="examples_4">Examples<a class="headerlink" href="#examples_4" title="Permanent link">&para;</a></h4>
@@ -27898,62 +27645,22 @@ scraped: 2026-02-19T21:18:08.972644</p>
 </code></pre></div>
 <p>Run in Playground</p>
 <p>Query result:</p>
-<p>content</p>
-<p>endsWith(content, "awesome!")</p>
-<p>endsWith(content, "AWESOME!", caseSensitive:FALSE)</p>
-<p>endsWith(content, "Language")</p>
-<p><code>DQL is awesome!</code></p>
-<p><code>true</code></p>
-<p><code>true</code></p>
-<p><code>false</code></p>
-<p><code>Dynatrace Query Language</code></p>
-<p><code>false</code></p>
-<p><code>false</code></p>
-<p><code>true</code></p>
 <h2 id="escape">escape<a class="headerlink" href="#escape" title="Permanent link">&para;</a></h2>
 <p>Returns an escaped string.</p>
 <p>Escaping rules</p>
 <ol>
-<li>Single and double quotes are escaped. Backticks are not escaped.</li>
-</ol>
-<p>Input</p>
-<p>Output</p>
-<p><code>"</code></p>
-<p><code>\"</code></p>
-<p><code>'</code></p>
-<p><code>\'</code></p>
-<ol>
-<li>Backslashes are escaped.</li>
-</ol>
-<p>Input</p>
-<p>Output</p>
-<p><code>\</code></p>
-<p><code>\\</code></p>
-<ol>
-<li>ASCII characters backspace, form feed, new line, carriage return, horizontal tabs are escaped.</li>
-</ol>
-<p>Input</p>
-<p>Output</p>
-<p><code>&lt;backspace&gt;</code></p>
-<p><code>\b</code></p>
-<p><code>&lt;form feed&gt;</code></p>
-<p><code>\f</code></p>
-<p><code>&lt;new line&gt;</code></p>
-<p><code>\n</code></p>
-<p><code>&lt;carriage return&gt;</code></p>
-<p><code>\r</code></p>
-<p><code>&lt;horizontal tab&gt;</code></p>
-<p><code>\t</code></p>
-<ol>
-<li>ASCII characters within the range 0x20 - 0x7e (printable ASCII characters), that are not covered by any of the above rules, stay as they are.</li>
-</ol>
-<p>Input</p>
-<p>Output</p>
-<p><code>a</code></p>
-<p><code>a</code></p>
-<p><code>1</code></p>
-<p><code>1</code></p>
-<ol>
+<li>
+<p>Single and double quotes are escaped. Backticks are not escaped.</p>
+</li>
+<li>
+<p>Backslashes are escaped.</p>
+</li>
+<li>
+<p>ASCII characters backspace, form feed, new line, carriage return, horizontal tabs are escaped.</p>
+</li>
+<li>
+<p>ASCII characters within the range 0x20 - 0x7e (printable ASCII characters), that are not covered by any of the above rules, stay as they are.</p>
+</li>
 <li>
 <p>All other ASCII characters are represented as <code>\xhh</code>. This applies to the following characters</p>
 </li>
@@ -27962,30 +27669,16 @@ scraped: 2026-02-19T21:18:08.972644</p>
 </li>
 <li>character 0x0b (vertical tab)</li>
 <li>characters within the range 0x0e - 0x1f</li>
-<li>character 0x7f</li>
+<li>
+<p>character 0x7f</p>
+</li>
+<li>
+<p>All characters in extended ASCII space (0x80-0xff) and Unicode characters outside of the ASCII space are represented as <code>\uhhhh</code>.</p>
+</li>
 </ol>
-<p>Input</p>
-<p>Output</p>
-<p><code>&lt;vertical tab&gt;</code></p>
-<p><code>\x0b</code></p>
-<ol>
-<li>All characters in extended ASCII space (0x80-0xff) and Unicode characters outside of the ASCII space are represented as <code>\uhhhh</code>.</li>
-</ol>
-<p>Input</p>
-<p>Output</p>
-<p><code>Ã¶</code></p>
-<p><code>\u00f6</code></p>
 <h4 id="syntax_5">Syntax<a class="headerlink" href="#syntax_5" title="Permanent link">&para;</a></h4>
 <p><code>escape(expression)</code></p>
 <h4 id="parameters_6">Parameters<a class="headerlink" href="#parameters_6" title="Permanent link">&para;</a></h4>
-<p>Parameter</p>
-<p>Type</p>
-<p>Description</p>
-<p>Required</p>
-<p>expression</p>
-<p>string expression</p>
-<p>The string expression that will be escaped.</p>
-<p>Required</p>
 <h4 id="returns_5">Returns<a class="headerlink" href="#returns_5" title="Permanent link">&para;</a></h4>
 <p>The data type of the returned value is <code>string</code>.</p>
 <h4 id="examples_5">Examples<a class="headerlink" href="#examples_5" title="Permanent link">&para;</a></h4>
@@ -28017,17 +27710,6 @@ scraped: 2026-02-19T21:18:08.972644</p>
 <h4 id="syntax_6">Syntax<a class="headerlink" href="#syntax_6" title="Permanent link">&para;</a></h4>
 <p><code>getCharacter(expression, position)</code></p>
 <h4 id="parameters_7">Parameters<a class="headerlink" href="#parameters_7" title="Permanent link">&para;</a></h4>
-<p>Parameter</p>
-<p>Type</p>
-<p>Description</p>
-<p>Required</p>
-<p>expression</p>
-<p>string</p>
-<p>Required</p>
-<p>position</p>
-<p>long</p>
-<p>The position at which to get the character.</p>
-<p>Required</p>
 <h4 id="returns_6">Returns<a class="headerlink" href="#returns_6" title="Permanent link">&para;</a></h4>
 <p>The data type of the returned value is <code>string</code>.</p>
 <h4 id="examples_6">Examples<a class="headerlink" href="#examples_6" title="Permanent link">&para;</a></h4>
@@ -28052,18 +27734,6 @@ scraped: 2026-02-19T21:18:08.972644</p>
 </code></pre></div>
 <p>Run in Playground</p>
 <p>Query result:</p>
-<p>content</p>
-<p>getCharacter(content, 1)</p>
-<p>getCharacter(content, 17)</p>
-<p>getCharacter(content, -1)</p>
-<p><code>DQL is awesome!</code></p>
-<p><code>Q</code></p>
-<p><em>null</em></p>
-<p><code>!</code></p>
-<p><code>Dynatrace Query Language</code></p>
-<p><code>y</code></p>
-<p><code>a</code></p>
-<p><code>e</code></p>
 <h2 id="indexof">indexOf<a class="headerlink" href="#indexof" title="Permanent link">&para;</a></h2>
 <p>Returns the index of the first occurrence of a substring in a string expression.
 Starts to search forward from a given index. Negative values for the <code>from</code> parameter are counted from the end of the string.
@@ -28073,22 +27743,6 @@ If the defined substring is not found, the function returns <code>-1</code>.</p>
 <h4 id="syntax_7">Syntax<a class="headerlink" href="#syntax_7" title="Permanent link">&para;</a></h4>
 <p><code>indexOf(expression, substring [, from])</code></p>
 <h4 id="parameters_8">Parameters<a class="headerlink" href="#parameters_8" title="Permanent link">&para;</a></h4>
-<p>Parameter</p>
-<p>Type</p>
-<p>Description</p>
-<p>Required</p>
-<p>expression</p>
-<p>string</p>
-<p>The string expression in which the substring is searched for.</p>
-<p>Required</p>
-<p>substring</p>
-<p>string</p>
-<p>The substring expression to search for in the expression.</p>
-<p>Required</p>
-<p>from</p>
-<p>long</p>
-<p>The index from which to start the forward search for the first occurrence of the substring within the expression. Negative values are counted from the end of the string.</p>
-<p>Optional</p>
 <h4 id="returns_7">Returns<a class="headerlink" href="#returns_7" title="Permanent link">&para;</a></h4>
 <p>The data type of the returned value is <code>long</code>.</p>
 <h4 id="examples_7">Examples<a class="headerlink" href="#examples_7" title="Permanent link">&para;</a></h4>
@@ -28113,39 +27767,11 @@ If the defined substring is not found, the function returns <code>-1</code>.</p>
 </code></pre></div>
 <p>Run in Playground</p>
 <p>Query result:</p>
-<p>content</p>
-<p>indexOf(content, "a")</p>
-<p>indexOf(content, "a", from:10)</p>
-<p>indexOf(content, "Query")</p>
-<p><code>DQL is awesome!</code></p>
-<p><code>7</code></p>
-<p><code>-1</code></p>
-<p><code>-1</code></p>
-<p><code>Dynatrace Query Language</code></p>
-<p><code>3</code></p>
-<p><code>17</code></p>
-<p><code>10</code></p>
 <h2 id="jsonfield">jsonField<a class="headerlink" href="#jsonfield" title="Permanent link">&para;</a></h2>
 <p>Parses a JSON string and extracts one value selected by its name.</p>
 <h4 id="syntax_8">Syntax<a class="headerlink" href="#syntax_8" title="Permanent link">&para;</a></h4>
 <p><code>jsonField(expression, fieldName [, seek])</code></p>
 <h4 id="parameters_9">Parameters<a class="headerlink" href="#parameters_9" title="Permanent link">&para;</a></h4>
-<p>Parameter</p>
-<p>Type</p>
-<p>Description</p>
-<p>Required</p>
-<p>expression</p>
-<p>string</p>
-<p>The JSON string that should be parsed.</p>
-<p>Required</p>
-<p>fieldName</p>
-<p>string</p>
-<p>The string literal with the key to be extracted.</p>
-<p>Required</p>
-<p>seek</p>
-<p>boolean</p>
-<p>Flag indicating if the function should search for the first valid JSON object in the expression. The default value is <code>false</code>.</p>
-<p>Optional</p>
 <h4 id="returns_8">Returns<a class="headerlink" href="#returns_8" title="Permanent link">&para;</a></h4>
 <p>The data type of the returned value is <code>long</code>, <code>double</code>, <code>boolean</code>, <code>string</code>, <code>array</code> or <code>record</code>.</p>
 <h4 id="examples_8">Examples<a class="headerlink" href="#examples_8" title="Permanent link">&para;</a></h4>
@@ -28174,10 +27800,6 @@ If the defined substring is not found, the function returns <code>-1</code>.</p>
 </code></pre></div>
 <p>Run in Playground</p>
 <p>Query result:</p>
-<p>content</p>
-<p>jsonField(content, "name")</p>
-<p><code>{"name":"John", "children":["Mallory", "Mary"], "address":{"city":"Boston", "zip":"02210"}}</code></p>
-<p><code>John</code></p>
 <h5 id="example-2">Example 2<a class="headerlink" href="#example-2" title="Permanent link">&para;</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-118-1" name="__codelineno-118-1" href="#__codelineno-118-1"></a>data record(content = &quot;&quot;&quot;JSON: {&quot;name&quot;: &quot;John&quot;} ...&quot;&quot;&quot;)
 <a id="__codelineno-118-2" name="__codelineno-118-2" href="#__codelineno-118-2"></a>
@@ -28191,33 +27813,11 @@ If the defined substring is not found, the function returns <code>-1</code>.</p>
 </code></pre></div>
 <p>Run in Playground</p>
 <p>Query result:</p>
-<p>content</p>
-<p>jsonField(content, "name", seek:FALSE)</p>
-<p>jsonField(content, "name", seek:TRUE)</p>
-<p><code>JSON: {"name": "John"} ...</code></p>
-<p><code>null</code></p>
-<p><code>John</code></p>
 <h2 id="jsonpath">jsonPath<a class="headerlink" href="#jsonpath" title="Permanent link">&para;</a></h2>
 <p>Parses a JSON string and extracts one value selected by a JSONPath expression.</p>
 <h4 id="syntax_9">Syntax<a class="headerlink" href="#syntax_9" title="Permanent link">&para;</a></h4>
 <p><code>jsonPath(expression, jsonPath [, seek])</code></p>
 <h4 id="parameters_10">Parameters<a class="headerlink" href="#parameters_10" title="Permanent link">&para;</a></h4>
-<p>Parameter</p>
-<p>Type</p>
-<p>Description</p>
-<p>Required</p>
-<p>expression</p>
-<p>string</p>
-<p>The JSON string that should be parsed.</p>
-<p>Required</p>
-<p>jsonPath</p>
-<p>string</p>
-<p>The string literal with the JSONPath expression of the value to be extracted.</p>
-<p>Required</p>
-<p>seek</p>
-<p>boolean</p>
-<p>Flag indicating if the function should search for the first valid JSON object in the expression. The default value is <code>false</code>.</p>
-<p>Optional</p>
 <h4 id="returns_9">Returns<a class="headerlink" href="#returns_9" title="Permanent link">&para;</a></h4>
 <p>The data type of the returned value is <code>long</code>, <code>double</code>, <code>boolean</code>, <code>string</code>, <code>array</code> or <code>record</code>.</p>
 <h4 id="examples_9">Examples<a class="headerlink" href="#examples_9" title="Permanent link">&para;</a></h4>
@@ -28254,14 +27854,6 @@ If the defined substring is not found, the function returns <code>-1</code>.</p>
 </code></pre></div>
 <p>Run in Playground</p>
 <p>Query result:</p>
-<p>content</p>
-<p>jsonPath(content, "$.children[0]")</p>
-<p>jsonPath(content, "$.address.city")</p>
-<p>jsonPath(content, "$['address']['zip']")</p>
-<p><code>{"name":"John", "children":["Mallory", "Mary"], "address":{"city":"Boston", "zip":"02210"}}</code></p>
-<p><code>Mallory</code></p>
-<p><code>Boston</code></p>
-<p><code>02210</code></p>
 <h5 id="example-2_1">Example 2<a class="headerlink" href="#example-2_1" title="Permanent link">&para;</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-120-1" name="__codelineno-120-1" href="#__codelineno-120-1"></a>data record(content = &quot;&quot;&quot;JSON: {&quot;name&quot;: &quot;John&quot;} ...&quot;&quot;&quot;)
 <a id="__codelineno-120-2" name="__codelineno-120-2" href="#__codelineno-120-2"></a>
@@ -28275,32 +27867,11 @@ If the defined substring is not found, the function returns <code>-1</code>.</p>
 </code></pre></div>
 <p>Run in Playground</p>
 <p>Query result:</p>
-<p>content</p>
-<p>jsonPath(content, "$.name", seek:FALSE)</p>
-<p>jsonPath(content, "$.name", seek:TRUE)</p>
-<p><code>JSON: {"name": "John"} ...</code></p>
-<p><code>null</code></p>
-<p><code>John</code></p>
 <h2 id="lastindexof">lastIndexOf<a class="headerlink" href="#lastindexof" title="Permanent link">&para;</a></h2>
 <p>Returns the index of the last occurrence of a substring in a string expression. Starts to search backward from a given index. Negative values for the from parameter are counted from the end of the string. The default value for from is -1 (search from the end of the string). The search is case-sensitive. If the substring is not found, the function returns <code>-1</code>.</p>
 <h4 id="syntax_10">Syntax<a class="headerlink" href="#syntax_10" title="Permanent link">&para;</a></h4>
 <p><code>lastIndexOf(expression, substring [, from])</code></p>
 <h4 id="parameters_11">Parameters<a class="headerlink" href="#parameters_11" title="Permanent link">&para;</a></h4>
-<p>Parameter</p>
-<p>Type</p>
-<p>Description</p>
-<p>Required</p>
-<p>expression</p>
-<p>string</p>
-<p>The string expression in which the substring is searched for.</p>
-<p>Required</p>
-<p>substring</p>
-<p>string</p>
-<p>The substring expression to search for in the expression.</p>
-<p>Required</p>
-<p>from</p>
-<p>long</p>
-<p>Optional</p>
 <h4 id="returns_10">Returns<a class="headerlink" href="#returns_10" title="Permanent link">&para;</a></h4>
 <p>The data type of the returned value is <code>long</code>.</p>
 <h4 id="examples_10">Examples<a class="headerlink" href="#examples_10" title="Permanent link">&para;</a></h4>
@@ -28325,35 +27896,11 @@ If the defined substring is not found, the function returns <code>-1</code>.</p>
 </code></pre></div>
 <p>Run in Playground</p>
 <p>Query result:</p>
-<p>content</p>
-<p>lastIndexOf(content, "a")</p>
-<p>lastIndexOf(content, "a", from:10)</p>
-<p>lastIndexOf(content, "Query")</p>
-<p><code>DQL is awesome!</code></p>
-<p><code>7</code></p>
-<p><code>7</code></p>
-<p><code>-1</code></p>
-<p><code>Dynatrace Query Language</code></p>
-<p><code>21</code></p>
-<p><code>6</code></p>
-<p><code>10</code></p>
 <h2 id="levenshteindistance">levenshteinDistance<a class="headerlink" href="#levenshteindistance" title="Permanent link">&para;</a></h2>
 <p>Computes the Levenshtein distance between two input strings.</p>
 <h4 id="syntax_11">Syntax<a class="headerlink" href="#syntax_11" title="Permanent link">&para;</a></h4>
 <p><code>levenshteinDistance(expression, expression)</code></p>
 <h4 id="parameters_12">Parameters<a class="headerlink" href="#parameters_12" title="Permanent link">&para;</a></h4>
-<p>Parameter</p>
-<p>Type</p>
-<p>Description</p>
-<p>Required</p>
-<p>first expression</p>
-<p>string</p>
-<p>The first string expression to compute the Levenshtein distance from.</p>
-<p>Required</p>
-<p>second</p>
-<p>string</p>
-<p>The second string expression to compute the Levenshtein distance from.</p>
-<p>Required</p>
 <h4 id="returns_11">Returns<a class="headerlink" href="#returns_11" title="Permanent link">&para;</a></h4>
 <p>The data type of the returned value is <code>long</code>.</p>
 <h4 id="examples_11">Examples<a class="headerlink" href="#examples_11" title="Permanent link">&para;</a></h4>
@@ -28374,33 +27921,11 @@ If the defined substring is not found, the function returns <code>-1</code>.</p>
 </code></pre></div>
 <p>Run in Playground</p>
 <p>Query result:</p>
-<p>a</p>
-<p>b</p>
-<p>levenshteinDistance(a, b)</p>
-<p><code>DQL is awesome!</code></p>
-<p><code>Grail is awesome!</code></p>
-<p><code>5</code></p>
-<p><code>Dynatrace Query Language</code></p>
-<p><code>DQL</code></p>
-<p><code>21</code></p>
-<p><code>Dynatrace Query Language</code></p>
-<p><code>dynatrace query language</code></p>
-<p><code>3</code></p>
 <h2 id="like">like<a class="headerlink" href="#like" title="Permanent link">&para;</a></h2>
 <p>Tests if a string expression matches a pattern. If the pattern does not contain percent signs, <code>like()</code> acts as the <code>==</code> operator (equality check). A percent character in the pattern <code>(%)</code> matches any sequence of zero or more characters. An underscore in the pattern <code>(\_)</code> matches a single character.</p>
 <h4 id="syntax_12">Syntax<a class="headerlink" href="#syntax_12" title="Permanent link">&para;</a></h4>
 <p><code>like(expression, pattern)</code></p>
 <h4 id="parameters_13">Parameters<a class="headerlink" href="#parameters_13" title="Permanent link">&para;</a></h4>
-<p>Parameter</p>
-<p>Type</p>
-<p>Description</p>
-<p>Required</p>
-<p>expression</p>
-<p>string</p>
-<p>Required</p>
-<p>pattern</p>
-<p>string</p>
-<p>Required</p>
 <h4 id="returns_12">Returns<a class="headerlink" href="#returns_12" title="Permanent link">&para;</a></h4>
 <p>The data type of the returned value is <code>boolean</code>.</p>
 <h4 id="examples_12">Examples<a class="headerlink" href="#examples_12" title="Permanent link">&para;</a></h4>
@@ -28425,31 +27950,11 @@ If the defined substring is not found, the function returns <code>-1</code>.</p>
 </code></pre></div>
 <p>Run in Playground</p>
 <p>Query result:</p>
-<p>content</p>
-<p>like(content, "%DQL%")</p>
-<p>like(content, "D%L%")</p>
-<p>like(content, "D_L%")</p>
-<p><code>DQL is awesome!</code></p>
-<p><code>true</code></p>
-<p><code>true</code></p>
-<p><code>true</code></p>
-<p><code>Dynatrace Query Language</code></p>
-<p><code>false</code></p>
-<p><code>true</code></p>
-<p><code>false</code></p>
 <h2 id="lower">lower<a class="headerlink" href="#lower" title="Permanent link">&para;</a></h2>
 <p>Converts a string to lowercase.</p>
 <h4 id="syntax_13">Syntax<a class="headerlink" href="#syntax_13" title="Permanent link">&para;</a></h4>
 <p><code>lower(expression)</code></p>
 <h4 id="parameters_14">Parameters<a class="headerlink" href="#parameters_14" title="Permanent link">&para;</a></h4>
-<p>Parameter</p>
-<p>Type</p>
-<p>Description</p>
-<p>Required</p>
-<p>expression</p>
-<p>string</p>
-<p>The string expression to convert to lowercase.</p>
-<p>Required</p>
 <h4 id="returns_13">Returns<a class="headerlink" href="#returns_13" title="Permanent link">&para;</a></h4>
 <p>The data type of the returned value is <code>string</code>.</p>
 <h4 id="examples_13">Examples<a class="headerlink" href="#examples_13" title="Permanent link">&para;</a></h4>
@@ -28466,29 +27971,11 @@ If the defined substring is not found, the function returns <code>-1</code>.</p>
 </code></pre></div>
 <p>Run in Playground</p>
 <p>Query result:</p>
-<p>content</p>
-<p>lower(content)</p>
-<p><code>DQL is awesome!</code></p>
-<p><code>dql is awesome!</code></p>
-<p><code>Dynatrace Query Language</code></p>
-<p><code>dynatrace query language</code></p>
 <h2 id="matchespattern">matchesPattern<a class="headerlink" href="#matchespattern" title="Permanent link">&para;</a></h2>
 <p>Tests if a string expression matches the DPL pattern and returns <code>true</code> if it does, otherwise, returns <code>false</code>.</p>
 <h4 id="syntax_14">Syntax<a class="headerlink" href="#syntax_14" title="Permanent link">&para;</a></h4>
 <p><code>matchesPattern(expression, pattern)</code></p>
 <h4 id="parameters_15">Parameters<a class="headerlink" href="#parameters_15" title="Permanent link">&para;</a></h4>
-<p>Parameter</p>
-<p>Type</p>
-<p>Description</p>
-<p>Required</p>
-<p>expression</p>
-<p>string</p>
-<p>A field or string expression to test.</p>
-<p>Required</p>
-<p>pattern</p>
-<p>string</p>
-<p>The matching pattern.</p>
-<p>Required</p>
 <h4 id="returns_14">Returns<a class="headerlink" href="#returns_14" title="Permanent link">&para;</a></h4>
 <p>The data type of the returned value is <code>boolean</code>.</p>
 <h4 id="examples_14">Examples<a class="headerlink" href="#examples_14" title="Permanent link">&para;</a></h4>
@@ -28544,22 +28031,6 @@ If the defined substring is not found, the function returns <code>-1</code>.</p>
 <h4 id="syntax_15">Syntax<a class="headerlink" href="#syntax_15" title="Permanent link">&para;</a></h4>
 <p><code>matchesPhrase(expression, phrase [, caseSensitive])</code></p>
 <h4 id="parameters_16">Parameters<a class="headerlink" href="#parameters_16" title="Permanent link">&para;</a></h4>
-<p>Parameter</p>
-<p>Type</p>
-<p>Description</p>
-<p>Required</p>
-<p>expression</p>
-<p>string, array</p>
-<p>The expression (string or array of strings) that should be checked.</p>
-<p>Required</p>
-<p>phrase</p>
-<p>string</p>
-<p>The phrase to search for.</p>
-<p>Required</p>
-<p>caseSensitive</p>
-<p>boolean</p>
-<p>Whether the match should be done case-sensitive. Default: <code>false</code>.</p>
-<p>Optional</p>
 <h4 id="returns_15">Returns<a class="headerlink" href="#returns_15" title="Permanent link">&para;</a></h4>
 <p>The data type of the returned value is <code>boolean</code>.</p>
 <h4 id="examples_15">Examples<a class="headerlink" href="#examples_15" title="Permanent link">&para;</a></h4>
@@ -28592,47 +28063,11 @@ If the defined substring is not found, the function returns <code>-1</code>.</p>
 </code></pre></div>
 <p>Run in Playground</p>
 <p>Query result:</p>
-<p>content</p>
-<p>matchesPhrase(content, "DQL")</p>
-<p>matchesPhrase(content, "Dyna")</p>
-<p>matchesPhrase(content, "query")</p>
-<p>matchesPhrase(content, "query", caseSensitive:TRUE)</p>
-<p><code>DQL is awesome!</code></p>
-<p><code>true</code></p>
-<p><code>false</code></p>
-<p><code>false</code></p>
-<p><code>false</code></p>
-<p><code>Dynatrace Query Language</code></p>
-<p><code>false</code></p>
-<p><code>false</code></p>
-<p><code>true</code></p>
-<p><code>false</code></p>
-<p><code>[DQL, is, awesome, !, Dynatrace Query Language]</code></p>
-<p><code>true</code></p>
-<p><code>false</code></p>
-<p><code>true</code></p>
-<p><code>false</code></p>
 <h2 id="matchesvalue">matchesValue<a class="headerlink" href="#matchesvalue" title="Permanent link">&para;</a></h2>
 <p>Searches records for a specific value in a given attribute. Returns <code>true</code> or <code>false</code>.</p>
 <h4 id="syntax_16">Syntax<a class="headerlink" href="#syntax_16" title="Permanent link">&para;</a></h4>
 <p><code>matchesValue(expression, value, â¦ [, caseSensitive])</code></p>
 <h4 id="parameters_17">Parameters<a class="headerlink" href="#parameters_17" title="Permanent link">&para;</a></h4>
-<p>Parameter</p>
-<p>Type</p>
-<p>Description</p>
-<p>Required</p>
-<p>expression</p>
-<p>string, array</p>
-<p>The expression (string or array of strings) that should be checked.</p>
-<p>Required</p>
-<p>value</p>
-<p>string, array</p>
-<p>The value to search for using patterns (supports an array of patterns or a list of patterns).</p>
-<p>Required</p>
-<p>caseSensitive</p>
-<p>boolean</p>
-<p>Whether the match should be done case-sensitive. Default: <code>false</code>.</p>
-<p>Optional</p>
 <h4 id="returns_16">Returns<a class="headerlink" href="#returns_16" title="Permanent link">&para;</a></h4>
 <p>The data type of the returned value is <code>boolean</code>.</p>
 <h4 id="examples_16">Examples<a class="headerlink" href="#examples_16" title="Permanent link">&para;</a></h4>
@@ -28654,14 +28089,6 @@ If the defined substring is not found, the function returns <code>-1</code>.</p>
 </code></pre></div>
 <p>Run in Playground</p>
 <p>Query result:</p>
-<p>content</p>
-<p>matchesValue(content, "User*")</p>
-<p>matchesValue(content, "user*")</p>
-<p>matchesValue(content, "user*", caseSensitive:TRUE)</p>
-<p><code>User 'kÃ¤Ã¤rmanÃ¼' failed to login from 192.168.0.1</code></p>
-<p><code>true</code></p>
-<p><code>true</code></p>
-<p><code>false</code></p>
 <h5 id="example-2_2">Example 2<a class="headerlink" href="#example-2_2" title="Permanent link">&para;</a></h5>
 <p>Values are matched from the beginning. To match parts of the value, use <code>*</code> as wildcard symbol:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-128-1" name="__codelineno-128-1" href="#__codelineno-128-1"></a>data record(content = &quot;User &#39;kÃ¤Ã¤rmanÃ¼&#39; failed to login from 192.168.0.1&quot;)
@@ -28680,14 +28107,6 @@ If the defined substring is not found, the function returns <code>-1</code>.</p>
 </code></pre></div>
 <p>Run in Playground</p>
 <p>Query result:</p>
-<p>content</p>
-<p>matchesValue(content, "192.168.0.1")</p>
-<p>matchesValue(content, "*192.168.0.1")</p>
-<p>matchesValue(content, "*failed to log*")</p>
-<p><code>User 'kÃ¤Ã¤rmanÃ¼' failed to login from 192.168.0.1</code></p>
-<p><code>false</code></p>
-<p><code>true</code></p>
-<p><code>true</code></p>
 <h5 id="example-3">Example 3<a class="headerlink" href="#example-3" title="Permanent link">&para;</a></h5>
 <p>Only ASCII characters are matched case-insensitive:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-129-1" name="__codelineno-129-1" href="#__codelineno-129-1"></a>data record(content = &quot;Ãsterreich&quot;)
@@ -28702,12 +28121,6 @@ If the defined substring is not found, the function returns <code>-1</code>.</p>
 </code></pre></div>
 <p>Run in Playground</p>
 <p>Query result:</p>
-<p>content</p>
-<p>matchesValue(content, "Ã¶sterreich")</p>
-<p>matchesValue(content, "Ãsterreich")</p>
-<p><code>Ãsterreich</code></p>
-<p><code>false</code></p>
-<p><code>true</code></p>
 <h5 id="example-4">Example 4<a class="headerlink" href="#example-4" title="Permanent link">&para;</a></h5>
 <p>The function handles values of arrays in "any-match" manner.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-130-1" name="__codelineno-130-1" href="#__codelineno-130-1"></a>data record(technologies = array(&quot;Java11&quot;, &quot;java17&quot;))
@@ -28726,14 +28139,6 @@ If the defined substring is not found, the function returns <code>-1</code>.</p>
 </code></pre></div>
 <p>Run in Playground</p>
 <p>Query result:</p>
-<p>technologies</p>
-<p>matchesValue(technologies, "Java11")</p>
-<p>matchesValue(technologies, "java")</p>
-<p>matchesValue(technologies, "java*")</p>
-<p><code>[Java11, java17]</code></p>
-<p><code>true</code></p>
-<p><code>false</code></p>
-<p><code>true</code></p>
 <h4 id="multi-pattern-comparison">Multi-pattern comparison<a class="headerlink" href="#multi-pattern-comparison" title="Permanent link">&para;</a></h4>
 <p>The <code>matchesValue()</code> function supports matching against multiple patterns. You can use it by either providing an array or a list of patterns with the <code>value</code> parameter. Only strings are supported as patterns. Other datatypes don't produce a match and are ignored. The <code>matchesValue()</code> function returns true if any of the patterns matches. In case none of the patterns produce a match, <code>false</code> is returned.</p>
 <h4 id="example_5">Example<a class="headerlink" href="#example_5" title="Permanent link">&para;</a></h4>
@@ -28757,33 +28162,11 @@ If the defined substring is not found, the function returns <code>-1</code>.</p>
 </code></pre></div>
 <p>Run in Playground</p>
 <p>Query result:</p>
-<p>content</p>
-<p>matchesValue(content, array("Grail", "dql"))</p>
-<p>matchesValue(content, {"Grail", "dql"})</p>
-<p>matchesValue(content, {"Grail", "dq*"})</p>
-<p>matchesValue(caseSensitive:TRUE, content, {"Grail", "dq*"})</p>
-<p><code>DQL, is, awesome, !</code></p>
-<p><code>true</code></p>
-<p><code>true</code></p>
-<p><code>true</code></p>
-<p><code>false</code></p>
 <h2 id="parse">parse<a class="headerlink" href="#parse" title="Permanent link">&para;</a></h2>
 <p>Extracts a single value from a string as specified in the pattern or a record if there are multiple named matchers.</p>
 <h4 id="syntax_17">Syntax<a class="headerlink" href="#syntax_17" title="Permanent link">&para;</a></h4>
 <p><code>parse(expression, pattern)</code></p>
 <h4 id="parameters_18">Parameters<a class="headerlink" href="#parameters_18" title="Permanent link">&para;</a></h4>
-<p>Parameter</p>
-<p>Type</p>
-<p>Description</p>
-<p>Required</p>
-<p>expression</p>
-<p>string</p>
-<p>A field or string expression to parse.</p>
-<p>Required</p>
-<p>pattern</p>
-<p>string</p>
-<p>The parse pattern. Must conform with patterns (see <a href="/docs/platform/grail/dynatrace-pattern-language" title="Use Dynatrace Pattern Language to describe patterns using matchers.">DPL</a>).</p>
-<p>Required</p>
 <h4 id="returns_17">Returns<a class="headerlink" href="#returns_17" title="Permanent link">&para;</a></h4>
 <p>The <code>parse</code> function returns a single value, which can be either of primitive type or a record. The result is of primitive type in case of a single named matcher in the DPL pattern. If there are multiple named matchers in the pattern, then the result is a record containing fields corresponding to the names of the matchers.
 Fields created from the output of the <code>parse</code> function by default get the name of the named matcher in the DPL pattern. In case of multiple named matchers in the pattern, the default field name is <code>parsed_record</code>. You can also define alternative field names using an alias expression.</p>
@@ -28839,18 +28222,6 @@ Unlike the <a href="/docs/platform/grail/dynatrace-query-language/functions/stri
 <h4 id="syntax_18">Syntax<a class="headerlink" href="#syntax_18" title="Permanent link">&para;</a></h4>
 <p><code>parseAll(expression, pattern)</code></p>
 <h4 id="parameters_19">Parameters<a class="headerlink" href="#parameters_19" title="Permanent link">&para;</a></h4>
-<p>Parameter</p>
-<p>Type</p>
-<p>Description</p>
-<p>Required</p>
-<p>expression</p>
-<p>string</p>
-<p>A field or string expression to parse.</p>
-<p>Required</p>
-<p>pattern</p>
-<p>string</p>
-<p>The parse pattern. Must conform with <a href="/docs/platform/grail/dynatrace-pattern-language" title="Use Dynatrace Pattern Language to describe patterns using matchers.">DPL patterns</a>.</p>
-<p>Required</p>
 <h4 id="returns_18">Returns<a class="headerlink" href="#returns_18" title="Permanent link">&para;</a></h4>
 <p>The data type of the returned value is <code>array</code>.</p>
 <h4 id="examples_18">Examples<a class="headerlink" href="#examples_18" title="Permanent link">&para;</a></h4>
@@ -28904,22 +28275,6 @@ Unlike the <a href="/docs/platform/grail/dynatrace-query-language/functions/stri
 <h4 id="syntax_19">Syntax<a class="headerlink" href="#syntax_19" title="Permanent link">&para;</a></h4>
 <p><code>punctuation(expression, [, count] [, withSpace])</code></p>
 <h4 id="parameters_20">Parameters<a class="headerlink" href="#parameters_20" title="Permanent link">&para;</a></h4>
-<p>Parameter</p>
-<p>Type</p>
-<p>Description</p>
-<p>Required</p>
-<p>expression</p>
-<p>string</p>
-<p>The string expression from which the punctuation characters are extracted.</p>
-<p>Required</p>
-<p>count</p>
-<p>positive integer</p>
-<p>The maximum number of returned punctuation characters. Default: <code>32</code>.</p>
-<p>Optional</p>
-<p>withSpace</p>
-<p>boolean</p>
-<p>Whether space characters should be included. Default: <code>false</code>.</p>
-<p>Optional</p>
 <h4 id="returns_19">Returns<a class="headerlink" href="#returns_19" title="Permanent link">&para;</a></h4>
 <p>The data type of the returned value is <code>string</code>.</p>
 <h4 id="examples_19">Examples<a class="headerlink" href="#examples_19" title="Permanent link">&para;</a></h4>
@@ -28949,43 +28304,11 @@ Unlike the <a href="/docs/platform/grail/dynatrace-query-language/functions/stri
 </code></pre></div>
 <p>Run in Playground</p>
 <p>Query result:</p>
-<p>content</p>
-<p>punctuation(content)</p>
-<p>punctuation(content, count:2)</p>
-<p>punctuation(content, count:2, withSpace:TRUE)</p>
-<p><code>DQL is awesome!</code></p>
-<p><code>!</code></p>
-<p><code>!</code></p>
-<p><code>__</code></p>
-<p><code>Dynatrace Query Language</code></p>
-<p><em>empty string</em></p>
-<p><em>empty string</em></p>
-<p><code>__</code></p>
-<p><code>${placeholder}</code></p>
-<p><code>${}</code></p>
-<p><code>${</code></p>
-<p><code>${</code></p>
 <h2 id="replacepattern">replacePattern<a class="headerlink" href="#replacepattern" title="Permanent link">&para;</a></h2>
 <p>Replaces each substring of a string that matches the DPL pattern with the given string. The pattern must be defined as a constant string expression. For additional details about pattern syntax, see the <a href="/docs/platform/grail/dynatrace-pattern-language" title="Use Dynatrace Pattern Language to describe patterns using matchers.">DPL documentation</a>.</p>
 <h4 id="syntax_20">Syntax<a class="headerlink" href="#syntax_20" title="Permanent link">&para;</a></h4>
 <p><code>replacePattern(expression, pattern, replacement)</code></p>
 <h4 id="parameters_21">Parameters<a class="headerlink" href="#parameters_21" title="Permanent link">&para;</a></h4>
-<p>Parameter</p>
-<p>Type</p>
-<p>Description</p>
-<p>Required</p>
-<p>expression</p>
-<p>string</p>
-<p>A field or string expression to replace.</p>
-<p>Required</p>
-<p>pattern</p>
-<p>string</p>
-<p>The replacing pattern.</p>
-<p>Required</p>
-<p>replacement</p>
-<p>string</p>
-<p>The string that should replace the found substrings.</p>
-<p>Required</p>
 <h4 id="returns_20">Returns<a class="headerlink" href="#returns_20" title="Permanent link">&para;</a></h4>
 <p>The data type of the returned value is <code>string</code>.</p>
 <h4 id="examples_20">Examples<a class="headerlink" href="#examples_20" title="Permanent link">&para;</a></h4>
@@ -29032,22 +28355,6 @@ Unlike the <a href="/docs/platform/grail/dynatrace-query-language/functions/stri
 <h4 id="syntax_21">Syntax<a class="headerlink" href="#syntax_21" title="Permanent link">&para;</a></h4>
 <p><code>replaceString(expression, substring, replacement)</code></p>
 <h4 id="parameters_22">Parameters<a class="headerlink" href="#parameters_22" title="Permanent link">&para;</a></h4>
-<p>Parameter</p>
-<p>Type</p>
-<p>Description</p>
-<p>Required</p>
-<p>expression</p>
-<p>string</p>
-<p>The field or expression where substrings should be replaced.</p>
-<p>Required</p>
-<p>substring</p>
-<p>string</p>
-<p>The substring that should be replaced.</p>
-<p>Required</p>
-<p>replacement</p>
-<p>string</p>
-<p>The string that should replace the found substrings.</p>
-<p>Required</p>
 <h4 id="returns_21">Returns<a class="headerlink" href="#returns_21" title="Permanent link">&para;</a></h4>
 <p>The data type of the returned value is <code>string</code>.</p>
 <h4 id="examples_21">Examples<a class="headerlink" href="#examples_21" title="Permanent link">&para;</a></h4>
@@ -29072,35 +28379,11 @@ Unlike the <a href="/docs/platform/grail/dynatrace-query-language/functions/stri
 </code></pre></div>
 <p>Run in Playground</p>
 <p>Query result:</p>
-<p>content</p>
-<p>replaceString(content, "awesome", "simple")</p>
-<p>replaceString(content, "abca", "xyz")</p>
-<p><code>DQL is awesome!</code></p>
-<p><code>DQL is simple!</code></p>
-<p><code>DQL is awesome!</code></p>
-<p><code>Dynatrace Query Language</code></p>
-<p><code>Dynatrace Query Language</code></p>
-<p><code>Dynatrace Query Language</code></p>
-<p><code>abcabca</code></p>
-<p><code>abcabca</code></p>
-<p><code>xyzbca</code></p>
 <h2 id="splitbypattern">splitByPattern<a class="headerlink" href="#splitbypattern" title="Permanent link">&para;</a></h2>
 <p>Splits a string into an array at each occurrence of the DPL pattern.</p>
 <h4 id="syntax_22">Syntax<a class="headerlink" href="#syntax_22" title="Permanent link">&para;</a></h4>
 <p><code>splitByPattern(expression, pattern)</code></p>
 <h4 id="parameters_23">Parameters<a class="headerlink" href="#parameters_23" title="Permanent link">&para;</a></h4>
-<p>Parameter</p>
-<p>Type</p>
-<p>Description</p>
-<p>Required</p>
-<p>expression</p>
-<p>string</p>
-<p>A field or string expression to split.</p>
-<p>Required</p>
-<p>pattern</p>
-<p>string</p>
-<p>The splitting pattern. Must conform with <a href="/docs/platform/grail/dynatrace-pattern-language" title="Use Dynatrace Pattern Language to describe patterns using matchers.">DPL patterns</a>.</p>
-<p>Required</p>
 <h4 id="returns_22">Returns<a class="headerlink" href="#returns_22" title="Permanent link">&para;</a></h4>
 <p>The data type of the returned value is <code>array</code>.</p>
 <h4 id="examples_22">Examples<a class="headerlink" href="#examples_22" title="Permanent link">&para;</a></h4>
@@ -29164,18 +28447,6 @@ Using an empty string as a pattern splits the string into one-byte substrings. F
 <h4 id="syntax_23">Syntax<a class="headerlink" href="#syntax_23" title="Permanent link">&para;</a></h4>
 <p><code>splitString(expression, pattern)</code></p>
 <h4 id="parameters_24">Parameters<a class="headerlink" href="#parameters_24" title="Permanent link">&para;</a></h4>
-<p>Parameter</p>
-<p>Type</p>
-<p>Description</p>
-<p>Required</p>
-<p>expression</p>
-<p>string</p>
-<p>The string expression to split up into an array.</p>
-<p>Required</p>
-<p>pattern</p>
-<p>string</p>
-<p>The pattern to split the string expression at, or the empty string to split into one-byte strings.</p>
-<p>Required</p>
 <h4 id="returns_23">Returns<a class="headerlink" href="#returns_23" title="Permanent link">&para;</a></h4>
 <p>The data type of the returned value is <code>array</code>.</p>
 <h4 id="examples_23">Examples<a class="headerlink" href="#examples_23" title="Permanent link">&para;</a></h4>
@@ -29204,42 +28475,11 @@ Using an empty string as a pattern splits the string into one-byte substrings. F
 </code></pre></div>
 <p>Run in Playground</p>
 <p>Query result:</p>
-<p>content</p>
-<p>splitString(content, " ")</p>
-<p>splitString(content, "is")</p>
-<p>splitString(content, "")</p>
-<p>splitString(content, "XYZ")</p>
-<p><code>DQL is awesome!</code></p>
-<p><code>[DQL, is, awesome!]</code></p>
-<p><code>[DQL , awesome!]</code></p>
-<p><code>[D, Q, L, , i, s, , a, w, e, s, o, m, e, !]</code></p>
-<p><code>[DQL is awesome!]</code></p>
-<p><code>Dynatrace Query Language</code></p>
-<p><code>[Dynatrace, Query, Language]</code></p>
-<p><code>[Dynatrace Query Language]</code></p>
-<p><code>[D, y, n, a, t, r, a, c, e, , Q, u, e, r, y, , L, a, n, g, u, a, g, e]</code></p>
-<p><code>[Dynatrace Query Language]</code></p>
 <h2 id="startswith">startsWith<a class="headerlink" href="#startswith" title="Permanent link">&para;</a></h2>
 <p>Checks if a string expression starts with a prefix. Returns <code>true</code> if does, <code>false</code> otherwise.</p>
 <h4 id="syntax_24">Syntax<a class="headerlink" href="#syntax_24" title="Permanent link">&para;</a></h4>
 <p><code>startsWith(expression, prefix [, caseSensitive])</code></p>
 <h4 id="parameters_25">Parameters<a class="headerlink" href="#parameters_25" title="Permanent link">&para;</a></h4>
-<p>Parameter</p>
-<p>Type</p>
-<p>Description</p>
-<p>Required</p>
-<p>expression</p>
-<p>string</p>
-<p>The string expression that will be checked.</p>
-<p>Required</p>
-<p>prefix</p>
-<p>string</p>
-<p>The prefix string with which the expression should start.</p>
-<p>Required</p>
-<p>caseSensitive</p>
-<p>boolean</p>
-<p>Whether the check should be done in a case-sensitive way.</p>
-<p>Optional</p>
 <h4 id="returns_24">Returns<a class="headerlink" href="#returns_24" title="Permanent link">&para;</a></h4>
 <p>The data type of the returned value is <code>boolean</code>.</p>
 <h4 id="examples_24">Examples<a class="headerlink" href="#examples_24" title="Permanent link">&para;</a></h4>
@@ -29260,15 +28500,6 @@ Using an empty string as a pattern splits the string into one-byte substrings. F
 </code></pre></div>
 <p>Run in Playground</p>
 <p>Query result:</p>
-<p>content</p>
-<p>startsWith(content, "D")</p>
-<p>startsWith(content, "dql", caseSensitive:FALSE)</p>
-<p><code>DQL is awesome!</code></p>
-<p><code>true</code></p>
-<p><code>true</code></p>
-<p><code>Dynatrace Query Language</code></p>
-<p><code>true</code></p>
-<p><code>false</code></p>
 <h2 id="stringlength">stringLength<a class="headerlink" href="#stringlength" title="Permanent link">&para;</a></h2>
 <p>Returns the length of a string expression. Length is defined as the number of UTF-16 code units, which is often the same as the number of characters in the string. In some cases, the number of characters is smaller than the number of UTF-16 code units, for example when Combining Diacritical Marks are used, or if characters outside the Basic Multilingual Plane (BMP), such as Emoji, are present.</p>
 <p>If your use case requires consistent length for the same characters, consider ingesting strings after Unicode normalization.</p>
@@ -29276,14 +28507,6 @@ Using an empty string as a pattern splits the string into one-byte substrings. F
 <h4 id="syntax_25">Syntax<a class="headerlink" href="#syntax_25" title="Permanent link">&para;</a></h4>
 <p><code>stringLength(expression)</code></p>
 <h4 id="parameters_26">Parameters<a class="headerlink" href="#parameters_26" title="Permanent link">&para;</a></h4>
-<p>Parameter</p>
-<p>Type</p>
-<p>Description</p>
-<p>Required</p>
-<p>expression</p>
-<p>string</p>
-<p>The string expression to get the number of UTF-16 code units for.</p>
-<p>Required</p>
 <h4 id="returns_25">Returns<a class="headerlink" href="#returns_25" title="Permanent link">&para;</a></h4>
 <p>The data type of the returned value is <code>long</code>.</p>
 <h4 id="examples_25">Examples<a class="headerlink" href="#examples_25" title="Permanent link">&para;</a></h4>
@@ -29304,14 +28527,6 @@ Using an empty string as a pattern splits the string into one-byte substrings. F
 </code></pre></div>
 <p>Run in Playground</p>
 <p>Query result:</p>
-<p>content</p>
-<p>stringLength(content)</p>
-<p><code>DQL is awesome!</code></p>
-<p><code>15</code></p>
-<p><code>Dynatrace Query Language</code></p>
-<p><code>24</code></p>
-<p><code>ðâð¦º</code></p>
-<p><code>5</code></p>
 <h2 id="substring">substring<a class="headerlink" href="#substring" title="Permanent link">&para;</a></h2>
 <p>Gets a code unit range using a start index (inclusive) and an end index (exclusive).</p>
 <p>Returns an empty string if from <code>&gt;=</code> to.</p>
@@ -29323,22 +28538,6 @@ Using an empty string as a pattern splits the string into one-byte substrings. F
 <h4 id="syntax_26">Syntax<a class="headerlink" href="#syntax_26" title="Permanent link">&para;</a></h4>
 <p><code>substring(expression [, from] [, to])</code></p>
 <h4 id="parameters_27">Parameters<a class="headerlink" href="#parameters_27" title="Permanent link">&para;</a></h4>
-<p>Parameter</p>
-<p>Type</p>
-<p>Description</p>
-<p>Required</p>
-<p>expression</p>
-<p>string</p>
-<p>The string expression to get a substring of.</p>
-<p>Required</p>
-<p>from</p>
-<p>long</p>
-<p>Index of first code unit to include in sub-string, inclusive, relative to start of <code>expression</code> if positive, relative to end if negative. Clamped at string bounds.</p>
-<p>Optional</p>
-<p>to</p>
-<p>long</p>
-<p>Index of last code unit to include in sub-string, exclusive, relative to start of <code>expression</code> if positive, relative to end if negative. Clamped at string bounds.</p>
-<p>Optional</p>
 <h4 id="returns_26">Returns<a class="headerlink" href="#returns_26" title="Permanent link">&para;</a></h4>
 <p>The data type of the returned value is <code>string</code>.</p>
 <h4 id="examples_26">Examples<a class="headerlink" href="#examples_26" title="Permanent link">&para;</a></h4>
@@ -29367,34 +28566,11 @@ Using an empty string as a pattern splits the string into one-byte substrings. F
 </code></pre></div>
 <p>Run in Playground</p>
 <p>Query result:</p>
-<p>content</p>
-<p>substring(content, from:4)</p>
-<p>substring(content, from:-2)</p>
-<p>substring(content, from:4, to:9)</p>
-<p>substring(content, from:-42, to:42)</p>
-<p><code>DQL is awesome!</code></p>
-<p><code>is awesome!</code></p>
-<p><code>e!</code></p>
-<p><code>is aw</code></p>
-<p><code>DQL is awesome!</code></p>
-<p><code>Dynatrace Query Language</code></p>
-<p><code>trace Query Language</code></p>
-<p><code>ge</code></p>
-<p><code>trace</code></p>
-<p><code>Dynatrace Query Language</code></p>
 <h2 id="trim">trim<a class="headerlink" href="#trim" title="Permanent link">&para;</a></h2>
 <p>Removes leading and trailing whitespaces. Any code point &lt;= ASCII 32 in decimal is considered a whitespace, where ASCII 32 is a blank space.</p>
 <h4 id="syntax_27">Syntax<a class="headerlink" href="#syntax_27" title="Permanent link">&para;</a></h4>
 <p><code>trim(expression)</code></p>
 <h4 id="parameters_28">Parameters<a class="headerlink" href="#parameters_28" title="Permanent link">&para;</a></h4>
-<p>Parameter</p>
-<p>Type</p>
-<p>Description</p>
-<p>Required</p>
-<p>expression</p>
-<p>string</p>
-<p>The string expression to remove leading and trailing white-space from.</p>
-<p>Required</p>
 <h4 id="returns_27">Returns<a class="headerlink" href="#returns_27" title="Permanent link">&para;</a></h4>
 <p>The data type of the returned value is <code>string</code>.</p>
 <h4 id="examples_27">Examples<a class="headerlink" href="#examples_27" title="Permanent link">&para;</a></h4>
@@ -29411,88 +28587,32 @@ Using an empty string as a pattern splits the string into one-byte substrings. F
 </code></pre></div>
 <p>Run in Playground</p>
 <p>Query result:</p>
-<p>content</p>
-<p>trim(content)</p>
-<p><code>" DQL is awesome!"</code></p>
-<p><code>DQL is awesome!</code></p>
-<p><code>" Dynatrace Query Language "</code></p>
-<p><code>Dynatrace Query Language</code></p>
 <h2 id="unescape">unescape<a class="headerlink" href="#unescape" title="Permanent link">&para;</a></h2>
 <p>Returns an unescaped string.</p>
 <p>Unescaping rules</p>
 <ol>
-<li>Single quotes, double quotes and backticks are unescaped.</li>
+<li>
+<p>Single quotes, double quotes and backticks are unescaped.</p>
+</li>
+<li>
+<p>Backslashes are unescaped.</p>
+</li>
+<li>
+<p>ASCII characters bell, backspace, form feed, new line, carriage return, horizontal tab and vertical tab are unescaped.</p>
+</li>
+<li>
+<p><code>\xhh</code> within standard ASCII space (0x00 - 0x7f) is replaced by the related character.</p>
+</li>
+<li>
+<p><code>\xhh</code> within extended ASCII space (0x80 - 0xff) is interpreted as <code>\u00hh</code> and replaced by the related Unicode character.</p>
+</li>
+<li>
+<p><code>\uhhhh</code> is replaced by the related Unicode character.</p>
+</li>
 </ol>
-<p>Input</p>
-<p>Output</p>
-<p><code>\"</code></p>
-<p><code>"</code></p>
-<p><code>\'</code></p>
-<p><code>'</code></p>
-<p><code>\`</code></p>
-<p><code>`</code></p>
-<ol>
-<li>Backslashes are unescaped.</li>
-</ol>
-<p>Input</p>
-<p>Output</p>
-<p><code>\\</code></p>
-<p><code>\</code></p>
-<ol>
-<li>ASCII characters bell, backspace, form feed, new line, carriage return, horizontal tab and vertical tab are unescaped.</li>
-</ol>
-<p>Input</p>
-<p>Output</p>
-<p><code>\a</code></p>
-<p><code>&lt;bell&gt;</code></p>
-<p><code>\b</code></p>
-<p><code>&lt;backspace&gt;</code></p>
-<p><code>\f</code></p>
-<p><code>&lt;form feed&gt;</code></p>
-<p><code>\n</code></p>
-<p><code>&lt;new line&gt;</code></p>
-<p><code>\r</code></p>
-<p><code>&lt;carriage return&gt;</code></p>
-<p><code>\t</code></p>
-<p><code>&lt;horizontal tab&gt;</code></p>
-<p><code>\v</code></p>
-<p><code>&lt;vertical tab&gt;</code></p>
-<ol>
-<li><code>\xhh</code> within standard ASCII space (0x00 - 0x7f) is replaced by the related character.</li>
-</ol>
-<p>Input</p>
-<p>Output</p>
-<p><code>\x40</code></p>
-<p><code>@</code></p>
-<p><code>\x64</code></p>
-<p><code>d</code></p>
-<ol>
-<li><code>\xhh</code> within extended ASCII space (0x80 - 0xff) is interpreted as <code>\u00hh</code> and replaced by the related Unicode character.</li>
-</ol>
-<p>Input</p>
-<p>Output</p>
-<p><code>\xff</code></p>
-<p><code>Ã¿</code></p>
-<ol>
-<li><code>\uhhhh</code> is replaced by the related Unicode character.</li>
-</ol>
-<p>Input</p>
-<p>Output</p>
-<p><code>\u002e</code></p>
-<p><code>.</code></p>
-<p><code>\u0064</code></p>
-<p><code>d</code></p>
 <h4 id="syntax_28">Syntax<a class="headerlink" href="#syntax_28" title="Permanent link">&para;</a></h4>
 <p><code>unescape(expression)</code></p>
 <h4 id="parameters_29">Parameters<a class="headerlink" href="#parameters_29" title="Permanent link">&para;</a></h4>
-<p>Parameter</p>
-<p>Type</p>
-<p>Description</p>
-<p>Required</p>
-<p>expression</p>
-<p>string expression</p>
-<p>The string expression that will be unescaped.</p>
-<p>Required</p>
 <h4 id="returns_28">Returns<a class="headerlink" href="#returns_28" title="Permanent link">&para;</a></h4>
 <p>The data type of the returned value is <code>string</code>.</p>
 <h4 id="examples_28">Examples<a class="headerlink" href="#examples_28" title="Permanent link">&para;</a></h4>
@@ -29524,14 +28644,6 @@ Using an empty string as a pattern splits the string into one-byte substrings. F
 <h4 id="syntax_29">Syntax<a class="headerlink" href="#syntax_29" title="Permanent link">&para;</a></h4>
 <p><code>unescapeHtml(expression)</code></p>
 <h4 id="parameters_30">Parameters<a class="headerlink" href="#parameters_30" title="Permanent link">&para;</a></h4>
-<p>Parameter</p>
-<p>Type</p>
-<p>Description</p>
-<p>Required</p>
-<p>expression</p>
-<p>string</p>
-<p>The string expression that will be unescaped.</p>
-<p>Required</p>
 <h4 id="returns_29">Returns<a class="headerlink" href="#returns_29" title="Permanent link">&para;</a></h4>
 <p>The data type of the returned value is <code>string</code>.</p>
 <h4 id="examples_29">Examples<a class="headerlink" href="#examples_29" title="Permanent link">&para;</a></h4>
@@ -29548,25 +28660,11 @@ Using an empty string as a pattern splits the string into one-byte substrings. F
 </code></pre></div>
 <p>Run in Playground</p>
 <p>Query result:</p>
-<p>content</p>
-<p>unescapeHtml(content)</p>
-<p><code>DQL is &amp;lt;bold&amp;gt;awesome&amp;lt;/bold&amp;gt;!</code></p>
-<p><code>DQL is &lt;bold&gt;awesome&lt;/bold&gt;!</code></p>
-<p><code>&amp;lt;a href=&amp;quot;https://www.dynatrace.com/platform/grail&amp;quot;&amp;gt;Dynatrace Query Language&amp;lt;/a&amp;gt;</code></p>
-<p><code>&lt;a href="https://www.dynatrace.com/platform/grail"&gt;Dynatrace Query Language&lt;/a&gt;</code></p>
 <h2 id="upper">upper<a class="headerlink" href="#upper" title="Permanent link">&para;</a></h2>
 <p>Converts a string to uppercase.</p>
 <h4 id="syntax_30">Syntax<a class="headerlink" href="#syntax_30" title="Permanent link">&para;</a></h4>
 <p><code>upper(expression)</code></p>
 <h4 id="parameters_31">Parameters<a class="headerlink" href="#parameters_31" title="Permanent link">&para;</a></h4>
-<p>Parameter</p>
-<p>Type</p>
-<p>Description</p>
-<p>Required</p>
-<p>expression</p>
-<p>string</p>
-<p>The string expression to convert to uppercase.</p>
-<p>Required</p>
 <h4 id="returns_30">Returns<a class="headerlink" href="#returns_30" title="Permanent link">&para;</a></h4>
 <p>The data type of the returned value is <code>string</code>.</p>
 <h4 id="examples_30">Examples<a class="headerlink" href="#examples_30" title="Permanent link">&para;</a></h4>
@@ -29583,12 +28681,6 @@ Using an empty string as a pattern splits the string into one-byte substrings. F
 </code></pre></div>
 <p>Run in Playground</p>
 <p>Query result:</p>
-<p>content</p>
-<p>upper(content)</p>
-<p><code>DQL is awesome!</code></p>
-<p><code>DQL IS AWESOME!</code></p>
-<p><code>Dynatrace Query Language</code></p>
-<p><code>DYNATRACE QUERY LANGUAGE</code></p>
 <h2 id="related-topics_10">Related topics<a class="headerlink" href="#related-topics_10" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="/docs/platform/grail/dynatrace-query-language" title="How to use Dynatrace Query Language.">Dynatrace Query Language</a></li>
@@ -29605,7 +28697,7 @@ Using an empty string as a pattern splits the string into one-byte substrings. F
 <hr />
 <p>title: DQL functions
 source: https://www.dynatrace.com/docs/platform/grail/dynatrace-query-language/functions
-scraped: 2026-02-23T21:25:57.767975</p>
+scraped: 2026-02-24T21:18:23.779955</p>
 <hr />
 <h1 id="dql-functions">DQL functions<a class="headerlink" href="#dql-functions" title="Permanent link">&para;</a></h1>
 <h1 id="dql-functions_1">DQL functions<a class="headerlink" href="#dql-functions_1" title="Permanent link">&para;</a></h1>
@@ -29617,488 +28709,32 @@ scraped: 2026-02-23T21:25:57.767975</p>
 <p>DQL functions grouped by category. For in-depth information on a specific function, select its name.</p>
 <h2 id="aggregation-functions"><a href="/docs/platform/grail/dynatrace-query-language/functions/aggregation-functions" title="A list of DQL aggregation functions.">Aggregation functions</a><a class="headerlink" href="#aggregation-functions" title="Permanent link">&para;</a></h2>
 <p>Aggregation functions compute results from a list of records.</p>
-<p>Name</p>
-<p>Description</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/aggregation-functions#avg" title="A list of DQL aggregation functions.">avg</a></p>
-<p>Calculates the average value of a field for a list of records.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/aggregation-functions#collectArray" title="A list of DQL aggregation functions.">collectArray</a></p>
-<p>Collects the values of the provided field into an array.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/aggregation-functions#collectDistinct" title="A list of DQL aggregation functions.">collectDistinct</a></p>
-<p>Collects distinct values of the provided field into an array.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/aggregation-functions#correlation" title="A list of DQL aggregation functions.">correlation</a></p>
-<p>Calculates the Pearson correlation of two numeric fields for a list of records.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/aggregation-functions#count" title="A list of DQL aggregation functions.">count</a></p>
-<p>Counts the total number of records.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/aggregation-functions#countDistinct" title="A list of DQL aggregation functions.">countDistinct</a></p>
-<p>Calculates the cardinality of unique values of a field for a list of records.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/aggregation-functions#countDistinctApprox" title="A list of DQL aggregation functions.">countDistinctApprox</a></p>
-<p>Calculates the cardinality of unique values of a field for a list of records based on a stochastic estimation.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/aggregation-functions#countDistinctExact" title="A list of DQL aggregation functions.">countDistinctExact</a></p>
-<p>Calculates the cardinality of unique values for the provided expression up to a maximum of 1M distinct values.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/aggregation-functions#countIf" title="A list of DQL aggregation functions.">countIf</a></p>
-<p>Counts the number of records that match the condition.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/aggregation-functions#max" title="A list of DQL aggregation functions.">max</a></p>
-<p>Calculates the maximum value of a field for a list of records.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/aggregation-functions#median" title="A list of DQL aggregation functions.">median</a></p>
-<p>Calculates the median of an expression.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/aggregation-functions#min" title="A list of DQL aggregation functions.">min</a></p>
-<p>Calculates the minimum value of a field for a list of records.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/aggregation-functions#percentile" title="A list of DQL aggregation functions.">percentile</a></p>
-<p>Calculates a given percentile of an expression.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/aggregation-functions#stddev" title="A list of DQL aggregation functions.">stddev</a></p>
-<p>Calculates the standard deviation of a field for a list of records.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/aggregation-functions#sum" title="A list of DQL aggregation functions.">sum</a></p>
-<p>Calculates the sum of a field for a list of records.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/aggregation-functions#takeAny" title="A list of DQL aggregation functions.">takeAny</a></p>
-<p>Returns any non-null value of a field for a list of records.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/aggregation-functions#takeFirst" title="A list of DQL aggregation functions.">takeFirst</a></p>
-<p>Returns the first value of a field for a list of records.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/aggregation-functions#takeLast" title="A list of DQL aggregation functions.">takeLast</a></p>
-<p>Returns the last value of a field for a list of records.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/aggregation-functions#takeMax" title="A list of DQL aggregation functions.">takeMax</a></p>
-<p>Returns the maximum value of a field for a list of records.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/aggregation-functions#takeMin" title="A list of DQL aggregation functions.">takeMin</a></p>
-<p>Returns the minimum value of a field for a list of records.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/aggregation-functions#variance" title="A list of DQL aggregation functions.">variance</a></p>
-<p>Calculates the variance of a field for a list of records.</p>
 <h2 id="string-functions_2"><a href="/docs/platform/grail/dynatrace-query-language/functions/string-functions" title="A list of DQL string functions.">String functions</a><a class="headerlink" href="#string-functions_2" title="Permanent link">&para;</a></h2>
 <p>String functions allow you to create expressions that manipulate text strings in a variety of ways.</p>
-<p>Name</p>
-<p>Description</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/string-functions#concat" title="A list of DQL string functions.">concat</a></p>
-<p>Concatenates the expressions into a single string.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/string-functions#contains" title="A list of DQL string functions.">contains</a></p>
-<p>Searches the string expression for a substring.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/string-functions#decodeUrl" title="A list of DQL string functions.">decodeUrl</a></p>
-<p>Returns a URL-decoded string.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/string-functions#encodeUrl" title="A list of DQL string functions.">encodeUrl</a></p>
-<p>Encodes a URL string.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/string-functions#endsWith" title="A list of DQL string functions.">endsWith</a></p>
-<p>Checks if a string expression ends with a suffix.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/string-functions#escape" title="A list of DQL string functions.">escape</a></p>
-<p>Returns an escaped string.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/string-functions#getCharacter" title="A list of DQL string functions.">getCharacter</a></p>
-<p>Returns the character at a given position from a string expression.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/string-functions#indexOf" title="A list of DQL string functions.">indexOf</a></p>
-<p>Returns the index of the first occurrence of a substring in a string expression.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/string-functions#jsonField" title="A list of DQL string functions.">jsonField</a></p>
-<p>Parses a JSON string and extracts one value selected by its name.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/string-functions#jsonPath" title="A list of DQL string functions.">jsonPath</a></p>
-<p>Parses a JSON string and extracts one value selected by a JSONPath expression.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/string-functions#lastIndexOf" title="A list of DQL string functions.">lastIndexOf</a></p>
-<p>Returns the index of the last occurrence of a substring in a string expression.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/string-functions#levenshteinDistance" title="A list of DQL string functions.">levenshteinDistance</a></p>
-<p>Computes the Levenshtein distance between two input strings.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/string-functions#like" title="A list of DQL string functions.">like</a></p>
-<p>Tests if a string expression matches a pattern.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/string-functions#lower" title="A list of DQL string functions.">lower</a></p>
-<p>Converts a string to lowercase.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/string-functions#matchesPattern" title="A list of DQL string functions.">matchesPattern</a></p>
-<p>Tests if a string expression matches the DPL pattern.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/string-functions#matchesPhrase" title="A list of DQL string functions.">matchesPhrase</a></p>
-<p>Matches a phrase against the input string expression using token matchers.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/string-functions#matchesValue" title="A list of DQL string functions.">matchesValue</a></p>
-<p>Searches records for a specific value in a given attribute. Returns true or false.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/string-functions#parse" title="A list of DQL string functions.">parse</a></p>
-<p>Extracts a single value from a string as specified in the pattern or a record if there are multiple named matchers.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/string-functions#parseAll" title="A list of DQL string functions.">parseAll</a></p>
-<p>Extracts several values from a string as specified in the pattern.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/string-functions#punctuation" title="A list of DQL string functions.">punctuation</a></p>
-<p>Extracts punctuation characters out of an input string.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/string-functions#replacePattern" title="A list of DQL string functions.">replacePattern</a></p>
-<p>Replaces each substring of a string that matches the DPL pattern with the given string.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/string-functions#replaceString" title="A list of DQL string functions.">replaceString</a></p>
-<p>Replaces each substring of a string with a given string</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/string-functions#splitByPattern" title="A list of DQL string functions.">splitByPattern</a></p>
-<p>Splits a string into an array at each occurrence of the DPL pattern.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/string-functions#splitString" title="A list of DQL string functions.">splitString</a></p>
-<p>Splits a string according to the parameters set.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/string-functions#startsWith" title="A list of DQL string functions.">startsWith</a></p>
-<p>Checks if a string expression starts with a prefix. Returns true if does, false otherwise.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/string-functions#stringLength" title="A list of DQL string functions.">stringLength</a></p>
-<p>Returns the length of a string expression.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/string-functions#substring" title="A list of DQL string functions.">substring</a></p>
-<p>Gets a code unit range using a start index (inclusive) and an end index (exclusive).</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/string-functions#trim" title="A list of DQL string functions.">trim</a></p>
-<p>Removes leading and trailing whitespaces.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/string-functions#unescape" title="A list of DQL string functions.">unescape</a></p>
-<p>Returns an unescaped string.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/string-functions#unescapeHtml" title="A list of DQL string functions.">unescapeHtml</a></p>
-<p>Unescapes HTML in a string by replacing ASCII characters with HTML syntax.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/string-functions#upper" title="A list of DQL string functions.">upper</a></p>
-<p>Converts a string to uppercase.</p>
 <h2 id="conversion-and-casting-functions"><a href="/docs/platform/grail/dynatrace-query-language/functions/conversion-and-casting-functions" title="A list of DQL conversion and casting functions.">Conversion and casting functions</a><a class="headerlink" href="#conversion-and-casting-functions" title="Permanent link">&para;</a></h2>
 <p>Conversion and casting functions convert the expression or value from one data type to another type.</p>
-<p>Name</p>
-<p>Description</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/conversion-and-casting-functions#asArray" title="A list of DQL conversion and casting functions.">asArray</a></p>
-<p>Returns array value if the value is array, otherwise, returns null.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/conversion-and-casting-functions#asBinary" title="A list of DQL conversion and casting functions.">asBinary</a></p>
-<p>Returns binary value (byte array) if the value is binary, otherwise, returns null.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/conversion-and-casting-functions#asBoolean" title="A list of DQL conversion and casting functions.">asBoolean</a></p>
-<p>Returns boolean value if the value is boolean, otherwise, returns null.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/conversion-and-casting-functions#asDouble" title="A list of DQL conversion and casting functions.">asDouble</a></p>
-<p>Returns double value if the value is double, otherwise, returns null.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/conversion-and-casting-functions#asDuration" title="A list of DQL conversion and casting functions.">asDuration</a></p>
-<p>Returns duration value if the value is duration, otherwise, returns null.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/conversion-and-casting-functions#asIp" title="A list of DQL conversion and casting functions.">asIp</a></p>
-<p>You can use this function to cast to an IP address.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/conversion-and-casting-functions#asLong" title="A list of DQL conversion and casting functions.">asLong</a></p>
-<p>Returns long value if the value is long, otherwise, null.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/conversion-and-casting-functions#asNumber" title="A list of DQL conversion and casting functions.">asNumber</a></p>
-<p>Returns same value if the value is integer, long, double, otherwise. returns null.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/conversion-and-casting-functions#asRecord" title="A list of DQL conversion and casting functions.">asRecord</a></p>
-<p>Returns record value if the value is record, otherwise, returns null.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/conversion-and-casting-functions#asString" title="A list of DQL conversion and casting functions.">asString</a></p>
-<p>Returns string value if the value is string, otherwise, returns null.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/conversion-and-casting-functions#asTimeframe" title="A list of DQL conversion and casting functions.">asTimeframe</a></p>
-<p>Returns timeframe value if the value is timeframe, otherwise. returns null.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/conversion-and-casting-functions#asTimestamp" title="A list of DQL conversion and casting functions.">asTimestamp</a></p>
-<p>Returns timestamp value if the value is timestamp, otherwise, returns null.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/conversion-and-casting-functions#asUid" title="A list of DQL conversion and casting functions.">asUid</a></p>
-<p>Returns a uid value if the value is a uid, otherwise, returns null.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/conversion-and-casting-functions#decode" title="A list of DQL conversion and casting functions.">decode</a></p>
-<p>The decode functions allow decoding an encoded string representation into a plain string or binary data.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/conversion-and-casting-functions#encode" title="A list of DQL conversion and casting functions.">encode</a></p>
-<p>The encode functions allow encoding binary data and plain strings into an encoded string representation.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/conversion-and-casting-functions#getHighBits" title="A list of DQL conversion and casting functions.">getHighBits</a></p>
-<p>Extracts the most significant bits of a uid value or IP address.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/conversion-and-casting-functions#getLowBits" title="A list of DQL conversion and casting functions.">getLowBits</a></p>
-<p>Extracts the least significant bits of a uid value or IP address.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/conversion-and-casting-functions#hexStringToNumber" title="A list of DQL conversion and casting functions.">hexStringToNumber</a></p>
-<p>Converts a hexadecimal string to a number.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/conversion-and-casting-functions#isUid128" title="A list of DQL conversion and casting functions.">isUid128</a></p>
-<p>Tests if a uid value is of subtype uid128.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/conversion-and-casting-functions#isUid64" title="A list of DQL conversion and casting functions.">isUid64</a></p>
-<p>Tests if a uid value is of subtype uid64.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/conversion-and-casting-functions#isUuid" title="A list of DQL conversion and casting functions.">isUuid</a></p>
-<p>Tests if a uid value is of subtype uuid.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/conversion-and-casting-functions#numberToHexString" title="A list of DQL conversion and casting functions.">numberToHexString</a></p>
-<p>Converts a number to a hexadecimal string.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/conversion-and-casting-functions#toArray" title="A list of DQL conversion and casting functions.">toArray</a></p>
-<p>Returns the value if it is an array.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/conversion-and-casting-functions#toBoolean" title="A list of DQL conversion and casting functions.">toBoolean</a></p>
-<p>Converts a value to Boolean if the value is of a suitable type.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/conversion-and-casting-functions#toDouble" title="A list of DQL conversion and casting functions.">toDouble</a></p>
-<p>Converts a value to double if the value is of a suitable type.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/conversion-and-casting-functions#toDuration" title="A list of DQL conversion and casting functions.">toDuration</a></p>
-<p>Converts a value to duration if the value is of a suitable type.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/conversion-and-casting-functions#toIp" title="A list of DQL conversion and casting functions.">toIp</a></p>
-<p>You can use this function to convert an expression to an IP address.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/conversion-and-casting-functions#toLong" title="A list of DQL conversion and casting functions.">toLong</a></p>
-<p>Converts a value to long if the value is of a suitable type.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/conversion-and-casting-functions#toString" title="A list of DQL conversion and casting functions.">toString</a></p>
-<p>Returns the string representation of a value.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/conversion-and-casting-functions#toTimeframe" title="A list of DQL conversion and casting functions.">toTimeframe</a></p>
-<p>Converts a value to timeframe if the value is of a suitable type.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/conversion-and-casting-functions#toTimestamp" title="A list of DQL conversion and casting functions.">toTimestamp</a></p>
-<p>Converts a value to timestamp if the value is of a suitable type.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/conversion-and-casting-functions#toUid" title="A list of DQL conversion and casting functions.">toUid</a></p>
-<p>Converts a value to uid if the value is of a suitable type.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/conversion-and-casting-functions#type" title="A list of DQL conversion and casting functions.">type</a></p>
-<p>Returns the type of value as a string.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/conversion-and-casting-functions#uid128" title="A list of DQL conversion and casting functions.">uid128</a></p>
-<p>Creates a uid of subtype uid128 from two long expressions.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/conversion-and-casting-functions#uid64" title="A list of DQL conversion and casting functions.">uid64</a></p>
-<p>Creates a uid of subtype uid64 from a long expression.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/conversion-and-casting-functions#uuid" title="A list of DQL conversion and casting functions.">uuid</a></p>
-<p>Creates a uid of subtype uuid from two long expressions.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/conversion-and-casting-functions#smartscapeId" title="A list of DQL conversion and casting functions.">smartscapeId</a></p>
-<p>Creates a smartscapeId from the given string and long expression.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/conversion-and-casting-functions#asSmartscapeId" title="A list of DQL conversion and casting functions.">asSmartscapeId</a></p>
-<p>Returns smartscapeId value if the value is <code>smartscapeId</code>, otherwise returns <code>null</code>.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/conversion-and-casting-functions#toSmartscapeId" title="A list of DQL conversion and casting functions.">toSmartscapeId</a></p>
-<p>Converts a value to <code>smartscapeId</code> if the value is of a suitable type.</p>
 <h2 id="conditional-functions"><a href="/docs/platform/grail/dynatrace-query-language/functions/conditional-functions" title="A list of DQL conditional functions.">Conditional functions</a><a class="headerlink" href="#conditional-functions" title="Permanent link">&para;</a></h2>
 <p>Functions that return a conditional result.</p>
-<p>Name</p>
-<p>Description</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/conditional-functions#coalesce" title="A list of DQL conditional functions.">coalesce</a></p>
-<p>Returns the first non-null argument, if any, otherwise null.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/conditional-functions#if" title="A list of DQL conditional functions.">if</a></p>
-<p>Evaluates the condition, and returns the value of either the then or else parameter.</p>
 <h2 id="boolean-functions"><a href="/docs/platform/grail/dynatrace-query-language/functions/boolean-functions" title="A list of DQL boolean functions.">Boolean functions</a><a class="headerlink" href="#boolean-functions" title="Permanent link">&para;</a></h2>
 <p>Functions that evaluate boolean expressions and test the presence of values.</p>
-<p>Name</p>
-<p>Description</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/boolean-functions#isFalseOrNull" title="A list of DQL boolean functions.">isFalseOrNull</a></p>
-<p>Evaluates if an expression is false or null.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/boolean-functions#isNotNull" title="A list of DQL boolean functions.">isNotNull</a></p>
-<p>Tests if a value is not null.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/boolean-functions#isNull" title="A list of DQL boolean functions.">isNull</a></p>
-<p>Tests if a value is null.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/boolean-functions#isTrueOrNull" title="A list of DQL boolean functions.">isTrueOrNull</a></p>
-<p>Evaluates if an expression is true or null.</p>
 <h2 id="time-functions"><a href="/docs/platform/grail/dynatrace-query-language/functions/time-functions" title="A list of DQL time functions.">Time functions</a><a class="headerlink" href="#time-functions" title="Permanent link">&para;</a></h2>
 <p>Time functions return the decimal number for a particular time value, calculate the number of time units (days, months, years) between two dates, and allow to determine timestamps and timeframes, among others.</p>
-<p>Name</p>
-<p>Description</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/time-functions#duration" title="A list of DQL time functions.">duration</a></p>
-<p>Creates a duration from the given amount and time unit.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/time-functions#formatTimestamp" title="A list of DQL time functions.">formatTimestamp</a></p>
-<p>Formats a given timestamp according to a format string using a given pattern.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/time-functions#getDayOfMonth" title="A list of DQL time functions.">getDayOfMonth</a></p>
-<p>Extracts the day of the month from a timestamp.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/time-functions#getDayOfWeek" title="A list of DQL time functions.">getDayOfWeek</a></p>
-<p>Extracts the day of the week from a timestamp.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/time-functions#getDayOfYear" title="A list of DQL time functions.">getDayOfYear</a></p>
-<p>Extracts the day of the year from a timestamp.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/time-functions#getEnd" title="A list of DQL time functions.">getEnd</a></p>
-<p>Extracts the end timestamp from a timeframe.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/time-functions#getHour" title="A list of DQL time functions.">getHour</a></p>
-<p>Extracts the hour from a timestamp.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/time-functions#getMinute" title="A list of DQL time functions.">getMinute</a></p>
-<p>Extracts the minute from a timestamp.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/time-functions#getMonth" title="A list of DQL time functions.">getMonth</a></p>
-<p>Extracts the month from a timestamp.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/time-functions#getStart" title="A list of DQL time functions.">getStart</a></p>
-<p>Extracts the start timestamp from a timeframe.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/time-functions#getSecond" title="A list of DQL time functions.">getSecond</a></p>
-<p>Extracts the second from a timestamp.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/time-functions#getYear" title="A list of DQL time functions.">getYear</a></p>
-<p>Extracts the year from a timestamp.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/time-functions#getWeekOfYear" title="A list of DQL time functions.">getWeekOfYear</a></p>
-<p>Extracts the week of the year from a timestamp.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/time-functions#now" title="A list of DQL time functions.">now</a></p>
-<p>Returns the current time as a fixed timestamp of the query start.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/time-functions#timeframe" title="A list of DQL time functions.">timeframe</a></p>
-<p>Creates a timeframe structure from the given start and end timestamps.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/time-functions#timestamp" title="A list of DQL time functions.">timestamp</a></p>
-<p>Creates a timestamp using provided values in mandatory parameters.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/time-functions#timestampFromUnixMillis" title="A list of DQL time functions.">timestampFromUnixMillis</a></p>
-<p>Creates a timestamp from the given milliseconds since Unix epoch.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/time-functions#timestampFromUnixNanos" title="A list of DQL time functions.">timestampFromUnixNanos</a></p>
-<p>Creates a timestamp from the given nanoseconds since Unix epoch.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/time-functions#timestampFromUnixSeconds" title="A list of DQL time functions.">timestampFromUnixSeconds</a></p>
-<p>Creates a timestamp from the given seconds since Unix epoch.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/time-functions#unixMillisFromTimestamp" title="A list of DQL time functions.">unixMillisFromTimestamp</a></p>
-<p>Converts a timestamp into milliseconds since Unix epoch.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/time-functions#unixNanosFromTimestamp" title="A list of DQL time functions.">unixNanosFromTimestamp</a></p>
-<p>Converts a timestamp into nanoseconds since Unix epoch.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/time-functions#unixSecondsFromTimestamp" title="A list of DQL time functions.">unixSecondsFromTimestamp</a></p>
-<p>Converts a timestamp into seconds since Unix epoch.</p>
 <h2 id="array-functions"><a href="/docs/platform/grail/dynatrace-query-language/functions/array-functions" title="A list of DQL array functions.">Array functions</a><a class="headerlink" href="#array-functions" title="Permanent link">&para;</a></h2>
 <p>Functions related to a collection of items of the same data type stored at adjacent memory locations.</p>
-<p>Name</p>
-<p>Description</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/array-functions#array" title="A list of DQL array functions.">array</a></p>
-<p>Creates an array from the list of given parameters.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/array-functions#array-avg" title="A list of DQL array functions.">arrayAvg</a></p>
-<p>Returns the average of an array.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/array-functions#array-concat" title="A list of DQL array functions.">arrayConcat</a></p>
-<p>Concatenates multiple arrays into a single array.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/array-functions#arrayCumulativeSum" title="A list of DQL array functions.">arrayCumulativeSum</a></p>
-<p>Returns the cumulative sum, also known as the running total, of the elements of the input array.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/array-functions#array-delta" title="A list of DQL array functions.">arrayDelta</a></p>
-<p>Returns an array where each element is the difference from the previous non-null element.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/array-functions#array-diff" title="A list of DQL array functions.">arrayDiff</a></p>
-<p>Calculates the element-wise difference between consecutive elements in an array.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/array-functions#array-distinct" title="A list of DQL array functions.">arrayDistinct</a></p>
-<p>Returns the array without duplicates.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/array-functions#array-element" title="A list of DQL array functions.">arrayElement</a></p>
-<p>Extracts a single element with the given index from an array.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/array-functions#array-first" title="A list of DQL array functions.">arrayFirst</a></p>
-<p>Returns the first non-null element of an array.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/array-functions#array-flatten" title="A list of DQL array functions.">arrayFlatten</a></p>
-<p>Returns a flattened array.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/array-functions#array-index-of" title="A list of DQL array functions.">arrayIndexOf</a></p>
-<p>Returns position of the first member in the array, which is equal to the given value.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/array-functions#array-last" title="A list of DQL array functions.">arrayLast</a></p>
-<p>Returns the last non-null element of an array.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/array-functions#array-last-index-of" title="A list of DQL array functions.">arrayLastIndexOf</a></p>
-<p>Returns position of the last member in the array, which is equal to the given value.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/array-functions#array-max" title="A list of DQL array functions.">arrayMax</a></p>
-<p>Returns the biggest number of an array.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/array-functions#array-median" title="A list of DQL array functions.">arrayMedian</a></p>
-<p>Returns the median of the members of an array.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/array-functions#array-min" title="A list of DQL array functions.">arrayMin</a></p>
-<p>Returns the smallest number of an array.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/array-functions#array-moving-avg" title="A list of DQL array functions.">arrayMovingAvg</a></p>
-<p>Replaces each element of the input array with the average of current and previous elements within the window.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/array-functions#array-moving-max" title="A list of DQL array functions.">arrayMovingMax</a></p>
-<p>Replaces each element of the input array with the maximum of current and previous elements within the window.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/array-functions#array-moving-min" title="A list of DQL array functions.">arrayMovingMin</a></p>
-<p>Replaces each element of the input array with the minimum of current and previous elements within the window.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/array-functions#array-moving-sum" title="A list of DQL array functions.">arrayMovingSum</a></p>
-<p>Replaces each element of the input array with the sum of current and previous elements within the window.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/array-functions#array-percentile" title="A list of DQL array functions.">arrayPercentile</a></p>
-<p>Calculates a given percentile of an array.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/array-functions#array-remove-nulls" title="A list of DQL array functions.">arrayRemoveNulls</a></p>
-<p>Returns the array where null elements are removed.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/array-functions#array-reverse" title="A list of DQL array functions.">arrayReverse</a></p>
-<p>Returns the array with elements in reversed order.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/array-functions#array-size" title="A list of DQL array functions.">arraySize</a></p>
-<p>Returns the size of an array.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/array-functions#array-slice" title="A list of DQL array functions.">arraySlice</a></p>
-<p>Extracts a slice from the input array using a <code>from</code> index (inclusive) and a <code>to</code> index (exclusive).</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/array-functions#array-sort" title="A list of DQL array functions.">arraySort</a></p>
-<p>Returns the array with elements sorted in ascending order by default.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/array-functions#array-sum" title="A list of DQL array functions.">arraySum</a></p>
-<p>Returns the sum of an array.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/array-functions#array-to-String" title="A list of DQL array functions.">arraytoString</a></p>
-<p>Converts an array into a string.</p>
 <h2 id="vector-distance-functions"><a href="/docs/platform/grail/dynatrace-query-language/functions/vector-distance-functions" title="A list of DQL vector distance functions.">Vector distance functions</a><a class="headerlink" href="#vector-distance-functions" title="Permanent link">&para;</a></h2>
 <p>Functions that calculate the distance between numeric array expressions.</p>
-<p>Name</p>
-<p>Description</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/vector-distance-functions#vectorL1Distance" title="A list of DQL vector distance functions.">vectorL1Distance</a></p>
-<p>Calculates the taxicab distance between numeric array expressions.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/vector-distance-functions#vectorL2Distance" title="A list of DQL vector distance functions.">vectorL2Distance</a></p>
-<p>Calculates the Euclidean distance between numeric array expressions.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/vector-distance-functions#vectorCosineDistance" title="A list of DQL vector distance functions.">vectorCosineDistance</a></p>
-<p>Calculates the cosine distance between numeric array expressions.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/vector-distance-functions#vectorInnerProductDistance" title="A list of DQL vector distance functions.">vectorInnerProductDistance</a></p>
-<p>Calculates the negative dot product between numeric array expressions.</p>
 <h2 id="network-functions"><a href="/docs/platform/grail/dynatrace-query-language/functions/network-functions" title="A list of DQL array functions.">Network functions</a><a class="headerlink" href="#network-functions" title="Permanent link">&para;</a></h2>
 <p>Functions related to IP addresses.</p>
-<p>Name</p>
-<p>Description</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/network-functions#ip" title="A list of DQL array functions.">ip</a></p>
-<p>You can use this function to create an IP address.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/network-functions#ipIn" title="A list of DQL array functions.">ipIn</a></p>
-<p>This function can be used to check if a list of IP addresses or an IP network (e.g. 127.0.0.1/8) contains particular IP addresses</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/network-functions#ipIsLinkLocal" title="A list of DQL array functions.">ipIsLinkLocal</a></p>
-<p>Checks if an IP address is a link-local IP address.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/network-functions#ipIsLoopback" title="A list of DQL array functions.">ipIsLoopback</a></p>
-<p>Checks if an IP address is a loopback IP address.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/network-functions#ipIsPrivate" title="A list of DQL array functions.">ipIsPrivate</a></p>
-<p>Checks if an IP address is a private IP address.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/network-functions#ipIsPublic" title="A list of DQL array functions.">ipIsPublic</a></p>
-<p>Checks if an IP address is a public IP address.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/network-functions#ipMask" title="A list of DQL array functions.">ipMask</a></p>
-<p>You can use this function to mask an IP address with given bits.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/network-functions#isIp" title="A list of DQL array functions.">isIp</a></p>
-<p>Checks if an expression is an IPv4/v6 address.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/network-functions#isIpV4" title="A list of DQL array functions.">isIpV4</a></p>
-<p>Checks if an expression is an IPv4 address.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/network-functions#isIpV6" title="A list of DQL array functions.">isIpV6</a></p>
-<p>Checks if an expression is an IPv6 address.</p>
 <h2 id="hash-functions"><a href="/docs/platform/grail/dynatrace-query-language/functions/hash-functions" title="A list of DQL hash functions.">Hash functions</a><a class="headerlink" href="#hash-functions" title="Permanent link">&para;</a></h2>
 <p>Hash related functions.</p>
-<p>Name</p>
-<p>Description</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/hash-functions#hashCrc32" title="A list of DQL hash functions.">hashCrc32</a></p>
-<p>Returns a CRC32 hash for a given string expression.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/hash-functions#hashMd5" title="A list of DQL hash functions.">hashMd5</a></p>
-<p>Computes the MD5 hash for a given string expression.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/hash-functions#hashSha1" title="A list of DQL hash functions.">hashSha1</a></p>
-<p>Computes the SHA-1 hash for a given string expression.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/hash-functions#hashSha256" title="A list of DQL hash functions.">hashSha256</a></p>
-<p>Returns a SHA-256 hash for the given expression.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/hash-functions#hashSha512" title="A list of DQL hash functions.">hashSha512</a></p>
-<p>Returns a SHA-512 hash for the given expression.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/hash-functions#hashXxHash32" title="A list of DQL hash functions.">hashXxHash32</a></p>
-<p>Returns a xxHash32 hash for a given string expression.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/hash-functions#hashXxHash64" title="A list of DQL hash functions.">hashXxHash64</a></p>
-<p>Returns a xxHash64 hash for a given string expression.</p>
 <h2 id="bitwise-functions"><a href="/docs/platform/grail/dynatrace-query-language/functions/bitwise-functions" title="A list of DQL bitwise functions.">Bitwise functions</a><a class="headerlink" href="#bitwise-functions" title="Permanent link">&para;</a></h2>
 <p>Bitwise operations performing on long expressions.</p>
-<p>Name</p>
-<p>Description</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/bitwise-functions#bitwiseAnd" title="A list of DQL bitwise functions.">bitwiseAnd</a></p>
-<p>Calculates the bitwise and between two long expressions.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/bitwise-functions#bitwiseCountOnes" title="A list of DQL bitwise functions.">bitwiseCountOnes</a></p>
-<p>Counts the bits assigned to one of the long expressions.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/bitwise-functions#bitwiseNot" title="A list of DQL bitwise functions.">bitwiseNot</a></p>
-<p>Inverts the bits included in the long expression.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/bitwise-functions#bitwiseShiftLeft" title="A list of DQL bitwise functions.">bitwiseShiftLeft</a></p>
-<p>Shifts the long expressions by the number of given bits to the left.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/bitwise-functions#bitwiseShiftRight" title="A list of DQL bitwise functions.">bitwiseShiftRight</a></p>
-<p>Shifts the long expression by number of given bits to the right.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/bitwise-functions#bitwiseOr" title="A list of DQL bitwise functions.">bitwiseOr</a></p>
-<p>Calculates the bitwise or between two long expressions.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/bitwise-functions#bitwiseXor" title="A list of DQL bitwise functions.">bitwiseXor</a></p>
-<p>Calculates the bitwise xor between two long expressions.</p>
 <h2 id="mathematical-functions"><a href="/docs/platform/grail/dynatrace-query-language/functions/mathematical-functions" title="A list of DQL mathematical functions.">Mathematical functions</a><a class="headerlink" href="#mathematical-functions" title="Permanent link">&para;</a></h2>
 <p>Functions executing mathematical calculations.</p>
-<p>Name</p>
-<p>Description</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/mathematical-functions#abs" title="A list of DQL mathematical functions.">abs</a></p>
-<p>Returns the absolute value of numeric_expression.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/mathematical-functions#acos" title="A list of DQL mathematical functions.">acos</a></p>
-<p>Computes arc cosine of expression.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/mathematical-functions#asin" title="A list of DQL mathematical functions.">asin</a></p>
-<p>Computes arc sine of expression.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/mathematical-functions#atan" title="A list of DQL mathematical functions.">atan</a></p>
-<p>Computes the arc tangent of expression.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/mathematical-functions#atan2" title="A list of DQL mathematical functions.">atan2</a></p>
-<p>Computes the angle theta from the conversion of rectangular coordinates (x, y) to polar coordinates (r, theta).</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/mathematical-functions#bin" title="A list of DQL mathematical functions.">bin</a></p>
-<p>Rounds values down to a multiple of a given numeric bin size.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/mathematical-functions#ceil" title="A list of DQL mathematical functions.">ceil</a></p>
-<p>Calculates the smallest (closest to negative infinity) double value greater than or equal to the numeric_expression; is equal to a mathematical integer.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/mathematical-functions#cos" title="A list of DQL mathematical functions.">cos</a></p>
-<p>Computes the trigonometric cosine of an angle expression (in radians).</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/mathematical-functions#cosh" title="A list of DQL mathematical functions.">cosh</a></p>
-<p>Computes the hyperbolic cosine of an angle expression.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/mathematical-functions#cbrt" title="A list of DQL mathematical functions.">cbrt</a></p>
-<p>Calculates the real cubic root of a numeric expression.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/mathematical-functions#degreeToRadian" title="A list of DQL mathematical functions.">degreeToRadian</a></p>
-<p>Converts the numeric expression of an angle in degrees to an approximately equivalent angle as expressed in radians.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/mathematical-functions#e" title="A list of DQL mathematical functions.">e</a></p>
-<p>Returns Eulerâs number.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/mathematical-functions#exp" title="A list of DQL mathematical functions.">exp</a></p>
-<p>Calculates the exponential function e^x, where e is the Euler's number and x is a numeric expression.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/mathematical-functions#floor" title="A list of DQL mathematical functions.">floor</a></p>
-<p>Calculates the largest (closest to positive infinity) double value less than or equal to the numeric_expression; and is equal to a mathematical integer.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/mathematical-functions#hypotenuse" title="A list of DQL mathematical functions.">hypotenuse</a></p>
-<p>Returns sqrt (x^2 + y^2).</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/mathematical-functions#log" title="A list of DQL mathematical functions.">log</a></p>
-<p>Calculates the natural logarithm (the base is e, the Euler's number) of a numeric expression.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/mathematical-functions#log1p" title="A list of DQL mathematical functions.">log1p</a></p>
-<p>Calculates log(1+x), where log is the natural logarithm and x is a numeric expression.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/mathematical-functions#log10" title="A list of DQL mathematical functions.">log10</a></p>
-<p>Calculates the decadic (common) logarithm (the base is 10) of a numeric expression.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/mathematical-functions#pi" title="A list of DQL mathematical functions.">pi</a></p>
-<p>Returns the constant value of PI (Archimedesâ number).</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/mathematical-functions#power" title="A list of DQL mathematical functions.">power</a></p>
-<p>Raises a numeric expression to a given power.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/mathematical-functions#radianToDegree" title="A list of DQL mathematical functions.">radianToDegree</a></p>
-<p>Converts the numeric expression of an angle in radians to an approximately equivalent angle as expressed in degrees.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/mathematical-functions#random" title="A list of DQL mathematical functions.">random</a></p>
-<p>Creates a random double value.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/mathematical-functions#range" title="A list of DQL mathematical functions.">range</a></p>
-<p>Aligns the given value/timestamp to value range based on the provided alignment parameter.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/mathematical-functions#round" title="A list of DQL mathematical functions.">round</a></p>
-<p>Rounds any numeric value to the specified number of decimal places.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/mathematical-functions#signum" title="A list of DQL mathematical functions.">signum</a></p>
-<p>Returns the signum (sign) result of an argument.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/mathematical-functions#sin" title="A list of DQL mathematical functions.">sin</a></p>
-<p>Computes the trigonometric sine of angle expression (in radians).</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/mathematical-functions#sinh" title="A list of DQL mathematical functions.">sinh</a></p>
-<p>Computes the hyperbolic sine of expression.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/mathematical-functions#sqrt" title="A list of DQL mathematical functions.">sqrt</a></p>
-<p>Computes the positive square root of a numeric expression.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/mathematical-functions#tan" title="A list of DQL mathematical functions.">tan</a></p>
-<p>Computes the trigonometric tangent of angle expression (in radians).</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/mathematical-functions#tanh" title="A list of DQL mathematical functions.">tanh</a></p>
-<p>Computes the hyperbolic tangent of expression.</p>
 <h2 id="join-functions"><a href="/docs/platform/grail/dynatrace-query-language/functions/join-functions" title="A list of DQL join functions.">Join functions</a><a class="headerlink" href="#join-functions" title="Permanent link">&para;</a></h2>
 <p>Functions that join records from subqueries.</p>
-<p>Name</p>
-<p>Description</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/join-functions#lookup" title="A list of DQL join functions.">lookup</a></p>
-<p>Returns a record from a subquery (the lookup table) producing a match between a field in the source table (sourceField) and a field in the lookup table (lookupField).</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/join-functions#getNodeName" title="A list of DQL join functions.">getNodeName</a></p>
-<p>Returns the Smartscape node name.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/join-functions#getNodeField" title="A list of DQL join functions.">getNodeField</a></p>
-<p>Returns the field value for a Smartscape node.</p>
 <h2 id="general-functions"><a href="/docs/platform/grail/dynatrace-query-language/functions/general-functions" title="A list of DQL general functions.">General functions</a><a class="headerlink" href="#general-functions" title="Permanent link">&para;</a></h2>
 <p>Functions with a general purpose.</p>
-<p>Name</p>
-<p>Description</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/general-functions#classic-entity-selector" title="A list of DQL general functions.">classicEntitySelector</a></p>
-<p>Returns entities matching the specified entity selector.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/general-functions#entity-attr" title="A list of DQL general functions.">entityAttr</a></p>
-<p>Returns the attribute value for an entity.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/general-functions#entity-name" title="A list of DQL general functions.">entityName</a></p>
-<p>Returns the name of an entity.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/general-functions#exists" title="A list of DQL general functions.">exists</a></p>
-<p>Tests if a field exists.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/general-functions#in" title="A list of DQL general functions.">in</a></p>
-<p>Tests if a value is a member of an array.</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/functions/general-functions#record" title="A list of DQL general functions.">record</a></p>
-<p>Creates a record from the keys and values of the parameter.</p>
 <h2 id="related-topics_11">Related topics<a class="headerlink" href="#related-topics_11" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="/docs/platform/grail/dynatrace-query-language" title="How to use Dynatrace Query Language.">Dynatrace Query Language</a></li>
@@ -30115,7 +28751,7 @@ scraped: 2026-02-23T21:25:57.767975</p>
 <hr />
 <p>title: DQL operators
 source: https://www.dynatrace.com/docs/platform/grail/dynatrace-query-language/operators
-scraped: 2026-02-23T21:39:24.354003</p>
+scraped: 2026-02-24T21:18:33.657610</p>
 <hr />
 <h1 id="dql-operators">DQL operators<a class="headerlink" href="#dql-operators" title="Permanent link">&para;</a></h1>
 <h1 id="dql-operators_1">DQL operators<a class="headerlink" href="#dql-operators_1" title="Permanent link">&para;</a></h1>
@@ -30126,44 +28762,6 @@ scraped: 2026-02-23T21:39:24.354003</p>
 <li>Updated on Oct 28, 2025</li>
 </ul>
 <p>The following table shows a list of all the DQL operators.</p>
-<p>Operator</p>
-<p>Description</p>
-<p><code>+</code></p>
-<p>Addition</p>
-<p><code>-</code></p>
-<p>Subtraction or arithmetic negation</p>
-<p><code>*</code></p>
-<p>Multiplication</p>
-<p><code>/</code></p>
-<p>Division</p>
-<p><code>%</code></p>
-<p>Modulo</p>
-<p><code>&lt;</code></p>
-<p>Less than</p>
-<p><code>&lt;=</code></p>
-<p>Less than or equal to</p>
-<p><code>&gt;</code></p>
-<p>Greater than</p>
-<p><code>&gt;=</code></p>
-<p>Greater than or equal to</p>
-<p><code>==</code></p>
-<p>Equals</p>
-<p><code>!=</code></p>
-<p>Does not equal</p>
-<p><code>not</code></p>
-<p>Logical NOT (negation)</p>
-<p><code>and</code></p>
-<p>Logical AND</p>
-<p><code>or</code></p>
-<p>Logical OR</p>
-<p><code>xor</code></p>
-<p>Logical XOR (exclusive or)</p>
-<p><code>in</code></p>
-<p>Subquery comparison</p>
-<p><code>@</code></p>
-<p>Time alignment</p>
-<p><code>~</code></p>
-<p>Search</p>
 <p>The precedence for the operators is as follows (from strongest to weakest):</p>
 <ul>
 <li><code>-</code> (arithmetic negation)</li>
@@ -30180,27 +28778,6 @@ scraped: 2026-02-23T21:39:24.354003</p>
 </ul>
 <h2 id="arithmetic-operators">Arithmetic operators<a class="headerlink" href="#arithmetic-operators" title="Permanent link">&para;</a></h2>
 <p>You can use arithmetic operators with numbers, represented by both the types <code>long</code> or <code>double</code>. In addition, some operators support the types <code>timestamp</code>, <code>timeframe</code>, <code>duration</code> or <code>ip</code>.</p>
-<p>Operator</p>
-<p>Description</p>
-<p>Example</p>
-<p><code>+</code></p>
-<p>Addition</p>
-<p><code>2 + 2.5</code></p>
-<p><code>-</code></p>
-<p>Subtraction</p>
-<p><code>0.2 - 0.11</code></p>
-<p><code>*</code></p>
-<p>Multiplication</p>
-<p><code>4 * 5</code>, <code>60 * 1s</code></p>
-<p><code>/</code></p>
-<p>Division</p>
-<p><code>10 / 2</code>, <code>1h / 60</code></p>
-<p><code>%</code></p>
-<p>Modulo</p>
-<p><code>4 % 2</code></p>
-<p><code>-</code></p>
-<p>Arithmetic negation</p>
-<p><code>-1</code></p>
 <h3 id="addition">ADDITION<a class="headerlink" href="#addition" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
@@ -31252,21 +29829,6 @@ scraped: 2026-02-23T21:39:24.354003</p>
 </tbody>
 </table>
 <h2 id="comparison-operators">Comparison operators<a class="headerlink" href="#comparison-operators" title="Permanent link">&para;</a></h2>
-<p>Operator</p>
-<p>Description</p>
-<p>Example</p>
-<p><code>&lt;</code></p>
-<p>Less than</p>
-<p><code>8 &lt; 9</code>, <code>now()-1m &lt; now()</code></p>
-<p><code>&lt;=</code></p>
-<p>Less than or equal to</p>
-<p><code>4 &lt;= 5</code></p>
-<p><code>&gt;</code></p>
-<p>Greater than</p>
-<p><code>5 &gt; 4</code>, <code>"a" &gt; "A"</code></p>
-<p><code>&gt;=</code></p>
-<p>Greater than or equal to</p>
-<p><code>4 &gt;=4</code></p>
 <h3 id="comparison-operators_1">Comparison operators (&lt;, &lt;=, &gt;, &gt;=)<a class="headerlink" href="#comparison-operators_1" title="Permanent link">&para;</a></h3>
 <ul>
 <li>( <img alt="Applicable" src="https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg" title="Applicable" /> ) - <code>true</code> or <code>false</code> based on the result of the operator</li>
@@ -31474,15 +30036,6 @@ scraped: 2026-02-23T21:39:24.354003</p>
 </tbody>
 </table>
 <h2 id="equality-operators">Equality operators<a class="headerlink" href="#equality-operators" title="Permanent link">&para;</a></h2>
-<p>Operator</p>
-<p>Description</p>
-<p>Example</p>
-<p><code>==</code></p>
-<p>Equals</p>
-<p><code>2 == 2</code></p>
-<p><code>!=</code></p>
-<p>Does not equal</p>
-<p><code>1 != 2</code></p>
 <p>Equality comparisons (<code>==</code>, <code>!=</code>) use a tri-state boolean algebra (<code>true</code>, <code>false</code>, <code>null</code>). This means that if any side of the equality comparison is <code>null</code>, the overall result of the comparison is <code>null</code>.
 There are four DQL functions that cover scenarios where missing or <code>null</code> records need to be retrieved:</p>
 <ul>
@@ -31714,21 +30267,6 @@ There are four DQL functions that cover scenarios where missing or <code>null</c
 </tbody>
 </table>
 <h2 id="logical-operators">Logical operators<a class="headerlink" href="#logical-operators" title="Permanent link">&para;</a></h2>
-<p>Operator</p>
-<p>Description</p>
-<p>Example (yields true)</p>
-<p><code>not</code></p>
-<p>Logical NOT (negation) - Negates a logical state</p>
-<p><code>not 2==1</code></p>
-<p><code>and</code></p>
-<p>Logical AND (multiplication) - Yields <code>true</code> if both operands are <code>true</code>.</p>
-<p><code>not 2==1 and 1&lt;2</code></p>
-<p><code>or</code></p>
-<p>Logical OR (addition) - Yields <code>true</code> if one of the operands is <code>true</code>, regardless of the other operand.</p>
-<p><code>1 &lt; 2 or 1 &gt; 2</code></p>
-<p><code>xor</code></p>
-<p>Logical XOR (exclusive OR) - Yields <code>true</code> if one of the operands is <code>true</code>, but <code>false</code> in case both are <code>true</code>.</p>
-<p><code>1 &lt; 2 xor 1 &gt; 2</code></p>
 <p>The behavior of logical operators follows the tri-state boolean logic.</p>
 <ul>
 <li>
@@ -31817,21 +30355,6 @@ There are four DQL functions that cover scenarios where missing or <code>null</c
 <p><strong>Syntax</strong></p>
 <p><code>expression in [execution block]</code></p>
 <p><strong>Usage and constraints</strong></p>
-<p>Name</p>
-<p>Type</p>
-<p>Mandatory</p>
-<p>Constraints</p>
-<p>Description</p>
-<p>left side</p>
-<p>expression</p>
-<p>yes</p>
-<p>Either a field identifier or an expression.</p>
-<p>The element to be found in the list returned by the right side's subquery.</p>
-<p>right side</p>
-<p>execution block</p>
-<p>yes</p>
-<p>It has to return a single field providing a list of values.</p>
-<p>The DQL Subquery which returns the list of values to compare against.</p>
 <p><strong>Example</strong></p>
 <p>This example shows how to use the <code>in</code> keyword for filtering a host metric for the host's attribute:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-151-1" name="__codelineno-151-1" href="#__codelineno-151-1"></a>timeseries avg(dt.host.cpu.usage), filter:dt.entity.host in [fetch dt.entity.host
@@ -31880,36 +30403,6 @@ To explicitly specify the first day of the week, you can use the following time 
 <p>For example, <code>@w1</code> means midnight of Monday of the current week.</p>
 <h5 id="examples_31">Examples<a class="headerlink" href="#examples_31" title="Permanent link">&para;</a></h5>
 <p>For the following examples, the current time is Wednesday, 04 September 2024, 14:47:05+0200.</p>
-<p>Time modifier</p>
-<p>Description</p>
-<p>Resulting time</p>
-<p><code>-2h@h</code></p>
-<p>2 hours ago, aligned to the hour</p>
-<p>Wednesday, 04 September 2024, 12:00:00+0200</p>
-<p><code>-1d@d</code></p>
-<p>Yesterday, aligned to the day</p>
-<p>Tuesday, 03 September 2024, 00:00:00+0200</p>
-<p><code>-7d@d</code></p>
-<p>7 days ago, aligned to the day</p>
-<p>Wednesday, 28 August 2024, 00:00:00+0200</p>
-<p><code>@w0</code></p>
-<p>Start of this week, from Sunday</p>
-<p>Sunday, 01 September 2024, 00:00:00+0200</p>
-<p><code>@w1</code></p>
-<p>Start of this week, from Monday</p>
-<p>Monday, 02 September 2024, 00:00:00+0200</p>
-<p><code>@M</code></p>
-<p>Start of this month</p>
-<p>Sunday, 01 September 2024, 00:00:00+0200</p>
-<p><code>-1M@M</code></p>
-<p>Start of last month</p>
-<p>Thursday, 01 August 2024, 00:00:00+0200</p>
-<p><code>@q</code></p>
-<p>Start of this quarter</p>
-<p>Monday, 01 July 2024, 00:00:00+0200</p>
-<p><code>@y</code></p>
-<p>Start of this year</p>
-<p>Monday, 01 January 2024, 00:00:00+0100</p>
 <h2 id="search">Search<a class="headerlink" href="#search" title="Permanent link">&para;</a></h2>
 <p>You can use the <code>~</code> operator in expressions to match the value of an expression against a given search string. The performed comparison is case-insensitive and supports pattern matching using wildcards. The <code>~</code> operator returns a <code>boolean</code> value: <code>true</code> in case of a match, and <code>false</code> otherwise.</p>
 <h4 id="syntax_32">Syntax<a class="headerlink" href="#syntax_32" title="Permanent link">&para;</a></h4>
@@ -31936,95 +30429,6 @@ To explicitly specify the first day of the week, you can use the following time 
 <li>If the expression is of type <code>record</code>, the operator matches if any field name or value matches.</li>
 <li>If the expression is of type <code>boolean</code>, <code>timestamp</code>, <code>duration</code>, or <code>binary</code>, the result is always false.</li>
 </ul>
-<p>Expression type</p>
-<p>Expression value</p>
-<p>Operation</p>
-<p>Result</p>
-<p>Note</p>
-<p>String</p>
-<p><code>"Hello WORLD!"</code></p>
-<p><code>~"world"</code></p>
-<p><code>true</code></p>
-<p>String</p>
-<p><code>"helloWorld"</code></p>
-<p><code>~"World"</code></p>
-<p><code>false</code></p>
-<p><code>helloWorld</code> is one token since there are no separators.</p>
-<p>String</p>
-<p><code>"192.168.0.7"</code></p>
-<p><code>~"192"</code></p>
-<p><code>true</code></p>
-<p>As itâs a string, the field has four tokens.</p>
-<p>IP</p>
-<p><code>192.168.0.7</code></p>
-<p><code>~"192"</code></p>
-<p><code>false</code></p>
-<p>Only strings are tokenized.</p>
-<p>IP</p>
-<p><code>192.168.0.7</code></p>
-<p><code>~"192.168.0.7"</code></p>
-<p><code>true</code></p>
-<p>The value is auto-converted, so there's an exact match.</p>
-<p>Long</p>
-<p><code>12</code></p>
-<p><code>~"12"</code></p>
-<p><code>true</code></p>
-<p>The value is auto-converted, so there's an exact match.</p>
-<p>UID</p>
-<p><code>uuid(1,2)</code></p>
-<p><code>~"00000000-0000-0001-0000-000000000002"</code></p>
-<p><code>true</code></p>
-<p>The value is not tokenized, but can be auto-converted.</p>
-<p>Smartscape ID</p>
-<p><code>smartscapeId("HOST", 1)</code></p>
-<p><code>~"HOST-0000000000000001"</code></p>
-<p><code>true</code></p>
-<p>The value is auto-converted.</p>
-<p>Smartscape ID</p>
-<p><code>smartscapeId("HOST", 1)</code></p>
-<p><code>~"host-0000000000000001"</code></p>
-<p><code>false</code></p>
-<p>For a Smartscape ID, the check is case-sensitive.</p>
-<p>Smartscape ID</p>
-<p><code>smartscapeId("HOST", 1)</code></p>
-<p><code>~"HOST"</code></p>
-<p><code>false</code></p>
-<p>The value isn't tokenized.</p>
-<p>Record</p>
-<p><code>record(firstName="John",lastName="Doe")</code></p>
-<p><code>~"john"</code></p>
-<p><code>true</code></p>
-<p>Search also works in nested fields.</p>
-<p>Record</p>
-<p><code>record(firstName="John",lastName="Doe")</code></p>
-<p><code>~"lastName"</code></p>
-<p><code>true</code></p>
-<p>Search also works in the names of nested fields.</p>
-<p>Record</p>
-<p><code>record(firstName="John",lastName="Doe")</code></p>
-<p><code>~"name"</code></p>
-<p><code>false</code></p>
-<p><code>firstName</code> and <code>lastName</code> are one token since they don't contain separators.</p>
-<p>Record</p>
-<p><code>record(first name="John",last name="Doe")</code></p>
-<p><code>~"name"</code></p>
-<p><code>true</code></p>
-<p>Search also works in the names of nested fields.</p>
-<p>Array</p>
-<p><code>array(1,2,3,5,8,13)</code></p>
-<p><code>~"3"</code></p>
-<p><code>true</code></p>
-<p>One element of the array is 3, which can be auto-converted to match <code>~"3"</code>.</p>
-<p>Boolean</p>
-<p><code>true</code></p>
-<p><code>~"true"</code></p>
-<p><code>false</code></p>
-<p>Booleans aren't supported.</p>
-<p>Duration</p>
-<p><code>1h</code></p>
-<p><code>~"1h"</code></p>
-<p><code>false</code></p>
-<p>Durations aren't supported.</p>
 <h5 id="search-strings-with-wildcards">Search strings with wildcards<a class="headerlink" href="#search-strings-with-wildcards" title="Permanent link">&para;</a></h5>
 <p>The operator searches the pattern in the tokens of a string. Its behavior depends on the data type of the expression on the left side:</p>
 <ul>
@@ -32033,76 +30437,6 @@ To explicitly specify the first day of the week, you can use the following time 
 <li>If the expression is of type <code>record</code>, the result is true if the name or value of a nested field matches the pattern.</li>
 <li>If the expression is of any other type (<code>long</code>, <code>double</code>, <code>smartscape ID</code>, <code>IP address</code>, <code>UID</code>, <code>boolean</code>, <code>timestamp</code>, <code>duration</code>, or <code>binary</code>) patterns aren't supported and the result is always <code>false</code>.</li>
 </ul>
-<p>Expression type</p>
-<p>Expression value</p>
-<p>Operation</p>
-<p>Result</p>
-<p>Note</p>
-<p>String</p>
-<p><code>"AuthenticationError"</code></p>
-<p><code>~"*error"</code></p>
-<p><code>true</code></p>
-<p>String</p>
-<p><code>"There was an AuthenticationError"</code></p>
-<p><code>~"authentication*"</code></p>
-<p><code>true</code></p>
-<p>String</p>
-<p><code>"There was an NoAuthenticationError"</code></p>
-<p><code>~"authentication*"</code></p>
-<p><code>false</code></p>
-<p>String</p>
-<p><code>"helloWorld"</code></p>
-<p><code>~"*ow*"</code></p>
-<p><code>true</code></p>
-<p>String</p>
-<p><code>"hello world"</code></p>
-<p><code>~"*ow*"</code></p>
-<p><code>false</code></p>
-<p>String</p>
-<p><code>"192.168.0.7"</code></p>
-<p><code>~"192.168.*"</code></p>
-<p><code>true</code></p>
-<p>It matches as it's a string and not an IP address.</p>
-<p>Record</p>
-<p><code>record(firstName="John",lastName="Doe")</code></p>
-<p><code>~"*name"</code></p>
-<p><code>true</code></p>
-<p>The string matches the name of the nested field in the record.</p>
-<p>Record</p>
-<p><code>record(firstName="John",lastName="Doe")</code></p>
-<p><code>~"*do*"</code></p>
-<p><code>true</code></p>
-<p>The string matches the record.</p>
-<p>Array</p>
-<p><code>array("hello", "world", "myCustomName")</code></p>
-<p><code>~"my*"</code></p>
-<p><code>true</code></p>
-<p>The string matches within the array.</p>
-<p>IP</p>
-<p><code>192.168.0.7</code></p>
-<p><code>~"192*"</code></p>
-<p><code>false</code></p>
-<p>Only strings allow patterns.</p>
-<p>Long</p>
-<p><code>192</code></p>
-<p><code>~"1*"</code></p>
-<p><code>false</code></p>
-<p>Only strings allow patterns.</p>
-<p>Smartscape ID</p>
-<p><code>smartscapeId("HOST", 1)</code></p>
-<p><code>~"HOST*"</code></p>
-<p><code>false</code></p>
-<p>Only strings allow patterns.</p>
-<p>Boolean</p>
-<p><code>true</code></p>
-<p><code>~"t*"</code></p>
-<p><code>false</code></p>
-<p>Only strings allow patterns.</p>
-<p>Duration</p>
-<p><code>1h</code></p>
-<p><code>~"*h"</code></p>
-<p><code>false</code></p>
-<p>Only strings allow patterns.</p>
 <h2 id="related-topics_12">Related topics<a class="headerlink" href="#related-topics_12" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="/docs/platform/grail/dynatrace-query-language" title="How to use Dynatrace Query Language.">Dynatrace Query Language</a></li>
@@ -32119,7 +30453,7 @@ To explicitly specify the first day of the week, you can use the following time 
 <hr />
 <p>title: Dynatrace Query Language
 source: https://www.dynatrace.com/docs/platform/grail/dynatrace-query-language
-scraped: 2026-02-23T21:20:05.761859</p>
+scraped: 2026-02-24T21:14:10.429833</p>
 <hr />
 <h1 id="dynatrace-query-language">Dynatrace Query Language<a class="headerlink" href="#dynatrace-query-language" title="Permanent link">&para;</a></h1>
 <h1 id="dynatrace-query-language_1">Dynatrace Query Language<a class="headerlink" href="#dynatrace-query-language_1" title="Permanent link">&para;</a></h1>
@@ -32156,7 +30490,7 @@ scraped: 2026-02-23T21:20:05.761859</p>
 <hr />
 <p>title: Lookup data in Grail
 source: https://www.dynatrace.com/docs/platform/grail/lookup-data
-scraped: 2026-02-23T21:39:05.842730</p>
+scraped: 2026-02-24T21:32:46.922161</p>
 <hr />
 <h1 id="lookup-data-in-grail">Lookup data in Grail<a class="headerlink" href="#lookup-data-in-grail" title="Permanent link">&para;</a></h1>
 <h1 id="lookup-data-in-grail_1">Lookup data in Grail<a class="headerlink" href="#lookup-data-in-grail_1" title="Permanent link">&para;</a></h1>
@@ -32254,14 +30588,6 @@ scraped: 2026-02-23T21:39:05.842730</p>
 <li>Optional Authenticate with your API token if you want to use Swagger to execute your requests. For details, see <a href="/docs/manage/identity-access-management/access-tokens-and-oauth-clients/platform-tokens" title="Create personalised platform tokens to access Dynatrace services via the API in your user context.">Authentication</a>. Select the <strong>Try it out</strong> button to interact with the API directly from the documentation.</li>
 <li>Perform one of the following actions.</li>
 </ol>
-<p>To do this</p>
-<p>Go to <strong>Lookup Data</strong> and select this</p>
-<p>Test parsing your to-be-uploaded lookup data without storing the result in Grail.</p>
-<p><strong>POST/platform/storage/resource-store/v1/files/tabular/lookup:test-pattern</strong></p>
-<p>Upload your lookup data and store it as a new tabular file in Grail or replace an existing one.</p>
-<p><strong>POST/platform/storage/resource-store/v1/files/tabular/lookup:upload</strong></p>
-<p>Delete the file from the Resource Store.</p>
-<p><strong>POST/platform/storage/resource-store/v1/files:delete</strong></p>
 <h3 id="parse-lookup-data">Parse lookup data<a class="headerlink" href="#parse-lookup-data" title="Permanent link">&para;</a></h3>
 <p>The API provides the <code>/platform/storage/resource-store/v1/files/tabular/lookup:test-pattern</code> endpoint, which previews the uploaded results without persisting them as a file in Grail. The endpoint helps you define the DPL pattern that fits the format of your data.</p>
 <p>The endpoint accepts input as <code>multipart/form-data</code> with a <code>content</code> part for the uploaded data and a <code>request</code> part for additional parameters. The only required parameter in the request part is the <code>parsePattern</code> parameter, which provides the DPL pattern to parse the uploaded text-based data. For more details, see the Swagger API documentation.</p>
@@ -32449,7 +30775,7 @@ scraped: 2026-02-23T21:39:05.842730</p>
 <hr />
 <p>title: Configure advanced permissions with security context
 source: https://www.dynatrace.com/docs/platform/grail/organize-data/advanced-permission-setup
-scraped: 2026-02-23T21:39:53.559359</p>
+scraped: 2026-02-24T21:20:48.218268</p>
 <hr />
 <h1 id="configure-advanced-permissions-with-security-context">Configure advanced permissions with security context<a class="headerlink" href="#configure-advanced-permissions-with-security-context" title="Permanent link">&para;</a></h1>
 <h1 id="configure-advanced-permissions-with-security-context_1">Configure advanced permissions with security context<a class="headerlink" href="#configure-advanced-permissions-with-security-context_1" title="Permanent link">&para;</a></h1>
@@ -32525,7 +30851,7 @@ After configuring your pipeline, add <code>Set Security Context</code> processor
 <hr />
 <p>title: Permissions in Grail
 source: https://www.dynatrace.com/docs/platform/grail/organize-data/assign-permissions-in-grail
-scraped: 2026-02-22T21:13:44.269574</p>
+scraped: 2026-02-24T21:17:37.151298</p>
 <hr />
 <h1 id="permissions-in-grail">Permissions in Grail<a class="headerlink" href="#permissions-in-grail" title="Permanent link">&para;</a></h1>
 <h1 id="permissions-in-grail_1">Permissions in Grail<a class="headerlink" href="#permissions-in-grail_1" title="Permanent link">&para;</a></h1>
@@ -32624,42 +30950,6 @@ This condition has two possible values.</p>
 </code></pre></div>
 <h2 id="table-permissions">Table permissions<a class="headerlink" href="#table-permissions" title="Permanent link">&para;</a></h2>
 <p>Besides granting access to buckets, you also need to configure table permissions.</p>
-<p>Table name</p>
-<p>Permission</p>
-<p>Affected DQL functions/commands</p>
-<p>logs</p>
-<p>storage:logs:read</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/commands/data-source-commands#fetch" title="DQL data source commands">fetch</a></p>
-<p>events</p>
-<p>storage:events:read</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/commands/data-source-commands#fetch" title="DQL data source commands">fetch</a></p>
-<p>security.events</p>
-<p>storage:security.events:read</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/commands/data-source-commands#fetch" title="DQL data source commands">fetch</a></p>
-<p>metrics</p>
-<p>storage:metrics:read</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/commands/metric-commands#timeseries" title="DQL metric commands">timeseries</a></p>
-<p>bizevents</p>
-<p>storage:bizevents:read</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/commands/data-source-commands#fetch" title="DQL data source commands">fetch</a></p>
-<p>spans</p>
-<p>storage:spans:read</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/commands/data-source-commands#fetch" title="DQL data source commands">fetch</a></p>
-<p>entities</p>
-<p>storage:entities:read</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/commands/data-source-commands#fetch" title="DQL data source commands">fetch</a>, <a href="/docs/platform/grail/dynatrace-query-language/functions/general-functions#classic-entity-selector" title="A list of DQL general functions.">classicEntitySelector</a>, <a href="/docs/platform/grail/dynatrace-query-language/functions/general-functions#entity-attr" title="A list of DQL general functions.">entityAttr</a>, <a href="/docs/platform/grail/dynatrace-query-language/functions/general-functions#entity-name" title="A list of DQL general functions.">entityName</a></p>
-<p>smartscape</p>
-<p>storage:smartscape:read</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/commands/smartscape-commands#smartscapeNodes" title="DQL Smartscape commands">smartscapeNodes</a>, <a href="/docs/platform/grail/dynatrace-query-language/commands/smartscape-commands#smartscapeEdges" title="DQL Smartscape commands">smartscapeEdges</a>, <a href="/docs/platform/grail/dynatrace-query-language/functions/join-functions#getNodeName" title="A list of DQL join functions.">getNodeName()</a>, <a href="/docs/platform/grail/dynatrace-query-language/functions/join-functions#getNodeField" title="A list of DQL join functions.">getNodeField()</a></p>
-<p>dt.system.events</p>
-<p>storage:system:read</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/commands/data-source-commands#fetch" title="DQL data source commands">fetch</a></p>
-<p>user.events</p>
-<p>storage:user.events:read</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/commands/data-source-commands#fetch" title="DQL data source commands">fetch</a></p>
-<p>user.sessions</p>
-<p>storage:user.sessions:read</p>
-<p><a href="/docs/platform/grail/dynatrace-query-language/commands/data-source-commands#fetch" title="DQL data source commands">fetch</a></p>
 <p>For more information, see <a href="/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies/advanced/iam-policystatements#storage" title="Complete reference of IAM policies and corresponding conditions across all Dynatrace services.">IAM policy reference</a>.</p>
 <h3 id="bucket-level-permissions">Bucket level permissions<a class="headerlink" href="#bucket-level-permissions" title="Permanent link">&para;</a></h3>
 <p>You can restrict table permissions to certain buckets using the <code>WHERE</code> clause. For example:</p>
@@ -32670,54 +30960,6 @@ This condition has two possible values.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-173-1" name="__codelineno-173-1" href="#__codelineno-173-1"></a>ALLOW storage:logs:read WHERE storage:dt.security_context=&quot;TeamA&quot;;
 </code></pre></div>
 <p>Supported fields:</p>
-<p>Field name</p>
-<p>IAM condition</p>
-<p>Supported IAM tables</p>
-<p><code>event.kind</code></p>
-<p><code>storage:event.kind</code></p>
-<p><code>events</code>, <code>security.events</code>, <code>bizevents</code>, <code>system</code></p>
-<p><code>event.type</code></p>
-<p><code>storage:event.type</code></p>
-<p><code>events</code>, <code>security.events</code>, <code>bizevents</code>, <code>system</code></p>
-<p><code>event.provider</code></p>
-<p><code>storage:event.provider</code></p>
-<p><code>events</code>, <code>security.events</code>, <code>bizevents</code>, <code>system</code></p>
-<p><code>k8s.namespace.name</code></p>
-<p><code>storage:k8s.namespace.name</code></p>
-<p><code>events</code>, <code>security.events</code>, <code>bizevents</code>, <code>logs</code>, <code>metrics</code>, <code>spans</code>, <code>smartscape</code></p>
-<p><code>k8s.cluster.name</code></p>
-<p><code>storage:k8s.cluster.name</code></p>
-<p><code>events</code>, <code>security.events</code>, <code>bizevents</code>, <code>logs</code>, <code>metrics</code>, <code>spans</code>, <code>smartscape</code></p>
-<p><code>host.name</code></p>
-<p><code>storage:host.name</code></p>
-<p><code>events</code>, <code>security.events</code>, <code>bizevents</code>, <code>logs</code>, <code>metrics</code>, <code>spans</code>, <code>smartscape</code></p>
-<p><code>dt.host_group.id</code></p>
-<p><code>storage:dt.host_group.id</code></p>
-<p><code>events</code>, <code>security.events</code>, <code>bizevents</code>, <code>logs</code>, <code>metrics</code>, <code>spans</code>, <code>smartscape</code></p>
-<p><code>metric.key</code></p>
-<p><code>storage:metric.key</code></p>
-<p><code>metrics</code></p>
-<p><code>log.source</code></p>
-<p><code>storage:log.source</code></p>
-<p><code>logs</code></p>
-<p><code>dt.security_context</code></p>
-<p><code>storage:dt.security_context</code></p>
-<p><code>events</code>, <code>security.events</code>, <code>bizevents</code>, <code>system</code>, <code>logs</code>, <code>metrics</code>, <code>spans</code>, <code>entities</code>, <code>smartscape</code>, <code>user.events</code>, <code>user.sessions</code></p>
-<p><code>gcp.project.id</code></p>
-<p><code>storage:gcp.project.id</code></p>
-<p><code>events</code>, <code>security.events</code>, <code>bizevents</code>, <code>logs</code>, <code>metrics</code>, <code>spans</code>, <code>smartscape</code></p>
-<p><code>aws.account.id</code></p>
-<p><code>storage:aws.account.id</code></p>
-<p><code>events</code>, <code>security.events</code>, <code>bizevents</code>, <code>logs</code>, <code>metrics</code>, <code>spans</code>, <code>smartscape</code></p>
-<p><code>azure.subscription</code></p>
-<p><code>storage:azure.subscription</code></p>
-<p><code>events</code>, <code>security.events</code>, <code>bizevents</code>, <code>logs</code>, <code>metrics</code>, <code>spans</code>, <code>smartscape</code></p>
-<p><code>azure.resource.group</code></p>
-<p><code>storage:azure.resource.group</code></p>
-<p><code>events</code>, <code>security.events</code>, <code>bizevents</code>, <code>logs</code>, <code>metrics</code>, <code>spans</code>, <code>smartscape</code></p>
-<p><code>frontend.name</code></p>
-<p><code>storage:frontend.name</code></p>
-<p><code>user.events</code>, <code>user.sessions</code>, <code>metrics</code>, <code>smartscape</code></p>
 <p>For details that are not available as a dedicated field, set the <code>dt.security_context</code> field either at the data source or in the processing pipeline.</p>
 <h3 id="combining-bucket-and-record-level-permissions">Combining bucket and record level permissions<a class="headerlink" href="#combining-bucket-and-record-level-permissions" title="Permanent link">&para;</a></h3>
 <p>You can combine both bucket and record level in your table permissions. For example this statement will provide access to all logs in the <code>unrestricted_logs</code> bucket and only specific records in the <code>default_logs</code> bucket:</p>
@@ -32825,18 +31067,6 @@ This condition has two possible values.</p>
    For details, see <a href="/docs/manage/identity-access-management/access-tokens-and-oauth-clients/platform-tokens" title="Create personalised platform tokens to access Dynatrace services via the API in your user context.">Authentication</a>.</li>
 <li>Perform one of the following actions.</li>
 </ol>
-<p>To do this</p>
-<p>Go to <strong>Fieldsets</strong> and select this</p>
-<p>Get all fieldsets</p>
-<p><strong>GET /fieldsets</strong></p>
-<p>Create a new fieldset</p>
-<p><strong>POST /fieldsets</strong></p>
-<p>Get fieldsets by UID</p>
-<p><strong>GET /fieldsets/{fieldsetUid}</strong></p>
-<p>Update a fieldset. All fields will be overwritten.</p>
-<p><strong>PUT /fieldsets/{fieldsetUid}</strong></p>
-<p>Delete a fieldset</p>
-<p><strong>DELETE /fieldsets/{fieldsetUid}</strong></p>
 <h4 id="example_6">Example<a class="headerlink" href="#example_6" title="Permanent link">&para;</a></h4>
 <p>This call creates the fieldset <code>sensitive-fields-retail</code>, removing the <code>credit_card</code> and <code>DOB</code> fields from DQL query results in the <code>logs_retail</code> bucket.</p>
 <h5 id="request-url">Request URL<a class="headerlink" href="#request-url" title="Permanent link">&para;</a></h5>
@@ -33045,7 +31275,7 @@ This condition has two possible values.</p>
 <hr />
 <p>title: Organize data
 source: https://www.dynatrace.com/docs/platform/grail/organize-data
-scraped: 2026-02-22T21:15:28.354969</p>
+scraped: 2026-02-24T21:23:59.525940</p>
 <hr />
 <h1 id="organize-data">Organize data<a class="headerlink" href="#organize-data" title="Permanent link">&para;</a></h1>
 <h1 id="organize-data_1">Organize data<a class="headerlink" href="#organize-data_1" title="Permanent link">&para;</a></h1>
@@ -33078,36 +31308,6 @@ For a full list of available built-in buckets, run this DQL query:</p>
 <a id="__codelineno-191-5" name="__codelineno-191-5" href="#__codelineno-191-5"></a>| filter startsWith(name, &quot;default_&quot;) or startsWith(name, &quot;dt_&quot;)
 </code></pre></div>
 <p>Run in Playground</p>
-<p>Name</p>
-<p>Table</p>
-<p>Retention</p>
-<p><code>default_events</code></p>
-<p>events</p>
-<p>35 days</p>
-<p><code>default_securityevents_builtin</code></p>
-<p>security.events</p>
-<p>3 years</p>
-<p><code>default_securityevents</code></p>
-<p>security.events</p>
-<p>1 year</p>
-<p><code>default_bizevents</code></p>
-<p>bizevents</p>
-<p>35 days</p>
-<p><code>default_logs</code></p>
-<p>logs</p>
-<p>35 days</p>
-<p><code>default_metrics</code></p>
-<p>metrics</p>
-<p>15 months</p>
-<p><code>default_spans</code></p>
-<p>spans</p>
-<p>10 days</p>
-<p><code>dt_system_events</code></p>
-<p>dt.system.events</p>
-<p>1 year</p>
-<p><code>default_application_snapshots</code></p>
-<p>application.snapshots</p>
-<p>10 days</p>
 <h2 id="custom-grail-buckets">Custom Grail buckets<a class="headerlink" href="#custom-grail-buckets" title="Permanent link">&para;</a></h2>
 <p>You can create a bucket tailored to your needs. Grail buckets behave like folders in a file system and are designed for records that should be handled together. For example, you might need to store together:</p>
 <ul>
@@ -33193,7 +31393,7 @@ This operation can be executed on all types of buckets, except buckets where <st
 <hr />
 <p>title: Query monitored entities in Grail
 source: https://www.dynatrace.com/docs/platform/grail/querying-monitored-entities
-scraped: 2026-02-23T21:38:14.816910</p>
+scraped: 2026-02-24T21:33:46.572131</p>
 <hr />
 <h1 id="query-monitored-entities-in-grail">Query monitored entities in Grail<a class="headerlink" href="#query-monitored-entities-in-grail" title="Permanent link">&para;</a></h1>
 <h1 id="query-monitored-entities-in-grail_1">Query monitored entities in Grail<a class="headerlink" href="#query-monitored-entities-in-grail_1" title="Permanent link">&para;</a></h1>
@@ -33211,22 +31411,6 @@ scraped: 2026-02-23T21:38:14.816910</p>
 <p>For example, executing the <code>fetch dt.entity.host</code> query retrieves all host entities. By default, entity records include the ID and entity name.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-192-1" name="__codelineno-192-1" href="#__codelineno-192-1"></a>fetch dt.entity.host
 </code></pre></div>
-<p><code>entity.name</code></p>
-<p><code>id</code></p>
-<p>HOST-1</p>
-<p>HOST-123</p>
-<p>HOST-2</p>
-<p>HOST-456</p>
-<p>HOST-3</p>
-<p>HOST-789</p>
-<p>HOST-4</p>
-<p>HOST-101</p>
-<p>HOST-5</p>
-<p>HOST-111</p>
-<p>HOST-6</p>
-<p>HOST-131</p>
-<p>HOST-7</p>
-<p>HOST-141</p>
 <p>To include additional details, you can use the <code>fieldsAdd</code> command. As you start typing, the auto-complete feature suggests available fields for the entity type.</p>
 <p>Another way to get started is to use one of the built-in topology query snippets.</p>
 <p><img alt="Example of how to get started by using built-in topology query snippets." src="https://dt-cdn.net/images/topology-1447-687b6417ca.png" /></p>
@@ -33238,18 +31422,6 @@ scraped: 2026-02-23T21:38:14.816910</p>
 <a id="__codelineno-193-4" name="__codelineno-193-4" href="#__codelineno-193-4"></a>
 <a id="__codelineno-193-5" name="__codelineno-193-5" href="#__codelineno-193-5"></a>| fieldsAdd runs
 </code></pre></div>
-<p><code>entity.name</code></p>
-<p><code>id</code></p>
-<p><code>runs</code></p>
-<p>HOST-1</p>
-<p>HOST-123</p>
-<p>runs: Complex record</p>
-<p>HOST-2</p>
-<p>HOST-456</p>
-<p>runs: Complex record</p>
-<p>HOST-3</p>
-<p>HOST-789</p>
-<p>runs: Complex record</p>
 <p>The <code>runs</code> field is a nested record that contains a field for each entity type running on a specific host. Depending on the cardinality, these fields are either strings representing a single entity ID or arrays of strings representing a list of entity IDs. In notebooks, select a nested record in the results list to see its contents.</p>
 <p>If you only want to see process groups running on that host, you can specify this in the <code>fieldsAdd</code> command. The auto-complete feature will provide a list of possible identifier types.</p>
 <p>Selecting a type refines the query to only return an array containing the process group IDs.</p>
@@ -33259,18 +31431,6 @@ scraped: 2026-02-23T21:38:14.816910</p>
 <a id="__codelineno-194-4" name="__codelineno-194-4" href="#__codelineno-194-4"></a>
 <a id="__codelineno-194-5" name="__codelineno-194-5" href="#__codelineno-194-5"></a>| fieldsAdd runs[dt.entity.process_group]
 </code></pre></div>
-<p><code>entity.name</code></p>
-<p><code>id</code></p>
-<p><code>runs[dt.entity.process_group]</code></p>
-<p>HOST-1</p>
-<p>HOST-123</p>
-<p>runs: PROCESS_GROUP-D123, PROCESS_GROUP-567, PROCESS_GROUP-012</p>
-<p>HOST-2</p>
-<p>HOST-456</p>
-<p>runs: PROCESS_GROUP-D234, PROCESS_GROUP-234, PROCESS_GROUP-F10</p>
-<p>HOST-3</p>
-<p>HOST-789</p>
-<p>runs: PROCESS_GROUP-D567, PROCESS_GROUP-789, PROCESS_GROUP-123</p>
 <p>The field names for relationships differ from the original relationship names in the previous Dynatrace. Instead of using a single name prefixed with <code>fromRelationship</code> and <code>toRelationship</code>, the fields have different names on both sides.</p>
 <p>See the <a href="#relationship-mapping-table">relationship mapping table</a> below to understand how second-generation relationships are represented as DQL fields.</p>
 <p>Note that 1:n relationships only return 100 entity IDs per type, per record. In such cases, we recommend using <code>classicEntitySelector()</code> instead.</p>
@@ -33283,15 +31443,6 @@ scraped: 2026-02-23T21:38:14.816910</p>
 <a id="__codelineno-195-4" name="__codelineno-195-4" href="#__codelineno-195-4"></a>
 <a id="__codelineno-195-5" name="__codelineno-195-5" href="#__codelineno-195-5"></a>| fieldsAdd runs_on[dt.entity.host]
 </code></pre></div>
-<p><code>entity.name</code></p>
-<p><code>id</code></p>
-<p><code>runs_on[dt.entity.host]</code></p>
-<p>Mapped Instance for answer_queue on ActiveMQ Artemis</p>
-<p>SERVICE_INSTANCE-1AB2</p>
-<p>HOST-1</p>
-<p>Mapped Instance for Requests executed in the background threads of eT-demo-1-BussinessBackend</p>
-<p>SERVICE_INSTANCE-A123</p>
-<p>HOST-2</p>
 <p>It's important to note that service instances always run on a single host, which means that you obtain a single host ID per service instance record. This allows you to use the <code>lookup</code> command to add the hostname to your records. The hostname is added as the <code>lookup.entity.name</code> field.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-196-1" name="__codelineno-196-1" href="#__codelineno-196-1"></a>fetch dt.entity.service_instance
 <a id="__codelineno-196-2" name="__codelineno-196-2" href="#__codelineno-196-2"></a>
@@ -33303,26 +31454,6 @@ scraped: 2026-02-23T21:38:14.816910</p>
 <a id="__codelineno-196-8" name="__codelineno-196-8" href="#__codelineno-196-8"></a>
 <a id="__codelineno-196-9" name="__codelineno-196-9" href="#__codelineno-196-9"></a>| lookup sourceField:`runs_on[dt.entity.host]`, lookupField:id, [ fetch dt.entity.host ]
 </code></pre></div>
-<p><code>entity.name</code></p>
-<p><code>id</code></p>
-<p><code>runs_on[dt.entity.host]</code></p>
-<p><code>lookup.entity.name</code></p>
-<p><code>lookup.id</code></p>
-<p>Mapped Instance for answer_queue on ActiveMQ Artemis</p>
-<p>SERVICE_INSTANCE-2AB1</p>
-<p>HOST-1</p>
-<p>AB1-abc</p>
-<p>HOST-1</p>
-<p>Mapped Instance for Requests executed in the background threads of eT-demo-1-BussinessBackend</p>
-<p>SERVICE_INSTANCE-B123</p>
-<p>HOST-2</p>
-<p>BA1-cba</p>
-<p>HOST-2</p>
-<p>Mapped Instance for :80</p>
-<p>SERVICE_INSTANCE-C321</p>
-<p>HOST-3</p>
-<p>BA1-cba</p>
-<p>HOST-2</p>
 <h2 id="expand-relationships">Expand relationships<a class="headerlink" href="#expand-relationships" title="Permanent link">&para;</a></h2>
 <p>Hosts can run multiple service instances, so the <code>runs[dt.entity.service_instance]</code> field is an array of entity IDs.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-197-1" name="__codelineno-197-1" href="#__codelineno-197-1"></a>fetch dt.entity.host
@@ -33331,21 +31462,6 @@ scraped: 2026-02-23T21:38:14.816910</p>
 <a id="__codelineno-197-4" name="__codelineno-197-4" href="#__codelineno-197-4"></a>
 <a id="__codelineno-197-5" name="__codelineno-197-5" href="#__codelineno-197-5"></a>| fieldsAdd runs[dt.entity.service_instance]
 </code></pre></div>
-<p><code>entity.name</code></p>
-<p><code>id</code></p>
-<p><code>runs[dt.entity.service_instance]</code></p>
-<p>dw123</p>
-<p>HOST-1</p>
-<p>SERVICE_INSTANCE-AB123</p>
-<p>dw123</p>
-<p>HOST-1</p>
-<p>SERVICE_INSTANCE-CB123</p>
-<p>dw123</p>
-<p>HOST-1</p>
-<p>SERVICE_INSTANCE-DB123</p>
-<p>abc/123</p>
-<p>HOST-2</p>
-<p>SERVICE_INSTANCE-AB902</p>
 <p>The <code>lookup</code> command doesn't apply to arrays of IDs, so you need to use the <code>expand</code> command first to retrieve individual records per service instance ID.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-198-1" name="__codelineno-198-1" href="#__codelineno-198-1"></a>fetch dt.entity.host
 <a id="__codelineno-198-2" name="__codelineno-198-2" href="#__codelineno-198-2"></a>
@@ -33357,21 +31473,6 @@ scraped: 2026-02-23T21:38:14.816910</p>
 <a id="__codelineno-198-8" name="__codelineno-198-8" href="#__codelineno-198-8"></a>
 <a id="__codelineno-198-9" name="__codelineno-198-9" href="#__codelineno-198-9"></a>| expand runs[dt.entity.service_instance]
 </code></pre></div>
-<p><code>entity.name</code></p>
-<p><code>id</code></p>
-<p><code>runs[dt.entity.service_instance]</code></p>
-<p>dw123</p>
-<p>HOST-1</p>
-<p>SERVICE_INSTANCE-DB123</p>
-<p>dw456</p>
-<p>HOST-2</p>
-<p>SERVICE_INSTANCE-BA987</p>
-<p>dw789</p>
-<p>HOST-3</p>
-<p>SERVICE_INSTANCE-CA687</p>
-<p>dw652</p>
-<p>HOST-4</p>
-<p>SERVICE_INSTANCE-1AB2</p>
 <p>In this example, the first record expands into three. Now you can use the <code>lookup</code> command to get the service instance details that you include in the <code>lookup</code> field.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-199-1" name="__codelineno-199-1" href="#__codelineno-199-1"></a>fetch dt.entity.host
 <a id="__codelineno-199-2" name="__codelineno-199-2" href="#__codelineno-199-2"></a>
@@ -33387,31 +31488,6 @@ scraped: 2026-02-23T21:38:14.816910</p>
 <a id="__codelineno-199-12" name="__codelineno-199-12" href="#__codelineno-199-12"></a>
 <a id="__codelineno-199-13" name="__codelineno-199-13" href="#__codelineno-199-13"></a>| lookup sourceField:`runs[dt.entity.service_instance]`, lookupField:id, [ fetch dt.entity.service_instance]
 </code></pre></div>
-<p><code>entity.name</code></p>
-<p><code>id</code></p>
-<p><code>runs[dt.entity.service_instance]</code></p>
-<p><code>lookup.entity.name</code></p>
-<p><code>lookup.id</code></p>
-<p>dw123</p>
-<p>HOST-1</p>
-<p>SERVICE_INSTANCE-AB123</p>
-<p>Mapped instance for easytravelazure-weather-service</p>
-<p>SERVICE_INSTANCE-AB123</p>
-<p>dw123</p>
-<p>HOST-1</p>
-<p>SERVICE_INSTANCE-CB123</p>
-<p>Mapped Instance for weather-service-restify</p>
-<p>SERVICE_INSTANCE-CB123</p>
-<p>dw123</p>
-<p>HOST-1</p>
-<p>SERVICE_INSTANCE-DB123</p>
-<p>Mapped Instance for easytravelazure-weather-express</p>
-<p>SERVICE_INSTANCE-DB123</p>
-<p>abc/123</p>
-<p>HOST-2</p>
-<p>SERVICE_INSTANCE-AB902</p>
-<p>Mapped Instance for easytravel-frontend</p>
-<p>SERVICE_INSTANCE-AB902</p>
 <h2 id="entity-tags">Entity tags<a class="headerlink" href="#entity-tags" title="Permanent link">&para;</a></h2>
 <p>Entity tags consist of up to three values: context, key, and value. Dynatrace creates a string representation of these values in the following format:</p>
 <p><code>[&lt;context&gt;]&lt;key&gt;:&lt;value&gt;</code></p>
@@ -33430,13 +31506,6 @@ scraped: 2026-02-23T21:38:14.816910</p>
 <a id="__codelineno-200-8" name="__codelineno-200-8" href="#__codelineno-200-8"></a>
 <a id="__codelineno-200-9" name="__codelineno-200-9" href="#__codelineno-200-9"></a>| fields tag
 </code></pre></div>
-<p><code>tag</code></p>
-<p>AppSec:Node.js</p>
-<p>[Azure]tenant:CustomerA</p>
-<p>HostName:dw123</p>
-<p>AppSec:.NET</p>
-<p>[AWS]created_at:2023-07-07T12:20:10Z</p>
-<p>[Environment]tema:cpn</p>
 <p>You can use the <code>expand</code> command to optimize tag filtering. This example filters hosts based on a specific cluster name.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-201-1" name="__codelineno-201-1" href="#__codelineno-201-1"></a>fetch dt.entity.host
 <a id="__codelineno-201-2" name="__codelineno-201-2" href="#__codelineno-201-2"></a>
@@ -33448,24 +31517,6 @@ scraped: 2026-02-23T21:38:14.816910</p>
 <a id="__codelineno-201-8" name="__codelineno-201-8" href="#__codelineno-201-8"></a>
 <a id="__codelineno-201-9" name="__codelineno-201-9" href="#__codelineno-201-9"></a>| filter contains(tags, &quot;[Environment]Cluster.Name:prod-eu-west-6-ireland&quot;)
 </code></pre></div>
-<p><code>entity.name</code></p>
-<p><code>id</code></p>
-<p><code>tags</code></p>
-<p>HOST-1</p>
-<p>HOST-C2</p>
-<p>tags:[Environment]Cluster.Name:prod-eu-west-6-ireland</p>
-<p>HOST-2</p>
-<p>HOST-C3</p>
-<p>tags:[Environment]Cluster.Name:prod-eu-west-6-ireland</p>
-<p>HOST-3</p>
-<p>HOST-C4</p>
-<p>tags:[Environment]Cluster.Name:prod-eu-west-6-ireland</p>
-<p>HOST-4</p>
-<p>HOST-C5</p>
-<p>tags:[Environment]Cluster.Name:prod-eu-west-6-ireland</p>
-<p>HOST-5</p>
-<p>HOST-C6</p>
-<p>tags:[Environment]Cluster.Name:prod-eu-west-6-ireland</p>
 <p>If you need structured access to the key, context, or value, you can use the following DPL parse expression to split the string representation into individual fields.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-202-1" name="__codelineno-202-1" href="#__codelineno-202-1"></a>fetch dt.entity.host
 <a id="__codelineno-202-2" name="__codelineno-202-2" href="#__codelineno-202-2"></a>
@@ -33477,30 +31528,6 @@ scraped: 2026-02-23T21:38:14.816910</p>
 <a id="__codelineno-202-8" name="__codelineno-202-8" href="#__codelineno-202-8"></a>
 <a id="__codelineno-202-9" name="__codelineno-202-9" href="#__codelineno-202-9"></a>| parse tag_string, &quot;&quot;&quot;((&#39;[&#39;LD:tag_context &#39;]&#39; LD:tag_key (!&lt;&lt;&#39;\\&#39; &#39;:&#39;) LD:tag_value)|(LD:tag_key (!&lt;&lt;&#39;\\&#39; &#39;:&#39;) LD:tag_value)|LD:tag_key)&quot;&quot;&quot;
 </code></pre></div>
-<p><code>entity.name</code></p>
-<p><code>id</code></p>
-<p><code>tag_string</code></p>
-<p><code>tag_context</code></p>
-<p><code>tag_key</code></p>
-<p><code>tag_value</code></p>
-<p>HOST-1</p>
-<p>HOST-73</p>
-<p>Maxk:WebService2-ABC</p>
-<p>undefined</p>
-<p>Maxk:WebService2-ABC</p>
-<p>undefined</p>
-<p>HOST-1</p>
-<p>HOST-73</p>
-<p>testtests:testspreiser</p>
-<p>undefined</p>
-<p>testtests:testspreiser</p>
-<p>undefined</p>
-<p>HOST-1</p>
-<p>HOST-73</p>
-<p>Maxk:WebService3-ABC</p>
-<p>undefined</p>
-<p>Maxk:WebService3-ABC</p>
-<p>undefined</p>
 <h2 id="list-fields-and-relationships">List fields and relationships<a class="headerlink" href="#list-fields-and-relationships" title="Permanent link">&para;</a></h2>
 <p>Use the <code>describe</code> command to obtain a list of fields and relationships for each entity view.</p>
 <p>For example, to retrieve a list of all fields and relationships for the <code>service_instance</code> entity view, enter <code>describe dt.entity.service_instance</code>:</p>
@@ -33520,20 +31547,6 @@ scraped: 2026-02-23T21:38:14.816910</p>
 <a id="__codelineno-204-4" name="__codelineno-204-4" href="#__codelineno-204-4"></a>
 <a id="__codelineno-204-5" name="__codelineno-204-5" href="#__codelineno-204-5"></a>| filter in(data_types, &quot;record&quot;)
 </code></pre></div>
-<p><code>field</code></p>
-<p><code>data_types</code></p>
-<p>belongs_to</p>
-<p>record</p>
-<p>runs_on</p>
-<p>record</p>
-<p>sends_to</p>
-<p>record</p>
-<p>icon</p>
-<p>record</p>
-<p>receives_from</p>
-<p>record</p>
-<p>instance_of</p>
-<p>record</p>
 <h2 id="permissions_1">Permissions<a class="headerlink" href="#permissions_1" title="Permanent link">&para;</a></h2>
 <p>You need the <code>storage:entities:read</code> permission to query entities.</p>
 <p>Grail doesn't apply management zone filters. Users having the <code>storage:entities:read</code> permission can query all entities.</p>
@@ -33546,18 +31559,6 @@ scraped: 2026-02-23T21:38:14.816910</p>
 <a id="__codelineno-205-4" name="__codelineno-205-4" href="#__codelineno-205-4"></a>
 <a id="__codelineno-205-5" name="__codelineno-205-5" href="#__codelineno-205-5"></a>| filter in(id, classicEntitySelector(&quot;type(service), fromRelationship.runsOnHost(type(host), tag([AWS]Category:ABC))&quot;))
 </code></pre></div>
-<p><code>entity.name</code></p>
-<p><code>id</code></p>
-<p>123</p>
-<p>123</p>
-<p>123</p>
-<p>123</p>
-<p>123</p>
-<p>123</p>
-<p>123</p>
-<p>123</p>
-<p>123</p>
-<p>123</p>
 <p>You can also obtain this result using native DQL with the following query.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-206-1" name="__codelineno-206-1" href="#__codelineno-206-1"></a>fetch dt.entity.service
 <a id="__codelineno-206-2" name="__codelineno-206-2" href="#__codelineno-206-2"></a>
@@ -33581,26 +31582,6 @@ scraped: 2026-02-23T21:38:14.816910</p>
 <a id="__codelineno-206-20" name="__codelineno-206-20" href="#__codelineno-206-20"></a>
 <a id="__codelineno-206-21" name="__codelineno-206-21" href="#__codelineno-206-21"></a>| filter host.tags == &quot;[AWS]Category:ABC&quot;
 </code></pre></div>
-<p><code>entity.name</code></p>
-<p><code>id</code></p>
-<p><code>host.id</code></p>
-<p><code>host.tags</code></p>
-<p>123</p>
-<p>123</p>
-<p>123</p>
-<p>123</p>
-<p>123</p>
-<p>123</p>
-<p>123</p>
-<p>123</p>
-<p>123</p>
-<p>123</p>
-<p>123</p>
-<p>123</p>
-<p>123</p>
-<p>123</p>
-<p>123</p>
-<p>123</p>
 <p>This query has limitations, such as returning only 100 hosts per service entity, and is generally more complex than the previous example using the <code>classicEntitySelector</code> function.</p>
 <h3 id="filtering-along-relationships">Filtering along relationships<a class="headerlink" href="#filtering-along-relationships" title="Permanent link">&para;</a></h3>
 <p>When your query evaluates relationships, we recommend using the <a href="/docs/platform/grail/dynatrace-query-language/functions/general-functions#classic-entity-selector" title="A list of DQL general functions."><code>classicEntitySelector</code></a> function instead of native DQL queries.</p>
@@ -33697,312 +31678,6 @@ scraped: 2026-02-23T21:38:14.816910</p>
 </code></pre></div>
 <h2 id="relationship-mapping-table">Relationship mapping table<a class="headerlink" href="#relationship-mapping-table" title="Permanent link">&para;</a></h2>
 <p>Entity relationships in the previous Dynatrace (for example, the environment API v2) are mapped to the new names in DQL records according to the following table.</p>
-<p>Relationship name</p>
-<p>From &gt; To</p>
-<p>To &gt; From</p>
-<p>belongsTo</p>
-<p>belongs_to</p>
-<p>contains</p>
-<p>calls</p>
-<p>calls</p>
-<p>called_by</p>
-<p>candidateTalksWith</p>
-<p>called_by</p>
-<p>calls</p>
-<p>hostsComputeNode</p>
-<p>hosts</p>
-<p>hosted_by</p>
-<p>indirectlySendsToQueue</p>
-<p>indirectly_sends_to</p>
-<p>indirectly_receives_from</p>
-<p>isAccessibleBy</p>
-<p>accessible_by</p>
-<p>can_access</p>
-<p>isApplicationMethodOf</p>
-<p>belongs_to</p>
-<p>contains</p>
-<p>isApplicationMethodOfGroup</p>
-<p>belongs_to</p>
-<p>contains</p>
-<p>isApplicationOfSyntheticTest</p>
-<p>monitored_by</p>
-<p>monitors</p>
-<p>isAzrAppServicePlanOf</p>
-<p>contains</p>
-<p>belongs_to</p>
-<p>isAzrEventHubNamespaceOfEventHub</p>
-<p>contains</p>
-<p>belongs_to</p>
-<p>isAzrMgmtGroupOfAzrTenant</p>
-<p>belongs_to</p>
-<p>contains</p>
-<p>isAzrServiceBusNamespaceOfQueue</p>
-<p>contains</p>
-<p>belongs_to</p>
-<p>isAzrServiceBusNamespaceOfTopic</p>
-<p>contains</p>
-<p>belongs_to</p>
-<p>isAzrSQLDatabaseOfElasticPool</p>
-<p>belongs_to</p>
-<p>contains</p>
-<p>isAzrSqlServerOfDatabase</p>
-<p>contains</p>
-<p>belongs_to</p>
-<p>isAzrSqlServerOfElasticPool</p>
-<p>belongs_to</p>
-<p>contains</p>
-<p>isAzrStorageAccountOfAzrEventHub</p>
-<p>contains</p>
-<p>belongs_to</p>
-<p>isAzrSubscriptionOfAzrMgmtGroup</p>
-<p>belongs_to</p>
-<p>contains</p>
-<p>isAzrSubscriptionOfAzrTenant</p>
-<p>belongs_to</p>
-<p>contains</p>
-<p>isAzrSubscriptionOfCredentials</p>
-<p>contains</p>
-<p>belongs_to</p>
-<p>isBalancedBy</p>
-<p>balanced_by</p>
-<p>balances</p>
-<p>isBoshDeploymentOfHost</p>
-<p>contains</p>
-<p>belongs_to</p>
-<p>isCfFoundationOfHost</p>
-<p>contains</p>
-<p>belongs_to</p>
-<p>isCgiOfCa</p>
-<p>belongs_to</p>
-<p>contains</p>
-<p>isCgiOfCai</p>
-<p>belongs_to</p>
-<p>contains</p>
-<p>isCgiOfCluster</p>
-<p>belongs_to</p>
-<p>contains</p>
-<p>isCgiOfHost</p>
-<p>belongs_to</p>
-<p>contains</p>
-<p>isCgiOfNamespace</p>
-<p>belongs_to</p>
-<p>contains</p>
-<p>isChildOf</p>
-<p>child_of</p>
-<p>parent_of</p>
-<p>isClusterOfCa</p>
-<p>cluster_of</p>
-<p>clustered_by</p>
-<p>isClusterOfCai</p>
-<p>cluster_of</p>
-<p>clustered_by</p>
-<p>isClusterOfCni</p>
-<p>cluster_of</p>
-<p>clustered_by</p>
-<p>isClusterOfHost</p>
-<p>cluster_of</p>
-<p>clustered_by</p>
-<p>isClusterOfKubernetesSvc</p>
-<p>cluster_of</p>
-<p>clustered_by</p>
-<p>isClusterOfNamespace</p>
-<p>cluster_of</p>
-<p>clustered_by</p>
-<p>isClusterOfNode</p>
-<p>cluster_of</p>
-<p>isClusterOfPg</p>
-<p>clustered_by</p>
-<p>cluster_of</p>
-<p>clustered_by</p>
-<p>isCnpOfCai</p>
-<p>belongs_to</p>
-<p>contains</p>
-<p>isDatastoreOf</p>
-<p>belongs_to</p>
-<p>contains</p>
-<p>isDeviceApplicationMethodOf</p>
-<p>belongs_to</p>
-<p>contains</p>
-<p>isDeviceApplicationMethodOfGroup</p>
-<p>belongs_to</p>
-<p>contains</p>
-<p>isDiskOf</p>
-<p>belongs_to</p>
-<p>contains</p>
-<p>isDockerContainerOf</p>
-<p>contains</p>
-<p>belongs_to</p>
-<p>isDockerContainerOfPg</p>
-<p>contains</p>
-<p>belongs_to</p>
-<p>isEbsVolumeOf</p>
-<p>belongs_to</p>
-<p>contains</p>
-<p>isGroupOf</p>
-<p>group_of</p>
-<p>groups</p>
-<p>isHostGroupOf</p>
-<p>group_of</p>
-<p>groups</p>
-<p>isHostOfContainer</p>
-<p>hosts</p>
-<p>hosted_by</p>
-<p>isInstanceOf</p>
-<p>instance_of</p>
-<p>instantiates</p>
-<p>isKubernetesSvcOfCa</p>
-<p>balances</p>
-<p>balanced_by</p>
-<p>isKubernetesSvcOfCai</p>
-<p>balances</p>
-<p>balanced_by</p>
-<p>isLocatedIn</p>
-<p>belongs_to</p>
-<p>contains</p>
-<p>isMainPgiOfCgi</p>
-<p>belongs_to</p>
-<p>contains</p>
-<p>isMemberOf</p>
-<p>belongs_to</p>
-<p>contains</p>
-<p>isMemberOfScalingGroup</p>
-<p>belongs_to</p>
-<p>contains</p>
-<p>isNamespaceOfCa</p>
-<p>contains</p>
-<p>belongs_to</p>
-<p>isNamespaceOfCai</p>
-<p>contains</p>
-<p>belongs_to</p>
-<p>isNamespaceOfCni</p>
-<p>contains</p>
-<p>belongs_to</p>
-<p>isNamespaceOfCnp</p>
-<p>contains</p>
-<p>belongs_to</p>
-<p>isNamespaceOfKubernetesSvc</p>
-<p>contains</p>
-<p>belongs_to</p>
-<p>isNamespaceOfPg</p>
-<p>contains</p>
-<p>belongs_to</p>
-<p>isNamespaceOfService</p>
-<p>contains</p>
-<p>belongs_to</p>
-<p>isNetworkClientOf</p>
-<p>calls</p>
-<p>called_by</p>
-<p>isNetworkClientOfHost</p>
-<p>calls</p>
-<p>called_by</p>
-<p>isNetworkClientOfProcessGroup</p>
-<p>calls</p>
-<p>called_by</p>
-<p>isNetworkInterfaceOf</p>
-<p>belongs_to</p>
-<p>contains</p>
-<p>isNodeOfHost</p>
-<p>belongs_to</p>
-<p>contains</p>
-<p>isOpenstackAvZoneOf</p>
-<p>belongs_to</p>
-<p>contains</p>
-<p>isPartOf</p>
-<p>belongs_to</p>
-<p>contains</p>
-<p>isPgAppOf</p>
-<p>belongs_to</p>
-<p>contains</p>
-<p>isPgiOfCgi</p>
-<p>belongs_to</p>
-<p>contains</p>
-<p>isPgOfCa</p>
-<p>belongs_to</p>
-<p>contains</p>
-<p>isPgOfCai</p>
-<p>belongs_to</p>
-<p>contains</p>
-<p>isPgOfCg</p>
-<p>belongs_to</p>
-<p>contains</p>
-<p>isProcessOf</p>
-<p>belongs_to</p>
-<p>contains</p>
-<p>isProcessRunningOpenstackVm</p>
-<p>belongs_to</p>
-<p>contains</p>
-<p>isRuntimeComponentOf</p>
-<p>belongs_to</p>
-<p>contains</p>
-<p>isSameAs</p>
-<p>same_as</p>
-<p>same_as</p>
-<p>isServedByDcrumService</p>
-<p>served_by</p>
-<p>serves</p>
-<p>isServiceMethodOf</p>
-<p>belongs_to</p>
-<p>contains</p>
-<p>isServiceMethodOfService</p>
-<p>belongs_to</p>
-<p>contains</p>
-<p>isServiceOf</p>
-<p>belongs_to</p>
-<p>contains</p>
-<p>isServiceOfProcessGroup</p>
-<p>belongs_to</p>
-<p>contains</p>
-<p>isSiteOf</p>
-<p>contains</p>
-<p>belongs_to</p>
-<p>isSoftwareComponentOfPgi</p>
-<p>belongs_to</p>
-<p>contains</p>
-<p>isStepOf</p>
-<p>belongs_to</p>
-<p>contains</p>
-<p>isUserActionOf</p>
-<p>belongs_to</p>
-<p>contains</p>
-<p>listensOnQueue</p>
-<p>belongs_to</p>
-<p>contains</p>
-<p>manages</p>
-<p>manages</p>
-<p>managed_by</p>
-<p>monitors</p>
-<p>monitors</p>
-<p>monitored_by</p>
-<p>propagatesTo</p>
-<p>propagates_to</p>
-<p>propagated_from</p>
-<p>receivesFromQueue</p>
-<p>receives_from</p>
-<p>sends_to</p>
-<p>runsOn</p>
-<p>runs_on</p>
-<p>runs</p>
-<p>runsOnHost</p>
-<p>runs_on</p>
-<p>runs</p>
-<p>runsOnProcessGroupInstance</p>
-<p>runs_on</p>
-<p>runs</p>
-<p>runsOnResource</p>
-<p>runs_on</p>
-<p>runs</p>
-<p>sendsToQueue</p>
-<p>sends_to</p>
-<p>receives_from</p>
-<p>talksWithCandidate</p>
-<p>calls</p>
-<p>called_by</p>
-<p>affects</p>
-<p>affects</p>
-<p>affected_by</p>
-<p>isRelatedTo</p>
-<p>related_to</p>
-<p>related_to</p>
 <h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h2>
 <ul>
 <li><strong>The DQL query returns different or fewer entities than API v2 environment</strong>
@@ -34241,7 +31916,7 @@ scraped: 2026-02-22T21:13:59.859577</p>
 <hr />
 <p>title: Grail
 source: https://www.dynatrace.com/docs/platform/grail
-scraped: 2026-02-23T21:21:10.804887</p>
+scraped: 2026-02-24T21:16:08.658379</p>
 <hr />
 <h1 id="grail">Grail<a class="headerlink" href="#grail" title="Permanent link">&para;</a></h1>
 <h1 id="grail_1">Grail<a class="headerlink" href="#grail_1" title="Permanent link">&para;</a></h1>

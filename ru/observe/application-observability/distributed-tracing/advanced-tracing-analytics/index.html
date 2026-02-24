@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
     
     
       
@@ -25518,14 +25518,6 @@
 <a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>| limit 5
 </code></pre></div>
 <p>Query result:</p>
-<p>endpoint.name</p>
-<p>http.request.header.host</p>
-<p>http.request.method</p>
-<p>trace.id</p>
-<p><code>/api/currency</code></p>
-<p><code>astroshop.playground.demoability.dynatracelabs.com</code></p>
-<p><code>GET</code></p>
-<p><code>86b11c85e1bc1dc039252a95fd009d16</code></p>
 <p>Example: DQL access to all attributes</p>
 <p>The following query fetches spans generated with an HTTP route from the server. To make sure all spans use the same field name for the HTTP request method field, it looks for two semantically different fields and stores the first result into a new field for consultation purposes. It then summarizes the results by HTTP request method and HTTP route, providing the number of spans, their average duration, and the value of their duration in the 50th percentiles.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>fetch spans
@@ -25547,16 +25539,6 @@
 <a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>| limit 3
 </code></pre></div>
 <p>Query result:</p>
-<p>http.request.method</p>
-<p>http.route</p>
-<p>count()</p>
-<p>avg(duration)</p>
-<p>p50</p>
-<p><code>POST</code></p>
-<p><code>/v1/orders/{id}/status</code></p>
-<p><code>758</code></p>
-<p><code>84.28 ms</code></p>
-<p><code>78.11 ms</code></p>
 <p>Example: Full text search</p>
 <p>The following example fetches spans with an HTTP route that contain <code>user</code> and don't end with <code>username</code> and summarizes the results, providing the number of spans by HTTP request method and HTTP route.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>fetch spans
@@ -25574,12 +25556,6 @@
 <a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>| summarize count(), by: { http.request.method, http.route }
 </code></pre></div>
 <p>Query result:</p>
-<p>http.request.method</p>
-<p>http.route</p>
-<p>count()</p>
-<p><code>POST</code></p>
-<p><code>v1/balance/{accountId:int}/deposit</code></p>
-<p><code>458</code></p>
 <p>For more examples, see the <a href="https://wkf10640.apps.dynatrace.com/ui/document/v0/#share=404274dc-4f04-4dda-840d-47ba9bd17a9f">Introductionï»¿</a> notebook in Dynatrace Playground.</p>
 <h2 id="http-requests-and-networking">HTTP requests and networking<a class="headerlink" href="#http-requests-and-networking" title="Permanent link">&para;</a></h2>
 <p>You can analyze your Web Requests via DQL and</p>
@@ -25622,14 +25598,6 @@
 <a id="__codelineno-3-29" name="__codelineno-3-29" href="#__codelineno-3-29"></a>| fields `bin(duration, 100ms)`, spans, trace.id=trace[trace.id], start_time=trace[start_time]
 </code></pre></div>
 <p>Query result:</p>
-<p>bin(duration, 100ms)</p>
-<p>spans</p>
-<p>trace.id</p>
-<p>start_time</p>
-<p><code>300.00ms</code></p>
-<p><code>342</code></p>
-<p><code>4e990942081eb61ac0e39399555ebb2a</code></p>
-<p><code>2025-05-27T08:04:04.229120000+02:00</code></p>
 <p>Example: Extract timeseries</p>
 <p>Via the <code>makeTimeseries</code> command, you can extract a timeseries from raw span data and use span attributes to filter, aggregate, or group the results. This on-the-fly approach supersedes the limitation of materialized timeseries (metrics) that require sets of dimensions defined up-front.</p>
 <p>The following query fetches spans that contain a specific HTTP route and extracts a timeseries based on the results.</p>
@@ -26177,14 +26145,6 @@
 <a id="__codelineno-12-73" name="__codelineno-12-73" href="#__codelineno-12-73"></a>| limit 10
 </code></pre></div>
 <p>Query result:</p>
-<p>Database</p>
-<p>Query</p>
-<p>ExceptionMessage</p>
-<p>Errors</p>
-<p>TradeManagement</p>
-<p><code>SET IMPLICIT_TRANSACTIONS OFF; SET NOCOUNT ON; INSERT INTO [Trades] ([Id], [AccountId], [Direction], [EntryPrice], [InstrumentId], [Quantity], [Status], [TimestampClose], [TimestampOpen], [TradeClosed], [TransactionHappened]) VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10);</code></p>
-<p>One or more errors occurred. (Cannot insert explicit value for identity column in table 'Trades' when IDENTITY_INSERT is set to OFF.)</p>
-<p>201</p>
 <p>For more examples, see the <a href="https://wkf10640.apps.dynatrace.com/ui/document/v0/#share=1386b571-6998-445c-ae10-75510374d535">Databasesï»¿</a> notebook in Dynatrace Playground.</p>
 <h2 id="exceptions">Exceptions<a class="headerlink" href="#exceptions" title="Permanent link">&para;</a></h2>
 <p>Exceptions that happen in the context of a distributed trace are stored within individual spans as a list of <code>span.events</code>. You can query for those exceptions with the <code>iAny</code> DQL command. You can also expand and flatten the span events, so that the exception attributes appear as top-level attributes. With this, it's easy to create timeseries or any other aggregation from exceptions.</p>
@@ -26294,22 +26254,6 @@
 <a id="__codelineno-15-25" name="__codelineno-15-25" href="#__codelineno-15-25"></a>| summarize count(), by: { exception.type }
 </code></pre></div>
 <p>Query result:</p>
-<p><code>exception.type</code></p>
-<p>count()</p>
-<p><code>*net.OpError</code></p>
-<p>1</p>
-<p><code>Error</code></p>
-<p>236</p>
-<p><code>Grpc.Core.RpcException</code></p>
-<p>57</p>
-<p>PHP Deprecated</p>
-<p>1626</p>
-<p><code>error</code></p>
-<p>311</p>
-<p><code>javax.servlet.http.HttpServletResponse.setStatus</code></p>
-<p>2</p>
-<p><code>null</code></p>
-<p>114</p>
 <p>Example: Exception frequency as chart</p>
 <p>This query creates a timeseries chart showing the frequency of exceptions by their type.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>fetch spans
@@ -26397,18 +26341,6 @@
 <a id="__codelineno-17-53" name="__codelineno-17-53" href="#__codelineno-17-53"></a>| limit 5
 </code></pre></div>
 <p>Query result:</p>
-<p><code>user_id</code></p>
-<p>count()</p>
-<p>3</p>
-<p>3</p>
-<p>302</p>
-<p>3</p>
-<p>389</p>
-<p>3</p>
-<p>428</p>
-<p>3</p>
-<p>507</p>
-<p>3</p>
 <p>For more examples, see the <a href="https://wkf10640.apps.dynatrace.com/ui/document/v0/#share=e977e465-a4a8-4be7-a335-0f6eb5c420aa">Exceptionsï»¿</a> notebook in Dynatrace Playground.</p>
 <h2 id="logs">Logs<a class="headerlink" href="#logs" title="Permanent link">&para;</a></h2>
 <p>Logs can be enriched with <code>trace_id</code> and <code>span_id</code>. OneAgent can even enrich such context into logs automatically. With this information, you can join spans and logs to, for example, find traces and spans that emit specific logs.</p>
@@ -26642,10 +26574,6 @@ To use the extrapolation, for example, to count the number of requests, you need
 <a id="__codelineno-24-45" name="__codelineno-24-45" href="#__codelineno-24-45"></a>| summarize span_count=count(), request_count_extrapolated = sum(multiplicity)
 </code></pre></div>
 <p>Query result:</p>
-<p><code>span_count</code></p>
-<p><code>request_count_extrapolated</code></p>
-<p>479927</p>
-<p>48460200</p>
 <p>Example: Database call count and durations, extrapolated</p>
 <p>This query counts the number of database calls with extrapolations applied.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>fetch spans
@@ -26711,10 +26639,6 @@ To use the extrapolation, for example, to count the number of requests, you need
 <a id="__codelineno-25-61" name="__codelineno-25-61" href="#__codelineno-25-61"></a>}
 </code></pre></div>
 <p>Query result:</p>
-<p><code>operation_count_extrapolated</code></p>
-<p><code>operation_duration_extrapolated</code></p>
-<p>11800</p>
-<p>6.38ms</p>
 <p>For more examples, see the <a href="https://wkf10640.apps.dynatrace.com/ui/document/v0/#share=4c3d3c0f-161a-4c0e-bc8a-623410d549c3">Sampling, aggregation, and extrapolationï»¿</a> notebook in Dynatrace Playground.</p>
 <h2 id="trace-query-usage">Trace query usage<a class="headerlink" href="#trace-query-usage" title="Permanent link">&para;</a></h2>
 <p>Explore the Trace query usage from the billing perspective. Discover usage per apps, users, and query type.</p>

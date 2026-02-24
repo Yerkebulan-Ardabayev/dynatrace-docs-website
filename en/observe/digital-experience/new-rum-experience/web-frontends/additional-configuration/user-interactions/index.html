@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../../../../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
     
     
       
@@ -25499,24 +25499,6 @@
 </ol>
 <h2 id="types-of-user-interactions">Types of user interactions<a class="headerlink" href="#types-of-user-interactions" title="Permanent link">&para;</a></h2>
 <p>The following table provides an overview of the available types of user interactions. For a detailed specification, see <a href="/docs/semantic-dictionary/model/rum/user-events/user-interactions">User interaction</a> in the Semantic Dictionary.</p>
-<p>User interaction type</p>
-<p>Description</p>
-<p><a href="/docs/semantic-dictionary/model/rum/user-events/user-interactions#click-events">Click</a></p>
-<p>When a user clicks or touches an HTML element. Note that a touch on an HTML element is captured as a click.</p>
-<p><a href="/docs/semantic-dictionary/model/rum/user-events/user-interactions#key-press-events">Key press</a></p>
-<p>When a user presses a key combination involving the <code>Ctrl</code>, <code>Alt</code>, or <code>Meta</code> (<code>Windows</code> or <code>Cmd</code>) keys, or presses one of the individual keys <code>Esc</code>, <code>Enter</code>, <code>Tab</code>, and <code>Space</code>.</p>
-<p><a href="/docs/semantic-dictionary/model/rum/user-events/user-interactions#zoom-events">Zoom</a>/<a href="/docs/semantic-dictionary/model/rum/user-events/user-interactions#resize-events">resize</a></p>
-<p>When a user zooms in or out, or resizes the viewport.</p>
-<p><a href="/docs/semantic-dictionary/model/rum/user-events/user-interactions#focus-events">Focus</a>/<a href="/docs/semantic-dictionary/model/rum/user-events/user-interactions#blur-events">blur</a></p>
-<p>When a user focuses on or leaves an HTML element. These user interaction types are only captured if you have <a href="#opt-in">opted in</a>.</p>
-<p><a href="/docs/semantic-dictionary/model/rum/user-events/user-interactions#change-events">Change</a></p>
-<p>When a user modifies a value in a form field, for example, by selecting a checkbox.</p>
-<p><a href="/docs/semantic-dictionary/model/rum/user-events/user-interactions#scroll-events">Scroll</a></p>
-<p>When a user scrolls through a page or view.</p>
-<p><a href="/docs/semantic-dictionary/model/rum/user-events/user-interactions#drag-events">Drag</a>/<a href="/docs/semantic-dictionary/model/rum/user-events/user-interactions#drop-events">drop</a></p>
-<p>When a user starts or ends a drag operation. Valid external drop actions are also captured, for example, dropping a file into an upload area. In both cases, the position is recorded.</p>
-<p><a href="/docs/semantic-dictionary/model/rum/user-events/user-interactions#mouse-over-events">Mouseover</a></p>
-<p>When a user hovers over an HTML element. This user interaction type is only captured if you have <a href="#opt-in">opted in</a>.</p>
 <h2 id="opt-in-user-interaction-types">Opt-in user interaction types<a class="headerlink" href="#opt-in-user-interaction-types" title="Permanent link">&para;</a></h2>
 <p>Most user interaction types are captured automatically once you have <a href="#activate-capturing">activated user interaction capturing</a>. Some interaction types, however, require an explicit opt-in by adding dedicated attributes to the corresponding HTML elements. These attributes enable event capture but don't affect the element's behavior.</p>
 <h3 id="focusblur">Focus/Blur<a class="headerlink" href="#focusblur" title="Permanent link">&para;</a></h3>

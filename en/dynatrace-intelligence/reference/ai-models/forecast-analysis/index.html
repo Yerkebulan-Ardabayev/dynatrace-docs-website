@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
     
     
       
@@ -25486,31 +25486,6 @@
 <p>The analysis is agnostic to the distribution of the input data. The forecast is calculated without any assumption about specific data distribution and works for both symmetric and non-symmetric distributions.</p>
 <p>You can trigger a forecast analysis from your <a href="/docs/dynatrace-intelligence/dynatrace-intelligence-integrations/davis-for-notebooks" title="Run AI analysis in Dynatrace Notebooks.">notebook</a>.</p>
 <h2 id="analyzer-input">Analyzer input<a class="headerlink" href="#analyzer-input" title="Permanent link">&para;</a></h2>
-<p>Parameter</p>
-<p>Description</p>
-<p>Time series</p>
-<p>Input time series serving as the base for the prediction analysis.</p>
-<p>It must include at least 14 data points. If fewer than 14 data points are available, the forecast fails.</p>
-<p>Number of simulated paths</p>
-<p>The number of paths (nPath) simulated by the <a href="#sampling">sampling forecaster</a>. The more paths that are simulated, the more accurate the forecast and the longer it takes to calculate.</p>
-<p>The default value is <code>200</code>; the allowed range is between <code>1</code> and <code>1,000</code>.</p>
-<p>Forecast horizon</p>
-<p>The number of data points to be predicted. The more data points that are predicted, the less accurate the forecast is.</p>
-<p>The default value is <code>100</code>; the allowed range is between <code>1</code> and <code>600</code>.</p>
-<p>Coverage probability</p>
-<p>The coverage probability targeted by the forecaster, which translates to the following quantiles:</p>
-<ul>
-<li><code>Î±</code></li>
-<li><code>0.5</code></li>
-<li><code>1 â Î±</code></li>
-</ul>
-<p>where <code>Î± = (1 â coverage probability)/2</code>.</p>
-<p>For example, if the coverage probability is <code>0.5</code>, the forecaster forecasts 25th, 50th, and 75th quantiles, and we expect to see 50% of the future points lying within the prediction interval.</p>
-<p>The default value is <code>0.9</code>; the allowed range is between <code>0</code> and <code>1</code>.</p>
-<p>Forecast offset</p>
-<p>The number of most recent data points that are ignored by the forecaster.</p>
-<p>The offset helps you to exclude incomplete data points from the forecast, since because incomplete data has a negative impact on the forecast.</p>
-<p>The default value is <code>1</code>; the allowed range is between <code>0</code> and <code>10</code>.</p>
 <h2 id="analysis-methodology">Analysis methodology<a class="headerlink" href="#analysis-methodology" title="Permanent link">&para;</a></h2>
 <p>When you trigger a forecast analysis, the time series is sent to an appropriate forecaster that produces the forecast. Then the <a href="#quality">forecast quality</a> is evaluated, and the forecast and evaluation are returned as analysis results.</p>
 <p><img alt="Analysis methodology" src="https://dt-cdn.net/images/analyser-methodology-1132-7fef138e18.png" /></p>

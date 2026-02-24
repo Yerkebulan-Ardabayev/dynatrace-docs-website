@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../../../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
     
     
       
@@ -25514,39 +25514,6 @@
 <li>Select <strong>Create policy</strong>.</li>
 <li>Enter the following information.</li>
 </ol>
-<p>Element</p>
-<p>Description</p>
-<p>Name</p>
-<p>The name of the policy.</p>
-<p>Description</p>
-<p>A brief description of the policy.</p>
-<p>Organization level</p>
-<p>Each policy has a level that determines its scope:</p>
-<ul>
-<li><code>global</code>: These policies are predefined and managed by Dynatrace, and they apply to all accounts and environments. They cannot be edited.</li>
-<li><code>account</code>: These policies apply to all environments under that account (customer). Use them to set company-wide policies.</li>
-<li><code>environment</code>: These policies apply only to a single customer environment.</li>
-</ul>
-<p>Organization levels are restricted in the UI to the <code>account</code> level (other levels are still available via API).
-   Restriction in UI was provided to avoid confusion between <em>creating</em> and <em>binding</em>.
-   Commonly creating multiple identical policies on the <code>environment</code> levels can be achieved in a more efficient way by defining one policy on the <code>account</code> level and binding it to <code>environment</code> levels.</p>
-<p>Policy statement</p>
-<p>A statement specifying exactly what this policy allows.</p>
-<p>Example: Policy for Settings 2.0 Write</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>ALLOW settings:objects:read;
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>ALLOW settings:objects:write;
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>ALLOW settings:schemas:read;
-</code></pre></div>
-<p>You can combine multiple permissions in a single statement. Here is the same example combined into a single statement:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>ALLOW settings:objects:read, settings:objects:write, settings:schemas:read;
-</code></pre></div>
-<p>Combining statements is particularly useful for managing policies with complicated conditions.</p>
 <h3 id="services">Services<a class="headerlink" href="#services" title="Permanent link">&para;</a></h3>
 <p>For a complete and up-to-date list of Dynatrace services that support permission management via IAM policies, see <a href="/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies/advanced/iam-policystatements" title="Complete reference of IAM policies and corresponding conditions across all Dynatrace services.">IAM policy reference</a>.</p>
 <h2 id="edit-a-policy">Edit a policy<a class="headerlink" href="#edit-a-policy" title="Permanent link">&para;</a></h2>

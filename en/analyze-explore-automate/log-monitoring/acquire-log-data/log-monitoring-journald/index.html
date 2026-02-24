@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
     
     
       
@@ -25520,46 +25520,8 @@
 </ol>
 <h2 id="attributes-selected-in-journald">Attributes selected in journald<a class="headerlink" href="#attributes-selected-in-journald" title="Permanent link">&para;</a></h2>
 <p>Each entry is processed to gain the following attributes:</p>
-<p>Semantic attribute name</p>
-<p>Description</p>
-<p><code>Timestamp</code></p>
-<p>Retrieved by direct API call for timestamp, results in microseconds since epoch converted to agentâs timestamp domain resolution</p>
-<p><code>Content</code></p>
-<p>The extracted value of the API call for data with the <strong>MESSAGE</strong> field as a selector</p>
-<p><code>Journald.unit</code></p>
-<p>The extracted value of the API call for data with the <strong>UNIT</strong> field as a selector
-As an alternative, the <strong><em>SYSTEMD_UNIT</em></strong> field is searched. It may happen that none of the fields are found.</p>
-<p><code>LogEntryLevel</code></p>
-<p>The extracted value of the API call for data with the <strong>PRIORITY</strong> field as a selector, priority. Consult the table below for the definitions of the priority levels.</p>
 <h2 id="priority-level">Priority level<a class="headerlink" href="#priority-level" title="Permanent link">&para;</a></h2>
 <p>Journald priority codes are used to mark the importance of a message. The following table shows how these priorities translate into Dynatrace severity:</p>
-<p>Value</p>
-<p>Severity</p>
-<p>Description</p>
-<p>0</p>
-<p>Emergency</p>
-<p>System is unusable</p>
-<p>1</p>
-<p>Alert</p>
-<p>Should be corrected immediately</p>
-<p>2</p>
-<p>Critical</p>
-<p>Critical conditions</p>
-<p>3</p>
-<p>Error</p>
-<p>Error conditions</p>
-<p>4</p>
-<p>Warn</p>
-<p>May indicate that an error will occur if action is not taken</p>
-<p>5</p>
-<p>Notice</p>
-<p>Events that are unusual, but not error conditions</p>
-<p>6</p>
-<p>Info</p>
-<p>Normal operational messages that require no action</p>
-<p>7</p>
-<p>Debug</p>
-<p>Messages which may need to be enabled first, only useful for debugging</p>
 
 
 

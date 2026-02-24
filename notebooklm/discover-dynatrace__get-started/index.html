@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
     
     
       
@@ -25495,14 +25495,14 @@
 
 <h1 id="dynatrace-discover-dynatraceget-started">Документация Dynatrace: discover-dynatrace/get-started<a class="headerlink" href="#dynatrace-discover-dynatraceget-started" title="Permanent link">&para;</a></h1>
 <p>Язык: Русский (RU)
-Сгенерировано: 2026-02-23
+Сгенерировано: 2026-02-24
 Файлов в разделе: 11</p>
 <hr />
 <h2 id="discover-dynatraceget-starteddynatrace-uiaccessibilitymd">discover-dynatrace/get-started/dynatrace-ui/accessibility.md<a class="headerlink" href="#discover-dynatraceget-starteddynatrace-uiaccessibilitymd" title="Permanent link">&para;</a></h2>
 <hr />
 <p>title: Accessibility
 source: https://www.dynatrace.com/docs/discover-dynatrace/get-started/dynatrace-ui/accessibility
-scraped: 2026-02-22T21:27:11.892021</p>
+scraped: 2026-02-24T21:29:47.997683</p>
 <hr />
 <h1 id="accessibility">Accessibility<a class="headerlink" href="#accessibility" title="Permanent link">&para;</a></h1>
 <h1 id="accessibility_1">Accessibility<a class="headerlink" href="#accessibility_1" title="Permanent link">&para;</a></h1>
@@ -25562,7 +25562,7 @@ scraped: 2026-02-23T21:27:46.890359</p>
 <hr />
 <p>title: Launchpads
 source: https://www.dynatrace.com/docs/discover-dynatrace/get-started/dynatrace-ui/launchpads
-scraped: 2026-02-22T21:14:02.490472</p>
+scraped: 2026-02-24T21:23:10.288317</p>
 <hr />
 <h1 id="launchpads">Launchpads<a class="headerlink" href="#launchpads" title="Permanent link">&para;</a></h1>
 <h1 id="launchpads_1">Launchpads<a class="headerlink" href="#launchpads_1" title="Permanent link">&para;</a></h1>
@@ -25684,7 +25684,7 @@ scraped: 2026-02-22T21:14:02.490472</p>
 <hr />
 <p>title: Troubleshooting sign-in issues
 source: https://www.dynatrace.com/docs/discover-dynatrace/get-started/dynatrace-ui/login-issues
-scraped: 2026-02-22T21:27:44.495203</p>
+scraped: 2026-02-24T21:34:08.708820</p>
 <hr />
 <h1 id="troubleshooting-sign-in-issues">Troubleshooting sign-in issues<a class="headerlink" href="#troubleshooting-sign-in-issues" title="Permanent link">&para;</a></h1>
 <h1 id="troubleshooting-sign-in-issues_1">Troubleshooting sign-in issues<a class="headerlink" href="#troubleshooting-sign-in-issues_1" title="Permanent link">&para;</a></h1>
@@ -25703,7 +25703,7 @@ scraped: 2026-02-22T21:27:44.495203</p>
 <hr />
 <p>title: Share documents
 source: https://www.dynatrace.com/docs/discover-dynatrace/get-started/dynatrace-ui/share
-scraped: 2026-02-23T21:20:03.231784</p>
+scraped: 2026-02-24T21:14:46.979338</p>
 <hr />
 <h1 id="share-documents">Share documents<a class="headerlink" href="#share-documents" title="Permanent link">&para;</a></h1>
 <h1 id="share-documents_1">Share documents<a class="headerlink" href="#share-documents_1" title="Permanent link">&para;</a></h1>
@@ -26099,7 +26099,7 @@ For example:</p>
 <hr />
 <p>title: Filter field
 source: https://www.dynatrace.com/docs/discover-dynatrace/get-started/dynatrace-ui/ui-filter-field
-scraped: 2026-02-23T21:27:56.002038</p>
+scraped: 2026-02-24T21:18:42.670469</p>
 <hr />
 <h1 id="filter-field">Filter field<a class="headerlink" href="#filter-field" title="Permanent link">&para;</a></h1>
 <h1 id="filter-field_1">Filter field<a class="headerlink" href="#filter-field_1" title="Permanent link">&para;</a></h1>
@@ -26158,79 +26158,16 @@ scraped: 2026-02-23T21:27:56.002038</p>
 <p><code>service = payment-service AND * ~Â paymentError</code></p>
 <h3 id="comparison-operators">Comparison operators<a class="headerlink" href="#comparison-operators" title="Permanent link">&para;</a></h3>
 <p>Comparison operators define how a key compares to a value. Here are the available comparison operators:</p>
-<p>Filter syntax</p>
-<p>Description</p>
-<p>Example</p>
-<p><code>=</code></p>
-<p>equals</p>
-<p><code>key = value</code></p>
-<p><code>!=</code></p>
-<p>doesn't equal</p>
-<p><code>key != value</code></p>
-<p><code>&lt;</code></p>
-<p>less than</p>
-<p><code>key &lt; value</code></p>
-<p><code>&lt;=</code></p>
-<p>less than or equal to</p>
-<p><code>key &lt;= value</code></p>
-<p><code>&gt;</code></p>
-<p>greater than</p>
-<p><code>key &gt; value</code></p>
-<p><code>&gt;=</code></p>
-<p>greater than or equal to</p>
-<p><code>key &gt;= value</code></p>
-<p><code>= *</code></p>
-<p>is any value</p>
-<p><code>key = *</code></p>
-<p><code>!= *</code></p>
-<p>isn't any value</p>
-<p><code>key != *</code></p>
-<p><code>in</code></p>
-<p>matches one or more values in a list of values</p>
-<p><code>key in (value1, value2)</code></p>
-<p><code>not in</code></p>
-<p>doesnât match any value in a list of values</p>
-<p><code>key not in (value1, value2)</code></p>
 <h3 id="logical-operators">Logical operators<a class="headerlink" href="#logical-operators" title="Permanent link">&para;</a></h3>
 <p>The filter field supports the logical operators <code>AND</code> and <code>OR</code>. If you donât specify an operator, filter statements are automatically connected by an implicit <code>AND</code>, which is the default logical operator between any two expressions.</p>
-<p>Filter syntax</p>
-<p>Description</p>
-<p>Example</p>
-<p><code>AND</code></p>
-<p>Both expressions must be true.</p>
-<p><code>key = value key2 = value</code><br />
-Alternative:<br />
-<code>key = value AND key2 = value</code></p>
-<p><code>OR</code></p>
-<p>Only one expression must be true.</p>
-<p><code>key = value OR key2 = value</code></p>
 <h3 id="grouping-filter-statements">Grouping filter statements<a class="headerlink" href="#grouping-filter-statements" title="Permanent link">&para;</a></h3>
 <p>Use parentheses <code>()</code> to group filter statements logically. For example, <code>key = value OR (key2 = value key3 = value)</code>.</p>
 <h3 id="escaping-values">Escaping values<a class="headerlink" href="#escaping-values" title="Permanent link">&para;</a></h3>
 <p>Space, <code>*</code>, <code>,</code>, <code>(</code>, <code>)</code>, <code>!</code>, <code>&lt;</code>, <code>&gt;</code>, <code>=</code>, <code>"</code>, <code>$</code>, <code>:</code>, <code>[</code>, <code>]</code>, <code>\</code>, and <code>~</code> are special characters in the filter field. To use special characters as part of a key or a value, you need to escape them.</p>
-<p>Escape option</p>
-<p>Description</p>
-<p>Example</p>
-<p>Quotation marks <code>"</code></p>
-<p>Wrap the corresponding key or value in quotation marks. In the following example, the spaces between <code>Product</code> and <code>Name</code>, and between <code>Widget</code> and <code>A</code>, are escaped by wrapping the values in quotation marks.</p>
-<p><code>"Product Name" = "Widget A"</code></p>
-<p>Backslash <code>\</code></p>
-<p>Escape a single character with a backslash <code>\</code>. In the following example, the asterisk on the right end is escaped with a backslash. This means it isn't interpreted as a wildcard.</p>
-<p><code>key = openshift-service-serving-signer@1677006647\*</code></p>
-<p>If you want a backslash to appear in a value, it must itself be escaped.
-For example, to get <code>path = C:\my\path</code> you need to write <code>path = C:\\my\\path</code>.</p>
 <h3 id="case-sensitivity">Case sensitivity<a class="headerlink" href="#case-sensitivity" title="Permanent link">&para;</a></h3>
 <p>String values are case-insensitive for all operators.</p>
 <h3 id="wildcards">Wildcards<a class="headerlink" href="#wildcards" title="Permanent link">&para;</a></h3>
 <p>A wildcard will match any character in a value. Wildcards are indicated by an asterisk <code>*</code>.</p>
-<p>Wildcard syntax</p>
-<p>Description</p>
-<p><code>key = *value</code></p>
-<p>ends with any <code>value</code></p>
-<p><code>key = value*</code></p>
-<p>starts with any <code>value</code></p>
-<p><code>key = *value*</code></p>
-<p>contains any <code>value</code></p>
 <p>When a value contains <strong>special characters</strong> such as spaces, you must escape the value to ensure that it is correctly interpreted. In such cases, wildcards can be used <strong>outside or inside</strong> the escaped value. See examples below:</p>
 <p>Suppose you want to filter for a service named "Payment Service". You would write the filter like this:</p>
 <p><code>Name = "Payment Service"</code></p>
@@ -26278,23 +26215,12 @@ For more details, see <a href="#escaping-values">Escaping values</a> in filter e
 </ul>
 <h3 id="filtering-json-data">Filtering JSON data<a class="headerlink" href="#filtering-json-data" title="Permanent link">&para;</a></h3>
 <p>Access nested fields in JSON data with dot or bracket notation. JSON filters may use a combination of dot and bracket notations.</p>
-<p>Notation</p>
-<p>Description</p>
-<p>Example</p>
-<p>Dot notation
-<code>key$.field</code></p>
-<p>Use the compact dot notation for simple syntax.</p>
-<p><code>content$.uri = "/status-service/deployments/health"</code></p>
-<p>Bracket notation
-<code>key$["field"][index]</code></p>
-<p>Use bracket notation for subkeys with special characters (spaces, dashes, etc.) and to access a child of an array.</p>
-<p><code>content$["spans"][0]["duration-ms"] &gt; 75</code></p>
 <hr />
 <h2 id="discover-dynatraceget-starteddynatrace-uimd">discover-dynatrace/get-started/dynatrace-ui.md<a class="headerlink" href="#discover-dynatraceget-starteddynatrace-uimd" title="Permanent link">&para;</a></h2>
 <hr />
 <p>title: Navigate the Dynatrace platform
 source: https://www.dynatrace.com/docs/discover-dynatrace/get-started/dynatrace-ui
-scraped: 2026-02-23T21:34:52.173120</p>
+scraped: 2026-02-24T21:20:06.203474</p>
 <hr />
 <h1 id="navigate-the-dynatrace-platform">Navigate the Dynatrace platform<a class="headerlink" href="#navigate-the-dynatrace-platform" title="Permanent link">&para;</a></h1>
 <h1 id="navigate-the-dynatrace-platform_1">Navigate the Dynatrace platform<a class="headerlink" href="#navigate-the-dynatrace-platform_1" title="Permanent link">&para;</a></h1>
@@ -26445,7 +26371,7 @@ scraped: 2026-02-23T21:34:52.173120</p>
 <hr />
 <p>title: What is a monitoring environment?
 source: https://www.dynatrace.com/docs/discover-dynatrace/get-started/monitoring-environment
-scraped: 2026-02-23T21:19:10.671279</p>
+scraped: 2026-02-24T21:16:13.823136</p>
 <hr />
 <h1 id="what-is-a-monitoring-environment">What is a monitoring environment?<a class="headerlink" href="#what-is-a-monitoring-environment" title="Permanent link">&para;</a></h1>
 <h1 id="what-is-a-monitoring-environment_1">What is a monitoring environment?<a class="headerlink" href="#what-is-a-monitoring-environment_1" title="Permanent link">&para;</a></h1>
@@ -27027,7 +26953,7 @@ scraped: 2026-02-22T21:18:15.440502</p>
 <hr />
 <p>title: Get started with Dynatrace
 source: https://www.dynatrace.com/docs/discover-dynatrace/get-started
-scraped: 2026-02-23T21:18:43.999314</p>
+scraped: 2026-02-24T21:13:29.498031</p>
 <hr />
 <h1 id="get-started-with-dynatrace">Get started with Dynatrace<a class="headerlink" href="#get-started-with-dynatrace" title="Permanent link">&para;</a></h1>
 <h1 id="get-started-with-dynatrace_1">Get started with Dynatrace<a class="headerlink" href="#get-started-with-dynatrace_1" title="Permanent link">&para;</a></h1>

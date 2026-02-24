@@ -25,7 +25,7 @@
       
       
       <link rel="icon" href="../../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
     
     
       
@@ -25691,32 +25691,6 @@ It's flexible and uses contextual data to represent the objectives.</p>
 <p>For complex metric expressions, you might need to adapt the DQL queries manually.
 2. Convert the entity selectors to the corresponding <a href="/docs/platform/grail/dynatrace-query-language" title="How to use Dynatrace Query Language.">DQL statement</a>. For more information, see <a href="/docs/platform/grail/dynatrace-query-language/dql-best-practices" title="Best practices for using Dynatrace Query Language.">DQL best practices</a>.</p>
 <p>The following table shows the typical entity selectors for Classic SLOs and their equivalent in DQL.</p>
-<p>Entity selector classic</p>
-<p>DQL representation</p>
-<p><code>type("SERVICE")</code></p>
-<p><code>by: {dt.entity.service}</code></p>
-<p><code>tag("myTag")</code></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>| fieldsAdd tags=entityAttr(dt.entity.service, &quot;tags&quot;)
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
-<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>
-<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>| filter in(tags, &quot;myTag&quot;)
-</code></pre></div>
-<p><code>entityId("SERVICE-XY")</code></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>| filter in(dt.entity.service, &quot;SERVICE-XY&quot;)
-</code></pre></div>
-<p><code>entityName.contains/equals/in/startsWith("ENTITY-NAME")</code></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>| fieldsAdd name = entityName(dt.entity.service)
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
-<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>
-<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>
-<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>| filter in/contains/startsWith/endsWith(name, &quot;ENTITY-NAME&quot;)
-</code></pre></div>
-<p><code>mzId</code> / <code>mzName</code></p>
-<p>Use <a href="/docs/manage/segments" title="Segments logically structure monitoring data in Grail and function as convenient filters for data that users are allowed to access based on permissions.">Segments</a>.</p>
-<p>Segments aren't related to permissions or access control.</p>
-<p><code>toRelationship</code> / <code>fromRelationship</code></p>
-<p>See the relationship mapping table in Grail: <a href="/docs/platform/grail/querying-monitored-entities#relationship-mapping-table" title="Find out how to query monitored entities in Grail.">Query monitored entities in Grail</a>.</p>
 <p>If you use management zones for permissions and access control, see <a href="/docs/manage/identity-access-management/use-cases/access-security-context" title="Grant access to entities with security context">Grant access to entities with security context</a>.
 3. Enhance your SLI definition.</p>
 <p>While you can upgrade most Classic SLOs to a one-to-one match in Grail, consider enhancing your SLI definitions by leveraging options that are not available with traditional metric expressions.</p>
@@ -25731,10 +25705,6 @@ It's flexible and uses contextual data to represent the objectives.</p>
 </ul>
 <h2 id="upgrade-api-integration">Upgrade API integration<a class="headerlink" href="#upgrade-api-integration" title="Permanent link">&para;</a></h2>
 <p>To automate SLO management and evaluation, use the dedicated API endpoints. Reference the table below to upgrade your API integration for Classic SLO to SLO leveraging the SLO Service Public API.</p>
-<p><img alt="SLOs Classic" src="https://dt-cdn.net/images/service-level-objectives-256-3d3d62c9a8.png" title="SLOs Classic" /> <strong>Service-Level Objectives Classic</strong></p>
-<p><img alt="SLOs" src="https://dt-cdn.net/images/service-level-objectives-256-3d3d62c9a8.png" title="SLOs" /> <strong>Service-Level Objectives</strong></p>
-<p><a href="/docs/dynatrace-api/environment-api/service-level-objectives-classic" title="Find out what the Dynatrace SLO API classic offers.">Service-level Objectives API classic</a></p>
-<p><a href="/docs/dynatrace-api/environment-api/service-level-objectives" title="Discover the API functionalities of the new Service-Level Objectives powered by Grail.">SLO Service Public API</a></p>
 <h2 id="upgrade-via-configuration-as-code">Upgrade via Configuration as Code<a class="headerlink" href="#upgrade-via-configuration-as-code" title="Permanent link">&para;</a></h2>
 <p>For scalable SLO management and evaluation, use <a href="/docs/deliver/configuration-as-code" title="Use Dynatrace configuration as code via Monaco or Terraform.">Configuration as Code overview</a> on top of the SLO Service Public API.</p>
 <p>To access the SLO Service Public API on your tenant</p>
