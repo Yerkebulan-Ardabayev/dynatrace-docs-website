@@ -1,7 +1,7 @@
 ---
 title: DPS permissions
 source: https://www.dynatrace.com/docs/license/dps-permissions
-scraped: 2026-02-22T21:14:35.791940
+scraped: 2026-02-24T21:18:07.696907
 ---
 
 # DPS permissions
@@ -14,30 +14,6 @@ scraped: 2026-02-22T21:14:35.791940
 * Published Sep 03, 2025
 
 Dynatrace permissions are structured across three levels:
-
-Scope
-
-Role
-
-Capabilities
-
-Account Level
-
-Account Admin / Viewer
-
-View and manage billing, users, subscriptions, and environments.
-
-Environment Level
-
-Environment Admin / Viewer
-
-Access and configure monitoring environments.
-
-Subscription Level
-
-Subscription Admin / Viewer
-
-View consumption, forecasts, and cost allocation across accounts.
 
 Permissions are cumulative and are assigned in **Account Management** > **Identity & access management**.
 For a detailed view, see [Working with policies](/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies "Working with policies").

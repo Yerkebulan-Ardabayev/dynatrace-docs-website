@@ -1,7 +1,7 @@
 ---
 title: Event topology extraction and mapping
 source: https://www.dynatrace.com/docs/ingest-from/extend-dynatrace/extend-topology/events-entity-extraction
-scraped: 2026-02-21T21:18:18.526468
+scraped: 2026-02-24T21:33:41.176253
 ---
 
 # Event topology extraction and mapping
@@ -39,34 +39,6 @@ You can't extract entities of predefined types and re-map events to them.
 ### Step 2 Provide event metadata
 
 To be able to extract generic entities from events, you need to provide the relevant information in the event configuration. The following elements of event properties control the feature. You can find descriptions on all event configuration fields in [**POST an event**](/docs/dynatrace-api/environment-api/events-v2/post-event "Ingests an event via the Dynatrace API.").
-
-Name
-
-ID
-
-Description
-
-Allow entity remapping
-
-`dt.event.allow_entity_remapping`
-
-Defines whether the remapping is allowed. Set to `"true"` to allow remapping to extracted entities.
-
-If set to `"false"`, no remapping will happen, even if there's a matching extraction rule. However, if there **is** a matching rule, the extracted entity will still be created/updated. You can use such incoming events to keep your custom entities up-to-date.
-
-Note that the values of the property must be of the `String` type.
-
-Preferred entity type for remapping
-
-`dt.event.preferred_entity_type`
-
-Defines the generic entity type to which the event should be mapped. Use this property if your event metadata contains multiple entities of different types. If no entity of the specified type is extracted, no remapping is applied. If not set, Dynatrace Intelligence automatically decides on the appropriate entity type.
-
-Entity identification
-
-User-defined
-
-Defines the ID of your entity. Since generic entities are user-defined, so is the ID of this property. As an illustration, for our [Easy Shipping LTD logistics example](/docs/ingest-from/extend-dynatrace/extend-topology#custom-topology-model-in-action "Ensure that all incoming observations are context-rich and analyzed in the context of the monitored entities they relate to."), this property could use the key **trucknr**.
 
 Show an example JSON
 

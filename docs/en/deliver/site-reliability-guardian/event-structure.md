@@ -1,7 +1,7 @@
 ---
 title: Site Reliability guardian event structure
 source: https://www.dynatrace.com/docs/deliver/site-reliability-guardian/event-structure
-scraped: 2026-02-22T21:22:26.967414
+scraped: 2026-02-24T21:26:58.458201
 ---
 
 # Site Reliability guardian event structure
@@ -112,36 +112,6 @@ The structure of the other event fields aligns with the [Semantic Dictionary for
 
 When you want to integrate Lifecycle guardian validation results with a [dashboard](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.") or other tooling that you have created, the event fields below is a good starting point for your queries.
 
-**Field name**
-
-**Description**
-
-**Event type / status**
-
-`validation.result`
-
-A text indicating the result of the validation. Any value of `pass`, `warning`, `fail`, `error`, or `info` is possible.
-
-`validation`, `finished`
-
-`dt.srg.id`
-
-The ID of the guardian. It could be used to filter for specific guardian events or as part of a backlink to the guardian.
-
-all
-
-`dt.srg.tags`
-
-All the tags that have been defined for a guardian. It could be used to filter for specific guardian events.
-
-all
-
-`task.id`
-
-The ID of the guardian validation. It could be used as part of a backlink to the analysis page of the guardian.
-
-all
-
 ## Business guardian (Business events)
 
 To query business guardian events with DQL, use the following query:
@@ -209,33 +179,3 @@ The above business events share several common fields.
 ### Business guardian event fields
 
 When you want to integrate business guardian validation results with a [dashboard](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.") or other tooling that you have created, the event fields below is a good starting point for your queries.
-
-**Field name**
-
-**Description**
-
-**Event type / status**
-
-`validation.status`
-
-A text indicating the status of the validation. Any value of `pass`, `warning`, `fail`, `error`, or `info` is possible.
-
-`guardian.validation.finished`
-
-`guardian.id`
-
-The ID of the guardian. It could be used to filter for specific guardian events or as part of a backlink to the guardian.
-
-all
-
-`guardian.tags`
-
-All the tags that have been defined for a guardian. It could be used to filter for specific guardian events.
-
-all
-
-`validation.id`
-
-The ID of the guardian validation. It could be used as part of a backlink to the analysis page of the guardian.
-
-all

@@ -1,7 +1,7 @@
 ---
 title: Set up Grail permissions for Distributed Tracing
 source: https://www.dynatrace.com/docs/observe/application-observability/distributed-tracing/permissions
-scraped: 2026-02-23T21:20:35.070737
+scraped: 2026-02-24T21:13:56.465173
 ---
 
 # Set up Grail permissions for Distributed Tracing
@@ -73,48 +73,6 @@ When setting up permissions for Distributed Tracing, consider these recommendati
 ## User permissions for Distributed Tracing
 
 When working with the ![Distributed Tracing](https://dt-cdn.net/images/distributed-tracing-4ed13d1274.svg "Distributed Tracing") **Distributed Tracing**, make sure that you've read and set all the necessary permissions:
-
-Policy scope
-
-Table permission
-
-Read buckets data
-
-`storage:buckets:read`
-
-Read span data
-
-`storage:spans:read`
-
-Read entities data
-
-`storage:entities:read`
-
-Read log data
-
-`storage:logs:read`
-
-Read filter-segments data
-
-`storage:filter-segments:read`
-
-View sensitive fields trace data [1](#fn-1-1-def) [2](#fn-1-2-def)
-
-`storage:fieldsets:read WHERE storage:fieldset-name="builtin-sensitive-spans`
-
-`storage:fieldsets:read WHERE storage:fieldset-name="builtin-request-attributes-spans`
-
-Read user app states
-
-`state:user-app-states:read`
-
-Write user app states
-
-`state:user-app-states:write`
-
-Delete user app states
-
-`state:user-app-states:delete`
 
 1
 

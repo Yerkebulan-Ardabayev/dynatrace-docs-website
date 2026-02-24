@@ -1,7 +1,7 @@
 ---
 title: Red Hat Event-Driven Ansible
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/red-hat/redhat-even-driven-ansible
-scraped: 2026-02-23T21:27:25.665147
+scraped: 2026-02-24T21:23:52.558932
 ---
 
 # Red Hat Event-Driven Ansible
@@ -61,34 +61,6 @@ Before creating the event stream, you need to set up the credentials for token a
 2. Select **Create credential**.
 3. Enter the following credential details.
 
-   Field
-
-   Description
-
-   **Name**
-
-   Enter a name.
-
-   **Description**
-
-   Enter a short description.
-
-   **Organization**
-
-   From the list, select your organization or `Default`.
-
-   **Credential type**
-
-   From the list, select `Token Event Stream`.
-
-   **Token**
-
-   Enter a token. This token is used later for the connection of the workflow action.
-
-   **HTTP Header Key**
-
-   Enter `Authorization`.
-
 For more information on how to set up a credential, see [Setting up a credentialï»¿](https://dt-url.net/6c23znj) in the Red Hat documentation.
 
 ##### Event stream configuration
@@ -98,26 +70,6 @@ After the credential is configured, you can create an event stream.
 1. In the Ansible Automation Platform navigation panel, select **Automation Decisions** > **Event streams**.
 2. Select **Create event stream**.
 3. Enter the following event stream details.
-
-   Field
-
-   Description
-
-   **Name**
-
-   Enter a name.
-
-   **Organization**
-
-   From the list, select your organization or `Default`.
-
-   **Event stream type**
-
-   Select the event stream type `Token Event Stream`.
-
-   **Credential**
-
-   From the list, select the credential you created earlier.
 
 For more information on how to set up an event stream, see [Simplified event routingï»¿](https://dt-url.net/sv63zyi) in the Red Hat documentation.
 
@@ -295,19 +247,6 @@ To configure a connection for the **Red Hat Event-Driven Ansible Controller**
 ## Available action
 
 The following workflow action is available for the Red Hat Event-Driven Ansible controller.
-
-Action
-
-Description
-
-Red Hat Ansible API endpoint
-
-Send event to Event-Driven Ansible
-
-Send an event to the Red Hat Event-Driven Ansible Controller via Event Source Plugin
-
-`POST /event`   
-Send an event
 
 ## Send event to Event-Driven Ansible
 

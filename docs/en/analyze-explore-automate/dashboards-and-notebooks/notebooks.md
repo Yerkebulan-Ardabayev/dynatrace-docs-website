@@ -1,7 +1,7 @@
 ---
 title: Notebooks
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks
-scraped: 2026-02-23T21:20:55.757216
+scraped: 2026-02-24T21:15:50.576457
 ---
 
 # Notebooks
@@ -18,10 +18,6 @@ Prerequisites
 ### Permissions
 
 The following table describes the required permissions.
-
-Permission
-
-Description
 
 app-engine:apps:run
 
@@ -62,16 +58,6 @@ Allows the user to access shared notebooks
 document:direct-shares:read
 
 Allows the user to access shared notebooks
-
-10
-
-rows per page
-
-Page
-
-1
-
-of 1
 
 Get started
 
@@ -138,110 +124,6 @@ A link in Markdown is a label and link of the form `[label](address)`, where:
 
 * The `label` is freeform text to display on the link in your Markdown tile or section
 * The `address` specifies what to open when someone selects the link, such as a website or a Dynatrace app
-
-Link to
-
-Syntax and examples
-
-Website
-
-```
-[My label](https://www.example.com/)
-```
-
-Notebooks app
-
-```
-[My label](/ui/apps/dynatrace.notebooks/notebooks)
-```
-
-Specific notebook
-
-**Syntax**:
-
-```
-[label](/ui/apps/dynatrace.notebooks/notebook/<notebookid>)
-```
-
-**Example**:
-
-```
-[My label](/ui/apps/dynatrace.notebooks/notebook/274edae4-dfe8-41fb-aced-5020fb1270bc)
-```
-
-To get the address
-
-1. Display the target notebook.
-2. Copy everything on the browser address line starting from `/ui/`.
-3. Paste it into your Markdown as the address of a link.
-
-Specific notebook section
-
-**Syntax**:
-
-```
-[label](/ui/apps/dynatrace.notebooks/notebook/<notebookid>#<sectionid>)
-```
-
-**Example**:
-
-```
-[My label](/ui/apps/dynatrace.notebooks/notebook/274edae4-dfe8-41fb-aced-5020fb1270bc#cb69caf1-52ed-4e73-8a3e-120e8cd7e8f8)
-```
-
-To get the address
-
-1. Display the target notebook.
-2. Select the target section of the notebook.
-3. Copy everything on the browser address line starting from `/ui/`.
-4. Paste it into your Markdown as the address of a link.
-
-Dashboards app
-
-```
-[My label](/ui/apps/dynatrace.dashboards/)
-```
-
-Specific dashboard
-
-**Syntax**:
-
-```
-[label](/ui/apps/dynatrace.dashboards/<dashboardid>)
-```
-
-**Example**:
-
-```
-[My label](/ui/apps/dynatrace.dashboards/dashboard/9f24c36e-ca5f-401c-8e00-5e4b05c46bd2)
-```
-
-To get the address
-
-1. Display the target dashboard.
-2. Copy everything on the browser address line starting from `/ui/`.
-3. Paste it into your Markdown as the address of a link.
-
-Specific dashboard tile
-
-**Syntax**:
-
-```
-[label](/ui/apps/dynatrace.dashboards/dashboard/<dashboardid>#tileIds=n)
-```
-
-**Example**:
-
-```
-[My label](/ui/apps/dynatrace.dashboards/dashboard/9f24c36e-ca5f-401c-8e00-5e4b05c46bd2#from=now%28%29-2h&to=now%28%29&tileIds=6)
-```
-
-To include a specific tile ID in the link
-
-1. Display the target dashboard.
-2. Select the target tile in the target dashboard.
-3. Copy everything on the browser address line starting from `/ui/`.
-4. Paste it into your Markdown as the address of a link.
 
 ## Use cases
 
@@ -620,110 +502,6 @@ To add a Markdown-formatted annotation to a notebook
 
   + The `label` is freeform text to display on the link in your Markdown tile or section
   + The `address` specifies what to open when someone selects the link, such as a website or a Dynatrace app
-
-  Link to
-
-  Syntax and examples
-
-  Website
-
-  ```
-  [My label](https://www.example.com/)
-  ```
-
-  Notebooks app
-
-  ```
-  [My label](/ui/apps/dynatrace.notebooks/notebooks)
-  ```
-
-  Specific notebook
-
-  **Syntax**:
-
-  ```
-  [label](/ui/apps/dynatrace.notebooks/notebook/<notebookid>)
-  ```
-
-  **Example**:
-
-  ```
-  [My label](/ui/apps/dynatrace.notebooks/notebook/274edae4-dfe8-41fb-aced-5020fb1270bc)
-  ```
-
-  To get the address
-
-  1. Display the target notebook.
-  2. Copy everything on the browser address line starting from `/ui/`.
-  3. Paste it into your Markdown as the address of a link.
-
-  Specific notebook section
-
-  **Syntax**:
-
-  ```
-  [label](/ui/apps/dynatrace.notebooks/notebook/<notebookid>#<sectionid>)
-  ```
-
-  **Example**:
-
-  ```
-  [My label](/ui/apps/dynatrace.notebooks/notebook/274edae4-dfe8-41fb-aced-5020fb1270bc#cb69caf1-52ed-4e73-8a3e-120e8cd7e8f8)
-  ```
-
-  To get the address
-
-  1. Display the target notebook.
-  2. Select the target section of the notebook.
-  3. Copy everything on the browser address line starting from `/ui/`.
-  4. Paste it into your Markdown as the address of a link.
-
-  Dashboards app
-
-  ```
-  [My label](/ui/apps/dynatrace.dashboards/)
-  ```
-
-  Specific dashboard
-
-  **Syntax**:
-
-  ```
-  [label](/ui/apps/dynatrace.dashboards/<dashboardid>)
-  ```
-
-  **Example**:
-
-  ```
-  [My label](/ui/apps/dynatrace.dashboards/dashboard/9f24c36e-ca5f-401c-8e00-5e4b05c46bd2)
-  ```
-
-  To get the address
-
-  1. Display the target dashboard.
-  2. Copy everything on the browser address line starting from `/ui/`.
-  3. Paste it into your Markdown as the address of a link.
-
-  Specific dashboard tile
-
-  **Syntax**:
-
-  ```
-  [label](/ui/apps/dynatrace.dashboards/dashboard/<dashboardid>#tileIds=n)
-  ```
-
-  **Example**:
-
-  ```
-  [My label](/ui/apps/dynatrace.dashboards/dashboard/9f24c36e-ca5f-401c-8e00-5e4b05c46bd2#from=now%28%29-2h&to=now%28%29&tileIds=6)
-  ```
-
-  To include a specific tile ID in the link
-
-  1. Display the target dashboard.
-  2. Select the target tile in the target dashboard.
-  3. Copy everything on the browser address line starting from `/ui/`.
-  4. Paste it into your Markdown as the address of a link.
 * **Images**: to link to a picture, use this format:
 
   `![alternate text](https://www.example.com/file-name.jpg)`

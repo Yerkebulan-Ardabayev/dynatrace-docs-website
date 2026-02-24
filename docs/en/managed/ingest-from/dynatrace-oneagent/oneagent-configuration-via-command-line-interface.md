@@ -1,7 +1,7 @@
 ---
 title: OneAgent configuration via command-line interface
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface
-scraped: 2026-02-23T21:37:43.472158
+scraped: 2026-02-24T21:34:03.239667
 ---
 
 # OneAgent configuration via command-line interface
@@ -315,18 +315,6 @@ Archive saved as C:\data\support-archive\support_archive_agent_2021-09-07_121619
 ### Contents of diagnostic data
 
 All the collected diagnostic data is compressed into a `support_archive_agent_YYYY-MM-DD_hhmmss.zip` archive that includes the following subset of the full [OneAgent diagnostics](/docs/ingest-from/dynatrace-oneagent/oneagent-troubleshooting/oneagent-diagnostics "Learn how to run OneAgent diagnostics") data:
-
-Folder or file
-
-Description
-
-`support_archive` (ZIP)
-
-Contains the local configuration of the OneAgent installed on the host or process where youâve run the troubleshooting, as well as the OneAgent-related log files.
-
-`diagnostic_files` (ZIP)
-
-Contains information about process group detection, auto-injection problems, and extension configuration.
 
 ## Access to system logs for proactive support
 

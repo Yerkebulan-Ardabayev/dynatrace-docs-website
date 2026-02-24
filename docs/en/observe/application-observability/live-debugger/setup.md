@@ -1,7 +1,7 @@
 ---
 title: Set up permissions for Live Debugging
 source: https://www.dynatrace.com/docs/observe/application-observability/live-debugger/setup
-scraped: 2026-02-23T21:35:37.094753
+scraped: 2026-02-24T21:24:21.324114
 ---
 
 # Set up permissions for Live Debugging
@@ -16,10 +16,6 @@ scraped: 2026-02-23T21:35:37.094753
 ## User permissions
 
 All supported values for each IAM permission and condition are listed below. Use them to define access policies based on a fine-grained set of permissions and conditions that can be enforced per service. For more information, see [Working with policies](/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies "Working with policies").
-
-Permission
-
-Description
 
 state:user-app-states:read
 
@@ -44,16 +40,6 @@ See Observability for Developers agents and place breakpoints.
 dev-obs:breakpoints:manage
 
 Manage Observability for Developers breakpoints.
-
-10
-
-rows per page
-
-Page
-
-1
-
-of 1
 
 ## Set breakpoints
 

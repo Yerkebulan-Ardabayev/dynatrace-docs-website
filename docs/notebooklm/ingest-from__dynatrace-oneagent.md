@@ -1,6 +1,6 @@
 # Документация Dynatrace: ingest-from/dynatrace-oneagent
 Язык: Русский (RU)
-Сгенерировано: 2026-02-23
+Сгенерировано: 2026-02-24
 Файлов в разделе: 63
 ---
 
@@ -9,7 +9,7 @@
 ---
 title: Adaptive Traffic Management concepts
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/adaptive-traffic-management/adaptive-traffic-management-concepts
-scraped: 2026-02-23T21:33:50.225151
+scraped: 2026-02-24T21:31:21.446056
 ---
 
 # Adaptive Traffic Management concepts
@@ -82,7 +82,7 @@ To control how much of your [Full-Stack included trace volume](#full-stack-inclu
 ---
 title: Adaptive Traffic Management for distributed tracing
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/adaptive-traffic-management
-scraped: 2026-02-23T21:38:40.794723
+scraped: 2026-02-24T21:16:39.429562
 ---
 
 # Adaptive Traffic Management for distributed tracing
@@ -852,7 +852,7 @@ One last thing: to monitor your processes, you need to restart them. At any time
 ---
 title: OneAgent security on AIX
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/aix/installation/oneagent-security-aix
-scraped: 2026-02-23T21:24:40.582690
+scraped: 2026-02-24T21:25:40.312725
 ---
 
 # OneAgent security on AIX
@@ -952,7 +952,7 @@ We're aware that global read and write permissions on OneAgent directories get f
 ---
 title: Automated injection of deep-code monitoring on AIX
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/aix/operation/enable-auto-injection
-scraped: 2026-02-23T21:29:09.830242
+scraped: 2026-02-24T21:23:16.880411
 ---
 
 # Automated injection of deep-code monitoring on AIX
@@ -1263,7 +1263,7 @@ Run `oneagentctl` with the `--version` parameter. For more information, see [One
 ---
 title: AIX
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/aix
-scraped: 2026-02-23T21:19:24.590626
+scraped: 2026-02-24T21:15:38.465827
 ---
 
 # AIX
@@ -2468,7 +2468,7 @@ The installer prints a message at the end of OneAgent installation. Depending on
 ---
 title: OneAgent security on Linux
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/oneagent-security-linux
-scraped: 2026-02-22T21:12:11.550190
+scraped: 2026-02-24T21:34:34.232330
 ---
 
 # OneAgent security on Linux
@@ -3227,7 +3227,7 @@ Run `oneagentctl` with the `--version` parameter. For more information, see [One
 ---
 title: OneAgent on Linux
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux
-scraped: 2026-02-23T21:19:23.400697
+scraped: 2026-02-24T21:15:37.125037
 ---
 
 # OneAgent on Linux
@@ -3817,7 +3817,7 @@ For more details on setting up Oracle WebLogic monitoring, see [Configure Oracle
 ---
 title: Uninstall OneAgent on Solaris
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/solaris/uninstall-oneagent-on-solaris
-scraped: 2026-02-22T21:11:54.235021
+scraped: 2026-02-24T21:30:37.026362
 ---
 
 # Uninstall OneAgent on Solaris
@@ -3903,7 +3903,7 @@ Use one of these methods to check which version of OneAgent you currently have i
 ---
 title: Solaris
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/solaris
-scraped: 2026-02-23T21:19:29.739881
+scraped: 2026-02-24T21:15:32.087921
 ---
 
 # Solaris
@@ -4813,7 +4813,7 @@ One last thing: to monitor your processes, you need to restart them. At any time
 ---
 title: OneAgent security on Windows
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/windows/installation/oneagent-security-windows
-scraped: 2026-02-22T21:12:03.899045
+scraped: 2026-02-24T21:34:29.117532
 ---
 
 # OneAgent security on Windows
@@ -5269,7 +5269,7 @@ Run `oneagentctl` with the `--version` parameter. For more information, see [One
 ---
 title: OneAgent on Windows
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/windows
-scraped: 2026-02-23T21:19:25.748413
+scraped: 2026-02-24T21:15:35.773589
 ---
 
 # OneAgent on Windows
@@ -7803,7 +7803,7 @@ sc query "Dynatrace zRemote"
 ---
 title: Download z/OS product datasets
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/zosmf-installer/download-zos-datasets
-scraped: 2026-02-23T21:40:04.057941
+scraped: 2026-02-24T21:35:42.008594
 ---
 
 # Download z/OS product datasets
@@ -7857,24 +7857,6 @@ You can download the latest PAX file version via Deployment API as follows:
 1. Generate an [Access token](/docs/dynatrace-api/basics/dynatrace-api-authentication#create-token "Find out how to get authenticated to use the Dynatrace API.") with the scope **PaaS integration - Installer download** (`InstallerDownload`).
 2. Download the latest PAX file via [Deployment API - Download latest OneAgent](/docs/dynatrace-api/environment-api/deployment/oneagent/download-oneagent-latest "Download the latest OneAgent installer via Dynatrace API."):
 
-   HTTP method
-
-   Dynatrace environment
-
-   Endpoint
-
-   GET
-
-   SaaS
-
-   `https://{your-environment-id}.live.dynatrace.com/api/v1/deployment/installer/agent/zos/mainframe/latest`
-
-   GET
-
-   Managed
-
-   `https://{your-domain}/e/{your-environment-id}/api/v1/deployment/installer/agent/zos/mainframe/latest`
-
    Below is a sample `curl` command for a SaaS environment that uses the Deployment API to download the latest PAX file version:
 
    ```
@@ -7890,24 +7872,6 @@ You can download a specific PAX file version via Deployment API as follows:
 1. Generate an [Access token](/docs/dynatrace-api/basics/dynatrace-api-authentication#create-token "Find out how to get authenticated to use the Dynatrace API.") with the scope **PaaS integration - Installer download** (`InstallerDownload`).
 2. List all available PAX file versions via [Deployment API - List available versions of OneAgent](/docs/dynatrace-api/environment-api/deployment/oneagent/get-available-versions "List available versions of OneAgent via Dynatrace API.").
 
-   HTTP method
-
-   Dynatrace environment
-
-   Endpoint
-
-   GET
-
-   SaaS
-
-   `https://{your-environment-id}.live.dynatrace.com/api/v1/deployment/installer/agent/versions/zos/mainframe`
-
-   GET
-
-   Managed
-
-   `https://{your-domain}/e/{your-environment-id}/api/v1/deployment/installer/agent/versions/zos/mainframe`
-
    Below is a sample `curl` command for a SaaS environment that uses the Deployment API to list all available PAX file versions:
 
    ```
@@ -7916,24 +7880,6 @@ You can download a specific PAX file version via Deployment API as follows:
 
    Replace `<environment>` with your Dynatrace environment ID and `<accessToken>` with your generated access token.
 3. Download a specific PAX file version via [Deployment API - Download OneAgent of specific version](/docs/dynatrace-api/environment-api/deployment/oneagent/download-oneagent-version "Download the OneAgent installer of the specific version via Dynatrace API."):
-
-   HTTP method
-
-   Dynatrace environment
-
-   Endpoint
-
-   GET
-
-   SaaS
-
-   `https://{your-environment-id}.live.dynatrace.com/api/v1/deployment/installer/agent/zos/mainframe/version/{version}`
-
-   GET
-
-   Managed
-
-   `https://{your-domain}/e/{your-environment-id}/api/v1/deployment/installer/agent/zos/mainframe/version/{version}`
 
    Below is a sample `curl` command for a SaaS environment that uses the Deployment API to download a specific PAX file version:
 
@@ -7944,8 +7890,6 @@ You can download a specific PAX file version via Deployment API as follows:
    Replace `<environment>` with your Dynatrace environment ID, `<version>` with your selected PAX file version, and `<accessToken>` with your generated access token.
 
 ## Extract product datasets
-
-
 
 You can extract the product datasets from the PAX file as follows:
 
@@ -8361,6 +8305,8 @@ You can extract the product datasets from the PAX file as follows:
 
 ### Product datasets
 
+
+
 The extraction process creates the following product datasets (the names are provided for the default high-level qualifier and the `R1nnnx` release version):
 
 * `DT.R1nnnx.SZDTAUTH`: Contains the zDC subsystem and the IMS module including IMS Connect
@@ -8497,7 +8443,7 @@ To turn off file access monitoring, toggle the `z/OS CICS file monitoring` senso
 ---
 title: Monitor z/OS logs
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/monitoring/monitor-zos-logs
-scraped: 2026-02-23T21:24:11.698311
+scraped: 2026-02-24T21:19:23.713556
 ---
 
 # Monitor z/OS logs
@@ -8544,28 +8490,6 @@ Go to **Settings** and select **Log Monitoring** > **Log ingest rules**.
 
 Activate one of the following built-in rules to ingest discovered logs from your IBM CICS regions and IBM IMS subsystems to Dynatrace.
 
-Rule
-
-Condition
-
-Scope
-
-**z/OS CICS message user**
-
-**Log source** is: `z/OS CICS message user`
-
-**Log record level** is any of: `ERROR` or `WARN`
-
-Environment
-
-**z/OS IMS master terminal**
-
-**Log source** is any of: `z/OS IMS primary master` or `z/OS IMS secondary master`
-
-**Log record level** is any of: `ERROR` or `WARN`
-
-Environment
-
 ![z/OS log settings](https://dt-cdn.net/images/zos-log-settings-1651-077ed26fb6.png)
 
 #### Limit the scope of rules
@@ -8579,36 +8503,6 @@ To do this, define a [Log ingest rule](/docs/analyze-explore-automate/logs/lma-l
 If necessary, you can use attributes to precisely control which logs are ingested.
 
 To do this, define a [Log ingest rule](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-log-storage-configuration "Include and exclude specific log sources already known to OneAgent for storage and analysis.") with specific attributes so that only logs that match those attributes are ingested. For example, you can use the following attributes.
-
-Attribute
-
-Description
-
-Search dropdown logic
-
-**Log source**
-
-Matching is based on a **Log source** attribute. For CICS, select the `z/OS CICS message user`. For IMS, select either or both of `z/OS IMS primary master` or `z/OS IMS secondary master`.
-
-Can be entered manually. No time limit.
-
-**Log record level**[1](#fn-1-1-def)
-
-Matching is based on the level of the log record. It supports the following values: `alert`, `critical`, `debug`, `emergency`, `error`, `info`, `none`, `notice`, `severe`, `warn`.
-
-Can be entered manually. No time limit.
-
-**Log content**
-
-Matching is based on the content of the log; wildcards are supported in the form of an asterisk.
-
-Can be entered manually. No time limit.
-
-**Process group**
-
-Matching is based on the process group ID.
-
-Entities visible in the last 3 days are listed.
 
 1
 
@@ -8647,7 +8541,7 @@ This metadata is used to map the logs to the entity model of z/OS processes.
 ---
 title: Monitor JMX metrics on z/OS
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/monitoring/zos-java-custom-jmx-metrics
-scraped: 2026-02-23T21:24:15.821043
+scraped: 2026-02-24T21:22:01.778974
 ---
 
 # Monitor JMX metrics on z/OS
@@ -9567,7 +9461,7 @@ You can find the **Attribute key** of your spans on the [Distributed traces](/do
 ---
 title: Set up IBM MQ tracing on z/OS
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/operation/ibm-mq-monitoring
-scraped: 2026-02-21T21:17:12.321533
+scraped: 2026-02-24T21:26:36.275798
 ---
 
 # Set up IBM MQ tracing on z/OS
@@ -9590,30 +9484,6 @@ Dynatrace can automatically create a continuous [service flow](/docs/observe/app
 Without IBM MQ configuration, Dynatrace can still trace all messages, but the service flow will be broken.
 
 The table lists the available IBM MQ configuration items for queues and topics.
-
-Item
-
-Description
-
-Your action
-
-Queue manager
-
-Queue manager with its queues
-
-Define your queue managers, including alias queues, remote queues, and cluster queues within a single configuration item.
-
-z/OS Queue sharing group
-
-Group of queue managers that access the same shared queues
-
-Specify which queue managers and shared queues belong to a queue-sharing group within a single configuration item.
-
-z/OS IMS bridge
-
-The IBM MQ component that allows direct access to the IMS system
-
-Specify which queue managers and queues belong to an IMS bridge within a single configuration item.
 
 ## Manage IBM MQ configuration
 
@@ -9653,7 +9523,7 @@ Settings API for IBM MQ tracing:
 ---
 title: Dynatrace for z/OS
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos
-scraped: 2026-02-23T21:19:30.867407
+scraped: 2026-02-24T21:15:34.442161
 ---
 
 # Dynatrace for z/OS
@@ -9839,7 +9709,7 @@ With Dynatrace, you can get [Full-Stack Monitoring with Host monitoring (DPS)](/
 ---
 title: Install OneAgent on a server
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation
-scraped: 2026-02-23T21:18:50.816851
+scraped: 2026-02-24T21:13:41.151449
 ---
 
 # Install OneAgent on a server
@@ -9930,7 +9800,7 @@ OneAgent is now set up and monitoring your host. See [Get started with Dynatrace
 ---
 title: OneAgent requirements
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/oa-requirements
-scraped: 2026-02-19T21:17:29.029591
+scraped: 2026-02-24T21:16:45.946177
 ---
 
 # OneAgent requirements
@@ -10022,7 +9892,7 @@ Dependent on OneAgent code module, memory demand might peak at application start
 ---
 title: OneAgent file aging mechanism
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/oneagent-aging-mechanism
-scraped: 2026-02-23T21:35:42.535086
+scraped: 2026-02-24T21:33:36.930749
 ---
 
 # OneAgent file aging mechanism
@@ -10168,7 +10038,7 @@ To prevent unnecessary delays in your application's startup, the OneAgent bulk p
 ---
 title: Enable the OpenTelemetry Span Sensor for OneAgent
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/oneagent-and-opentelemetry/configuration
-scraped: 2026-02-23T21:32:37.867116
+scraped: 2026-02-24T21:34:16.304175
 ---
 
 # Enable the OpenTelemetry Span Sensor for OneAgent
@@ -10468,193 +10338,11 @@ The ID rewrite applies only to newly started traces (not context propagation) an
 
 ## Prevention of span duplication in Java
 
-
-
 OneAgent version 1.259+
 
 To avoid possible span duplicates for areas covered by OpenTelemetry and OneAgent, OneAgent skips spans from the following automatic instrumentation Java libraries if OneAgent is configured to instrument your Java application and ingest OpenTelemetry spans.
 
 Such spans are skipped only by OneAgent. Exports to third parties (for example, other backends or the Collector) remain unaffected.
-
-io.opentelemetry.akka-http-10.0
-
-io.opentelemetry.apache-dbcp-2.0
-
-io.opentelemetry.apache-httpasyncclient-4.1
-
-io.opentelemetry.apache-httpclient-2.0
-
-io.opentelemetry.apache-httpclient-4.0
-
-io.opentelemetry.apache-httpclient-4.3
-
-io.opentelemetry.apache-httpclient-5.0
-
-io.opentelemetry.async-http-client-1.9
-
-io.opentelemetry.async-http-client-2.0
-
-io.opentelemetry.c3p0-0.9
-
-io.opentelemetry.cassandra-3.0
-
-io.opentelemetry.cassandra-4.0
-
-io.opentelemetry.cassandra-4.4
-
-io.opentelemetry.cxf-jaxrs-3.2
-
-io.opentelemetry.google-http-client-1.19
-
-io.opentelemetry.grpc-1.6
-
-io.opentelemetry.http-url-connection
-
-io.opentelemetry.java-http-client
-
-io.opentelemetry.jaxrs-1.0
-
-io.opentelemetry.jaxrs-1.0-common
-
-io.opentelemetry.jaxrs-2.0-annotations
-
-io.opentelemetry.jaxrs-2.0-common
-
-io.opentelemetry.jaxrs-2.0-cxf-3.2
-
-io.opentelemetry.jaxrs-2.0-jersey-2.0
-
-io.opentelemetry.jaxrs-2.0-resteasy-3.0
-
-io.opentelemetry.jaxrs-2.0-resteasy-3.1
-
-io.opentelemetry.jaxrs-3.0-annotations
-
-io.opentelemetry.jaxrs-3.0-jersey-3.0
-
-io.opentelemetry.jaxrs-3.0-resteasy-6.0
-
-io.opentelemetry.jaxrs-annotations-2.0
-
-io.opentelemetry.jaxrs-annotations-3.0
-
-io.opentelemetry.jaxrs-client-1.1
-
-io.opentelemetry.jaxrs-client-2.0
-
-io.opentelemetry.jaxrs-client-2.0-resteasy-3.0
-
-io.opentelemetry.jaxws-2.0
-
-io.opentelemetry.jaxws-2.0-axis2-1.6
-
-io.opentelemetry.jaxws-2.0-cxf-3.0
-
-io.opentelemetry.jaxws-2.0-metro-2.2
-
-io.opentelemetry.jaxws-cxf-3.0
-
-io.opentelemetry.jaxws-common
-
-io.opentelemetry.jaxws-jws-api-1.1
-
-io.opentelemetry.jdbc
-
-io.opentelemetry.jedis-1.4
-
-io.opentelemetry.jedis-3.0
-
-io.opentelemetry.jedis-4.0
-
-io.opentelemetry.jersey-2.0
-
-io.opentelemetry.jetty-11.0
-
-io.opentelemetry.jetty-8.0
-
-io.opentelemetry.jetty-httpclient-9.2
-
-io.opentelemetry.jms-1.1
-
-io.opentelemetry.jms-3.0
-
-io.opentelemetry.jsp-2.3
-
-io.opentelemetry.kafka-clients
-
-io.opentelemetry.kafka-clients-0.11
-
-io.opentelemetry.kafka-clients-2.6
-
-io.opentelemetry.kafka-streams-0.11
-
-io.opentelemetry.lettuce-5.1
-
-io.opentelemetry.liberty
-
-io.opentelemetry.liberty-20.0
-
-io.opentelemetry.mongo-3.1
-
-io.opentelemetry.netty-3.8
-
-io.opentelemetry.netty-4.0
-
-io.opentelemetry.netty-4.1
-
-io.opentelemetry.okhttp-2.2
-
-io.opentelemetry.okhttp-3.0
-
-io.opentelemetry.orcale-ucp-11.2 ([sic!ï»¿](https://github.com/open-telemetry/opentelemetry-java-instrumentation/blob/4fd52c5a7c73e8186a575cd08a20c55ccb8a0419/instrumentation/oracle-ucp-11.2/library/src/main/java/io/opentelemetry/instrumentation/oracleucp/v11_2/ConnectionPoolMetrics.java#L18))
-
-io.opentelemetry.rabbitmq-2.7
-
-io.opentelemetry.reactor-kafka-1.0
-
-io.opentelemetry.reactor-netty-1.0
-
-io.opentelemetry.resteasy-3.0
-
-io.opentelemetry.resteasy-3.1
-
-io.opentelemetry.resteasy-6.0
-
-io.opentelemetry.rmi
-
-io.opentelemetry.servlet-2.2
-
-io.opentelemetry.servlet-3.0
-
-io.opentelemetry.servlet-5.0
-
-io.opentelemetry.servlet-javax-common
-
-io.opentelemetry.spring-jms-2.0
-
-io.opentelemetry.spring-jms-6.0
-
-io.opentelemetry.spring-kafka-2.7
-
-io.opentelemetry.spring-rabbit-1.0
-
-io.opentelemetry.spring-rmi-4.0
-
-io.opentelemetry.spring-webflux-5.0
-
-io.opentelemetry.spring-webflux-5.3
-
-io.opentelemetry.spring-ws-2.0
-
-io.opentelemetry.tomcat-10.0
-
-io.opentelemetry.tomcat-7.0
-
-io.opentelemetry.tomcat-jdbc
-
-io.opentelemetry.undertow-1.4
-
-io.opentelemetry.vibur-dbcp-11.0
 
 ## Prevention of span duplication in Node.js
 
@@ -10664,42 +10352,6 @@ To avoid possible span duplicates for areas covered by OpenTelemetry and OneAgen
 
 Such spans are skipped only by OneAgent. Exports to third parties (for example, other backends or the Collector) remain unaffected.
 
-@opentelemetry/instrumentation-http
-
-@opentelemetry/instrumentation-undici
-
-@opentelemetry/instrumentation-aws-sdk
-
-@opentelemetry/instrumentation-aws-lambda
-
-@opentelemetry/instrumentation-connect
-
-@opentelemetry/instrumentation-graphql
-
-@opentelemetry/instrumentation-grpc
-
-@opentelemetry/instrumentation-ioredis
-
-@opentelemetry/instrumentation-redis
-
-@opentelemetry/instrumentation-kafkajs
-
-@opentelemetry/instrumentation-memcached
-
-@opentelemetry/instrumentation-mongodb
-
-@opentelemetry/instrumentation-tedious
-
-@opentelemetry/instrumentation-mysql
-
-@opentelemetry/instrumentation-mysql2
-
-@opentelemetry/instrumentation-oracledb
-
-@opentelemetry/instrumentation-pg
-
-@opentelemetry/instrumentation-amqplib
-
 ## Prevention of span duplication in PHP
 
 OneAgent version 1.313+
@@ -10708,22 +10360,6 @@ To avoid possible span duplicates for areas covered by OpenTelemetry and OneAgen
 
 Such spans are skipped only by OneAgent. Exports to third parties (for example, other backends or the Collector) remain unaffected.
 
-io.opentelemetry.contrib.php.curl
-
-io.opentelemetry.contrib.php.laravel
-
-io.opentelemetry.contrib.php.mongodb
-
-io.opentelemetry.contrib.php.mysqli
-
-io.opentelemetry.contrib.php.pdo
-
-io.opentelemetry.contrib.php.slim
-
-io.opentelemetry.contrib.php.symfony
-
-io.opentelemetry.contrib.php.wordpress
-
 ---
 
 ## ingest-from/dynatrace-oneagent/oneagent-and-opentelemetry/oneagent-otel.md
@@ -10731,7 +10367,7 @@ io.opentelemetry.contrib.php.wordpress
 ---
 title: Use OneAgent with OpenTelemetry data
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/oneagent-and-opentelemetry/oneagent-otel
-scraped: 2026-02-22T21:19:07.865164
+scraped: 2026-02-24T21:18:52.997436
 ---
 
 # Use OneAgent with OpenTelemetry data
@@ -11887,7 +11523,7 @@ Set the `--set-osagent-cap-setuid-enabled` parameter to `true` or `false` to dis
 ---
 title: OneAgent features
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/oneagent-features
-scraped: 2026-02-23T21:19:28.592641
+scraped: 2026-02-24T21:13:59.404362
 ---
 
 # OneAgent features
@@ -12060,7 +11696,7 @@ To use the Settings API
 ---
 title: OneAgent health overview
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/oneagent-health
-scraped: 2026-02-22T21:15:11.087099
+scraped: 2026-02-24T21:27:48.547753
 ---
 
 # OneAgent health overview
@@ -12104,105 +11740,9 @@ Select a specific data point in the area chart to see the contributing OneAgent 
 
 The **Health state** metric (`dsfm:cluster.oneagent.agent_modules`) indicates the health state of your deployed OneAgent modules. It is divided into four classesâCritical, Warning, Info, and Healthy. Each class has different implications.
 
-Health state
-
-Implications
-
-Critical
-
-* A OneAgent module struggles with problems that might result in monitoring outage.
-* Corrective action is required.
-
-Warning
-
-* A OneAgent module struggles with anomalies that might impact monitoring availability.
-* Corrective action is recommended.
-
-Info
-
-* The health of a OneAgent module could be improved to ensure monitoring availability.
-* Corrective action is not necessary.
-
-Healthy
-
-* A OneAgent module is healthy without monitoring disturbances.
-* No action is required.
-
 ### Health state examples
 
 The following conditions are applied to your OneAgent modules and result in specific recommendations.
-
-Health state
-
-Condition
-
-Recommendation
-
-Critical
-
-Installer version date older than 11 months
-
-Update OneAgent to a newer version to maintain full Dynatrace support.
-
-Critical
-
-Module heartbeat is 180 seconds overdue
-
-Dynatrace hasnât received data from this module for 180 seconds. There might be communication problems, or your process might have exited unexpectedly.
-
-Critical
-
-Host ID conflict
-
-Multiple monitored hosts report that theyâre using the same host identifier. This unexpected situation might be the result of machine cloning. Please contact a Dynatrace product expert via live chat within your environment.
-
-Critical
-
-Host quota exceeded
-
-Monitoring is currently disabled. Please contact a Dynatrace product expert via live chat within your environment.
-
-Critical
-
-Installer version marked as faulty by Dynatrace
-
-Update OneAgent to a newer version. Processes might also need to be restarted.
-
-Critical
-
-Module version marked as faulty by Dynatrace
-
-Update OneAgent to a newer version. A process restart might also be required.
-
-Warning
-
-Installer version is between 9 and 11 months old
-
-Update to a newer OneAgent version to stay current.
-
-Warning
-
-Minimum OneAgent version incompatible
-
-Update OneAgent to a newer version. A process restart might also be required, even if youâve already updated your module.
-
-Warning
-
-Maximum OneAgent version incompatible
-
-Only OneAgent versions that are equal to or lower than the Dynatrace cluster version can be connected. Download a compatible OneAgent version from this cluster.
-
-Info
-
-Process restart needed
-
-Your module version is outdated. Restart your process to update the module to a newer OneAgent version.
-
-Info
-
-Auto-update suppressed
-
-Enable auto-update to stay current.
 
 ### Limitations
 
@@ -12217,7 +11757,7 @@ Enable auto-update to stay current.
 ---
 title: Set up Grail permissions for OneAgent
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/oneagent-security-context
-scraped: 2026-02-19T21:17:56.447105
+scraped: 2026-02-24T21:17:40.800100
 ---
 
 # Set up Grail permissions for OneAgent
@@ -12276,7 +11816,7 @@ The `dt.security_context` is utilized by many features in Dynatrace and availabl
 ---
 title: Troubleshooting OneAgent deep-monitoring issues
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/oneagent-troubleshooting/troubleshoot-oneagent-deep-monitoring-issues
-scraped: 2026-02-22T21:12:30.668351
+scraped: 2026-02-24T21:17:43.489152
 ---
 
 # Troubleshooting OneAgent deep-monitoring issues
@@ -12745,7 +12285,7 @@ export DT_HOME=/opt/dynatrace/oneagent
 ---
 title: Dynatrace OneAgent
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent
-scraped: 2026-02-23T21:20:43.653988
+scraped: 2026-02-24T21:13:52.336801
 ---
 
 # Dynatrace OneAgent

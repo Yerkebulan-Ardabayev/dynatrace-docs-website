@@ -1,7 +1,7 @@
 ---
 title: Log processing with OpenPipeline
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-log-processing/lma-openpipeline
-scraped: 2026-02-23T21:20:59.843323
+scraped: 2026-02-24T21:15:48.579180
 ---
 
 # Log processing with OpenPipeline
@@ -37,140 +37,6 @@ The stages of log processing with OpenPipeline are described below.
 
 Specific fields are excluded from matching and processing or restricted. To learn more, see [Limits specific to fields](/docs/platform/openpipeline/reference/limits#fields "Reference limits of Dynatrace OpenPipeline.").
 
-Stage
-
-Description
-
-Processors in the stage
-
-Executed processors
-
-Supported data types
-
-Processing
-
-Prepare data for analysis and storage by parsing values into fields, transforming the schema, and filtering the data records. Fields are edited, and sensitive data is masked.
-
-* DQL
-* Add fields
-* Remove fields
-* Rename fields
-* Drop record
-
-All matches
-
-Logs, EventsâGeneric, EventsâDavis events, EventsâDavis, EventsâSDLC events, EventsâSecurity events (legacy), Security events (new) [1](#fn-1-1-def), Business events, Spans[1](#fn-1-1-def) , Metrics, User events, User sessions
-
-Metric extraction
-
-Extract metrics from the records that match the query.
-
-* Counter metric
-* Preview Histogram metric[2](#fn-1-2-def)
-* Value metric
-
-All matches
-
-Logs, EventsâGeneric, EventsâSDLC events, EventsâSecurity events (legacy), Security events (new)[1](#fn-1-1-def), Business events, System events, User events, User sessions
-
-Smartscape Node Extraction
-
-Extract Smartscape nodes for the records that match the query.
-
-* Smartscape node
-
-All matches
-
-Logs, EventsâGeneric, EventsâSDLC events, EventsâSecurity events (legacy), Security events (new)[1](#fn-1-1-def), Business events, System events, Spans[1](#fn-1-1-def), User events, User sessions
-
-Smartscape Edge Extraction
-
-Extract Smartscape edges for the records that match the query.
-
-* Smartscape edge
-
-All matches
-
-Logs, EventsâGeneric, EventsâSDLC events, EventsâSecurity events (legacy), Security events (new)[1](#fn-1-1-def), Business events, System events, Spans[1](#fn-1-1-def), User events, User sessions
-
-Metric extraction
-
-Extract metrics from the records that match the query.
-
-* Sampling aware counter metric
-* Preview Sampling aware histogram metric[2](#fn-1-2-def)
-* Sampling aware value metric
-
-All matches
-
-Spans
-
-Data extraction
-
-Extract a new record from a pipeline and re-ingest it as a different data type into another pipeline.
-
-* Business event
-* Software developement lifecycle event
-
-All matches
-
-Logs, EventsâGeneric, EventsâSDLC events, EventsâSecurity events (legacy), Security events (new)[1](#fn-1-1-def), Business events, System events, Spans[1](#fn-1-1-def), User events, User sessions
-
-Davis
-
-Extract a new record from a pipeline and re-ingest it as a Davis events into another pipeline.
-
-* Davis event
-
-All matches
-
-Logs, EventsâGeneric, EventsâSDLC events, EventsâSecurity events (legacy), Security events (new)[1](#fn-1-1-def), Business events, System events, Spans[1](#fn-1-1-def)
-
-Cost allocation
-
-Advanced option to assign cost center usage to specific records that match a query.
-
-Make sure to review [Cost Allocation documentation](/docs/license/cost-allocation "Learn how to allocate costs to cost centers and products.") when choosing the best approach for your environment.
-
-* DPS Cost Allocation - Cost Center
-
-First match only
-
-Logs, Spans[1](#fn-1-1-def)
-
-Product allocation
-
-Advanced option to assign product or application usage to specific records that match a query.
-
-Make sure to review [Cost Allocation documentation](/docs/license/cost-allocation "Learn how to allocate costs to cost centers and products.") when choosing the best approach for your environment.
-
-* DPS Cost Allocation - Product
-
-First match only
-
-Logs, Spans[1](#fn-1-1-def)
-
-Permissions
-
-Apply security context to the records that match the query.
-
-* Set dt.security\_context
-
-First match only
-
-Logs, EventsâGeneric, EventsâDavis events, EventsâDavis, EventsâSDLC events, EventsâSecurity events (legacy), Security events (new)[1](#fn-1-1-def), Business events, Spans[1](#fn-1-1-def), Metrics, User events, User sessions
-
-Storage
-
-Assign records to the best-fit bucket.
-
-* Bucket assignment
-* No storage assignment
-
-First match only
-
-Logs, EventsâGeneric, EventsâDavis events, EventsâDavis, EventsâSDLC events, EventsâSecurity events (legacy), Security events (new)[1](#fn-1-1-def), Business events, Spans[1](#fn-1-1-def)
-
 1
 
 The data remains in its original, structured form. This is important for detailed analysis and troubleshooting, as it ensures that no information is lost or altered.
@@ -202,8 +68,6 @@ To enable technology bundles in OpenPipeline
 To process logs, you need to enable dynamic routing. For details, see [Route data](/docs/platform/openpipeline/getting-started/how-to-routing "Learn how to route data to an OpenPipeline processing pipeline.").
 
 ## Add a custom pipeline
-
-
 
 To create a custom pipeline in OpenPipeline
 

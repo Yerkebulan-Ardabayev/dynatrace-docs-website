@@ -1,7 +1,7 @@
 ---
 title: Extend metric observability
 source: https://www.dynatrace.com/docs/ingest-from/extend-dynatrace/extend-metrics
-scraped: 2026-02-23T21:35:43.887937
+scraped: 2026-02-24T21:29:23.609504
 ---
 
 # Extend metric observability
@@ -160,18 +160,3 @@ The following limits apply to metric ingestion using a common ingestion channel.
 | Length of line, characters | 50,000 | The maximum length of a single line of the payload. |
 
 There's also a limit to the number of metrics that Dynatrace can ingest.
-
-Channel
-
-Limit
-
-[OneAgent metric API](/docs/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/oneagent-metric-api "Use the Dynatrace API to retrieve the metrics of monitored entities.")
-
-Per minute per OneAgent instance:
-
-OneAgent version 1.213 and earlier 1,000  
-OneAgent version 1.215+ 100,000
-
-[Metrics API v2](/docs/dynatrace-api/environment-api/metric-v2/post-ingest-metrics "Ingest custom metrics to Dynatrace via Metrics v2 API.")
-
-There's no limit to the metric number, but [API throttling](/docs/dynatrace-api/basics/access-limit#throttling "Find out about payload limits and request throttling that may affect your use of the Dynatrace API.") applies.

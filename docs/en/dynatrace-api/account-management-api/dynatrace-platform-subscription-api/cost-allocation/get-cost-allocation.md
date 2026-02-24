@@ -1,7 +1,7 @@
 ---
 title: Dynatrace Platform Subscription API - GET cost allocation
 source: https://www.dynatrace.com/docs/dynatrace-api/account-management-api/dynatrace-platform-subscription-api/cost-allocation/get-cost-allocation
-scraped: 2026-02-23T21:39:17.127846
+scraped: 2026-02-24T21:27:44.524600
 ---
 
 # Dynatrace Platform Subscription API - GET cost allocation
@@ -15,10 +15,6 @@ scraped: 2026-02-23T21:39:17.127846
 Lists Dynatrace Platform Subscription usage data by cost allocation field.
 
 The request produces an `application/json` payload.
-
-GET
-
-`https://api.dynatrace.com/v1/subscriptions/{subscription-uuid}/cost-allocation`
 
 ## Authentication
 

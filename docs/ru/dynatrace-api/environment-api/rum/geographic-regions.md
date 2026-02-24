@@ -1,7 +1,7 @@
 ---
 title: Geographic regions API
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/rum/geographic-regions
-scraped: 2026-02-23T21:34:47.282195
+scraped: 2026-02-24T21:33:50.561179
 ---
 
 # Geographic regions API

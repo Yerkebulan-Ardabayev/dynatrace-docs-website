@@ -1,7 +1,7 @@
 ---
 title: OneAgent diagnostics
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/oneagent-troubleshooting/oneagent-diagnostics
-scraped: 2026-02-20T21:20:59.969393
+scraped: 2026-02-24T21:35:29.065597
 ---
 
 # OneAgent diagnostics
@@ -225,38 +225,6 @@ The **Dynatrace OneAgent diagnostics overview** page lists all OneAgent diagnost
 ## Contents of diagnostic data
 
 All the collected diagnostic data is compressed into a `SupportArchive<ID number>` ZIP file that includes the following folders and files:
-
-Folder or file
-
-Description
-
-`host` (folder)
-
-Contains a snapshot of the topology information of the host entity including any relationships to other hosts.
-
-`monitored_entities` (folder)
-
-Contains a snapshot of the topology information of all involved process groups, process group instances, services, and service instances.
-
-`agent_registration_entries` (JSON)
-
-Contains information about which OneAgent code modules are connected to Dynatrace.
-
-`archive` (JSON)
-
-Contains information about who, when, where, and why the diagnostic data was collected.
-
-`monitoring_state` (JSON)
-
-Contains information about the monitoring state of processes and related problems.
-
-`support_archive` (ZIP)
-
-Contains the local configuration of the OneAgent installed on the host or process where youâve run the troubleshooting, as well as the OneAgent-related log files.
-
-`diagnostic_files` ZIP
-
-Contains information about the process group detection, auto-injection problems, and extension configuration.
 
 ## Data privacy
 

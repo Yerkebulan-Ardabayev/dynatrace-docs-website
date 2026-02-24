@@ -1,7 +1,7 @@
 ---
 title: Exception analysis
 source: https://www.dynatrace.com/docs/observe/application-observability/distributed-tracing/exception-analysis
-scraped: 2026-02-23T21:20:47.172530
+scraped: 2026-02-24T21:13:57.807381
 ---
 
 # Exception analysis
@@ -49,42 +49,6 @@ Exception analysis provides:
 ## Key capabilities
 
 ### Core capabilities
-
-Capability
-
-Description
-
-**Advanced filtering**
-
-Use Dynatrace filters to narrow down exceptions by attributes such as service, endpoint, failures, and more.
-
-* Timeframe
-* Segments
-* Facets
-
-**Exception trend chart**
-
-Visualize the trend of exceptions over time.
-
-* Select an exception in the table to highlight it in the trend chart for deeper analysis.
-
-**Exceptions table**
-
-View a detailed list of exceptions, including their type, frequency, and impact.
-
-* Select an exception in the table to highlight it in the trend chart for deeper analysis.
-
-**Aggregated stack traces**
-
-Explore aggregated stack traces for each exception, allowing you to identify common code paths and pinpoint the root cause of issues.
-
-**Related logs**
-
-View logs related to each exception for additional context. This helps you correlate log events with the occurrence of exceptions.
-
-**Requests containing exceptions**
-
-Analyze requests that contained the selected exception, either directly or within a sub-trace. This feature helps you understand how exceptions are affecting specific transactions.
 
 ### Integration with Dynatrace
 

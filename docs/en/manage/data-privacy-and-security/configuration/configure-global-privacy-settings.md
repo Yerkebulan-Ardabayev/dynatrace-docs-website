@@ -1,7 +1,7 @@
 ---
 title: Configure data privacy settings
 source: https://www.dynatrace.com/docs/manage/data-privacy-and-security/configuration/configure-global-privacy-settings
-scraped: 2026-02-19T21:18:00.752233
+scraped: 2026-02-24T21:17:32.813062
 ---
 
 # Configure data privacy settings
@@ -133,36 +133,6 @@ Dynatrace captures full URIs of requests that are sent from desktop and mobile b
 When **Mask personal data in URIs** is turned on, Dynatrace detects personal dataâemail addresses, IBANs, payment card numbers, IP addresses, UUIDs, and other IDsâin URIs, headers, exception messages, and data captured for request attributes. It masks this data at storage by replacing it with the `<masked>` string. It also replaces query parameter values with the `<masked>` string. IDs and numbers must have at least 5 decimal or hexadecimal digits to be masked.
 
 URI masking examples
-
-Type of personal data
-
-Example before masking
-
-Example after masking
-
-Email address
-
-`https://example.com/user/john.doe@example.com/profile`
-
-`https://example.com/user/<masked>/profile`
-
-Query parameter value
-
-`https://example.com?country=Austria&city=Linz`
-
-`https://example.com?country=<masked>&city=<masked>`
-
-Payment card number
-
-`https://example.com/checkout?card=4111111111111111`
-
-`https://example.com/checkout?card=<masked>`
-
-IP address
-
-`https://192.168.10.25/dashboard`
-
-`https://<masked>/dashboard`
 
 As a result, the personal data is masked in the distributed trace analysis, error analysis, user action names for RUM, and elsewhere in Dynatrace.
 

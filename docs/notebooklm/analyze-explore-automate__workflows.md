@@ -1,6 +1,6 @@
 # Документация Dynatrace: analyze-explore-automate/workflows
 Язык: Русский (RU)
-Сгенерировано: 2026-02-23
+Сгенерировано: 2026-02-24
 Файлов в разделе: 31
 ---
 
@@ -9,7 +9,7 @@
 ---
 title: Email
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/email
-scraped: 2026-02-20T21:17:06.502243
+scraped: 2026-02-24T21:20:29.501622
 ---
 
 # Email
@@ -202,18 +202,6 @@ If you are using [expressions](/docs/analyze-explore-automate/workflows/referenc
 ## Action result
 
 The **Send email** action provides the following result.
-
-Property
-
-Description
-
-`requestId`
-
-A unique identifier to trace successfully accepted email send requests.
-
-`clientRequestId`
-
-A unique identifier to trace successfully accepted email send requests. For sending emails, this is identical to `requestId`.
 
 ## Expected behavior 'Failed to send email. Status code 403.'
 
@@ -948,7 +936,7 @@ Select scopes > repo (Full control of private repositories).
 ---
 title: Set up GitHub Connector
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/github/github-workflows-setup
-scraped: 2026-02-23T21:39:34.439544
+scraped: 2026-02-24T21:31:04.287873
 ---
 
 # Set up GitHub Connector
@@ -1061,7 +1049,7 @@ Learn about available actions used by GitHub Connector integration for automatin
 ---
 title: Actions for GitLab Connector
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/gitlab/gitlab-workflows-actions
-scraped: 2026-02-23T21:34:18.878034
+scraped: 2026-02-24T21:19:33.154930
 ---
 
 # Actions for GitLab Connector
@@ -1463,7 +1451,7 @@ Learn about available actions used by GitLab Connector integration for automatin
 ---
 title: Set up Jenkins Connector
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/jenkins/jenkins-workflows-setup
-scraped: 2026-02-23T21:26:45.825970
+scraped: 2026-02-24T21:21:29.198340
 ---
 
 # Set up Jenkins Connector
@@ -1525,7 +1513,7 @@ To configure a connection
 ---
 title: Jira Connector
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/jira
-scraped: 2026-02-20T21:16:45.146392
+scraped: 2026-02-24T21:23:51.174470
 ---
 
 # Jira Connector
@@ -1574,7 +1562,7 @@ The following are solutions to problems some people had with Jira Connector acti
 ---
 title: Microsoft Entra ID Connector
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/microsoft-entra-id
-scraped: 2026-02-23T21:33:04.966923
+scraped: 2026-02-24T21:23:53.940384
 ---
 
 # Microsoft Entra ID Connector
@@ -1712,7 +1700,7 @@ The log of a successful run is shown below.
 ---
 title: PagerDuty
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/pagerduty
-scraped: 2026-02-23T21:35:26.906007
+scraped: 2026-02-24T21:21:15.028945
 ---
 
 # PagerDuty
@@ -1771,50 +1759,6 @@ To configure a connection
 ## Available actions
 
 The following workflow actions are available for the PagerDuty integration. Each action corresponds to an endpoint of the PagerDuty API.
-
-Action
-
-Description
-
-PagerDuty API endpoint
-
-Create an incident
-
-Creates an incident in your PagerDuty environment. An incident represents a problem or an issue that needs to be addressed and resolved.
-
-Use other actions to obtain the necessary input.
-
-[Create an incidentï»¿](https://dt-url.net/b723jjs)
-
-List all of the on-calls
-
-Lists all PagerDuty users who are on call duty.
-
-[List all of the on-callsï»¿](https://dt-url.net/4t43jm9)
-
-List escalation policies
-
-Lists PagerDuty escalation policies. An escalation policy defines who to notify (and how) in case of an incident.
-
-[List escalation policiesï»¿](https://dt-url.net/qo63j74)
-
-List priorities
-
-Lists PagerDuty priorities. A priority defines the importance of an incident. The list is ordered from the most to the least severe.
-
-[List prioritiesï»¿](https://dt-url.net/ow83jrh)
-
-List services
-
-Lists PagerDuty services. A service represents an application, component, or team to which you want to map the incident.
-
-[List servicesï»¿](https://dt-url.net/0b03jpm)
-
-List users
-
-List all users of your PagerDuty environment.
-
-[List usersï»¿](https://dt-url.net/ee23j45)
 
 ## Create a PagerDuty incident
 
@@ -2007,7 +1951,7 @@ The following are solutions to problems some people have.
 ---
 title: Red Hat Event-Driven Ansible
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/red-hat/redhat-even-driven-ansible
-scraped: 2026-02-23T21:27:25.665147
+scraped: 2026-02-24T21:23:52.558932
 ---
 
 # Red Hat Event-Driven Ansible
@@ -2067,34 +2011,6 @@ Before creating the event stream, you need to set up the credentials for token a
 2. Select **Create credential**.
 3. Enter the following credential details.
 
-   Field
-
-   Description
-
-   **Name**
-
-   Enter a name.
-
-   **Description**
-
-   Enter a short description.
-
-   **Organization**
-
-   From the list, select your organization or `Default`.
-
-   **Credential type**
-
-   From the list, select `Token Event Stream`.
-
-   **Token**
-
-   Enter a token. This token is used later for the connection of the workflow action.
-
-   **HTTP Header Key**
-
-   Enter `Authorization`.
-
 For more information on how to set up a credential, see [Setting up a credentialï»¿](https://dt-url.net/6c23znj) in the Red Hat documentation.
 
 ##### Event stream configuration
@@ -2104,26 +2020,6 @@ After the credential is configured, you can create an event stream.
 1. In the Ansible Automation Platform navigation panel, select **Automation Decisions** > **Event streams**.
 2. Select **Create event stream**.
 3. Enter the following event stream details.
-
-   Field
-
-   Description
-
-   **Name**
-
-   Enter a name.
-
-   **Organization**
-
-   From the list, select your organization or `Default`.
-
-   **Event stream type**
-
-   Select the event stream type `Token Event Stream`.
-
-   **Credential**
-
-   From the list, select the credential you created earlier.
 
 For more information on how to set up an event stream, see [Simplified event routingï»¿](https://dt-url.net/sv63zyi) in the Red Hat documentation.
 
@@ -2303,19 +2199,6 @@ To configure a connection for the **Red Hat Event-Driven Ansible Controller**
 ## Available action
 
 The following workflow action is available for the Red Hat Event-Driven Ansible controller.
-
-Action
-
-Description
-
-Red Hat Ansible API endpoint
-
-Send event to Event-Driven Ansible
-
-Send an event to the Red Hat Event-Driven Ansible Controller via Event Source Plugin
-
-`POST /event`   
-Send an event
 
 ## Send event to Event-Driven Ansible
 
@@ -2675,7 +2558,7 @@ The following is a solution to a problem some people have.
 ---
 title: Slack Connector
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/slack
-scraped: 2026-02-22T21:28:49.602961
+scraped: 2026-02-24T21:27:51.206272
 ---
 
 # Slack Connector
@@ -2841,145 +2724,15 @@ Your Dynatrace Slack Connector requires an OAuth token to authorize sending mess
 
 ### Input examples
 
-
-
 The workflow action can be used to send Markdown-formatted messages or [Block Kit-basedï»¿](https://app.slack.com/block-kit-builder/) interactive messages in Slack.
 
 * **Connection**: select any connection from the dropdown list, for example, `dynatrace-notifications-sandbox`.
 * **Message**: see the examples in the following table.
-
-  Input type
-
-  Sample input
-
-  Markdown
-
-  ```
-  *Hello World*
-
-
-
-  This is Markdown-formatted text!
-  ```
-
-  Block Kit Builder
-
-  ```
-  {
-
-
-
-  "blocks": [
-
-
-
-  {
-
-
-
-  "type": "section",
-
-
-
-  "text": {
-
-
-
-  "type": "mrkdwn",
-
-
-
-  "text": "*This is a section block with a button.*"
-
-
-
-  },
-
-
-
-  "accessory": {
-
-
-
-  "type": "button",
-
-
-
-  "text": {
-
-
-
-  "type": "plain_text",
-
-
-
-  "text": "Click Me"
-
-
-
-  },
-
-
-
-  "value": "click_me_123",
-
-
-
-  "action_id": "button-action"
-
-
-
-  }
-
-
-
-  }
-
-
-
-  ]
-
-
-
-  }
-  ```
-
-  Automation expression
-
-  ```
-  {{ result("workflow_action_script_result") }}
-  ```
 * **Interactions**
 
   Select **Run** to send your message to your Slack channel.
 
   + **Output**:
-
-    Sample result
-
-    threadTs
-
-    ```
-    123456789.01234
-    ```
-
-    channelID
-
-    ```
-    ABCDEF012345
-    ```
-
-    messageTs
-
-    ```
-    123456789.01234
-    ```
-
-    permalink
-
-    ```
-    https://your-environment.slack.com/archives/ABCDEFG/p12345679890
-    ```
 * **Log output examples**
 
   + **Successful**:
@@ -3660,6 +3413,8 @@ For more expression capabilities, see [Expression reference](/docs/analyze-explo
 
 ## Use Workflows with Slack
 
+
+
 1. Go to **Workflows** ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") and select ![Add](https://dt-cdn.net/images/dashboards-app-menu-plus-7e9b7c3547.svg "Add") to create a new workflow.
 2. In the **Choose trigger** panel, select the trigger best suited to your needs.
 3. On the trigger node, select ![Add](https://dt-cdn.net/images/dashboards-app-menu-plus-7e9b7c3547.svg "Add") to browse available actions.
@@ -3695,7 +3450,7 @@ The following are solutions to problems some people had with Slack integration.
 ---
 title: Actions for Text Processing Connector
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/text-processing/automation-workflows-text-processing-actions
-scraped: 2026-02-23T21:26:19.214163
+scraped: 2026-02-24T21:35:57.178592
 ---
 
 # Actions for Text Processing Connector
@@ -3732,44 +3487,6 @@ In the official Jinja documentation, read more about [escape mechanismsï»¿](h
 Configures a JSON file.
 
 ### Inputs
-
-Field
-
-Description
-
-Required
-
-Example syntax
-
-**JSON content**
-
-The full content of the JSON.
-
-Required
-
-```
-{ "obj1": { "innerObj1": { "array": [ { "theObjectInsideTheArray": "value1" }, { "theObjectInsideTheArray": "value2" } ] } } }
-```
-
-**Path**
-
-The path to the property that is added or changed.
-
-Required
-
-* Nested object: `.obj1.innerObj1`
-* Array element: `.obj1.innerObj1.array[2].theObjectInsideTheArray`
-* Property with spaces: `.["some property"]`
-* Top-level array: `.[0].someObjectInTheToplevelArray`
-* Entire content: `.`
-
-**Value**
-
-The new value for the property path.
-
-Required
-
-`{"new-key": "new-value"}`
 
 ### Results
 
@@ -3884,88 +3601,6 @@ Manipulates a YAML.
 Supports multi-document YAML files.
 
 ### Inputs
-
-Field
-
-Description
-
-Required
-
-Example syntax
-
-**YAML content**
-
-The full content of the YAML.
-
-Required
-
-```
-obj1:
-
-
-
-innerObj1:
-
-
-
-array:
-
-
-
-- theObjectInsideTheArray: value1
-
-
-
-- theObjectInsideTheArray: value2
-```
-
-**Path**
-
-The path to the property that is added or changed.
-
-Required
-
-* Nested object: `.obj1.innerObj1`
-* Array element: `.obj1.innerObj1.array[0].theObjectInsideTheArray`
-* Property with spaces: `.["some property"]`
-* Top-level array: `.[0].someObjectInTheTopLevelArray`
-* Entire content: `.`
-
-**Value**
-
-The new value for the property path.
-
-Required
-
-`'new-value'`
-
-**Document index**
-
-Relevant only for YAML files containing multiple documents. Index starts at `0`.
-
-Optional
-
-```
-obj1:
-
-
-
-key: value1
-
-
-
----
-
-
-
-obj2:
-
-
-
-key: value2
-```
-
-To modify the second document, set `documentIndex` to `1`.
 
 ### Results
 
@@ -4166,7 +3801,7 @@ Supports multi-document YAML files.
 ---
 title: Text Processing
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/text-processing
-scraped: 2026-02-23T21:38:21.328078
+scraped: 2026-02-24T21:24:12.777186
 ---
 
 # Text Processing
@@ -4310,7 +3945,7 @@ Text Processing provides a set of `set` and `get` actions for manipulating conte
 ---
 title: DQL query action for Workflows
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/default-workflow-actions/dql-query-workflow-action
-scraped: 2026-02-21T21:26:10.423355
+scraped: 2026-02-24T21:35:11.029897
 ---
 
 # DQL query action for Workflows
@@ -4337,7 +3972,7 @@ You can find the results in the **Result** tab of the **Execution** that you cou
 ---
 title: HTTP request action for Workflows
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/default-workflow-actions/http-request-workflow-action
-scraped: 2026-02-22T21:29:08.557804
+scraped: 2026-02-24T21:20:26.837337
 ---
 
 # HTTP request action for Workflows
@@ -4775,7 +4410,7 @@ Use the **Run Workflow** action to modularize workflow usage.](/docs/analyze-exp
 ---
 title: Access workflow management functionality
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/manage-workflows/workflows-access-management
-scraped: 2026-02-23T21:30:18.913311
+scraped: 2026-02-24T21:21:49.380863
 ---
 
 # Access workflow management functionality
@@ -4820,7 +4455,7 @@ To access various workflow management commands:
 ---
 title: Manage live or draft workflows
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/manage-workflows/workflows-manage-live-mode
-scraped: 2026-02-22T21:29:41.043146
+scraped: 2026-02-24T21:25:21.764532
 ---
 
 # Manage live or draft workflows
@@ -4858,7 +4493,7 @@ To access various **Live** or **Draft** workflow management commands
 ---
 title: Get notified about workflow changes
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/manage-workflows/workflows-notifications
-scraped: 2026-02-23T21:29:15.242568
+scraped: 2026-02-24T21:30:14.120795
 ---
 
 # Get notified about workflow changes
@@ -5619,7 +5254,7 @@ This workflow is a great starting point for automating incident response and imp
 ---
 title: Workflows use cases
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/use-cases
-scraped: 2026-02-23T21:33:21.482403
+scraped: 2026-02-24T21:32:22.600613
 ---
 
 # Workflows use cases
@@ -5688,7 +5323,7 @@ Design a workflow to manage high-volume AWS alerts by filtering out noise and su
 ---
 title: Workflows
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows
-scraped: 2026-02-23T21:31:26.546776
+scraped: 2026-02-24T21:17:58.769579
 ---
 
 # Workflows
@@ -5711,10 +5346,6 @@ Prerequisites
 ### Permissions
 
 The following table describes the required permissions.
-
-Permission
-
-Description
 
 hub:catalog:read
 
@@ -5755,16 +5386,6 @@ Admin access to workflows and executions.
 automation:workflows:read
 
 Read access to workflows.
-
-10
-
-rows per page
-
-Page
-
-1
-
-of 1
 
 You might need additional permissions to run certain tasks in ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Workflows**.
 

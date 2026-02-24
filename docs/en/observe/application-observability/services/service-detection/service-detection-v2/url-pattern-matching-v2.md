@@ -1,7 +1,7 @@
 ---
 title: Configure URL path pattern matching in Service Detection v2
 source: https://www.dynatrace.com/docs/observe/application-observability/services/service-detection/service-detection-v2/url-pattern-matching-v2
-scraped: 2026-02-23T21:24:57.536319
+scraped: 2026-02-24T21:25:29.421870
 ---
 
 # Configure URL path pattern matching in Service Detection v2
@@ -62,40 +62,12 @@ The following characters or values are possible in the URL path patterns. Use th
 * Copied as-is to the output.
 * Use for fixed path parts that never change.
 
-URL pattern
-
-URL path
-
-Resulting endpoint
-
-`/api/orders`
-
-`/api/orders`
-
-`/api/orders`
-
 ### Placeholder `{placeholder-name}`
 
 * Represented by a placeholder name in curly braces, for example, `{id}` or `{date}`.
 * Matches exactly one path segment.
 * Replaced with a placeholder name in curly braces.
 * Use to hide dynamic path values, for example, IDs, UUIDs, or timestamps.
-
-URL pattern
-
-URL path
-
-Resulting endpoint
-
-`/api/orders/{id}`
-
-`/api/orders/1234`
-
-`/api/orders/abcd`
-
-`/api/orders/{id}`
-
-`/api/orders/{id}`
 
 ### Variable segments `_`
 
@@ -104,44 +76,12 @@ Resulting endpoint
 * Replaced with the original segment value.
 * Use when the segment should remain visible, for example, for versioned APIs where the version should remain visible.
 
-URL pattern
-
-URL path
-
-Resulting endpoint
-
-`/api/_/orders`
-
-`/api/v1/orders`
-
-`/api/v2/orders`
-
-`/api/v1/orders`
-
-`/api/v2/orders`
-
 ### Catch-all `*`
 
 * Represented by an asterisk `*`.
 * Matches zero or more trailing segments. Must be the last token in the URL pattern.
 * Replaced with `*`.
 * Use when matching any remaining path segments.
-
-URL pattern
-
-URL path
-
-Resulting endpoint
-
-`/internal/*`
-
-`/internal/service`
-
-`/internal/service/operation/extra`
-
-`/internal/*`
-
-`/internal/*`
 
 ## Configure URL pattern matching
 
@@ -197,58 +137,6 @@ The **URL pattern matching** feature is particularly useful for the following us
 * REST endpoints with IDs
 * Internal APIs with deep paths
 * Mixed depth paths
-
-Use case
-
-URL pattern
-
-URL path
-
-Resulting endpoint
-
-Nginx reverse proxy routing
-
-`/api/_/_/{id}`
-
-`/api/v1/users/john`
-
-`/api/v2/users/jack`
-
-`/api/v1/users/{id}`
-
-`/api/v2/users/{id}`
-
-API versioning patterns
-
-`/api/_/_/{id}`
-
-`/api/v1/orders/123456789`
-
-`/api/v2/orders/987654321`
-
-`/api/v1/orders/{id}`
-
-`/api/v2/orders/{id}`
-
-Mixed depth paths
-
-`/blog/_/_/*`
-
-`/blog/2024/11/my-post.md`
-
-`/blog/2024/12/my-holiday.md`
-
-`/blog/2026/01/15/my-thoughts.md`
-
-`/blog/2026/02/05/my-memories.md`
-
-`/blog/2024/11/*`
-
-`/blog/2024/12/*`
-
-`/blog/2026/01/*`
-
-`/blog/2026/02/*`
 
 ## Related topics
 

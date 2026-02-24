@@ -1,7 +1,7 @@
 ---
 title: Amazon Rekognition monitoring
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-rekognition
-scraped: 2026-02-23T21:27:38.861067
+scraped: 2026-02-24T21:23:03.413805
 ---
 
 # Amazon Rekognition monitoring

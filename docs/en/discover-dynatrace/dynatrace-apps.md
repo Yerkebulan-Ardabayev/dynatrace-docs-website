@@ -1,7 +1,7 @@
 ---
 title: Dynatrace Apps
 source: https://www.dynatrace.com/docs/discover-dynatrace/dynatrace-apps
-scraped: 2026-02-23T21:18:46.433758
+scraped: 2026-02-24T21:13:25.930595
 ---
 
 # Dynatrace Apps
@@ -20,5 +20,3 @@ Filter by
 Select an option
 
 Type to filter
-
-Unable to render DataTable. Check configuration.

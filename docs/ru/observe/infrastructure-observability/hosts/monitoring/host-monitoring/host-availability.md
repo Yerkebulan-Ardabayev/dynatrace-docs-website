@@ -1,7 +1,7 @@
 ---
 title: Host availability
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/hosts/monitoring/host-monitoring/host-availability
-scraped: 2026-02-23T21:33:13.946532
+scraped: 2026-02-24T21:28:33.548715
 ---
 
 # Host availability
@@ -34,46 +34,6 @@ To check a host's availability state
    ![Host page detail - online availability](https://dt-cdn.net/images/image-3-757-d2642a2b5d.png)
 
 ## Host availability states
-
-Availability state
-
-Description
-
-**up**
-
-The host is working; OneAgent is active and sending data. If the connectivity to the host is lost, OneAgent sends all cached metrics when the connection is restored.
-
-**no\_data**
-
-The host is working and OneAgent is active, but no data is being sent. This state is also set when collecting monitoring data takes too long (for example, OneAgent freezes).
-
-**no\_data\_agent\_inactive**
-
-The host is working, OneAgent is inactive, and no data is being sent because OneAgent has been manually disabled in the configuration.
-
-**shutdown\_host**
-
-The host has been shut down due to an expected operating system shutdown or reboot.
-
-**unmonitored\_agent\_stopped**
-
-The host is not monitored because OneAgent is inactive. For details, refer to [Check OneAgent monitoring settings per host](#check-monitoring-settings).
-
-**unmonitored\_agent\_upgrade**
-
-The host is not monitored because OneAgent is being upgraded.
-
-**unmonitored\_agent\_uninstalled**
-
-The host is not monitored because OneAgent has been uninstalled.
-
-**reboot\_graceful**
-
-The host was rebooted following a graceful shutdown, which means an expected operating system shutdown has occurred.
-
-**reboot\_ungraceful**
-
-The host was rebooted following an ungraceful shutdown, which means an unexpected operating system shutdown has occurred. This may be caused by events, such as power loss or a system crash.
 
 ### Check OneAgent monitoring settings per host
 

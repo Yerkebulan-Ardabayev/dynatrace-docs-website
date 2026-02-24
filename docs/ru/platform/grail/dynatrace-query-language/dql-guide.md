@@ -1,7 +1,7 @@
 ---
 title: Use DQL queries
 source: https://www.dynatrace.com/docs/platform/grail/dynatrace-query-language/dql-guide
-scraped: 2026-02-22T21:14:05.514143
+scraped: 2026-02-24T21:18:34.803188
 ---
 
 # Use DQL queries
@@ -63,10 +63,6 @@ fetch events
 
 | summarize Total_amount = sum(amount)
 ```
-
-Total\_amount
-
-`1,064,497`
 
 ## Specify timeframe
 

@@ -1,7 +1,7 @@
 ---
 title: Collector References
 source: https://www.dynatrace.com/docs/ingest-from/opentelemetry/collector/references
-scraped: 2026-02-23T21:37:02.597851
+scraped: 2026-02-24T21:33:51.943134
 ---
 
 # Collector References

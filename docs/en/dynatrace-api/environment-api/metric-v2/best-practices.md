@@ -1,7 +1,7 @@
 ---
 title: Metrics API v2 - Best practices
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/metric-v2/best-practices
-scraped: 2026-02-23T21:31:59.083013
+scraped: 2026-02-24T21:32:40.246663
 ---
 
 # Metrics API v2 - Best practices
@@ -96,32 +96,6 @@ To mitigate the negative effects of volatile dimensions, Dynatrace enforces card
 A cardinality limit is a limit to the number of dimension tuples you can ingest.
 
 In Dynatrace, classic metrics have multiple dimension tuple limits:
-
-Limit
-
-Value
-
-Note
-
-Built-in metric pool dimension limit
-
-20 million
-
-(This was increased from 10 million in Dynatrace version 1.277+.)
-
-All built-in metrics share the same dimension tuple space.
-
-Custom metric pool dimension limit
-
-50 million
-
-All custom metrics share a dimension tuple space (for example, Prometheus metrics).
-
-Per-metric dimension limit
-
-1 million
-
-Each metric has its own dimension tuples limit. This applies to all metrics.
 
 The limits are applied against the dimension tuples of the last 30 days (a 30-day sliding window). If a limit is reached, data points having new and as yet unseen dimension tuples are rejected. The limits apply to the tenant.
 

@@ -1,7 +1,7 @@
 ---
 title: New Documentation articles
 source: https://www.dynatrace.com/docs/whats-new/documentation
-scraped: 2026-02-23T21:19:19.820738
+scraped: 2026-02-24T21:14:32.935007
 ---
 
 # New Documentation articles
@@ -13,6 +13,15 @@ scraped: 2026-02-23T21:19:19.820738
 * Updated on Jan 28, 2026
 
 This page lists all new or significantly changed Dynatrace Documentation topics, sorted by week of publication.
+
+## Feb 23, 2026
+
+* [Alerting and notifications](/docs/analyze-explore-automate/alerting-and-notifications "Utilize anomaly detection, problem detection, and workflows for external notifications to ensure that critical problems never go unnoticed.")
+* [OpenTelemetry](/docs/observe/dynatrace-for-ai-observability/get-started/opentelemetry "Learn how to instrument AI applications with OpenTelemetry and the GenAI semantic conventions.")
+* [OpenAI Observability](/docs/observe/dynatrace-for-ai-observability/sample-use-cases/openai-observability "Learn about Dynatrace for OpenAI Observability, how Dynatrace observes OpenAI SaaS services, and much more.")
+* [OpenTelemetry Host Monitoring extension](/docs/observe/infrastructure-observability/extensions/opentelemetry-host-monitoring "Generate topology and screens for your OpenTelemetry host data for quicker display and easier analysis of the data.")
+* [Security Posture Management compliance standards](/docs/secure/application-security/spm/compliance-standards "Technical details about the supported compliance standards.")
+* [Configure user interaction capturing for mobile frontends](/docs/observe/digital-experience/new-rum-experience/mobile-frontends/additional-configuration/user-interactions-mobile "Learn how to configure user interaction capturing for mobile frontends.")
 
 ## Feb 16, 2026
 
@@ -67,7 +76,7 @@ This page lists all new or significantly changed Dynatrace Documentation topics,
 * [Pre-process logs with OpenPipeline with ready-made bundles](/docs/analyze-explore-automate/logs/lma-log-processing/lma-pre-processing "Streamline log analysis by enriching and normalizing data using ready-made technology bundles for popular technologies before it enters OpenPipeline.")
 * [OpenTelemetry to Dynatrace semantic mapping](/docs/ingest-from/opentelemetry/otlp-api/otel-semantic-mapping "Learn how Dynatrace automatically maps OpenTelemetry semantic conventions to the Dynatrace Semantic Dictionary.")
 * [Exception analysis](/docs/observe/application-observability/distributed-tracing/exception-analysis "Exception analysis helps you detect, investigate, and resolve exceptions more effectively in Dynatrace.")
-* [Leverage enhanced endpoints for SDv1](/docs/observe/application-observability/services/enhanced-endpoints-sdv1 "Utilize the Enhanced endpoints for SDv1 feature to gain deeper insights into your application's performance and improve your ability to monitor and troubleshoot service interactions.")
+* [Leverage enhanced endpoints for SDv1](/docs/observe/application-observability/services/service-detection/service-detection-v1/enhanced-endpoints-sdv1 "Utilize the Enhanced endpoints for SDv1 feature to gain deeper insights into your application's performance and improve your ability to monitor and troubleshoot service interactions.")
 * [Monitor service message processing](/docs/observe/application-observability/services/monitor-service-message-processing "Monitor service message processing")
 * [Response time analysis](/docs/observe/application-observability/services/response-time-analysis "Response time analysis helps you quickly the key contributors to slow service performance in Dynatrace.")
 * [Data privacy in the New RUM Experience](/docs/observe/digital-experience/new-rum-experience/data-privacy "Learn how to ensure that your RUM setup complies with the data privacy regulations of your region.")
@@ -119,12 +128,12 @@ This page lists all new or significantly changed Dynatrace Documentation topics,
 
 ## Dec 08, 2025
 
+
+
 * [Optimize engineering flow metrics using Jira data](/docs/deliver/pipeline-observability-sdlc-events/tutorials/pipeline-observability-tutorial-jira "Stabilize your value delivery system by making data-driven decisions that improve focus, predictability, and value delivery lead times.")
 * [Upgrade Thirdâparty and Codeâlevel vulnerabilities to the 3rd generation experience](/docs/secure/application-security/vulnerability-analytics/vulnerabilities-upgrade-classic-to-latest "Upgrade from the classic Thirdâparty and Codeâlevel vulnerabilities apps to the Vulnerabilities app in the latest Dynatrace.")
 * [Adjust the log message](/docs/analyze-explore-automate/logs/lma-logs-app/message "Adjust the log message in the Dynatrace Logs app.")
 * [Sensitive Data Center](/docs/manage/data-privacy-and-security/data-privacy/sensitive-data-center "Ease your compliance requirements and manage end-user privacy rights requests.")
-
-
 
 ## Dec 01, 2025
 
@@ -139,7 +148,7 @@ This page lists all new or significantly changed Dynatrace Documentation topics,
 ## Nov 24, 2025
 
 * [Use traces, DQL, and logs to spot patterns](/docs/observe/application-observability/distributed-tracing/use-traces-and-dql-to-spot-patterns "Utilize traces, logs, and DQL to visualize raw data and identify abnormal patterns.")
-* [Relationship between the New RUM Experience and RUM Classic](/docs/observe/digital-experience/new-rum-experience/relationship-to-rum-classic "Learn how the New RUM Experience works alongside RUM Classic.")
+* [Relationship between the New RUM Experience and RUM Classic](/docs/observe/digital-experience/new-rum-experience/transition-from-rum-classic "Learn how to transition from RUM Classic to the New RUM Experience.")
 * [Dynatrace Intelligence (Preview)](/docs/dynatrace-intelligence/dynatrace-intelligence-integrations/copilot-for-workflows "Learn how to automate Dynatrace Intelligence generative AI actions and responses with workflows.")
 * [Mobile frontends](/docs/observe/digital-experience/new-rum-experience/mobile-frontends "Learn how to configure and use the New RUM Experience for your mobile frontends.")
 * [Customize web frontend monitoring using the JavaScript API](/docs/observe/digital-experience/new-rum-experience/web-frontends/new-javascript-api "Learn how to customize web frontend monitoring in the New RUM Experience using the JavaScript API.")

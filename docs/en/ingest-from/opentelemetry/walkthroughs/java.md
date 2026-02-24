@@ -1,7 +1,7 @@
 ---
 title: Instrument your Java application with OpenTelemetry
 source: https://www.dynatrace.com/docs/ingest-from/opentelemetry/walkthroughs/java
-scraped: 2026-02-22T21:24:57.866772
+scraped: 2026-02-24T21:34:19.044798
 ---
 
 # Instrument your Java application with OpenTelemetry

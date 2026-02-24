@@ -1,6 +1,6 @@
 # Документация Dynatrace: analyze-explore-automate/smartscape
 Язык: Русский (RU)
-Сгенерировано: 2026-02-23
+Сгенерировано: 2026-02-24
 Файлов в разделе: 12
 ---
 
@@ -125,7 +125,7 @@ By optimizing the graph's size, you can ensure a stable and uninterrupted experi
 ---
 title: View topology
 source: https://www.dynatrace.com/docs/analyze-explore-automate/smartscape/smartscape-modals/smartscape-view-topology
-scraped: 2026-02-23T21:35:58.657793
+scraped: 2026-02-24T21:33:26.109678
 ---
 
 # View topology
@@ -239,7 +239,7 @@ To maximize your efficiency when using ![Smartscape](https://dt-cdn.net/images/s
 ---
 title: Visual Resolution Path
 source: https://www.dynatrace.com/docs/analyze-explore-automate/smartscape/smartscape-modals/visual-resolution-path
-scraped: 2026-02-23T21:29:22.353181
+scraped: 2026-02-24T21:24:36.440408
 ---
 
 # Visual Resolution Path
@@ -363,7 +363,7 @@ Visualize the topology around any selected entity to gain immediate insights on 
 ---
 title: AWS EC2 ecosystem overview
 source: https://www.dynatrace.com/docs/analyze-explore-automate/smartscape/smartscape-views/aws-ec2-ecosystem-overview
-scraped: 2026-02-23T21:25:37.014172
+scraped: 2026-02-24T21:20:28.137626
 ---
 
 # AWS EC2 ecosystem overview
@@ -437,7 +437,7 @@ To use the **AWS EC2 Instance Ecosystem** effectively, we recommend that you:
 ---
 title: Infrastructure overview
 source: https://www.dynatrace.com/docs/analyze-explore-automate/smartscape/smartscape-views/infrastructure-overview
-scraped: 2026-02-23T21:35:06.540679
+scraped: 2026-02-24T21:19:40.314178
 ---
 
 # Infrastructure overview
@@ -515,7 +515,7 @@ To use **Infrastructure overview** effectively, we recommend that you:
 ---
 title: Kubernetes overview
 source: https://www.dynatrace.com/docs/analyze-explore-automate/smartscape/smartscape-views/kubernetes-overview
-scraped: 2026-02-22T21:25:49.611131
+scraped: 2026-02-24T21:32:37.521559
 ---
 
 # Kubernetes overview
@@ -578,7 +578,7 @@ To use **Kubernetes overview** effectively, we recommend that you:
 ---
 title: Problem graph
 source: https://www.dynatrace.com/docs/analyze-explore-automate/smartscape/smartscape-views/problem-graph
-scraped: 2026-02-23T21:34:24.323244
+scraped: 2026-02-24T21:21:45.479163
 ---
 
 # Problem graph
@@ -699,7 +699,7 @@ To use **Service dependency graph** effectively, we recommend that you:
 ---
 title: Smartscape on Grail view
 source: https://www.dynatrace.com/docs/analyze-explore-automate/smartscape/smartscape-views/smartscape-on-grail-view
-scraped: 2026-02-23T21:27:14.238869
+scraped: 2026-02-24T21:25:51.008651
 ---
 
 # Smartscape on Grail view
@@ -758,7 +758,7 @@ To use the **Smartscape on Grail** view effectively, we recommend that you:
 ---
 title: Smartscape views
 source: https://www.dynatrace.com/docs/analyze-explore-automate/smartscape/smartscape-views
-scraped: 2026-02-23T21:29:01.231428
+scraped: 2026-02-24T21:25:06.865245
 ---
 
 # Smartscape views
@@ -799,7 +799,7 @@ Visualize your AWS EC2 ecosystem and resource relationships.](/docs/analyze-expl
 ---
 title: Smartscape
 source: https://www.dynatrace.com/docs/analyze-explore-automate/smartscape
-scraped: 2026-02-22T21:25:15.911771
+scraped: 2026-02-24T21:31:18.972444
 ---
 
 # Smartscape
@@ -816,10 +816,6 @@ scraped: 2026-02-22T21:25:15.911771
 ### Permissions
 
 The following table describes the required permissions.
-
-Permission
-
-Description
 
 storage:buckets:read
 
@@ -860,16 +856,6 @@ Necessary to read segment variables
 storage:entities:read
 
 Necessary to read segment variables
-
-10
-
-rows per page
-
-Page
-
-1
-
-of 1
 
 ## Get started
 

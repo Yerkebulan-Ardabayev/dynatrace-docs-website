@@ -1,7 +1,7 @@
 ---
 title: Ownership
 source: https://www.dynatrace.com/docs/deliver/ownership-app
-scraped: 2026-02-23T21:30:36.873187
+scraped: 2026-02-24T21:28:18.944131
 ---
 
 # Ownership
@@ -26,10 +26,6 @@ Additionally, you require the following primary permissions in Workflows (go to 
 
 Alternatively, you can set up users with the [AppEngine user policyï»¿](https://www.dynatrace.com/news/blog/tailored-access-management-part-2-onboard-users-to-grail-and-appengine/).
 
-Permission
-
-Description
-
 settings:objects:read
 
 Read settings 2.0
@@ -37,16 +33,6 @@ Read settings 2.0
 settings:objects:write
 
 Write settings 2.0 schemas
-
-10
-
-rows per page
-
-Page
-
-1
-
-of 1
 
 ## Installation
 

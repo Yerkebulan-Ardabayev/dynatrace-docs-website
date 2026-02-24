@@ -1,7 +1,7 @@
 ---
 title: DPL Universally Unique Identifiers
 source: https://www.dynatrace.com/docs/platform/grail/dynatrace-pattern-language/log-processing-uuid-numbers
-scraped: 2026-02-23T21:33:47.287258
+scraped: 2026-02-24T21:26:25.783665
 ---
 
 # DPL Universally Unique Identifiers
@@ -13,18 +13,6 @@ scraped: 2026-02-23T21:33:47.287258
 * Published Jan 17, 2023
 
 Matches valid Universally Unique Identifiers (UUIDs), such as social security numbers. Creates a UUID string parser.
-
-output type
-
-quantifier
-
-configuration
-
-STRING
-
-none
-
-none
 
 ### Example
 
@@ -39,7 +27,3 @@ UUIDSTRING:uuid LD
 ```
 
 Parsing results: UUID is extracted from the string.
-
-uuid
-
-b79cb3ba-745e-5d9a-8903-4a02327a7e09

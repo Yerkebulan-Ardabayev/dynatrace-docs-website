@@ -1,6 +1,6 @@
 # Документация Dynatrace: platform/grail
 Язык: Русский (RU)
-Сгенерировано: 2026-02-23
+Сгенерировано: 2026-02-24
 Файлов в разделе: 23
 ---
 
@@ -9,7 +9,7 @@
 ---
 title: What is Dynatrace Grail?
 source: https://www.dynatrace.com/docs/platform/grail/dynatrace-grail
-scraped: 2026-02-23T21:20:42.580969
+scraped: 2026-02-24T21:13:53.659146
 ---
 
 # What is Dynatrace Grail?
@@ -110,44 +110,6 @@ Because of this architecture:
 
 
 Grail is optimized for extreme throughput and extreme volumes of immutable data converged into one unified place for cost-effective storage and high-performance query. It incorporates elements of ACID and BASE providing full flexibility and contextual analytics.
-
-Scenario
-
-Grail
-
-Conventional DBs
-
-From tera- to exabyte scale of immutable data
-
-![Applicable](https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg "Applicable")
-
-For heterogeneous data in context
-
-![Applicable](https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg "Applicable")
-
-For real-time instant query any-question any-time
-
-![Applicable](https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg "Applicable")
-
-Observability, security data, and business data from digital systems
-
-![Applicable](https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg "Applicable")
-
-For cost-effectiveness as a data lake
-
-![Applicable](https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg "Applicable")
-
-Minimize data interfaces and data flow
-
-![Applicable](https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg "Applicable")
-
-ACID transactional guarantees
-
-![Applicable](https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg "Applicable")
-
-When you need highly frequent updates to data records
-
-![Applicable](https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg "Applicable")
 
 Conventional databases are either built to handle transactional data in low volume following the ACID paradigm, or implement the BASE paradigm known from NoSQL databases.
 
@@ -427,7 +389,7 @@ For additional insights into DPL Architect, see
 ---
 title: DPL Positional Matchers
 source: https://www.dynatrace.com/docs/platform/grail/dynatrace-pattern-language/log-processing-positional-matchers
-scraped: 2026-02-20T21:18:12.035766
+scraped: 2026-02-24T21:22:52.281142
 ---
 
 # DPL Positional Matchers
@@ -443,18 +405,6 @@ scraped: 2026-02-20T21:18:12.035766
 **BOS, BOF**
 
 Matches beginning of string
-
-output type
-
-quantifier
-
-configuration
-
-none
-
-none
-
-none
 
 #### Example
 
@@ -489,18 +439,6 @@ Results in the first line parsed into the `header` field. Parsing following line
 
 Matches any bytes in the middle of string
 
-output type
-
-quantifier
-
-configuration
-
-none
-
-none
-
-none
-
 #### Example
 
 Extracting records after the first row in the string
@@ -534,18 +472,6 @@ Results in lines 2 and 3 parsed to fields `name` and `age`. Line 1 fails to pars
 **EOS, EOF**
 
 Matches end of string
-
-output type
-
-quantifier
-
-configuration
-
-none
-
-none
-
-none
 
 #### Example
 
@@ -587,7 +513,7 @@ Results in the last line being extracted to the `footer` field. First three line
 ---
 title: DPL Universally Unique Identifiers
 source: https://www.dynatrace.com/docs/platform/grail/dynatrace-pattern-language/log-processing-uuid-numbers
-scraped: 2026-02-23T21:33:47.287258
+scraped: 2026-02-24T21:26:25.783665
 ---
 
 # DPL Universally Unique Identifiers
@@ -599,18 +525,6 @@ scraped: 2026-02-23T21:33:47.287258
 * Published Jan 17, 2023
 
 Matches valid Universally Unique Identifiers (UUIDs), such as social security numbers. Creates a UUID string parser.
-
-output type
-
-quantifier
-
-configuration
-
-STRING
-
-none
-
-none
 
 ### Example
 
@@ -625,10 +539,6 @@ UUIDSTRING:uuid LD
 ```
 
 Parsing results: UUID is extracted from the string.
-
-uuid
-
-b79cb3ba-745e-5d9a-8903-4a02327a7e09
 
 ---
 
@@ -839,7 +749,7 @@ If the engine encounters data for which it is unable to find a match, it resets 
 ---
 title: DQL commands
 source: https://www.dynatrace.com/docs/platform/grail/dynatrace-query-language/commands
-scraped: 2026-02-23T21:35:55.204280
+scraped: 2026-02-24T21:18:36.158763
 ---
 
 # DQL commands
@@ -854,183 +764,23 @@ This page provides a list of DQL commands grouped by categories. To get more in-
 
 ## [Data source commands](/docs/platform/grail/dynatrace-query-language/commands/data-source-commands "DQL data source commands")
 
-Name
-
-Description
-
-[data](/docs/platform/grail/dynatrace-query-language/commands/data-source-commands#data "DQL data source commands")
-
-Generates sample data during query runtime.
-
-[describe](/docs/platform/grail/dynatrace-query-language/commands/data-source-commands#describe "DQL data source commands")
-
-Describes the on-read schema extraction definition for a given data object.
-
-[fetch](/docs/platform/grail/dynatrace-query-language/commands/data-source-commands#fetch "DQL data source commands")
-
-Loads data from the specified resource.
-
-[load](/docs/platform/grail/dynatrace-query-language/commands/data-source-commands#load "DQL data source commands")
-
-Loads data from the specified resource. It's used with [lookup data](/docs/platform/grail/lookup-data "Learn about lookup data in Grail.").
-
 ## [Metric commands](/docs/platform/grail/dynatrace-query-language/commands/metric-commands "DQL metric commands")
-
-Name
-
-Description
-
-[timeseries](/docs/platform/grail/dynatrace-query-language/commands/metric-commands#timeseries "DQL metric commands")
-
-Combines loading, filtering and aggregating metrics data into a time series output.
-
-[metrics](/docs/platform/grail/dynatrace-query-language/commands/metric-commands#metrics "DQL metric commands")
-
-Retrieves metric series.
 
 ## [Filter and search commands](/docs/platform/grail/dynatrace-query-language/commands/filtering-commands "DQL filter and search commands")
 
-Name
-
-Description
-
-[dedup](/docs/platform/grail/dynatrace-query-language/commands/filtering-commands#dedup "DQL filter and search commands")
-
-Removes duplicates from a list of records.
-
-[filter](/docs/platform/grail/dynatrace-query-language/commands/filtering-commands#filter "DQL filter and search commands")
-
-Reduces the number of records in a list by keeping only those records that match the specified condition.
-
-[filterOut](/docs/platform/grail/dynatrace-query-language/commands/filtering-commands#filterOut "DQL filter and search commands")
-
-Removes records that match a specific condition.
-
-[search](/docs/platform/grail/dynatrace-query-language/commands/filtering-commands#search "DQL filter and search commands")
-
-Searches for records that match the specified search condition.
-
 ## [Selection and modification commands](/docs/platform/grail/dynatrace-query-language/commands/selection-and-modification-commands "DQL selection and modification commands")
-
-Name
-
-Description
-
-[fields](/docs/platform/grail/dynatrace-query-language/commands/selection-and-modification-commands#fields "DQL selection and modification commands")
-
-Keeps only specified fields.
-
-[fieldsAdd](/docs/platform/grail/dynatrace-query-language/commands/selection-and-modification-commands#fieldsAdd "DQL selection and modification commands")
-
-Evaluates an expression and appends or replaces a field.
-
-[fieldsKeep](/docs/platform/grail/dynatrace-query-language/commands/selection-and-modification-commands#fieldsKeep "DQL selection and modification commands")
-
-Keeps selected fields.
-
-[fieldsRemove](/docs/platform/grail/dynatrace-query-language/commands/selection-and-modification-commands#fieldsRemove "DQL selection and modification commands")
-
-Removes fields from the result.
-
-[fieldsRename](/docs/platform/grail/dynatrace-query-language/commands/selection-and-modification-commands#fieldsRename "DQL selection and modification commands")
-
-Renames a field.
 
 ## [Extraction and parsing commands](/docs/platform/grail/dynatrace-query-language/commands/extraction-and-parsing-commands "DQL extraction commands")
 
-Name
-
-Description
-
-[parse](/docs/platform/grail/dynatrace-query-language/commands/extraction-and-parsing-commands#parse "DQL extraction commands")
-
-Parses a record field and puts the result into one or more fields as specified in the pattern.
-
 ## [Ordering commands](/docs/platform/grail/dynatrace-query-language/commands/ordering-commands "DQL ordering commands")
-
-Name
-
-Description
-
-[limit](/docs/platform/grail/dynatrace-query-language/commands/ordering-commands#limit "DQL ordering commands")
-
-Limits the number of returned records.
-
-[sort](/docs/platform/grail/dynatrace-query-language/commands/ordering-commands#sort "DQL ordering commands")
-
-Sorts the records.
 
 ## [Structuring commands](/docs/platform/grail/dynatrace-query-language/commands/structuring-commands "DQL structuring commands")
 
-Name
-
-Description
-
-[expand](/docs/platform/grail/dynatrace-query-language/commands/structuring-commands#expand "DQL structuring commands")
-
-Expands an array into separate records.
-
-[fieldsFlatten](/docs/platform/grail/dynatrace-query-language/commands/structuring-commands#fieldsFlatten "DQL structuring commands")
-
-Extracts/flattens fields from a nested record.
-
 ## [Aggregation commands](/docs/platform/grail/dynatrace-query-language/commands/aggregation-commands "DQL aggregation commands")
-
-Name
-
-Description
-
-[fieldsSummary](/docs/platform/grail/dynatrace-query-language/commands/aggregation-commands#fieldsSummary "DQL aggregation commands")
-
-Calculates the cardinality of field values that the specified fields have.
-
-[makeTimeseries](/docs/platform/grail/dynatrace-query-language/commands/aggregation-commands#makeTimeseries "DQL aggregation commands")
-
-Creates timeseries from the data in the stream.
-
-[summarize](/docs/platform/grail/dynatrace-query-language/commands/aggregation-commands#summarize "DQL aggregation commands")
-
-Groups together records that have the same values for a given field and aggregates them.
 
 ## [Correlation and join commands](/docs/platform/grail/dynatrace-query-language/commands/correlation-and-join-commands "DQL correlation and join commands")
 
-Name
-
-Description
-
-[append](/docs/platform/grail/dynatrace-query-language/commands/correlation-and-join-commands#append "DQL correlation and join commands")
-
-Appends a given list of records by the records returned by a sub-query.
-
-[join](/docs/platform/grail/dynatrace-query-language/commands/correlation-and-join-commands#join "DQL correlation and join commands")
-
-Joins all records from the source and the sub-query as long as they fulfill the join condition.
-
-[joinNested](/docs/platform/grail/dynatrace-query-language/commands/correlation-and-join-commands#join-nested "DQL correlation and join commands")
-
-Adds matching results from the sub-query as an array of nested records.
-
-[lookup](/docs/platform/grail/dynatrace-query-language/commands/correlation-and-join-commands#lookup "DQL correlation and join commands")
-
-Adds fields from a subquery to the source table by finding a match between a field in the source table and the lookup table.
-
 ## [Smartscape commands](/docs/platform/grail/dynatrace-query-language/commands/smartscape-commands "DQL Smartscape commands")
-
-Name
-
-Description
-
-[smartscapeNodes](/docs/platform/grail/dynatrace-query-language/commands/smartscape-commands#smartscapeNodes "DQL Smartscape commands")
-
-Loads Smartscape nodes using a type pattern (use `*` for all types).
-
-[smartscapeEdges](/docs/platform/grail/dynatrace-query-language/commands/smartscape-commands#smartscapeEdges "DQL Smartscape commands")
-
-Loads Smartscape edges using an edge type pattern (use `*` for all types).
-
-[traverse](/docs/platform/grail/dynatrace-query-language/commands/smartscape-commands#traverse "DQL Smartscape commands")
-
-Traverses source nodes to target nodes in the specified direction, following edge types defined by edgeTypes.
 
 ## Related topics
 
@@ -1048,7 +798,7 @@ Traverses source nodes to target nodes in the specified direction, following edg
 ---
 title: DQL data types
 source: https://www.dynatrace.com/docs/platform/grail/dynatrace-query-language/data-types
-scraped: 2026-02-23T21:36:57.509291
+scraped: 2026-02-24T21:18:30.271421
 ---
 
 # DQL data types
@@ -1460,7 +1210,7 @@ A set of key-value pair data whose value can be any DQL data type.
 ---
 title: DQL best practices
 source: https://www.dynatrace.com/docs/platform/grail/dynatrace-query-language/dql-best-practices
-scraped: 2026-02-21T21:25:22.193670
+scraped: 2026-02-24T21:18:57.246518
 ---
 
 # DQL best practices
@@ -1715,7 +1465,7 @@ Similarly, if you need to sort by a field named 'not':
 ---
 title: DQL compared to SQL and more
 source: https://www.dynatrace.com/docs/platform/grail/dynatrace-query-language/dql-comparison
-scraped: 2026-02-22T21:14:14.260118
+scraped: 2026-02-24T21:18:26.127806
 ---
 
 # DQL compared to SQL and more
@@ -2120,7 +1870,7 @@ events
 ---
 title: Use DQL queries
 source: https://www.dynatrace.com/docs/platform/grail/dynatrace-query-language/dql-guide
-scraped: 2026-02-22T21:14:05.514143
+scraped: 2026-02-24T21:18:34.803188
 ---
 
 # Use DQL queries
@@ -2182,10 +1932,6 @@ fetch events
 
 | summarize Total_amount = sum(amount)
 ```
-
-Total\_amount
-
-`1,064,497`
 
 ## Specify timeframe
 
@@ -2320,7 +2066,7 @@ You can learn DQL through hands-on experience with interactive tutorials in the 
 ---
 title: DQL language reference
 source: https://www.dynatrace.com/docs/platform/grail/dynatrace-query-language/dql-reference
-scraped: 2026-02-23T21:39:47.237084
+scraped: 2026-02-24T21:18:24.946470
 ---
 
 # DQL language reference
@@ -2520,7 +2266,7 @@ The following DQL query uses seven pipeline steps to get from raw log data to an
 ---
 title: DQL use cases
 source: https://www.dynatrace.com/docs/platform/grail/dynatrace-query-language/dql-use-cases
-scraped: 2026-02-23T21:37:22.369772
+scraped: 2026-02-24T21:20:14.888458
 ---
 
 # DQL use cases
@@ -2631,50 +2377,6 @@ total=count()
 
 Results:
 
-bank\_card
-
-bank\_cardPer
-
-apple\_pay
-
-apple\_payPerc
-
-paypal
-
-paypalPerc
-
-google\_pay
-
-google\_payPerc
-
-unpaid\_booking
-
-unpaid\_bookingPerc
-
-total
-
-345
-
-0.19425675675675674
-
-353
-
-0.19876126126126126
-
-360
-
-0.20270270270270271
-
-364
-
-0.20495495495495494
-
-354
-
-0.19932432432432431
-
-1776
-
 ### Extract the first 'n' characters from the field.
 
 In this example, you have a field called `kiosk` and need to extract the first three characters to identify the location abbreviation of the kiosk.
@@ -2704,14 +2406,6 @@ In this example, you have a field called `kiosk` and need to extract the first t
 ```
 
 Results:
-
-kiosk
-
-kioskLoc
-
-LAOBAUA729
-
-LAO
 
 ### Extract information from an XML element
 
@@ -2811,26 +2505,6 @@ code = xml[code]
 
 Results:
 
-domain
-
-serial
-
-object
-
-transaction
-
-code
-
-bca\_icas\_soa
-
-1467
-
-example-Firewall
-
-6187
-
-0x01130007
-
 ### Investigate security incidents in Kubernetes clusters Threat hunting
 
 Application Security
@@ -2857,7 +2531,7 @@ In this use case, you perform queries using [![Investigations](https://dt-cdn.ne
 ---
 title: String functions
 source: https://www.dynatrace.com/docs/platform/grail/dynatrace-query-language/functions/string-functions
-scraped: 2026-02-19T21:18:08.972644
+scraped: 2026-02-24T21:17:57.597577
 ---
 
 # String functions
@@ -2892,30 +2566,6 @@ Concatenates the expressions into a single string.
 
 #### Parameters
 
-Parameter
-
-Type
-
-Description
-
-Required
-
-expression
-
-double, long, string
-
-A numeric or string expressions that should be concatenated with others.
-
-Required
-
-delimiter
-
-string
-
-Constant string to be inserted between each concatenated value. Default: `""` (empty string).
-
-Optional
-
 #### Returns
 
 The data type of the returned value is `string`.
@@ -2936,22 +2586,6 @@ Run in Playground
 
 Query result:
 
-a
-
-b
-
-c
-
-concat(a, b, c, delimiter: " ")
-
-`DQL`
-
-`is`
-
-`awesome!`
-
-`DQL is awesome!`
-
 ## contains
 
 Searches the string expression for a substring. Returns `true` if the substring was found, `false` otherwise.
@@ -2961,38 +2595,6 @@ Searches the string expression for a substring. Returns `true` if the substring 
 `contains(expression, substring [, caseSensitive])`
 
 #### Parameters
-
-Parameter
-
-Type
-
-Description
-
-Required
-
-expression
-
-string
-
-The field or expression to check.
-
-Required
-
-substring
-
-string
-
-The substring that should be contained.
-
-Required
-
-caseSensitive
-
-boolean
-
-Whether the search should be done in a case-sensitive way. The default value is `true`.
-
-Optional
 
 #### Returns
 
@@ -3026,30 +2628,6 @@ Run in Playground
 
 Query result:
 
-content
-
-contains(content, "DQL")
-
-contains(content, "dql", caseSensitive:FALSE)
-
-contains(content, "Query")
-
-`DQL is awesome!`
-
-`true`
-
-`true`
-
-`false`
-
-`Dynatrace Query Language`
-
-`false`
-
-`false`
-
-`true`
-
 ## decodeUrl
 
 Returns a URL-decoded string.
@@ -3059,22 +2637,6 @@ Returns a URL-decoded string.
 `decodeUrl(expression)`
 
 #### Parameters
-
-Parameter
-
-Type
-
-Description
-
-Required
-
-expression
-
-string
-
-The string expression that will be decoded.
-
-Required
 
 #### Returns
 
@@ -3100,18 +2662,6 @@ Run in Playground
 
 Query result:
 
-content
-
-decodeUrl(content)
-
-`https%3A%2F%2Fwww.dynatrace.com%2Fplatform%2Fgrail`
-
-`https://www.dynatrace.com/platform/grail`
-
-`https://www.dynatrace.com/platform/grail`
-
-`https://www.dynatrace.com/platform/grail`
-
 ## encodeUrl
 
 Encodes a URL string by replacing characters that aren't numbers or letters with percentage symbols and hexadecimal numbers.
@@ -3121,22 +2671,6 @@ Encodes a URL string by replacing characters that aren't numbers or letters with
 `encodeUrl(expression)`
 
 #### Parameters
-
-Parameter
-
-Type
-
-Description
-
-Required
-
-expression
-
-string
-
-The string expression that will be encoded.
-
-Required
 
 #### Returns
 
@@ -3158,14 +2692,6 @@ Run in Playground
 
 Query result:
 
-content
-
-encodeUrl(content)
-
-`https://www.dynatrace.com/platform/grail`
-
-`https%3A%2F%2Fwww.dynatrace.com%2Fplatform%2Fgrail`
-
 ## endsWith
 
 Checks if a string expression ends with a suffix. Returns `true` if does, `false` otherwise.
@@ -3175,38 +2701,6 @@ Checks if a string expression ends with a suffix. Returns `true` if does, `false
 `endsWith(expression, suffix [, caseSensitive])`
 
 #### Parameters
-
-Parameter
-
-Type
-
-Description
-
-Required
-
-expression
-
-string
-
-The string expression that will be checked.
-
-Required
-
-suffix
-
-string
-
-The suffix string with which the expression should end.
-
-Required
-
-caseSensitive
-
-boolean
-
-Whether the check should be done in a case-sensitive way.
-
-Optional
 
 #### Returns
 
@@ -3240,30 +2734,6 @@ Run in Playground
 
 Query result:
 
-content
-
-endsWith(content, "awesome!")
-
-endsWith(content, "AWESOME!", caseSensitive:FALSE)
-
-endsWith(content, "Language")
-
-`DQL is awesome!`
-
-`true`
-
-`true`
-
-`false`
-
-`Dynatrace Query Language`
-
-`false`
-
-`false`
-
-`true`
-
 ## escape
 
 Returns an escaped string.
@@ -3272,67 +2742,11 @@ Escaping rules
 
 1. Single and double quotes are escaped. Backticks are not escaped.
 
-Input
-
-Output
-
-`"`
-
-`\"`
-
-`'`
-
-`\'`
-
 2. Backslashes are escaped.
-
-Input
-
-Output
-
-`\`
-
-`\\`
 
 3. ASCII characters backspace, form feed, new line, carriage return, horizontal tabs are escaped.
 
-Input
-
-Output
-
-`<backspace>`
-
-`\b`
-
-`<form feed>`
-
-`\f`
-
-`<new line>`
-
-`\n`
-
-`<carriage return>`
-
-`\r`
-
-`<horizontal tab>`
-
-`\t`
-
 4. ASCII characters within the range 0x20 - 0x7e (printable ASCII characters), that are not covered by any of the above rules, stay as they are.
-
-Input
-
-Output
-
-`a`
-
-`a`
-
-`1`
-
-`1`
 
 5. All other ASCII characters are represented as `\xhh`. This applies to the following characters
 
@@ -3341,45 +2755,13 @@ Output
    * characters within the range 0x0e - 0x1f
    * character 0x7f
 
-Input
-
-Output
-
-`<vertical tab>`
-
-`\x0b`
-
 6. All characters in extended ASCII space (0x80-0xff) and Unicode characters outside of the ASCII space are represented as `\uhhhh`.
-
-Input
-
-Output
-
-`Ã¶`
-
-`\u00f6`
 
 #### Syntax
 
 `escape(expression)`
 
 #### Parameters
-
-Parameter
-
-Type
-
-Description
-
-Required
-
-expression
-
-string expression
-
-The string expression that will be escaped.
-
-Required
 
 #### Returns
 
@@ -3415,28 +2797,6 @@ Returns the character at a given position from a string expression. Negative val
 
 #### Parameters
 
-Parameter
-
-Type
-
-Description
-
-Required
-
-expression
-
-string
-
-Required
-
-position
-
-long
-
-The position at which to get the character.
-
-Required
-
 #### Returns
 
 The data type of the returned value is `string`.
@@ -3469,30 +2829,6 @@ Run in Playground
 
 Query result:
 
-content
-
-getCharacter(content, 1)
-
-getCharacter(content, 17)
-
-getCharacter(content, -1)
-
-`DQL is awesome!`
-
-`Q`
-
-*null*
-
-`!`
-
-`Dynatrace Query Language`
-
-`y`
-
-`a`
-
-`e`
-
 ## indexOf
 
 Returns the index of the first occurrence of a substring in a string expression.
@@ -3506,38 +2842,6 @@ If the defined substring is not found, the function returns `-1`.
 `indexOf(expression, substring [, from])`
 
 #### Parameters
-
-Parameter
-
-Type
-
-Description
-
-Required
-
-expression
-
-string
-
-The string expression in which the substring is searched for.
-
-Required
-
-substring
-
-string
-
-The substring expression to search for in the expression.
-
-Required
-
-from
-
-long
-
-The index from which to start the forward search for the first occurrence of the substring within the expression. Negative values are counted from the end of the string.
-
-Optional
 
 #### Returns
 
@@ -3571,33 +2875,7 @@ Run in Playground
 
 Query result:
 
-content
-
-indexOf(content, "a")
-
-indexOf(content, "a", from:10)
-
-indexOf(content, "Query")
-
-`DQL is awesome!`
-
-`7`
-
-`-1`
-
-`-1`
-
-`Dynatrace Query Language`
-
-`3`
-
-`17`
-
-`10`
-
 ## jsonField
-
-
 
 Parses a JSON string and extracts one value selected by its name.
 
@@ -3606,38 +2884,6 @@ Parses a JSON string and extracts one value selected by its name.
 `jsonField(expression, fieldName [, seek])`
 
 #### Parameters
-
-Parameter
-
-Type
-
-Description
-
-Required
-
-expression
-
-string
-
-The JSON string that should be parsed.
-
-Required
-
-fieldName
-
-string
-
-The string literal with the key to be extracted.
-
-Required
-
-seek
-
-boolean
-
-Flag indicating if the function should search for the first valid JSON object in the expression. The default value is `false`.
-
-Optional
 
 #### Returns
 
@@ -3675,14 +2921,6 @@ Run in Playground
 
 Query result:
 
-content
-
-jsonField(content, "name")
-
-`{"name":"John", "children":["Mallory", "Mary"], "address":{"city":"Boston", "zip":"02210"}}`
-
-`John`
-
 ##### Example 2
 
 ```
@@ -3701,18 +2939,6 @@ Run in Playground
 
 Query result:
 
-content
-
-jsonField(content, "name", seek:FALSE)
-
-jsonField(content, "name", seek:TRUE)
-
-`JSON: {"name": "John"} ...`
-
-`null`
-
-`John`
-
 ## jsonPath
 
 Parses a JSON string and extracts one value selected by a JSONPath expression.
@@ -3722,38 +2948,6 @@ Parses a JSON string and extracts one value selected by a JSONPath expression.
 `jsonPath(expression, jsonPath [, seek])`
 
 #### Parameters
-
-Parameter
-
-Type
-
-Description
-
-Required
-
-expression
-
-string
-
-The JSON string that should be parsed.
-
-Required
-
-jsonPath
-
-string
-
-The string literal with the JSONPath expression of the value to be extracted.
-
-Required
-
-seek
-
-boolean
-
-Flag indicating if the function should search for the first valid JSON object in the expression. The default value is `false`.
-
-Optional
 
 #### Returns
 
@@ -3799,22 +2993,6 @@ Run in Playground
 
 Query result:
 
-content
-
-jsonPath(content, "$.children[0]")
-
-jsonPath(content, "$.address.city")
-
-jsonPath(content, "$['address']['zip']")
-
-`{"name":"John", "children":["Mallory", "Mary"], "address":{"city":"Boston", "zip":"02210"}}`
-
-`Mallory`
-
-`Boston`
-
-`02210`
-
 ##### Example 2
 
 ```
@@ -3833,18 +3011,6 @@ Run in Playground
 
 Query result:
 
-content
-
-jsonPath(content, "$.name", seek:FALSE)
-
-jsonPath(content, "$.name", seek:TRUE)
-
-`JSON: {"name": "John"} ...`
-
-`null`
-
-`John`
-
 ## lastIndexOf
 
 Returns the index of the last occurrence of a substring in a string expression. Starts to search backward from a given index. Negative values for the from parameter are counted from the end of the string. The default value for from is -1 (search from the end of the string). The search is case-sensitive. If the substring is not found, the function returns `-1`.
@@ -3854,36 +3020,6 @@ Returns the index of the last occurrence of a substring in a string expression. 
 `lastIndexOf(expression, substring [, from])`
 
 #### Parameters
-
-Parameter
-
-Type
-
-Description
-
-Required
-
-expression
-
-string
-
-The string expression in which the substring is searched for.
-
-Required
-
-substring
-
-string
-
-The substring expression to search for in the expression.
-
-Required
-
-from
-
-long
-
-Optional
 
 #### Returns
 
@@ -3917,30 +3053,6 @@ Run in Playground
 
 Query result:
 
-content
-
-lastIndexOf(content, "a")
-
-lastIndexOf(content, "a", from:10)
-
-lastIndexOf(content, "Query")
-
-`DQL is awesome!`
-
-`7`
-
-`7`
-
-`-1`
-
-`Dynatrace Query Language`
-
-`21`
-
-`6`
-
-`10`
-
 ## levenshteinDistance
 
 Computes the Levenshtein distance between two input strings.
@@ -3950,30 +3062,6 @@ Computes the Levenshtein distance between two input strings.
 `levenshteinDistance(expression, expression)`
 
 #### Parameters
-
-Parameter
-
-Type
-
-Description
-
-Required
-
-first expression
-
-string
-
-The first string expression to compute the Levenshtein distance from.
-
-Required
-
-second
-
-string
-
-The second string expression to compute the Levenshtein distance from.
-
-Required
 
 #### Returns
 
@@ -4003,30 +3091,6 @@ Run in Playground
 
 Query result:
 
-a
-
-b
-
-levenshteinDistance(a, b)
-
-`DQL is awesome!`
-
-`Grail is awesome!`
-
-`5`
-
-`Dynatrace Query Language`
-
-`DQL`
-
-`21`
-
-`Dynatrace Query Language`
-
-`dynatrace query language`
-
-`3`
-
 ## like
 
 Tests if a string expression matches a pattern. If the pattern does not contain percent signs, `like()` acts as the `==` operator (equality check). A percent character in the pattern `(%)` matches any sequence of zero or more characters. An underscore in the pattern `(\_)` matches a single character.
@@ -4036,26 +3100,6 @@ Tests if a string expression matches a pattern. If the pattern does not contain 
 `like(expression, pattern)`
 
 #### Parameters
-
-Parameter
-
-Type
-
-Description
-
-Required
-
-expression
-
-string
-
-Required
-
-pattern
-
-string
-
-Required
 
 #### Returns
 
@@ -4089,30 +3133,6 @@ Run in Playground
 
 Query result:
 
-content
-
-like(content, "%DQL%")
-
-like(content, "D%L%")
-
-like(content, "D\_L%")
-
-`DQL is awesome!`
-
-`true`
-
-`true`
-
-`true`
-
-`Dynatrace Query Language`
-
-`false`
-
-`true`
-
-`false`
-
 ## lower
 
 Converts a string to lowercase.
@@ -4122,22 +3142,6 @@ Converts a string to lowercase.
 `lower(expression)`
 
 #### Parameters
-
-Parameter
-
-Type
-
-Description
-
-Required
-
-expression
-
-string
-
-The string expression to convert to lowercase.
-
-Required
 
 #### Returns
 
@@ -4163,19 +3167,9 @@ Run in Playground
 
 Query result:
 
-content
-
-lower(content)
-
-`DQL is awesome!`
-
-`dql is awesome!`
-
-`Dynatrace Query Language`
-
-`dynatrace query language`
-
 ## matchesPattern
+
+
 
 Tests if a string expression matches the DPL pattern and returns `true` if it does, otherwise, returns `false`.
 
@@ -4184,30 +3178,6 @@ Tests if a string expression matches the DPL pattern and returns `true` if it do
 `matchesPattern(expression, pattern)`
 
 #### Parameters
-
-Parameter
-
-Type
-
-Description
-
-Required
-
-expression
-
-string
-
-A field or string expression to test.
-
-Required
-
-pattern
-
-string
-
-The matching pattern.
-
-Required
 
 #### Returns
 
@@ -4257,38 +3227,6 @@ Matches a phrase against the input string expression using token matchers.
 
 #### Parameters
 
-Parameter
-
-Type
-
-Description
-
-Required
-
-expression
-
-string, array
-
-The expression (string or array of strings) that should be checked.
-
-Required
-
-phrase
-
-string
-
-The phrase to search for.
-
-Required
-
-caseSensitive
-
-boolean
-
-Whether the match should be done case-sensitive. Default: `false`.
-
-Optional
-
 #### Returns
 
 The data type of the returned value is `boolean`.
@@ -4329,49 +3267,7 @@ Run in Playground
 
 Query result:
 
-content
-
-matchesPhrase(content, "DQL")
-
-matchesPhrase(content, "Dyna")
-
-matchesPhrase(content, "query")
-
-matchesPhrase(content, "query", caseSensitive:TRUE)
-
-`DQL is awesome!`
-
-`true`
-
-`false`
-
-`false`
-
-`false`
-
-`Dynatrace Query Language`
-
-`false`
-
-`false`
-
-`true`
-
-`false`
-
-`[DQL, is, awesome, !, Dynatrace Query Language]`
-
-`true`
-
-`false`
-
-`true`
-
-`false`
-
 ## matchesValue
-
-
 
 Searches records for a specific value in a given attribute. Returns `true` or `false`.
 
@@ -4380,38 +3276,6 @@ Searches records for a specific value in a given attribute. Returns `true` or `f
 `matchesValue(expression, value, â¦ [, caseSensitive])`
 
 #### Parameters
-
-Parameter
-
-Type
-
-Description
-
-Required
-
-expression
-
-string, array
-
-The expression (string or array of strings) that should be checked.
-
-Required
-
-value
-
-string, array
-
-The value to search for using patterns (supports an array of patterns or a list of patterns).
-
-Required
-
-caseSensitive
-
-boolean
-
-Whether the match should be done case-sensitive. Default: `false`.
-
-Optional
 
 #### Returns
 
@@ -4443,22 +3307,6 @@ Run in Playground
 
 Query result:
 
-content
-
-matchesValue(content, "User\*")
-
-matchesValue(content, "user\*")
-
-matchesValue(content, "user\*", caseSensitive:TRUE)
-
-`User 'kÃ¤Ã¤rmanÃ¼' failed to login from 192.168.0.1`
-
-`true`
-
-`true`
-
-`false`
-
 ##### Example 2
 
 Values are matched from the beginning. To match parts of the value, use `*` as wildcard symbol:
@@ -4483,22 +3331,6 @@ Run in Playground
 
 Query result:
 
-content
-
-matchesValue(content, "192.168.0.1")
-
-matchesValue(content, "\*192.168.0.1")
-
-matchesValue(content, "\*failed to log\*")
-
-`User 'kÃ¤Ã¤rmanÃ¼' failed to login from 192.168.0.1`
-
-`false`
-
-`true`
-
-`true`
-
 ##### Example 3
 
 Only ASCII characters are matched case-insensitive:
@@ -4518,18 +3350,6 @@ matchesValue(content, "Ãsterreich")
 Run in Playground
 
 Query result:
-
-content
-
-matchesValue(content, "Ã¶sterreich")
-
-matchesValue(content, "Ãsterreich")
-
-`Ãsterreich`
-
-`false`
-
-`true`
 
 ##### Example 4
 
@@ -4554,22 +3374,6 @@ matchesValue(technologies, "java*")
 Run in Playground
 
 Query result:
-
-technologies
-
-matchesValue(technologies, "Java11")
-
-matchesValue(technologies, "java")
-
-matchesValue(technologies, "java\*")
-
-`[Java11, java17]`
-
-`true`
-
-`false`
-
-`true`
 
 #### Multi-pattern comparison
 
@@ -4601,26 +3405,6 @@ Run in Playground
 
 Query result:
 
-content
-
-matchesValue(content, array("Grail", "dql"))
-
-matchesValue(content, {"Grail", "dql"})
-
-matchesValue(content, {"Grail", "dq\*"})
-
-matchesValue(caseSensitive:TRUE, content, {"Grail", "dq\*"})
-
-`DQL, is, awesome, !`
-
-`true`
-
-`true`
-
-`true`
-
-`false`
-
 ## parse
 
 Extracts a single value from a string as specified in the pattern or a record if there are multiple named matchers.
@@ -4630,30 +3414,6 @@ Extracts a single value from a string as specified in the pattern or a record if
 `parse(expression, pattern)`
 
 #### Parameters
-
-Parameter
-
-Type
-
-Description
-
-Required
-
-expression
-
-string
-
-A field or string expression to parse.
-
-Required
-
-pattern
-
-string
-
-The parse pattern. Must conform with patterns (see [DPL](/docs/platform/grail/dynatrace-pattern-language "Use Dynatrace Pattern Language to describe patterns using matchers.")).
-
-Required
 
 #### Returns
 
@@ -4704,30 +3464,6 @@ Unlike the [`parse`](/docs/platform/grail/dynatrace-query-language/functions/str
 
 #### Parameters
 
-Parameter
-
-Type
-
-Description
-
-Required
-
-expression
-
-string
-
-A field or string expression to parse.
-
-Required
-
-pattern
-
-string
-
-The parse pattern. Must conform with [DPL patterns](/docs/platform/grail/dynatrace-pattern-language "Use Dynatrace Pattern Language to describe patterns using matchers.").
-
-Required
-
 #### Returns
 
 The data type of the returned value is `array`.
@@ -4775,38 +3511,6 @@ Extracts punctuation characters out of an input string.
 
 #### Parameters
 
-Parameter
-
-Type
-
-Description
-
-Required
-
-expression
-
-string
-
-The string expression from which the punctuation characters are extracted.
-
-Required
-
-count
-
-positive integer
-
-The maximum number of returned punctuation characters. Default: `32`.
-
-Optional
-
-withSpace
-
-boolean
-
-Whether space characters should be included. Default: `false`.
-
-Optional
-
 #### Returns
 
 The data type of the returned value is `string`.
@@ -4845,38 +3549,6 @@ Run in Playground
 
 Query result:
 
-content
-
-punctuation(content)
-
-punctuation(content, count:2)
-
-punctuation(content, count:2, withSpace:TRUE)
-
-`DQL is awesome!`
-
-`!`
-
-`!`
-
-`__`
-
-`Dynatrace Query Language`
-
-*empty string*
-
-*empty string*
-
-`__`
-
-`${placeholder}`
-
-`${}`
-
-`${`
-
-`${`
-
 ## replacePattern
 
 Replaces each substring of a string that matches the DPL pattern with the given string. The pattern must be defined as a constant string expression. For additional details about pattern syntax, see the [DPL documentation](/docs/platform/grail/dynatrace-pattern-language "Use Dynatrace Pattern Language to describe patterns using matchers.").
@@ -4886,38 +3558,6 @@ Replaces each substring of a string that matches the DPL pattern with the given 
 `replacePattern(expression, pattern, replacement)`
 
 #### Parameters
-
-Parameter
-
-Type
-
-Description
-
-Required
-
-expression
-
-string
-
-A field or string expression to replace.
-
-Required
-
-pattern
-
-string
-
-The replacing pattern.
-
-Required
-
-replacement
-
-string
-
-The string that should replace the found substrings.
-
-Required
 
 #### Returns
 
@@ -4954,8 +3594,6 @@ Query result:
 
 ## replaceString
 
-
-
 Replaces each substring of a string with a given string. This function replaces only exactly matched substrings from the original string to the replacement. Matching is case-sensitive and doesn't use any wildcards. All found patterns will be replaced if they do not intersect. For instance, replacing `abcabca` in a string with `abca` pattern produces only one replacement. Only the first occurrence at the beginning of the string will be replaced.
 
 #### Syntax
@@ -4963,38 +3601,6 @@ Replaces each substring of a string with a given string. This function replaces 
 `replaceString(expression, substring, replacement)`
 
 #### Parameters
-
-Parameter
-
-Type
-
-Description
-
-Required
-
-expression
-
-string
-
-The field or expression where substrings should be replaced.
-
-Required
-
-substring
-
-string
-
-The substring that should be replaced.
-
-Required
-
-replacement
-
-string
-
-The string that should replace the found substrings.
-
-Required
 
 #### Returns
 
@@ -5028,30 +3634,6 @@ Run in Playground
 
 Query result:
 
-content
-
-replaceString(content, "awesome", "simple")
-
-replaceString(content, "abca", "xyz")
-
-`DQL is awesome!`
-
-`DQL is simple!`
-
-`DQL is awesome!`
-
-`Dynatrace Query Language`
-
-`Dynatrace Query Language`
-
-`Dynatrace Query Language`
-
-`abcabca`
-
-`abcabca`
-
-`xyzbca`
-
 ## splitByPattern
 
 Splits a string into an array at each occurrence of the DPL pattern.
@@ -5061,30 +3643,6 @@ Splits a string into an array at each occurrence of the DPL pattern.
 `splitByPattern(expression, pattern)`
 
 #### Parameters
-
-Parameter
-
-Type
-
-Description
-
-Required
-
-expression
-
-string
-
-A field or string expression to split.
-
-Required
-
-pattern
-
-string
-
-The splitting pattern. Must conform with [DPL patterns](/docs/platform/grail/dynatrace-pattern-language "Use Dynatrace Pattern Language to describe patterns using matchers.").
-
-Required
 
 #### Returns
 
@@ -5127,6 +3685,8 @@ Query result:
 
 ## splitString
 
+
+
 Splits a string according to the parameters set.  
 Retrieves an array of substrings of the specified expression that are adjacent to occurrences of the given pattern.  
 Parameters are interpreted literally. For example, splitting `www.dynatrace.org` by `.` results in `www` and `dynatrace` and `org`.  
@@ -5147,30 +3707,6 @@ If the pattern is empty, it splits the expression into one-byte substrings. For 
 `splitString(expression, pattern)`
 
 #### Parameters
-
-Parameter
-
-Type
-
-Description
-
-Required
-
-expression
-
-string
-
-The string expression to split up into an array.
-
-Required
-
-pattern
-
-string
-
-The pattern to split the string expression at, or the empty string to split into one-byte strings.
-
-Required
 
 #### Returns
 
@@ -5208,36 +3744,6 @@ Run in Playground
 
 Query result:
 
-content
-
-splitString(content, " ")
-
-splitString(content, "is")
-
-splitString(content, "")
-
-splitString(content, "XYZ")
-
-`DQL is awesome!`
-
-`[DQL, is, awesome!]`
-
-`[DQL , awesome!]`
-
-`[D, Q, L, , i, s, , a, w, e, s, o, m, e, !]`
-
-`[DQL is awesome!]`
-
-`Dynatrace Query Language`
-
-`[Dynatrace, Query, Language]`
-
-`[Dynatrace Query Language]`
-
-`[D, y, n, a, t, r, a, c, e, , Q, u, e, r, y, , L, a, n, g, u, a, g, e]`
-
-`[Dynatrace Query Language]`
-
 ## startsWith
 
 Checks if a string expression starts with a prefix. Returns `true` if does, `false` otherwise.
@@ -5247,38 +3753,6 @@ Checks if a string expression starts with a prefix. Returns `true` if does, `fal
 `startsWith(expression, prefix [, caseSensitive])`
 
 #### Parameters
-
-Parameter
-
-Type
-
-Description
-
-Required
-
-expression
-
-string
-
-The string expression that will be checked.
-
-Required
-
-prefix
-
-string
-
-The prefix string with which the expression should start.
-
-Required
-
-caseSensitive
-
-boolean
-
-Whether the check should be done in a case-sensitive way.
-
-Optional
 
 #### Returns
 
@@ -5308,24 +3782,6 @@ Run in Playground
 
 Query result:
 
-content
-
-startsWith(content, "D")
-
-startsWith(content, "dql", caseSensitive:FALSE)
-
-`DQL is awesome!`
-
-`true`
-
-`true`
-
-`Dynatrace Query Language`
-
-`true`
-
-`false`
-
 ## stringLength
 
 Returns the length of a string expression. Length is defined as the number of UTF-16 code units, which is often the same as the number of characters in the string. In some cases, the number of characters is smaller than the number of UTF-16 code units, for example when Combining Diacritical Marks are used, or if characters outside the Basic Multilingual Plane (BMP), such as Emoji, are present.
@@ -5339,22 +3795,6 @@ No specific normalization form is guaranteed for Dynatrace-provided strings.
 `stringLength(expression)`
 
 #### Parameters
-
-Parameter
-
-Type
-
-Description
-
-Required
-
-expression
-
-string
-
-The string expression to get the number of UTF-16 code units for.
-
-Required
 
 #### Returns
 
@@ -5384,22 +3824,6 @@ Run in Playground
 
 Query result:
 
-content
-
-stringLength(content)
-
-`DQL is awesome!`
-
-`15`
-
-`Dynatrace Query Language`
-
-`24`
-
-`ðâð¦º`
-
-`5`
-
 ## substring
 
 Gets a code unit range using a start index (inclusive) and an end index (exclusive).
@@ -5421,38 +3845,6 @@ The returned substring never starts or ends with an incomplete UTF-16 surrogate 
 `substring(expression [, from] [, to])`
 
 #### Parameters
-
-Parameter
-
-Type
-
-Description
-
-Required
-
-expression
-
-string
-
-The string expression to get a substring of.
-
-Required
-
-from
-
-long
-
-Index of first code unit to include in sub-string, inclusive, relative to start of `expression` if positive, relative to end if negative. Clamped at string bounds.
-
-Optional
-
-to
-
-long
-
-Index of last code unit to include in sub-string, exclusive, relative to start of `expression` if positive, relative to end if negative. Clamped at string bounds.
-
-Optional
 
 #### Returns
 
@@ -5490,39 +3882,7 @@ Run in Playground
 
 Query result:
 
-content
-
-substring(content, from:4)
-
-substring(content, from:-2)
-
-substring(content, from:4, to:9)
-
-substring(content, from:-42, to:42)
-
-`DQL is awesome!`
-
-`is awesome!`
-
-`e!`
-
-`is aw`
-
-`DQL is awesome!`
-
-`Dynatrace Query Language`
-
-`trace Query Language`
-
-`ge`
-
-`trace`
-
-`Dynatrace Query Language`
-
 ## trim
-
-
 
 Removes leading and trailing whitespaces. Any code point <= ASCII 32 in decimal is considered a whitespace, where ASCII 32 is a blank space.
 
@@ -5531,22 +3891,6 @@ Removes leading and trailing whitespaces. Any code point <= ASCII 32 in decimal 
 `trim(expression)`
 
 #### Parameters
-
-Parameter
-
-Type
-
-Description
-
-Required
-
-expression
-
-string
-
-The string expression to remove leading and trailing white-space from.
-
-Required
 
 #### Returns
 
@@ -5572,18 +3916,6 @@ Run in Playground
 
 Query result:
 
-content
-
-trim(content)
-
-`" DQL is awesome!"`
-
-`DQL is awesome!`
-
-`" Dynatrace Query Language "`
-
-`Dynatrace Query Language`
-
 ## unescape
 
 Returns an unescaped string.
@@ -5592,125 +3924,21 @@ Unescaping rules
 
 1. Single quotes, double quotes and backticks are unescaped.
 
-Input
-
-Output
-
-`\"`
-
-`"`
-
-`\'`
-
-`'`
-
-`` \` ``
-
-`` ` ``
-
 2. Backslashes are unescaped.
-
-Input
-
-Output
-
-`\\`
-
-`\`
 
 3. ASCII characters bell, backspace, form feed, new line, carriage return, horizontal tab and vertical tab are unescaped.
 
-Input
-
-Output
-
-`\a`
-
-`<bell>`
-
-`\b`
-
-`<backspace>`
-
-`\f`
-
-`<form feed>`
-
-`\n`
-
-`<new line>`
-
-`\r`
-
-`<carriage return>`
-
-`\t`
-
-`<horizontal tab>`
-
-`\v`
-
-`<vertical tab>`
-
 4. `\xhh` within standard ASCII space (0x00 - 0x7f) is replaced by the related character.
-
-Input
-
-Output
-
-`\x40`
-
-`@`
-
-`\x64`
-
-`d`
 
 5. `\xhh` within extended ASCII space (0x80 - 0xff) is interpreted as `\u00hh` and replaced by the related Unicode character.
 
-Input
-
-Output
-
-`\xff`
-
-`Ã¿`
-
 6. `\uhhhh` is replaced by the related Unicode character.
-
-Input
-
-Output
-
-`\u002e`
-
-`.`
-
-`\u0064`
-
-`d`
 
 #### Syntax
 
 `unescape(expression)`
 
 #### Parameters
-
-Parameter
-
-Type
-
-Description
-
-Required
-
-expression
-
-string expression
-
-The string expression that will be unescaped.
-
-Required
 
 #### Returns
 
@@ -5746,22 +3974,6 @@ Unescapes HTML in a string by replacing ASCII characters with HTML syntax.
 
 #### Parameters
 
-Parameter
-
-Type
-
-Description
-
-Required
-
-expression
-
-string
-
-The string expression that will be unescaped.
-
-Required
-
 #### Returns
 
 The data type of the returned value is `string`.
@@ -5786,18 +3998,6 @@ Run in Playground
 
 Query result:
 
-content
-
-unescapeHtml(content)
-
-`DQL is &lt;bold&gt;awesome&lt;/bold&gt;!`
-
-`DQL is <bold>awesome</bold>!`
-
-`&lt;a href=&quot;https://www.dynatrace.com/platform/grail&quot;&gt;Dynatrace Query Language&lt;/a&gt;`
-
-`<a href="https://www.dynatrace.com/platform/grail">Dynatrace Query Language</a>`
-
 ## upper
 
 Converts a string to uppercase.
@@ -5807,22 +4007,6 @@ Converts a string to uppercase.
 `upper(expression)`
 
 #### Parameters
-
-Parameter
-
-Type
-
-Description
-
-Required
-
-expression
-
-string
-
-The string expression to convert to uppercase.
-
-Required
 
 #### Returns
 
@@ -5848,18 +4032,6 @@ Run in Playground
 
 Query result:
 
-content
-
-upper(content)
-
-`DQL is awesome!`
-
-`DQL IS AWESOME!`
-
-`Dynatrace Query Language`
-
-`DYNATRACE QUERY LANGUAGE`
-
 ## Related topics
 
 * [Dynatrace Query Language](/docs/platform/grail/dynatrace-query-language "How to use Dynatrace Query Language.")
@@ -5878,7 +4050,7 @@ upper(content)
 ---
 title: DQL functions
 source: https://www.dynatrace.com/docs/platform/grail/dynatrace-query-language/functions
-scraped: 2026-02-23T21:25:57.767975
+scraped: 2026-02-24T21:18:23.779955
 ---
 
 # DQL functions
@@ -5895,981 +4067,57 @@ DQL functions grouped by category. For in-depth information on a specific functi
 
 Aggregation functions compute results from a list of records.
 
-Name
-
-Description
-
-[avg](/docs/platform/grail/dynatrace-query-language/functions/aggregation-functions#avg "A list of DQL aggregation functions.")
-
-Calculates the average value of a field for a list of records.
-
-[collectArray](/docs/platform/grail/dynatrace-query-language/functions/aggregation-functions#collectArray "A list of DQL aggregation functions.")
-
-Collects the values of the provided field into an array.
-
-[collectDistinct](/docs/platform/grail/dynatrace-query-language/functions/aggregation-functions#collectDistinct "A list of DQL aggregation functions.")
-
-Collects distinct values of the provided field into an array.
-
-[correlation](/docs/platform/grail/dynatrace-query-language/functions/aggregation-functions#correlation "A list of DQL aggregation functions.")
-
-Calculates the Pearson correlation of two numeric fields for a list of records.
-
-[count](/docs/platform/grail/dynatrace-query-language/functions/aggregation-functions#count "A list of DQL aggregation functions.")
-
-Counts the total number of records.
-
-[countDistinct](/docs/platform/grail/dynatrace-query-language/functions/aggregation-functions#countDistinct "A list of DQL aggregation functions.")
-
-Calculates the cardinality of unique values of a field for a list of records.
-
-[countDistinctApprox](/docs/platform/grail/dynatrace-query-language/functions/aggregation-functions#countDistinctApprox "A list of DQL aggregation functions.")
-
-Calculates the cardinality of unique values of a field for a list of records based on a stochastic estimation.
-
-[countDistinctExact](/docs/platform/grail/dynatrace-query-language/functions/aggregation-functions#countDistinctExact "A list of DQL aggregation functions.")
-
-Calculates the cardinality of unique values for the provided expression up to a maximum of 1M distinct values.
-
-[countIf](/docs/platform/grail/dynatrace-query-language/functions/aggregation-functions#countIf "A list of DQL aggregation functions.")
-
-Counts the number of records that match the condition.
-
-[max](/docs/platform/grail/dynatrace-query-language/functions/aggregation-functions#max "A list of DQL aggregation functions.")
-
-Calculates the maximum value of a field for a list of records.
-
-[median](/docs/platform/grail/dynatrace-query-language/functions/aggregation-functions#median "A list of DQL aggregation functions.")
-
-Calculates the median of an expression.
-
-[min](/docs/platform/grail/dynatrace-query-language/functions/aggregation-functions#min "A list of DQL aggregation functions.")
-
-Calculates the minimum value of a field for a list of records.
-
-[percentile](/docs/platform/grail/dynatrace-query-language/functions/aggregation-functions#percentile "A list of DQL aggregation functions.")
-
-Calculates a given percentile of an expression.
-
-[stddev](/docs/platform/grail/dynatrace-query-language/functions/aggregation-functions#stddev "A list of DQL aggregation functions.")
-
-Calculates the standard deviation of a field for a list of records.
-
-[sum](/docs/platform/grail/dynatrace-query-language/functions/aggregation-functions#sum "A list of DQL aggregation functions.")
-
-Calculates the sum of a field for a list of records.
-
-[takeAny](/docs/platform/grail/dynatrace-query-language/functions/aggregation-functions#takeAny "A list of DQL aggregation functions.")
-
-Returns any non-null value of a field for a list of records.
-
-[takeFirst](/docs/platform/grail/dynatrace-query-language/functions/aggregation-functions#takeFirst "A list of DQL aggregation functions.")
-
-Returns the first value of a field for a list of records.
-
-[takeLast](/docs/platform/grail/dynatrace-query-language/functions/aggregation-functions#takeLast "A list of DQL aggregation functions.")
-
-Returns the last value of a field for a list of records.
-
-[takeMax](/docs/platform/grail/dynatrace-query-language/functions/aggregation-functions#takeMax "A list of DQL aggregation functions.")
-
-Returns the maximum value of a field for a list of records.
-
-[takeMin](/docs/platform/grail/dynatrace-query-language/functions/aggregation-functions#takeMin "A list of DQL aggregation functions.")
-
-Returns the minimum value of a field for a list of records.
-
-[variance](/docs/platform/grail/dynatrace-query-language/functions/aggregation-functions#variance "A list of DQL aggregation functions.")
-
-Calculates the variance of a field for a list of records.
-
 ## [String functions](/docs/platform/grail/dynatrace-query-language/functions/string-functions "A list of DQL string functions.")
-
-
 
 String functions allow you to create expressions that manipulate text strings in a variety of ways.
 
-Name
-
-Description
-
-[concat](/docs/platform/grail/dynatrace-query-language/functions/string-functions#concat "A list of DQL string functions.")
-
-Concatenates the expressions into a single string.
-
-[contains](/docs/platform/grail/dynatrace-query-language/functions/string-functions#contains "A list of DQL string functions.")
-
-Searches the string expression for a substring.
-
-[decodeUrl](/docs/platform/grail/dynatrace-query-language/functions/string-functions#decodeUrl "A list of DQL string functions.")
-
-Returns a URL-decoded string.
-
-[encodeUrl](/docs/platform/grail/dynatrace-query-language/functions/string-functions#encodeUrl "A list of DQL string functions.")
-
-Encodes a URL string.
-
-[endsWith](/docs/platform/grail/dynatrace-query-language/functions/string-functions#endsWith "A list of DQL string functions.")
-
-Checks if a string expression ends with a suffix.
-
-[escape](/docs/platform/grail/dynatrace-query-language/functions/string-functions#escape "A list of DQL string functions.")
-
-Returns an escaped string.
-
-[getCharacter](/docs/platform/grail/dynatrace-query-language/functions/string-functions#getCharacter "A list of DQL string functions.")
-
-Returns the character at a given position from a string expression.
-
-[indexOf](/docs/platform/grail/dynatrace-query-language/functions/string-functions#indexOf "A list of DQL string functions.")
-
-Returns the index of the first occurrence of a substring in a string expression.
-
-[jsonField](/docs/platform/grail/dynatrace-query-language/functions/string-functions#jsonField "A list of DQL string functions.")
-
-Parses a JSON string and extracts one value selected by its name.
-
-[jsonPath](/docs/platform/grail/dynatrace-query-language/functions/string-functions#jsonPath "A list of DQL string functions.")
-
-Parses a JSON string and extracts one value selected by a JSONPath expression.
-
-[lastIndexOf](/docs/platform/grail/dynatrace-query-language/functions/string-functions#lastIndexOf "A list of DQL string functions.")
-
-Returns the index of the last occurrence of a substring in a string expression.
-
-[levenshteinDistance](/docs/platform/grail/dynatrace-query-language/functions/string-functions#levenshteinDistance "A list of DQL string functions.")
-
-Computes the Levenshtein distance between two input strings.
-
-[like](/docs/platform/grail/dynatrace-query-language/functions/string-functions#like "A list of DQL string functions.")
-
-Tests if a string expression matches a pattern.
-
-[lower](/docs/platform/grail/dynatrace-query-language/functions/string-functions#lower "A list of DQL string functions.")
-
-Converts a string to lowercase.
-
-[matchesPattern](/docs/platform/grail/dynatrace-query-language/functions/string-functions#matchesPattern "A list of DQL string functions.")
-
-Tests if a string expression matches the DPL pattern.
-
-[matchesPhrase](/docs/platform/grail/dynatrace-query-language/functions/string-functions#matchesPhrase "A list of DQL string functions.")
-
-Matches a phrase against the input string expression using token matchers.
-
-[matchesValue](/docs/platform/grail/dynatrace-query-language/functions/string-functions#matchesValue "A list of DQL string functions.")
-
-Searches records for a specific value in a given attribute. Returns true or false.
-
-[parse](/docs/platform/grail/dynatrace-query-language/functions/string-functions#parse "A list of DQL string functions.")
-
-Extracts a single value from a string as specified in the pattern or a record if there are multiple named matchers.
-
-[parseAll](/docs/platform/grail/dynatrace-query-language/functions/string-functions#parseAll "A list of DQL string functions.")
-
-Extracts several values from a string as specified in the pattern.
-
-[punctuation](/docs/platform/grail/dynatrace-query-language/functions/string-functions#punctuation "A list of DQL string functions.")
-
-Extracts punctuation characters out of an input string.
-
-[replacePattern](/docs/platform/grail/dynatrace-query-language/functions/string-functions#replacePattern "A list of DQL string functions.")
-
-Replaces each substring of a string that matches the DPL pattern with the given string.
-
-[replaceString](/docs/platform/grail/dynatrace-query-language/functions/string-functions#replaceString "A list of DQL string functions.")
-
-Replaces each substring of a string with a given string
-
-[splitByPattern](/docs/platform/grail/dynatrace-query-language/functions/string-functions#splitByPattern "A list of DQL string functions.")
-
-Splits a string into an array at each occurrence of the DPL pattern.
-
-[splitString](/docs/platform/grail/dynatrace-query-language/functions/string-functions#splitString "A list of DQL string functions.")
-
-Splits a string according to the parameters set.
-
-[startsWith](/docs/platform/grail/dynatrace-query-language/functions/string-functions#startsWith "A list of DQL string functions.")
-
-Checks if a string expression starts with a prefix. Returns true if does, false otherwise.
-
-[stringLength](/docs/platform/grail/dynatrace-query-language/functions/string-functions#stringLength "A list of DQL string functions.")
-
-Returns the length of a string expression.
-
-[substring](/docs/platform/grail/dynatrace-query-language/functions/string-functions#substring "A list of DQL string functions.")
-
-Gets a code unit range using a start index (inclusive) and an end index (exclusive).
-
-[trim](/docs/platform/grail/dynatrace-query-language/functions/string-functions#trim "A list of DQL string functions.")
-
-Removes leading and trailing whitespaces.
-
-[unescape](/docs/platform/grail/dynatrace-query-language/functions/string-functions#unescape "A list of DQL string functions.")
-
-Returns an unescaped string.
-
-[unescapeHtml](/docs/platform/grail/dynatrace-query-language/functions/string-functions#unescapeHtml "A list of DQL string functions.")
-
-Unescapes HTML in a string by replacing ASCII characters with HTML syntax.
-
-[upper](/docs/platform/grail/dynatrace-query-language/functions/string-functions#upper "A list of DQL string functions.")
-
-Converts a string to uppercase.
-
 ## [Conversion and casting functions](/docs/platform/grail/dynatrace-query-language/functions/conversion-and-casting-functions "A list of DQL conversion and casting functions.")
 
-
-
 Conversion and casting functions convert the expression or value from one data type to another type.
-
-Name
-
-Description
-
-[asArray](/docs/platform/grail/dynatrace-query-language/functions/conversion-and-casting-functions#asArray "A list of DQL conversion and casting functions.")
-
-Returns array value if the value is array, otherwise, returns null.
-
-[asBinary](/docs/platform/grail/dynatrace-query-language/functions/conversion-and-casting-functions#asBinary "A list of DQL conversion and casting functions.")
-
-Returns binary value (byte array) if the value is binary, otherwise, returns null.
-
-[asBoolean](/docs/platform/grail/dynatrace-query-language/functions/conversion-and-casting-functions#asBoolean "A list of DQL conversion and casting functions.")
-
-Returns boolean value if the value is boolean, otherwise, returns null.
-
-[asDouble](/docs/platform/grail/dynatrace-query-language/functions/conversion-and-casting-functions#asDouble "A list of DQL conversion and casting functions.")
-
-Returns double value if the value is double, otherwise, returns null.
-
-[asDuration](/docs/platform/grail/dynatrace-query-language/functions/conversion-and-casting-functions#asDuration "A list of DQL conversion and casting functions.")
-
-Returns duration value if the value is duration, otherwise, returns null.
-
-[asIp](/docs/platform/grail/dynatrace-query-language/functions/conversion-and-casting-functions#asIp "A list of DQL conversion and casting functions.")
-
-You can use this function to cast to an IP address.
-
-[asLong](/docs/platform/grail/dynatrace-query-language/functions/conversion-and-casting-functions#asLong "A list of DQL conversion and casting functions.")
-
-Returns long value if the value is long, otherwise, null.
-
-[asNumber](/docs/platform/grail/dynatrace-query-language/functions/conversion-and-casting-functions#asNumber "A list of DQL conversion and casting functions.")
-
-Returns same value if the value is integer, long, double, otherwise. returns null.
-
-[asRecord](/docs/platform/grail/dynatrace-query-language/functions/conversion-and-casting-functions#asRecord "A list of DQL conversion and casting functions.")
-
-Returns record value if the value is record, otherwise, returns null.
-
-[asString](/docs/platform/grail/dynatrace-query-language/functions/conversion-and-casting-functions#asString "A list of DQL conversion and casting functions.")
-
-Returns string value if the value is string, otherwise, returns null.
-
-[asTimeframe](/docs/platform/grail/dynatrace-query-language/functions/conversion-and-casting-functions#asTimeframe "A list of DQL conversion and casting functions.")
-
-Returns timeframe value if the value is timeframe, otherwise. returns null.
-
-[asTimestamp](/docs/platform/grail/dynatrace-query-language/functions/conversion-and-casting-functions#asTimestamp "A list of DQL conversion and casting functions.")
-
-Returns timestamp value if the value is timestamp, otherwise, returns null.
-
-[asUid](/docs/platform/grail/dynatrace-query-language/functions/conversion-and-casting-functions#asUid "A list of DQL conversion and casting functions.")
-
-Returns a uid value if the value is a uid, otherwise, returns null.
-
-[decode](/docs/platform/grail/dynatrace-query-language/functions/conversion-and-casting-functions#decode "A list of DQL conversion and casting functions.")
-
-The decode functions allow decoding an encoded string representation into a plain string or binary data.
-
-[encode](/docs/platform/grail/dynatrace-query-language/functions/conversion-and-casting-functions#encode "A list of DQL conversion and casting functions.")
-
-The encode functions allow encoding binary data and plain strings into an encoded string representation.
-
-[getHighBits](/docs/platform/grail/dynatrace-query-language/functions/conversion-and-casting-functions#getHighBits "A list of DQL conversion and casting functions.")
-
-Extracts the most significant bits of a uid value or IP address.
-
-[getLowBits](/docs/platform/grail/dynatrace-query-language/functions/conversion-and-casting-functions#getLowBits "A list of DQL conversion and casting functions.")
-
-Extracts the least significant bits of a uid value or IP address.
-
-[hexStringToNumber](/docs/platform/grail/dynatrace-query-language/functions/conversion-and-casting-functions#hexStringToNumber "A list of DQL conversion and casting functions.")
-
-Converts a hexadecimal string to a number.
-
-[isUid128](/docs/platform/grail/dynatrace-query-language/functions/conversion-and-casting-functions#isUid128 "A list of DQL conversion and casting functions.")
-
-Tests if a uid value is of subtype uid128.
-
-[isUid64](/docs/platform/grail/dynatrace-query-language/functions/conversion-and-casting-functions#isUid64 "A list of DQL conversion and casting functions.")
-
-Tests if a uid value is of subtype uid64.
-
-[isUuid](/docs/platform/grail/dynatrace-query-language/functions/conversion-and-casting-functions#isUuid "A list of DQL conversion and casting functions.")
-
-Tests if a uid value is of subtype uuid.
-
-[numberToHexString](/docs/platform/grail/dynatrace-query-language/functions/conversion-and-casting-functions#numberToHexString "A list of DQL conversion and casting functions.")
-
-Converts a number to a hexadecimal string.
-
-[toArray](/docs/platform/grail/dynatrace-query-language/functions/conversion-and-casting-functions#toArray "A list of DQL conversion and casting functions.")
-
-Returns the value if it is an array.
-
-[toBoolean](/docs/platform/grail/dynatrace-query-language/functions/conversion-and-casting-functions#toBoolean "A list of DQL conversion and casting functions.")
-
-Converts a value to Boolean if the value is of a suitable type.
-
-[toDouble](/docs/platform/grail/dynatrace-query-language/functions/conversion-and-casting-functions#toDouble "A list of DQL conversion and casting functions.")
-
-Converts a value to double if the value is of a suitable type.
-
-[toDuration](/docs/platform/grail/dynatrace-query-language/functions/conversion-and-casting-functions#toDuration "A list of DQL conversion and casting functions.")
-
-Converts a value to duration if the value is of a suitable type.
-
-[toIp](/docs/platform/grail/dynatrace-query-language/functions/conversion-and-casting-functions#toIp "A list of DQL conversion and casting functions.")
-
-You can use this function to convert an expression to an IP address.
-
-[toLong](/docs/platform/grail/dynatrace-query-language/functions/conversion-and-casting-functions#toLong "A list of DQL conversion and casting functions.")
-
-Converts a value to long if the value is of a suitable type.
-
-[toString](/docs/platform/grail/dynatrace-query-language/functions/conversion-and-casting-functions#toString "A list of DQL conversion and casting functions.")
-
-Returns the string representation of a value.
-
-[toTimeframe](/docs/platform/grail/dynatrace-query-language/functions/conversion-and-casting-functions#toTimeframe "A list of DQL conversion and casting functions.")
-
-Converts a value to timeframe if the value is of a suitable type.
-
-[toTimestamp](/docs/platform/grail/dynatrace-query-language/functions/conversion-and-casting-functions#toTimestamp "A list of DQL conversion and casting functions.")
-
-Converts a value to timestamp if the value is of a suitable type.
-
-[toUid](/docs/platform/grail/dynatrace-query-language/functions/conversion-and-casting-functions#toUid "A list of DQL conversion and casting functions.")
-
-Converts a value to uid if the value is of a suitable type.
-
-[type](/docs/platform/grail/dynatrace-query-language/functions/conversion-and-casting-functions#type "A list of DQL conversion and casting functions.")
-
-Returns the type of value as a string.
-
-[uid128](/docs/platform/grail/dynatrace-query-language/functions/conversion-and-casting-functions#uid128 "A list of DQL conversion and casting functions.")
-
-Creates a uid of subtype uid128 from two long expressions.
-
-[uid64](/docs/platform/grail/dynatrace-query-language/functions/conversion-and-casting-functions#uid64 "A list of DQL conversion and casting functions.")
-
-Creates a uid of subtype uid64 from a long expression.
-
-[uuid](/docs/platform/grail/dynatrace-query-language/functions/conversion-and-casting-functions#uuid "A list of DQL conversion and casting functions.")
-
-Creates a uid of subtype uuid from two long expressions.
-
-[smartscapeId](/docs/platform/grail/dynatrace-query-language/functions/conversion-and-casting-functions#smartscapeId "A list of DQL conversion and casting functions.")
-
-Creates a smartscapeId from the given string and long expression.
-
-[asSmartscapeId](/docs/platform/grail/dynatrace-query-language/functions/conversion-and-casting-functions#asSmartscapeId "A list of DQL conversion and casting functions.")
-
-Returns smartscapeId value if the value is `smartscapeId`, otherwise returns `null`.
-
-[toSmartscapeId](/docs/platform/grail/dynatrace-query-language/functions/conversion-and-casting-functions#toSmartscapeId "A list of DQL conversion and casting functions.")
-
-Converts a value to `smartscapeId` if the value is of a suitable type.
 
 ## [Conditional functions](/docs/platform/grail/dynatrace-query-language/functions/conditional-functions "A list of DQL conditional functions.")
 
 Functions that return a conditional result.
 
-Name
-
-Description
-
-[coalesce](/docs/platform/grail/dynatrace-query-language/functions/conditional-functions#coalesce "A list of DQL conditional functions.")
-
-Returns the first non-null argument, if any, otherwise null.
-
-[if](/docs/platform/grail/dynatrace-query-language/functions/conditional-functions#if "A list of DQL conditional functions.")
-
-Evaluates the condition, and returns the value of either the then or else parameter.
-
 ## [Boolean functions](/docs/platform/grail/dynatrace-query-language/functions/boolean-functions "A list of DQL boolean functions.")
 
-
-
 Functions that evaluate boolean expressions and test the presence of values.
-
-Name
-
-Description
-
-[isFalseOrNull](/docs/platform/grail/dynatrace-query-language/functions/boolean-functions#isFalseOrNull "A list of DQL boolean functions.")
-
-Evaluates if an expression is false or null.
-
-[isNotNull](/docs/platform/grail/dynatrace-query-language/functions/boolean-functions#isNotNull "A list of DQL boolean functions.")
-
-Tests if a value is not null.
-
-[isNull](/docs/platform/grail/dynatrace-query-language/functions/boolean-functions#isNull "A list of DQL boolean functions.")
-
-Tests if a value is null.
-
-[isTrueOrNull](/docs/platform/grail/dynatrace-query-language/functions/boolean-functions#isTrueOrNull "A list of DQL boolean functions.")
-
-Evaluates if an expression is true or null.
 
 ## [Time functions](/docs/platform/grail/dynatrace-query-language/functions/time-functions "A list of DQL time functions.")
 
 Time functions return the decimal number for a particular time value, calculate the number of time units (days, months, years) between two dates, and allow to determine timestamps and timeframes, among others.
 
-Name
-
-Description
-
-[duration](/docs/platform/grail/dynatrace-query-language/functions/time-functions#duration "A list of DQL time functions.")
-
-Creates a duration from the given amount and time unit.
-
-[formatTimestamp](/docs/platform/grail/dynatrace-query-language/functions/time-functions#formatTimestamp "A list of DQL time functions.")
-
-Formats a given timestamp according to a format string using a given pattern.
-
-[getDayOfMonth](/docs/platform/grail/dynatrace-query-language/functions/time-functions#getDayOfMonth "A list of DQL time functions.")
-
-Extracts the day of the month from a timestamp.
-
-[getDayOfWeek](/docs/platform/grail/dynatrace-query-language/functions/time-functions#getDayOfWeek "A list of DQL time functions.")
-
-Extracts the day of the week from a timestamp.
-
-[getDayOfYear](/docs/platform/grail/dynatrace-query-language/functions/time-functions#getDayOfYear "A list of DQL time functions.")
-
-Extracts the day of the year from a timestamp.
-
-[getEnd](/docs/platform/grail/dynatrace-query-language/functions/time-functions#getEnd "A list of DQL time functions.")
-
-Extracts the end timestamp from a timeframe.
-
-[getHour](/docs/platform/grail/dynatrace-query-language/functions/time-functions#getHour "A list of DQL time functions.")
-
-Extracts the hour from a timestamp.
-
-[getMinute](/docs/platform/grail/dynatrace-query-language/functions/time-functions#getMinute "A list of DQL time functions.")
-
-Extracts the minute from a timestamp.
-
-[getMonth](/docs/platform/grail/dynatrace-query-language/functions/time-functions#getMonth "A list of DQL time functions.")
-
-Extracts the month from a timestamp.
-
-[getStart](/docs/platform/grail/dynatrace-query-language/functions/time-functions#getStart "A list of DQL time functions.")
-
-Extracts the start timestamp from a timeframe.
-
-[getSecond](/docs/platform/grail/dynatrace-query-language/functions/time-functions#getSecond "A list of DQL time functions.")
-
-Extracts the second from a timestamp.
-
-[getYear](/docs/platform/grail/dynatrace-query-language/functions/time-functions#getYear "A list of DQL time functions.")
-
-Extracts the year from a timestamp.
-
-[getWeekOfYear](/docs/platform/grail/dynatrace-query-language/functions/time-functions#getWeekOfYear "A list of DQL time functions.")
-
-Extracts the week of the year from a timestamp.
-
-[now](/docs/platform/grail/dynatrace-query-language/functions/time-functions#now "A list of DQL time functions.")
-
-Returns the current time as a fixed timestamp of the query start.
-
-[timeframe](/docs/platform/grail/dynatrace-query-language/functions/time-functions#timeframe "A list of DQL time functions.")
-
-Creates a timeframe structure from the given start and end timestamps.
-
-[timestamp](/docs/platform/grail/dynatrace-query-language/functions/time-functions#timestamp "A list of DQL time functions.")
-
-Creates a timestamp using provided values in mandatory parameters.
-
-[timestampFromUnixMillis](/docs/platform/grail/dynatrace-query-language/functions/time-functions#timestampFromUnixMillis "A list of DQL time functions.")
-
-Creates a timestamp from the given milliseconds since Unix epoch.
-
-[timestampFromUnixNanos](/docs/platform/grail/dynatrace-query-language/functions/time-functions#timestampFromUnixNanos "A list of DQL time functions.")
-
-Creates a timestamp from the given nanoseconds since Unix epoch.
-
-[timestampFromUnixSeconds](/docs/platform/grail/dynatrace-query-language/functions/time-functions#timestampFromUnixSeconds "A list of DQL time functions.")
-
-Creates a timestamp from the given seconds since Unix epoch.
-
-[unixMillisFromTimestamp](/docs/platform/grail/dynatrace-query-language/functions/time-functions#unixMillisFromTimestamp "A list of DQL time functions.")
-
-Converts a timestamp into milliseconds since Unix epoch.
-
-[unixNanosFromTimestamp](/docs/platform/grail/dynatrace-query-language/functions/time-functions#unixNanosFromTimestamp "A list of DQL time functions.")
-
-Converts a timestamp into nanoseconds since Unix epoch.
-
-[unixSecondsFromTimestamp](/docs/platform/grail/dynatrace-query-language/functions/time-functions#unixSecondsFromTimestamp "A list of DQL time functions.")
-
-Converts a timestamp into seconds since Unix epoch.
-
 ## [Array functions](/docs/platform/grail/dynatrace-query-language/functions/array-functions "A list of DQL array functions.")
 
-
-
 Functions related to a collection of items of the same data type stored at adjacent memory locations.
-
-Name
-
-Description
-
-[array](/docs/platform/grail/dynatrace-query-language/functions/array-functions#array "A list of DQL array functions.")
-
-Creates an array from the list of given parameters.
-
-[arrayAvg](/docs/platform/grail/dynatrace-query-language/functions/array-functions#array-avg "A list of DQL array functions.")
-
-Returns the average of an array.
-
-[arrayConcat](/docs/platform/grail/dynatrace-query-language/functions/array-functions#array-concat "A list of DQL array functions.")
-
-Concatenates multiple arrays into a single array.
-
-[arrayCumulativeSum](/docs/platform/grail/dynatrace-query-language/functions/array-functions#arrayCumulativeSum "A list of DQL array functions.")
-
-Returns the cumulative sum, also known as the running total, of the elements of the input array.
-
-[arrayDelta](/docs/platform/grail/dynatrace-query-language/functions/array-functions#array-delta "A list of DQL array functions.")
-
-Returns an array where each element is the difference from the previous non-null element.
-
-[arrayDiff](/docs/platform/grail/dynatrace-query-language/functions/array-functions#array-diff "A list of DQL array functions.")
-
-Calculates the element-wise difference between consecutive elements in an array.
-
-[arrayDistinct](/docs/platform/grail/dynatrace-query-language/functions/array-functions#array-distinct "A list of DQL array functions.")
-
-Returns the array without duplicates.
-
-[arrayElement](/docs/platform/grail/dynatrace-query-language/functions/array-functions#array-element "A list of DQL array functions.")
-
-Extracts a single element with the given index from an array.
-
-[arrayFirst](/docs/platform/grail/dynatrace-query-language/functions/array-functions#array-first "A list of DQL array functions.")
-
-Returns the first non-null element of an array.
-
-[arrayFlatten](/docs/platform/grail/dynatrace-query-language/functions/array-functions#array-flatten "A list of DQL array functions.")
-
-Returns a flattened array.
-
-[arrayIndexOf](/docs/platform/grail/dynatrace-query-language/functions/array-functions#array-index-of "A list of DQL array functions.")
-
-Returns position of the first member in the array, which is equal to the given value.
-
-[arrayLast](/docs/platform/grail/dynatrace-query-language/functions/array-functions#array-last "A list of DQL array functions.")
-
-Returns the last non-null element of an array.
-
-[arrayLastIndexOf](/docs/platform/grail/dynatrace-query-language/functions/array-functions#array-last-index-of "A list of DQL array functions.")
-
-Returns position of the last member in the array, which is equal to the given value.
-
-[arrayMax](/docs/platform/grail/dynatrace-query-language/functions/array-functions#array-max "A list of DQL array functions.")
-
-Returns the biggest number of an array.
-
-[arrayMedian](/docs/platform/grail/dynatrace-query-language/functions/array-functions#array-median "A list of DQL array functions.")
-
-Returns the median of the members of an array.
-
-[arrayMin](/docs/platform/grail/dynatrace-query-language/functions/array-functions#array-min "A list of DQL array functions.")
-
-Returns the smallest number of an array.
-
-[arrayMovingAvg](/docs/platform/grail/dynatrace-query-language/functions/array-functions#array-moving-avg "A list of DQL array functions.")
-
-Replaces each element of the input array with the average of current and previous elements within the window.
-
-[arrayMovingMax](/docs/platform/grail/dynatrace-query-language/functions/array-functions#array-moving-max "A list of DQL array functions.")
-
-Replaces each element of the input array with the maximum of current and previous elements within the window.
-
-[arrayMovingMin](/docs/platform/grail/dynatrace-query-language/functions/array-functions#array-moving-min "A list of DQL array functions.")
-
-Replaces each element of the input array with the minimum of current and previous elements within the window.
-
-[arrayMovingSum](/docs/platform/grail/dynatrace-query-language/functions/array-functions#array-moving-sum "A list of DQL array functions.")
-
-Replaces each element of the input array with the sum of current and previous elements within the window.
-
-[arrayPercentile](/docs/platform/grail/dynatrace-query-language/functions/array-functions#array-percentile "A list of DQL array functions.")
-
-Calculates a given percentile of an array.
-
-[arrayRemoveNulls](/docs/platform/grail/dynatrace-query-language/functions/array-functions#array-remove-nulls "A list of DQL array functions.")
-
-Returns the array where null elements are removed.
-
-[arrayReverse](/docs/platform/grail/dynatrace-query-language/functions/array-functions#array-reverse "A list of DQL array functions.")
-
-Returns the array with elements in reversed order.
-
-[arraySize](/docs/platform/grail/dynatrace-query-language/functions/array-functions#array-size "A list of DQL array functions.")
-
-Returns the size of an array.
-
-[arraySlice](/docs/platform/grail/dynatrace-query-language/functions/array-functions#array-slice "A list of DQL array functions.")
-
-Extracts a slice from the input array using a `from` index (inclusive) and a `to` index (exclusive).
-
-[arraySort](/docs/platform/grail/dynatrace-query-language/functions/array-functions#array-sort "A list of DQL array functions.")
-
-Returns the array with elements sorted in ascending order by default.
-
-[arraySum](/docs/platform/grail/dynatrace-query-language/functions/array-functions#array-sum "A list of DQL array functions.")
-
-Returns the sum of an array.
-
-[arraytoString](/docs/platform/grail/dynatrace-query-language/functions/array-functions#array-to-String "A list of DQL array functions.")
-
-Converts an array into a string.
 
 ## [Vector distance functions](/docs/platform/grail/dynatrace-query-language/functions/vector-distance-functions "A list of DQL vector distance functions.")
 
 Functions that calculate the distance between numeric array expressions.
 
-Name
-
-Description
-
-[vectorL1Distance](/docs/platform/grail/dynatrace-query-language/functions/vector-distance-functions#vectorL1Distance "A list of DQL vector distance functions.")
-
-Calculates the taxicab distance between numeric array expressions.
-
-[vectorL2Distance](/docs/platform/grail/dynatrace-query-language/functions/vector-distance-functions#vectorL2Distance "A list of DQL vector distance functions.")
-
-Calculates the Euclidean distance between numeric array expressions.
-
-[vectorCosineDistance](/docs/platform/grail/dynatrace-query-language/functions/vector-distance-functions#vectorCosineDistance "A list of DQL vector distance functions.")
-
-Calculates the cosine distance between numeric array expressions.
-
-[vectorInnerProductDistance](/docs/platform/grail/dynatrace-query-language/functions/vector-distance-functions#vectorInnerProductDistance "A list of DQL vector distance functions.")
-
-Calculates the negative dot product between numeric array expressions.
-
 ## [Network functions](/docs/platform/grail/dynatrace-query-language/functions/network-functions "A list of DQL array functions.")
 
 Functions related to IP addresses.
 
-Name
-
-Description
-
-[ip](/docs/platform/grail/dynatrace-query-language/functions/network-functions#ip "A list of DQL array functions.")
-
-You can use this function to create an IP address.
-
-[ipIn](/docs/platform/grail/dynatrace-query-language/functions/network-functions#ipIn "A list of DQL array functions.")
-
-This function can be used to check if a list of IP addresses or an IP network (e.g. 127.0.0.1/8) contains particular IP addresses
-
-[ipIsLinkLocal](/docs/platform/grail/dynatrace-query-language/functions/network-functions#ipIsLinkLocal "A list of DQL array functions.")
-
-Checks if an IP address is a link-local IP address.
-
-[ipIsLoopback](/docs/platform/grail/dynatrace-query-language/functions/network-functions#ipIsLoopback "A list of DQL array functions.")
-
-Checks if an IP address is a loopback IP address.
-
-[ipIsPrivate](/docs/platform/grail/dynatrace-query-language/functions/network-functions#ipIsPrivate "A list of DQL array functions.")
-
-Checks if an IP address is a private IP address.
-
-[ipIsPublic](/docs/platform/grail/dynatrace-query-language/functions/network-functions#ipIsPublic "A list of DQL array functions.")
-
-Checks if an IP address is a public IP address.
-
-[ipMask](/docs/platform/grail/dynatrace-query-language/functions/network-functions#ipMask "A list of DQL array functions.")
-
-You can use this function to mask an IP address with given bits.
-
-[isIp](/docs/platform/grail/dynatrace-query-language/functions/network-functions#isIp "A list of DQL array functions.")
-
-Checks if an expression is an IPv4/v6 address.
-
-[isIpV4](/docs/platform/grail/dynatrace-query-language/functions/network-functions#isIpV4 "A list of DQL array functions.")
-
-Checks if an expression is an IPv4 address.
-
-[isIpV6](/docs/platform/grail/dynatrace-query-language/functions/network-functions#isIpV6 "A list of DQL array functions.")
-
-Checks if an expression is an IPv6 address.
-
 ## [Hash functions](/docs/platform/grail/dynatrace-query-language/functions/hash-functions "A list of DQL hash functions.")
 
-
-
 Hash related functions.
-
-Name
-
-Description
-
-[hashCrc32](/docs/platform/grail/dynatrace-query-language/functions/hash-functions#hashCrc32 "A list of DQL hash functions.")
-
-Returns a CRC32 hash for a given string expression.
-
-[hashMd5](/docs/platform/grail/dynatrace-query-language/functions/hash-functions#hashMd5 "A list of DQL hash functions.")
-
-Computes the MD5 hash for a given string expression.
-
-[hashSha1](/docs/platform/grail/dynatrace-query-language/functions/hash-functions#hashSha1 "A list of DQL hash functions.")
-
-Computes the SHA-1 hash for a given string expression.
-
-[hashSha256](/docs/platform/grail/dynatrace-query-language/functions/hash-functions#hashSha256 "A list of DQL hash functions.")
-
-Returns a SHA-256 hash for the given expression.
-
-[hashSha512](/docs/platform/grail/dynatrace-query-language/functions/hash-functions#hashSha512 "A list of DQL hash functions.")
-
-Returns a SHA-512 hash for the given expression.
-
-[hashXxHash32](/docs/platform/grail/dynatrace-query-language/functions/hash-functions#hashXxHash32 "A list of DQL hash functions.")
-
-Returns a xxHash32 hash for a given string expression.
-
-[hashXxHash64](/docs/platform/grail/dynatrace-query-language/functions/hash-functions#hashXxHash64 "A list of DQL hash functions.")
-
-Returns a xxHash64 hash for a given string expression.
 
 ## [Bitwise functions](/docs/platform/grail/dynatrace-query-language/functions/bitwise-functions "A list of DQL bitwise functions.")
 
 Bitwise operations performing on long expressions.
 
-Name
-
-Description
-
-[bitwiseAnd](/docs/platform/grail/dynatrace-query-language/functions/bitwise-functions#bitwiseAnd "A list of DQL bitwise functions.")
-
-Calculates the bitwise and between two long expressions.
-
-[bitwiseCountOnes](/docs/platform/grail/dynatrace-query-language/functions/bitwise-functions#bitwiseCountOnes "A list of DQL bitwise functions.")
-
-Counts the bits assigned to one of the long expressions.
-
-[bitwiseNot](/docs/platform/grail/dynatrace-query-language/functions/bitwise-functions#bitwiseNot "A list of DQL bitwise functions.")
-
-Inverts the bits included in the long expression.
-
-[bitwiseShiftLeft](/docs/platform/grail/dynatrace-query-language/functions/bitwise-functions#bitwiseShiftLeft "A list of DQL bitwise functions.")
-
-Shifts the long expressions by the number of given bits to the left.
-
-[bitwiseShiftRight](/docs/platform/grail/dynatrace-query-language/functions/bitwise-functions#bitwiseShiftRight "A list of DQL bitwise functions.")
-
-Shifts the long expression by number of given bits to the right.
-
-[bitwiseOr](/docs/platform/grail/dynatrace-query-language/functions/bitwise-functions#bitwiseOr "A list of DQL bitwise functions.")
-
-Calculates the bitwise or between two long expressions.
-
-[bitwiseXor](/docs/platform/grail/dynatrace-query-language/functions/bitwise-functions#bitwiseXor "A list of DQL bitwise functions.")
-
-Calculates the bitwise xor between two long expressions.
-
 ## [Mathematical functions](/docs/platform/grail/dynatrace-query-language/functions/mathematical-functions "A list of DQL mathematical functions.")
 
 Functions executing mathematical calculations.
 
-Name
-
-Description
-
-[abs](/docs/platform/grail/dynatrace-query-language/functions/mathematical-functions#abs "A list of DQL mathematical functions.")
-
-Returns the absolute value of numeric\_expression.
-
-[acos](/docs/platform/grail/dynatrace-query-language/functions/mathematical-functions#acos "A list of DQL mathematical functions.")
-
-Computes arc cosine of expression.
-
-[asin](/docs/platform/grail/dynatrace-query-language/functions/mathematical-functions#asin "A list of DQL mathematical functions.")
-
-Computes arc sine of expression.
-
-[atan](/docs/platform/grail/dynatrace-query-language/functions/mathematical-functions#atan "A list of DQL mathematical functions.")
-
-Computes the arc tangent of expression.
-
-[atan2](/docs/platform/grail/dynatrace-query-language/functions/mathematical-functions#atan2 "A list of DQL mathematical functions.")
-
-Computes the angle theta from the conversion of rectangular coordinates (x, y) to polar coordinates (r, theta).
-
-[bin](/docs/platform/grail/dynatrace-query-language/functions/mathematical-functions#bin "A list of DQL mathematical functions.")
-
-Rounds values down to a multiple of a given numeric bin size.
-
-[ceil](/docs/platform/grail/dynatrace-query-language/functions/mathematical-functions#ceil "A list of DQL mathematical functions.")
-
-Calculates the smallest (closest to negative infinity) double value greater than or equal to the numeric\_expression; is equal to a mathematical integer.
-
-[cos](/docs/platform/grail/dynatrace-query-language/functions/mathematical-functions#cos "A list of DQL mathematical functions.")
-
-Computes the trigonometric cosine of an angle expression (in radians).
-
-[cosh](/docs/platform/grail/dynatrace-query-language/functions/mathematical-functions#cosh "A list of DQL mathematical functions.")
-
-Computes the hyperbolic cosine of an angle expression.
-
-[cbrt](/docs/platform/grail/dynatrace-query-language/functions/mathematical-functions#cbrt "A list of DQL mathematical functions.")
-
-Calculates the real cubic root of a numeric expression.
-
-[degreeToRadian](/docs/platform/grail/dynatrace-query-language/functions/mathematical-functions#degreeToRadian "A list of DQL mathematical functions.")
-
-Converts the numeric expression of an angle in degrees to an approximately equivalent angle as expressed in radians.
-
-[e](/docs/platform/grail/dynatrace-query-language/functions/mathematical-functions#e "A list of DQL mathematical functions.")
-
-Returns Eulerâs number.
-
-[exp](/docs/platform/grail/dynatrace-query-language/functions/mathematical-functions#exp "A list of DQL mathematical functions.")
-
-Calculates the exponential function e^x, where e is the Euler's number and x is a numeric expression.
-
-[floor](/docs/platform/grail/dynatrace-query-language/functions/mathematical-functions#floor "A list of DQL mathematical functions.")
-
-Calculates the largest (closest to positive infinity) double value less than or equal to the numeric\_expression; and is equal to a mathematical integer.
-
-[hypotenuse](/docs/platform/grail/dynatrace-query-language/functions/mathematical-functions#hypotenuse "A list of DQL mathematical functions.")
-
-Returns sqrt (x^2 + y^2).
-
-[log](/docs/platform/grail/dynatrace-query-language/functions/mathematical-functions#log "A list of DQL mathematical functions.")
-
-Calculates the natural logarithm (the base is e, the Euler's number) of a numeric expression.
-
-[log1p](/docs/platform/grail/dynatrace-query-language/functions/mathematical-functions#log1p "A list of DQL mathematical functions.")
-
-Calculates log(1+x), where log is the natural logarithm and x is a numeric expression.
-
-[log10](/docs/platform/grail/dynatrace-query-language/functions/mathematical-functions#log10 "A list of DQL mathematical functions.")
-
-Calculates the decadic (common) logarithm (the base is 10) of a numeric expression.
-
-[pi](/docs/platform/grail/dynatrace-query-language/functions/mathematical-functions#pi "A list of DQL mathematical functions.")
-
-Returns the constant value of PI (Archimedesâ number).
-
-[power](/docs/platform/grail/dynatrace-query-language/functions/mathematical-functions#power "A list of DQL mathematical functions.")
-
-Raises a numeric expression to a given power.
-
-[radianToDegree](/docs/platform/grail/dynatrace-query-language/functions/mathematical-functions#radianToDegree "A list of DQL mathematical functions.")
-
-Converts the numeric expression of an angle in radians to an approximately equivalent angle as expressed in degrees.
-
-[random](/docs/platform/grail/dynatrace-query-language/functions/mathematical-functions#random "A list of DQL mathematical functions.")
-
-Creates a random double value.
-
-[range](/docs/platform/grail/dynatrace-query-language/functions/mathematical-functions#range "A list of DQL mathematical functions.")
-
-Aligns the given value/timestamp to value range based on the provided alignment parameter.
-
-[round](/docs/platform/grail/dynatrace-query-language/functions/mathematical-functions#round "A list of DQL mathematical functions.")
-
-Rounds any numeric value to the specified number of decimal places.
-
-[signum](/docs/platform/grail/dynatrace-query-language/functions/mathematical-functions#signum "A list of DQL mathematical functions.")
-
-Returns the signum (sign) result of an argument.
-
-[sin](/docs/platform/grail/dynatrace-query-language/functions/mathematical-functions#sin "A list of DQL mathematical functions.")
-
-Computes the trigonometric sine of angle expression (in radians).
-
-[sinh](/docs/platform/grail/dynatrace-query-language/functions/mathematical-functions#sinh "A list of DQL mathematical functions.")
-
-Computes the hyperbolic sine of expression.
-
-[sqrt](/docs/platform/grail/dynatrace-query-language/functions/mathematical-functions#sqrt "A list of DQL mathematical functions.")
-
-Computes the positive square root of a numeric expression.
-
-[tan](/docs/platform/grail/dynatrace-query-language/functions/mathematical-functions#tan "A list of DQL mathematical functions.")
-
-Computes the trigonometric tangent of angle expression (in radians).
-
-[tanh](/docs/platform/grail/dynatrace-query-language/functions/mathematical-functions#tanh "A list of DQL mathematical functions.")
-
-Computes the hyperbolic tangent of expression.
-
 ## [Join functions](/docs/platform/grail/dynatrace-query-language/functions/join-functions "A list of DQL join functions.")
 
-
-
 Functions that join records from subqueries.
-
-Name
-
-Description
-
-[lookup](/docs/platform/grail/dynatrace-query-language/functions/join-functions#lookup "A list of DQL join functions.")
-
-Returns a record from a subquery (the lookup table) producing a match between a field in the source table (sourceField) and a field in the lookup table (lookupField).
-
-[getNodeName](/docs/platform/grail/dynatrace-query-language/functions/join-functions#getNodeName "A list of DQL join functions.")
-
-Returns the Smartscape node name.
-
-[getNodeField](/docs/platform/grail/dynatrace-query-language/functions/join-functions#getNodeField "A list of DQL join functions.")
-
-Returns the field value for a Smartscape node.
 
 ## [General functions](/docs/platform/grail/dynatrace-query-language/functions/general-functions "A list of DQL general functions.")
 
 Functions with a general purpose.
-
-Name
-
-Description
-
-[classicEntitySelector](/docs/platform/grail/dynatrace-query-language/functions/general-functions#classic-entity-selector "A list of DQL general functions.")
-
-Returns entities matching the specified entity selector.
-
-[entityAttr](/docs/platform/grail/dynatrace-query-language/functions/general-functions#entity-attr "A list of DQL general functions.")
-
-Returns the attribute value for an entity.
-
-[entityName](/docs/platform/grail/dynatrace-query-language/functions/general-functions#entity-name "A list of DQL general functions.")
-
-Returns the name of an entity.
-
-[exists](/docs/platform/grail/dynatrace-query-language/functions/general-functions#exists "A list of DQL general functions.")
-
-Tests if a field exists.
-
-[in](/docs/platform/grail/dynatrace-query-language/functions/general-functions#in "A list of DQL general functions.")
-
-Tests if a value is a member of an array.
-
-[record](/docs/platform/grail/dynatrace-query-language/functions/general-functions#record "A list of DQL general functions.")
-
-Creates a record from the keys and values of the parameter.
 
 ## Related topics
 
@@ -6889,7 +4137,7 @@ Creates a record from the keys and values of the parameter.
 ---
 title: DQL operators
 source: https://www.dynatrace.com/docs/platform/grail/dynatrace-query-language/operators
-scraped: 2026-02-23T21:39:24.354003
+scraped: 2026-02-24T21:18:33.657610
 ---
 
 # DQL operators
@@ -6902,82 +4150,6 @@ scraped: 2026-02-23T21:39:24.354003
 * Updated on Oct 28, 2025
 
 The following table shows a list of all the DQL operators.
-
-Operator
-
-Description
-
-`+`
-
-Addition
-
-`-`
-
-Subtraction or arithmetic negation
-
-`*`
-
-Multiplication
-
-`/`
-
-Division
-
-`%`
-
-Modulo
-
-`<`
-
-Less than
-
-`<=`
-
-Less than or equal to
-
-`>`
-
-Greater than
-
-`>=`
-
-Greater than or equal to
-
-`==`
-
-Equals
-
-`!=`
-
-Does not equal
-
-`not`
-
-Logical NOT (negation)
-
-`and`
-
-Logical AND
-
-`or`
-
-Logical OR
-
-`xor`
-
-Logical XOR (exclusive or)
-
-`in`
-
-Subquery comparison
-
-`@`
-
-Time alignment
-
-`~`
-
-Search
 
 The precedence for the operators is as follows (from strongest to weakest):
 
@@ -6996,48 +4168,6 @@ The precedence for the operators is as follows (from strongest to weakest):
 ## Arithmetic operators
 
 You can use arithmetic operators with numbers, represented by both the types `long` or `double`. In addition, some operators support the types `timestamp`, `timeframe`, `duration` or `ip`.
-
-Operator
-
-Description
-
-Example
-
-`+`
-
-Addition
-
-`2 + 2.5`
-
-`-`
-
-Subtraction
-
-`0.2 - 0.11`
-
-`*`
-
-Multiplication
-
-`4 * 5`, `60 * 1s`
-
-`/`
-
-Division
-
-`10 / 2`, `1h / 60`
-
-`%`
-
-Modulo
-
-`4 % 2`
-
-`-`
-
-Arithmetic negation
-
-`-1`
 
 ### ADDITION
 
@@ -7075,8 +4205,6 @@ Arithmetic negation
 
 ### MULTIPLICATION
 
-
-
 | MULTIPLICATION | Long | Double | String | Boolean | Timestamp | Duration | Timeframe | Binary | IP | UID | Array | Record |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | Long | Applicable (long) | Applicable (double) | Not applicable | Not applicable | Not applicable | Applicable (duration) | Not applicable | Not applicable | Not applicable | Not applicable | Not applicable | Not applicable |
@@ -7093,6 +4221,8 @@ Arithmetic negation
 | Record | Not applicable | Not applicable | Not applicable | Not applicable | Not applicable | Not applicable | Not applicable | Not applicable | Not applicable | Not applicable | Not applicable | Not applicable |
 
 ### DIVISION
+
+
 
 Integer division
 
@@ -7140,39 +4270,7 @@ The data type resulting from the operation is indicated in parentheses in the ta
 
 ## Comparison operators
 
-Operator
-
-Description
-
-Example
-
-`<`
-
-Less than
-
-`8 < 9`, `now()-1m < now()`
-
-`<=`
-
-Less than or equal to
-
-`4 <= 5`
-
-`>`
-
-Greater than
-
-`5 > 4`, `"a" > "A"`
-
-`>=`
-
-Greater than or equal to
-
-`4 >=4`
-
 ### Comparison operators (<, <=, >, >=)
-
-
 
 * ( ![Applicable](https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg "Applicable") ) - `true` or `false` based on the result of the operator
 * ( ![Not applicable](https://dt-cdn.net/images/icon-red-cross-1f1142a5dc.svg "Not applicable") ) - `null`
@@ -7194,23 +4292,7 @@ Greater than or equal to
 
 ## Equality operators
 
-Operator
 
-Description
-
-Example
-
-`==`
-
-Equals
-
-`2 == 2`
-
-`!=`
-
-Does not equal
-
-`1 != 2`
 
 Equality comparisons (`==`, `!=`) use a tri-state boolean algebra (`true`, `false`, `null`). This means that if any side of the equality comparison is `null`, the overall result of the comparison is `null`.
 There are four DQL functions that cover scenarios where missing or `null` records need to be retrieved:
@@ -7263,36 +4345,6 @@ fetch logs
 | Record | Not applicable | Not applicable | Not applicable | Not applicable | Not applicable | Not applicable | Not applicable | Not applicable | Not applicable | Not applicable | Not applicable | Applicable |
 
 ## Logical operators
-
-Operator
-
-Description
-
-Example (yields true)
-
-`not`
-
-Logical NOT (negation) - Negates a logical state
-
-`not 2==1`
-
-`and`
-
-Logical AND (multiplication) - Yields `true` if both operands are `true`.
-
-`not 2==1 and 1<2`
-
-`or`
-
-Logical OR (addition) - Yields `true` if one of the operands is `true`, regardless of the other operand.
-
-`1 < 2 or 1 > 2`
-
-`xor`
-
-Logical XOR (exclusive OR) - Yields `true` if one of the operands is `true`, but `false` in case both are `true`.
-
-`1 < 2 xor 1 > 2`
 
 The behavior of logical operators follows the tri-state boolean logic.
 
@@ -7383,8 +4435,6 @@ iIndex only works in expressions where at least one iterative expression is pres
 
 ### in
 
-
-
 The `in` comparison operator evaluates the occurrence of a value returned by the left side's expression within a list of values returned by the right side's DQL subquery.
 
 **Syntax**
@@ -7392,36 +4442,6 @@ The `in` comparison operator evaluates the occurrence of a value returned by the
 `expression in [execution block]`
 
 **Usage and constraints**
-
-Name
-
-Type
-
-Mandatory
-
-Constraints
-
-Description
-
-left side
-
-expression
-
-yes
-
-Either a field identifier or an expression.
-
-The element to be found in the list returned by the right side's subquery.
-
-right side
-
-execution block
-
-yes
-
-It has to return a single field providing a list of values.
-
-The DQL Subquery which returns the list of values to compare against.
 
 **Example**
 
@@ -7486,67 +4506,9 @@ For example, `@w1` means midnight of Monday of the current week.
 
 For the following examples, the current time is Wednesday, 04 September 2024, 14:47:05+0200.
 
-Time modifier
-
-Description
-
-Resulting time
-
-`-2h@h`
-
-2 hours ago, aligned to the hour
-
-Wednesday, 04 September 2024, 12:00:00+0200
-
-`-1d@d`
-
-Yesterday, aligned to the day
-
-Tuesday, 03 September 2024, 00:00:00+0200
-
-`-7d@d`
-
-7 days ago, aligned to the day
-
-Wednesday, 28 August 2024, 00:00:00+0200
-
-`@w0`
-
-Start of this week, from Sunday
-
-Sunday, 01 September 2024, 00:00:00+0200
-
-`@w1`
-
-Start of this week, from Monday
-
-Monday, 02 September 2024, 00:00:00+0200
-
-`@M`
-
-Start of this month
-
-Sunday, 01 September 2024, 00:00:00+0200
-
-`-1M@M`
-
-Start of last month
-
-Thursday, 01 August 2024, 00:00:00+0200
-
-`@q`
-
-Start of this quarter
-
-Monday, 01 July 2024, 00:00:00+0200
-
-`@y`
-
-Start of this year
-
-Monday, 01 January 2024, 00:00:00+0100
-
 ## Search
+
+
 
 You can use the `~` operator in expressions to match the value of an expression against a given search string. The performed comparison is case-insensitive and supports pattern matching using wildcards. The `~` operator returns a `boolean` value: `true` in case of a match, and `false` otherwise.
 
@@ -7585,184 +4547,6 @@ The `~` operator searches the value as a string token inside a string. Its behav
 * If the expression is of type `record`, the operator matches if any field name or value matches.
 * If the expression is of type `boolean`, `timestamp`, `duration`, or `binary`, the result is always false.
 
-Expression type
-
-Expression value
-
-Operation
-
-Result
-
-Note
-
-String
-
-`"Hello WORLD!"`
-
-`~"world"`
-
-`true`
-
-String
-
-`"helloWorld"`
-
-`~"World"`
-
-`false`
-
-`helloWorld` is one token since there are no separators.
-
-String
-
-`"192.168.0.7"`
-
-`~"192"`
-
-`true`
-
-As itâs a string, the field has four tokens.
-
-IP
-
-`192.168.0.7`
-
-`~"192"`
-
-`false`
-
-Only strings are tokenized.
-
-IP
-
-`192.168.0.7`
-
-`~"192.168.0.7"`
-
-`true`
-
-The value is auto-converted, so there's an exact match.
-
-Long
-
-`12`
-
-`~"12"`
-
-`true`
-
-The value is auto-converted, so there's an exact match.
-
-UID
-
-`uuid(1,2)`
-
-`~"00000000-0000-0001-0000-000000000002"`
-
-`true`
-
-The value is not tokenized, but can be auto-converted.
-
-Smartscape ID
-
-`smartscapeId("HOST", 1)`
-
-`~"HOST-0000000000000001"`
-
-`true`
-
-The value is auto-converted.
-
-Smartscape ID
-
-`smartscapeId("HOST", 1)`
-
-`~"host-0000000000000001"`
-
-`false`
-
-For a Smartscape ID, the check is case-sensitive.
-
-Smartscape ID
-
-`smartscapeId("HOST", 1)`
-
-`~"HOST"`
-
-`false`
-
-The value isn't tokenized.
-
-Record
-
-`record(firstName="John",lastName="Doe")`
-
-`~"john"`
-
-`true`
-
-Search also works in nested fields.
-
-Record
-
-`record(firstName="John",lastName="Doe")`
-
-`~"lastName"`
-
-`true`
-
-Search also works in the names of nested fields.
-
-Record
-
-`record(firstName="John",lastName="Doe")`
-
-`~"name"`
-
-`false`
-
-`firstName` and `lastName` are one token since they don't contain separators.
-
-Record
-
-`record(first name="John",last name="Doe")`
-
-`~"name"`
-
-`true`
-
-Search also works in the names of nested fields.
-
-Array
-
-`array(1,2,3,5,8,13)`
-
-`~"3"`
-
-`true`
-
-One element of the array is 3, which can be auto-converted to match `~"3"`.
-
-Boolean
-
-`true`
-
-`~"true"`
-
-`false`
-
-Booleans aren't supported.
-
-Duration
-
-`1h`
-
-`~"1h"`
-
-`false`
-
-Durations aren't supported.
-
 ##### Search strings with wildcards
 
 The operator searches the pattern in the tokens of a string. Its behavior depends on the data type of the expression on the left side:
@@ -7772,149 +4556,7 @@ The operator searches the pattern in the tokens of a string. Its behavior depend
 * If the expression is of type `record`, the result is true if the name or value of a nested field matches the pattern.
 * If the expression is of any other type (`long`, `double`, `smartscape ID`, `IP address`, `UID`, `boolean`, `timestamp`, `duration`, or `binary`) patterns aren't supported and the result is always `false`.
 
-Expression type
-
-Expression value
-
-Operation
-
-Result
-
-Note
-
-String
-
-`"AuthenticationError"`
-
-`~"*error"`
-
-`true`
-
-String
-
-`"There was an AuthenticationError"`
-
-`~"authentication*"`
-
-`true`
-
-String
-
-`"There was an NoAuthenticationError"`
-
-`~"authentication*"`
-
-`false`
-
-String
-
-`"helloWorld"`
-
-`~"*ow*"`
-
-`true`
-
-String
-
-`"hello world"`
-
-`~"*ow*"`
-
-`false`
-
-String
-
-`"192.168.0.7"`
-
-`~"192.168.*"`
-
-`true`
-
-It matches as it's a string and not an IP address.
-
-Record
-
-`record(firstName="John",lastName="Doe")`
-
-`~"*name"`
-
-`true`
-
-The string matches the name of the nested field in the record.
-
-Record
-
-`record(firstName="John",lastName="Doe")`
-
-`~"*do*"`
-
-`true`
-
-The string matches the record.
-
-Array
-
-`array("hello", "world", "myCustomName")`
-
-`~"my*"`
-
-`true`
-
-The string matches within the array.
-
-IP
-
-`192.168.0.7`
-
-`~"192*"`
-
-`false`
-
-Only strings allow patterns.
-
-Long
-
-`192`
-
-`~"1*"`
-
-`false`
-
-Only strings allow patterns.
-
-Smartscape ID
-
-`smartscapeId("HOST", 1)`
-
-`~"HOST*"`
-
-`false`
-
-Only strings allow patterns.
-
-Boolean
-
-`true`
-
-`~"t*"`
-
-`false`
-
-Only strings allow patterns.
-
-Duration
-
-`1h`
-
-`~"*h"`
-
-`false`
-
-Only strings allow patterns.
-
 ## Related topics
-
-
 
 * [Dynatrace Query Language](/docs/platform/grail/dynatrace-query-language "How to use Dynatrace Query Language.")
 * [Use DQL queries](/docs/platform/grail/dynatrace-query-language/dql-guide "Find out how DQL works and what are DQL key concepts.")
@@ -7932,7 +4574,7 @@ Only strings allow patterns.
 ---
 title: Dynatrace Query Language
 source: https://www.dynatrace.com/docs/platform/grail/dynatrace-query-language
-scraped: 2026-02-23T21:20:05.761859
+scraped: 2026-02-24T21:14:10.429833
 ---
 
 # Dynatrace Query Language
@@ -7986,7 +4628,7 @@ Use DQL to query your metric observability data.](/docs/analyze-explore-automate
 ---
 title: Lookup data in Grail
 source: https://www.dynatrace.com/docs/platform/grail/lookup-data
-scraped: 2026-02-23T21:39:05.842730
+scraped: 2026-02-24T21:32:46.922161
 ---
 
 # Lookup data in Grail
@@ -8097,22 +4739,6 @@ To access the Swagger API documentation for the Resource Store API and to start 
 2. In the **Select a definition** field, select **Grail - Resource Store**.
 3. Optional Authenticate with your API token if you want to use Swagger to execute your requests. For details, see [Authentication](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/platform-tokens "Create personalised platform tokens to access Dynatrace services via the API in your user context."). Select the **Try it out** button to interact with the API directly from the documentation.
 4. Perform one of the following actions.
-
-To do this
-
-Go to **Lookup Data** and select this
-
-Test parsing your to-be-uploaded lookup data without storing the result in Grail.
-
-**POST/platform/storage/resource-store/v1/files/tabular/lookup:test-pattern**
-
-Upload your lookup data and store it as a new tabular file in Grail or replace an existing one.
-
-**POST/platform/storage/resource-store/v1/files/tabular/lookup:upload**
-
-Delete the file from the Resource Store.
-
-**POST/platform/storage/resource-store/v1/files:delete**
 
 ### Parse lookup data
 
@@ -8345,7 +4971,7 @@ fetch spans
 ---
 title: Configure advanced permissions with security context
 source: https://www.dynatrace.com/docs/platform/grail/organize-data/advanced-permission-setup
-scraped: 2026-02-23T21:39:53.559359
+scraped: 2026-02-24T21:20:48.218268
 ---
 
 # Configure advanced permissions with security context
@@ -8442,7 +5068,7 @@ You can also use [policy boundaries](/docs/manage/identity-access-management/per
 ---
 title: Permissions in Grail
 source: https://www.dynatrace.com/docs/platform/grail/organize-data/assign-permissions-in-grail
-scraped: 2026-02-22T21:13:44.269574
+scraped: 2026-02-24T21:17:37.151298
 ---
 
 # Permissions in Grail
@@ -8569,78 +5195,6 @@ The following examples describe how to use bucket permissions to grant access to
 
 Besides granting access to buckets, you also need to configure table permissions.
 
-Table name
-
-Permission
-
-Affected DQL functions/commands
-
-logs
-
-storage:logs:read
-
-[fetch](/docs/platform/grail/dynatrace-query-language/commands/data-source-commands#fetch "DQL data source commands")
-
-events
-
-storage:events:read
-
-[fetch](/docs/platform/grail/dynatrace-query-language/commands/data-source-commands#fetch "DQL data source commands")
-
-security.events
-
-storage:security.events:read
-
-[fetch](/docs/platform/grail/dynatrace-query-language/commands/data-source-commands#fetch "DQL data source commands")
-
-metrics
-
-storage:metrics:read
-
-[timeseries](/docs/platform/grail/dynatrace-query-language/commands/metric-commands#timeseries "DQL metric commands")
-
-bizevents
-
-storage:bizevents:read
-
-[fetch](/docs/platform/grail/dynatrace-query-language/commands/data-source-commands#fetch "DQL data source commands")
-
-spans
-
-storage:spans:read
-
-[fetch](/docs/platform/grail/dynatrace-query-language/commands/data-source-commands#fetch "DQL data source commands")
-
-entities
-
-storage:entities:read
-
-[fetch](/docs/platform/grail/dynatrace-query-language/commands/data-source-commands#fetch "DQL data source commands"), [classicEntitySelector](/docs/platform/grail/dynatrace-query-language/functions/general-functions#classic-entity-selector "A list of DQL general functions."), [entityAttr](/docs/platform/grail/dynatrace-query-language/functions/general-functions#entity-attr "A list of DQL general functions."), [entityName](/docs/platform/grail/dynatrace-query-language/functions/general-functions#entity-name "A list of DQL general functions.")
-
-smartscape
-
-storage:smartscape:read
-
-[smartscapeNodes](/docs/platform/grail/dynatrace-query-language/commands/smartscape-commands#smartscapeNodes "DQL Smartscape commands"), [smartscapeEdges](/docs/platform/grail/dynatrace-query-language/commands/smartscape-commands#smartscapeEdges "DQL Smartscape commands"), [getNodeName()](/docs/platform/grail/dynatrace-query-language/functions/join-functions#getNodeName "A list of DQL join functions."), [getNodeField()](/docs/platform/grail/dynatrace-query-language/functions/join-functions#getNodeField "A list of DQL join functions.")
-
-dt.system.events
-
-storage:system:read
-
-[fetch](/docs/platform/grail/dynatrace-query-language/commands/data-source-commands#fetch "DQL data source commands")
-
-user.events
-
-storage:user.events:read
-
-[fetch](/docs/platform/grail/dynatrace-query-language/commands/data-source-commands#fetch "DQL data source commands")
-
-user.sessions
-
-storage:user.sessions:read
-
-[fetch](/docs/platform/grail/dynatrace-query-language/commands/data-source-commands#fetch "DQL data source commands")
-
 For more information, see [IAM policy reference](/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies/advanced/iam-policystatements#storage "Complete reference of IAM policies and corresponding conditions across all Dynatrace services.").
 
 ### Bucket level permissions
@@ -8661,107 +5215,9 @@ ALLOW storage:logs:read WHERE storage:dt.security_context="TeamA";
 
 Supported fields:
 
-Field name
-
-IAM condition
-
-Supported IAM tables
-
-`event.kind`
-
-`storage:event.kind`
-
-`events`, `security.events`, `bizevents`, `system`
-
-`event.type`
-
-`storage:event.type`
-
-`events`, `security.events`, `bizevents`, `system`
-
-`event.provider`
-
-`storage:event.provider`
-
-`events`, `security.events`, `bizevents`, `system`
-
-`k8s.namespace.name`
-
-`storage:k8s.namespace.name`
-
-`events`, `security.events`, `bizevents`, `logs`, `metrics`, `spans`, `smartscape`
-
-`k8s.cluster.name`
-
-`storage:k8s.cluster.name`
-
-`events`, `security.events`, `bizevents`, `logs`, `metrics`, `spans`, `smartscape`
-
-`host.name`
-
-`storage:host.name`
-
-`events`, `security.events`, `bizevents`, `logs`, `metrics`, `spans`, `smartscape`
-
-`dt.host_group.id`
-
-`storage:dt.host_group.id`
-
-`events`, `security.events`, `bizevents`, `logs`, `metrics`, `spans`, `smartscape`
-
-`metric.key`
-
-`storage:metric.key`
-
-`metrics`
-
-`log.source`
-
-`storage:log.source`
-
-`logs`
-
-`dt.security_context`
-
-`storage:dt.security_context`
-
-`events`, `security.events`, `bizevents`, `system`, `logs`, `metrics`, `spans`, `entities`, `smartscape`, `user.events`, `user.sessions`
-
-`gcp.project.id`
-
-`storage:gcp.project.id`
-
-`events`, `security.events`, `bizevents`, `logs`, `metrics`, `spans`, `smartscape`
-
-`aws.account.id`
-
-`storage:aws.account.id`
-
-`events`, `security.events`, `bizevents`, `logs`, `metrics`, `spans`, `smartscape`
-
-`azure.subscription`
-
-`storage:azure.subscription`
-
-`events`, `security.events`, `bizevents`, `logs`, `metrics`, `spans`, `smartscape`
-
-`azure.resource.group`
-
-`storage:azure.resource.group`
-
-`events`, `security.events`, `bizevents`, `logs`, `metrics`, `spans`, `smartscape`
-
-`frontend.name`
-
-`storage:frontend.name`
-
-`user.events`, `user.sessions`, `metrics`, `smartscape`
-
 For details that are not available as a dedicated field, set the `dt.security_context` field either at the data source or in the processing pipeline.
 
 ### Combining bucket and record level permissions
-
-
 
 You can combine both bucket and record level in your table permissions. For example this statement will provide access to all logs in the `unrestricted_logs` bucket and only specific records in the `default_logs` bucket:
 
@@ -8881,6 +5337,8 @@ For more information, see [Grant access to entities with security context](/docs
 
 ## Field permissions
 
+
+
 You can use field permissions to hide fields that might contain sensitive data. For this purpose, we provide fieldsets. A field is considered sensitive when it's part of a fieldset. Once a field is part of a fieldset, only users with the right permissions can use it in DQL queries for filtering and grouping. For other users, it won't show up in the query results.
 
 You require permission to access fieldsets in order to use sensitive fields. For example, if you want to use `builtin-sensitive-spans` fields in DQL queries, you need the following permission:
@@ -8909,30 +5367,6 @@ You can manage your custom fieldsets via REST API
 3. Authenticate with your API token.  
    For details, see [Authentication](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/platform-tokens "Create personalised platform tokens to access Dynatrace services via the API in your user context.").
 4. Perform one of the following actions.
-
-To do this
-
-Go to **Fieldsets** and select this
-
-Get all fieldsets
-
-**GET /fieldsets**
-
-Create a new fieldset
-
-**POST /fieldsets**
-
-Get fieldsets by UID
-
-**GET /fieldsets/{fieldsetUid}**
-
-Update a fieldset. All fields will be overwritten.
-
-**PUT /fieldsets/{fieldsetUid}**
-
-Delete a fieldset
-
-**DELETE /fieldsets/{fieldsetUid}**
 
 #### Example
 
@@ -9072,8 +5506,6 @@ ALLOW storage:logs:read;
 
 ### Read all data
 
-
-
 This permission statement gives you access to all tables and all buckets, therefore it needs to be used only in justified cases.
 
 ```
@@ -9189,7 +5621,7 @@ ALLOW storage:system:read;
 ---
 title: Organize data
 source: https://www.dynatrace.com/docs/platform/grail/organize-data
-scraped: 2026-02-22T21:15:28.354969
+scraped: 2026-02-24T21:23:59.525940
 ---
 
 # Organize data
@@ -9236,66 +5668,6 @@ fetch dt.system.buckets
 ```
 
 Run in Playground
-
-Name
-
-Table
-
-Retention
-
-`default_events`
-
-events
-
-35 days
-
-`default_securityevents_builtin`
-
-security.events
-
-3 years
-
-`default_securityevents`
-
-security.events
-
-1 year
-
-`default_bizevents`
-
-bizevents
-
-35 days
-
-`default_logs`
-
-logs
-
-35 days
-
-`default_metrics`
-
-metrics
-
-15 months
-
-`default_spans`
-
-spans
-
-10 days
-
-`dt_system_events`
-
-dt.system.events
-
-1 year
-
-`default_application_snapshots`
-
-application.snapshots
-
-10 days
 
 ## Custom Grail buckets
 
@@ -9373,7 +5745,7 @@ See when to [create custom buckets and how to allow access to them](/docs/platfo
 ---
 title: Query monitored entities in Grail
 source: https://www.dynatrace.com/docs/platform/grail/querying-monitored-entities
-scraped: 2026-02-23T21:38:14.816910
+scraped: 2026-02-24T21:33:46.572131
 ---
 
 # Query monitored entities in Grail
@@ -9401,38 +5773,6 @@ For example, executing the `fetch dt.entity.host` query retrieves all host entit
 fetch dt.entity.host
 ```
 
-`entity.name`
-
-`id`
-
-HOST-1
-
-HOST-123
-
-HOST-2
-
-HOST-456
-
-HOST-3
-
-HOST-789
-
-HOST-4
-
-HOST-101
-
-HOST-5
-
-HOST-111
-
-HOST-6
-
-HOST-131
-
-HOST-7
-
-HOST-141
-
 To include additional details, you can use the `fieldsAdd` command. As you start typing, the auto-complete feature suggests available fields for the entity type.
 
 Another way to get started is to use one of the built-in topology query snippets.
@@ -9451,30 +5791,6 @@ fetch dt.entity.host
 | fieldsAdd runs
 ```
 
-`entity.name`
-
-`id`
-
-`runs`
-
-HOST-1
-
-HOST-123
-
-runs: Complex record
-
-HOST-2
-
-HOST-456
-
-runs: Complex record
-
-HOST-3
-
-HOST-789
-
-runs: Complex record
-
 The `runs` field is a nested record that contains a field for each entity type running on a specific host. Depending on the cardinality, these fields are either strings representing a single entity ID or arrays of strings representing a list of entity IDs. In notebooks, select a nested record in the results list to see its contents.
 
 If you only want to see process groups running on that host, you can specify this in the `fieldsAdd` command. The auto-complete feature will provide a list of possible identifier types.
@@ -9488,30 +5804,6 @@ fetch dt.entity.host
 
 | fieldsAdd runs[dt.entity.process_group]
 ```
-
-`entity.name`
-
-`id`
-
-`runs[dt.entity.process_group]`
-
-HOST-1
-
-HOST-123
-
-runs: PROCESS\_GROUP-D123, PROCESS\_GROUP-567, PROCESS\_GROUP-012
-
-HOST-2
-
-HOST-456
-
-runs: PROCESS\_GROUP-D234, PROCESS\_GROUP-234, PROCESS\_GROUP-F10
-
-HOST-3
-
-HOST-789
-
-runs: PROCESS\_GROUP-D567, PROCESS\_GROUP-789, PROCESS\_GROUP-123
 
 The field names for relationships differ from the original relationship names in the previous Dynatrace. Instead of using a single name prefixed with `fromRelationship` and `toRelationship`, the fields have different names on both sides.
 
@@ -9533,24 +5825,6 @@ fetch dt.entity.service_instance
 | fieldsAdd runs_on[dt.entity.host]
 ```
 
-`entity.name`
-
-`id`
-
-`runs_on[dt.entity.host]`
-
-Mapped Instance for answer\_queue on ActiveMQ Artemis
-
-SERVICE\_INSTANCE-1AB2
-
-HOST-1
-
-Mapped Instance for Requests executed in the background threads of eT-demo-1-BussinessBackend
-
-SERVICE\_INSTANCE-A123
-
-HOST-2
-
 It's important to note that service instances always run on a single host, which means that you obtain a single host ID per service instance record. This allows you to use the `lookup` command to add the hostname to your records. The hostname is added as the `lookup.entity.name` field.
 
 ```
@@ -9565,46 +5839,6 @@ fetch dt.entity.service_instance
 | lookup sourceField:`runs_on[dt.entity.host]`, lookupField:id, [ fetch dt.entity.host ]
 ```
 
-`entity.name`
-
-`id`
-
-`runs_on[dt.entity.host]`
-
-`lookup.entity.name`
-
-`lookup.id`
-
-Mapped Instance for answer\_queue on ActiveMQ Artemis
-
-SERVICE\_INSTANCE-2AB1
-
-HOST-1
-
-AB1-abc
-
-HOST-1
-
-Mapped Instance for Requests executed in the background threads of eT-demo-1-BussinessBackend
-
-SERVICE\_INSTANCE-B123
-
-HOST-2
-
-BA1-cba
-
-HOST-2
-
-Mapped Instance for :80
-
-SERVICE\_INSTANCE-C321
-
-HOST-3
-
-BA1-cba
-
-HOST-2
-
 ## Expand relationships
 
 Hosts can run multiple service instances, so the `runs[dt.entity.service_instance]` field is an array of entity IDs.
@@ -9616,36 +5850,6 @@ fetch dt.entity.host
 
 | fieldsAdd runs[dt.entity.service_instance]
 ```
-
-`entity.name`
-
-`id`
-
-`runs[dt.entity.service_instance]`
-
-dw123
-
-HOST-1
-
-SERVICE\_INSTANCE-AB123
-
-dw123
-
-HOST-1
-
-SERVICE\_INSTANCE-CB123
-
-dw123
-
-HOST-1
-
-SERVICE\_INSTANCE-DB123
-
-abc/123
-
-HOST-2
-
-SERVICE\_INSTANCE-AB902
 
 The `lookup` command doesn't apply to arrays of IDs, so you need to use the `expand` command first to retrieve individual records per service instance ID.
 
@@ -9660,36 +5864,6 @@ fetch dt.entity.host
 
 | expand runs[dt.entity.service_instance]
 ```
-
-`entity.name`
-
-`id`
-
-`runs[dt.entity.service_instance]`
-
-dw123
-
-HOST-1
-
-SERVICE\_INSTANCE-DB123
-
-dw456
-
-HOST-2
-
-SERVICE\_INSTANCE-BA987
-
-dw789
-
-HOST-3
-
-SERVICE\_INSTANCE-CA687
-
-dw652
-
-HOST-4
-
-SERVICE\_INSTANCE-1AB2
 
 In this example, the first record expands into three. Now you can use the `lookup` command to get the service instance details that you include in the `lookup` field.
 
@@ -9708,56 +5882,6 @@ fetch dt.entity.host
 
 | lookup sourceField:`runs[dt.entity.service_instance]`, lookupField:id, [ fetch dt.entity.service_instance]
 ```
-
-`entity.name`
-
-`id`
-
-`runs[dt.entity.service_instance]`
-
-`lookup.entity.name`
-
-`lookup.id`
-
-dw123
-
-HOST-1
-
-SERVICE\_INSTANCE-AB123
-
-Mapped instance for easytravelazure-weather-service
-
-SERVICE\_INSTANCE-AB123
-
-dw123
-
-HOST-1
-
-SERVICE\_INSTANCE-CB123
-
-Mapped Instance for weather-service-restify
-
-SERVICE\_INSTANCE-CB123
-
-dw123
-
-HOST-1
-
-SERVICE\_INSTANCE-DB123
-
-Mapped Instance for easytravelazure-weather-express
-
-SERVICE\_INSTANCE-DB123
-
-abc/123
-
-HOST-2
-
-SERVICE\_INSTANCE-AB902
-
-Mapped Instance for easytravel-frontend
-
-SERVICE\_INSTANCE-AB902
 
 ## Entity tags
 
@@ -9782,20 +5906,6 @@ fetch dt.entity.host
 | fields tag
 ```
 
-`tag`
-
-AppSec:Node.js
-
-[Azure]tenant:CustomerA
-
-HostName:dw123
-
-AppSec:.NET
-
-[AWS]created\_at:2023-07-07T12:20:10Z
-
-[Environment]tema:cpn
-
 You can use the `expand` command to optimize tag filtering. This example filters hosts based on a specific cluster name.
 
 ```
@@ -9809,42 +5919,6 @@ fetch dt.entity.host
 
 | filter contains(tags, "[Environment]Cluster.Name:prod-eu-west-6-ireland")
 ```
-
-`entity.name`
-
-`id`
-
-`tags`
-
-HOST-1
-
-HOST-C2
-
-tags:[Environment]Cluster.Name:prod-eu-west-6-ireland
-
-HOST-2
-
-HOST-C3
-
-tags:[Environment]Cluster.Name:prod-eu-west-6-ireland
-
-HOST-3
-
-HOST-C4
-
-tags:[Environment]Cluster.Name:prod-eu-west-6-ireland
-
-HOST-4
-
-HOST-C5
-
-tags:[Environment]Cluster.Name:prod-eu-west-6-ireland
-
-HOST-5
-
-HOST-C6
-
-tags:[Environment]Cluster.Name:prod-eu-west-6-ireland
 
 If you need structured access to the key, context, or value, you can use the following DPL parse expression to split the string representation into individual fields.
 
@@ -9860,57 +5934,7 @@ fetch dt.entity.host
 | parse tag_string, """(('['LD:tag_context ']' LD:tag_key (!<<'\\' ':') LD:tag_value)|(LD:tag_key (!<<'\\' ':') LD:tag_value)|LD:tag_key)"""
 ```
 
-`entity.name`
-
-`id`
-
-`tag_string`
-
-`tag_context`
-
-`tag_key`
-
-`tag_value`
-
-HOST-1
-
-HOST-73
-
-Maxk:WebService2-ABC
-
-undefined
-
-Maxk:WebService2-ABC
-
-undefined
-
-HOST-1
-
-HOST-73
-
-testtests:testspreiser
-
-undefined
-
-testtests:testspreiser
-
-undefined
-
-HOST-1
-
-HOST-73
-
-Maxk:WebService3-ABC
-
-undefined
-
-Maxk:WebService3-ABC
-
-undefined
-
 ## List fields and relationships
-
-
 
 Use the `describe` command to obtain a list of fields and relationships for each entity view.
 
@@ -9937,34 +5961,6 @@ describe dt.entity.service_instance
 | filter in(data_types, "record")
 ```
 
-`field`
-
-`data_types`
-
-belongs\_to
-
-record
-
-runs\_on
-
-record
-
-sends\_to
-
-record
-
-icon
-
-record
-
-receives\_from
-
-record
-
-instance\_of
-
-record
-
 ## Permissions
 
 You need the `storage:entities:read` permission to query entities.
@@ -9984,30 +5980,6 @@ fetch dt.entity.service
 
 | filter in(id, classicEntitySelector("type(service), fromRelationship.runsOnHost(type(host), tag([AWS]Category:ABC))"))
 ```
-
-`entity.name`
-
-`id`
-
-123
-
-123
-
-123
-
-123
-
-123
-
-123
-
-123
-
-123
-
-123
-
-123
 
 You can also obtain this result using native DQL with the following query.
 
@@ -10034,46 +6006,6 @@ fetch dt.entity.service
 
 | filter host.tags == "[AWS]Category:ABC"
 ```
-
-`entity.name`
-
-`id`
-
-`host.id`
-
-`host.tags`
-
-123
-
-123
-
-123
-
-123
-
-123
-
-123
-
-123
-
-123
-
-123
-
-123
-
-123
-
-123
-
-123
-
-123
-
-123
-
-123
 
 This query has limitations, such as returning only 100 hosts per service entity, and is generally more complex than the previous example using the `classicEntitySelector` function.
 
@@ -10137,6 +6069,8 @@ fetch dt.entity.host
 
 ### Combine `classicEntitySelector` with native DQL filters
 
+
+
 If you already use the `classicEntitySelector` function, it is better to add all filter criteria into the function call rather than add additional native filter statements. The mixed query is slower than the query that contains all filter conditions in the entity selector.
 
 ```
@@ -10187,626 +6121,12 @@ fetch dt.entity.host
 
 Entity relationships in the previous Dynatrace (for example, the environment API v2) are mapped to the new names in DQL records according to the following table.
 
-Relationship name
-
-From > To
-
-To > From
-
-belongsTo
-
-belongs\_to
-
-contains
-
-calls
-
-calls
-
-called\_by
-
-candidateTalksWith
-
-called\_by
-
-calls
-
-hostsComputeNode
-
-hosts
-
-hosted\_by
-
-indirectlySendsToQueue
-
-indirectly\_sends\_to
-
-indirectly\_receives\_from
-
-isAccessibleBy
-
-accessible\_by
-
-can\_access
-
-isApplicationMethodOf
-
-belongs\_to
-
-contains
-
-isApplicationMethodOfGroup
-
-belongs\_to
-
-contains
-
-isApplicationOfSyntheticTest
-
-monitored\_by
-
-monitors
-
-isAzrAppServicePlanOf
-
-contains
-
-belongs\_to
-
-isAzrEventHubNamespaceOfEventHub
-
-contains
-
-belongs\_to
-
-isAzrMgmtGroupOfAzrTenant
-
-belongs\_to
-
-contains
-
-isAzrServiceBusNamespaceOfQueue
-
-contains
-
-belongs\_to
-
-isAzrServiceBusNamespaceOfTopic
-
-contains
-
-belongs\_to
-
-isAzrSQLDatabaseOfElasticPool
-
-belongs\_to
-
-contains
-
-isAzrSqlServerOfDatabase
-
-contains
-
-belongs\_to
-
-isAzrSqlServerOfElasticPool
-
-belongs\_to
-
-contains
-
-isAzrStorageAccountOfAzrEventHub
-
-contains
-
-belongs\_to
-
-isAzrSubscriptionOfAzrMgmtGroup
-
-belongs\_to
-
-contains
-
-isAzrSubscriptionOfAzrTenant
-
-belongs\_to
-
-contains
-
-isAzrSubscriptionOfCredentials
-
-contains
-
-belongs\_to
-
-isBalancedBy
-
-balanced\_by
-
-balances
-
-isBoshDeploymentOfHost
-
-contains
-
-belongs\_to
-
-isCfFoundationOfHost
-
-contains
-
-belongs\_to
-
-isCgiOfCa
-
-belongs\_to
-
-contains
-
-isCgiOfCai
-
-belongs\_to
-
-contains
-
-isCgiOfCluster
-
-belongs\_to
-
-contains
-
-isCgiOfHost
-
-belongs\_to
-
-contains
-
-isCgiOfNamespace
-
-belongs\_to
-
-contains
-
-isChildOf
-
-child\_of
-
-parent\_of
-
-isClusterOfCa
-
-cluster\_of
-
-clustered\_by
-
-isClusterOfCai
-
-cluster\_of
-
-clustered\_by
-
-isClusterOfCni
-
-cluster\_of
-
-clustered\_by
-
-isClusterOfHost
-
-cluster\_of
-
-clustered\_by
-
-isClusterOfKubernetesSvc
-
-cluster\_of
-
-clustered\_by
-
-isClusterOfNamespace
-
-cluster\_of
-
-clustered\_by
-
-isClusterOfNode
-
-cluster\_of
-
-isClusterOfPg
-
-clustered\_by
-
-cluster\_of
-
-clustered\_by
-
-isCnpOfCai
-
-belongs\_to
-
-contains
-
-isDatastoreOf
-
-belongs\_to
-
-contains
-
-isDeviceApplicationMethodOf
-
-belongs\_to
-
-contains
-
-isDeviceApplicationMethodOfGroup
-
-belongs\_to
-
-contains
-
-isDiskOf
-
-belongs\_to
-
-contains
-
-isDockerContainerOf
-
-contains
-
-belongs\_to
-
-isDockerContainerOfPg
-
-contains
-
-belongs\_to
-
-isEbsVolumeOf
-
-belongs\_to
-
-contains
-
-isGroupOf
-
-group\_of
-
-groups
-
-isHostGroupOf
-
-group\_of
-
-groups
-
-isHostOfContainer
-
-hosts
-
-hosted\_by
-
-isInstanceOf
-
-instance\_of
-
-instantiates
-
-isKubernetesSvcOfCa
-
-balances
-
-balanced\_by
-
-isKubernetesSvcOfCai
-
-balances
-
-balanced\_by
-
-isLocatedIn
-
-belongs\_to
-
-contains
-
-isMainPgiOfCgi
-
-belongs\_to
-
-contains
-
-isMemberOf
-
-belongs\_to
-
-contains
-
-isMemberOfScalingGroup
-
-belongs\_to
-
-contains
-
-isNamespaceOfCa
-
-contains
-
-belongs\_to
-
-isNamespaceOfCai
-
-contains
-
-belongs\_to
-
-isNamespaceOfCni
-
-contains
-
-belongs\_to
-
-isNamespaceOfCnp
-
-contains
-
-belongs\_to
-
-isNamespaceOfKubernetesSvc
-
-contains
-
-belongs\_to
-
-isNamespaceOfPg
-
-contains
-
-belongs\_to
-
-isNamespaceOfService
-
-contains
-
-belongs\_to
-
-isNetworkClientOf
-
-calls
-
-called\_by
-
-isNetworkClientOfHost
-
-calls
-
-called\_by
-
-isNetworkClientOfProcessGroup
-
-calls
-
-called\_by
-
-isNetworkInterfaceOf
-
-belongs\_to
-
-contains
-
-isNodeOfHost
-
-belongs\_to
-
-contains
-
-isOpenstackAvZoneOf
-
-belongs\_to
-
-contains
-
-isPartOf
-
-belongs\_to
-
-contains
-
-isPgAppOf
-
-belongs\_to
-
-contains
-
-isPgiOfCgi
-
-belongs\_to
-
-contains
-
-isPgOfCa
-
-belongs\_to
-
-contains
-
-isPgOfCai
-
-belongs\_to
-
-contains
-
-isPgOfCg
-
-belongs\_to
-
-contains
-
-isProcessOf
-
-belongs\_to
-
-contains
-
-isProcessRunningOpenstackVm
-
-belongs\_to
-
-contains
-
-isRuntimeComponentOf
-
-belongs\_to
-
-contains
-
-isSameAs
-
-same\_as
-
-same\_as
-
-isServedByDcrumService
-
-served\_by
-
-serves
-
-isServiceMethodOf
-
-belongs\_to
-
-contains
-
-isServiceMethodOfService
-
-belongs\_to
-
-contains
-
-isServiceOf
-
-belongs\_to
-
-contains
-
-isServiceOfProcessGroup
-
-belongs\_to
-
-contains
-
-isSiteOf
-
-contains
-
-belongs\_to
-
-isSoftwareComponentOfPgi
-
-belongs\_to
-
-contains
-
-isStepOf
-
-belongs\_to
-
-contains
-
-isUserActionOf
-
-belongs\_to
-
-contains
-
-listensOnQueue
-
-belongs\_to
-
-contains
-
-manages
-
-manages
-
-managed\_by
-
-monitors
-
-monitors
-
-monitored\_by
-
-propagatesTo
-
-propagates\_to
-
-propagated\_from
-
-receivesFromQueue
-
-receives\_from
-
-sends\_to
-
-runsOn
-
-runs\_on
-
-runs
-
-runsOnHost
-
-runs\_on
-
-runs
-
-runsOnProcessGroupInstance
-
-runs\_on
-
-runs
-
-runsOnResource
-
-runs\_on
-
-runs
-
-sendsToQueue
-
-sends\_to
-
-receives\_from
-
-talksWithCandidate
-
-calls
-
-called\_by
-
-affects
-
-affects
-
-affected\_by
-
-isRelatedTo
-
-related\_to
-
-related\_to
-
 ## Troubleshooting
 
 * **The DQL query returns different or fewer entities than API v2 environment**
   Verify that you are using the same query timeframe `fetch dt.entity.*`. The `classicEntitySelector()` function only returns entities that have a lifetime that overlaps with the query timeframe. By default, DQL queries are executed for the last 2 hours, whereas the default timeframe in the API environment is 72 hours.
 
 ## Related topics
-
-
 
 * [What is Dynatrace Grail?](/docs/platform/grail/dynatrace-grail "Grail is the Dynatrace data lakehouse that's designed explicitly for observability and security data and acts as single unified storage for logs, metrics, traces, events, and more.")
 * [DQL commands](/docs/platform/grail/dynatrace-query-language/commands "A list of DQL commands.")
@@ -11128,7 +6448,7 @@ Only Smartscape nodes can be filtered using segments, meaning that Smartscape ed
 ---
 title: Grail
 source: https://www.dynatrace.com/docs/platform/grail
-scraped: 2026-02-23T21:21:10.804887
+scraped: 2026-02-24T21:16:08.658379
 ---
 
 # Grail

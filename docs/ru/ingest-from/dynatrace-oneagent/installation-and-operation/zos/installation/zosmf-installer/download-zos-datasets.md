@@ -1,7 +1,7 @@
 ---
 title: Download z/OS product datasets
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/zosmf-installer/download-zos-datasets
-scraped: 2026-02-23T21:40:04.057941
+scraped: 2026-02-24T21:35:42.008594
 ---
 
 # Download z/OS product datasets
@@ -55,24 +55,6 @@ You can download the latest PAX file version via Deployment API as follows:
 1. Generate an [Access token](/docs/dynatrace-api/basics/dynatrace-api-authentication#create-token "Find out how to get authenticated to use the Dynatrace API.") with the scope **PaaS integration - Installer download** (`InstallerDownload`).
 2. Download the latest PAX file via [Deployment API - Download latest OneAgent](/docs/dynatrace-api/environment-api/deployment/oneagent/download-oneagent-latest "Download the latest OneAgent installer via Dynatrace API."):
 
-   HTTP method
-
-   Dynatrace environment
-
-   Endpoint
-
-   GET
-
-   SaaS
-
-   `https://{your-environment-id}.live.dynatrace.com/api/v1/deployment/installer/agent/zos/mainframe/latest`
-
-   GET
-
-   Managed
-
-   `https://{your-domain}/e/{your-environment-id}/api/v1/deployment/installer/agent/zos/mainframe/latest`
-
    Below is a sample `curl` command for a SaaS environment that uses the Deployment API to download the latest PAX file version:
 
    ```
@@ -88,24 +70,6 @@ You can download a specific PAX file version via Deployment API as follows:
 1. Generate an [Access token](/docs/dynatrace-api/basics/dynatrace-api-authentication#create-token "Find out how to get authenticated to use the Dynatrace API.") with the scope **PaaS integration - Installer download** (`InstallerDownload`).
 2. List all available PAX file versions via [Deployment API - List available versions of OneAgent](/docs/dynatrace-api/environment-api/deployment/oneagent/get-available-versions "List available versions of OneAgent via Dynatrace API.").
 
-   HTTP method
-
-   Dynatrace environment
-
-   Endpoint
-
-   GET
-
-   SaaS
-
-   `https://{your-environment-id}.live.dynatrace.com/api/v1/deployment/installer/agent/versions/zos/mainframe`
-
-   GET
-
-   Managed
-
-   `https://{your-domain}/e/{your-environment-id}/api/v1/deployment/installer/agent/versions/zos/mainframe`
-
    Below is a sample `curl` command for a SaaS environment that uses the Deployment API to list all available PAX file versions:
 
    ```
@@ -114,24 +78,6 @@ You can download a specific PAX file version via Deployment API as follows:
 
    Replace `<environment>` with your Dynatrace environment ID and `<accessToken>` with your generated access token.
 3. Download a specific PAX file version via [Deployment API - Download OneAgent of specific version](/docs/dynatrace-api/environment-api/deployment/oneagent/download-oneagent-version "Download the OneAgent installer of the specific version via Dynatrace API."):
-
-   HTTP method
-
-   Dynatrace environment
-
-   Endpoint
-
-   GET
-
-   SaaS
-
-   `https://{your-environment-id}.live.dynatrace.com/api/v1/deployment/installer/agent/zos/mainframe/version/{version}`
-
-   GET
-
-   Managed
-
-   `https://{your-domain}/e/{your-environment-id}/api/v1/deployment/installer/agent/zos/mainframe/version/{version}`
 
    Below is a sample `curl` command for a SaaS environment that uses the Deployment API to download a specific PAX file version:
 
@@ -142,8 +88,6 @@ You can download a specific PAX file version via Deployment API as follows:
    Replace `<environment>` with your Dynatrace environment ID, `<version>` with your selected PAX file version, and `<accessToken>` with your generated access token.
 
 ## Extract product datasets
-
-
 
 You can extract the product datasets from the PAX file as follows:
 
@@ -558,6 +502,8 @@ You can extract the product datasets from the PAX file as follows:
    Optional Delete `dynatrace-zos.pax` and `dynatrace-oneagent-zos-java.jar` (if it is not needed) to free up disk space.
 
 ### Product datasets
+
+
 
 The extraction process creates the following product datasets (the names are provided for the default high-level qualifier and the `R1nnnx` release version):
 

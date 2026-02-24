@@ -1,7 +1,7 @@
 ---
 title: Anomaly detection configuration
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-configuration
-scraped: 2026-02-23T21:38:05.184771
+scraped: 2026-02-24T21:30:10.414974
 ---
 
 # Anomaly detection configuration

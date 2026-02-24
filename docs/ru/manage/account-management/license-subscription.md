@@ -1,7 +1,7 @@
 ---
 title: Subscription or license overview
 source: https://www.dynatrace.com/docs/manage/account-management/license-subscription
-scraped: 2026-02-23T21:31:21.623400
+scraped: 2026-02-24T21:34:39.541887
 ---
 
 # Subscription or license overview
@@ -22,9 +22,13 @@ All references to time and date are therefore to be understood as UTC+00:00.
 
 [![Dynatrace Signet](https://dt-cdn.net/images/dt-logo-color-vertical-0a89040753.svg "Dynatrace Signet")
 
-### Dynatrace Platform Subscription
+### Dynatrace Platform Subscription (DPS)
 
 Information related to your Dynatrace Platform Subscription.](/docs/manage/account-management/license-subscription/subscription-overview-dps "View your Dynatrace Platform Subscription budget summary and cost analysis.")[![Dynatrace Signet](https://dt-cdn.net/images/dt-logo-color-vertical-0a89040753.svg "Dynatrace Signet")
+
+### Dynatrace Platform Subscription (DPS) for hybrid setups
+
+Information related to your Dynatrace Platform Subscription, when you have a hybrid setup.](/docs/manage/account-management/license-subscription/subscription-overview-dps-hybrid "View your DPS for Hybrid budget summary and cost analysis.")[![Dynatrace Signet](https://dt-cdn.net/images/dt-logo-color-vertical-0a89040753.svg "Dynatrace Signet")
 
 ### Dynatrace classic licensing
 

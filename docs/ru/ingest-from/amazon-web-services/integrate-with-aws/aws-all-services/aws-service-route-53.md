@@ -1,7 +1,7 @@
 ---
 title: Amazon Route 53 monitoring
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-route-53
-scraped: 2026-02-23T21:28:34.207625
+scraped: 2026-02-24T21:31:56.515444
 ---
 
 # Amazon Route 53 monitoring

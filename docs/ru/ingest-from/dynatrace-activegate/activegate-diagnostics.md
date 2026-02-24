@@ -1,7 +1,7 @@
 ---
 title: ActiveGate diagnostics
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-activegate/activegate-diagnostics
-scraped: 2026-02-23T21:37:45.809052
+scraped: 2026-02-24T21:34:56.903033
 ---
 
 # ActiveGate diagnostics
@@ -343,46 +343,6 @@ We recommend that you delete the file after use.
 ## Contents of diagnostic data
 
 All the collected diagnostic data is compressed into a `SupportArchive<ID number>` (for `agctl` - `support_archive_<timestamp>`) ZIP file that includes the following folders and files:
-
-Folder or file
-
-Description
-
-`details.txt` (file)
-
-Contains general information on when and where the diagnostic data was collected and archive statistics.
-
-`config` (folder)
-
-Contains a snapshot of the ActiveGate [configuration directory](/docs/ingest-from/dynatrace-activegate/configuration/where-can-i-find-activegate-files "Find out where ActiveGate files are stored on Windows and Linux systems.").
-
-`debugui` (folder)
-
-Contains a snapshot of the internal environment configuration related to the ActiveGate.
-
-`log` (folder)
-
-Contains a snapshot of the ActiveGate [log directory](/docs/ingest-from/dynatrace-activegate/configuration/where-can-i-find-activegate-files "Find out where ActiveGate files are stored on Windows and Linux systems.").
-
-`autoupdater` (folder)
-
-Contains AutoUpdater service logs and RPM, Synthetic, zRemote installer modules.
-
-`install` (folder)
-
-Contains ActiveGate installer logs.
-
-`zremote` (folder)
-
-Contains zRemote, watchdog logs and agent configuration files.
-
-`synthetic` (folder)
-
-Contains ActiveGate Synthetic monitors configuration files and logs.
-
-`remotepluginmodule` (folder)
-
-Contains logs for Extensions and agent executing them.
 
 ## Data privacy
 

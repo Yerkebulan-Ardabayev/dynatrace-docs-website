@@ -1,7 +1,7 @@
 ---
 title: DPL Positional Matchers
 source: https://www.dynatrace.com/docs/platform/grail/dynatrace-pattern-language/log-processing-positional-matchers
-scraped: 2026-02-20T21:18:12.035766
+scraped: 2026-02-24T21:22:52.281142
 ---
 
 # DPL Positional Matchers
@@ -17,18 +17,6 @@ scraped: 2026-02-20T21:18:12.035766
 **BOS, BOF**
 
 Matches beginning of string
-
-output type
-
-quantifier
-
-configuration
-
-none
-
-none
-
-none
 
 #### Example
 
@@ -63,18 +51,6 @@ Results in the first line parsed into the `header` field. Parsing following line
 
 Matches any bytes in the middle of string
 
-output type
-
-quantifier
-
-configuration
-
-none
-
-none
-
-none
-
 #### Example
 
 Extracting records after the first row in the string
@@ -108,18 +84,6 @@ Results in lines 2 and 3 parsed to fields `name` and `age`. Line 1 fails to pars
 **EOS, EOF**
 
 Matches end of string
-
-output type
-
-quantifier
-
-configuration
-
-none
-
-none
-
-none
 
 #### Example
 

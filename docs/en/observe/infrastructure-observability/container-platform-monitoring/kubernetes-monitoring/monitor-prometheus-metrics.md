@@ -1,7 +1,7 @@
 ---
 title: Monitor Prometheus metrics
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-prometheus-metrics
-scraped: 2026-02-23T21:27:09.688253
+scraped: 2026-02-24T21:31:29.729725
 ---
 
 # Monitor Prometheus metrics
@@ -56,22 +56,6 @@ Histograms[1](#fn-3-1-def) provide visual insights into the distribution and fre
 For a base metric name of `<basename>`, Dynatrace will ingest the data according to the
 following table.
 
-Prometheus Metric
-
-Dynatrace Ingest Type
-
-`<basename>_bucket{le="<upper inclusive bound>"}`
-
-[`COUNT`](/docs/ingest-from/extend-dynatrace/extend-metrics/reference/metric-ingestion-protocol#count-metric "Learn how the data ingestion protocol for Dynatrace Metrics API works.")
-
-`<basename>_bucket_sum`
-
-[`COUNT`](/docs/ingest-from/extend-dynatrace/extend-metrics/reference/metric-ingestion-protocol#count-metric "Learn how the data ingestion protocol for Dynatrace Metrics API works.")
-
-`<basename>_bucket_count`
-
-[`COUNT`](/docs/ingest-from/extend-dynatrace/extend-metrics/reference/metric-ingestion-protocol#count-metric "Learn how the data ingestion protocol for Dynatrace Metrics API works.")
-
 Additional flexibility and control is provided via the [`builtin:histogram-metrics`ï»¿](https://dt-url.net/ne02rlq) settings schema.
 This schema allows to configure the ingestion of `<basename>_bucket{le="<upper inclusive bound>"}` metrics.
 
@@ -84,22 +68,6 @@ This schema allows to configure the ingestion of `<basename>_bucket{le="<upper i
 Like a [Histogram](#histogram), the summary metric[1](#fn-4-1-def) samples observations. In contrast to the histogram metric, a summary's buckets are
 represented by Ï-quantiles where 0 â¤ Ï â¤ 1. For a base metric name of `<basename>`, Dynatrace will ingest the data according to the
 following table.
-
-Prometheus Metric
-
-Dynatrace Ingest Type
-
-`<basename>{quantile="<Ï>"}`
-
-[`GAUGE`](/docs/ingest-from/extend-dynatrace/extend-metrics/reference/metric-ingestion-protocol#gauge-metric "Learn how the data ingestion protocol for Dynatrace Metrics API works.")
-
-`<basename>_sum`
-
-[`COUNT`](/docs/ingest-from/extend-dynatrace/extend-metrics/reference/metric-ingestion-protocol#count-metric "Learn how the data ingestion protocol for Dynatrace Metrics API works.")
-
-`<basename>_count`
-
-[`COUNT`](/docs/ingest-from/extend-dynatrace/extend-metrics/reference/metric-ingestion-protocol#count-metric "Learn how the data ingestion protocol for Dynatrace Metrics API works.")
 
 1
 

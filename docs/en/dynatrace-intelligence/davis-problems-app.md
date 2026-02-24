@@ -1,7 +1,7 @@
 ---
 title: Problems app
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/davis-problems-app
-scraped: 2026-02-23T21:19:00.341164
+scraped: 2026-02-24T21:13:44.106277
 ---
 
 # Problems app
@@ -22,10 +22,6 @@ Prerequisites
 ### Permissions
 
 The following table describes the required permissions.
-
-Permission
-
-Description
 
 business-analytics:business-flows:read
 
@@ -66,16 +62,6 @@ Save notifications for alerting on saved filters
 settings:objects:read
 
 Read settings objects from Environment API
-
-10
-
-rows per page
-
-Page
-
-1
-
-of 1
 
 ## Installation
 
@@ -425,26 +411,6 @@ To view a problem overview
    ![Example problem details Overview tab](https://dt-cdn.net/images/problems-screenshot-with-overview-1920-6c68de3f34.png)
 
 The **Overview** has four sections:
-
-Section
-
-Description
-
-[Impact](#overview-impact)
-
-Displays all impacted Smartscape entities (for example, services, processes, and hosts) along with brief issue details for each entity.
-
-[Root cause](#overview-root-cause)
-
-Focuses on the root cause of the issue, including detailed information about the affected deployment stack.
-
-[Visual resolution path](#overview-visual-resolution-path)
-
-Graphically illustrates the relationships between frontends, services, and backends involved in the issue.
-
-[Automation and remediation](#overview-automation-and-remediation)
-
-Lists all automation workflows triggered by the problem, such as notifications, remediations, and external integrations.
 
 Customize the layout
 

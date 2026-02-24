@@ -1,7 +1,7 @@
 ---
 title: Custom metric metadata
 source: https://www.dynatrace.com/docs/ingest-from/extend-dynatrace/extend-metrics/reference/custom-metric-metadata
-scraped: 2026-02-23T21:27:50.667101
+scraped: 2026-02-24T21:33:02.304727
 ---
 
 # Custom metric metadata
@@ -26,134 +26,13 @@ Parameters
 
 Example JSON
 
-Parameter
-
-Type
-
-Description
-
-displayName
-
-string
-
-The name of the metric in the user interface.
-
-description
-
-string
-
-A short description of the metric.
-
-unit
-
-string
-
-The unit of the metric.
-
-Find the possible values in the description of the **unit** field for [built-in metrics](/docs/dynatrace-api/environment-api/metric-v2/get-descriptor "View the descriptor of a metric via Metrics v2 API.").
-
-sourceEntityType
-
-string
-
-The entity type of the metric. Used for management zone filtering.
-
-For details, see [Metric entity type](/docs/analyze-explore-automate/metrics-classic/metrics-mz#entity-based-rules "How to filter metrics by management zone and related security considerations").
-
-tags
-
-string[]
-
-A list of tags applied to the metric.
-
-metricProperties
-
-[MetricProperties](#properties)
-
-A list of the metric's properties.
-
-dimensions
-
-[MetricDimensions](#dimensions)[]
-
-A list of the metric's dimensions.
-
 #### The `MetricProperties` object
 
 Properties of a metric.
 
-Parameter
-
-Type
-
-Description
-
-minValue
-
-integer
-
-The minimum allowed value of the metric.
-
-maxValue
-
-integer
-
-The maximum allowed value of the metric.
-
-rootCauseRelevant
-
-boolean
-
-Whether (`true` or `false`) the metric is related to a root cause of a problem.
-
-A root-cause relevant metric represents a strong indicator for a faulty component.
-
-impactRelevant
-
-boolean
-
-Whether (`true` or `false`) the metric is relevant to a problem's impact.
-
-An impact-relevant metric is highly dependent on other metrics and changes because an underlying root-cause metric has changed.
-
-valueType
-
-string
-
-The type of the metric's value. You have these options:
-
-* `score`: A score metric is a metric where high values indicate a good situation, while low values indicate trouble. An example of such a metric is a success rate.
-* `error`: An error metric is a metric where high values indicate trouble, while low values indicate a good situation. An example of such a metric is an error count.
-
-latency
-
-integer
-
-The reporting delay of the metrics, in minutes.
-
-The delay caused by constraints of cloud vendors or other third-party data sources that leads to a latency in data ingest on the Dynatrace side.
-
 #### The `MetricDimensions` object
 
 A dimension of the metric.
-
-Parameter
-
-Type
-
-Description
-
-key
-
-string
-
-The key of the dimension to be used in the [ingestion protocol](/docs/ingest-from/extend-dynatrace/extend-metrics/reference/metric-ingestion-protocol "Learn how the data ingestion protocol for Dynatrace Metrics API works.").
-
-displayName
-
-string
-
-The name of the dimension in the user interface.
 
 ```
 {

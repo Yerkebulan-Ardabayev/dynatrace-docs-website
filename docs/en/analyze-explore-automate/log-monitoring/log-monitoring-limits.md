@@ -1,7 +1,7 @@
 ---
 title: Log Monitoring default limits (Logs Classic)
 source: https://www.dynatrace.com/docs/analyze-explore-automate/log-monitoring/log-monitoring-limits
-scraped: 2026-02-23T21:35:51.365158
+scraped: 2026-02-24T21:24:54.412096
 ---
 
 # Log Monitoring default limits (Logs Classic)
@@ -68,50 +68,9 @@ In special cases, such as very poor hardware performance, the OneAgent log modul
 
 Scenarios that are not supported in the rotated log monitoring process include:
 
-Type
-
-Description
-
-Rotated log generation with a directory change
-
-The potential consequence is the creation of duplicates and/or incomplete logs.
-
-Rotated log generation with immediate compression
-
-If a rotation criterion is met (for example, the required file size is reached), the file is moved to another location and immediately compressed. Example: `/var/log/application.log -> /var/log/application.log.1.gz -> /var/log/application.log.2.gz -> /var/log/application.log.3.gz`. This process might again lead to incomplete log ingest. There should be at least one uncompressed rotated file.
-
-Rotated log generation with queue logic
-
-The oldest log records are removed whenever new content is added to a file, resulting in a relatively constant log file size. This scenario can be easily replaced with a supported rotation scheme by, for example, starting a new file when the current file reaches a predefined size.
-
 ## Log record accepted time range
 
 The following rules apply to all log event sources, such as OneAgent and the generic log ingestion API.
-
-Log record timestamp
-
-Description
-
-The current time minus 24 hours for log records.
-
-The event is dropped if the log event contains a timestamp before the current time minus 24 hours.
-If the record is ingested via the generic Log Ingestion API, it can return the following:
-
-`400` - if all log events in the payload have timestamps earlier than the current time minus 24 hours.
-Message in response: `All logs are out of correct time range.`
-
-`200` - in case some of the events in the payload have timestamps earlier than the current time minus 24 hours.
-Example message in response: `2 events were not ingested because of timestamp out of correct time range`.
-
-`204` - (No Content) in case of success.
-
-The current time minus two hours for log metrics and events.
-
-The data point is dropped if the log metric data point timestamp is before the current time minus two hours.
-
-Current time plus ten minutes
-
-The time stamp is reset to current time.
 
 ## High-cardinality attributes
 
@@ -119,22 +78,24 @@ Unique log data attributes (high-cardinality attributes) such as `span_id` and `
 
 ## Log ingestion API request objects
 
-In addition to generic Dynatrace API limitations ([Dynatrace API - Access limit](/docs/dynatrace-api/basics/access-limit "Find out about payload limits and request throttling that may affect your use of the Dynatrace API.")) the following log ingestion API specific limits apply:
+In addition to the [generic Dynatrace API limitations](/docs/dynatrace-api/basics/access-limit "Find out about payload limits and request throttling that may affect your use of the Dynatrace API."), the following limits specific to the log ingestion API apply:
 
 * `LogMessagePlain plain` text object.  
   The length of the message is limited to 8,192 characters. Any content exceeding the limit is trimmed.
 * `LogMessageJson` JSON object.  
-  The object might contain the following types of keys (the possible key values are listed below):
+  The object should contain the following groups of keys (the possible key values are listed below):
 
   + Timestamp. The following formats are supported: UTC milliseconds, RFC3339, and RFC3164. If not set, the current timestamp is used.
-  + Severity. If not set, NONE is used.
+  + Severity. If not set, `NONE` is used.
   + Content. If the content key is not set, the whole JSON is parsed as the content.
-  + Semantic attribute. Only values of the String type are supported. Semantic attributes are indexed and can be used in queries. These are also displayed in aggregations (facets). If an unsupported key occurs it is not indexed and cannot be used in indexing and aggregations.
+  + Attributes. String, number, boolean values, or an array of these types are supported. Numbers and boolean values are transformed into string representation. Nested objects are flattened (for example, `host: {name: "host1"}` becomes `host.name`).
+    Semantic attributes and custom attributes are indexed and can be used in queries. These are also displayed in aggregations (facets). If an unsupported key occurs, it is not indexed and cannot be used in queries and aggregations.
+    See [Semantic attributes (Logs Classic)](/docs/analyze-explore-automate/log-monitoring/acquire-log-data/logs-classic-ingestion-api/log-classic-semantic-attributes "Supported semantic attributes that are indexed in Log Monitoring Classic.") for more details.
 
-  The length of the value is limited. Any content exceeding the limit is trimmed. Default limits:
+  The length of the value is limited for all attributes. Any content exceeding the limit is trimmed. The default limits are as follows:
 
   + Content: 8,192 characters.
-  + Semantic attribute value: 250 characters.
+  + Attribute value: 250 characters.
 
 ## Sensitive data masking limits
 

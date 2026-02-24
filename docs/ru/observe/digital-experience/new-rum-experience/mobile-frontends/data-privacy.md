@@ -1,7 +1,7 @@
 ---
 title: Configure data privacy settings for mobile frontends
 source: https://www.dynatrace.com/docs/observe/digital-experience/new-rum-experience/mobile-frontends/data-privacy
-scraped: 2026-02-23T21:28:21.738577
+scraped: 2026-02-24T21:23:55.286860
 ---
 
 # Configure data privacy settings for mobile frontends
@@ -62,44 +62,6 @@ Check the sections below for detailed instructions on how to set up the mobile u
 ### Data collection levels
 
 The table below describes the available data collection levels and shows whether [user tags](/docs/observe/digital-experience/rum-concepts/user-and-error-events#user-tagging "Learn about user and error events and the types of user and error events captured by Dynatrace.") and custom user actions, events, values, and errors are reported for a particular level.
-
-Level
-
-Description
-
-User tags, custom events, and custom values
-
-Custom user actions and errors
-
-**Off**
-
-Monitoring data is not sent
-
-No personal data is sent; all identifiers are randomized on every launch.[1](#fn-1-1-def)
-
-![Not applicable](https://dt-cdn.net/images/icon-red-cross-1f1142a5dc.svg "Not applicable")
-
-![Not applicable](https://dt-cdn.net/images/icon-red-cross-1f1142a5dc.svg "Not applicable")
-
-**Performance**
-
-Only performance, automatically captured data is sent
-
-No personal data is sent; all identifiers are randomized on every launch.
-
-![Not applicable](https://dt-cdn.net/images/icon-red-cross-1f1142a5dc.svg "Not applicable")
-
-![Applicable](https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg "Applicable")
-
-**User behavior**
-
-Performance data and user data is sent
-
-Personal data is sent; OneAgent recognizes and reports users who revisit in the future.[2](#fn-1-2-def)
-
-![Applicable](https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg "Applicable")
-
-![Applicable](https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg "Applicable")
 
 1
 

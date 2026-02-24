@@ -1,14 +1,14 @@
 ---
 title: Мобильные и пользовательские приложения API
 source: https://www.dynatrace.com/docs/dynatrace-api/configuration-api/rum/mobile-custom-app-configuration
-scraped: 2026-02-23T21:38:34.550249
+scraped: 2026-02-24T21:25:28.252272
 ---
 
 # Мобильные и пользовательские приложения API
 
 # Мобильные и пользовательские приложения API
 
-* Справочник
+* Справка
 * Опубликовано 05 нояб. 2020 г.
 
 [### Список всех приложений

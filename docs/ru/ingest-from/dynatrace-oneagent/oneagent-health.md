@@ -1,7 +1,7 @@
 ---
 title: OneAgent health overview
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/oneagent-health
-scraped: 2026-02-22T21:15:11.087099
+scraped: 2026-02-24T21:27:48.547753
 ---
 
 # OneAgent health overview
@@ -45,105 +45,9 @@ Select a specific data point in the area chart to see the contributing OneAgent 
 
 The **Health state** metric (`dsfm:cluster.oneagent.agent_modules`) indicates the health state of your deployed OneAgent modules. It is divided into four classesâCritical, Warning, Info, and Healthy. Each class has different implications.
 
-Health state
-
-Implications
-
-Critical
-
-* A OneAgent module struggles with problems that might result in monitoring outage.
-* Corrective action is required.
-
-Warning
-
-* A OneAgent module struggles with anomalies that might impact monitoring availability.
-* Corrective action is recommended.
-
-Info
-
-* The health of a OneAgent module could be improved to ensure monitoring availability.
-* Corrective action is not necessary.
-
-Healthy
-
-* A OneAgent module is healthy without monitoring disturbances.
-* No action is required.
-
 ### Health state examples
 
 The following conditions are applied to your OneAgent modules and result in specific recommendations.
-
-Health state
-
-Condition
-
-Recommendation
-
-Critical
-
-Installer version date older than 11 months
-
-Update OneAgent to a newer version to maintain full Dynatrace support.
-
-Critical
-
-Module heartbeat is 180 seconds overdue
-
-Dynatrace hasnât received data from this module for 180 seconds. There might be communication problems, or your process might have exited unexpectedly.
-
-Critical
-
-Host ID conflict
-
-Multiple monitored hosts report that theyâre using the same host identifier. This unexpected situation might be the result of machine cloning. Please contact a Dynatrace product expert via live chat within your environment.
-
-Critical
-
-Host quota exceeded
-
-Monitoring is currently disabled. Please contact a Dynatrace product expert via live chat within your environment.
-
-Critical
-
-Installer version marked as faulty by Dynatrace
-
-Update OneAgent to a newer version. Processes might also need to be restarted.
-
-Critical
-
-Module version marked as faulty by Dynatrace
-
-Update OneAgent to a newer version. A process restart might also be required.
-
-Warning
-
-Installer version is between 9 and 11 months old
-
-Update to a newer OneAgent version to stay current.
-
-Warning
-
-Minimum OneAgent version incompatible
-
-Update OneAgent to a newer version. A process restart might also be required, even if youâve already updated your module.
-
-Warning
-
-Maximum OneAgent version incompatible
-
-Only OneAgent versions that are equal to or lower than the Dynatrace cluster version can be connected. Download a compatible OneAgent version from this cluster.
-
-Info
-
-Process restart needed
-
-Your module version is outdated. Restart your process to update the module to a newer OneAgent version.
-
-Info
-
-Auto-update suppressed
-
-Enable auto-update to stay current.
 
 ### Limitations
 

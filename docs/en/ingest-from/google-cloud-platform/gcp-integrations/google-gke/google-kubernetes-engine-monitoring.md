@@ -1,7 +1,7 @@
 ---
 title: Google Kubernetes Engine monitoring
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/google-gke/google-kubernetes-engine-monitoring
-scraped: 2026-02-23T21:32:39.021553
+scraped: 2026-02-24T21:24:18.591370
 ---
 
 # Google Kubernetes Engine monitoring

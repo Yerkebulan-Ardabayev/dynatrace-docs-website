@@ -1,7 +1,7 @@
 ---
 title: User actions in web frontends
 source: https://www.dynatrace.com/docs/observe/digital-experience/new-rum-experience/web-frontends/concepts/user-actions
-scraped: 2026-02-23T21:30:41.717762
+scraped: 2026-02-24T21:27:36.050669
 ---
 
 # User actions in web frontends
@@ -59,37 +59,3 @@ The diagram below illustrates the lifecycle of a user action, using a request us
 ## Comparison to user actions in RUM Classic
 
 RUM Classic also provides a user action concept, but it differs in several ways from user actions in the New RUM Experience. The table below highlights the key differences.
-
-New RUM Experience
-
-RUM Classic
-
-User action triggers
-
-Click
-
-Click, keypress, scroll, touch, etc.
-
-Maximum action duration
-
-50 s
-
-180 s
-
-Consideration of DOM mutations for default end behavior
-
-Considers all DOM mutations.
-
-Considers only the visible area, and only if the [Visually complete and Speed index setting](/docs/observe/digital-experience/web-applications/analyze-and-use/how-to-use-visually-complete-and-speed-index-metrics#config-key-performmetric "Learn how to use 'Visually complete' and 'Speed index' metrics.") is enabled.
-
-Support for asynchronous JavaScript executions
-
-Fully supported
-
-Only partially supported, and only if [timed action support](/docs/observe/digital-experience/web-applications/initial-setup/configure-dynatrace-real-user-monitoring-to-capture-xhr-actions#enable-timed-action-support "Understand why you need to activate specific JavaScript frameworks for XHR-action support and learn how to configure Real User Monitoring for XHR actions.") is enabled.
-
-API support
-
-Granular control
-
-Basic support

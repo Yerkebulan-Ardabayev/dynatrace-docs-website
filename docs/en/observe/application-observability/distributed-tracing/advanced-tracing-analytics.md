@@ -1,7 +1,7 @@
 ---
 title: Advanced Tracing Analytics powered by Grail
 source: https://www.dynatrace.com/docs/observe/application-observability/distributed-tracing/advanced-tracing-analytics
-scraped: 2026-02-23T21:20:50.068828
+scraped: 2026-02-24T21:14:02.579145
 ---
 
 # Advanced Tracing Analytics powered by Grail
@@ -57,22 +57,6 @@ fetch spans
 
 Query result:
 
-endpoint.name
-
-http.request.header.host
-
-http.request.method
-
-trace.id
-
-`/api/currency`
-
-`astroshop.playground.demoability.dynatracelabs.com`
-
-`GET`
-
-`86b11c85e1bc1dc039252a95fd009d16`
-
 Example: DQL access to all attributes
 
 The following query fetches spans generated with an HTTP route from the server. To make sure all spans use the same field name for the HTTP request method field, it looks for two semantically different fields and stores the first result into a new field for consultation purposes. It then summarizes the results by HTTP request method and HTTP route, providing the number of spans, their average duration, and the value of their duration in the 50th percentiles.
@@ -99,26 +83,6 @@ fetch spans
 
 Query result:
 
-http.request.method
-
-http.route
-
-count()
-
-avg(duration)
-
-p50
-
-`POST`
-
-`/v1/orders/{id}/status`
-
-`758`
-
-`84.28 ms`
-
-`78.11 ms`
-
 Example: Full text search
 
 The following example fetches spans with an HTTP route that contain `user` and don't end with `username` and summarizes the results, providing the number of spans by HTTP request method and HTTP route.
@@ -140,18 +104,6 @@ fetch spans
 ```
 
 Query result:
-
-http.request.method
-
-http.route
-
-count()
-
-`POST`
-
-`v1/balance/{accountId:int}/deposit`
-
-`458`
 
 For more examples, see the [Introductionï»¿](https://wkf10640.apps.dynatrace.com/ui/document/v0/#share=404274dc-4f04-4dda-840d-47ba9bd17a9f) notebook in Dynatrace Playground.
 
@@ -201,22 +153,6 @@ trace=takeAny(record(start_time, trace.id)) // pick random trace from aggregatio
 ```
 
 Query result:
-
-bin(duration, 100ms)
-
-spans
-
-trace.id
-
-start\_time
-
-`300.00ms`
-
-`342`
-
-`4e990942081eb61ac0e39399555ebb2a`
-
-`2025-05-27T08:04:04.229120000+02:00`
 
 Example: Extract timeseries
 
@@ -812,22 +748,6 @@ by:{Database = db.namespace, Query = db.query.text}
 
 Query result:
 
-Database
-
-Query
-
-ExceptionMessage
-
-Errors
-
-TradeManagement
-
-`SET IMPLICIT_TRANSACTIONS OFF; SET NOCOUNT ON; INSERT INTO [Trades] ([Id], [AccountId], [Direction], [EntryPrice], [InstrumentId], [Quantity], [Status], [TimestampClose], [TimestampOpen], [TradeClosed], [TransactionHappened]) VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10);`
-
-One or more errors occurred. (Cannot insert explicit value for identity column in table 'Trades' when IDENTITY\_INSERT is set to OFF.)
-
-201
-
 For more examples, see the [Databasesï»¿](https://wkf10640.apps.dynatrace.com/ui/document/v0/#share=1386b571-6998-445c-ae10-75510374d535) notebook in Dynatrace Playground.
 
 ## Exceptions
@@ -954,38 +874,6 @@ fetch spans
 
 Query result:
 
-`exception.type`
-
-count()
-
-`*net.OpError`
-
-1
-
-`Error`
-
-236
-
-`Grpc.Core.RpcException`
-
-57
-
-PHP Deprecated
-
-1626
-
-`error`
-
-311
-
-`javax.servlet.http.HttpServletResponse.setStatus`
-
-2
-
-`null`
-
-114
-
 Example: Exception frequency as chart
 
 This query creates a timeseries chart showing the frequency of exceptions by their type.
@@ -1083,30 +971,6 @@ fetch spans
 ```
 
 Query result:
-
-`user_id`
-
-count()
-
-3
-
-3
-
-302
-
-3
-
-389
-
-3
-
-428
-
-3
-
-507
-
-3
 
 For more examples, see the [Exceptionsï»¿](https://wkf10640.apps.dynatrace.com/ui/document/v0/#share=e977e465-a4a8-4be7-a335-0f6eb5c420aa) notebook in Dynatrace Playground.
 
@@ -1370,14 +1234,6 @@ fetch spans
 
 Query result:
 
-`span_count`
-
-`request_count_extrapolated`
-
-479927
-
-48460200
-
 Example: Database call count and durations, extrapolated
 
 This query counts the number of database calls with extrapolations applied.
@@ -1447,14 +1303,6 @@ operation_duration_extrapolated = sum(aggregation.duration_avg * multiplicity) /
 ```
 
 Query result:
-
-`operation_count_extrapolated`
-
-`operation_duration_extrapolated`
-
-11800
-
-6.38ms
 
 For more examples, see the [Sampling, aggregation, and extrapolationï»¿](https://wkf10640.apps.dynatrace.com/ui/document/v0/#share=4c3d3c0f-161a-4c0e-bc8a-623410d549c3) notebook in Dynatrace Playground.
 

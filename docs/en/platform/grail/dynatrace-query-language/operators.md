@@ -1,7 +1,7 @@
 ---
 title: DQL operators
 source: https://www.dynatrace.com/docs/platform/grail/dynatrace-query-language/operators
-scraped: 2026-02-23T21:39:24.354003
+scraped: 2026-02-24T21:18:33.657610
 ---
 
 # DQL operators
@@ -14,82 +14,6 @@ scraped: 2026-02-23T21:39:24.354003
 * Updated on Oct 28, 2025
 
 The following table shows a list of all the DQL operators.
-
-Operator
-
-Description
-
-`+`
-
-Addition
-
-`-`
-
-Subtraction or arithmetic negation
-
-`*`
-
-Multiplication
-
-`/`
-
-Division
-
-`%`
-
-Modulo
-
-`<`
-
-Less than
-
-`<=`
-
-Less than or equal to
-
-`>`
-
-Greater than
-
-`>=`
-
-Greater than or equal to
-
-`==`
-
-Equals
-
-`!=`
-
-Does not equal
-
-`not`
-
-Logical NOT (negation)
-
-`and`
-
-Logical AND
-
-`or`
-
-Logical OR
-
-`xor`
-
-Logical XOR (exclusive or)
-
-`in`
-
-Subquery comparison
-
-`@`
-
-Time alignment
-
-`~`
-
-Search
 
 The precedence for the operators is as follows (from strongest to weakest):
 
@@ -108,48 +32,6 @@ The precedence for the operators is as follows (from strongest to weakest):
 ## Arithmetic operators
 
 You can use arithmetic operators with numbers, represented by both the types `long` or `double`. In addition, some operators support the types `timestamp`, `timeframe`, `duration` or `ip`.
-
-Operator
-
-Description
-
-Example
-
-`+`
-
-Addition
-
-`2 + 2.5`
-
-`-`
-
-Subtraction
-
-`0.2 - 0.11`
-
-`*`
-
-Multiplication
-
-`4 * 5`, `60 * 1s`
-
-`/`
-
-Division
-
-`10 / 2`, `1h / 60`
-
-`%`
-
-Modulo
-
-`4 % 2`
-
-`-`
-
-Arithmetic negation
-
-`-1`
 
 ### ADDITION
 
@@ -250,36 +132,6 @@ The data type resulting from the operation is indicated in parentheses in the ta
 
 ## Comparison operators
 
-Operator
-
-Description
-
-Example
-
-`<`
-
-Less than
-
-`8 < 9`, `now()-1m < now()`
-
-`<=`
-
-Less than or equal to
-
-`4 <= 5`
-
-`>`
-
-Greater than
-
-`5 > 4`, `"a" > "A"`
-
-`>=`
-
-Greater than or equal to
-
-`4 >=4`
-
 ### Comparison operators (<, <=, >, >=)
 
 * ( ![Applicable](https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg "Applicable") ) - `true` or `false` based on the result of the operator
@@ -301,24 +153,6 @@ Greater than or equal to
 | Record | Not applicable | Not applicable | Not applicable | Not applicable | Not applicable | Not applicable | Not applicable | Not applicable | Not applicable | Not applicable | Not applicable | Not applicable |
 
 ## Equality operators
-
-Operator
-
-Description
-
-Example
-
-`==`
-
-Equals
-
-`2 == 2`
-
-`!=`
-
-Does not equal
-
-`1 != 2`
 
 Equality comparisons (`==`, `!=`) use a tri-state boolean algebra (`true`, `false`, `null`). This means that if any side of the equality comparison is `null`, the overall result of the comparison is `null`.
 There are four DQL functions that cover scenarios where missing or `null` records need to be retrieved:
@@ -371,36 +205,6 @@ fetch logs
 | Record | Not applicable | Not applicable | Not applicable | Not applicable | Not applicable | Not applicable | Not applicable | Not applicable | Not applicable | Not applicable | Not applicable | Applicable |
 
 ## Logical operators
-
-Operator
-
-Description
-
-Example (yields true)
-
-`not`
-
-Logical NOT (negation) - Negates a logical state
-
-`not 2==1`
-
-`and`
-
-Logical AND (multiplication) - Yields `true` if both operands are `true`.
-
-`not 2==1 and 1<2`
-
-`or`
-
-Logical OR (addition) - Yields `true` if one of the operands is `true`, regardless of the other operand.
-
-`1 < 2 or 1 > 2`
-
-`xor`
-
-Logical XOR (exclusive OR) - Yields `true` if one of the operands is `true`, but `false` in case both are `true`.
-
-`1 < 2 xor 1 > 2`
 
 The behavior of logical operators follows the tri-state boolean logic.
 
@@ -499,36 +303,6 @@ The `in` comparison operator evaluates the occurrence of a value returned by the
 
 **Usage and constraints**
 
-Name
-
-Type
-
-Mandatory
-
-Constraints
-
-Description
-
-left side
-
-expression
-
-yes
-
-Either a field identifier or an expression.
-
-The element to be found in the list returned by the right side's subquery.
-
-right side
-
-execution block
-
-yes
-
-It has to return a single field providing a list of values.
-
-The DQL Subquery which returns the list of values to compare against.
-
 **Example**
 
 This example shows how to use the `in` keyword for filtering a host metric for the host's attribute:
@@ -592,66 +366,6 @@ For example, `@w1` means midnight of Monday of the current week.
 
 For the following examples, the current time is Wednesday, 04 September 2024, 14:47:05+0200.
 
-Time modifier
-
-Description
-
-Resulting time
-
-`-2h@h`
-
-2 hours ago, aligned to the hour
-
-Wednesday, 04 September 2024, 12:00:00+0200
-
-`-1d@d`
-
-Yesterday, aligned to the day
-
-Tuesday, 03 September 2024, 00:00:00+0200
-
-`-7d@d`
-
-7 days ago, aligned to the day
-
-Wednesday, 28 August 2024, 00:00:00+0200
-
-`@w0`
-
-Start of this week, from Sunday
-
-Sunday, 01 September 2024, 00:00:00+0200
-
-`@w1`
-
-Start of this week, from Monday
-
-Monday, 02 September 2024, 00:00:00+0200
-
-`@M`
-
-Start of this month
-
-Sunday, 01 September 2024, 00:00:00+0200
-
-`-1M@M`
-
-Start of last month
-
-Thursday, 01 August 2024, 00:00:00+0200
-
-`@q`
-
-Start of this quarter
-
-Monday, 01 July 2024, 00:00:00+0200
-
-`@y`
-
-Start of this year
-
-Monday, 01 January 2024, 00:00:00+0100
-
 ## Search
 
 You can use the `~` operator in expressions to match the value of an expression against a given search string. The performed comparison is case-insensitive and supports pattern matching using wildcards. The `~` operator returns a `boolean` value: `true` in case of a match, and `false` otherwise.
@@ -691,184 +405,6 @@ The `~` operator searches the value as a string token inside a string. Its behav
 * If the expression is of type `record`, the operator matches if any field name or value matches.
 * If the expression is of type `boolean`, `timestamp`, `duration`, or `binary`, the result is always false.
 
-Expression type
-
-Expression value
-
-Operation
-
-Result
-
-Note
-
-String
-
-`"Hello WORLD!"`
-
-`~"world"`
-
-`true`
-
-String
-
-`"helloWorld"`
-
-`~"World"`
-
-`false`
-
-`helloWorld` is one token since there are no separators.
-
-String
-
-`"192.168.0.7"`
-
-`~"192"`
-
-`true`
-
-As itâs a string, the field has four tokens.
-
-IP
-
-`192.168.0.7`
-
-`~"192"`
-
-`false`
-
-Only strings are tokenized.
-
-IP
-
-`192.168.0.7`
-
-`~"192.168.0.7"`
-
-`true`
-
-The value is auto-converted, so there's an exact match.
-
-Long
-
-`12`
-
-`~"12"`
-
-`true`
-
-The value is auto-converted, so there's an exact match.
-
-UID
-
-`uuid(1,2)`
-
-`~"00000000-0000-0001-0000-000000000002"`
-
-`true`
-
-The value is not tokenized, but can be auto-converted.
-
-Smartscape ID
-
-`smartscapeId("HOST", 1)`
-
-`~"HOST-0000000000000001"`
-
-`true`
-
-The value is auto-converted.
-
-Smartscape ID
-
-`smartscapeId("HOST", 1)`
-
-`~"host-0000000000000001"`
-
-`false`
-
-For a Smartscape ID, the check is case-sensitive.
-
-Smartscape ID
-
-`smartscapeId("HOST", 1)`
-
-`~"HOST"`
-
-`false`
-
-The value isn't tokenized.
-
-Record
-
-`record(firstName="John",lastName="Doe")`
-
-`~"john"`
-
-`true`
-
-Search also works in nested fields.
-
-Record
-
-`record(firstName="John",lastName="Doe")`
-
-`~"lastName"`
-
-`true`
-
-Search also works in the names of nested fields.
-
-Record
-
-`record(firstName="John",lastName="Doe")`
-
-`~"name"`
-
-`false`
-
-`firstName` and `lastName` are one token since they don't contain separators.
-
-Record
-
-`record(first name="John",last name="Doe")`
-
-`~"name"`
-
-`true`
-
-Search also works in the names of nested fields.
-
-Array
-
-`array(1,2,3,5,8,13)`
-
-`~"3"`
-
-`true`
-
-One element of the array is 3, which can be auto-converted to match `~"3"`.
-
-Boolean
-
-`true`
-
-`~"true"`
-
-`false`
-
-Booleans aren't supported.
-
-Duration
-
-`1h`
-
-`~"1h"`
-
-`false`
-
-Durations aren't supported.
-
 ##### Search strings with wildcards
 
 The operator searches the pattern in the tokens of a string. Its behavior depends on the data type of the expression on the left side:
@@ -877,146 +413,6 @@ The operator searches the pattern in the tokens of a string. Its behavior depend
 * If the expression is of type `array`, the result is true if one of the elements of the array matches the pattern.
 * If the expression is of type `record`, the result is true if the name or value of a nested field matches the pattern.
 * If the expression is of any other type (`long`, `double`, `smartscape ID`, `IP address`, `UID`, `boolean`, `timestamp`, `duration`, or `binary`) patterns aren't supported and the result is always `false`.
-
-Expression type
-
-Expression value
-
-Operation
-
-Result
-
-Note
-
-String
-
-`"AuthenticationError"`
-
-`~"*error"`
-
-`true`
-
-String
-
-`"There was an AuthenticationError"`
-
-`~"authentication*"`
-
-`true`
-
-String
-
-`"There was an NoAuthenticationError"`
-
-`~"authentication*"`
-
-`false`
-
-String
-
-`"helloWorld"`
-
-`~"*ow*"`
-
-`true`
-
-String
-
-`"hello world"`
-
-`~"*ow*"`
-
-`false`
-
-String
-
-`"192.168.0.7"`
-
-`~"192.168.*"`
-
-`true`
-
-It matches as it's a string and not an IP address.
-
-Record
-
-`record(firstName="John",lastName="Doe")`
-
-`~"*name"`
-
-`true`
-
-The string matches the name of the nested field in the record.
-
-Record
-
-`record(firstName="John",lastName="Doe")`
-
-`~"*do*"`
-
-`true`
-
-The string matches the record.
-
-Array
-
-`array("hello", "world", "myCustomName")`
-
-`~"my*"`
-
-`true`
-
-The string matches within the array.
-
-IP
-
-`192.168.0.7`
-
-`~"192*"`
-
-`false`
-
-Only strings allow patterns.
-
-Long
-
-`192`
-
-`~"1*"`
-
-`false`
-
-Only strings allow patterns.
-
-Smartscape ID
-
-`smartscapeId("HOST", 1)`
-
-`~"HOST*"`
-
-`false`
-
-Only strings allow patterns.
-
-Boolean
-
-`true`
-
-`~"t*"`
-
-`false`
-
-Only strings allow patterns.
-
-Duration
-
-`1h`
-
-`~"*h"`
-
-`false`
-
-Only strings allow patterns.
 
 ## Related topics
 

@@ -1,6 +1,6 @@
 # Документация Dynatrace: deliver/configuration-as-code
 Язык: Русский (RU)
-Сгенерировано: 2026-02-23
+Сгенерировано: 2026-02-24
 Файлов в разделе: 14
 ---
 
@@ -9,7 +9,7 @@
 ---
 title: Account configuration for Monaco account management
 source: https://www.dynatrace.com/docs/deliver/configuration-as-code/monaco/configuration/account-configuration
-scraped: 2026-02-23T21:37:52.105940
+scraped: 2026-02-24T21:30:38.518675
 ---
 
 # Account configuration for Monaco account management
@@ -1138,7 +1138,7 @@ Some configuration types have special requirements for their JSON payloads and m
 ---
 title: Monaco configuration YAML file - list of special configuration types
 source: https://www.dynatrace.com/docs/deliver/configuration-as-code/monaco/configuration/special-configuration-types-saas
-scraped: 2026-02-20T21:13:46.753744
+scraped: 2026-02-24T21:35:43.500489
 ---
 
 # Monaco configuration YAML file - list of special configuration types
@@ -3166,7 +3166,7 @@ While this sample shows users, service users, policies, and groups defined in a 
 ---
 title: Monaco configuration YAML file structure
 source: https://www.dynatrace.com/docs/deliver/configuration-as-code/monaco/configuration/yaml-configuration-saas
-scraped: 2026-02-22T21:28:45.568986
+scraped: 2026-02-24T21:30:50.679602
 ---
 
 # Monaco configuration YAML file structure
@@ -4329,7 +4329,7 @@ skip: true
 ---
 title: Monaco API support and access permission handling
 source: https://www.dynatrace.com/docs/deliver/configuration-as-code/monaco/monaco-api-support-and-access-handling
-scraped: 2026-02-21T21:20:19.757676
+scraped: 2026-02-24T21:30:55.029638
 ---
 
 # Monaco API support and access permission handling
@@ -4418,96 +4418,6 @@ OAuth credentials are required to target platform APIs.
 
 The Dynatrace Monaco CLI provides support for Dynatrace platform API types as described in the table below.
 
-Platform service
-
-Configuration type
-
-Endpoint
-
-OAuth client permissions
-
-Monaco CLI version
-
-Automation
-
-`business-calendars`
-
-`/platform/automation/v1/business-calendars`
-
-`automation:calendars:read`, `automation:calendars:write`
-
-2.6.0+
-
-Automation
-
-`scheduling-rules`
-
-`/platform/automation/v1/scheduling-rules`
-
-`automation:rules:read`, `automation:rules:write`
-
-2.6.0+
-
-Automation
-
-`workflows`
-
-`/platform/automation/v1/workflow`
-
-`automation:workflows:read`, `automation:workflows:write`
-
-2.6.0+
-
-Grailâ-storage management
-
-`buckets`
-
-`/platform/storage/management/v1/bucket-definitions`
-
-`storage:bucket-definitions:read`, `storage:bucket-definitions:write`, `storage:bucket-definitions:delete`
-
-2.9.0+
-
-Documents (Dashboards, Notebooks, Launchpads)
-
-`documents`
-
-`/platform/document/v1/documents`
-
-`document:documents:write`, `document:documents:read`, `document:documents:delete`, `document:trash.documents:delete`
-
-2.15.0+
-
-OpenPipeline
-
-`openpipelines`
-
-`/platform/openpipeline/v1/configurations`
-
-`openpipeline:configurations:read`, `openpipeline:configurations:write`
-
-2.15.0+
-
-Grail
-
-`segment`
-
-`/platform/storage/filter-segments/v1/filter-segments`
-
-`storage:filter-segments:read`, `storage:filter-segments:write`, `storage:filter-segments:delete`, `storage:filter-segments:admin`
-
-2.19.0+
-
-SLOs
-
-`slo-v2`
-
-`/platform/slo/v1/slos`
-
-`slo:slos:read`, `slo:slos:write`, `slo:objective-templates:read`
-
-2.22.0+
-
 ### Account Management permissions
 
 To manage account resources, such as user management or policy handling, OAuth credentials require the following permissions:
@@ -4536,335 +4446,6 @@ This table provides:
 
 Note that most Configuration APIs are deprecated in favor of Settings 2.0, see [Settings 2.0](/docs/dynatrace-api/configuration-api "Find out what you need to use the configuration section of the Dynatrace API.").
 
-Configuration type
-
-Constraints
-
-Endpoint and access permission
-
-**alerting-profile**
-
-[Non-Unique Name Configuration](/docs/deliver/configuration-as-code/monaco/configuration/special-configuration-types-saas#non-unique-name "This is a list of Monaco special configuration types.")
-
-[Settings API](/docs/dynatrace-api/environment-api/settings "Find out what the Dynatrace Settings API offers.") Problem alerting profiles schema: `builtin:alerting.profile`
-
-RUM: **allowed-beacon-origins**
-
-[Single configuration endpoint](/docs/deliver/configuration-as-code/monaco/configuration/special-configuration-types-saas#single-configuration-endpoint "This is a list of Monaco special configuration types.")
-
-[Real User Monitoring configuration APIs](/docs/dynatrace-api/configuration-api/rum "Find out what RUM endpoints of the Dynatrace configuration API offer.")
-
-**anomaly-detection-applications**
-
-[Single configuration endpoint](/docs/deliver/configuration-as-code/monaco/configuration/special-configuration-types-saas#single-configuration-endpoint "This is a list of Monaco special configuration types.")
-
-[Anomaly detection API](/docs/dynatrace-api/configuration-api/anomaly-detection-api "Learn what the Dynatrace anomaly detection API offers.")
-
-**anomaly-detection-aws**
-
-[Single configuration endpoint](/docs/deliver/configuration-as-code/monaco/configuration/special-configuration-types-saas#single-configuration-endpoint "This is a list of Monaco special configuration types.")
-
-[Anomaly detection API](/docs/dynatrace-api/configuration-api/anomaly-detection-api "Learn what the Dynatrace anomaly detection API offers.")
-
-**anomaly-detection-database-services**
-
-[Single configuration endpoint](/docs/deliver/configuration-as-code/monaco/configuration/special-configuration-types-saas#single-configuration-endpoint "This is a list of Monaco special configuration types.")
-
-[Anomaly detection API](/docs/dynatrace-api/configuration-api/anomaly-detection-api "Learn what the Dynatrace anomaly detection API offers.")
-
-**anomaly-detection-disks**
-
-[Anomaly detection API](/docs/dynatrace-api/configuration-api/anomaly-detection-api "Learn what the Dynatrace anomaly detection API offers.")
-
-**anomaly-detection-hosts**
-
-[Single configuration endpoint](/docs/deliver/configuration-as-code/monaco/configuration/special-configuration-types-saas#single-configuration-endpoint "This is a list of Monaco special configuration types.")
-
-[Anomaly detection API](/docs/dynatrace-api/configuration-api/anomaly-detection-api "Learn what the Dynatrace anomaly detection API offers.")
-
-**anomaly-detection-metrics**
-
-[Non-Unique Name Configuration](/docs/deliver/configuration-as-code/monaco/configuration/special-configuration-types-saas#non-unique-name "This is a list of Monaco special configuration types.")
-
-[Settings API](/docs/dynatrace-api/environment-api/settings "Find out what the Dynatrace Settings API offers.") Metric events schema:
-`builtin:anomaly-detection.metric-events`
-
-**anomaly-detection-services**
-
-[Single configuration endpoint](/docs/deliver/configuration-as-code/monaco/configuration/special-configuration-types-saas#single-configuration-endpoint "This is a list of Monaco special configuration types.")
-
-[Anomaly detection API](/docs/dynatrace-api/configuration-api/anomaly-detection-api "Learn what the Dynatrace anomaly detection API offers.")
-
-**anomaly-detection-vmware**
-
-[Single configuration endpoint](/docs/deliver/configuration-as-code/monaco/configuration/special-configuration-types-saas#single-configuration-endpoint "This is a list of Monaco special configuration types.")
-
-[Anomaly detection API](/docs/dynatrace-api/configuration-api/anomaly-detection-api "Learn what the Dynatrace anomaly detection API offers.")
-
-**app-detection-rule**
-
-[Non-Unique Name Configuration](/docs/deliver/configuration-as-code/monaco/configuration/special-configuration-types-saas#non-unique-name "This is a list of Monaco special configuration types.")
-
-[Real User Monitoring configuration APIs](/docs/dynatrace-api/configuration-api/rum "Find out what RUM endpoints of the Dynatrace configuration API offer.")
-
-**app-detection-rule-host**
-
-[Single configuration endpoint](/docs/deliver/configuration-as-code/monaco/configuration/special-configuration-types-saas#single-configuration-endpoint "This is a list of Monaco special configuration types.")
-
-[Real User Monitoring configuration APIs](/docs/dynatrace-api/configuration-api/rum "Find out what RUM endpoints of the Dynatrace configuration API offer.")
-
-**application-web**
-
-[Non-Unique Name Configuration](/docs/deliver/configuration-as-code/monaco/configuration/special-configuration-types-saas#non-unique-name "This is a list of Monaco special configuration types.")
-
-[Real User Monitoring configuration APIs](/docs/dynatrace-api/configuration-api/rum "Find out what RUM endpoints of the Dynatrace configuration API offer.")
-
-**application-mobile**
-
-[Real User Monitoring configuration APIs](/docs/dynatrace-api/configuration-api/rum "Find out what RUM endpoints of the Dynatrace configuration API offer.")
-
-**auto-tag**
-
-[Settings API](/docs/dynatrace-api/environment-api/settings "Find out what the Dynatrace Settings API offers.") Automatically applied tags schema: `builtin:tags.auto-tagging`
-
-**aws-credentials**
-
-It can't be downloaded.
-
-[AWS credentials API](/docs/dynatrace-api/configuration-api/aws-credentials-api "Learn what the Dynatrace AWS credentials config API offers.")
-
-**azure-credentials**
-
-It can't be downloaded.
-
-[Azure credentials API](/docs/dynatrace-api/configuration-api/azure-credentials-api "Learn what the Dynatrace Azure credentials config API offers.")
-
-**calculated-metrics-application-mobile**
-
-[Special Name requirements](/docs/deliver/configuration-as-code/monaco/configuration/special-configuration-types-saas#calc-metrics "This is a list of Monaco special configuration types.")
-
-[Calculated metrics API](/docs/dynatrace-api/configuration-api/calculated-metrics "Learn what the Dynatrace calculated metrics config API offers.")
-
-**calculated-metrics-application-web**
-
-[Special Name requirements](/docs/deliver/configuration-as-code/monaco/configuration/special-configuration-types-saas#calc-metrics "This is a list of Monaco special configuration types.")
-
-[Calculated metrics API](/docs/dynatrace-api/configuration-api/calculated-metrics "Learn what the Dynatrace calculated metrics config API offers.")
-
-**calculated-metrics-log**
-
-[Special Name requirements](/docs/deliver/configuration-as-code/monaco/configuration/special-configuration-types-saas#calc-metrics "This is a list of Monaco special configuration types.")
-
-[Settings API](/docs/dynatrace-api/environment-api/settings "Find out what the Dynatrace Settings API offers.") with SchemaID `builtin:logmonitoring.schemaless-log-metric`.
-
-**calculated-metrics-service**
-
-[Special Name requirements](/docs/deliver/configuration-as-code/monaco/configuration/special-configuration-types-saas#calc-metrics "This is a list of Monaco special configuration types.")
-
-[Calculated metrics API](/docs/dynatrace-api/configuration-api/calculated-metrics "Learn what the Dynatrace calculated metrics config API offers.")
-
-**calculated-metrics-synthetic**
-
-[Special Name requirements](/docs/deliver/configuration-as-code/monaco/configuration/special-configuration-types-saas#calc-metrics "This is a list of Monaco special configuration types.")
-
-[Calculated metrics API](/docs/dynatrace-api/configuration-api/calculated-metrics "Learn what the Dynatrace calculated metrics config API offers.")
-
-**conditional-naming-host**
-
-[Conditional naming API](/docs/dynatrace-api/configuration-api/conditional-naming "Learn what the Dynatrace configuration API for conditional naming offers.")
-
-**conditional-naming-processgroup**
-
-[Conditional naming API](/docs/dynatrace-api/configuration-api/conditional-naming "Learn what the Dynatrace configuration API for conditional naming offers.")
-
-**conditional-naming-service**
-
-[Conditional naming API](/docs/dynatrace-api/configuration-api/conditional-naming "Learn what the Dynatrace configuration API for conditional naming offers.")
-
-**content-resources**
-
-[Single configuration endpoint](/docs/deliver/configuration-as-code/monaco/configuration/special-configuration-types-saas#single-configuration-endpoint "This is a list of Monaco special configuration types.")
-
-[Real User Monitoring configuration APIs](/docs/dynatrace-api/configuration-api/rum "Find out what RUM endpoints of the Dynatrace configuration API offer.")
-
-**credential-vault**
-
-It can't be downloaded.
-
-[Credential vault API](/docs/dynatrace-api/configuration-api/credential-vault "Learn what the Dynatrace configuration API for credentials offers.")
-
-**custom-service-java**
-
-[Services configuration API](/docs/dynatrace-api/configuration-api/service-api "This is a list of services endpoints of the Dynatrace config API.")
-
-**custom-service-dotnet**
-
-[Services configuration API](/docs/dynatrace-api/configuration-api/service-api "This is a list of services endpoints of the Dynatrace config API.")
-
-**custom-service-go**
-
-[Services configuration API](/docs/dynatrace-api/configuration-api/service-api "This is a list of services endpoints of the Dynatrace config API.")
-
-**custom-service-nodejs**
-
-[Services configuration API](/docs/dynatrace-api/configuration-api/service-api "This is a list of services endpoints of the Dynatrace config API.")
-
-**custom-service-php**
-
-[Services configuration API](/docs/dynatrace-api/configuration-api/service-api "This is a list of services endpoints of the Dynatrace config API.")
-
-Dashboard Classic
-
-[Non-Unique Name Configuration](/docs/deliver/configuration-as-code/monaco/configuration/special-configuration-types-saas#non-unique-name "This is a list of Monaco special configuration types.")
-
-[Dashboards Classic API](/docs/dynatrace-api/configuration-api/dashboards-api "Find out how to manage dashboard configuration via Dynatrace Classic configuration API.")
-
-dashboard-share-settings classic
-
-[Single configuration endpoint](/docs/deliver/configuration-as-code/monaco/configuration/special-configuration-types-saas#single-configuration-endpoint "This is a list of Monaco special configuration types.") and [Scoped configuration](/docs/deliver/configuration-as-code/monaco/configuration/special-configuration-types-saas#API-type-field "This is a list of Monaco special configuration types.")
-
-[Dashboards Classic API](/docs/dynatrace-api/configuration-api/dashboards-api "Find out how to manage dashboard configuration via Dynatrace Classic configuration API.")
-
-**data-privacy**
-
-[Single configuration endpoint](/docs/deliver/configuration-as-code/monaco/configuration/special-configuration-types-saas#single-configuration-endpoint "This is a list of Monaco special configuration types.")
-
-[Data privacy API](/docs/dynatrace-api/configuration-api/data-privacy-api "Learn what the Dynatrace data privacy config API offers.")
-
-**extension**
-
-It can't be downloaded.
-
-[Extensions API](/docs/dynatrace-api/configuration-api/extensions-api "Learn what the Dynatrace Extension API offers.")
-
-**extension-elasticsearch**
-
-[Single configuration endpoint](/docs/deliver/configuration-as-code/monaco/configuration/special-configuration-types-saas#single-configuration-endpoint "This is a list of Monaco special configuration types.")
-
-[Extensions API](/docs/dynatrace-api/configuration-api/extensions-api "Learn what the Dynatrace Extension API offers.")
-
-**failure-detection-parametersets**
-
-[Services configuration API](/docs/dynatrace-api/configuration-api/service-api "This is a list of services endpoints of the Dynatrace config API.")
-
-**failure-detection-rules**
-
-[Services configuration API](/docs/dynatrace-api/configuration-api/service-api "This is a list of services endpoints of the Dynatrace config API.")
-
-**frequent-issue-detection**
-
-[Single configuration endpoint](/docs/deliver/configuration-as-code/monaco/configuration/special-configuration-types-saas#single-configuration-endpoint "This is a list of Monaco special configuration types.")
-
-[Settings API](/docs/dynatrace-api/environment-api/settings "Find out what the Dynatrace Settings API offers.") with `builtin:anomaly-detection.frequent-issues` schema
-
-**geo-ip-address-mappings**
-
-[Single configuration endpoint](/docs/deliver/configuration-as-code/monaco/configuration/special-configuration-types-saas#single-configuration-endpoint "This is a list of Monaco special configuration types.")
-
-[Real User Monitoring configuration APIs](/docs/dynatrace-api/configuration-api/rum "Find out what RUM endpoints of the Dynatrace configuration API offer.")
-
-**geo-ip-detection-headers**
-
-[Single configuration endpoint](/docs/deliver/configuration-as-code/monaco/configuration/special-configuration-types-saas#single-configuration-endpoint "This is a list of Monaco special configuration types.")
-
-[Real User Monitoring configuration APIs](/docs/dynatrace-api/configuration-api/rum "Find out what RUM endpoints of the Dynatrace configuration API offer.")
-
-**hosts-auto-update**
-
-[Single configuration endpoint](/docs/deliver/configuration-as-code/monaco/configuration/special-configuration-types-saas#single-configuration-endpoint "This is a list of Monaco special configuration types.")
-
-[OneAgent environment-wide configuration API](/docs/dynatrace-api/configuration-api/oneagent-configuration/oneagent-environment-wide "Manage environment-wide configuration of OneAgent via the Dynatrace API.")
-
-**key-user-actions-mobile**
-
-[Scoped configuration](/docs/deliver/configuration-as-code/monaco/configuration/yaml-configuration-saas-type-fields#settings-type-field "This is a list of type fields in the Monaco configuration YAML file.")
-
-[Real User Monitoring configuration APIs](/docs/dynatrace-api/configuration-api/rum "Find out what RUM endpoints of the Dynatrace configuration API offer.")
-
-**key-user-actions-web**
-
-[Scoped Configuration](/docs/deliver/configuration-as-code/monaco/configuration/yaml-configuration-saas-type-fields#settings-type-field "This is a list of type fields in the Monaco configuration YAML file.")
-
-[Real User Monitoring configuration APIs](/docs/dynatrace-api/configuration-api/rum "Find out what RUM endpoints of the Dynatrace configuration API offer.")
-
-**kubernetes-credentials**
-
-It can't be downloaded.
-
-[Settings API](/docs/dynatrace-api/environment-api/settings "Find out what the Dynatrace Settings API offers.") with [Settings API - Connection settings schema table](/docs/dynatrace-api/environment-api/settings/schemas/builtin-cloud-kubernetes "View builtin:cloud.kubernetes settings schema table of your monitoring environment via the Dynatrace API.") `builtin:cloud.kubernetes` and [Settings API - Monitoring settings schema table](/docs/dynatrace-api/environment-api/settings/schemas/builtin-cloud-kubernetes-monitoring "View builtin:cloud.kubernetes.monitoring settings schema table of your monitoring environment via the Dynatrace API.") `builtin:cloud.kubernetes.monitoring` schemas
-
-**maintenance-window**
-
-[Settings API](/docs/dynatrace-api/environment-api/settings "Find out what the Dynatrace Settings API offers.") with the Maintenance windows `builtin:alerting.maintenance-window` schema
-
-**management-zone**
-
-[Settings API](/docs/dynatrace-api/environment-api/settings "Find out what the Dynatrace Settings API offers.") with the Problem notifications `builtin:problem.notifications` schema
-
-network-zone Dynatrace Monaco CLI version 2.10.0+
-
-[Network zones API](/docs/dynatrace-api/environment-api/network-zones "Manage network zones via the Dynatrace API.")
-
-**notification**
-
-[Settings API](/docs/dynatrace-api/environment-api/settings "Find out what the Dynatrace Settings API offers.") with Problem notifications `builtin:problem.notifications` schema
-
-**reports**
-
-[Reports API](/docs/dynatrace-api/configuration-api/reports-api "Manage reports via the Dynatrace configuration API.")
-
-**request-attributes**
-
-[Services configuration API](/docs/dynatrace-api/configuration-api/service-api "This is a list of services endpoints of the Dynatrace config API.")
-
-**request-naming-service**
-
-[Non-Unique Name Configuration](/docs/deliver/configuration-as-code/monaco/configuration/special-configuration-types-saas#non-unique-name "This is a list of Monaco special configuration types.")
-
-[Services configuration API](/docs/dynatrace-api/configuration-api/service-api "This is a list of services endpoints of the Dynatrace config API.")
-
-**slo classic**
-
-[Service-level Objectives API classic](/docs/dynatrace-api/environment-api/service-level-objectives-classic "Find out what the Dynatrace SLO API classic offers.")
-
-**service-detection-full-web-request**
-
-[Services configuration API](/docs/dynatrace-api/configuration-api/service-api "This is a list of services endpoints of the Dynatrace config API.")
-
-**service-detection-full-web-service**
-
-[Services configuration API](/docs/dynatrace-api/configuration-api/service-api "This is a list of services endpoints of the Dynatrace config API.")
-
-**service-detection-opaque-web-request**
-
-[Services configuration API](/docs/dynatrace-api/configuration-api/service-api "This is a list of services endpoints of the Dynatrace config API.")
-
-**service-detection-opaque-web-service**
-
-[Services configuration API](/docs/dynatrace-api/configuration-api/service-api "This is a list of services endpoints of the Dynatrace config API.")
-
-**service-resource-naming**
-
-[Single configuration endpoint](/docs/deliver/configuration-as-code/monaco/configuration/special-configuration-types-saas#single-configuration-endpoint "This is a list of Monaco special configuration types.")
-
-[Services configuration API](/docs/dynatrace-api/configuration-api/service-api "This is a list of services endpoints of the Dynatrace config API.") `/api/config/v1/service/resourceNaming`
-
-**synthetic-location**
-
-[Synthetic API v1](/docs/dynatrace-api/environment-api/synthetic "Find out what the Dynatrace Synthetic v1 API offers.")
-
-**synthetic-monitor**
-
-[Synthetic API v2](/docs/dynatrace-api/environment-api/synthetic-v2 "Find out what the Dynatrace Synthetic v2 API offers.")
-
-**user-action-and-session-properties-mobile**
-
-[Scoped Configuration](/docs/deliver/configuration-as-code/monaco/configuration/yaml-configuration-saas-type-fields#settings-type-field "This is a list of type fields in the Monaco configuration YAML file.")
-
-[Real User Monitoring configuration APIs](/docs/dynatrace-api/configuration-api/rum "Find out what RUM endpoints of the Dynatrace configuration API offer.")
-
-
-
 ## Related topics
 
 * [Monaco configuration YAML file - list of special configuration types](/docs/deliver/configuration-as-code/monaco/configuration/special-configuration-types-saas "This is a list of Monaco special configuration types.")
@@ -4876,7 +4457,7 @@ network-zone Dynatrace Monaco CLI version 2.10.0+
 ---
 title: Monaco concepts
 source: https://www.dynatrace.com/docs/deliver/configuration-as-code/monaco/monaco-concepts
-scraped: 2026-02-23T21:31:40.505304
+scraped: 2026-02-24T21:33:00.875646
 ---
 
 # Monaco concepts
@@ -4934,7 +4515,7 @@ Dynatrace resource configuration
 ---
 title: Manage configurations with Monaco
 source: https://www.dynatrace.com/docs/deliver/configuration-as-code/monaco/monaco-getting-started
-scraped: 2026-02-23T21:26:48.167826
+scraped: 2026-02-24T21:31:59.111271
 ---
 
 # Manage configurations with Monaco
@@ -5442,7 +5023,7 @@ Verify that your Dynatrace config has been deleted from your Dynatrace environme
 ---
 title: Work with Dynatrace Monaco CLI commands for Latest Dynatrace
 source: https://www.dynatrace.com/docs/deliver/configuration-as-code/monaco/reference/commands-saas
-scraped: 2026-02-23T21:36:02.684080
+scraped: 2026-02-24T21:33:14.033868
 ---
 
 # Work with Dynatrace Monaco CLI commands for Latest Dynatrace
@@ -5477,80 +5058,7 @@ This way, all configurations in the project section of the deployment manifest f
 
 ### Arguments
 
-Argument
-
-Description
-
-Required
-
-`<manifest.yaml>`
-
-The manifest file defining projects to deploy and the environments to deploy them to.
-
-Required
-
 ### Options
-
-Option
-
-Description
-
-Required
-
-`--continue-on-error`, `-c`
-
-Proceed with deployment even if an error is encountered.
-
-This can be used to ensure that all valid configurations are applied to your environments, even if other configurations are invalid or failed to deploy.
-
-Using this flag might lead to follow-up errors for configurations that depend on each other.
-
-Optional
-
-`--dry-run`, `-d`
-
-Validate the configuration file structure without deploying it.
-
-With this flag set, `monaco deploy` checks whether your templates are valid JSON and whether your configuration YAML files can be parsed and used.
-
-A `dry-run` doesn't connect to Dynatrace and can't validate the content of the JSON sent to Dynatrace.
-A deployment may still fail with `HTTP 400 Bad Request` errors after a successful `dry-run` if the content of a JSON template is incorrect.
-
-Optional
-
-`--environment <name>`, `-e <name>`
-
-Apply your configurations to specific environments within your deployment manifest file.
-To set multiple environments, either repeat this flag or separate them using a comma (`,`).
-
-This flag is mutually exclusive with `--group`:
-
-* If this flag is specified, configurations are deployed to each specified environment.
-* If neither `--group` nor `--environment` is present, all environments are used.
-
-Optional
-
-`--group <name>`, `-g <name>`
-
-Apply your configurations to specific [environment groups](/docs/deliver/configuration-as-code/monaco/configuration#environment-groups "Manage the Dynatrace configuration files using Monaco with a set of projects and a deployment manifest.") within your deployment manifest file.
-To set multiple groups, either repeat this flag or separate them using a comma (`,`).
-
-This flag is mutually exclusive with `--environment`:
-
-* If this flag is specified, configurations are deployed to each environment within the specified groups.
-* If neither `--group` nor `--environment` is present, all environments are used.
-
-Optional
-
-`--project <name>`, `-p <name>`
-
-Specify one or more projects to be deployed.
-To set multiple projects, either repeat this flag or separate them using a comma (`,`).
-
-* If this flag is specified, configurations from the specified projects are deployed.
-* Without this flag, configurations from all projects defined in the manifest are deployed.
-
-Optional
 
 ### Additional configuration via environment variables
 
@@ -5609,181 +5117,19 @@ monaco download [ARGS] [OPTIONS]
 
 ### Options
 
-
-
 The available options depend on the download method.
 
 #### Arguments to download via manifest
 
 These arguments are used when you want to download via a manifest YAML file.
 
-Argument
-
-Description
-
-Required
-
-`--manifest <filepath>`, `-m <filepath>`
-
-The path to the manifest file to use for connection information.
-
-If not specified, Monaco searches for a file named `manifest.yaml` in the current directory.
-
-Required
-
-`--environment <name>`, `-e <name>`
-
-Specify an environment defined in the manifest from which the configuration is to be downloaded.
-
-Required
-
-`--force`, `-f`
-
-Used in combination with `--manifest`.
-Force overwrites any existing `manifest.yaml` file.
-
-Never append the source environment name to the project folder name.
-
-Optional
-
 #### Arguments to download via URL
 
 These arguments are used when you want to download via the Dynatrace environment URL.
 
-Argument
-
-Description
-
-Required
-
-`--url <url>`
-
-The URL of the Dynatrace environment from which to download the configuration.
-
-This flag is mutually exclusive with `--manifest` or `--environment`.
-
-Required
-
-`--platform-token <environment variable name>`
-
-The name of the environment variable that contains the Dynatrace platform token.
-
-This is mutually exclusive with `--oauth-client-id` and `--oauth-client-secret`.
-
-Required
-
-`--token <environment variable name>`
-
-The name of the environment variable that contains the API token (classic Dynatrace only).
-
-Required
-
-`--oauth-client-id <environment variable name>`
-
-The name of the environment variable that contains the OAuth client ID.
-
-This must be used together with `--oauth-client-secret`.
-This is mutually exclusive with `--platform-token`.
-
-Required
-
-`--oauth-client-secret <environment-variable-name>`
-
-The name of the environment variable that contains the OAuth client secret.
-
-This must be used together with `--oauth-client-id`.
-This is mutually exclusive with `--platform-token`.
-
-Required
-
 #### Options
 
 These options can be used with either download method (whether via manifest or URL).
-
-Option
-
-Description
-
-Required
-
-`--output-folder <filepath>`, `-o <filepath>`
-
-Specifies the name of the output folder in which downloaded configurations will be stored.
-
-By default, the folder name will be `download` with the current timestamp appended.
-
-Optional
-
-`--project <name>`, `-p <name>`
-
-The name of the project (which contains all downloaded configurations) that will be generated.
-
-By default, the project name is `project`.
-
-Optional
-
-`--api <name>`, `-a <name>`
-
-Download one or more classic Configuration APIs, including deprecated ones.
-You can specify multiple APIs by repeating the flag, or by using comma-separated values.
-
-Optional
-
-`--settings-schema <name>`, `-s <name>`
-
-Download Settings 2.0 objects for one or more Settings 2.0 schemas.
-You can specify multiple APIs by repeating the flag, or by using comma-separated values.
-
-Optional
-
-`--only-apis`
-
-Download only [classic Configuration APIs](/docs/deliver/configuration-as-code/monaco/configuration/yaml-configuration-saas-type-fields#API-type-field "This is a list of type fields in the Monaco configuration YAML file.").
-Deprecated configuration APIs will not be included.
-
-Optional
-
-`--only-automation`
-
-Download only [automation](/docs/deliver/configuration-as-code/monaco/configuration/yaml-configuration-saas-type-fields#automation-type-field "This is a list of type fields in the Monaco configuration YAML file.") configurations.
-
-Optional
-
-`--only-settings`
-
-Download only [Settings 2.0](/docs/deliver/configuration-as-code/monaco/configuration/yaml-configuration-saas-type-fields#settings-type-field "This is a list of type fields in the Monaco configuration YAML file.") configuration objects.
-
-Optional
-
-`--only-buckets`
-
-Download only [bucket](/docs/deliver/configuration-as-code/monaco/configuration/yaml-configuration-saas-type-fields#bucket-type-field "This is a list of type fields in the Monaco configuration YAML file.") configurations.
-
-Optional
-
-`--only-documents`
-
-Download only [document](/docs/deliver/configuration-as-code/monaco/configuration/yaml-configuration-saas-type-fields#document-type-field "This is a list of type fields in the Monaco configuration YAML file.") configurations.
-
-Optional
-
-`--only-openpipeline` Deprecated
-
-Download only [openpipeline](/docs/deliver/configuration-as-code/monaco/configuration/yaml-configuration-saas-type-fields#openpipeline-type-field "This is a list of type fields in the Monaco configuration YAML file.") configurations.
-
-Optional
-
-`--only-segments`
-
-Download only [segment](/docs/deliver/configuration-as-code/monaco/configuration/yaml-configuration-saas-type-fields#segment-type-field "This is a list of type fields in the Monaco configuration YAML file.") configurations.
-
-Optional
-
-`--only-slo-v2`
-
-Download only [slo-v2](/docs/deliver/configuration-as-code/monaco/configuration/yaml-configuration-saas-type-fields#slo-v2-type-field "This is a list of type fields in the Monaco configuration YAML file.") configurations.
-
-Optional
 
 You can combine multiple `--only-<type>` flags in a single `monaco download` command to download several types at once.
 
@@ -5939,8 +5285,6 @@ monaco download
 
 ## Delete
 
-
-
 The `delete` command is a convenient way to remove configurations from Dynatrace environments.
 
 * Deleting long-lived configurations in production environments is not ideal, but sometimes it's necessary
@@ -5961,54 +5305,6 @@ monaco delete [--manifest <file>] [--file <file>] [OPTIONS]
 
 ### Arguments
 
-Argument
-
-Description
-
-Required
-
-`--manifest <file>`, `-m <file>`
-
-The manifest file that specifies the relevant Dynatrace environments.
-
-If not specified, Monaco will look for the file named `manifest.yaml`.
-
-Optional
-
-`--file <file>`
-
-The delete file that specifies the relevant configurations.
-
-If not specified, Monaco will look for the file named `delete.yaml`.
-
-Optional
-
-Option
-
-Description
-
-Required
-
-`--environment <name>`, `-e <name>`
-
-The environment(s) from which the configurations should be deleted.
-To delete from multiple environments in a single call, either repeat this flag or use comma-separated variables.
-
-This flag is mutually exclusive with `--group`.
-If neither `--group` nor `--environment` is present, all environments are used.
-
-Optional
-
-`--group <name>`, `-g <name>`
-
-The environment group(s) from which the configurations should be deleted.
-To delete from multiple groups in a single call, either repeat this flag or use comma-separated variables.
-
-This flag is mutually exclusive with `--environment`.
-If neither `--group` nor `--environment` is present, all environments are used.
-
-Optional
-
 ## Generate
 
 The `monaco generate` command lets you generate various auxiliary files, based on your configuration:
@@ -6025,41 +5321,6 @@ monaco generate [ARGS] [OPTIONS]
 
 ### Arguments
 
-Argument
-
-Description
-
-Supported from version
-
-Required
-
-`deletefile`
-
-Generates a deletefile.
-
-Dynatrace Monaco 2.6.0
-
-Optional
-
-`graph`
-
-Generates a DOT representation of the dependencies between configurations defined in a manifest's projects.
-
-The [DOT formatï»¿](https://graphviz.org/doc/info/lang.html) is a standardized text-based format for representing graphs.
-You can create visual representations with tools such as Graphviz.
-
-Dynatrace Monaco 2.6.0
-
-Optional
-
-`schema`
-
-Creates JSON schema files for Monaco's YAML files, such as the manifest, configuration, and delete files.
-
-Dynatrace Monaco 2.10.0
-
-Optional
-
 ### Options
 
 The available options depend on the specific argument that is used.
@@ -6067,36 +5328,6 @@ The available options depend on the specific argument that is used.
 #### deletefile
 
 These options are used with the `monaco generate deletefile` command.
-
-Option
-
-Description
-
-Required
-
-`--file <file>`
-
-Specify the name of the generated delete file.
-If a file of this name already exists, a timestamp is appended.
-By default, the file is named `delete.yaml`.
-
-Optional
-
-`--output-folder <path>`, `-o <path>`
-
-Specify the path/name of the output folder where the deletefile will be saved.
-
-If not specified, the file is generated in the directory from which you run the command.
-
-Optional
-
-`--project <name>`, `-p <name>`
-
-Specify the project(s) for which deletefile entries are generated.
-
-If not specified, all projects in the manifest are used.
-
-Optional
 
 The `generate deletefile` command can't process configurations that contain references in their name field and will fail when encountering such configurations.
 
@@ -6156,72 +5387,9 @@ api: app-detection-rule
 
 These options are used with the `monaco generate graph` command.
 
-Option
-
-Description
-
-Required
-
-`--output-folder <path>`, `-o <path>`
-
-Specify the path/name of the output folder where the graph will be saved.
-
-If not specified, the file is generated in the directory from which you run the command.
-
-Optional
-
-`--environment <name>`, `-e <name>`
-
-Generate dependency graphs for one or more environment(s) within your deployment manifest file.
-To set multiple environments, either repeat this flag or separate them using a comma (`,`).
-
-This flag is mutually exclusive with `--group`:
-
-* If this flag is specified, graphs are generated for each specified environment.
-* If neither `--group` nor `--environment` is present, all environments are used.
-
-Optional
-
-`--group <name>`, `-g <name>`
-
-Generate dependency graphs for one or more specific [environment groups](/docs/deliver/configuration-as-code/monaco/configuration#environment-groups "Manage the Dynatrace configuration files using Monaco with a set of projects and a deployment manifest.") within your deployment manifest file.
-To set multiple groups, either repeat this flag or separate them using a comma (`,`).
-
-This flag is mutually exclusive with `--environment`:
-
-* If this flag is specified, graphs are generated for each environment within the specified groups.
-* If neither `--group` nor `--environment` is present, all environments are used.
-
-Optional
-
-`--id-encoding [default,json]`
-
-Starting with Dynatrace Monaco 2.12.0, you can choose the encoding format:
-
-* The default string representation.
-* JSON.
-
-JSON encoding can be useful when processing generated DOT files automatically.
-
-Optional
-
 #### schema
 
 These options are used with the `monaco generate schema` command.
-
-Option
-
-Description
-
-Required
-
-`--output-folder <filepath>`, `-o <filepath>`
-
-Specifies the name of the output folder in which the JSON schema files will be saved.
-
-If not specified, the files will be saved in a `./schemas/` directory, which is within the directory where you ran the command.
-
-Optional
 
 ## Account
 
@@ -6235,30 +5403,6 @@ monaco account [ARGS] [OPTIONS]
 
 ### Arguments
 
-Argument
-
-Description
-
-Required
-
-`deploy`
-
-Deploy Account Management resources.
-
-Optional
-
-`download`
-
-Download Account Management resources.
-
-Optional
-
-`delete`
-
-Delete Account Management resources.
-
-Optional
-
 ### Options
 
 
@@ -6269,43 +5413,6 @@ The available options depend on the specific argument that is used.
 
 These options are used with the `monaco account deploy` command.
 
-Option
-
-Description
-
-Required
-
-`--account <name>`, `-a <name>`
-
-The account name to deploy to, as specified in the manifest file.
-
-Optional
-
-`--dry-run`, `-d`
-
-Validate the structure of your manifest, projects, and configurations.
-A dry run resolves all configuration parameters, but it can't verify if the Dynatrace APIs will accept the content.
-
-Optional
-
-`--manifest <file>`, `-m <file>`
-
-The name of the manifest file.
-
-If not specified, Monaco searches for the `./manifest.yaml` file in the folder where the command is executed from.
-
-Optional
-
-`--project <name>`, `-p <name>`
-
-Specify one or more projects to be deployed.
-To set multiple projects, either repeat this flag or separate them using a comma (`,`).
-
-* If this flag is specified, configurations from the specified projects are deployed.
-* Without this flag, configurations from all projects defined in the manifest are deployed.
-
-Optional
-
 #### download
 
 These options are used with the `monaco account download` command.
@@ -6314,120 +5421,17 @@ These options are used with the `monaco account download` command.
 
 These options are used when you want to download via a manifest YAML file.
 
-Option
-
-Description
-
-Required
-
-`--manifest <file>`, `-m <file>`
-
-The name of the manifest file.
-
-If the file name is not specified, Monaco searches for the `./manifest.yaml` file in the folder where the command is executed from.
-
-Optional
-
-`--account <name>`, `-a <name>`
-
-The account name(s) to download from, as specified in the manifest file.
-To set multiple accounts, either repeat this flag or separate them using a comma (`,`).
-
-* If this flag is specified, configurations from the specified accounts are downloaded.
-* Without this flag, configurations from all projects defined in the manifest are downloaded.
-
-Optional
-
-`--force`, `-f`
-
-Used in combination with `--manifest`.
-Force overwrites any existing `manifest.yaml` file.
-
-Optional
-
 ##### Options to download via UUID
 
 These options are used when you want to download via a Dynatrace account UUID
-
-Option
-
-Description
-
-Required
-
-`--oauth-client-id <environment variable name>`
-
-The name of the environment variable that contains the OAuth client ID.
-
-Required
-
-`--oauth-client-secret <environment-variable-name>`
-
-The name of the environment variable that contains the OAuth client secret.
-
-Required
-
-`--uuid <account UUID>`, `-u <account UUID>`
-
-Account UUID from which the account management resources should be downloaded.
-
-You can find the UUID on the **Account Management** > **Identity & access management** > **OAuth clients** page, during creation of an OAuth client.
-
-Required
 
 ##### Additional options
 
 These options can be used with either download method (whether via manifest or UUID).
 
-Option
-
-Description
-
-Required
-
-`--output-folder <filepath>`, `-o <filepath>`
-
-Specifies the name of the output folder in which downloaded configurations will be stored.
-
-By default, the folder name will be `download` with the current timestamp appended.
-
-Optional
-
 #### delete
 
 These options are used with the `monaco account delete` command.
-
-Option
-
-Description
-
-Required
-
-`--account <name>`, `-a <name>`
-
-The account name(s) account whose resources should be deleted, as specified in the manifest file.
-To set multiple accounts, either repeat this flag or separate them using a comma (`,`).
-
-* If this flag is specified, configurations from the specified accounts are deleted.
-* Without this flag, configurations from all projects defined in the manifest are deleted.
-
-Optional
-
-`--file <file>`
-
-The delete file that specifies the relevant configurations.
-
-If not specified, Monaco will look for the file named `delete.yaml`.
-
-Optional
-
-`--manifest <file>`, `-m <file>`
-
-The manifest file that specifies the relevant Dynatrace environments.
-
-If not specified, Monaco will look for the file named `manifest.yaml`.
-
-Optional
 
 ##### Example
 
@@ -6490,24 +5494,6 @@ name: My Boundary
 These options can be used with any `monaco` argument.
 They are useful for troubleshooting any errors that you might encounter.
 
-Option
-
-Description
-
-Required
-
-`--support-archive`
-
-Create a [support archive for troubleshooting](/docs/deliver/configuration-as-code/monaco/reference/logging#support-archive "Logging reference for Dynatrace Configuration as Code via Monaco").
-
-Optional
-
-`--verbose`, `-v`
-
-Enable [verbose debugging logs](/docs/deliver/configuration-as-code/monaco/reference/logging "Logging reference for Dynatrace Configuration as Code via Monaco").
-
-Optional
-
 ---
 
 ## deliver/configuration-as-code/terraform/terraform-api-support-access-permission-handling.md
@@ -6515,7 +5501,7 @@ Optional
 ---
 title: Terraform API support and access permission handling
 source: https://www.dynatrace.com/docs/deliver/configuration-as-code/terraform/terraform-api-support-access-permission-handling
-scraped: 2026-02-23T21:38:43.290202
+scraped: 2026-02-24T21:26:33.683363
 ---
 
 # Terraform API support and access permission handling
@@ -6823,7 +5809,7 @@ The reasons are added as comments at the beginning of each file.
 ---
 title: Configure automated notifications using Terraform and Configuration as Code
 source: https://www.dynatrace.com/docs/deliver/configuration-as-code/terraform/tutorials/terraform-tutorial-set-up-automated-notification
-scraped: 2026-02-23T21:32:22.724252
+scraped: 2026-02-24T21:29:16.815942
 ---
 
 # Configure automated notifications using Terraform and Configuration as Code
@@ -8051,7 +7037,7 @@ To modify the Terraform configuration
 ---
 title: Terraform tutorials overview
 source: https://www.dynatrace.com/docs/deliver/configuration-as-code/terraform/tutorials
-scraped: 2026-02-20T21:26:34.228393
+scraped: 2026-02-24T21:26:02.975649
 ---
 
 # Terraform tutorials overview
@@ -8074,7 +7060,7 @@ We provide a tutorial to help you [Configure automated notifications using Terra
 ---
 title: Configuration as Code overview
 source: https://www.dynatrace.com/docs/deliver/configuration-as-code
-scraped: 2026-02-20T21:15:37.278711
+scraped: 2026-02-24T21:21:04.012667
 ---
 
 # Configuration as Code overview

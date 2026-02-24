@@ -1,7 +1,7 @@
 # Документация Dynatrace: observe/application-observability
 Язык: Русский (RU)
-Сгенерировано: 2026-02-23
-Файлов в разделе: 66
+Сгенерировано: 2026-02-24
+Файлов в разделе: 67
 ---
 
 ## observe/application-observability/distributed-traces/analysis/connect-environments.md
@@ -9,7 +9,7 @@
 ---
 title: Set up cross-environment tracing
 source: https://www.dynatrace.com/docs/observe/application-observability/distributed-traces/analysis/connect-environments
-scraped: 2026-02-23T21:23:58.537394
+scraped: 2026-02-24T21:26:00.345781
 ---
 
 # Set up cross-environment tracing
@@ -256,7 +256,7 @@ While limits that protect your environment's resources can't usually be removed,
 ---
 title: Distributed traces concepts
 source: https://www.dynatrace.com/docs/observe/application-observability/distributed-traces/concepts
-scraped: 2026-02-19T21:17:42.544336
+scraped: 2026-02-24T21:17:55.799580
 ---
 
 # Distributed traces concepts
@@ -339,31 +339,6 @@ You can integrate OpenTelemetry and OneAgent to collect trace dataâlike req
 #### Best practices
 
 Before getting started with distributed tracing, understand how setup and trace data collection differs between OpenTelemetry and OneAgent. The following is an overview of the key differences.
-
-OpenTelemetry
-
-OneAgent
-
-Set up
-
-Automatic or manual
-
-Automatic
-
-Capturing
-
-Automatic collection of allowed span attributes.
-
-Automatic collection of several request attributes, including HTTP method, URL, response codes, topology data, and details about the underlying technologies.
-
-Context
-
-Automatically or manually contextualized log entries, depending on the instrumentation library.
-
-Automatically contextualized
-
-* Log entries produced by prominent log frameworks.
-* Traces in Smartscape and Dynatrace Intelligence.
 
 To get started see
 
@@ -468,7 +443,7 @@ While the W3C standard formally specifies HTTP propagation, Dynatrace and the br
 ---
 title: Leverage log enrichment for traces to resolve problems
 source: https://www.dynatrace.com/docs/observe/application-observability/distributed-traces/use-cases/problems-logs-traces
-scraped: 2026-02-21T21:20:03.120647
+scraped: 2026-02-24T21:16:31.805770
 ---
 
 # Leverage log enrichment for traces to resolve problems
@@ -616,20 +591,6 @@ What kind of pricing and packaging do I need to start?
 
 You need both log monitoring and trace pricing and packaging.
 
-Your technology is monitored via OneAgent
-
-Learn more about pricing and packaging
-
-![Applicable](https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg "Applicable")
-
-* For logs, see [Log Management and Analytics (Grail)](/docs/license/monitoring-consumption-classic/davis-data-units/log-management-and-analytics "Understand how the volume of DDUs consumption is calculated for Dynatrace Log Management and Analytics.") or [Log Monitoring Classic](/docs/license/monitoring-consumption-classic/davis-data-units/log-monitoring-consumption "Understand how the volume of DDU consumption is calculated for Dynatrace Log Monitoring Classic.").
-* For traces (Full-Stack Monitoring), see [Application and Infrastructure Monitoring (Host Units)](/docs/license/monitoring-consumption-classic/application-and-infrastructure-monitoring "Understand how Dynatrace application and infrastructure monitoring consumption is calculated based on host units.")
-
-![Not applicable](https://dt-cdn.net/images/icon-red-cross-1f1142a5dc.svg "Not applicable")
-
-* For logs, see [Log Management and Analytics (Grail)](/docs/license/monitoring-consumption-classic/davis-data-units/log-management-and-analytics "Understand how the volume of DDUs consumption is calculated for Dynatrace Log Management and Analytics.") or [Log Monitoring Classic](/docs/license/monitoring-consumption-classic/davis-data-units/log-monitoring-consumption "Understand how the volume of DDU consumption is calculated for Dynatrace Log Monitoring Classic.").
-* For traces (open trace ingestion with OpenTelemetry), see [DDUs for serverless functions](/docs/license/monitoring-consumption-classic/davis-data-units/serverless-monitoring "Understand how serverless monitoring consumption is calculated.") and [DDUs for custom traces (Trace API)](/docs/license/monitoring-consumption-classic/davis-data-units/custom-traces "Understand how DDU consumption is calculated for spans ingested via the Trace API.")
-
 Can I use this data for end user sessions?
 
 Yes. To learn how, see [Connect your log data to user sessions and Session Replays](/docs/whats-new/saas/sprint-244#connect-your-log-data-to-user-sessions-and-session-replays "Release notes for Dynatrace SaaS, version 1.244").
@@ -647,7 +608,7 @@ Yes. To learn how, see [Connect your log data to user sessions and Session Repla
 ---
 title: Segment requests to improve response time degradation
 source: https://www.dynatrace.com/docs/observe/application-observability/distributed-traces/use-cases/segment-request
-scraped: 2026-02-23T21:20:51.279155
+scraped: 2026-02-24T21:14:11.767720
 ---
 
 # Segment requests to improve response time degradation
@@ -717,7 +678,7 @@ You can extend your analysis:
 ---
 title: Distributed Traces Classic
 source: https://www.dynatrace.com/docs/observe/application-observability/distributed-traces
-scraped: 2026-02-23T21:39:38.165835
+scraped: 2026-02-24T21:16:22.471072
 ---
 
 # Distributed Traces Classic
@@ -757,7 +718,7 @@ Upgrade Distributed Traces Classic ![Distributed Traces Classic](https://dt-cdn.
 ---
 title: Advanced Tracing Analytics powered by Grail
 source: https://www.dynatrace.com/docs/observe/application-observability/distributed-tracing/advanced-tracing-analytics
-scraped: 2026-02-23T21:20:50.068828
+scraped: 2026-02-24T21:14:02.579145
 ---
 
 # Advanced Tracing Analytics powered by Grail
@@ -813,22 +774,6 @@ fetch spans
 
 Query result:
 
-endpoint.name
-
-http.request.header.host
-
-http.request.method
-
-trace.id
-
-`/api/currency`
-
-`astroshop.playground.demoability.dynatracelabs.com`
-
-`GET`
-
-`86b11c85e1bc1dc039252a95fd009d16`
-
 Example: DQL access to all attributes
 
 The following query fetches spans generated with an HTTP route from the server. To make sure all spans use the same field name for the HTTP request method field, it looks for two semantically different fields and stores the first result into a new field for consultation purposes. It then summarizes the results by HTTP request method and HTTP route, providing the number of spans, their average duration, and the value of their duration in the 50th percentiles.
@@ -855,26 +800,6 @@ fetch spans
 
 Query result:
 
-http.request.method
-
-http.route
-
-count()
-
-avg(duration)
-
-p50
-
-`POST`
-
-`/v1/orders/{id}/status`
-
-`758`
-
-`84.28 ms`
-
-`78.11 ms`
-
 Example: Full text search
 
 The following example fetches spans with an HTTP route that contain `user` and don't end with `username` and summarizes the results, providing the number of spans by HTTP request method and HTTP route.
@@ -896,18 +821,6 @@ fetch spans
 ```
 
 Query result:
-
-http.request.method
-
-http.route
-
-count()
-
-`POST`
-
-`v1/balance/{accountId:int}/deposit`
-
-`458`
 
 For more examples, see the [Introductionï»¿](https://wkf10640.apps.dynatrace.com/ui/document/v0/#share=404274dc-4f04-4dda-840d-47ba9bd17a9f) notebook in Dynatrace Playground.
 
@@ -959,22 +872,6 @@ trace=takeAny(record(start_time, trace.id)) // pick random trace from aggregatio
 ```
 
 Query result:
-
-bin(duration, 100ms)
-
-spans
-
-trace.id
-
-start\_time
-
-`300.00ms`
-
-`342`
-
-`4e990942081eb61ac0e39399555ebb2a`
-
-`2025-05-27T08:04:04.229120000+02:00`
 
 Example: Extract timeseries
 
@@ -1572,22 +1469,6 @@ by:{Database = db.namespace, Query = db.query.text}
 
 Query result:
 
-Database
-
-Query
-
-ExceptionMessage
-
-Errors
-
-TradeManagement
-
-`SET IMPLICIT_TRANSACTIONS OFF; SET NOCOUNT ON; INSERT INTO [Trades] ([Id], [AccountId], [Direction], [EntryPrice], [InstrumentId], [Quantity], [Status], [TimestampClose], [TimestampOpen], [TradeClosed], [TransactionHappened]) VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10);`
-
-One or more errors occurred. (Cannot insert explicit value for identity column in table 'Trades' when IDENTITY\_INSERT is set to OFF.)
-
-201
-
 For more examples, see the [Databasesï»¿](https://wkf10640.apps.dynatrace.com/ui/document/v0/#share=1386b571-6998-445c-ae10-75510374d535) notebook in Dynatrace Playground.
 
 ## Exceptions
@@ -1714,38 +1595,6 @@ fetch spans
 
 Query result:
 
-`exception.type`
-
-count()
-
-`*net.OpError`
-
-1
-
-`Error`
-
-236
-
-`Grpc.Core.RpcException`
-
-57
-
-PHP Deprecated
-
-1626
-
-`error`
-
-311
-
-`javax.servlet.http.HttpServletResponse.setStatus`
-
-2
-
-`null`
-
-114
-
 Example: Exception frequency as chart
 
 This query creates a timeseries chart showing the frequency of exceptions by their type.
@@ -1844,35 +1693,9 @@ fetch spans
 
 Query result:
 
-`user_id`
-
-count()
-
-3
-
-3
-
-302
-
-3
-
-389
-
-3
-
-428
-
-3
-
-507
-
-3
-
 For more examples, see the [Exceptionsï»¿](https://wkf10640.apps.dynatrace.com/ui/document/v0/#share=e977e465-a4a8-4be7-a335-0f6eb5c420aa) notebook in Dynatrace Playground.
 
 ## Logs
-
-
 
 Logs can be enriched with `trace_id` and `span_id`. OneAgent can even enrich such context into logs automatically. With this information, you can join spans and logs to, for example, find traces and spans that emit specific logs.
 
@@ -2032,6 +1855,8 @@ For more examples, see the [Logsï»¿](https://wkf10640.apps.dynatrace.com/ui/d
 
 ## Sampling, aggregation, and extrapolation
 
+
+
 Sampling
 :   * **Adaptive Traffic Management (ATM)** is a rate-limiting, head-based sampling mechanism that adaptively reacts to the rate of requests. The decision is made on the agent, at the beginning of a trace (thus "head-based").
     * **Adaptive Load Reduction (ALR)** is a server-side sampling mechanism that's aimed to protect the backend infrastructure from being overloaded.
@@ -2132,14 +1957,6 @@ fetch spans
 
 Query result:
 
-`span_count`
-
-`request_count_extrapolated`
-
-479927
-
-48460200
-
 Example: Database call count and durations, extrapolated
 
 This query counts the number of database calls with extrapolations applied.
@@ -2209,14 +2026,6 @@ operation_duration_extrapolated = sum(aggregation.duration_avg * multiplicity) /
 ```
 
 Query result:
-
-`operation_count_extrapolated`
-
-`operation_duration_extrapolated`
-
-11800
-
-6.38ms
 
 For more examples, see the [Sampling, aggregation, and extrapolationï»¿](https://wkf10640.apps.dynatrace.com/ui/document/v0/#share=4c3d3c0f-161a-4c0e-bc8a-623410d549c3) notebook in Dynatrace Playground.
 
@@ -2588,7 +2397,7 @@ For more examples, see the [Trace query usageï»¿](https://wkf10640.apps.dynat
 ---
 title: Retain trace data for long periods
 source: https://www.dynatrace.com/docs/observe/application-observability/distributed-tracing/data-retention
-scraped: 2026-02-23T21:20:57.101912
+scraped: 2026-02-24T21:15:53.266853
 ---
 
 # Retain trace data for long periods
@@ -2696,7 +2505,7 @@ You created a new bucket with a custom retention period of 5 years. The new buck
 ---
 title: Detect performance issues
 source: https://www.dynatrace.com/docs/observe/application-observability/distributed-tracing/detect-performance-issues
-scraped: 2026-02-23T21:20:32.720400
+scraped: 2026-02-24T21:14:05.072439
 ---
 
 # Detect performance issues
@@ -2799,7 +2608,7 @@ We analyzed trace data and identified a cluster of slow and failing requests wit
 ---
 title: Manage facets
 source: https://www.dynatrace.com/docs/observe/application-observability/distributed-tracing/distributed-tracing-app/facets
-scraped: 2026-02-19T21:17:41.188841
+scraped: 2026-02-24T21:18:41.318187
 ---
 
 # Manage facets
@@ -2872,7 +2681,7 @@ The table is updated with the selected attribute(s). To change the filter select
 ---
 title: Distributed Tracing app
 source: https://www.dynatrace.com/docs/observe/application-observability/distributed-tracing/distributed-tracing-app
-scraped: 2026-02-23T21:20:31.534507
+scraped: 2026-02-24T21:14:13.175597
 ---
 
 # Distributed Tracing app
@@ -2937,34 +2746,6 @@ Distributed Tracing charts
 
 The following table compares the **Timeseries** and **Histogram** charts.
 
-Timeseries
-
-Histogram
-
-X-axis
-
-Time intervals [1](#fn-1-1-def)
-
-Response time intervals
-
-Y-axis
-
-Frequency of data points (left-hand side) and response time (right-hand side)
-
-Frequency of data points
-
-Important statistical factors
-
-The legend lists dedicated views for percentiles, averages, and successful and failed requests. Choose an option to view the related trends.
-
-Percentiles and averages are marked with contrast-color vertical lines.
-
-Use cases
-
-Understand how trace data changes over time and identify trends and cyclic behaviors.
-
-Visualize your data's distribution, identify patterns, and spot outliers.
-
 1
 
 Granularity depends on the selected timeframe.
@@ -2985,18 +2766,6 @@ For details how to manage your facets, see [Manage facets](/docs/observe/applica
 ## Table results
 
 The table lists the latest 1000 records for the selected timeframe that match the filtering options you applied. The table data is available as a list (  ) or grouped by attributes (  ). You can manage columns to display only the attributes you're interested in and exclude noise.
-
-UI element
-
-Scope
-
-`<column value>`
-
-Filter trace data by a column value.
-
-Copy the DQL statement or the DQL API call.
-
-Download the visible table data.
 
 ### Use cases
 
@@ -3068,8 +2837,6 @@ Exception analysis provides:
 
 ### Access and navigation
 
-
-
 In addition to the **Exceptions** tab in [![Distributed Tracing](https://dt-cdn.net/images/distributed-tracing-4ed13d1274.svg "Distributed Tracing") **Distributed Tracing**](/docs/observe/application-observability/distributed-tracing/distributed-tracing-app "Discover the functionalities of the new Distributed Tracing app."), you can analyze exceptions in context through service-specific drill-downs.
 
 To learn more about analyzing exceptions, see [Exception analysis](/docs/observe/application-observability/distributed-tracing/exception-analysis "Exception analysis helps you detect, investigate, and resolve exceptions more effectively in Dynatrace.").
@@ -3081,7 +2848,7 @@ To learn more about analyzing exceptions, see [Exception analysis](/docs/observe
 ---
 title: Exception analysis
 source: https://www.dynatrace.com/docs/observe/application-observability/distributed-tracing/exception-analysis
-scraped: 2026-02-23T21:20:47.172530
+scraped: 2026-02-24T21:13:57.807381
 ---
 
 # Exception analysis
@@ -3129,42 +2896,6 @@ Exception analysis provides:
 ## Key capabilities
 
 ### Core capabilities
-
-Capability
-
-Description
-
-**Advanced filtering**
-
-Use Dynatrace filters to narrow down exceptions by attributes such as service, endpoint, failures, and more.
-
-* Timeframe
-* Segments
-* Facets
-
-**Exception trend chart**
-
-Visualize the trend of exceptions over time.
-
-* Select an exception in the table to highlight it in the trend chart for deeper analysis.
-
-**Exceptions table**
-
-View a detailed list of exceptions, including their type, frequency, and impact.
-
-* Select an exception in the table to highlight it in the trend chart for deeper analysis.
-
-**Aggregated stack traces**
-
-Explore aggregated stack traces for each exception, allowing you to identify common code paths and pinpoint the root cause of issues.
-
-**Related logs**
-
-View logs related to each exception for additional context. This helps you correlate log events with the occurrence of exceptions.
-
-**Requests containing exceptions**
-
-Analyze requests that contained the selected exception, either directly or within a sub-trace. This feature helps you understand how exceptions are affecting specific transactions.
 
 ### Integration with Dynatrace
 
@@ -3220,7 +2951,7 @@ Visit the [Feedback Channelï»¿](https://dt-url.net/i003111) in the Dynatrace 
 ---
 title: Ingest traces
 source: https://www.dynatrace.com/docs/observe/application-observability/distributed-tracing/ingest-traces
-scraped: 2026-02-23T21:20:29.001347
+scraped: 2026-02-24T21:13:55.019797
 ---
 
 # Ingest traces
@@ -3289,7 +3020,7 @@ Other setup options
 ---
 title: Set up Grail permissions for Distributed Tracing
 source: https://www.dynatrace.com/docs/observe/application-observability/distributed-tracing/permissions
-scraped: 2026-02-23T21:20:35.070737
+scraped: 2026-02-24T21:13:56.465173
 ---
 
 # Set up Grail permissions for Distributed Tracing
@@ -3362,48 +3093,6 @@ When setting up permissions for Distributed Tracing, consider these recommendati
 
 When working with the ![Distributed Tracing](https://dt-cdn.net/images/distributed-tracing-4ed13d1274.svg "Distributed Tracing") **Distributed Tracing**, make sure that you've read and set all the necessary permissions:
 
-Policy scope
-
-Table permission
-
-Read buckets data
-
-`storage:buckets:read`
-
-Read span data
-
-`storage:spans:read`
-
-Read entities data
-
-`storage:entities:read`
-
-Read log data
-
-`storage:logs:read`
-
-Read filter-segments data
-
-`storage:filter-segments:read`
-
-View sensitive fields trace data [1](#fn-1-1-def) [2](#fn-1-2-def)
-
-`storage:fieldsets:read WHERE storage:fieldset-name="builtin-sensitive-spans`
-
-`storage:fieldsets:read WHERE storage:fieldset-name="builtin-request-attributes-spans`
-
-Read user app states
-
-`state:user-app-states:read`
-
-Write user app states
-
-`state:user-app-states:write`
-
-Delete user app states
-
-`state:user-app-states:delete`
-
 1
 
 Sensitive attributes for spans are tagged as `sensitive-spans` in [Global field reference](/docs/semantic-dictionary/fields "Get to know the list of global fields that have a well defined semantic meaning in Dynatrace and can be used across different monitoring types.").
@@ -3419,7 +3108,7 @@ To learn more about restricted view access to personal data and confidential req
 ---
 title: Configure data storage and retention for Distributed Tracing
 source: https://www.dynatrace.com/docs/observe/application-observability/distributed-tracing/storage
-scraped: 2026-02-23T21:20:38.989666
+scraped: 2026-02-24T21:14:00.763161
 ---
 
 # Configure data storage and retention for Distributed Tracing
@@ -3502,7 +3191,7 @@ With this procedure, you skip storage of spans that match the route and the pipe
 ---
 title: Span and trace context propagation
 source: https://www.dynatrace.com/docs/observe/application-observability/distributed-tracing/tracking-transactions
-scraped: 2026-02-23T21:20:44.817401
+scraped: 2026-02-24T21:14:07.665124
 ---
 
 # Span and trace context propagation
@@ -3583,7 +3272,7 @@ While the W3C standard formally specifies HTTP propagation, Dynatrace and the br
 ---
 title: Use traces, DQL, and logs to spot patterns
 source: https://www.dynatrace.com/docs/observe/application-observability/distributed-tracing/use-traces-and-dql-to-spot-patterns
-scraped: 2026-02-23T21:20:41.475600
+scraped: 2026-02-24T21:14:17.003821
 ---
 
 # Use traces, DQL, and logs to spot patterns
@@ -4057,7 +3746,7 @@ If you believe that you need to have certain information at hand, [add the DQL q
 ---
 title: Distributed Tracing
 source: https://www.dynatrace.com/docs/observe/application-observability/distributed-tracing
-scraped: 2026-02-23T21:18:59.011215
+scraped: 2026-02-24T21:13:32.243040
 ---
 
 # Distributed Tracing
@@ -4076,10 +3765,6 @@ scraped: 2026-02-23T21:18:59.011215
 ### Permissions
 
 The following table describes the required permissions.
-
-Permission
-
-Description
 
 storage:buckets:read
 
@@ -4120,16 +3805,6 @@ Read filter-segments
 storage:smartscape:read
 
 Read smartscape nodes and edges
-
-10
-
-rows per page
-
-Page
-
-1
-
-of 1
 
 ## Installation
 
@@ -4248,31 +3923,6 @@ You can integrate OpenTelemetry and OneAgent to collect trace dataâlike req
 
 Before getting started with distributed tracing, understand how setup and trace data collection differs between OpenTelemetry and OneAgent. The following is an overview of the key differences.
 
-OpenTelemetry
-
-OneAgent
-
-Set up
-
-Automatic or manual
-
-Automatic
-
-Capturing
-
-Automatic collection of allowed span attributes.
-
-Automatic collection of several request attributes, including HTTP method, URL, response codes, topology data, and details about the underlying technologies.
-
-Context
-
-Automatically or manually contextualized log entries, depending on the instrumentation library.
-
-Automatically contextualized
-
-* Log entries produced by prominent log frameworks.
-* Traces in Smartscape and Dynatrace Intelligence.
-
 To get started see
 
 * [Automatic setup with OneAgent](/docs/ingest-from/dynatrace-oneagent "Understand the important concepts related to OneAgent and find out how to install and operate OneAgent on different platforms.")
@@ -4354,7 +4004,7 @@ Analyze and slice distributed traces by any attribute and from any source.
 ---
 title: Configure additional settings for Live Debugging
 source: https://www.dynatrace.com/docs/observe/application-observability/live-debugger/additional-settings
-scraped: 2026-02-23T21:26:12.582006
+scraped: 2026-02-24T21:23:20.809073
 ---
 
 # Configure additional settings for Live Debugging
@@ -4515,7 +4165,7 @@ You can choose a custom string for the rule, or replace it with an SHA-256 hash.
 ---
 title: Live Debugger breakpoints
 source: https://www.dynatrace.com/docs/observe/application-observability/live-debugger/breakpoints
-scraped: 2026-02-23T21:37:10.713090
+scraped: 2026-02-24T21:30:04.999866
 ---
 
 # Live Debugger breakpoints
@@ -4621,54 +4271,6 @@ There are several collection levels that you can set to a breakpoint. The collec
 
 Three collection levels are available:
 
-Level\Language
-
-JVM
-
-Node.js
-
-Low
-
-Collection depth: 2
-
-String width: 128
-
-Collection width: 10
-
-Collection depth: 2
-
-String width: 128
-
-Collection width: 5
-
-Medium
-
-Collection depth: 5
-
-String width: 512
-
-Collection width: 15
-
-Collection depth: 3
-
-String width: 512
-
-Collection width: 10
-
-High
-
-Collection depth: 8
-
-String width: 4096
-
-Collection width: 25
-
-Collection depth: 5
-
-String width: 4096
-
-Collection width: 20
-
 For example, if an object has a deeply nested field, we will stop when we reach the maximum collection depth (as in the following example). Note that `l5` has more fields, but they werenât collected because they were too deep.
 
 ![Example of an object with deeply nested fields](https://dt-cdn.net/images/2025-01-30-22-13-44-1200-5eed210010-640-cfbd29135d.jpg)
@@ -4690,8 +4292,6 @@ Breakpoint default limit values:
 
 ## Breakpoint conditions
 
-
-
 Conditional breakpoints allow you to limit the data collected by OneAgent. You will only collect data when the defined expression evaluates as true. This makes it possible to debug specific scenarios and limit the number of messages you receive.
 To set a condition, right-click a breakpoint and select **Edit**.
 
@@ -4704,84 +4304,6 @@ Condition types:
 
 Advanced conditions support the following operators and functions:
 
-Operator
-
-Example
-
-Description
-
-`==`
-
-`a==1`, `b=='bbb'`, `x==y`
-
-If the values of two operands are equal, the condition is true.
-
-`!=`
-
-`a!=1`, `b!='bbb'`, `x!=y`
-
-If values of two operands are not equal, the condition is true.
-
-`>`
-
-`a>1`, `x>y`
-
-If the value of the left operand is greater than the value of the right operand, the condition is true.
-
-`>=`
-
-`a>=1`, `x>=y`
-
-If the value of the left operand is greater than or equal to the value of the right operand, the condition is true.
-
-`<`
-
-`a<1`, `x<y`
-
-If the value of left operand is less than the value of right operand, then condition becomes true.
-
-`<=`
-
-`a<=1`, `x<=y`
-
-If the value of the left operand is less than or equal to the value of the right operand, the condition is true.
-
-`in`
-
-`'bbb' in a`
-
-If the value of the left operand is included in the right operand, the condition is true.
-
-`&&`
-
-`a<=1 && b!='bbb'`
-
-If both operands are true, the condition is true.
-
-`||`
-
-`a<=1 || b=='bbb'`
-
-If any of the two operands are non-zero, the condition is true.
-
-`()`
-
-``` (a<=1``||``b=='bbb') && (x<y) ```
-
-You can use parentheses to change the precedence when evaluating the condition.
-
-`[]`
-
-`arr[4]!=4`, `dict['a']!=4`
-
-Set conditions regarding to a specific sequenceâs element - list, dict, etc.
-
-`size`
-
-`arr.size() >= 32`
-
-Use size instead of len or length on any platform.
-
 ---
 
 ## observe/application-observability/live-debugger/ide-integration.md
@@ -4789,7 +4311,7 @@ Use size instead of len or length on any platform.
 ---
 title: Use Live Debugger with your IDE
 source: https://www.dynatrace.com/docs/observe/application-observability/live-debugger/ide-integration
-scraped: 2026-02-23T21:30:58.282768
+scraped: 2026-02-24T21:26:40.406848
 ---
 
 # Use Live Debugger with your IDE
@@ -4893,7 +4415,7 @@ When required, you can access all session configuration options via the header o
 ---
 title: Set up permissions for Live Debugging
 source: https://www.dynatrace.com/docs/observe/application-observability/live-debugger/setup
-scraped: 2026-02-23T21:35:37.094753
+scraped: 2026-02-24T21:24:21.324114
 ---
 
 # Set up permissions for Live Debugging
@@ -4908,10 +4430,6 @@ scraped: 2026-02-23T21:35:37.094753
 ## User permissions
 
 All supported values for each IAM permission and condition are listed below. Use them to define access policies based on a fine-grained set of permissions and conditions that can be enforced per service. For more information, see [Working with policies](/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies "Working with policies").
-
-Permission
-
-Description
 
 state:user-app-states:read
 
@@ -4936,16 +4454,6 @@ See Observability for Developers agents and place breakpoints.
 dev-obs:breakpoints:manage
 
 Manage Observability for Developers breakpoints.
-
-10
-
-rows per page
-
-Page
-
-1
-
-of 1
 
 ## Set breakpoints
 
@@ -5008,7 +4516,7 @@ Grants permission to read user-level Live Debugging snapshots.
 ---
 title: Live Debugger
 source: https://www.dynatrace.com/docs/observe/application-observability/live-debugger
-scraped: 2026-02-23T21:26:33.498792
+scraped: 2026-02-24T21:29:41.032126
 ---
 
 # Live Debugger
@@ -5257,7 +4765,7 @@ Dev training and onboarding
 ---
 title: Top database statements
 source: https://www.dynatrace.com/docs/observe/application-observability/multidimensional-analysis/top-database-statements
-scraped: 2026-02-23T21:38:06.483582
+scraped: 2026-02-24T21:33:38.286764
 ---
 
 # Top database statements
@@ -5302,30 +4810,6 @@ The view in this example is configured with the metric **Fetch count** filtered 
 
      ![Show export menu](https://dt-cdn.net/images/show-export-menu-107-2a8a76c9a2.png)
   2. Select **Export visible data** or **Export table data**.
-
-     Option
-
-     Exported data
-
-     Fields
-
-     Number of entries
-
-     **Export visible data**
-
-     The currently displayed area of the table, taking into account applied filters
-
-     Only visible data
-
-     Up to 100 top dimensions
-
-     **Export table data**
-
-     All table data
-
-     All the available data related to top dimensions
-
-     Up to 100 top dimensions
 * The chart uses [trace and request data](/docs/observe/application-observability/multidimensional-analysis#data-source "Configure a multidimensional analysis view and save it as a calculated metric."), which has different data retention periods. For timeframes containing data older than 10 days, you can turn on the **Show data retention** toggle to better understand which data is available for which period directly from the chart.
 
 ## Analyze individual SQL statements
@@ -5534,7 +5018,7 @@ In this case, all non-POST requests are filtered out, so you can focus your anal
 ---
 title: Multidimensional analysis
 source: https://www.dynatrace.com/docs/observe/application-observability/multidimensional-analysis
-scraped: 2026-02-23T21:24:52.311373
+scraped: 2026-02-24T21:16:26.540457
 ---
 
 # Multidimensional analysis
@@ -5581,67 +5065,12 @@ Unlike [Data Explorer](/docs/analyze-explore-automate/explorer#limitations "Quer
 
 In **Configure view**, you can set up multiple filtering capabilities. The view updates automatically as you change the parameters.
 
-Parameter
-
-Description
-
-Metric
-
-The metric to be analyzed.
-
-Aggregation
-
-How the metric values are aggregated. Available aggregations depend on the selected metric.
-
-Split mode
-
-How dimensions specified in **Split by dimension** are treated.
-
-* **Split by services**âeach dimension is displayed separately for each service.
-* **Merge by services**âsame dimensions from different services are merged into one.
-
-Split by dimension
-
-A list of dimensions by which the requests are split.
-
-You can specify several dimensions. Place your cursor in the input field to see the available options. The requests are split by dimension in the specified order.
-
-Filter requests
-
-Filter the requests to be included to the view. Place your cursor in the input field to see the available options.
-
-Criteria of the same type are grouped by **OR** logic. Criteria of different types are grouped by **AND** logic.
-
 You can export the table data in a comma-separated values (CSV) file.
 
 1. In the lower-right corner of the page, select **Show export menu** ![More](https://dt-cdn.net/images/more-icon-01c8b008ca.svg "More").
 
    ![Show export menu](https://dt-cdn.net/images/show-export-menu-107-2a8a76c9a2.png)
 2. Select **Export visible data** or **Export table data**.
-
-   Option
-
-   Exported data
-
-   Fields
-
-   Number of entries
-
-   **Export visible data**
-
-   The currently displayed area of the table, taking into account applied filters
-
-   Only visible data
-
-   Up to 100 top dimensions
-
-   **Export table data**
-
-   All table data
-
-   All the available data related to top dimensions
-
-   Up to 100 top dimensions
 
 ## View
 
@@ -5977,7 +5406,7 @@ The log and support alert directories are cleaned up automatically.
 ---
 title: Analyze memory dumps
 source: https://www.dynatrace.com/docs/observe/application-observability/profiling-and-optimization/memory-dump-analysis
-scraped: 2026-02-23T21:33:37.076341
+scraped: 2026-02-24T21:27:01.120560
 ---
 
 # Analyze memory dumps
@@ -6500,7 +5929,7 @@ Your existing configuration for resource request detection is still applicable, 
 ---
 title: Failure Analysis
 source: https://www.dynatrace.com/docs/observe/application-observability/services/failure-analysis
-scraped: 2026-02-23T21:19:46.596285
+scraped: 2026-02-24T21:14:41.369608
 ---
 
 # Failure Analysis
@@ -6613,7 +6042,7 @@ Weâd love to hear your feedback and questions about the new **Failure Analy
 ---
 title: Monitor service message processing
 source: https://www.dynatrace.com/docs/observe/application-observability/services/monitor-service-message-processing
-scraped: 2026-02-23T21:29:59.669227
+scraped: 2026-02-24T21:30:42.492789
 ---
 
 # Monitor service message processing
@@ -6754,7 +6183,7 @@ by: { timeframe, interval, `Service`, dt.smartscape.service }
 ---
 title: Capture request attributes based on method arguments
 source: https://www.dynatrace.com/docs/observe/application-observability/services/request-attributes/capture-request-attributes-based-on-method-arguments
-scraped: 2026-02-19T21:18:22.141664
+scraped: 2026-02-24T21:19:10.117064
 ---
 
 # Capture request attributes based on method arguments
@@ -6885,7 +6314,7 @@ The following limitations apply to deep object access:
 ---
 title: Capture request attributes based on web request data
 source: https://www.dynatrace.com/docs/observe/application-observability/services/request-attributes/capture-request-attributes-based-on-web-request-data
-scraped: 2026-02-19T21:18:18.066616
+scraped: 2026-02-24T21:19:11.446557
 ---
 
 # Capture request attributes based on web request data
@@ -6945,54 +6374,6 @@ Request attribute data sources for web requests include
 
   OneAgent is always required at capture.
 
-  Option
-
-  Request type
-
-  Capture side
-
-  Store side
-
-  **Capture on the client side of a web request service and store on the calling service**
-
-  Full-service call[1](#fn-1-1-def)
-
-  Client
-
-  Server
-
-  **Capture on server side of a web request service**
-
-  Full-service call
-
-  Server
-
-  Server
-
-  **Capture on the client side of a web request service**
-
-  External service call[2](#fn-1-2-def)
-
-  Client
-
-  Client
-
-  **Capture from both client and server side and store where found**
-
-  Full-service call
-
-  Server
-
-  Server
-
-  **Capture from both client and server side and store where found**
-
-  External service call
-
-  Client
-
-  Client
-
   1
 
   Full-service call: request that is fully monitored by Dynatrace.
@@ -7033,7 +6414,7 @@ Step 5 enables you to extract something from the resulting string based a [regul
 ---
 title: Filter monitoring data via request attributes
 source: https://www.dynatrace.com/docs/observe/application-observability/services/request-attributes/filter-monitoring-data-via-request-attributes
-scraped: 2026-02-19T21:18:25.524108
+scraped: 2026-02-24T21:19:07.660944
 ---
 
 # Filter monitoring data via request attributes
@@ -7083,7 +6464,7 @@ Once youâve defined your request attributes, they're listed in the related 
 ---
 title: Request attributes
 source: https://www.dynatrace.com/docs/observe/application-observability/services/request-attributes
-scraped: 2026-02-23T21:20:45.997251
+scraped: 2026-02-24T21:14:19.671360
 ---
 
 # Request attributes
@@ -7162,7 +6543,7 @@ The maximum number of request attributes that can be captured by OneAgent for a 
 ---
 title: Response time analysis
 source: https://www.dynatrace.com/docs/observe/application-observability/services/response-time-analysis
-scraped: 2026-02-23T21:19:42.829529
+scraped: 2026-02-24T21:14:40.038085
 ---
 
 # Response time analysis
@@ -7179,38 +6560,6 @@ Response time analysis in Dynatrace helps users quickly identify the key contrib
 This analysis is designed to be used both reactively, to investigate specific performance issues, and proactively, to explore potential bottlenecks. Users can also compare different timeframes to understand how the response time for services and their endpoints has changed over time.
 
 ## Key capabilities
-
-**Capability**
-
-**Description**
-
-Root cause identification
-
-Understand the main contributors to slow service requests, such as CPU heavy service execution, waiting for outbound calls, or heavy database queries.
-
-Advanced filtering
-
-Use filters to narrow down failures by attributes such as service, endpoint, and more. Timeframe filters allow users to isolate failures within specific periods or compare across time ranges.
-
-Response time trend chart
-
-Understand how the response time evolves over time or as a histogram distribution chart.
-
-Timeframe comparison
-
-Compare the response time between two timeframes to identify trends, assess the impact of changes, or validate fixes.
-
-Outbound calls
-
-Investigate the impact of downstream dependencies such as downstream services, or third-party APIs to the response time.
-
-Infrastructure perspective
-
-Gain insights into key metrics for related infrastructure components, helping to identify potential bottlenecks.
-
-Exploratory and contextual access
-
-Access response time analysis with or without predefined context. When accessed via the problems-specific drill-down options or from a specific service, filters are pre-applied. Users can also explore failures manually by adjusting filters.
 
 ## Access and navigation
 
@@ -7282,7 +6631,7 @@ Use response time analysis proactively to:
 ---
 title: Configure service failure detection
 source: https://www.dynatrace.com/docs/observe/application-observability/services/service-detection/service-detection-v1/configure-service-failure-detection
-scraped: 2026-02-22T21:10:44.641553
+scraped: 2026-02-24T21:18:58.368155
 ---
 
 # Configure service failure detection
@@ -7434,7 +6783,7 @@ On the service level, you can visualize the **Schema ID** by selecting **More** 
 ---
 title: Service detection rules
 source: https://www.dynatrace.com/docs/observe/application-observability/services/service-detection/service-detection-v1/customize-service-detection
-scraped: 2026-02-23T21:36:04.314019
+scraped: 2026-02-24T21:19:06.357660
 ---
 
 # Service detection rules
@@ -7497,26 +6846,6 @@ To define a new service detection rule via API
 1. Query the settings schema via the [GET a schema](/docs/dynatrace-api/environment-api/settings/schemas/get-schema "View a settings schema via the Dynatrace API.") callâit contains the information about parameters included in the settings object.
 
    The ID of schema depends on the request type, as summarized in the following table.
-
-   Request type
-
-   Schema ID
-
-   Full web request
-
-   [`builtin:service-detection.full-web-request`](/docs/dynatrace-api/environment-api/settings/schemas/builtin-service-detection-full-web-request "View builtin:service-detection.full-web-request settings schema table of your monitoring environment via the Dynatrace API.")
-
-   Full web service
-
-   [`builtin:service-detection.full-web-service`](/docs/dynatrace-api/environment-api/settings/schemas/builtin-service-detection-full-web-service "View builtin:service-detection.full-web-service settings schema table of your monitoring environment via the Dynatrace API.")
-
-   External web request
-
-   [`builtin:service-detection.external-web-request`](/docs/dynatrace-api/environment-api/settings/schemas/builtin-service-detection-external-web-request "View builtin:service-detection.external-web-request settings schema table of your monitoring environment via the Dynatrace API.")
-
-   External web service
-
-   [`builtin:service-detection.external-web-service`](/docs/dynatrace-api/environment-api/settings/schemas/builtin-service-detection-external-web-service "View builtin:service-detection.external-web-service settings schema table of your monitoring environment via the Dynatrace API.")
 2. Create a JSON object for your settings.
 
    Example JSON for a full web request rule
@@ -7688,8 +7017,6 @@ To define a new service detection rule via API
 
 ### Modify a rule
 
-
-
 When you modify a rule, some services might not be affected by it anymore. While historical data is available only for the previous service, all newly captured data is then associated with the new standalone service.
 
 via web UI
@@ -7709,26 +7036,6 @@ To update an existing rule via API
 1. Query the settings schema via the [GET a schema](/docs/dynatrace-api/environment-api/settings/schemas/get-schema "View a settings schema via the Dynatrace API.") callâit contains the information about parameters included in the settings object.
 
    The ID of schema depends on the request type, as summarized in the following table.
-
-   Request type
-
-   Schema ID
-
-   Full web request
-
-   [`builtin:service-detection.full-web-request`](/docs/dynatrace-api/environment-api/settings/schemas/builtin-service-detection-full-web-request "View builtin:service-detection.full-web-request settings schema table of your monitoring environment via the Dynatrace API.")
-
-   Full web service
-
-   [`builtin:service-detection.full-web-service`](/docs/dynatrace-api/environment-api/settings/schemas/builtin-service-detection-full-web-service "View builtin:service-detection.full-web-service settings schema table of your monitoring environment via the Dynatrace API.")
-
-   External web request
-
-   [`builtin:service-detection.external-web-request`](/docs/dynatrace-api/environment-api/settings/schemas/builtin-service-detection-external-web-request "View builtin:service-detection.external-web-request settings schema table of your monitoring environment via the Dynatrace API.")
-
-   External web service
-
-   [`builtin:service-detection.external-web-service`](/docs/dynatrace-api/environment-api/settings/schemas/builtin-service-detection-external-web-service "View builtin:service-detection.external-web-service settings schema table of your monitoring environment via the Dynatrace API.")
 2. Query the current configuration via the [GET objects](/docs/dynatrace-api/environment-api/settings/objects/get-objects "View multiple settings objects via the Dynatrace API.") call.
 3. Create a JSON object for your update. We recommend to use **updateToken** from previous objectâit ensures proper versioning of your settings.
 
@@ -7917,26 +7224,6 @@ To delete a rule via API
 
 1. Query the list of existing rules via the [GET objects](/docs/dynatrace-api/environment-api/settings/objects/get-objects "View multiple settings objects via the Dynatrace API.") call. Specify the schema of your request type in the **schemaIds** query parameter.
    The ID of schema depends on the request type, as summarized in the following table.
-
-   Request type
-
-   Schema ID
-
-   Full web request
-
-   [`builtin:service-detection.full-web-request`](/docs/dynatrace-api/environment-api/settings/schemas/builtin-service-detection-full-web-request "View builtin:service-detection.full-web-request settings schema table of your monitoring environment via the Dynatrace API.")
-
-   Full web service
-
-   [`builtin:service-detection.full-web-service`](/docs/dynatrace-api/environment-api/settings/schemas/builtin-service-detection-full-web-service "View builtin:service-detection.full-web-service settings schema table of your monitoring environment via the Dynatrace API.")
-
-   External web request
-
-   [`builtin:service-detection.external-web-request`](/docs/dynatrace-api/environment-api/settings/schemas/builtin-service-detection-external-web-request "View builtin:service-detection.external-web-request settings schema table of your monitoring environment via the Dynatrace API.")
-
-   External web service
-
-   [`builtin:service-detection.external-web-service`](/docs/dynatrace-api/environment-api/settings/schemas/builtin-service-detection-external-web-service "View builtin:service-detection.external-web-service settings schema table of your monitoring environment via the Dynatrace API.")
 2. Find the rule you want to delete, and copy its **objectId**.
 3. Delete the rule via the [DELETE an object](/docs/dynatrace-api/environment-api/settings/objects/del-object "Delete a settings object via the Dynatrace API.") call. Use the object ID obtained in the previous step.
 
@@ -8547,7 +7834,7 @@ When you create, edit, or delete a rule, data monitored after the change in serv
 ---
 title: Service naming rules
 source: https://www.dynatrace.com/docs/observe/application-observability/services/service-detection/service-detection-v1/customize-service-naming
-scraped: 2026-02-19T21:18:32.223054
+scraped: 2026-02-24T21:19:03.673121
 ---
 
 # Service naming rules
@@ -8594,12 +7881,238 @@ You can use [regular expressions](/docs/manage/tags-and-metadata/reference/regul
 
 ---
 
+## observe/application-observability/services/service-detection/service-detection-v1/enhanced-endpoints-sdv1.md
+
+---
+title: Leverage enhanced endpoints for SDv1
+source: https://www.dynatrace.com/docs/observe/application-observability/services/service-detection/service-detection-v1/enhanced-endpoints-sdv1
+scraped: 2026-02-24T21:28:03.124285
+---
+
+# Leverage enhanced endpoints for SDv1
+
+# Leverage enhanced endpoints for SDv1
+
+* Latest Dynatrace
+* How-to guide
+* 8-min read
+* Updated on Feb 24, 2026
+
+With the **Enhanced endpoints for Service Detection v1 (SDv1)** feature, you can get full endpoint visibility for SDv1 services. When this feature is turned on, all endpoints are shown in [![Services](https://dt-cdn.net/hub/logos/services.png "Services") **Services**](/docs/observe/application-observability/services/services-app "Maintain centralized control over service health, performance, and resources with the Services app.") without requiring you to configure [key requests](/docs/observe/application-observability/services/services-concepts#key-requests "Understand application observability, services, and distributed tracing concepts."). This is consistent with the behavior already in place for [SDv2](/docs/observe/application-observability/services/service-detection/service-detection-v2 "Find out how to detect, name, and split services from OpenTelemetry and OneAgent spans.") services.
+
+No endpoints are created for [external services](/docs/discover-dynatrace/get-started/glossary#glossary-externalservice "Get acquainted with Dynatrace terminology.") and for the following SDv1 service types: [Background activity services](/docs/observe/application-observability/services/service-detection/service-detection-v1/service-types#background-activity-services "Understand the different types of services that can be detected and monitored in your environment."), [Queue listener services](/docs/observe/application-observability/services/service-detection/service-detection-v1/service-types#queue-listener-services "Understand the different types of services that can be detected and monitored in your environment."), and Key value store.
+
+## Availability and state
+
+The availability and default state of the **Enhanced endpoints for SDv1** feature depend on when your Dynatrace environment was created.
+
+| Environment created in | Available in | Default | Possible to control? |
+| --- | --- | --- | --- |
+| Dynatrace version 1.329 and earlier | Dynatrace version 1.333+ | Off | Yes |
+| Dynatrace version 1.330 â Dynatrace version 1.332 | Dynatrace version 1.330+ | On | Yes |
+| Dynatrace version 1.333+ | Dynatrace version 1.330+ | On | No |
+
+## Benefits
+
+* **Complete endpoint visibility in ![Services](https://dt-cdn.net/hub/logos/services.png "Services") **Services****: Gain a complete list of endpoints for SDv1 services in ![Services](https://dt-cdn.net/hub/logos/services.png "Services") **Services**.
+
+  If you don't enable the **Enhanced endpoints for SDv1** feature, the **Endpoints** section in ![Services](https://dt-cdn.net/hub/logos/services.png "Services") **Services** either remains empty or only shows key requests.
+* **Improved service insights**: The list of endpoints enhances visibility into the service's behavior, enabling quick identification and resolution of issues.
+* **Dedicated metrics for endpoints**: Detected endpoints feature [dedicated metrics](#metrics), which you can add to [dashboards](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.") and analyze for long-term endpoint history.
+
+## Endpoint metrics
+
+When the **Enhanced endpoints for SDv1** feature is turned on, Dynatrace starts collecting metrics for all detected endpoints of an SDv1 service in Grail.
+
+The following metrics are collected for each endpoint:
+
+* Failure count
+* Response time
+* Throughput
+
+These endpoint metrics are available not only in ![Services](https://dt-cdn.net/hub/logos/services.png "Services") **Services** but also in other Dynatrace apps, such as [![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.") or [![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.").
+
+## Enable enhanced endpoints for SDv1
+
+You can activate the **Enhanced endpoints for SDv1** feature for the entire environment or for a specific host group, Kubernetes namespace, and cluster.
+
+Environment
+
+1. Go to ![Settings](https://dt-cdn.net/images/settings-icon-256-38e1321b51.webp "Settings") **Settings** > **Process and contextualize** > **Services**.
+2. Under **Service detection v1**, select **Enhanced endpoints for SDv1**.
+3. Turn on **Enable enhanced endpoints for SDv1**.
+4. Recommended Turn on **Resolve request attributes for SDv1 request naming rules**. For details, see [Request attribute values in SDv1 endpoint names](#request-attribute-values-in-endpoint-names).
+
+Host group
+
+1. Go to ![Deployment Status](https://dt-cdn.net/images/deploy-status-512-c91e319ae5.png "Deployment Status") **Deployment Status** > **OneAgents**.
+2. On the **OneAgent deployment** page, turn off **Show new OneAgent deployments**.
+3. In the **Filter by** field, enter **Host group**, and then select the host group you want to configure from the dropdown list.
+
+   The host list is now filtered by the selected host group. Each listed host has a **Host group:** `<group name>` link, where `<group name>` is the name of the host group that you want to configure.
+
+   The **Host group** property is not displayed when the selected host doesn't belong to any host group.
+4. Select the host group name in any row.
+
+   As you have filtered by host group, all displayed hosts go to the same host group.
+
+5. Close the overlay with the host group settings.
+6. Go to **Process and contextualize** > **Services** > **Enhanced endpoints for SDv1**.
+7. Turn on **Enable enhanced endpoints for SDv1**.
+8. Recommended Turn on **Resolve request attributes for SDv1 request naming rules**. For details, see [Request attribute values in SDv1 endpoint names](#request-attribute-values-in-endpoint-names).
+
+Kubernetes namespace or cluster
+
+1. Go to ![Kubernetes (new)](https://dt-cdn.net/images/kubernetes-new-1024-45d3de15d1.webp "Kubernetes (new)") **Kubernetes**.
+2. Select the required namespace or cluster.
+3. In the upper-right corner of the namespace or cluster details pane, select  (**Actions menu**) > **Service detection settings**.
+4. Go to **Process and contextualize** > **Services** > **Enhanced endpoints for SDv1**.
+5. Turn on **Enable enhanced endpoints for SDv1**.
+6. Recommended Turn on **Resolve request attributes for SDv1 request naming rules**. For details, see [Request attribute values in SDv1 endpoint names](#request-attribute-values-in-endpoint-names).
+
+Settings page not available for all environments
+
+The **Enhanced endpoints for SDv1** settings page is not available for the environments created in Dynatrace version 1.333+.
+
+Endpoint names changed
+
+Enabling the **Enhanced endpoints for SDv1** feature changes some request names and their associated endpoint names. For this reason, your existing API metric queries, dashboards, and configured alerts for the changed endpoints might be impacted, so you should reconfigure them. See [Changes to endpoint names](#changes-to-endpoint-names) for the details.
+
+## View service endpoints
+
+Service endpoints as well as the [related metrics](#metrics) are displayed in ![Services](https://dt-cdn.net/hub/logos/services.png "Services") **Services**, in the **Endpoints** section.
+
+1. Go to ![Services](https://dt-cdn.net/hub/logos/services.png "Services") **Services** > **Explorer**.
+2. Find and select the service for which you want to explore the endpoints.
+3. On the **Overview** tab, scroll down to the **Endpoints** section.
+
+From there, you can view the service endpoints, check the related endpoint metrics, view traces for each endpoint, and more. Select  (**Actions menu**) for the endpoint to view the available options.
+
+![Services app showing the Endpoints section with four different endpoints and their metrics](https://dt-cdn.net/images/service-app-endpoints-section-3840-6f62930eb6.png)
+
+Edit auto-detected endpoints
+
+Dynatrace auto-detects endpoints for your services. However, you can edit the detected endpoints, for example, to monitor a specific HTTP path that was not caught by the default endpoint detection rules.
+
+To modify auto-detected endpoints, create custom [request naming rules](/docs/observe/application-observability/services/service-detection/service-detection-v1/set-up-request-naming#create-request-naming-rule "Adjust request naming and define the operations your services offer.").
+
+Identify services with most endpoints
+
+Use the **Endpoint Cardinality Dashboard** to see which services have the most endpoints and act accordingly. For more information, see [Dashboard with endpoint-heavy services](#dashboard-endpoint-heavy-service).
+
+## Dashboard with endpoint-heavy services
+
+
+
+The **Endpoint Cardinality Dashboard** displays services with the most endpoints (SDv1 and SDv2 services).
+
+This dashboard allows you to quickly identify endpoint-heavy services for which you could adjust the [request naming rules (SDv1)](/docs/observe/application-observability/services/service-detection/service-detection-v1/set-up-request-naming "Adjust request naming and define the operations your services offer.") or [endpoint detection rules (SDv2)](/docs/observe/application-observability/services/service-detection/service-detection-v2/endpoint-detection-v2 "Find out how to detect endpoints that are entry points into your service.").
+
+To view services with the most endpoints
+
+1. Go to ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**.
+2. In the **Dashboards** panel on the left, select  **All dashboards**.
+3. In **Search by name**, enter **Endpoint Cardinality Dashboard**.
+4. Select the dashboard to open it.
+
+To display additional endpoint-heavy services, [duplicate this dashboard](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new#dashboards-duplicate "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.") and edit the DQL query behind the service list (for example, change `100` in `limit 100` to the required value). Alternatively, you can add this query to [![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.") and modify it there.
+
+## Changes to endpoint names
+
+Enabling the **Enhanced endpoints for SDv1** feature changes some request names and their associated endpoint names. Check the flowchart and textual description below for the details.
+
+Pre-existing key requests and request naming rules remain in effect
+
+For all service types, the already existing [key requests](/docs/observe/application-observability/services-classic/monitor-key-requests "Discover how to closely monitor requests that are critical to your business.") and [request naming rules](/docs/observe/application-observability/services/service-detection/service-detection-v1/set-up-request-naming "Adjust request naming and define the operations your services offer.") continue to apply.
+
+If you have set up key requests, the associated endpoints have the same names as their key requests. If you have configured request naming rules, they are also applied to the related endpoint names.
+
+![Diagram - Changes to endpoint names](https://dt-cdn.net/images/enhanced-endpoints-sdv1-changes-to-endpoint-names-6993-563d8740fc.png)
+
+When the **Enhanced endpoints for SDv1** feature is on, some endpoint names for [web request services](/docs/observe/application-observability/services/service-detection/service-detection-v1/service-types#web-request-service "Understand the different types of services that can be detected and monitored in your environment.") and other service types are changed. This depends on whether there's an associated [request naming rule](/docs/observe/application-observability/services/service-detection/service-detection-v1/set-up-request-naming "Adjust request naming and define the operations your services offer.") and whether [volatile placeholder attributes](#volatile-placeholder-attributes) are used in these rules.
+
+1
+
+For example, if the spans have no `{http.route}`, the endpoint name is `GET /*`.
+
+2
+
+For example, the `{HTTP-Method} - {Request:IsKeyRequest} - user authentication endpoint` template results in the `GET - yes - user authentication endpoint` endpoint name. Note that both `{HTTP-Method}` and `{Request:IsKeyRequest}` are replaced with their corresponding values (that is, `GET` and `yes`), as these are non-volatile placeholder attributes.
+
+3
+
+For example, the `{HTTP-Method} - {URL} - user authentication endpoint` template results in the `GET - {URL} - user authentication endpoint` endpoint name. Note that `{HTTP-Method}` (non-volatile placeholder attribute) is replaced with `GET` , while `{URL}` (volatile placeholder attribute) is not replaced and is used as is.
+
+You can modify endpoint names by creating [custom naming rules](/docs/observe/application-observability/services/service-detection/service-detection-v1/set-up-request-naming#create-request-naming-rule "Adjust request naming and define the operations your services offer.").
+
+### Volatile placeholder attributes
+
+The volatile placeholder attributes are as follows:
+
+* `{OneAgentAttribute:}` except `http.route`
+* `{Relative-URL}`
+* `{URL:Path}`
+* `{URL:Query}`
+* `{URL}`
+* Customer-defined patterns based on one of the above-stated patterns
+
+### Required actions
+
+As some request names and their associated endpoint names change after you enable the **Enhanced endpoints for SDv1** feature, your existing API metric queries, dashboards, and configured alerts for the changed endpoints might be impacted. For this reason, you should reconfigure the affected entities.
+
+## Request attribute values in SDv1 endpoint names
+
+When the **Resolve request attributes for SDv1 request naming rules** feature is turned on, the `{RequestAttribute:_}` non-volatile placeholder attribute (used in [SDv1 request naming rules](/docs/observe/application-observability/services/service-detection/service-detection-v1/set-up-request-naming "Adjust request naming and define the operations your services offer.")) is replaced with the corresponding value, resulting in endpoints that contain explicit request attribute values.
+
+This is the standard behavior, and we recommend turning on the **Resolve request attributes for SDv1 request naming rules** feature when it's not activated by default. This way, you can see separate endpoints per request attribute value. To verify your setup, see [Enable enhanced endpoints for SDv1](#enable-enhanced-endpoints).
+
+The availability and default state of the **Resolve request attributes for SDv1 request naming rules** feature depend on when your Dynatrace environment was created.
+
+| Environment created in | Available in | Default | Possible to control? |
+| --- | --- | --- | --- |
+| Dynatrace version 1.333+ | Dynatrace version 1.333+ | On | No |
+| Dynatrace version 1.332 and earlier | Dynatrace version 1.333+ | Off | Yes |
+
+Highâcardinality request attributes
+
+If your requests contain highâcardinality request attributes and you've used the `{RequestAttribute:_}` placeholder attribute in request naming rules, you might get an excessive number of endpoints. In this case, deactivating the **Resolve request attributes for SDv1 request naming rules** feature should solve this issue. Complete the instructions in [Enable enhanced endpoints for SDv1](#enable-enhanced-endpoints), but turn off **Resolve request attributes for SDv1 request naming rules**.
+
+## Static resource requests
+
+Static resource requests include `Image`, `Binary`, `CSS`, and `JavaScript`.
+
+When the **Enhanced endpoints for SDv1** feature is turned on, all static resource requests are unmuted and grouped into a single **Static resources** endpoint that has the same [metrics](#metrics) as other regular endpoints.
+
+However, you can mute your static resource requests.
+
+Whether the **Static resources** endpoint is muted or not, you can always go to [![Distributed Tracing](https://dt-cdn.net/images/distributed-tracing-4ed13d1274.svg "Distributed Tracing") **Distributed Tracing**](/docs/observe/application-observability/distributed-tracing/distributed-tracing-app "Discover the functionalities of the new Distributed Tracing app.") to view and analyze spans like CSS, images, or binary.
+
+### Mute static resource requests
+
+To mute static resource requests, follow the steps described in [Mute monitoring of service requests](/docs/observe/application-observability/services/service-detection/service-detection-v1/service-monitoring-mute "Mute the monitoring of certain service requests so that you can focus on the performance of requests that affect your customers.").
+
+After you mute your static resource requests, the **Static resources** endpoint is not displayed in the endpoint list in ![Services](https://dt-cdn.net/hub/logos/services.png "Services") **Services**, and these requests don't count toward the overall service metrics.
+
+### Manage resource request detection
+
+You can add or edit filename extensions that count towards the **Static resources** endpoint. For details, see [Configure resource request detection](/docs/observe/application-observability/services/service-detection/service-detection-v1/set-up-request-naming#resource-request-detection "Adjust request naming and define the operations your services offer.").
+
+Your existing configuration for resource request detection is still applicable, so if you have already added additional filename extensions, the corresponding requests should also become a part of the **Static resources** endpoint.
+
+## Licensing considerations
+
+When you activate the **Enhanced endpoints for SDv1** feature, Dynatrace starts collecting [metrics](#metrics) for a larger set of distinct endpoint names. For example, separate metrics are collected for endpoints `A`, `B`, `C`, and `D` instead of a single aggregated `NON_KEY_REQUEST` entry.
+
+This richer "endpoint name" dimension provides significantly better visibility into service behavior and troubleshooting. It also means that more individual metric datapoints are stored in Grail and contribute to your overall [metrics consumption](/docs/license/capabilities/metrics "Learn how Dynatrace Metrics powered by Grail consumption is calculated using the Dynatrace Platform Subscription model."), while providing additional insight into your services.
+
+---
+
 ## observe/application-observability/services/service-detection/service-detection-v1/service-types/opaque-services.md
 
 ---
 title: Opaque services
 source: https://www.dynatrace.com/docs/observe/application-observability/services/service-detection/service-detection-v1/service-types/opaque-services
-scraped: 2026-02-23T21:19:13.026690
+scraped: 2026-02-24T21:16:21.089316
 ---
 
 # Opaque services
@@ -8652,7 +8165,7 @@ There can be cases where a service is considered opaque even when the service is
 ---
 title: Unified services
 source: https://www.dynatrace.com/docs/observe/application-observability/services/service-detection/service-detection-v1/service-types/unified-service
-scraped: 2026-02-20T21:28:16.331683
+scraped: 2026-02-24T21:33:43.902129
 ---
 
 # Unified services
@@ -8698,7 +8211,7 @@ For details, see the [Service Detection V2 (SDv2) Overviewï»¿](https://dt-url
 ---
 title: Set up request naming
 source: https://www.dynatrace.com/docs/observe/application-observability/services/service-detection/service-detection-v1/set-up-request-naming
-scraped: 2026-02-23T21:37:33.973842
+scraped: 2026-02-24T21:19:00.849897
 ---
 
 # Set up request naming
@@ -8707,7 +8220,7 @@ scraped: 2026-02-23T21:37:33.973842
 
 * How-to guide
 * 7-min read
-* Updated on Jan 21, 2026
+* Updated on Feb 24, 2026
 
 You can use request naming rules to adjust how your requests are tracked and to define service entry and endpoints in your customer-facing workflow. With such end-to-end tracing, you can easily recognize and monitor important business transactions that are critical to the success of your digital business.
 
@@ -8734,10 +8247,27 @@ Because request naming rules produce distinct service requests, each request is 
 
 The first step in setting up clear naming for your service (web) requests is to create request naming rules with conditions that define how they appear in your environment.
 
-1. Go to ![Services Classic](https://dt-cdn.net/images/services-classic-f58502bd22.svg "Services Classic") **Services Classic** and select the service you want to configure.
-2. Select **More** (**â¦**) > **Settings**.
-3. On the **Service settings** page, go to the **Request naming rules** (or **Web request naming rules**) and select **Add rule**.
-4. Define a set of conditions that represent the criteria of your service operations.
+To create a request naming rule for your service
+
+1. Navigate to the (web) request naming settings page:
+
+   Latest Dynatrace, option 1
+
+   Latest Dynatrace, option 2
+
+   Dynatrace Classic
+
+   1. Go to ![Services](https://dt-cdn.net/hub/logos/services.png "Services") **Services** and select the service you want to configure.
+   2. In the upper-right corner of the service overview pane, select  (**Actions menu**) >  **Settings**, and go to **Request naming** or **Web request naming**.
+
+   1. Go to ![Services](https://dt-cdn.net/hub/logos/services.png "Services") **Services** and select the service you want to configure.
+   2. On the **Overview** tab, scroll down to the **Endpoints** section.
+   3. In the **Endpoints** section header, select  (**Actions menu**) >  **Configure request naming**.
+
+   1. Go to ![Services Classic](https://dt-cdn.net/images/services-classic-f58502bd22.svg "Services Classic") **Services Classic** and select the service you want to configure.
+   2. Select **More** (**â¦**) > **Settings**, and go to **Request naming** or **Web request naming**.
+2. Select **Add rule**.
+3. Define a set of conditions that represent the criteria of your service operations.
 
    You can use anything from request headers to code-level method argument values to identify specific requests. All requests that match the specified criteria will be named based on the defined naming pattern.
 
@@ -8752,7 +8282,7 @@ The first step in setting up clear naming for your service (web) requests is to 
    All requests matching **all** the specified criteria will be named based on the defined naming pattern `PAYMENT`.
 
    ![Add request naming rule - example](https://dt-cdn.net/images/example-naming-rule-2006-1ef0fc7a46.png)
-5. Select **Save**.
+4. Select **Save**.
 
 ## Global request naming rules
 
@@ -8767,7 +8297,7 @@ Dynatrace automatically detects resource requests based on the file extension an
 * JavaScript
 * Binaries
 
-When the **Enhanced endpoints for SDv1** feature is turned on, all static resource requests are grouped into a single **Static resources** endpoint. See [Static resource requests](/docs/observe/application-observability/services/enhanced-endpoints-sdv1#resource-requests "Utilize the Enhanced endpoints for SDv1 feature to gain deeper insights into your application's performance and improve your ability to monitor and troubleshoot service interactions.") for more details.
+When the **Enhanced endpoints for SDv1** feature is turned on, all static resource requests are grouped into a single **Static resources** endpoint. See [Static resource requests](/docs/observe/application-observability/services/service-detection/service-detection-v1/enhanced-endpoints-sdv1#resource-requests "Utilize the Enhanced endpoints for SDv1 feature to gain deeper insights into your application's performance and improve your ability to monitor and troubleshoot service interactions.") for more details.
 
 If Dynatrace doesn't automatically detect one of your application's images or binaries, you can add the missing filename extensions. You can configure these settings for the entire environment or for a specific service.
 
@@ -8825,6 +8355,8 @@ By constructing your service entry and end points in this way for Dynatrace moni
 
 ### Cleanup rules
 
+
+
 Service-level rules and settings, including web request services clean URL rules, override global request naming rules.
 
 * You can define global request naming rules through the API to clean up the URLs of one or more services at the time.
@@ -8836,7 +8368,7 @@ Accessing **Service settings** > **Web request naming**, you can:
 
   This action normalizes URL paths containing UUIDs, IP addresses, and IBANs by replacing specific values with content-related static strings, such as `UUID`, `IPv4`, and `IBAN`.
 
-  This option is not available for environments where the [**Enhanced endpoints for SDv1** feature](/docs/observe/application-observability/services/enhanced-endpoints-sdv1 "Utilize the Enhanced endpoints for SDv1 feature to gain deeper insights into your application's performance and improve your ability to monitor and troubleshoot service interactions.") is enabled.
+  This option is not available for environments where the [**Enhanced endpoints for SDv1** feature](/docs/observe/application-observability/services/service-detection/service-detection-v1/enhanced-endpoints-sdv1 "Utilize the Enhanced endpoints for SDv1 feature to gain deeper insights into your application's performance and improve your ability to monitor and troubleshoot service interactions.") is enabled.
 * **Create clean URL rule**.
 
   Define the [regular expressions](/docs/manage/tags-and-metadata/reference/regular-expressions-in-dynatrace "Learn how to use regular expressions in the context of Dynatrace.") to remove parts of a web request service URL path, such as IDs.
@@ -8844,8 +8376,6 @@ Accessing **Service settings** > **Web request naming**, you can:
 Custom service request names are never masked.
 
 ### Preview
-
-
 
 You can modify a request naming rule or combine them to create even more fine-grained request names. **Preview Rule** shows the output of the new request naming rule.
 
@@ -8911,7 +8441,7 @@ While this has been possible using request attributes alone, request naming make
 ---
 title: Service Detection v1
 source: https://www.dynatrace.com/docs/observe/application-observability/services/service-detection/service-detection-v1
-scraped: 2026-02-23T21:20:54.038815
+scraped: 2026-02-24T21:14:18.356073
 ---
 
 # Service Detection v1
@@ -9236,7 +8766,7 @@ It's not possible to delete built-in rules, however you can deactivate built-in 
 ---
 title: Customize failure detection in Service Detection v2
 source: https://www.dynatrace.com/docs/observe/application-observability/services/service-detection/service-detection-v2/failure-detection-v2
-scraped: 2026-02-21T21:19:08.288982
+scraped: 2026-02-24T21:24:19.963307
 ---
 
 # Customize failure detection in Service Detection v2
@@ -9274,26 +8804,6 @@ Failure detection consists of:
 
 Dynatrace provides default failure detection rulesets and rules.
 Additionally, you can add custom rulesets and rules as described in [Create new ruleset](/docs/observe/application-observability/services/service-detection/service-detection-v2/failure-detection-v2#create-new-ruleset "Find out how to detect failed requests within services.").
-
-Condition
-
-Failure reason
-
-`span.status_code` is `ERROR`
-
-Based on span status
-
-`http.response.status_code` is `5xx` (server-side error)
-
-The HTTP error status code
-
-`rpc.grpc.status_code` is `2`, `4`, `12`, `13`, `14`, or `15` (that is, a server-side error code).
-
-The gRPC error status code
-
-Exited by exception
-
-The exception itself
 
 A request is considered successful if no failure detection rule matches.
 
@@ -9441,7 +8951,7 @@ You can delete only custom rulesets and rules, not the built-in ones.
 ---
 title: Customize service detection in Service Detection v2
 source: https://www.dynatrace.com/docs/observe/application-observability/services/service-detection/service-detection-v2/service-detection-v2
-scraped: 2026-02-22T21:24:24.318322
+scraped: 2026-02-24T21:34:01.966608
 ---
 
 # Customize service detection in Service Detection v2
@@ -9474,42 +8984,6 @@ Dynatrace provides several default service detection rules.
 Additionally, custom rules can be created as described in [Create new rule](/docs/observe/application-observability/services/service-detection/service-detection-v2/service-detection-v2#create-new-rule "Find out how to detect services based on OpenTelemetry resource attributes.").
 
 Any future default rule changes will be opt-in: new rules will be shipped as disabled; you can choose whether to activate them.
-
-Priority
-
-Condition
-
-Service name
-
-1
-
-`adobe.em.tier`, `adobe.em.env_type`, `adobe.em.program` attributes present
-
-`aem-{adobe.em.tier}-{adobe.em.env_type}-{adobe.em.program}`
-
-2
-
-`k8s.workload.name` attribute present
-
-`{k8s.workload.name}`
-
-3
-
-`dt.kubernetes.workload.name` attribute present
-
-`{dt.kubernetes.workload.name}`
-
-4
-
-`istio.canonical_service` attribute present
-
-`{istio.canonical_service}`
-
-5
-
-`service.name` attribute present
-
-`{service.name}`
 
 The service ID is a unique identifier, such as `SERVICE-649B4E44CBA804F4`, that is the result of hashing the attribute values that are used as part of the name pattern, additional service detection attributes, and [service splitting attributes](/docs/observe/application-observability/services/service-detection/service-detection-v2/service-splitting-v2 "Find out how to split detected services based on resource attributes."), when applicable.
 
@@ -9737,7 +9211,7 @@ It's not possible to delete built-in rules, however you can deactivate built-in 
 ---
 title: Configure URL path pattern matching in Service Detection v2
 source: https://www.dynatrace.com/docs/observe/application-observability/services/service-detection/service-detection-v2/url-pattern-matching-v2
-scraped: 2026-02-23T21:24:57.536319
+scraped: 2026-02-24T21:25:29.421870
 ---
 
 # Configure URL path pattern matching in Service Detection v2
@@ -9798,40 +9272,12 @@ The following characters or values are possible in the URL path patterns. Use th
 * Copied as-is to the output.
 * Use for fixed path parts that never change.
 
-URL pattern
-
-URL path
-
-Resulting endpoint
-
-`/api/orders`
-
-`/api/orders`
-
-`/api/orders`
-
 ### Placeholder `{placeholder-name}`
 
 * Represented by a placeholder name in curly braces, for example, `{id}` or `{date}`.
 * Matches exactly one path segment.
 * Replaced with a placeholder name in curly braces.
 * Use to hide dynamic path values, for example, IDs, UUIDs, or timestamps.
-
-URL pattern
-
-URL path
-
-Resulting endpoint
-
-`/api/orders/{id}`
-
-`/api/orders/1234`
-
-`/api/orders/abcd`
-
-`/api/orders/{id}`
-
-`/api/orders/{id}`
 
 ### Variable segments `_`
 
@@ -9840,44 +9286,12 @@ Resulting endpoint
 * Replaced with the original segment value.
 * Use when the segment should remain visible, for example, for versioned APIs where the version should remain visible.
 
-URL pattern
-
-URL path
-
-Resulting endpoint
-
-`/api/_/orders`
-
-`/api/v1/orders`
-
-`/api/v2/orders`
-
-`/api/v1/orders`
-
-`/api/v2/orders`
-
 ### Catch-all `*`
 
 * Represented by an asterisk `*`.
 * Matches zero or more trailing segments. Must be the last token in the URL pattern.
 * Replaced with `*`.
 * Use when matching any remaining path segments.
-
-URL pattern
-
-URL path
-
-Resulting endpoint
-
-`/internal/*`
-
-`/internal/service`
-
-`/internal/service/operation/extra`
-
-`/internal/*`
-
-`/internal/*`
 
 ## Configure URL pattern matching
 
@@ -9934,58 +9348,6 @@ The **URL pattern matching** feature is particularly useful for the following us
 * Internal APIs with deep paths
 * Mixed depth paths
 
-Use case
-
-URL pattern
-
-URL path
-
-Resulting endpoint
-
-Nginx reverse proxy routing
-
-`/api/_/_/{id}`
-
-`/api/v1/users/john`
-
-`/api/v2/users/jack`
-
-`/api/v1/users/{id}`
-
-`/api/v2/users/{id}`
-
-API versioning patterns
-
-`/api/_/_/{id}`
-
-`/api/v1/orders/123456789`
-
-`/api/v2/orders/987654321`
-
-`/api/v1/orders/{id}`
-
-`/api/v2/orders/{id}`
-
-Mixed depth paths
-
-`/blog/_/_/*`
-
-`/blog/2024/11/my-post.md`
-
-`/blog/2024/12/my-holiday.md`
-
-`/blog/2026/01/15/my-thoughts.md`
-
-`/blog/2026/02/05/my-memories.md`
-
-`/blog/2024/11/*`
-
-`/blog/2024/12/*`
-
-`/blog/2026/01/*`
-
-`/blog/2026/02/*`
-
 ## Related topics
 
 * [Customize endpoint detection in Service Detection v2](/docs/observe/application-observability/services/service-detection/service-detection-v2/endpoint-detection-v2 "Find out how to detect endpoints that are entry points into your service.")
@@ -9997,7 +9359,7 @@ Mixed depth paths
 ---
 title: Service Detection v2
 source: https://www.dynatrace.com/docs/observe/application-observability/services/service-detection/service-detection-v2
-scraped: 2026-02-19T21:18:36.664478
+scraped: 2026-02-24T21:19:04.996103
 ---
 
 # Service Detection v2
@@ -10055,7 +9417,7 @@ SDv2 behavior can be configured via:
 ---
 title: Services app
 source: https://www.dynatrace.com/docs/observe/application-observability/services/services-app
-scraped: 2026-02-23T21:18:53.427103
+scraped: 2026-02-24T21:13:35.886487
 ---
 
 # Services app
@@ -10211,7 +9573,7 @@ Get a hands-on experience with ![Services](https://dt-cdn.net/hub/logos/services
 ---
 title: Service-related concepts
 source: https://www.dynatrace.com/docs/observe/application-observability/services/services-concepts
-scraped: 2026-02-23T21:19:44.084875
+scraped: 2026-02-24T21:14:42.683392
 ---
 
 # Service-related concepts
@@ -10265,7 +9627,7 @@ Key requests are requests requiring special attention (critical business measure
 
 Switch to Enhanced endpoints for SDv1
 
-Instead of [defining key requests](/docs/observe/application-observability/services-classic/monitor-key-requests "Discover how to closely monitor requests that are critical to your business.") for SDv1 services, we strongly recommend enabling the [**Enhanced endpoints for SDv1** feature](/docs/observe/application-observability/services/enhanced-endpoints-sdv1 "Utilize the Enhanced endpoints for SDv1 feature to gain deeper insights into your application's performance and improve your ability to monitor and troubleshoot service interactions.") that allows showing all endpoints in ![Services](https://dt-cdn.net/hub/logos/services.png "Services") **Services**, not just key requests.
+Instead of [defining key requests](/docs/observe/application-observability/services-classic/monitor-key-requests "Discover how to closely monitor requests that are critical to your business.") for SDv1 services, we strongly recommend enabling the [**Enhanced endpoints for SDv1** feature](/docs/observe/application-observability/services/service-detection/service-detection-v1/enhanced-endpoints-sdv1 "Utilize the Enhanced endpoints for SDv1 feature to gain deeper insights into your application's performance and improve your ability to monitor and troubleshoot service interactions.") that allows showing all endpoints in ![Services](https://dt-cdn.net/hub/logos/services.png "Services") **Services**, not just key requests.
 
 ## Errors, exceptions, and failures
 
@@ -10280,7 +9642,7 @@ Instead of [defining key requests](/docs/observe/application-observability/servi
 ---
 title: Monitor key requests
 source: https://www.dynatrace.com/docs/observe/application-observability/services-classic/monitor-key-requests
-scraped: 2026-02-23T21:39:50.902698
+scraped: 2026-02-24T21:28:51.225773
 ---
 
 # Monitor key requests
@@ -10295,29 +9657,13 @@ Switch to Enhanced endpoints for SDv1
 
 Setting up key requests is not available for environments created in Dynatrace version 1.330+.
 
-Instead of defining key requests as described on this page, we strongly recommend enabling the [**Enhanced endpoints for SDv1** feature](/docs/observe/application-observability/services/enhanced-endpoints-sdv1 "Utilize the Enhanced endpoints for SDv1 feature to gain deeper insights into your application's performance and improve your ability to monitor and troubleshoot service interactions.") that allows showing all endpoints in [![Services](https://dt-cdn.net/hub/logos/services.png "Services") **Services**](/docs/observe/application-observability/services/services-app "Maintain centralized control over service health, performance, and resources with the Services app."), not just key requests.
+Instead of defining key requests as described on this page, we strongly recommend enabling the [**Enhanced endpoints for SDv1** feature](/docs/observe/application-observability/services/service-detection/service-detection-v1/enhanced-endpoints-sdv1 "Utilize the Enhanced endpoints for SDv1 feature to gain deeper insights into your application's performance and improve your ability to monitor and troubleshoot service interactions.") that allows showing all endpoints in [![Services](https://dt-cdn.net/hub/logos/services.png "Services") **Services**](/docs/observe/application-observability/services/services-app "Maintain centralized control over service health, performance, and resources with the Services app."), not just key requests.
 
 *Key requests* are requests that need special attention, either because they're a critical measure of the success of your business (for example, a login request or a shopping-cart checkout request) or because they provide vital technical functionality that your application relies on.
 
 * Key requests feature [dedicated metrics](/docs/analyze-explore-automate/metrics-classic/built-in-metrics#key-requests "Explore the complete list of built-in Dynatrace metrics.") that you can manage via the web UI or [API](#manage-api). You can create dedicated dashboard tiles for charting key requests, with direct access from your dashboard, and analyze key request long-term metric history in [request charts](/docs/observe/application-observability/services-classic#request-charting "Learn about Dynatrace's classic service monitoring").
 * Alerting is always enabled for key requests, even when they contribute less than 1% of throughput. They also provide custom thresholds.
 * Data retention periods of key requests are maintained as follows:
-
-  Data type
-
-  Retention period
-
-  [Detailed code-level data](/docs/manage/data-privacy-and-security/data-privacy/data-retention-periods#purepath "Check retention times for various data types.")
-
-  10 days
-
-  [Aggregated code-level data](/docs/manage/data-privacy-and-security/data-privacy/data-retention-periods#request-attributes "Check retention times for various data types.")
-
-  35 days
-
-  [Long-term metric history](/docs/manage/data-privacy-and-security/data-privacy/data-retention-periods#metrics-classic "Check retention times for various data types.")
-
-  5 years
 
 Key requests are highlighted in **Key requests/endpoints** of each service overview page. This visibility is particularly valuable for low-volume, high-importance requests that would otherwise appear at the bottom of **Top requests**.
 
@@ -10498,7 +9844,7 @@ Follow the steps below to create a new key request configuration. Note that this
 ---
 title: Response time distribution and outlier analysis
 source: https://www.dynatrace.com/docs/observe/application-observability/services-classic/response-time-distribution-and-outlier-analysis
-scraped: 2026-02-19T21:18:29.568443
+scraped: 2026-02-24T21:18:37.286345
 ---
 
 # Response time distribution and outlier analysis
@@ -10772,7 +10118,7 @@ Contains a list of [logs](/docs/analyze-explore-automate/logs "Log Management an
 ---
 title: Service analysis timings
 source: https://www.dynatrace.com/docs/observe/application-observability/services-classic/service-analysis-timing
-scraped: 2026-02-23T21:20:30.191036
+scraped: 2026-02-24T21:13:48.036999
 ---
 
 # Service analysis timings
@@ -10792,167 +10138,6 @@ Service analysis operates with many different timings, describing the behavior o
 
 Regardless of which analysis you're running, it is not guaranteed that you'll see all of the timings listed here. The actual timings you see depend completely on how you're running your services. For example, if the distributed trace runs completely on one host without any networking involved, you won't see any network-related times.
 
-Time
-
-Appears in
-
-Description
-
-Response time
-
-DT  
-SF
-
-The total execution time of the first node of a distributed trace.
-
-* Server side The time between moments when the distributed trace is started on the server side and when the response is sent back to the client.
-* Client side The time between moments when the client triggers the request and receives the response.
-
-Response time
-
-RT
-
-The total execution time of the method.
-
-* Server side The processing time of the method.
-* Client side The time between moments when the client triggers the request and receives the response.
-
-Processing time
-
-DT  
-RT
-
-The duration of the distributed trace from start to end.
-
-It is the *wall-clock time* (difference between start and end time), not the sum of all asynchronous executions.
-
-Execution time
-
-RT
-
-The total time taken to execute the code.
-
-It is the **sum of all asynchronous executions**, so it might be longer than the processing time.
-
-Suspension
-
-DT  
-RT
-
-The time during which any code execution is halted. It is usually caused by garbage collection.
-
-Wait time
-
-DT
-
-The time during which the code actively waits for something (for example, `Object.wait()` or a similar functionality).
-
-Lock wait
-
-RT
-
-The time during which the code is blocked. It usually caused by wait time prior to entry into a synchronized code block or by wait time to acquire a spinlock.
-
-Active wait
-
-RT
-
-The time during which the code in *this node* is waiting for something. The wait caused by child calls is not included.
-
-Lock time
-
-DT
-
-The time during which the code is blocked by waiting for a synchronous code block.
-
-Network I/O
-
-DT  
-RT
-
-The time during which the code is actively waiting for *native* network functions (for example, `java.net.SocketInputStream.socketRead0`).
-
-For response time analysis, the wait caused by child calls is not included.
-
-Disk I/O
-
-DT  
-RT
-
-The time during which the code is actively reading from or writing to a disk or waiting for disk input/output.
-
-For response time analysis, the wait caused by child calls is not included.
-
-Total I/O
-
--
-
-In a node, this is **the sum of Network I/O and Disk I/O**.
-
-When these metrics aren't available, and if the node is the direct parent of a synchronously invoked child service that isn't a custom service, the node Total I/O can be estimated as **the node Duration minus the node CPU Self time**.
-
-CPU time
-
-DT  
-RT
-
-The time during which the CPU executes code related to the distributed trace. The measurement is provided by OneAgent.
-
-Self time
-
-DT  
-RT
-
-The processing time of a particular node in the distributed trace.
-
-Other
-
-DT
-
-Any unclassified fraction of the self time.
-
-Elapsed time
-
-DT
-
-The time between executions, from when the distributed trace is created to when the method enters.
-
-Duration
-
-DT
-
-Timeframe that represents the duration of a node, including its synchronous children nodes, from its start time to its end time.
-
-Code execution
-
-MH
-
-Percentage of measured samples in which the method code is actively executed.
-
-Disk I/O
-
-MH
-
-Percentage of measured samples in which the method is actively reading from or writing to a disk or waiting for disk input/output.
-
-Network I/O
-
-MH
-
-Percentage of measured samples in which the method is actively waiting for *native* network functions.
-
-Waiting
-
-MH
-
-Percentage of measured samples in which the method is actively waiting for something (for example, `Object.wait()` or a similar functionality).
-
-Locking
-
-MH
-
-Percentage of measured samples in which the method is blocked by waiting for a synchronous code block.
-
 ## Related topics
 
 * [Distributed Traces Classic](/docs/observe/application-observability/distributed-traces "Gain observability into highly distributed, cloud-native architectures to effectively trace and analyze transactions in real time.")
@@ -10966,7 +10151,7 @@ Percentage of measured samples in which the method is blocked by waiting for a s
 ---
 title: Service backtrace
 source: https://www.dynatrace.com/docs/observe/application-observability/services-classic/service-backtrace
-scraped: 2026-02-22T21:11:24.113589
+scraped: 2026-02-24T21:18:39.994712
 ---
 
 # Service backtrace
@@ -11065,7 +10250,7 @@ Dynatrace enables you to see which services call which third-party services, in 
 ---
 title: Service flow filtering
 source: https://www.dynatrace.com/docs/observe/application-observability/services-classic/service-flow/service-flow-filtering
-scraped: 2026-02-19T21:18:20.777374
+scraped: 2026-02-24T21:18:38.654318
 ---
 
 # Service flow filtering
@@ -11185,7 +10370,7 @@ Learn more about additional analysis options in topics listed below.
 ---
 title: Service flow
 source: https://www.dynatrace.com/docs/observe/application-observability/services-classic/service-flow
-scraped: 2026-02-23T21:22:20.344474
+scraped: 2026-02-24T21:16:23.794846
 ---
 
 # Service flow
@@ -11225,7 +10410,7 @@ As you can see in the example above, some of the services in the above service f
 ---
 title: Service response time hotspots
 source: https://www.dynatrace.com/docs/observe/application-observability/services-classic/service-response-time-hotspots
-scraped: 2026-02-19T21:16:55.784384
+scraped: 2026-02-24T21:16:25.186436
 ---
 
 # Service response time hotspots
@@ -11355,7 +10540,7 @@ Typically, web-request services have a wide range of response times. Analyzing a
 ---
 title: Services Classic
 source: https://www.dynatrace.com/docs/observe/application-observability/services-classic
-scraped: 2026-02-23T21:32:55.818419
+scraped: 2026-02-24T21:24:44.600540
 ---
 
 # Services Classic
@@ -11433,7 +10618,7 @@ Read this guide](/docs/observe/application-observability/services-classic/servic
 ---
 title: Services
 source: https://www.dynatrace.com/docs/observe/application-observability/services
-scraped: 2026-02-23T21:19:41.666858
+scraped: 2026-02-24T21:14:37.192526
 ---
 
 # Services
@@ -11454,10 +10639,6 @@ Services are an application's fundamental building blocks. From an observability
 ### Permissions
 
 Check the minimal set of permissions required to run ![Services](https://dt-cdn.net/hub/logos/services.png "Services") **Services**.
-
-Permission
-
-Description
 
 storage:events:read
 
@@ -11498,16 +10679,6 @@ Read fieldsets from GRAIL
 storage:filter-segments:read
 
 Read filter-segments
-
-10
-
-rows per page
-
-Page
-
-1
-
-of 1
 
 ### Installation
 
@@ -11593,7 +10764,7 @@ Read this guide](/docs/observe/application-observability/services-classic/servic
 ---
 title: Application Observability
 source: https://www.dynatrace.com/docs/observe/application-observability
-scraped: 2026-02-23T21:21:14.352898
+scraped: 2026-02-24T21:15:55.778940
 ---
 
 # Application Observability

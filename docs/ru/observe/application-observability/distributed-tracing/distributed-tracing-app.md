@@ -1,7 +1,7 @@
 ---
 title: Distributed Tracing app
 source: https://www.dynatrace.com/docs/observe/application-observability/distributed-tracing/distributed-tracing-app
-scraped: 2026-02-23T21:20:31.534507
+scraped: 2026-02-24T21:14:13.175597
 ---
 
 # Distributed Tracing app
@@ -66,34 +66,6 @@ Distributed Tracing charts
 
 The following table compares the **Timeseries** and **Histogram** charts.
 
-Timeseries
-
-Histogram
-
-X-axis
-
-Time intervals [1](#fn-1-1-def)
-
-Response time intervals
-
-Y-axis
-
-Frequency of data points (left-hand side) and response time (right-hand side)
-
-Frequency of data points
-
-Important statistical factors
-
-The legend lists dedicated views for percentiles, averages, and successful and failed requests. Choose an option to view the related trends.
-
-Percentiles and averages are marked with contrast-color vertical lines.
-
-Use cases
-
-Understand how trace data changes over time and identify trends and cyclic behaviors.
-
-Visualize your data's distribution, identify patterns, and spot outliers.
-
 1
 
 Granularity depends on the selected timeframe.
@@ -114,18 +86,6 @@ For details how to manage your facets, see [Manage facets](/docs/observe/applica
 ## Table results
 
 The table lists the latest 1000 records for the selected timeframe that match the filtering options you applied. The table data is available as a list (  ) or grouped by attributes (  ). You can manage columns to display only the attributes you're interested in and exclude noise.
-
-UI element
-
-Scope
-
-`<column value>`
-
-Filter trace data by a column value.
-
-Copy the DQL statement or the DQL API call.
-
-Download the visible table data.
 
 ### Use cases
 
@@ -196,8 +156,6 @@ Exception analysis provides:
 * Replaces the legacy Exceptions Analysis page for DPS customers
 
 ### Access and navigation
-
-
 
 In addition to the **Exceptions** tab in [![Distributed Tracing](https://dt-cdn.net/images/distributed-tracing-4ed13d1274.svg "Distributed Tracing") **Distributed Tracing**](/docs/observe/application-observability/distributed-tracing/distributed-tracing-app "Discover the functionalities of the new Distributed Tracing app."), you can analyze exceptions in context through service-specific drill-downs.
 

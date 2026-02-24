@@ -1,7 +1,7 @@
 ---
 title: Google Cloud Bigtable monitoring
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new/gcp-bigtable-monitoring
-scraped: 2026-02-22T21:26:42.976258
+scraped: 2026-02-24T21:27:37.373734
 ---
 
 # Google Cloud Bigtable monitoring

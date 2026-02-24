@@ -1,7 +1,7 @@
 ---
 title: Set up Dynatrace on Google Cloud
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform
-scraped: 2026-02-23T21:35:39.849572
+scraped: 2026-02-24T21:16:34.011096
 ---
 
 # Set up Dynatrace on Google Cloud

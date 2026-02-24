@@ -1,7 +1,7 @@
 ---
 title: Azure SQL Data Warehouse (legacy)
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-sql-data-warehouse
-scraped: 2026-02-23T21:33:55.345286
+scraped: 2026-02-24T21:33:42.532048
 ---
 
 # Azure SQL Data Warehouse (legacy)

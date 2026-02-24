@@ -1,7 +1,7 @@
 ---
 title: SQL data source
 source: https://www.dynatrace.com/docs/ingest-from/extensions/develop-your-extensions/data-sources/sql
-scraped: 2026-02-23T21:38:30.556858
+scraped: 2026-02-24T21:36:15.805689
 ---
 
 # SQL data source

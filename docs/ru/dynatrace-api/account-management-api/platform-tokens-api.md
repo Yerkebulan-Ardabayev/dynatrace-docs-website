@@ -1,7 +1,7 @@
 ---
 title: Токены платформы API
 source: https://www.dynatrace.com/docs/dynatrace-api/account-management-api/platform-tokens-api
-scraped: 2026-02-23T21:35:50.024927
+scraped: 2026-02-24T21:21:22.178542
 ---
 
 # Токены платформы API
@@ -10,7 +10,7 @@ scraped: 2026-02-23T21:35:50.024927
 
 * Последнее Dynatrace
 * Справочник
-* Опубликовано Дек 04, 2025
+* Опубликовано 04 дек. 2025 г.
 
 [### Список всех токенов платформы
 

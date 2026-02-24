@@ -1,7 +1,7 @@
 ---
 title: Set up Grail permissions for telemetry from Kubernetes and Kubernetes workloads
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/k8-security-context
-scraped: 2026-02-20T21:27:21.175839
+scraped: 2026-02-24T21:28:37.483787
 ---
 
 # Set up Grail permissions for telemetry from Kubernetes and Kubernetes workloads

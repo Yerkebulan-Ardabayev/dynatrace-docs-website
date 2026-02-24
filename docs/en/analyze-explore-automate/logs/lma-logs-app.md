@@ -1,7 +1,7 @@
 ---
 title: Logs app
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-logs-app
-scraped: 2026-02-23T21:18:56.319261
+scraped: 2026-02-24T21:13:33.388155
 ---
 
 # Logs app
@@ -18,10 +18,6 @@ Prerequisites
 ### Permissions
 
 The following table describes the required permissions.
-
-Permission
-
-Description
 
 storage:spans:read
 
@@ -62,16 +58,6 @@ allow to read logs
 storage:files:read
 
 allow to do joins on the lookup tables
-
-10
-
-rows per page
-
-Page
-
-1
-
-of 1
 
 ## Installation
 

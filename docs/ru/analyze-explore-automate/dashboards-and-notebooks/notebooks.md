@@ -1,7 +1,7 @@
 ---
 title: Notebooks
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks
-scraped: 2026-02-23T21:20:55.757216
+scraped: 2026-02-24T21:15:50.576457
 ---
 
 # Notebooks
@@ -18,10 +18,6 @@ Prerequisites
 ### Permissions
 
 The following table describes the required permissions.
-
-Permission
-
-Description
 
 app-engine:apps:run
 
@@ -62,16 +58,6 @@ Allows the user to access shared notebooks
 document:direct-shares:read
 
 Allows the user to access shared notebooks
-
-10
-
-rows per page
-
-Page
-
-1
-
-of 1
 
 Get started
 
@@ -139,110 +125,6 @@ A link in Markdown is a label and link of the form `[label](address)`, where:
 * The `label` is freeform text to display on the link in your Markdown tile or section
 * The `address` specifies what to open when someone selects the link, such as a website or a Dynatrace app
 
-Link to
-
-Syntax and examples
-
-Website
-
-```
-[My label](https://www.example.com/)
-```
-
-Notebooks app
-
-```
-[My label](/ui/apps/dynatrace.notebooks/notebooks)
-```
-
-Specific notebook
-
-**Syntax**:
-
-```
-[label](/ui/apps/dynatrace.notebooks/notebook/<notebookid>)
-```
-
-**Example**:
-
-```
-[My label](/ui/apps/dynatrace.notebooks/notebook/274edae4-dfe8-41fb-aced-5020fb1270bc)
-```
-
-To get the address
-
-1. Display the target notebook.
-2. Copy everything on the browser address line starting from `/ui/`.
-3. Paste it into your Markdown as the address of a link.
-
-Specific notebook section
-
-**Syntax**:
-
-```
-[label](/ui/apps/dynatrace.notebooks/notebook/<notebookid>#<sectionid>)
-```
-
-**Example**:
-
-```
-[My label](/ui/apps/dynatrace.notebooks/notebook/274edae4-dfe8-41fb-aced-5020fb1270bc#cb69caf1-52ed-4e73-8a3e-120e8cd7e8f8)
-```
-
-To get the address
-
-1. Display the target notebook.
-2. Select the target section of the notebook.
-3. Copy everything on the browser address line starting from `/ui/`.
-4. Paste it into your Markdown as the address of a link.
-
-Dashboards app
-
-```
-[My label](/ui/apps/dynatrace.dashboards/)
-```
-
-Specific dashboard
-
-**Syntax**:
-
-```
-[label](/ui/apps/dynatrace.dashboards/<dashboardid>)
-```
-
-**Example**:
-
-```
-[My label](/ui/apps/dynatrace.dashboards/dashboard/9f24c36e-ca5f-401c-8e00-5e4b05c46bd2)
-```
-
-To get the address
-
-1. Display the target dashboard.
-2. Copy everything on the browser address line starting from `/ui/`.
-3. Paste it into your Markdown as the address of a link.
-
-Specific dashboard tile
-
-**Syntax**:
-
-```
-[label](/ui/apps/dynatrace.dashboards/dashboard/<dashboardid>#tileIds=n)
-```
-
-**Example**:
-
-```
-[My label](/ui/apps/dynatrace.dashboards/dashboard/9f24c36e-ca5f-401c-8e00-5e4b05c46bd2#from=now%28%29-2h&to=now%28%29&tileIds=6)
-```
-
-To include a specific tile ID in the link
-
-1. Display the target dashboard.
-2. Select the target tile in the target dashboard.
-3. Copy everything on the browser address line starting from `/ui/`.
-4. Paste it into your Markdown as the address of a link.
-
 ## Use cases
 
 Notebooks enables you to:
@@ -301,8 +183,6 @@ The number of undos could be limited depending on your notebook's size.
 
 ### Use shortcuts
 
-
-
 keyboard shortcuts help you work faster in ![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**.
 
 To list keyboard shortcuts, in ![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**, open the  menu and select  **Keyboard shortcuts** or use keyboard shortcut **Shift**+**?**
@@ -334,6 +214,8 @@ To list keyboard shortcuts, in ![Notebooks](https://dt-cdn.net/images/notebooks-
 | Toggle between view and edit mode | **Ctrl**/**Cmd**+**Enter** |
 
 ### List notebooks
+
+
 
 #### List all
 
@@ -476,8 +358,6 @@ The Explore sections offer the easiest way to get started.
 
 ### Create a Grail query section
 
-
-
 The fastest and easiest way to explore your data is with an [Explore](#section-create-explore-data) section. In a few seconds, you can find and analyze your logs, metrics, or business events. No DQL required!
 
 Deprecated: `dt.entity.*` fields
@@ -514,6 +394,8 @@ To add data to a notebook
    * To have Dynatrace once again automatically select a visualization, turn **Auto select** back on.
 
 ### Create a code section
+
+
 
 To add code fetching data for your notebook using Dynatrace functions
 
@@ -624,110 +506,6 @@ To add a Markdown-formatted annotation to a notebook
 
   + The `label` is freeform text to display on the link in your Markdown tile or section
   + The `address` specifies what to open when someone selects the link, such as a website or a Dynatrace app
-
-  Link to
-
-  Syntax and examples
-
-  Website
-
-  ```
-  [My label](https://www.example.com/)
-  ```
-
-  Notebooks app
-
-  ```
-  [My label](/ui/apps/dynatrace.notebooks/notebooks)
-  ```
-
-  Specific notebook
-
-  **Syntax**:
-
-  ```
-  [label](/ui/apps/dynatrace.notebooks/notebook/<notebookid>)
-  ```
-
-  **Example**:
-
-  ```
-  [My label](/ui/apps/dynatrace.notebooks/notebook/274edae4-dfe8-41fb-aced-5020fb1270bc)
-  ```
-
-  To get the address
-
-  1. Display the target notebook.
-  2. Copy everything on the browser address line starting from `/ui/`.
-  3. Paste it into your Markdown as the address of a link.
-
-  Specific notebook section
-
-  **Syntax**:
-
-  ```
-  [label](/ui/apps/dynatrace.notebooks/notebook/<notebookid>#<sectionid>)
-  ```
-
-  **Example**:
-
-  ```
-  [My label](/ui/apps/dynatrace.notebooks/notebook/274edae4-dfe8-41fb-aced-5020fb1270bc#cb69caf1-52ed-4e73-8a3e-120e8cd7e8f8)
-  ```
-
-  To get the address
-
-  1. Display the target notebook.
-  2. Select the target section of the notebook.
-  3. Copy everything on the browser address line starting from `/ui/`.
-  4. Paste it into your Markdown as the address of a link.
-
-  Dashboards app
-
-  ```
-  [My label](/ui/apps/dynatrace.dashboards/)
-  ```
-
-  Specific dashboard
-
-  **Syntax**:
-
-  ```
-  [label](/ui/apps/dynatrace.dashboards/<dashboardid>)
-  ```
-
-  **Example**:
-
-  ```
-  [My label](/ui/apps/dynatrace.dashboards/dashboard/9f24c36e-ca5f-401c-8e00-5e4b05c46bd2)
-  ```
-
-  To get the address
-
-  1. Display the target dashboard.
-  2. Copy everything on the browser address line starting from `/ui/`.
-  3. Paste it into your Markdown as the address of a link.
-
-  Specific dashboard tile
-
-  **Syntax**:
-
-  ```
-  [label](/ui/apps/dynatrace.dashboards/dashboard/<dashboardid>#tileIds=n)
-  ```
-
-  **Example**:
-
-  ```
-  [My label](/ui/apps/dynatrace.dashboards/dashboard/9f24c36e-ca5f-401c-8e00-5e4b05c46bd2#from=now%28%29-2h&to=now%28%29&tileIds=6)
-  ```
-
-  To include a specific tile ID in the link
-
-  1. Display the target dashboard.
-  2. Select the target tile in the target dashboard.
-  3. Copy everything on the browser address line starting from `/ui/`.
-  4. Paste it into your Markdown as the address of a link.
 * **Images**: to link to a picture, use this format:
 
   `![alternate text](https://www.example.com/file-name.jpg)`
@@ -781,8 +559,6 @@ The number of undos could be limited depending on your notebook's size.
 
 ### Section edit controls
 
-
-
 To see the edit commands for a section, select the section. If you have edit permission, the edit commands are displayed.
 
 * is where you click to drag the selected section to a different position.
@@ -829,6 +605,8 @@ The available edit options will vary depending on the type of section you're edi
   ![Example: Notebooks: edit Markdown section](https://dt-cdn.net/images/notebooks-markdown-edit-969-a08f9afae1.png)
 
 ### Select section segments
+
+
 
 To filter data for a section, you can specify [segments](/docs/manage/segments "Segments logically structure monitoring data in Grail and function as convenient filters for data that users are allowed to access based on permissions.") for a section.
 
@@ -970,8 +748,6 @@ Example:
 
 ### Manage multiple sections
 
-
-
 You can select multiple sections and then apply the same command to all of them at once.
 
 * **Shift**+**Click**âselects one or more consecutive sections
@@ -1067,6 +843,8 @@ For details on sharing documents, see [Share documents](/docs/discover-dynatrace
 You can also export a notebook as a JSON file and send the JSON to others, and then they can import the JSON.
 
 ### Export a notebook
+
+
 
 To export a notebook
 

@@ -1,7 +1,7 @@
 ---
 title: Configure user interaction capturing for web frontends
 source: https://www.dynatrace.com/docs/observe/digital-experience/new-rum-experience/web-frontends/additional-configuration/user-interactions
-scraped: 2026-02-23T21:36:13.523981
+scraped: 2026-02-24T21:32:26.734346
 ---
 
 # Configure user interaction capturing for web frontends
@@ -34,42 +34,6 @@ To capture user interactions
 ## Types of user interactions
 
 The following table provides an overview of the available types of user interactions. For a detailed specification, see [User interaction](/docs/semantic-dictionary/model/rum/user-events/user-interactions) in the Semantic Dictionary.
-
-User interaction type
-
-Description
-
-[Click](/docs/semantic-dictionary/model/rum/user-events/user-interactions#click-events)
-
-When a user clicks or touches an HTML element. Note that a touch on an HTML element is captured as a click.
-
-[Key press](/docs/semantic-dictionary/model/rum/user-events/user-interactions#key-press-events)
-
-When a user presses a key combination involving the `Ctrl`, `Alt`, or `Meta` (`Windows` or `Cmd`) keys, or presses one of the individual keys `Esc`, `Enter`, `Tab`, and `Space`.
-
-[Zoom](/docs/semantic-dictionary/model/rum/user-events/user-interactions#zoom-events)/[resize](/docs/semantic-dictionary/model/rum/user-events/user-interactions#resize-events)
-
-When a user zooms in or out, or resizes the viewport.
-
-[Focus](/docs/semantic-dictionary/model/rum/user-events/user-interactions#focus-events)/[blur](/docs/semantic-dictionary/model/rum/user-events/user-interactions#blur-events)
-
-When a user focuses on or leaves an HTML element. These user interaction types are only captured if you have [opted in](#opt-in).
-
-[Change](/docs/semantic-dictionary/model/rum/user-events/user-interactions#change-events)
-
-When a user modifies a value in a form field, for example, by selecting a checkbox.
-
-[Scroll](/docs/semantic-dictionary/model/rum/user-events/user-interactions#scroll-events)
-
-When a user scrolls through a page or view.
-
-[Drag](/docs/semantic-dictionary/model/rum/user-events/user-interactions#drag-events)/[drop](/docs/semantic-dictionary/model/rum/user-events/user-interactions#drop-events)
-
-When a user starts or ends a drag operation. Valid external drop actions are also captured, for example, dropping a file into an upload area. In both cases, the position is recorded.
-
-[Mouseover](/docs/semantic-dictionary/model/rum/user-events/user-interactions#mouse-over-events)
-
-When a user hovers over an HTML element. This user interaction type is only captured if you have [opted in](#opt-in).
 
 ## Opt-in user interaction types
 

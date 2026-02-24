@@ -1,7 +1,7 @@
 ---
 title: Permissions in Grail
 source: https://www.dynatrace.com/docs/platform/grail/organize-data/assign-permissions-in-grail
-scraped: 2026-02-22T21:13:44.269574
+scraped: 2026-02-24T21:17:37.151298
 ---
 
 # Permissions in Grail
@@ -128,78 +128,6 @@ The following examples describe how to use bucket permissions to grant access to
 
 Besides granting access to buckets, you also need to configure table permissions.
 
-Table name
-
-Permission
-
-Affected DQL functions/commands
-
-logs
-
-storage:logs:read
-
-[fetch](/docs/platform/grail/dynatrace-query-language/commands/data-source-commands#fetch "DQL data source commands")
-
-events
-
-storage:events:read
-
-[fetch](/docs/platform/grail/dynatrace-query-language/commands/data-source-commands#fetch "DQL data source commands")
-
-security.events
-
-storage:security.events:read
-
-[fetch](/docs/platform/grail/dynatrace-query-language/commands/data-source-commands#fetch "DQL data source commands")
-
-metrics
-
-storage:metrics:read
-
-[timeseries](/docs/platform/grail/dynatrace-query-language/commands/metric-commands#timeseries "DQL metric commands")
-
-bizevents
-
-storage:bizevents:read
-
-[fetch](/docs/platform/grail/dynatrace-query-language/commands/data-source-commands#fetch "DQL data source commands")
-
-spans
-
-storage:spans:read
-
-[fetch](/docs/platform/grail/dynatrace-query-language/commands/data-source-commands#fetch "DQL data source commands")
-
-entities
-
-storage:entities:read
-
-[fetch](/docs/platform/grail/dynatrace-query-language/commands/data-source-commands#fetch "DQL data source commands"), [classicEntitySelector](/docs/platform/grail/dynatrace-query-language/functions/general-functions#classic-entity-selector "A list of DQL general functions."), [entityAttr](/docs/platform/grail/dynatrace-query-language/functions/general-functions#entity-attr "A list of DQL general functions."), [entityName](/docs/platform/grail/dynatrace-query-language/functions/general-functions#entity-name "A list of DQL general functions.")
-
-smartscape
-
-storage:smartscape:read
-
-[smartscapeNodes](/docs/platform/grail/dynatrace-query-language/commands/smartscape-commands#smartscapeNodes "DQL Smartscape commands"), [smartscapeEdges](/docs/platform/grail/dynatrace-query-language/commands/smartscape-commands#smartscapeEdges "DQL Smartscape commands"), [getNodeName()](/docs/platform/grail/dynatrace-query-language/functions/join-functions#getNodeName "A list of DQL join functions."), [getNodeField()](/docs/platform/grail/dynatrace-query-language/functions/join-functions#getNodeField "A list of DQL join functions.")
-
-dt.system.events
-
-storage:system:read
-
-[fetch](/docs/platform/grail/dynatrace-query-language/commands/data-source-commands#fetch "DQL data source commands")
-
-user.events
-
-storage:user.events:read
-
-[fetch](/docs/platform/grail/dynatrace-query-language/commands/data-source-commands#fetch "DQL data source commands")
-
-user.sessions
-
-storage:user.sessions:read
-
-[fetch](/docs/platform/grail/dynatrace-query-language/commands/data-source-commands#fetch "DQL data source commands")
-
 For more information, see [IAM policy reference](/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies/advanced/iam-policystatements#storage "Complete reference of IAM policies and corresponding conditions across all Dynatrace services.").
 
 ### Bucket level permissions
@@ -219,102 +147,6 @@ ALLOW storage:logs:read WHERE storage:dt.security_context="TeamA";
 ```
 
 Supported fields:
-
-Field name
-
-IAM condition
-
-Supported IAM tables
-
-`event.kind`
-
-`storage:event.kind`
-
-`events`, `security.events`, `bizevents`, `system`
-
-`event.type`
-
-`storage:event.type`
-
-`events`, `security.events`, `bizevents`, `system`
-
-`event.provider`
-
-`storage:event.provider`
-
-`events`, `security.events`, `bizevents`, `system`
-
-`k8s.namespace.name`
-
-`storage:k8s.namespace.name`
-
-`events`, `security.events`, `bizevents`, `logs`, `metrics`, `spans`, `smartscape`
-
-`k8s.cluster.name`
-
-`storage:k8s.cluster.name`
-
-`events`, `security.events`, `bizevents`, `logs`, `metrics`, `spans`, `smartscape`
-
-`host.name`
-
-`storage:host.name`
-
-`events`, `security.events`, `bizevents`, `logs`, `metrics`, `spans`, `smartscape`
-
-`dt.host_group.id`
-
-`storage:dt.host_group.id`
-
-`events`, `security.events`, `bizevents`, `logs`, `metrics`, `spans`, `smartscape`
-
-`metric.key`
-
-`storage:metric.key`
-
-`metrics`
-
-`log.source`
-
-`storage:log.source`
-
-`logs`
-
-`dt.security_context`
-
-`storage:dt.security_context`
-
-`events`, `security.events`, `bizevents`, `system`, `logs`, `metrics`, `spans`, `entities`, `smartscape`, `user.events`, `user.sessions`
-
-`gcp.project.id`
-
-`storage:gcp.project.id`
-
-`events`, `security.events`, `bizevents`, `logs`, `metrics`, `spans`, `smartscape`
-
-`aws.account.id`
-
-`storage:aws.account.id`
-
-`events`, `security.events`, `bizevents`, `logs`, `metrics`, `spans`, `smartscape`
-
-`azure.subscription`
-
-`storage:azure.subscription`
-
-`events`, `security.events`, `bizevents`, `logs`, `metrics`, `spans`, `smartscape`
-
-`azure.resource.group`
-
-`storage:azure.resource.group`
-
-`events`, `security.events`, `bizevents`, `logs`, `metrics`, `spans`, `smartscape`
-
-`frontend.name`
-
-`storage:frontend.name`
-
-`user.events`, `user.sessions`, `metrics`, `smartscape`
 
 For details that are not available as a dedicated field, set the `dt.security_context` field either at the data source or in the processing pipeline.
 
@@ -466,30 +298,6 @@ You can manage your custom fieldsets via REST API
 3. Authenticate with your API token.  
    For details, see [Authentication](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/platform-tokens "Create personalised platform tokens to access Dynatrace services via the API in your user context.").
 4. Perform one of the following actions.
-
-To do this
-
-Go to **Fieldsets** and select this
-
-Get all fieldsets
-
-**GET /fieldsets**
-
-Create a new fieldset
-
-**POST /fieldsets**
-
-Get fieldsets by UID
-
-**GET /fieldsets/{fieldsetUid}**
-
-Update a fieldset. All fields will be overwritten.
-
-**PUT /fieldsets/{fieldsetUid}**
-
-Delete a fieldset
-
-**DELETE /fieldsets/{fieldsetUid}**
 
 #### Example
 

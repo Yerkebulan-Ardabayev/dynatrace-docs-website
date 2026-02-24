@@ -1,7 +1,7 @@
 ---
 title: Workflows
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows
-scraped: 2026-02-23T21:31:26.546776
+scraped: 2026-02-24T21:17:58.769579
 ---
 
 # Workflows
@@ -24,10 +24,6 @@ Prerequisites
 ### Permissions
 
 The following table describes the required permissions.
-
-Permission
-
-Description
 
 hub:catalog:read
 
@@ -68,16 +64,6 @@ Admin access to workflows and executions.
 automation:workflows:read
 
 Read access to workflows.
-
-10
-
-rows per page
-
-Page
-
-1
-
-of 1
 
 You might need additional permissions to run certain tasks in ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Workflows**.
 

@@ -1,7 +1,7 @@
 # Документация Dynatrace: observe/infrastructure-observability
 Язык: Русский (RU)
-Сгенерировано: 2026-02-23
-Файлов в разделе: 87
+Сгенерировано: 2026-02-24
+Файлов в разделе: 88
 ---
 
 ## observe/infrastructure-observability/cloud-platform-monitoring/aws-monitoring.md
@@ -161,7 +161,7 @@ To set up a new AWS connection
 ---
 title: Clouds app
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/cloud-platform-monitoring/clouds-app
-scraped: 2026-02-23T21:19:32.052264
+scraped: 2026-02-24T21:15:22.365272
 ---
 
 # Clouds app
@@ -171,7 +171,7 @@ scraped: 2026-02-23T21:19:32.052264
 * Latest Dynatrace
 * App
 * 4-min read
-* Updated on Jan 21, 2026
+* Updated on Feb 20, 2026
 
 The new [cloud experienceï»¿](https://www.dynatrace.com/platform/cloud-monitoring/) is optimized for Cloud (Platform) Operation teams and Site Reliability Engineers (SREs) and focuses on health, troubleshooting, and performance optimization use cases of (multi-)cloud environments.
 
@@ -215,10 +215,6 @@ See [concepts](#concepts) for the comparison between classic and new cloud conne
 
 The following table describes the required permissions.
 
-Permission
-
-Description
-
 settings:objects:read
 
 Read settings of ownership (settings:schemaIds = builtin:ownership.config) - required by Ownership tab in details panel.
@@ -258,16 +254,6 @@ Storing per-user app state.
 document:documents:read
 
 Read documents. Required by filter presets feature. Required for ready-made dashboards (Overview).
-
-10
-
-rows per page
-
-Page
-
-1
-
-of 1
 
 ## Get started
 
@@ -433,27 +419,7 @@ In the **Health** perspective, you can see each cloud service's health and custo
 
 
 
-You have access to the following ready-made dashboards for the new AWS Cloud Platform Monitoring:
-
-* AWS Overview
-* AWS API (API Gateway and REST APIs)
-* AWS Bedrock
-* AWS Dynamo DB
-* AWS EC2 (EC2, EBS, AutoScaling)
-* AWS ECS (including ECS Container Insights)
-* AWS Edge Networking (Route 53, CloudFront)
-* AWS EFS
-* AWS ElastiCache (Redis, Memcached)
-* AWS ELB (Application, Classic, Network Load Balancing)
-* AWS EventBridge
-* AWS Foundation Networking (NAT Gateway, PrivateLink)
-* AWS Health Events
-* AWS Lambda
-* AWS MSK (Kafka)
-* AWS RDS (including Aurora)
-* AWS S3
-* AWS SNS
-* AWS SQS
+You have access to the ready-made dashboards for the new AWS Cloud Platform Monitoring and Azure Cloud Platform Monitoring (Preview).
 
 The ready-made dashboards can be accessed through:
 
@@ -625,7 +591,7 @@ To learn how to analyze monitoring results in Dynatrace, see [Cloud Foundry metr
 ---
 title: Monitor container groups
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/container-platform-monitoring/container-groups
-scraped: 2026-02-22T21:18:19.180560
+scraped: 2026-02-24T21:31:08.262777
 ---
 
 # Monitor container groups
@@ -1374,7 +1340,7 @@ Explorer — это общий интерфейс Dynatrace для монито�
 ---
 title: Alert on common Kubernetes/OpenShift issues
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/alert-on-kubernetes-issues
-scraped: 2026-02-22T21:15:00.499328
+scraped: 2026-02-24T21:27:31.984651
 ---
 
 # Alert on common Kubernetes/OpenShift issues
@@ -1452,100 +1418,6 @@ See below for a list of available alerts.
 
 ### Cluster alerts
 
-Alert name
-
-Dynatrace version
-
-Problem type
-
-Problem title
-
-Problem description
-
-De-alerts after
-
-Calculation
-
-Supported in
-
-[Detect cluster CPU-request saturation](#detect-cluster-cpu-request-saturation)
-
-1.254
-
-Resource
-
-CPU-request saturation on cluster
-
-CPU-request saturation exceeds the specified threshold.
-
-10 minutes
-
-Node CPU requests / Node CPU allocatable
-
-Kubernetes Classic, Kubernetes app
-
-[Detect cluster memory-request saturation](#detect-cluster-memory-request-saturation)
-
-1.254
-
-Resource
-
-Memory-request saturation on cluster
-
-Memory-request saturation exceeds the specified threshold.
-
-10 minutes
-
-Node memory requests / Node memory allocatable
-
-Kubernetes Classic, Kubernetes app
-
-[Detect cluster pod-saturation](#detect-cluster-pod-saturation)
-
-1.258
-
-Resource
-
-Pod saturation on cluster
-
-Cluster pod-saturation exceeds the specified threshold.
-
-10 minutes
-
-Sum of ready pods / Sum of allocatable pods
-
-Kubernetes Classic, Kubernetes app
-
-[Detect cluster readiness issues](#detect-cluster-readiness-issues)
-
-1.254
-
-Availability
-
-Cluster not ready
-
-Readyz endpoint indicates that this cluster is not ready.
-
-10 minutes
-
-Cluster readyz metric
-
-Kubernetes Classic, Kubernetes app
-
-[Detect monitoring issues](#detect-monitoring-issues)
-
-1.258
-
-Availability
-
-Monitoring not available
-
-Dynatrace API monitoring is not available.
-
-10 minutes
-
-Kubernetes Classic, Kubernetes app
-
 Cluster metric and DQL expressions
 
 #### Detect cluster CPU-request saturation
@@ -1585,135 +1457,7 @@ Cluster metric and DQL expressions
 
 Default alerts for new tenants
 
-Alert
-
-Setting
-
-Value
-
-Readiness Issues
-
-sample period in minutes
-
-3
-
-Readiness Issues
-
-observation period in minutes
-
-5
-
-Monitoring Issues
-
-sample period in minutes
-
-15
-
-Monitoring Issues
-
-observation period in minutes
-
-30
-
 ### Namespace alerts
-
-
-
-Alert name
-
-Dynatrace version
-
-Problem type
-
-Problem title
-
-Problem description
-
-De-alerts after
-
-Calculation
-
-Supported in
-
-[Detect namespace CPU-limit quota saturation](#detect-namespace-cpu-limit-quota-saturation)
-
-1.254
-
-Resource
-
-CPU-limit quota saturation
-
-CPU-limit quota saturation exceeds the specified threshold.
-
-10 minutes
-
-Sum of resource quota CPU used / Sum of resource quota CPU limits
-
-Kubernetes Classic, Kubernetes app
-
-[Detect namespace CPU-request quota saturation](#detect-namespace-cpu-request-quota-saturation)
-
-1.254
-
-Resource
-
-CPU-request quota saturation
-
-CPU-request quota saturation exceeds the specified threshold.
-
-10 minutes
-
-Sum of resource quota CPU used / Sum of resource quota CPU requests
-
-Kubernetes Classic, Kubernetes app
-
-[Detect namespace memory-limit quota saturation](#detect-namespace-memory-limit-quota-saturation)
-
-1.254
-
-Resource
-
-Memory-limit quota saturation
-
-Memory-limit quota saturation exceeds the specified threshold.
-
-10 minutes
-
-Sum of resource quota memory used / Sum of resource quota memory limits
-
-Kubernetes Classic, Kubernetes app
-
-[Detect namespace memory-request quota saturation](#detect-namespace-memory-request-quota-saturation)
-
-1.254
-
-Resource
-
-Memory-request quota saturation
-
-Memory-request quota saturation exceeds the specified threshold.
-
-10 minutes
-
-Sum of resource quota memory used / Sum of resource quota memory requests
-
-Kubernetes Classic, Kubernetes app
-
-[Detect namespace pod quota saturation](#detect-namespace-pod-quota-saturation)
-
-1.254
-
-Resource
-
-Pod quota saturation
-
-Pod quota saturation exceeds the specified threshold.
-
-10 minutes
-
-Sum of resource quota pods used / Sum of resource quota pods limit
-
-Kubernetes Classic, Kubernetes app
 
 Namespace metric and DQL expressions
 
@@ -1756,102 +1500,6 @@ Namespace metric and DQL expressions
 
 
 
-Alert name
-
-Dynatrace version
-
-Problem type
-
-Problem title
-
-Problem description
-
-De-alerts after
-
-Calculation
-
-Supported in
-
-[Detect node CPU-request saturation](#detect-node-cpu-request-saturation)
-
-1.254
-
-Resource
-
-CPU-request saturation on node
-
-CPU-request saturation exceeds the specified threshold.
-
-10 minutes
-
-Sum of node CPU requests / Sum of node CPU allocatable
-
-Kubernetes Classic, Kubernetes app
-
-[Detect node memory-request saturation](#detect-node-memory-request-saturation)
-
-1.254
-
-Resource
-
-Memory-request saturation on node
-
-Memory-request saturation exceeds the specified threshold.
-
-10 minutes
-
-Sum of node memory requests / Sum of node memory allocatable
-
-Kubernetes Classic, Kubernetes app
-
-[Detect node pod-saturation](#detect-node-pod-saturation)
-
-1.254
-
-Resource
-
-Pod saturation on node
-
-Pod saturation exceeds the specified threshold.
-
-10 minutes
-
-Sum of running pods on node / Node pod limit
-
-Kubernetes Classic, Kubernetes app
-
-[Detect node readiness issues](#detect-node-readiness-issues)
-
-1.254
-
-Availability
-
-Node not ready
-
-Node is not ready.
-
-10 minutes
-
-Node condition metric filtered by 'not ready'
-
-Kubernetes Classic, Kubernetes app
-
-[Detect problematic node conditions](#detect-problematic-node-conditions)
-
-1.264
-
-Error
-
-Problematic node condition
-
-Node has one or more problematic conditions out of the following: `ContainerRuntimeProblem`, `ContainerRuntimeUnhealthy`, `CorruptDockerOverlay2`, `DiskPressure`, `FilesystemCorruptionProblem`, `FrequentContainerdRestart`, `FrequentDockerRestart`, `FrequentGcfsSnapshotterRestart`, `FrequentGcfsdRestart`, `FrequentKubeletRestart`, `FrequentUnregisterNetDevice`, `GcfsSnapshotterMissingLayer`, `GcfsSnapshotterUnhealthy`, `GcfsdUnhealthy`, `KernelDeadlock`, `KubeletProblem`, `KubeletUnhealthy`, `MemoryPressure`, `NetworkUnavailable`, `OutOfDisk`, `PIDPressure`, `ReadonlyFilesystem`
-
-10 minutes
-
-Nodes condition metric
-
-Kubernetes Classic, Kubernetes app
-
 Node metric and DQL expressions
 
 #### Detect node CPU-request saturation
@@ -1891,85 +1539,7 @@ Node metric and DQL expressions
 
 Default alerts for new tenants
 
-Alert
-
-Setting
-
-Value
-
-Readiness Issues
-
-Readiness Issues
-
-sample period in minutes
-
-3
-
-observation period in minutes
-
-5
-
-Node Problematic Condition
-
-Node Problematic Condition
-
-sample period in minutes
-
-3
-
-observation period in minutes
-
-5
-
 ### Persistent volume claims alerts
-
-Alert name
-
-Dynatrace version
-
-Problem type
-
-Problem title
-
-Problem description
-
-De-alerts after
-
-Calculation
-
-Supported in
-
-[Detect low disk space (%)](#detect-low-disk-space)
-
-1.262
-
-Resource
-
-Kubernetes PVC: Low disk space %
-
-Available disk space for a persistent volume claim is below the threshold.
-
-10 minutes
-
-Volume stats available bytes / Volume stats capacity bytes
-
-Kubernetes Classic, Kubernetes app
-
-[Detect low disk space (MiB)](#detect-low-disk-space-mb)
-
-1.262
-
-Resource
-
-Kubernetes PVC: Low disk space
-
-Available disk space for a persistent volume claim is below the threshold.
-
-10 minutes
-
-Kubelet volume stats available bytes metric
-
-Kubernetes Classic, Kubernetes app
 
 Persistent volume claims metric and DQL expressions
 
@@ -1989,245 +1559,7 @@ Persistent volume claims metric and DQL expressions
 
 ### Workload alerts
 
-Alert name
 
-Dynatrace version
-
-Problem type
-
-Problem title
-
-Problem description
-
-De-alerts after
-
-Calculation
-
-Supported in
-
-[Detect CPU usage saturation](#detect-cpu-usage-saturation)
-
-1.264
-
-Resource
-
-CPU usage close to limits
-
-The CPU usage exceeds the threshold in terms of the defined CPU limit.
-
-10 minutes
-
-Sum of workload CPU usage / Sum of workload CPU limits
-
-Kubernetes Classic, Kubernetes app
-
-[Detect container restarts](#detect-container-restarts)
-
-1.254
-
-Error
-
-Container restarts
-
-Observed container restarts exceed the specified threshold.
-
-15 minutes
-
-Container restarts metric
-
-Kubernetes Classic, Kubernetes app
-
-[Detect high CPU throttling](#detect-high-cpu-throttling)
-
-1.264
-
-Resource
-
-High CPU throttling
-
-The CPU throttling to limits ratio exceeds the specified threshold.
-
-10 minutes
-
-Sum of workload CPU throttled / Sum of workload CPU limits
-
-Kubernetes Classic, Kubernetes app
-
-[Detect job failure events](#detect-job-failure-events)
-
-1.268
-
-Error
-
-Job failure event
-
-Events with reason 'BackoffLimitExceeded', 'DeadlineExceeded', or 'PodFailurePolicy' have been detected.
-
-60 minutes
-
-Event metric filtered by reason and workload kind
-
-Kubernetes Classic, Kubernetes app
-
-[Detect memory usage saturation](#detect-memory-usage-saturation)
-
-1.264
-
-Resource
-
-Memory usage close to limits
-
-The memory usage (working set memory) exceeds the threshold in terms of the defined memory limit.
-
-10 minutes
-
-Sum of workload working set memory / Sum of workload memory limits
-
-Kubernetes Classic, Kubernetes app
-
-[Detect out-of-memory kills](#detect-out-of-memory-kills)
-
-1.268
-
-Error
-
-Out-of-memory kills
-
-Out-of-memory kills have been observed for pods of this workload.
-
-15 minutes
-
-Out-of-memory kills metric
-
-Kubernetes Classic, Kubernetes app
-
-[Detect pod backoff events](#detect-pod-backoff-events)
-
-1.268
-
-Error
-
-Backoff event
-
-Events with reason 'BackOff' have been detected for pods of this workload. Check for pods with status 'ImagePullBackOff' or 'CrashLoopBackOff'.
-
-15 minutes
-
-Event metric filtered by reason
-
-Kubernetes Classic, Kubernetes app
-
-[Detect pod eviction events](#detect-pod-eviction-events)
-
-1.268
-
-Error
-
-Pod eviction event
-
-Events with reason 'Evicted' have been detected for pods of this workload.
-
-60 minutes
-
-Event metric filtered by reason
-
-Kubernetes Classic, Kubernetes app
-
-[Detect pod preemption events](#detect-pod-preemption-events)
-
-1.268
-
-Error
-
-Preemption event
-
-Events with reasons 'Preempted' or 'Preempting' have been detected for pods of this workload.
-
-60 minutes
-
-Event metric filtered by reason
-
-Kubernetes Classic, Kubernetes app
-
-[Detect pods stuck in pending](#detect-pods-stuck-in-pending)
-
-1.254
-
-Resource
-
-Pods stuck in pending
-
-Workload has pending pods.
-
-10 minutes
-
-Pods metric filtered by phase 'Pending'
-
-Kubernetes Classic, Kubernetes app
-
-[Detect pods stuck in terminating](#detect-pods-stuck-in-terminating)
-
-1.260
-
-Resource
-
-Pods stuck in terminating
-
-Workload has pods stuck in terminating.
-
-10 minutes
-
-Pods metric filtered by status 'Terminating'
-
-Kubernetes Classic, Kubernetes app
-
-[Detect stuck deployments](#detect-stuck-deployments)
-
-1.260
-
-Error
-
-Deployment stuck
-
-Deployment is stuck and therefore is no longer progressing.
-
-10 minutes
-
-Workload condition metric filtered by 'not progressing'
-
-Kubernetes Classic, Kubernetes app
-
-[Detect workloads with non-ready pods](#detect-workloads-with-non-ready-pods)
-
-1.258
-
-Error
-
-Not all pods ready
-
-Workload has pods that are not ready.
-
-10 minutes
-
-Sum of all pending or running pods â Sum of ready pending or running pods. Pods of Jobs and CronJob are excluded.
-
-Kubernetes Classic, Kubernetes app
-
-[Detect workloads without ready pods](#detect-workloads-without-ready-pods)
-
-1.254
-
-Error
-
-No pod ready
-
-Workload does not have any ready pods.
-
-10 minutes
-
-Sum of all pending or running pods â Sum of non-ready pending or running pods. Pods of Jobs and CronJob are excluded.
-
-Kubernetes Classic, Kubernetes app
 
 Workload metric and DQL expressions
 
@@ -2334,116 +1666,6 @@ The following expression returns the number of pending and running pods in the r
 | DQL | `timeseries o1=sum(dt.kubernetes.pods, rollup: avg), filter: {((pod_phase!="Failed")AND(pod_phase!="Succeeded")AND(k8s.workload.kind!="job")AND(k8s.workload.kind!="cronjob"))}, by: {k8s.namespace.name,k8s.workload.kind,k8s.workload.name}| join [timeseries operand=sum(dt.kubernetes.pods, default:0.0, rollup: avg), nonempty:true, filter: {((pod_phase!="Failed")AND(pod_phase!="Succeeded")AND(k8s.workload.kind!="job")AND(k8s.workload.kind!="cronjob")AND(pod_condition!="Ready"))}, by: {k8s.namespace.name,k8s.workload.kind,k8s.workload.name}], on: {interval}, fields: {o2=operand}| fieldsAdd result=o1[]-o2[]| fieldsRemove {o1,o2}` |
 
 #### Default alerts for new tenants
-
-Alert
-
-Setting
-
-Value
-
-Container Restarts
-
-threshold
-
-1
-
-Container Restarts
-
-sample period in minutes
-
-3
-
-Container Restarts
-
-observation period in minutes
-
-5
-
-Deployment Stuck
-
-sample period in minutes
-
-3
-
-Deployment Stuck
-
-observation period in minutes
-
-5
-
-Pending Pods
-
-threshold
-
-1
-
-Pending Pods
-
-sample period in minutes
-
-10
-
-Pending Pods
-
-observation period in minutes
-
-15
-
-Pod Stuck In Terminating
-
-sample period in minutes
-
-10
-
-Pod Stuck In Terminating
-
-observation period in minutes
-
-15
-
-Workload Without Ready Pods
-
-sample period in minutes
-
-10
-
-Workload Without Ready Pods
-
-observation period in minutes
-
-15
-
-Oom Kills
-
-alert
-
-always
-
-Job Failure Events
-
-alert
-
-always
-
-Pod Backoff Events
-
-alert
-
-always
-
-Pod Eviction Events
-
-alert
-
-always
-
-Pod Preemption Events
-
-alert
-
-always
-
-
 
 ## Related topics
 
@@ -3040,7 +2262,7 @@ DDU consumption applies to Kubernetes event monitoring. For details, see [DDUs f
 ---
 title: Istio/Envoy proxy metrics
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-istio-metrics
-scraped: 2026-02-22T21:15:01.857430
+scraped: 2026-02-24T21:23:24.875607
 ---
 
 # Istio/Envoy proxy metrics
@@ -3094,7 +2316,7 @@ Istio monitoring by OneAgent is supported for the classic full-stack, cloud-nati
 ---
 title: Monitor Kubernetes/OpenShift metrics
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-metrics-kubernetes
-scraped: 2026-02-23T21:29:36.477055
+scraped: 2026-02-24T21:25:12.263320
 ---
 
 # Monitor Kubernetes/OpenShift metrics
@@ -3149,7 +2371,7 @@ For a list of all available metrics, see [Workload metrics](/docs/analyze-explor
 ---
 title: Monitor Prometheus metrics
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-prometheus-metrics
-scraped: 2026-02-23T21:27:09.688253
+scraped: 2026-02-24T21:31:29.729725
 ---
 
 # Monitor Prometheus metrics
@@ -3204,22 +2426,6 @@ Histograms[1](#fn-3-1-def) provide visual insights into the distribution and fre
 For a base metric name of `<basename>`, Dynatrace will ingest the data according to the
 following table.
 
-Prometheus Metric
-
-Dynatrace Ingest Type
-
-`<basename>_bucket{le="<upper inclusive bound>"}`
-
-[`COUNT`](/docs/ingest-from/extend-dynatrace/extend-metrics/reference/metric-ingestion-protocol#count-metric "Learn how the data ingestion protocol for Dynatrace Metrics API works.")
-
-`<basename>_bucket_sum`
-
-[`COUNT`](/docs/ingest-from/extend-dynatrace/extend-metrics/reference/metric-ingestion-protocol#count-metric "Learn how the data ingestion protocol for Dynatrace Metrics API works.")
-
-`<basename>_bucket_count`
-
-[`COUNT`](/docs/ingest-from/extend-dynatrace/extend-metrics/reference/metric-ingestion-protocol#count-metric "Learn how the data ingestion protocol for Dynatrace Metrics API works.")
-
 Additional flexibility and control is provided via the [`builtin:histogram-metrics`ï»¿](https://dt-url.net/ne02rlq) settings schema.
 This schema allows to configure the ingestion of `<basename>_bucket{le="<upper inclusive bound>"}` metrics.
 
@@ -3232,22 +2438,6 @@ This schema allows to configure the ingestion of `<basename>_bucket{le="<upper i
 Like a [Histogram](#histogram), the summary metric[1](#fn-4-1-def) samples observations. In contrast to the histogram metric, a summary's buckets are
 represented by Ï-quantiles where 0 â¤ Ï â¤ 1. For a base metric name of `<basename>`, Dynatrace will ingest the data according to the
 following table.
-
-Prometheus Metric
-
-Dynatrace Ingest Type
-
-`<basename>{quantile="<Ï>"}`
-
-[`GAUGE`](/docs/ingest-from/extend-dynatrace/extend-metrics/reference/metric-ingestion-protocol#gauge-metric "Learn how the data ingestion protocol for Dynatrace Metrics API works.")
-
-`<basename>_sum`
-
-[`COUNT`](/docs/ingest-from/extend-dynatrace/extend-metrics/reference/metric-ingestion-protocol#count-metric "Learn how the data ingestion protocol for Dynatrace Metrics API works.")
-
-`<basename>_count`
-
-[`COUNT`](/docs/ingest-from/extend-dynatrace/extend-metrics/reference/metric-ingestion-protocol#count-metric "Learn how the data ingestion protocol for Dynatrace Metrics API works.")
 
 1
 
@@ -3301,8 +2491,6 @@ If you want to skip verification of the TLS certificate (for example, if you use
 `metrics.dynatrace.com/insecure_skip_verify` to `true`. This annotation, however, is only considered when using an ActiveGate deployed inside the monitored cluster and the Kubernetes connection settings configured to monitor the local Kubernetes API endpoint.
 
 ### Filter metrics Optional
-
-
 
 Use `metrics.dynatrace.com/filter` to define a filter that allows you to include (`"mode": "include"`) or exclude (`"mode": "exclude"`) a list of metrics. If no filter annotation is defined, all metrics are collected.
 The filter syntax also supports the asterisk (`*`). This symbol allows you to filter metrics keys that begin with, end with, or contain a particular sequence, such as:
@@ -3413,6 +2601,8 @@ image: myregistry/myimage:mytag
 The values of `metrics.dynatrace.com/path`, `metrics.dynatrace.com/port`, and `metrics.dynatrace.com/secure` depend on the exporter being used; adapt them to your requirements. To determine the port value, see [Default port allocationsï»¿](https://github.com/prometheus/prometheus/wiki/Default-port-allocations) for a list of common ports for known exporters.
 
 ### Client authentication Optional
+
+
 
 **Requirements:** Add the permissions to access `secrets` and `configmaps` for the `dynatrace-kubernetes-monitoring` ClusterRole.
 
@@ -3748,8 +2938,6 @@ If you have full control over the pod template or service definition, we recomme
 
 ### Options if you don't have full control
 
-
-
 If you don't have full control over the pod template, you have the following options:
 
 * Annotate an existing service (in YAML)  
@@ -3916,6 +3104,8 @@ You can simply search for metric keys of all available metrics and define how yo
 
 ## Metric alerts
 
+
+
 You can also create custom alerts based on the Prometheus scraped metrics. Go to **Settings** > **Anomaly detection** > **Metric events** and select **Add metric event**. In the **Add metric event** page, search for a Prometheus metric using its key and define your alert. For more information, see [Metric events for alerting](/docs/dynatrace-intelligence/anomaly-detection/metric-events "Learn about metric events in Dynatrace").
 
 ## Limitations
@@ -3982,7 +3172,7 @@ To troubleshoot Prometheus integration issues, download the [Kubernetes Monitori
 ---
 title: Monitor persistent volume claims on Kubernetes/OpenShift
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-pvc-metrics
-scraped: 2026-02-23T21:30:40.392215
+scraped: 2026-02-24T21:32:38.869795
 ---
 
 # Monitor persistent volume claims on Kubernetes/OpenShift
@@ -4185,7 +3375,7 @@ If no SLOs are found, you can
 ---
 title: Monitor vulnerabilities in Kubernetes/OpenShift
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-vulnerabilities-kubernetes
-scraped: 2026-02-23T21:28:43.929997
+scraped: 2026-02-24T21:22:27.931993
 ---
 
 # Monitor vulnerabilities in Kubernetes/OpenShift
@@ -4346,7 +3536,7 @@ You can use management zones to control user access to the monitoring data of sp
 ---
 title: Kubernetes Classic
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring
-scraped: 2026-02-23T21:21:07.265161
+scraped: 2026-02-24T21:15:41.080457
 ---
 
 # Kubernetes Classic
@@ -4486,7 +3676,7 @@ Monitor Heroku with Dynatrace.](/docs/observe/infrastructure-observability/conta
 ---
 title: Data collected with Dynatrace database monitoring
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/databases/database-app/data-collected
-scraped: 2026-02-23T21:33:52.660581
+scraped: 2026-02-24T21:32:02.092932
 ---
 
 # Data collected with Dynatrace database monitoring
@@ -4641,7 +3831,7 @@ For complete details, go to the [FAQ](/docs/observe/infrastructure-observability
 ---
 title: Monitor MariaDB database
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/databases/database-app/get-started/mariadb
-scraped: 2026-02-23T21:31:50.529472
+scraped: 2026-02-24T21:31:49.678179
 ---
 
 # Monitor MariaDB database
@@ -4687,7 +3877,7 @@ For complete details, go to the [FAQ](/docs/observe/infrastructure-observability
 ---
 title: Monitor Microsoft SQL database
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/databases/database-app/get-started/microsoft-sql
-scraped: 2026-02-23T21:34:20.042733
+scraped: 2026-02-24T21:29:39.863604
 ---
 
 # Monitor Microsoft SQL database
@@ -4757,7 +3947,7 @@ Check these use case scenarios for more details.
 ---
 title: Monitor MySQL database
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/databases/database-app/get-started/mysql
-scraped: 2026-02-23T21:33:42.008002
+scraped: 2026-02-24T21:31:51.022608
 ---
 
 # Monitor MySQL database
@@ -4837,7 +4027,7 @@ Oracle Database monitoring helps you understand your application's database inte
 ---
 title: Monitor SAP HANA database
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/databases/database-app/get-started/sap-hana
-scraped: 2026-02-20T21:26:23.598228
+scraped: 2026-02-24T21:29:13.922147
 ---
 
 # Monitor SAP HANA database
@@ -4887,7 +4077,7 @@ For complete details, go to the [FAQ](/docs/observe/infrastructure-observability
 ---
 title: Monitor Snowflake database
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/databases/database-app/get-started/snowflake
-scraped: 2026-02-22T21:26:13.385955
+scraped: 2026-02-24T21:24:29.725543
 ---
 
 # Monitor Snowflake database
@@ -4933,7 +4123,7 @@ You can benefit from Snowflake monitoring in these [use cases](/docs/observe/inf
 ---
 title: Get started with database monitoring
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/databases/database-app/get-started
-scraped: 2026-02-22T21:20:40.439932
+scraped: 2026-02-24T21:24:59.302446
 ---
 
 # Get started with database monitoring
@@ -5009,7 +4199,7 @@ scraped: 2026-02-23T21:36:09.557295
 ---
 title: Databases app
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/databases/database-app
-scraped: 2026-02-23T21:19:33.404095
+scraped: 2026-02-24T21:15:18.487727
 ---
 
 # Databases app
@@ -5043,10 +4233,6 @@ Before you begin, ensure the following:
 ### Permissions
 
 The following table describes the required permissions.
-
-Permission
-
-Description
 
 davis:analyzers:execute
 
@@ -5087,16 +4273,6 @@ Read logs from Grail
 storage:metrics:read
 
 Read metrics from Grail
-
-10
-
-rows per page
-
-Page
-
-1
-
-of 1
 
 ### Installation steps
 
@@ -5207,12 +4383,12 @@ Insights highlight patterns, anomalies, and trends based on built-in domain expe
 
 ### Understand database health
 
-
-
 ![Databases](https://dt-cdn.net/images/dynatrace-database-256-1afe08286e.webp "Databases") **Databases** provides a real-time overview of your database's health. The app continuously evaluates key metrics to provide a health score that reflects the current state of your database environment. This health score helps you quickly identify areas that might require attention.
 
 * Tracks performance indicators such as query execution times, resource utilization, and connection issues.
 * Highlights anomalies and potential risks affecting database reliability.
+
+
 
 ### Analyze and optimize query performance
 
@@ -5259,7 +4435,7 @@ Get an overview of all your extension-monitored databases.](https://www.dynatrac
 ---
 title: Analyze database services (new page)
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/databases/database-services-classic/analyze-database-services-new
-scraped: 2026-02-23T21:30:53.915802
+scraped: 2026-02-24T21:30:07.703878
 ---
 
 # Analyze database services (new page)
@@ -6090,12 +5266,129 @@ Gain detailed visibility into Linux host local datastores where OneAgent is inst
 
 ---
 
+## observe/infrastructure-observability/extensions/opentelemetry-host-monitoring.md
+
+---
+title: OpenTelemetry Host Monitoring extension
+source: https://www.dynatrace.com/docs/observe/infrastructure-observability/extensions/opentelemetry-host-monitoring
+scraped: 2026-02-24T21:31:53.484173
+---
+
+# OpenTelemetry Host Monitoring extension
+
+# OpenTelemetry Host Monitoring extension
+
+* Latest Dynatrace
+* Extension
+* Published Feb 20, 2026
+
+Generate topology and screens for your OpenTelemetry host data for quicker display and easier analysis of the data.
+
+## Get started
+
+### Overview
+
+Monitor your hosts with OpenTelemetry using integrated metric visualizations, topology, and alerts. This extension automatically generates entities for hosts and their running processes, presenting telemetry data through intuitive interfaces designed for quick analysis. By correlating metrics, logs, and spans to host and process entities, you gain full context and a comprehensive view of your infrastructure.
+
+### Requirements
+
+This extension depends on the telemetry data that is pushed to Dynatrace from OpenTelemetry, using the [OpenTelemetry Collector](/docs/ingest-from/opentelemetry/collector "Learn about the Dynatrace OTel Collector.").
+
+## Activation and setup
+
+In order to use this extension, you need to:
+
+* [Deploy the OpenTelemetry Collector](/docs/ingest-from/opentelemetry/collector/deployment "How to deploy Dynatrace OTel Collector."), following the instructions for the relevant deployment option.
+* Activate this extension in Dynatrace environment to report on the metrics in context. This extension doesn't need an ActiveGate or a OneAgent.
+
+### Use cases
+
+* Track performance, health, and availability of OpenTelemetry-monitored infrastructure.
+* Analyze trends and baselines for capacity planning.
+* Raise alerts on resource saturation, network errors, and other infrastructure issues.
+* Get a dedicated, pre-configured view for infrastructure monitoring.
+
+This extension uses telemetry data collected by the OpenTelemetry Collector. To monitor the health of your Collectors, see [Collector self-monitoring](/docs/ingest-from/opentelemetry/collector/self-monitoring "How to monitor OpenTelemetry Collectors with Dynatrace dashboards.").
+
+## Activation and setup
+
+### Deploy the OpenTelemetry Collector
+
+1. Follow the instructions on the [OpenTelemetry Collector](/docs/ingest-from/opentelemetry/collector/deployment "How to deploy Dynatrace OTel Collector.") to deploy the Collector.
+2. Use the [reference configurationï»¿](https://github.com/Dynatrace/dynatrace-otel-collector/blob/main/config_examples/host-metrics.yaml).
+3. Ensure the Collector is running and telemetry data is reported to Dynatrace correctly.
+
+### Activate the OpenTelemetry Host Monitoring extension
+
+Activate the OpenTelemetry Host Monitoring extension to enable [topology](#topology), [Unified Analysis screens](#screens), and [alert templates](#alert-templates).
+
+## Details
+
+The [OpenTelemetry Collector](/docs/ingest-from/opentelemetry/collector "Learn about the Dynatrace OTel Collector.") captures telemetry data from your infrastructure and pushes metrics to Dynatrace via the OTel API.
+
+The extension displays telemetry data captured by the OpenTelemetry Collector and provides quick analysis and clear understanding of the data, adding Dynatrace-specific context to all signals (metrics, logs, and spans).
+
+### Topology
+
+This extension automatically generates topology for infrastructure monitored via the OpenTelemetry Collector. Specifically, it creates the following entity types based on metadata extracted from metrics, logs, and traces:
+
+| Entity type | Entity ID |
+| --- | --- |
+| OpenTelemetry Host | dt.entity.otel:host |
+| OpenTelemetry Process | dt.entity.otel:process |
+
+These entities enable Dynatrace to correlate your metrics, logs, and spans and provide unified context across your monitored environment.
+
+### Screens
+
+The extension provides screens and dashboards that display entity information, metrics, and more. The data is displayed in a smart and structured way for easier navigation and a clearer understanding of the insights.
+
+To find a list of your OTel hosts and processes, go to ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Infrastructure & Operations** > **Technologies**.
+
+### Alert templates
+
+This extension provides alert templates that you can use to create alerts based on the imported data. To use these templates and set up alerts:
+
+1. Go to ![Extensions](https://dt-cdn.net/images/dynatrace-extensions-256-9cb05e0f55.png "Extensions") **Extensions** > **OpenTelemetry Host Monitoring** > **Extension content**.
+2. Find any alert template you're interested in and select  **New Alert**.
+3. Configure the alert according to the available options.
+
+### Licensing and cost
+
+All ingested OpenTelemetry data (logs, metrics, and spans) is charged according to your rate card, see [Dynatrace Platform Subscription](/docs/license/capabilities "How different DPS capabilities work and how consumption is calculated and billed.") or [Dynatrace classic licensing](/docs/license/monitoring-consumption-classic "Understand how Dynatrace monitoring consumption is calculated for classic licensing.").
+
+The use of this extension does not itself incur any additional costs.
+
+Based on our measurements using [the reference configurationï»¿](https://github.com/Dynatrace/dynatrace-otel-collector/blob/main/config_examples/host-metrics.yaml), we estimate the following metrics ingest volume:
+
+* Approximately 4400 metric data points per host per hour.
+* Approximately 400 datapoints per process per hour.
+
+Both these numbers will vary depending on the available metrics. For more details, see [Limitations](#limitations).
+
+### Limitations
+
+* The metric `system.processes.created` is currently available only on Linux and BSD operating systems.
+* The metric `process.disk.io` requires running the Collector with privileged access. Not doing so will prevent the metric from being captured.
+
+## Feature sets
+
+This extension does not include any feature sets. Users are in control of what data will be sent to Dynatrace based on the Collector configuration.
+
+[![Hub](https://dt-cdn.net/images/hub-512-82db3c583e.png "Hub")
+
+### Explore in Dynatrace Hub
+
+Generate topology and screens for your OpenTelemetry host data for quicker display and easier analysis of the data.](https://www.dynatrace.com/hub/detail/opentelemetry-host-monitoring-extension/)
+
+---
+
 ## observe/infrastructure-observability/extensions/radware-alteon-load-balancer.md
 
 ---
 title: Radware Alteon Load Balancer extension
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/extensions/radware-alteon-load-balancer
-scraped: 2026-02-23T21:32:33.951086
+scraped: 2026-02-24T21:25:56.387205
 ---
 
 # Radware Alteon Load Balancer extension
@@ -6437,7 +5730,7 @@ With ![Extensions](https://dt-cdn.net/images/dynatrace-extensions-256-9cb05e0f55
 ---
 title: Exclude disks and network traffic from host monitoring
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/hosts/configuration/exclude-disks-and-network-traffic
-scraped: 2026-02-22T21:26:59.663176
+scraped: 2026-02-24T21:21:16.384409
 ---
 
 # Exclude disks and network traffic from host monitoring
@@ -6531,88 +5824,6 @@ To exclude an IP address from connectivity calculations
 ## Disks not monitored by OneAgent
 
 The following disks are not monitored by OneAgent. To exclude an additional filesystem type or mount point name, see [Exclude disks](#disk-options).
-
-Operating system
-
-Type
-
-Excluded disks
-
-All supported OS
-
-File systems
-
-`hsfs`
-
-`devtmpfs`
-
-`sysfs`
-
-`rootfs`
-
-`ramfs`
-
-`proc`
-
-`procfs`
-
-`devpts`
-
-`securityfs`
-
-`cgroup`
-
-`cpuset`
-
-`pstore`
-
-`mqueue`
-
-`debugfs`
-
-`autofs`
-
-`hugetlbfs`
-
-`fusectl`
-
-`fuse.gvfsd-fuse`
-
-`binfmt_misc`
-
-`iso9660`
-
-`none`
-
-`rpc_pipefs`
-
-Linux
-
-File systems
-
-`tmpfs`
-
-`udf`
-
-`squashfs`
-
-Linux
-
-Mount point
-
-`/dev`
-
-AIX
-
-File systems
-
-`cdrfs`
-
-Solaris
-
-Network interface
-
-`mac`
 
 ---
 
@@ -6718,7 +5929,7 @@ Host groups can also be used in [tagging rules](/docs/manage/tags-and-metadata/s
 ---
 title: Host-level settings
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/hosts/configuration
-scraped: 2026-02-23T21:19:22.114756
+scraped: 2026-02-24T21:15:30.697715
 ---
 
 # Host-level settings
@@ -7062,7 +6273,7 @@ For details on Linux and Windows core crash dumps, see [Crash analysis](/docs/ob
 ---
 title: Host availability
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/hosts/monitoring/host-monitoring/host-availability
-scraped: 2026-02-23T21:33:13.946532
+scraped: 2026-02-24T21:28:33.548715
 ---
 
 # Host availability
@@ -7095,46 +6306,6 @@ To check a host's availability state
    ![Host page detail - online availability](https://dt-cdn.net/images/image-3-757-d2642a2b5d.png)
 
 ## Host availability states
-
-Availability state
-
-Description
-
-**up**
-
-The host is working; OneAgent is active and sending data. If the connectivity to the host is lost, OneAgent sends all cached metrics when the connection is restored.
-
-**no\_data**
-
-The host is working and OneAgent is active, but no data is being sent. This state is also set when collecting monitoring data takes too long (for example, OneAgent freezes).
-
-**no\_data\_agent\_inactive**
-
-The host is working, OneAgent is inactive, and no data is being sent because OneAgent has been manually disabled in the configuration.
-
-**shutdown\_host**
-
-The host has been shut down due to an expected operating system shutdown or reboot.
-
-**unmonitored\_agent\_stopped**
-
-The host is not monitored because OneAgent is inactive. For details, refer to [Check OneAgent monitoring settings per host](#check-monitoring-settings).
-
-**unmonitored\_agent\_upgrade**
-
-The host is not monitored because OneAgent is being upgraded.
-
-**unmonitored\_agent\_uninstalled**
-
-The host is not monitored because OneAgent has been uninstalled.
-
-**reboot\_graceful**
-
-The host was rebooted following a graceful shutdown, which means an expected operating system shutdown has occurred.
-
-**reboot\_ungraceful**
-
-The host was rebooted following an ungraceful shutdown, which means an unexpected operating system shutdown has occurred. This may be caused by events, such as power loss or a system crash.
 
 ### Check OneAgent monitoring settings per host
 
@@ -7624,7 +6795,7 @@ On Linux, systemd OS services with the following startup types are supported:
 ---
 title: Process availability
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/hosts/monitoring/process-availability
-scraped: 2026-02-23T21:38:01.175767
+scraped: 2026-02-24T21:20:17.460002
 ---
 
 # Process availability
@@ -8088,7 +7259,7 @@ Disabled OneAgents effectively stop monitoring your environment. However, the co
 ---
 title: Host metrics
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/hosts/reference/metrics
-scraped: 2026-02-23T21:39:03.415742
+scraped: 2026-02-24T21:33:07.904820
 ---
 
 # Host metrics
@@ -8611,7 +7782,7 @@ The **Health** perspective includes the following default columns:
 ---
 title: Infrastructure & Operations
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/infrastructure-and-operations
-scraped: 2026-02-23T21:19:27.207238
+scraped: 2026-02-24T21:15:25.133136
 ---
 
 # Infrastructure & Operations
@@ -8637,10 +7808,6 @@ The ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-oper
 ### Permissions
 
 The following table describes the required permissions.
-
-Permission
-
-Description
 
 storage:logs:read
 
@@ -8681,16 +7848,6 @@ Read settings configurations from Settings 2.0
 settings:objects:write
 
 Write settings configurations to Settings 2.0
-
-10
-
-rows per page
-
-Page
-
-1
-
-of 1
 
 ## Get started
 
@@ -8938,7 +8095,7 @@ View the status of all data centers and hosts and identify the root cause of inf
 ---
 title: Enable Kubernetes experience for existing clusters
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/kubernetes-app/enable-k8s-experience/existing-clusters
-scraped: 2026-02-23T21:21:08.424783
+scraped: 2026-02-24T21:15:39.805961
 ---
 
 # Enable Kubernetes experience for existing clusters
@@ -8978,7 +8135,7 @@ When you enable Kubernetes clusters for the new Kubernetes experience, Dynatrace
 ---
 title: Kubernetes Enhanced Object Visibility Preview
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/kubernetes-app/preview/enhanced-object-vis-preview
-scraped: 2026-02-23T21:31:25.324420
+scraped: 2026-02-24T21:27:59.067677
 ---
 
 # Kubernetes Enhanced Object Visibility Preview
@@ -9229,7 +8386,7 @@ A quick video tutorial on how to install Dynatrace Operator.](https://dt-cdn.net
 ---
 title: Permissions
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/kubernetes-app/reference/permissions
-scraped: 2026-02-23T21:21:06.110814
+scraped: 2026-02-24T21:15:42.412043
 ---
 
 # Permissions
@@ -9286,7 +8443,7 @@ ALLOW davis:analyzers:execute, unified-analysis:screen-definition:read;
 ---
 title: Alert on common Kubernetes misconfigurations and detect anomalies with Kubernetes metrics
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/kubernetes-app/use-cases/alert-use-case
-scraped: 2026-02-23T21:32:20.064602
+scraped: 2026-02-24T21:28:00.172296
 ---
 
 # Alert on common Kubernetes misconfigurations and detect anomalies with Kubernetes metrics
@@ -9983,7 +9140,7 @@ Explore further how Dynatrace can transform your approach to Kubernetes manageme
 ---
 title: Kubernetes
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/kubernetes-app
-scraped: 2026-02-23T21:19:01.783571
+scraped: 2026-02-24T21:13:42.601516
 ---
 
 # Kubernetes
@@ -10202,7 +9359,7 @@ Automated change impact analysis for your deployment and release processes.
 ---
 title: Ingest NetFlow records into Dynatrace
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/networks/ingest-netflow-records
-scraped: 2026-02-23T21:31:49.211008
+scraped: 2026-02-24T21:20:20.254013
 ---
 
 # Ingest NetFlow records into Dynatrace
@@ -10688,7 +9845,7 @@ After it's collected, NetTracer data is available as metrics throughout Dynatrac
 ---
 title: Troubleshooting network monitoring
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/networks/troubleshoot-network-monitoring
-scraped: 2026-02-23T21:32:15.046762
+scraped: 2026-02-24T21:31:00.215306
 ---
 
 # Troubleshooting network monitoring
@@ -10779,7 +9936,7 @@ Read this guide](/docs/observe/infrastructure-observability/networks/ingest-netf
 ---
 title: Which are the most important processes?
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/process-groups/basic-concepts/which-are-the-most-important-processes
-scraped: 2026-02-23T21:19:11.945440
+scraped: 2026-02-24T21:16:12.708401
 ---
 
 # Which are the most important processes?
@@ -10836,7 +9993,7 @@ If you run Apache HTTP Server, for example, you may be accustomed to seeing long
 ---
 title: Process group detection
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/process-groups/configuration/pg-detection
-scraped: 2026-02-23T21:24:03.884175
+scraped: 2026-02-24T21:19:02.290574
 ---
 
 # Process group detection
@@ -12750,7 +11907,7 @@ The following is a distributed trace example with a producer service, queue enti
 ---
 title: Message queues
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/queues
-scraped: 2026-02-23T21:34:08.252769
+scraped: 2026-02-24T21:27:20.072251
 ---
 
 # Message queues
@@ -12786,8 +11943,6 @@ To get an overview of all detected queues and topics, go to **Message Queues**.
 ![Message queues table](https://dt-cdn.net/images/queues-table-1857-49308cb749.png)
 
 ## Extensions
-
-Unable to render DataTable. Check configuration.
 
 ## FAQ
 
@@ -12853,7 +12008,7 @@ Visit the related section on the [Tags and management zone page](/docs/observe/i
 ---
 title: Limit VMware infrastructure monitoring using permissions
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/vmware-vsphere-monitoring/limit-infrastructure-monitoring-using-permissions
-scraped: 2026-02-23T21:26:15.113795
+scraped: 2026-02-24T21:29:46.666059
 ---
 
 # Limit VMware infrastructure monitoring using permissions
@@ -13040,7 +12195,7 @@ You can use the [Settings API](/docs/dynatrace-api/environment-api/settings "Fin
 ---
 title: Infrastructure Observability
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability
-scraped: 2026-02-23T21:21:15.729119
+scraped: 2026-02-24T21:16:01.053148
 ---
 
 # Infrastructure Observability

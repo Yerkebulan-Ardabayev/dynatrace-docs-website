@@ -1,7 +1,7 @@
 ---
 title: Service detection rules
 source: https://www.dynatrace.com/docs/observe/application-observability/services/service-detection/service-detection-v1/customize-service-detection
-scraped: 2026-02-23T21:36:04.314019
+scraped: 2026-02-24T21:19:06.357660
 ---
 
 # Service detection rules
@@ -64,26 +64,6 @@ To define a new service detection rule via API
 1. Query the settings schema via the [GET a schema](/docs/dynatrace-api/environment-api/settings/schemas/get-schema "View a settings schema via the Dynatrace API.") callâit contains the information about parameters included in the settings object.
 
    The ID of schema depends on the request type, as summarized in the following table.
-
-   Request type
-
-   Schema ID
-
-   Full web request
-
-   [`builtin:service-detection.full-web-request`](/docs/dynatrace-api/environment-api/settings/schemas/builtin-service-detection-full-web-request "View builtin:service-detection.full-web-request settings schema table of your monitoring environment via the Dynatrace API.")
-
-   Full web service
-
-   [`builtin:service-detection.full-web-service`](/docs/dynatrace-api/environment-api/settings/schemas/builtin-service-detection-full-web-service "View builtin:service-detection.full-web-service settings schema table of your monitoring environment via the Dynatrace API.")
-
-   External web request
-
-   [`builtin:service-detection.external-web-request`](/docs/dynatrace-api/environment-api/settings/schemas/builtin-service-detection-external-web-request "View builtin:service-detection.external-web-request settings schema table of your monitoring environment via the Dynatrace API.")
-
-   External web service
-
-   [`builtin:service-detection.external-web-service`](/docs/dynatrace-api/environment-api/settings/schemas/builtin-service-detection-external-web-service "View builtin:service-detection.external-web-service settings schema table of your monitoring environment via the Dynatrace API.")
 2. Create a JSON object for your settings.
 
    Example JSON for a full web request rule
@@ -274,26 +254,6 @@ To update an existing rule via API
 1. Query the settings schema via the [GET a schema](/docs/dynatrace-api/environment-api/settings/schemas/get-schema "View a settings schema via the Dynatrace API.") callâit contains the information about parameters included in the settings object.
 
    The ID of schema depends on the request type, as summarized in the following table.
-
-   Request type
-
-   Schema ID
-
-   Full web request
-
-   [`builtin:service-detection.full-web-request`](/docs/dynatrace-api/environment-api/settings/schemas/builtin-service-detection-full-web-request "View builtin:service-detection.full-web-request settings schema table of your monitoring environment via the Dynatrace API.")
-
-   Full web service
-
-   [`builtin:service-detection.full-web-service`](/docs/dynatrace-api/environment-api/settings/schemas/builtin-service-detection-full-web-service "View builtin:service-detection.full-web-service settings schema table of your monitoring environment via the Dynatrace API.")
-
-   External web request
-
-   [`builtin:service-detection.external-web-request`](/docs/dynatrace-api/environment-api/settings/schemas/builtin-service-detection-external-web-request "View builtin:service-detection.external-web-request settings schema table of your monitoring environment via the Dynatrace API.")
-
-   External web service
-
-   [`builtin:service-detection.external-web-service`](/docs/dynatrace-api/environment-api/settings/schemas/builtin-service-detection-external-web-service "View builtin:service-detection.external-web-service settings schema table of your monitoring environment via the Dynatrace API.")
 2. Query the current configuration via the [GET objects](/docs/dynatrace-api/environment-api/settings/objects/get-objects "View multiple settings objects via the Dynatrace API.") call.
 3. Create a JSON object for your update. We recommend to use **updateToken** from previous objectâit ensures proper versioning of your settings.
 
@@ -482,26 +442,6 @@ To delete a rule via API
 
 1. Query the list of existing rules via the [GET objects](/docs/dynatrace-api/environment-api/settings/objects/get-objects "View multiple settings objects via the Dynatrace API.") call. Specify the schema of your request type in the **schemaIds** query parameter.
    The ID of schema depends on the request type, as summarized in the following table.
-
-   Request type
-
-   Schema ID
-
-   Full web request
-
-   [`builtin:service-detection.full-web-request`](/docs/dynatrace-api/environment-api/settings/schemas/builtin-service-detection-full-web-request "View builtin:service-detection.full-web-request settings schema table of your monitoring environment via the Dynatrace API.")
-
-   Full web service
-
-   [`builtin:service-detection.full-web-service`](/docs/dynatrace-api/environment-api/settings/schemas/builtin-service-detection-full-web-service "View builtin:service-detection.full-web-service settings schema table of your monitoring environment via the Dynatrace API.")
-
-   External web request
-
-   [`builtin:service-detection.external-web-request`](/docs/dynatrace-api/environment-api/settings/schemas/builtin-service-detection-external-web-request "View builtin:service-detection.external-web-request settings schema table of your monitoring environment via the Dynatrace API.")
-
-   External web service
-
-   [`builtin:service-detection.external-web-service`](/docs/dynatrace-api/environment-api/settings/schemas/builtin-service-detection-external-web-service "View builtin:service-detection.external-web-service settings schema table of your monitoring environment via the Dynatrace API.")
 2. Find the rule you want to delete, and copy its **objectId**.
 3. Delete the rule via the [DELETE an object](/docs/dynatrace-api/environment-api/settings/objects/del-object "Delete a settings object via the Dynatrace API.") call. Use the object ID obtained in the previous step.
 

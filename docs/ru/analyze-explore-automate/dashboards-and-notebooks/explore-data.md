@@ -1,7 +1,7 @@
 ---
 title: Explore data
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/explore-data
-scraped: 2026-02-23T21:20:04.678376
+scraped: 2026-02-24T21:14:45.538758
 ---
 
 # Explore data
@@ -56,106 +56,6 @@ To explore data such as logs, metrics, or business events with our point-and-cli
      + Only operators relevant to the data type are suggested.
      + Read more on [how the filter field works](/docs/discover-dynatrace/get-started/dynatrace-ui/ui-filter-field "The filter field is a powerful tool that allows you to quickly find relevant information or narrow down results within apps.") in the dedicated documentation.
 
-     Operator
-
-     Description
-
-     `~`
-
-     Use a tilde to get one of two effects:
-
-     To match on a specific field
-
-     1. In the  filter bar
-
-        + Select the field name
-        + Select the tilde (`~`) as the operator
-        + Enter the term you want to match
-     2. Select **Run**.
-
-        For example, when exploring log data, `content` `~` `error` lists log entries that have "error" in the "content" field.
-
-        In DQL, this translates to [matchesPhrase](/docs/platform/grail/dynatrace-query-language/functions/string-functions#matchesPhrase "A list of DQL string functions."), such as:
-
-        ```
-        fetch logs
-
-
-
-        | filter matchesPhrase(content, "error")
-
-
-
-        | limit 20
-        ```
-
-     To search all data
-
-     3. In the  filter bar
-
-        + Enter an asterisk (`*`)
-        + Select the tilde (`~`) as the operator
-        + Enter the term you want to search for
-
-        Alternative: Click in the  filter bar, scroll down to the bottom of the list of suggestions, select `Search a phrase in all data`, and enter the search term between the quotation marks. (This bar is hidden when there is no splitting set, or when there is more than one building block with a metric selected.)
-     4. Select **Run**.
-
-        For example, when exploring log data, `*` `~` `error` lists log entries that have "error".
-
-        In DQL, this translates to [search](/docs/platform/grail/dynatrace-query-language/commands/filtering-commands#search "DQL filter and search commands"), such as:
-
-        ```
-        fetch logs
-
-
-
-        | search "error"
-
-
-
-        | limit 20
-        ```
-
-     `=`
-
-     equals
-
-     `!=`
-
-     doesn't equal
-
-     `<`
-
-     less than
-
-     `<=`
-
-     less than or equal to
-
-     `>`
-
-     greater than
-
-     `>=`
-
-     greater than or equal to
-
-     `= *`
-
-     is any value
-
-     `!= *`
-
-     isn't any value
-
-     `in`
-
-     matches one or more values in a list of values
-
-     `not in`
-
-     doesnât match any value in a list of values
-
      Note: Combining `=` with a wildcard in before `*`, after, or both, before your search term will resolve to a starts with, ends with, or contains filter respectively.
    * The  on the bottom of the definition opens a menu of additional commands you can add.
    * Select any ![remove filter](https://dt-cdn.net/images/remove-filter-9fadf8ea2a.svg "remove filter") in the definition to remove the element that comes before the ![remove filter](https://dt-cdn.net/images/remove-filter-9fadf8ea2a.svg "remove filter"). If you remove an element and then change your mind, you can use  to select it from the menu and add it back to your definition.
@@ -198,8 +98,6 @@ You can create a notebook section or dashboard tile using [Dynatrace Intelligenc
 
 ### Generative AI in your dashboard
 
-
-
 To create a dashboard tile using Dynatrace Intelligence generative AI
 
 1. Go to [![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.") and open or create a dashboard you can edit.
@@ -230,6 +128,8 @@ To create a dashboard tile using Dynatrace Intelligence generative AI
 8. Optional Select the **Visual** tab to change the visualization (refer to the [visualization-specific documentation](/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations "Create, edit, and view visualizations on your Dynatrace dashboards and notebooks.") for more information).
 
 ### Generative AI in your notebook
+
+
 
 To create a notebook section using Dynatrace Intelligence generative AI
 
@@ -337,8 +237,6 @@ To summarize your results
 
 ### Convert to time series
 
-
-
 You can convert log-based events to a time series format appropriate to be visualized with graph visualizations. This is done by counting occurrences of fields specified for each timeslot.
 
 To convert log-based events to a time series format
@@ -373,6 +271,8 @@ If the **Limit** setting is not displayed,  **Limit** and then set the value.
 ## Metrics
 
 ### Add
+
+
 
 This exploration functionality is the same in ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards** and ![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**. We use ![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks** in these examples.
 
@@ -512,8 +412,6 @@ This reduces the time series data to a single scalar value over the selected tim
 
 ### Alias
 
-
-
 You might want to rename (add an alias to) a metric to make it more readable.
 
 * Adding an alias gives the metric a more convenient alternate name for you to use in the current dashboard tile or notebook section. Instead of the raw metric name, the alias is displayed in your query definition and in the resulting dashboard tile or notebook section.
@@ -561,6 +459,8 @@ Add expressions to apply arithmetic based on your selected metrics.
 ![Explore metrics example: expression](https://dt-cdn.net/images/explore-metrics-example-expression-662-b59f306f98.png)
 
 ### Sort
+
+
 
 To sort your results
 
@@ -711,8 +611,6 @@ To see the DQL that is created automatically during your exploration with the po
 ![Example: show DQL in an Explore tile: expanded](https://dt-cdn.net/images/explore-logs-show-dql-open-633-3242ed63eb.png)
 
 ### Create a DQL query
-
-
 
 When you're satisfied with the results but want to advance with more complex DQL commands, you can easily create a standard notebook section or dashboard tile based on it.
 

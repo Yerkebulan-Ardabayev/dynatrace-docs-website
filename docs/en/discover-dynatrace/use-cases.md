@@ -1,7 +1,7 @@
 ---
 title: Dynatrace tutorials
 source: https://www.dynatrace.com/docs/discover-dynatrace/use-cases
-scraped: 2026-02-23T21:37:21.163085
+scraped: 2026-02-24T21:26:55.392628
 ---
 
 # Dynatrace tutorials
@@ -20,5 +20,3 @@ Filter by
 Select an option
 
 Type to filter
-
-Unable to render DataTable. Check configuration.

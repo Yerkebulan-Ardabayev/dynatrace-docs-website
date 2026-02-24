@@ -1,7 +1,7 @@
 ---
 title: Vulnerabilities concepts
 source: https://www.dynatrace.com/docs/secure/vulnerabilities/concepts
-scraped: 2026-02-21T21:23:48.792347
+scraped: 2026-02-24T21:33:09.406436
 ---
 
 # Vulnerabilities concepts

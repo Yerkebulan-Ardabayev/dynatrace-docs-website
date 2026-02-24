@@ -1,7 +1,7 @@
 ---
 title: Synthetic alerting overview
 source: https://www.dynatrace.com/docs/observe/digital-experience/synthetic-on-grail/synthetic-alerting-overview-on-grail
-scraped: 2026-02-23T21:33:58.219810
+scraped: 2026-02-24T21:24:53.057411
 ---
 
 # Synthetic alerting overview

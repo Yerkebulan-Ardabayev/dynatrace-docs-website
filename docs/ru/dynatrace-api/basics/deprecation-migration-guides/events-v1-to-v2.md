@@ -1,17 +1,17 @@
 ---
-title: Мигрировать из Events API v1 в Events API v2
+title: Перейти с Events API v1 на Events API v2
 source: https://www.dynatrace.com/docs/dynatrace-api/basics/deprecation-migration-guides/events-v1-to-v2
-scraped: 2026-02-23T21:35:33.610251
+scraped: 2026-02-24T21:32:32.314990
 ---
 
-# Мигрировать из Events API v1 в Events API v2
+# Перейти с Events API v1 на Events API v2
 
-# Мигрировать из Events API v1 в Events API v2
+# Перейти с Events API v1 на Events API v2
 
-* Справка
-* Опубликовано 25 нояб. 2022 г.
+* Справочник
+* Опубликовано 25 ноября 2022 г.
 
-[Events API v1](/docs/dynatrace-api/environment-api/events-v1 "Узнайте, что можно сделать с помощью Dynatrace Events API.") был заменен [Dynatrace версией 1.243](/docs/whats-new/dynatrace-api/sprint-243 "Журнал изменений для Dynatrace API версии 1.243"). Его заменой является [Events API v2](/docs/dynatrace-api/environment-api/events-v2 "Узнайте, что можно сделать с помощью Dynatrace Events API v2."). Мы рекомендуем вам перейти на новую API как можно скорее.
+[Events API v1](/docs/dynatrace-api/environment-api/events-v1 "Узнайте, что вы можете сделать с помощью Dynatrace Events API.") был заменен [Dynatrace версией 1.243](/docs/whats-new/dynatrace-api/sprint-243 "Журнал изменений Dynatrace API версии 1.243"). Его заменой является [Events API v2](/docs/dynatrace-api/environment-api/events-v2 "Узнайте, что вы можете сделать с помощью Dynatrace Events API v2."). Мы рекомендуем вам перейти на новую API как можно скорее.
 
 Миграция затрагивает URL-адреса конечных точек, параметры запроса и параметры тела запроса/ответа, а также область действия токена для аутентификации запросов.
 
@@ -19,7 +19,7 @@ scraped: 2026-02-23T21:35:33.610251
 
 Events API v2 предлагает вам следующие новые функции:
 
-* [Селектор сущностей](/docs/dynatrace-api/environment-api/entity-v2/entity-selector "Настройте селектор сущностей для Environment API конечных точек.") помогает вам фильтровать события в запросах на чтение и передавать события, которые влияют на несколько сущностей.
+* [Селектор сущностей](/docs/dynatrace-api/environment-api/entity-v2/entity-selector "Настройте селектор сущностей для Environment API конечных точек.") помогает вам фильтровать события в запросах на чтение и ингестировать события, которые влияют на несколько сущностей.
 * Улучшенная фильтрация событий через селектор событий.
 * Унифицированный селектор временного интервала.
 * Конечные точки свойств событий.
@@ -27,23 +27,23 @@ Events API v2 предлагает вам следующие новые функ
 
 ## Лицензирование
 
-[Передача](/docs/dynatrace-api/environment-api/events-v2/post-event "Передает событие через Dynatrace API.") пользовательских событий потребляет [Единицы данных Davis (DDU)](/docs/license/monitoring-consumption-classic/davis-data-units "Поймите, как потребление мониторинга Dynatrace рассчитывается на основе единиц данных Davis (DDU).") из пула событий.
+[Ингестирование](/docs/dynatrace-api/environment-api/events-v2/post-event "Ингестирует событие через Dynatrace API.") пользовательских событий потребляет [Единицы данных Davis (DDU)](/docs/license/monitoring-consumption-classic/davis-data-units "Поймите, как потребление мониторинга Dynatrace рассчитывается на основе единиц данных Davis (DDU).") из пула событий.
 
 ## Базовый URL
 
-| новое Events v2 | старое Events v1 |
+| новые Events v2 | старые Events v1 |
 | --- | --- |
 | `/api/v2/events` | `/api/v1/events` |
 
 ## Область действия токена аутентификации
 
-| новое Events v2 | старое Events v1 |
+| новые Events v2 | старые Events v1 |
 | --- | --- |
-| **Чтение событий** (`events.read`) **Передача событий** (`events.ingest`) | **Доступ к ленте проблем и событий, метрикам и топологии** (`DataExport`) |
+| **Чтение событий** (`events.read`) **Ингестирование событий** (`events.ingest`) | **Доступ к ленте проблем и событий, метрикам и топологии** (`DataExport`) |
 
 ## Параметры
 
-Чтобы узнать о новых параметрах запроса/тела, см. документацию отдельных запросов в [Events API v2](/docs/dynatrace-api/environment-api/events-v2 "Узнайте, что можно сделать с помощью Dynatrace Events API v2.").
+Чтобы узнать о новых параметрах запроса/тела, см. документацию отдельных запросов в [Events API v2](/docs/dynatrace-api/environment-api/events-v2 "Узнайте, что вы можете сделать с помощью Dynatrace Events API v2.").
 
 ## Примеры
 
@@ -110,11 +110,11 @@ GET https://mySampleEnv.live.dynatrace.com/api/v2/events?eventSelector=eventType
 
 
 
-"entityId":).
+"entityId": {
 
 
 
-"entityId":,
+"entityId": {
 
 
 
@@ -266,7 +266,7 @@ GET https://mySampleEnv.live.dynatrace.com/api/v2/events?eventSelector=eventType
 
 
 
-)
+}
 
 
 
@@ -326,7 +326,7 @@ GET https://mySampleEnv.live.dynatrace.com/api/v2/events?eventSelector=eventType
 
 
 
-)
+
 
 
 
@@ -382,11 +382,7 @@ GET https://mySampleEnv.live.dynatrace.com/api/v2/events?eventSelector=eventType
 
 
 
-)
-
-
-
-],
+},
 
 
 
@@ -434,11 +430,11 @@ GET https://mySampleEnv.live.dynatrace.com/api/v2/events?eventSelector=eventType
 
 
 
-"entityId":,
+"entityId": 
 
 
 
-"entityId":,
+"entityId": 
 
 
 
@@ -542,11 +538,7 @@ GET https://mySampleEnv.live.dynatrace.com/api/v2/events?eventSelector=eventType
 
 
 
-)
-
-
-
-],
+},
 
 
 
@@ -582,11 +574,7 @@ GET https://mySampleEnv.live.dynatrace.com/api/v2/events?eventSelector=eventType
 
 
 
-)
-
-
-
-],
+},
 
 
 
@@ -622,11 +610,7 @@ GET https://mySampleEnv.live.dynatrace.com/api/v2/events?eventSelector=eventType
 
 
 
-)
-
-
-
-],
+},
 
 
 
@@ -646,11 +630,7 @@ GET https://mySampleEnv.live.dynatrace.com/api/v2/events?eventSelector=eventType
 
 
 
-)
-
-
-
-],
+},
 
 
 
@@ -661,7 +641,7 @@ GET https://mySampleEnv.live.dynatrace.com/api/v2/events?eventSelector=eventType
 }
 ```
 
-В Events API v1 невозможно фильтровать ленту событий по статусу события. Кроме того, невозможно выбрать несколько сущностей через селектор сущностей. Вы можете указать только конкретные сущности. Для иллюстрации примера полезная нагрузка показывает одни и те же события, но вам придется найти их в полезной нагрузке с помощью внешних средств.
+В Events API v1 невозможно фильтровать ленту событий по статусу события. Кроме того, невозможно выбрать несколько сущностей через селектор сущностей. Вы можете указать только конкретные сущности. Для иллюстрации примера полезная нагрузка показывает те же события, но вам придется найти их в полезной нагрузке внешними средствами.
 
 #### URL-адрес запроса
 
@@ -780,11 +760,7 @@ GET https://mySampleEnv.live.dynatrace.com/api/v1/events?relativeTime=2hours?eve
 
 
 
-)
-
-
-
-],
+},
 
 
 
@@ -792,7 +768,7 @@ GET https://mySampleEnv.live.dynatrace.com/api/v1/events?relativeTime=2hours?eve
 
 
 
-"customProperties":,
+"customProperties": 
 
 
 
@@ -804,11 +780,7 @@ GET https://mySampleEnv.live.dynatrace.com/api/v1/events?relativeTime=2hours?eve
 
 
 
-"Message": "Missing process matching rule named Oracle listener"
-
-
-
-},
+"Message": "Missing process matching rule named Oracle listener",
 
 
 
@@ -816,11 +788,7 @@ GET https://mySampleEnv.live.dynatrace.com/api/v1/events?relativeTime=2hours?eve
 
 
 
-"source": "builtin"
-
-
-
-},
+"source": "builtin",
 
 
 
@@ -880,15 +848,11 @@ GET https://mySampleEnv.live.dynatrace.com/api/v1/events?relativeTime=2hours?eve
 
 
 
-"value": "Linux"
+"value": "Linux",
 
 
 
-)
-
-
-
-],
+},
 
 
 
@@ -900,24 +864,16 @@ GET https://mySampleEnv.live.dynatrace.com/api/v1/events?relativeTime=2hours?eve
 
 
 
-"source": "builtin"
-
-
-
-)
+"source": "builtin",
 
 
 
 ]
-
-
-
-}
 ```
 
-### Передача события третьей стороны
+### Ингестируйте событие третьей стороны
 
-В этом примере мы передаем пользовательское событие информационного типа, которое влияет на все хосты, имя которых начинается с `prod`.
+В этом примере мы ингестируем пользовательское событие информационного типа, которое влияет на все хосты, имя которых начинается с `prod`.
 
 Events v2
 
@@ -956,7 +912,7 @@ POST https://mySampleEnv.live.dynatrace.com/api/v2/events
 
 
 
-"properties":,
+"properties": 
 
 
 
@@ -964,14 +920,14 @@ POST https://mySampleEnv.live.dynatrace.com/api/v2/events
 
 
 
-"custom property 2": "my property value 2"
+"custom property 2": "my property value 2",
 
 
 
 }
 ```
 
-В Events API v1 невозможно выбрать несколько сущностей через селектор сущностей. Вам необходимо указать каждую сущность или полагаться на теги.
+В Events API v1 невозможно выбрать несколько сущностей через селектор сущностей. Вы должны указать каждую сущность или полагаться на теги.
 
 #### URL-адрес запроса
 
@@ -1002,7 +958,7 @@ POST https://mySampleEnv.live.dynatrace.com/api/v1/events
 
 
 
-"attachRules":,
+"attachRules": 
 
 
 
@@ -1018,7 +974,7 @@ POST https://mySampleEnv.live.dynatrace.com/api/v1/events
 
 
 
-"HOST"
+"HOST",
 
 
 
@@ -1042,19 +998,7 @@ POST https://mySampleEnv.live.dynatrace.com/api/v1/events
 
 
 
-"value": "production"
-
-
-
-)
-
-
-
-]
-
-
-
-]
+"value": "production",
 
 
 
@@ -1062,7 +1006,15 @@ POST https://mySampleEnv.live.dynatrace.com/api/v1/events
 
 
 
-"source": "REST API"
+],
+
+
+
+],
+
+
+
+"source": "REST API",
 
 
 
@@ -1071,5 +1023,5 @@ POST https://mySampleEnv.live.dynatrace.com/api/v1/events
 
 ## Связанные темы
 
-* [Events API v2](/docs/dynatrace-api/environment-api/events-v2 "Узнайте, что можно сделать с помощью Dynatrace Events API v2.")
-* [Events API v1](/docs/dynatrace-api/environment-api/events-v1 "Узнайте, что можно сделать с помощью Dynatrace Events API.")
+* [Events API v2](/docs/dynatrace-api/environment-api/events-v2 "Узнайте, что вы можете сделать с помощью Dynatrace Events API v2.")
+* [Events API v1](/docs/dynatrace-api/environment-api/events-v1 "Узнайте, что вы можете сделать с помощью Dynatrace Events API.")

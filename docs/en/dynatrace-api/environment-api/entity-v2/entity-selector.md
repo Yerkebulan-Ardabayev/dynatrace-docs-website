@@ -1,7 +1,7 @@
 ---
 title: Environment API v2 - Entity selector
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/entity-v2/entity-selector
-scraped: 2026-02-20T21:22:00.097540
+scraped: 2026-02-24T21:27:03.934896
 ---
 
 # Environment API v2 - Entity selector
@@ -208,25 +208,6 @@ The health state of the requested entities. Possible values are `HEALTHY` and `U
 
 The timestamp (UTC milliseconds) when the entity was seen for the first time.
 
-Syntax
-
-`firstSeenTms.<operator>(timestamp)`
-
-Multiple values
-
-![Not applicable](https://dt-cdn.net/images/icon-red-cross-1f1142a5dc.svg "Not applicable")
-
-Value operator
-
-* `lte`: earlier than or at the specified time
-* `lt`: earlier than the specified time
-* `gte`: later than or at the specified time
-* `gt`: later than the specified time
-
-Case-sensitive value
-
-n/a
-
 ## Inclusion of deleted entities
 
 Include or exclude entities marked as deleted. Those are limited to the following entity types:
@@ -241,46 +222,11 @@ Include or exclude entities marked as deleted. Those are limited to the followin
 * `DCRUM_APPLICATION`
 * `CUSTOM_DEVICE`
 
-Syntax
-
-`deletedEntities.<operator>()`
-
-Operator
-
-* `include`: include deleted entities
-* `exclude`: exclude deleted entities
-
-Values
-
-![Not applicable](https://dt-cdn.net/images/icon-red-cross-1f1142a5dc.svg "Not applicable")
-
-Example
-
-`type(HTTP_CHECK), deletedEntities.include()`: Select all entities of type `HTTP_CHECK` and include the ones marked as deleted.
-
-Note
-
-* By default, deleted entities are excluded from all results.
-* This is not supported in [management zone rules](/docs/manage/identity-access-management/permission-management/management-zones/management-zone-rules#text "Define rules to limit the entities accessible within a management zone.") and [automatic tagging](/docs/manage/tags-and-metadata/setup/how-to-define-tags#automatic "Find out how to define and apply tags manually and automatically.").
-
 ## Relationships
 
 Relationships that the requested entity should have.
 
 To fetch the list of available relationships, issue the [GET entity type](/docs/dynatrace-api/environment-api/entity-v2/get-entity-type "View the details of a monitored entity type via Dynatrace API.") call and check the **fromRelationships** and **toRelationships** fields.
-
-Syntax
-
-* `fromRelationships.<relationship>(<entitySelector>)`
-* `toRelationships.<relationship>(<entitySelector>)`
-
-Multiple arguments
-
-![Not applicable](https://dt-cdn.net/images/icon-red-cross-1f1142a5dc.svg "Not applicable")
-
-Note
-
-Takes an entity selector as an attribute.
 
 ## Negate criterion
 

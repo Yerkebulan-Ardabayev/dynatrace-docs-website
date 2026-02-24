@@ -1,7 +1,7 @@
 ---
 title: Embedded conversation starters
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/copilot/chat-with-davis-copilot/copilot-conv-starters
-scraped: 2026-02-23T21:37:15.774546
+scraped: 2026-02-24T21:26:49.944676
 ---
 
 # Embedded conversation starters

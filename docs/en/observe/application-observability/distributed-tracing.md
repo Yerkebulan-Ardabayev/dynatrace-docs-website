@@ -1,7 +1,7 @@
 ---
 title: Distributed Tracing
 source: https://www.dynatrace.com/docs/observe/application-observability/distributed-tracing
-scraped: 2026-02-23T21:18:59.011215
+scraped: 2026-02-24T21:13:32.243040
 ---
 
 # Distributed Tracing
@@ -20,10 +20,6 @@ scraped: 2026-02-23T21:18:59.011215
 ### Permissions
 
 The following table describes the required permissions.
-
-Permission
-
-Description
 
 storage:buckets:read
 
@@ -64,16 +60,6 @@ Read filter-segments
 storage:smartscape:read
 
 Read smartscape nodes and edges
-
-10
-
-rows per page
-
-Page
-
-1
-
-of 1
 
 ## Installation
 
@@ -189,31 +175,6 @@ You can integrate OpenTelemetry and OneAgent to collect trace dataâlike req
 #### Best practices
 
 Before getting started with distributed tracing, understand how setup and trace data collection differs between OpenTelemetry and OneAgent. The following is an overview of the key differences.
-
-OpenTelemetry
-
-OneAgent
-
-Set up
-
-Automatic or manual
-
-Automatic
-
-Capturing
-
-Automatic collection of allowed span attributes.
-
-Automatic collection of several request attributes, including HTTP method, URL, response codes, topology data, and details about the underlying technologies.
-
-Context
-
-Automatically or manually contextualized log entries, depending on the instrumentation library.
-
-Automatically contextualized
-
-* Log entries produced by prominent log frameworks.
-* Traces in Smartscape and Dynatrace Intelligence.
 
 To get started see
 

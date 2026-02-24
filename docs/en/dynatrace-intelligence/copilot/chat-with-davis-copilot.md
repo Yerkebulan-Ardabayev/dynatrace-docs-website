@@ -1,7 +1,7 @@
 ---
 title: Dynatrace Assist
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/copilot/chat-with-davis-copilot
-scraped: 2026-02-23T21:26:46.987169
+scraped: 2026-02-24T21:26:44.628717
 ---
 
 # Dynatrace Assist
@@ -18,10 +18,6 @@ scraped: 2026-02-23T21:26:46.987169
 ### Permissions
 
 The following table describes the required permissions.
-
-Permission
-
-Description
 
 document:documents:write
 
@@ -62,16 +58,6 @@ use copilot agentic feature
 davis:analyzers:read
 
 use copilot agentic feature
-
-10
-
-rows per page
-
-Page
-
-1
-
-of 1
 
 To use  **Dynatrace Assist** with generative AI features, you only need the following permissions:
 

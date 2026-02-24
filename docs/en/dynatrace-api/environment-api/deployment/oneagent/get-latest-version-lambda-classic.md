@@ -1,7 +1,7 @@
 ---
 title: Deployment API - View the latest OneAgent version for AWS Lambda Classic
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/deployment/oneagent/get-latest-version-lambda-classic
-scraped: 2026-02-22T21:23:28.749193
+scraped: 2026-02-24T21:30:46.249329
 ---
 
 # Deployment API - View the latest OneAgent version for AWS Lambda Classic

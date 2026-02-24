@@ -1,7 +1,7 @@
 ---
 title: Customize failure detection in Service Detection v2
 source: https://www.dynatrace.com/docs/observe/application-observability/services/service-detection/service-detection-v2/failure-detection-v2
-scraped: 2026-02-21T21:19:08.288982
+scraped: 2026-02-24T21:24:19.963307
 ---
 
 # Customize failure detection in Service Detection v2
@@ -39,26 +39,6 @@ Failure detection consists of:
 
 Dynatrace provides default failure detection rulesets and rules.
 Additionally, you can add custom rulesets and rules as described in [Create new ruleset](/docs/observe/application-observability/services/service-detection/service-detection-v2/failure-detection-v2#create-new-ruleset "Find out how to detect failed requests within services.").
-
-Condition
-
-Failure reason
-
-`span.status_code` is `ERROR`
-
-Based on span status
-
-`http.response.status_code` is `5xx` (server-side error)
-
-The HTTP error status code
-
-`rpc.grpc.status_code` is `2`, `4`, `12`, `13`, `14`, or `15` (that is, a server-side error code).
-
-The gRPC error status code
-
-Exited by exception
-
-The exception itself
 
 A request is considered successful if no failure detection rule matches.
 

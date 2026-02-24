@@ -1,7 +1,7 @@
 ---
 title: Business event capture
 source: https://www.dynatrace.com/docs/observe/business-observability/bo-events-capturing
-scraped: 2026-02-23T21:27:37.215526
+scraped: 2026-02-24T21:27:05.344402
 ---
 
 # Business event capture
@@ -62,156 +62,6 @@ Supported technologies for data extraction from HTTP requests are listed in the 
 
 #### Data extraction from incoming HTTP requests
 
-Agent
-
-OneAgent feature
-
-Min. version
-
-Technologies supported
-
-Min. version
-
-Compressed body
-
-Full body
-
-Min. version
-
-Compressed body
-
-Full body
-
-**Enablement (event capture)**
-
-**Enablement (event capture)**
-
-**Enablement (event capture)**
-
-**application/json (payload capture)**
-
-**application/json (payload capture)**
-
-**application/json (payload capture)**
-
-**Header: XML (payload capture)**[1](#fn-1-1-def)
-
-**Header: XML (payload capture)**[1](#fn-1-1-def)
-
-**Header: XML (payload capture)**[1](#fn-1-1-def)
-
-Webserver
-
-Webserver Business Events
-
-1.253
-
-* Apache ![Applicable](https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg "Applicable")
-* NGINX ![Applicable](https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg "Applicable")
-* IIS ![Applicable](https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg "Applicable")
-
-1.253
-
-![Applicable](https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg "Applicable")
-
-![Applicable](https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg "Applicable")
-
-1.275
-
-![Applicable](https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg "Applicable")
-
-![Applicable](https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg "Applicable")
-
-.NET
-
-.NET Business Events
-
-1.253
-
-![Applicable](https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg "Applicable")
-
-1.253
-
-![Not applicable](https://dt-cdn.net/images/icon-red-cross-1f1142a5dc.svg "Not applicable")
-
-![Applicable](https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg "Applicable")
-
-1.279
-
-![Not applicable](https://dt-cdn.net/images/icon-red-cross-1f1142a5dc.svg "Not applicable")
-
-![Applicable](https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg "Applicable")
-
-Java
-
-Java Business Events (incoming HTTP)
-
-1.253
-
-Servlet ![Applicable](https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg "Applicable")
-
-* Tomcat[2](#fn-1-2-def)
-* Jetty
-* JBoss
-* Wildfly
-* Websphere Liberty
-* WebLogic
-* Undertow
-* GlassFish
-* Netty[3](#fn-1-3-def)
-
-1.253
-
-![Applicable](https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg "Applicable")
-
-![Applicable](https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg "Applicable")
-
-1.275
-
-![Applicable](https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg "Applicable")
-
-![Applicable](https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg "Applicable")
-
-Node.js
-
-Node.js Business Events
-
-1.259
-
-![Applicable](https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg "Applicable")
-
-1.259
-
-![Applicable](https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg "Applicable")
-
-![Applicable](https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg "Applicable")
-
-n/a
-
-![Not applicable](https://dt-cdn.net/images/icon-red-cross-1f1142a5dc.svg "Not applicable")
-
-![Not applicable](https://dt-cdn.net/images/icon-red-cross-1f1142a5dc.svg "Not applicable")
-
-Golang
-
-Go Business Events
-
-1.263
-
-![Applicable](https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg "Applicable")
-
-1.263
-
-![Applicable](https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg "Applicable") (1.265)
-
-![Applicable](https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg "Applicable")
-
-n/a
-
-![Not applicable](https://dt-cdn.net/images/icon-red-cross-1f1142a5dc.svg "Not applicable")
-
-![Not applicable](https://dt-cdn.net/images/icon-red-cross-1f1142a5dc.svg "Not applicable")
-
 1
 
 Supported content types for XML capture on Java are `application/xml`.
@@ -226,147 +76,6 @@ Supported from OneAgent version 1.323+. FileRegions are not supported.
 
 #### Data extraction from outgoing HTTP requests
 
-Agent
-
-OneAgent feature
-
-Min. version
-
-Technologies supported
-
-Min. version
-
-Compressed body
-
-Full body
-
-Min. version
-
-Compressed body
-
-Full body
-
-**Enablement (event capture)**
-
-**Enablement (event capture)**
-
-**Enablement (event capture)**
-
-**application/json (payload capture)**
-
-**application/json (payload capture)**
-
-**application/json (payload capture)**
-
-**Header: XML (payload capture)**[1](#fn-2-1-def)
-
-**Header: XML (payload capture)**[1](#fn-2-1-def)
-
-**Header: XML (payload capture)**[1](#fn-2-1-def)
-
-Webserver
-
-n/a
-
-n/a
-
-n/a
-
-n/a
-
-n/a
-
-n/a
-
-n/a
-
-n/a
-
-n/a
-
-.NET
-
-n/a
-
-n/a
-
-n/a
-
-n/a
-
-n/a
-
-n/a
-
-n/a
-
-n/a
-
-n/a
-
-Java
-
-Java Business Events (outgoing HTTP)
-
-1.297+
-
-HTTP Clients
-
-* Apache HTTP Client 4.x
-* OK HTTP Client 3.4+
-
-1.297+
-
-![Applicable](https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg "Applicable")
-
-![Applicable](https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg "Applicable")
-
-1.297+
-
-![Applicable](https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg "Applicable")
-
-![Applicable](https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg "Applicable")
-
-Node.js
-
-n/a
-
-n/a
-
-n/a
-
-n/a
-
-n/a
-
-n/a
-
-n/a
-
-n/a
-
-n/a
-
-Golang
-
-n/a
-
-n/a
-
-n/a
-
-n/a
-
-n/a
-
-n/a
-
-n/a
-
-n/a
-
-n/a
-
 ### Capturing variants
 
 This feature is available for OneAgent version 1.309+ on Webserver, .NET and Java. For all other technologies, apply [the technology support table](#supported-technologies).
@@ -375,31 +84,9 @@ Define how incoming business events should be parsed based on their content-type
 
 To access the default configuration,  **Search** for `Capturing variants` and select it.
 
-Content-type
-
-Parser
-
-\*/json
-
-JSON
-
-\*/xml
-
-XML
-
-application/x-www-form-urlencoded
-
-URL encoded
-
-text/plain
-
-Text
-
 Those settings apply on the global level and are therefore used for all deployed agents on supported technologies.
 
 ### Configure business event sources on OneAgent
-
-
 
 OneAgent version 1.253+
 
@@ -656,6 +343,8 @@ Example request payload JSON file for OneAgent
 
 ### Examples of data extraction from XML payloads
 
+
+
 The extraction of data from XML payloads works with the same syntax as for JSON.
 
 #### Example 1: Extracting attributes and values from basic XML
@@ -760,8 +449,6 @@ Example of query string wildcard capture
 * ResultâAll query string parameters as a JSON-compatible string
 
 ## Get business events from RUM
-
-
 
 Business events are available for all Dynatrace RUM technologies (web RUM, mobile RUM, and OpenKit). RUM business events can be obtained by leveraging a dedicated method of the RUM JavaScript, OneAgent for Mobile, or OpenKit.
 
@@ -873,6 +560,8 @@ See the following log example to get started:
 ![Log to Business Events Extraction](https://dt-cdn.net/images/logs-extraction-3020-925a020b55.png)
 
 ## Generate business events from Workflows
+
+
 
 You can generate business events from workflows to capture and persist business-grade data. Examples of how this can be used include:
 
@@ -993,8 +682,6 @@ This action requires the `storage:events:write` permission defined in the Workfl
 If you're using DQL, your workflow actor needs permissions to run the DQL statement against necessary buckets.
 
 ### Handling JSON response data
-
-
 
 Some use cases require you to use JSON data returned by an API call from a previous workflow action, and convert it into correct JSON that can be used with **Ingest business event**. For example, let's say you want to ingest currency rates from an external service on a daily basis and persist them as business events that can be used in other queries. To do that, you can define a workflow that triggers two steps:
 

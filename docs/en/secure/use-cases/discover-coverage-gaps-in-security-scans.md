@@ -1,7 +1,7 @@
 ---
 title: Discover coverage gaps in security findings
 source: https://www.dynatrace.com/docs/secure/use-cases/discover-coverage-gaps-in-security-scans
-scraped: 2026-02-23T21:30:24.213297
+scraped: 2026-02-24T21:32:55.416164
 ---
 
 # Discover coverage gaps in security findings

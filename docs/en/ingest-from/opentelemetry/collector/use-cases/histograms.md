@@ -1,7 +1,7 @@
 ---
 title: Compute histogram summaries with the OpenTelemetry Collector
 source: https://www.dynatrace.com/docs/ingest-from/opentelemetry/collector/use-cases/histograms
-scraped: 2026-02-23T21:34:09.640268
+scraped: 2026-02-24T21:33:31.526177
 ---
 
 # Compute histogram summaries with the OpenTelemetry Collector

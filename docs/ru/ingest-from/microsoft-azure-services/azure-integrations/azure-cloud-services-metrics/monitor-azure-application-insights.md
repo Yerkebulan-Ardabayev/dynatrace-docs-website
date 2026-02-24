@@ -1,7 +1,7 @@
 ---
 title: Azure Application Insights monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-application-insights
-scraped: 2026-02-23T21:27:54.740357
+scraped: 2026-02-24T21:30:02.021263
 ---
 
 # Azure Application Insights monitoring

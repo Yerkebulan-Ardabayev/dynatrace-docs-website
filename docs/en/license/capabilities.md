@@ -1,7 +1,7 @@
 ---
 title: Understanding DPS capabilities
 source: https://www.dynatrace.com/docs/license/capabilities
-scraped: 2026-02-22T21:14:36.929726
+scraped: 2026-02-24T21:18:08.816373
 ---
 
 # Understanding DPS capabilities

@@ -1,7 +1,7 @@
 ---
 title: Databases app
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/databases/database-app
-scraped: 2026-02-23T21:19:33.404095
+scraped: 2026-02-24T21:15:18.487727
 ---
 
 # Databases app
@@ -35,10 +35,6 @@ Before you begin, ensure the following:
 ### Permissions
 
 The following table describes the required permissions.
-
-Permission
-
-Description
 
 davis:analyzers:execute
 
@@ -79,16 +75,6 @@ Read logs from Grail
 storage:metrics:read
 
 Read metrics from Grail
-
-10
-
-rows per page
-
-Page
-
-1
-
-of 1
 
 ### Installation steps
 

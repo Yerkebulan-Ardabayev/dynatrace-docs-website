@@ -1,7 +1,7 @@
 ---
 title: Check your application health
 source: https://www.dynatrace.com/docs/observe/digital-experience/web-applications/initial-setup/app-health-check
-scraped: 2026-02-23T21:28:25.717665
+scraped: 2026-02-24T21:20:01.141079
 ---
 
 # Check your application health
@@ -41,40 +41,6 @@ This section also shows for which RUM JavaScript versions the RUM data is discar
 In the **RUM status** section, you can see if RUM is activated for your application, related process groups, and hosts. Moreover, this section explains why Dynatrace doesn't capture RUM data for certain user sessions.
 
 The following configuration-related RUM issues and warnings might be shown in this section:
-
-Issue or warning
-
-Explanation
-
-![Not applicable](https://dt-cdn.net/images/icon-red-cross-1f1142a5dc.svg "Not applicable") RUM disabled for application
-
-If RUM is disabled for your application, follow the provided link to enable RUM.
-
-![Not applicable](https://dt-cdn.net/images/icon-red-cross-1f1142a5dc.svg "Not applicable") RUM disabled for process groups
-
-If RUM is disabled for process groups related to your application, follow the provided links to configure these process groups.
-
-![Not applicable](https://dt-cdn.net/images/icon-red-cross-1f1142a5dc.svg "Not applicable") RUM disabled for hosts
-
-If RUM is disabled for hosts related to your application, follow the provided links to configure these hosts.
-
-![Not applicable](https://dt-cdn.net/images/icon-red-cross-1f1142a5dc.svg "Not applicable") Not enough DEM units
-
-If you've run out of [DEM units](/docs/license/monitoring-consumption-classic/digital-experience-monitoring-units "Understand how Dynatrace Digital Experience Monitoring consumption is calculated based on DEM units."), RUM is disabled and Dynatrace receives no data from your application.
-
-Increase the DEM unit quota or enable [DEM overages](/docs/license/monitoring-consumption-classic/digital-experience-monitoring-units#dem-overages "Understand how Dynatrace Digital Experience Monitoring consumption is calculated based on DEM units.").
-
-![Information](https://dt-cdn.net/images/information-turquoise-500-5531844321.svg "Information") Opt-in mode enabled
-
-When [Data-collection and opt-in mode](/docs/observe/digital-experience/web-applications/additional-configuration/configure-real-user-monitoring-according-to-gdpr#user-opt-in-mode-gdpr "Learn about the privacy settings that Dynatrace provides to ensure that your web applications comply with the data-privacy regulations of your region.") is enabled, Dynatrace doesn't capture any data until a special API method is called for specific user sessions.
-
-If you want Dynatrace to capture data for all user sessions, disable this mode.
-
-![Information](https://dt-cdn.net/images/information-turquoise-500-5531844321.svg "Information") Do Not Track mode enabled
-
-When the [Comply with "Do Not Track" browser settings](/docs/observe/digital-experience/web-applications/additional-configuration/configure-real-user-monitoring-according-to-gdpr#do-not-track-gdpr "Learn about the privacy settings that Dynatrace provides to ensure that your web applications comply with the data-privacy regulations of your region.") mode is enabled with the **Turn Real User Monitoring off for "Do Not Track"-enabled browsers** option, Dynatrace doesn't capture any data when a user has the "Do Not Track" setting turned on in their browser.
-
-If you want to ignore the "Do Not Track" browser setting and capture RUM data from all browsers, disable the Do Not Track mode. Alternatively, you can select the **Capture anonymous user sessions for "Do Not Track"-enabled browsers** option to send anonymized data from such browsers.
 
 ## RUM JavaScript injection diagnostics
 

@@ -1,7 +1,7 @@
 ---
 title: Metric ingestion protocol
 source: https://www.dynatrace.com/docs/ingest-from/extend-dynatrace/extend-metrics/reference/metric-ingestion-protocol
-scraped: 2026-02-23T21:36:10.859096
+scraped: 2026-02-24T21:25:53.667258
 ---
 
 # Metric ingestion protocol
@@ -117,30 +117,6 @@ You can provide custom metric metadata via the ingestion protocol. The ingestion
 Set either `gauge` or `count` in place of `<payload-format>`. Usage of the count format will automatically create a new metric with the `metric-key.count` key.
 
 The following properties are available. To specify several properties, separate them with a comma (`,`).
-
-Key
-
-Type
-
-Description
-
-dt.meta.displayName
-
-string
-
-The name of the metric in the user interface.
-
-dt.meta.description
-
-string
-
-A short description of the metric.
-
-dt.meta.unit
-
-string
-
-The unit of the metric. Find the possible unit values in the [Dynatrace Developerï»¿](https://developer.dynatrace.com/reference/units/) documentation.
 
 ## Examples
 
