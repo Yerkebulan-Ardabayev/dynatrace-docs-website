@@ -1,7 +1,7 @@
 ---
 title: Azure Cosmos DB Account (GlobalDocumentDB) monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-cosmos-db-account-globaldocumentdb
-scraped: 2026-02-23T21:34:59.106474
+scraped: 2026-02-24T21:26:54.067940
 ---
 
 # Azure Cosmos DB Account (GlobalDocumentDB) monitoring
@@ -54,7 +54,7 @@ Hiding a dashboard doesn't affect other users.
 
 ## Available metrics
 
-Эта служба отслеживает часть Azure учетной записи Cosmos DB (Microsoft.DocumentDB/databaseAccounts). Пока эта служба настроена, вы не можете включить службу Azure Cosmos Database (встроенную).
+This service monitors a part of Azure Cosmos DB Account (Microsoft.DocumentDB/databaseAccounts). While you have this service configured, you can't have Azure Cosmos Database (built-in) service turned on.
 
 | Name | Description | Dimensions | Unit | Recommended |
 | --- | --- | --- | --- | --- |

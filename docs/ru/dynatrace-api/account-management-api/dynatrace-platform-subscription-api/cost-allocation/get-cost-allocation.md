@@ -1,7 +1,7 @@
 ---
 title: Dynatrace Platform Subscription API - GET cost allocation
 source: https://www.dynatrace.com/docs/dynatrace-api/account-management-api/dynatrace-platform-subscription-api/cost-allocation/get-cost-allocation
-scraped: 2026-02-23T21:39:17.127846
+scraped: 2026-02-24T21:27:44.524600
 ---
 
 # Dynatrace Platform Subscription API - GET cost allocation
@@ -12,54 +12,50 @@ scraped: 2026-02-23T21:39:17.127846
 * Reference
 * Published Oct 18, 2024
 
-Lists Dynatrace Platform Subscription usage data by cost allocation field.
+Списки данных об использовании Dynatrace Platform Subscription по полю распределения затрат.
 
-The request produces an `application/json` payload.
+Запрос производит полезную нагрузку `application/json`.
 
-GET
+## Аутентификация
 
-`https://api.dynatrace.com/v1/subscriptions/{subscription-uuid}/cost-allocation`
+Чтобы выполнить этот запрос, вам необходимо назначить область `Allow read access for usage and consumption resources` (`account-uac-read`) вашему токену. Чтобы узнать, как получить и использовать его, см. [Клиенты OAuth](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/oauth-clients "Управление аутентификацией и разрешениями пользователей с помощью клиентов OAuth.").
 
-## Authentication
+## Параметры
 
-To execute this request, you need the **Allow read access for usage and consumption resources** (`account-uac-read`) scope assigned to your token. To learn how to obtain and use it, see [OAuth clients](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/oauth-clients "Manage authentication and user permissions using OAuth clients.").
-
-## Parameters
-
-| Parameter | Type | Description | In | Required |
+| Параметр | Тип | Описание | В | Обязательный |
 | --- | --- | --- | --- | --- |
-| subscription-uuid | string | The UUID of the requested subscription.  Fetch the list of subscriptions via the [GET all subscriptionsï»¿](https://dt-url.net/jq03jvq) request. (required) | path | Required |
-| field | string | Field by which costs and usage should be split. Allowed values: `COSTCENTER`, `PRODUCT` (required unless page-key is provided) | query | Required |
-| environment-id | string | The identifier of an environment. (required unless page-key is provided) | query | Optional |
-| from | string | The start of the requested timeframe in `2021-05-01` format. | query | Optional |
-| to | string | The end of the requested timeframe in `2021-05-01` format. | query | Optional |
-| page-size | number | Defines the requested number of entries for the next page. | query | Optional |
-| page-key | string | A base64 encoded key to retrieve a specific page. If this query parameter is set, no other query parameters can be set. | query | Optional |
+| subscription-uuid | string | UUID запрошенной подписки. Получите список подписок через запрос [GET all subscriptions](https://dt-url.net/jq03jvq). (обязательный) | path | Обязательный |
+| field | string | Поле, по которому должны быть разделены затраты и использование. Допустимые значения: `COSTCENTER`, `PRODUCT` (обязательный, если не указан page-key) | query | Обязательный |
+| environment-id | string | Идентификатор среды. (обязательный, если не указан page-key) | query | Необязательный |
+| from | string | Начало запрошенного временного интервала в формате `2021-05-01`. | query | Необязательный |
+| to | string | Конец запрошенного временного интервала в формате `2021-05-01`. | query | Необязательный |
+| page-size | number | Определяет количество записей, запрошенных для следующей страницы. | query | Необязательный |
+| page-key | string | Закодированный в base64 ключ для получения конкретной страницы. Если этот параметр запроса задан, другие параметры запроса не могут быть заданы. | query | Необязательный |
 
-## Response
+## Ответ
 
-### Response codes
+### Код ответа
 
-| Code | Type | Description |
+| Код | Тип | Описание |
 | --- | --- | --- |
-| **200** | [PaginatedEnvironmentBreakdownDto](#openapi-definition-PaginatedEnvironmentBreakdownDto) | Success. The response contains a page of the requested chargeback breakdown. |
-| **400** | - | The request was unacceptable, often due to missing a required parameter |
-| **401** | - | No valid session provided |
-| **403** | - | Access denied |
-| **500** | - | Something went wrong on Account Management's end |
+| **200** | [PaginatedEnvironmentBreakdownDto](#openapi-definition-PaginatedEnvironmentBreakdownDto) | Успех. Ответ содержит страницу запрошенного анализа распределения затрат. |
+| **400** | - | Запрос был недопустимым, часто из-за отсутствия обязательного параметра |
+| **401** | - | Не предоставлена действительная сессия |
+| **403** | - | Доступ запрещен |
+| **500** | - | Что-то пошло не так на стороне Account Management |
 
-### Response body objects
+### Объекты тела ответа
 
-#### The `PaginatedEnvironmentBreakdownDto` object
+#### Объект `PaginatedEnvironmentBreakdownDto`
 
-| Element | Type | Description |
+| Элемент | Тип | Описание |
 | --- | --- | --- |
-| environmentId | string | Identifier of the environment |
-| field | string | Field used to generate the breakdown. Can be `COSTCENTER` or `PRODUCT` |
-| records | string[] | List of individual breakdown entries. |
-| nextPageKey | string | Key to request the next page. |
+| environmentId | string | Идентификатор среды |
+| field | string | Поле, использованное для генерации анализа. Может быть `COSTCENTER` или `PRODUCT` |
+| records | string[] | Список отдельных записей анализа. |
+| nextPageKey | string | Ключ для запроса следующей страницы. |
 
-### Response body JSON models
+### Модели тела ответа JSON
 
 ```
 {
@@ -93,6 +89,6 @@ To execute this request, you need the **Allow read access for usage and consumpt
 }
 ```
 
-## Related topics
+## Связанные темы
 
-* [Allocate your DPS costs](/docs/license/cost-allocation "Learn how to allocate costs to cost centers and products.")
+* [Распределение затрат DPS](/docs/license/cost-allocation "Узнайте, как распределить затраты по центрам затрат и продуктам.")

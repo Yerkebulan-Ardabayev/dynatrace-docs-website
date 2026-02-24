@@ -1,7 +1,7 @@
 ---
 title: Containerized, auto-scalable private Synthetic locations on Kubernetes
 source: https://www.dynatrace.com/docs/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/containerized-locations
-scraped: 2026-02-23T21:37:56.196774
+scraped: 2026-02-24T21:23:34.979106
 ---
 
 # Containerized, auto-scalable private Synthetic locations on Kubernetes
@@ -10,7 +10,7 @@ scraped: 2026-02-23T21:37:56.196774
 
 * How-to guide
 * 26-min read
-* Updated on Oct 22, 2025
+* Updated on Feb 11, 2026
 
 Dynatrace version 1.264+
 
@@ -944,7 +944,7 @@ subPath: custom.properties
 
 In general, we recommend the deployment of complete synthetic private locations to support the execution of all types synthetic monitors (HTTP, browser, NAM).
 
-If you don't need to execute browser monitors, however, you might want to consider deploying your private location in a special browserless mode. Such a location (or ActiveGate belonging to it) will be deployed without the browser. The resulting deployment requires less hardware resources, but browser monitors cannot be executed from such a location.
+If you don't need to run browser monitors, consider deploying your location in browserless mode. This mode deploys the location (or ActiveGate belonging to it) without a browser, reducing hardware requirements. However, browser monitors can't run on a browserless location.
 
 Consider browserless locations as an alternative to synthetic private locations with browser monitor support when youâre focused purely on:
 
@@ -1128,11 +1128,11 @@ mountPath: /etc/krb5.conf
 subPath: krb5.conf
 ```
 
-
-
 ## Synthetic metric adapter
 
 ### Disable domain certificate validation
+
+
 
 Add the following code to Synthetic metric adapter template under `env:`
 

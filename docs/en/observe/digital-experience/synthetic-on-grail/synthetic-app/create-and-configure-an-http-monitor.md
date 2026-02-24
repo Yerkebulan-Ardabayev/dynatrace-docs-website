@@ -1,7 +1,7 @@
 ---
 title: Create and configure an HTTP monitor
 source: https://www.dynatrace.com/docs/observe/digital-experience/synthetic-on-grail/synthetic-app/create-and-configure-an-http-monitor
-scraped: 2026-02-23T21:29:58.562981
+scraped: 2026-02-24T21:27:15.921877
 ---
 
 # Create and configure an HTTP monitor
@@ -171,26 +171,6 @@ You can configure one or more requests in **Visual** or **Script** mode. In **Vi
     Default HTTP headers
 
     These are the default headers Dynatrace creates per request.
-
-    Name
-
-    Value
-
-    `Accept`
-
-    `*/*`
-
-    `Connection`
-
-    `close`
-
-    `Host`
-
-    `<hostname>`
-
-    `User-Agent`
-
-    `DynatraceSynthetic/{version}`[1](#fn-1-1-def)
 
     1
 

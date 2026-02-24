@@ -1,7 +1,7 @@
 ---
 title: Dynatrace Intelligence DQL examples
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/use-cases/davis-dql-examples
-scraped: 2026-02-23T21:27:35.825130
+scraped: 2026-02-24T21:18:22.552249
 ---
 
 # Dynatrace Intelligence DQL examples
@@ -57,10 +57,6 @@ fetch dt.davis.problems, from:now()-24h, to:now()
 
 **Query result**
 
-problemCount
-
-415
-
 ## Count the current number of distinct active problems
 
 * Fetches table `dt.davis.problems`.
@@ -81,10 +77,6 @@ fetch dt.davis.problems
 
 **Query result**
 
-activeProblems
-
-15
-
 ## Chart the number of problems from the last 7 days
 
 * Fetches table `dt.davis.problems`.
@@ -101,18 +93,6 @@ fetch dt.davis.problems, from:now()-7d
 ```
 
 **Query result**
-
-timeframe
-
-interval
-
-count
-
-start: 20/11/2024, 12:00 end: 27/11/2024, 13:00
-
-60 min
-
-0.00, 55.00, 143.00, 703.00, 504.00, 120.00, 117.00, 692.00, 534.00
 
 ## Identify the top 3 problem-affected entities within your environment
 
@@ -144,22 +124,6 @@ fetch dt.davis.problems
 
 **Query result**
 
-affected\_entity\_ids
-
-count
-
-HOST-A9449CACDE12B2BF
-
-10
-
-SERVICE-5624DD59D74FF453
-
-5
-
-PROCESS\_GROUP\_INSTANCE-3184C659684130C7
-
-3
-
 ## Fetch all problems for a host with the name "myhost"
 
 This example joins entity attributes in order to filter all problems with a given host name.
@@ -188,26 +152,6 @@ fetch dt.davis.problems
 
 **Query result**
 
-timestamp
-
-affected\_entity\_ids
-
-host.id
-
-host.name
-
-display\_id
-
-5/31/2023, 1:31:39 PM
-
-HOST-27D70086952122CF
-
-HOST-27D70086952122CF
-
-myhost
-
-P-23054243
-
 ## Load the last state of a given problem
 
 This example shows you how to filter problems by a unique ID.
@@ -225,26 +169,6 @@ fetch dt.davis.problems
 ```
 
 **Query result**
-
-timestamp
-
-affected\_entity\_ids
-
-host.id
-
-host.name
-
-display\_id
-
-5/31/2023, 1:31:39 PM
-
-HOST-27D70086952122CF
-
-HOST-27D70086952122CF
-
-myhost
-
-P-23053506
 
 ## Load all active problems and exclude all those that are marked as duplicates
 
@@ -265,22 +189,6 @@ fetch dt.davis.problems
 ```
 
 **Query result**
-
-display\_id
-
-status
-
-id
-
-duplicate
-
-P-230910385
-
-ACTIVE
-
-P-230910385
-
-false
 
 ## Calculate the mean time of resolving problems over time
 
@@ -346,19 +254,3 @@ fetch dt.davis.events, from:now()-7d, to:now()
 ```
 
 **Query result**
-
-60min interval
-
-count
-
-5/25/2023, 3:00 PM
-
-146
-
-5/25/2023, 4:00 PM
-
-312
-
-5/25/2023, 5:00 PM
-
-201

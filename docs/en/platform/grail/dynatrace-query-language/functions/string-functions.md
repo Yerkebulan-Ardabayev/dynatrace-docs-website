@@ -1,7 +1,7 @@
 ---
 title: String functions
 source: https://www.dynatrace.com/docs/platform/grail/dynatrace-query-language/functions/string-functions
-scraped: 2026-02-19T21:18:08.972644
+scraped: 2026-02-24T21:17:57.597577
 ---
 
 # String functions
@@ -36,30 +36,6 @@ Concatenates the expressions into a single string.
 
 #### Parameters
 
-Parameter
-
-Type
-
-Description
-
-Required
-
-expression
-
-double, long, string
-
-A numeric or string expressions that should be concatenated with others.
-
-Required
-
-delimiter
-
-string
-
-Constant string to be inserted between each concatenated value. Default: `""` (empty string).
-
-Optional
-
 #### Returns
 
 The data type of the returned value is `string`.
@@ -80,22 +56,6 @@ Run in Playground
 
 Query result:
 
-a
-
-b
-
-c
-
-concat(a, b, c, delimiter: " ")
-
-`DQL`
-
-`is`
-
-`awesome!`
-
-`DQL is awesome!`
-
 ## contains
 
 Searches the string expression for a substring. Returns `true` if the substring was found, `false` otherwise.
@@ -105,38 +65,6 @@ Searches the string expression for a substring. Returns `true` if the substring 
 `contains(expression, substring [, caseSensitive])`
 
 #### Parameters
-
-Parameter
-
-Type
-
-Description
-
-Required
-
-expression
-
-string
-
-The field or expression to check.
-
-Required
-
-substring
-
-string
-
-The substring that should be contained.
-
-Required
-
-caseSensitive
-
-boolean
-
-Whether the search should be done in a case-sensitive way. The default value is `true`.
-
-Optional
 
 #### Returns
 
@@ -170,30 +98,6 @@ Run in Playground
 
 Query result:
 
-content
-
-contains(content, "DQL")
-
-contains(content, "dql", caseSensitive:FALSE)
-
-contains(content, "Query")
-
-`DQL is awesome!`
-
-`true`
-
-`true`
-
-`false`
-
-`Dynatrace Query Language`
-
-`false`
-
-`false`
-
-`true`
-
 ## decodeUrl
 
 Returns a URL-decoded string.
@@ -203,22 +107,6 @@ Returns a URL-decoded string.
 `decodeUrl(expression)`
 
 #### Parameters
-
-Parameter
-
-Type
-
-Description
-
-Required
-
-expression
-
-string
-
-The string expression that will be decoded.
-
-Required
 
 #### Returns
 
@@ -244,18 +132,6 @@ Run in Playground
 
 Query result:
 
-content
-
-decodeUrl(content)
-
-`https%3A%2F%2Fwww.dynatrace.com%2Fplatform%2Fgrail`
-
-`https://www.dynatrace.com/platform/grail`
-
-`https://www.dynatrace.com/platform/grail`
-
-`https://www.dynatrace.com/platform/grail`
-
 ## encodeUrl
 
 Encodes a URL string by replacing characters that aren't numbers or letters with percentage symbols and hexadecimal numbers.
@@ -265,22 +141,6 @@ Encodes a URL string by replacing characters that aren't numbers or letters with
 `encodeUrl(expression)`
 
 #### Parameters
-
-Parameter
-
-Type
-
-Description
-
-Required
-
-expression
-
-string
-
-The string expression that will be encoded.
-
-Required
 
 #### Returns
 
@@ -302,14 +162,6 @@ Run in Playground
 
 Query result:
 
-content
-
-encodeUrl(content)
-
-`https://www.dynatrace.com/platform/grail`
-
-`https%3A%2F%2Fwww.dynatrace.com%2Fplatform%2Fgrail`
-
 ## endsWith
 
 Checks if a string expression ends with a suffix. Returns `true` if does, `false` otherwise.
@@ -319,38 +171,6 @@ Checks if a string expression ends with a suffix. Returns `true` if does, `false
 `endsWith(expression, suffix [, caseSensitive])`
 
 #### Parameters
-
-Parameter
-
-Type
-
-Description
-
-Required
-
-expression
-
-string
-
-The string expression that will be checked.
-
-Required
-
-suffix
-
-string
-
-The suffix string with which the expression should end.
-
-Required
-
-caseSensitive
-
-boolean
-
-Whether the check should be done in a case-sensitive way.
-
-Optional
 
 #### Returns
 
@@ -384,30 +204,6 @@ Run in Playground
 
 Query result:
 
-content
-
-endsWith(content, "awesome!")
-
-endsWith(content, "AWESOME!", caseSensitive:FALSE)
-
-endsWith(content, "Language")
-
-`DQL is awesome!`
-
-`true`
-
-`true`
-
-`false`
-
-`Dynatrace Query Language`
-
-`false`
-
-`false`
-
-`true`
-
 ## escape
 
 Returns an escaped string.
@@ -416,67 +212,11 @@ Escaping rules
 
 1. Single and double quotes are escaped. Backticks are not escaped.
 
-Input
-
-Output
-
-`"`
-
-`\"`
-
-`'`
-
-`\'`
-
 2. Backslashes are escaped.
-
-Input
-
-Output
-
-`\`
-
-`\\`
 
 3. ASCII characters backspace, form feed, new line, carriage return, horizontal tabs are escaped.
 
-Input
-
-Output
-
-`<backspace>`
-
-`\b`
-
-`<form feed>`
-
-`\f`
-
-`<new line>`
-
-`\n`
-
-`<carriage return>`
-
-`\r`
-
-`<horizontal tab>`
-
-`\t`
-
 4. ASCII characters within the range 0x20 - 0x7e (printable ASCII characters), that are not covered by any of the above rules, stay as they are.
-
-Input
-
-Output
-
-`a`
-
-`a`
-
-`1`
-
-`1`
 
 5. All other ASCII characters are represented as `\xhh`. This applies to the following characters
 
@@ -485,45 +225,13 @@ Output
    * characters within the range 0x0e - 0x1f
    * character 0x7f
 
-Input
-
-Output
-
-`<vertical tab>`
-
-`\x0b`
-
 6. All characters in extended ASCII space (0x80-0xff) and Unicode characters outside of the ASCII space are represented as `\uhhhh`.
-
-Input
-
-Output
-
-`Ã¶`
-
-`\u00f6`
 
 #### Syntax
 
 `escape(expression)`
 
 #### Parameters
-
-Parameter
-
-Type
-
-Description
-
-Required
-
-expression
-
-string expression
-
-The string expression that will be escaped.
-
-Required
 
 #### Returns
 
@@ -559,28 +267,6 @@ Returns the character at a given position from a string expression. Negative val
 
 #### Parameters
 
-Parameter
-
-Type
-
-Description
-
-Required
-
-expression
-
-string
-
-Required
-
-position
-
-long
-
-The position at which to get the character.
-
-Required
-
 #### Returns
 
 The data type of the returned value is `string`.
@@ -613,30 +299,6 @@ Run in Playground
 
 Query result:
 
-content
-
-getCharacter(content, 1)
-
-getCharacter(content, 17)
-
-getCharacter(content, -1)
-
-`DQL is awesome!`
-
-`Q`
-
-*null*
-
-`!`
-
-`Dynatrace Query Language`
-
-`y`
-
-`a`
-
-`e`
-
 ## indexOf
 
 Returns the index of the first occurrence of a substring in a string expression.
@@ -650,38 +312,6 @@ If the defined substring is not found, the function returns `-1`.
 `indexOf(expression, substring [, from])`
 
 #### Parameters
-
-Parameter
-
-Type
-
-Description
-
-Required
-
-expression
-
-string
-
-The string expression in which the substring is searched for.
-
-Required
-
-substring
-
-string
-
-The substring expression to search for in the expression.
-
-Required
-
-from
-
-long
-
-The index from which to start the forward search for the first occurrence of the substring within the expression. Negative values are counted from the end of the string.
-
-Optional
 
 #### Returns
 
@@ -715,30 +345,6 @@ Run in Playground
 
 Query result:
 
-content
-
-indexOf(content, "a")
-
-indexOf(content, "a", from:10)
-
-indexOf(content, "Query")
-
-`DQL is awesome!`
-
-`7`
-
-`-1`
-
-`-1`
-
-`Dynatrace Query Language`
-
-`3`
-
-`17`
-
-`10`
-
 ## jsonField
 
 Parses a JSON string and extracts one value selected by its name.
@@ -748,38 +354,6 @@ Parses a JSON string and extracts one value selected by its name.
 `jsonField(expression, fieldName [, seek])`
 
 #### Parameters
-
-Parameter
-
-Type
-
-Description
-
-Required
-
-expression
-
-string
-
-The JSON string that should be parsed.
-
-Required
-
-fieldName
-
-string
-
-The string literal with the key to be extracted.
-
-Required
-
-seek
-
-boolean
-
-Flag indicating if the function should search for the first valid JSON object in the expression. The default value is `false`.
-
-Optional
 
 #### Returns
 
@@ -817,14 +391,6 @@ Run in Playground
 
 Query result:
 
-content
-
-jsonField(content, "name")
-
-`{"name":"John", "children":["Mallory", "Mary"], "address":{"city":"Boston", "zip":"02210"}}`
-
-`John`
-
 ##### Example 2
 
 ```
@@ -843,18 +409,6 @@ Run in Playground
 
 Query result:
 
-content
-
-jsonField(content, "name", seek:FALSE)
-
-jsonField(content, "name", seek:TRUE)
-
-`JSON: {"name": "John"} ...`
-
-`null`
-
-`John`
-
 ## jsonPath
 
 Parses a JSON string and extracts one value selected by a JSONPath expression.
@@ -864,38 +418,6 @@ Parses a JSON string and extracts one value selected by a JSONPath expression.
 `jsonPath(expression, jsonPath [, seek])`
 
 #### Parameters
-
-Parameter
-
-Type
-
-Description
-
-Required
-
-expression
-
-string
-
-The JSON string that should be parsed.
-
-Required
-
-jsonPath
-
-string
-
-The string literal with the JSONPath expression of the value to be extracted.
-
-Required
-
-seek
-
-boolean
-
-Flag indicating if the function should search for the first valid JSON object in the expression. The default value is `false`.
-
-Optional
 
 #### Returns
 
@@ -941,22 +463,6 @@ Run in Playground
 
 Query result:
 
-content
-
-jsonPath(content, "$.children[0]")
-
-jsonPath(content, "$.address.city")
-
-jsonPath(content, "$['address']['zip']")
-
-`{"name":"John", "children":["Mallory", "Mary"], "address":{"city":"Boston", "zip":"02210"}}`
-
-`Mallory`
-
-`Boston`
-
-`02210`
-
 ##### Example 2
 
 ```
@@ -975,18 +481,6 @@ Run in Playground
 
 Query result:
 
-content
-
-jsonPath(content, "$.name", seek:FALSE)
-
-jsonPath(content, "$.name", seek:TRUE)
-
-`JSON: {"name": "John"} ...`
-
-`null`
-
-`John`
-
 ## lastIndexOf
 
 Returns the index of the last occurrence of a substring in a string expression. Starts to search backward from a given index. Negative values for the from parameter are counted from the end of the string. The default value for from is -1 (search from the end of the string). The search is case-sensitive. If the substring is not found, the function returns `-1`.
@@ -996,36 +490,6 @@ Returns the index of the last occurrence of a substring in a string expression. 
 `lastIndexOf(expression, substring [, from])`
 
 #### Parameters
-
-Parameter
-
-Type
-
-Description
-
-Required
-
-expression
-
-string
-
-The string expression in which the substring is searched for.
-
-Required
-
-substring
-
-string
-
-The substring expression to search for in the expression.
-
-Required
-
-from
-
-long
-
-Optional
 
 #### Returns
 
@@ -1059,30 +523,6 @@ Run in Playground
 
 Query result:
 
-content
-
-lastIndexOf(content, "a")
-
-lastIndexOf(content, "a", from:10)
-
-lastIndexOf(content, "Query")
-
-`DQL is awesome!`
-
-`7`
-
-`7`
-
-`-1`
-
-`Dynatrace Query Language`
-
-`21`
-
-`6`
-
-`10`
-
 ## levenshteinDistance
 
 Computes the Levenshtein distance between two input strings.
@@ -1092,30 +532,6 @@ Computes the Levenshtein distance between two input strings.
 `levenshteinDistance(expression, expression)`
 
 #### Parameters
-
-Parameter
-
-Type
-
-Description
-
-Required
-
-first expression
-
-string
-
-The first string expression to compute the Levenshtein distance from.
-
-Required
-
-second
-
-string
-
-The second string expression to compute the Levenshtein distance from.
-
-Required
 
 #### Returns
 
@@ -1145,30 +561,6 @@ Run in Playground
 
 Query result:
 
-a
-
-b
-
-levenshteinDistance(a, b)
-
-`DQL is awesome!`
-
-`Grail is awesome!`
-
-`5`
-
-`Dynatrace Query Language`
-
-`DQL`
-
-`21`
-
-`Dynatrace Query Language`
-
-`dynatrace query language`
-
-`3`
-
 ## like
 
 Tests if a string expression matches a pattern. If the pattern does not contain percent signs, `like()` acts as the `==` operator (equality check). A percent character in the pattern `(%)` matches any sequence of zero or more characters. An underscore in the pattern `(\_)` matches a single character.
@@ -1178,26 +570,6 @@ Tests if a string expression matches a pattern. If the pattern does not contain 
 `like(expression, pattern)`
 
 #### Parameters
-
-Parameter
-
-Type
-
-Description
-
-Required
-
-expression
-
-string
-
-Required
-
-pattern
-
-string
-
-Required
 
 #### Returns
 
@@ -1231,30 +603,6 @@ Run in Playground
 
 Query result:
 
-content
-
-like(content, "%DQL%")
-
-like(content, "D%L%")
-
-like(content, "D\_L%")
-
-`DQL is awesome!`
-
-`true`
-
-`true`
-
-`true`
-
-`Dynatrace Query Language`
-
-`false`
-
-`true`
-
-`false`
-
 ## lower
 
 Converts a string to lowercase.
@@ -1264,22 +612,6 @@ Converts a string to lowercase.
 `lower(expression)`
 
 #### Parameters
-
-Parameter
-
-Type
-
-Description
-
-Required
-
-expression
-
-string
-
-The string expression to convert to lowercase.
-
-Required
 
 #### Returns
 
@@ -1305,18 +637,6 @@ Run in Playground
 
 Query result:
 
-content
-
-lower(content)
-
-`DQL is awesome!`
-
-`dql is awesome!`
-
-`Dynatrace Query Language`
-
-`dynatrace query language`
-
 ## matchesPattern
 
 Tests if a string expression matches the DPL pattern and returns `true` if it does, otherwise, returns `false`.
@@ -1326,30 +646,6 @@ Tests if a string expression matches the DPL pattern and returns `true` if it do
 `matchesPattern(expression, pattern)`
 
 #### Parameters
-
-Parameter
-
-Type
-
-Description
-
-Required
-
-expression
-
-string
-
-A field or string expression to test.
-
-Required
-
-pattern
-
-string
-
-The matching pattern.
-
-Required
 
 #### Returns
 
@@ -1399,38 +695,6 @@ Matches a phrase against the input string expression using token matchers.
 
 #### Parameters
 
-Parameter
-
-Type
-
-Description
-
-Required
-
-expression
-
-string, array
-
-The expression (string or array of strings) that should be checked.
-
-Required
-
-phrase
-
-string
-
-The phrase to search for.
-
-Required
-
-caseSensitive
-
-boolean
-
-Whether the match should be done case-sensitive. Default: `false`.
-
-Optional
-
 #### Returns
 
 The data type of the returned value is `boolean`.
@@ -1471,46 +735,6 @@ Run in Playground
 
 Query result:
 
-content
-
-matchesPhrase(content, "DQL")
-
-matchesPhrase(content, "Dyna")
-
-matchesPhrase(content, "query")
-
-matchesPhrase(content, "query", caseSensitive:TRUE)
-
-`DQL is awesome!`
-
-`true`
-
-`false`
-
-`false`
-
-`false`
-
-`Dynatrace Query Language`
-
-`false`
-
-`false`
-
-`true`
-
-`false`
-
-`[DQL, is, awesome, !, Dynatrace Query Language]`
-
-`true`
-
-`false`
-
-`true`
-
-`false`
-
 ## matchesValue
 
 Searches records for a specific value in a given attribute. Returns `true` or `false`.
@@ -1520,38 +744,6 @@ Searches records for a specific value in a given attribute. Returns `true` or `f
 `matchesValue(expression, value, â¦ [, caseSensitive])`
 
 #### Parameters
-
-Parameter
-
-Type
-
-Description
-
-Required
-
-expression
-
-string, array
-
-The expression (string or array of strings) that should be checked.
-
-Required
-
-value
-
-string, array
-
-The value to search for using patterns (supports an array of patterns or a list of patterns).
-
-Required
-
-caseSensitive
-
-boolean
-
-Whether the match should be done case-sensitive. Default: `false`.
-
-Optional
 
 #### Returns
 
@@ -1583,22 +775,6 @@ Run in Playground
 
 Query result:
 
-content
-
-matchesValue(content, "User\*")
-
-matchesValue(content, "user\*")
-
-matchesValue(content, "user\*", caseSensitive:TRUE)
-
-`User 'kÃ¤Ã¤rmanÃ¼' failed to login from 192.168.0.1`
-
-`true`
-
-`true`
-
-`false`
-
 ##### Example 2
 
 Values are matched from the beginning. To match parts of the value, use `*` as wildcard symbol:
@@ -1623,22 +799,6 @@ Run in Playground
 
 Query result:
 
-content
-
-matchesValue(content, "192.168.0.1")
-
-matchesValue(content, "\*192.168.0.1")
-
-matchesValue(content, "\*failed to log\*")
-
-`User 'kÃ¤Ã¤rmanÃ¼' failed to login from 192.168.0.1`
-
-`false`
-
-`true`
-
-`true`
-
 ##### Example 3
 
 Only ASCII characters are matched case-insensitive:
@@ -1658,18 +818,6 @@ matchesValue(content, "Ãsterreich")
 Run in Playground
 
 Query result:
-
-content
-
-matchesValue(content, "Ã¶sterreich")
-
-matchesValue(content, "Ãsterreich")
-
-`Ãsterreich`
-
-`false`
-
-`true`
 
 ##### Example 4
 
@@ -1694,22 +842,6 @@ matchesValue(technologies, "java*")
 Run in Playground
 
 Query result:
-
-technologies
-
-matchesValue(technologies, "Java11")
-
-matchesValue(technologies, "java")
-
-matchesValue(technologies, "java\*")
-
-`[Java11, java17]`
-
-`true`
-
-`false`
-
-`true`
 
 #### Multi-pattern comparison
 
@@ -1741,26 +873,6 @@ Run in Playground
 
 Query result:
 
-content
-
-matchesValue(content, array("Grail", "dql"))
-
-matchesValue(content, {"Grail", "dql"})
-
-matchesValue(content, {"Grail", "dq\*"})
-
-matchesValue(caseSensitive:TRUE, content, {"Grail", "dq\*"})
-
-`DQL, is, awesome, !`
-
-`true`
-
-`true`
-
-`true`
-
-`false`
-
 ## parse
 
 Extracts a single value from a string as specified in the pattern or a record if there are multiple named matchers.
@@ -1770,30 +882,6 @@ Extracts a single value from a string as specified in the pattern or a record if
 `parse(expression, pattern)`
 
 #### Parameters
-
-Parameter
-
-Type
-
-Description
-
-Required
-
-expression
-
-string
-
-A field or string expression to parse.
-
-Required
-
-pattern
-
-string
-
-The parse pattern. Must conform with patterns (see [DPL](/docs/platform/grail/dynatrace-pattern-language "Use Dynatrace Pattern Language to describe patterns using matchers.")).
-
-Required
 
 #### Returns
 
@@ -1844,30 +932,6 @@ Unlike the [`parse`](/docs/platform/grail/dynatrace-query-language/functions/str
 
 #### Parameters
 
-Parameter
-
-Type
-
-Description
-
-Required
-
-expression
-
-string
-
-A field or string expression to parse.
-
-Required
-
-pattern
-
-string
-
-The parse pattern. Must conform with [DPL patterns](/docs/platform/grail/dynatrace-pattern-language "Use Dynatrace Pattern Language to describe patterns using matchers.").
-
-Required
-
 #### Returns
 
 The data type of the returned value is `array`.
@@ -1915,38 +979,6 @@ Extracts punctuation characters out of an input string.
 
 #### Parameters
 
-Parameter
-
-Type
-
-Description
-
-Required
-
-expression
-
-string
-
-The string expression from which the punctuation characters are extracted.
-
-Required
-
-count
-
-positive integer
-
-The maximum number of returned punctuation characters. Default: `32`.
-
-Optional
-
-withSpace
-
-boolean
-
-Whether space characters should be included. Default: `false`.
-
-Optional
-
 #### Returns
 
 The data type of the returned value is `string`.
@@ -1985,38 +1017,6 @@ Run in Playground
 
 Query result:
 
-content
-
-punctuation(content)
-
-punctuation(content, count:2)
-
-punctuation(content, count:2, withSpace:TRUE)
-
-`DQL is awesome!`
-
-`!`
-
-`!`
-
-`__`
-
-`Dynatrace Query Language`
-
-*empty string*
-
-*empty string*
-
-`__`
-
-`${placeholder}`
-
-`${}`
-
-`${`
-
-`${`
-
 ## replacePattern
 
 Replaces each substring of a string that matches the DPL pattern with the given string. The pattern must be defined as a constant string expression. For additional details about pattern syntax, see the [DPL documentation](/docs/platform/grail/dynatrace-pattern-language "Use Dynatrace Pattern Language to describe patterns using matchers.").
@@ -2026,38 +1026,6 @@ Replaces each substring of a string that matches the DPL pattern with the given 
 `replacePattern(expression, pattern, replacement)`
 
 #### Parameters
-
-Parameter
-
-Type
-
-Description
-
-Required
-
-expression
-
-string
-
-A field or string expression to replace.
-
-Required
-
-pattern
-
-string
-
-The replacing pattern.
-
-Required
-
-replacement
-
-string
-
-The string that should replace the found substrings.
-
-Required
 
 #### Returns
 
@@ -2102,38 +1070,6 @@ Replaces each substring of a string with a given string. This function replaces 
 
 #### Parameters
 
-Parameter
-
-Type
-
-Description
-
-Required
-
-expression
-
-string
-
-The field or expression where substrings should be replaced.
-
-Required
-
-substring
-
-string
-
-The substring that should be replaced.
-
-Required
-
-replacement
-
-string
-
-The string that should replace the found substrings.
-
-Required
-
 #### Returns
 
 The data type of the returned value is `string`.
@@ -2166,30 +1102,6 @@ Run in Playground
 
 Query result:
 
-content
-
-replaceString(content, "awesome", "simple")
-
-replaceString(content, "abca", "xyz")
-
-`DQL is awesome!`
-
-`DQL is simple!`
-
-`DQL is awesome!`
-
-`Dynatrace Query Language`
-
-`Dynatrace Query Language`
-
-`Dynatrace Query Language`
-
-`abcabca`
-
-`abcabca`
-
-`xyzbca`
-
 ## splitByPattern
 
 Splits a string into an array at each occurrence of the DPL pattern.
@@ -2199,30 +1111,6 @@ Splits a string into an array at each occurrence of the DPL pattern.
 `splitByPattern(expression, pattern)`
 
 #### Parameters
-
-Parameter
-
-Type
-
-Description
-
-Required
-
-expression
-
-string
-
-A field or string expression to split.
-
-Required
-
-pattern
-
-string
-
-The splitting pattern. Must conform with [DPL patterns](/docs/platform/grail/dynatrace-pattern-language "Use Dynatrace Pattern Language to describe patterns using matchers.").
-
-Required
 
 #### Returns
 
@@ -2286,30 +1174,6 @@ If the pattern is empty, it splits the expression into one-byte substrings. For 
 
 #### Parameters
 
-Parameter
-
-Type
-
-Description
-
-Required
-
-expression
-
-string
-
-The string expression to split up into an array.
-
-Required
-
-pattern
-
-string
-
-The pattern to split the string expression at, or the empty string to split into one-byte strings.
-
-Required
-
 #### Returns
 
 The data type of the returned value is `array`.
@@ -2346,36 +1210,6 @@ Run in Playground
 
 Query result:
 
-content
-
-splitString(content, " ")
-
-splitString(content, "is")
-
-splitString(content, "")
-
-splitString(content, "XYZ")
-
-`DQL is awesome!`
-
-`[DQL, is, awesome!]`
-
-`[DQL , awesome!]`
-
-`[D, Q, L, , i, s, , a, w, e, s, o, m, e, !]`
-
-`[DQL is awesome!]`
-
-`Dynatrace Query Language`
-
-`[Dynatrace, Query, Language]`
-
-`[Dynatrace Query Language]`
-
-`[D, y, n, a, t, r, a, c, e, , Q, u, e, r, y, , L, a, n, g, u, a, g, e]`
-
-`[Dynatrace Query Language]`
-
 ## startsWith
 
 Checks if a string expression starts with a prefix. Returns `true` if does, `false` otherwise.
@@ -2385,38 +1219,6 @@ Checks if a string expression starts with a prefix. Returns `true` if does, `fal
 `startsWith(expression, prefix [, caseSensitive])`
 
 #### Parameters
-
-Parameter
-
-Type
-
-Description
-
-Required
-
-expression
-
-string
-
-The string expression that will be checked.
-
-Required
-
-prefix
-
-string
-
-The prefix string with which the expression should start.
-
-Required
-
-caseSensitive
-
-boolean
-
-Whether the check should be done in a case-sensitive way.
-
-Optional
 
 #### Returns
 
@@ -2446,24 +1248,6 @@ Run in Playground
 
 Query result:
 
-content
-
-startsWith(content, "D")
-
-startsWith(content, "dql", caseSensitive:FALSE)
-
-`DQL is awesome!`
-
-`true`
-
-`true`
-
-`Dynatrace Query Language`
-
-`true`
-
-`false`
-
 ## stringLength
 
 Returns the length of a string expression. Length is defined as the number of UTF-16 code units, which is often the same as the number of characters in the string. In some cases, the number of characters is smaller than the number of UTF-16 code units, for example when Combining Diacritical Marks are used, or if characters outside the Basic Multilingual Plane (BMP), such as Emoji, are present.
@@ -2477,22 +1261,6 @@ No specific normalization form is guaranteed for Dynatrace-provided strings.
 `stringLength(expression)`
 
 #### Parameters
-
-Parameter
-
-Type
-
-Description
-
-Required
-
-expression
-
-string
-
-The string expression to get the number of UTF-16 code units for.
-
-Required
 
 #### Returns
 
@@ -2522,22 +1290,6 @@ Run in Playground
 
 Query result:
 
-content
-
-stringLength(content)
-
-`DQL is awesome!`
-
-`15`
-
-`Dynatrace Query Language`
-
-`24`
-
-`ðâð¦º`
-
-`5`
-
 ## substring
 
 Gets a code unit range using a start index (inclusive) and an end index (exclusive).
@@ -2559,38 +1311,6 @@ The returned substring never starts or ends with an incomplete UTF-16 surrogate 
 `substring(expression [, from] [, to])`
 
 #### Parameters
-
-Parameter
-
-Type
-
-Description
-
-Required
-
-expression
-
-string
-
-The string expression to get a substring of.
-
-Required
-
-from
-
-long
-
-Index of first code unit to include in sub-string, inclusive, relative to start of `expression` if positive, relative to end if negative. Clamped at string bounds.
-
-Optional
-
-to
-
-long
-
-Index of last code unit to include in sub-string, exclusive, relative to start of `expression` if positive, relative to end if negative. Clamped at string bounds.
-
-Optional
 
 #### Returns
 
@@ -2628,36 +1348,6 @@ Run in Playground
 
 Query result:
 
-content
-
-substring(content, from:4)
-
-substring(content, from:-2)
-
-substring(content, from:4, to:9)
-
-substring(content, from:-42, to:42)
-
-`DQL is awesome!`
-
-`is awesome!`
-
-`e!`
-
-`is aw`
-
-`DQL is awesome!`
-
-`Dynatrace Query Language`
-
-`trace Query Language`
-
-`ge`
-
-`trace`
-
-`Dynatrace Query Language`
-
 ## trim
 
 Removes leading and trailing whitespaces. Any code point <= ASCII 32 in decimal is considered a whitespace, where ASCII 32 is a blank space.
@@ -2667,22 +1357,6 @@ Removes leading and trailing whitespaces. Any code point <= ASCII 32 in decimal 
 `trim(expression)`
 
 #### Parameters
-
-Parameter
-
-Type
-
-Description
-
-Required
-
-expression
-
-string
-
-The string expression to remove leading and trailing white-space from.
-
-Required
 
 #### Returns
 
@@ -2708,18 +1382,6 @@ Run in Playground
 
 Query result:
 
-content
-
-trim(content)
-
-`" DQL is awesome!"`
-
-`DQL is awesome!`
-
-`" Dynatrace Query Language "`
-
-`Dynatrace Query Language`
-
 ## unescape
 
 Returns an unescaped string.
@@ -2728,125 +1390,21 @@ Unescaping rules
 
 1. Single quotes, double quotes and backticks are unescaped.
 
-Input
-
-Output
-
-`\"`
-
-`"`
-
-`\'`
-
-`'`
-
-`` \` ``
-
-`` ` ``
-
 2. Backslashes are unescaped.
-
-Input
-
-Output
-
-`\\`
-
-`\`
 
 3. ASCII characters bell, backspace, form feed, new line, carriage return, horizontal tab and vertical tab are unescaped.
 
-Input
-
-Output
-
-`\a`
-
-`<bell>`
-
-`\b`
-
-`<backspace>`
-
-`\f`
-
-`<form feed>`
-
-`\n`
-
-`<new line>`
-
-`\r`
-
-`<carriage return>`
-
-`\t`
-
-`<horizontal tab>`
-
-`\v`
-
-`<vertical tab>`
-
 4. `\xhh` within standard ASCII space (0x00 - 0x7f) is replaced by the related character.
-
-Input
-
-Output
-
-`\x40`
-
-`@`
-
-`\x64`
-
-`d`
 
 5. `\xhh` within extended ASCII space (0x80 - 0xff) is interpreted as `\u00hh` and replaced by the related Unicode character.
 
-Input
-
-Output
-
-`\xff`
-
-`Ã¿`
-
 6. `\uhhhh` is replaced by the related Unicode character.
-
-Input
-
-Output
-
-`\u002e`
-
-`.`
-
-`\u0064`
-
-`d`
 
 #### Syntax
 
 `unescape(expression)`
 
 #### Parameters
-
-Parameter
-
-Type
-
-Description
-
-Required
-
-expression
-
-string expression
-
-The string expression that will be unescaped.
-
-Required
 
 #### Returns
 
@@ -2882,22 +1440,6 @@ Unescapes HTML in a string by replacing ASCII characters with HTML syntax.
 
 #### Parameters
 
-Parameter
-
-Type
-
-Description
-
-Required
-
-expression
-
-string
-
-The string expression that will be unescaped.
-
-Required
-
 #### Returns
 
 The data type of the returned value is `string`.
@@ -2922,18 +1464,6 @@ Run in Playground
 
 Query result:
 
-content
-
-unescapeHtml(content)
-
-`DQL is &lt;bold&gt;awesome&lt;/bold&gt;!`
-
-`DQL is <bold>awesome</bold>!`
-
-`&lt;a href=&quot;https://www.dynatrace.com/platform/grail&quot;&gt;Dynatrace Query Language&lt;/a&gt;`
-
-`<a href="https://www.dynatrace.com/platform/grail">Dynatrace Query Language</a>`
-
 ## upper
 
 Converts a string to uppercase.
@@ -2943,22 +1473,6 @@ Converts a string to uppercase.
 `upper(expression)`
 
 #### Parameters
-
-Parameter
-
-Type
-
-Description
-
-Required
-
-expression
-
-string
-
-The string expression to convert to uppercase.
-
-Required
 
 #### Returns
 
@@ -2983,18 +1497,6 @@ record(content = "Dynatrace Query Language")
 Run in Playground
 
 Query result:
-
-content
-
-upper(content)
-
-`DQL is awesome!`
-
-`DQL IS AWESOME!`
-
-`Dynatrace Query Language`
-
-`DYNATRACE QUERY LANGUAGE`
 
 ## Related topics
 

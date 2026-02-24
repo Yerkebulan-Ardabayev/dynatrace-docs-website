@@ -1,7 +1,7 @@
 ---
 title: License Dynatrace
 source: https://www.dynatrace.com/docs/license
-scraped: 2026-02-23T21:20:37.803217
+scraped: 2026-02-24T21:14:06.212761
 ---
 
 # License Dynatrace
@@ -26,30 +26,6 @@ DPS empowers organizations to consume any Dynatrace capability, at any volume, a
 Itâs designed to eliminate friction, simplify operations, and scale effortlessly with your business.
 
 DPS is the licensing foundation for Dynatraceâs latest platform innovations, including [AI observability](/docs/observe/dynatrace-for-ai-observability "Learn about AI and LLM observability, what AI observability is, how Dynatrace observes Generative AI (LLM) models and AI SaaS services, and much more."), [Grail](/docs/platform/grail "Insights on what and how you can query Dynatrace data."), [AppEngine](/docs/platform/appengine "Develop feature-rich Dynatrace apps for you and the world!"), and [AutomationEngine](/docs/platform/automationengine "Combine observability, security, and business data with causal AI to easily automate BizDevSecOps workflows at enterprise scale.").
-
-Feature
-
-Benefit
-
-Simplicity
-
-One contract, one rate card, one platform. No SKU juggling. No surprises.
-
-Scalability
-
-DPS scales with your needsâacross modules, teams, and geographies.
-
-Frictionless use
-
-No pre-allocation. No per-user costs. No overage penalties. Just use what you need, when you need it.
-
-Transparency
-
-Real-time usage and cost visibility via Account Management and DPS APIs.
-
-Flexibility
-
-Supports all deployments, trials, and evolving pricing models.
 
 Dynatrace meters usage based on Coordinated Universal Time (UTC).
 All references to time and date are therefore to be understood as UTC+00:00.
@@ -90,7 +66,10 @@ The following pages give you an overview of how to get started with DPS, from pl
 * Learn how to use the Cost Monitors feature to make forecasts and cost events.](/docs/license/cost-monitors)[07Billing report
 
 * Explanation
-* View your billing to see details about accrued costs per booking date. Use this view to determine which Dynatrace monitoring costs were recognized and booked on which day.](/docs/license/billing-reports)
+* View your billing to see details about accrued costs per booking date. Use this view to determine which Dynatrace monitoring costs were recognized and booked on which day.](/docs/license/billing-reports)[08Dynatrace Platform Subscription for hybrid setups (DPS for Hybrid)
+
+* Explanation
+* DPS for Hybrid lets you share one subscription across multiple accounts.](/docs/license/dps-for-hybrid)
 
 Account Management
 :   Account Management provides forecasting, alerting, drill-downs and real-time insights into your usage patterns. You can also manage Dynatrace license and subscriptions, Dynatrace users, SSO access, and monitor Dynatrace platform adoption and environment health.

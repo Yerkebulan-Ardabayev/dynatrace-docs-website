@@ -1,7 +1,7 @@
 ---
 title: SAML
 source: https://www.dynatrace.com/docs/manage/identity-access-management/user-and-group-management/access-saml
-scraped: 2026-02-23T21:35:20.485804
+scraped: 2026-02-24T21:22:50.951376
 ---
 
 # SAML
@@ -117,30 +117,6 @@ Before you can configure the domain for which you want to set up SAML, you need 
 Go to [**Account Management**ï»¿](https://myaccount.dynatrace.com/) > your account > **Identity & access management** > **SAML configuration** to list all SAML configurations for the selected account. This is your starting point for managing SAML configurations.
 
 What can I do from the SAML configuration page?
-
-Action
-
-How to do it
-
-Find
-
-To find a SAML configuration, use the filter controls above the table. You can filter by **Search table** (text), **Scope**, and **Domain**.
-
-Create
-
-To create a new SAML configuration, select the **New configuration** button above the table.
-
-Edit
-
-To edit an existing SAML configuration, find the configuration in the table and, in the **Actions** column, select  > **Edit configuration**. The steps are the same as for creating a new configuration.
-
-Disable
-
-To disable an existing SAML configuration, find the configuration in the table and, in the **Actions** column, select  > **Disable configuration**.
-
-Delete
-
-To delete an existing SAML configuration, find the configuration in the table and, in the **Actions** column, select  > **Delete configuration**.
 
 After you [create a fallback user account](#create-fallback) and [verify your ownership of the domain](#verify-ownership), go to **Identity & access management** > **SAML configuration** and select **New configuration** to create a new SAML configuration.
 
@@ -441,7 +417,7 @@ In Dynatrace, all user group permissions are joined together. The user will be g
 
    * **Group name**âMake sure it matches the group you intend to edit.
    * **SAML Group Attribute Value**âA list of one or more federated group names returned by your IdP and mapped to this Dynatrace group.  
-     Select \*\* +SAML Group Attribute Value\*\* if you need to match to an incoming SAML group claim.  
+     Select  **SAML Group Attribute Value** if you need to match to an incoming SAML group claim.  
      This typically isn't a group display name. It can be, for example, an LDAP ID.
 
      Note that when adding SAML Group Attribute Values to a local group:
@@ -691,81 +667,3 @@ To resolve this issue, choose one of the following approaches:
 For details, see the [Microsoft documentationï»¿](https://dt-url.net/0602ymq).
 
 ## Glossary
-
-**Term**
-
-**Definition**
-
-**account**
-
-In the account scope, a customer can manage their federations, account verified domains, federated domains, and account default federation. An account is identified by UUID, which is typical for all Dynatrace applications.
-
-**account domain**
-
-When the customer confirms their ownership of a given domain in the process of domain verification in the account, this domain becomes an account verified domain. An account can own multiple verified domains, and multiple accounts can own the same verified domain.
-
-**account default federation**
-
-The default federation for a user who doesn't belong to any of the account federated domains. It's used in [federation discovery](#sp-initiated-authentication-federation-discovery).
-
-**account federated guest**
-
-An account federated guest is created whenever a user logs in through account/environment-specific federation, but does not belong to any verified domain within the account. In this case, SSO creates a new user with a very specific identifier to make sure that this user is tied to a single account and does not interfere with the global user, who may freely be assigned to multiple accounts.
-
-The username of an account federated guest is remapped on the fly as follows:
-
-`<login_part>_<domain_part>@a.<account_uuid>.sso.dynatrace.com`
-
-For example, user `mary.smith@example.com`, in an account with IDM UUID `7f5bab5a-9620-11ee-960a-2fcdafd38a3b`, would become the following account federated guest:
-
-`mary.smith_example.com@a.7f5bab5a-9620-11ee-960a-2fcdafd38a3b.sso.dynatrace.com`
-
-The mapping from the original login to the account federated guest stamp is automatic.
-
-* The user is free to use either their regular or mapped email in the login field.
-* In the Account Management **People** list, however, account federated guests are displayed with the mapped value.
-* The account UUID, which is part of the mapped login, is not parsed and does not influence the process of environment discovery.
-
-**environment**
-
-Identified by ID, which is unique across Dynatrace (usually called tenantId). The environment belongs to one account. The environment defines how users sign into it. It can have a user-friendly alias. The alias is unique and the environment can have at least one alias.
-
-**environment discovery**
-
-The process used to resolve the environment from the sign-in context. For details, see the [Environment resolution](#sp-initiated-authentication-environment-discovery) section.
-
-**federated domain**
-
-Association between domain and federation. When a user signs in to the account and belongs to a federated domain, they are redirected to federated domain's federation. It can be set on the account or environment scope. It's used in [federation discovery](#sp-initiated-authentication-federation-discovery).
-
-**federation**
-
-Defines Dynatrace as a Service Provider (SP), which delegates sign-in, manages sessions, and manages user groups to the customer's Identity Provider (IdP). This configuration enables linking identities (users) to Dynatrace SSO. It has a unique UUID. The federation IdP ID corresponds to the entity ID from the SAML 2.0 specification. Federation belongs to the account.
-
-**federation discovery**
-
-The process used to choose the federation for signing in users in the SP-initiated authentication. For details, see the [Federation discovery](#sp-initiated-authentication-federation-discovery) section.
-
-**global federation**
-
-Bound to the account verified domain and shared between all accounts having this domain.
-
-**global user**
-
-The user for which, in the current setup, the username, login, and email are synonymous.
-
-**IdP-initiated authentication**
-
-Sign-in process initiated by the federated IDP. For example, when the user wants to open Dynatrace application in the Azure Portal. For details, see the [IdP-initiated authentication](#idp-initiated-authentication) section.
-
-**last used environment cookie**
-
-An optional cookie that contains the environment ID. For details, see the [Environment discovery](#sp-initiated-authentication-environment-discovery)
-
-**SP-initiated authentication**
-
-Sign-in process initiated by Dynatrace. For example, when the user wants to sign into the environment. For details, see the [SP-initiated authentication](#sp-initiated-authentication) section.
-
-**username**
-
-The user enters their username on the SSO sign-in page to sign in. It's in email address format.

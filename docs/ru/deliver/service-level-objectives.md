@@ -1,7 +1,7 @@
 ---
 title: Service-Level Objectives
 source: https://www.dynatrace.com/docs/deliver/service-level-objectives
-scraped: 2026-02-23T21:38:29.243883
+scraped: 2026-02-24T21:28:59.282528
 ---
 
 # Service-Level Objectives
@@ -18,10 +18,6 @@ Prerequisites
 ### Permissions
 
 The following table describes the required permissions.
-
-Permission
-
-Description
 
 slo:slos:read
 
@@ -62,16 +58,6 @@ Read security events from Grail
 storage:user.events:read
 
 Read user events from Grail
-
-10
-
-rows per page
-
-Page
-
-1
-
-of 1
 
 To read and write SLOs, you need the following [IAM](/docs/manage/identity-access-management "Configure users, groups and permissions.") permissions:
 

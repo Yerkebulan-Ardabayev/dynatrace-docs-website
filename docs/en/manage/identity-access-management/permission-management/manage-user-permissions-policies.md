@@ -1,7 +1,7 @@
 ---
 title: Working with policies
 source: https://www.dynatrace.com/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies
-scraped: 2026-02-22T21:15:07.190984
+scraped: 2026-02-24T21:27:11.725644
 ---
 
 # Working with policies

@@ -1,7 +1,7 @@
 ---
 title: Smartscape
 source: https://www.dynatrace.com/docs/analyze-explore-automate/smartscape
-scraped: 2026-02-22T21:25:15.911771
+scraped: 2026-02-24T21:31:18.972444
 ---
 
 # Smartscape
@@ -18,10 +18,6 @@ scraped: 2026-02-22T21:25:15.911771
 ### Permissions
 
 The following table describes the required permissions.
-
-Permission
-
-Description
 
 storage:buckets:read
 
@@ -62,16 +58,6 @@ Necessary to read segment variables
 storage:entities:read
 
 Necessary to read segment variables
-
-10
-
-rows per page
-
-Page
-
-1
-
-of 1
 
 ## Get started
 

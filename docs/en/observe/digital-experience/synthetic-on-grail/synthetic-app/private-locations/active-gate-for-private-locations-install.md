@@ -1,7 +1,7 @@
 ---
 title: Install a Synthetic-enabled ActiveGate
 source: https://www.dynatrace.com/docs/observe/digital-experience/synthetic-on-grail/synthetic-app/private-locations/active-gate-for-private-locations-install
-scraped: 2026-02-23T21:34:28.038326
+scraped: 2026-02-24T21:32:13.011251
 ---
 
 # Install a Synthetic-enabled ActiveGate
@@ -10,7 +10,7 @@ scraped: 2026-02-23T21:34:28.038326
 
 * Latest Dynatrace
 * How-to guide
-* Published Sep 09, 2025
+* Updated on Feb 11, 2026
 
 Synthetic-enabled ActiveGate is used exclusively to run synthetic monitors. A clean ActiveGate installation for the purpose of synthetic monitoring disables all other ActiveGate features, including communication with OneAgents. Make sure the host on which you install the ActiveGate has access to the internet.
 
@@ -32,9 +32,9 @@ You can install a Synthetic-enabled ActiveGate from the **Install ActiveGate** w
 8. Linux only Choose a Linux distribution and follow the instructions that precede the **Install ActiveGate as the privileged user** box if there are any.
 9. Run the installer with the command provided in the **Install ActiveGate as the privileged user** box, and then follow the instructions displayed in the web UI.
 
-   Linux only The installer automatically downloads Chromium and the dependencies required by the Synthetic engine. On Red Hat, Oracle Linux, and Rocky Linux, you also need to enable repositories from which the installer downloads the dependencies. As a prerequisite for enabling proprietary repositories on Red Hat, you need to register your Red Hat instance. The web UI provides you with all the required commands for doing so, as shown in the example below.
+   Linux only The installer automatically downloads the browser and dependencies required by the Synthetic engine. On Red Hat, Oracle Linux, and Rocky Linux, you also need to enable repositories from which the installer downloads the dependencies. As a prerequisite for enabling proprietary repositories on Red Hat, you need to register your Red Hat instance. The web UI provides you with all the required commands for doing so, as shown in the example below.
 
-   If the web UIâguided installation fails or you prefer to prepare the host for the Synthetic engine yourself, you can install Chromium and other dependencies [manually or from a custom repository](/docs/observe/digital-experience/synthetic-on-grail/synthetic-app/private-locations/install-chromium-for-linux "Learn how to install Chromium for Linux manually and from custom repositories.").
+   If the web UIâguided installation fails or you prefer to prepare the host for the Synthetic engine yourself, you can install the browser and dependencies [manually or from a custom repository](/docs/observe/digital-experience/synthetic-on-grail/synthetic-app/private-locations/install-chromium-for-linux "Learn how to install Chromium for Linux manually and from custom repositories.").
 
    ![Commands to install ActiveGate on Red Hat 9](https://dt-cdn.net/images/synth-ag-commands-red-hat-9-2025-04-24-813-39a89e370b.png)
 10. Select **Show deployment status** to verify the ActiveGate installation.

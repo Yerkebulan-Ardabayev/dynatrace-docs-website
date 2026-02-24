@@ -1,7 +1,7 @@
 ---
 title: Site Reliability Guardian
 source: https://www.dynatrace.com/docs/deliver/site-reliability-guardian
-scraped: 2026-02-22T21:19:47.795078
+scraped: 2026-02-24T21:23:46.945189
 ---
 
 # Site Reliability Guardian
@@ -13,20 +13,11 @@ scraped: 2026-02-22T21:19:47.795078
 * 15-min read
 * Updated on Jan 28, 2026
 
-In this tutorial
-
-* Create and use guardians
-* Use guardians at scale with Site Reliability Guardian as code
-
-Prerequisites
+## Prerequisites
 
 ### Permissions
 
 The following table describes the required permissions.
-
-Permission
-
-Description
 
 app-settings:objects:read
 
@@ -68,25 +59,11 @@ storage:entities:read
 
 Read entities during validations
 
-10
-
-rows per page
-
-Page
-
-1
-
-of 1
-
 ## Installation
 
 Make sure the app is [installed in your environment](/docs/manage/hub#install "See the information about Dynatrace Hub.").
 
-Get started
-
-Concepts
-
-Use cases
+## Get started
 
 The Site Reliability Guardian is a Dynatrace app that automates change impact analysis to validate service availability, performance, and capacity objectives across various systems. It enables DevOps platform engineers to make the right release decisions and empowers SREs to apply Service-Level Objectives (SLOs) for their critical services.
 
@@ -107,24 +84,27 @@ Go through the following process to learn using Site Reliability Guardian:
 * List your guardians to view, compare, or delete them in bulk.](/docs/deliver/site-reliability-guardian/guardian-list)[03Add Site Reliability Guardian objective
 
 * Reference
-* Add a new Site Reliability Guardian objective.](/docs/deliver/site-reliability-guardian/reference)[04Guardian execution context
+* Add a new Site Reliability Guardian objective.](/docs/deliver/site-reliability-guardian/reference)[04Add and access validation insight links
 
 * How-to guide
-* Filter Site Reliability Guardian validation events triggered by an external tool using the context information provided by the tool.](/docs/deliver/site-reliability-guardian/execution-context)[05Site Reliability Guardian as code
+* Add and access validation insight links to provide contextual information and resources for an objective.](/docs/deliver/site-reliability-guardian/validation-insight-link)[05Guardian execution context
 
 * How-to guide
-* See configuration as code examples for a guardian and its workflow.](/docs/deliver/site-reliability-guardian/config-as-code-srg)[06Site Reliability Guardian Role Permissions
+* Filter Site Reliability Guardian validation events triggered by an external tool using the context information provided by the tool.](/docs/deliver/site-reliability-guardian/execution-context)[06Site Reliability Guardian as code
+
+* How-to guide
+* See configuration as code examples for a guardian and its workflow.](/docs/deliver/site-reliability-guardian/config-as-code-srg)[07Site Reliability Guardian Role Permissions
 
 * Reference
-* Configure role permissions to use the Site Reliability Guardian.](/docs/deliver/site-reliability-guardian/role-permissions)[07Site Reliability guardian event structure
+* Configure role permissions to use the Site Reliability Guardian.](/docs/deliver/site-reliability-guardian/role-permissions)[08Site Reliability guardian event structure
 
 * Reference
-* Details about the event structure of the Site Reliability Guardian.](/docs/deliver/site-reliability-guardian/event-structure)[08Validate a Site Reliability guardian
+* Details about the event structure of the Site Reliability Guardian.](/docs/deliver/site-reliability-guardian/event-structure)[09Validate a Site Reliability guardian
 
 * Tutorial
 * Trigger a guardian validation either manually or automatically using a workflow to evaluate service reliability.](/docs/deliver/site-reliability-guardian/trigger-srg)
 
-## Site Reliability Guardian concepts
+## Concepts
 
 Site Reliability Guardian is based on the following concepts:
 
@@ -235,9 +215,9 @@ fetch bizevents
 
 ### 8. Guardian workflow action
 
+
+
 You can automate the execution of a guardian via [Workflows](/docs/analyze-explore-automate/workflows "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services."), tying guardian execution to [an event](/docs/analyze-explore-automate/workflows/trigger/event-trigger#event-trigger "Guide to creating workflow automation event triggers in Dynatrace Workflows.") or [an API call](/docs/analyze-explore-automate/workflows/trigger#on-demand-trigger "Introduction to workflow automation triggers for workflows.").
-
-
 
 ### Add a guardian action to an existing workflow or create a new workflow
 
@@ -290,48 +270,6 @@ You can create a new workflow by selecting ![Workflows](https://dt-cdn.net/image
 
 The guardian validation action generates the following output and passes it to the subsequent actions of the workflow.
 
-Parameter
-
-Description
-
-`guardian_id`
-
-The ID of the validated guardian
-
-`guardian_name`
-
-The name of the validated guardian
-
-`guardian_tags`
-
-An array of tags assigned to the validated guardian
-
-`execution_context`
-
-The execution context property of the trigger, if it was set
-
-`validation_id`
-
-The ID of all events generated by the validation
-
-`validation_url`
-
-The URL with the full validation details
-
-`validation_status`
-
-The status of the validation, indicating the overall result. The following values are possible:
-
-* `info`
-* `pass`
-* `warning`
-* `fail`
-* `error`
-
-`validation_summary`
-
-The number of objectives for each status
-
 To learn more about workflows for a guardian, select  >  **Get started with Automation**.
 
 ### 9. Validation
@@ -378,10 +316,8 @@ After the validation of each objective is done, the guarding uses the most sever
 
 Leverage [Segments](/docs/manage/segments "Segments logically structure monitoring data in Grail and function as convenient filters for data that users are allowed to access based on permissions.") in DQL-based objectives to logically structure and conveniently filter observability data.
 
-![Hub](https://dt-cdn.net/images/hub-512-82db3c583e.png "Hub")
+## Use cases
 
-### Explore in Dynatrace Hub
+## Related topics
 
-Automated change impact analysis for your deployment and release processes
-
-[Dynatrace Hubï»¿](https://www.dynatrace.com/hub/detail/site-reliability-guardian/?internal_source=doc&internal_medium=link&internal_campaign=cross)
+* [Add and access validation insight links](/docs/deliver/site-reliability-guardian/validation-insight-link "Add and access validation insight links to provide contextual information and resources for an objective.")

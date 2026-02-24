@@ -1,7 +1,7 @@
 ---
 title: Explore supported Extensions
 source: https://www.dynatrace.com/docs/ingest-from/extensions/supported-extensions
-scraped: 2026-02-23T21:29:45.359948
+scraped: 2026-02-24T21:28:48.504817
 ---
 
 # Explore supported Extensions
@@ -22,8 +22,6 @@ Filter by
 Select an option
 
 Type to filter
-
-Unable to render DataTable. Check configuration.
 
 ## Where can you find an Extension?
 

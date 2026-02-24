@@ -1,7 +1,7 @@
 ---
 title: Set up IBM MQ tracing on z/OS
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/operation/ibm-mq-monitoring
-scraped: 2026-02-21T21:17:12.321533
+scraped: 2026-02-24T21:26:36.275798
 ---
 
 # Set up IBM MQ tracing on z/OS
@@ -24,30 +24,6 @@ Dynatrace can automatically create a continuous [service flow](/docs/observe/app
 Without IBM MQ configuration, Dynatrace can still trace all messages, but the service flow will be broken.
 
 The table lists the available IBM MQ configuration items for queues and topics.
-
-Item
-
-Description
-
-Your action
-
-Queue manager
-
-Queue manager with its queues
-
-Define your queue managers, including alias queues, remote queues, and cluster queues within a single configuration item.
-
-z/OS Queue sharing group
-
-Group of queue managers that access the same shared queues
-
-Specify which queue managers and shared queues belong to a queue-sharing group within a single configuration item.
-
-z/OS IMS bridge
-
-The IBM MQ component that allows direct access to the IMS system
-
-Specify which queue managers and queues belong to an IMS bridge within a single configuration item.
 
 ## Manage IBM MQ configuration
 

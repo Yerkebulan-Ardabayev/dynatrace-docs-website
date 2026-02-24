@@ -1,6 +1,6 @@
 # Документация Dynatrace: license/capabilities
 Язык: Русский (RU)
-Сгенерировано: 2026-02-23
+Сгенерировано: 2026-02-24
 Файлов в разделе: 17
 ---
 
@@ -905,7 +905,7 @@ The following details apply to metric data points:
 ---
 title: Application & Infrastructure Observability overview (DPS)
 source: https://www.dynatrace.com/docs/license/capabilities/app-infra-observability
-scraped: 2026-02-23T21:29:54.726079
+scraped: 2026-02-24T21:25:03.169982
 ---
 
 # Application & Infrastructure Observability overview (DPS)
@@ -1174,7 +1174,7 @@ You can query metrics via the [Environment API - Metrics API v2](/docs/dynatrace
 ---
 title: Digital Experience Monitoring (DEM) overview (DPS)
 source: https://www.dynatrace.com/docs/license/capabilities/digital-experience-monitoring
-scraped: 2026-02-23T21:34:50.834207
+scraped: 2026-02-24T21:23:19.436279
 ---
 
 # Digital Experience Monitoring (DEM) overview (DPS)
@@ -1470,7 +1470,7 @@ Use DQL to analyze event data in context with relevant data on the Dynatrace pla
 ---
 title: Calculate your consumption of Log Management & Analytics - Query (DPS)
 source: https://www.dynatrace.com/docs/license/capabilities/log-analytics/dps-log-query
-scraped: 2026-02-23T21:20:08.142033
+scraped: 2026-02-24T21:14:22.374101
 ---
 
 # Calculate your consumption of Log Management & Analytics - Query (DPS)
@@ -1604,7 +1604,7 @@ You can query metrics via the [Environment API - Metrics API v2](/docs/dynatrace
 ---
 title: Log Analytics (DPS)
 source: https://www.dynatrace.com/docs/license/capabilities/log-analytics
-scraped: 2026-02-22T21:18:40.629746
+scraped: 2026-02-24T21:19:17.153120
 ---
 
 # Log Analytics (DPS)
@@ -1724,7 +1724,7 @@ Alternatively, if the Retain with Included Query option does not meet your use c
 ---
 title: Metrics powered by Grail overview (DPS)
 source: https://www.dynatrace.com/docs/license/capabilities/metrics
-scraped: 2026-02-23T21:30:48.755466
+scraped: 2026-02-24T21:21:06.689200
 ---
 
 # Metrics powered by Grail overview (DPS)
@@ -1746,44 +1746,9 @@ For information about how usage of a specific capability translates to consumpti
 
 Here's what's included with the Ingest & Process data-usage dimension:
 
-Concept
-
-Explanation
-
-Data delivery
-
-Delivery of metrics via OneAgent, extensions or ingest API
-
-Topology enrichment
-
-Enrichment of metrics with data source and topology metadata
-
-Data transformation
-
-* Rollup of data to reduced granularity to optimize queries for longer timeframes
-* Use of efficient data structures to derive metrics from high volume spans like service response time metrics
-
-Data-retention control
-
-Manage data retention period of incoming metrics based on bucket assignment rules
-
 ## Metrics - Retain feature overview
 
 Here's what's included with the Retain data-usage dimension:
-
-Concept
-
-Explanation
-
-Data availability
-
-Retained data is accessible for analysis and querying until the end of the retention period.
-Metrics retention is defined at the bucket level, ensuring tailored retention periods for specific metrics.
-
-Retention periods
-
-Choose a desired retention period.
-For the default metrics bucket, the available retention period ranges from 15 months (462 days) to 10 years (3,657 days).
 
 ## Metrics - Query feature overview
 
@@ -1808,7 +1773,7 @@ Here's what's included with the Query data-usage dimension:
 ---
 title: Platform extensions overview (DPS)
 source: https://www.dynatrace.com/docs/license/capabilities/platform-extensions
-scraped: 2026-02-23T21:34:34.128077
+scraped: 2026-02-24T21:25:47.221608
 ---
 
 # Platform extensions overview (DPS)
@@ -1886,7 +1851,7 @@ Dynatrace also allows you to ingest logs from your serverless cloud functions.
 ---
 title: Traces powered by Grail overview (DPS)
 source: https://www.dynatrace.com/docs/license/capabilities/traces
-scraped: 2026-02-22T21:15:29.616889
+scraped: 2026-02-24T21:17:49.198680
 ---
 
 # Traces powered by Grail overview (DPS)
@@ -1977,7 +1942,7 @@ When other data types are also read in a query, this can result in consumption o
 ---
 title: Understanding DPS capabilities
 source: https://www.dynatrace.com/docs/license/capabilities
-scraped: 2026-02-22T21:14:36.929726
+scraped: 2026-02-24T21:18:08.816373
 ---
 
 # Understanding DPS capabilities

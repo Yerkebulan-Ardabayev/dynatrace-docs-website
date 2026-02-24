@@ -1,7 +1,7 @@
 ---
 title: Upgrade Classic SLOs
 source: https://www.dynatrace.com/docs/deliver/service-level-objectives/service-level-objective-upgrade-classic
-scraped: 2026-02-18T21:31:03.900611
+scraped: 2026-02-24T21:25:02.060353
 ---
 
 # Upgrade Classic SLOs
@@ -142,50 +142,6 @@ To upgrade a Classic SLO to SLO
 
    The following table shows the typical entity selectors for Classic SLOs and their equivalent in DQL.
 
-   Entity selector classic
-
-   DQL representation
-
-   `type("SERVICE")`
-
-   `by: {dt.entity.service}`
-
-   `tag("myTag")`
-
-   ```
-   | fieldsAdd tags=entityAttr(dt.entity.service, "tags")
-
-
-
-   | filter in(tags, "myTag")
-   ```
-
-   `entityId("SERVICE-XY")`
-
-   ```
-   | filter in(dt.entity.service, "SERVICE-XY")
-   ```
-
-   `entityName.contains/equals/in/startsWith("ENTITY-NAME")`
-
-   ```
-   | fieldsAdd name = entityName(dt.entity.service)
-
-
-
-   | filter in/contains/startsWith/endsWith(name, "ENTITY-NAME")
-   ```
-
-   `mzId` / `mzName`
-
-   Use [Segments](/docs/manage/segments "Segments logically structure monitoring data in Grail and function as convenient filters for data that users are allowed to access based on permissions.").
-
-   Segments aren't related to permissions or access control.
-
-   `toRelationship` / `fromRelationship`
-
-   See the relationship mapping table in Grail: [Query monitored entities in Grail](/docs/platform/grail/querying-monitored-entities#relationship-mapping-table "Find out how to query monitored entities in Grail.").
-
    If you use management zones for permissions and access control, see [Grant access to entities with security context](/docs/manage/identity-access-management/use-cases/access-security-context "Grant access to entities with security context").
 3. Enhance your SLI definition.
 
@@ -203,14 +159,6 @@ To upgrade a Classic SLO to SLO
 ## Upgrade API integration
 
 To automate SLO management and evaluation, use the dedicated API endpoints. Reference the table below to upgrade your API integration for Classic SLO to SLO leveraging the SLO Service Public API.
-
-![SLOs Classic](https://dt-cdn.net/images/service-level-objectives-256-3d3d62c9a8.png "SLOs Classic") **Service-Level Objectives Classic**
-
-![SLOs](https://dt-cdn.net/images/service-level-objectives-256-3d3d62c9a8.png "SLOs") **Service-Level Objectives**
-
-[Service-level Objectives API classic](/docs/dynatrace-api/environment-api/service-level-objectives-classic "Find out what the Dynatrace SLO API classic offers.")
-
-[SLO Service Public API](/docs/dynatrace-api/environment-api/service-level-objectives "Discover the API functionalities of the new Service-Level Objectives powered by Grail.")
 
 ## Upgrade via Configuration as Code
 

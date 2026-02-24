@@ -1,6 +1,6 @@
 # Документация Dynatrace: dynatrace-intelligence/anomaly-detection
 Язык: Русский (RU)
-Сгенерировано: 2026-02-23
+Сгенерировано: 2026-02-24
 Файлов в разделе: 16
 ---
 
@@ -167,7 +167,7 @@ To configure detection sensitivity on the global level
 ---
 title: Anomaly Detection status types
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-app/anomaly-detection-status-types
-scraped: 2026-02-23T21:40:02.648834
+scraped: 2026-02-24T21:34:55.473950
 ---
 
 # Anomaly Detection status types
@@ -193,36 +193,6 @@ In addition, the **Status** column contains information about the inaccessibilit
 
 A custom alert can have any of the following status types:
 
-Status
-
-Description
-
-**Success**
-
-The success rate for the last 24 hours is over 99%.
-
-**Error**
-
-The success rate for the last 24 hours is under 95%.
-
-**Warning**
-
-The success rate for the last 24 hours is between 95% and 99%.
-
-**Unavailable**
-
-Status currently unavailable. Check if you have the following permissions:
-
-* `storage:system:read`
-
-**Pending**
-
-Can't calculate the success rate. The custom alert has not yet been executed, or the query does not contain any execution events.
-
-**Inactive**
-
-The custom alert is not enabled.
-
 ## Troubleshooting
 
 If the status of your custom alert shows an error, select  **Error** > **View more details** to see the error message.
@@ -246,7 +216,7 @@ Some of the error messages might be more complicated than others. Here are some 
 ---
 title: Configure a simple custom alert
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-app/configure-a-simple-ad
-scraped: 2026-02-23T21:39:10.621933
+scraped: 2026-02-24T21:29:34.634623
 ---
 
 # Configure a simple custom alert
@@ -519,7 +489,7 @@ When creating a custom alert:
 ---
 title: Anomaly Detection DQL optimization guide
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-app/davis-ad-dql-optimization
-scraped: 2026-02-23T21:36:51.500557
+scraped: 2026-02-24T21:19:41.725367
 ---
 
 # Anomaly Detection DQL optimization guide
@@ -897,7 +867,7 @@ Detect anomalies in timeseries using ![Anomaly Detection - new](https://dt-cdn.n
 ---
 title: Anomaly detection configuration
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-configuration
-scraped: 2026-02-23T21:38:05.184771
+scraped: 2026-02-24T21:30:10.414974
 ---
 
 # Anomaly detection configuration
@@ -1025,7 +995,7 @@ You can provide additional parameters as key-value pairs. For a list of possible
 ---
 title: Auto-adaptive thresholds for anomaly detection
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/anomaly-detection/auto-adaptive-threshold
-scraped: 2026-02-23T21:37:42.077549
+scraped: 2026-02-24T21:26:39.026414
 ---
 
 # Auto-adaptive thresholds for anomaly detection
@@ -1194,7 +1164,7 @@ You should consider this design choice when configuring alerting settings to ens
 ---
 title: Metric key events
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/anomaly-detection/metric-events/metric-key-events
-scraped: 2026-02-21T21:24:27.644588
+scraped: 2026-02-24T21:29:20.949344
 ---
 
 # Metric key events
@@ -1280,7 +1250,7 @@ Two types of filters are available:
 ---
 title: Metric selector events
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/anomaly-detection/metric-events/metric-selector-events
-scraped: 2026-02-23T21:35:48.954260
+scraped: 2026-02-24T21:31:20.087671
 ---
 
 # Metric selector events
@@ -1380,7 +1350,7 @@ If there are sparse counts across many entities (for example, an error count acr
 ---
 title: Metric events
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/anomaly-detection/metric-events
-scraped: 2026-02-23T21:23:57.340458
+scraped: 2026-02-24T21:17:59.992857
 ---
 
 # Metric events
@@ -1952,7 +1922,7 @@ You have learned how to set up and configure a custom alert via API. Now you can
 ---
 title: Static thresholds for anomaly detection
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/anomaly-detection/static-thresholds
-scraped: 2026-02-23T21:39:29.565927
+scraped: 2026-02-24T21:24:28.443315
 ---
 
 # Static thresholds for anomaly detection
@@ -1991,7 +1961,7 @@ By default, any 3 minutes out of a sliding window of 5 minutes must violate your
 ---
 title: Anomaly detection
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/anomaly-detection
-scraped: 2026-02-23T21:19:55.651830
+scraped: 2026-02-24T21:14:56.550729
 ---
 
 # Anomaly detection

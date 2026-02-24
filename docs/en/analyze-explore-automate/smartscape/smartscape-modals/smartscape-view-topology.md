@@ -1,7 +1,7 @@
 ---
 title: View topology
 source: https://www.dynatrace.com/docs/analyze-explore-automate/smartscape/smartscape-modals/smartscape-view-topology
-scraped: 2026-02-23T21:35:58.657793
+scraped: 2026-02-24T21:33:26.109678
 ---
 
 # View topology

@@ -1,7 +1,7 @@
 ---
 title: Manage Extensions
 source: https://www.dynatrace.com/docs/ingest-from/extensions/manage-extensions
-scraped: 2026-02-23T21:31:18.176629
+scraped: 2026-02-24T21:28:26.051257
 ---
 
 # Manage Extensions
@@ -18,10 +18,6 @@ Manage Dynatrace extensions for hundreds of technologies.
 ## Prerequisites
 
 ### Permissions
-
-Permission
-
-Description
 
 hub:catalog:read
 
@@ -62,16 +58,6 @@ For reading any data
 state:user-app-states:write
 
 Write user preferences
-
-10
-
-rows per page
-
-Page
-
-1
-
-of 1
 
 ### Things to consider
 

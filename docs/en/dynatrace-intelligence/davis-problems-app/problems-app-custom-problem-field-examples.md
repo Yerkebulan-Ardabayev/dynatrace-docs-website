@@ -1,7 +1,7 @@
 ---
 title: Dynatrace Intelligence causal AI use cases
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/davis-problems-app/problems-app-custom-problem-field-examples
-scraped: 2026-02-23T21:21:04.953046
+scraped: 2026-02-24T21:15:51.928778
 ---
 
 # Dynatrace Intelligence causal AI use cases
@@ -45,34 +45,6 @@ Event description
 Event properties
 
 1. Set the following **Event properties**:
-
-   Event property
-
-   Value
-
-   **dt.source\_entity**
-
-   `{dims.dt.source_entity}`
-
-   **event.type**
-
-   `ERROR_EVENT`
-
-   **event.name**
-
-   `Abnormally high network traffic`
-
-   **event.description**
-
-   `Abnormally high network traffic was detected for cluster 23`
-
-   **dt.owner**
-
-   `app-team-us-23`
-
-   **app-id**
-
-   `app-23`
 
 2. Select **Create**.
 

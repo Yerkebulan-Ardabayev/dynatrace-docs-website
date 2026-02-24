@@ -1,7 +1,7 @@
 ---
 title: Top database statements
 source: https://www.dynatrace.com/docs/observe/application-observability/multidimensional-analysis/top-database-statements
-scraped: 2026-02-23T21:38:06.483582
+scraped: 2026-02-24T21:33:38.286764
 ---
 
 # Top database statements
@@ -46,30 +46,6 @@ The view in this example is configured with the metric **Fetch count** filtered 
 
      ![Show export menu](https://dt-cdn.net/images/show-export-menu-107-2a8a76c9a2.png)
   2. Select **Export visible data** or **Export table data**.
-
-     Option
-
-     Exported data
-
-     Fields
-
-     Number of entries
-
-     **Export visible data**
-
-     The currently displayed area of the table, taking into account applied filters
-
-     Only visible data
-
-     Up to 100 top dimensions
-
-     **Export table data**
-
-     All table data
-
-     All the available data related to top dimensions
-
-     Up to 100 top dimensions
 * The chart uses [trace and request data](/docs/observe/application-observability/multidimensional-analysis#data-source "Configure a multidimensional analysis view and save it as a calculated metric."), which has different data retention periods. For timeframes containing data older than 10 days, you can turn on the **Show data retention** toggle to better understand which data is available for which period directly from the chart.
 
 ## Analyze individual SQL statements

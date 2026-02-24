@@ -1,6 +1,6 @@
 # Документация Dynatrace: platform/openpipeline
 Язык: Русский (RU)
-Сгенерировано: 2026-02-23
+Сгенерировано: 2026-02-24
 Файлов в разделе: 18
 ---
 
@@ -9,7 +9,7 @@
 ---
 title: Owner-based access control in OpenPipeline
 source: https://www.dynatrace.com/docs/platform/openpipeline/concepts/access-control
-scraped: 2026-02-23T21:32:26.646258
+scraped: 2026-02-24T21:22:33.585177
 ---
 
 # Owner-based access control in OpenPipeline
@@ -256,7 +256,7 @@ Storage and retention for system events is not configurable.
 ---
 title: Processing in OpenPipeline
 source: https://www.dynatrace.com/docs/platform/openpipeline/concepts/processing
-scraped: 2026-02-22T21:15:24.441536
+scraped: 2026-02-24T21:17:35.658460
 ---
 
 # Processing in OpenPipeline
@@ -352,140 +352,6 @@ The following table is a comprehensive list of stages, ordered in the pipeline s
 
 Specific fields are excluded from matching and processing or restricted. To learn more, see [Limits specific to fields](/docs/platform/openpipeline/reference/limits#fields "Reference limits of Dynatrace OpenPipeline.").
 
-Stage
-
-Description
-
-Processors in the stage
-
-Executed processors
-
-Supported data types
-
-Processing
-
-Prepare data for analysis and storage by parsing values into fields, transforming the schema, and filtering the data records. Fields are edited, and sensitive data is masked.
-
-* DQL
-* Add fields
-* Remove fields
-* Rename fields
-* Drop record
-
-All matches
-
-Logs, EventsâGeneric, EventsâDavis events, EventsâDavis, EventsâSDLC events, EventsâSecurity events (legacy), Security events (new) [1](#fn-2-1-def), Business events, Spans[1](#fn-2-1-def) , Metrics, User events, User sessions
-
-Metric extraction
-
-Extract metrics from the records that match the query.
-
-* Counter metric
-* Preview Histogram metric[2](#fn-2-2-def)
-* Value metric
-
-All matches
-
-Logs, EventsâGeneric, EventsâSDLC events, EventsâSecurity events (legacy), Security events (new)[1](#fn-2-1-def), Business events, System events, User events, User sessions
-
-Smartscape Node Extraction
-
-Extract Smartscape nodes for the records that match the query.
-
-* Smartscape node
-
-All matches
-
-Logs, EventsâGeneric, EventsâSDLC events, EventsâSecurity events (legacy), Security events (new)[1](#fn-2-1-def), Business events, System events, Spans[1](#fn-2-1-def), User events, User sessions
-
-Smartscape Edge Extraction
-
-Extract Smartscape edges for the records that match the query.
-
-* Smartscape edge
-
-All matches
-
-Logs, EventsâGeneric, EventsâSDLC events, EventsâSecurity events (legacy), Security events (new)[1](#fn-2-1-def), Business events, System events, Spans[1](#fn-2-1-def), User events, User sessions
-
-Metric extraction
-
-Extract metrics from the records that match the query.
-
-* Sampling aware counter metric
-* Preview Sampling aware histogram metric[2](#fn-2-2-def)
-* Sampling aware value metric
-
-All matches
-
-Spans
-
-Data extraction
-
-Extract a new record from a pipeline and re-ingest it as a different data type into another pipeline.
-
-* Business event
-* Software developement lifecycle event
-
-All matches
-
-Logs, EventsâGeneric, EventsâSDLC events, EventsâSecurity events (legacy), Security events (new)[1](#fn-2-1-def), Business events, System events, Spans[1](#fn-2-1-def), User events, User sessions
-
-Davis
-
-Extract a new record from a pipeline and re-ingest it as a Davis events into another pipeline.
-
-* Davis event
-
-All matches
-
-Logs, EventsâGeneric, EventsâSDLC events, EventsâSecurity events (legacy), Security events (new)[1](#fn-2-1-def), Business events, System events, Spans[1](#fn-2-1-def)
-
-Cost allocation
-
-Advanced option to assign cost center usage to specific records that match a query.
-
-Make sure to review [Cost Allocation documentation](/docs/license/cost-allocation "Learn how to allocate costs to cost centers and products.") when choosing the best approach for your environment.
-
-* DPS Cost Allocation - Cost Center
-
-First match only
-
-Logs, Spans[1](#fn-2-1-def)
-
-Product allocation
-
-Advanced option to assign product or application usage to specific records that match a query.
-
-Make sure to review [Cost Allocation documentation](/docs/license/cost-allocation "Learn how to allocate costs to cost centers and products.") when choosing the best approach for your environment.
-
-* DPS Cost Allocation - Product
-
-First match only
-
-Logs, Spans[1](#fn-2-1-def)
-
-Permissions
-
-Apply security context to the records that match the query.
-
-* Set dt.security\_context
-
-First match only
-
-Logs, EventsâGeneric, EventsâDavis events, EventsâDavis, EventsâSDLC events, EventsâSecurity events (legacy), Security events (new)[1](#fn-2-1-def), Business events, Spans[1](#fn-2-1-def), Metrics, User events, User sessions
-
-Storage
-
-Assign records to the best-fit bucket.
-
-* Bucket assignment
-* No storage assignment
-
-First match only
-
-Logs, EventsâGeneric, EventsâDavis events, EventsâDavis, EventsâSDLC events, EventsâSecurity events (legacy), Security events (new)[1](#fn-2-1-def), Business events, Spans[1](#fn-2-1-def)
-
 1
 
 The data remains in its original, structured form. This is important for detailed analysis and troubleshooting, as it ensures that no information is lost or altered.
@@ -496,8 +362,6 @@ Extracted metrics are sent to Grail only, except for the security events (new) a
 
 ## Processor
 
-
-
 A processor is a pre-formatted processing instruction that focuses either on modifying (for example, by renaming or adding a new field) or extracting data (for example, by creating an event from a log line or extracting metrics).
 
 While the processor format is predefined, it contains a configurable matcher and processing definition.
@@ -506,108 +370,6 @@ While the processor format is predefined, it contains a configurable matcher and
 * The processing definition instructs Dynatrace on how to transform or modify the data filtered by the matcher.
 
 The following table lists alphabetically all available processors in a pipeline.
-
-Processor
-
-Description
-
-Add fields
-
-Adds fields with name and value.
-
-Bucket assignment
-
-Assigns a Grail bucket.
-
-Business event
-
-Extracts fields into a new record and sends it to the business event table.
-
-Counter metric
-
-Returns the number of occurrences of a metric, from the records that match the query.
-
-Davis event
-
-Extracts fields into a new record and sends it to an event table.
-
-DQL
-
-Processes a subset of DQL. The output is formatted to string, number, bool, duration, timestamp, and respective arrays of those.
-
-DPS Cost Allocation - Cost Center
-
-Assigns cost center usage to a record via [`dt.cost.costcenter`](/docs/semantic-dictionary/fields#dynatrace "Get to know the list of global fields that have a well defined semantic meaning in Dynatrace and can be used across different monitoring types.") by either copying the value from a field or setting it as a static string.
-
-DPS Cost Allocation - Product
-
-Assigns product or application usage to a record via [`dt.cost.product`](/docs/semantic-dictionary/fields#dynatrace "Get to know the list of global fields that have a well defined semantic meaning in Dynatrace and can be used across different monitoring types.") by either copying the value from a field or setting it as a static string.
-
-Drop record
-
-Drops a record. The record is not retained.
-
-Preview Histogram metric
-
-Produces histogram metrics that capture a distribution. Histogram metrics can be used to calculate percentiles using the [`timeseries percentile` aggregation](/docs/platform/grail/dynatrace-query-language/commands/metric-commands#timeseries "DQL metric commands"), which are useful to analyze latencies and payload sizes.
-
-The Histogram metric processor is currently in [Preview](/docs/whats-new/preview-releases "Learn about our Preview releases and how you can participate in them.") and only accessible to selected customers. To get started, contact a Dynatrace product expert.
-
-To start a conversation with a Dynatrace product expert, use live chat within your Dynatrace environment.
-
-No storage assignment
-
-Skips storage assignment. The record is not retained.
-
-Sampling aware counter metric
-
-Sampling might be applied to trace data before it's processed, according to [Adaptive Traffic Management for distributed tracing](/docs/ingest-from/dynatrace-oneagent/adaptive-traffic-management "Dynatrace Adaptive Traffic Management provides dynamic sampling to ensure that the amount of capture traces stays within the Full-Stack Monitoring included trace volume."). This span-specific processor supports sampling awareness when returning the number of metric occurrences, from the span records that match the query. Span aggregation and sampling awareness are configurable for all fields available in field extraction, except durationâaggregation of duration is automatically detected and handled.
-
-Preview Sampling aware histogram metric
-
-Sampling might be applied to trace data before it's processed, according to [Adaptive Traffic Management for distributed tracing](/docs/ingest-from/dynatrace-oneagent/adaptive-traffic-management "Dynatrace Adaptive Traffic Management provides dynamic sampling to ensure that the amount of capture traces stays within the Full-Stack Monitoring included trace volume."). This span-specific processor supports sampling awareness when producing histogram metrics that capture a distribution. Span aggregation and sampling awareness are configurable for all fields available in field extraction, except durationâaggregation of duration is automatically detected and handled. Histogram metrics can be used to calculate percentiles using the [`timeseries percentile` aggregation](/docs/platform/grail/dynatrace-query-language/commands/metric-commands#timeseries "DQL metric commands"), which are useful to analyze latencies and payload sizes.
-
-The Sampling aware histogram metric processor is currently in [Preview](/docs/whats-new/preview-releases "Learn about our Preview releases and how you can participate in them.") and only accessible to selected customers. To get started, contact a Dynatrace product expert.
-
-To start a conversation with a Dynatrace product expert, use live chat within your Dynatrace environment.
-
-Sampling aware value metric
-
-Sampling might be applied to trace data before it's processed, according to [Adaptive Traffic Management for distributed tracing](/docs/ingest-from/dynatrace-oneagent/adaptive-traffic-management "Dynatrace Adaptive Traffic Management provides dynamic sampling to ensure that the amount of capture traces stays within the Full-Stack Monitoring included trace volume."). This span-specific processor supports sampling awareness when returning the aggregated values of a metric, from the span records that match the query. Span aggregation and sampling awareness are configurable for all fields available in field extraction, except durationâaggregation of duration is automatically detected and handled.
-
-Set dt.security\_context
-
-Sets the proper record-level access via [`dt.security_context`](/docs/semantic-dictionary/fields#dynatrace "Get to know the list of global fields that have a well defined semantic meaning in Dynatrace and can be used across different monitoring types.") by either copying it from a field, setting it as a static string, or a static array that allows multiple values.
-
-Smartscape node
-
-* Calculates and enriches a Smartscape ID. The Smartscape ID is calculated based on specified ordered ID components. The ID components support the `String` type; their values are taken from reference fields and the specified node type. The Smartscape ID is then enriched on the signal. The default enriched field is `dt.smartscape.<type>` and can be renamed.
-* If configured and if the signal contains details to store on the node, it creates a Smartscape event to update the Smartscape storage. This includes any fields and stable static edges extracted from the signal.
-  To learn more about Smartscape nodes, see [Smartscape on Grail](/docs/platform/grail/smartscape-on-grail "Learn about Smartscape on Grail features and how Smartscape uses the power of DQL.").
-
-Smartscape edge
-
-Extracts Smartscape edges and assigns specified key-value pairs for the fields: source type, source ID, edge type (pre-defined or custom), target type, and target ID. To learn more about Smartscape edges, see [Smartscape on Grail](/docs/platform/grail/smartscape-on-grail "Learn about Smartscape on Grail features and how Smartscape uses the power of DQL.").
-
-Software developement lifecycle event
-
-Extracts fields into a new record and sends it to the SDLC event table.
-
-Technology bundle
-
-Matches records for the selected technology and processes them according to predefined context-sensitive processing statements.
-
-Remove fields
-
-Removes fields from the record.
-
-Rename fields
-
-Changes the name of fields.
-
-Value metric
-
-Returns the aggregated values of a metric from the records that match the query.
 
 ## Related topics
 
@@ -2285,7 +2047,7 @@ Contrary to `matchesValue` function, `strict equality` operator performs case-se
 ---
 title: OpenPipeline limits
 source: https://www.dynatrace.com/docs/platform/openpipeline/reference/limits
-scraped: 2026-02-23T21:27:33.318718
+scraped: 2026-02-24T21:16:48.637674
 ---
 
 # OpenPipeline limits
@@ -2392,18 +2154,6 @@ If the timestamp is more than 10 minutes in the future, it's adjusted to the ing
 
 ### Record minimum timestamp
 
-Item
-
-Earliest timestamp
-
-Logs, Events, Business Events, System events
-
-The ingest time minus 24 hours
-
-Metrics, extracted metrics, and Davis events
-
-The ingest time minus 1 hour
-
 Records outside of these timeframes are dropped.
 
 ## Ingest API
@@ -2463,68 +2213,6 @@ The Smartscape ID calculation supports `string` only. The ID components must be 
 [Pre-process](/docs/platform/openpipeline/concepts/data-flow#pre-processing "Learn how data flows in Dynatrace Platform, from ingestion to storage, via Dynatrace OpenPipeline.") records to convert the values you need to the `string` data type.
 
 ## Configuration
-
-Item
-
-Maximum limit
-
-Early Adopter program maximum limit
-
-Request payload size (per configuration scope)
-
-10 MB
-
-* Total pipeline schemas: 70 MB
-* Total route schemas: 10 MB
-* Total ingest source schemas: 30 MB
-
-Pipeline number (per configuration scope)
-
-100
-
-2,000
-
-Size of a stage
-
-512 KB
-
-512 KB
-
-Processor number (per pipeline)
-
-1,000
-
-1,000
-
-Endpoint number (per configuration scope)
-
-100
-
-100
-
-Routes number (per configuration scope)
-
-100
-
-3,000
-
-Ingest sources number (per configuration scope)
-
-100
-
-2,000
-
-Length of a matching condition
-
-1,000 UTF-8 encoded bytes
-
-1,000 UTF-8 encoded bytes
-
-Length of a DQL processor script
-
-8,192 UTF-8 encoded bytes
-
-8,192 UTF-8 encoded bytes
 
 ### Allowed characters in the endpoint path
 
@@ -3690,7 +3378,7 @@ Conclusion
 ---
 title: Reduce span-based and metric-based cardinality
 source: https://www.dynatrace.com/docs/platform/openpipeline/use-cases/reduce-span-metric-cardinality
-scraped: 2026-02-23T21:19:45.423543
+scraped: 2026-02-24T21:14:38.734726
 ---
 
 # Reduce span-based and metric-based cardinality
@@ -5227,7 +4915,7 @@ You successfully structured syslog logs according to pre-defined processing rule
 ---
 title: OpenPipeline
 source: https://www.dynatrace.com/docs/platform/openpipeline
-scraped: 2026-02-23T21:19:38.009881
+scraped: 2026-02-24T21:15:23.700298
 ---
 
 # OpenPipeline

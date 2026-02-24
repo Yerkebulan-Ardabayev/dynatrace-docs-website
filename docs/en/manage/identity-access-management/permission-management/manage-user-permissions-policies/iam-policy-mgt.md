@@ -1,7 +1,7 @@
 ---
 title: Manage IAM policies
 source: https://www.dynatrace.com/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies/iam-policy-mgt
-scraped: 2026-02-22T21:19:20.597485
+scraped: 2026-02-24T21:21:27.921277
 ---
 
 # Manage IAM policies
@@ -47,56 +47,6 @@ To create a policy
 1. Go to [**Account Management**ï»¿](https://myaccount.dynatrace.com/) > **Identity & access management** > **Policy management**.
 2. Select **Create policy**.
 3. Enter the following information.
-
-   Element
-
-   Description
-
-   Name
-
-   The name of the policy.
-
-   Description
-
-   A brief description of the policy.
-
-   Organization level
-
-   Each policy has a level that determines its scope:
-
-   * `global`: These policies are predefined and managed by Dynatrace, and they apply to all accounts and environments. They cannot be edited.
-   * `account`: These policies apply to all environments under that account (customer). Use them to set company-wide policies.
-   * `environment`: These policies apply only to a single customer environment.
-
-   Organization levels are restricted in the UI to the `account` level (other levels are still available via API).
-   Restriction in UI was provided to avoid confusion between *creating* and *binding*.
-   Commonly creating multiple identical policies on the `environment` levels can be achieved in a more efficient way by defining one policy on the `account` level and binding it to `environment` levels.
-
-   Policy statement
-
-   A statement specifying exactly what this policy allows.
-
-   Example: Policy for Settings 2.0 Write
-
-   ```
-   ALLOW settings:objects:read;
-
-
-
-   ALLOW settings:objects:write;
-
-
-
-   ALLOW settings:schemas:read;
-   ```
-
-   You can combine multiple permissions in a single statement. Here is the same example combined into a single statement:
-
-   ```
-   ALLOW settings:objects:read, settings:objects:write, settings:schemas:read;
-   ```
-
-   Combining statements is particularly useful for managing policies with complicated conditions.
 
 ### Services
 

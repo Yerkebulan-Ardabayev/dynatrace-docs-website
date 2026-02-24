@@ -1,7 +1,7 @@
 ---
 title: Policy management API - PUT a policy boundary
 source: https://www.dynatrace.com/docs/dynatrace-api/account-management-api/policy-management-api/boundaries/put-boundary
-scraped: 2026-02-23T21:25:58.938749
+scraped: 2026-02-24T21:31:15.135917
 ---
 
 # Policy management API - PUT a policy boundary
@@ -17,10 +17,6 @@ Updates or creates a policy boundary by uuid within a level. You can't edit a gl
 If the specified boundary doesn't exist, a [new boundary is created](/docs/dynatrace-api/account-management-api/policy-management-api/boundaries/post-boundary "Create a new boundary via the Policy management API.") instead.
 
 The request consumes and produces an `application/json` payload.
-
-PUT
-
-`https://api.dynatrace.com/iam/v1/repo/account/{accountId}/boundaries/{policyBoundaryUuid}`
 
 ## Authentication
 
@@ -208,10 +204,6 @@ This is a model of the request body, showing the possible elements. It has to be
 We recommend that you validate the payload before submitting it with an actual request. A response code of **200** indicates a valid payload.
 
 The request consumes an `application/json` payload.
-
-POST
-
-`https://api.dynatrace.com/iam/v1/repo/account/{accountId}/boundaries/{policyBoundaryUuid}/validation/{policyUuid}`
 
 ### Authentication
 

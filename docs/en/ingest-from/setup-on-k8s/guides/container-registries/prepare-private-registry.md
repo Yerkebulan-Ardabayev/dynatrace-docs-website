@@ -1,7 +1,7 @@
 ---
 title: Store Dynatrace images in private registries
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/guides/container-registries/prepare-private-registry
-scraped: 2026-02-23T21:34:44.954034
+scraped: 2026-02-24T21:23:00.370597
 ---
 
 # Store Dynatrace images in private registries
@@ -43,60 +43,6 @@ An exception applies for the OneAgent image for Classic Full-Stack, where the re
 
 Depending on the [observability options](/docs/ingest-from/setup-on-k8s/deployment#observability-options-for-kubernetes "Deploy Dynatrace Operator on Kubernetes") you choose, you might want to only copy required images. The following table outlines the relations between Dynatrace images and observability options.
 
-Observability option
-
-Dynatrace Operator
-
-Dynatrace ActiveGate
-
-Dynatrace Code Module
-
-Dynatrace OneAgent
-
-Full observability
-
-(Classic Full-Stack)
-
-required
-
-required
-
--
-
-required [1](#fn-1-1-def)
-
-Full observability
-
-(Cloud-Native Full-Stack)
-
-required
-
-required
-
-required
-
-required
-
-Kubernetes Observability
-
-required
-
-required
-
--
-
--
-
-Application Observability
-
-required
-
-required
-
-required
-
--
-
 1
 
 Must be replicated from Dynatrace built-in registry. See [Support for Classic Full-Stack monitoring](#classic-full-stack) for further details.
@@ -109,30 +55,6 @@ Note how Dynatrace ActiveGate, Code Modules, and OneAgent share a similar versio
 
 In all cases, version-based image tagging is employed with container images. Mutable image tags like 'latest' are not used.
 
-Container image
-
-Image tag
-
-dynatrace-operator
-
-`docker.io/dynatrace/dynatrace-operator:v1.5.0`
-
-dynatrace-activegate
-
-`public.ecr.aws/dynatrace/dynatrace-activegate:1.301.70.20241127-162512`
-
-dynatrace-codemodules
-
-`public.ecr.aws/dynatrace/dynatrace-codemodules:1.301.70.20241127-162512`
-
-dynatrace-oneagent
-
-`public.ecr.aws/dynatrace/dynatrace-oneagent:1.301.70.20241127-162512`
-
-dynatrace-k8s-node-config-collector
-
-`public.ecr.aws/dynatrace/dynatrace-k8s-node-config-collector:1.0.0`
-
 ### Image signature verification
 
 All of our immutable and signed container images adhere to best practices, enhancing security and shielding against supply chain attacks. To learn how to verify signatures and guarantee software integrity, see [Verify Dynatrace image signatures](/docs/ingest-from/setup-on-k8s/guides/container-registries/verify-image-signature "Verify Dynatrace image signatures").
@@ -140,30 +62,6 @@ All of our immutable and signed container images adhere to best practices, enhan
 ## Copy Dynatrace container images
 
 The following guide describes how to copy Dynatrace container images from public Amazon ECR to our private registry with the following example attributes.
-
-Private container registry address
-
-`registry.my-company.com`
-
-Dynatrace Operator repository
-
-`dynatrace-operator`
-
-Dynatrace ActiveGate repository
-
-`dynatrace-activegate`
-
-Dynatrace Code Modules repository
-
-`dynatrace-codemodules`
-
-Dynatrace OneAgent repository
-
-`dynatrace-oneagent`
-
-Dynatrace K8s Node Config Collector repository
-
-`dynatrace-k8s-node-config-collector`
 
 The instructions below to copy container images to your private registry:
 
@@ -296,18 +194,6 @@ To understand which OneAgent versions are available for replication, you can use
 * [View the latest version of OneAgent](/docs/dynatrace-api/environment-api/deployment/oneagent/get-version-latest "View the latest version of OneAgent via Dynatrace API."), if you want to understand the OneAgent version behind `latest` or automate OneAgent image replication.
 
 The following examples show how OneAgent versions translate to image tags available in the Dynatrace built-in registry:
-
-OneAgent version
-
-OneAgent image tag
-
-latest
-
-**latest-raw**
-
-1.283.114.20240129-173640
-
-**1.283.114-raw**
 
 Before executing the following command, be sure to replace `<tag-with-raw-suffix>` and `<environment-id>`:
 

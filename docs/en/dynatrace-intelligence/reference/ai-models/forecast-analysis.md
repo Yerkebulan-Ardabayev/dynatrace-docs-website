@@ -1,7 +1,7 @@
 ---
 title: Dynatrace Intelligence predictive AI analysis
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/reference/ai-models/forecast-analysis
-scraped: 2026-02-23T21:19:48.249827
+scraped: 2026-02-24T21:14:58.238486
 ---
 
 # Dynatrace Intelligence predictive AI analysis
@@ -20,50 +20,6 @@ The analysis is agnostic to the distribution of the input data. The forecast is 
 You can trigger a forecast analysis from your [notebook](/docs/dynatrace-intelligence/dynatrace-intelligence-integrations/davis-for-notebooks "Run AI analysis in Dynatrace Notebooks.").
 
 ## Analyzer input
-
-Parameter
-
-Description
-
-Time series
-
-Input time series serving as the base for the prediction analysis.
-
-It must include at least 14 data points. If fewer than 14 data points are available, the forecast fails.
-
-Number of simulated paths
-
-The number of paths (nPath) simulated by the [sampling forecaster](#sampling). The more paths that are simulated, the more accurate the forecast and the longer it takes to calculate.
-
-The default value is `200`; the allowed range is between `1` and `1,000`.
-
-Forecast horizon
-
-The number of data points to be predicted. The more data points that are predicted, the less accurate the forecast is.
-
-The default value is `100`; the allowed range is between `1` and `600`.
-
-Coverage probability
-
-The coverage probability targeted by the forecaster, which translates to the following quantiles:
-
-* `Î±`
-* `0.5`
-* `1 â Î±`
-
-where `Î± = (1 â coverage probability)/2`.
-
-For example, if the coverage probability is `0.5`, the forecaster forecasts 25th, 50th, and 75th quantiles, and we expect to see 50% of the future points lying within the prediction interval.
-
-The default value is `0.9`; the allowed range is between `0` and `1`.
-
-Forecast offset
-
-The number of most recent data points that are ignored by the forecaster.
-
-The offset helps you to exclude incomplete data points from the forecast, since because incomplete data has a negative impact on the forecast.
-
-The default value is `1`; the allowed range is between `0` and `10`.
 
 ## Analysis methodology
 

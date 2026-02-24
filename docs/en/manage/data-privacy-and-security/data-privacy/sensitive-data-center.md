@@ -1,7 +1,7 @@
 ---
 title: Sensitive Data Center
 source: https://www.dynatrace.com/docs/manage/data-privacy-and-security/data-privacy/sensitive-data-center
-scraped: 2026-02-23T21:30:16.458616
+scraped: 2026-02-24T21:33:16.748988
 ---
 
 # Sensitive Data Center
@@ -18,10 +18,6 @@ scraped: 2026-02-23T21:30:16.458616
 ### Permissions
 
 The following table describes the required permissions.
-
-Permission
-
-Description
 
 storage:logs:read
 
@@ -62,16 +58,6 @@ Enables the app to process requests using a service user
 email:emails:send
 
 Enables the app to send status updates for requests
-
-10
-
-rows per page
-
-Page
-
-1
-
-of 1
 
 ## Before you begin
 

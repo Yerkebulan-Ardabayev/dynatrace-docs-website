@@ -1,7 +1,7 @@
 ---
 title: AWS DMS (Database Migration Service) monitoring
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-database-migration-service-dms
-scraped: 2026-02-23T21:28:28.676029
+scraped: 2026-02-24T21:29:45.559660
 ---
 
 # AWS DMS (Database Migration Service) monitoring

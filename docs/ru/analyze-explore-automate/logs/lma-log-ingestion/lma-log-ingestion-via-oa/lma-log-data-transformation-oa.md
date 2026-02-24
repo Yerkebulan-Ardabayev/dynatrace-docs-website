@@ -1,7 +1,7 @@
 ---
 title: Automatic log enrichment
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-log-data-transformation-oa
-scraped: 2026-02-19T21:17:03.758666
+scraped: 2026-02-24T21:18:19.259979
 ---
 
 # Automatic log enrichment
@@ -34,111 +34,11 @@ To adjust these limits
 
 There are 19 keywords that correspond with 9 severity levels as per the table below:
 
-Keyword
-
-Severity level
-
-trace
-
-DEBUG
-
-debug
-
-DEBUG
-
-fine
-
-DEBUG
-
-finer
-
-DEBUG
-
-finest
-
-DEBUG
-
-notice
-
-NOTICE
-
-info
-
-INFO
-
-information
-
-INFO
-
-warn
-
-WARN
-
-warning
-
-WARN
-
-severe\_warning
-
-WARN
-
-severe
-
-SEVERE
-
-err
-
-ERROR
-
-error
-
-ERROR
-
-crit
-
-CRITICAL
-
-critical
-
-CRITICAL
-
-alert
-
-ALERT
-
-fatal
-
-EMERGENCY
-
-emerg
-
-EMERGENCY
-
 A match occurs and severity is determined when the keyword found is a single word/phrase from the above list, and it is preceded and followed any non-alphanumeric symbol other than `/` or `_`.
 
 ## Transform all types of logs
 
 Additionally, for each log event, a `status` attribute is created with a value that is a sum of `loglevel` values based on the following grouping:
-
-Included `loglevel` values
-
-Combined `status` attribute value
-
-`SEVERE`, `ERROR`, `CRITICAL`, `ALERT`, `FATAL`, `EMERGENCY`
-
-`ERROR`
-
-`WARN`
-
-`WARN`
-
-`INFO`, `TRACE`, `DEBUG`, `NOTICE`
-
-`INFO`
-
-`NONE`
-
-`NONE`
 
 For example:
 The `level` severity key in the generic log ingestion API request parameter contains the value `serious`.

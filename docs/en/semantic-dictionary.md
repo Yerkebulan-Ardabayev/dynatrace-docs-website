@@ -1,7 +1,7 @@
 ---
 title: Semantic Dictionary
 source: https://www.dynatrace.com/docs/semantic-dictionary
-scraped: 2026-02-22T21:10:48.709687
+scraped: 2026-02-24T21:17:51.433186
 ---
 
 # Semantic Dictionary

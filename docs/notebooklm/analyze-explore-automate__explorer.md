@@ -1,6 +1,6 @@
 # Документация Dynatrace: analyze-explore-automate/explorer
 Язык: Русский (RU)
-Сгенерировано: 2026-02-23
+Сгенерировано: 2026-02-24
 Файлов в разделе: 2
 ---
 
@@ -9,7 +9,7 @@
 ---
 title: Data Explorer FAQ
 source: https://www.dynatrace.com/docs/analyze-explore-automate/explorer/explorer-troubleshooting
-scraped: 2026-02-23T21:36:29.943603
+scraped: 2026-02-24T21:35:32.197207
 ---
 
 # Data Explorer FAQ

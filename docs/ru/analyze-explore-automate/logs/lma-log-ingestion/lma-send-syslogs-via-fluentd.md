@@ -1,7 +1,7 @@
 ---
 title: Stream syslog to Dynatrace with Fluentd
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-send-syslogs-via-fluentd
-scraped: 2026-02-23T21:38:18.642012
+scraped: 2026-02-24T21:22:36.361614
 ---
 
 # Stream syslog to Dynatrace with Fluentd

@@ -1,7 +1,7 @@
 ---
 title: Anomaly Detection status types
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-app/anomaly-detection-status-types
-scraped: 2026-02-23T21:40:02.648834
+scraped: 2026-02-24T21:34:55.473950
 ---
 
 # Anomaly Detection status types
@@ -26,36 +26,6 @@ In addition, the **Status** column contains information about the inaccessibilit
 ## Anomaly Detection status list
 
 A custom alert can have any of the following status types:
-
-Status
-
-Description
-
-**Success**
-
-The success rate for the last 24 hours is over 99%.
-
-**Error**
-
-The success rate for the last 24 hours is under 95%.
-
-**Warning**
-
-The success rate for the last 24 hours is between 95% and 99%.
-
-**Unavailable**
-
-Status currently unavailable. Check if you have the following permissions:
-
-* `storage:system:read`
-
-**Pending**
-
-Can't calculate the success rate. The custom alert has not yet been executed, or the query does not contain any execution events.
-
-**Inactive**
-
-The custom alert is not enabled.
 
 ## Troubleshooting
 

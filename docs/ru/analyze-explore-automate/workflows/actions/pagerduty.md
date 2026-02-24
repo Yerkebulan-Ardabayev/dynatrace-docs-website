@@ -1,7 +1,7 @@
 ---
 title: PagerDuty
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/pagerduty
-scraped: 2026-02-23T21:35:26.906007
+scraped: 2026-02-24T21:21:15.028945
 ---
 
 # PagerDuty
@@ -60,50 +60,6 @@ To configure a connection
 ## Available actions
 
 The following workflow actions are available for the PagerDuty integration. Each action corresponds to an endpoint of the PagerDuty API.
-
-Action
-
-Description
-
-PagerDuty API endpoint
-
-Create an incident
-
-Creates an incident in your PagerDuty environment. An incident represents a problem or an issue that needs to be addressed and resolved.
-
-Use other actions to obtain the necessary input.
-
-[Create an incidentï»¿](https://dt-url.net/b723jjs)
-
-List all of the on-calls
-
-Lists all PagerDuty users who are on call duty.
-
-[List all of the on-callsï»¿](https://dt-url.net/4t43jm9)
-
-List escalation policies
-
-Lists PagerDuty escalation policies. An escalation policy defines who to notify (and how) in case of an incident.
-
-[List escalation policiesï»¿](https://dt-url.net/qo63j74)
-
-List priorities
-
-Lists PagerDuty priorities. A priority defines the importance of an incident. The list is ordered from the most to the least severe.
-
-[List prioritiesï»¿](https://dt-url.net/ow83jrh)
-
-List services
-
-Lists PagerDuty services. A service represents an application, component, or team to which you want to map the incident.
-
-[List servicesï»¿](https://dt-url.net/0b03jpm)
-
-List users
-
-List all users of your PagerDuty environment.
-
-[List usersï»¿](https://dt-url.net/ee23j45)
 
 ## Create a PagerDuty incident
 

@@ -1,7 +1,7 @@
 ---
 title: Dynatrace Платформа Подписки API
 source: https://www.dynatrace.com/docs/dynatrace-api/account-management-api/dynatrace-platform-subscription-api
-scraped: 2026-02-23T21:30:43.940627
+scraped: 2026-02-24T21:30:57.547043
 ---
 
 # Dynatrace Платформа Подписки API
@@ -9,12 +9,12 @@ scraped: 2026-02-23T21:30:43.940627
 # Dynatrace Платформа Подписки API
 
 * Последнее Dynatrace
-* Справочник
+* Справка
 * Опубликовано 30 марта 2023 г.
 
 [### Список подписок
 
-Получите обзор своих подписок.](/docs/dynatrace-api/account-management-api/dynatrace-platform-subscription-api/subscriptions/get-all "Список всех Dynatrace Платформ Подписки через Управление Учетной Записью API.")[### Просмотр подписки
+Получите обзор ваших подписок.](/docs/dynatrace-api/account-management-api/dynatrace-platform-subscription-api/subscriptions/get-all "Список всех Dynatrace Платформ Подписки через Управление Учетной Записью API.")[### Просмотр подписки
 
 Проверьте детали подписки.](/docs/dynatrace-api/account-management-api/dynatrace-platform-subscription-api/subscriptions/get-subscription "Просмотр информации о Dynatrace Платформе Подписки через Управление Учетной Записью API.")
 
@@ -32,13 +32,13 @@ scraped: 2026-02-23T21:30:43.940627
 
 Получите обзор стоимости вашей Dynatrace Платформы Подписки.](/docs/dynatrace-api/account-management-api/dynatrace-platform-subscription-api/cost/get-cost "Проверьте стоимость вашей Dynatrace Платформы Подписки через Управление Учетной Записью API.")[### Просмотр стоимости по среде
 
-Посмотрите, сколько каждая среда мониторинга вносит в стоимость вашей Dynatrace Платформы Подписки.](/docs/dynatrace-api/account-management-api/dynatrace-platform-subscription-api/cost/get-cost-environment "Проверьте стоимость вашей Dynatrace Платформы Подписки по среде через Управление Учетной Записью API.")
+Посмотрите, сколько каждая среда мониторинга вносит вклад в стоимость вашей Dynatrace Платформы Подписки.](/docs/dynatrace-api/account-management-api/dynatrace-platform-subscription-api/cost/get-cost-environment "Проверьте стоимость вашей Dynatrace Платформы Подписки по среде через Управление Учетной Записью API.")
 
 ## Мониторинг стоимости
 
 [### Просмотр прогноза стоимости
 
-Получите прогнозируемую стоимость вашей Dynatrace Платформы Подписки.](/docs/dynatrace-api/account-management-api/dynatrace-platform-subscription-api/cost-monitors/get-forecast "Автоматизируйте управление вашей Dynatrace Платформой Подписки через наш API.")[### Просмотр событий стоимости
+Получите прогнозную стоимость вашей Dynatrace Платформы Подписки.](/docs/dynatrace-api/account-management-api/dynatrace-platform-subscription-api/cost-monitors/get-forecast "Автоматизируйте управление вашей Dynatrace Платформой Подписки через наш API.")[### Просмотр событий стоимости
 
 Получите события стоимости и прогноза, обнаруженные Управлением Учетной Записью.](/docs/dynatrace-api/account-management-api/dynatrace-platform-subscription-api/cost-monitors/get-events "Автоматизируйте управление вашей Dynatrace Платформой Подписки через наш API.")
 

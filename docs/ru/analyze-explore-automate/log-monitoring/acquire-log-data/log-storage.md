@@ -1,7 +1,7 @@
 ---
 title: Log ingest rules (Logs Classic)
 source: https://www.dynatrace.com/docs/analyze-explore-automate/log-monitoring/acquire-log-data/log-storage
-scraped: 2026-02-22T21:28:33.771211
+scraped: 2026-02-24T21:28:41.646258
 ---
 
 # Log ingest rules (Logs Classic)
@@ -26,8 +26,6 @@ The configuration is based on rules that use matchers for hierarchy, log path, a
 
 ## Log ingest rule
 
-
-
 1. Go to **Settings** and select **Log Monitoring** > **Log ingest rules**.
 2. Select **Add rule** and provide the name for your configuration.  
    By default, the **Include in storage** button is turned on, indicating that items configured by this rule will be stored in Dynatrace. Alternatively, you can select the **Exclude from storage** rule type.
@@ -36,157 +34,6 @@ The configuration is based on rules that use matchers for hierarchy, log path, a
 
    Other than the **Log source** attribute in Windows (due to file paths being case insensitive), matchers are case-sensitive.
 4. Select the matching attribute:
-
-Attribute
-
-Description
-
-Search dropdown logic
-
-**Process group**
-
-Matching is based on the process group ID. The process group is determined by the detection rules described in [Process group detection](/docs/observe/infrastructure-observability/process-groups/configuration/pg-detection "Ways to customize process-group detection"). If a process changes its process group, log ingestion for that process may start or stop based on the changes made.
-
-Attributes visible in the last 3 days are listed.
-
-**Log source**
-
-Matching is based on a log path or a Windows event log full name; wildcards are supported in form of an asterisk. Autocompletion for **Log source** is only partial. You can either choose one of the predefined values or enter your log source.
-
-Can be entered manually. No time limit.
-
-**Log source origin**[1](#fn-1-1-def)
-
-Matching is based on the detector used by the log agent to discover the log file. Available options include:
-
-* **Custom log source configuration**: Log source provided by the user through custom configuration.
-* **Open log file detector**: Logs discovered automatically by the log module's autodetection mechanism.
-* **System log detector**: Includes Windows application log or `/var/log/syslog` for Linux.
-* **Container output**: Autodetected Kubernetes or Docker logs.
-* **IIS log detector**: Logs detected by the IIS detector.
-
-Can be entered manually. No time limit.
-
-**Log content**
-
-Matching is based on the content of the log; wildcards are supported in form of an asterisk.
-
-Can be entered manually. No time limit.
-
-**Log record level**[2](#fn-1-2-def)[3](#fn-1-3-def)
-
-Matching is based on the level of the log record. It supports the following values: `alert`, `critical`, `debug`, `emergency`, `error`, `info`, `none`, `notice`, `severe`, `warn`.
-
-Can be entered manually. No time limit.
-
-**journald unit**[4](#fn-1-4-def)
-
-Matching is based on any of the selected journald units. Unless you enrich other log sources with a `journald.unit` attribute, you should also add a `log.source` or `log.source.origin` matcher to the ingest rule to boost the Log Module performance.
-
-Can be entered manually. No time limit.
-
-**Host tag**[5](#fn-1-5-def)[6](#fn-1-6-def)
-
-Matching is based on the host tag. The attribute only supports the tags set with the [OneAgent command line tool](/docs/observe/infrastructure-observability/hosts/configuration/define-tags-and-metadata-for-hosts "Learn how to tag and set additional properties for a monitored host.") or with the [Remote configuration](/docs/ingest-from/bulk-configuration "Perform OneAgent and ActiveGate configuration on hosts from the Deployment status page or at scale using the Dynatrace API.") in a `key=value` pair format. They can be distinguished by the `[Environment]` prefix on the UI, but you should use the value without the prefix.
-Multiple tags can be specified in a single matcher, but each tag needs to have the same key, such as `logscope=frontend`, `logscope=backend`.
-
-Can be entered manually. No time limit.
-
-**Kubernetes container name**
-
-Matching is based on the name of the Kubernetes container.
-
-Attributes visible in the last 90 days are listed.
-
-**Kubernetes namespace name**
-
-Matching is based on the name of the Kubernetes namespace.
-
-Attributes visible in the last 90 days are listed.
-
-**Kubernetes deployment name**
-
-Matching is based on any of the selected deployments. It is deprecated for the OneAgent Log Module managed by Dynatrace Operator or when the **Collect all container logs** feature flag is enabled.
-
-Can be entered manually.
-
-**Kubernetes pod annotation**[4](#fn-1-4-def)[7](#fn-1-7-def)
-
-Matching is based on any of the selected pod annotations. The correct format is `key=value`. It requires either the OneAgent Log Module managed by Dynatrace Operator or the **Collect all container** logs feature flag to be enabled.
-
-Can be entered manually.
-
-**Kubernetes pod label**[4](#fn-1-4-def)[7](#fn-1-7-def)
-
-Matching is based on any of the selected pod labels. The correct format is `key=value`. It requires either the OneAgent Log Module managed by Dynatrace Operator or the **Collect all container logs** feature flag to be enabled.
-
-Can be entered manually.
-
-**Kubernetes workload name**[4](#fn-1-4-def)[7](#fn-1-7-def)
-
-Matching is based on any of the selected workload names. It requires either the OneAgent Log Module managed by Dynatrace Operator or the **Collect all container logs** feature flag to be enabled.
-
-Attributes visible in the last 90 days are listed.
-
-**Kubernetes workload kind**[4](#fn-1-4-def)[7](#fn-1-7-def)
-
-Matching is based on any of the selected workload kinds. It requires either the OneAgent Log Module managed by Dynatrace Operator or the **Collect all container logs** feature flag to be enabled.
-
-Can be entered manually.
-
-**Docker container name**
-
-Matching is based on the name of the container.
-
-Attributes visible in the last 90 days are listed.
-
-**DT entity container group ID**
-
-Matching is based on any of the selected container groups.
-
-Can be entered manually. No time limit.
-
-**Process technology**
-
-Matching is based on the technology name.
-
-Can be entered manually. No time limit.
-
-**Windows log record event ID**[3](#fn-1-3-def)
-
-Matching is based on any of the selected event ID attribute.
-
-Can be entered manually. No time limit.
-
-**Windows log record source**[3](#fn-1-3-def)
-
-Matching is based on any of the selected source attributes.
-
-Can be entered manually. No time limit.
-
-**Windows log record task category**[3](#fn-1-3-def)
-
-Matching is based on any of the selected task category attributes.
-
-Can be entered manually. No time limit.
-
-**Windows log record operational code**[3](#fn-1-3-def)
-
-Matching is based on any of the selected operational code attribute.
-
-Can be entered manually. No time limit.
-
-**Windows log record user name**[8](#fn-1-8-def)
-
-Matching is based on any of the selected user name attributes.
-
-Can be entered manually. No time limit.
-
-**Windows log record keywords**[8](#fn-1-8-def)
-
-Matching is based on any of the selected keywords attributes.
-
-Can be entered manually. No time limit.
 
 1
 
@@ -254,8 +101,6 @@ Three hierarchy scopes are supported: host, host group, and tenant. The scope wi
 
 ### Host scope
 
-
-
 The host scope can be accessed through the **Host settings** for a specific host.
 
 1. Go to ![Hosts](https://dt-cdn.net/images/hosts-512-59f5d2dd7f.png "Hosts") **Hosts Classic**.
@@ -313,6 +158,8 @@ In this example, we configure the tenant storage upload for `c:\inetpub\logs\Log
 10. Save changes.
 
 ## Example exclude
+
+
 
 In this example, we configure the tenant storage upload for all log sources except `c:\inetpub\logs\LogFiles\ex_*.log` files in a process group `IIS (PROCESS_GROUP-4A7B47FDB53137AE)`.
 
@@ -782,8 +629,6 @@ This task requires setting two rules with one matcher each.
 
 ### Example 4: Send logs written by Apache, and containing 'ERROR' and 'Customer'
 
-
-
 This task requires setting one rule with three matchers, with one value each.
 
 ```
@@ -1245,6 +1090,8 @@ The rules have to be executed in the order indicated below.
 ```
 
 ## FAQ
+
+
 
 Will older OneAgents work with this solution?
 

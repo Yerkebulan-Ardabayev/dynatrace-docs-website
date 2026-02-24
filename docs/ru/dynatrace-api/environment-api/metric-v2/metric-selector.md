@@ -1,7 +1,7 @@
 ---
 title: Metrics API - Metric selector
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/metric-v2/metric-selector
-scraped: 2026-02-23T21:29:08.649802
+scraped: 2026-02-24T21:19:55.439927
 ---
 
 # Metrics API - Metric selector
@@ -799,56 +799,7 @@ Dynatrace provides you with a rich set of transformations to manipulate the seri
 
 Specifies the aggregation of the returned data points. The following aggregation types are available:
 
-Syntax
-
-Description
-
-`:auto`
-
-Applies the default aggregation. To check the default aggregation, query a metric with the [GET metric descriptors](/docs/dynatrace-api/environment-api/metric-v2/get-descriptor "View the descriptor of a metric via Metrics v2 API.") call and check the **defaultAggregation** field.
-
-`:avg`
-
-Calculates the arithmetic mean of all values from the time slot. All `null` values are ignored.
-
-`:count`
-
-Takes the count of the values in the time slot. All `null` values are ignored.
-
-`:histogram`
-
-Exposes the buckets of a histogram metric as dimensions. The value of the `le` dimension denotes the upper boundary (less than or equal to) of each bucket.
-
-`:max`
-
-Selects the highest value from the time slot. All `null` values are ignored.
-
-`:min`
-
-Selects the lowest value from the time slot. All `null` values are ignored.
-
-`:percentile(99.9)`
-
-Calculates the Nth percentile, where N is between `0` and `100` (inclusive).
-
-`:sum`
-
-Sums all values from the time slot. All `null` values are ignored.
-
-`:value`
-
-Takes a single value as is. Only applicable to previously aggregated values and metrics that support the `value` aggregation.
-
 ## Default transformation
-
-Syntax
-
-`:default(<number>, always)`
-
-Arguments
-
-* The value (floating-point number) to replace `null` values in the result.
-* Optional Whether to replace an empty result with default values. This argument is only valid when preceded by **an empty** [**splitBy** transformation](#splitby).
 
 The **default** transformation replaces `null` values in the payload with the specified value.
 
@@ -1380,8 +1331,6 @@ The **filter** transformation filters the response by the specified criteria. It
 
 ### Conditions
 
-
-
 The `:filter` transformation supports the following conditions.
 
 | Syntax | Description |
@@ -1430,22 +1379,6 @@ The condition supports the following aggregations and operators.
 
 Each condition can be a combination of subconditions.
 
-Syntax
-
-Description
-
-`and(<subcondition1>,<subcondition2>,<subconditionN>)`
-
-**All** subconditions must be fulfilled.
-
-`or(<subcondition1>,<subcondition2>,<subconditionN>)`
-
-**At least one** subcondition must be fulfilled.
-
-`not(<subcondition>)`
-
-Reverses the subcondition. For example, it turns **contains** into **does not contain**.
-
 ### Syntax examples
 
 ```
@@ -1461,6 +1394,8 @@ Filters data points to those delivered by either **Server "North"** or **Server 
 Filters data points to those delivered by an application of major version **2** that is not run on the **OS-472A4A3B41095B09** operating system.
 
 ## Fold transformation
+
+
 
 |  |  |
 | --- | --- |
@@ -2175,8 +2110,6 @@ After limit transformation
 
 ## Merge transformation
 
-
-
 |  |  |
 | --- | --- |
 | Syntax | `:merge("<dimension0>","<dimension1>","<dimensionN>")` |
@@ -2450,6 +2383,8 @@ After names transformation
 
 ## Parents transformation
 
+
+
 |  |  |
 | --- | --- |
 | Syntax | `:parents` |
@@ -2532,22 +2467,9 @@ After parents transformation
 
 ## Partition transformation
 
-Syntax
-
-`:partition("<partition dimension key>",<partition1>,<partitionN>)`
-
-Arguments
-
-* The key of the partition dimensionâthis is **not** an existing dimension, but a new one that the transformation will create.
-
-  Quotes (`"`) and tildes (`~`) that are part of the dimension key must be escaped with a tilde (`~`).
-* A list of partitions to be appliedâto learn how to specify them, see the [Partition syntax](#partition-syntax) section below.
-
 The **partition** transformation splits data points of a series based on the specified criteria. It introduces a new dimension (the partition dimension), with the value determined by a partition criterion. Data points from the original series are distributed between one or several new series according to partition criteria. In each new series, data points that don't pass the criterion or are already taken by another criterion are replaced with `null`.
 
 ### Partition syntax
-
-
 
 A single transformation can contain several partitions. These are evaluated from top to bottom; the first matching partition applies.
 
@@ -2977,22 +2899,6 @@ After partition transformation
 
 ## Rate transformation
 
-Syntax
-
-`:rate(5m)`
-
-Argument
-
-The base of the rate. The following values are supported:
-
-`s`: per second  
-`m`: per minute  
-`h`: per hour  
-`d`: per day  
-`w`: per week  
-`M`: per month  
-`y`: per year
-
 The **rate** transformation converts a count-based metric (for example, bytes) into a rate-based metric (for example, bytes per minute).
 
 Any argument can be modified by an integer factor. For example, `5m` means **per 5 minutes** rate. If no argument is specified, the **per 1 minute** rate is used.
@@ -3004,23 +2910,7 @@ You can use the rate transformation with any metric that supports the `VALUE` ag
 
 ## Rollup transformation
 
-Syntax
 
-`:rollup(avg,15m)`
-
-Arguments
-
-* The required aggregation of the rollup. Supported aggregations are:
-
-  + `avg`
-  + `count`
-  + `max`
-  + `median`
-  + `min`
-  + `percentile(N)`, with N in the `0` to `100` range.
-  + `sum`
-  + `value`
-* The duration of the rollup window in minutes. The duration must be a multiple of the query resolution. For example, if the resolution is five minutes, the rollup can be `5m`, `10m`, `15m`, and so on.
 
 The **rollup** transformation smoothes data points, removing any spikes from the requested timeframe.
 
@@ -3045,8 +2935,6 @@ After rollup transformation
 ![Rollup transformation - after](https://dt-cdn.net/images/rollup-after-876-3776eb8906.png)
 
 ## Smooth transformation
-
-
 
 |  |  |
 | --- | --- |
@@ -3643,6 +3531,8 @@ After sort transformation
 
 ## Split by transformation
 
+
+
 |  |  |
 | --- | --- |
 | Syntax | `:splitBy("<dimension0>","<dimension1>","<dimensionN>")` |
@@ -4131,22 +4021,6 @@ After split by transformation
 ```
 
 ## Time shift transformation
-
-
-
-Syntax
-
-`:timeshift(5m)`
-
-Argument
-
-The period of the shift. The following values are supported:
-
-`s`: seconds  
-`m`: minutes  
-`h`: hours  
-`d`: days  
-`w`: weeks
 
 The **time shift** transformation shifts the timeframe specified by the **from** and **to** query parameters and maps the resulting data points to timestamps from the original timeframe. It can help you hand data from different time zones or put yesterday's and today's data on the same chart for visual comparison.
 

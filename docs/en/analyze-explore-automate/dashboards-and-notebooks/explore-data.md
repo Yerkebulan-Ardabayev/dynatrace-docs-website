@@ -1,7 +1,7 @@
 ---
 title: Explore data
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/explore-data
-scraped: 2026-02-23T21:20:04.678376
+scraped: 2026-02-24T21:14:45.538758
 ---
 
 # Explore data
@@ -55,106 +55,6 @@ To explore data such as logs, metrics, or business events with our point-and-cli
 
      + Only operators relevant to the data type are suggested.
      + Read more on [how the filter field works](/docs/discover-dynatrace/get-started/dynatrace-ui/ui-filter-field "The filter field is a powerful tool that allows you to quickly find relevant information or narrow down results within apps.") in the dedicated documentation.
-
-     Operator
-
-     Description
-
-     `~`
-
-     Use a tilde to get one of two effects:
-
-     To match on a specific field
-
-     1. In the  filter bar
-
-        + Select the field name
-        + Select the tilde (`~`) as the operator
-        + Enter the term you want to match
-     2. Select **Run**.
-
-        For example, when exploring log data, `content` `~` `error` lists log entries that have "error" in the "content" field.
-
-        In DQL, this translates to [matchesPhrase](/docs/platform/grail/dynatrace-query-language/functions/string-functions#matchesPhrase "A list of DQL string functions."), such as:
-
-        ```
-        fetch logs
-
-
-
-        | filter matchesPhrase(content, "error")
-
-
-
-        | limit 20
-        ```
-
-     To search all data
-
-     3. In the  filter bar
-
-        + Enter an asterisk (`*`)
-        + Select the tilde (`~`) as the operator
-        + Enter the term you want to search for
-
-        Alternative: Click in the  filter bar, scroll down to the bottom of the list of suggestions, select `Search a phrase in all data`, and enter the search term between the quotation marks. (This bar is hidden when there is no splitting set, or when there is more than one building block with a metric selected.)
-     4. Select **Run**.
-
-        For example, when exploring log data, `*` `~` `error` lists log entries that have "error".
-
-        In DQL, this translates to [search](/docs/platform/grail/dynatrace-query-language/commands/filtering-commands#search "DQL filter and search commands"), such as:
-
-        ```
-        fetch logs
-
-
-
-        | search "error"
-
-
-
-        | limit 20
-        ```
-
-     `=`
-
-     equals
-
-     `!=`
-
-     doesn't equal
-
-     `<`
-
-     less than
-
-     `<=`
-
-     less than or equal to
-
-     `>`
-
-     greater than
-
-     `>=`
-
-     greater than or equal to
-
-     `= *`
-
-     is any value
-
-     `!= *`
-
-     isn't any value
-
-     `in`
-
-     matches one or more values in a list of values
-
-     `not in`
-
-     doesnât match any value in a list of values
 
      Note: Combining `=` with a wildcard in before `*`, after, or both, before your search term will resolve to a starts with, ends with, or contains filter respectively.
    * The  on the bottom of the definition opens a menu of additional commands you can add.

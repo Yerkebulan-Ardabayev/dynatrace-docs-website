@@ -1,7 +1,7 @@
 ---
 title: Available tiles
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-classic/charts-and-tiles/available-tiles
-scraped: 2026-02-23T21:34:43.618792
+scraped: 2026-02-24T21:19:34.905870
 ---
 
 # Available tiles

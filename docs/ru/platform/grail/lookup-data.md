@@ -1,7 +1,7 @@
 ---
 title: Lookup data in Grail
 source: https://www.dynatrace.com/docs/platform/grail/lookup-data
-scraped: 2026-02-23T21:39:05.842730
+scraped: 2026-02-24T21:32:46.922161
 ---
 
 # Lookup data in Grail
@@ -112,22 +112,6 @@ To access the Swagger API documentation for the Resource Store API and to start 
 2. In the **Select a definition** field, select **Grail - Resource Store**.
 3. Optional Authenticate with your API token if you want to use Swagger to execute your requests. For details, see [Authentication](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/platform-tokens "Create personalised platform tokens to access Dynatrace services via the API in your user context."). Select the **Try it out** button to interact with the API directly from the documentation.
 4. Perform one of the following actions.
-
-To do this
-
-Go to **Lookup Data** and select this
-
-Test parsing your to-be-uploaded lookup data without storing the result in Grail.
-
-**POST/platform/storage/resource-store/v1/files/tabular/lookup:test-pattern**
-
-Upload your lookup data and store it as a new tabular file in Grail or replace an existing one.
-
-**POST/platform/storage/resource-store/v1/files/tabular/lookup:upload**
-
-Delete the file from the Resource Store.
-
-**POST/platform/storage/resource-store/v1/files:delete**
 
 ### Parse lookup data
 

@@ -1,7 +1,7 @@
 ---
 title: OpenTelemetry interoperability in Java
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/opentelemetry-interoperability/lambda-otel-bridge-java
-scraped: 2026-02-23T21:24:18.568985
+scraped: 2026-02-24T21:26:37.677473
 ---
 
 # OpenTelemetry interoperability in Java
@@ -29,22 +29,6 @@ Example: Instrument AWS SDK for Java to monitor a DynamoDB database
 Dynatrace version 1.277+ The following example shows how the [OpenTelemetry AWS SDK instrumentationï»¿](https://github.com/open-telemetry/opentelemetry-java-instrumentation/tree/main/instrumentation/aws-sdk) packages can be used to monitor calls to a DynamoDB database.
 
 Depending on the AWS SDK version you use, add one of the following packages to your package manager configuration (for example, Maven or Gradle).
-
-AWS SDK version
-
-Package to add
-
-Notes
-
-v1
-
-[opentelemetry-aws-sdk-1.11-autoconfigureï»¿](https://central.sonatype.com/artifact/io.opentelemetry.instrumentation/opentelemetry-aws-sdk-1.11-autoconfigure)
-
-Experimental span attributes must be enabled via system property (`otel.instrumentation.aws-sdk.experimental-span-attributes=true`) or environment variable (`OTEL_INSTRUMENTATION_AWS_SDK_EXPERIMENTAL_SPAN_ATTRIBUTES=true`).
-
-v2
-
-[opentelemetry-aws-sdk-2.2-autoconfigureï»¿](https://central.sonatype.com/artifact/io.opentelemetry.instrumentation/opentelemetry-aws-sdk-2.2-autoconfigure)
 
 Once the package has been added as a dependency, instrumentation is automatically added to capture requests to DynamoDB.
 

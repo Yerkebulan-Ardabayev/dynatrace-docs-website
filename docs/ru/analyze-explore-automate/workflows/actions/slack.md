@@ -1,7 +1,7 @@
 ---
 title: Slack Connector
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/slack
-scraped: 2026-02-22T21:28:49.602961
+scraped: 2026-02-24T21:27:51.206272
 ---
 
 # Slack Connector
@@ -167,145 +167,15 @@ Your Dynatrace Slack Connector requires an OAuth token to authorize sending mess
 
 ### Input examples
 
-
-
 The workflow action can be used to send Markdown-formatted messages or [Block Kit-basedï»¿](https://app.slack.com/block-kit-builder/) interactive messages in Slack.
 
 * **Connection**: select any connection from the dropdown list, for example, `dynatrace-notifications-sandbox`.
 * **Message**: see the examples in the following table.
-
-  Input type
-
-  Sample input
-
-  Markdown
-
-  ```
-  *Hello World*
-
-
-
-  This is Markdown-formatted text!
-  ```
-
-  Block Kit Builder
-
-  ```
-  {
-
-
-
-  "blocks": [
-
-
-
-  {
-
-
-
-  "type": "section",
-
-
-
-  "text": {
-
-
-
-  "type": "mrkdwn",
-
-
-
-  "text": "*This is a section block with a button.*"
-
-
-
-  },
-
-
-
-  "accessory": {
-
-
-
-  "type": "button",
-
-
-
-  "text": {
-
-
-
-  "type": "plain_text",
-
-
-
-  "text": "Click Me"
-
-
-
-  },
-
-
-
-  "value": "click_me_123",
-
-
-
-  "action_id": "button-action"
-
-
-
-  }
-
-
-
-  }
-
-
-
-  ]
-
-
-
-  }
-  ```
-
-  Automation expression
-
-  ```
-  {{ result("workflow_action_script_result") }}
-  ```
 * **Interactions**
 
   Select **Run** to send your message to your Slack channel.
 
   + **Output**:
-
-    Sample result
-
-    threadTs
-
-    ```
-    123456789.01234
-    ```
-
-    channelID
-
-    ```
-    ABCDEF012345
-    ```
-
-    messageTs
-
-    ```
-    123456789.01234
-    ```
-
-    permalink
-
-    ```
-    https://your-environment.slack.com/archives/ABCDEFG/p12345679890
-    ```
 * **Log output examples**
 
   + **Successful**:
@@ -985,6 +855,8 @@ To replicate this behavior, you can use expressions instead. The same example ab
 For more expression capabilities, see [Expression reference](/docs/analyze-explore-automate/workflows/reference "Get to know the workflows expression").
 
 ## Use Workflows with Slack
+
+
 
 1. Go to **Workflows** ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") and select ![Add](https://dt-cdn.net/images/dashboards-app-menu-plus-7e9b7c3547.svg "Add") to create a new workflow.
 2. In the **Choose trigger** panel, select the trigger best suited to your needs.

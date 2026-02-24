@@ -1,7 +1,7 @@
 ---
 title: Services
 source: https://www.dynatrace.com/docs/observe/application-observability/services
-scraped: 2026-02-23T21:19:41.666858
+scraped: 2026-02-24T21:14:37.192526
 ---
 
 # Services
@@ -22,10 +22,6 @@ Services are an application's fundamental building blocks. From an observability
 ### Permissions
 
 Check the minimal set of permissions required to run ![Services](https://dt-cdn.net/hub/logos/services.png "Services") **Services**.
-
-Permission
-
-Description
 
 storage:events:read
 
@@ -66,16 +62,6 @@ Read fieldsets from GRAIL
 storage:filter-segments:read
 
 Read filter-segments
-
-10
-
-rows per page
-
-Page
-
-1
-
-of 1
 
 ### Installation
 

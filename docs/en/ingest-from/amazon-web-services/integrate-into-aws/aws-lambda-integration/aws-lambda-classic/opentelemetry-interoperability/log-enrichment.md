@@ -1,7 +1,7 @@
 ---
 title: AWS Lambda logs in context of traces
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/opentelemetry-interoperability/log-enrichment
-scraped: 2026-02-23T21:25:38.274496
+scraped: 2026-02-24T21:16:27.964634
 ---
 
 # AWS Lambda logs in context of traces
@@ -159,22 +159,6 @@ body: msg
 ```
 
 Logs created by some commonly used Node.js logging frameworks are automatically associated with traces by using the corresponding OpenTelemetry instrumentations.
-
-Node.js logging framework
-
-OpenTelemetry instrumentation
-
-[winstonï»¿](https://www.npmjs.com/package/winston)
-
-[@opentelemetry/instrumentation-winstonï»¿](https://www.npmjs.com/package/@opentelemetry/instrumentation-winston)
-
-[pinoï»¿](https://www.npmjs.com/package/pino)
-
-[@opentelemetry/instrumentation-pinoï»¿](https://www.npmjs.com/package/@opentelemetry/instrumentation-pino)
-
-[bunyanï»¿](https://www.npmjs.com/package/bunyan)
-
-[@opentelemetry/instrumentation-bunyanï»¿](https://www.npmjs.com/package/@opentelemetry/instrumentation-bunyan)
 
 In the example below, the winston instrumentation is used to enrich a winston info log with TraceId and SpanId. The created log is associated with the currently active span in Dynatrace.
 

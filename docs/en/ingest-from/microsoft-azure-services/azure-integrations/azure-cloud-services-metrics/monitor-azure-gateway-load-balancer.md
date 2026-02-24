@@ -1,7 +1,7 @@
 ---
 title: Azure Gateway Load Balancer monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-gateway-load-balancer
-scraped: 2026-02-22T21:22:57.620483
+scraped: 2026-02-24T21:24:47.353531
 ---
 
 # Azure Gateway Load Balancer monitoring

@@ -1,7 +1,7 @@
 ---
 title: Migrate from cloud-native full-stack to application monitoring mode
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/guides/migration/cloud-native-to-app-monitoring
-scraped: 2026-02-19T21:34:03.735520
+scraped: 2026-02-24T21:31:10.997654
 ---
 
 # Migrate from cloud-native full-stack to application monitoring mode
@@ -190,37 +190,3 @@ This section provides all the information needed to perform the migration from c
 ## Changes in Kubernetes resources
 
 The migration impacts several Kubernetes resources, altering their functions or introducing new components to support the application monitoring monitoring mode. Key changes include:
-
-Component
-
-cloud-native full-stack
-
-Application monitoring
-
-Dynatrace OneAgent
-
-* Deployed as a DaemonSet
-* Collect host metrics on nodes
-
-* Not present
-
-Dynatrace Webhook Server
-
-* Validates DynaKube definitions
-* Inject code modules into application pods by modifying pod definitions
-
-* Validates DynaKube definitions
-* Inject code modules into application pods by modifying pod definitions
-
-[Dynatrace Operator CSI driver](/docs/ingest-from/setup-on-k8s/how-it-works#csi-driver "In-depth description on how the deployment on Kubernetes works.")
-
-Required
-
-* Deployed as a DaemonSet
-* Provides volume storage for OneAgents
-* Manages and provides code modules used for pod injection and optimizes storage consumption
-
-Optional
-
-* Deployed as a DaemonSet
-* Manages and provides code modules used for pod injection and optimizes storage consumption

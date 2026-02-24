@@ -1,7 +1,7 @@
 ---
 title: Capture request attributes based on web request data
 source: https://www.dynatrace.com/docs/observe/application-observability/services/request-attributes/capture-request-attributes-based-on-web-request-data
-scraped: 2026-02-19T21:18:18.066616
+scraped: 2026-02-24T21:19:11.446557
 ---
 
 # Capture request attributes based on web request data
@@ -60,54 +60,6 @@ Request attribute data sources for web requests include
   In the last two cases, you can also choose the side of the web request on which to capture and store the attribute.
 
   OneAgent is always required at capture.
-
-  Option
-
-  Request type
-
-  Capture side
-
-  Store side
-
-  **Capture on the client side of a web request service and store on the calling service**
-
-  Full-service call[1](#fn-1-1-def)
-
-  Client
-
-  Server
-
-  **Capture on server side of a web request service**
-
-  Full-service call
-
-  Server
-
-  Server
-
-  **Capture on the client side of a web request service**
-
-  External service call[2](#fn-1-2-def)
-
-  Client
-
-  Client
-
-  **Capture from both client and server side and store where found**
-
-  Full-service call
-
-  Server
-
-  Server
-
-  **Capture from both client and server side and store where found**
-
-  External service call
-
-  Client
-
-  Client
 
   1
 

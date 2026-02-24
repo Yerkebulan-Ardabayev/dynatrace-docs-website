@@ -1,7 +1,7 @@
 ---
 title: Allocate your DPS costs
 source: https://www.dynatrace.com/docs/license/cost-allocation
-scraped: 2026-02-22T21:14:41.990464
+scraped: 2026-02-24T21:18:17.916628
 ---
 
 # Allocate your DPS costs
@@ -11,7 +11,7 @@ scraped: 2026-02-22T21:14:41.990464
 * Latest Dynatrace
 * How-to guide
 * 16-min read
-* Updated on Feb 09, 2026
+* Updated on Feb 20, 2026
 
 Cost Allocation is exclusively available for Dynatrace SaaS environments with a Dynatrace Platform Subscription (DPS) licensing agreement that was signed after April 2023.
 
@@ -91,172 +91,6 @@ If you will be using lookup tables to access Grail data, you will additionally n
 The table below describes the [rate card capabilitiesï»¿](https://www.dynatrace.com/pricing/) for which Cost Allocation is available.
 
 In the case that Cost Allocation isn't available for the given capability, an alternative best practice is recommended.
-
-Category
-
-Capability
-
-DPS Cost Allocation
-
-Alternative best practice
-
-Application & Infrastructure Observability
-
-Full-Stack Monitoring
-
-â
-
-Infrastructure Monitoring
-
-â
-
-Foundation & Discovery
-
-â
-
-Mainframe Monitoring
-
-Classic metrics
-
-Container Observability
-
-Kubernetes Monitoring
-
-Classic metrics
-
-Application Security Protection
-
-Runtime Vulnerability Analytics
-
-â
-
-Runtime Application Protection
-
-â
-
-Security Posture Management
-
-Notebook available via Account Management
-
-Digital Experience Monitoring
-
-Real User Monitoring
-
-Classic metrics
-
-Real User Monitoring with Session Replay
-
-Classic metrics
-
-Real User Monitoring Property
-
-Classic metrics
-
-Browser Monitor or Clickpath
-
-Classic metrics
-
-Third-Party Synthetic API Ingestion
-
-Classic metrics
-
-HTTP Monitor
-
-Classic metrics
-
-Metrics powered by Grail
-
-Metrics - Ingest
-
-Notebook available via Account Management
-
-Metrics - Retain
-
-Notebook available via Account Management
-
-Metrics - Query
-
-Notebook available via Account Management
-
-Log Analytics
-
-Log - Ingest
-
-â
-
-Log - Retain
-
-â
-
-Logs - Retain with Included Queries
-
-â
-
-Log - Query
-
-See [Configure user-based Cost Allocation for queries, Automation Workflow, and AppEngine Functions](#user-based).
-
-Traces powered by Grail
-
-Traces - Ingest
-
-â
-
-Traces - Retain
-
-Notebook available via Account Management
-
-Traces - Query
-
-See [Configure user-based Cost Allocation for queries, Automation Workflow, and AppEngine Functions](#user-based).
-
-Events powered by Grail
-
-Events - Ingest
-
-Notebook available via Account Management
-
-Events - Retain
-
-Notebook available via Account Management
-
-Events - Query
-
-See [Configure user-based Cost Allocation for queries, Automation Workflow, and AppEngine Functions](#user-based).
-
-AppEngine Functions
-
-AppEngine Functions - Small
-
-See [Configure user-based Cost Allocation for queries, Automation Workflow, and AppEngine Functions](#user-based).
-
-Automation
-
-AutomationWorkflow
-
-See [Configure user-based Cost Allocation for queries, Automation Workflow, and AppEngine Functions](#user-based).
-
-Platform extensions
-
-Custom Metrics Classic
-
-Please switch to [Metrics powered by Grail](/docs/license/capabilities/metrics "Learn how Dynatrace Metrics powered by Grail consumption is calculated using the Dynatrace Platform Subscription model.")
-
-Log Monitoring Classic
-
-Please switch to [Log Analytics](/docs/license/capabilities/log-analytics "Learn how Dynatrace Log Analytics consumption is calculated using the Dynatrace Platform Subscription model.")
-
-Custom Traces Classic
-
-Please switch to [Traces powered by Grail](/docs/license/capabilities/traces "Learn how Dynatrace Traces powered by Grail consumption is calculated using the Dynatrace Platform Subscription (DPS) model.")
-
-Custom Events Classic
-
-Please switch to [Events powered by Grail](/docs/license/capabilities/events "Learn how Dynatrace Events powered by Grail consumption is calculated using the Dynatrace Platform Subscription model.")
-
-Serverless Functions Classic
-
-Please switch to [AppEngine Functions](/docs/license/capabilities/appengine-functions "Learn how AppEngine Function consumption is calculated using the Dynatrace Platform Subscription model.")
 
 We're continuously extending Cost Allocation support to cover additional Dynatrace capabilities.
 For complete details regarding your licensing agreement, please contact your Dynatrace account manager.
@@ -5586,30 +5420,6 @@ If you have both, we recommend to use both the text-based name and the ID, separ
 This lets you separate the name and ID after a data export.
 
 Examples:
-
-Host
-
-Cost center
-
-Product
-
-Host 1
-
-`dt.cost.costcenter=BusinessUnit1/Bu1`
-
-`dt.cost.product=AppName/AppID`
-
-Host 2
-
-`dt.cost.costcenter=BusinessUnit2/Bu2`
-
-`dt.cost.product=AppName/AppID`
-
-Host 3
-
-`dt.cost.costcenter=BusinessUnit2/Bu2`
-
-`dt.cost.product=AppName/AppID`
 
 ### Handling shared costs
 

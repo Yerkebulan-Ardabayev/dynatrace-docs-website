@@ -1,7 +1,7 @@
 ---
 title: Synthetic app
 source: https://www.dynatrace.com/docs/observe/digital-experience/synthetic-on-grail/synthetic-app
-scraped: 2026-02-23T21:19:39.169264
+scraped: 2026-02-24T21:15:26.528507
 ---
 
 # Synthetic app
@@ -20,10 +20,6 @@ Prerequisites
 ### Permissions
 
 The following table describes the required permissions.
-
-Permission
-
-Description
 
 geolocation:locations:lookup
 
@@ -64,16 +60,6 @@ allows querying stored filter sets
 document:documents:delete
 
 allows deleting filter sets
-
-10
-
-rows per page
-
-Page
-
-1
-
-of 1
 
 ## Installation
 

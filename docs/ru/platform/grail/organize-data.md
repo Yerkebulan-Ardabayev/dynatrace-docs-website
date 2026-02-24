@@ -1,7 +1,7 @@
 ---
 title: Organize data
 source: https://www.dynatrace.com/docs/platform/grail/organize-data
-scraped: 2026-02-22T21:15:28.354969
+scraped: 2026-02-24T21:23:59.525940
 ---
 
 # Organize data
@@ -48,66 +48,6 @@ fetch dt.system.buckets
 ```
 
 Run in Playground
-
-Name
-
-Table
-
-Retention
-
-`default_events`
-
-events
-
-35 days
-
-`default_securityevents_builtin`
-
-security.events
-
-3 years
-
-`default_securityevents`
-
-security.events
-
-1 year
-
-`default_bizevents`
-
-bizevents
-
-35 days
-
-`default_logs`
-
-logs
-
-35 days
-
-`default_metrics`
-
-metrics
-
-15 months
-
-`default_spans`
-
-spans
-
-10 days
-
-`dt_system_events`
-
-dt.system.events
-
-1 year
-
-`default_application_snapshots`
-
-application.snapshots
-
-10 days
 
 ## Custom Grail buckets
 

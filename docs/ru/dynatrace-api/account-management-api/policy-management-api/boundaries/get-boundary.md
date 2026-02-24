@@ -1,78 +1,74 @@
 ---
-title: Policy management API - GET a policy boundary
+title: Управление политиками API - GET граница политики
 source: https://www.dynatrace.com/docs/dynatrace-api/account-management-api/policy-management-api/boundaries/get-boundary
-scraped: 2026-02-23T21:34:13.687045
+scraped: 2026-02-24T21:22:18.230977
 ---
 
-# Policy management API - GET a policy boundary
+# Управление политиками API - GET граница политики
 
-# Policy management API - GET a policy boundary
+# Управление политиками API - GET граница политики
 
 * Latest Dynatrace
 * Reference
 * Published Nov 20, 2025
 
-Gets a policy boundary within a level.
+Получает границу политики внутри уровня.
 
-The request produces an `application/json` payload.
+Запрос производит полезную нагрузку `application/json`.
 
-GET
+## Аутентификация
 
-`https://api.dynatrace.com/iam/v1/repo/account/{accountId}/boundaries/{policyBoundaryUuid}`
+Чтобы выполнить этот запрос, вам необходимо иметь разрешение **Allow IAM policy configuration for environments** (`iam-policies-management`) назначенное вашему токену. Чтобы узнать, как получить и использовать его, см. [OAuth клиенты](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/oauth-clients "Управление аутентификацией и разрешениями пользователей с помощью OAuth клиентов.").
 
-## Authentication
+## Параметры
 
-To execute this request, you need the **Allow IAM policy configuration for environments** (`iam-policies-management`) permission assigned to your token. To learn how to obtain and use it, see [OAuth clients](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/oauth-clients "Manage authentication and user permissions using OAuth clients.").
-
-## Parameters
-
-| Parameter | Type | Description | In | Required |
+| Параметр | Тип | Описание | В | Обязательный |
 | --- | --- | --- | --- | --- |
-| policyBoundaryUuid | - | The ID of the required boundary. | path | Required |
-| accountId | - | The ID of the policy boundary level. Use the UUID of the account. | path | Required |
+| policyBoundaryUuid | - | Идентификатор необходимой границы. | path | Обязательный |
+| accountId | - | Идентификатор уровня границы политики. Используйте UUID учетной записи. | path | Обязательный |
 
-## Response
+## Ответ
 
-### Response codes
+### Код ответа
 
-| Code | Type | Description |
+| Код | Тип | Описание |
 | --- | --- | --- |
-| **200** | [PolicyBoundaryOverview](#openapi-definition-PolicyBoundaryOverview) | Successful response - policy boundary |
-| **404** | [ErrorDto](#openapi-definition-ErrorDto) | Failed. The specified resource is not found. |
+| **200** | [PolicyBoundaryOverview](#openapi-definition-PolicyBoundaryOverview) | Успешный ответ - граница политики |
+| **404** | [ErrorDto](#openapi-definition-ErrorDto) | Не найдено. Указанный ресурс не найден. |
 
-### Response body objects
+### Объекты тела ответа
 
-#### The `PolicyBoundaryOverview` object
+#### Объект `PolicyBoundaryOverview`
 
-| Element | Type | Description |
+| Элемент | Тип | Описание |
 | --- | --- | --- |
 | uuid | string | - |
 | levelType | string | - |
 | levelId | string | - |
-| name | string | The display name of the policy boundary. |
-| boundaryQuery | string | The boundary query of the policy boundary. |
+| name | string | Отображаемое имя границы политики. |
+| boundaryQuery | string | Запрос границы политики. |
 | boundaryConditions | [Condition[]](#openapi-definition-Condition) | - |
-| metadata | [Map](#openapi-definition-Map) | The metadata of the policy boundary. |
+| metadata | [Map](#openapi-definition-Map) | Метаданные границы политики. |
 
-#### The `Condition` object
+#### Объект `Condition`
 
-| Element | Type | Description |
+| Элемент | Тип | Описание |
 | --- | --- | --- |
-| name | string | The name of the condition.  It indicates which part of the **services** is checked by the condition. |
-| operator | string | The operator of the condition. |
-| values | string[] | A list of reference values of the condition. |
+| name | string | Имя условия.  Оно указывает, какая часть **сервисов** проверяется условием. |
+| operator | string | Оператор условия. |
+| values | string[] | Список ссылочных значений условия. |
 
-#### The `Map` object
+#### Объект `Map`
 
-#### The `ErrorDto` object
+#### Объект `ErrorDto`
 
-| Element | Type | Description |
+| Элемент | Тип | Описание |
 | --- | --- | --- |
-| code | number | The code of the error. |
-| message | string | A short description of the error. |
+| code | number | Код ошибки. |
+| message | string | Краткое описание ошибки. |
 | errorsMap | object | - |
 
-### Response body JSON models
+### Модели тела ответа JSON
 
 ```
 {
@@ -127,7 +123,7 @@ To execute this request, you need the **Allow IAM policy configuration for envir
 
 
 
-}
+)
 
 
 
@@ -162,9 +158,9 @@ To execute this request, you need the **Allow IAM policy configuration for envir
 }
 ```
 
-## Example
+## Пример
 
-In this example, the request retrieves the details of the policy boundary with the UUID of **9a7b6c54-3d2e-4f10-a8b2-7cde9012f345** for the account with the `accountId` **f1a2b3c4-d5e6-7890-ab12-34cd56ef7890**.
+В этом примере запрос получает детали границы политики с UUID **9a7b6c54-3d2e-4f10-a8b2-7cde9012f345** для учетной записи с `accountId` **f1a2b3c4-d5e6-7890-ab12-34cd56ef7890**.
 
 #### Curl
 
@@ -180,13 +176,13 @@ curl --request GET \
 --header 'Authorization: Bearer abcdefjhij1234567890'
 ```
 
-#### Request URL
+#### URL запроса
 
 ```
 https://api.dynatrace.com/iam/v1/repo/account/f1a2b3c4-d5e6-7890-ab12-34cd56ef7890/boundaries/9a7b6c54-3d2e-4f10-a8b2-7cde9012f345
 ```
 
-#### Response body
+#### Тело ответа
 
 ```
 {
@@ -241,7 +237,7 @@ https://api.dynatrace.com/iam/v1/repo/account/f1a2b3c4-d5e6-7890-ab12-34cd56ef78
 
 
 
-}
+)
 
 
 
@@ -256,6 +252,6 @@ https://api.dynatrace.com/iam/v1/repo/account/f1a2b3c4-d5e6-7890-ab12-34cd56ef78
 }
 ```
 
-#### Response code
+#### Код ответа
 
-200 - Successful response - policy boundary.
+200 - Успешный ответ - граница политики.

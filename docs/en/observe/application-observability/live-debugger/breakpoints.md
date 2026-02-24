@@ -1,7 +1,7 @@
 ---
 title: Live Debugger breakpoints
 source: https://www.dynatrace.com/docs/observe/application-observability/live-debugger/breakpoints
-scraped: 2026-02-23T21:37:10.713090
+scraped: 2026-02-24T21:30:04.999866
 ---
 
 # Live Debugger breakpoints
@@ -107,54 +107,6 @@ There are several collection levels that you can set to a breakpoint. The collec
 
 Three collection levels are available:
 
-Level\Language
-
-JVM
-
-Node.js
-
-Low
-
-Collection depth: 2
-
-String width: 128
-
-Collection width: 10
-
-Collection depth: 2
-
-String width: 128
-
-Collection width: 5
-
-Medium
-
-Collection depth: 5
-
-String width: 512
-
-Collection width: 15
-
-Collection depth: 3
-
-String width: 512
-
-Collection width: 10
-
-High
-
-Collection depth: 8
-
-String width: 4096
-
-Collection width: 25
-
-Collection depth: 5
-
-String width: 4096
-
-Collection width: 20
-
 For example, if an object has a deeply nested field, we will stop when we reach the maximum collection depth (as in the following example). Note that `l5` has more fields, but they werenât collected because they were too deep.
 
 ![Example of an object with deeply nested fields](https://dt-cdn.net/images/2025-01-30-22-13-44-1200-5eed210010-640-cfbd29135d.jpg)
@@ -187,81 +139,3 @@ Condition types:
   Using an advanced condition, you can define a more complex condition using logical parameters. Use `&&` for an AND statement, `||` for an OR statement, and `(` and `)` for encapsulation.
 
 Advanced conditions support the following operators and functions:
-
-Operator
-
-Example
-
-Description
-
-`==`
-
-`a==1`, `b=='bbb'`, `x==y`
-
-If the values of two operands are equal, the condition is true.
-
-`!=`
-
-`a!=1`, `b!='bbb'`, `x!=y`
-
-If values of two operands are not equal, the condition is true.
-
-`>`
-
-`a>1`, `x>y`
-
-If the value of the left operand is greater than the value of the right operand, the condition is true.
-
-`>=`
-
-`a>=1`, `x>=y`
-
-If the value of the left operand is greater than or equal to the value of the right operand, the condition is true.
-
-`<`
-
-`a<1`, `x<y`
-
-If the value of left operand is less than the value of right operand, then condition becomes true.
-
-`<=`
-
-`a<=1`, `x<=y`
-
-If the value of the left operand is less than or equal to the value of the right operand, the condition is true.
-
-`in`
-
-`'bbb' in a`
-
-If the value of the left operand is included in the right operand, the condition is true.
-
-`&&`
-
-`a<=1 && b!='bbb'`
-
-If both operands are true, the condition is true.
-
-`||`
-
-`a<=1 || b=='bbb'`
-
-If any of the two operands are non-zero, the condition is true.
-
-`()`
-
-``` (a<=1``||``b=='bbb') && (x<y) ```
-
-You can use parentheses to change the precedence when evaluating the condition.
-
-`[]`
-
-`arr[4]!=4`, `dict['a']!=4`
-
-Set conditions regarding to a specific sequenceâs element - list, dict, etc.
-
-`size`
-
-`arr.size() >= 32`
-
-Use size instead of len or length on any platform.

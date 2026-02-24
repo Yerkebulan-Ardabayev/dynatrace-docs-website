@@ -1,7 +1,7 @@
 ---
 title: Windows event logs
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-windows-event-logs
-scraped: 2026-02-23T21:37:49.432571
+scraped: 2026-02-24T21:32:54.083850
 ---
 
 # Windows event logs
@@ -81,68 +81,6 @@ To ingest custom Windows event logs, you can define a custom log source. Follow 
 ## Attributes selected in Windows event logs
 
 For Windows event logs, Log Monitoring detects the following fields and sends them as custom attributes:
-
-Semantic attribute name
-
-Configuration matcher name
-
-Event property
-
-Description
-
-`winlog.keywords`
-
-Windows log record keywords
-
-`Event.RenderingInfo.Keywords`
-
-A bitmask of the keywords defined in the event. Keywords are used to classify types of events (for example, events associated with reading data).
-
-`winlog.username`
-
-Windows log record user name
-
-`Event.System.Security.UserID`
-
-The user name of the event provider that logged the event.
-
-`winlog.level`
-
-`Event.RenderingInfo.Level`
-
-The severity level defined in the event. This attribute is not available in the configuration matchers, but you can use the **Log record level** instead.
-
-`winlog.eventid`
-
-Windows log record event ID
-
-`Event.System.EventID`
-
-The identifier that the provider used to identify the event.
-
-`winlog.provider`
-
-Windows log record source
-
-`Event.System.Provider.Name`
-
-Identifies the provider that logged the event.
-
-`winlog.task`
-
-Windows log record task category
-
-`Event.System.Task`
-
-The task defined in the event. Task and opcode are typically used to identify the location in the application from where the event was logged.
-
-`winlog.opcode`
-
-Windows log record operational code
-
-`Event.RenderingInfo.Opcode`
-
-The opcode defined in the event. Task and opcode are typcially used to identify the location in the application from where the event was logged.
 
 ## Support for structured data
 

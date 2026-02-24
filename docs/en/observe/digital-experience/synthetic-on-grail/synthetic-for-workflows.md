@@ -1,7 +1,7 @@
 ---
 title: Synthetic for Workflows
 source: https://www.dynatrace.com/docs/observe/digital-experience/synthetic-on-grail/synthetic-for-workflows
-scraped: 2026-02-21T21:20:01.916629
+scraped: 2026-02-24T21:29:19.553601
 ---
 
 # Synthetic for Workflows

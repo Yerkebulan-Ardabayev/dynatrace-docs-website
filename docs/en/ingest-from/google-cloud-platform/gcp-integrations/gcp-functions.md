@@ -1,7 +1,7 @@
 ---
 title: Google Cloud Functions monitoring
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-functions
-scraped: 2026-02-23T21:37:23.528242
+scraped: 2026-02-24T21:17:19.238701
 ---
 
 # Google Cloud Functions monitoring

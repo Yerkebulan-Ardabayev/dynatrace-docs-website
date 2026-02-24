@@ -1,7 +1,7 @@
 ---
 title: DDUs for Log Management and Analytics
 source: https://www.dynatrace.com/docs/license/monitoring-consumption-classic/davis-data-units/log-management-and-analytics
-scraped: 2026-02-22T21:25:27.790582
+scraped: 2026-02-24T21:22:29.279195
 ---
 
 # DDUs for Log Management and Analytics
@@ -21,61 +21,9 @@ The DDU consumption model for Log Management and Analytics is based on three dim
 
 Total DDU consumption for Log Management and Analytics is calculated by multiplying the DDU weight of each of the three data-usage dimensions with the data volume in GB.
 
-Unit of measure
-
-Ingest & Process
-
-Retain
-
-Query
-
-Definition
-
-Ingested data is the amount of raw data in bytes (logs and events) sent to Dynatrace after decompression and before enrichment and transformation.
-
-Retained data is the amount of data saved to storage after data parsing, enrichment, transformation, and filtering but before compression.
-
-Queried data is the data read during the execution of a DQL query, including sampled data.
-
-DDU consumption
-
-100.00 DDUs per GB
-
-0.30 DDUs per GB retained per day
-
-1.70 DDUs per GB read
-
 ## Ingest & Process
 
 Whatâs included with the Ingest & Process data-usage dimension?
-
-Concept
-
-Explanation
-
-Data delivery
-
-* Delivery of log data via OneAgent or the Log ingestion API (via ActiveGate)
-
-Topology enrichment
-
-* Enrichment of log events with data source and topology metadata
-
-Data transformation
-
-* Add, edit, or drop any log attribute
-* Perform mathematical transformations on numerical values (for example, creating new attributes based on calculations of existing attributes)
-* Extract business, infrastructure, application, or other data from raw logs. This can be a single character, string, number, array of values, or other. Extracted data can be turned into a new attribute allowing additional querying, filtering, etc. Metrics can be created from newly extracted attributes (see "Conversion to time series" below), or extracted attributes can be queried for ad-hoc analysis
-* Mask sensitive data by replacing either the whole log record, one specific log record attribute, or certain text with a masked string
-
-Data-retention control
-
-* Filter incoming logs based on content, topology, or metadata to reduce noise. Log filtering consumes DDUs during Ingest & Process, but not for Retain.
-* Manage data retention periods of incoming logs based on data-retention rules
-
-Conversion to time series
-
-* Create metrics from log records or attributes (note that creating [custom metrics consumes additional DDUs](/docs/license/monitoring-consumption-classic/davis-data-units/metric-cost-calculation "Understand how to calculate Davis data unit consumption and costs related to monitored metrics.") beyond those consumed for ingestion and processing.)
 
 Apply the following calculation to determine your DDU consumption for the Ingest & Process data-usage dimension:  
 `(number of GBs ingested) Ã (100.00 DDU weight) = DDUs consumed`
@@ -85,30 +33,6 @@ Be aware that data enrichment and processing can increase your data volume signi
 ## Retain
 
 Whatâs included with the Retain data-usage dimension?
-
-Concept
-
-Explanation
-
-Data availability
-
-* Retained data is accessible for analysis and querying until the end of the retention period.
-
-Retention periods
-
-* Choose a desired retention period
-
-  + 10 days (10 days)
-  + 2 weeks (15 days)
-  + 1 month (35 days) default
-  + 3 months (95 days)
-  + 1 year (372 days)
-
-  + 15 months (462 days)
-  + 3 years (1,102 days)
-  + 5 years (1,832 days)
-  + 7 years (2,562 days)
-  + 10 years (3,657 days)
 
 Apply the following calculation to determine your DDU consumption for the Retain data-usage dimension:  
 `(number of GB of processed data ingested) Ã (retention period in days) Ã (0.30 DDU weight) Ã (number of days that data is stored) = DDUs consumed`
@@ -127,27 +51,6 @@ Dynatrace Query Language (DQL) queries consume Davis data units (DDUs) while the
 
 Whatâs included with the Query data-usage dimension?
 
-Concept
-
-Explanation
-
-On-read parsing
-
-* Use DQL to query historical logs in storage and extract business, infrastructure, or other data across any timeframe, and use extracted data for follow-up analysis.
-* No upfront indexes or schema required for on-read parsing
-
-Aggregation
-
-* Perform aggregation, summarization, or statistical analysis of data in logs across specific timeframes or time patterns (for example, data occurrences in 30-second or 10-minute intervals), mathematical, or logical functions.
-
-Reporting
-
-* Create reports or summaries with customized fields (columns) by adding, modifying, or dropping existing log attributes.
-
-Context
-
-* Use DQL to analyze log data in context with relevant data on the Dynatrace platform, for example, user sessions or distributed traces.
-
 Apply the following calculation to determine your DDU consumption for the Query data-usage dimension:  
 `(number of GB of uncompressed data read during query execution) Ã (1.70 DDU weight) = DDUs consumed`
 
@@ -159,115 +62,19 @@ Following are example DDU calculations which show how each data-usage dimension 
 
 For example, say that you produce 500 GB of log data per day which you ingest into Log Management and Analytics for processing. The monthly DDU consumption for Ingest & Process in this case would be 1,500,000 DDUs:
 
-Ingest volume per day
-
-500 GB
-
-Ingest volume per month
-
-15,000 GB
-
-`500 (GB data per day) Ã 30 (days)`
-
-DDU consumption per month
-
-1,500,000 DDUs
-
-`15,000 (GB per month) Ã 100.00 (DDUs per GB)`
-
 ### Step 2 - Retain
 
 Following the Ingest & Process step, your data is retained and enriched on an on-going basis. If you ingested 500 GB of raw data in step 1, 900 GB of enriched data (`500 GB Ã 1.8 for enrichment`) is added to your storage daily. In this example, your enriched data is retained for 35 days. The monthly DDU consumption (after a ramp-up period of 35 days) for Retain in this case is 283,500 DDUs:
 
-Retained volume for 1 day
-
-900 GB
-
-`500 (GB data per day) Ã 1.8 (enrichment)`
-
-Retained volume for 35 days
-
-31,500 GB
-
-`900 (GB data per day) Ã 35 (days)`
-
-DDU consumption per day
-
-9,450 DDUs
-
-`31,500 (GB) Ã 0.3 (DDUs per GB per day)`
-
-DDU consumption per month
-
-283,500 DDUs
-
-`9,450 (DDUs) Ã 30 (days)`
-
 If the same amount of processed data is to be retained for a year, the monthly DDU consumption (after a ramp-up of 365 days in this case) for Retain is 2,956,500 DDUs.
-
-Retained volume for 1 day
-
-900 GB
-
-`500 (GB data per day) Ã 1.8 (enrichment)`
-
-Retained volume for 365 days
-
-328,500 GB
-
-`900 (GB data per day) Ã 365 (days)`
-
-DDU consumption per day
-
-98,550 DDUs
-
-328,500 (GB) Ã 0.3 (DDUs per GB per day)
-
-DDU consumption per month
-
-2,956,500 DDUs
-
-`98,550 (DDUs) Ã 30 (days)`
 
 ### Step 3 - Query
 
 Letâs assume that to resolve incidents and analyze performance issues your team executes DQL queries with a total of 25 TB of data read per day. The monthly DDU consumption for Query in this case is 1,275,000 DDUs.
 
-Data volume read per day
-
-25,000 GB
-
-Data volume read per month
-
-750,000 GB
-
-`25,000 (GB data per day) Ã 30 (days)`
-
-DDU consumption per month
-
-1,275,000 DDUs
-
-`750,000 (GB per month) Ã 1.70 (DDUs per GB)`
-
 ### Step 4 â Total DDU consumption
 
 The total monthly DDU consumption for this example scenario of 35 days of data retention is 3,058,500 DDUs.
-
-Ingest â DDU consumption per month
-
-1,500,000 DDUs
-
-Retain â DDU consumption per month
-
-283,500 DDUs
-
-Query â DDU consumption per month
-
-1,275,000 DDUs
-
-Total DDU consumption per month
-
-3,058,500 DDUs
 
 ## FAQ
 

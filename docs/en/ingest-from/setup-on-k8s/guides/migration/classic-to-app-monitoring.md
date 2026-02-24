@@ -1,7 +1,7 @@
 ---
 title: Migrate from classic full-stack to application monitoring mode
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/guides/migration/classic-to-app-monitoring
-scraped: 2026-02-18T21:36:28.310109
+scraped: 2026-02-24T21:24:09.202181
 ---
 
 # Migrate from classic full-stack to application monitoring mode
@@ -259,33 +259,3 @@ Follow these instructions to successfully migrate from classic full-stack mode:
 ## Changes in Kubernetes resources
 
 The migration impacts several Kubernetes resources, altering their functions or introducing new components to support the application monitoring mode. Key changes include:
-
-Component
-
-classic full-stack
-
-Application monitoring
-
-Dynatrace Oneagent
-
-* Deployed as a DaemonSet
-* Collect host metrics on nodes
-* Inject code modules into application pods
-
-* Not present
-
-Dynatrace Webhook Server
-
-* Validates DynaKube definitions
-
-* Validates DynaKube definitions
-* Inject code modules into application pods by modifying pod definitions
-
-[Dynatrace Operator CSI driver](/docs/ingest-from/setup-on-k8s/how-it-works#csi-driver "In-depth description on how the deployment on Kubernetes works.")
-
-Optional
-
-* Not present
-
-* Deployed as a DaemonSet
-* Optimizes the download of code modules to speed up pod injection and reduce storage consumption

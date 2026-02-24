@@ -1,7 +1,7 @@
 ---
 title: DQL use cases
 source: https://www.dynatrace.com/docs/platform/grail/dynatrace-query-language/dql-use-cases
-scraped: 2026-02-23T21:37:22.369772
+scraped: 2026-02-24T21:20:14.888458
 ---
 
 # DQL use cases
@@ -112,50 +112,6 @@ total=count()
 
 Results:
 
-bank\_card
-
-bank\_cardPer
-
-apple\_pay
-
-apple\_payPerc
-
-paypal
-
-paypalPerc
-
-google\_pay
-
-google\_payPerc
-
-unpaid\_booking
-
-unpaid\_bookingPerc
-
-total
-
-345
-
-0.19425675675675674
-
-353
-
-0.19876126126126126
-
-360
-
-0.20270270270270271
-
-364
-
-0.20495495495495494
-
-354
-
-0.19932432432432431
-
-1776
-
 ### Extract the first 'n' characters from the field.
 
 In this example, you have a field called `kiosk` and need to extract the first three characters to identify the location abbreviation of the kiosk.
@@ -185,14 +141,6 @@ In this example, you have a field called `kiosk` and need to extract the first t
 ```
 
 Results:
-
-kiosk
-
-kioskLoc
-
-LAOBAUA729
-
-LAO
 
 ### Extract information from an XML element
 
@@ -291,26 +239,6 @@ code = xml[code]
 ```
 
 Results:
-
-domain
-
-serial
-
-object
-
-transaction
-
-code
-
-bca\_icas\_soa
-
-1467
-
-example-Firewall
-
-6187
-
-0x01130007
 
 ### Investigate security incidents in Kubernetes clusters Threat hunting
 

@@ -1,7 +1,7 @@
 ---
 title: Infrastructure & Operations
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/infrastructure-and-operations
-scraped: 2026-02-23T21:19:27.207238
+scraped: 2026-02-24T21:15:25.133136
 ---
 
 # Infrastructure & Operations
@@ -27,10 +27,6 @@ The ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-oper
 ### Permissions
 
 The following table describes the required permissions.
-
-Permission
-
-Description
 
 storage:logs:read
 
@@ -71,16 +67,6 @@ Read settings configurations from Settings 2.0
 settings:objects:write
 
 Write settings configurations to Settings 2.0
-
-10
-
-rows per page
-
-Page
-
-1
-
-of 1
 
 ## Get started
 

@@ -1,7 +1,7 @@
 ---
 title: Set up GitHub Connector
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/github/github-workflows-setup
-scraped: 2026-02-23T21:39:34.439544
+scraped: 2026-02-24T21:31:04.287873
 ---
 
 # Set up GitHub Connector

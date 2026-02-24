@@ -1,7 +1,7 @@
 ---
 title: Metrics powered by Grail overview (DPS)
 source: https://www.dynatrace.com/docs/license/capabilities/metrics
-scraped: 2026-02-23T21:30:48.755466
+scraped: 2026-02-24T21:21:06.689200
 ---
 
 # Metrics powered by Grail overview (DPS)
@@ -23,44 +23,9 @@ For information about how usage of a specific capability translates to consumpti
 
 Here's what's included with the Ingest & Process data-usage dimension:
 
-Concept
-
-Explanation
-
-Data delivery
-
-Delivery of metrics via OneAgent, extensions or ingest API
-
-Topology enrichment
-
-Enrichment of metrics with data source and topology metadata
-
-Data transformation
-
-* Rollup of data to reduced granularity to optimize queries for longer timeframes
-* Use of efficient data structures to derive metrics from high volume spans like service response time metrics
-
-Data-retention control
-
-Manage data retention period of incoming metrics based on bucket assignment rules
-
 ## Metrics - Retain feature overview
 
 Here's what's included with the Retain data-usage dimension:
-
-Concept
-
-Explanation
-
-Data availability
-
-Retained data is accessible for analysis and querying until the end of the retention period.
-Metrics retention is defined at the bucket level, ensuring tailored retention periods for specific metrics.
-
-Retention periods
-
-Choose a desired retention period.
-For the default metrics bucket, the available retention period ranges from 15 months (462 days) to 10 years (3,657 days).
 
 ## Metrics - Query feature overview
 

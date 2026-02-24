@@ -1,6 +1,6 @@
 # Документация Dynatrace: dynatrace-intelligence/dynatrace-intelligence-integrations
 Язык: Русский (RU)
-Сгенерировано: 2026-02-23
+Сгенерировано: 2026-02-24
 Файлов в разделе: 3
 ---
 
@@ -9,7 +9,7 @@
 ---
 title: Dynatrace Intelligence (Preview) app
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/dynatrace-intelligence-integrations/copilot-for-workflows
-scraped: 2026-02-22T21:25:13.353245
+scraped: 2026-02-24T21:24:31.080256
 ---
 
 # Dynatrace Intelligence (Preview) app
@@ -53,18 +53,6 @@ To install  **Dynatrace Intelligence (Preview)**
 
 Standard usage limits for  **Generative AI** are also applied to  **Dynatrace Intelligence (Preview)**:
 
-Item
-
-Maximum limit
-
-Individual user requests
-
-25 requests per 15 minutes
-
-All user requests across the environment
-
-60 requests per 15 minutes
-
 This means that, if you schedule the automatic workflow execution to run frequently, all other Dynatrace Intelligence generative AI functionality might get throttled due to reaching the request limit. If you do run into the usage limit, please reach out to your CSM or let us know in the [Agentic AI Preview User Groupï»¿](https://dt-url.net/copilot-community) in our Community.
 
 ## Set up a Dynatrace Intelligence generative AI workflow action
@@ -107,7 +95,7 @@ To learn about specific use cases and how you can use the Dynatrace Intelligence
 ---
 title: Dynatrace Intelligence for Notebooks
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/dynatrace-intelligence-integrations/davis-for-notebooks
-scraped: 2026-02-23T21:29:30.080128
+scraped: 2026-02-24T21:24:11.447432
 ---
 
 # Dynatrace Intelligence for Notebooks

@@ -1,7 +1,7 @@
 ---
 title: Email
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/email
-scraped: 2026-02-20T21:17:06.502243
+scraped: 2026-02-24T21:20:29.501622
 ---
 
 # Email
@@ -194,18 +194,6 @@ If you are using [expressions](/docs/analyze-explore-automate/workflows/referenc
 ## Action result
 
 The **Send email** action provides the following result.
-
-Property
-
-Description
-
-`requestId`
-
-A unique identifier to trace successfully accepted email send requests.
-
-`clientRequestId`
-
-A unique identifier to trace successfully accepted email send requests. For sending emails, this is identical to `requestId`.
 
 ## Expected behavior 'Failed to send email. Status code 403.'
 

@@ -1,7 +1,7 @@
 ---
 title: Send Slack notifications for problems
 source: https://www.dynatrace.com/docs/analyze-explore-automate/alerting-and-notifications/workflows-tutorial-problems-slack
-scraped: 2026-02-22T21:21:41.644759
+scraped: 2026-02-24T21:34:43.176508
 ---
 
 # Send Slack notifications for problems

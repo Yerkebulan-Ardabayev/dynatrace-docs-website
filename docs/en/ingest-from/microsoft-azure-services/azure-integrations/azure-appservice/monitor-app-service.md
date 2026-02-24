@@ -1,7 +1,7 @@
 ---
 title: Monitor Azure App Service Plan metrics
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-appservice/monitor-app-service
-scraped: 2026-02-23T21:29:16.614953
+scraped: 2026-02-24T21:35:27.655604
 ---
 
 # Monitor Azure App Service Plan metrics

@@ -1,7 +1,7 @@
 ---
 title: Out-of-memory (OOM) and out-of-threads (OOT) events and alerting
 source: https://www.dynatrace.com/docs/ingest-from/technology-support/application-software/java/set-up-event-and-memory-alerting
-scraped: 2026-02-23T21:25:26.752307
+scraped: 2026-02-24T21:36:10.104085
 ---
 
 # Out-of-memory (OOM) and out-of-threads (OOT) events and alerting
@@ -44,42 +44,6 @@ Alternatively, you can create alerts only for specific metric events.
 1. Go to **Settings** > **Anomaly detection** and select **Metric events**.
 2. Select **Add metric event**.
 3. Define the following two events.
-
-   Metric event
-
-   Metric key
-
-   Threshold
-
-   Violating samples
-
-   Sliding window
-
-   Dealerting samples
-
-   High GC suspension time
-
-   `builtin:tech.jvm.memory.gc.suspensionTime`
-
-   25 %
-
-   3
-
-   5
-
-   4
-
-   High GC total collection time
-
-   `builtin:tech.jvm.memory.gc.collectionTime`
-
-   24 s
-
-   3
-
-   5
-
-   4
 4. Select **Save changes**.
 
 ## Related topics

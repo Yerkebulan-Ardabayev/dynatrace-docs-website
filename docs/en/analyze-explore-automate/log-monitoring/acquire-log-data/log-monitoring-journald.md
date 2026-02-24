@@ -1,7 +1,7 @@
 ---
 title: Log Monitoring from Journald (Logs Classic)
 source: https://www.dynatrace.com/docs/analyze-explore-automate/log-monitoring/acquire-log-data/log-monitoring-journald
-scraped: 2026-02-23T21:34:30.572011
+scraped: 2026-02-24T21:35:05.543977
 ---
 
 # Log Monitoring from Journald (Logs Classic)
@@ -66,81 +66,6 @@ Follow the steps below to configure the tenat storage upload for `kubelet.servic
 
 Each entry is processed to gain the following attributes:
 
-Semantic attribute name
-
-Description
-
-`Timestamp`
-
-Retrieved by direct API call for timestamp, results in microseconds since epoch converted to agentâs timestamp domain resolution
-
-`Content`
-
-The extracted value of the API call for data with the **MESSAGE** field as a selector
-
-`Journald.unit`
-
-The extracted value of the API call for data with the **UNIT** field as a selector
-As an alternative, the ***SYSTEMD\_UNIT*** field is searched. It may happen that none of the fields are found.
-
-`LogEntryLevel`
-
-The extracted value of the API call for data with the **PRIORITY** field as a selector, priority. Consult the table below for the definitions of the priority levels.
-
 ## Priority level
 
 Journald priority codes are used to mark the importance of a message. The following table shows how these priorities translate into Dynatrace severity:
-
-Value
-
-Severity
-
-Description
-
-0
-
-Emergency
-
-System is unusable
-
-1
-
-Alert
-
-Should be corrected immediately
-
-2
-
-Critical
-
-Critical conditions
-
-3
-
-Error
-
-Error conditions
-
-4
-
-Warn
-
-May indicate that an error will occur if action is not taken
-
-5
-
-Notice
-
-Events that are unusual, but not error conditions
-
-6
-
-Info
-
-Normal operational messages that require no action
-
-7
-
-Debug
-
-Messages which may need to be enabled first, only useful for debugging

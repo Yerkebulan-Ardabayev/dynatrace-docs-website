@@ -1,7 +1,7 @@
 ---
 title: Data retention periods
 source: https://www.dynatrace.com/docs/manage/data-privacy-and-security/data-privacy/data-retention-periods
-scraped: 2026-02-22T21:15:27.012003
+scraped: 2026-02-24T21:17:50.323793
 ---
 
 # Data retention periods
@@ -21,82 +21,6 @@ After a 15-day trial account expires, Dynatrace continues to store the monitorin
 ## Purchased accounts
 
 For active Dynatrace accounts, the following retention rates are set by default:
-
-Data type
-
-Retention rate
-
-[Distributed tracing powered by Grail](#traces-grail)
-
-Configurable, from `10 days` to `10 years` of retention time
-
-[Distributed traces Classic](#traces-classic)
-
-`10 days`
-
-[Services Classic: Requests and request attributes](#request-attributes)
-
-`35 days`
-
-[RUM Classic: User action data](#rum-aggregated)
-
-`35 days`
-
-[RUM Classic: User sessions](#rum-user-session)
-
-`35 days`
-
-[RUM Classic: Mobile crashes](#rum-mobile-crashes)
-
-`35 days`
-
-[RUM Classic: Session Replay](#rum-session-replay)
-
-`35 days`
-
-[New RUM Experience: User events](#new-rum-user-events-and-sessions)
-
-`35 days`
-
-[New RUM Experience: User sessions](#new-rum-user-events-and-sessions)
-
-`35 days`
-
-Synthetic
-
-`35 days`
-
-[Log Management and Analytics](#log-management)
-
-Configurable, with maximum `10 years` of retention time
-
-[Log Monitoring Classic](#log-monitoring)
-
-`35 days`
-
-[Metrics powered by Grail](#metrics-grail)
-
-`15 months`
-
-[Metrics Classic](#metrics-classic)
-
-`5 years`
-
-[OneAgent diagnostics](#diagnostics) (support archives and analysis results)
-
-`30 days`
-
-[Davis problems and events](/docs/dynatrace-intelligence "Get familiar with the capabilities of Dynatrace Intelligence.")
-
-`14 months`
-
-[Security data powered by Grail](#security-grail)
-
-1 to 3 years depending on source (`3 years` for Dynatrace-generated, `1 year` for third-party)
-
-[Security data Classic](#security-classic)
-
-Open vulnerabilities: retained until resolution; Resolved vulnerabilities: `365 days`; Events: `365 days`
 
 ## Distributed tracing powered by Grail
 
@@ -185,8 +109,6 @@ Metrics powered by Grail provides a default 1-minute interval granularity for 15
 
 ## Metrics Classic
 
-
-
 The following interval granularity levels are available for dashboarding and API access:
 
 | Timeframe | Interval granularity |
@@ -207,6 +129,8 @@ Support archives are created by Dynatrace OneAgent or Dynatrace ActiveGate and s
 You can delete OneAgent or ActiveGate diagnostics issues at any time. If you delete an issue, the related support archive and analysis report are deleted from Cassandra and the AWS S3 bucket immediately. The analysis result in Dynatrace Health Control is deleted after 30 days.
 
 ## Security data powered by Grail
+
+
 
 Depending on the source of the data, Dynatrace stores [security events](/docs/secure/threat-observability/concepts#security-events "Basic concepts related to Threat Observability") in dedicated [Grail buckets](/docs/platform/grail/organize-data#built-in-grail-buckets "Insights on the Grail data model consisting of buckets, tables, and views.") for different periods of time, as follows:
 

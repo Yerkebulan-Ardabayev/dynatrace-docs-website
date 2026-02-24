@@ -1,7 +1,7 @@
 ---
 title: Dynatrace Platform Subscription API - manage cost allocation
 source: https://www.dynatrace.com/docs/dynatrace-api/account-management-api/dynatrace-platform-subscription-api/cost-allocation/manage-cost-allocation
-scraped: 2026-02-23T21:36:32.701272
+scraped: 2026-02-24T21:33:39.808779
 ---
 
 # Dynatrace Platform Subscription API - manage cost allocation
@@ -21,10 +21,6 @@ Use Dynatrace Platform Subscription API to manage your products and cost centers
 Lists all the defined cost centers.
 
 The request produces an `application/json` payload.
-
-GET
-
-`https://api.dynatrace.com//v1/accounts/{accountUuid}/settings/costcenters`
 
 ### Authentication
 
@@ -105,10 +101,6 @@ Add the provided value to the cost center field.
 
 The request produces an `application/json` payload.
 
-POST
-
-`https://api.dynatrace.com//v1/accounts/{accountUuid}/settings/costcenters`
-
 ## Authentication
 
 To execute this request, you need the **Allow write access for usage and consumption resources** (`account-uac-write`) permission assigned to your token. To learn how to obtain and use it, see [OAuth clients](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/oauth-clients "Manage authentication and user permissions using OAuth clients.").
@@ -183,10 +175,6 @@ This is a model of the request body, showing the possible elements. It has to be
 Replace the current values to the cost center field.
 
 The request produces an `application/json` payload.
-
-PUT
-
-`https://api.dynatrace.com//v1/accounts/{accountUuid}/settings/costcenters`
 
 ## Authentication
 
@@ -263,10 +251,6 @@ Delete a value by key on the cost center field.
 
 The request produces an `application/json` payload.
 
-DELETE
-
-`https://api.dynatrace.com//v1/accounts/{accountUuid}/settings/costcenters/{key}`
-
 ## Authentication
 
 To execute this request, you need the **Allow write access for usage and consumption resources** (`account-uac-write`) permission assigned to your token. To learn how to obtain and use it, see [OAuth clients](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/oauth-clients "Manage authentication and user permissions using OAuth clients.").
@@ -295,10 +279,6 @@ To execute this request, you need the **Allow write access for usage and consump
 Lists all the defined products.
 
 The request produces an `application/json` payload.
-
-GET
-
-`https://api.dynatrace.com//v1/accounts/{accountUuid}/settings/products`
 
 ### Authentication
 
@@ -379,10 +359,6 @@ Add the provided value to the product field.
 
 The request produces an `application/json` payload.
 
-POST
-
-`https://api.dynatrace.com//v1/accounts/{accountUuid}/settings/products`
-
 ## Authentication
 
 To execute this request, you need the **Allow write access for usage and consumption resources** (`account-uac-write`) permission assigned to your token. To learn how to obtain and use it, see [OAuth clients](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/oauth-clients "Manage authentication and user permissions using OAuth clients.").
@@ -458,10 +434,6 @@ Replace the current values to the product field.
 
 The request produces an `application/json` payload.
 
-PUT
-
-`https://api.dynatrace.com//v1/accounts/{accountUuid}/settings/products`
-
 ## Authentication
 
 To execute this request, you need the **Allow write access for usage and consumption resources** (`account-uac-write`) permission assigned to your token. To learn how to obtain and use it, see [OAuth clients](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/oauth-clients "Manage authentication and user permissions using OAuth clients.").
@@ -536,10 +508,6 @@ This is a model of the request body, showing the possible elements. It has to be
 Delete a value by key on the cost center field.
 
 The request produces an `application/json` payload.
-
-DELETE
-
-`https://api.dynatrace.com//v1/accounts/{accountUuid}/settings/products/{key}`
 
 ## Authentication
 

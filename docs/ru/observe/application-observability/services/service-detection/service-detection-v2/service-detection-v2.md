@@ -1,7 +1,7 @@
 ---
 title: Customize service detection in Service Detection v2
 source: https://www.dynatrace.com/docs/observe/application-observability/services/service-detection/service-detection-v2/service-detection-v2
-scraped: 2026-02-22T21:24:24.318322
+scraped: 2026-02-24T21:34:01.966608
 ---
 
 # Customize service detection in Service Detection v2
@@ -34,42 +34,6 @@ Dynatrace provides several default service detection rules.
 Additionally, custom rules can be created as described in [Create new rule](/docs/observe/application-observability/services/service-detection/service-detection-v2/service-detection-v2#create-new-rule "Find out how to detect services based on OpenTelemetry resource attributes.").
 
 Any future default rule changes will be opt-in: new rules will be shipped as disabled; you can choose whether to activate them.
-
-Priority
-
-Condition
-
-Service name
-
-1
-
-`adobe.em.tier`, `adobe.em.env_type`, `adobe.em.program` attributes present
-
-`aem-{adobe.em.tier}-{adobe.em.env_type}-{adobe.em.program}`
-
-2
-
-`k8s.workload.name` attribute present
-
-`{k8s.workload.name}`
-
-3
-
-`dt.kubernetes.workload.name` attribute present
-
-`{dt.kubernetes.workload.name}`
-
-4
-
-`istio.canonical_service` attribute present
-
-`{istio.canonical_service}`
-
-5
-
-`service.name` attribute present
-
-`{service.name}`
 
 The service ID is a unique identifier, such as `SERVICE-649B4E44CBA804F4`, that is the result of hashing the attribute values that are used as part of the name pattern, additional service detection attributes, and [service splitting attributes](/docs/observe/application-observability/services/service-detection/service-detection-v2/service-splitting-v2 "Find out how to split detected services based on resource attributes."), when applicable.
 

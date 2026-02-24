@@ -1,7 +1,7 @@
 ---
 title: Manage configurations with Monaco
 source: https://www.dynatrace.com/docs/deliver/configuration-as-code/monaco/monaco-getting-started
-scraped: 2026-02-23T21:26:48.167826
+scraped: 2026-02-24T21:31:59.111271
 ---
 
 # Manage configurations with Monaco

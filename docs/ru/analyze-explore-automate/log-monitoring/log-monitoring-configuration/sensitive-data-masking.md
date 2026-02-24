@@ -1,7 +1,7 @@
 ---
 title: Sensitive data masking (Logs Classic)
 source: https://www.dynatrace.com/docs/analyze-explore-automate/log-monitoring/log-monitoring-configuration/sensitive-data-masking
-scraped: 2026-02-21T21:24:26.576838
+scraped: 2026-02-24T21:24:48.902521
 ---
 
 # Sensitive data masking (Logs Classic)
@@ -76,42 +76,6 @@ You can configure sensitive data masking on the host, host group or environment 
    * If you select **SHA-1**, your data will be replaced by the 40-character hash string.
 5. Select **Add matcher** to create a specific match for this rule and narrow down the scope for that rule. You can include multiple matchers in one rule. For example, the masking rule can be applied to logs from a specific container, namespace, or log source.
 6. Select the matching attribute.
-
-   Attribute
-
-   Description
-
-   **Container name**
-
-   Matching is based on the name of the container.
-
-   **DT entity container group ID**
-
-   Matching is based on the DT entity container group ID.
-
-   **K8s container name**
-
-   Matching is based on the name of the Kubernetes container.
-
-   **K8s deployment name**
-
-   Matching is based on the name of the Kubernetes deployment.
-
-   **K8s namespace name**
-
-   Matching is based on the name of the Kubernetes namespace.
-
-   **Log source**
-
-   Matching is based on a log path; wildcards are supported in form of an asterisk.
-
-   **Process group**
-
-   Matching is based on the process group ID.
-
-   **Process technology**
-
-   Matching is based on the technology name.
 7. Select **Add value** and, from the **Values** list, select the detected log data items (log files or process groups that contain log data). Multiple values can be added to the selected operator. You can have one matcher that indicates log source and matches values **/var/log/syslog** and **Windows Application Log**.
 8. Select **Save changes**.
 
@@ -269,8 +233,6 @@ Username: John Doe, CreditCardNumber: 7e938e089861f3975b38cff3a93cc3aa659f7779
 
 ### Mask phone number
 
-
-
 In this example, you will configure a sensitive data masking rule that targets all phone numbers in the following log record for all log files.
 
 ```
@@ -292,6 +254,8 @@ Username: John Doe, 011897d555c81e88f286cbb74c59f4ad99ec2f8d
 ```
 
 ## Advanced SHA-1 examples
+
+
 
 In the examples below, you can see how various combinations of sensitive data can be masked. You can use the listed payload JSON files in the REST API, or enter the listed masking rules, matchers, Regex expressions, and attributes directly when creating your rules via Dynatrace web UI.
 
@@ -972,26 +936,6 @@ The scenario with one rule with a matcher that has two values:
 ## Regex examples
 
 The common regex formats for sensitive data include:
-
-Sensitive data type
-
-ReGEx
-
-IPv4
-
-`\b\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}\b`
-
-Email address
-
-`\b[\w\-\._]+?@[\w\-\._]+?\.\w{2,10}?\b`
-
-Credit card number
-
-`\b[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{4}\b`
-
-Phone number
-
-`\+?[0-9]{3}-?[0-9]{6,12}\b`
 
 ### Unsupported regular expressions
 

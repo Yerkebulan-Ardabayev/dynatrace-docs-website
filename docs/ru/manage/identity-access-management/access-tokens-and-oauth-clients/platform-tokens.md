@@ -1,7 +1,7 @@
 ---
 title: Platform tokens
 source: https://www.dynatrace.com/docs/manage/identity-access-management/access-tokens-and-oauth-clients/platform-tokens
-scraped: 2026-02-22T21:29:32.773425
+scraped: 2026-02-24T21:21:53.328130
 ---
 
 # Platform tokens
@@ -52,7 +52,7 @@ This page lists all of your platform tokens and enables you to create, delete, o
 
 Every user is able to create up to 10 platform tokens in a given account.
 
-1. Select  \*\*platform token \*\* and specify:
+1. Select  **Platform token** and specify:
 
    * **Token Name**
    * **Expiration date**

@@ -1,7 +1,7 @@
 ---
 title: ActiveGate container image
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-activegate/activegate-in-container
-scraped: 2026-02-22T21:20:48.345316
+scraped: 2026-02-24T21:19:50.326214
 ---
 
 # ActiveGate container image

@@ -1,7 +1,7 @@
 ---
 title: OpenTelemetry and Dynatrace
 source: https://www.dynatrace.com/docs/ingest-from/opentelemetry
-scraped: 2026-02-23T21:23:03.280804
+scraped: 2026-02-24T21:16:55.633570
 ---
 
 # OpenTelemetry and Dynatrace
@@ -26,38 +26,6 @@ There are three different ways you can export your OTLP data to Dynatrace.
 Choose the deployment option that best aligns with your observability strategy.
 
 ![OTLP send data to Dynatrace](https://dt-cdn.net/images/screenshot-2025-09-30-at-12-44-57-2356-978977628c.png)
-
-Method
-
-Best whenâ¦
-
-Good forâ¦
-
-Ideal forâ¦
-
-Direct export to Dynatrace API endpoints
-
-You want minimal complexity and infrastructure overhead.
-
-Simple deployments with straightforward telemetry requirements.
-
-If you don't need data processing, enrichment, or transformation capabilities.
-
-Standard OpenTelemetry Collector
-
-Your organization has already standardized on OpenTelemetry collectors.
-
-Teams with existing OpenTelemetry expertise and tooling.
-
-Ideal if you need compatibility with existing collector configurations or custom versions.
-
-Dynatrace Collector Recommended
-
-Most Dynatrace deployments requiring data processing capabilities.
-
-Teams who need a fully supported Collector distribution with verified configurations.
-
-When you want automated management through the Dynatrace Operator.
 
 ## Why use OpenTelemetry with Dynatrace?
 

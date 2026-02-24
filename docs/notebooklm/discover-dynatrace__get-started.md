@@ -1,6 +1,6 @@
 # Документация Dynatrace: discover-dynatrace/get-started
 Язык: Русский (RU)
-Сгенерировано: 2026-02-23
+Сгенерировано: 2026-02-24
 Файлов в разделе: 11
 ---
 
@@ -9,7 +9,7 @@
 ---
 title: Accessibility
 source: https://www.dynatrace.com/docs/discover-dynatrace/get-started/dynatrace-ui/accessibility
-scraped: 2026-02-22T21:27:11.892021
+scraped: 2026-02-24T21:29:47.997683
 ---
 
 # Accessibility
@@ -96,7 +96,7 @@ Common interactions and features of data visualizations in the latest Dynatrace.
 ---
 title: Launchpads
 source: https://www.dynatrace.com/docs/discover-dynatrace/get-started/dynatrace-ui/launchpads
-scraped: 2026-02-22T21:14:02.490472
+scraped: 2026-02-24T21:23:10.288317
 ---
 
 # Launchpads
@@ -248,7 +248,7 @@ To see the full API documentation for the documents service
 ---
 title: Troubleshooting sign-in issues
 source: https://www.dynatrace.com/docs/discover-dynatrace/get-started/dynatrace-ui/login-issues
-scraped: 2026-02-22T21:27:44.495203
+scraped: 2026-02-24T21:34:08.708820
 ---
 
 # Troubleshooting sign-in issues
@@ -271,7 +271,7 @@ Use this page to solve problems with signing in to your Dynatrace account.
 ---
 title: Share documents
 source: https://www.dynatrace.com/docs/discover-dynatrace/get-started/dynatrace-ui/share
-scraped: 2026-02-23T21:20:03.231784
+scraped: 2026-02-24T21:14:46.979338
 ---
 
 # Share documents
@@ -577,7 +577,7 @@ Sharing exceptions
 ---
 title: Filter field
 source: https://www.dynatrace.com/docs/discover-dynatrace/get-started/dynatrace-ui/ui-filter-field
-scraped: 2026-02-23T21:27:56.002038
+scraped: 2026-02-24T21:18:42.670469
 ---
 
 # Filter field
@@ -645,95 +645,9 @@ Some features may not be available due to performance or data source limitations
 
 Comparison operators define how a key compares to a value. Here are the available comparison operators:
 
-Filter syntax
-
-Description
-
-Example
-
-`=`
-
-equals
-
-`key = value`
-
-`!=`
-
-doesn't equal
-
-`key != value`
-
-`<`
-
-less than
-
-`key < value`
-
-`<=`
-
-less than or equal to
-
-`key <= value`
-
-`>`
-
-greater than
-
-`key > value`
-
-`>=`
-
-greater than or equal to
-
-`key >= value`
-
-`= *`
-
-is any value
-
-`key = *`
-
-`!= *`
-
-isn't any value
-
-`key != *`
-
-`in`
-
-matches one or more values in a list of values
-
-`key in (value1, value2)`
-
-`not in`
-
-doesnât match any value in a list of values
-
-`key not in (value1, value2)`
-
 ### Logical operators
 
 The filter field supports the logical operators `AND` and `OR`. If you donât specify an operator, filter statements are automatically connected by an implicit `AND`, which is the default logical operator between any two expressions.
-
-Filter syntax
-
-Description
-
-Example
-
-`AND`
-
-Both expressions must be true.
-
-`key = value key2 = value`  
-Alternative:  
-`key = value AND key2 = value`
-
-`OR`
-
-Only one expression must be true.
-
-`key = value OR key2 = value`
 
 ### Grouping filter statements
 
@@ -743,27 +657,6 @@ Use parentheses `()` to group filter statements logically. For example, `key = v
 
 Space, `*`, `,`, `(`, `)`, `!`, `<`, `>`, `=`, `"`, `$`, `:`, `[`, `]`, `\`, and `~` are special characters in the filter field. To use special characters as part of a key or a value, you need to escape them.
 
-Escape option
-
-Description
-
-Example
-
-Quotation marks `"`
-
-Wrap the corresponding key or value in quotation marks. In the following example, the spaces between `Product` and `Name`, and between `Widget` and `A`, are escaped by wrapping the values in quotation marks.
-
-`"Product Name" = "Widget A"`
-
-Backslash `\`
-
-Escape a single character with a backslash `\`. In the following example, the asterisk on the right end is escaped with a backslash. This means it isn't interpreted as a wildcard.
-
-`key = openshift-service-serving-signer@1677006647\*`
-
-If you want a backslash to appear in a value, it must itself be escaped.
-For example, to get `path = C:\my\path` you need to write `path = C:\\my\\path`.
-
 ### Case sensitivity
 
 String values are case-insensitive for all operators.
@@ -771,22 +664,6 @@ String values are case-insensitive for all operators.
 ### Wildcards
 
 A wildcard will match any character in a value. Wildcards are indicated by an asterisk `*`.
-
-Wildcard syntax
-
-Description
-
-`key = *value`
-
-ends with any `value`
-
-`key = value*`
-
-starts with any `value`
-
-`key = *value*`
-
-contains any `value`
 
 When a value contains **special characters** such as spaces, you must escape the value to ensure that it is correctly interpreted. In such cases, wildcards can be used **outside or inside** the escaped value. See examples below:
 
@@ -842,26 +719,6 @@ When using a variable like `$cluster`, the position of the `*` relative to the v
 
 Access nested fields in JSON data with dot or bracket notation. JSON filters may use a combination of dot and bracket notations.
 
-Notation
-
-Description
-
-Example
-
-Dot notation
-`key$.field`
-
-Use the compact dot notation for simple syntax.
-
-`content$.uri = "/status-service/deployments/health"`
-
-Bracket notation
-`key$["field"][index]`
-
-Use bracket notation for subkeys with special characters (spaces, dashes, etc.) and to access a child of an array.
-
-`content$["spans"][0]["duration-ms"] > 75`
-
 ---
 
 ## discover-dynatrace/get-started/dynatrace-ui.md
@@ -869,7 +726,7 @@ Use bracket notation for subkeys with special characters (spaces, dashes, etc.) 
 ---
 title: Navigate the Dynatrace platform
 source: https://www.dynatrace.com/docs/discover-dynatrace/get-started/dynatrace-ui
-scraped: 2026-02-23T21:34:52.173120
+scraped: 2026-02-24T21:20:06.203474
 ---
 
 # Navigate the Dynatrace platform
@@ -1059,7 +916,7 @@ The contents of this user menu depend on your deployment type, configuration, an
 ---
 title: What is a monitoring environment?
 source: https://www.dynatrace.com/docs/discover-dynatrace/get-started/monitoring-environment
-scraped: 2026-02-23T21:19:10.671279
+scraped: 2026-02-24T21:16:13.823136
 ---
 
 # What is a monitoring environment?
@@ -1854,7 +1711,7 @@ Be sure to watch for the recommendations within the Dynatrace web UI to enable a
 ---
 title: Get started with Dynatrace
 source: https://www.dynatrace.com/docs/discover-dynatrace/get-started
-scraped: 2026-02-23T21:18:43.999314
+scraped: 2026-02-24T21:13:29.498031
 ---
 
 # Get started with Dynatrace

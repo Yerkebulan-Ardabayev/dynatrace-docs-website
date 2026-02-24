@@ -1,7 +1,7 @@
 ---
 title: Timestamp/splitting configuration (Logs Classic)
 source: https://www.dynatrace.com/docs/analyze-explore-automate/log-monitoring/log-monitoring-configuration/timestamp-configuration
-scraped: 2026-02-23T21:29:23.738511
+scraped: 2026-02-24T21:25:34.921024
 ---
 
 # Timestamp/splitting configuration (Logs Classic)
@@ -149,42 +149,6 @@ To add a rule (on the host, host group, or environment level) that interprets th
 6. Select **Add matcher** to create a specific match for this rule and narrow down the scope for that rule.
 
    You can include multiple matchers in one rule. For example, the timestamp configuration rule can be applied to logs from a specific container, namespace, or log source. Multiple matchers with the same attribute use AND logic between matchers, while matchers with multiple values assigned to them use OR logic.
-
-   Matcher attribute
-
-   Matching is based on
-
-   **Process group**
-
-   The process group ID.
-
-   **Log source**
-
-   A log path; wildcards are supported in form of an asterisk.
-
-   **K8s container name**
-
-   The name of the Kubernetes container.
-
-   **K8s namespace name**
-
-   The name of the Kubernetes namespace.
-
-   **K8s deployment name**
-
-   The name of the Kubernetes deployment.
-
-   **Container name**
-
-   The name of the container.
-
-   **DT entity container group ID**
-
-   The DT entity container group ID.
-
-   **Process technology**
-
-   The technology name.
 7. Select the matching attribute.
 8. Select **Value** and, from the **Value** list, select the detected log data items.
 

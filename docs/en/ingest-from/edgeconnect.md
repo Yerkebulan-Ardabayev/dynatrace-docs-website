@@ -1,7 +1,7 @@
 ---
 title: Configure and deploy EdgeConnect
 source: https://www.dynatrace.com/docs/ingest-from/edgeconnect
-scraped: 2026-02-23T21:24:33.617693
+scraped: 2026-02-24T21:28:49.847781
 ---
 
 # Configure and deploy EdgeConnect
@@ -281,106 +281,6 @@ Refer to the table below for environment variable names of each field.
 The `edgeConnect.yaml` fields and the names of the corresponding environment variables are described in the table below.
 Please note that some environment variable names use both single (`_`) and double underscore symbols (`__`).
 
-Field
-
-Environment Variable
-
-Description
-
-`name`
-
-`EDGE_CONNECT_NAME`
-
-The technical identifier of the EdgeConnect.
-
-This has to match the name that was specified in the [configuration added in the app](#appconfigurations).
-
-`api_endpoint_host`
-
-`EDGE_CONNECT_API_ENDPOINT_HOST`
-
-Your environment base URL.
-
-`oauth.endpoint`
-
-`EDGE_CONNECT_OAUTH__ENDPOINT`
-
-The token endpoint URL of Dynatrace SSO.
-
-`oauth.client_id`
-
-`EDGE_CONNECT_OAUTH__CLIENT_ID`
-
-The ID of the OAuth client that was created along with the [EdgeConnect configuration](#appconfigurations).
-
-`oauth.client_secret`
-
-`EDGE_CONNECT_OAUTH__CLIENT_SECRET`
-
-The secret of the OAuth client that was created along with the [EdgeConnect configuration](#appconfigurations).
-
-`oauth.resource`
-
-`EDGE_CONNECT_OAUTH__RESOURCE`
-
-The URN identifying your tenant.
-
-`restrict_hosts_to` Optional
-
-`EDGE_CONNECT_RESTRICT_HOSTS_TO`
-
-Restricts outgoing HTTP requests to specified hosts.
-
-* You can use a wildcard to replace the first parts of the host domain. For example, `*.myapp.org` will match `staging.myapp.org` and `prod.myapp.org`. Use a YAML list or separate multiple entries with commas.
-* If `restrict_hosts_to` is configured, any other requests are rejected, including host patterns specified in [host pattern mapping](#appconfigurations) that don't match this configuration.
-* `restrict_hosts_to` is only used to additionally restrict connections. You still need to create [host pattern mapping](#appconfigurations) for EdgeConnect to be able to connect to your internal resources.
-
-`certificate_paths` Optional
-
-`EDGE_CONNECT_CERTIFICATE_PATHS`
-
-For communication over TLS-encrypted channels (HTTPS and secure WebSockets), EdgeConnect verifies the identity of a host based on its certificate. The parameter lists such certificates. You must mount these certificates into the EdgeConnect container. The parameter lists the paths to certificates in the container itself. For more information, see [certificates](#run-certificates) instructions.
-
-EdgeConnect supports certificate files in the PEM (`.pem`, `.crt`, or `.cer`) and DER (`.der`) formats.
-
-`proxy.server` Optional
-
-`EDGE_CONNECT_PROXY__SERVER`
-
-Server address (hostname or IP address) of the proxy.
-
-`proxy.port` Optional
-
-`EDGE_CONNECT_PROXY__PORT`
-
-Port of the proxy.
-
-`proxy.exceptions` Optional
-
-`EDGE_CONNECT_PROXY__EXCEPTIONS`
-
-A list of hosts for which EdgeConnect should *not* use the configured proxy for communication.
-
-You can use a wildcard to replace the first parts of a host domain. For example, `*.myapp.org` will match `staging.myapp.org` and `prod.myapp.org`. Use a YAML list or separate multiple entries with commas.
-
-`proxy.auth.user` Optional
-
-`EDGE_CONNECT_PROXY__AUTH__USER`
-
-User name for authentication with the proxy, using the "Basic" HTTP authentication scheme.
-
-`proxy.auth.password` Optional
-
-`EDGE_CONNECT_PROXY__AUTH__PASSWORD`
-
-Password for authentication with the proxy, using the "Basic" HTTP authentication scheme.
-
-`secrets` Optional
-
-N/A
-
-An optional list of secrets. Refer to [the table below](#edgeconnect-yaml-secrets-fields) for details on how the list items are structured.
-
 ##### Secrets
 
 Whenever requests are sent to services outside the Dynatrace platform, secrets are likely required to authenticate these service interactions (e.g., API tokens or secrets within webhook URLs).
@@ -391,73 +291,6 @@ EdgeConnect then securely replaces occurrences of these tokens on the fly with a
 
 This section explains how to configure such secrets.
 EdgeConnect can read secrets from two sources: from environment variables or from files mounted into your EdgeConnect container.
-
-Field
-
-Environment Variable
-
-Description
-
-`name`
-
-N/A
-
-A human-readable name that identifies your secret. Used for logging purposes.
-
-`token`
-
-N/A
-
-A placeholder for secrets that you can include in your requests. EdgeConnect will replace occurrences of `token` in query parameters, headers, and bodies by the secret's actual value.
-
-Secret tokens need to adhere to the following format: `dt0e01.<token_name>.<token_secret>`, where `<token_name>` has to be a base-32 string of length 15 and `<token_secret>` has to be a base-32 string of length 40.
-
-On Linux, you can use the following command to generate a cryptographically secure token:
-
-```
-echo "dt0e01.`openssl rand -out /dev/stdout 15 \
-
-
-
-| base32 \
-
-
-
-| tr '[:lower:]' '[:upper:]'`.`\
-
-
-
-openssl rand -out /dev/stdout 40 \
-
-
-
-| base32 \
-
-
-
-| tr '[:lower:]' '[:upper:]'`"
-```
-
-Note that this command requires `openssl` to be available on your system as well as the `base32` utility (which is part of GNU coreutils and is typically pre-installed on popular distributions).
-
-`from_env` Optional
-
-N/A
-
-The environment variable that holds the actual secret value. Note that exactly one of `from_env` or `from_file` must be configured.
-
-`from_file` Optional
-
-N/A
-
-The file that contains the actual secret value. Note that exactly one of `from_env` or `from_file` must be configured.
-
-`restrict_hosts_to`
-
-N/A
-
-The hosts that this secret is restricted to. Only if a request targets one of the hosts in this list, its query parameters, headers and body will be scanned for occurrences of `token` which will be replaced by the actual secret value.
-Requests to hosts that aren't covered by `restrict_hosts_to` will fail if they contain the given `token` to avoid its accidental leakage to mistrusted hosts.
 
 If you run [EdgeConnect in Kubernetes via Dynatrace Operator](#kubernetes), the above fields are configured using the parameters of a custom Kubernetes resource as explained in [EdgeConnect parameters for Dynatrace Operator](/docs/ingest-from/setup-on-k8s/reference/edgeconnect-parameters "List of configuration parameters for EdgeConnect.").
 
@@ -566,37 +399,6 @@ If you are using EdgeConnect behind an HTTP proxy that performs TLS interception
 ##### Troubleshooting
 
 If EdgeConnect aborts an HTTPS connection due to a certificate verification failure, this can be caused by incomplete configuration or invalid SSL certificates. The table below lists common certificate verification errors that might appear as part of the EdgeConnect container logs.
-
-Error Message
-
-Explanation
-
-Suggested Action
-
-"self-signed certificate"
-
-"self-signed certificate in certificate chain"
-
-"unable to get issuer certificate"
-
-"unable to get local issuer certificate"
-
-These errors point out that EdgeConnect fails to verify the CA certificates involved in signing the certificate of the target host EdgeConnect is connecting to.
-
-Please make sure that all certificates that either directly or indirectly sign the target server's certificate are listed in the `certificate_paths` configuration field, as described in the [table above](#edgeconnect-yaml-fields).
-
-"hostname mismatch"
-
-This error is raised when a server presents a certificate that does not match the host name EdgeConnect is trying to connect to.
-This can happen, for example, if a TLS connection is intercepted within your network or redirected to a different host.
-
-Please make sure that EdgeConnect's network traffic isn't subject to undesired interception or redirection.
-
-"certificate has expired"
-
-This error indicates that the certificate of the target host, or one of the CA certificates used to sign it, has expired.
-
-Please make sure that all certificates involved in the certificate chain are still valid and renew any expired ones.
 
 #### Secrets
 

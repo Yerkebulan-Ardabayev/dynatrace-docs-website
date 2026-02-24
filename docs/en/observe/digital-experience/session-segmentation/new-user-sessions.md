@@ -1,7 +1,7 @@
 ---
 title: New: User session analysis
 source: https://www.dynatrace.com/docs/observe/digital-experience/session-segmentation/new-user-sessions
-scraped: 2026-02-23T21:24:48.181410
+scraped: 2026-02-24T21:29:36.130565
 ---
 
 # New: User session analysis
@@ -117,76 +117,6 @@ If you select the current timeframe in the menu bar, an editable timeframe expre
 * Reading from left to right, a timeframe expression has a start time, a `to` operator, and an end time.
 * If there is no explicit end time, the `to` and `now` are implied. For example, `-2h` is the same `-2h to now`.
 * Supported units: `s`, `m`, `h`, `d`, `w`, `M`, `q`, `y` (you can also use whole words such as `minutes` and `quarter`)
-
-**Example timeframe expressions**
-
-**Meaning**
-
-`today`
-
-From the beginning of today to the beginning of tomorrow.
-
-`yesterday`
-
-From the beginning of yesterday to the beginning of today. Like `-1d/d to today`.
-
-`yesterday to now`
-
-From the beginning of yesterday to the current time today.
-
-`previous week`
-
-The previous seven whole days. If today is Monday, you get the previous Monday through the previous Sunday (yesterday).
-
-`this year`
-
-The current calendar year, from January 1 of this year at `00:00` through January 1 of next year at `00:00`.
-
-`last 6 weeks`
-
-The last 42 days (6 weeks \* 7 days) ending now. Equivalent to `-6w to now`.
-
-`-2h`
-
-From 2 hours (120 minutes) ago to the current time (`now` is implied). Equivalent to `Last 2 hours` and `-2h to now`.
-
-`-4d to -1h30m`
-
-From 4 days (96 hours) ago to 1.5 hours ago.
-
-`-1w`
-
-The last 7 days (168 hours), from this time 7 days ago to the current time (`now`). Equivalent to `-7d` and `-168h`.
-
-`-1w/w`
-
-From the beginning of the previous calendar week to the current time (now).
-
-* If you used `-1w/w` on a Friday afternoon at 3:00, you would get a range of 11 days 15 hours, starting with the beginning of the previous week's Monday, because `/w` rounds down to the beginning of the week.
-* If you used `-1w` without `/w` on a Friday afternoon at 3:00, the start time would be exactly 7 days (168 hours) earlier: the previous Friday at 3:00 in the afternoon.
-
-In general, `/` used in combination with a unit (such as `/d`, `/w`, `/M`, and `/y`) means to round down the date or time to the beginning of the specified time unit. For example, `-3d` means exactly 72 hours ago, whereas `-3d/d` means three days ago rounded down to the nearest day (starting at time `00:00`, the beginning of the day). Use `now/d` to mean the start of today.
-
-`-1w/w + 8h`
-
-Starting from the beginning of last week plus 8 hours (8:00 AM Monday).
-
-* Note that you can use the `+` and `-` operators with units, timestamps, and `now`.
-
-`-1d/d+9h00m to -1d/d+17h00m`
-
-Business hours yesterday, from 09:00 - 17:00 (9 AM to 5 PM).
-
-`2020-08-16 21:28 to 2020-08-19 10:02`
-
-An absolute range consisting of absolute start and end dates and times in `YYYY-MM-DD hh:mm` format.
-
-* If you provide a date but omit the time (for example, just `2020-08-16`), the time is assumed to be the beginning of day (`00:00`)
-* If you provide a time but omit the date (for example, just `21:28`), the date is assumed to be today
-
-`1598545932346 to 1598837052346`
-
-Unix epoch millisecond timestamps.
 
 User sessions that are [live](/docs/observe/digital-experience/rum-concepts/user-session#live-vs-completed-sessions "Learn how a user session is defined, when a user session starts or ends, how user session duration is calculated, and more.") within the timeframe set in the timeframe selector are shown in the session list. The **Analysis over time** [finding](#drill-down-using-findings), on the contrary, shows only those sessions that started within the set timeframe.
 

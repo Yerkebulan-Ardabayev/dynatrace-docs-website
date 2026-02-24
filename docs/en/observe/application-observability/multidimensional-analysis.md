@@ -1,7 +1,7 @@
 ---
 title: Multidimensional analysis
 source: https://www.dynatrace.com/docs/observe/application-observability/multidimensional-analysis
-scraped: 2026-02-23T21:24:52.311373
+scraped: 2026-02-24T21:16:26.540457
 ---
 
 # Multidimensional analysis
@@ -48,67 +48,12 @@ Unlike [Data Explorer](/docs/analyze-explore-automate/explorer#limitations "Quer
 
 In **Configure view**, you can set up multiple filtering capabilities. The view updates automatically as you change the parameters.
 
-Parameter
-
-Description
-
-Metric
-
-The metric to be analyzed.
-
-Aggregation
-
-How the metric values are aggregated. Available aggregations depend on the selected metric.
-
-Split mode
-
-How dimensions specified in **Split by dimension** are treated.
-
-* **Split by services**âeach dimension is displayed separately for each service.
-* **Merge by services**âsame dimensions from different services are merged into one.
-
-Split by dimension
-
-A list of dimensions by which the requests are split.
-
-You can specify several dimensions. Place your cursor in the input field to see the available options. The requests are split by dimension in the specified order.
-
-Filter requests
-
-Filter the requests to be included to the view. Place your cursor in the input field to see the available options.
-
-Criteria of the same type are grouped by **OR** logic. Criteria of different types are grouped by **AND** logic.
-
 You can export the table data in a comma-separated values (CSV) file.
 
 1. In the lower-right corner of the page, select **Show export menu** ![More](https://dt-cdn.net/images/more-icon-01c8b008ca.svg "More").
 
    ![Show export menu](https://dt-cdn.net/images/show-export-menu-107-2a8a76c9a2.png)
 2. Select **Export visible data** or **Export table data**.
-
-   Option
-
-   Exported data
-
-   Fields
-
-   Number of entries
-
-   **Export visible data**
-
-   The currently displayed area of the table, taking into account applied filters
-
-   Only visible data
-
-   Up to 100 top dimensions
-
-   **Export table data**
-
-   All table data
-
-   All the available data related to top dimensions
-
-   Up to 100 top dimensions
 
 ## View
 

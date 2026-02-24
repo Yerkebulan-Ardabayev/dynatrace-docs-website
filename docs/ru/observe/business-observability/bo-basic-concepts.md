@@ -1,7 +1,7 @@
 ---
 title: Basic concepts of Dynatrace Business Observability
 source: https://www.dynatrace.com/docs/observe/business-observability/bo-basic-concepts
-scraped: 2026-02-23T21:25:24.499030
+scraped: 2026-02-24T21:28:11.913167
 ---
 
 # Basic concepts of Dynatrace Business Observability

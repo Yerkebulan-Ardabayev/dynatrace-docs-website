@@ -1,7 +1,7 @@
 ---
 title: Create USQL custom metrics for web applications
 source: https://www.dynatrace.com/docs/observe/digital-experience/web-applications/additional-configuration/custom-metrics-from-user-sessions
-scraped: 2026-02-23T21:32:41.514748
+scraped: 2026-02-24T21:33:24.777061
 ---
 
 # Create USQL custom metrics for web applications
@@ -326,68 +326,6 @@ You can also use the [Settings API](/docs/dynatrace-api/environment-api/settings
 3. Use the [POST an object](/docs/dynatrace-api/environment-api/settings/objects/post-object "Create or validate a settings object via the Dynatrace API.") endpoint to send your configuration.
 
 The table below explains all configuration properties required to create or update a USQL custom metric via API.
-
-Property
-
-Description
-
-Possible values
-
-`enabled`
-
-Defines if the USQL custom metric is enabled or not. Set to `false` to temporarily disable the metric.
-
-`true` or `false`
-
-`metricKey`
-
-The metric key used when ingesting the metric. Use this key when requesting the metric data via [Data Explorer](/docs/analyze-explore-automate/explorer "Query for metrics and transform results to gain desired insights.").
-
-* For user session metric events, the metric key must start with the `uscm.` prefix.
-* For user action metric events, the metric key must start with the `uacm.` prefix.
-
-`value`
-
-The source of the metric value.
-
-`value.type`
-
-* To count the number of user sessions or user actions, which is similar to `COUNT(*)` when using [USQL](/docs/observe/digital-experience/session-segmentation/custom-queries-segmentation-and-aggregation-of-session-data "Learn how you can access and query user session data based on keywords, syntax, functions, and more."), set to `COUNTER`.
-* To extract a value of a user session or user action field, set to `FIELD`.
-
-`COUNTER` or `FIELD`
-
-`value.fieldName`
-
-If `value.type`=`FIELD`, specifies the name of the user session or user action field.
-
-See [Values for user session metric events](#values-uscm) and [Values for user action metric events](#values-uacm).
-
-`dimensions`
-
-Lists the fields used as dimensions.
-
-See [Dimensions for user session metric events](#dimensions-uscm) and [Dimensions for user action metric events](#dimensions-uacm).
-
-`filters`
-
-Specifies filters.
-
-`filter.fieldName`
-
-Specifies the name of the filter field.
-
-See [Filters for user session metric events](#filters-uscm) and [Filters for user action metric events](#filters-uacm).
-
-`filter.operator`
-
-Specifies the operator.
-
-`EQUALS`, `NOT_EQUAL`, `IS_NULL`, `IS_NOT_NULL`, `LIKE`, `LESS_THAN`, `LESS_THAN_OR_EQUAL_TO`, `GREATER_THAN`, `GREATER_THAN_OR_EQUAL_TO`
-
-`filter.value`
-
-Provides the second argument for binary operators (such as `EQUALS` or `GREATER_THAN`).
 
 ## Supported values, dimensions, and filters
 

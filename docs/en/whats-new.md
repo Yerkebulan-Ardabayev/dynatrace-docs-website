@@ -1,7 +1,7 @@
 ---
 title: What's new in Dynatrace
 source: https://www.dynatrace.com/docs/whats-new
-scraped: 2026-02-23T21:18:49.734023
+scraped: 2026-02-24T21:13:34.511737
 ---
 
 # What's new in Dynatrace
@@ -9,7 +9,7 @@ scraped: 2026-02-23T21:18:49.734023
 # What's new in Dynatrace
 
 * Latest Dynatrace
-* Updated on Feb 03, 2026
+* Updated on Feb 23, 2026
 
 These release notes for Dynatrace updatesâshowcasing new features, changes, and bug fixesâkeep you informed and ahead of the game.
 
@@ -18,8 +18,6 @@ Filter by
 Select an option
 
 Type to filter
-
-Unable to render DataTable. Check configuration.
 
 ## How does rollout work?
 

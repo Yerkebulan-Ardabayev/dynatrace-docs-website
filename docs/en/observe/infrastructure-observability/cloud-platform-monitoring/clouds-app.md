@@ -1,7 +1,7 @@
 ---
 title: Clouds app
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/cloud-platform-monitoring/clouds-app
-scraped: 2026-02-23T21:19:32.052264
+scraped: 2026-02-24T21:15:22.365272
 ---
 
 # Clouds app
@@ -11,7 +11,7 @@ scraped: 2026-02-23T21:19:32.052264
 * Latest Dynatrace
 * App
 * 4-min read
-* Updated on Jan 21, 2026
+* Updated on Feb 20, 2026
 
 The new [cloud experienceï»¿](https://www.dynatrace.com/platform/cloud-monitoring/) is optimized for Cloud (Platform) Operation teams and Site Reliability Engineers (SREs) and focuses on health, troubleshooting, and performance optimization use cases of (multi-)cloud environments.
 
@@ -55,10 +55,6 @@ See [concepts](#concepts) for the comparison between classic and new cloud conne
 
 The following table describes the required permissions.
 
-Permission
-
-Description
-
 settings:objects:read
 
 Read settings of ownership (settings:schemaIds = builtin:ownership.config) - required by Ownership tab in details panel.
@@ -98,16 +94,6 @@ Storing per-user app state.
 document:documents:read
 
 Read documents. Required by filter presets feature. Required for ready-made dashboards (Overview).
-
-10
-
-rows per page
-
-Page
-
-1
-
-of 1
 
 ## Get started
 
@@ -269,27 +255,7 @@ In the **Health** perspective, you can see each cloud service's health and custo
 
 ### Ready-made dashboards (New connections)
 
-You have access to the following ready-made dashboards for the new AWS Cloud Platform Monitoring:
-
-* AWS Overview
-* AWS API (API Gateway and REST APIs)
-* AWS Bedrock
-* AWS Dynamo DB
-* AWS EC2 (EC2, EBS, AutoScaling)
-* AWS ECS (including ECS Container Insights)
-* AWS Edge Networking (Route 53, CloudFront)
-* AWS EFS
-* AWS ElastiCache (Redis, Memcached)
-* AWS ELB (Application, Classic, Network Load Balancing)
-* AWS EventBridge
-* AWS Foundation Networking (NAT Gateway, PrivateLink)
-* AWS Health Events
-* AWS Lambda
-* AWS MSK (Kafka)
-* AWS RDS (including Aurora)
-* AWS S3
-* AWS SNS
-* AWS SQS
+You have access to the ready-made dashboards for the new AWS Cloud Platform Monitoring and Azure Cloud Platform Monitoring (Preview).
 
 The ready-made dashboards can be accessed through:
 

@@ -1,7 +1,7 @@
 ---
 title: Monitor z/OS logs
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/monitoring/monitor-zos-logs
-scraped: 2026-02-23T21:24:11.698311
+scraped: 2026-02-24T21:19:23.713556
 ---
 
 # Monitor z/OS logs
@@ -48,28 +48,6 @@ Go to **Settings** and select **Log Monitoring** > **Log ingest rules**.
 
 Activate one of the following built-in rules to ingest discovered logs from your IBM CICS regions and IBM IMS subsystems to Dynatrace.
 
-Rule
-
-Condition
-
-Scope
-
-**z/OS CICS message user**
-
-**Log source** is: `z/OS CICS message user`
-
-**Log record level** is any of: `ERROR` or `WARN`
-
-Environment
-
-**z/OS IMS master terminal**
-
-**Log source** is any of: `z/OS IMS primary master` or `z/OS IMS secondary master`
-
-**Log record level** is any of: `ERROR` or `WARN`
-
-Environment
-
 ![z/OS log settings](https://dt-cdn.net/images/zos-log-settings-1651-077ed26fb6.png)
 
 #### Limit the scope of rules
@@ -83,36 +61,6 @@ To do this, define a [Log ingest rule](/docs/analyze-explore-automate/logs/lma-l
 If necessary, you can use attributes to precisely control which logs are ingested.
 
 To do this, define a [Log ingest rule](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-log-storage-configuration "Include and exclude specific log sources already known to OneAgent for storage and analysis.") with specific attributes so that only logs that match those attributes are ingested. For example, you can use the following attributes.
-
-Attribute
-
-Description
-
-Search dropdown logic
-
-**Log source**
-
-Matching is based on a **Log source** attribute. For CICS, select the `z/OS CICS message user`. For IMS, select either or both of `z/OS IMS primary master` or `z/OS IMS secondary master`.
-
-Can be entered manually. No time limit.
-
-**Log record level**[1](#fn-1-1-def)
-
-Matching is based on the level of the log record. It supports the following values: `alert`, `critical`, `debug`, `emergency`, `error`, `info`, `none`, `notice`, `severe`, `warn`.
-
-Can be entered manually. No time limit.
-
-**Log content**
-
-Matching is based on the content of the log; wildcards are supported in the form of an asterisk.
-
-Can be entered manually. No time limit.
-
-**Process group**
-
-Matching is based on the process group ID.
-
-Entities visible in the last 3 days are listed.
 
 1
 

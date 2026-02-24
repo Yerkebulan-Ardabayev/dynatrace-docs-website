@@ -1,7 +1,7 @@
 ---
 title: Integrate OneAgent on Azure App Service for Linux and containers
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-appservice/integrate-oneagent-on-web-app-for-containers
-scraped: 2026-02-19T21:21:37.774500
+scraped: 2026-02-24T21:28:38.681838
 ---
 
 # Integrate OneAgent on Azure App Service for Linux and containers
@@ -124,33 +124,6 @@ For details on startup commands, see the Azure App Service for Linux documentati
 ### Integrate Dynatrace using a startup script/command
 
 To integrate Dynatrace, the startup script/command needs to have access to a few variables.
-
-Parameter
-
-Description
-
-`$DT_ENDPOINT`
-
-Your Dynatrace API server endpointâuse either your environment [cluster endpoint](/docs/discover-dynatrace/get-started/monitoring-environment "Understand and learn how to work with monitoring environments.") or an [ActiveGate address](/docs/ingest-from/dynatrace-activegate "Understand the basic concepts related to ActiveGate.").
-
-`$DT_API_TOKEN`
-
-API Token to access the Dynatrace REST APIâ[create an API Token](/docs/dynatrace-api/basics/dynatrace-api-authentication "Find out how to get authenticated to use the Dynatrace API.") with the **InstallerDownload** scope.
-
-`$DT_INCLUDE`
-
-Configure required code modules, depending on the used technology stack.
-
-* `all` includes all available OneAgent code modules (`java`, `apache`, `nginx`, `nodejs`, `dotnet`, `php`, `go`, `sdk`), but it increases download package size.
-* Alternatively, choose identifiers appropriate to your application stack, such as `java`, `dotnet`, `nodejs`, or `php`.
-
-For details, see [API documentation](/docs/dynatrace-api/environment-api/deployment/oneagent/download-oneagent-latest "Download the latest OneAgent installer via Dynatrace API.").
-
-`$START_APP_CMD`
-
-The command to start your application
-
-[What are the expected values for the Startup File section when I configure the runtime stack?ï»¿](https://docs.microsoft.com/en-us/troubleshoot/azure/app-service/faqs-app-service-linux#what-are-the-expected-values-for-the-startup-file-section-when-i-configure-the-runtime-stack-)
 
 If you use a shell other than bash, make sure to adapt the script appropriately to the shell's character escape requirements.
 
@@ -319,23 +292,6 @@ This option requires that you have Docker v17.05+ installed on your computer.
 
    Replace the following placeholders in the template.
 
-   Parameter
-
-   Description
-
-   `<ADDRESS>`
-
-   Your Dynatrace registry endpointâuse either your environment [cluster endpoint](/docs/discover-dynatrace/get-started/monitoring-environment "Understand and learn how to work with monitoring environments.") or an [ActiveGate address](/docs/ingest-from/dynatrace-activegate "Understand the basic concepts related to ActiveGate.").
-
-   `<TECHNOLOGY>`
-
-   Configure required code modules, depending on the used technology stack.
-
-   * `all` includes all available OneAgent code modules (`java`, `apache`, `nginx`, `nodejs`, `dotnet`, `php`, `go`, `sdk`), but it increases download package size.
-   * Alternatively, choose identifiers appropriate to your application stack, such as `java`, `dotnet`, `nodejs`, or `php`.
-
-   For details, see the [API documentation](/docs/dynatrace-api/environment-api/deployment/oneagent/download-oneagent-latest "Download the latest OneAgent installer via Dynatrace API.").
-
    **What if my Docker image is based on Alpine Linux?**
 
    Dynatrace OneAgent supports Alpine Linuxâbased environments. To use an Alpine Linux compatible OneAgent, use image name `oneagent-codemodules-musl` (as shown in the adapted template below) instead of `oneagent-codemodules`.
@@ -372,34 +328,6 @@ This option requires that you have Docker v17.05+ installed on your computer.
    ```
 
    Replace the following parameters in the template above.
-
-   Parameter
-
-   Description
-
-   `<DT_ENDPOINT>`
-
-   Your Dynatrace API endpointâuse either your environment [cluster endpoint](/docs/discover-dynatrace/get-started/monitoring-environment "Understand and learn how to work with monitoring environments.") or an [ActiveGate address](/docs/ingest-from/dynatrace-activegate "Understand the basic concepts related to ActiveGate.").
-
-   `<DT_API_TOKEN>`
-
-   API Token to access the Dynatrace REST APIâ[create an API Token](/docs/dynatrace-api/basics/dynatrace-api-authentication "Find out how to get authenticated to use the Dynatrace API.") with the **InstallerDownload** scope.
-
-   `<DT_FLAVOR>`
-
-   Configure the required architecture.
-
-   * `default` for standard, glibc-based Linux images
-   * `musl` for Alpine Linuxâbased images
-
-   `<DT_INCLUDE>`
-
-   Configure required code modules, depending on the used technology stack.
-
-   * `all` includes all available OneAgent code modules (`java`, `apache`, `nginx`, `nodejs`, `dotnet`, `php`, `go`, `sdk`), but it increases download package size.
-   * Alternatively, choose identifiers appropriate to your application stack, such as `java`, `dotnet`, `nodejs`, or `php`.
-
-   For details, see the [API documentation](/docs/dynatrace-api/environment-api/deployment/oneagent/download-oneagent-latest "Download the latest OneAgent installer via Dynatrace API.").
 2. Build your application image.
 
    Build the Docker image from your Dockerfile to use it in your Kubernetes environment.
@@ -418,67 +346,11 @@ Use additional environment variables to configure OneAgent for troubleshooting o
 
 ### Networking variables
 
-Parameter
-
-Description
-
-`DT_NETWORK_ZONE`
-
-Specifies to use a network zone. For more information, see [network zones](/docs/manage/network-zones "Find out how network zones work in Dynatrace.").
-
-`DT_PROXY`
-
-When using a proxy, use this environment variable to pass proxy credentials. For more information, see [Set up OneAgent on containers for application-only monitoring](/docs/ingest-from/setup-on-container-platforms/docker/set-up-oneagent-on-containers-for-application-only-monitoring "Install, update, and uninstall OneAgent on containers for application-only monitoring.").
-
 ### Additional metadata for process grouping and service detection
 
 When listing multiple tags, you need to put them in double quotes, for example: DT\_TAGS="Tag1=Value1 Tag2=Value2".
 
-Parameter
-
-Description
-
-`DT_LOCALTOVIRTUALHOSTNAME`
-
-Multiple containers are sometimes detected as a single instance (localhost), leading to various problems in, for example, service detection or availability alerts. Use this environment variable to define a unique name for your container instance. For details, see [Service Detection v1](/docs/observe/application-observability/services/service-detection/service-detection-v1#adjusting-service-detection "Find out how Dynatrace Service Detection v1 detects and names different types of services.")
-
-`DT_APPLICATIONID`
-
-Some technologies don't provide unique application names. In such cases, use this environment variable to provide a unique name. For more information, see [Web server naming issues](/docs/observe/application-observability/services/service-detection/service-detection-v1#web-server-naming-issues "Find out how Dynatrace Service Detection v1 detects and names different types of services.").
-
-`DT_TAGS`
-
-Applies [custom tags](/docs/manage/tags-and-metadata/setup/define-tags-based-on-environment-variables "Find out how Dynatrace enables you to define tags based on environment variables.") to your process group.
-
-`DT_CUSTOM_PROP`
-
-Applies [custom metadata](/docs/observe/infrastructure-observability/process-groups/configuration/define-your-own-process-group-metadata "Configure your own process-related metadata based on the unique needs of your organization or environment.") to your process group.
-
-`DT_CLUSTER_ID`
-
-If the [process group detection rules](/docs/observe/infrastructure-observability/process-groups/configuration/pg-detection "Ways to customize process-group detection") won't work for your use case, use this environment variable to **group all processes with the same value**.
-
-`DT_NODE_ID`
-
-If the [process group detection rules](/docs/observe/infrastructure-observability/process-groups/configuration/pg-detection "Ways to customize process-group detection") won't work for your use case, use this environment variable to **separate process group instances**.
-
 ### Validating variables
-
-Parameter
-
-Description
-
-`DT_LOGSTREAM`
-
-Set this variable with `stdout` to configure the OneAgent to log errors to the console. To see additional OneAgent logs, set the log level with `DT_LOGLEVELCON` as follows.
-
-`DT_LOGLEVELCON`
-
-Use this environment variable to define the console log level. Valid options are: `NONE`, `SEVERE`, and `INFO`.
-
-`DT_AGENTACTIVE`
-
-Set to `true` or `false` to enable or disable OneAgent.
 
 ## Update OneAgent
 

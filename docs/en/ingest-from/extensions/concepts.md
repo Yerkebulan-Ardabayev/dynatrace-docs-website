@@ -1,7 +1,7 @@
 ---
 title: About Extensions
 source: https://www.dynatrace.com/docs/ingest-from/extensions/concepts
-scraped: 2026-02-22T21:23:40.388687
+scraped: 2026-02-24T21:30:16.798160
 ---
 
 # About Extensions
@@ -138,24 +138,6 @@ Without a monitoring configuration, an extension is visible in the Dynatrace pla
 ### Extension package
 
 Extensions are provided as a ZIP package containing only:
-
-File
-
-Description
-
-`extension.zip`
-
-An archive containing the actual extension definition with all its assets.
-
-`extension.zip.sig`
-
-A signature file: a digital signature for a ZIP archive. It ensures the integrity and authenticity of the ZIP file contents by verifying that it hasn't been altered and was signed by a trusted source.
-
-For details, see [Sign extensions](/docs/ingest-from/extensions/develop-your-extensions/sign-extensions "Learn how to sign an extension for secure distribution in your environment using the Dynatrace Extensions framework.").
-
-`extension.zip.sig.tsr`
-
-A signature timestamp file used to ensure the signature's validity over time (processed only for official extensions).
 
 Extension packages with different contents are not accepted for upload. The maximum size of an extension package is 25 MB.
 

@@ -1,7 +1,7 @@
 ---
 title: Red Hat Quarkus native applications monitoring
 source: https://www.dynatrace.com/docs/ingest-from/technology-support/application-software/java/quarkus
-scraped: 2026-02-23T21:39:35.767827
+scraped: 2026-02-24T21:30:00.668005
 ---
 
 # Red Hat Quarkus native applications monitoring

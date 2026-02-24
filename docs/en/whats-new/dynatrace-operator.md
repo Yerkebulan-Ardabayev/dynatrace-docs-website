@@ -1,7 +1,7 @@
 ---
 title: Dynatrace Operator release notes
 source: https://www.dynatrace.com/docs/whats-new/dynatrace-operator
-scraped: 2026-02-23T21:19:16.935399
+scraped: 2026-02-24T21:14:29.950182
 ---
 
 # Dynatrace Operator release notes
@@ -19,5 +19,3 @@ Get to know the changes in [Dynatrace Operatorï»¿](https://github.com/Dynatra
   + Supports the rollout and lifecycle management of Dynatrace ActiveGate and OneAgent in Kubernetes and OpenShift.
   + Has its own release cycle; code is hosted on [GitHubï»¿](https://github.com/Dynatrace/dynatrace-operator/releases/).
 * Make sure you use the highest Dynatrace Operator version available.
-
-Unable to render DataTable. Check configuration.

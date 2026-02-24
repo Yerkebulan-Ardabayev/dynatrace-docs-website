@@ -1,7 +1,7 @@
 ---
 title: Kubernetes metrics migration guide
 source: https://www.dynatrace.com/docs/analyze-explore-automate/metrics/upgrade/kubernetes-metric-migration
-scraped: 2026-02-20T21:24:35.734535
+scraped: 2026-02-24T21:23:45.697069
 ---
 
 # Kubernetes metrics migration guide
@@ -22,106 +22,6 @@ This guide provides insights into migrating Kubernetes metrics to Grail. Typical
 
 Classic Metrics and Grail Metrics have the same level of detail and dimensions available. The only difference is the metric key.
 
-Metric key (Grail)
-
-Metric key (Classic)
-
-dt.kubernetes.cluster.readyz
-
-builtin:kubernetes.cluster.readyz
-
-dt.kubernetes.container.oom\_kills
-
-builtin:kubernetes.container.oom\_kills
-
-dt.kubernetes.container.restarts
-
-builtin:kubernetes.container.restarts
-
-dt.kubernetes.node.conditions
-
-builtin:kubernetes.node.conditions
-
-dt.kubernetes.node.cpu\_allocatable
-
-builtin:kubernetes.node.cpu\_allocatable
-
-dt.kubernetes.node.memory\_allocatable
-
-builtin:kubernetes.node.memory\_allocatable
-
-dt.kubernetes.node.pods\_allocatable
-
-builtin:kubernetes.node.pods\_allocatable
-
-dt.kubernetes.nodes
-
-builtin:kubernetes.nodes
-
-dt.kubernetes.persistentvolumeclaim.available
-
-builtin:kubernetes.persistentvolumeclaim.available
-
-dt.kubernetes.persistentvolumeclaim.capacity
-
-builtin:kubernetes.persistentvolumeclaim.capacity
-
-dt.kubernetes.persistentvolumeclaim.used
-
-builtin:kubernetes.persistentvolumeclaim.used
-
-dt.kubernetes.resourcequota.limits\_cpu
-
-builtin:kubernetes.resourcequota.limits\_cpu
-
-dt.kubernetes.resourcequota.limits\_cpu\_used
-
-builtin:kubernetes.resourcequota.limits\_cpu\_used
-
-dt.kubernetes.resourcequota.limits\_memory
-
-builtin:kubernetes.resourcequota.limits\_memory
-
-dt.kubernetes.resourcequota.limits\_memory\_used
-
-builtin:kubernetes.resourcequota.limits\_memory\_used
-
-dt.kubernetes.resourcequota.pods
-
-builtin:kubernetes.resourcequota.pods
-
-dt.kubernetes.resourcequota.pods\_used
-
-builtin:kubernetes.resourcequota.pods\_used
-
-dt.kubernetes.resourcequota.requests\_cpu
-
-builtin:kubernetes.resourcequota.requests\_cpu
-
-dt.kubernetes.resourcequota.requests\_cpu\_used
-
-builtin:kubernetes.resourcequota.requests\_cpu\_used
-
-dt.kubernetes.resourcequota.requests\_memory
-
-builtin:kubernetes.resourcequota.requests\_memory
-
-dt.kubernetes.resourcequota.requests\_memory\_used
-
-builtin:kubernetes.resourcequota.requests\_memory\_used
-
-dt.kubernetes.workload.conditions
-
-builtin:kubernetes.workload.conditions
-
-dt.kubernetes.workload.pods\_desired
-
-builtin:kubernetes.workload.pods\_desired
-
-dt.kubernetes.workloads
-
-builtin:kubernetes.workloads
-
 ## Convergent metrics
 
 The following metrics have been consolidated. The Grail metrics that supersede the Classic metrics offer an increased level of detail compared to the Classic metrics.
@@ -131,27 +31,6 @@ To achieve this decreased level of detail, the Grail metrics are first aggregate
 The following list of metrics contains the pod and container count metrics and the Kubernetes event count metric that was available at a lower level of detail as Classic metric.
 
 Kubernetes events and container/pod count metrics
-
-Metric key (Grail)
-
-Metric key (Classic)
-
-dt.kubernetes.containers
-
-builtin:kubernetes.containers
-
-dt.kubernetes.pod.containers\_desired
-
-builtin:kubernetes.workload.containers\_desired
-
-dt.kubernetes.events
-
-builtin:kubernetes.events
-
-dt.kubernetes.pods
-
-builtin:kubernetes.node.pods  
-builtin:kubernetes.pods
 
 The following table contains the workload and node resource metrics that have been available as separate workload- and node- level Classic metrics.
 With Grail, there is a single metric at the container level.
@@ -184,72 +63,13 @@ k8s.workload.name
 
 Workload- and node- level resource consumption metrics
 
-Metric key (Grail)
-
-Metric key (Classic)
-
-dt.kubernetes.container.cpu\_usage
-
-builtin:kubernetes.node.cpu\_usage  
-builtin:kubernetes.workload.cpu\_usage
-
-dt.kubernetes.container.cpu\_throttled
-
-builtin:kubernetes.node.cpu\_throttled  
-builtin:kubernetes.workload.cpu\_throttled
-
-dt.kubernetes.container.requests\_cpu
-
-builtin:kubernetes.node.requests\_cpu  
-builtin:kubernetes.workload.requests\_cpu
-
-dt.kubernetes.container.limits\_cpu
-
-builtin:kubernetes.node.limits\_cpu  
-builtin:kubernetes.workload.limits\_cpu
-
-dt.kubernetes.container.memory\_working\_set
-
-builtin:kubernetes.node.memory\_working\_set  
-builtin:kubernetes.workload.memory\_working\_set
-
-dt.kubernetes.container.requests\_memory
-
-builtin:kubernetes.node.requests\_memory  
-builtin:kubernetes.workload.requests\_memory
-
-dt.kubernetes.container.limits\_memory
-
-builtin:kubernetes.node.limits\_memory  
-builtin:kubernetes.workload.limits\_memory
-
 ## Replaced metrics
 
 This group of metrics consists of Classic metric keys that have never been made available as Grail metrics.
 Instead the most similar Classic metric is used to then determine the Grail metric replacement for these deprecated metrics.
 The reason for the deprecation is a cleanup of duplicate metric keys. In the case of the following metrics, a complete identity of the values between the Classic Metric and Grail Metric is not feasible, but they are closely related and do not deviate very much.
 
-Metric key (Grail)
-
-Metric key (Classic)
-
-Superseding Classic Metric
-
-dt.kubernetes.container.limits\_cpu
-
-builtin:containers.cpu.limit
-
-n.a.
-
-dt.kubernetes.container.oom\_kills
-
-builtin:kubernetes.container.outOfMemoryKills
-
-builtin:kubernetes.container.oom\_kills
-
 ## Calculated metrics
-
-
 
 The following set of Classic container metrics is superseded by Grail container metrics.
 For most of the CPU metrics in this section the Classic metrics have the unit millicores, while the Grail metrics have the unit nanoseconds/minute. To get

@@ -1,7 +1,7 @@
 ---
 title: Event analysis and correlation
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/root-cause-analysis/event-analysis-and-correlation
-scraped: 2026-02-23T21:39:07.026291
+scraped: 2026-02-24T21:25:24.280294
 ---
 
 # Event analysis and correlation
@@ -107,54 +107,6 @@ Deduplication of events based on the causal topology is a highly sophisticated p
 ### Custom-defined event correlation
 
 While event correlation and deduplication are fully automatic, some use cases require more fine-grained control of deduplication. To achieve that, you can use Dynatrace Intelligence control properties of ingested events. For example, **dt.event.allow\_davis\_merge** defines whether Dynatrace Intelligence can merge events into a larger problem. Such properties are agnostic to the ingestion channel. See the list of available properties below.
-
-Property
-
-Type
-
-Description
-
-**dt.event.allow\_davis\_merge**
-
-Boolean
-
-The event can be merged into an existing problem (`true`), or a new problem must be created for it (`false`).
-
-**dt.event.allow\_frequent\_issue\_detection**
-
-Boolean
-
-Dynatrace Intelligence frequent issue detection is active (`true`) or inactive (`false`).
-
-If frequent issue detection is active, Dynatrace Intelligence can mute frequently occurring events, preventing event noise.
-
-**dt.event.allow\_entity\_remapping**
-
-Boolean
-
-Event remapping is active (`true`) or inactive (`false`).
-
-If remapping is active, Dynatrace Intelligence can remap the incoming event to a new entity type extracted from event properties.
-
-**dt.event.is\_rootcause\_relevant**
-
-Boolean
-
-Dynatrace Intelligence can (`true`) or can't (`false`) consider the event in root cause analysis.
-
-**dt.event.suppress\_problem**
-
-Boolean
-
-Problems suppression is active (`true`) or (`false`) inactive.
-
-If suppression is active, Dynatrace Intelligence doesn't raise a problem and doesn't trigger event correlation and deduplication for the event. The event is stored and visualized in Dynatrace, but no problem is raised and analyzed based on it.
-
-**dt.event.timeout**
-
-String
-
-The timeout (in minutes) of the event. It defines the time period until a refresh must arrive from the event source. If no refresh is received, the event is closed with the change reason `TIMED_OUT`.
 
 Additionally, the processing of events can be influenced by the event sender or the source using `event.davis` field defined in the Semantic Dictionary. For more information, see [Semantic Dictionary](/docs/semantic-dictionary/model/davis#davis-ai-events "Get to know the Semantic Dictionary models related to Davis AI.").
 

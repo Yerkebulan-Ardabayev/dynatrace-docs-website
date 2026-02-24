@@ -1,7 +1,7 @@
 ---
 title: Actions for Text Processing Connector
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/text-processing/automation-workflows-text-processing-actions
-scraped: 2026-02-23T21:26:19.214163
+scraped: 2026-02-24T21:35:57.178592
 ---
 
 # Actions for Text Processing Connector
@@ -38,44 +38,6 @@ In the official Jinja documentation, read more about [escape mechanismsï»¿](h
 Configures a JSON file.
 
 ### Inputs
-
-Field
-
-Description
-
-Required
-
-Example syntax
-
-**JSON content**
-
-The full content of the JSON.
-
-Required
-
-```
-{ "obj1": { "innerObj1": { "array": [ { "theObjectInsideTheArray": "value1" }, { "theObjectInsideTheArray": "value2" } ] } } }
-```
-
-**Path**
-
-The path to the property that is added or changed.
-
-Required
-
-* Nested object: `.obj1.innerObj1`
-* Array element: `.obj1.innerObj1.array[2].theObjectInsideTheArray`
-* Property with spaces: `.["some property"]`
-* Top-level array: `.[0].someObjectInTheToplevelArray`
-* Entire content: `.`
-
-**Value**
-
-The new value for the property path.
-
-Required
-
-`{"new-key": "new-value"}`
 
 ### Results
 
@@ -190,88 +152,6 @@ Manipulates a YAML.
 Supports multi-document YAML files.
 
 ### Inputs
-
-Field
-
-Description
-
-Required
-
-Example syntax
-
-**YAML content**
-
-The full content of the YAML.
-
-Required
-
-```
-obj1:
-
-
-
-innerObj1:
-
-
-
-array:
-
-
-
-- theObjectInsideTheArray: value1
-
-
-
-- theObjectInsideTheArray: value2
-```
-
-**Path**
-
-The path to the property that is added or changed.
-
-Required
-
-* Nested object: `.obj1.innerObj1`
-* Array element: `.obj1.innerObj1.array[0].theObjectInsideTheArray`
-* Property with spaces: `.["some property"]`
-* Top-level array: `.[0].someObjectInTheTopLevelArray`
-* Entire content: `.`
-
-**Value**
-
-The new value for the property path.
-
-Required
-
-`'new-value'`
-
-**Document index**
-
-Relevant only for YAML files containing multiple documents. Index starts at `0`.
-
-Optional
-
-```
-obj1:
-
-
-
-key: value1
-
-
-
----
-
-
-
-obj2:
-
-
-
-key: value2
-```
-
-To modify the second document, set `documentIndex` to `1`.
 
 ### Results
 

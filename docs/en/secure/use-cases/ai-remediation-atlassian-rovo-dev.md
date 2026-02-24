@@ -1,7 +1,7 @@
 ---
 title: Automate vulnerability remediation with Atlassian Rovo Dev and Dynatrace
 source: https://www.dynatrace.com/docs/secure/use-cases/ai-remediation-atlassian-rovo-dev
-scraped: 2026-02-23T21:37:59.849989
+scraped: 2026-02-24T21:34:05.920123
 ---
 
 # Automate vulnerability remediation with Atlassian Rovo Dev and Dynatrace

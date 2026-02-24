@@ -1,7 +1,7 @@
 ---
 title: Azure Media Services monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-media-service
-scraped: 2026-02-23T21:27:32.017394
+scraped: 2026-02-24T21:23:43.186093
 ---
 
 # Azure Media Services monitoring

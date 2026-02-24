@@ -1,7 +1,7 @@
 ---
 title: Monitor Prometheus metrics
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-prometheus-metrics
-scraped: 2026-02-23T21:27:09.688253
+scraped: 2026-02-24T21:31:29.729725
 ---
 
 # Monitor Prometheus metrics
@@ -56,22 +56,6 @@ Histograms[1](#fn-3-1-def) provide visual insights into the distribution and fre
 For a base metric name of `<basename>`, Dynatrace will ingest the data according to the
 following table.
 
-Prometheus Metric
-
-Dynatrace Ingest Type
-
-`<basename>_bucket{le="<upper inclusive bound>"}`
-
-[`COUNT`](/docs/ingest-from/extend-dynatrace/extend-metrics/reference/metric-ingestion-protocol#count-metric "Learn how the data ingestion protocol for Dynatrace Metrics API works.")
-
-`<basename>_bucket_sum`
-
-[`COUNT`](/docs/ingest-from/extend-dynatrace/extend-metrics/reference/metric-ingestion-protocol#count-metric "Learn how the data ingestion protocol for Dynatrace Metrics API works.")
-
-`<basename>_bucket_count`
-
-[`COUNT`](/docs/ingest-from/extend-dynatrace/extend-metrics/reference/metric-ingestion-protocol#count-metric "Learn how the data ingestion protocol for Dynatrace Metrics API works.")
-
 Additional flexibility and control is provided via the [`builtin:histogram-metrics`ï»¿](https://dt-url.net/ne02rlq) settings schema.
 This schema allows to configure the ingestion of `<basename>_bucket{le="<upper inclusive bound>"}` metrics.
 
@@ -84,22 +68,6 @@ This schema allows to configure the ingestion of `<basename>_bucket{le="<upper i
 Like a [Histogram](#histogram), the summary metric[1](#fn-4-1-def) samples observations. In contrast to the histogram metric, a summary's buckets are
 represented by Ï-quantiles where 0 â¤ Ï â¤ 1. For a base metric name of `<basename>`, Dynatrace will ingest the data according to the
 following table.
-
-Prometheus Metric
-
-Dynatrace Ingest Type
-
-`<basename>{quantile="<Ï>"}`
-
-[`GAUGE`](/docs/ingest-from/extend-dynatrace/extend-metrics/reference/metric-ingestion-protocol#gauge-metric "Learn how the data ingestion protocol for Dynatrace Metrics API works.")
-
-`<basename>_sum`
-
-[`COUNT`](/docs/ingest-from/extend-dynatrace/extend-metrics/reference/metric-ingestion-protocol#count-metric "Learn how the data ingestion protocol for Dynatrace Metrics API works.")
-
-`<basename>_count`
-
-[`COUNT`](/docs/ingest-from/extend-dynatrace/extend-metrics/reference/metric-ingestion-protocol#count-metric "Learn how the data ingestion protocol for Dynatrace Metrics API works.")
 
 1
 
@@ -153,8 +121,6 @@ If you want to skip verification of the TLS certificate (for example, if you use
 `metrics.dynatrace.com/insecure_skip_verify` to `true`. This annotation, however, is only considered when using an ActiveGate deployed inside the monitored cluster and the Kubernetes connection settings configured to monitor the local Kubernetes API endpoint.
 
 ### Filter metrics Optional
-
-
 
 Use `metrics.dynatrace.com/filter` to define a filter that allows you to include (`"mode": "include"`) or exclude (`"mode": "exclude"`) a list of metrics. If no filter annotation is defined, all metrics are collected.
 The filter syntax also supports the asterisk (`*`). This symbol allows you to filter metrics keys that begin with, end with, or contain a particular sequence, such as:
@@ -265,6 +231,8 @@ image: myregistry/myimage:mytag
 The values of `metrics.dynatrace.com/path`, `metrics.dynatrace.com/port`, and `metrics.dynatrace.com/secure` depend on the exporter being used; adapt them to your requirements. To determine the port value, see [Default port allocationsï»¿](https://github.com/prometheus/prometheus/wiki/Default-port-allocations) for a list of common ports for known exporters.
 
 ### Client authentication Optional
+
+
 
 **Requirements:** Add the permissions to access `secrets` and `configmaps` for the `dynatrace-kubernetes-monitoring` ClusterRole.
 
@@ -600,8 +568,6 @@ If you have full control over the pod template or service definition, we recomme
 
 ### Options if you don't have full control
 
-
-
 If you don't have full control over the pod template, you have the following options:
 
 * Annotate an existing service (in YAML)  
@@ -767,6 +733,8 @@ Metrics from Prometheus exporters are available in Data Explorer for custom char
 You can simply search for metric keys of all available metrics and define how youâd like to analyze and chart your metrics. After that you can pin your charts on a dashboard.
 
 ## Metric alerts
+
+
 
 You can also create custom alerts based on the Prometheus scraped metrics. Go to **Settings** > **Anomaly detection** > **Metric events** and select **Add metric event**. In the **Add metric event** page, search for a Prometheus metric using its key and define your alert. For more information, see [Metric events for alerting](/docs/dynatrace-intelligence/anomaly-detection/metric-events "Learn about metric events in Dynatrace").
 

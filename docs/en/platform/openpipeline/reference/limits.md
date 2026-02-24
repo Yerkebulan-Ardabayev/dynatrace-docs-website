@@ -1,7 +1,7 @@
 ---
 title: OpenPipeline limits
 source: https://www.dynatrace.com/docs/platform/openpipeline/reference/limits
-scraped: 2026-02-23T21:27:33.318718
+scraped: 2026-02-24T21:16:48.637674
 ---
 
 # OpenPipeline limits
@@ -108,18 +108,6 @@ If the timestamp is more than 10 minutes in the future, it's adjusted to the ing
 
 ### Record minimum timestamp
 
-Item
-
-Earliest timestamp
-
-Logs, Events, Business Events, System events
-
-The ingest time minus 24 hours
-
-Metrics, extracted metrics, and Davis events
-
-The ingest time minus 1 hour
-
 Records outside of these timeframes are dropped.
 
 ## Ingest API
@@ -179,68 +167,6 @@ The Smartscape ID calculation supports `string` only. The ID components must be 
 [Pre-process](/docs/platform/openpipeline/concepts/data-flow#pre-processing "Learn how data flows in Dynatrace Platform, from ingestion to storage, via Dynatrace OpenPipeline.") records to convert the values you need to the `string` data type.
 
 ## Configuration
-
-Item
-
-Maximum limit
-
-Early Adopter program maximum limit
-
-Request payload size (per configuration scope)
-
-10 MB
-
-* Total pipeline schemas: 70 MB
-* Total route schemas: 10 MB
-* Total ingest source schemas: 30 MB
-
-Pipeline number (per configuration scope)
-
-100
-
-2,000
-
-Size of a stage
-
-512 KB
-
-512 KB
-
-Processor number (per pipeline)
-
-1,000
-
-1,000
-
-Endpoint number (per configuration scope)
-
-100
-
-100
-
-Routes number (per configuration scope)
-
-100
-
-3,000
-
-Ingest sources number (per configuration scope)
-
-100
-
-2,000
-
-Length of a matching condition
-
-1,000 UTF-8 encoded bytes
-
-1,000 UTF-8 encoded bytes
-
-Length of a DQL processor script
-
-8,192 UTF-8 encoded bytes
-
-8,192 UTF-8 encoded bytes
 
 ### Allowed characters in the endpoint path
 

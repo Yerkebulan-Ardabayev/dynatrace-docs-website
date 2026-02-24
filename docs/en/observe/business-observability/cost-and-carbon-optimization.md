@@ -1,7 +1,7 @@
 ---
 title: Cost & Carbon Optimization
 source: https://www.dynatrace.com/docs/observe/business-observability/cost-and-carbon-optimization
-scraped: 2026-02-23T21:37:32.828067
+scraped: 2026-02-24T21:20:51.154904
 ---
 
 # Cost & Carbon Optimization
@@ -26,10 +26,6 @@ Prerequisites
 ### Permissions
 
 The following table describes the required permissions.
-
-Permission
-
-Description
 
 app-engine:apps:run
 
@@ -70,16 +66,6 @@ Creates/edits the Cost & Carbon Optimization data ingest automation
 storage:bizevents:read
 
 Read Cost & Carbon Optimization events from GRAIL
-
-10
-
-rows per page
-
-Page
-
-1
-
-of 1
 
 ### Grant permissions to Workflows
 

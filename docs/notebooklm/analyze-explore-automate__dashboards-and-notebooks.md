@@ -1,6 +1,6 @@
 # Документация Dynatrace: analyze-explore-automate/dashboards-and-notebooks
 Язык: Русский (RU)
-Сгенерировано: 2026-02-23
+Сгенерировано: 2026-02-24
 Файлов в разделе: 38
 ---
 
@@ -9,7 +9,7 @@
 ---
 title: Add code to a dashboard
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new/components/dashboard-component-code
-scraped: 2026-02-23T21:19:49.471038
+scraped: 2026-02-24T21:14:48.360567
 ---
 
 # Add code to a dashboard
@@ -226,7 +226,7 @@ To see more examples, open the  menu at the top of your dashboard and browse the
 ---
 title: Add data to a dashboard
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new/components/dashboard-component-data
-scraped: 2026-02-23T21:19:53.232547
+scraped: 2026-02-24T21:14:54.032822
 ---
 
 # Add data to a dashboard
@@ -424,7 +424,7 @@ Select **Run query**.
 ---
 title: Add Markdown to dashboard
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new/components/dashboard-component-markdown
-scraped: 2026-02-23T21:19:59.567955
+scraped: 2026-02-24T21:14:44.024489
 ---
 
 # Add Markdown to dashboard
@@ -566,110 +566,6 @@ A link in Markdown is a label and link of the form `[label](address)`, where:
 * The `label` is freeform text to display on the link in your Markdown tile or section
 * The `address` specifies what to open when someone selects the link, such as a website or a Dynatrace app
 
-Link to
-
-Syntax and examples
-
-Website
-
-```
-[My label](https://www.example.com/)
-```
-
-Notebooks app
-
-```
-[My label](/ui/apps/dynatrace.notebooks/notebooks)
-```
-
-Specific notebook
-
-**Syntax**:
-
-```
-[label](/ui/apps/dynatrace.notebooks/notebook/<notebookid>)
-```
-
-**Example**:
-
-```
-[My label](/ui/apps/dynatrace.notebooks/notebook/274edae4-dfe8-41fb-aced-5020fb1270bc)
-```
-
-To get the address
-
-1. Display the target notebook.
-2. Copy everything on the browser address line starting from `/ui/`.
-3. Paste it into your Markdown as the address of a link.
-
-Specific notebook section
-
-**Syntax**:
-
-```
-[label](/ui/apps/dynatrace.notebooks/notebook/<notebookid>#<sectionid>)
-```
-
-**Example**:
-
-```
-[My label](/ui/apps/dynatrace.notebooks/notebook/274edae4-dfe8-41fb-aced-5020fb1270bc#cb69caf1-52ed-4e73-8a3e-120e8cd7e8f8)
-```
-
-To get the address
-
-1. Display the target notebook.
-2. Select the target section of the notebook.
-3. Copy everything on the browser address line starting from `/ui/`.
-4. Paste it into your Markdown as the address of a link.
-
-Dashboards app
-
-```
-[My label](/ui/apps/dynatrace.dashboards/)
-```
-
-Specific dashboard
-
-**Syntax**:
-
-```
-[label](/ui/apps/dynatrace.dashboards/<dashboardid>)
-```
-
-**Example**:
-
-```
-[My label](/ui/apps/dynatrace.dashboards/dashboard/9f24c36e-ca5f-401c-8e00-5e4b05c46bd2)
-```
-
-To get the address
-
-1. Display the target dashboard.
-2. Copy everything on the browser address line starting from `/ui/`.
-3. Paste it into your Markdown as the address of a link.
-
-Specific dashboard tile
-
-**Syntax**:
-
-```
-[label](/ui/apps/dynatrace.dashboards/dashboard/<dashboardid>#tileIds=n)
-```
-
-**Example**:
-
-```
-[My label](/ui/apps/dynatrace.dashboards/dashboard/9f24c36e-ca5f-401c-8e00-5e4b05c46bd2#from=now%28%29-2h&to=now%28%29&tileIds=6)
-```
-
-To include a specific tile ID in the link
-
-1. Display the target dashboard.
-2. Select the target tile in the target dashboard.
-3. Copy everything on the browser address line starting from `/ui/`.
-4. Paste it into your Markdown as the address of a link.
-
 ### Images
 
 To link to a picture, use this format:
@@ -703,7 +599,7 @@ For details on variables, see [Add a variable to a dashboard](/docs/analyze-expl
 ---
 title: Add a snippet to a dashboard
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new/components/dashboard-component-snippet
-scraped: 2026-02-23T21:20:00.760826
+scraped: 2026-02-24T21:14:55.437737
 ---
 
 # Add a snippet to a dashboard
@@ -812,7 +708,7 @@ When you find something interesting:
 ---
 title: Add a variable to a dashboard
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new/components/dashboard-component-variable
-scraped: 2026-02-23T21:19:51.994344
+scraped: 2026-02-24T21:14:59.749023
 ---
 
 # Add a variable to a dashboard
@@ -1335,7 +1231,7 @@ In this example, we selected `Variable1` to display the variable definition and 
 ---
 title: Dashboards
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new
-scraped: 2026-02-23T21:18:54.994751
+scraped: 2026-02-24T21:13:37.459284
 ---
 
 # Dashboards
@@ -1352,10 +1248,6 @@ Prerequisites
 ### Permissions
 
 The following table describes the required permissions.
-
-Permission
-
-Description
 
 app-engine:functions:run
 
@@ -1396,16 +1288,6 @@ Allows the user to read configuration of Davis analyzers
 davis:analyzers:execute
 
 Allows the user to run Davis analyzers
-
-10
-
-rows per page
-
-Page
-
-1
-
-of 1
 
 Get started
 
@@ -1463,110 +1345,6 @@ A link in Markdown is a label and link of the form `[label](address)`, where:
 
 * The `label` is freeform text to display on the link in your Markdown tile or section
 * The `address` specifies what to open when someone selects the link, such as a website or a Dynatrace app
-
-Link to
-
-Syntax and examples
-
-Website
-
-```
-[My label](https://www.example.com/)
-```
-
-Notebooks app
-
-```
-[My label](/ui/apps/dynatrace.notebooks/notebooks)
-```
-
-Specific notebook
-
-**Syntax**:
-
-```
-[label](/ui/apps/dynatrace.notebooks/notebook/<notebookid>)
-```
-
-**Example**:
-
-```
-[My label](/ui/apps/dynatrace.notebooks/notebook/274edae4-dfe8-41fb-aced-5020fb1270bc)
-```
-
-To get the address
-
-1. Display the target notebook.
-2. Copy everything on the browser address line starting from `/ui/`.
-3. Paste it into your Markdown as the address of a link.
-
-Specific notebook section
-
-**Syntax**:
-
-```
-[label](/ui/apps/dynatrace.notebooks/notebook/<notebookid>#<sectionid>)
-```
-
-**Example**:
-
-```
-[My label](/ui/apps/dynatrace.notebooks/notebook/274edae4-dfe8-41fb-aced-5020fb1270bc#cb69caf1-52ed-4e73-8a3e-120e8cd7e8f8)
-```
-
-To get the address
-
-1. Display the target notebook.
-2. Select the target section of the notebook.
-3. Copy everything on the browser address line starting from `/ui/`.
-4. Paste it into your Markdown as the address of a link.
-
-Dashboards app
-
-```
-[My label](/ui/apps/dynatrace.dashboards/)
-```
-
-Specific dashboard
-
-**Syntax**:
-
-```
-[label](/ui/apps/dynatrace.dashboards/<dashboardid>)
-```
-
-**Example**:
-
-```
-[My label](/ui/apps/dynatrace.dashboards/dashboard/9f24c36e-ca5f-401c-8e00-5e4b05c46bd2)
-```
-
-To get the address
-
-1. Display the target dashboard.
-2. Copy everything on the browser address line starting from `/ui/`.
-3. Paste it into your Markdown as the address of a link.
-
-Specific dashboard tile
-
-**Syntax**:
-
-```
-[label](/ui/apps/dynatrace.dashboards/dashboard/<dashboardid>#tileIds=n)
-```
-
-**Example**:
-
-```
-[My label](/ui/apps/dynatrace.dashboards/dashboard/9f24c36e-ca5f-401c-8e00-5e4b05c46bd2#from=now%28%29-2h&to=now%28%29&tileIds=6)
-```
-
-To include a specific tile ID in the link
-
-1. Display the target dashboard.
-2. Select the target tile in the target dashboard.
-3. Copy everything on the browser address line starting from `/ui/`.
-4. Paste it into your Markdown as the address of a link.
 
 ## Use cases
 
@@ -2693,7 +2471,7 @@ To delete multiple tiles simultaneously
 ---
 title: API for Dashboards and Notebooks
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/document-api
-scraped: 2026-02-23T21:28:35.492931
+scraped: 2026-02-24T21:25:04.264988
 ---
 
 # API for Dashboards and Notebooks
@@ -2743,7 +2521,7 @@ To see the full API documentation for the documents service
 ---
 title: Manage document versions
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/document-version
-scraped: 2026-02-23T21:19:50.687304
+scraped: 2026-02-24T21:15:01.114133
 ---
 
 # Manage document versions
@@ -2862,7 +2640,7 @@ The **Actions** column displays all of the actions available from the **History*
 ---
 title: Drilldowns and navigation
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/drilldowns-and-navigation
-scraped: 2026-02-23T21:19:57.178610
+scraped: 2026-02-24T21:14:51.287458
 ---
 
 # Drilldowns and navigation
@@ -10325,7 +10103,7 @@ To reset to defaults (discard override settings for the selected metric), select
 ---
 title: Scatterplot visualization
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-scatterplot
-scraped: 2026-02-23T21:37:00.015863
+scraped: 2026-02-24T21:22:15.316728
 ---
 
 # Scatterplot visualization
@@ -10947,7 +10725,7 @@ To reset to defaults (discard threshold settings), select the trash can  next to
 ---
 title: Edit visualizations for Notebooks and Dashboards
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations
-scraped: 2026-02-23T21:20:01.960921
+scraped: 2026-02-24T21:14:49.803603
 ---
 
 # Edit visualizations for Notebooks and Dashboards
@@ -11115,7 +10893,7 @@ For details, see [Scatterplot visualization](/docs/analyze-explore-automate/dash
 ---
 title: Explore data
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/explore-data
-scraped: 2026-02-23T21:20:04.678376
+scraped: 2026-02-24T21:14:45.538758
 ---
 
 # Explore data
@@ -11170,106 +10948,6 @@ To explore data such as logs, metrics, or business events with our point-and-cli
      + Only operators relevant to the data type are suggested.
      + Read more on [how the filter field works](/docs/discover-dynatrace/get-started/dynatrace-ui/ui-filter-field "The filter field is a powerful tool that allows you to quickly find relevant information or narrow down results within apps.") in the dedicated documentation.
 
-     Operator
-
-     Description
-
-     `~`
-
-     Use a tilde to get one of two effects:
-
-     To match on a specific field
-
-     1. In the  filter bar
-
-        + Select the field name
-        + Select the tilde (`~`) as the operator
-        + Enter the term you want to match
-     2. Select **Run**.
-
-        For example, when exploring log data, `content` `~` `error` lists log entries that have "error" in the "content" field.
-
-        In DQL, this translates to [matchesPhrase](/docs/platform/grail/dynatrace-query-language/functions/string-functions#matchesPhrase "A list of DQL string functions."), such as:
-
-        ```
-        fetch logs
-
-
-
-        | filter matchesPhrase(content, "error")
-
-
-
-        | limit 20
-        ```
-
-     To search all data
-
-     3. In the  filter bar
-
-        + Enter an asterisk (`*`)
-        + Select the tilde (`~`) as the operator
-        + Enter the term you want to search for
-
-        Alternative: Click in the  filter bar, scroll down to the bottom of the list of suggestions, select `Search a phrase in all data`, and enter the search term between the quotation marks. (This bar is hidden when there is no splitting set, or when there is more than one building block with a metric selected.)
-     4. Select **Run**.
-
-        For example, when exploring log data, `*` `~` `error` lists log entries that have "error".
-
-        In DQL, this translates to [search](/docs/platform/grail/dynatrace-query-language/commands/filtering-commands#search "DQL filter and search commands"), such as:
-
-        ```
-        fetch logs
-
-
-
-        | search "error"
-
-
-
-        | limit 20
-        ```
-
-     `=`
-
-     equals
-
-     `!=`
-
-     doesn't equal
-
-     `<`
-
-     less than
-
-     `<=`
-
-     less than or equal to
-
-     `>`
-
-     greater than
-
-     `>=`
-
-     greater than or equal to
-
-     `= *`
-
-     is any value
-
-     `!= *`
-
-     isn't any value
-
-     `in`
-
-     matches one or more values in a list of values
-
-     `not in`
-
-     doesnât match any value in a list of values
-
      Note: Combining `=` with a wildcard in before `*`, after, or both, before your search term will resolve to a starts with, ends with, or contains filter respectively.
    * The  on the bottom of the definition opens a menu of additional commands you can add.
    * Select any ![remove filter](https://dt-cdn.net/images/remove-filter-9fadf8ea2a.svg "remove filter") in the definition to remove the element that comes before the ![remove filter](https://dt-cdn.net/images/remove-filter-9fadf8ea2a.svg "remove filter"). If you remove an element and then change your mind, you can use  to select it from the menu and add it back to your definition.
@@ -11312,8 +10990,6 @@ You can create a notebook section or dashboard tile using [Dynatrace Intelligenc
 
 ### Generative AI in your dashboard
 
-
-
 To create a dashboard tile using Dynatrace Intelligence generative AI
 
 1. Go to [![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.") and open or create a dashboard you can edit.
@@ -11344,6 +11020,8 @@ To create a dashboard tile using Dynatrace Intelligence generative AI
 8. Optional Select the **Visual** tab to change the visualization (refer to the [visualization-specific documentation](/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations "Create, edit, and view visualizations on your Dynatrace dashboards and notebooks.") for more information).
 
 ### Generative AI in your notebook
+
+
 
 To create a notebook section using Dynatrace Intelligence generative AI
 
@@ -11451,8 +11129,6 @@ To summarize your results
 
 ### Convert to time series
 
-
-
 You can convert log-based events to a time series format appropriate to be visualized with graph visualizations. This is done by counting occurrences of fields specified for each timeslot.
 
 To convert log-based events to a time series format
@@ -11487,6 +11163,8 @@ If the **Limit** setting is not displayed,  **Limit** and then set the value.
 ## Metrics
 
 ### Add
+
+
 
 This exploration functionality is the same in ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards** and ![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**. We use ![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks** in these examples.
 
@@ -11626,8 +11304,6 @@ This reduces the time series data to a single scalar value over the selected tim
 
 ### Alias
 
-
-
 You might want to rename (add an alias to) a metric to make it more readable.
 
 * Adding an alias gives the metric a more convenient alternate name for you to use in the current dashboard tile or notebook section. Instead of the raw metric name, the alias is displayed in your query definition and in the resulting dashboard tile or notebook section.
@@ -11675,6 +11351,8 @@ Add expressions to apply arithmetic based on your selected metrics.
 ![Explore metrics example: expression](https://dt-cdn.net/images/explore-metrics-example-expression-662-b59f306f98.png)
 
 ### Sort
+
+
 
 To sort your results
 
@@ -11826,8 +11504,6 @@ To see the DQL that is created automatically during your exploration with the po
 
 ### Create a DQL query
 
-
-
 When you're satisfied with the results but want to advance with more complex DQL commands, you can easily create a standard notebook section or dashboard tile based on it.
 
 1. Open the  menu and select  **Create DQL section** or  **Create DQL tile**
@@ -11848,7 +11524,7 @@ That's what makes this a great tool for beginners and experts.
 ---
 title: Notebooks
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks
-scraped: 2026-02-23T21:20:55.757216
+scraped: 2026-02-24T21:15:50.576457
 ---
 
 # Notebooks
@@ -11865,10 +11541,6 @@ Prerequisites
 ### Permissions
 
 The following table describes the required permissions.
-
-Permission
-
-Description
 
 app-engine:apps:run
 
@@ -11909,16 +11581,6 @@ Allows the user to access shared notebooks
 document:direct-shares:read
 
 Allows the user to access shared notebooks
-
-10
-
-rows per page
-
-Page
-
-1
-
-of 1
 
 Get started
 
@@ -11986,110 +11648,6 @@ A link in Markdown is a label and link of the form `[label](address)`, where:
 * The `label` is freeform text to display on the link in your Markdown tile or section
 * The `address` specifies what to open when someone selects the link, such as a website or a Dynatrace app
 
-Link to
-
-Syntax and examples
-
-Website
-
-```
-[My label](https://www.example.com/)
-```
-
-Notebooks app
-
-```
-[My label](/ui/apps/dynatrace.notebooks/notebooks)
-```
-
-Specific notebook
-
-**Syntax**:
-
-```
-[label](/ui/apps/dynatrace.notebooks/notebook/<notebookid>)
-```
-
-**Example**:
-
-```
-[My label](/ui/apps/dynatrace.notebooks/notebook/274edae4-dfe8-41fb-aced-5020fb1270bc)
-```
-
-To get the address
-
-1. Display the target notebook.
-2. Copy everything on the browser address line starting from `/ui/`.
-3. Paste it into your Markdown as the address of a link.
-
-Specific notebook section
-
-**Syntax**:
-
-```
-[label](/ui/apps/dynatrace.notebooks/notebook/<notebookid>#<sectionid>)
-```
-
-**Example**:
-
-```
-[My label](/ui/apps/dynatrace.notebooks/notebook/274edae4-dfe8-41fb-aced-5020fb1270bc#cb69caf1-52ed-4e73-8a3e-120e8cd7e8f8)
-```
-
-To get the address
-
-1. Display the target notebook.
-2. Select the target section of the notebook.
-3. Copy everything on the browser address line starting from `/ui/`.
-4. Paste it into your Markdown as the address of a link.
-
-Dashboards app
-
-```
-[My label](/ui/apps/dynatrace.dashboards/)
-```
-
-Specific dashboard
-
-**Syntax**:
-
-```
-[label](/ui/apps/dynatrace.dashboards/<dashboardid>)
-```
-
-**Example**:
-
-```
-[My label](/ui/apps/dynatrace.dashboards/dashboard/9f24c36e-ca5f-401c-8e00-5e4b05c46bd2)
-```
-
-To get the address
-
-1. Display the target dashboard.
-2. Copy everything on the browser address line starting from `/ui/`.
-3. Paste it into your Markdown as the address of a link.
-
-Specific dashboard tile
-
-**Syntax**:
-
-```
-[label](/ui/apps/dynatrace.dashboards/dashboard/<dashboardid>#tileIds=n)
-```
-
-**Example**:
-
-```
-[My label](/ui/apps/dynatrace.dashboards/dashboard/9f24c36e-ca5f-401c-8e00-5e4b05c46bd2#from=now%28%29-2h&to=now%28%29&tileIds=6)
-```
-
-To include a specific tile ID in the link
-
-1. Display the target dashboard.
-2. Select the target tile in the target dashboard.
-3. Copy everything on the browser address line starting from `/ui/`.
-4. Paste it into your Markdown as the address of a link.
-
 ## Use cases
 
 Notebooks enables you to:
@@ -12148,8 +11706,6 @@ The number of undos could be limited depending on your notebook's size.
 
 ### Use shortcuts
 
-
-
 keyboard shortcuts help you work faster in ![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**.
 
 To list keyboard shortcuts, in ![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**, open the  menu and select  **Keyboard shortcuts** or use keyboard shortcut **Shift**+**?**
@@ -12181,6 +11737,8 @@ To list keyboard shortcuts, in ![Notebooks](https://dt-cdn.net/images/notebooks-
 | Toggle between view and edit mode | **Ctrl**/**Cmd**+**Enter** |
 
 ### List notebooks
+
+
 
 #### List all
 
@@ -12323,8 +11881,6 @@ The Explore sections offer the easiest way to get started.
 
 ### Create a Grail query section
 
-
-
 The fastest and easiest way to explore your data is with an [Explore](#section-create-explore-data) section. In a few seconds, you can find and analyze your logs, metrics, or business events. No DQL required!
 
 Deprecated: `dt.entity.*` fields
@@ -12361,6 +11917,8 @@ To add data to a notebook
    * To have Dynatrace once again automatically select a visualization, turn **Auto select** back on.
 
 ### Create a code section
+
+
 
 To add code fetching data for your notebook using Dynatrace functions
 
@@ -12471,110 +12029,6 @@ To add a Markdown-formatted annotation to a notebook
 
   + The `label` is freeform text to display on the link in your Markdown tile or section
   + The `address` specifies what to open when someone selects the link, such as a website or a Dynatrace app
-
-  Link to
-
-  Syntax and examples
-
-  Website
-
-  ```
-  [My label](https://www.example.com/)
-  ```
-
-  Notebooks app
-
-  ```
-  [My label](/ui/apps/dynatrace.notebooks/notebooks)
-  ```
-
-  Specific notebook
-
-  **Syntax**:
-
-  ```
-  [label](/ui/apps/dynatrace.notebooks/notebook/<notebookid>)
-  ```
-
-  **Example**:
-
-  ```
-  [My label](/ui/apps/dynatrace.notebooks/notebook/274edae4-dfe8-41fb-aced-5020fb1270bc)
-  ```
-
-  To get the address
-
-  1. Display the target notebook.
-  2. Copy everything on the browser address line starting from `/ui/`.
-  3. Paste it into your Markdown as the address of a link.
-
-  Specific notebook section
-
-  **Syntax**:
-
-  ```
-  [label](/ui/apps/dynatrace.notebooks/notebook/<notebookid>#<sectionid>)
-  ```
-
-  **Example**:
-
-  ```
-  [My label](/ui/apps/dynatrace.notebooks/notebook/274edae4-dfe8-41fb-aced-5020fb1270bc#cb69caf1-52ed-4e73-8a3e-120e8cd7e8f8)
-  ```
-
-  To get the address
-
-  1. Display the target notebook.
-  2. Select the target section of the notebook.
-  3. Copy everything on the browser address line starting from `/ui/`.
-  4. Paste it into your Markdown as the address of a link.
-
-  Dashboards app
-
-  ```
-  [My label](/ui/apps/dynatrace.dashboards/)
-  ```
-
-  Specific dashboard
-
-  **Syntax**:
-
-  ```
-  [label](/ui/apps/dynatrace.dashboards/<dashboardid>)
-  ```
-
-  **Example**:
-
-  ```
-  [My label](/ui/apps/dynatrace.dashboards/dashboard/9f24c36e-ca5f-401c-8e00-5e4b05c46bd2)
-  ```
-
-  To get the address
-
-  1. Display the target dashboard.
-  2. Copy everything on the browser address line starting from `/ui/`.
-  3. Paste it into your Markdown as the address of a link.
-
-  Specific dashboard tile
-
-  **Syntax**:
-
-  ```
-  [label](/ui/apps/dynatrace.dashboards/dashboard/<dashboardid>#tileIds=n)
-  ```
-
-  **Example**:
-
-  ```
-  [My label](/ui/apps/dynatrace.dashboards/dashboard/9f24c36e-ca5f-401c-8e00-5e4b05c46bd2#from=now%28%29-2h&to=now%28%29&tileIds=6)
-  ```
-
-  To include a specific tile ID in the link
-
-  1. Display the target dashboard.
-  2. Select the target tile in the target dashboard.
-  3. Copy everything on the browser address line starting from `/ui/`.
-  4. Paste it into your Markdown as the address of a link.
 * **Images**: to link to a picture, use this format:
 
   `![alternate text](https://www.example.com/file-name.jpg)`
@@ -12628,8 +12082,6 @@ The number of undos could be limited depending on your notebook's size.
 
 ### Section edit controls
 
-
-
 To see the edit commands for a section, select the section. If you have edit permission, the edit commands are displayed.
 
 * is where you click to drag the selected section to a different position.
@@ -12676,6 +12128,8 @@ The available edit options will vary depending on the type of section you're edi
   ![Example: Notebooks: edit Markdown section](https://dt-cdn.net/images/notebooks-markdown-edit-969-a08f9afae1.png)
 
 ### Select section segments
+
+
 
 To filter data for a section, you can specify [segments](/docs/manage/segments "Segments logically structure monitoring data in Grail and function as convenient filters for data that users are allowed to access based on permissions.") for a section.
 
@@ -12817,8 +12271,6 @@ Example:
 
 ### Manage multiple sections
 
-
-
 You can select multiple sections and then apply the same command to all of them at once.
 
 * **Shift**+**Click**âselects one or more consecutive sections
@@ -12914,6 +12366,8 @@ For details on sharing documents, see [Share documents](/docs/discover-dynatrace
 You can also export a notebook as a JSON file and send the JSON to others, and then they can import the JSON.
 
 ### Export a notebook
+
+
 
 To export a notebook
 
@@ -13571,7 +13025,7 @@ Try the full example on the [Dynatrace playgroundï»¿](https://wkf10640.apps.d
 ---
 title: Ready-made dashboards
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/ready-made-documents/ready-made-dashboards
-scraped: 2026-02-23T21:18:52.214196
+scraped: 2026-02-24T21:13:40.015863
 ---
 
 # Ready-made dashboards
@@ -14901,7 +14355,7 @@ return null; // Return null or handle gracefully.
 ---
 title: Notebooks and Dashboards use cases
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/use-cases
-scraped: 2026-02-23T21:26:59.815611
+scraped: 2026-02-24T21:22:41.868869
 ---
 
 # Notebooks and Dashboards use cases

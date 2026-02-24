@@ -1,7 +1,7 @@
 ---
 title: Secure development controls
 source: https://www.dynatrace.com/docs/manage/data-privacy-and-security/data-security/secure-development-controls
-scraped: 2026-02-21T21:26:45.640830
+scraped: 2026-02-24T21:35:54.313611
 ---
 
 # Secure development controls

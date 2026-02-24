@@ -1,7 +1,7 @@
 ---
 title: Azure SQL Database Hyperscale monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-sql-database-hyperscale
-scraped: 2026-02-23T21:36:38.776650
+scraped: 2026-02-24T21:25:13.587695
 ---
 
 # Azure SQL Database Hyperscale monitoring

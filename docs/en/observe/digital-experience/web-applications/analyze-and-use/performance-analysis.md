@@ -1,7 +1,7 @@
 ---
 title: Performance analysis
 source: https://www.dynatrace.com/docs/observe/digital-experience/web-applications/analyze-and-use/performance-analysis
-scraped: 2026-02-23T21:19:06.454578
+scraped: 2026-02-24T21:16:18.456147
 ---
 
 # Performance analysis

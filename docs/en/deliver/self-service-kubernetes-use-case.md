@@ -1,7 +1,7 @@
 ---
 title: Predict and autoscale Kubernetes workloads
 source: https://www.dynatrace.com/docs/deliver/self-service-kubernetes-use-case
-scraped: 2026-02-22T21:21:58.879805
+scraped: 2026-02-24T21:34:52.511885
 ---
 
 # Predict and autoscale Kubernetes workloads
@@ -49,54 +49,6 @@ Alternatively, follow our [Observability Lab: Predictive Auto-Scaling for Kubern
 ### Annotate your Kubernetes Deployments
 
 The workflows that provide the predictive scaling suggestions will only operate on Kubernetes Deployments annotated with use-caseâspecific metadata. You need to add the following annotations to your Deployment.
-
-Annotation
-
-Value
-
-Comment
-
-`predictive-kubernetes-scaling.observability-labs.dynatrace.com/enabled`
-
-`true` or `false`
-
-`true` to enable for this workload.
-
-`predictive-kubernetes-scaling.observability-labs.dynatrace.com/managed-by-repo:`
-
-`yourgithub/yourreponame`
-
-Reference to the target repo.
-
-`predictive-kubernetes-scaling.observability-labs.dynatrace.com/uuid`
-
-For example, `4bc1299a-58ae-4c19-9533-b19c1b8ca57f`
-
-Any unique GUID in your repo.
-
-`predictive-kubernetes-scaling.observability-labs.dynatrace.com/target-utilization`
-
-For example, `80-90`.
-
-Target utilization.
-
-`predictive-kubernetes-scaling.observability-labs.dynatrace.com/target-cpu-utilization`
-
-For example, `80-90`.
-
-Target CPU utilization.
-
-`predictive-kubernetes-scaling.observability-labs.dynatrace.com/target-memory-utilization`
-
-For example, `80-90`.
-
-Target memory utilization.
-
-`predictive-kubernetes-scaling.observability-labs.dynatrace.com/scale-down`
-
-`true`
-
-`true` will also scale down and not just up.
 
 For a complete example, see the [horizontal scalingï»¿](https://dt-url.net/d723u3m) and [vertical scalingï»¿](https://dt-url.net/vf43uri) deployment example from the [Observability Lab GitHub Tutorialï»¿](https://dt-url.net/ms63uam).
 
