@@ -29,7 +29,7 @@
     
     
       
-        <title>Dynatrace Intelligence limits - Dynatrace Managed - Документация</title>
+        <title>Dynatrace Intelligence ограничения - Dynatrace Managed - Документация</title>
       
     
     
@@ -82,7 +82,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#dynatrace-intelligence-limits" class="md-skip">
+        <a href="#dynatrace-intelligence" class="md-skip">
           Перейти к содержанию
         </a>
       
@@ -118,7 +118,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Dynatrace Intelligence limits
+              Dynatrace Intelligence ограничения
             
           </span>
         </div>
@@ -25549,17 +25549,17 @@
 
 
 
-<h1 id="dynatrace-intelligence-limits">Dynatrace Intelligence limits<a class="headerlink" href="#dynatrace-intelligence-limits" title="Permanent link">&para;</a></h1>
-<h1 id="dynatrace-intelligence-limits_1">Dynatrace Intelligence limits<a class="headerlink" href="#dynatrace-intelligence-limits_1" title="Permanent link">&para;</a></h1>
+<h1 id="dynatrace-intelligence">Dynatrace Intelligence ограничения<a class="headerlink" href="#dynatrace-intelligence" title="Permanent link">&para;</a></h1>
+<h1 id="dynatrace-intelligence_1">Dynatrace Intelligence ограничения<a class="headerlink" href="#dynatrace-intelligence_1" title="Permanent link">&para;</a></h1>
 <ul>
-<li>Latest Dynatrace</li>
-<li>Reference</li>
-<li>5-min read</li>
-<li>Updated on Feb 04, 2026</li>
+<li>Последнее Dynatrace</li>
+<li>Справочник</li>
+<li>5-минутное чтение</li>
+<li>Обновлено 4 февраля 2026 г.</li>
 </ul>
-<p>The following page lists the default limits of Dynatrace Intelligence components.</p>
-<h2 id="problems-and-events">Problems and events<a class="headerlink" href="#problems-and-events" title="Permanent link">&para;</a></h2>
-<p>Some of the problems and events limits apply per provider. The following providers are subject to limits:</p>
+<p>На этой странице перечислены ограничения компонентов Dynatrace Intelligence по умолчанию.</p>
+<h2 id="_1">Проблемы и события<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>Некоторые ограничения проблем и событий применяются для каждого поставщика. Следующие поставщики подлежат ограничениям:</p>
 <ul>
 <li><code>AGENT_LOCAL_REST_API_INGEST</code></li>
 <li><code>AVAILABILITY</code></li>
@@ -25574,114 +25574,28 @@
 <li><code>REAL_USER_MONITORING</code></li>
 <li><code>SYNTHETIC</code></li>
 </ul>
-<h3 id="number-of-simultaneously-active-davis-problems">Number of simultaneously active Davis problems<a class="headerlink" href="#number-of-simultaneously-active-davis-problems" title="Permanent link">&para;</a></h3>
-<p>The maximum number of simultaneously active Davis problems within a single environment is 10,000.</p>
-<h3 id="number-of-simultaneously-active-davis-events">Number of simultaneously active Davis events<a class="headerlink" href="#number-of-simultaneously-active-davis-events" title="Permanent link">&para;</a></h3>
-<p>The maximum number of simultaneously active Davis events within a single environment, across all event providers, is 15,000.</p>
-<h3 id="number-of-simultaneously-active-davis-events-per-provider">Number of simultaneously active Davis events per provider<a class="headerlink" href="#number-of-simultaneously-active-davis-events-per-provider" title="Permanent link">&para;</a></h3>
-<p>The maximum number of simultaneously active Davis events per event provider is 4,000. Example of the event provider: <code>event.provider = "AVAILABILITY"</code>.</p>
-<h3 id="number-of-davis-events-processed-every-hour">Number of Davis events processed every hour<a class="headerlink" href="#number-of-davis-events-processed-every-hour" title="Permanent link">&para;</a></h3>
-<p>The maximum number of Davis events per event provider that can be processed within an hour is 100,000. This limit is replenished every hour.</p>
-<p>Certain events override default limits. See the table below for more information.</p>
-<p>Event provider</p>
-<p>Maximum limit</p>
-<p><code>AVAILABILITY</code></p>
-<p>200,000 Davis events processed per hour.</p>
-<p><code>METRIC_EVENTS</code></p>
-<p>200,000 Davis events processed per hour.</p>
-<ul>
-<li><code>AGENT_LOCAL_REST_API_INGEST</code></li>
-<li><code>BASELINING</code></li>
-<li><code>EVENTS_REST_API_INGEST</code></li>
-<li><code>KUBERNETES_ANOMALY_DETECTION</code></li>
-<li><code>KUBERNETES_EVENT</code></li>
-<li><code>LOG_EVENTS</code></li>
-<li><code>ONEAGENT</code></li>
-<li><code>OPENPIPELINE_DATA_EXTRACTION</code></li>
-<li><code>REAL_USER_MONITORING</code></li>
-<li><code>SYNTHETIC</code></li>
-</ul>
-<p>The default of 100,000 Davis events processed per hour applies.</p>
-<h3 id="event-maximum-lifetime">Event maximum lifetime<a class="headerlink" href="#event-maximum-lifetime" title="Permanent link">&para;</a></h3>
-<p>The maximum lifetime for active events is 60 days. If the underlying anomaly doesn't disappear after 60 days, the respective event is closed and a new one is created.</p>
-<h3 id="problem-merging-timeframe">Problem merging timeframe<a class="headerlink" href="#problem-merging-timeframe" title="Permanent link">&para;</a></h3>
-<p>The maximum problem merging timeframe is 90 minutes. If the problem remains unresolved for more than 90 minutes, no new events will be merged into it after that.</p>
-<p>This measure ensures that Dynatrace Intelligence avoids collecting unrelated information for long-lasting incidents.</p>
-<h2 id="anomaly-detection-new-anomaly-detection">Anomaly Detection - new <strong>Anomaly Detection</strong><a class="headerlink" href="#anomaly-detection-new-anomaly-detection" title="Permanent link">&para;</a></h2>
-<h3 id="custom-alerts">Custom alerts<a class="headerlink" href="#custom-alerts" title="Permanent link">&para;</a></h3>
-<p>Item</p>
-<p>Maximum limit</p>
-<p>Description</p>
-<p>Number of custom alert configurations</p>
-<p>1,000 per environment</p>
-<p>The maximum number of custom alerts that can be configured.</p>
-<p>Grail query request timeout</p>
-<p>10 seconds</p>
-<p>The maximum time limit for the query execution.</p>
-<p>Number of auto-adaptive threshold monitored dimensions</p>
-<p>10,000 per configuration</p>
-<p>The maximum number of auto-adaptive threshold monitored dimensions. Once the limit is reached, no additional dimensions will be monitored.</p>
-<p>Number of seasonal baseline monitored dimensions</p>
-<p>10,000 per configuration</p>
-<p>The maximum number of seasonal baseline monitored dimensions. Once the limit is reached, no additional dimensions will be monitored.</p>
-<h3 id="metric-events">Metric events<a class="headerlink" href="#metric-events" title="Permanent link">&para;</a></h3>
-<h4 id="general">General<a class="headerlink" href="#general" title="Permanent link">&para;</a></h4>
-<p>Item</p>
-<p>Maximum limit</p>
-<p>Description</p>
-<p>Number of metric events</p>
-<p>10,000 per environment</p>
-<p>The maximum number of metric events that can be configured.</p>
-<h4 id="metric-selector-events">Metric selector events<a class="headerlink" href="#metric-selector-events" title="Permanent link">&para;</a></h4>
-<p>Item</p>
-<p>Maximum limit</p>
-<p>Description</p>
-<p>Number of monitored dimensions</p>
-<p>100,000</p>
-<p>This limit applies across all customer-defined metric selector metric events.</p>
-<p>Dynatrace also counts aggregated dimensions towards the limit. Once the limit is reached, no additional dimensions will be monitored.</p>
-<p>Number of static threshold metric event configurations</p>
-<p>100</p>
-<p>The maximum number of static threshold model metric event configurations created with metric selector.</p>
-<p>Number of static threshold monitored dimensions</p>
-<p>1,000 per configuration</p>
-<p>The maximum number of static threshold monitored dimensions. Once the limit is reached, no additional dimensions will be monitored.</p>
-<p>Number of auto-adaptive threshold metric event configurations</p>
-<p>100</p>
-<p>The maximum number of metric event configurations that use the auto-adaptive threshold model.</p>
-<p>Number of auto-adaptive threshold monitored dimensions</p>
-<p>1,000 per configuration</p>
-<p>The maximum number of auto-adaptive threshold monitored dimensions. Once the limit is reached, no additional dimensions will be monitored.</p>
-<p>Number of seasonal baseline metric event configurations</p>
-<p>100</p>
-<p>The maximum number of metric event configurations that use the seasonal baseline model.</p>
-<p>Number of seasonal baseline monitored dimensions</p>
-<p>500 per configuration</p>
-<p>The maximum number of seasonal baseline monitored dimensions. Once the limit is reached, no additional dimensions will be monitored.</p>
-<p>Hard monitored dimension limit</p>
-<p>10,000 per configuration</p>
-<p>If the number of monitored dimensions exceeds the hard limit, the query will start failing.</p>
-<h4 id="metric-key-events">Metric key events<a class="headerlink" href="#metric-key-events" title="Permanent link">&para;</a></h4>
-<p>Item</p>
-<p>Maximum limit</p>
-<p>Description</p>
-<p>Number of simultaneously active alerts</p>
-<p>200 per configuration</p>
-<p>The maximum number of simultaneously active alerts per metric key-based configuration.</p>
-<h3 id="notebook-dashboard-simulation">Notebook &amp; Dashboard Simulation<a class="headerlink" href="#notebook-dashboard-simulation" title="Permanent link">&para;</a></h3>
-<p>Item</p>
-<p>Maximum limit</p>
-<p>Description</p>
-<p>Data records</p>
-<p>1,000</p>
-<p>The maximum number of timeseries data records that can be uniquely simulated per single data analyzer execution.</p>
-<h2 id="dynatrace-intelligence-generative-ai">Dynatrace Intelligence generative AI<a class="headerlink" href="#dynatrace-intelligence-generative-ai" title="Permanent link">&para;</a></h2>
-<p>Item</p>
-<p>Maximum limit</p>
-<p>Individual user requests</p>
-<p>25 requests per 15 minutes</p>
-<p>All user requests across the environment</p>
-<p>60 requests per 15 minutes</p>
+<h3 id="davis">Количество одновременно активных проблем Davis<a class="headerlink" href="#davis" title="Permanent link">&para;</a></h3>
+<p>Максимальное количество одновременно активных проблем Davis в одной среде составляет 10 000.</p>
+<h3 id="davis_1">Количество одновременно активных событий Davis<a class="headerlink" href="#davis_1" title="Permanent link">&para;</a></h3>
+<p>Максимальное количество одновременно активных событий Davis в одной среде, во всех поставщиках событий, составляет 15 000.</p>
+<h3 id="davis_2">Количество одновременно активных событий Davis на поставщика<a class="headerlink" href="#davis_2" title="Permanent link">&para;</a></h3>
+<p>Максимальное количество одновременно активных событий Davis на поставщика событий составляет 4 000. Пример поставщика событий: <code>event.provider = "AVAILABILITY"</code>.</p>
+<h3 id="davis_3">Количество обработанных событий Davis в час<a class="headerlink" href="#davis_3" title="Permanent link">&para;</a></h3>
+<p>Максимальное количество событий Davis на поставщика, которые можно обработать в течение часа, составляет 100 000. Это ограничение пополняется каждый час.</p>
+<p>Определенные события переопределяют ограничения по умолчанию. См. таблицу ниже для получения дополнительной информации.</p>
+<h3 id="_2">Максимальный срок жизни события<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<p>Максимальный срок жизни для активных событий составляет 60 дней. Если основная аномалия не исчезает после 60 дней, соответствующее событие закрывается и создается новое.</p>
+<h3 id="_3">Временной интервал слияния проблем<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p>Максимальный временной интервал слияния проблем составляет 90 минут. Если проблема остается нерешенной более 90 минут, после этого в нее не будут объединены новые события.</p>
+<p>Эта мера гарантирует, что Dynatrace Intelligence избегает сбора не связанной информации для длительных инцидентов.</p>
+<h2 id="-">Обнаружение аномалий - новое <strong>Обнаружение аномалий</strong><a class="headerlink" href="#-" title="Permanent link">&para;</a></h2>
+<h3 id="_4">Пользовательские оповещения<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<h3 id="_5">События метрик<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<h4 id="_6">Общие<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h4>
+<h4 id="_7">События селекторов метрик<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h4>
+<h4 id="_8">События ключей метрик<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h4>
+<h3 id="_9">Симуляция ноутбука и панели управления<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<h2 id="dynatrace-intelligence_2">Dynatrace Intelligence генеративный ИИ<a class="headerlink" href="#dynatrace-intelligence_2" title="Permanent link">&para;</a></h2>
 
 
 

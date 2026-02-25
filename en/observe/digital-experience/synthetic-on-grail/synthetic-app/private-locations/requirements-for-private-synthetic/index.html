@@ -25479,7 +25479,7 @@
 <ul>
 <li>Latest Dynatrace</li>
 <li>How-to guide</li>
-<li>Updated on Jan 13, 2026</li>
+<li>Updated on Feb 11, 2026</li>
 </ul>
 <p>Ensure that the host you want to use for your private location complies with the following requirements.</p>
 <p>End-of-support information</p>
@@ -25504,11 +25504,9 @@
 </li>
 <li>Check the latest <a href="/docs/whats-new/activegate" title="Release notes for Dynatrace ActiveGate">ActiveGate release notes</a> for the oldest supported ActiveGate versions.</li>
 </ul>
-<h2 id="pros-and-cons-of-linux-and-windows-operation-systems">Pros and cons of Linux and Windows operation systems<a class="headerlink" href="#pros-and-cons-of-linux-and-windows-operation-systems" title="Permanent link">&para;</a></h2>
-<p>Both Linux and Windows operation systems have their pros and cons when deploying private Synthetic locations. Windows is relatively easy to deploy because the package includes all you need, whereas Linux is more convenient for smaller machinesâit's easier to manage, in particular when creating virtual machines.</p>
 <h2 id="operating-system-requirements">Operating system requirements<a class="headerlink" href="#operating-system-requirements" title="Permanent link">&para;</a></h2>
 <p>Antivirus and Anti-Malware software</p>
-<p>Antivirus and anti-malware software can adversely affect Dynatrace Synthetic monitoring capabilities. The antivirus or anti-malware software might block the Chromium browser or Dynatrace processes responsible for executing synthetic monitors, cause Synthetic-enabled ActiveGate installation failures, interfere with network communication, and impact the reliability of measurements.</p>
+<p>Antivirus and anti-malware software can adversely affect Dynatrace Synthetic monitoring capabilities. The antivirus or anti-malware software might block the browser or Dynatrace processes responsible for executing synthetic monitors, cause Synthetic-enabled ActiveGate installation failures, interfere with network communication, and impact the reliability of measurements.</p>
 <p>Please also note</p>
 <p>To ensure proper stability and performance, consider adding the following directories and processes to the allowed list or excluding them from the policy:</p>
 <p><strong>Directories:</strong></p>
@@ -25522,7 +25520,7 @@
 <li>java</li>
 </ul>
 <p>This is the minimal list of processes and directories required for Dynatrace Synthetic to operate. It's not guaranteed that the service will function correctly with only these exclusions. Collaborate with your vendor to appropriately allow expected behaviors from Dynatrace.</p>
-<p>Prior to contacting Dynatrace support to troubleshoot issues with your private synthetic locations, make sure that antivirus or anti-malware software was excluded as a source of problems.</p>
+<p>Prior to contacting Dynatrace support to troubleshoot issues with your private synthetic locations make sure that antivirus or anti-malware software was excluded as a source of problems.</p>
 <p>A freshly installed ActiveGate can run your private synthetic monitors (both HTTP and browser monitors) on the following operating systems.</p>
 <h3 id="windows">Windows<a class="headerlink" href="#windows" title="Permanent link">&para;</a></h3>
 <h4 id="supported-operating-systems">Supported operating systems<a class="headerlink" href="#supported-operating-systems" title="Permanent link">&para;</a></h4>
@@ -25540,16 +25538,20 @@
 </tr>
 </tbody>
 </table>
-<h4 id="chromium-version-on-windows">Chromium version on Windows<a class="headerlink" href="#chromium-version-on-windows" title="Permanent link">&para;</a></h4>
+<h4 id="browser-versions-on-windows">Browser versions on Windows<a class="headerlink" href="#browser-versions-on-windows" title="Permanent link">&para;</a></h4>
 <p>On Windows, the ActiveGate installer package includes the Chromium browser used to run browser monitors. The table below shows the Chromium versions that are bundled with the respective ActiveGate versions.</p>
 <table>
 <thead>
 <tr>
 <th>ActiveGate version</th>
-<th>Included Chromium version</th>
+<th>Included browser version</th>
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>1.331</td>
+<td>143</td>
+</tr>
 <tr>
 <td>1.329</td>
 <td>142</td>
@@ -25598,19 +25600,11 @@
 <td>1.307</td>
 <td>132</td>
 </tr>
-<tr>
-<td>1.305</td>
-<td>130</td>
-</tr>
-<tr>
-<td>1.303</td>
-<td>129</td>
-</tr>
 </tbody>
 </table>
 <h4 id="unsupported-windows-versions-for-testing-purposes-only">Unsupported Windows versions for testing purposes only<a class="headerlink" href="#unsupported-windows-versions-for-testing-purposes-only" title="Permanent link">&para;</a></h4>
 <p>If you only want to test private Synthetic locations on a non-production host, for example, your own desktop, you can install a Synthetic-enabled ActiveGate on unsupported Windows versions such as Windows 10 or Windows 11.</p>
-<p>As of ActiveGate version 1.263+, Synthetic-enabled ActiveGate no longer works on Windows Server 2012 for testing purposes. <a href="https://dt-url.net/e2026id">Google has dropped support for Windows 2012 Server with Chromium 110ï»¿</a>, which is bundled with the <a href="#chromium-windows">ActiveGate version 1.263 installation package</a>.</p>
+<p>As of ActiveGate version 1.263+, Synthetic-enabled ActiveGates no longer work on Windows Server 2012 for testing purposes. <a href="https://dt-url.net/e2026id">Google has dropped support for Windows 2012 Server with Chromium 110ï»¿</a>, which is bundled with the <a href="#browser-windows">ActiveGate version 1.263 installation package</a>.</p>
 <h3 id="linux">Linux<a class="headerlink" href="#linux" title="Permanent link">&para;</a></h3>
 <h4 id="supported-operating-systems_1">Supported operating systems<a class="headerlink" href="#supported-operating-systems_1" title="Permanent link">&para;</a></h4>
 <table>
@@ -25623,7 +25617,7 @@
 <tbody>
 <tr>
 <td>Red Hat Enterprise Linux<a href="#fn-1-1-def">1</a></td>
-<td>9.2, 9.4, 9.6</td>
+<td>9.2, 9.4, 9.6, 9.7</td>
 </tr>
 <tr>
 <td>Ubuntu</td>
@@ -25634,18 +25628,20 @@
 <td>2023</td>
 </tr>
 <tr>
-<td>Oracle Linux<a href="#fn-1-1-def">1</a></td>
-<td>9.5</td>
+<td>Oracle Linux<a href="#fn-1-2-def">2</a></td>
+<td>9.6, 9.7</td>
 </tr>
 <tr>
-<td>Rocky Linux<a href="#fn-1-2-def">2</a></td>
+<td>Rocky Linux<a href="#fn-1-3-def">3</a></td>
 <td>9.7</td>
 </tr>
 </tbody>
 </table>
 <p>1</p>
-<p>The Synthetic installer can be installed on all minor releases of Oracle Linux 9. However, we recommend using the latest currently supported versions according to documentation for <a href="https://docs.oracle.com/en/operating-systems/oracle-linux/9/">Oracle Linux 9ï»¿</a>.</p>
+<p>The Synthetic installer can be installed on all minor releases of Red Hat Enterprise Linux 9. However, we recommend using the versions listed in this table, as they have Extended Life-cycle Support (ELS) according to <a href="https://access.redhat.com/support/policy/updates/errata">Red Hat Enterprise Linux Life Cycleï»¿</a>.</p>
 <p>2</p>
+<p>The Synthetic installer can be installed on all minor releases of Oracle Linux 9. However, we recommend using the latest currently supported versions according to documentation for <a href="https://docs.oracle.com/en/operating-systems/oracle-linux/9/">Oracle Linux 9ï»¿</a>.</p>
+<p>3</p>
 <p>The Synthetic installer can be installed on all minor releases of Rocky Linux 9. However, we recommend using the latest currently supported versions according to <a href="https://wiki.rockylinux.org/rocky/version/#current-supported-releases">Rocky Linux Release and Version Guideï»¿</a>.</p>
 <h4 id="deprecated-operating-systems">Deprecated operating systems<a class="headerlink" href="#deprecated-operating-systems" title="Permanent link">&para;</a></h4>
 <table>
@@ -25692,10 +25688,10 @@
 <p>ActiveGate version 1.307 is the last Synthetic-enabled ActiveGate to support Amazon Linux 2.</p>
 <p>3</p>
 <p>ActiveGate version 1.325 is the last Synthetic-enabled ActiveGate to support Red Hat/Oracle Linux/Rocky Linux 8.</p>
-<h4 id="chromium-versions-on-linux">Chromium versions on Linux<a class="headerlink" href="#chromium-versions-on-linux" title="Permanent link">&para;</a></h4>
-<p>We strongly recommend that you keep your Linux-based Synthetic-enabled ActiveGates and Chromium versions updatedâDynatrace supports Chromium versions that are no more than two versions behind the latest Dynatrace-supported version for a specific ActiveGate release. For example, if the latest supported Chromium version is 103, Dynatrace supports up to Chromium version 101. If the provided Chromium version is significantly older for a specific OS, we support only the provided version. See information on updating Chromium <a href="/docs/observe/digital-experience/synthetic-on-grail/synthetic-app/private-locations#chromium-autoupdate" title="Learn how to manage private locations in the Synthetic app.">automatically</a> and <a href="/docs/observe/digital-experience/synthetic-on-grail/synthetic-app/private-locations/install-chromium-for-linux#chromium-manual" title="Learn how to install Chromium for Linux manually and from custom repositories.">manually</a>.</p>
-<p>On Linux, the ActiveGate installer downloads the Chromium dependencies that are required by the Synthetic engine. On Red Hat and Rocky, you need to enable particular repositories from which the installer downloads the dependencies. The Dynatrace web UI provides you with all the required commands. For detailed instructions, see <a href="/docs/observe/digital-experience/synthetic-on-grail/synthetic-app/private-locations#create-private-location" title="Learn how to manage private locations in the Synthetic app.">Create a private synthetic location</a>.</p>
-<p>When <a href="/docs/observe/digital-experience/synthetic-on-grail/synthetic-app/private-locations/install-chromium-for-linux#custom-repo" title="Learn how to install Chromium for Linux manually and from custom repositories.">installing ActiveGate and Chromium from a custom, local repository</a>, you need to resolve all dependencies and enable repositories as required; the custom repository can be used only for Chromium packages, not their dependencies. Place the Chromium package archive and the signature file in the custom repository for installation. If your package archive file is <code>https://synthetic-packages.s3.amazonaws.com/Chromium/snap/chromium-107.0.5304.87-2168.tgz</code> (Chromium 107 for Ubuntu 20 and 22 on ActiveGate version 1.255), you can find the signature file by appending <code>.sig</code> to the URL: <code>https://synthetic-packages.s3.amazonaws.com/Chromium/snap/chromium-107.0.5304.87-2168.tgz.sig</code>.</p>
+<h4 id="browser-versions-on-linux">Browser versions on Linux<a class="headerlink" href="#browser-versions-on-linux" title="Permanent link">&para;</a></h4>
+<p>We strongly recommend that you keep your Linux-based Synthetic-enabled ActiveGates and browser versions updatedâDynatrace supports browser versions that are no more than two versions behind the latest Dynatrace-supported version for a specific ActiveGate release. For example, if the latest supported browser version is 103, Dynatrace supports up to browser version 101. If the provided browser version is significantly older for a specific OS, we support only the provided version. See information on updating browser <a href="/docs/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/manage-private-synthetic-locations#browser" title="Analyze and manage capacity usage at your private Synthetic locations.">automatically</a> and <a href="/docs/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/manage-private-synthetic-locations#browser-manual" title="Analyze and manage capacity usage at your private Synthetic locations.">manually</a>.</p>
+<p>On Linux, the ActiveGate installer downloads the browser dependencies that are required by the Synthetic engine. On Red Hat and Rocky, you need to enable particular repositories from which the installer downloads the dependencies. The Dynatrace web UI provides you with all the required commands. For detailed instructions, see <a href="/docs/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/create-a-private-synthetic-location" title="Learn how to create a private location for synthetic monitoring.">Create a private synthetic location</a>.</p>
+<p>When <a href="/docs/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/create-a-private-synthetic-location#custom-repo" title="Learn how to create a private location for synthetic monitoring.">installing ActiveGate and the browser from a custom, local repository</a>, you need to resolve all dependencies and enable repositories as required; the custom repository can be used only for browser packages, not their dependencies. Place the browser package archive and the signature file in the custom repository for installation. If your package archive file is <code>https://synthetic-packages.s3.amazonaws.com/Chrome/chrome-for-testing-linux64/chrome-for-testing-linux64-143.0.7499.192.zip</code> (Chrome for Testing 143 for Ubuntu on ActiveGate version 1.333), you can find the signature file by appending <code>.sig</code> to the URL: <code>https://synthetic-packages.s3.amazonaws.com/Chrome/chrome-for-testing-linux64/chrome-for-testing-linux64-143.0.7499.192.zip.sig</code>.</p>
 <ul>
 <li>
 <p>Chromium development for Red Hat/CentOS 7 and Amazon Linux 2 stopped at version 126.</p>
@@ -25711,7 +25707,23 @@ Please refer to <a href="https://dt-url.net/x303x5f">troubleshooting guideï»¿
 <tr>
 <th>ActiveGate version</th>
 <th>Latest supported Chromium version Red Hat, CentOS, Oracle Linux 8</th>
-<th>Latest supported Chromium version Ubuntu</th>
+<th>Latest supported Chrome for Testing version Amazon Linux 2023, Ubuntu, Oracle Linux 9</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1.331<a href="#fn-3-3-def">3</a></td>
+<td>143 <a href="https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-143.0.7499.192-1.el9.tgz">Red Hat/Rocky Linux 9ï»¿</a></td>
+<td><a href="https://synthetic-packages.s3.amazonaws.com/Chrome/chrome-for-testing-linux64/chrome-for-testing-linux64-143.0.7499.192.zip">143ï»¿</a></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>ActiveGate version</th>
+<th>Latest supported Chromium version Red Hat, CentOS, Oracle Linux 8</th>
+<th>Latest supported Chromium version Ubuntu 20 and 22</th>
 <th>Latest supported Chrome for Testing version Amazon Linux 2023, Ubuntu 24, Oracle Linux 9</th>
 </tr>
 </thead>
@@ -25742,8 +25754,8 @@ Please refer to <a href="https://dt-url.net/x303x5f">troubleshooting guideï»¿
 </tr>
 <tr>
 <td>1.321</td>
-<td>133 <a href="https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-133.0.6943.141-1.el8.tgz">Red Hat/Oracle/Rocky Linux 8ï»¿</a>, 138 <a href="https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-138.0.7204.100-1.el9.tgz">Red Hat/Rocky Linux 9ï»¿</a></td>
-<td>138 <a href="https://synthetic-packages.s3.amazonaws.com/Chromium/snap/chromium-138.0.7204.100-3199.tgz">Ubuntu 20.04 and 22.04ï»¿</a></td>
+<td>133 <a href="https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-133.0.6943.141-1.el8.tgz">Red Hat/Oracle/Rocky Linux 8ï»¿</a>, 138 <a href="https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-138.0.7204.157-1.el9.tgz">Red Hat/Rocky Linux 9ï»¿</a></td>
+<td>138 <a href="https://synthetic-packages.s3.amazonaws.com/Chromium/snap/chromium-138.0.7204.157-3203.tgz">Ubuntu 20.04 and 22.04ï»¿</a></td>
 <td>138</td>
 </tr>
 <tr>
@@ -25788,26 +25800,16 @@ Please refer to <a href="https://dt-url.net/x303x5f">troubleshooting guideï»¿
 <td>131 <a href="https://synthetic-packages.s3.amazonaws.com/Chromium/snap/chromium-131.0.6778.85-3002.tgz">Ubuntu 20.04 and 22.04ï»¿</a></td>
 <td>131</td>
 </tr>
-<tr>
-<td>1.305</td>
-<td>126 <a href="https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-126.0.6478.114-1.el7.tgz">Red Hat/CentOS 7 and Amazon Linux 2ï»¿</a>, 130 <a href="https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-130.0.6723.69-1.el8.tgz">Red Hat/Oracle/Rocky Linux 8ï»¿</a>, <a href="https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-130.0.6723.116-1.el9.tgz">Red Hat/Rocky Linux 9ï»¿</a></td>
-<td>130 <a href="https://synthetic-packages.s3.amazonaws.com/Chromium/snap/chromium-130.0.6723.69-2985.tgz">Ubuntu 20.04 and 22.04ï»¿</a></td>
-<td>130</td>
-</tr>
-<tr>
-<td>1.303</td>
-<td>126 <a href="https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-126.0.6478.114-1.el7.tgz">Red Hat/CentOS 7 and Amazon Linux 2ï»¿</a>, 129 <a href="https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-129.0.6668.89-1.el8.tgz">Red Hat/Oracle/Rocky Linux 8ï»¿</a>, Red Hat/Rocky Linux 9 requires chromium 130</td>
-<td>129 <a href="https://synthetic-packages.s3.amazonaws.com/Chromium/snap/chromium-129.0.6668.89-2965.tgz">Ubuntu 20.04 and 22.04ï»¿</a></td>
-<td>129</td>
-</tr>
 </tbody>
 </table>
 <p>1</p>
 <p>Introduced support for Ubuntu 24.</p>
 <p>2</p>
 <p>Introduced support for Oracle Linux 9.</p>
+<p>3</p>
+<p>Ubuntu Server 20.04 and 22.04 migrated to use Chrome for Testing.</p>
 <h4 id="file-access-policy-daemon-framework-fapolicyd">File Access Policy Daemon framework (<code>fapolicyd</code>)<a class="headerlink" href="#file-access-policy-daemon-framework-fapolicyd" title="Permanent link">&para;</a></h4>
-<p>If not configured correctly, the File Access Policy Daemon (<code>fapolicyd</code>) can potentially affect Dynatrace Synthetic monitoring capabilities. Similarly to antivirus or anti-malware software, <code>fapolicyd</code> might block the Chromium browser or Dynatrace processes responsible for executing synthetic monitors.</p>
+<p>If not configured correctly, the File Access Policy Daemon (<code>fapolicyd</code>) can potentially affect Dynatrace Synthetic monitoring capabilities. Similarly to antivirus or anti-malware software, <code>fapolicyd</code> might block the browser or Dynatrace processes responsible for executing synthetic monitors.</p>
 <p>To ensure proper stability and performance, consider adding directories and processes to the allowed list or excluding them from the policy. For more detailed information, refer to the <a href="https://dt-url.net/tn1v0z1x">Red Hat documentation on fapolicydï»¿</a>. Prior to contacting Dynatrace support to troubleshoot issues with your private synthetic locations, make sure that <code>fapolicyd</code> was excluded as a source of problems.</p>
 <p>File Access Policy Daemon framework can be run in debug mode where all denials are logged, making tracking down missing rules and troubleshooting issues easier. For more detailed information about its debug mode, refer to the <a href="https://dt-url.net/e943wcc">documentation on troubleshooting problems related to fapolicydï»¿</a></p>
 <h2 id="hardware-requirements">Hardware requirements<a class="headerlink" href="#hardware-requirements" title="Permanent link">&para;</a></h2>
@@ -25826,8 +25828,8 @@ Please refer to <a href="https://dt-url.net/x303x5f">troubleshooting guideï»¿
 <p>M node</p>
 <p>L node</p>
 <p>XS node</p>
-<p>While XS nodes can be used on Windows Server-based ActiveGates, they may not be the best fit due to the higher hardware demands of Chromium. For optimal performance and to prepare for future enhancements, we recommend having at least 8 GB of RAM and 25 GB of free disk space.</p>
-<p>On Linux systems with only 4 GB of RAM, the increasing resource requirements of Chrome (or Chromium), combined with the installation of third-party tools on the host, may lead to occasional memory shortages. Upgrading to 8 GB of RAM is strongly recommended to help ensure a smoother and more reliable experience.</p>
+<p>While XS nodes can be used on Windows Server-based ActiveGates, they may not be the best fit due to the higher hardware demands of the browser. For optimal performance and to prepare for future enhancements, we recommend having at least 8 GB of RAM and 25 GB of free disk space.</p>
+<p>On Linux systems with only 4 GB of RAM, the increasing resource requirements of the browser, combined with the installation of third-party tools on the host, may lead to occasional memory shortages. Upgrading to 8 GB of RAM is strongly recommended to help ensure a smoother and more reliable experience.</p>
 <table>
 <thead>
 <tr>
@@ -26182,48 +26184,6 @@ There were multiple resolution targets used during tests; all of them were resol
 Publicly available DNS servers were used: Google (8.8.8.8 and 8.8.4.4) and Cloudflare (1.1.1.1 and 1.1.1.2)</p>
 <h3 id="storage-and-file-system-permissions">Storage and file system permissions<a class="headerlink" href="#storage-and-file-system-permissions" title="Permanent link">&para;</a></h3>
 <p>The table below shows the default installation locations (Linux and Windows) of various ActiveGate directories and the minimum size requirements. This information is compiled from details in <a href="/docs/ingest-from/dynatrace-activegate/configuration/where-can-i-find-activegate-files" title="Find out where ActiveGate files are stored on Windows and Linux systems.">ActiveGate directories</a>.</p>
-<p>Installation parameter</p>
-<p>Default path</p>
-<p>Min. size</p>
-<p>Notes</p>
-<p><code>&lt;INSTALL&gt;</code></p>
-<ul>
-<li><code>/opt/dynatrace/</code></li>
-<li><code>%PROGRAMFILES%\dynatrace</code></li>
-</ul>
-<p>600 MB</p>
-<p>For executable files, libraries, and related files</p>
-<ul>
-<li>300 MB for ActiveGate</li>
-<li>270 MB for Private Synthetic files</li>
-</ul>
-<p><code>&lt;LOGS&gt;</code></p>
-<ul>
-<li><code>/var/log/dynatrace</code></li>
-<li><code>%PROGRAMDATA%\dynatrace</code></li>
-</ul>
-<p>1.7 GB</p>
-<ul>
-<li>500 MB for ActiveGate logs</li>
-<li>1 GB for Private Synthetic logs</li>
-<li>200 MB for autoupdater logs</li>
-</ul>
-<p><code>&lt;CONFIG&gt;</code></p>
-<ul>
-<li><code>/var/lib/dynatrace</code></li>
-<li><code>%PROGRAMDATA%\dynatrace</code></li>
-</ul>
-<p>1 MB</p>
-<p><code>&lt;TEMP&gt;</code></p>
-<ul>
-<li><code>/var/tmp/dynatrace</code></li>
-<li><code>%PROGRAMDATA%\dynatrace</code></li>
-</ul>
-<p>21 GB<a href="#fn-8-1-def">1</a></p>
-<ul>
-<li>1 GB for ActiveGate temporary files (without cached OneAgent installers and container images)</li>
-<li>20 GB for Private Synthetic temporary files (including execution logs, cache, and screenshots)</li>
-</ul>
 <p>1</p>
 <p>For an XS ActiveGateâmore space is required for execution logs on larger ActiveGates.</p>
 <h4 id="permissions-for-tmp">Permissions for <code>/tmp</code><a class="headerlink" href="#permissions-for-tmp" title="Permanent link">&para;</a></h4>
@@ -26231,7 +26191,9 @@ Publicly available DNS servers were used: Google (8.8.8.8 and 8.8.4.4) and Cloud
 Lack of write permissions to this directory may result in unexpected failures or degraded functionality.
 Ensure that the host environment provides sufficient access rights and available space in <code>/tmp</code> to support these operations reliably.</p>
 <h2 id="related-topics">Related topics<a class="headerlink" href="#related-topics" title="Permanent link">&para;</a></h2>
-<p><a href="/docs/ingest-from/dynatrace-activegate/configuration/where-can-i-find-activegate-files" title="Find out where ActiveGate files are stored on Windows and Linux systems.">ActiveGate directories</a></p>
+<ul>
+<li><a href="/docs/ingest-from/dynatrace-activegate/configuration/where-can-i-find-activegate-files" title="Find out where ActiveGate files are stored on Windows and Linux systems.">ActiveGate directories</a></li>
+</ul>
 
 
 

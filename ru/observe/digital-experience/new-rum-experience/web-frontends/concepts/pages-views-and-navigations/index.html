@@ -25497,18 +25497,6 @@
 <h3 id="google-web-vitals">Google Web Vitals<a class="headerlink" href="#google-web-vitals" title="Permanent link">&para;</a></h3>
 <p><a href="https://web.dev/articles/vitals">Google Web Vitalsï»¿</a> are critical for understanding the user experience on a page. These metrics are captured with every page summary event. For details, see <a href="/docs/semantic-dictionary/model/rum/user-events/navigation-related#page-summary-web-vitals-attributes">Web vitals attributes</a> in the Semantic Dictionary. As Google's official Web Vitals specification is page-based, the built-in Web Vitals metrics in the New RUM Experience are based on the values in page summaries, even though Web Vitals are also captured in <a href="#views">view summary events</a>.</p>
 <p>Built-in metrics for Web Vitals</p>
-<p>Web vital</p>
-<p>Built-in metric</p>
-<p>Largest Contentful Paint (LCP)</p>
-<p>dt.frontend.web.page.largest_contentful_paint</p>
-<p>Interaction to Next Paint (INP)</p>
-<p>dt.frontend.web.page.interaction_to_next_paint</p>
-<p>Cumulative Layout Shift (CLS)</p>
-<p>dt.frontend.web.page.cumulative_layout_shift</p>
-<p>First Input Delay (FID)</p>
-<p>dt.frontend.web.page.first_input_delay</p>
-<p>Time to First Byte (TTFB)</p>
-<p>dt.frontend.web.navigation.time_to_first_byte</p>
 <h3 id="example-dql-query">Example DQL query<a class="headerlink" href="#example-dql-query" title="Permanent link">&para;</a></h3>
 <p>The following DQL query retrieves the 75th percentile for the Largest Contentful Paint (LCP) Web Vital by page.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>fetch user.events

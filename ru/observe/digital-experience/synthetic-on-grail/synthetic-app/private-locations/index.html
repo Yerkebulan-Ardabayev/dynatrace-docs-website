@@ -25495,12 +25495,11 @@
 <h2 id="system-and-hardware-requirements-for-private-locations">System and hardware requirements for private locations<a class="headerlink" href="#system-and-hardware-requirements-for-private-locations" title="Permanent link">&para;</a></h2>
 <p>Make sure the target host you plan to use for running synthetic monitors complies with <a href="/docs/observe/digital-experience/synthetic-on-grail/synthetic-app/private-locations/requirements-for-private-synthetic" title="Check system and hardware requirements for private Synthetic locations.">system and hardware requirements for private Synthetic locations</a>. Note that Synthetic-enabled ActiveGates have more demanding hardware and system requirements than a regular Environment or Cluster ActiveGate.</p>
 <p>End-of-support information</p>
-<p>There are no new versions of Chromium for Red Hat/Oracle Linux/Rocky Linux 8 beyond version 133. For important security and stability reasons, we've decided to discontinue our support for installing <strong>Synthetic-enabled</strong> ActiveGate on Red Hat/Oracle Linux/Rocky Linux 8 after ActiveGate version 1.325.</p>
-<p>To ensure the continuity and security of your synthetic monitors, we recommend migrating your Synthetic-enabled ActiveGate to one of the <a href="/docs/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/system-and-hardware-requirements-for-private-synthetic#linux-supported-os" title="Supported operating systems, Chromium versions, and hardware requirements for running synthetic monitors from private locations">supported operating systems</a>, for example, Red Hat/Oracle Linux/Rocky Linux 9.</p>
-<p>ActiveGate version 1.325 is <strong>the last Synthetic-enabled</strong> ActiveGate supported on Red Hat/Oracle Linux/Rocky Linux 8.</p>
-<p>Additionally, with Dynatrace version 1.326, we plan to introduce mechanisms preventing Synthetic-enabled ActiveGates on Red Hat/Oracle Linux/Rocky Linux 8 from being updated beyond version 1.325.</p>
-<p>Additional support notes</p>
 <ul>
+<li>There are no new versions of Chromium for Red Hat/Oracle Linux/Rocky Linux 8 beyond version 133.
+  For important security and stability reasons, we've decided to discontinue our support for installing <strong>Synthetic-enabled</strong> ActiveGate on Red Hat/Oracle Linux/Rocky Linux 8 after ActiveGate version 1.325.
+  ActiveGate version 1.325 is <strong>the last Synthetic-enabled</strong> ActiveGate supported on Red Hat/Oracle Linux/Rocky Linux 8.
+  Additionally, with Dynatrace version 1.326, we plan to introduce mechanisms preventing Synthetic-enabled ActiveGates on Red Hat/Oracle Linux/Rocky Linux 8 from being updated beyond version 1.325.</li>
 <li>Chromium development for Amazon Linux 2 stopped at version 126.
   For important security and stability reasons, we've decided to discontinue our support for installing Synthetic-enabled ActiveGate on Amazon Linux 2 after ActiveGate version 1.307.
   ActiveGate version 1.307 is the last Synthetic-enabled ActiveGate to support Amazon Linux 2.
@@ -25516,21 +25515,16 @@
 </li>
 <li>Until version 1.329 Synthetic-enabled ActiveGates on Ubuntu 20 and Ubuntu 22 use Chromium snap. When customizing the <a href="/docs/ingest-from/dynatrace-activegate/configuration/where-can-i-find-activegate-files#default-activegate-directories--linux" title="Find out where ActiveGate files are stored on Windows and Linux systems.">default temporary directory for private Synthetic files</a>â<code>/var/tmp/dynatrace/synthetic</code>, the path must begin with <code>/var/tmp</code>, for example, <code>TEMP=/var/tmp/syn</code>. Dynatrace requires write access to <code>/var/tmp</code> for the installation of Chromium snap packages.
   Since version 1.331, these restrictions no longer apply. The latest ActiveGate version on Ubuntu 20 and Ubuntu 22 uses Chrome for Testing, just like Ubuntu 24.</li>
-<li>Check the latest <a href="/docs/whats-new/activegate" title="Release notes for Dynatrace ActiveGate">ActiveGate release notes</a> for the oldest supported ActiveGate versions.</li>
 </ul>
 <h3 id="before-you-begin">Before you begin<a class="headerlink" href="#before-you-begin" title="Permanent link">&para;</a></h3>
 <ul>
 <li>You cannot execute synthetic monitors using an Environment ActiveGate configured for <a href="/docs/ingest-from/dynatrace-activegate/configuration/configure-an-environment-activegate-for-multi-environment-support" title="Read the step-by-step procedure for configuring a single Environment ActiveGate for multi-environment support.">multi-environment support</a>.</li>
 <li>You can create a private location using a clean-installed Synthetic-enabled Environment ActiveGate version 1.169+ or Cluster ActiveGate with Dynatrace Managed version 1.176+. If you want to use an existing ActiveGate host, <a href="/docs/ingest-from/dynatrace-activegate/operation/uninstall-activegate" title="Learn how to remove ActiveGate from Windows or Linux-based systems.">uninstall ActiveGate</a> first.</li>
-<li>
-<p>Synthetic-enabled ActiveGate is used exclusively to run synthetic monitors. A clean ActiveGate installation for the purpose of synthetic monitoring disables all other ActiveGate features, including communication with OneAgents.</p>
-</li>
-<li>
-<p>Only IPv4 and DNS UDP are supported for network configuration.</p>
-</li>
-<li>
-<p>Both manual and automatic Chromium updates require access to <code>https://synthetic-packages.s3.amazonaws.com</code>. For security reasons, public access to the S3 bucket is enabled only for specific files; trying anything else will result in a 403 error.</p>
-</li>
+<li>Synthetic-enabled ActiveGate is used exclusively to run synthetic monitors. A clean ActiveGate installation for the purpose of synthetic monitoring disables all other ActiveGate features, including communication with OneAgents.</li>
+<li>Make sure that the ActiveGate can connect to other <a href="/docs/ingest-from/dynatrace-activegate/supported-connectivity-schemes-for-activegates" title="Learn about the connectivity priorities between ActiveGate types as well as the priorities between ActiveGates and OneAgents.">Dynatrace components</a> as well as the resource you want to test. See <a href="/docs/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/setting-up-proxy-for-private-synthetic" title="Learn how to configure ActiveGate properties to set up a proxy for private synthetic monitoring.">Set up a proxy for private synthetic monitoring</a>.</li>
+<li>Only IPv4 and DNS UDP are supported for network configuration.</li>
+<li>Synthetic-enabled ActiveGate needs access to the Amazon S3 service to upload and access browser monitor screenshots from private locations. Ensure that your firewall configuration allows connections to <code>*.s3-accelerate.amazonaws.com</code> on port <code>443</code>. You can also <a href="/docs/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/setting-up-proxy-for-private-synthetic" title="Learn how to configure ActiveGate properties to set up a proxy for private synthetic monitoring.">set up your proxy</a> to connect to the Amazon S3 service. (Screenshots are stored in a different folder for each monitoring environment, but the S3 Bucket is the same (<code>ruxit-synth-screencap</code>). Data is encrypted by <a href="https://dt-url.net/4a02xvx">Amazon S3-managed keyï»¿</a>.)</li>
+<li>Both manual and automatic browser updates require access to <code>https://synthetic-packages.s3.amazonaws.com</code>. For security reasons, public access to the S3 bucket is enabled only for specific files; trying anything else will result in a 403 error.</li>
 </ul>
 <h2 id="create-a-private-location">Create a private location<a class="headerlink" href="#create-a-private-location" title="Permanent link">&para;</a></h2>
 <p>To add a classic private location</p>
@@ -25588,7 +25582,7 @@
 <li>API monitoring (using HTTP monitors)</li>
 </ul>
 <h3 id="kerberos-client-setup">Kerberos client setup<a class="headerlink" href="#kerberos-client-setup" title="Permanent link">&para;</a></h3>
-<p>If you want to run browser monitors using Kerberos authentication, the private location should be configured to be able to get ticket from the Kerberos Key Distribution Center.</p>
+<p>If you want to run browser monitors using Kerberos authentication, the private location should be configured to be able to get a ticket from the Kerberos Key Distribution Center.</p>
 <p>Windows</p>
 <p>Linux</p>
 <ol>
@@ -25642,7 +25636,7 @@ Additionally, if you intend to execute browser monitors, additional setup will b
 <li>Private Synthetic locations on Kubernetes are not supported at the moment.</li>
 </ul>
 <h4 id="ensuring-compliance">Ensuring compliance<a class="headerlink" href="#ensuring-compliance" title="Permanent link">&para;</a></h4>
-<p>To ensure the browser monitor traffic is FIPS compliant, it must be routed through a local intercepting proxy that encrypts traffic with a FIPS-certified crypto library. See <a href="/docs/observe/digital-experience/synthetic-on-grail/synthetic-app/private-locations#fips-proxy" title="Learn how to manage private locations in the Synthetic app.">Proxy configuration for FIPS mode</a> for details.</p>
+<p>To ensure the browser monitor traffic is FIPS compliant, it must be routed through a local intercepting proxy that encrypts traffic with a FIPS-certified crypto library. See <a href="/docs/observe/digital-experience/synthetic-on-grail/synthetic-app/private-locations/proxy-for-private-locations#fips-proxy" title="Learn how to manage proxies for private Synthetic locations.">Proxy configuration for FIPS mode</a> for details.</p>
 <p>For HTTP monitors, we use the <a href="https://github.com/corretto/amazon-corretto-crypto-provider/">Amazon Corretto Crypto Providerï»¿</a> FIPS-certified cryptographic library that uses AWS-LC-FIPS 2.x as its cryptographic module. See <a href="https://csrc.nist.gov/projects/cryptographic-module-validation-program/certificate/4816">Certificate #4816ï»¿</a>.</p>
 <p>Synthetic-enabled ActiveGate in FIPS compliant mode supports the same set of cipher suites as <a href="/docs/ingest-from/dynatrace-activegate/activegate-fips-compliance#supported-cipher-suites" title="Learn about ActiveGate FIPS compliance">regular ActiveGate</a>.</p>
 <h2 id="faq">FAQ<a class="headerlink" href="#faq" title="Permanent link">&para;</a></h2>
@@ -25724,7 +25718,7 @@ Additionally, if you intend to execute browser monitors, additional setup will b
 <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>openssl ts -reply -in chrome.zip.sig.tsr -text
 </code></pre></div>
 <p>Can I use a proxy with the Synthetic-enabled ActiveGate?</p>
-<p>With ActiveGate version 1.175+, an ActiveGate executing synthetic monitors can connect through the proxy to both the Dynatrace Cluster and the tested resource. For more information, see <a href="/docs/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/setting-up-proxy-for-private-synthetic" title="Learn how to configure ActiveGate properties to set up a proxy for private synthetic monitoring.">Setting up proxy for private synthetic monitoring</a>.</p>
+<p>With ActiveGate version 1.175+, an ActiveGate executing synthetic monitors can connect through the proxy to both the Dynatrace Cluster and the tested resource. For more information, see <a href="/docs/observe/digital-experience/synthetic-on-grail/synthetic-app/private-locations/proxy-for-private-locations" title="Learn how to manage proxies for private Synthetic locations.">Setting up proxy for private synthetic monitoring</a>.</p>
 <p>Can I update an earlier ActiveGate to version 1.169+ and configure it to use with private synthetic monitors?</p>
 <p>No, you need to run a clean installation specifically for the purpose of synthetic monitoring to enable your ActiveGate to execute monitors from private locations.</p>
 <p>Can I turn on Synthetic on an existing ActiveGate installation?</p>

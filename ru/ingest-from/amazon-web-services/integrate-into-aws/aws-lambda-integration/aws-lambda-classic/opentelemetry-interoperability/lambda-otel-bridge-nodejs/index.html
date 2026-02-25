@@ -26479,20 +26479,6 @@
 <p><img alt="PurePath example for manually created SQS receive messages" src="https://dt-cdn.net/images/sqs-manual-receiving-1727-9fcf0717f4.png" />
 * An SNS topic</p>
 <p>For SNS messages that are forwarded to SQS, the message format depends on the <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-large-payload-raw-message-delivery.html">raw message deliveryï»¿</a> configuration on the SNS subscription.</p>
-<p>Raw message delivery</p>
-<p>Message format</p>
-<p>Example</p>
-<p>Enabled</p>
-<p>The SNS message attributes are converted to SQS message attributes and the parent can be directly extracted from the <code>MessageAttributes</code> of the SQS message.</p>
-<ul>
-<li><a href="#receive-example">Receive a batch of multiple messages</a></li>
-</ul>
-<p>Disabled</p>
-<p>The SNS message and its <code>MessageAttributes</code> are delivered as a serialized JSON string in the body of the received SQS message. To correctly link the receive span, the parent needs to be extracted from the <code>MessageAttributes</code> of the serialized SNS message.</p>
-<ul>
-<li><a href="#receive-example">Receive a batch of multiple messages</a>
-    Additional configuration is required for this example. When calling the <code>extractParent</code> method, set the value of the <code>fromSnsPayload</code> parameter to <code>true</code>.</li>
-</ul>
 <p>AWS Lambda functions that are triggered by SNS are supported out of the box when monitored with the Dynatrace AWS Lambda extension.</p>
 <p>SNS topics can be configured via a subscription to forward messages to an SQS queue. Messages in the SQS queue can then be consumed by a Lambda function. Tracing the received messages in the SQS-triggered AWS Lambda function works out of the box when AWS Lambda is monitored with the Dynatrace AWS Lambda extension. However, the tracer can only select a single parent, and if your Lambda function receives batches of multiple messages, special handling is required to track each message separately.</p>
 <p>For details, see how to <a href="#receive-sqs-node">receive an SQS message</a>.</p>

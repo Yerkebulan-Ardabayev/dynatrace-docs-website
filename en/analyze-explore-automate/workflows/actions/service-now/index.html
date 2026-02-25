@@ -25538,39 +25538,6 @@ Furthermore, you can retrieve groups from ServiceNow and import them as <a href=
 </ol>
 <h2 id="available-actions">Available actions<a class="headerlink" href="#available-actions" title="Permanent link">&para;</a></h2>
 <p>The following workflow actions are available for the ServiceNow integration. Each action corresponds to an endpoint of the ServiceNow API.</p>
-<p>Action</p>
-<p>Description</p>
-<p>ServiceNow API endpoint</p>
-<p><strong>Create Incident</strong></p>
-<p>Creates an incident in your ServiceNow environment. An incident represents a problem or an issue that needs to be addressed and resolved.</p>
-<p><code>POST /api/now/v2/table/incident</code></p>
-<p><strong>Create a vulnerability item</strong></p>
-<p>Creates a vulnerability item in your ServiceNow environment.</p>
-<p><code>POST /api/now/v2/table/sn_vul_vulnerable_item</code></p>
-<p><strong>Get Groups</strong></p>
-<p>Get groups from your ServiceNow environment.</p>
-<p><code>GET /api/now/v2/table/sys_user_group</code></p>
-<p><strong>Comment</strong></p>
-<p>Create a comment on an entry in your ServiceNow environment.</p>
-<p><code>PUT /api/now/v2/table/${tableName}/${sysId}</code></p>
-<p><strong>Comment on an incident</strong></p>
-<p>Add a new comment to a ServiceNow incident record.</p>
-<p><code>PUT /api/now/v2/table/incident/${sys_id}</code></p>
-<p><strong>Search</strong></p>
-<p>Generic search action that allows searching your ServiceNow environment.</p>
-<p><code>GET /api/now/v2/table/${tableName}</code></p>
-<p><strong>Search incidents</strong></p>
-<p>Query ServiceNow to retrieve a list of incidents matching specified criteria.</p>
-<p><code>GET /api/now/v2/table/incident</code></p>
-<p><strong>Resolve incident</strong></p>
-<p>Update a ServiceNow incident to mark it as resolved.</p>
-<p><code>PUT /api/now/v2/table/incident/${sys_id}</code></p>
-<p><strong>Create record</strong></p>
-<p>Create a new record in a specified ServiceNow table.</p>
-<p><code>POST /api/now/v2/table/${tableName}</code></p>
-<p><strong>Update record</strong></p>
-<p>Update an existing record in a specified ServiceNow table.</p>
-<p><code>PUT /api/now/v2/table/${tableName}/${sys_id}</code></p>
 <h2 id="create-a-servicenow-incident">Create a ServiceNow incident<a class="headerlink" href="#create-a-servicenow-incident" title="Permanent link">&para;</a></h2>
 <p>To raise a ServiceNow incident in your workflow <img alt="Workflows" src="https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp" title="Workflows" /></p>
 <ol>

@@ -25532,6 +25532,179 @@
 <p>In highly segmented networks, feature sets can reflect the segments of your environment. Then, when you create a monitoring configuration, you can select a feature set and a corresponding ActiveGate group that can connect to this particular segment.</p>
 <p>All metrics that aren't categorized into any feature set are considered to be the default and are always reported.</p>
 <p>A metric inherits the feature set of a subgroup, which in turn inherits the feature set of a group. Also, the feature set defined on the metric level overrides the feature set defined on the subgroup level, which in turn overrides the feature set defined on the group level.</p>
+<p>default</p>
+<table>
+<thead>
+<tr>
+<th>Metric name</th>
+<th>Metric key</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Return code</td>
+<td>varnish.cache.returncode</td>
+<td>Return code of the varnishstat command</td>
+</tr>
+</tbody>
+</table>
+<p>smf</p>
+<table>
+<thead>
+<tr>
+<th>Metric name</th>
+<th>Metric key</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Allocator requests</td>
+<td>varnish.cache.smf.c_req.count</td>
+<td>Number of times the storage has been asked to provide a storage segment.</td>
+</tr>
+<tr>
+<td>Allocator failures</td>
+<td>varnish.cache.smf.c_fail.count</td>
+<td>Number of times the storage has failed to provide a storage segment.</td>
+</tr>
+<tr>
+<td>Bytes allocated</td>
+<td>varnish.cache.smf.c_bytes.count</td>
+<td>Number of total bytes allocated by this storage.</td>
+</tr>
+<tr>
+<td>Bytes freed</td>
+<td>varnish.cache.smf.c_freed.count</td>
+<td>Number of total bytes returned to this storage.</td>
+</tr>
+<tr>
+<td>Allocations outstanding</td>
+<td>varnish.cache.smf.g_alloc</td>
+<td>Number of storage allocations outstanding.</td>
+</tr>
+<tr>
+<td>Bytes outstanding</td>
+<td>varnish.cache.smf.g_bytes</td>
+<td>Number of bytes allocated from the storage.</td>
+</tr>
+<tr>
+<td>Bytes available</td>
+<td>varnish.cache.smf.g_space</td>
+<td>Number of bytes left in the storage.</td>
+</tr>
+<tr>
+<td>N struct smf</td>
+<td>varnish.cache.smf.g_smf</td>
+<td>N struct smf</td>
+</tr>
+<tr>
+<td>N small free smf</td>
+<td>varnish.cache.smf.g_smf_frag</td>
+<td>N small free smf</td>
+</tr>
+<tr>
+<td>N large free smf</td>
+<td>varnish.cache.smf.g_smf_large</td>
+<td>N large free smf</td>
+</tr>
+</tbody>
+</table>
+<p>smu</p>
+<table>
+<thead>
+<tr>
+<th>Metric name</th>
+<th>Metric key</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Allocator requests</td>
+<td>varnish.cache.smu.c_req.count</td>
+<td>Number of times the storage has been asked to provide a storage segment.</td>
+</tr>
+<tr>
+<td>Allocator failures</td>
+<td>varnish.cache.smu.c_fail.count</td>
+<td>Number of times the storage has failed to provide a storage segment.</td>
+</tr>
+<tr>
+<td>Bytes allocated</td>
+<td>varnish.cache.smu.c_bytes.count</td>
+<td>Number of total bytes allocated by this storage.</td>
+</tr>
+<tr>
+<td>Bytes freed</td>
+<td>varnish.cache.smu.c_freed.count</td>
+<td>Number of total bytes returned to this storage.</td>
+</tr>
+<tr>
+<td>Allocations outstanding</td>
+<td>varnish.cache.smu.g_alloc</td>
+<td>Number of storage allocations outstanding.</td>
+</tr>
+<tr>
+<td>Bytes outstanding</td>
+<td>varnish.cache.smu.g_bytes</td>
+<td>Number of bytes allocated from the storage.</td>
+</tr>
+<tr>
+<td>Bytes available</td>
+<td>varnish.cache.smu.g_space</td>
+<td>Number of bytes left in the storage.</td>
+</tr>
+</tbody>
+</table>
+<p>sma</p>
+<table>
+<thead>
+<tr>
+<th>Metric name</th>
+<th>Metric key</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Allocator requests</td>
+<td>varnish.cache.sma.c_req.count</td>
+<td>Number of times the storage has been asked to provide a storage segment.</td>
+</tr>
+<tr>
+<td>Allocator failures</td>
+<td>varnish.cache.sma.c_fail.count</td>
+<td>Number of times the storage has failed to provide a storage segment.</td>
+</tr>
+<tr>
+<td>Bytes allocated</td>
+<td>varnish.cache.sma.c_bytes.count</td>
+<td>Number of total bytes allocated by this storage.</td>
+</tr>
+<tr>
+<td>Bytes freed</td>
+<td>varnish.cache.sma.c_freed.count</td>
+<td>Number of total bytes returned to this storage.</td>
+</tr>
+<tr>
+<td>Allocations outstanding</td>
+<td>varnish.cache.sma.g_alloc</td>
+<td>Number of storage allocations outstanding.</td>
+</tr>
+<tr>
+<td>Bytes outstanding</td>
+<td>varnish.cache.sma.g_bytes</td>
+<td>Number of bytes allocated from the storage.</td>
+</tr>
+<tr>
+<td>Bytes available</td>
+<td>varnish.cache.sma.g_space</td>
+<td>Number of bytes left in the storage.</td>
+</tr>
+</tbody>
+</table>
 <p>main</p>
 <table>
 <thead>
@@ -26534,179 +26707,6 @@
 <td>Child process panic</td>
 <td>varnish.cache.mgt.child_panic.count</td>
 <td>Number of times the management process has caught a child panic</td>
-</tr>
-</tbody>
-</table>
-<p>default</p>
-<table>
-<thead>
-<tr>
-<th>Metric name</th>
-<th>Metric key</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Return code</td>
-<td>varnish.cache.returncode</td>
-<td>Return code of the varnishstat command</td>
-</tr>
-</tbody>
-</table>
-<p>smf</p>
-<table>
-<thead>
-<tr>
-<th>Metric name</th>
-<th>Metric key</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Allocator requests</td>
-<td>varnish.cache.smf.c_req.count</td>
-<td>Number of times the storage has been asked to provide a storage segment.</td>
-</tr>
-<tr>
-<td>Allocator failures</td>
-<td>varnish.cache.smf.c_fail.count</td>
-<td>Number of times the storage has failed to provide a storage segment.</td>
-</tr>
-<tr>
-<td>Bytes allocated</td>
-<td>varnish.cache.smf.c_bytes.count</td>
-<td>Number of total bytes allocated by this storage.</td>
-</tr>
-<tr>
-<td>Bytes freed</td>
-<td>varnish.cache.smf.c_freed.count</td>
-<td>Number of total bytes returned to this storage.</td>
-</tr>
-<tr>
-<td>Allocations outstanding</td>
-<td>varnish.cache.smf.g_alloc</td>
-<td>Number of storage allocations outstanding.</td>
-</tr>
-<tr>
-<td>Bytes outstanding</td>
-<td>varnish.cache.smf.g_bytes</td>
-<td>Number of bytes allocated from the storage.</td>
-</tr>
-<tr>
-<td>Bytes available</td>
-<td>varnish.cache.smf.g_space</td>
-<td>Number of bytes left in the storage.</td>
-</tr>
-<tr>
-<td>N struct smf</td>
-<td>varnish.cache.smf.g_smf</td>
-<td>N struct smf</td>
-</tr>
-<tr>
-<td>N small free smf</td>
-<td>varnish.cache.smf.g_smf_frag</td>
-<td>N small free smf</td>
-</tr>
-<tr>
-<td>N large free smf</td>
-<td>varnish.cache.smf.g_smf_large</td>
-<td>N large free smf</td>
-</tr>
-</tbody>
-</table>
-<p>smu</p>
-<table>
-<thead>
-<tr>
-<th>Metric name</th>
-<th>Metric key</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Allocator requests</td>
-<td>varnish.cache.smu.c_req.count</td>
-<td>Number of times the storage has been asked to provide a storage segment.</td>
-</tr>
-<tr>
-<td>Allocator failures</td>
-<td>varnish.cache.smu.c_fail.count</td>
-<td>Number of times the storage has failed to provide a storage segment.</td>
-</tr>
-<tr>
-<td>Bytes allocated</td>
-<td>varnish.cache.smu.c_bytes.count</td>
-<td>Number of total bytes allocated by this storage.</td>
-</tr>
-<tr>
-<td>Bytes freed</td>
-<td>varnish.cache.smu.c_freed.count</td>
-<td>Number of total bytes returned to this storage.</td>
-</tr>
-<tr>
-<td>Allocations outstanding</td>
-<td>varnish.cache.smu.g_alloc</td>
-<td>Number of storage allocations outstanding.</td>
-</tr>
-<tr>
-<td>Bytes outstanding</td>
-<td>varnish.cache.smu.g_bytes</td>
-<td>Number of bytes allocated from the storage.</td>
-</tr>
-<tr>
-<td>Bytes available</td>
-<td>varnish.cache.smu.g_space</td>
-<td>Number of bytes left in the storage.</td>
-</tr>
-</tbody>
-</table>
-<p>sma</p>
-<table>
-<thead>
-<tr>
-<th>Metric name</th>
-<th>Metric key</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Allocator requests</td>
-<td>varnish.cache.sma.c_req.count</td>
-<td>Number of times the storage has been asked to provide a storage segment.</td>
-</tr>
-<tr>
-<td>Allocator failures</td>
-<td>varnish.cache.sma.c_fail.count</td>
-<td>Number of times the storage has failed to provide a storage segment.</td>
-</tr>
-<tr>
-<td>Bytes allocated</td>
-<td>varnish.cache.sma.c_bytes.count</td>
-<td>Number of total bytes allocated by this storage.</td>
-</tr>
-<tr>
-<td>Bytes freed</td>
-<td>varnish.cache.sma.c_freed.count</td>
-<td>Number of total bytes returned to this storage.</td>
-</tr>
-<tr>
-<td>Allocations outstanding</td>
-<td>varnish.cache.sma.g_alloc</td>
-<td>Number of storage allocations outstanding.</td>
-</tr>
-<tr>
-<td>Bytes outstanding</td>
-<td>varnish.cache.sma.g_bytes</td>
-<td>Number of bytes allocated from the storage.</td>
-</tr>
-<tr>
-<td>Bytes available</td>
-<td>varnish.cache.sma.g_space</td>
-<td>Number of bytes left in the storage.</td>
 </tr>
 </tbody>
 </table>

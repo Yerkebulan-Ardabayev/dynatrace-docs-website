@@ -25,7 +25,7 @@
     
     
       
-        <title>OpenTelemetry - Dynatrace Managed - Документация</title>
+        <title>Get started with OpenTelemetry and AI Observability - Dynatrace Managed - Документация</title>
       
     
     
@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#opentelemetry" class="md-skip">
+        <a href="#get-started-with-opentelemetry-and-ai-observability" class="md-skip">
           Перейти к содержанию
         </a>
       
@@ -114,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              OpenTelemetry
+              Get started with OpenTelemetry and AI Observability
             
           </span>
         </div>
@@ -25474,25 +25474,70 @@
 
 
 
-<h1 id="opentelemetry">OpenTelemetry<a class="headerlink" href="#opentelemetry" title="Permanent link">&para;</a></h1>
-<h1 id="opentelemetry_1">OpenTelemetry<a class="headerlink" href="#opentelemetry_1" title="Permanent link">&para;</a></h1>
+<h1 id="get-started-with-opentelemetry-and-ai-observability">Get started with OpenTelemetry and AI Observability<a class="headerlink" href="#get-started-with-opentelemetry-and-ai-observability" title="Permanent link">&para;</a></h1>
+<h1 id="get-started-with-opentelemetry-and-ai-observability_1">Get started with OpenTelemetry and AI Observability<a class="headerlink" href="#get-started-with-opentelemetry-and-ai-observability_1" title="Permanent link">&para;</a></h1>
 <ul>
 <li>Latest Dynatrace</li>
-<li>Explanation</li>
+<li>Getting started guide</li>
 <li>5-min read</li>
-<li>Published Feb 02, 2026</li>
+<li>Published Feb 25, 2026</li>
 </ul>
-<p>OpenTelemetry provides a vendor-neutral standard for collecting traces, metrics, and logs from AI applications. With the <a href="https://opentelemetry.io/docs/specs/semconv/gen-ai/">GenAI semantic conventionsï»¿</a>, OpenTelemetry defines a consistent way to capture AI-specific attributes such as model names, token counts, latency, and cost metrics across different LLM providers.</p>
+<p>OpenTelemetry provides a vendor-neutral standard for collecting traces and metrics from AI applications. With the <a href="https://opentelemetry.io/docs/specs/semconv/gen-ai/">GenAI semantic conventionsï»¿</a>, OpenTelemetry defines a consistent way to capture AI-specific attributes such as model names, token counts, latency, and cost metrics across different LLM providers.</p>
 <p>Dynatrace fully supports OpenTelemetry, allowing you to send AI observability data directly to your Dynatrace environment using the <a href="/docs/ingest-from/opentelemetry/otlp-api" title="Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.">OTLP API endpoints</a>. This approach gives you flexibility to use any OpenTelemetry-compatible instrumentation library or build custom instrumentation.</p>
-<h2 id="instrument-your-ai-application">Instrument your AI application<a class="headerlink" href="#instrument-your-ai-application" title="Permanent link">&para;</a></h2>
+<h2 id="who-is-this-for">Who is this for?<a class="headerlink" href="#who-is-this-for" title="Permanent link">&para;</a></h2>
+<p>This getting started guide is for:</p>
+<ul>
+<li>AI engineering teams building agent and LLM powered applications and services.</li>
+<li>Site Reliability Engineers responsible for monitoring AI workloads on hyperscalers.</li>
+<li>Platform engineers integrating OTel data into Dynatrace.</li>
+</ul>
+<h2 id="what-will-you-learn">What will you learn?<a class="headerlink" href="#what-will-you-learn" title="Permanent link">&para;</a></h2>
+<p>By following this guide, you will learn:</p>
+<ul>
+<li>How to set up OpenTelemetry and get trace- and log-level visibility into your AI apps.</li>
+<li>How to configure and instrument your app with OTel.</li>
+<li>How to configure OTLP exports to Dynatrace.</li>
+<li>How to report attributes following GenAI semantic conventions.</li>
+<li>What traces and metrics can be sent to Dynatrace.</li>
+<li>How to achieve trace- and token-level visibility into Agent and LLM operations.</li>
+</ul>
+<h2 id="before-you-begin">Before you begin<a class="headerlink" href="#before-you-begin" title="Permanent link">&para;</a></h2>
+<h3 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h3>
+<p>In order for this to work, you need to have:</p>
+<ul>
+<li>A running AI app or AI demo app.</li>
+<li>Dynatrace SaaS with a <a href="/docs/license" title="About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.">Dynatrace Platform Subscription (DPS)</a> license that has <a href="/docs/license/capabilities/traces" title="Learn how Dynatrace Traces powered by Grail consumption is calculated using the Dynatrace Platform Subscription (DPS) model.">Traces powered by Grail</a>, <a href="/docs/license/capabilities/metrics" title="Learn how Dynatrace Metrics powered by Grail consumption is calculated using the Dynatrace Platform Subscription model.">Metrics powered by Grail</a>, and <a href="/docs/license/capabilities/log-analytics" title="Learn how Dynatrace Log Analytics consumption is calculated using the Dynatrace Platform Subscription model.">Log Analytics</a> enabled.</li>
+<li>OTLP ingestion enabled, see <a href="/docs/ingest-from/opentelemetry" title="Learn how to integrate and ingest OpenTelemetry data (traces, metrics, and logs) into Dynatrace.">OpenTelemetry and Dynatrace</a>.</li>
+<li>An OpenAPI platform API key.</li>
+<li>
+<p>A Dynatrace API token the following scopes, see <a href="/docs/manage/identity-access-management/access-tokens-and-oauth-clients/platform-tokens" title="Create personalised platform tokens to access Dynatrace services via the API in your user context.">Platform tokens</a>.</p>
+</li>
+<li>
+<p>Ingest metrics (<code>metrics.ingest</code>)</p>
+</li>
+<li>Ingest logs (<code>logs.ingest</code>)</li>
+<li>Ingest OpenTelemetry traces (<code>openTelemetryTrace.ingest</code>)</li>
+</ul>
+<h3 id="prior-knowledge">Prior knowledge<a class="headerlink" href="#prior-knowledge" title="Permanent link">&para;</a></h3>
+<p>It's helpful to have some basic knowledge of:</p>
+<ul>
+<li>Python or Node.js.</li>
+<li>OTel concepts like SDKs, spans, exporters, and collectors.</li>
+<li>Dynatrace permissions and data ingestion.</li>
+</ul>
+<h2 id="get-started-with-ai-and-opentelemetry">Get started with AI and OpenTelemetry<a class="headerlink" href="#get-started-with-ai-and-opentelemetry" title="Permanent link">&para;</a></h2>
+<h3 id="1-instrument-your-application-for-opentelemetry">1. Instrument your application for OpenTelemetry<a class="headerlink" href="#1-instrument-your-application-for-opentelemetry" title="Permanent link">&para;</a></h3>
 <p>You can use Python or Node.js to instrument your AI application directly with the OpenTelemetry SDK.</p>
 <p>Python</p>
 <p>Node.js</p>
-<p>Install the required packages:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>pip install opentelemetry-sdk opentelemetry-exporter-otlp-proto-http
+<ol>
+<li>Install the OpenTelemetry SDK and Collector Exporter.
+   Run the following command in your terminal.</li>
+</ol>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>pip install opentelemetry-sdk opentelemetry-exporter-otlp-proto-http
 </code></pre></div>
-<p>The Dynatrace backend works exclusively with delta values and <a href="/docs/ingest-from/opentelemetry/otlp-api/ingest-otlp-metrics/about-metrics-ingest#aggregation-temporality" title="Learn how Dynatrace ingests OpenTelemetry metrics and what limitations apply.">requires the respective aggregation temporality</a>. Set the <code>OTEL_EXPORTER_OTLP_METRICS_TEMPORALITY_PREFERENCE</code> environment variable to <code>DELTA</code>.</p>
-<p>Configure the OpenTelemetry SDK:</p>
+2. Initialize the OpenTelemetry SDK.
+   Add the following code at the beginning of your main file.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>from opentelemetry import trace
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
 <a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
@@ -25547,120 +25592,128 @@
 <a id="__codelineno-1-52" name="__codelineno-1-52" href="#__codelineno-1-52"></a>
 <a id="__codelineno-1-53" name="__codelineno-1-53" href="#__codelineno-1-53"></a>tracer = trace.get_tracer(__name__)
 </code></pre></div>
-<p>Add GenAI attributes to your spans:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>from opentelemetry.trace import SpanKind
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>with tracer.start_as_current_span(&quot;chat gpt-5&quot;, kind=SpanKind.CLIENT) as span:
-<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
-<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>
-<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>
-<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>span.set_attribute(&quot;gen_ai.operation.name&quot;, &quot;chat&quot;)
-<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>
-<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>
-<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>
-<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>span.set_attribute(&quot;gen_ai.provider.name&quot;, &quot;openai&quot;)
-<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>
-<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>
-<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>
-<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>span.set_attribute(&quot;gen_ai.request.model&quot;, &quot;gpt-5.2&quot;)
-<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a>
-<a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a>
-<a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a>
-<a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a>span.set_attribute(&quot;gen_ai.request.temperature&quot;, 0.7)
-<a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a>
-<a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a>
-<a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a>
-<a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a>response = openai_client.chat.completions.create(
-<a id="__codelineno-2-26" name="__codelineno-2-26" href="#__codelineno-2-26"></a>
-<a id="__codelineno-2-27" name="__codelineno-2-27" href="#__codelineno-2-27"></a>
-<a id="__codelineno-2-28" name="__codelineno-2-28" href="#__codelineno-2-28"></a>
-<a id="__codelineno-2-29" name="__codelineno-2-29" href="#__codelineno-2-29"></a>model=&quot;gpt-4&quot;,
-<a id="__codelineno-2-30" name="__codelineno-2-30" href="#__codelineno-2-30"></a>
-<a id="__codelineno-2-31" name="__codelineno-2-31" href="#__codelineno-2-31"></a>
-<a id="__codelineno-2-32" name="__codelineno-2-32" href="#__codelineno-2-32"></a>
-<a id="__codelineno-2-33" name="__codelineno-2-33" href="#__codelineno-2-33"></a>messages=messages,
-<a id="__codelineno-2-34" name="__codelineno-2-34" href="#__codelineno-2-34"></a>
-<a id="__codelineno-2-35" name="__codelineno-2-35" href="#__codelineno-2-35"></a>
-<a id="__codelineno-2-36" name="__codelineno-2-36" href="#__codelineno-2-36"></a>
-<a id="__codelineno-2-37" name="__codelineno-2-37" href="#__codelineno-2-37"></a>temperature=0.7,
-<a id="__codelineno-2-38" name="__codelineno-2-38" href="#__codelineno-2-38"></a>
-<a id="__codelineno-2-39" name="__codelineno-2-39" href="#__codelineno-2-39"></a>
-<a id="__codelineno-2-40" name="__codelineno-2-40" href="#__codelineno-2-40"></a>
-<a id="__codelineno-2-41" name="__codelineno-2-41" href="#__codelineno-2-41"></a>)
-<a id="__codelineno-2-42" name="__codelineno-2-42" href="#__codelineno-2-42"></a>
-<a id="__codelineno-2-43" name="__codelineno-2-43" href="#__codelineno-2-43"></a>
-<a id="__codelineno-2-44" name="__codelineno-2-44" href="#__codelineno-2-44"></a>
-<a id="__codelineno-2-45" name="__codelineno-2-45" href="#__codelineno-2-45"></a>span.set_attribute(&quot;gen_ai.response.model&quot;, response.model)
-<a id="__codelineno-2-46" name="__codelineno-2-46" href="#__codelineno-2-46"></a>
-<a id="__codelineno-2-47" name="__codelineno-2-47" href="#__codelineno-2-47"></a>
-<a id="__codelineno-2-48" name="__codelineno-2-48" href="#__codelineno-2-48"></a>
-<a id="__codelineno-2-49" name="__codelineno-2-49" href="#__codelineno-2-49"></a>span.set_attribute(&quot;gen_ai.response.id&quot;, response.id)
-<a id="__codelineno-2-50" name="__codelineno-2-50" href="#__codelineno-2-50"></a>
-<a id="__codelineno-2-51" name="__codelineno-2-51" href="#__codelineno-2-51"></a>
-<a id="__codelineno-2-52" name="__codelineno-2-52" href="#__codelineno-2-52"></a>
-<a id="__codelineno-2-53" name="__codelineno-2-53" href="#__codelineno-2-53"></a>span.set_attribute(&quot;gen_ai.usage.input_tokens&quot;, response.usage.prompt_tokens)
-<a id="__codelineno-2-54" name="__codelineno-2-54" href="#__codelineno-2-54"></a>
-<a id="__codelineno-2-55" name="__codelineno-2-55" href="#__codelineno-2-55"></a>
-<a id="__codelineno-2-56" name="__codelineno-2-56" href="#__codelineno-2-56"></a>
-<a id="__codelineno-2-57" name="__codelineno-2-57" href="#__codelineno-2-57"></a>span.set_attribute(&quot;gen_ai.usage.output_tokens&quot;, response.usage.completion_tokens)
+<ol>
+<li>Install the OpenTelemetry SDK, API, and Collector Exporter.
+   Run the following command in your terminal.</li>
+</ol>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>npm install @opentelemetry/sdk-node @opentelemetry/api @opentelemetry/exporter-trace-otlp-proto
 </code></pre></div>
-<p>Install the required packages:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>npm install @opentelemetry/sdk-node @opentelemetry/api @opentelemetry/exporter-trace-otlp-proto
+2. Initialize the OpenTelemetry SDK.
+   Add the following code at the beginning of your main file.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>import { NodeSDK } from &#39;@opentelemetry/sdk-node&#39;;
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>import { Resource } from &#39;@opentelemetry/resources&#39;;
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>import { OTLPTraceExporter } from &#39;@opentelemetry/exporter-trace-otlp-proto&#39;;
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>import { trace } from &#39;@opentelemetry/api&#39;;
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>
+<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>
+<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>
+<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>const sdk = new NodeSDK({
+<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a>
+<a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a>
+<a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a>
+<a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a>resource: new Resource({ &#39;service.name&#39;: &#39;&lt;your-service&gt;&#39; }),
+<a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a>
+<a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a>
+<a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a>
+<a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a>traceExporter: new OTLPTraceExporter({
+<a id="__codelineno-3-26" name="__codelineno-3-26" href="#__codelineno-3-26"></a>
+<a id="__codelineno-3-27" name="__codelineno-3-27" href="#__codelineno-3-27"></a>
+<a id="__codelineno-3-28" name="__codelineno-3-28" href="#__codelineno-3-28"></a>
+<a id="__codelineno-3-29" name="__codelineno-3-29" href="#__codelineno-3-29"></a>url: &#39;https://&lt;YOUR_ENV&gt;.live.dynatrace.com/api/v2/otlp/v1/traces&#39;,
+<a id="__codelineno-3-30" name="__codelineno-3-30" href="#__codelineno-3-30"></a>
+<a id="__codelineno-3-31" name="__codelineno-3-31" href="#__codelineno-3-31"></a>
+<a id="__codelineno-3-32" name="__codelineno-3-32" href="#__codelineno-3-32"></a>
+<a id="__codelineno-3-33" name="__codelineno-3-33" href="#__codelineno-3-33"></a>headers: { Authorization: &#39;Api-Token &lt;YOUR_DT_API_TOKEN&gt;&#39; },
+<a id="__codelineno-3-34" name="__codelineno-3-34" href="#__codelineno-3-34"></a>
+<a id="__codelineno-3-35" name="__codelineno-3-35" href="#__codelineno-3-35"></a>
+<a id="__codelineno-3-36" name="__codelineno-3-36" href="#__codelineno-3-36"></a>
+<a id="__codelineno-3-37" name="__codelineno-3-37" href="#__codelineno-3-37"></a>}),
+<a id="__codelineno-3-38" name="__codelineno-3-38" href="#__codelineno-3-38"></a>
+<a id="__codelineno-3-39" name="__codelineno-3-39" href="#__codelineno-3-39"></a>
+<a id="__codelineno-3-40" name="__codelineno-3-40" href="#__codelineno-3-40"></a>
+<a id="__codelineno-3-41" name="__codelineno-3-41" href="#__codelineno-3-41"></a>});
+<a id="__codelineno-3-42" name="__codelineno-3-42" href="#__codelineno-3-42"></a>
+<a id="__codelineno-3-43" name="__codelineno-3-43" href="#__codelineno-3-43"></a>
+<a id="__codelineno-3-44" name="__codelineno-3-44" href="#__codelineno-3-44"></a>
+<a id="__codelineno-3-45" name="__codelineno-3-45" href="#__codelineno-3-45"></a>sdk.start();
+<a id="__codelineno-3-46" name="__codelineno-3-46" href="#__codelineno-3-46"></a>
+<a id="__codelineno-3-47" name="__codelineno-3-47" href="#__codelineno-3-47"></a>
+<a id="__codelineno-3-48" name="__codelineno-3-48" href="#__codelineno-3-48"></a>
+<a id="__codelineno-3-49" name="__codelineno-3-49" href="#__codelineno-3-49"></a>const tracer = trace.getTracer(&#39;my-tracer&#39;);
 </code></pre></div>
-<p>Configure the OpenTelemetry SDK:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>import { NodeSDK } from &#39;@opentelemetry/sdk-node&#39;;
+<h3 id="2-add-genai-attributes-to-your-spans">2. Add GenAI attributes to your spans<a class="headerlink" href="#2-add-genai-attributes-to-your-spans" title="Permanent link">&para;</a></h3>
+<p>The OpenTelemetry GenAI semantic conventions standardize the attributes captured for generative AI operations.
+To make sure that your telemetry data follows these conventions, add the following code to your application.</p>
+<p>For more information about semantic conventions, see <a href="/docs/observe/dynatrace-for-ai-observability/terms-and-concepts#semantic-conventions" title="Learn how to combine Dynatrace and Traceloop OpenLLMetry to observe an AI/ML model through OpenTelemetry.">GenAI semantic conventions</a>.</p>
+<p>Python</p>
+<p>Node.js</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>from opentelemetry.trace import SpanKind
 <a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
 <a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
 <a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>
-<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>import { Resource } from &#39;@opentelemetry/resources&#39;;
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>with tracer.start_as_current_span(&quot;chat gpt-5&quot;, kind=SpanKind.CLIENT) as span:
 <a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>
 <a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>
 <a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>
-<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>import { OTLPTraceExporter } from &#39;@opentelemetry/exporter-trace-otlp-proto&#39;;
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>span.set_attribute(&quot;gen_ai.operation.name&quot;, &quot;chat&quot;)
 <a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>
 <a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>
 <a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>
-<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>import { trace } from &#39;@opentelemetry/api&#39;;
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>span.set_attribute(&quot;gen_ai.provider.name&quot;, &quot;openai&quot;)
 <a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>
 <a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a>
 <a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a>
-<a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a>const sdk = new NodeSDK({
+<a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a>span.set_attribute(&quot;gen_ai.request.model&quot;, &quot;gpt-5.2&quot;)
 <a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a>
 <a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a>
 <a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a>
-<a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a>resource: new Resource({ &#39;service.name&#39;: &#39;&lt;your-service&gt;&#39; }),
+<a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a>span.set_attribute(&quot;gen_ai.request.temperature&quot;, 0.7)
 <a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a>
 <a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a>
 <a id="__codelineno-4-24" name="__codelineno-4-24" href="#__codelineno-4-24"></a>
-<a id="__codelineno-4-25" name="__codelineno-4-25" href="#__codelineno-4-25"></a>traceExporter: new OTLPTraceExporter({
+<a id="__codelineno-4-25" name="__codelineno-4-25" href="#__codelineno-4-25"></a>response = openai_client.chat.completions.create(
 <a id="__codelineno-4-26" name="__codelineno-4-26" href="#__codelineno-4-26"></a>
 <a id="__codelineno-4-27" name="__codelineno-4-27" href="#__codelineno-4-27"></a>
 <a id="__codelineno-4-28" name="__codelineno-4-28" href="#__codelineno-4-28"></a>
-<a id="__codelineno-4-29" name="__codelineno-4-29" href="#__codelineno-4-29"></a>url: &#39;https://&lt;YOUR_ENV&gt;.live.dynatrace.com/api/v2/otlp/v1/traces&#39;,
+<a id="__codelineno-4-29" name="__codelineno-4-29" href="#__codelineno-4-29"></a>model=&quot;gpt-4&quot;,
 <a id="__codelineno-4-30" name="__codelineno-4-30" href="#__codelineno-4-30"></a>
 <a id="__codelineno-4-31" name="__codelineno-4-31" href="#__codelineno-4-31"></a>
 <a id="__codelineno-4-32" name="__codelineno-4-32" href="#__codelineno-4-32"></a>
-<a id="__codelineno-4-33" name="__codelineno-4-33" href="#__codelineno-4-33"></a>headers: { Authorization: &#39;Api-Token &lt;YOUR_DT_API_TOKEN&gt;&#39; },
+<a id="__codelineno-4-33" name="__codelineno-4-33" href="#__codelineno-4-33"></a>messages=messages,
 <a id="__codelineno-4-34" name="__codelineno-4-34" href="#__codelineno-4-34"></a>
 <a id="__codelineno-4-35" name="__codelineno-4-35" href="#__codelineno-4-35"></a>
 <a id="__codelineno-4-36" name="__codelineno-4-36" href="#__codelineno-4-36"></a>
-<a id="__codelineno-4-37" name="__codelineno-4-37" href="#__codelineno-4-37"></a>}),
+<a id="__codelineno-4-37" name="__codelineno-4-37" href="#__codelineno-4-37"></a>temperature=0.7,
 <a id="__codelineno-4-38" name="__codelineno-4-38" href="#__codelineno-4-38"></a>
 <a id="__codelineno-4-39" name="__codelineno-4-39" href="#__codelineno-4-39"></a>
 <a id="__codelineno-4-40" name="__codelineno-4-40" href="#__codelineno-4-40"></a>
-<a id="__codelineno-4-41" name="__codelineno-4-41" href="#__codelineno-4-41"></a>});
+<a id="__codelineno-4-41" name="__codelineno-4-41" href="#__codelineno-4-41"></a>)
 <a id="__codelineno-4-42" name="__codelineno-4-42" href="#__codelineno-4-42"></a>
 <a id="__codelineno-4-43" name="__codelineno-4-43" href="#__codelineno-4-43"></a>
 <a id="__codelineno-4-44" name="__codelineno-4-44" href="#__codelineno-4-44"></a>
-<a id="__codelineno-4-45" name="__codelineno-4-45" href="#__codelineno-4-45"></a>sdk.start();
+<a id="__codelineno-4-45" name="__codelineno-4-45" href="#__codelineno-4-45"></a>span.set_attribute(&quot;gen_ai.response.model&quot;, response.model)
 <a id="__codelineno-4-46" name="__codelineno-4-46" href="#__codelineno-4-46"></a>
 <a id="__codelineno-4-47" name="__codelineno-4-47" href="#__codelineno-4-47"></a>
 <a id="__codelineno-4-48" name="__codelineno-4-48" href="#__codelineno-4-48"></a>
-<a id="__codelineno-4-49" name="__codelineno-4-49" href="#__codelineno-4-49"></a>const tracer = trace.getTracer(&#39;my-tracer&#39;);
+<a id="__codelineno-4-49" name="__codelineno-4-49" href="#__codelineno-4-49"></a>span.set_attribute(&quot;gen_ai.response.id&quot;, response.id)
+<a id="__codelineno-4-50" name="__codelineno-4-50" href="#__codelineno-4-50"></a>
+<a id="__codelineno-4-51" name="__codelineno-4-51" href="#__codelineno-4-51"></a>
+<a id="__codelineno-4-52" name="__codelineno-4-52" href="#__codelineno-4-52"></a>
+<a id="__codelineno-4-53" name="__codelineno-4-53" href="#__codelineno-4-53"></a>span.set_attribute(&quot;gen_ai.usage.input_tokens&quot;, response.usage.prompt_tokens)
+<a id="__codelineno-4-54" name="__codelineno-4-54" href="#__codelineno-4-54"></a>
+<a id="__codelineno-4-55" name="__codelineno-4-55" href="#__codelineno-4-55"></a>
+<a id="__codelineno-4-56" name="__codelineno-4-56" href="#__codelineno-4-56"></a>
+<a id="__codelineno-4-57" name="__codelineno-4-57" href="#__codelineno-4-57"></a>span.set_attribute(&quot;gen_ai.usage.output_tokens&quot;, response.usage.completion_tokens)
 </code></pre></div>
-<p>Add GenAI attributes to your spans:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>import { SpanKind } from &#39;@opentelemetry/api&#39;;
 <a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
 <a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>
@@ -25727,232 +25780,11 @@
 <a id="__codelineno-5-64" name="__codelineno-5-64" href="#__codelineno-5-64"></a>
 <a id="__codelineno-5-65" name="__codelineno-5-65" href="#__codelineno-5-65"></a>});
 </code></pre></div>
-<h2 id="genai-semantic-conventions">GenAI semantic conventions<a class="headerlink" href="#genai-semantic-conventions" title="Permanent link">&para;</a></h2>
-<p>The <a href="https://opentelemetry.io/docs/specs/semconv/gen-ai/">OpenTelemetry GenAI semantic conventionsï»¿</a> standardize the attributes captured for generative AI operations.</p>
-<h3 id="common-attributes">Common attributes<a class="headerlink" href="#common-attributes" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
-<tr>
-<th>Attribute</th>
-<th>Description</th>
-<th>Example</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>gen_ai.operation.name</code></td>
-<td>The name of the operation being performed</td>
-<td><code>chat</code>, <code>embeddings</code>, <code>invoke_agent</code></td>
-</tr>
-<tr>
-<td><code>gen_ai.provider.name</code></td>
-<td>The GenAI provider</td>
-<td><code>openai</code>, <code>anthropic</code>, <code>aws.bedrock</code></td>
-</tr>
-<tr>
-<td><code>gen_ai.request.model</code></td>
-<td>The model used for the request</td>
-<td><code>gpt-5.2</code></td>
-</tr>
-<tr>
-<td><code>gen_ai.response.model</code></td>
-<td>The model that generated the response</td>
-<td><code>gpt-5.2-0613</code></td>
-</tr>
-<tr>
-<td><code>gen_ai.usage.input_tokens</code></td>
-<td>Number of tokens in the prompt</td>
-<td><code>100</code></td>
-</tr>
-<tr>
-<td><code>gen_ai.usage.output_tokens</code></td>
-<td>Number of tokens in the completion</td>
-<td><code>180</code></td>
-</tr>
-<tr>
-<td><code>gen_ai.request.max_tokens</code></td>
-<td>Maximum tokens requested</td>
-<td><code>100</code></td>
-</tr>
-<tr>
-<td><code>gen_ai.response.id</code></td>
-<td>The unique identifier for the completion</td>
-<td><code>chatcmpl-123</code></td>
-</tr>
-<tr>
-<td><code>gen_ai.response.finish_reasons</code></td>
-<td>Reasons the model stopped generating</td>
-<td><code>["stop"]</code></td>
-</tr>
-<tr>
-<td><code>gen_ai.conversation.id</code></td>
-<td>Unique identifier for the conversation</td>
-<td><code>conv_5j66UpCpwteGg4YSxUnt7lPY</code></td>
-</tr>
-<tr>
-<td><code>gen_ai.request.temperature</code></td>
-<td>Temperature parameter for the request</td>
-<td><code>0.7</code></td>
-</tr>
-<tr>
-<td><code>gen_ai.request.top_p</code></td>
-<td>The top_p sampling setting</td>
-<td><code>1.0</code></td>
-</tr>
-</tbody>
-</table>
-<h3 id="metrics">Metrics<a class="headerlink" href="#metrics" title="Permanent link">&para;</a></h3>
-<p>OpenTelemetry defines standard metrics for GenAI operations:</p>
-<table>
-<thead>
-<tr>
-<th>Metric</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>gen_ai.client.token.usage</code></td>
-<td>Token usage by input/output type</td>
-</tr>
-<tr>
-<td><code>gen_ai.client.operation.duration</code></td>
-<td>Duration of GenAI operations</td>
-</tr>
-</tbody>
-</table>
-<p>These conventions ensure consistent data across different AI providers, making it easier to compare performance and costs.</p>
-<h3 id="agent-span-attributes">Agent span attributes<a class="headerlink" href="#agent-span-attributes" title="Permanent link">&para;</a></h3>
-<p>For AI agents, additional attributes are available. See <a href="https://opentelemetry.io/docs/specs/semconv/gen-ai/gen-ai-agent-spans/">GenAI agent spansï»¿</a> for the full specification.</p>
-<table>
-<thead>
-<tr>
-<th>Attribute</th>
-<th>Description</th>
-<th>Example</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>gen_ai.agent.id</code></td>
-<td>The unique identifier of the agent</td>
-<td><code>assist_agent_5j66UpCpwteGg4YSxUnt7lPY</code></td>
-</tr>
-<tr>
-<td><code>gen_ai.agent.name</code></td>
-<td>Human-readable name of the agent</td>
-<td><code>Supervisor</code>, <code>FAQ Agent</code></td>
-</tr>
-<tr>
-<td><code>gen_ai.agent.description</code></td>
-<td>Free-form description of the agent</td>
-<td><code>Orchestrates agents for flight details</code></td>
-</tr>
-<tr>
-<td><code>gen_ai.data_source.id</code></td>
-<td>The data source identifier for RAG</td>
-<td><code>H7STPQYOND</code></td>
-</tr>
-<tr>
-<td><code>gen_ai.output.type</code></td>
-<td>The content type requested</td>
-<td><code>text</code>, <code>json</code>, <code>image</code></td>
-</tr>
-<tr>
-<td><code>gen_ai.system_instructions</code></td>
-<td>System message or instructions</td>
-<td>JSON array of instructions</td>
-</tr>
-<tr>
-<td><code>gen_ai.tool.definitions</code></td>
-<td>Tool definitions available to the agent</td>
-<td>JSON array of tools</td>
-</tr>
-<tr>
-<td><code>gen_ai.input.messages</code></td>
-<td>Chat history provided to the model</td>
-<td>JSON array of messages</td>
-</tr>
-<tr>
-<td><code>gen_ai.output.messages</code></td>
-<td>Messages returned by the model</td>
-<td>JSON array of responses</td>
-</tr>
-</tbody>
-</table>
-<h3 id="openai-specific-attributes">OpenAI-specific attributes<a class="headerlink" href="#openai-specific-attributes" title="Permanent link">&para;</a></h3>
-<p>When using OpenAI, set <code>gen_ai.provider.name</code> to <code>openai</code>. See <a href="https://opentelemetry.io/docs/specs/semconv/gen-ai/openai/">OpenAI semantic conventionsï»¿</a> for details.</p>
-<table>
-<thead>
-<tr>
-<th>Attribute</th>
-<th>Description</th>
-<th>Example</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>openai.request.service_tier</code></td>
-<td>The service tier requested</td>
-<td><code>auto</code>, <code>default</code></td>
-</tr>
-<tr>
-<td><code>openai.response.service_tier</code></td>
-<td>The service tier used for the response</td>
-<td><code>scale</code>, <code>default</code></td>
-</tr>
-<tr>
-<td><code>openai.response.system_fingerprint</code></td>
-<td>Fingerprint to track environment changes</td>
-<td><code>fp_44709d6fcb</code></td>
-</tr>
-</tbody>
-</table>
-<h3 id="aws-bedrock-and-agentcore-specific-attributes">AWS Bedrock and AgentCore specific attributes<a class="headerlink" href="#aws-bedrock-and-agentcore-specific-attributes" title="Permanent link">&para;</a></h3>
-<p>When using AWS Bedrock, set <code>gen_ai.provider.name</code> to <code>aws.bedrock</code>. See <a href="https://opentelemetry.io/docs/specs/semconv/gen-ai/aws-bedrock/">AWS Bedrock semantic conventionsï»¿</a> for details.</p>
-<table>
-<thead>
-<tr>
-<th>Attribute</th>
-<th>Description</th>
-<th>Example</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>aws.bedrock.guardrail.id</code></td>
-<td>The unique identifier of the AWS Bedrock Guardrail. A guardrail helps safeguard and prevent unwanted behavior from model responses</td>
-<td><code>sgi5gkybzqak</code></td>
-</tr>
-<tr>
-<td><code>aws.bedrock.knowledge_base.id</code></td>
-<td>The unique identifier of the AWS Bedrock Knowledge base used for RAG</td>
-<td><code>XFWUPB9PAW</code></td>
-</tr>
-</tbody>
-</table>
-<h3 id="azure-ai-foundry-and-inference-specific-attributes">Azure AI Foundry and Inference-specific attributes<a class="headerlink" href="#azure-ai-foundry-and-inference-specific-attributes" title="Permanent link">&para;</a></h3>
-<p>When using Azure AI Inference, set <code>gen_ai.provider.name</code> to <code>azure.ai.inference</code>. See <a href="https://opentelemetry.io/docs/specs/semconv/gen-ai/azure-ai-inference/">Azure AI Inference semantic conventionsï»¿</a> for details.</p>
-<table>
-<thead>
-<tr>
-<th>Attribute</th>
-<th>Description</th>
-<th>Example</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>azure.resource_provider.namespace</code></td>
-<td>Azure Resource Provider Namespace as recognized by the client</td>
-<td><code>Microsoft.CognitiveServices</code></td>
-</tr>
-</tbody>
-</table>
-<h2 id="next-steps">Next steps<a class="headerlink" href="#next-steps" title="Permanent link">&para;</a></h2>
+<h2 id="congratulations">Congratulations!<a class="headerlink" href="#congratulations" title="Permanent link">&para;</a></h2>
+<p>Now that you've set up your AI app to send observability data directly to Dynatrace, you can:</p>
 <ul>
-<li>Explore the <a href="/docs/observe/dynatrace-for-ai-observability/ai-observability-app" title="Use the new AI Observability app to monitor all your AI workloads.">AI Observability app</a> to visualize your AI workloads</li>
-<li>Check out the <a href="https://github.com/dynatrace-oss/dynatrace-ai-agent-instrumentation-examples">sample applicationsï»¿</a> for more examples</li>
+<li>Explore the <a href="/docs/observe/dynatrace-for-ai-observability/ai-observability-app" title="Use the new AI Observability app to monitor all your AI workloads.">AI Observability app</a> to visualize your AI workloads.</li>
+<li>Check out the <a href="https://github.com/dynatrace-oss/dynatrace-ai-agent-instrumentation-examples">sample applicationsï»¿</a> for more examples.</li>
 </ul>
 
 

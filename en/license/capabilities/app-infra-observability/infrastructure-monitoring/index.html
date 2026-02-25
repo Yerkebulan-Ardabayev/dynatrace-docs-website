@@ -25498,7 +25498,7 @@ When a host is monitored for fewer than 15 minutes in an interval, host-hour con
 <p><img alt="Infrastructure Monitoring consumption" src="https://dt-cdn.net/images/infrastructure-monitoring-consumption-5843-2c70d0f91c.jpg" /></p>
 <h3 id="metrics">Metrics<a class="headerlink" href="#metrics" title="Permanent link">&para;</a></h3>
 <p>This section assumes that you have followed the Dynatrace-recommended deployment options.
-If you implement a custom deployment, the charging of included Metrics may still work as describedâbut this is not guaranteed by Dynatrace.</p>
+If you implement a custom deployment, the charging of included metrics may still work as describedâbut this is not guaranteed by Dynatrace.</p>
 <p>Dynatrace Infrastructure Monitoring includes Infrastructure Monitoring metrics and <a href="/docs/license/capabilities/metrics/dps-metrics-ingest#billable-and-non-billable-metrics" title="Learn how your consumption of the Metrics - Ingest &amp; Process DPS capability is billed and charged.">other built-in metrics</a>.
 These metrics are included and never produce any charge.</p>
 <p>Infrastructure Monitoring also includes a defined amount of custom metric data points.
@@ -25510,29 +25510,6 @@ This applies to custom metrics as described in the table below.</p>
 <ul>
 <li>If Metrics powered by Grail exists on your rate card, these are charged as <a href="/docs/license/capabilities/metrics" title="Learn how Dynatrace Metrics powered by Grail consumption is calculated using the Dynatrace Platform Subscription model.">Metrics powered by Grail</a>.</li>
 <li>If Metrics powered by Grail does not exist on your rate card, these are charged as <a href="/docs/license/capabilities/platform-extensions/custom-metrics-classic" title="Learn how your consumption of the Dynatrace Custom Metrics Classic DPS capability is billed and charged.">Custom Metrics Classic</a>.</li>
-</ul>
-<p>Origin</p>
-<p>Examples (including but not limited to)</p>
-<p>An Infrastructure-monitored host and sent via the <a href="/docs/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/oneagent-metric-api" title="Use the Dynatrace API to retrieve the metrics of monitored entities.">OneAgent metric API</a></p>
-<ul>
-<li>OpenTelemetry metrics</li>
-<li>Spring Micrometer</li>
-<li>StatsD</li>
-<li>JMX</li>
-<li>Extensions run locally on the host by OneAgent</li>
-<li>a host-local Telegraf</li>
-</ul>
-<p>An Infrastructure-monitored Kubernetes node</p>
-<ul>
-<li>OpenTelemetry metrics</li>
-<li>Spring Micrometer</li>
-<li>JMX</li>
-<li>
-<p><a href="/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-prometheus-metrics" title="Metric ingestion from Prometheus endpoints in Kubernetes, metrics alerts, and monitoring consumption.">Prometheus metrics via ActiveGate</a></p>
-</li>
-<li>
-<p>Metrics sent via the Dynatrace Collector <a href="#fn-1-1-def">1</a> or OpenTelemetry Collector <a href="#fn-1-2-def">2</a></p>
-</li>
 </ul>
 <p>1</p>
 <p>Metric data points sent via the Dynatrace Collector are included only if <a href="/docs/license/capabilities/metrics" title="Learn how Dynatrace Metrics powered by Grail consumption is calculated using the Dynatrace Platform Subscription model.">Metrics powered by Grail overview (DPS)</a> exists on your rate card.</p>

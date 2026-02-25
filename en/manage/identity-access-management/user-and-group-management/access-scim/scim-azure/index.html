@@ -25541,15 +25541,7 @@
 6. Select <strong>Apply</strong> in the lower-left corner.
 7. You can leave all <strong>Target Object Actions</strong> selected.<br />
    Dynatrace SCIM supports all of these actions.
-8. Set <strong>Attribute Mappings</strong> as follows:</p>
-<p>Microsoft Entra ID Attribute</p>
-<p>customappsso Attribute</p>
-<p><code>displayName</code></p>
-<p><code>displayName</code></p>
-<p><code>objectId</code></p>
-<p><code>externalId</code></p>
-<p><code>members</code></p>
-<p><code>members</code>
+8. Set <strong>Attribute Mappings</strong> as follows:
 9. Select <strong>Save</strong> on the <strong>Attribute Mapping</strong> page.</p>
 <h2 id="step-4-configure-user-mappings">Step 4 Configure user mappings<a class="headerlink" href="#step-4-configure-user-mappings" title="Permanent link">&para;</a></h2>
 <p>You need to limit the scope of users that are provisioned by SCIM to those with matching email domains to prevent your SCIM requests from being rejected.</p>
@@ -25572,19 +25564,7 @@
 6. Select <strong>Apply</strong> in the lower-left corner.
 7. You can leave all <strong>Target Object Actions</strong> selected.<br />
    Dynatrace SCIM supports all of these actions.
-8. Limit <strong>Attribute Mappings</strong> to the following:</p>
-<p>Microsoft Entra ID Attribute</p>
-<p>customappsso Attribute</p>
-<p><code>userPrincipalName</code></p>
-<p><code>userName</code></p>
-<p><code>Switch([IsSoftDeleted],,"False","True","True","False")</code></p>
-<p><code>active</code></p>
-<p><code>displayName</code></p>
-<p><code>displayName</code></p>
-<p><code>givenName</code></p>
-<p><code>name.givenName</code></p>
-<p><code>surname</code></p>
-<p><code>name.familyName</code>
+8. Limit <strong>Attribute Mappings</strong> to the following:
 9. Select <strong>Show advanced options</strong> in <strong>Attribute Mappings</strong>, and select <strong>Edit attribute list for customappsso</strong>.
 10. Make sure the following checkboxes are selected.</p>
 <div class="highlight"><pre><span></span><code>* For **id**âselect **Primary Key?** and **Required?**

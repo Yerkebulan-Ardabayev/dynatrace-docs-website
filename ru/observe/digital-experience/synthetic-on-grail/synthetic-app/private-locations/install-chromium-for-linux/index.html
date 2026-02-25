@@ -25479,21 +25479,21 @@
 <ul>
 <li>Latest Dynatrace</li>
 <li>How-to guide</li>
-<li>Updated on Jan 12, 2026</li>
+<li>Updated on Feb 11, 2026</li>
 </ul>
-<p>If the <a href="/docs/observe/digital-experience/synthetic-on-grail/synthetic-app/private-locations/active-gate-for-private-locations-install#ui-guided-chromium-installation" title="Learn how to install Synthetic-enabled ActiveGates.">web UIâguided installation</a> fails or you prefer to prepare the host for the Synthetic engine yourself, you can install Chromium and other dependencies <a href="#manual">manually</a> or from a <a href="#custom-repo">custom repository</a>.</p>
-<h2 id="install-chromium-and-dependencies-manually-from-s3">Install Chromium and dependencies manually from S3<a class="headerlink" href="#install-chromium-and-dependencies-manually-from-s3" title="Permanent link">&para;</a></h2>
+<p>If the <a href="/docs/observe/digital-experience/synthetic-on-grail/synthetic-app/private-locations/active-gate-for-private-locations-install#ui-guided-browser-installation" title="Learn how to install Synthetic-enabled ActiveGates.">web UIâguided installation</a> fails or you prefer to prepare the host for the Synthetic engine yourself, you can install Chromium and other dependencies <a href="#manual">manually</a> or from a <a href="#custom-repo">custom repository</a>.</p>
+<h2 id="install-the-browser-and-dependencies-manually-from-s3">Install the browser and dependencies manually from S3<a class="headerlink" href="#install-the-browser-and-dependencies-manually-from-s3" title="Permanent link">&para;</a></h2>
 <p>This section is not relevant for browserless locations.</p>
-<p>Amazon Linux 2023, Ubuntu 24, and Oracle Linux 9</p>
-<p>Amazon Linux 2023, Ubuntu 24, and Oracle Linux 9 use Chrome for Testing instead of Chromium. For manual installation of Chrome for Testing on these operating systems, see <a href="#chrome-for-testing">Amazon Linux 2023, Ubuntu 24, and Oracle Linux 9 (Chrome for Testing)</a>.</p>
-<p>Ensure that you can connect to <code>https://synthetic-packages.s3.amazonaws.com</code> to access Chromium and dependencies. For security reasons, public access to the S3 bucket is enabled only for specific files; trying anything else will result in a 403 error.</p>
-<p>Also see <a href="#custom-repo">Install Chromium from a custom repository</a> below.</p>
-<p>See <a href="/docs/observe/digital-experience/synthetic-on-grail/synthetic-app/private-locations/install-chromium-for-linux#chromium-manual" title="Learn how to install Chromium for Linux manually and from custom repositories.">how to update Chromium manually</a>. We strongly recommend that you keep your Linux-based Synthetic-enabled ActiveGates and Chromium versions updatedâDynatrace supports Chromium versions that are no more than two versions behind the <a href="/docs/observe/digital-experience/synthetic-on-grail/synthetic-app/private-locations/requirements-for-private-synthetic#chromium-linux" title="Check system and hardware requirements for private Synthetic locations.">latest Dynatrace-supported version</a> for a specific ActiveGate release.</p>
-<h3 id="ubuntu-server">Ubuntu Server<a class="headerlink" href="#ubuntu-server" title="Permanent link">&para;</a></h3>
+<p>Amazon Linux 2023, Ubuntu and Oracle Linux 9</p>
+<p>Amazon Linux 2023, Ubuntu and Oracle Linux 9 use Chrome for Testing instead of Chromium. For manual installation of Chrome for Testing on these operating systems, see <a href="#chrome-for-testing">Amazon Linux 2023, Ubuntu and Oracle Linux 9 (Chrome for Testing)</a>.</p>
+<p>Ensure that you can connect to <code>https://synthetic-packages.s3.amazonaws.com</code> to access the browser packages. For security reasons, public access to the S3 bucket is enabled only for specific files; trying anything else will result in a 403 error.</p>
+<p>Also see <a href="#custom-repo">Install the browser from a custom repository</a> below.</p>
+<p>See <a href="/docs/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/manage-private-synthetic-locations#browser-manual" title="Analyze and manage capacity usage at your private Synthetic locations.">how to update the browser manually</a> in <a href="/docs/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/manage-private-synthetic-locations" title="Analyze and manage capacity usage at your private Synthetic locations.">Manage private Synthetic locations</a>. We strongly recommend that you keep your Linux-based Synthetic-enabled ActiveGates and browser versions updatedâDynatrace supports browser versions that are no more than two versions behind the <a href="/docs/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/system-and-hardware-requirements-for-private-synthetic#browser-linux" title="Supported operating systems, Chromium versions, and hardware requirements for running synthetic monitors from private locations">latest Dynatrace-supported version</a> for a specific ActiveGate release.</p>
+<h3 id="ubuntu-server-2004-and-2204">Ubuntu Server 20.04 and 22.04<a class="headerlink" href="#ubuntu-server-2004-and-2204" title="Permanent link">&para;</a></h3>
+<p>This section is only relevant for releases 1.329 and earlier.</p>
 <ol>
 <li>Install Synthetic engine dependencies:</li>
 </ol>
-<p>Ubuntu 20.04 and 22.04</p>
 <p>Synthetic engine dependencies:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>sudo apt-get update &amp;&amp; sudo apt-get -y install xvfb x11-xkb-utils xfonts-100dpi xfonts-75dpi xfonts-scalable libnss3-tools auditd
 </code></pre></div>
@@ -25505,88 +25505,66 @@
 2. Download and install Chromium.</p>
 <ul>
 <li>
-<p>Download the snap (Ubuntu 20.04 and 22.04) package archive. This is a safe and verified archive hosted by Dynatrace.</p>
+<p>Download the snap (Ubuntu Server 20.04 and 22.04) package archive. This is a safe and verified archive hosted by Dynatrace.</p>
 <p>ActiveGate version 1.329</p>
-<p>##### Ubuntu 20.04 and 22.04</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>curl --output chromium.tgz https://synthetic-packages.s3.amazonaws.com/Chromium/snap/chromium-142.0.7444.175-3313.tgz
 </code></pre></div>
 <p>ActiveGate version 1.327</p>
-<p>##### Ubuntu 20.04 and 22.04</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>curl --output chromium.tgz https://synthetic-packages.s3.amazonaws.com/Chromium/snap/chromium-141.0.7390.122-3285.tgz
 </code></pre></div>
 <p>ActiveGate version 1.325</p>
-<p>##### Ubuntu 20.04 and 22.04</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>curl --output chromium.tgz https://synthetic-packages.s3.amazonaws.com/Chromium/snap/chromium-140.0.7339.185-3251.tgz
 </code></pre></div>
 <p>ActiveGate version 1.323</p>
-<p>##### Ubuntu 20.04 and 22.04</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>curl --output chromium.tgz https://synthetic-packages.s3.amazonaws.com/Chromium/snap/chromium-139.0.7258.138-3235.tgz
 </code></pre></div>
 <p>ActiveGate version 1.321</p>
-<p>##### Ubuntu 20.04 and 22.04</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>curl --output chromium.tgz https://synthetic-packages.s3.amazonaws.com/Chromium/snap/chromium-138.0.7204.100-3199.tgz
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>curl --output chromium.tgz https://synthetic-packages.s3.amazonaws.com/Chromium/snap/chromium-138.0.7204.157-3203.tgz
 </code></pre></div>
 <p>ActiveGate version 1.319</p>
-<p>##### Ubuntu 20.04 and 22.04</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>curl --output chromium.tgz https://synthetic-packages.s3.amazonaws.com/Chromium/snap/chromium-138.0.7204.100-3199.tgz
 </code></pre></div>
 <p>ActiveGate version 1.317</p>
-<p>##### Ubuntu 20.04 and 22.04</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>curl --output chromium.tgz https://synthetic-packages.s3.amazonaws.com/Chromium/snap/chromium-137.0.7151.103-3169.tgz
 </code></pre></div>
 <p>ActiveGate version 1.315</p>
-<p>##### Ubuntu 20.04 and 22.04</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>curl --output chromium.tgz https://synthetic-packages.s3.amazonaws.com/Chromium/snap/chromium-136.0.7103.59-3121.tgz
 </code></pre></div>
 <p>ActiveGate version 1.313</p>
-<p>##### Ubuntu 20.04 and 22.04</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>curl --output chromium.tgz https://synthetic-packages.s3.amazonaws.com/Chromium/snap/chromium-135.0.7049.95-3110.tgz
 </code></pre></div>
 <p>ActiveGate version 1.311</p>
-<p>##### Ubuntu 20.04 and 22.04</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>curl --output chromium.tgz https://synthetic-packages.s3.amazonaws.com/Chromium/snap/chromium-134.0.6998.35-3060.tgz
 </code></pre></div>
 <p>ActiveGate version 1.309</p>
-<p>##### Ubuntu 20.04 and 22.04</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>curl --output chromium.tgz https://synthetic-packages.s3.amazonaws.com/Chromium/snap/chromium-132.0.6834.159-3036.tgz
 </code></pre></div>
 <p>ActiveGate version 1.307</p>
-<p>##### Ubuntu 20.04 and 22.04</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>curl --output chromium.tgz https://synthetic-packages.s3.amazonaws.com/Chromium/snap/chromium-131.0.6778.85-3002.tgz
 </code></pre></div>
-<p>ActiveGate version 1.305</p>
-<p>##### Ubuntu 20.04 and 22.04</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>curl --output chromium.tgz https://synthetic-packages.s3.amazonaws.com/Chromium/snap/chromium-130.0.6723.69-2985.tgz
-</code></pre></div>
-<p>ActiveGate version 1.303</p>
-<p>##### Ubuntu 20.04 and 22.04</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>curl --output chromium.tgz https://synthetic-packages.s3.amazonaws.com/Chromium/snap/chromium-129.0.6668.89-2965.tgz
-</code></pre></div>
-</li>
-</ul>
-<p>You can <a href="/docs/observe/digital-experience/synthetic-on-grail/synthetic-app/private-locations#verify" title="Learn how to manage private locations in the Synthetic app.">verify the authenticity of the packages</a> using the signature files stored together with the package archives.</p>
-<ul>
-<li>Extract the installation packages. Go to the directory where you saved the archive and run the following command:</li>
-</ul>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>mkdir /tmp/chromium ; tar xzf chromium.tgz -C /tmp/chromium
+<p>You can <a href="#verify">verify the authenticity of the packages</a> using the signature files stored together with the package archives.
+   * Extract the installation packages. Go to the directory where you saved the archive and run the following command:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>mkdir /tmp/chromium ; tar xzf chromium.tgz -C /tmp/chromium
 </code></pre></div>
 <p>This creates a <code>/tmp/chromium</code> directory and extracts the packages into it.
-* Install the extracted packages.</p>
-<p>Ubuntu 20.04 and 22.04</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>sudo chown -R root:root /tmp/snap-private-tmp
+   * Install the extracted packages.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>sudo chown -R root:root /tmp/snap-private-tmp
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>sudo snap ack /tmp/chromium/chromium.assert
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>sudo snap ack /tmp/chromium/chromium.assert
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>sudo snap install --devmode /tmp/chromium/chromium.snap
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>sudo snap install --devmode /tmp/chromium/chromium.snap
 </code></pre></div>
 <p>Substitute <code>dtuserag</code> with the names of the ActiveGate service user and group if they differ from the default values.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>sudo chown -R dtuserag:dtuserag /tmp/snap-private-tmp
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>sudo chown -R dtuserag:dtuserag /tmp/snap-private-tmp
 </code></pre></div>
 <p>This installs all the packages extracted to the <code>/tmp/chromium/</code> directory. You can delete the <code>/tmp/chromium/</code> directory and the downloaded <code>chromium.tgz</code> archive after successful Chromium installation.
-* After you satisfy the dependencies, run the ActiveGate installer with root rights with the <code>--enable-synthetic</code> parameter set to <code>manual</code>. For example:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>/bin/bash ./Dynatrace-ActiveGate-Linux.sh --enable-synthetic=manual
+3. After you satisfy the dependencies, run the ActiveGate installer with root rights with the <code>--enable-synthetic</code> parameter set to <code>manual</code>. For example:</p>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>/bin/bash ./Dynatrace-ActiveGate-Linux.sh --enable-synthetic=manual
 </code></pre></div>
-<h3 id="red-hat-enterprise-linux-oracle-linux-and-rocky-linux">Red Hat Enterprise Linux, Oracle Linux, and Rocky Linux<a class="headerlink" href="#red-hat-enterprise-linux-oracle-linux-and-rocky-linux" title="Permanent link">&para;</a></h3>
+<p>You can <a href="/docs/observe/digital-experience/synthetic-on-grail/synthetic-app/private-locations#verify" title="Learn how to manage private locations in the Synthetic app.">verify the authenticity of the packages</a> using the signature files stored together with the package archives.</p>
+<h3 id="red-hat-enterprise-linux-oracle-linux-8-and-rocky-linux">Red Hat Enterprise Linux, Oracle Linux 8, and Rocky Linux<a class="headerlink" href="#red-hat-enterprise-linux-oracle-linux-8-and-rocky-linux" title="Permanent link">&para;</a></h3>
 <ul>
 <li>
 <p>Chromium development for Red Hat/CentOS 7 and Amazon Linux 2 stopped at version 126.</p>
@@ -25598,12 +25576,12 @@
 <p>Chromium installation when a proxy is required for internet access.</p>
 </li>
 <li>
-<p>If you need to download and install Chromium, and your system requires a proxy for internet access, you should configure <code>curl</code>to use the correct proxy. Specify your proxy and port details by running the commands as in this example:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>vi /root/.curlrc
-<a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>
-<a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a>
-<a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a>
-<a id="__codelineno-23-5" name="__codelineno-23-5" href="#__codelineno-23-5"></a>proxy=http://proxy.example.com:8080
+<p>If you need to download and install Chromium, and your system requires a proxy for internet access, you should configure <code>curl</code> to use the correct proxy. Specify your proxy and port details by running the commands as in this example:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>vi /root/.curlrc
+<a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>
+<a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a>
+<a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a>
+<a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a>proxy=http://proxy.example.com:8080
 </code></pre></div>
 </li>
 <li>
@@ -25618,90 +25596,113 @@
 <p>Amazon Linux 2</p>
 <p>Rocky Linux 8</p>
 <p>Rocky Linux 9</p>
-<p>Deprecated operating system: ActiveGate version 1.305 is the last Synthetic-enabled ActiveGate to support Red Hat 7.</p>
+<p>Deprecated operating system</p>
+<p>ActiveGate version 1.305 is the last Synthetic-enabled ActiveGate to support Red Hat 7.</p>
 <ul>
 <li>
 <p>Register the Red Hat instance.</p>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>sudo subscription-manager register --auto-attach
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>sudo subscription-manager register --auto-attach
 </code></pre></div>
-   * Enable the Red Hat <code>Extras</code> and <code>Optional</code> repositories as well as <code>EPEL</code> (Extra Packages for Enterprise Linux ).</p>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>sudo subscription-manager repos --enable rhel-7-server-extras-rpms
-<a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a>
-<a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a>
-<a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a>
-<a id="__codelineno-25-5" name="__codelineno-25-5" href="#__codelineno-25-5"></a>sudo subscription-manager repos --enable rhel-7-server-optional-rpms
-<a id="__codelineno-25-6" name="__codelineno-25-6" href="#__codelineno-25-6"></a>
-<a id="__codelineno-25-7" name="__codelineno-25-7" href="#__codelineno-25-7"></a>
-<a id="__codelineno-25-8" name="__codelineno-25-8" href="#__codelineno-25-8"></a>
-<a id="__codelineno-25-9" name="__codelineno-25-9" href="#__codelineno-25-9"></a>sudo rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
-</code></pre></div>
-   * Install Synthetic engine dependencies.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>sudo yum install -y xorg-x11-server-Xvfb xorg-x11-xkb-utils xorg-x11-server-utils xorg-x11-fonts-100dpi xorg-x11-fonts-75dpi xorg-x11-fonts-Type1 libwayland-server mesa-libgbm curl nss-tools
-</code></pre></div>
-</li>
-<li>
-<p>Register the Red Hat instance.</p>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a>sudo subscription-manager register --auto-attach
-</code></pre></div>
-   * Enable the Red Hat <code>Extras</code> and <code>Optional</code> repositories as well as <code>EPEL</code> (Extra Packages for Enterprise Linux ).</p>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a>sudo subscription-manager repos --enable rhel-8-for-x86_64-baseos-rpms
-<a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a>
-<a id="__codelineno-28-3" name="__codelineno-28-3" href="#__codelineno-28-3"></a>
-<a id="__codelineno-28-4" name="__codelineno-28-4" href="#__codelineno-28-4"></a>
-<a id="__codelineno-28-5" name="__codelineno-28-5" href="#__codelineno-28-5"></a>sudo subscription-manager repos --enable rhel-8-for-x86_64-appstream-rpms
-<a id="__codelineno-28-6" name="__codelineno-28-6" href="#__codelineno-28-6"></a>
-<a id="__codelineno-28-7" name="__codelineno-28-7" href="#__codelineno-28-7"></a>
-<a id="__codelineno-28-8" name="__codelineno-28-8" href="#__codelineno-28-8"></a>
-<a id="__codelineno-28-9" name="__codelineno-28-9" href="#__codelineno-28-9"></a>sudo rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
+   * Enable the Red Hat <code>Extras</code> and <code>Optional</code> repositories as well as <code>EPEL</code> (Extra Packages for Enterprise Linux).</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>sudo subscription-manager repos --enable rhel-7-server-extras-rpms
+<a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>
+<a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a>
+<a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a>
+<a id="__codelineno-23-5" name="__codelineno-23-5" href="#__codelineno-23-5"></a>sudo subscription-manager repos --enable rhel-7-server-optional-rpms
+<a id="__codelineno-23-6" name="__codelineno-23-6" href="#__codelineno-23-6"></a>
+<a id="__codelineno-23-7" name="__codelineno-23-7" href="#__codelineno-23-7"></a>
+<a id="__codelineno-23-8" name="__codelineno-23-8" href="#__codelineno-23-8"></a>
+<a id="__codelineno-23-9" name="__codelineno-23-9" href="#__codelineno-23-9"></a>sudo rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
 </code></pre></div>
    * Install Synthetic engine dependencies.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a>sudo yum install -y xorg-x11-server-Xvfb xorg-x11-xkb-utils xorg-x11-server-utils xorg-x11-fonts-100dpi xorg-x11-fonts-75dpi xorg-x11-fonts-Type1 libwayland-server mesa-libgbm curl nss-tools
-</code></pre></div>
-</li>
-<li>
-<p>Register the Red Hat instance.</p>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a>sudo subscription-manager register --auto-attach
-</code></pre></div>
-   * Enable the Red Hat <code>Extras</code> and <code>Optional</code> repositories as well as <code>EPEL</code> (Extra Packages for Enterprise Linux ).</p>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a>sudo subscription-manager repos --enable rhel-9-for-x86_64-baseos-rpms
-<a id="__codelineno-31-2" name="__codelineno-31-2" href="#__codelineno-31-2"></a>
-<a id="__codelineno-31-3" name="__codelineno-31-3" href="#__codelineno-31-3"></a>
-<a id="__codelineno-31-4" name="__codelineno-31-4" href="#__codelineno-31-4"></a>
-<a id="__codelineno-31-5" name="__codelineno-31-5" href="#__codelineno-31-5"></a>sudo subscription-manager repos --enable rhel-9-for-x86_64-appstream-rpms
-<a id="__codelineno-31-6" name="__codelineno-31-6" href="#__codelineno-31-6"></a>
-<a id="__codelineno-31-7" name="__codelineno-31-7" href="#__codelineno-31-7"></a>
-<a id="__codelineno-31-8" name="__codelineno-31-8" href="#__codelineno-31-8"></a>
-<a id="__codelineno-31-9" name="__codelineno-31-9" href="#__codelineno-31-9"></a>sudo rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-9.noarch.rpm
-</code></pre></div>
-   * Install Synthetic engine dependencies.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a>sudo yum install -y xorg-x11-server-Xvfb xkbcomp xorg-x11-server-utils xorg-x11-fonts-100dpi xorg-x11-fonts-75dpi xorg-x11-fonts-Type1 libwayland-server mesa-libgbm curl nss-tools
+<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>sudo yum install -y xorg-x11-server-Xvfb xorg-x11-xkb-utils xorg-x11-server-utils xorg-x11-fonts-100dpi xorg-x11-fonts-75dpi xorg-x11-fonts-Type1 libwayland-server mesa-libgbm curl nss-tools
 </code></pre></div>
 </li>
 </ul>
-<p>Deprecated operating system: ActiveGate version 1.305 is the last Synthetic-enabled ActiveGate to support CentOS.</p>
+<p>Deprecated operating system</p>
+<p>ActiveGate version 1.325 is the last Synthetic-enabled ActiveGate to support Red Hat 8.</p>
+<ul>
+<li>
+<p>Register the Red Hat instance.</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>sudo subscription-manager register --auto-attach
+</code></pre></div>
+   * Enable the Red Hat <code>Extras</code> and <code>Optional</code> repositories as well as <code>EPEL</code> (Extra Packages for Enterprise Linux ).</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>sudo subscription-manager repos --enable rhel-8-for-x86_64-baseos-rpms
+<a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a>
+<a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a>
+<a id="__codelineno-26-4" name="__codelineno-26-4" href="#__codelineno-26-4"></a>
+<a id="__codelineno-26-5" name="__codelineno-26-5" href="#__codelineno-26-5"></a>sudo subscription-manager repos --enable rhel-8-for-x86_64-appstream-rpms
+<a id="__codelineno-26-6" name="__codelineno-26-6" href="#__codelineno-26-6"></a>
+<a id="__codelineno-26-7" name="__codelineno-26-7" href="#__codelineno-26-7"></a>
+<a id="__codelineno-26-8" name="__codelineno-26-8" href="#__codelineno-26-8"></a>
+<a id="__codelineno-26-9" name="__codelineno-26-9" href="#__codelineno-26-9"></a>sudo rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
+</code></pre></div>
+   * Install Synthetic engine dependencies.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a>sudo yum install -y xorg-x11-server-Xvfb xorg-x11-xkb-utils xorg-x11-server-utils xorg-x11-fonts-100dpi xorg-x11-fonts-75dpi xorg-x11-fonts-Type1 libwayland-server mesa-libgbm curl nss-tools
+</code></pre></div>
+</li>
+<li>
+<p>Register the Red Hat instance.</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a>sudo subscription-manager register --auto-attach
+</code></pre></div>
+   * Enable the Red Hat <code>Extras</code> and <code>Optional</code> repositories as well as <code>EPEL</code> (Extra Packages for Enterprise Linux ).</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a>sudo subscription-manager repos --enable rhel-9-for-x86_64-baseos-rpms
+<a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a>
+<a id="__codelineno-29-3" name="__codelineno-29-3" href="#__codelineno-29-3"></a>
+<a id="__codelineno-29-4" name="__codelineno-29-4" href="#__codelineno-29-4"></a>
+<a id="__codelineno-29-5" name="__codelineno-29-5" href="#__codelineno-29-5"></a>sudo subscription-manager repos --enable rhel-9-for-x86_64-appstream-rpms
+<a id="__codelineno-29-6" name="__codelineno-29-6" href="#__codelineno-29-6"></a>
+<a id="__codelineno-29-7" name="__codelineno-29-7" href="#__codelineno-29-7"></a>
+<a id="__codelineno-29-8" name="__codelineno-29-8" href="#__codelineno-29-8"></a>
+<a id="__codelineno-29-9" name="__codelineno-29-9" href="#__codelineno-29-9"></a>sudo rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-9.noarch.rpm
+</code></pre></div>
+   * Install Synthetic engine dependencies.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a>sudo yum install -y xorg-x11-server-Xvfb xkbcomp xorg-x11-server-utils xorg-x11-fonts-100dpi xorg-x11-fonts-75dpi xorg-x11-fonts-Type1 libwayland-server mesa-libgbm curl nss-tools
+</code></pre></div>
+</li>
+</ul>
+<p>Deprecated operating system</p>
+<p>ActiveGate version 1.305 is the last Synthetic-enabled ActiveGate to support CentOS.</p>
 <ul>
 <li>
 <p>Enable <code>EPEL</code> (Extra Packages for Enterprise Linux ).</p>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a>sudo yum install epel-release
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a>sudo yum install epel-release
+</code></pre></div>
+   * Install Synthetic engine dependencies.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a>sudo yum install -y xorg-x11-server-Xvfb xorg-x11-xkb-utils xorg-x11-server-utils xorg-x11-fonts-100dpi xorg-x11-fonts-75dpi xorg-x11-fonts-Type1 libwayland-server mesa-libgbm curl nss-tools
+</code></pre></div>
+</li>
+</ul>
+<p>Deprecated operating system</p>
+<p>ActiveGate version 1.325 is the last Synthetic-enabled ActiveGate to support Oracle Linux 8.</p>
+<ul>
+<li>
+<p>Enable <code>EPEL</code> (Extra Packages for Enterprise Linux ).</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a>sudo yum install -y oracle-epel-release-el8
 </code></pre></div>
    * Install Synthetic engine dependencies.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a>sudo yum install -y xorg-x11-server-Xvfb xorg-x11-xkb-utils xorg-x11-server-utils xorg-x11-fonts-100dpi xorg-x11-fonts-75dpi xorg-x11-fonts-Type1 libwayland-server mesa-libgbm curl nss-tools
 </code></pre></div>
 </li>
+</ul>
+<p>Deprecated operating system</p>
+<p>ActiveGate version 1.307 is the last Synthetic-enabled ActiveGate to support Amazon Linux 2.</p>
+<ul>
 <li>
 <p>Enable <code>EPEL</code> (Extra Packages for Enterprise Linux ).</p>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a>sudo yum install -y oracle-epel-release-el8
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a>sudo amazon-linux-extras install epel
 </code></pre></div>
    * Install Synthetic engine dependencies.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a>sudo yum install -y xorg-x11-server-Xvfb xorg-x11-xkb-utils xorg-x11-server-utils xorg-x11-fonts-100dpi xorg-x11-fonts-75dpi xorg-x11-fonts-Type1 libwayland-server mesa-libgbm curl nss-tools
 </code></pre></div>
 </li>
 </ul>
-<p>Deprecated operating system: ActiveGate version 1.307 is the last Synthetic-enabled ActiveGate to support Amazon Linux 2.</p>
+<p>Deprecated operating system</p>
+<p>ActiveGate version 1.325 is the last Synthetic-enabled ActiveGate to support Rocky Linux 8.</p>
 <ul>
 <li>
 <p>Enable <code>EPEL</code> (Extra Packages for Enterprise Linux ).</p>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a>sudo amazon-linux-extras install epel
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a>sudo yum install epel-release
 </code></pre></div>
    * Install Synthetic engine dependencies.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a>sudo yum install -y xorg-x11-server-Xvfb xorg-x11-xkb-utils xorg-x11-server-utils xorg-x11-fonts-100dpi xorg-x11-fonts-75dpi xorg-x11-fonts-Type1 libwayland-server mesa-libgbm curl nss-tools
@@ -25712,252 +25713,233 @@
 <p><div class="highlight"><pre><span></span><code><a id="__codelineno-39-1" name="__codelineno-39-1" href="#__codelineno-39-1"></a>sudo yum install epel-release
 </code></pre></div>
    * Install Synthetic engine dependencies.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-40-1" name="__codelineno-40-1" href="#__codelineno-40-1"></a>sudo yum install -y xorg-x11-server-Xvfb xorg-x11-xkb-utils xorg-x11-server-utils xorg-x11-fonts-100dpi xorg-x11-fonts-75dpi xorg-x11-fonts-Type1 libwayland-server mesa-libgbm curl nss-tools
-</code></pre></div>
-</li>
-<li>
-<p>Enable <code>EPEL</code> (Extra Packages for Enterprise Linux ).</p>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-41-1" name="__codelineno-41-1" href="#__codelineno-41-1"></a>sudo yum install epel-release
-</code></pre></div>
-   * Install Synthetic engine dependencies.</p>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-42-1" name="__codelineno-42-1" href="#__codelineno-42-1"></a>sudo yum install -y xorg-x11-server-Xvfb xkbcomp xorg-x11-server-utils xorg-x11-fonts-100dpi xorg-x11-fonts-75dpi xorg-x11-fonts-Type1 libwayland-server mesa-libgbm curl nss-tools
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-40-1" name="__codelineno-40-1" href="#__codelineno-40-1"></a>sudo yum install -y xorg-x11-server-Xvfb xkbcomp xorg-x11-server-utils xorg-x11-fonts-100dpi xorg-x11-fonts-75dpi xorg-x11-fonts-Type1 libwayland-server mesa-libgbm curl nss-tools
 </code></pre></div>
 2. Download and install Chromium.</p>
 </li>
 <li>
 <p>Download the rpm package archive. This is a safe and verified archive hosted by Dynatrace.</p>
+<p>ActiveGate version 1.331</p>
+<p>##### Red Hat Enterprise Linux/Rocky Linux 9</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-41-1" name="__codelineno-41-1" href="#__codelineno-41-1"></a>curl --output chromium.tgz https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-143.0.7499.192-1.el9.tgz
+</code></pre></div>
 <p>ActiveGate version 1.329</p>
 <p>##### Red Hat Enterprise Linux/Rocky Linux 9</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-43-1" name="__codelineno-43-1" href="#__codelineno-43-1"></a>curl --output chromium.tgz https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-142.0.7444.175-2.el9.tgz
+<div class="highlight"><pre><span></span><code><a id="__codelineno-42-1" name="__codelineno-42-1" href="#__codelineno-42-1"></a>curl --output chromium.tgz https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-142.0.7444.175-2.el9.tgz
 </code></pre></div>
 <p>ActiveGate version 1.327</p>
 <p>##### Red Hat Enterprise Linux/Rocky Linux 9</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-44-1" name="__codelineno-44-1" href="#__codelineno-44-1"></a>curl --output chromium.tgz https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-141.0.7390.122-1.el9.tgz
+<div class="highlight"><pre><span></span><code><a id="__codelineno-43-1" name="__codelineno-43-1" href="#__codelineno-43-1"></a>curl --output chromium.tgz https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-141.0.7390.122-1.el9.tgz
 </code></pre></div>
 <p>ActiveGate version 1.325</p>
 <p>##### Red Hat Enterprise Linux/Oracle/Rocky Linux 8</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-45-1" name="__codelineno-45-1" href="#__codelineno-45-1"></a>curl --output chromium.tgz https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-133.0.6943.141-1.el8.tgz
+<div class="highlight"><pre><span></span><code><a id="__codelineno-44-1" name="__codelineno-44-1" href="#__codelineno-44-1"></a>curl --output chromium.tgz https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-133.0.6943.141-1.el8.tgz
 </code></pre></div>
 <p>##### Red Hat Enterprise Linux/Rocky Linux 9</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-46-1" name="__codelineno-46-1" href="#__codelineno-46-1"></a>curl --output chromium.tgz https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-140.0.7339.185-1.el9.tgz
+<div class="highlight"><pre><span></span><code><a id="__codelineno-45-1" name="__codelineno-45-1" href="#__codelineno-45-1"></a>curl --output chromium.tgz https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-140.0.7339.185-1.el9.tgz
 </code></pre></div>
 <p>ActiveGate version 1.323</p>
 <p>##### Red Hat Enterprise Linux/Oracle/Rocky Linux 8</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-47-1" name="__codelineno-47-1" href="#__codelineno-47-1"></a>curl --output chromium.tgz https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-133.0.6943.141-1.el8.tgz
+<div class="highlight"><pre><span></span><code><a id="__codelineno-46-1" name="__codelineno-46-1" href="#__codelineno-46-1"></a>curl --output chromium.tgz https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-133.0.6943.141-1.el8.tgz
 </code></pre></div>
 <p>##### Red Hat Enterprise Linux/Rocky Linux 9</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-48-1" name="__codelineno-48-1" href="#__codelineno-48-1"></a>curl --output chromium.tgz https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-139.0.7258.138-1.el9.tgz
+<div class="highlight"><pre><span></span><code><a id="__codelineno-47-1" name="__codelineno-47-1" href="#__codelineno-47-1"></a>curl --output chromium.tgz https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-139.0.7258.138-1.el9.tgz
 </code></pre></div>
 <p>ActiveGate version 1.321</p>
 <p>##### Red Hat Enterprise Linux/Oracle/Rocky Linux 8</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-49-1" name="__codelineno-49-1" href="#__codelineno-49-1"></a>curl --output chromium.tgz https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-133.0.6943.141-1.el8.tgz
+<div class="highlight"><pre><span></span><code><a id="__codelineno-48-1" name="__codelineno-48-1" href="#__codelineno-48-1"></a>curl --output chromium.tgz https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-133.0.6943.141-1.el8.tgz
 </code></pre></div>
 <p>##### Red Hat Enterprise Linux/Rocky Linux 9</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-50-1" name="__codelineno-50-1" href="#__codelineno-50-1"></a>curl --output chromium.tgz https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-138.0.7204.100-1.el9.tgz
+<div class="highlight"><pre><span></span><code><a id="__codelineno-49-1" name="__codelineno-49-1" href="#__codelineno-49-1"></a>curl --output chromium.tgz https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-138.0.7204.157-1.el9.tgz
 </code></pre></div>
 <p>ActiveGate version 1.319</p>
 <p>##### Red Hat Enterprise Linux/Oracle/Rocky Linux 8</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-51-1" name="__codelineno-51-1" href="#__codelineno-51-1"></a>curl --output chromium.tgz https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-133.0.6943.141-1.el8.tgz
+<div class="highlight"><pre><span></span><code><a id="__codelineno-50-1" name="__codelineno-50-1" href="#__codelineno-50-1"></a>curl --output chromium.tgz https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-133.0.6943.141-1.el8.tgz
 </code></pre></div>
 <p>##### Red Hat Enterprise Linux/Rocky Linux 9</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-52-1" name="__codelineno-52-1" href="#__codelineno-52-1"></a>curl --output chromium.tgz https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-138.0.7204.100-1.el9.tgz
+<div class="highlight"><pre><span></span><code><a id="__codelineno-51-1" name="__codelineno-51-1" href="#__codelineno-51-1"></a>curl --output chromium.tgz https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-138.0.7204.100-1.el9.tgz
 </code></pre></div>
 <p>ActiveGate version 1.317</p>
 <p>##### Red Hat Enterprise Linux/Oracle/Rocky Linux 8</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-53-1" name="__codelineno-53-1" href="#__codelineno-53-1"></a>curl --output chromium.tgz https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-133.0.6943.141-1.el8.tgz
+<div class="highlight"><pre><span></span><code><a id="__codelineno-52-1" name="__codelineno-52-1" href="#__codelineno-52-1"></a>curl --output chromium.tgz https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-133.0.6943.141-1.el8.tgz
 </code></pre></div>
 <p>##### Red Hat Enterprise Linux/Rocky Linux 9</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-54-1" name="__codelineno-54-1" href="#__codelineno-54-1"></a>curl --output chromium.tgz https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-137.0.7151.103-1.el9.tgz
+<div class="highlight"><pre><span></span><code><a id="__codelineno-53-1" name="__codelineno-53-1" href="#__codelineno-53-1"></a>curl --output chromium.tgz https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-137.0.7151.103-1.el9.tgz
 </code></pre></div>
 <p>ActiveGate version 1.315</p>
 <p>##### Red Hat Enterprise Linux/Oracle/Rocky Linux 8</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-55-1" name="__codelineno-55-1" href="#__codelineno-55-1"></a>curl --output chromium.tgz https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-133.0.6943.141-1.el8.tgz
+<div class="highlight"><pre><span></span><code><a id="__codelineno-54-1" name="__codelineno-54-1" href="#__codelineno-54-1"></a>curl --output chromium.tgz https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-133.0.6943.141-1.el8.tgz
 </code></pre></div>
 <p>##### Red Hat Enterprise Linux/Rocky Linux 9</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-56-1" name="__codelineno-56-1" href="#__codelineno-56-1"></a>curl --output chromium.tgz https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-136.0.7103.59-1.el9.tgz
+<div class="highlight"><pre><span></span><code><a id="__codelineno-55-1" name="__codelineno-55-1" href="#__codelineno-55-1"></a>curl --output chromium.tgz https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-136.0.7103.59-1.el9.tgz
 </code></pre></div>
 <p>ActiveGate version 1.313</p>
 <p>##### Red Hat Enterprise Linux/Oracle/Rocky Linux 8</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-57-1" name="__codelineno-57-1" href="#__codelineno-57-1"></a>curl --output chromium.tgz https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-133.0.6943.141-1.el8.tgz
+<div class="highlight"><pre><span></span><code><a id="__codelineno-56-1" name="__codelineno-56-1" href="#__codelineno-56-1"></a>curl --output chromium.tgz https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-133.0.6943.141-1.el8.tgz
 </code></pre></div>
 <p>##### Red Hat Enterprise Linux/Rocky Linux 9</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-58-1" name="__codelineno-58-1" href="#__codelineno-58-1"></a>curl --output chromium.tgz https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-135.0.7049.95-1.el9.tgz
+<div class="highlight"><pre><span></span><code><a id="__codelineno-57-1" name="__codelineno-57-1" href="#__codelineno-57-1"></a>curl --output chromium.tgz https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-135.0.7049.95-1.el9.tgz
 </code></pre></div>
 <p>ActiveGate version 1.311</p>
 <p>##### Red Hat Enterprise Linux/Oracle/Rocky Linux 8</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-59-1" name="__codelineno-59-1" href="#__codelineno-59-1"></a>curl --output chromium.tgz https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-133.0.6943.141-1.el8.tgz
+<div class="highlight"><pre><span></span><code><a id="__codelineno-58-1" name="__codelineno-58-1" href="#__codelineno-58-1"></a>curl --output chromium.tgz https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-133.0.6943.141-1.el8.tgz
 </code></pre></div>
 <p>##### Red Hat Enterprise Linux/Rocky Linux 9</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-60-1" name="__codelineno-60-1" href="#__codelineno-60-1"></a>curl --output chromium.tgz https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-134.0.6998.35-1.el9.tgz
+<div class="highlight"><pre><span></span><code><a id="__codelineno-59-1" name="__codelineno-59-1" href="#__codelineno-59-1"></a>curl --output chromium.tgz https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-134.0.6998.35-1.el9.tgz
 </code></pre></div>
 <p>ActiveGate version 1.309</p>
 <p>##### Red Hat Enterprise Linux/Oracle/Rocky Linux 8</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-61-1" name="__codelineno-61-1" href="#__codelineno-61-1"></a>curl --output chromium.tgz https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-132.0.6834.159-1.el8.tgz
+<div class="highlight"><pre><span></span><code><a id="__codelineno-60-1" name="__codelineno-60-1" href="#__codelineno-60-1"></a>curl --output chromium.tgz https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-132.0.6834.159-1.el8.tgz
 </code></pre></div>
 <p>##### Red Hat Enterprise Linux/Rocky Linux 9</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-62-1" name="__codelineno-62-1" href="#__codelineno-62-1"></a>curl --output chromium.tgz https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-132.0.6834.159-1.el9.tgz
+<div class="highlight"><pre><span></span><code><a id="__codelineno-61-1" name="__codelineno-61-1" href="#__codelineno-61-1"></a>curl --output chromium.tgz https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-132.0.6834.159-1.el9.tgz
 </code></pre></div>
 <p>ActiveGate version 1.307</p>
 <p>##### Amazon Linux 2</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-63-1" name="__codelineno-63-1" href="#__codelineno-63-1"></a>curl --output chromium.tgz https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-126.0.6478.114-1.el7.tgz
+<div class="highlight"><pre><span></span><code><a id="__codelineno-62-1" name="__codelineno-62-1" href="#__codelineno-62-1"></a>curl --output chromium.tgz https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-126.0.6478.114-1.el7.tgz
 </code></pre></div>
 <p>##### Red Hat Enterprise Linux/Oracle/Rocky Linux 8</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-64-1" name="__codelineno-64-1" href="#__codelineno-64-1"></a>curl --output chromium.tgz https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-131.0.6778.204-1.el8.tgz
+<div class="highlight"><pre><span></span><code><a id="__codelineno-63-1" name="__codelineno-63-1" href="#__codelineno-63-1"></a>curl --output chromium.tgz https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-131.0.6778.204-1.el8.tgz
 </code></pre></div>
 <p>##### Red Hat Enterprise Linux/Rocky Linux 9</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-65-1" name="__codelineno-65-1" href="#__codelineno-65-1"></a>curl --output chromium.tgz https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-131.0.6778.204-1.el9.tgz
+<div class="highlight"><pre><span></span><code><a id="__codelineno-64-1" name="__codelineno-64-1" href="#__codelineno-64-1"></a>curl --output chromium.tgz https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-131.0.6778.204-1.el9.tgz
 </code></pre></div>
-<p>ActiveGate version 1.305</p>
-<p>##### Red Hat Enterprise Linux/CentOS 7, Amazon Linux 2</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-66-1" name="__codelineno-66-1" href="#__codelineno-66-1"></a>curl --output chromium.tgz https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-126.0.6478.114-1.el7.tgz
+<p>You can <a href="#verify">verify the authenticity of the packages</a> using the signature files stored together with the package archives.
+   * Extract the installation packages. Go to the directory where you saved the archive and run the following command:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-65-1" name="__codelineno-65-1" href="#__codelineno-65-1"></a>mkdir /tmp/chromium ; tar xzf chromium.tgz -C /tmp/chromium
 </code></pre></div>
-<p>##### Red Hat Enterprise Linux/Oracle/Rocky Linux 8</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-67-1" name="__codelineno-67-1" href="#__codelineno-67-1"></a>curl --output chromium.tgz https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-130.0.6723.69-1.el8.tgz
-</code></pre></div>
-<p>##### Red Hat Enterprise Linux/Rocky Linux 9</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-68-1" name="__codelineno-68-1" href="#__codelineno-68-1"></a>curl --output chromium.tgz https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-130.0.6723.116-1.el9.tgz
-</code></pre></div>
-<p>ActiveGate version 1.303</p>
-<p>##### Red Hat Enterprise Linux/CentOS 7, Amazon Linux 2</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-69-1" name="__codelineno-69-1" href="#__codelineno-69-1"></a>curl --output chromium.tgz https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-126.0.6478.114-1.el7.tgz
-</code></pre></div>
-<p>##### Red Hat Enterprise Linux/Oracle/Rocky Linux 8</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-70-1" name="__codelineno-70-1" href="#__codelineno-70-1"></a>curl --output chromium.tgz https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-129.0.6668.89-1.el8.tgz
-</code></pre></div>
-<p>##### Red Hat Enterprise Linux/Rocky Linux 9</p>
-<p>Requires Chromium 130, previous version <code>129.0.6668.89-1.el9</code> cannot be installed anymore, please refer to <a href="https://dt-url.net/x303x5f">troubleshooting guideï»¿</a> for details.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-71-1" name="__codelineno-71-1" href="#__codelineno-71-1"></a>curl --output chromium.tgz https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-130.0.6723.116-1.el9.tgz
-</code></pre></div>
-</li>
-</ul>
-<p>You can <a href="/docs/observe/digital-experience/synthetic-on-grail/synthetic-app/private-locations#verify" title="Learn how to manage private locations in the Synthetic app.">verify the authenticity of the packages</a> using the signature files stored together with the package archives.</p>
-<ul>
-<li>
-<p>Extract the installation packages. Go to the directory where you saved the archive and run the following command:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-72-1" name="__codelineno-72-1" href="#__codelineno-72-1"></a>mkdir /tmp/chromium ; tar xzf chromium.tgz -C /tmp/chromium
-</code></pre></div>
-<p>This creates a <code>/tmp/chromium</code> directory and extract the packages into it.
+<p>This creates a <code>/tmp/chromium</code> directory and extracts the packages into it.
    * Install extracted packages.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-73-1" name="__codelineno-73-1" href="#__codelineno-73-1"></a>sudo yum install -y /tmp/chromium/*.rpm
+<div class="highlight"><pre><span></span><code><a id="__codelineno-66-1" name="__codelineno-66-1" href="#__codelineno-66-1"></a>sudo yum install -y /tmp/chromium/*.rpm
 </code></pre></div>
 <p>This installs all the packages extracted to the <code>/tmp/chromium/</code> directory. You can delete the <code>/tmp/chromium/</code> directory and the downloaded <code>chromium.tgz</code> archive after successful Chromium installation.
 3. Disable automatic update of Chromium packages:</p>
 </li>
 </ul>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-74-1" name="__codelineno-74-1" href="#__codelineno-74-1"></a>sudo yum -y install yum-plugin-versionlock
-<a id="__codelineno-74-2" name="__codelineno-74-2" href="#__codelineno-74-2"></a>
-<a id="__codelineno-74-3" name="__codelineno-74-3" href="#__codelineno-74-3"></a>
-<a id="__codelineno-74-4" name="__codelineno-74-4" href="#__codelineno-74-4"></a>
-<a id="__codelineno-74-5" name="__codelineno-74-5" href="#__codelineno-74-5"></a>sudo yum versionlock chromium
-<a id="__codelineno-74-6" name="__codelineno-74-6" href="#__codelineno-74-6"></a>
-<a id="__codelineno-74-7" name="__codelineno-74-7" href="#__codelineno-74-7"></a>
-<a id="__codelineno-74-8" name="__codelineno-74-8" href="#__codelineno-74-8"></a>
-<a id="__codelineno-74-9" name="__codelineno-74-9" href="#__codelineno-74-9"></a>sudo yum versionlock chromium-common
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-67-1" name="__codelineno-67-1" href="#__codelineno-67-1"></a>sudo yum -y install yum-plugin-versionlock
+<a id="__codelineno-67-2" name="__codelineno-67-2" href="#__codelineno-67-2"></a>
+<a id="__codelineno-67-3" name="__codelineno-67-3" href="#__codelineno-67-3"></a>
+<a id="__codelineno-67-4" name="__codelineno-67-4" href="#__codelineno-67-4"></a>
+<a id="__codelineno-67-5" name="__codelineno-67-5" href="#__codelineno-67-5"></a>sudo yum versionlock chromium
+<a id="__codelineno-67-6" name="__codelineno-67-6" href="#__codelineno-67-6"></a>
+<a id="__codelineno-67-7" name="__codelineno-67-7" href="#__codelineno-67-7"></a>
+<a id="__codelineno-67-8" name="__codelineno-67-8" href="#__codelineno-67-8"></a>
+<a id="__codelineno-67-9" name="__codelineno-67-9" href="#__codelineno-67-9"></a>sudo yum versionlock chromium-common
 </code></pre></div>
 4. Optional Install non-Latin TrueType fonts:</p>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-75-1" name="__codelineno-75-1" href="#__codelineno-75-1"></a>sudo yum install dejavu-fonts-common.noarch dejavu-sans-fonts.noarch
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-68-1" name="__codelineno-68-1" href="#__codelineno-68-1"></a>sudo yum install dejavu-fonts-common.noarch dejavu-sans-fonts.noarch
 </code></pre></div>
 5. After you satisfy the dependencies, run the ActiveGate installer with root rights with the <code>--enable-synthetic</code> parameter set to <code>manual</code>. For example:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-76-1" name="__codelineno-76-1" href="#__codelineno-76-1"></a>/bin/bash ./Dynatrace-ActiveGate-Linux.sh --enable-synthetic=manual
+<div class="highlight"><pre><span></span><code><a id="__codelineno-69-1" name="__codelineno-69-1" href="#__codelineno-69-1"></a>/bin/bash ./Dynatrace-ActiveGate-Linux.sh --enable-synthetic=manual
 </code></pre></div>
-<h3 id="amazon-linux-2023-ubuntu-24-and-oracle-linux-9-chrome-for-testing">Amazon Linux 2023, Ubuntu 24, and Oracle Linux 9 (Chrome for Testing)<a class="headerlink" href="#amazon-linux-2023-ubuntu-24-and-oracle-linux-9-chrome-for-testing" title="Permanent link">&para;</a></h3>
+<p>You can <a href="/docs/observe/digital-experience/synthetic-on-grail/synthetic-app/private-locations#verify" title="Learn how to manage private locations in the Synthetic app.">verify the authenticity of the packages</a> using the signature files stored together with the package archives.</p>
+<h3 id="amazon-linux-2023-ubuntu-and-oracle-linux-9-chrome-for-testing">Amazon Linux 2023, Ubuntu, and Oracle Linux 9 (Chrome for Testing)<a class="headerlink" href="#amazon-linux-2023-ubuntu-and-oracle-linux-9-chrome-for-testing" title="Permanent link">&para;</a></h3>
 <p>Unlike Chromium on other distributions, Chrome for Testing updates do not use package managers. You manually manage the Chrome binaries while dependencies are managed by the system package manager.</p>
-<p>See <a href="#chromium-manual">how to update Chrome for Testing manually</a>. We strongly recommend that you keep your Linux-based Synthetic-enabled ActiveGates and Chrome for Testing versions updatedâDynatrace supports Chrome for Testing versions that are no more than two versions behind the <a href="/docs/observe/digital-experience/synthetic-on-grail/synthetic-app/private-locations/requirements-for-private-synthetic#chromium-linux" title="Check system and hardware requirements for private Synthetic locations.">latest Dynatrace-supported version</a> for a specific ActiveGate release.</p>
+<p>On Ubuntu Server 20.04 and 22.04 Chrome for Testing is supported since 1.331</p>
 <ol>
 <li>Set up repositories and install dependencies.</li>
 </ol>
-<p>Ubuntu 24</p>
+<p>Ubuntu</p>
 <p>Amazon Linux 2023</p>
 <p>Oracle Linux 9</p>
 <ul>
 <li>
 <p>Install Synthetic engine dependencies:</p>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-77-1" name="__codelineno-77-1" href="#__codelineno-77-1"></a>sudo apt-get update &amp;&amp; sudo apt-get -y install xvfb x11-xkb-utils xfonts-100dpi xfonts-75dpi xfonts-scalable libnss3-tools auditd unzip
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-70-1" name="__codelineno-70-1" href="#__codelineno-70-1"></a>sudo apt-get update &amp;&amp; sudo apt-get -y install xvfb x11-xkb-utils xfonts-100dpi xfonts-75dpi xfonts-scalable libnss3-tools auditd unzip
 </code></pre></div>
    * Install Chrome for Testing dependencies:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-78-1" name="__codelineno-78-1" href="#__codelineno-78-1"></a>sudo apt-get -y install libasound2t64 libatk-bridge2.0-0t64 libatk1.0-0t64 libcairo2 libcups2t64 libgbm1 libnspr4 libnss3 libpango-1.0-0 libxcomposite1 libxdamage1 libxfixes3 libxkbcommon0 libxrandr2
+<div class="highlight"><pre><span></span><code><a id="__codelineno-71-1" name="__codelineno-71-1" href="#__codelineno-71-1"></a>sudo apt-get -y install libasound2t64 libatk-bridge2.0-0t64 libatk1.0-0t64 libcairo2 libcups2t64 libgbm1 libnspr4 libnss3 libpango-1.0-0 libxcomposite1 libxdamage1 libxfixes3 libxkbcommon0 libxrandr2
 </code></pre></div>
 </li>
 <li>
 <p>Enable <code>EPEL</code> (Extra Packages for Enterprise Linux):</p>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-79-1" name="__codelineno-79-1" href="#__codelineno-79-1"></a>sudo yum install -y epel-release
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-72-1" name="__codelineno-72-1" href="#__codelineno-72-1"></a>sudo yum install -y epel-release
 </code></pre></div>
    * Install Synthetic engine dependencies:</p>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-80-1" name="__codelineno-80-1" href="#__codelineno-80-1"></a>sudo yum install -y xorg-x11-server-Xvfb xorg-x11-xkb-utils xorg-x11-server-utils xorg-x11-fonts-100dpi xorg-x11-fonts-75dpi xorg-x11-fonts-Type1 libwayland-server mesa-libgbm curl nss-tools unzip
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-73-1" name="__codelineno-73-1" href="#__codelineno-73-1"></a>sudo yum install -y xorg-x11-server-Xvfb xorg-x11-xkb-utils xorg-x11-server-utils xorg-x11-fonts-100dpi xorg-x11-fonts-75dpi xorg-x11-fonts-Type1 libwayland-server mesa-libgbm curl nss-tools unzip
 </code></pre></div>
    * Install Chrome for Testing dependencies:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-81-1" name="__codelineno-81-1" href="#__codelineno-81-1"></a>sudo yum install -y alsa-lib at-spi2-atk atk cairo cups-libs dbus-libs libXcomposite libXdamage libXrandr libxkbcommon mesa-libgbm nspr nss pango
+<div class="highlight"><pre><span></span><code><a id="__codelineno-74-1" name="__codelineno-74-1" href="#__codelineno-74-1"></a>sudo yum install -y alsa-lib at-spi2-atk atk cairo cups-libs dbus-libs libXcomposite libXdamage libXrandr libxkbcommon mesa-libgbm nspr nss pango
 </code></pre></div>
 </li>
 <li>
 <p>Enable <code>EPEL</code> (Extra Packages for Enterprise Linux):</p>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-82-1" name="__codelineno-82-1" href="#__codelineno-82-1"></a>sudo yum install -y oracle-epel-release-el9
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-75-1" name="__codelineno-75-1" href="#__codelineno-75-1"></a>sudo yum install -y oracle-epel-release-el9
 </code></pre></div>
    * Install Synthetic engine dependencies:</p>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-83-1" name="__codelineno-83-1" href="#__codelineno-83-1"></a>sudo yum install -y xorg-x11-server-Xvfb xkbcomp xorg-x11-server-utils xorg-x11-fonts-100dpi xorg-x11-fonts-75dpi xorg-x11-fonts-Type1 libwayland-server mesa-libgbm curl nss-tools unzip
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-76-1" name="__codelineno-76-1" href="#__codelineno-76-1"></a>sudo yum install -y xorg-x11-server-Xvfb xkbcomp xorg-x11-server-utils xorg-x11-fonts-100dpi xorg-x11-fonts-75dpi xorg-x11-fonts-Type1 libwayland-server mesa-libgbm curl nss-tools unzip
 </code></pre></div>
    * Install Chrome for Testing dependencies:</p>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-84-1" name="__codelineno-84-1" href="#__codelineno-84-1"></a>sudo yum install -y alsa-lib at-spi2-atk atk cairo cups-libs libXcomposite libXdamage libXrandr libxkbcommon mesa-libgbm nspr nss pango
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-77-1" name="__codelineno-77-1" href="#__codelineno-77-1"></a>sudo yum install -y alsa-lib at-spi2-atk atk cairo cups-libs libXcomposite libXdamage libXrandr libxkbcommon mesa-libgbm nspr nss pango
 </code></pre></div>
 2. Download and set up Chrome for Testing.</p>
 </li>
 <li>
 <p>Create the Chrome for Testing directory:</p>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-85-1" name="__codelineno-85-1" href="#__codelineno-85-1"></a>sudo mkdir -p /usr/lib/chrome_for_testing
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-78-1" name="__codelineno-78-1" href="#__codelineno-78-1"></a>sudo mkdir -p /usr/lib/chrome_for_testing
 </code></pre></div>
    * Download the Chrome for Testing package archive to a temporary location. This is a safe and verified archive hosted by Dynatrace.</p>
+<p>ActiveGate version 1.331</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-79-1" name="__codelineno-79-1" href="#__codelineno-79-1"></a>curl --output /tmp/chrome.zip https://synthetic-packages.s3.amazonaws.com/Chrome/chrome-for-testing-linux64/chrome-for-testing-linux64-143.0.7499.192.zip
+</code></pre></div>
 <p>ActiveGate version 1.329</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-86-1" name="__codelineno-86-1" href="#__codelineno-86-1"></a>curl --output /tmp/chrome.zip https://synthetic-packages.s3.amazonaws.com/Chrome/chrome-for-testing-linux64/chrome-for-testing-linux64-142.0.7444.175.zip
+<div class="highlight"><pre><span></span><code><a id="__codelineno-80-1" name="__codelineno-80-1" href="#__codelineno-80-1"></a>curl --output /tmp/chrome.zip https://synthetic-packages.s3.amazonaws.com/Chrome/chrome-for-testing-linux64/chrome-for-testing-linux64-142.0.7444.175.zip
 </code></pre></div>
 <p>ActiveGate version 1.327</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-87-1" name="__codelineno-87-1" href="#__codelineno-87-1"></a>curl --output /tmp/chrome.zip https://synthetic-packages.s3.amazonaws.com/Chrome/chrome-for-testing-linux64/chrome-for-testing-linux64-141.0.7390.122.zip
+<div class="highlight"><pre><span></span><code><a id="__codelineno-81-1" name="__codelineno-81-1" href="#__codelineno-81-1"></a>curl --output /tmp/chrome.zip https://synthetic-packages.s3.amazonaws.com/Chrome/chrome-for-testing-linux64/chrome-for-testing-linux64-141.0.7390.122.zip
 </code></pre></div>
-<p>You can <a href="/docs/observe/digital-experience/synthetic-on-grail/synthetic-app/private-locations#verify" title="Learn how to manage private locations in the Synthetic app.">verify the authenticity of the packages</a> using the signature files stored together with the package archives.
+<p>You can <a href="#verify">verify the authenticity of the packages</a> using the signature files stored together with the package archives.
    * Extract the installation package and clean up:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-88-1" name="__codelineno-88-1" href="#__codelineno-88-1"></a>sudo unzip /tmp/chrome.zip -d /usr/lib/chrome_for_testing
-<a id="__codelineno-88-2" name="__codelineno-88-2" href="#__codelineno-88-2"></a>
-<a id="__codelineno-88-3" name="__codelineno-88-3" href="#__codelineno-88-3"></a>
-<a id="__codelineno-88-4" name="__codelineno-88-4" href="#__codelineno-88-4"></a>
-<a id="__codelineno-88-5" name="__codelineno-88-5" href="#__codelineno-88-5"></a>rm /tmp/chrome.zip
+<div class="highlight"><pre><span></span><code><a id="__codelineno-82-1" name="__codelineno-82-1" href="#__codelineno-82-1"></a>sudo unzip /tmp/chrome.zip -d /usr/lib/chrome_for_testing
+<a id="__codelineno-82-2" name="__codelineno-82-2" href="#__codelineno-82-2"></a>
+<a id="__codelineno-82-3" name="__codelineno-82-3" href="#__codelineno-82-3"></a>
+<a id="__codelineno-82-4" name="__codelineno-82-4" href="#__codelineno-82-4"></a>
+<a id="__codelineno-82-5" name="__codelineno-82-5" href="#__codelineno-82-5"></a>rm /tmp/chrome.zip
 </code></pre></div>
 <p>This creates a <code>chrome-linux64</code> directory inside <code>/usr/lib/chrome_for_testing</code> and extracts the Chrome binary and supporting files into it.
    * Verify Chrome for Testing by checking the version:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-89-1" name="__codelineno-89-1" href="#__codelineno-89-1"></a>/usr/lib/chrome_for_testing/chrome-linux64/chrome --version
+<div class="highlight"><pre><span></span><code><a id="__codelineno-83-1" name="__codelineno-83-1" href="#__codelineno-83-1"></a>/usr/lib/chrome_for_testing/chrome-linux64/chrome --version
 </code></pre></div>
 <p>Command output should show the Chrome version you downloaded.
 3. After you satisfy the dependencies, run the ActiveGate installer with root rights. The installer will automatically detect and validate Chrome for Testing. For example:</p>
 </li>
 </ul>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-90-1" name="__codelineno-90-1" href="#__codelineno-90-1"></a>/bin/bash ./Dynatrace-ActiveGate-Linux.sh --enable-synthetic=manual
+<div class="highlight"><pre><span></span><code><a id="__codelineno-84-1" name="__codelineno-84-1" href="#__codelineno-84-1"></a>/bin/bash ./Dynatrace-ActiveGate-Linux.sh --enable-synthetic=manual
 </code></pre></div>
-<p>Custom Chrome for Testing directory: If you want to use a different directory than the default <code>/usr/lib/chrome_for_testing</code>, specify it by setting the <code>synthetic_chrome_for_testing_path</code> property in the <code>custom.properties</code> file after installation. The new directory will be used after the upgrade of Synthetic module.</p>
-<p>Chrome for Testing files are preserved during ActiveGate uninstallation. If you uninstall the ActiveGate, the Chrome for Testing directory and its contents will remain on the system and can be reused during reinstallation.</p>
-<h2 id="update-chromium-manually-from-s3">Update Chromium manually from S3<a class="headerlink" href="#update-chromium-manually-from-s3" title="Permanent link">&para;</a></h2>
-<p>You might want to update Chromium and dependencies manually if you have an offline environment. If you've installed an ActiveGate manually, say, for manual dependency management because of constraints in accessing the Amazon S3 service, you'll want to update Chromium manually.</p>
-<p>You need to update Chromium manually per ActiveGate, and the process varies slightly based on the operating system. Note that manual update of Chromium only applies to Linux-based ActiveGates; on Windows-based ActiveGates, Chromium is automatically updated during Synthetic engine updates.</p>
+<ul>
+<li>Custom Chrome for Testing directory: If you want to use a different directory than the default <code>/usr/lib/chrome_for_testing</code>, specify it by setting the <code>synthetic_chrome_for_testing_path</code> property in the <code>custom.properties</code> file after installation. The new directory will be used after the upgrade of Synthetic module.</li>
+<li>Chrome for Testing files are preserved during ActiveGate uninstallation. If you uninstall the ActiveGate, the Chrome for Testing directory and its contents will remain on the system and can be reused during reinstallation.</li>
+<li>You can <a href="/docs/observe/digital-experience/synthetic-on-grail/synthetic-app/private-locations#verify" title="Learn how to manage private locations in the Synthetic app.">verify the authenticity of the packages</a> using the signature files stored together with the package archives.</li>
+</ul>
+<h2 id="update-the-browser-manually-from-s3">Update the browser manually from S3<a class="headerlink" href="#update-the-browser-manually-from-s3" title="Permanent link">&para;</a></h2>
+<p>If you have an offline environment or you installed an ActiveGate manually for dependency management or due to limited access to Amazon S3, you need to update the browser and dependencies manually.</p>
+<p>You need to update the browser manually per ActiveGate, and the process varies slightly based on the operating system. Note that manual update of the browser only applies to Linux-based ActiveGates; on Windows-based ActiveGates, the browser is automatically updated during Synthetic engine updates.</p>
 <p>Prerequisites:</p>
 <ul>
-<li>Ensure that <a href="/docs/observe/digital-experience/synthetic-on-grail/synthetic-app/private-locations#chromium-autoupdate" title="Learn how to manage private locations in the Synthetic app."><strong>Enable Chromium auto-update</strong></a> is turned off for your private location. If you disable autoupdate for a location, you need to update Chromium manually on every ActiveGate assigned to that location.</li>
+<li>Ensure that <a href="/docs/observe/digital-experience/synthetic-on-grail/synthetic-app/private-locations#browser-autoupdate" title="Learn how to manage private locations in the Synthetic app."><strong>Enable Chrome(-ium) auto-update</strong></a> is turned off for your private location. If you disable autoupdate for a location, you need to update the browser manually on every ActiveGate assigned to that location.</li>
 <li>
-<p>Ensure that you can connect to <code>https://synthetic-packages.s3.amazonaws.com</code> to access Chromium and dependencies.</p>
+<p>Ensure that you can connect to <code>https://synthetic-packages.s3.amazonaws.com</code> to access the browser packages.</p>
 </li>
 <li>
-<p>The Synthetic engine will use the new Chromium version after the update is completeânote that the status is updated once every hour, so it may take up to an hour to refresh the Chromium version displayed for your ActiveGate in <strong>Deployment Status</strong>.</p>
+<p>The Synthetic engine will use the new browser version after the update is completeânote that the status is updated once every hour, so it may take up to an hour to refresh the browser version displayed for your ActiveGate in <strong>Deployment Status</strong>.</p>
 </li>
-<li>We strongly recommend that you keep your Linux-based Synthetic-enabled ActiveGates and Chromium versions updatedâDynatrace supports Chromium versions that are no more than two versions behind the <a href="/docs/observe/digital-experience/synthetic-on-grail/synthetic-app/private-locations/requirements-for-private-synthetic#chromium-linux" title="Check system and hardware requirements for private Synthetic locations.">latest Dynatrace-supported version</a> for a specific ActiveGate release.</li>
+<li>We strongly recommend that you keep your Linux-based Synthetic-enabled ActiveGates and browser versions updatedâDynatrace supports browser versions that are no more than two versions behind the <a href="/docs/observe/digital-experience/synthetic-on-grail/synthetic-app/private-locations/requirements-for-private-synthetic#browser-linux" title="Check system and hardware requirements for private Synthetic locations.">latest Dynatrace-supported version</a> for a specific ActiveGate release.</li>
 <li>We strongly recommend updating all ActiveGates per location to the same version.</li>
-<li>See also <a href="/docs/observe/digital-experience/synthetic-on-grail/synthetic-app/private-locations/install-chromium-for-linux#autoupdate-custom-repo" title="Learn how to install Chromium for Linux manually and from custom repositories.">Chromium autoupdate from a custom repository</a>.</li>
+<li>See also <a href="/docs/observe/digital-experience/synthetic-on-grail/synthetic-app/private-locations/install-chromium-for-linux#autoupdate-custom-repo" title="Learn how to install Chromium for Linux manually and from custom repositories.">Browser autoupdate from a custom repository</a>.</li>
 </ul>
-<p>Ubuntu Server</p>
+<p>Since ActiveGate 1.331, on Ubuntu Server 20.04 and 22.04 we use Chrome for Testing. Chromium snap distribution is no longer supported.
+If you are using any automation for updating the browser, convert it to use Chrome for Testing. Please refer to <a href="https://dt-url.net/il0363p">community guideï»¿</a> for details.</p>
+<p>Ubuntu (snap)</p>
 <p>Red Hat Enterprise Linux and CentOS</p>
-<p>Amazon Linux 2023, Ubuntu 24, and Oracle Linux 9 (Chrome for Testing)</p>
+<p>Amazon Linux 2023, Ubuntu, and Oracle Linux 9 (Chrome for Testing)</p>
+<p>This section is only relevant for releases 1.329 and earlier for Ubuntu Server 20.04 and 22.04.</p>
 <ol>
-<li>If your ActiveGate and Chromium versions haven't been updated in a while, you might want to check and install Synthetic engine and Chromium dependencies again. See the <a href="/docs/observe/digital-experience/synthetic-on-grail/synthetic-app/private-locations/install-chromium-for-linux#ubuntu" title="Learn how to install Chromium for Linux manually and from custom repositories.">manual installation instructions for Ubuntu Server</a>.</li>
-<li>Download the snap (Ubuntu 20.04 and 22.04) package archive. This is a safe and verified archive hosted by Dynatrace at <code>https://synthetic-packages.s3.amazonaws.com</code>. Be sure to use the specific command provided for your ActiveGate and Ubuntu Server versions in the <a href="/docs/observe/digital-experience/synthetic-on-grail/synthetic-app/private-locations/install-chromium-for-linux#ubuntu" title="Learn how to install Chromium for Linux manually and from custom repositories.">manual installation instructions for Ubuntu Server</a>.</li>
+<li>If your ActiveGate and Chromium versions are out of support or have not been updated for several releases, review the Synthetic Engine and Chromium dependencies, and reinstall them if necessary. See the <a href="/docs/observe/digital-experience/synthetic-on-grail/synthetic-app/private-locations/install-chromium-for-linux#ubuntu" title="Learn how to install Chromium for Linux manually and from custom repositories.">manual installation instructions for Ubuntu Server</a>.</li>
+<li>Download the snap (Ubuntu Server 20.04 and 22.04) package archive. This is a safe and verified archive hosted by Dynatrace at <code>https://synthetic-packages.s3.amazonaws.com</code>. Be sure to use the specific command provided for your ActiveGate and Ubuntu Server versions in the <a href="/docs/observe/digital-experience/synthetic-on-grail/synthetic-app/private-locations/install-chromium-for-linux#ubuntu" title="Learn how to install Chromium for Linux manually and from custom repositories.">manual installation instructions for Ubuntu Server</a>.</li>
 <li>Extract and install the downloaded packages. Be sure to use the correct installation command for your Ubuntu Server version (check the <a href="/docs/observe/digital-experience/synthetic-on-grail/synthetic-app/private-locations/install-chromium-for-linux#ubuntu" title="Learn how to install Chromium for Linux manually and from custom repositories.">manual installation instructions for Ubuntu Server</a>).</li>
 <li>Verify Chromium update by running the following command from the default installation directory. Command output should match the Chromium version you installed.</li>
 </ol>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-91-1" name="__codelineno-91-1" href="#__codelineno-91-1"></a>/opt/dynatrace/synthetic/browser --version
+<div class="highlight"><pre><span></span><code><a id="__codelineno-85-1" name="__codelineno-85-1" href="#__codelineno-85-1"></a>/opt/dynatrace/synthetic/browser --version
 </code></pre></div>
 <p>Updating Chromium manually is identical on Red Hat Enterprise Linux and CentOS, the only difference being the downloaded packages for Red Hat/CentOS version 7 and version 8.</p>
 <p>If you've installed Chromium manually, there's no need at the time of the update to register the Red Hat instance in the subscription manager or to enable the Red Hat repositories or EPEL packages.</p>
@@ -25967,102 +25949,104 @@
 <li>Extract and install the downloaded packages. Check the <a href="#redhat">manual installation instructions for Red Hat Enterprise Linux and CentOS</a>.</li>
 <li>If necessary, disable the automatic update of Chromium packages. Note that for Red Hat Enterprise Linux and CentOS, packing locking, once performed, remains persistent across all future updates.</li>
 </ol>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-92-1" name="__codelineno-92-1" href="#__codelineno-92-1"></a>sudo yum -y install yum-plugin-versionlock
-<a id="__codelineno-92-2" name="__codelineno-92-2" href="#__codelineno-92-2"></a>
-<a id="__codelineno-92-3" name="__codelineno-92-3" href="#__codelineno-92-3"></a>
-<a id="__codelineno-92-4" name="__codelineno-92-4" href="#__codelineno-92-4"></a>
-<a id="__codelineno-92-5" name="__codelineno-92-5" href="#__codelineno-92-5"></a>sudo yum versionlock chromium
-<a id="__codelineno-92-6" name="__codelineno-92-6" href="#__codelineno-92-6"></a>
-<a id="__codelineno-92-7" name="__codelineno-92-7" href="#__codelineno-92-7"></a>
-<a id="__codelineno-92-8" name="__codelineno-92-8" href="#__codelineno-92-8"></a>
-<a id="__codelineno-92-9" name="__codelineno-92-9" href="#__codelineno-92-9"></a>sudo yum versionlock chromium-common
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-86-1" name="__codelineno-86-1" href="#__codelineno-86-1"></a>sudo yum -y install yum-plugin-versionlock
+<a id="__codelineno-86-2" name="__codelineno-86-2" href="#__codelineno-86-2"></a>
+<a id="__codelineno-86-3" name="__codelineno-86-3" href="#__codelineno-86-3"></a>
+<a id="__codelineno-86-4" name="__codelineno-86-4" href="#__codelineno-86-4"></a>
+<a id="__codelineno-86-5" name="__codelineno-86-5" href="#__codelineno-86-5"></a>sudo yum versionlock chromium
+<a id="__codelineno-86-6" name="__codelineno-86-6" href="#__codelineno-86-6"></a>
+<a id="__codelineno-86-7" name="__codelineno-86-7" href="#__codelineno-86-7"></a>
+<a id="__codelineno-86-8" name="__codelineno-86-8" href="#__codelineno-86-8"></a>
+<a id="__codelineno-86-9" name="__codelineno-86-9" href="#__codelineno-86-9"></a>sudo yum versionlock chromium-common
 </code></pre></div>
 5. Verify Chromium update by running the following command from the default installation directory. Command output should match the Chromium version you installed.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-93-1" name="__codelineno-93-1" href="#__codelineno-93-1"></a>/opt/dynatrace/synthetic/browser --version
+<div class="highlight"><pre><span></span><code><a id="__codelineno-87-1" name="__codelineno-87-1" href="#__codelineno-87-1"></a>/opt/dynatrace/synthetic/browser --version
 </code></pre></div>
-<p>Chrome for Testing is managed differently than Chromium. Manual updates are performed by downloading and extracting the new version to the Chrome for Testing directory.</p>
+<p>Chrome for Testing is managed differently from Chromium. To update manually, download the new version and extract it to the Chrome for Testing directory.</p>
 <p>Unlike Chromium on other distributions, Chrome for Testing updates do not use package managers. You manually manage the Chrome binaries while dependencies are managed by the system package manager.</p>
+<p>Ubuntu Server 20.04 and 22.04</p>
+<p>When migrating from Chromium snap, first update the ActiveGate, then install Chrome for Testing and optionally remove Chromium snap files.</p>
 <ol>
 <li>If your ActiveGate and Chrome for Testing versions haven't been updated in a while, you might want to check and install Synthetic engine and Chrome for Testing dependencies again. See the <a href="#chrome-for-testing">manual installation instructions for Chrome for Testing</a>.</li>
 <li>Download the Chrome for Testing package archive to a temporary location. This is a safe and verified archive hosted by Dynatrace at <code>https://synthetic-packages.s3.amazonaws.com</code>. Be sure to use the specific command provided for your ActiveGate version in the <a href="#chrome-for-testing">manual installation instructions for Chrome for Testing</a>, but modify the output path to <code>/tmp/chrome.zip</code>.</li>
 <li>Remove the old Chrome for Testing directory, extract the new version, and clean up:</li>
 </ol>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-94-1" name="__codelineno-94-1" href="#__codelineno-94-1"></a>sudo rm -rf /usr/lib/chrome_for_testing/chrome-linux64
-<a id="__codelineno-94-2" name="__codelineno-94-2" href="#__codelineno-94-2"></a>
-<a id="__codelineno-94-3" name="__codelineno-94-3" href="#__codelineno-94-3"></a>
-<a id="__codelineno-94-4" name="__codelineno-94-4" href="#__codelineno-94-4"></a>
-<a id="__codelineno-94-5" name="__codelineno-94-5" href="#__codelineno-94-5"></a>sudo unzip /tmp/chrome.zip -d /usr/lib/chrome_for_testing
-<a id="__codelineno-94-6" name="__codelineno-94-6" href="#__codelineno-94-6"></a>
-<a id="__codelineno-94-7" name="__codelineno-94-7" href="#__codelineno-94-7"></a>
-<a id="__codelineno-94-8" name="__codelineno-94-8" href="#__codelineno-94-8"></a>
-<a id="__codelineno-94-9" name="__codelineno-94-9" href="#__codelineno-94-9"></a>rm /tmp/chrome.zip
+<div class="highlight"><pre><span></span><code><a id="__codelineno-88-1" name="__codelineno-88-1" href="#__codelineno-88-1"></a>sudo rm -rf /usr/lib/chrome_for_testing/chrome-linux64
+<a id="__codelineno-88-2" name="__codelineno-88-2" href="#__codelineno-88-2"></a>
+<a id="__codelineno-88-3" name="__codelineno-88-3" href="#__codelineno-88-3"></a>
+<a id="__codelineno-88-4" name="__codelineno-88-4" href="#__codelineno-88-4"></a>
+<a id="__codelineno-88-5" name="__codelineno-88-5" href="#__codelineno-88-5"></a>sudo unzip /tmp/chrome.zip -d /usr/lib/chrome_for_testing
+<a id="__codelineno-88-6" name="__codelineno-88-6" href="#__codelineno-88-6"></a>
+<a id="__codelineno-88-7" name="__codelineno-88-7" href="#__codelineno-88-7"></a>
+<a id="__codelineno-88-8" name="__codelineno-88-8" href="#__codelineno-88-8"></a>
+<a id="__codelineno-88-9" name="__codelineno-88-9" href="#__codelineno-88-9"></a>rm /tmp/chrome.zip
 </code></pre></div>
 <p>If you configured a custom Chrome for Testing directory via the <code>synthetic_chrome_for_testing_path</code> property in <code>custom.properties</code>, replace <code>/usr/lib/chrome_for_testing</code> with your custom path in the commands above.
 4. Verify Chrome for Testing update by running the following command. Command output should match the Chrome version you installed.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-95-1" name="__codelineno-95-1" href="#__codelineno-95-1"></a>/usr/lib/chrome_for_testing/chrome-linux64/chrome --version
+<div class="highlight"><pre><span></span><code><a id="__codelineno-89-1" name="__codelineno-89-1" href="#__codelineno-89-1"></a>/usr/lib/chrome_for_testing/chrome-linux64/chrome --version
 </code></pre></div>
 <p>The Synthetic engine will use the new Chrome for Testing version immediately. Note that the status is updated once every hour, so it may take up to an hour to refresh the Chrome version displayed for your ActiveGate in <strong>Deployment Status</strong>.</p>
-<h2 id="install-chromium-from-a-custom-repository">Install Chromium from a custom repository<a class="headerlink" href="#install-chromium-from-a-custom-repository" title="Permanent link">&para;</a></h2>
-<p>ActiveGate version 1.243+ In addition to <a href="/docs/observe/digital-experience/synthetic-on-grail/synthetic-app/private-locations/active-gate-for-private-locations-install" title="Learn how to install Synthetic-enabled ActiveGates.">web UI-guided ActiveGate installation</a> and <a href="#manual">manual installation of Chromium and dependencies</a>, you can also <strong>install ActiveGate by pointing to a custom, local repository for Chromium components</strong>. As this repository is an HTTP server that you set up within your network, the advantage of this method is that it can be used in environments with intranet-only or limited network access.</p>
-<p>This method of installing Chromium broadly consists of:</p>
+<h2 id="install-the-browser-from-a-custom-repository">Install the browser from a custom repository<a class="headerlink" href="#install-the-browser-from-a-custom-repository" title="Permanent link">&para;</a></h2>
+<p>ActiveGate version 1.243+ In addition to <a href="/docs/observe/digital-experience/synthetic-on-grail/synthetic-app/private-locations/active-gate-for-private-locations-install" title="Learn how to install Synthetic-enabled ActiveGates.">web UI-guided ActiveGate installation</a> and <a href="#manual">manual installation of the browser and dependencies</a>, you can also <strong>install ActiveGate by pointing to a custom, local repository for browser components</strong>. As this repository is an HTTP server that you set up within your network, the advantage of this method is that it can be used in environments with intranet-only or limited network access.</p>
+<p>This method of installing the browser broadly consists of:</p>
 <ul>
 <li>Downloading the required Dynatrace-hosted deb, snap, or rpm package archives and their corresponding signature files.</li>
-<li>Installing and running a locally hosted web server where the downloaded Chromium components reside.</li>
+<li>Installing and running a locally hosted web server where the downloaded browser components reside.</li>
 <li>
 <p>Downloading and running the ActiveGate installer on the target host with an environment variable pointing to the location of the custom repository on the HTTP server.</p>
 </li>
 <li>
-<p>A custom Chromium repository can be used only for Chromium components, not their dependencies. Installing Chromium from a custom repository will only work if all dependencies have been resolved before installation.</p>
+<p>A custom browser repository can be used only for browser components, not their dependencies. Installing the browser from a custom repository will only work if all dependencies have been resolved before installation.</p>
 </li>
 <li>
-<p>Custom repositories can only be used for <strong>Chromium installation and autoupdate</strong>âsee <a href="/docs/observe/digital-experience/synthetic-on-grail/synthetic-app/private-locations/install-chromium-for-linux#autoupdate-custom-repo" title="Learn how to install Chromium for Linux manually and from custom repositories.">Chromium autoupdate from a custom repository</a> for details.</p>
+<p>Custom repositories can only be used for <strong>browser installation and autoupdate</strong>âsee <a href="/docs/observe/digital-experience/synthetic-on-grail/synthetic-app/private-locations/install-chromium-for-linux#autoupdate-custom-repo" title="Learn how to install Chromium for Linux manually and from custom repositories.">Browser autoupdate from a custom repository</a> for details.</p>
 </li>
 <li>
-<p>Download the Chromium componentsâthe package archive and signature fileâfrom the safe and verified archive hosted by Dynatrace. See <a href="/docs/observe/digital-experience/synthetic-on-grail/synthetic-app/private-locations/requirements-for-private-synthetic" title="Check system and hardware requirements for private Synthetic locations.">Requirements for private Synthetic locations</a> for links to the latest supported and provided Chromium versions.</p>
+<p>Download the browser componentsâthe package archive and signature fileâfrom the safe and verified archive hosted by Dynatrace. See <a href="/docs/observe/digital-experience/synthetic-on-grail/synthetic-app/private-locations/requirements-for-private-synthetic" title="Check system and hardware requirements for private Synthetic locations.">Requirements for private Synthetic locations</a> for links to the latest supported and provided browser versions.</p>
 </li>
 </ul>
-<p>We recommend keeping your Linux-based Synthetic-enabled ActiveGates and Chromium versions up to date; choose the latest provided Chromium version for ActiveGate.</p>
-<p>For example, for ActiveGate version 1.255 on Ubuntu 22. the required files are:</p>
+<p>We recommend keeping your Linux-based Synthetic-enabled ActiveGates and browser versions up to date; choose the latest provided browser version for ActiveGate.</p>
+<p>For example, for ActiveGate version 1.331 on Ubuntu 24 the required files are:</p>
 <ul>
-<li>Package archiveâ<code>https://synthetic-packages.s3.amazonaws.com/Chromium/snap/chromium-107.0.5304.87-2168.tgz</code></li>
-<li>Signature fileâ<code>https://synthetic-packages.s3.amazonaws.com/Chromium/snap/chromium-107.0.5304.87-2168.tgz.sig</code></li>
+<li>Package archiveâ<code>https://synthetic-packages.s3.amazonaws.com/Chrome/chrome-for-testing-linux64/chrome-for-testing-linux64-143.0.7499.192.zip</code></li>
+<li>Signature fileâ<code>https://synthetic-packages.s3.amazonaws.com/Chrome/chrome-for-testing-linux64/chrome-for-testing-linux64-143.0.7499.192.zip.sig</code></li>
 </ul>
 <p>The corresponding download commands are:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-96-1" name="__codelineno-96-1" href="#__codelineno-96-1"></a>curl -o chromium-107.0.5304.87-2168.tgz https://synthetic-packages.s3.amazonaws.com/Chromium/snap/chromium-107.0.5304.87-2168.tgz
+<div class="highlight"><pre><span></span><code><a id="__codelineno-90-1" name="__codelineno-90-1" href="#__codelineno-90-1"></a>curl -o chrome-for-testing-linux64-143.0.7499.192.zip https://synthetic-packages.s3.amazonaws.com/Chrome/chrome-for-testing-linux64/chrome-for-testing-linux64-143.0.7499.192.zip
 </code></pre></div>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-97-1" name="__codelineno-97-1" href="#__codelineno-97-1"></a>curl -o chromium-107.0.5304.87-2168.tgz.sig https://synthetic-packages.s3.amazonaws.com/Chromium/snap/chromium-107.0.5304.87-2168.tgz.sig
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-91-1" name="__codelineno-91-1" href="#__codelineno-91-1"></a>curl -o chrome-for-testing-linux64-143.0.7499.192.zip.sig https://synthetic-packages.s3.amazonaws.com/Chrome/chrome-for-testing-linux64/chrome-for-testing-linux64-143.0.7499.192.zip.sig
 </code></pre></div>
-2. Install a web server of your choice and create a directory, for example, <code>chromium-repo</code>, to serve the Chromium components to the ActiveGate host. Copy the downloaded Chromium components to this directory.
+2. Install a web server of your choice and create a directory, for example, <code>chromium-repo</code>, to serve the Chromium components to the ActiveGate host. Copy the downloaded browser components to this directory.
 3. Download the ActiveGate installer from Dynatrace Hub.
-4. Resolve all dependencies and enable repositories as required as shown in <a href="#manual">Install Chromium and dependencies manually from S3</a> above. The custom repository can be used only for Chromium packages, not their dependencies.
+4. Resolve all dependencies and enable repositories as required as shown in <a href="#manual">Install the browser and dependencies manually from S3</a> above. The custom repository can be used only for browser packages, not their dependencies.
 5. Install the ActiveGate with the Synthetic module enabled (<code>--enable-synthetic</code>) and the <code>DYNATRACE_SYNTHETIC_CUSTOM_CHROMIUM_REPO</code> environment variable pointing to the location of the custom repository (<code>https://172.18.0.100/chromium-repo</code> in this example).</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-98-1" name="__codelineno-98-1" href="#__codelineno-98-1"></a>sudo DYNATRACE_SYNTHETIC_CUSTOM_CHROMIUM_REPO=http://172.18.0.100:8000/chromium-repo  /bin/bash Dynatrace-ActiveGate-Linux-x86-1.257.0.20221129-155835.sh --enable-synthetic
+<div class="highlight"><pre><span></span><code><a id="__codelineno-92-1" name="__codelineno-92-1" href="#__codelineno-92-1"></a>sudo DYNATRACE_SYNTHETIC_CUSTOM_CHROMIUM_REPO=http://172.18.0.100:8000/chromium-repo  /bin/bash Dynatrace-ActiveGate-Linux-x86-*.sh --enable-synthetic
 </code></pre></div>
 <p>You can use the hostname of the HTTP server instead of the IP address so long as the ActiveGate host can resolve the hostname.</p>
-<p>Once you've installed Chromium in this way from a custom repository, it can only be autoupdated. See <a href="#autoupdate-custom-repo">Chromium autoupdate from a custom repository</a> for details and update alternatives.</p>
-<h2 id="chromium-autoupdate-from-a-custom-repository">Chromium autoupdate from a custom repository<a class="headerlink" href="#chromium-autoupdate-from-a-custom-repository" title="Permanent link">&para;</a></h2>
-<p>If you've enabled a <a href="#custom-repo">custom, local repository for Chromium installation</a>, Chromium can only be autoupdated. Follow this procedure to autoupdate Chromium via the same custom repository.</p>
+<p>Once you've installed the browser in this way from a custom repository, it can only be autoupdated. See <a href="/docs/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/manage-private-synthetic-locations#autoupdate-custom-repo" title="Analyze and manage capacity usage at your private Synthetic locations.">Browser autoupdate from a custom repository in Manage private Synthetic locations</a> for details and update alternatives.</p>
+<h2 id="browser-autoupdate-from-a-custom-repository">Browser autoupdate from a custom repository<a class="headerlink" href="#browser-autoupdate-from-a-custom-repository" title="Permanent link">&para;</a></h2>
+<p>If you've enabled a <a href="#custom-repo">custom, local repository for the browser installation</a>, the browser can only be autoupdated. Follow this procedure to autoupdate the browser via the same custom repository.</p>
 <ol>
-<li>After ActiveGate installation, specify the custom repository of the ActiveGate in the <a href="/docs/ingest-from/dynatrace-activegate/configuration/configure-activegate#synth_mod" title="Learn which ActiveGate properties you can configure based on your needs and requirements."><code>[synthetic]</code> section of the <code>custom.properties</code> file</a> in the <code>/var/lib/dynatrace/gateway/config</code> directory. This allows for automatic Chromium updates from the custom repository during manual or automatic Synthetic engine updates.</li>
+<li>After ActiveGate installation, specify the custom repository of the ActiveGate in the <a href="/docs/ingest-from/dynatrace-activegate/configuration/configure-activegate#synth_mod" title="Learn which ActiveGate properties you can configure based on your needs and requirements."><code>[synthetic]</code> section of the <code>custom.properties</code> file</a> in the <code>/var/lib/dynatrace/gateway/config</code> directory. This allows for automatic browser updates from the custom repository during manual or automatic Synthetic engine updates.</li>
 </ol>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-99-1" name="__codelineno-99-1" href="#__codelineno-99-1"></a>[synthetic]
-<a id="__codelineno-99-2" name="__codelineno-99-2" href="#__codelineno-99-2"></a>
-<a id="__codelineno-99-3" name="__codelineno-99-3" href="#__codelineno-99-3"></a>
-<a id="__codelineno-99-4" name="__codelineno-99-4" href="#__codelineno-99-4"></a>
-<a id="__codelineno-99-5" name="__codelineno-99-5" href="#__codelineno-99-5"></a>chromium_repo = https://172.18.0.100/chromium-repo
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-93-1" name="__codelineno-93-1" href="#__codelineno-93-1"></a>[synthetic]
+<a id="__codelineno-93-2" name="__codelineno-93-2" href="#__codelineno-93-2"></a>
+<a id="__codelineno-93-3" name="__codelineno-93-3" href="#__codelineno-93-3"></a>
+<a id="__codelineno-93-4" name="__codelineno-93-4" href="#__codelineno-93-4"></a>
+<a id="__codelineno-93-5" name="__codelineno-93-5" href="#__codelineno-93-5"></a>chromium_repo = https://172.18.0.100/chromium-repo
 </code></pre></div>
-2. Turn on <a href="/docs/observe/digital-experience/synthetic-on-grail/synthetic-app/private-locations#chromium-autoupdate" title="Learn how to manage private locations in the Synthetic app."><strong>Enable Chromium auto-update</strong></a> for your private location.</p>
-<p>Note that the Chromium autoupdate UI setting applies to all ActiveGates assigned to your private location.
-3. Ensure that the Chromium components required for update are available at the custom repository location. Chromium is then automatically updated from the custom repository during ActiveGate and Synthetic engine updates.</p>
-<p>Chromium autoupdate option</p>
-<p>If you do not specify the custom repository in <code>custom.properties</code>, Chromium is downloaded and updated from S3 during a manual or automatic ActiveGate and Synthetic engine update.</p>
-<h2 id="custom-chromium-version">Custom Chromium version<a class="headerlink" href="#custom-chromium-version" title="Permanent link">&para;</a></h2>
-<p>You can install a custom Chromium version, that is, override the Chromium version that the ActiveGate installer looks for. This is applicable for manual ActiveGate installation, as described in <a href="#manual">Chromium installation via S3</a> or via a <a href="#custom-repo">custom repository</a>.</p>
-<p>In this command for manual ActiveGate installation via S3, an environment variable points to an explicit Chromium version number <code>107.0.5304.87-2168</code>, which is part of the package archive for Ubuntu 20 or 22.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-100-1" name="__codelineno-100-1" href="#__codelineno-100-1"></a>sudo /bin/bash -c &quot;export DYNATRACE_SYNTHETIC_EXPLICIT_CHROMIUM_VERSION=107.0.5304.87-2168; /bin/bash Dynatrace-ActiveGate-Linux-x86-1.257.0.20221129-155835.sh --enable-synthetic&quot;
+2. Turn on <a href="/docs/observe/digital-experience/synthetic-on-grail/synthetic-app/private-locations#browser-autoupdate" title="Learn how to manage private locations in the Synthetic app."><strong>Enable Chrome(-ium) auto-update</strong></a> for your private location.</p>
+<p>Note that the browser autoupdate UI setting applies to all ActiveGates assigned to your private location.
+3. Ensure that the browser components required for update are available at the custom repository location. The browser is then automatically updated from the custom repository during ActiveGate and Synthetic engine updates.</p>
+<p>Browser autoupdate option</p>
+<p>If you do not specify the custom repository in <code>custom.properties</code>, the browser is downloaded and updated from S3 during a manual or automatic ActiveGate and Synthetic engine update.</p>
+<h2 id="custom-browser-version">Custom browser version<a class="headerlink" href="#custom-browser-version" title="Permanent link">&para;</a></h2>
+<p>You can install a custom browser version, that is, override the browser version that the ActiveGate installer looks for. This is applicable for manual ActiveGate installation, as described in <a href="#manual">Browser installation via S3</a> or via a <a href="#custom-repo">custom repository</a>.</p>
+<p>In this command for manual ActiveGate installation via S3, an environment variable points to an explicit browser version number <code>143.0.7499.192</code>, which is part of the Chrome for Testing package archive.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-94-1" name="__codelineno-94-1" href="#__codelineno-94-1"></a>sudo /bin/bash -c &quot;export DYNATRACE_SYNTHETIC_EXPLICIT_CHROMIUM_VERSION=143.0.7499.192; /bin/bash Dynatrace-ActiveGate-Linux-x86-*.sh --enable-synthetic&quot;
 </code></pre></div>
-<p>This command searches for the Chromium version <code>107.0.5304.87-2168</code> in the custom repository <code>https://172.18.0.100/chromium-repo</code>.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-101-1" name="__codelineno-101-1" href="#__codelineno-101-1"></a>sudo DYNATRACE_SYNTHETIC_EXPLICIT_CHROMIUM_VERSION=107.0.5304.87-2168 DYNATRACE_SYNTHETIC_CUSTOM_CHROMIUM_REPO=http://172.18.0.100:8000/chromium-repo  /bin/bash Dynatrace-ActiveGate-Linux-x86-1.257.0.20221129-155835.sh --enable-synthetic
+<p>This command searches for the browser version <code>143.0.7499.192</code> in the custom repository <code>https://172.18.0.100/chromium-repo</code>.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-95-1" name="__codelineno-95-1" href="#__codelineno-95-1"></a>sudo DYNATRACE_SYNTHETIC_EXPLICIT_CHROMIUM_VERSION=143.0.7499.192 DYNATRACE_SYNTHETIC_CUSTOM_CHROMIUM_REPO=http://172.18.0.100:8000/chromium-repo  /bin/bash Dynatrace-ActiveGate-Linux-x86-*.sh --enable-synthetic
 </code></pre></div>
 
 

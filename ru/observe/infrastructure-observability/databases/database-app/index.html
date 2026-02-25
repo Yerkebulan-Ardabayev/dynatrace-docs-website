@@ -25555,7 +25555,7 @@
 <li>Latest Dynatrace</li>
 <li>App</li>
 <li>4-min read</li>
-<li>Updated on Jan 28, 2026</li>
+<li>Updated on Feb 26, 2026</li>
 </ul>
 <p>The Dynatrace <img alt="Databases" src="https://dt-cdn.net/images/dynatrace-database-256-1afe08286e.webp" title="Databases" /> <strong>Databases</strong> enables you to monitor, analyze, and optimize database environments with clarity and control. It offers detailed insights into performance, health, and configuration, helping you identify issues early and maintain reliable operations.</p>
 <p>By integrating with Dynatrace observability ecosystem, <img alt="Databases" src="https://dt-cdn.net/images/dynatrace-database-256-1afe08286e.webp" title="Databases" /> <strong>Databases</strong> connects database metrics with application and infrastructure data, supporting faster troubleshooting and smarter decision-making.</p>
@@ -25604,6 +25604,13 @@
 <p>Read logs from Grail</p>
 <p>storage:metrics:read</p>
 <p>Read metrics from Grail</p>
+<h4 id="limit-data-access">Limit data access<a class="headerlink" href="#limit-data-access" title="Permanent link">&para;</a></h4>
+<p>In general, the Database app users need a basic <code>storage:**</code> permissions to access data from the Grail.</p>
+<p>However, for the strict access, you can create a custom policy limiting the access to the <code>default_database_monitoring</code> Grail bucket.</p>
+<p>The <code>default_database_monitoring</code> bucket is where all the database extension-retrived data is stored, including logs. You can use the following statement to create a policy:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>ALLOW storage:buckets:read WHERE storage:bucket-name = &#39;default_database_monitoring&#39;
+</code></pre></div>
+<p>For more information see, <a href="/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies" title="Working with policies">Working with policies</a> and <a href="/docs/manage/identity-access-management/use-cases/access-grail" title="Grant access to Grail">Grant access to Grail</a>.</p>
 <h3 id="installation-steps">Installation steps<a class="headerlink" href="#installation-steps" title="Permanent link">&para;</a></h3>
 <ol>
 <li>Install <img alt="Databases" src="https://dt-cdn.net/images/dynatrace-database-256-1afe08286e.webp" title="Databases" /> <strong>Databases</strong> from the Dynatrace  <strong>Hub</strong>.</li>

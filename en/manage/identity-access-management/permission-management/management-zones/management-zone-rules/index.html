@@ -25619,19 +25619,7 @@
 </ul>
 <p>In other cases, the propagation of access to related topological entities is implicit. For example, when you grant access to a host in a management zone, any custom metrics ingested via that host are also accessible within the management zone. Note that this does not automatically include all measurements of those custom metrics but only those measurements that were sent in for your host.</p>
 <p>In cases where such propagation isn't available, you need to explicitly create rules for the entities you wish to add to a management zone. For example, a management-zone rule that applies to <strong>Host groups</strong> does not automatically grant access to the hosts within those groups; you need to explicitly add rules for the <strong>Hosts</strong> you wish to include in the management zone, as shown in <a href="#examples">Examples</a> below.</p>
-<p>Management zones are always implicitly propagated to the following related entities. However, this does not apply to entity selector based rules.</p>
-<p>From</p>
-<p>To</p>
-<p>Process Group</p>
-<p>Process Group Instance, Container Group, Container Group Instance</p>
-<p>Hypervisor</p>
-<p>VCenter</p>
-<p>Host</p>
-<p>EC2 Instance, Container Group Instance</p>
-<p>AWS Credentials</p>
-<p>AWS availability zone, AWS lambda function, AWS application load balancer, AWS network load balancer, EC2 instance, Custom device, Custom device group, Auto scaling group, Relational database service</p>
-<p>Synthetic Test</p>
-<p>Application
+<p>Management zones are always implicitly propagated to the following related entities. However, this does not apply to entity selector based rules.
 * When you add an entity using tags to a management zone as part of entity creation via API, there might be a delay in management-zone assignment depending on the number and complexity of your tagging rules. See <a href="/docs/manage/tags-and-metadata/basic-concepts/best-practice-tagging-at-scale" title="Optimize auto-tagging and management-zone rules to speed up the automatic assignment process.">Best practices for scaling tagging and management-zone rules</a> for best practices to speed up the time taken to assign tags and management zones within your monitoring environments.
 * You cannot define management-zone rules where the entity selector for one management zone filters by another management zone. Management zone predicates such as <code>mzID</code> or <code>mzName</code> are not allowed in entity selector strings. This means, for example, that you cannot define management zone A as containing hosts belonging to management zone B. Management-zone rules based on other management zones increase the number of runs made by the conditional decision engine and can greatly delay management-zone assignment. See also <a href="/docs/manage/tags-and-metadata/basic-concepts/best-practice-tagging-at-scale" title="Optimize auto-tagging and management-zone rules to speed up the automatic assignment process.">Best practices for scaling tagging and management-zone rules</a> for related information.</p>
 <p>As a workaround, use the same entity selector string in both management zones. For example, consider that:</p>

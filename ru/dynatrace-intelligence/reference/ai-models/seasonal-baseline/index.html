@@ -29,7 +29,7 @@
     
     
       
-        <title>Seasonal baseline - Dynatrace Managed - Документация</title>
+        <title>Сезонная базовая линия - Dynatrace Managed - Документация</title>
       
     
     
@@ -82,7 +82,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#seasonal-baseline" class="md-skip">
+        <a href="#_1" class="md-skip">
           Перейти к содержанию
         </a>
       
@@ -118,7 +118,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Seasonal baseline
+              Сезонная базовая линия
             
           </span>
         </div>
@@ -25549,53 +25549,53 @@
 
 
 
-<h1 id="seasonal-baseline">Seasonal baseline<a class="headerlink" href="#seasonal-baseline" title="Permanent link">&para;</a></h1>
-<h1 id="seasonal-baseline_1">Seasonal baseline<a class="headerlink" href="#seasonal-baseline_1" title="Permanent link">&para;</a></h1>
+<h1 id="_1">Сезонная базовая линия<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<h1 id="_2">Сезонная базовая линия<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h1>
 <ul>
-<li>Latest Dynatrace</li>
-<li>Explanation</li>
-<li>5-min read</li>
-<li>Updated on Jan 28, 2026</li>
+<li>Последнее Dynatrace</li>
+<li>Объяснение</li>
+<li>5-минутное чтение</li>
+<li>Обновлено 28 января 2026 г.</li>
 </ul>
-<p>A seasonal baseline represents a dynamic approach to baselining where the systems have distinct seasonality patterns. An example of a seasonal pattern is a metric that rises during business hours and lies low outside of them. For such a case, it is difficult to set up an alerting configuration based on a static or auto-adaptive threshold. If you set a fixed threshold based on business hours' behavior, you'll miss an anomaly outside of business hours. Dynatrace Intelligence <strong>learns the seasonal behavior</strong> of your metrics and automatically creates a confidence band for it.</p>
-<p>When the configuration of a metric event includes multiple entities, each entity receives its own seasonal baseline, and each baseline is evaluated independently. For example, if the scope of an event includes five services, Dynatrace calculates and evaluates five independent baselines.</p>
-<h2 id="baseline-example">Baseline example<a class="headerlink" href="#baseline-example" title="Permanent link">&para;</a></h2>
-<p>In this example, we're looking at the number of user actions in an application. Real user interactions often follow the seasonality of business hours and weekends, and our time series also shows daily peaks.</p>
-<p>When evaluated by a static threshold, those daily peaks result in false-positive alarms (red annotation within the chart).</p>
-<p><img alt="Static threshold based anomaly detection producing false-positive alarms in case of seasonal timeseries behavior." src="https://dt-cdn.net/images/notebook-static-threshold-anomalies-1920-b17476b1bd.png" /></p>
-<p>Dynatrace Intelligence automatically detects seasonal behavior in the time series and creates a confidence band based on that pattern. As you can see on the chart below, the model recognizes seasonality and doesn't generate false alarms on the peaks. However, it will still trigger an alert should a spike occur at a different time.</p>
-<p><img alt="Seasonal anomaly detection model correctly follows the seasonal behavior of a timeseries and avoids false-positive alarms." src="https://dt-cdn.net/images/notebooks-seasonal-baseline-1920-c6aa3be336.png" /></p>
-<h2 id="parameters-of-the-baseline-model">Parameters of the baseline model<a class="headerlink" href="#parameters-of-the-baseline-model" title="Permanent link">&para;</a></h2>
-<p>The seasonal baseline model uses the metric values for each minute during the <strong>last 14 days</strong> as the reference for the baseline calculation. The model learns the usual behavior of the metric and aims to detect regularly repeating patterns. It uses <strong>probabilistic prediction</strong> to compute the confidence band, which covers the expected range of a future point.</p>
-<p>You can adapt the width of the confidence band via the <strong>tolerance</strong> parameter. A higher tolerance means a broader confidence band, leading to fewer triggered events. The allowed range for the tolerance is from <code>0.1</code> to <code>10</code>, with <code>4</code> as the default value.</p>
-<p>As the name suggests, the seasonal model is beneficial for data with seasonal patterns (for example, daily peaks). As it consumes significant resources and needs more time to learn the behavior, there are some validation checks to ensure optimal performance. The <a href="#training">validation</a> evaluates each tuple (unique combinations of metricâdimensionâdimension value). If there's no pass, a simple model is used instead, with the respective message appearing in the preview.</p>
-<p>The simple model calculates the confidence band based on the robust estimation of the distribution of the input data and its calculated interval stays constant over time. For the simple model, the <strong>tolerance</strong> parameter controls the width of the confidence band in the same manner as for the seasonal model.</p>
-<p>If <strong>metric boundaries</strong> (minimum or maximum value of the metric) are set in the metric metadata they are automatically considered in the model. If no metric boundaries are set and the input data contains only positive values, the model automatically sets a minimum boundary value of <code>0</code>. If a minimum or maximum value is found, the confidence band does not exceed this value.</p>
-<p>The model (be it seasonal or simple) is updated daily.</p>
-<p>Another important parameter for seasonal baselines is the <a href="/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-configuration#sliding-window" title="How to set up an alert for missing measurements.">sliding window</a> that is used to compare current measurements against the confidence band. It defines how often the confidence band must be violated within a sliding window of time to raise an event (violations don't have to be successive). This approach helps to reduce the number of false positives when alerting. You can set the sliding window to a maximum of 60 minutes.</p>
-<h2 id="training-of-the-baseline-model">Training of the baseline model<a class="headerlink" href="#training-of-the-baseline-model" title="Permanent link">&para;</a></h2>
-<p>The seasonal baseline model uses the metric values for each minute during the last 14 days for training and is trained per tuple (unique combinations of metricâdimensionâdimension value). The training happens on daily basis.</p>
-<p>The image below provides an overview of the training process.</p>
-<p><img alt="seasonal baseline model overview" src="https://dt-cdn.net/images/seasonal-baseline-model-training-1187-8bd05de831.png" /></p>
-<p>The first step, <strong>data validation</strong>, ensures that it is reasonable to train a seasonal model on the metric data. Here are some reasons to switch to a simple model:</p>
+<p>Сезонная базовая линия представляет собой динамический подход к базовой линии, где системы имеют разные сезонные закономерности. Примером сезонной закономерности является метрика, которая увеличивается в течение рабочих часов и остается низкой вне их. В таком случае сложно настроить конфигурацию оповещения на основе статического или автоадаптивного порога. Если вы установите фиксированный порог на основе поведения в рабочие часы, вы пропустите аномалию вне рабочих часов. Dynatrace Intelligence <strong>изучает сезонное поведение</strong> ваших метрик и автоматически создает доверительный интервал для него.</p>
+<p>Когда конфигурация события метрики включает несколько сущностей, каждая сущность получает свою собственную сезонную базовую линию, и каждая базовая линия оценивается независимо. Например, если область действия события включает пять сервисов, Dynatrace вычисляет и оценивает пять независимых базовых линий.</p>
+<h2 id="_3">Пример базовой линии<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>В этом примере мы рассматриваем количество действий пользователей в приложении. Реальные взаимодействия пользователей часто следуют сезонности рабочих часов и выходных, и наш временной ряд также показывает ежедневные пики.</p>
+<p>Когда оценивается статическим порогом, эти ежедневные пики приводят к ложноположительным сигналам тревоги (красная аннотация на графике).</p>
+<p><img alt="Статический порог обнаружения аномалий, производящий ложноположительные сигналы тревоги в случае сезонного поведения временного ряда." src="https://dt-cdn.net/images/notebook-static-threshold-anomalies-1920-b17476b1bd.png" /></p>
+<p>Dynatrace Intelligence автоматически обнаруживает сезонное поведение во временном ряду и создает доверительный интервал на основе этой закономерности. Как вы можете видеть на графике ниже, модель распознает сезонность и не генерирует ложные сигналы тревоги на пиках. Однако она все равно сработает, если происходит скачок в другое время.</p>
+<p><img alt="Сезонная модель обнаружения аномалий правильно следует сезонному поведению временного ряда и избегает ложноположительных сигналов тревоги." src="https://dt-cdn.net/images/notebooks-seasonal-baseline-1920-c6aa3be336.png" /></p>
+<h2 id="_4">Параметры модели базовой линии<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p>Модель сезонной базовой линии использует значения метрик за каждую минуту за <strong>последние 14 дней</strong> в качестве эталона для расчета базовой линии. Модель изучает обычное поведение метрики и стремится обнаружить регулярно повторяющиеся закономерности. Она использует <strong>вероятностное прогнозирование</strong> для расчета доверительного интервала, который охватывает ожидаемый диапазон будущей точки.</p>
+<p>Вы можете адаптировать ширину доверительного интервала с помощью параметра <strong>допустимой погрешности</strong>. Более высокая допустимая погрешность означает более широкий доверительный интервал, что приводит к меньшему количеству срабатываний событий. Разрешенный диапазон для допустимой погрешности составляет от <code>0,1</code> до <code>10</code>, с <code>4</code> в качестве значения по умолчанию.</p>
+<p>Как следует из названия, сезонная модель полезна для данных с сезонными закономерностями (например, ежедневными пиками). Поскольку она потребляет значительные ресурсы и требует больше времени для изучения поведения, существуют некоторые проверки валидации для обеспечения оптимальной производительности. <a href="#training">Валидация</a> оценивает каждую пару (уникальные комбинации метрики - размерность - значение размерности). Если проверка не проходит, используется простая модель, и соответствующее сообщение появляется в предварительном просмотре.</p>
+<p>Простая модель рассчитывает доверительный интервал на основе робастного оценщика распределения входных данных, и его рассчитанный интервал остается постоянным во времени. Для простой модели параметр <strong>допустимой погрешности</strong> контролирует ширину доверительного интервала таким же образом, как и для сезонной модели.</p>
+<p>Если <strong>границы метрик</strong> (минимальное или максимальное значение метрики) заданы в метаданных метрики, они автоматически учитываются в модели. Если границы метрик не заданы и входные данные содержат только положительные значения, модель автоматически задает минимальное значение границы <code>0</code>. Если найдено минимальное или максимальное значение, доверительный интервал не превышает это значение.</p>
+<p>Модель (сезонная или простая) обновляется ежедневно.</p>
+<p>Другим важным параметром для сезонных базовых линий является <a href="/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-configuration#sliding-window" title="Настройка оповещения для пропущенных измерений.">скользящее окно</a> , которое используется для сравнения текущих измерений с доверительным интервалом. Оно определяет, как часто доверительный интервал должен быть нарушен в течение скользящего окна времени, чтобы сработать событие (нарушения не должны быть последовательными). Этот подход помогает уменьшить количество ложных положительных сигналов при оповещении. Вы можете задать скользящее окно до максимально 60 минут.</p>
+<h2 id="_5">Обучение модели базовой линии<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<p>Модель сезонной базовой линии использует значения метрик за каждую минуту за последние 14 дней для обучения и обучается по паре (уникальные комбинации метрики - размерность - значение размерности). Обучение происходит ежедневно.</p>
+<p>Ниже представлена схема процесса обучения.</p>
+<p><img alt="Обзор модели сезонной базовой линии" src="https://dt-cdn.net/images/seasonal-baseline-model-training-1187-8bd05de831.png" /></p>
+<p>Первый шаг, <strong>валидация данных</strong>, гарантирует, что обучение сезонной модели на данных метрик является разумным. Вот некоторые причины для перехода на простую модель:</p>
 <ul>
-<li>the data has many missing values</li>
-<li>the data has many outliers</li>
-<li>there is not enough variability in the data</li>
-<li>there is no seasonality detectable in the data.</li>
+<li>данные имеют много пропущенных значений</li>
+<li>данные имеют много выбросов</li>
+<li>в данных недостаточно вариативности</li>
+<li>в данных нет обнаруживаемой сезонности.</li>
 </ul>
-<p>If this validation fails, the <strong>simple model</strong> is used instead. If the validation is successful, the next step is the <strong>pre-processing of the input data</strong>. In this step the data is prepared for training the quantile regression model which learns the seasonal behavior from three main characteristics (features) of data:</p>
+<p>Если эта валидация не проходит, используется <strong>простая модель</strong>. Если валидация проходит успешно, следующим шагом является <strong>предварительная обработка входных данных</strong>. На этом этапе данные готовятся для обучения модели квантильной регрессии, которая изучает сезонное поведение из трех основных характеристик (фич) данных:</p>
 <ul>
-<li><strong>Autoregressive features</strong> are the ten most recent historic data points (small gaps are interpolated)</li>
-<li><strong>Time and day features</strong> identify a day or a specific time of a day which can help to learn a pattern occurring only on a specific day</li>
-<li><strong>Robust seasonal patterns</strong> describe regular repeating patterns extracted via Fourier transformation.</li>
+<li><strong>Авторегрессивные фичи</strong> - это десять наиболее недавних исторических точек данных (маленькие разрывы интерполируются)</li>
+<li><strong>Фичи времени и дня</strong> идентифицируют день или конкретное время дня, которое может помочь изучить закономерность, возникающую только в конкретный день</li>
+<li><strong>Робастные сезонные закономерности</strong> описывают регулярно повторяющиеся закономерности, извлеченные с помощью преобразования Фурье.</li>
 </ul>
-<p>These features are used to train the <strong>Quantile regression model</strong>, a probabilistic regression model, that is robust against outliers due to estimating quantiles.</p>
-<p>The next step is the <strong>Model validation</strong>, which verifies the reliability of the forecasted quantiles on a subset of data. If this validation fails, the <strong>simple model</strong> is used instead.</p>
-<p>After the training is finished, Dynatrace uses the seasonal model to detect anomalies. Each minute the model produces a <strong>one-step-ahead forecast</strong> of the confidence band for the next minute. Once the actual data point arrives, the predicted confidence interval is compared with the actual value to check whether the value is within the predicted boundaries.</p>
-<h2 id="related-topics">Related topics<a class="headerlink" href="#related-topics" title="Permanent link">&para;</a></h2>
+<p>Эти фичи используются для обучения <strong>модели квантильной регрессии</strong>, вероятностной регрессионной модели, которая является робастной против выбросов благодаря оценке квантилей.</p>
+<p>Следующим шагом является <strong>валидация модели</strong>, которая проверяет надежность прогнозируемых квантилей на подмножестве данных. Если эта валидация не проходит, используется <strong>простая модель</strong>.</p>
+<p>После завершения обучения Dynatrace использует сезонную модель для обнаружения аномалий. Каждую минуту модель производит <strong>прогноз доверительного интервала</strong> на следующую минуту. Как только фактическая точка данных приходит, прогнозируемый доверительный интервал сравнивается с фактическим значением, чтобы проверить, находится ли значение в пределах прогнозируемого интервала.</p>
+<h2 id="_6">Связанные темы<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
 <ul>
-<li><a href="/docs/analyze-explore-automate/metrics-classic" title="Learn about metrics classic that Dynatrace offers.">Metrics Classic</a></li>
+<li><a href="/docs/analyze-explore-automate/metrics-classic" title="Узнайте о метриках Classic, которые Dynatrace предлагает.">Метрики Classic</a></li>
 </ul>
 
 

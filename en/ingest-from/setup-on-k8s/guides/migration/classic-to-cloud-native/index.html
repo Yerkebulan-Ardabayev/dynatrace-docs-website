@@ -25680,42 +25680,6 @@
 4. Continue with step 1 of the <a href="#migrate">standard migration procedure</a>.</p>
 <h2 id="changes-in-kubernetes-resources">Changes in Kubernetes resources<a class="headerlink" href="#changes-in-kubernetes-resources" title="Permanent link">&para;</a></h2>
 <p>This migration impacts several Kubernetes resources, altering their functions or introducing new components to support cloud-native injection mode. Key changes include:</p>
-<p>Component</p>
-<p>classic full-stack</p>
-<p>cloud-native full-stack</p>
-<p>OneAgent</p>
-<ul>
-<li>Deployed as a DaemonSet</li>
-<li>Collect host metrics on nodes</li>
-<li>
-<p>Inject code modules into application pods</p>
-</li>
-<li>
-<p>Deployed as a DaemonSet</p>
-</li>
-<li>Collect host metrics on nodes</li>
-</ul>
-<p>Dynatrace Webhook Server</p>
-<ul>
-<li>
-<p>Validates DynaKube definitions</p>
-</li>
-<li>
-<p>Validates DynaKube definitions</p>
-</li>
-<li>Inject code modules into application pods by modifying pod definitions</li>
-</ul>
-<p><a href="/docs/ingest-from/setup-on-k8s/how-it-works#csi-driver" title="In-depth description on how the deployment on Kubernetes works.">Dynatrace Operator CSI driver</a></p>
-<p>Required</p>
-<ul>
-<li>
-<p>Not present</p>
-</li>
-<li>
-<p>Deployed as a DaemonSet</p>
-</li>
-<li>Optimizes the download of code modules to speed up pod injection and reduce storage consumption</li>
-</ul>
 
 
 

@@ -25511,18 +25511,6 @@
 <p>By default, NetTracer is included as the binary <code>oneagentnettracer</code> with every OneAgent installation, and it can be enabled via the Dynatrace web UI.</p>
 <h2 id="nettracer-supported-platforms">NetTracer supported platforms<a class="headerlink" href="#nettracer-supported-platforms" title="Permanent link">&para;</a></h2>
 <p>NetTracer officially supports Linux kernel versions 4.15 and higher, but other Dynatrace components that coexist with NetTracer on a particular host have specific requirements and are supported on particular Linux distributions. The following table lists the tested and safest Linux distributions to use when planning to use NetTracer with Dynatrace.</p>
-<p>Distribution</p>
-<p>Architecture</p>
-<p>Release</p>
-<p>RedHat Enterprise Linux</p>
-<p>x86_64</p>
-<p>8.0 and higher</p>
-<p>CentOS</p>
-<p>x86_64</p>
-<p>8.0 and higher</p>
-<p>Ubuntu</p>
-<p>x86_64</p>
-<p>18.04 LTS and higher</p>
 <h2 id="enable-nettracer">Enable NetTracer<a class="headerlink" href="#enable-nettracer" title="Permanent link">&para;</a></h2>
 <p>When enabled, OneAgent will use NetTracer to collect network data from containers, but only for Linux hosts.</p>
 <p>To enable NetTracer on a specific Linux host</p>
@@ -25623,52 +25611,6 @@
 * <code>builtin:tech.nettracer.traffic</code> (Network traffic)</p>
 <p>Network traffic = ((sum of bytes received + sum of bytes transmitted) * 8) per second</p>
 <h2 id="dimensions-for-nettracer">Dimensions for NetTracer<a class="headerlink" href="#dimensions-for-nettracer" title="Permanent link">&para;</a></h2>
-<p>Metric key</p>
-<p>Dimension</p>
-<p>Value</p>
-<p>Unit</p>
-<p><code>builtin:tech.nettracer.bytes_rx</code></p>
-<p><code>dt.entity.process_group_instance</code><br />
-<code>dt.entity.process_group</code><br />
-<code>dt.entity.host</code></p>
-<p>Gauge, where:</p>
-<p>sum = number of bytes from all sessions in the given timeframe</p>
-<p>avg/min/max = average/minimal/maximal bytes per session in the given timeframe</p>
-<p>count = number of sessions in the given timeframe</p>
-<p>Bytes</p>
-<p><code>builtin:tech.nettracer.bytes_tx</code></p>
-<p><code>dt.entity.process_group_instance</code><br />
-<code>dt.entity.process_group</code><br />
-<code>dt.entity.host</code></p>
-<p>Gauge, where:</p>
-<p>sum = number of bytes from all sessions in the given timeframe</p>
-<p>avg/min/max = average/minimal/maximal bytes per session in the given timeframe</p>
-<p>count = number of sessions in the given timeframe</p>
-<p>Bytes</p>
-<p><code>builtin:tech.nettracer.pkts_rx</code></p>
-<p><code>dt.entity.process_group_instance</code><br />
-<code>dt.entity.process_group</code><br />
-<code>dt.entity.host</code></p>
-<p>Count, sending deltas/resetting counter</p>
-<p>Count</p>
-<p><code>builtin:tech.nettracer.pkts_tx</code></p>
-<p><code>dt.entity.process_group_instance</code><br />
-<code>dt.entity.process_group</code><br />
-<code>dt.entity.host</code></p>
-<p>Count, sending deltas/resetting counter</p>
-<p>Count</p>
-<p><code>builtin:tech.nettracer.pkts_retr</code></p>
-<p><code>dt.entity.process_group_instance</code><br />
-<code>dt.entity.process_group</code><br />
-<code>dt.entity.host</code></p>
-<p>Count, sending deltas/resetting counter</p>
-<p>Count</p>
-<p><code>builtin:tech.nettracer.rtt</code></p>
-<p><code>dt.entity.process_group_instance</code><br />
-<code>dt.entity.process_group</code><br />
-<code>dt.entity.host</code></p>
-<p>Gauge</p>
-<p>Miliseconds</p>
 <h3 id="container-dimensions-for-nettracer">Container dimensions for NetTracer<a class="headerlink" href="#container-dimensions-for-nettracer" title="Permanent link">&para;</a></h3>
 <p>If the process is running in a container, the following dimensions are added:</p>
 <ul>
@@ -25676,15 +25618,6 @@
 <li><code>dt.entity.container_group</code></li>
 </ul>
 <p>Additional container dimensions are added depending on the deployment type.</p>
-<p>Kubernetes</p>
-<p>Docker (no Kubernetes)</p>
-<p><code>container.image.name</code> (if it's available)<br />
-<code>k8s.container.name</code><br />
-<code>k8s.namespace.name</code><br />
-<code>k8s.pod.name</code><br />
-<code>k8s.pod.uid</code></p>
-<p><code>container.image.name</code><br />
-<code>container.name</code></p>
 <h2 id="where-can-i-see-nettracer-data">Where can I see NetTracer data?<a class="headerlink" href="#where-can-i-see-nettracer-data" title="Permanent link">&para;</a></h2>
 <p>After it's collected, NetTracer data is available as metrics throughout Dynatrace.</p>
 <ul>

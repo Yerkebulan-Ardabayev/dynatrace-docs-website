@@ -25548,21 +25548,6 @@
 <li>The target pipeline</li>
 </ol>
 <p>The following table contains example conditions based on the Kubernetes namespace and deployment to route each service's logs to the corresponding pipeline.</p>
-<p>Name</p>
-<p>Matching condition</p>
-<p>Target pipeline</p>
-<p>Checkout service</p>
-<p><code>k8s.deployment.name == "checkoutservice-*"</code></p>
-<p>Checkout service pipeline</p>
-<p>Currency service</p>
-<p><code>k8s.deployment.name == "currencyservice-*"</code></p>
-<p>Currency service pipeline</p>
-<p>Email service</p>
-<p><code>k8s.deployment.name == "emailservice-*"</code></p>
-<p>Email service pipeline</p>
-<p>Payment service</p>
-<p><code>k8s.deployment.name == "paymentservice-*"</code></p>
-<p>Payment service pipeline</p>
 <p>Logs that match the routing condition are routed to the target pipeline. The routing table now includes the new routes.</p>
 <h2 id="conclusion">Conclusion<a class="headerlink" href="#conclusion" title="Permanent link">&para;</a></h2>
 <p>You routed log lines for each significant production-relevant service to a dedicated empty pipeline.</p>

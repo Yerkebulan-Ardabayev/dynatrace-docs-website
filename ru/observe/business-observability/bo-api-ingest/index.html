@@ -26763,26 +26763,6 @@
 <li><code>Content-Type</code> headerâ<code>application/x-www-form-urlencoded</code></li>
 <li>Keys/parametersâYou can send the following keys or parameters in the request body. Make sure to URL encode all values.</li>
 </ul>
-<p>Key/Parameter</p>
-<p>Value</p>
-<p>Required</p>
-<p><code>grant_type</code></p>
-<p><code>client_credentials</code></p>
-<p>Required</p>
-<p><code>client_id</code></p>
-<p><code>dt0s02.****</code>âThis is the client ID generated when you created an <a href="#oauth-client">OAuth client</a>.</p>
-<p>Required</p>
-<p><code>client_secret</code></p>
-<p><code>dt0s02.***.****</code>âThis is the client secret generated when you created an <a href="#oauth-client">OAuth client</a>.</p>
-<p>Required</p>
-<p><code>scope</code></p>
-<p>A list of required scopes separated by a space, for example, <code>storage:bizevents:read storage:buckets:read storage:events:write</code></p>
-<p>You can assign multiple scopes to a single token, or you can generate several tokens, each with different access levels and use them accordinglyâcheck your organization's security policies for the best practice.</p>
-<p>Required</p>
-<p><code>resource</code></p>
-<p><code>urn:dtaccount:{your-account-UUID}</code></p>
-<p>Optional if not defined in the client</p>
-<p>Required if defined in the client, with the same value as in the client</p>
 <p>Example API request</p>
 <p>Request headers</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>POST /sso/oauth2/token HTTP/2

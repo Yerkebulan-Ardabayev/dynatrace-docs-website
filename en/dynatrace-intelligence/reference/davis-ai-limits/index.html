@@ -25508,25 +25508,6 @@
 <h3 id="number-of-davis-events-processed-every-hour">Number of Davis events processed every hour<a class="headerlink" href="#number-of-davis-events-processed-every-hour" title="Permanent link">&para;</a></h3>
 <p>The maximum number of Davis events per event provider that can be processed within an hour is 100,000. This limit is replenished every hour.</p>
 <p>Certain events override default limits. See the table below for more information.</p>
-<p>Event provider</p>
-<p>Maximum limit</p>
-<p><code>AVAILABILITY</code></p>
-<p>200,000 Davis events processed per hour.</p>
-<p><code>METRIC_EVENTS</code></p>
-<p>200,000 Davis events processed per hour.</p>
-<ul>
-<li><code>AGENT_LOCAL_REST_API_INGEST</code></li>
-<li><code>BASELINING</code></li>
-<li><code>EVENTS_REST_API_INGEST</code></li>
-<li><code>KUBERNETES_ANOMALY_DETECTION</code></li>
-<li><code>KUBERNETES_EVENT</code></li>
-<li><code>LOG_EVENTS</code></li>
-<li><code>ONEAGENT</code></li>
-<li><code>OPENPIPELINE_DATA_EXTRACTION</code></li>
-<li><code>REAL_USER_MONITORING</code></li>
-<li><code>SYNTHETIC</code></li>
-</ul>
-<p>The default of 100,000 Davis events processed per hour applies.</p>
 <h3 id="event-maximum-lifetime">Event maximum lifetime<a class="headerlink" href="#event-maximum-lifetime" title="Permanent link">&para;</a></h3>
 <p>The maximum lifetime for active events is 60 days. If the underlying anomaly doesn't disappear after 60 days, the respective event is closed and a new one is created.</p>
 <h3 id="problem-merging-timeframe">Problem merging timeframe<a class="headerlink" href="#problem-merging-timeframe" title="Permanent link">&para;</a></h3>
@@ -25534,79 +25515,12 @@
 <p>This measure ensures that Dynatrace Intelligence avoids collecting unrelated information for long-lasting incidents.</p>
 <h2 id="anomaly-detection-new-anomaly-detection">Anomaly Detection - new <strong>Anomaly Detection</strong><a class="headerlink" href="#anomaly-detection-new-anomaly-detection" title="Permanent link">&para;</a></h2>
 <h3 id="custom-alerts">Custom alerts<a class="headerlink" href="#custom-alerts" title="Permanent link">&para;</a></h3>
-<p>Item</p>
-<p>Maximum limit</p>
-<p>Description</p>
-<p>Number of custom alert configurations</p>
-<p>1,000 per environment</p>
-<p>The maximum number of custom alerts that can be configured.</p>
-<p>Grail query request timeout</p>
-<p>10 seconds</p>
-<p>The maximum time limit for the query execution.</p>
-<p>Number of auto-adaptive threshold monitored dimensions</p>
-<p>10,000 per configuration</p>
-<p>The maximum number of auto-adaptive threshold monitored dimensions. Once the limit is reached, no additional dimensions will be monitored.</p>
-<p>Number of seasonal baseline monitored dimensions</p>
-<p>10,000 per configuration</p>
-<p>The maximum number of seasonal baseline monitored dimensions. Once the limit is reached, no additional dimensions will be monitored.</p>
 <h3 id="metric-events">Metric events<a class="headerlink" href="#metric-events" title="Permanent link">&para;</a></h3>
 <h4 id="general">General<a class="headerlink" href="#general" title="Permanent link">&para;</a></h4>
-<p>Item</p>
-<p>Maximum limit</p>
-<p>Description</p>
-<p>Number of metric events</p>
-<p>10,000 per environment</p>
-<p>The maximum number of metric events that can be configured.</p>
 <h4 id="metric-selector-events">Metric selector events<a class="headerlink" href="#metric-selector-events" title="Permanent link">&para;</a></h4>
-<p>Item</p>
-<p>Maximum limit</p>
-<p>Description</p>
-<p>Number of monitored dimensions</p>
-<p>100,000</p>
-<p>This limit applies across all customer-defined metric selector metric events.</p>
-<p>Dynatrace also counts aggregated dimensions towards the limit. Once the limit is reached, no additional dimensions will be monitored.</p>
-<p>Number of static threshold metric event configurations</p>
-<p>100</p>
-<p>The maximum number of static threshold model metric event configurations created with metric selector.</p>
-<p>Number of static threshold monitored dimensions</p>
-<p>1,000 per configuration</p>
-<p>The maximum number of static threshold monitored dimensions. Once the limit is reached, no additional dimensions will be monitored.</p>
-<p>Number of auto-adaptive threshold metric event configurations</p>
-<p>100</p>
-<p>The maximum number of metric event configurations that use the auto-adaptive threshold model.</p>
-<p>Number of auto-adaptive threshold monitored dimensions</p>
-<p>1,000 per configuration</p>
-<p>The maximum number of auto-adaptive threshold monitored dimensions. Once the limit is reached, no additional dimensions will be monitored.</p>
-<p>Number of seasonal baseline metric event configurations</p>
-<p>100</p>
-<p>The maximum number of metric event configurations that use the seasonal baseline model.</p>
-<p>Number of seasonal baseline monitored dimensions</p>
-<p>500 per configuration</p>
-<p>The maximum number of seasonal baseline monitored dimensions. Once the limit is reached, no additional dimensions will be monitored.</p>
-<p>Hard monitored dimension limit</p>
-<p>10,000 per configuration</p>
-<p>If the number of monitored dimensions exceeds the hard limit, the query will start failing.</p>
 <h4 id="metric-key-events">Metric key events<a class="headerlink" href="#metric-key-events" title="Permanent link">&para;</a></h4>
-<p>Item</p>
-<p>Maximum limit</p>
-<p>Description</p>
-<p>Number of simultaneously active alerts</p>
-<p>200 per configuration</p>
-<p>The maximum number of simultaneously active alerts per metric key-based configuration.</p>
 <h3 id="notebook-dashboard-simulation">Notebook &amp; Dashboard Simulation<a class="headerlink" href="#notebook-dashboard-simulation" title="Permanent link">&para;</a></h3>
-<p>Item</p>
-<p>Maximum limit</p>
-<p>Description</p>
-<p>Data records</p>
-<p>1,000</p>
-<p>The maximum number of timeseries data records that can be uniquely simulated per single data analyzer execution.</p>
 <h2 id="dynatrace-intelligence-generative-ai">Dynatrace Intelligence generative AI<a class="headerlink" href="#dynatrace-intelligence-generative-ai" title="Permanent link">&para;</a></h2>
-<p>Item</p>
-<p>Maximum limit</p>
-<p>Individual user requests</p>
-<p>25 requests per 15 minutes</p>
-<p>All user requests across the environment</p>
-<p>60 requests per 15 minutes</p>
 
 
 

@@ -25545,25 +25545,12 @@
 <ul>
 <li><strong>Rule name</strong>: Add field</li>
 <li><strong>Matcher</strong>: <code>matchesValue(action, "buy")</code></li>
-<li><strong>Transformation fields</strong>:</li>
-</ul>
-<p>Name</p>
-<p>Type</p>
-<p>Optional</p>
-<p>is Array</p>
-<p>Read-only</p>
-<p>amount</p>
-<p>double</p>
-<p>false</p>
-<p>false</p>
-<p>true</p>
-<p>price</p>
-<p>double</p>
-<p>false</p>
-<p>false</p>
-<p>true</p>
-<ul>
-<li><strong>Processor definition</strong>: <code>FIELDS_ADD(trading_volume: price*amount)</code></li>
+<li>
+<p><strong>Transformation fields</strong>:</p>
+</li>
+<li>
+<p><strong>Processor definition</strong>: <code>FIELDS_ADD(trading_volume: price*amount)</code></p>
+</li>
 <li>Example 2. Mask your data.<br />
   You need to hide the CVV field on your credit card in an incoming JSON payload.</li>
 </ul>
@@ -25592,20 +25579,12 @@
 <ul>
 <li><strong>Rule name</strong>: Mask field</li>
 <li><strong>Matcher</strong>: <code>matchesValue(action, "payment")</code></li>
-<li><strong>Transformation fields</strong>:</li>
-</ul>
-<p>Name</p>
-<p>Type</p>
-<p>Optional</p>
-<p>is Array</p>
-<p>Read-only</p>
-<p>cvv</p>
-<p>string</p>
-<p>false</p>
-<p>false</p>
-<p>false</p>
-<ul>
-<li><strong>Processor definition</strong>: <code>FIELDS_ADD(cvv: SHA1(cvv))</code></li>
+<li>
+<p><strong>Transformation fields</strong>:</p>
+</li>
+<li>
+<p><strong>Processor definition</strong>: <code>FIELDS_ADD(cvv: SHA1(cvv))</code></p>
+</li>
 <li>Example 3. Drop event attribute.<br />
   You need to drop the birthdate field in an incoming JSON payload.</li>
 </ul>
@@ -25634,20 +25613,12 @@
 <ul>
 <li><strong>Rule name</strong>: Drop field</li>
 <li><strong>Matcher</strong>: <code>matchesValue(action, "newUser")</code></li>
-<li><strong>Transformation fields</strong>:</li>
-</ul>
-<p>Name</p>
-<p>Type</p>
-<p>Optional</p>
-<p>is Array</p>
-<p>Read-only</p>
-<p>birthDate</p>
-<p>string</p>
-<p>false</p>
-<p>false</p>
-<p>false</p>
-<ul>
-<li><strong>Processor definition</strong>: <code>FIELDS_REMOVE(birthDate)</code></li>
+<li>
+<p><strong>Transformation fields</strong>:</p>
+</li>
+<li>
+<p><strong>Processor definition</strong>: <code>FIELDS_REMOVE(birthDate)</code></p>
+</li>
 <li>Example 4. Parse nested JSON.<br />
   You need to parse attributes from a nested JSON in order to have them as top-level attributes in Grail.</li>
 </ul>
@@ -25688,20 +25659,12 @@
 <ul>
 <li><strong>Rule name</strong>: Parse field</li>
 <li><strong>Matcher</strong>: <code>matchesValue(action, "sell")</code></li>
-<li><strong>Transformation fields</strong>:</li>
-</ul>
-<p>Name</p>
-<p>Type</p>
-<p>Optional</p>
-<p>is Array</p>
-<p>Read-only</p>
-<p>details</p>
-<p>string</p>
-<p>false</p>
-<p>false</p>
-<p>false</p>
-<ul>
-<li><strong>Processor definition</strong>: <code>PARSE(details,"JSON{INTEGER:accountId,INTEGER:amount,INTEGER:instrumentId,DOUBLE:price}(flat=true)") | FIELDS_REMOVE(details)</code></li>
+<li>
+<p><strong>Transformation fields</strong>:</p>
+</li>
+<li>
+<p><strong>Processor definition</strong>: <code>PARSE(details,"JSON{INTEGER:accountId,INTEGER:amount,INTEGER:instrumentId,DOUBLE:price}(flat=true)") | FIELDS_REMOVE(details)</code></p>
+</li>
 <li>Example 5. Parse error message.</li>
 </ul>
 <p>In this example, you need to remove the voucher code from the error message field below to have the ability to count how often the same error message appears. The solution below leverages the <a href="/docs/platform/grail/dynatrace-pattern-language" title="Use Dynatrace Pattern Language to describe patterns using matchers.">Dynatrace Pattern language</a> for parsing.</p>
@@ -25730,21 +25693,13 @@
 <ul>
 <li><strong>Rule name</strong>: Parse error message</li>
 <li><strong>Matcher</strong>: <code>matchesValue(error.messageKey, "error.voucher ")</code></li>
-<li><strong>Transformation fields</strong>:</li>
-</ul>
-<p>Name</p>
-<p>Type;</p>
-<p>Optional</p>
-<p>is Array</p>
-<p>Read-only</p>
-<p>error.message</p>
-<p>string</p>
-<p>no</p>
-<p>no</p>
-<p>no</p>
-<ul>
-<li><strong>Processor definition</strong>:
-    <code>FIELDS_ADD(final:REPLACE_PATTERN(error.message, "LD:p1 '[' LD:to_be_masked ']' LD:p2 ", "${p1}${p2}"))</code></li>
+<li>
+<p><strong>Transformation fields</strong>:</p>
+</li>
+<li>
+<p><strong>Processor definition</strong>:
+    <code>FIELDS_ADD(final:REPLACE_PATTERN(error.message, "LD:p1 '[' LD:to_be_masked ']' LD:p2 ", "${p1}${p2}"))</code></p>
+</li>
 <li><strong>Result</strong>: <code>The voucher is not valid!</code>.</li>
 </ul>
 

@@ -25479,7 +25479,7 @@
 <ul>
 <li>Latest Dynatrace</li>
 <li>Overview</li>
-<li>Updated on Feb 11, 2026</li>
+<li>Updated on Feb 23, 2026</li>
 </ul>
 <p>The following reference contains a list of global fields that have a well defined semantic meaning in Dynatrace and can be used across different monitoring types. The fields are organized in namespaces that are separated with dots.</p>
 <h3 id="top-level-fields">Top level fields<a class="headerlink" href="#top-level-fields" title="Permanent link">&para;</a></h3>
@@ -26485,6 +26485,55 @@ With constant frequency of requests it can be treated as a time-base availabilit
 <td>string</td>
 <td>experimental Contains the <a href="https://docs.aws.amazon.com/xray/latest/devguide/aws-xray.html">AWS X-Rayï»¿</a> trace id (e.g., value of the <code>x-amzn-trace-id</code> HTTP header, <code>_X_AMZN_TRACE_ID</code> environment variable on AWS lambda)</td>
 <td><code>Root=1-63441c4a-abcdef012345678912345678</code>; <code>Self=1-63441c4a-12456789abcdef012345678;Root=1-67891233-abcdef012345678912345678</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="log-attributes">Log attributes<a class="headerlink" href="#log-attributes" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Description</th>
+<th>Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>aws.route53.edge_location_id</code></td>
+<td>string</td>
+<td>experimental The Route 53 edge location that responded to the query. Each edge location is identified by a three-letter code and an arbitrary number.</td>
+<td><code>FRA54-SN1</code>; <code>DFW3</code></td>
+</tr>
+<tr>
+<td><code>aws.route53.hostedzone_id</code></td>
+<td>string</td>
+<td>experimental The ID of the hosted zone that is associated with all the DNS queries in this log.</td>
+<td><code>Z1234567890ABCDEFGHIJ</code></td>
+</tr>
+<tr>
+<td><code>aws.route53.resolver_ip_address</code></td>
+<td>string</td>
+<td>experimental The IP address of the DNS resolver that submitted the request to Route 53.</td>
+<td><code>192.168.1.1</code>; <code>2001:db8::1234</code></td>
+</tr>
+<tr>
+<td><code>dns.question.name</code></td>
+<td>string</td>
+<td>experimental The domain or subdomain that was specified in the request.</td>
+<td><code>example.com</code>; <code>support.dynatrace.com/</code></td>
+</tr>
+<tr>
+<td><code>dns.question.type</code></td>
+<td>string</td>
+<td>experimental Either the DNS record type that was specified in the request, or ANY.</td>
+<td><code>A</code>; <code>AAAA</code>; <code>CNAME</code>; <code>TXT</code>; <code>ANY</code></td>
+</tr>
+<tr>
+<td><code>dns.response_code</code></td>
+<td>string</td>
+<td>experimental The DNS response code that Route 53 returned in response to the DNS query.</td>
+<td><code>NOERROR</code>; <code>NXDOMAIN</code></td>
 </tr>
 </tbody>
 </table>
@@ -27636,6 +27685,12 @@ When observered from the server side, and when communicating through an intermed
 <td>string</td>
 <td>resource experimental Container ID. Usually a UUID, as for example used to <a href="https://docs.docker.com/engine/containers/run/#container-identification">identify Docker containersï»¿</a>. The UUID might be abbreviated.</td>
 <td><code>a3bf90e006b2</code></td>
+</tr>
+<tr>
+<td><code>container.image.digest</code></td>
+<td>string</td>
+<td>resource experimental Immutable SHAâ256 hash of an image that uniquely identifies the exact image content in a registry.</td>
+<td><code>sha256:aa1ed41571fa937da61b5bcd7cf842981c7f026b516c18655bc2f3a9362b1fa5</code></td>
 </tr>
 <tr>
 <td><code>container.image.name</code></td>
@@ -29778,6 +29833,18 @@ The structure of the entity ID is currently as follows: <code>&lt;ID-NAMESPACE&g
 <td><code>vpc-123</code></td>
 </tr>
 <tr>
+<td><code>dt.openpipeline.forwarding.config_id</code></td>
+<td>string</td>
+<td>resource experimental ID of the forwarding configuration in OpenPipeline.</td>
+<td><code>v00zu89AAABADJidWlsdGluOmh5cGVyc2NhbGVyLWF1dGhlbnRpY2F0aW9uLmNvpb25zLmF3cwAGdGVuYW50AGZ7ZW5hbnQAJDNlOTM1YmE3LTkzODUtMzczZS1hMWJiLW9uioQwNDFmNzIyMb7vVN4V2t6t</code></td>
+</tr>
+<tr>
+<td><code>dt.openpipeline.forwarding.datatype</code></td>
+<td>string</td>
+<td>resource experimental Forwarded datatype</td>
+<td><code>Logs</code></td>
+</tr>
+<tr>
 <td><code>dt.pg_detection.cluster.id</code></td>
 <td>string</td>
 <td>resource experimental <code>DT_CLUSTER_ID</code> environment variable; also see <a href="/docs/observe/infrastructure-observability/process-groups/configuration/pg-detection" title="Ways to customize process-group detection">Process group detection</a></td>
@@ -29839,9 +29906,9 @@ The structure of the entity ID is currently as follows: <code>&lt;ID-NAMESPACE&g
 </tr>
 <tr>
 <td><code>dt.source_entity</code></td>
-<td>string[]</td>
-<td>resource stable The IDs of the entities considered as the sources of the signal. The strings represent the entity IDs of entities that are stored in the classic entity storage. <a href="#fn-7-3-def">3</a> Tags: <code>entity-id</code></td>
-<td><code>['HOST-E0D8F94D9065F24F', 'PROCESS_GROUP_INSTANCE-E0D8F94D9065F24F']</code></td>
+<td>string</td>
+<td>resource stable The ID of the entity considered the source of the signal. The string represents an entity ID of an entity that is stored in the classic entity storage. <a href="#fn-7-3-def">3</a> Tags: <code>entity-id</code></td>
+<td><code>HOST-E0D8F94D9065F24F</code>; <code>PROCESS_GROUP_INSTANCE-E0D8F94D9065F24F</code></td>
 </tr>
 <tr>
 <td><code>dt.source_entity.type</code></td>
@@ -32099,7 +32166,7 @@ For example, the variant <code>red</code> maybe be used for the value <code>#c05
 <tr>
 <td><code>frontend.name</code></td>
 <td>string</td>
-<td>experimental The frontend name determined at ingest. Tags: <code>permission</code></td>
+<td>stable The frontend name determined at ingest. Tags: <code>permission</code></td>
 <td><code>my_frontend</code></td>
 </tr>
 </tbody>
@@ -33367,9 +33434,53 @@ For example, the variant <code>red</code> maybe be used for the value <code>#c05
 </tr>
 </tbody>
 </table>
+<h2 id="apache-kafka">Apache Kafka<a class="headerlink" href="#apache-kafka" title="Permanent link">&para;</a></h2>
+<h3 id="fields_74">Fields<a class="headerlink" href="#fields_74" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Description</th>
+<th>Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>messaging.kafka.broker_id</code></td>
+<td>string</td>
+<td>experimental The ID of the Kafka broker.</td>
+<td><code>0</code>; <code>1</code>; <code>2</code></td>
+</tr>
+<tr>
+<td><code>messaging.kafka.component</code></td>
+<td>string</td>
+<td>experimental The component of the Kafka Connect worker.</td>
+<td><code>GroupCoordinator 1</code></td>
+</tr>
+<tr>
+<td><code>messaging.kafka.connect.connector_name</code></td>
+<td>string</td>
+<td>experimental The name of the Kafka Connect connector.</td>
+<td><code>my-s3-connector</code>; <code>jdbc-source-connector</code></td>
+</tr>
+<tr>
+<td><code>messaging.kafka.connect.task_id</code></td>
+<td>string</td>
+<td>experimental The ID of the Kafka Connect task.</td>
+<td><code>0</code>; <code>1</code>; <code>2</code></td>
+</tr>
+<tr>
+<td><code>messaging.kafka.connect.worker_id</code></td>
+<td>string</td>
+<td>experimental The ID of the Kafka Connect worker.</td>
+<td><code>10.0.0.1:8083</code>; <code>worker-1</code></td>
+</tr>
+</tbody>
+</table>
 <h2 id="standard-fields-used-for-log-events">Standard fields used for log events<a class="headerlink" href="#standard-fields-used-for-log-events" title="Permanent link">&para;</a></h2>
 <p>Fields relevant for log events</p>
-<h3 id="fields_74">Fields<a class="headerlink" href="#fields_74" title="Permanent link">&para;</a></h3>
+<h3 id="fields_75">Fields<a class="headerlink" href="#fields_75" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
@@ -33570,7 +33681,7 @@ For example, the variant <code>red</code> maybe be used for the value <code>#c05
 </tbody>
 </table>
 <h2 id="messaging">Messaging<a class="headerlink" href="#messaging" title="Permanent link">&para;</a></h2>
-<h3 id="fields_75">Fields<a class="headerlink" href="#fields_75" title="Permanent link">&para;</a></h3>
+<h3 id="fields_76">Fields<a class="headerlink" href="#fields_76" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
@@ -33950,7 +34061,7 @@ For example, the variant <code>red</code> maybe be used for the value <code>#c05
 <p>1</p>
 <p>If the message is a tombstone, the value is <code>true</code>. When missing, the value is assumed to be <code>false</code>.</p>
 <h2 id="metric">Metric<a class="headerlink" href="#metric" title="Permanent link">&para;</a></h2>
-<h3 id="fields_76">Fields<a class="headerlink" href="#fields_76" title="Permanent link">&para;</a></h3>
+<h3 id="fields_77">Fields<a class="headerlink" href="#fields_77" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
@@ -33996,7 +34107,7 @@ For example, the variant <code>red</code> maybe be used for the value <code>#c05
 </table>
 <h2 id="module-insights">Module Insights<a class="headerlink" href="#module-insights" title="Permanent link">&para;</a></h2>
 <p>In webserver technologies a multitude of modules might be contributing to handling a single web request. Module insights provides timings for these, where available.</p>
-<h3 id="fields_77">Fields<a class="headerlink" href="#fields_77" title="Permanent link">&para;</a></h3>
+<h3 id="fields_78">Fields<a class="headerlink" href="#fields_78" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
@@ -34017,7 +34128,7 @@ For example, the variant <code>red</code> maybe be used for the value <code>#c05
 </table>
 <h2 id="network">Network<a class="headerlink" href="#network" title="Permanent link">&para;</a></h2>
 <p>These attributes may be used for any network related operation.</p>
-<h3 id="fields_78">Fields<a class="headerlink" href="#fields_78" title="Permanent link">&para;</a></h3>
+<h3 id="fields_79">Fields<a class="headerlink" href="#fields_79" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
@@ -34191,7 +34302,7 @@ For example, the variant <code>red</code> maybe be used for the value <code>#c05
 </table>
 <h2 id="network-device">Network device<a class="headerlink" href="#network-device" title="Permanent link">&para;</a></h2>
 <p>Fields that are used in extensions to describe network devices.</p>
-<h3 id="fields_79">Fields<a class="headerlink" href="#fields_79" title="Permanent link">&para;</a></h3>
+<h3 id="fields_80">Fields<a class="headerlink" href="#fields_80" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
@@ -34230,7 +34341,7 @@ For example, the variant <code>red</code> maybe be used for the value <code>#c05
 </table>
 <h2 id="standard-fields-used-for-network-flows">Standard fields used for network flows<a class="headerlink" href="#standard-fields-used-for-network-flows" title="Permanent link">&para;</a></h2>
 <p>Fields relevant for network flows</p>
-<h3 id="fields_80">Fields<a class="headerlink" href="#fields_80" title="Permanent link">&para;</a></h3>
+<h3 id="fields_81">Fields<a class="headerlink" href="#fields_81" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
@@ -34377,7 +34488,7 @@ For example, the variant <code>red</code> maybe be used for the value <code>#c05
 </tbody>
 </table>
 <h2 id="nodejs">Nodejs<a class="headerlink" href="#nodejs" title="Permanent link">&para;</a></h2>
-<h3 id="fields_81">Fields<a class="headerlink" href="#fields_81" title="Permanent link">&para;</a></h3>
+<h3 id="fields_82">Fields<a class="headerlink" href="#fields_82" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
@@ -34408,9 +34519,89 @@ For example, the variant <code>red</code> maybe be used for the value <code>#c05
 </tr>
 </tbody>
 </table>
+<h2 id="elasticsearch_1">Elasticsearch<a class="headerlink" href="#elasticsearch_1" title="Permanent link">&para;</a></h2>
+<h3 id="fields_83">Fields<a class="headerlink" href="#fields_83" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Description</th>
+<th>Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>opensearch.document_id</code></td>
+<td>string</td>
+<td>experimental ID of the document stored in OpenSearch.</td>
+<td><code>2kuZ25sBo9KPhzL41rsg</code></td>
+</tr>
+<tr>
+<td><code>opensearch.id</code></td>
+<td>string</td>
+<td>experimental X-Opaque-Id http header if one was used.</td>
+<td><code>152220</code></td>
+</tr>
+<tr>
+<td><code>opensearch.index</code></td>
+<td>string</td>
+<td>experimental The name of the OpenSearch index.</td>
+<td><code>opensearch-index</code>; <code>index-2024.01.01</code></td>
+</tr>
+<tr>
+<td><code>opensearch.node_id</code></td>
+<td>string</td>
+<td>experimental The ID of the node.</td>
+<td><code>80f333333b31623f94213a9a43cef6b1</code></td>
+</tr>
+<tr>
+<td><code>opensearch.routing</code></td>
+<td>string</td>
+<td>experimental Custom routing value.</td>
+<td><code>user42</code></td>
+</tr>
+<tr>
+<td><code>opensearch.shard_id</code></td>
+<td>string</td>
+<td>experimental The ID of the OpenSearch shard.</td>
+<td><code>VzblS9m1Q9CBaTHoEbKLnT</code></td>
+</tr>
+<tr>
+<td><code>opensearch.stats</code></td>
+<td>string</td>
+<td>experimental Search group defined in the query.</td>
+<td><code>autocomplete</code>; <code>dashboard_query</code></td>
+</tr>
+<tr>
+<td><code>opensearch.took</code></td>
+<td>string</td>
+<td>experimental Execution time of the request.</td>
+<td><code>56ms</code></td>
+</tr>
+<tr>
+<td><code>opensearch.took_millis</code></td>
+<td>string</td>
+<td>experimental Execution time of the request.</td>
+<td><code>56</code></td>
+</tr>
+<tr>
+<td><code>opensearch.total_hits</code></td>
+<td>string</td>
+<td>experimental Total number of hits returned by the search.</td>
+<td><code>0 hits</code>; <code>4 hits</code></td>
+</tr>
+<tr>
+<td><code>opensearch.total_shards</code></td>
+<td>string</td>
+<td>experimental Total number of shards.</td>
+<td><code>1</code>; <code>9</code></td>
+</tr>
+</tbody>
+</table>
 <h2 id="openstack">OpenStack<a class="headerlink" href="#openstack" title="Permanent link">&para;</a></h2>
 <p>Fields that can come from applications running on OpenStack.</p>
-<h3 id="fields_82">Fields<a class="headerlink" href="#fields_82" title="Permanent link">&para;</a></h3>
+<h3 id="fields_84">Fields<a class="headerlink" href="#fields_84" title="Permanent link">&para;</a></h3>
 <h4 id="resource-attributes_9">Resource attributes<a class="headerlink" href="#resource-attributes_9" title="Permanent link">&para;</a></h4>
 <table>
 <thead>
@@ -34499,7 +34690,7 @@ For example, the variant <code>red</code> maybe be used for the value <code>#c05
 </table>
 <h2 id="os">OS<a class="headerlink" href="#os" title="Permanent link">&para;</a></h2>
 <p>The os namespace contains information on the operating system running an application.</p>
-<h3 id="fields_83">Fields<a class="headerlink" href="#fields_83" title="Permanent link">&para;</a></h3>
+<h3 id="fields_85">Fields<a class="headerlink" href="#fields_85" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
@@ -34537,7 +34728,7 @@ For example, the variant <code>red</code> maybe be used for the value <code>#c05
 </tbody>
 </table>
 <h2 id="opentelemetry-scope">OpenTelemetry scope<a class="headerlink" href="#opentelemetry-scope" title="Permanent link">&para;</a></h2>
-<h3 id="fields_84">Fields<a class="headerlink" href="#fields_84" title="Permanent link">&para;</a></h3>
+<h3 id="fields_86">Fields<a class="headerlink" href="#fields_86" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
@@ -34563,7 +34754,7 @@ For example, the variant <code>red</code> maybe be used for the value <code>#c05
 </tbody>
 </table>
 <h2 id="php">Php<a class="headerlink" href="#php" title="Permanent link">&para;</a></h2>
-<h3 id="fields_85">Fields<a class="headerlink" href="#fields_85" title="Permanent link">&para;</a></h3>
+<h3 id="fields_87">Fields<a class="headerlink" href="#fields_87" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
@@ -34613,7 +34804,7 @@ For example, the variant <code>red</code> maybe be used for the value <code>#c05
 </tbody>
 </table>
 <h2 id="postgresql">PostgreSQL<a class="headerlink" href="#postgresql" title="Permanent link">&para;</a></h2>
-<h3 id="fields_86">Fields<a class="headerlink" href="#fields_86" title="Permanent link">&para;</a></h3>
+<h3 id="fields_88">Fields<a class="headerlink" href="#fields_88" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
@@ -34634,7 +34825,7 @@ For example, the variant <code>red</code> maybe be used for the value <code>#c05
 </table>
 <h2 id="primary-grail-tags">Primary Grail Tags<a class="headerlink" href="#primary-grail-tags" title="Permanent link">&para;</a></h2>
 <p>Primary Grail tags are a small set of important, customer-selected tagsâsuch as Kubernetes labels, AWS/Azure tags, or key organizational attributesâthat Dynatrace automatically attaches to all raw telemetry data at ingest, using the <code>primary_tags.*</code> prefix. This enrichment enables fast, consistent filtering, grouping, and permission management across all data, without complex joins or proprietary tagging rules. Primary Grail tags are centrally configured and ensure that cloud-native and business-relevant metadata is always available for queries, dashboards, and access control.</p>
-<h3 id="fields_87">Fields<a class="headerlink" href="#fields_87" title="Permanent link">&para;</a></h3>
+<h3 id="fields_89">Fields<a class="headerlink" href="#fields_89" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
@@ -34654,7 +34845,7 @@ For example, the variant <code>red</code> maybe be used for the value <code>#c05
 </tbody>
 </table>
 <h2 id="process">Process<a class="headerlink" href="#process" title="Permanent link">&para;</a></h2>
-<h3 id="fields_88">Fields<a class="headerlink" href="#fields_88" title="Permanent link">&para;</a></h3>
+<h3 id="fields_90">Fields<a class="headerlink" href="#fields_90" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
@@ -34710,7 +34901,7 @@ For example, the variant <code>red</code> maybe be used for the value <code>#c05
 </tbody>
 </table>
 <h2 id="rabbitmq">RabbitMQ<a class="headerlink" href="#rabbitmq" title="Permanent link">&para;</a></h2>
-<h3 id="fields_89">Fields<a class="headerlink" href="#fields_89" title="Permanent link">&para;</a></h3>
+<h3 id="fields_91">Fields<a class="headerlink" href="#fields_91" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
@@ -34748,7 +34939,7 @@ For example, the variant <code>red</code> maybe be used for the value <code>#c05
 </tbody>
 </table>
 <h2 id="redis">Redis<a class="headerlink" href="#redis" title="Permanent link">&para;</a></h2>
-<h3 id="fields_90">Fields<a class="headerlink" href="#fields_90" title="Permanent link">&para;</a></h3>
+<h3 id="fields_92">Fields<a class="headerlink" href="#fields_92" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
@@ -34795,7 +34986,7 @@ For example, the variant <code>red</code> maybe be used for the value <code>#c05
 </tbody>
 </table>
 <h2 id="request">Request<a class="headerlink" href="#request" title="Permanent link">&para;</a></h2>
-<h3 id="fields_91">Fields<a class="headerlink" href="#fields_91" title="Permanent link">&para;</a></h3>
+<h3 id="fields_93">Fields<a class="headerlink" href="#fields_93" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
@@ -34825,7 +35016,7 @@ For example, the variant <code>red</code> maybe be used for the value <code>#c05
 The actual name of the attribute is the prefix "request_attribute" plus the "request attribute name" defined in the request attributes configuration.
 Request attributes are built based on captured attributes and other attributes like HTTP header values or "normal" span attributes, on which the aggregations (first/last value, distinct values, ...), type conversion and normalizations defined in the request attribute configuration are performed.
 They are evaluated for an entire request (possibly consisting of multiple spans) and are stored only on the request root node.</p>
-<h3 id="fields_92">Fields<a class="headerlink" href="#fields_92" title="Permanent link">&para;</a></h3>
+<h3 id="fields_94">Fields<a class="headerlink" href="#fields_94" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
@@ -34845,7 +35036,7 @@ They are evaluated for an entire request (possibly consisting of multiple spans)
 </tbody>
 </table>
 <h2 id="remote-procedure-calls">Remote Procedure Calls<a class="headerlink" href="#remote-procedure-calls" title="Permanent link">&para;</a></h2>
-<h3 id="fields_93">Fields<a class="headerlink" href="#fields_93" title="Permanent link">&para;</a></h3>
+<h3 id="fields_95">Fields<a class="headerlink" href="#fields_95" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
@@ -34989,7 +35180,7 @@ They are evaluated for an entire request (possibly consisting of multiple spans)
 </table>
 <h2 id="server">Server<a class="headerlink" href="#server" title="Permanent link">&para;</a></h2>
 <p>The server namespace contains information on the responder of a network connection.</p>
-<h3 id="fields_94">Fields<a class="headerlink" href="#fields_94" title="Permanent link">&para;</a></h3>
+<h3 id="fields_96">Fields<a class="headerlink" href="#fields_96" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
@@ -35021,7 +35212,7 @@ They are evaluated for an entire request (possibly consisting of multiple spans)
 </tbody>
 </table>
 <h2 id="service">Service<a class="headerlink" href="#service" title="Permanent link">&para;</a></h2>
-<h3 id="fields_95">Fields<a class="headerlink" href="#fields_95" title="Permanent link">&para;</a></h3>
+<h3 id="fields_97">Fields<a class="headerlink" href="#fields_97" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
@@ -35041,7 +35232,7 @@ They are evaluated for an entire request (possibly consisting of multiple spans)
 </tbody>
 </table>
 <h2 id="servlet">Servlet<a class="headerlink" href="#servlet" title="Permanent link">&para;</a></h2>
-<h3 id="fields_96">Fields<a class="headerlink" href="#fields_96" title="Permanent link">&para;</a></h3>
+<h3 id="fields_98">Fields<a class="headerlink" href="#fields_98" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
@@ -35068,7 +35259,7 @@ They are evaluated for an entire request (possibly consisting of multiple spans)
 </table>
 <h2 id="snmp">SNMP<a class="headerlink" href="#snmp" title="Permanent link">&para;</a></h2>
 <p>Fields that are used in SNMP extensions.</p>
-<h3 id="fields_97">Fields<a class="headerlink" href="#fields_97" title="Permanent link">&para;</a></h3>
+<h3 id="fields_99">Fields<a class="headerlink" href="#fields_99" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
@@ -35094,7 +35285,7 @@ They are evaluated for an entire request (possibly consisting of multiple spans)
 </tbody>
 </table>
 <h2 id="softwareag">Softwareag<a class="headerlink" href="#softwareag" title="Permanent link">&para;</a></h2>
-<h3 id="fields_98">Fields<a class="headerlink" href="#fields_98" title="Permanent link">&para;</a></h3>
+<h3 id="fields_100">Fields<a class="headerlink" href="#fields_100" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
@@ -35120,7 +35311,7 @@ They are evaluated for an entire request (possibly consisting of multiple spans)
 </tbody>
 </table>
 <h2 id="span">Span<a class="headerlink" href="#span" title="Permanent link">&para;</a></h2>
-<h3 id="fields_99">Fields<a class="headerlink" href="#fields_99" title="Permanent link">&para;</a></h3>
+<h3 id="fields_101">Fields<a class="headerlink" href="#fields_101" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
@@ -35272,7 +35463,7 @@ They are evaluated for an entire request (possibly consisting of multiple spans)
 </tbody>
 </table>
 <h2 id="span-event">Span Event<a class="headerlink" href="#span-event" title="Permanent link">&para;</a></h2>
-<h3 id="fields_100">Fields<a class="headerlink" href="#fields_100" title="Permanent link">&para;</a></h3>
+<h3 id="fields_102">Fields<a class="headerlink" href="#fields_102" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
@@ -35317,7 +35508,7 @@ They are evaluated for an entire request (possibly consisting of multiple spans)
 <h3 id="reference_1">Reference<a class="headerlink" href="#reference_1" title="Permanent link">&para;</a></h3>
 <p><a href="https://github.com/open-telemetry/opentelemetry-proto/blob/main/opentelemetry/proto/trace/v1/trace.proto">Language Independent Interface Types For OpenTelemetryï»¿</a></p>
 <h2 id="spring">Spring<a class="headerlink" href="#spring" title="Permanent link">&para;</a></h2>
-<h3 id="fields_101">Fields<a class="headerlink" href="#fields_101" title="Permanent link">&para;</a></h3>
+<h3 id="fields_103">Fields<a class="headerlink" href="#fields_103" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
@@ -35355,7 +35546,7 @@ They are evaluated for an entire request (possibly consisting of multiple spans)
 </tbody>
 </table>
 <h2 id="disk-extension">Disk extension<a class="headerlink" href="#disk-extension" title="Permanent link">&para;</a></h2>
-<h3 id="fields_102">Fields<a class="headerlink" href="#fields_102" title="Permanent link">&para;</a></h3>
+<h3 id="fields_104">Fields<a class="headerlink" href="#fields_104" title="Permanent link">&para;</a></h3>
 <p>Disk</p>
 <table>
 <thead>
@@ -35649,7 +35840,7 @@ They are evaluated for an entire request (possibly consisting of multiple spans)
 </tbody>
 </table>
 <h2 id="subtrace">Subtrace<a class="headerlink" href="#subtrace" title="Permanent link">&para;</a></h2>
-<h3 id="fields_103">Fields<a class="headerlink" href="#fields_103" title="Permanent link">&para;</a></h3>
+<h3 id="fields_105">Fields<a class="headerlink" href="#fields_105" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
@@ -35676,7 +35867,7 @@ They are evaluated for an entire request (possibly consisting of multiple spans)
 </table>
 <h2 id="supportability">Supportability<a class="headerlink" href="#supportability" title="Permanent link">&para;</a></h2>
 <p>Additional information about the attributes of a data point.</p>
-<h3 id="fields_104">Fields<a class="headerlink" href="#fields_104" title="Permanent link">&para;</a></h3>
+<h3 id="fields_106">Fields<a class="headerlink" href="#fields_106" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
@@ -35822,7 +36013,7 @@ Therefore these rules can only operate on span attributes given at span start ti
 <h2 id="telemetry">Telemetry<a class="headerlink" href="#telemetry" title="Permanent link">&para;</a></h2>
 <p>The <code>telemetry.sdk.*</code> fields are used to describe the telemetry SDK in OpenTelemetry or ODIN ingest. It can be considered the closest equivalent of ODIN/OTel data to <code>dt.agent.module.*</code>.</p>
 <p>The <code>telemetry.exporter.*</code> fields are used to define the exporter that exports telemetry data and is expected to be different for each exporter in case when multiple exporters co-exist.</p>
-<h3 id="fields_105">Fields<a class="headerlink" href="#fields_105" title="Permanent link">&para;</a></h3>
+<h3 id="fields_107">Fields<a class="headerlink" href="#fields_107" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
@@ -35872,7 +36063,7 @@ Therefore these rules can only operate on span attributes given at span start ti
 </tbody>
 </table>
 <h2 id="thread">Thread<a class="headerlink" href="#thread" title="Permanent link">&para;</a></h2>
-<h3 id="fields_106">Fields<a class="headerlink" href="#fields_106" title="Permanent link">&para;</a></h3>
+<h3 id="fields_108">Fields<a class="headerlink" href="#fields_108" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
@@ -35904,7 +36095,7 @@ Therefore these rules can only operate on span attributes given at span start ti
 </tbody>
 </table>
 <h2 id="tibco-business-works">TIBCO Business Works<a class="headerlink" href="#tibco-business-works" title="Permanent link">&para;</a></h2>
-<h3 id="fields_107">Fields<a class="headerlink" href="#fields_107" title="Permanent link">&para;</a></h3>
+<h3 id="fields_109">Fields<a class="headerlink" href="#fields_109" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
@@ -35968,7 +36159,7 @@ Therefore these rules can only operate on span attributes given at span start ti
 <h2 id="time-correction">Time correction<a class="headerlink" href="#time-correction" title="Permanent link">&para;</a></h2>
 <p>The time_correction namespace contains information on time corrections applied to the timestamps of an event, for example, <code>start_time</code>, <code>timestamp</code> or <code>event.end</code>.
 Time corrections may be necessary if events are reported with timestamps that are completely off compared to cluster time. For example, Dynatrace RUM reported data can be off depending on client time.</p>
-<h3 id="fields_108">Fields<a class="headerlink" href="#fields_108" title="Permanent link">&para;</a></h3>
+<h3 id="fields_110">Fields<a class="headerlink" href="#fields_110" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
@@ -35994,7 +36185,7 @@ Time corrections may be necessary if events are reported with timestamps that ar
 </tbody>
 </table>
 <h2 id="timeframe">Timeframe<a class="headerlink" href="#timeframe" title="Permanent link">&para;</a></h2>
-<h3 id="fields_109">Fields<a class="headerlink" href="#fields_109" title="Permanent link">&para;</a></h3>
+<h3 id="fields_111">Fields<a class="headerlink" href="#fields_111" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
@@ -36020,7 +36211,7 @@ Time corrections may be necessary if events are reported with timestamps that ar
 </tbody>
 </table>
 <h2 id="tls">Tls<a class="headerlink" href="#tls" title="Permanent link">&para;</a></h2>
-<h3 id="fields_110">Fields<a class="headerlink" href="#fields_110" title="Permanent link">&para;</a></h3>
+<h3 id="fields_112">Fields<a class="headerlink" href="#fields_112" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
@@ -36052,7 +36243,7 @@ Time corrections may be necessary if events are reported with timestamps that ar
 </tbody>
 </table>
 <h2 id="trace">Trace<a class="headerlink" href="#trace" title="Permanent link">&para;</a></h2>
-<h3 id="fields_111">Fields<a class="headerlink" href="#fields_111" title="Permanent link">&para;</a></h3>
+<h3 id="fields_113">Fields<a class="headerlink" href="#fields_113" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
@@ -36097,7 +36288,7 @@ Time corrections may be necessary if events are reported with timestamps that ar
 </table>
 <h2 id="url">URL<a class="headerlink" href="#url" title="Permanent link">&para;</a></h2>
 <p>The url namespace contains semantic conventions for URL and its components.</p>
-<h3 id="fields_112">Fields<a class="headerlink" href="#fields_112" title="Permanent link">&para;</a></h3>
+<h3 id="fields_114">Fields<a class="headerlink" href="#fields_114" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
@@ -36279,7 +36470,7 @@ Time corrections may be necessary if events are reported with timestamps that ar
 </table>
 <h2 id="vcs-repository">VCS Repository<a class="headerlink" href="#vcs-repository" title="Permanent link">&para;</a></h2>
 <p>The <code>vcs</code> namespace contains information about Version Control Systems.</p>
-<h3 id="fields_113">Fields<a class="headerlink" href="#fields_113" title="Permanent link">&para;</a></h3>
+<h3 id="fields_115">Fields<a class="headerlink" href="#fields_115" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
@@ -36531,7 +36722,7 @@ if the <code>main</code> branch is currently checked out, the head reference is 
 </table>
 <h2 id="vmware">VMware<a class="headerlink" href="#vmware" title="Permanent link">&para;</a></h2>
 <p>Fields that can come from applications running on VMware.</p>
-<h3 id="fields_114">Fields<a class="headerlink" href="#fields_114" title="Permanent link">&para;</a></h3>
+<h3 id="fields_116">Fields<a class="headerlink" href="#fields_116" title="Permanent link">&para;</a></h3>
 <h4 id="resource-attributes_10">Resource attributes<a class="headerlink" href="#resource-attributes_10" title="Permanent link">&para;</a></h4>
 <table>
 <thead>
@@ -36582,7 +36773,7 @@ if the <code>main</code> branch is currently checked out, the head reference is 
 </tbody>
 </table>
 <h2 id="vulnerability">Vulnerability<a class="headerlink" href="#vulnerability" title="Permanent link">&para;</a></h2>
-<h3 id="fields_115">Fields<a class="headerlink" href="#fields_115" title="Permanent link">&para;</a></h3>
+<h3 id="fields_117">Fields<a class="headerlink" href="#fields_117" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
@@ -37739,7 +37930,7 @@ if the <code>main</code> branch is currently checked out, the head reference is 
 </tbody>
 </table>
 <h2 id="weblogic">WebLogic<a class="headerlink" href="#weblogic" title="Permanent link">&para;</a></h2>
-<h3 id="fields_116">Fields<a class="headerlink" href="#fields_116" title="Permanent link">&para;</a></h3>
+<h3 id="fields_118">Fields<a class="headerlink" href="#fields_118" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
@@ -37778,7 +37969,7 @@ if the <code>main</code> branch is currently checked out, the head reference is 
 </table>
 <h2 id="websocket">Websocket<a class="headerlink" href="#websocket" title="Permanent link">&para;</a></h2>
 <p>The WebSocket namespace contains information on WebSocket attributes for user events. When this namespace is used, the request fields (URL and network namespace) must also be used, and <code>url.full</code> and <code>network.protocol.name</code> must be set.</p>
-<h3 id="fields_117">Fields<a class="headerlink" href="#fields_117" title="Permanent link">&para;</a></h3>
+<h3 id="fields_119">Fields<a class="headerlink" href="#fields_119" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
@@ -37798,7 +37989,7 @@ if the <code>main</code> branch is currently checked out, the head reference is 
 </tbody>
 </table>
 <h2 id="websphere">WebSphere<a class="headerlink" href="#websphere" title="Permanent link">&para;</a></h2>
-<h3 id="fields_118">Fields<a class="headerlink" href="#fields_118" title="Permanent link">&para;</a></h3>
+<h3 id="fields_120">Fields<a class="headerlink" href="#fields_120" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
@@ -37836,7 +38027,7 @@ if the <code>main</code> branch is currently checked out, the head reference is 
 </tbody>
 </table>
 <h2 id="websphere-liberty">WebSphere Liberty<a class="headerlink" href="#websphere-liberty" title="Permanent link">&para;</a></h2>
-<h3 id="fields_119">Fields<a class="headerlink" href="#fields_119" title="Permanent link">&para;</a></h3>
+<h3 id="fields_121">Fields<a class="headerlink" href="#fields_121" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
@@ -37856,7 +38047,7 @@ if the <code>main</code> branch is currently checked out, the head reference is 
 </tbody>
 </table>
 <h2 id="winlog">Winlog<a class="headerlink" href="#winlog" title="Permanent link">&para;</a></h2>
-<h3 id="fields_120">Fields<a class="headerlink" href="#fields_120" title="Permanent link">&para;</a></h3>
+<h3 id="fields_122">Fields<a class="headerlink" href="#fields_122" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
@@ -38524,7 +38715,7 @@ if the <code>main</code> branch is currently checked out, the head reference is 
 </tbody>
 </table>
 <h2 id="zos-connect">z/OS Connect<a class="headerlink" href="#zos-connect" title="Permanent link">&para;</a></h2>
-<h3 id="fields_121">Fields<a class="headerlink" href="#fields_121" title="Permanent link">&para;</a></h3>
+<h3 id="fields_123">Fields<a class="headerlink" href="#fields_123" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>

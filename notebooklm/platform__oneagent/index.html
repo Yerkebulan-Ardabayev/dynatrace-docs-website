@@ -25495,14 +25495,14 @@
 
 <h1 id="dynatrace-platformoneagent">Документация Dynatrace: platform/oneagent<a class="headerlink" href="#dynatrace-platformoneagent" title="Permanent link">&para;</a></h1>
 <p>Язык: Русский (RU)
-Сгенерировано: 2026-02-24
+Сгенерировано: 2026-02-25
 Файлов в разделе: 6</p>
 <hr />
 <h2 id="platformoneagenthow-one-agent-worksmd">platform/oneagent/how-one-agent-works.md<a class="headerlink" href="#platformoneagenthow-one-agent-worksmd" title="Permanent link">&para;</a></h2>
 <hr />
 <p>title: How OneAgent works
 source: https://www.dynatrace.com/docs/platform/oneagent/how-one-agent-works
-scraped: 2026-02-22T21:18:27.966461</p>
+scraped: 2026-02-25T21:16:21.491222</p>
 <hr />
 <h1 id="how-oneagent-works">How OneAgent works<a class="headerlink" href="#how-oneagent-works" title="Permanent link">&para;</a></h1>
 <h1 id="how-oneagent-works_1">How OneAgent works<a class="headerlink" href="#how-oneagent-works_1" title="Permanent link">&para;</a></h1>
@@ -25540,7 +25540,7 @@ OneAgent can connect directly to Dynatrace Cluster or it can communicate via one
 <hr />
 <p>title: Enable OneAgent monitoring modes
 source: https://www.dynatrace.com/docs/platform/oneagent/monitoring-modes/enable-monitoring-modes
-scraped: 2026-02-22T21:18:22.928105</p>
+scraped: 2026-02-25T21:16:17.573473</p>
 <hr />
 <h1 id="enable-oneagent-monitoring-modes">Enable OneAgent monitoring modes<a class="headerlink" href="#enable-oneagent-monitoring-modes" title="Permanent link">&para;</a></h1>
 <h1 id="enable-oneagent-monitoring-modes_1">Enable OneAgent monitoring modes<a class="headerlink" href="#enable-oneagent-monitoring-modes_1" title="Permanent link">&para;</a></h1>
@@ -25712,7 +25712,7 @@ scraped: 2026-02-22T21:18:22.928105</p>
 <hr />
 <p>title: OneAgent monitoring modes
 source: https://www.dynatrace.com/docs/platform/oneagent/monitoring-modes/monitoring-modes
-scraped: 2026-02-24T21:15:33.278894</p>
+scraped: 2026-02-25T21:15:53.009715</p>
 <hr />
 <h1 id="oneagent-monitoring-modes">OneAgent monitoring modes<a class="headerlink" href="#oneagent-monitoring-modes" title="Permanent link">&para;</a></h1>
 <h1 id="oneagent-monitoring-modes_1">OneAgent monitoring modes<a class="headerlink" href="#oneagent-monitoring-modes_1" title="Permanent link">&para;</a></h1>
@@ -26132,7 +26132,7 @@ scraped: 2026-02-24T21:15:33.278894</p>
 <hr />
 <p>title: Resource attributes
 source: https://www.dynatrace.com/docs/platform/oneagent/resource-attributes
-scraped: 2026-02-18T21:30:31.739033</p>
+scraped: 2026-02-25T21:28:09.333914</p>
 <hr />
 <h1 id="resource-attributes">Resource attributes<a class="headerlink" href="#resource-attributes" title="Permanent link">&para;</a></h1>
 <h1 id="resource-attributes_1">Resource attributes<a class="headerlink" href="#resource-attributes_1" title="Permanent link">&para;</a></h1>
@@ -26146,7 +26146,7 @@ scraped: 2026-02-18T21:30:31.739033</p>
 <p>All monitoring artifacts that leave a given host, that is have the host as its resource, are enriched with the host-level resource attributes.</p>
 <p>Host-level resource attributes are resource attributes of monitored hosts. All events raised by and measurements coming from OneAgent components running on a given host are enriched with those attributes. You can then use them in your queries to structure and filter the monitoring data.</p>
 <p>You can also use some of the attributes to create policies to manage data access. See <a href="/docs/semantic-dictionary/fields" title="Get to know the list of global fields that have a well defined semantic meaning in Dynatrace and can be used across different monitoring types.">Global field reference</a> and search for fields tagged as Permission</p>
-<p>If you have access to a host with OneAgent installed, you can inspect the <code>dt_host_metadata.json</code> and <code>dt_host_metadata.properties</code> to see the scope of resource attributes enrichment provided by OneAgent. For more information, see <a href="/docs/ingest-from/extend-dynatrace/extend-data" title="Learn how to automatically enrich your telemetry data with Dynatrace-specific dimensions.">Enrich ingested data with Dynatrace-specific dimensions</a>.</p>
+<p>If you have access to a host with OneAgent installed, you can inspect the <code>dt_host_metadata.json</code> and <code>dt_host_metadata.properties</code> to see the scope of resource attributes enrichment provided by OneAgent. For more information, see <a href="/docs/ingest-from/extend-dynatrace/extend-data" title="Learn how to automatically enrich your telemetry data with Dynatrace-specific fields.">Enrich ingested data with Dynatrace-specific fields</a>.</p>
 <h3 id="custom-host-level-attributes">Custom host-level attributes<a class="headerlink" href="#custom-host-level-attributes" title="Permanent link">&para;</a></h3>
 <p>You can create your own attributes by configuring key-value tags and properties set via <a href="/docs/observe/infrastructure-observability/hosts/configuration/define-tags-and-metadata-for-hosts" title="Learn how to tag and set additional properties for a monitored host.">oneagentctl</a> or through <a href="/docs/ingest-from/bulk-configuration" title="Perform OneAgent and ActiveGate configuration on hosts from the Deployment status page or at scale using the Dynatrace API.">Remote configuration management of OneAgents and ActiveGates</a>. Custom tags and properties defined this way are reported as flat, first-level resource attributes.</p>
 <p>The key tags with no value are ignored.</p>
@@ -26164,90 +26164,12 @@ scraped: 2026-02-18T21:30:31.739033</p>
 <p>If a name clash happens when merging resource attributes at different levels, the lowest level takes priority.</p>
 <h3 id="general-host-level-attributes">General host-level attributes<a class="headerlink" href="#general-host-level-attributes" title="Permanent link">&para;</a></h3>
 <p>All host-level resource attributes follow <a href="/docs/semantic-dictionary" title="The Semantic Dictionary defines standardized field names used across monitoring data types like logs, events, spans, metrics, and entities.">Semantic Dictionary</a>, unless stated otherwise.</p>
-<p>Attribute</p>
-<p>Description</p>
-<p>Custom host tags</p>
-<p>See <a href="#custom">Custom attributes</a></p>
-<p><code>dt.host_group.id</code></p>
-<p>Note that difference between <code>dt.entity.host_group</code> and <code>dt.host_group.id</code>:</p>
-<ul>
-<li><code>dt.host_group.id</code> is a name of the <a href="/docs/observe/infrastructure-observability/hosts/configuration/organize-your-environment-using-host-groups" title="Find out how Dynatrace enables you to organize your hosts, processes, and services using host groups.">host group</a>. It's human-readable host group identifier, for example <code>MyHostGroup</code>.</li>
-<li><code>dt.entity.host_group</code> is an identifier of host group entity in Dynatrace model. The identifier of the entity is not the same as the human readable identifier of the host group. It's created automatically and its format is for example <code>HOST_GROUP-008786529C8EE446</code>.</li>
-</ul>
-<p>For more information, see <a href="/docs/observe/infrastructure-observability/hosts/configuration/organize-your-environment-using-host-groups" title="Find out how Dynatrace enables you to organize your hosts, processes, and services using host groups.">Organize your environment using host groups</a>.</p>
-<p><code>dt.entity.host</code></p>
-<p>An entity ID of an entity of type HOST.</p>
-<p><code>dt.entity.host_group</code></p>
-<p>An entity ID of an entity of type <code>HOST_GROUP</code>.</p>
-<p><code>dt.security_context</code></p>
-<p>The security context is used to set up access permissions for monitored entities in Grail and needs to be configured. See <a href="#custom">Custom attributes</a></p>
-<p><code>dt.cost.costcenter</code></p>
-<p>The attribute is used to assign usage to a Cost Center and needs to be configured. See <a href="#custom">Custom attributes</a></p>
-<p><code>dt.cost.product</code></p>
-<p>The attribute is used to assign usage to a Product or Application ID and needs to be configured. See <a href="#custom">Custom attributes</a></p>
-<p><code>host.name</code></p>
-<p>The host name as determined depending on the data source, for example OneAgent, Extensions, or OpenTelemetry. Host name can be modified based on naming rules.</p>
-<p>Note that this not an entity ID of an entity of type <code>HOST</code> (<code>dt.entity.host</code>).</p>
 <h4 id="aws">AWS<a class="headerlink" href="#aws" title="Permanent link">&para;</a></h4>
-<p>Attribute</p>
-<p>Description</p>
-<p><code>dt.entity.ec2_instance</code></p>
-<p>An entity ID of an entity of type <code>EC2_INSTANCE</code>.</p>
-<p><code>dt.entity.aws_availability_zone</code></p>
-<p>An entity ID of an entity of type <code>AWS_AVAILABILITY_ZONE</code>.</p>
-<p><code>aws.availability_zone</code></p>
-<p>A specific availability zone in given AWS Region. For example, <code>usâeastâ1a</code>.</p>
-<p><code>aws.region</code></p>
-<p>A specific geographical AWS Cloud location. For example, <code>usâeastâ1</code>.</p>
-<p><code>aws.resource.id</code></p>
-<p>The unique identifier of the resource.</p>
 <h4 id="azure">Azure<a class="headerlink" href="#azure" title="Permanent link">&para;</a></h4>
-<p>Attribute</p>
-<p>Description</p>
-<p><code>dt.entity.azure_vm</code></p>
-<p>An entity ID of an entity of type <code>AZURE_VM</code>, retrieved from the <code>instanceId</code> field of Azure instance metadata.</p>
-<p><code>dt.entity.azure_region</code></p>
-<p>An entity ID of an entity of type <code>AZURE_REGION</code>.</p>
-<p><code>azure.location</code></p>
-<p>A specific geographical location of Azure Cloud resource, retrieved from the <code>location</code> field of Azure instance metadata.</p>
-<p><code>azure.vmid</code></p>
-<p>Azure Virtual Machine unique 128bits identifier.</p>
 <h4 id="google-cloud">Google Cloud<a class="headerlink" href="#google-cloud" title="Permanent link">&para;</a></h4>
-<p>Attribute</p>
-<p>Description</p>
-<p><code>gcp.instance.id</code></p>
-<p>A permanent identifier that is unique within your Google Cloud project.</p>
-<p><code>gcp.project.id</code></p>
-<p>The identifier of the GCP project associated with this resource.</p>
-<p><code>dt.entity.gcp_zone</code></p>
-<p>An entity ID of an entity of type <code>GCP_ZONE</code>.</p>
-<p><code>gcp.zone</code></p>
-<p>A zone is a subset of a region. Each region has three or more zones. For example, <code>europe-west3-c</code>.</p>
-<p><code>gcp.region</code></p>
-<p>A region is a specific geographical location where you can host your resources. For example, <code>europe-west3</code>.</p>
 <h4 id="openstack">OpenStack<a class="headerlink" href="#openstack" title="Permanent link">&para;</a></h4>
-<p>Attribute</p>
-<p>Description</p>
-<p><code>openstack.availability_zone</code></p>
-<p>A specific availability zone in a given OpenStack region. For example, <code>us-east-1a</code>.</p>
-<p><code>openstack.instance_uuid</code></p>
-<p>UUID of an OpenStack instance.</p>
 <h4 id="kubernetes">Kubernetes<a class="headerlink" href="#kubernetes" title="Permanent link">&para;</a></h4>
-<p>Attribute</p>
-<p>Description</p>
-<p><code>k8s.cluster.uid</code></p>
-<p>As the Kubernetes cluster name is not readily available, Dynatrace identifies the cluster by the UID of the kube-system namespace. Available only in Dynatrace Operator deployments.</p>
-<p><code>k8s.node.name</code></p>
-<p>A Kubernetes name of the Node. Available only in Dynatrace Operator deployments.</p>
 <h4 id="bosh">BOSH<a class="headerlink" href="#bosh" title="Permanent link">&para;</a></h4>
-<p>Attribute</p>
-<p>Description</p>
-<p><code>bosh.instance_id</code></p>
-<p>A unique identifier assigned to each deployed BOSH instance.</p>
-<p><code>bosh.availability_zone</code></p>
-<p>A specific geographical BOSH location. For example, <code>us-east-1a</code>.</p>
-<p><code>bosh.name</code></p>
-<p>A unique identifier to a deployment or instance.</p>
 <h3 id="resource-attributes-normalization">Resource attributes normalization<a class="headerlink" href="#resource-attributes-normalization" title="Permanent link">&para;</a></h3>
 <p>To ensure consistent and reliable metric ingestion, resource attributes normalization is applied to all relevant internal metric keys and values. This process helps prevent metrics from being dropped due to invalid or malformed dimensions.</p>
 <h4 id="dimension-key-rules">Dimension key rules<a class="headerlink" href="#dimension-key-rules" title="Permanent link">&para;</a></h4>
@@ -26308,7 +26230,7 @@ scraped: 2026-02-18T21:30:31.739033</p>
 <hr />
 <p>title: OneAgent monitoring capabilities
 source: https://www.dynatrace.com/docs/platform/oneagent/supported-monitoring-types
-scraped: 2026-02-24T21:16:36.999377</p>
+scraped: 2026-02-25T21:16:22.869844</p>
 <hr />
 <h1 id="oneagent-monitoring-capabilities">OneAgent monitoring capabilities<a class="headerlink" href="#oneagent-monitoring-capabilities" title="Permanent link">&para;</a></h1>
 <h1 id="oneagent-monitoring-capabilities_1">OneAgent monitoring capabilities<a class="headerlink" href="#oneagent-monitoring-capabilities_1" title="Permanent link">&para;</a></h1>
@@ -26338,7 +26260,7 @@ scraped: 2026-02-24T21:16:36.999377</p>
 <hr />
 <p>title: OneAgent
 source: https://www.dynatrace.com/docs/platform/oneagent
-scraped: 2026-02-24T21:16:05.334305</p>
+scraped: 2026-02-25T21:13:29.435040</p>
 <hr />
 <h1 id="oneagent">OneAgent<a class="headerlink" href="#oneagent" title="Permanent link">&para;</a></h1>
 <h1 id="oneagent_1">OneAgent<a class="headerlink" href="#oneagent_1" title="Permanent link">&para;</a></h1>

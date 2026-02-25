@@ -25484,14 +25484,6 @@
 <p>Dynatrace automatically detects how messages are processed within your environment. Under certain circumstances, however, some manual configuration is needed to allow Dynatrace to detect how messages are processed.</p>
 <h2 id="manual-configuration">Manual configuration<a class="headerlink" href="#manual-configuration" title="Permanent link">&para;</a></h2>
 <p>Review the following table to determine whether some manual configuration is needed.</p>
-<p>If this is trueâ¦</p>
-<p>â¦then this manual configuration is needed</p>
-<p>The application uses non-standard or non-event-based message queue handlers.</p>
-<p>Define a <a href="/docs/observe/application-observability/services/service-detection/service-detection-v1/service-types/define-messaging-services" title="Set up custom messaging services to trace message queues.">custom messaging service</a>.</p>
-<p>You're using IBM MQ.</p>
-<p>Define your <a href="/docs/observe/infrastructure-observability/queues/configuration/ibm-mq-tracing" title="Configure Dynatrace for IBM MQ tracing.">IBM MQ</a> configuration in Dynatrace to get a continuous service flow.</p>
-<p>The messaging client isn't compatible with Dynatrace, or you're using an unsupported protocol.</p>
-<p>Extend the traces with <a href="/docs/ingest-from/dynatrace-oneagent/oneagent-and-opentelemetry/oneagent-otel" title="Learn how to send OpenTelemetry data to a Dynatrace OneAgent.">OpenTelemetry</a> or <a href="/docs/ingest-from/extend-dynatrace/extend-tracing/oneagent-sdk" title="The Dynatrace OneAgent SDK enables you to instrument your application manually to extend end-to-end visibility for frameworks and technologies for which there is no code module yet available.">OneAgent SDK</a> (see also <a href="https://github.com/Dynatrace/OneAgent-SDK#trace-messaging">OneAgent SDK on GitHubï»¿</a>).</p>
 <h2 id="process-group-detection">Process group detection<a class="headerlink" href="#process-group-detection" title="Permanent link">&para;</a></h2>
 <p>OneAgent version 1.250+ Dynatrace uses the IBM MQ queue manager name to detect and group IBM MQ processes. To manage the IBM MQ process group detection</p>
 <ul>

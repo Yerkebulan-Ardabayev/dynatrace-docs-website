@@ -25687,13 +25687,6 @@
 <p>Expand a request from the list to view all performance metrics in one chart. Select a metric in the legend to remove/add it to the performance chart. Select <strong>Edit request</strong> to go to monitor settings from this card.</p>
 <p>The <strong>Status codes</strong> tab shows the timeline of returned HTTP status codes for a particular request. (The <a href="#status-codes">HTTP status codes card</a> shows the returned HTTP status codes for your HTTP monitor as a whole.)</p>
 <p>When a request violates its <a href="/docs/observe/digital-experience/synthetic-on-grail/synthetic-app/create-and-configure-an-http-monitor#outage-and-performance" title="Learn how to set up and edit an HTTP monitor to check the performance and availability of your site.">event-specific performance threshold</a>, it is highlighted in red. Expand the request to see the performance timings and the threshold violated. A solid red line for the problem duration appears above the stacked graph; the request threshold appears as a dotted red line. Select the solid red bar to display a link to the problem overview page.</p>
-<h2 id="errors">Errors<a class="headerlink" href="#errors" title="Permanent link">&para;</a></h2>
-<p>The <strong>Errors</strong> card displays errors found in the selected time frame.</p>
-<p>The Problems section lists all problems, both open and closed. On top of that, you can:</p>
-<ul>
-<li>See the details of an error in the form of a table with the request and number of occurrences.</li>
-<li>Select <strong>Analyze errors</strong>  for an in-depth error analysis.</li>
-</ul>
 <h2 id="response-size">Response size<a class="headerlink" href="#response-size" title="Permanent link">&para;</a></h2>
 <p>The <strong>Response size</strong> card shows trend lines for minimum and maximum response size for the sum of all requests, with any shaded area representing the difference between the two values at any given time. The trend lines might coincide, as when your monitor runs from a single location. However, response size might vary, for example, when different responses are sent based on location.</p>
 <p>To track such differences, you can <strong>Show response size breakdown per location</strong>. Note that if you filter the entire details page by any locations, the toggle is no longer available.</p>
@@ -25702,17 +25695,31 @@
 <p>Hover over a time slot in the event timeline to see the type and number of events generated at that interval. Select a time slot to view a tooltip with the events that took place in it.</p>
 <p>Select an event type, for example, <strong>HTTP monitor location slowdown</strong>, to see the list of events. One slowdown event is always created per location where your monitor violates request- or monitor-level performance thresholds. Select an individual event to see details.</p>
 <p>The <a href="/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic#end" title="Learn how to apply pre and post scripts to your requests"><code>api.fail()</code> method</a> can be used to define a custom <strong>Failure message</strong> that appears in the Events card in case of failure. Custom log messages also appear in the <code>customLogs</code> attribute in <a href="#analyze-last-execution">HTTP monitor execution details</a>.</p>
-<h2 id="properties-and-tags">Properties and tags<a class="headerlink" href="#properties-and-tags" title="Permanent link">&para;</a></h2>
-<p>This informational card shows the number of steps, locations, frequency of monitor execution, and any applied tags.</p>
-<p>Select  <strong>Edit</strong> to edit or apply additional tags.</p>
 <h2 id="changes">Changes<a class="headerlink" href="#changes" title="Permanent link">&para;</a></h2>
 <p>The <strong>Changes</strong> card shows the history log that displays:</p>
 <ul>
 <li>When the monitor was created and who created it.</li>
 <li>Who changed the monitor properties, when the change was made, and which properties were changed in the selected timeframe.</li>
 </ul>
+<h2 id="errors">Errors<a class="headerlink" href="#errors" title="Permanent link">&para;</a></h2>
+<p>The <strong>Errors</strong> card displays errors found in the selected timeframe.</p>
+<p>On the card, you can:</p>
+<ul>
+<li>See the details of an error in the form of a table with the step and number of occurrences.</li>
+<li>Select <strong>Analyze errors</strong> .</li>
+</ul>
 <h2 id="frontends">Frontends<a class="headerlink" href="#frontends" title="Permanent link">&para;</a></h2>
 <p>The <strong>Frontends</strong> card displays the frontends to which the monitor is assigned.</p>
+<h2 id="locations">Locations<a class="headerlink" href="#locations" title="Permanent link">&para;</a></h2>
+<p>The <strong>Locations</strong> card shows the status of the last monitor execution for each location. The status is displayed with colors:</p>
+<ul>
+<li>Greenâthe location was available during the last monitor execution.</li>
+<li>Redâan outage was detected during the last monitor execution.</li>
+<li>Grayâthere is no data about executions for this location.</li>
+</ul>
+<h2 id="properties-and-tags">Properties and tags<a class="headerlink" href="#properties-and-tags" title="Permanent link">&para;</a></h2>
+<p>This informational card shows the number of steps, the number and list of locations, frequency of monitor execution, and any applied tags.</p>
+<p>Select  <strong>Edit</strong> to edit or apply additional tags.</p>
 <h2 id="services">Services<a class="headerlink" href="#services" title="Permanent link">&para;</a></h2>
 <p>The <strong>Services</strong> card displays any monitored services automatically associated with the HTTP monitor. This card appears when the monitored HTTP endpoint is hosted on a OneAgent-monitored host, and the endpoint URL is handled by one of the discovered services. The association between the HTTP monitor and the service is made based on data provided by OneAgent. Therefore, at least one monitor execution needs to be completed before a service can be associated with the monitor.</p>
 <p>Select the link for a displayed service to view the service overview page, filtered by the HTTP monitor.</p>

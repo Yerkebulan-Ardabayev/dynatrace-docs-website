@@ -25488,40 +25488,12 @@
 <ul>
 <li>For CICS and IMS development environments: a small or medium-sized machine.</li>
 <li>For CICS and IMS production environments: a large or extra-large machine.</li>
-<li>For z/OS Java environments: a small or medium-sized machine.</li>
-</ul>
-<p>Hardware requirements</p>
-<p>Small (DEV)</p>
-<p>Medium (DEV)</p>
-<p>Large (PROD)</p>
-<p>X-Large (PROD)</p>
-<p><strong>Anticipated monitored CICS/IMS transactions per second</strong></p>
-<p><strong>4,000</strong></p>
-<p><strong>7,500</strong></p>
-<p><strong>15,000</strong></p>
-<p><strong>30,000</strong></p>
-<p>Required CPU cores on x86-64 architecture (Xeon E5-2600 series)</p>
-<p>2</p>
-<p>4</p>
-<p>8</p>
-<p>16</p>
-<p>Required <a href="https://www.ibm.com/products/integrated-facility-for-linux">IFL processorsï»¿</a> on s390 architecture</p>
-<p>1</p>
-<p>1</p>
-<p>1</p>
-<p>2</p>
-<p>Required memory</p>
-<p>4GB</p>
-<p>6GB</p>
-<p>8GB</p>
-<p>16GB</p>
-<p>Required disk space</p>
-<p>20GB</p>
-<p>20GB</p>
-<p>20GB</p>
-<p>20GB</p>
-<ul>
-<li>The hardware requirements are for the case when the zRemote module and its ActiveGate are used for mainframe monitoring only.</li>
+<li>
+<p>For z/OS Java environments: a small or medium-sized machine.</p>
+</li>
+<li>
+<p>The hardware requirements are for the case when the zRemote module and its ActiveGate are used for mainframe monitoring only.</p>
+</li>
 <li>Multiple <a href="/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-zdc" title="Set up the z/OS Data Collection subsystem (zDC).">zDC subsystems</a> can be connected to a single zRemote as long as the number of monitored transactions matches the hardware requirements.</li>
 </ul>
 <h2 id="system-requirements">System requirements<a class="headerlink" href="#system-requirements" title="Permanent link">&para;</a></h2>
@@ -25598,72 +25570,13 @@
 <p>Base path: <code>/opt/dynatrace/zremote</code></p>
 <p>Base path: <code>C:/Program Files/dynatrace/zremote</code></p>
 <p>All of the following directories are not retained in the event of a zRemote update or uninstallation. If you make changes here, they will be overwritten or deleted.</p>
-<p>Directory</p>
-<p>Component</p>
-<p>Description</p>
-<p><code>agent/lib64</code></p>
-<p>noneagentz</p>
-<p>The zRemote binary</p>
-<p><code>agent/lib64</code></p>
-<p>oneagentzwatchdog</p>
-<p>A binary that provides the service capabilities for the zRemote service and controls resource limits</p>
-<p><code>agent/lib64</code></p>
-<p>oneagentdumpproc</p>
-<p>A binary that supports creating dumps when the main application crashes</p>
-<p><code>agent/lib64/zos-s390-64/&lt;version&gt;</code></p>
-<p>dtzagent</p>
-<p>A binary deployed to the UNIX part of the mainframe to support OneAget communications. For more details, see <a href="/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-zdc" title="Set up the z/OS Data Collection subsystem (zDC).">Install the zDC subsystem</a></p>
-<p><code>agent/lib64/zos-s390-64/&lt;version&gt;</code></p>
-<p>libdtzagent.so</p>
-<p>A binary deployed to the UNIX part of the mainframe to support agent communications. For more details, see <a href="/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-zdc" title="Set up the z/OS Data Collection subsystem (zDC).">Install the zDC subsystem</a></p>
-<p><code>agent/conf</code></p>
-<p>ruxitagent.conf</p>
-<p>The default zRemote configuration file</p>
-<p><code>agent/conf</code></p>
-<p>oneagentzwatchdog.ini</p>
-<p>The default watchdog configuration file</p>
-<p><code>agent/conf</code></p>
-<p>.pem</p>
-<p>Application certificates</p>
-<p><code>agent</code></p>
-<p>installer.version</p>
-<p>The installer version of the zRemote binary, which is usually the same as the zRemote version</p>
-<p><code>agent</code></p>
-<p>zremote</p>
-<p>Linux only The service script for running the zRemote application</p>
-<p>uninstallation.sh</p>
-<p>Linux only The service script for uninstalling the zRemote application.</p>
-<p>It removes everything except the persistent user configuration and log files.</p>
 <h3 id="zremote-configuration-and-installation-directories">zRemote configuration and installation directories<a class="headerlink" href="#zremote-configuration-and-installation-directories" title="Permanent link">&para;</a></h3>
 <p>Linux</p>
 <p>Windows</p>
 <p>Base path: <code>/var/lib/dynatrace/zremote</code></p>
 <p>Base path: <code>C:/Program Files/dynatrace/zremote</code></p>
 <p>All of the following directories are not retained during zRemote update or uninstallation. If you make changes here, they will be overwritten or deleted.</p>
-<p>Directory</p>
-<p>Component</p>
-<p>Description</p>
-<p><code>agent</code></p>
-<p>runtime</p>
-<p>Contains the connection details as specified by your Dynatrace environment.</p>
-<p><code>config</code></p>
-<p>instance.properties</p>
-<p>Contains the ID of the currently registered instance.</p>
-<p><code>config</code></p>
-<p>version.properties</p>
-<p>Contains the full version number of the zRemote module.</p>
-<p>state</p>
-<p>Contains the address of the last successful server connection to indicate a properly established connection.</p>
 <p>The following directories are retained in case of update or uninstallation. You can make changes here. For more details, see <a href="/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-zremote/customize-zremote" title="Customize the zRemote module for your needs.">Customize the zRemote module</a>.</p>
-<p>Directory</p>
-<p>Component</p>
-<p>Description</p>
-<p><code>agent/conf</code></p>
-<p>zremoteagentuserconfig.conf</p>
-<p>The configuration file for zRemote module customization</p>
-<p><code>agent/conf</code></p>
-<p>watchdoguserconfig.conf</p>
-<p>The configuration file for watchdog customization</p>
 <h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h2>
 <p>The zRemote module is downloaded and installed automatically during the ActiveGate installation procedure on <a href="/docs/ingest-from/dynatrace-activegate/installation/linux/linux-install-an-environment-activegate" title="Read the step-by-step procedure for installing an Environment ActiveGate on Linux.">Linux</a> or <a href="/docs/ingest-from/dynatrace-activegate/installation/windows/windows-install-an-environment-activegate" title="Read the step-by-step procedure for installing an Environment ActiveGate on Windows.">Windows</a>.</p>
 <ol>

@@ -25491,71 +25491,6 @@
 </ul>
 <h2 id="milestone-metrics">Milestone metrics<a class="headerlink" href="#milestone-metrics" title="Permanent link">&para;</a></h2>
 <p>Milestone metrics represent events that occur at a specific point in time during a user action. However, these metrics are measured in seconds or milliseconds because they are calculated relative to the user action start time. In other words, user action start time serves as a reference point from which the time for the milestone metrics is measured. For example, a value of 47 ms for <strong>Navigation start</strong> indicates that this event occurred 47 ms after the action start time.</p>
-<p>Metric</p>
-<p>Description</p>
-<p>Applicable to</p>
-<p><strong>Navigation start</strong></p>
-<p>The moment when the user agent finishes prompting to unload the previous page<br />
-If there is no previous page, this value is the same as <code>PerformanceTiming.fetchStart</code>.</p>
-<p>Load actions</p>
-<p><strong>Request start</strong></p>
-<p>The time before the user agent sends the request to obtain the page from the server, relevant application caches, or a local resource<br />
-If the transport layer fails and the connection is reopened, this metric is set to the time corresponding to the new request.</p>
-<p>Load actions</p>
-<p>XHR actions</p>
-<p><strong>Time to first byte</strong></p>
-<p>The time taken until the first byte of the response is received from the server, relevant application caches, or a local resource</p>
-<p>Load actions</p>
-<p>XHR actions</p>
-<p><strong>HTML downloaded</strong></p>
-<p>The time taken until the user agent receives the last byte of the response or the transport connection is closed, whichever comes first<br />
-For XHR actions, this metric is known as <strong>Response end</strong>.</p>
-<p>Load actions</p>
-<p>XHR actions</p>
-<p><strong>DOM interactive</strong></p>
-<p>The time taken until the page's status is set to "interactive" and it's ready to receive input</p>
-<p>Load actions</p>
-<p><strong>Speed index</strong><a href="#fn-1-1-def">1</a></p>
-<p>The score measuring how quickly the visible parts of the page are rendered</p>
-<p>Load actions</p>
-<p><strong>DOM content loaded</strong></p>
-<p>The time taken until the user agent fires the <code>DOMContentLoaded</code> event at the page<br />
-The <code>DOMContentLoaded</code> event is executed when the basic HTML of the page is loaded and its parsing is complete. The event doesn't wait for the loading of add-ons (for example, stylesheets, sub-frames, and images) to be complete.</p>
-<p>Load actions</p>
-<p><strong>First paint</strong><a href="#fn-1-2-def">2</a></p>
-<p>The time taken to render the first non-default background element</p>
-<p>Load actions</p>
-<p><strong>First contentful paint</strong><a href="#fn-1-3-def">3</a></p>
-<p>The time taken to render the first bit of content, such as text or images</p>
-<p>Load actions</p>
-<p><strong>Largest contentful paint</strong><a href="#fn-1-4-def">4</a></p>
-<p>The time taken to render the largest element in the viewport</p>
-<p>Load actions</p>
-<p><strong>Visually complete</strong><a href="#fn-1-1-def">1</a></p>
-<p>The time taken to fully render content in the viewport</p>
-<p>Load actions</p>
-<p>XHR actions</p>
-<p><strong>DOM complete</strong></p>
-<p>The time taken until the page's status is set to "complete"</p>
-<p>Load actions</p>
-<p><strong>Load event start</strong></p>
-<p>The time taken to begin the load event of the page</p>
-<p>Load actions</p>
-<p><strong>Load event end</strong></p>
-<p>The time taken to complete the load event of the page</p>
-<p>Load actions</p>
-<p><strong>User action duration</strong></p>
-<p>The time taken to complete the page load<br />
-This includes load time of XHR requests initiated before <code>loadEventEnd</code> and load time of dynamic resources and script executions triggered by DOM modifications.</p>
-<p>Load actions</p>
-<p>XHR actions</p>
-<p>Custom actions</p>
-<p><strong>First input start</strong></p>
-<p>The moment when the user first interacts with a page, for example, clicks a UI control</p>
-<p>Load actions</p>
-<p><strong>First input delay</strong><a href="#fn-1-5-def">5</a></p>
-<p>The time from the first interaction with the page to when the user agent can respond to that interaction</p>
-<p>Load actions</p>
 <p>1</p>
 <p><strong>Speed index</strong> and <strong>Visually complete</strong> are only available on browsers that support <a href="https://developers.google.com/web/updates/2012/02/Detect-DOM-changes-with-Mutation-Observers">mutation observersï»¿</a>: Microsoft Internet Explorer 11, Microsoft Edge 15+, Firefox 57+, and Google Chrome 61+.</p>
 <p>2</p>
@@ -25568,52 +25503,6 @@ This includes load time of XHR requests initiated before <code>loadEventEnd</cod
 <p>For Chromium-based browsers, <strong>First input delay</strong> is measured using <a href="https://web.dev/fid/#measure-fid-in-javascript">Google-provided APIsï»¿</a>. For Firefox, Safari, and Internet Explorer 9+, the metric is measured using a Dynatrace implementation that listens for events of type <code>click</code>, <code>mousedown</code>, <code>keydown</code>, or <code>touchstart</code> and calculates the delay from when the RUM JavaScript registers such events to when the events are triggered.</p>
 <h2 id="phase-metrics">Phase metrics<a class="headerlink" href="#phase-metrics" title="Permanent link">&para;</a></h2>
 <p>As opposed to milestone metrics, phase metrics imply a duration.</p>
-<p>Metric</p>
-<p>Description</p>
-<p>Applicable to</p>
-<p><strong>Blocking</strong></p>
-<p>The time between when the user agent receives a request to download a resource and when it actually starts downloading the resource<br />
-This includes the time spent on waiting for a free TCP socket, generating disk cache entries, and proxy negotiation.</p>
-<p>Load actions</p>
-<p><strong>Application cache</strong></p>
-<p>The time spent checking any relevant application caches<br />
-This includes the time before the connection to the server is established.</p>
-<p>Load actions</p>
-<p><strong>DNS lookup</strong></p>
-<p>The time taken to resolve the hostname for a target URL</p>
-<p>Load actions</p>
-<p><strong>TCP connect</strong></p>
-<p>The time taken to establish a TCP connection to the server (including SSL)</p>
-<p>Load actions</p>
-<p><strong>Secure connect</strong></p>
-<p>The time taken to secure the connection established to the server<br />
-This includes the SSL handshake and SOCKS.</p>
-<p>Load actions</p>
-<p><strong>Request</strong></p>
-<p>The time taken to request the page from the server until the first byte is received</p>
-<p>Load actions</p>
-<p><strong>Response</strong></p>
-<p>The time taken to receive the response</p>
-<p>Load actions</p>
-<p><strong>Processing</strong></p>
-<p>The time between DOM loading and Load event start</p>
-<p>Load actions</p>
-<p><strong>OnLoad</strong></p>
-<p>The time taken to process the load event</p>
-<p>Load actions</p>
-<p><strong>OnDOMContentLoaded</strong></p>
-<p>The time taken to execute <code>onDomContentLoaded</code> handlers</p>
-<p>Load actions</p>
-<p><strong>Callback</strong></p>
-<p>The time taken to execute XHR callbacks</p>
-<p>Load actions</p>
-<p><strong>Redirect time</strong></p>
-<p>The time taken to follow any HTTP redirects</p>
-<p>Load actions</p>
-<p><strong>Long tasks</strong><a href="#fn-2-1-def">1</a></p>
-<p>The total time of all long JavaScript tasks (over 50 ms)<br />
-The metric is measured from <strong>Navigation start</strong> for the entire user action duration.</p>
-<p>Load actions</p>
 <p>1</p>
 <p>You can use the <strong>Long tasks</strong> metric instead of the <a href="https://web.dev/tbt/"><strong>Total blocking time</strong>ï»¿</a> metric, which we decided not to introduce due to certain technical limitations. Also note that the <strong>Blocking</strong> metric shown in the waterfall isn't related to <strong>Total blocking time</strong> and is only available for specific requests.</p>
 <h2 id="key-performance-metrics">Key performance metrics<a class="headerlink" href="#key-performance-metrics" title="Permanent link">&para;</a></h2>

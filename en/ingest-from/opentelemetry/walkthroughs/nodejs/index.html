@@ -25800,7 +25800,7 @@
 <a id="__codelineno-1-232" name="__codelineno-1-232" href="#__codelineno-1-232"></a>
 <a id="__codelineno-1-233" name="__codelineno-1-233" href="#__codelineno-1-233"></a>opentelemetry.metrics.setGlobalMeterProvider(meterProvider);
 </code></pre></div>
-<p>The file read operations, parsing the <code>dt_metadata</code> files in the example code, attempt to read the <a href="/docs/ingest-from/extend-dynatrace/extend-data" title="Learn how to automatically enrich your telemetry data with Dynatrace-specific dimensions.">OneAgent data files</a> to enrich the OTLP request and ensure that all relevant topology information is available within Dynatrace.
+<p>The file read operations, parsing the <code>dt_metadata</code> files in the example code, attempt to read the <a href="/docs/ingest-from/extend-dynatrace/extend-data" title="Learn how to automatically enrich your telemetry data with Dynatrace-specific fields.">OneAgent data files</a> to enrich the OTLP request and ensure that all relevant topology information is available within Dynatrace.
 3. If you export using OTLP, configure the two variables <code>DT_API_URL</code> and <code>DT_API_TOKEN</code> in <code>otel.js</code> with their <a href="#dynatrace-docs--otlp-export">respective values</a>.</p>
 <p>Value injection</p>
 <p>Instead of hardcoding the URL and token, you might also consider reading them from storage specific to your application framework (for example, environment variables or framework secrets).
@@ -25970,7 +25970,7 @@
 <p>For metrics and logs, go to <strong>Metrics</strong> or <img alt="Logs and Events" src="https://dt-cdn.net/images/logs-and-events-512-4b43bbadbe.png" title="Logs and Events" /> <strong>Logs &amp; Events Classic</strong>.</p>
 <h2 id="related-topics">Related topics<a class="headerlink" href="#related-topics" title="Permanent link">&para;</a></h2>
 <ul>
-<li><a href="/docs/ingest-from/extend-dynatrace/extend-data" title="Learn how to automatically enrich your telemetry data with Dynatrace-specific dimensions.">Enrich ingested data with Dynatrace-specific dimensions</a></li>
+<li><a href="/docs/ingest-from/extend-dynatrace/extend-data" title="Learn how to automatically enrich your telemetry data with Dynatrace-specific fields.">Enrich ingested data with Dynatrace-specific fields</a></li>
 </ul>
 
 

@@ -25628,7 +25628,11 @@ You can deploy Dynatrace for Application Observability and configure Platform Ob
 <li><code>docker.io/dynatrace/dynatrace-operator</code></li>
 <li><code>public.ecr.aws/dynatrace/dynatrace-operator</code></li>
 </ul>
-<p>Standalone LogMonitoring on GKE Autopilot is fully supported since Dynatrace Operator version 1.4.2.</p>
+<p>Standalone LogMonitoring on GKE Autopilot is fully supported since Dynatrace Operator version 1.4.2 with the following repository source support:</p>
+<ul>
+<li><code>docker.io/dynatrace/dynatrace-logmodule</code></li>
+<li><code>public.ecr.aws/dynatrace/dynatrace-logmodule</code></li>
+</ul>
 <h4 id="allowlisting-dynatrace-workloads">Allowlisting Dynatrace workloads<a class="headerlink" href="#allowlisting-dynatrace-workloads" title="Permanent link">&para;</a></h4>
 <p>CSI driver Standalone LogMonitoring</p>
 <p>Starting with GKE Autopilot version 1.32.1-gke.1376000 a <code>WorkloadAllowlist</code> explicitly permits security exceptions (for example, allowing the Dynatrace Operator CSI driver to run privileged workloads).

@@ -25521,70 +25521,12 @@
 </ul>
 <p>Included events</p>
 <p>The table below describes events that are included with a separate rate-card capability package.</p>
-<p>Built-in event kind</p>
-<p>Relevant capability</p>
-<p>Ingest &amp; Process</p>
-<p>Retain<a href="#fn-1-1-def">1</a></p>
-<p>Query</p>
-<p>Dynatrace Intelligence problems and events</p>
-<p>Full-Stack Monitoring</p>
-<p>Included</p>
-<p>First 15 months are included</p>
-<p>Included</p>
-<p>Kubernetes warning events</p>
-<p>Kubernetes Platform Monitoring</p>
-<p>60 warning events per pod-hour are included</p>
-<p>First 15 months are included</p>
-<p>Queries generated from within <img alt="Kubernetes (new)" src="https://dt-cdn.net/images/kubernetes-new-1024-45d3de15d1.webp" title="Kubernetes (new)" /> <strong>Kubernetes</strong> are included</p>
-<p>Built-in security events</p>
-<p>Runtime Vulnerability Analytics (RVA)</p>
-<p>Included</p>
-<p>First 3 years are included</p>
-<p>Queries generated from within <img alt="Vulnerabilities" src="https://dt-cdn.net/images/vulnerabilities-highresolution-1025-9279da9743.png" title="Vulnerabilities" /> <strong>Vulnerabilities</strong> are included</p>
 <p>1</p>
 <p>Retention beyond the included timeframe is billable as Events powered by Grail - Retain.</p>
 <h2 id="events-ingest-process-feature-overview">Events - Ingest &amp; Process feature overview<a class="headerlink" href="#events-ingest-process-feature-overview" title="Permanent link">&para;</a></h2>
 <p>Here's what's included with the Ingest &amp; Process data-usage dimension:</p>
-<p>Concept</p>
-<p>Explanation</p>
-<p>Data delivery</p>
-<p>Delivery of events via OneAgent, RUM JavaScript, or Generic Event Ingestion API (via ActiveGate)</p>
-<p>Topology enrichment</p>
-<p>Enrichment of events with data source and topology metadata</p>
-<p>Data transformation</p>
-<ul>
-<li>Add, edit, or drop any business event attribute</li>
-<li>Perform mathematical transformations on numerical values (for example, creating new attributes based on calculations of existing fields)</li>
-<li>Extract business, infrastructure, application, or other data from raw business events.
-  This can be a single character, string, number, array of values, or other.
-  Extracted data can be turned into a new field, allowing additional querying, filtering, etc.</li>
-<li>Mask sensitive data by replacing specific business attributes with a masked string</li>
-</ul>
-<p>Data-retention control</p>
-<p>Manage data retention periods of incoming events based on bucket assignment rules</p>
-<p>Conversion to timeseries</p>
-<p>Create metrics from event attributes (note that creating custom metrics generates additional consumption beyond the consumption for ingestion and processing.)</p>
 <h2 id="events-retain-feature-overview">Events - Retain feature overview<a class="headerlink" href="#events-retain-feature-overview" title="Permanent link">&para;</a></h2>
 <p>Here's what's included with the Retain data-usage dimension:</p>
-<p>Concept</p>
-<p>Explanation</p>
-<p>Data availability</p>
-<p>Retained data is accessible for analysis and querying until the end of the retention period.
-Events retention is defined at the bucket level, ensuring tailored retention periods for specific events.</p>
-<p>Retention periods</p>
-<p>Choose a retention period</p>
-<ul>
-<li>10 days (10 days)</li>
-<li>2 weeks (15 days)</li>
-<li>1 month (35 days) (this is the default period)</li>
-<li>3 months (95 days)</li>
-<li>1 year (372 days)</li>
-<li>15 months (462 days)</li>
-<li>3 years (1,102 days)</li>
-<li>5 years (1,832 days)</li>
-<li>7 years (2,562 days)</li>
-<li>10 years (3,657 days)</li>
-</ul>
 <h2 id="events-query-feature-overview">Events - Query feature overview<a class="headerlink" href="#events-query-feature-overview" title="Permanent link">&para;</a></h2>
 <p>Query data usage occurs when:</p>
 <ul>
@@ -25593,19 +25535,6 @@ Events retention is defined at the bucket level, ensuring tailored retention per
 <li>Executing DQL queries in Notebooks, Dashboards, Workflows, Custom apps, and via API.</li>
 </ul>
 <p>Here's what's included with the Query data-usage dimension:</p>
-<p>Concept</p>
-<p>Explanation</p>
-<p>On-read parsing</p>
-<ul>
-<li>Use DQL to query historical events in storage and extract business, infrastructure, or other data across any timeframe, and use extracted data for follow-up analysis.</li>
-<li>No upfront indexes or schema required for on-read parsing</li>
-</ul>
-<p>Aggregation</p>
-<p>Perform aggregation, summarization, or statistical analysis of data in events across specific timeframes or time patterns (for example, data occurrences in 30-second or 10-minute intervals), mathematical, or logical functions.</p>
-<p>Reporting</p>
-<p>Create reports or summaries with customized fields (columns) by adding, modifying, or dropping existing event attributes.</p>
-<p>Context</p>
-<p>Use DQL to analyze event data in context with relevant data on the Dynatrace platform, for example, user sessions or distributed traces.</p>
 <h2 id="related-topics">Related topics<a class="headerlink" href="#related-topics" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="/docs/analyze-explore-automate/logs/lma-log-processing/lma-log-events" title="Create log events based on log data and use them in problem detection.">Log events</a></li>

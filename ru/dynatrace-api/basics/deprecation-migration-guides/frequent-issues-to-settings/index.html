@@ -25,7 +25,7 @@
     
     
       
-        <title>Миграция из обнаружения частых проблем API в Настройки API - Dynatrace Managed - Документация</title>
+        <title>Migrate from Frequent issue detection API to Settings API - Dynatrace Managed - Документация</title>
       
     
     
@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#api-api" class="md-skip">
+        <a href="#migrate-from-frequent-issue-detection-api-to-settings-api" class="md-skip">
           Перейти к содержанию
         </a>
       
@@ -114,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Миграция из обнаружения частых проблем API в Настройки API
+              Migrate from Frequent issue detection API to Settings API
             
           </span>
         </div>
@@ -25474,20 +25474,20 @@
 
 
 
-<h1 id="api-api">Миграция из обнаружения частых проблем API в Настройки API<a class="headerlink" href="#api-api" title="Permanent link">&para;</a></h1>
-<h1 id="api-api_1">Миграция из обнаружения частых проблем API в Настройки API<a class="headerlink" href="#api-api_1" title="Permanent link">&para;</a></h1>
+<h1 id="migrate-from-frequent-issue-detection-api-to-settings-api">Migrate from Frequent issue detection API to Settings API<a class="headerlink" href="#migrate-from-frequent-issue-detection-api-to-settings-api" title="Permanent link">&para;</a></h1>
+<h1 id="migrate-from-frequent-issue-detection-api-to-settings-api_1">Migrate from Frequent issue detection API to Settings API<a class="headerlink" href="#migrate-from-frequent-issue-detection-api-to-settings-api_1" title="Permanent link">&para;</a></h1>
 <ul>
-<li>Ссылка</li>
-<li>Опубликовано 22 декабря 2022 г.</li>
+<li>Reference</li>
+<li>Published Dec 22, 2022</li>
 </ul>
-<p><a href="/docs/dynatrace-api/configuration-api/frequent-issue-detection-api" title="Управление конфигурацией обнаружения частых проблем через Dynatrace API.">Обнаружение частых проблем API</a> было устарено с <a href="/docs/whats-new/dynatrace-api/sprint-249" title="Журнал изменений для Dynatrace API версии 1.249">Dynatrace версии 1.249</a>. Его заменой является <a href="/docs/dynatrace-api/environment-api/settings" title="Узнайте, что предлагает Dynatrace Настройки API.">Настройки API</a> со схемой <strong>Обнаружение частых проблем</strong> (<code>builtin:anomaly-detection.frequent-issues</code>). Мы рекомендуем вам перейти на новую API как можно скорее.</p>
-<p>Миграция влияет на URL-адреса конечных точек, параметры запросов и параметры тела запроса/ответа, а также на область действия токена для аутентификации запросов.</p>
-<h2 id="url">Базовый URL<a class="headerlink" href="#url" title="Permanent link">&para;</a></h2>
+<p>The <a href="/docs/dynatrace-api/configuration-api/frequent-issue-detection-api" title="Manage frequent issue detection configuration via the Dynatrace API.">Frequent issue detection API</a> has been deprecated with <a href="/docs/whats-new/dynatrace-api/sprint-249" title="Changelog for Dynatrace API version 1.249">Dynatrace version 1.249</a>. Its replacement is <a href="/docs/dynatrace-api/environment-api/settings" title="Find out what the Dynatrace Settings API offers.">Settings API</a> with the <strong>Frequent issue detection</strong> (<code>builtin:anomaly-detection.frequent-issues</code>) schema. We recommend that you migrate to the new API at your earliest convenience.</p>
+<p>The migration affects endpoint URLs, query parameters, and response/request body parameters, as well as the scope of the token for request authentication.</p>
+<h2 id="base-url">Base URL<a class="headerlink" href="#base-url" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
-<th>новые Настройки 2.0</th>
-<th>старое Обнаружение частых проблем</th>
+<th>new Settings 2.0</th>
+<th>old Frequent issue detection</th>
 </tr>
 </thead>
 <tbody>
@@ -25497,34 +25497,34 @@
 </tr>
 </tbody>
 </table>
-<h2 id="_1">Область действия токена аутентификации<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h2 id="authentication-token-scope">Authentication token scope<a class="headerlink" href="#authentication-token-scope" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
-<th>новые Настройки 2.0</th>
-<th>старое Обнаружение частых проблем</th>
+<th>new Settings 2.0</th>
+<th>old Frequent issue detection</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>Чтение настроек</strong> (<code>settings.read</code>) <strong>Запись настроек</strong> (<code>settings.write</code>)</td>
-<td><strong>Чтение конфигурации</strong> (<code>ReadConfig</code>) <strong>Запись конфигурации</strong> (<code>WriteConfig</code>)</td>
+<td><strong>Read settings</strong> (<code>settings.read</code>) <strong>Write settings</strong> (<code>settings.write</code>)</td>
+<td><strong>Read configuration</strong> (<code>ReadConfig</code>) <strong>Write configuration</strong> (<code>WriteConfig</code>)</td>
 </tr>
 </tbody>
 </table>
-<h2 id="_2">Параметры<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<p>Чтобы узнать о новых параметрах запроса/тела, см. документацию отдельных запросов в <a href="/docs/dynatrace-api/environment-api/settings" title="Узнайте, что предлагает Dynatrace Настройки API.">Настройки API</a>.</p>
-<p>В рамках Настройки 2.0 каждая конфигурация обнаружения частых проблем представлена объектом настроек. Объект содержит некоторые метаданные (например, область или метку времени создания) и саму конфигурацию, инкапсулированную в объект <strong>значение</strong>. Чтобы узнать о параметрах конфигурации обнаружения частых проблем, запросите схему <strong>Обнаружение частых проблем</strong> (<code>builtin:anomaly-detection.frequent-issues</code>) с помощью запроса <a href="/docs/dynatrace-api/environment-api/settings/schemas/get-schema" title="Просмотр схемы настроек через Dynatrace API.">Получить схему</a>.</p>
-<h2 id="_3">Примеры<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<p>Вот некоторые примеры различий в использовании API.</p>
-<h3 id="_4">Просмотр конфигурации<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
-<p>Настройки 2.0</p>
-<p>Обнаружение частых проблем</p>
-<p>Чтобы просмотреть конфигурации обнаружения частых проблем, вам нужен запрос <a href="/docs/dynatrace-api/environment-api/settings/objects/get-objects" title="Просмотр нескольких объектов настроек через Dynatrace API.">Получить объекты</a>. В параметрах запроса установите <strong>schemaIds</strong> в <code>builtin:anomaly-detection.frequent-issues</code> и <strong>scope</strong> в <code>environment</code>.</p>
-<h4 id="url-">URL-адрес запроса<a class="headerlink" href="#url-" title="Permanent link">&para;</a></h4>
+<h2 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h2>
+<p>To learn about new query/body parameters, see the documentation of individual requests in <a href="/docs/dynatrace-api/environment-api/settings" title="Find out what the Dynatrace Settings API offers.">Settings API</a>.</p>
+<p>In the Settings 2.0 framework, each frequent issue detection configuration is represented by a settings object. An object contains some metadata (like the scope or creation timestamp) and the configuration itself, encapsulated in the <strong>value</strong> object. To learn about the parameters of the frequent issue detection configuration, query the <strong>Frequent issue detection</strong> (<code>builtin:anomaly-detection.frequent-issues</code>) schema with the <a href="/docs/dynatrace-api/environment-api/settings/schemas/get-schema" title="View a settings schema via the Dynatrace API.">GET a schema</a> request.</p>
+<h2 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h2>
+<p>Here are some examples of differences in API usage.</p>
+<h3 id="view-configuration">View configuration<a class="headerlink" href="#view-configuration" title="Permanent link">&para;</a></h3>
+<p>Settings 2.0</p>
+<p>Frequent issue detection</p>
+<p>To view the frequent issue detection configurations, you need the <a href="/docs/dynatrace-api/environment-api/settings/objects/get-objects" title="View multiple settings objects via the Dynatrace API.">GET objects</a> request. In query parameters, set <strong>schemaIds</strong> to <code>builtin:anomaly-detection.frequent-issues</code> and <strong>scope</strong> to <code>environment</code>.</p>
+<h4 id="request-url">Request URL<a class="headerlink" href="#request-url" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>GET https://mySampleEnv.live.dynatrace.com/api/v2/settings/objects?schemaIds=builtin:anomaly-detection.frequent-issues&amp;scopes=environment
 </code></pre></div>
-<h4 id="_5">Тело ответа<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h4>
+<h4 id="response-body">Response body<a class="headerlink" href="#response-body" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>{
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
 <a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
@@ -25561,11 +25561,11 @@
 <a id="__codelineno-1-34" name="__codelineno-1-34" href="#__codelineno-1-34"></a>
 <a id="__codelineno-1-35" name="__codelineno-1-35" href="#__codelineno-1-35"></a>
 <a id="__codelineno-1-36" name="__codelineno-1-36" href="#__codelineno-1-36"></a>
-<a id="__codelineno-1-37" name="__codelineno-1-37" href="#__codelineno-1-37"></a>]
+<a id="__codelineno-1-37" name="__codelineno-1-37" href="#__codelineno-1-37"></a>}
 <a id="__codelineno-1-38" name="__codelineno-1-38" href="#__codelineno-1-38"></a>
 <a id="__codelineno-1-39" name="__codelineno-1-39" href="#__codelineno-1-39"></a>
 <a id="__codelineno-1-40" name="__codelineno-1-40" href="#__codelineno-1-40"></a>
-<a id="__codelineno-1-41" name="__codelineno-1-41" href="#__codelineno-1-41"></a>,
+<a id="__codelineno-1-41" name="__codelineno-1-41" href="#__codelineno-1-41"></a>],
 <a id="__codelineno-1-42" name="__codelineno-1-42" href="#__codelineno-1-42"></a>
 <a id="__codelineno-1-43" name="__codelineno-1-43" href="#__codelineno-1-43"></a>
 <a id="__codelineno-1-44" name="__codelineno-1-44" href="#__codelineno-1-44"></a>
@@ -25579,10 +25579,10 @@
 <a id="__codelineno-1-52" name="__codelineno-1-52" href="#__codelineno-1-52"></a>
 <a id="__codelineno-1-53" name="__codelineno-1-53" href="#__codelineno-1-53"></a>}
 </code></pre></div>
-<h4 id="url-_1">URL-адрес запроса<a class="headerlink" href="#url-_1" title="Permanent link">&para;</a></h4>
+<h4 id="request-url_1">Request URL<a class="headerlink" href="#request-url_1" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>GET https://mySampleEnv.live.dynatrace.com/config/v1/frequentIssueDetection
 </code></pre></div>
-<h4 id="_6">Тело ответа<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h4>
+<h4 id="response-body_1">Response body<a class="headerlink" href="#response-body_1" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>{
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
 <a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
@@ -25629,14 +25629,14 @@
 <a id="__codelineno-3-44" name="__codelineno-3-44" href="#__codelineno-3-44"></a>
 <a id="__codelineno-3-45" name="__codelineno-3-45" href="#__codelineno-3-45"></a>}
 </code></pre></div>
-<h3 id="_7">Обновление конфигурации<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
-<p>Настройки 2.0</p>
-<p>Обнаружение частых проблем</p>
-<p>Чтобы изменить конфигурацию, вам нужен запрос <a href="/docs/dynatrace-api/environment-api/settings/objects/put-object" title="Изменение объекта настроек через Dynatrace API.">Изменить объект</a>. В теле запроса установите <strong>schemaId</strong> в <code>builtin:anomaly-detection.frequent-issues</code> и <strong>scope</strong> в <code>environment</code>. Предоставьте конфигурацию обнаружения частых проблем в объекте <strong>значение</strong>.</p>
-<h4 id="url-_2">URL-адрес запроса<a class="headerlink" href="#url-_2" title="Permanent link">&para;</a></h4>
+<h3 id="update-configuration">Update configuration<a class="headerlink" href="#update-configuration" title="Permanent link">&para;</a></h3>
+<p>Settings 2.0</p>
+<p>Frequent issue detection</p>
+<p>To edit a maintenance window, you need the <a href="/docs/dynatrace-api/environment-api/settings/objects/put-object" title="Edit a settings object via the Dynatrace API.">PUT an object</a> request. In the request body, set <strong>schemaId</strong> to <code>builtin:anomaly-detection.frequent-issues</code> and <strong>scope</strong> to <code>environment</code>. Provide the frequent issue detection configuration in the <strong>value</strong> object.</p>
+<h4 id="request-url_2">Request URL<a class="headerlink" href="#request-url_2" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>PUT https://mySampleEnv.live.dynatrace.com/api/v2/settings/objects/vu9U3hXa3q0AAAABAClidWlsdGluOmFub21hbHktZGV0ZWN0aW9uLmZyZXF1ZW50LWlzc3VlcwAGdGVuYW50AAZ0ZW5hbnQAJDNiNjk1ZjA4LWNhZDEtM2Y2OC04ZDM4LTQyODZkNzkzNjlkNL7vVN4V2t6t
 </code></pre></div>
-<h4 id="_8">Тело запроса<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h4>
+<h4 id="request-body">Request body<a class="headerlink" href="#request-body" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>{
 <a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
 <a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>
@@ -25671,7 +25671,7 @@
 <a id="__codelineno-5-32" name="__codelineno-5-32" href="#__codelineno-5-32"></a>
 <a id="__codelineno-5-33" name="__codelineno-5-33" href="#__codelineno-5-33"></a>}
 </code></pre></div>
-<h4 id="_9">Тело ответа<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h4>
+<h4 id="response-body_2">Response body<a class="headerlink" href="#response-body_2" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>[
 <a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
 <a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>
@@ -25694,10 +25694,10 @@
 <a id="__codelineno-6-20" name="__codelineno-6-20" href="#__codelineno-6-20"></a>
 <a id="__codelineno-6-21" name="__codelineno-6-21" href="#__codelineno-6-21"></a>]
 </code></pre></div>
-<h4 id="url-_3">URL-адрес запроса<a class="headerlink" href="#url-_3" title="Permanent link">&para;</a></h4>
+<h4 id="request-url_3">Request URL<a class="headerlink" href="#request-url_3" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>PUT https://mySampleEnv.live.dynatrace.com/config/v1/frequentIssueDetection/07f476c6-f1ed-4519-848d-61e52f7e2f24
 </code></pre></div>
-<h4 id="_10">Тело запроса<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h4>
+<h4 id="request-body_1">Request body<a class="headerlink" href="#request-body_1" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>{
 <a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>
 <a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>
@@ -25716,10 +25716,10 @@
 <a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a>
 <a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a>}
 </code></pre></div>
-<h2 id="_11">Связанные темы<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h2>
+<h2 id="related-topics">Related topics<a class="headerlink" href="#related-topics" title="Permanent link">&para;</a></h2>
 <ul>
-<li><a href="/docs/dynatrace-api/environment-api/settings" title="Узнайте, что предлагает Dynatrace Настройки API.">Настройки API</a></li>
-<li><a href="/docs/dynatrace-api/configuration-api/frequent-issue-detection-api" title="Управление конфигурацией обнаружения частых проблем через Dynatrace API.">Обнаружение частых проблем API</a></li>
+<li><a href="/docs/dynatrace-api/environment-api/settings" title="Find out what the Dynatrace Settings API offers.">Settings API</a></li>
+<li><a href="/docs/dynatrace-api/configuration-api/frequent-issue-detection-api" title="Manage frequent issue detection configuration via the Dynatrace API.">Frequent issue detection API</a></li>
 </ul>
 
 

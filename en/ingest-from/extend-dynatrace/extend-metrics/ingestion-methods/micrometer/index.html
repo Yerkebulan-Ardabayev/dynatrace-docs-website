@@ -25613,7 +25613,7 @@ Spring Boot automatically binds properties with the <code>management.dynatrace.m
 <a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>management.dynatrace.metrics.export.v2.default-dimensions.region=us-east-1
 </code></pre></div>
 <p>Dynatrace Operator configures Dynatrace Micrometer registry by providing ingest URL, credentials and Kubernetes metadata. For configuration examples, see our <a href="https://github.com/Dynatrace/dynatrace-operator/tree/main/assets/samples/dynakube">Dynakube examplesï»¿</a>.
-For more information about metadata enrichment, see <a href="/docs/ingest-from/extend-dynatrace/extend-data#operator-enrichment-directory" title="Learn how to automatically enrich your telemetry data with Dynatrace-specific dimensions.">the documentation on enrichment files</a>.</p>
+For more information about metadata enrichment, see <a href="/docs/ingest-from/extend-dynatrace/extend-data#operator-enrichment-directory" title="Learn how to automatically enrich your telemetry data with Dynatrace-specific fields.">the documentation on enrichment files</a>.</p>
 <ul>
 <li>This feature is available when using Dynatrace Micrometer registry versions 1.9.0 and above.</li>
 <li>An app using the Dynatrace Micrometer registry and running in Kubernetes with a Dynatrace Operator does not require any explicit configuration. Dynatrace Operator and the registry will work together and automatically export Micrometer metrics to Dynatrace.</li>
@@ -25772,7 +25772,7 @@ For more information about metadata enrichment, see <a href="/docs/ingest-from/e
 <a id="__codelineno-10-37" name="__codelineno-10-37" href="#__codelineno-10-37"></a>DynatraceMeterRegistry registry = DynatraceMeterRegistry.builder(config).build();
 </code></pre></div>
 <p>Dynatrace Operator configures Dynatrace Micrometer registry by providing ingest URL, credentials and Kubernetes metadata. For configuration examples, see our <a href="https://github.com/Dynatrace/dynatrace-operator/tree/main/assets/samples/dynakube">Dynakube examplesï»¿</a>.
-For more information about metadata enrichment, see <a href="/docs/ingest-from/extend-dynatrace/extend-data#operator-enrichment-directory" title="Learn how to automatically enrich your telemetry data with Dynatrace-specific dimensions.">the documentation on enrichment files</a>.</p>
+For more information about metadata enrichment, see <a href="/docs/ingest-from/extend-dynatrace/extend-data#operator-enrichment-directory" title="Learn how to automatically enrich your telemetry data with Dynatrace-specific fields.">the documentation on enrichment files</a>.</p>
 <ul>
 <li>This feature is available when using Dynatrace Micrometer registry versions 1.9.0 and above.</li>
 <li>An app using the Dynatrace Micrometer registry and running in Kubernetes with a Dynatrace Operator does not require any explicit configuration. Dynatrace Operator and the registry will work together and automatically export Micrometer metrics to Dynatrace.</li>
@@ -25939,70 +25939,6 @@ For more information about metadata enrichment, see <a href="/docs/ingest-from/e
 <p>Spring Boot</p>
 <p>Directly in Micrometer</p>
 <p>When using Spring Boot, entries in your <code>application.properties</code> or <code>application.yaml</code> files will be mapped to the <code>DynatraceConfig</code> object automatically.</p>
-<p>Property</p>
-<p>Description</p>
-<p>Required</p>
-<p>api-version</p>
-<p>The version of the Dynatrace API to ingest data to Dynatrace:</p>
-<ul>
-<li><code>V2</code> (default): <a href="/docs/dynatrace-api/environment-api/metric-v2/post-ingest-metrics" title="Ingest custom metrics to Dynatrace via Metrics v2 API.">Metrics API v2</a>.</li>
-<li><code>V1</code>: <a href="/docs/dynatrace-api/environment-api/metric-v1/custom-metrics" title="Manage custom metrics via the Timeseries v1 API.">Timeseries API v1</a></li>
-</ul>
-<p>Optional</p>
-<p>uri</p>
-<p>The ingestion endpoint of the API.</p>
-<p>Optional</p>
-<p>metric-key-prefix</p>
-<p>The prefix to be added to all ingested metric keys (for example, a namespace).</p>
-<p>Optional</p>
-<p>enrich-with-dynatrace-metadata</p>
-<p><a href="/docs/ingest-from/extend-dynatrace/extend-data" title="Learn how to automatically enrich your telemetry data with Dynatrace-specific dimensions.">Enrich</a> (<code>true</code>) or do not enrich (<code>false</code>) ingested metrics with additional metadata.</p>
-<p>If not set, <code>true</code> is used.</p>
-<p>Optional</p>
-<p>default-dimensions</p>
-<p>A list of dimensions to be added to the ingested metrics.</p>
-<p>Dimensions are defined as key-value pairs.</p>
-<p>Optional</p>
-<p>use-dynatrace-summary-instruments</p>
-<p>Micrometer versions 1.9.x+ Ignore the Dynatrace-specific implementation for summary instruments (<code>Timer</code> and <code>DistributionSummary</code>).</p>
-<p>The default (<code>true</code>) uses the new Instruments. Use <code>false</code> to fall back to 1.8.x behavior.</p>
-<p>Optional</p>
-<p>export-meter-metadata</p>
-<p>Micrometer versions 1.12.x+ Turn meter metadata export (unit &amp; description) on or off.</p>
-<p>The default (<code>true</code>) configures the registry to export meter metadata. Use <code>false</code> to turn off metadata exporting.</p>
-<p>Optional</p>
-<p>Property</p>
-<p>Description</p>
-<p>Required</p>
-<p>apiVersion</p>
-<p>The version of the Dynatrace API to ingest data to Dynatrace:</p>
-<ul>
-<li><code>V2</code> (default): <a href="/docs/dynatrace-api/environment-api/metric-v2/post-ingest-metrics" title="Ingest custom metrics to Dynatrace via Metrics v2 API.">Metrics API v2</a>.</li>
-<li><code>V1</code>: <a href="/docs/dynatrace-api/environment-api/metric-v1/custom-metrics" title="Manage custom metrics via the Timeseries v1 API.">Timeseries API v1</a></li>
-</ul>
-<p>Optional</p>
-<p>uri</p>
-<p>The ingestion endpoint of the API.</p>
-<p>Optional</p>
-<p>metricKeyPrefix</p>
-<p>The prefix to be added to all ingested metric keys (for example, a namespace).</p>
-<p>Optional</p>
-<p>enrichWithDynatraceMetadata</p>
-<p><a href="/docs/ingest-from/extend-dynatrace/extend-data" title="Learn how to automatically enrich your telemetry data with Dynatrace-specific dimensions.">Enrich</a> (<code>true</code>) or do not enrich (<code>false</code>) ingested metrics with additional metadata.</p>
-<p>If not set, <code>true</code> is used.</p>
-<p>Optional</p>
-<p>defaultDimensions</p>
-<p>A list of dimensions to be added to the ingested metrics.</p>
-<p>Dimensions are defined as key-value pairs.</p>
-<p>Optional</p>
-<p>useDynatraceSummaryInstruments</p>
-<p>Micrometer versions 1.9.x+ Ignore the Dynatrace-specific implementation for summary instruments (<code>Timer</code> and <code>DistributionSummary</code>).</p>
-<p>The default (<code>true</code>) uses the new Instruments. Use <code>false</code> to fall back to 1.8.x behavior.</p>
-<p>Optional</p>
-<p>exportMeterMetadata</p>
-<p>Micrometer versions 1.12.x+ Turn meter metadata export (unit &amp; description) on or off.</p>
-<p>The default (<code>true</code>) configures the registry to export meter metadata. Use <code>false</code> to turn off metadata exporting.</p>
-<p>Optional</p>
 <p>Code snippet to set properties</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>DynatraceConfig dynatraceConfig = new DynatraceConfig() {
 <a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>
@@ -26213,24 +26149,6 @@ For more information about metadata enrichment, see <a href="/docs/ingest-from/e
 <h2 id="additional-information">Additional information<a class="headerlink" href="#additional-information" title="Permanent link">&para;</a></h2>
 <h3 id="metric-types">Metric types<a class="headerlink" href="#metric-types" title="Permanent link">&para;</a></h3>
 <p>All metrics are transformed to follow the <a href="/docs/ingest-from/extend-dynatrace/extend-metrics/reference/metric-ingestion-protocol" title="Learn how the data ingestion protocol for Dynatrace Metrics API works.">Metric ingestion protocol types</a> used by Dynatrace.</p>
-<p>Micrometer instrument</p>
-<p>Dynatrace metric type</p>
-<p>Gauge</p>
-<p><code>gauge,X</code></p>
-<p>Counter</p>
-<p><code>count,delta=X</code></p>
-<p>Timer</p>
-<p><code>gauge,min=X,max=Y,sum=Z,count=N</code></p>
-<p>DistributionSummary</p>
-<p><code>gauge,min=X,max=Y,sum=Z,count=N</code></p>
-<p>LongTaskTimer</p>
-<p><code>gauge,min=X,max=Y,sum=Z,count=N</code></p>
-<p>TimeGauge</p>
-<p><code>gauge,X</code></p>
-<p>FunctionCounter</p>
-<p><code>count,delta=X</code></p>
-<p>FunctionTimer</p>
-<p><code>gauge,min=X,max=Y,sum=Z,count=N</code></p>
 <p>Note that the <code>count</code> for LongTaskTimers can be misleading as it is likely to double-count depending on the export frequency. In case you require the current number of active tasks, exporting a separate Gauge is more reliable.</p>
 <h3 id="meter-metadata">Meter metadata<a class="headerlink" href="#meter-metadata" title="Permanent link">&para;</a></h3>
 <p>Starting with version 1.12.0 of the Dynatrace Micrometer registry, meter metadata (unit and description) is automatically exported to Dynatrace.

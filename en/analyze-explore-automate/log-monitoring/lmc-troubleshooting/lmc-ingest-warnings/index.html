@@ -25484,42 +25484,6 @@
 <p>Log Monitoring Classic</p>
 <p>If your ingested logs donât look as expected, you can check if a particular log record contains warnings regarding issues that occurred for that log in the log ingest and processing pipeline. Look for a <code>dt.ingest.warnings</code> attribute in log viewer. It lists warnings about issues that affected a particular log record.</p>
 <p>Examples of possible warnings:</p>
-<p>Warning</p>
-<p>Description</p>
-<p>content_trimmed</p>
-<p>The content was trimmed after being received bythe API because it exceeded the event content maximum byte size limit.</p>
-<p>content_trimmed_pipe</p>
-<p>The content was trimmed after processing rules were applied because it exceeded the event content maximum byte size limit.</p>
-<p>attr_count_trimmed</p>
-<p>The number of attributes was trimmed after being received by the API because it exceeded the maximum number of attributes in a single event.</p>
-<p>attr_count_trimmed_pipe</p>
-<p>The number of attributes was trimmed after processing rules were applied because it exceeded the maximum number of attributes in a single event.</p>
-<p>attr_key_trimmed</p>
-<p>At least one attribute key was trimmed because it exceeded the key maximum byte size limit.</p>
-<p>attr_val_count_trimmed</p>
-<p>At least one multi-value attribute had the number of values trimmed, after being received by the API, because it exceeded the maximum number of attributes in a single event.</p>
-<p>attr_val_count_trimmed_pipe</p>
-<p>After applying processing rules, at least one multi-value attribute had its value number trimmed because it exceeded the maximum number of attributes.</p>
-<p>attr_val_size_trimmed</p>
-<p>At least one attribute value size was trimmed after being received by the API because it exceeded the value maximum byte size limit.</p>
-<p>attr_val_size_trimmed_pipe</p>
-<p>At least one attribute value size was trimmed after processing rules were applied because it exceeded the value maximum byte size limit.</p>
-<p>timestamp_corrected</p>
-<p>The timestamp was too far in the future and was corrected to the current time.</p>
-<p>common_attr_corrected</p>
-<p>At least one of the following attributes was corrected: <code>status</code>, <code>loglevel</code>, or <code>event.type</code>.</p>
-<p>processing_batch_timeout</p>
-<p>Batch timeout occurred while executing log processing rules.</p>
-<p>processing_transformer_timeout</p>
-<p>Execution timeout occurred in one of the processing transformers while executing log processing rules.</p>
-<p>processing_transformer_error</p>
-<p>Execution error occurred in one of the processing transformers while executing log processing rules.</p>
-<p>processing_transformer_throttled</p>
-<p>Execution throttled in one of the processing transformers while executing log processing rules.</p>
-<p>processing_output_record_conversion_error</p>
-<p>Output conversion error occurred for some records while executing log processing rules.</p>
-<p>processing_prepare_input_error</p>
-<p>âPrepare input errorâ occurred in one of the enabled log processing rules.</p>
 
 
 

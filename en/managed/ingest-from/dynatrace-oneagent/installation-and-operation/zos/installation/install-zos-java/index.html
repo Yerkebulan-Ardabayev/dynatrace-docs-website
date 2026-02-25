@@ -25482,33 +25482,6 @@
 <li>Updated on Nov 18, 2025</li>
 </ul>
 <p>With the z/OS Java module, you can get observability for your Java applications including IBM MQ and database calls.</p>
-<p>Observability for</p>
-<p>Including</p>
-<p>WebSphere Application Server</p>
-<p>WebSphere Liberty</p>
-<ul>
-<li>Incoming web requests on WebSphere Application Server and Liberty</li>
-<li>Outgoing web requests from WebSphere Application Server and Liberty via the Apache HttpClient</li>
-<li>Outgoing CICS Transaction Gateway requests from WebSphere Application Server and Liberty via the CTG client</li>
-<li>Websphere Application Server Websphere Liberty specific metrics (PMI and JMX)</li>
-<li>JVM specific managed memory metrics (JMX)</li>
-</ul>
-<p>z/OS Connect</p>
-<ul>
-<li>Incoming web requests on z/OS Connect</li>
-<li>Outgoing requests from z/OS Connect via the CICS, IMS, and IBM MQ service providers</li>
-<li>z/OS Connect specific metrics (JMX)</li>
-<li>JVM specific managed memory metrics (JMX)</li>
-</ul>
-<p>CICS/IMS transactions</p>
-<p>Transactions initiated using</p>
-<ul>
-<li>IBM MQ and JMS</li>
-<li>CICS SOAP and CICS Transaction Gateway</li>
-<li>IMS SOAP Gateway</li>
-</ul>
-<p>Database calls</p>
-<p>Database calls with their SQL statements from Java applications to Db2 via JDBC</p>
 <p>Trace your Java applications end-to-end with Dynatrace and quickly detect any anomalies</p>
 <p>Analyze the performance of your transactions end-to-end using the <a href="/docs/observe/application-observability/services-classic/service-backtrace" title="Trace the sequence of service calls all the way back up to the browser click that triggered the sequence of calls.">service flow</a>.</p>
 <p><img alt="zOS Java 1" src="https://dt-cdn.net/images/zos-java-1-2772-facc3b2740.png" /></p>
@@ -25525,133 +25498,8 @@
 <p><img alt="zOS Java metrics 2" src="https://dt-cdn.net/images/zos-java-metrics-2-2473-4cc98e9473.png" /></p>
 <h3 id="what-jmx-and-pmi-metrics-does-dynatrace-provide-out-of-the-box">What JMX and PMI metrics does Dynatrace provide out of the box?<a class="headerlink" href="#what-jmx-and-pmi-metrics-does-dynatrace-provide-out-of-the-box" title="Permanent link">&para;</a></h3>
 <p>JVM specific metrics:</p>
-<p>Metric group</p>
-<p>Metric</p>
-<p>Source</p>
-<p>JVM memory</p>
-<p>Garbage collection total activation count</p>
-<p>JMX</p>
-<p>JVM memory</p>
-<p>Garbage collection total collection time</p>
-<p>JMX</p>
-<p>JVM memory pool</p>
-<p>Garbage collection count</p>
-<p>JMX</p>
-<p>JVM memory pool</p>
-<p>Garbage collection time</p>
-<p>JMX</p>
-<p>JVM memory pool</p>
-<p>Heap memory pool maximum bytes</p>
-<p>JMX</p>
-<p>JVM memory pool</p>
-<p>Heap memory pool committed bytes</p>
-<p>JMX</p>
-<p>JVM memory pool</p>
-<p>Heap memory pool used bytes</p>
-<p>JMX</p>
-<p>JVM memory runtime</p>
-<p>Runtime maximum memory</p>
-<p>JMX</p>
-<p>JVM memory runtime</p>
-<p>Runtime total memory</p>
-<p>JMX</p>
-<p>JVM memory runtime</p>
-<p>Runtime free memory</p>
-<p>JMX</p>
-<p>JVM threads</p>
-<p>Thread count</p>
-<p>JMX</p>
-<p>JVM classes</p>
-<p>Total number of loaded classes</p>
-<p>JMX</p>
-<p>JVM classes</p>
-<p>Number of loaded classes</p>
-<p>JMX</p>
-<p>JVM classes</p>
-<p>Number of unloaded classes</p>
-<p>JMX</p>
 <p>WebSphere Liberty and z/OS Connect specific metrics:</p>
-<p>Metric group</p>
-<p>Metric</p>
-<p>Metric description</p>
-<p>Source</p>
-<p>JDBC connection pool</p>
-<p>In use connections</p>
-<p>The number of connections in use. This number might include multiple connections that are shared from a single managed connection.</p>
-<p>JMX</p>
-<p>JDBC connection pool</p>
-<p>Free connections</p>
-<p>The number of managed connections in the free pool.</p>
-<p>JMX</p>
-<p>JDBC connection pool</p>
-<p>Managed connections</p>
-<p>The total number of managed connections in the free, shared, and unshared pools.</p>
-<p>JMX</p>
-<p>JDBC connection pool</p>
-<p>In use time</p>
-<p>The average time in milliseconds that a connection is in use.</p>
-<p>JMX</p>
-<p>JDBC connection pool</p>
-<p>Wait time</p>
-<p>The average waiting time in milliseconds until a connection is granted if a connection is not currently available.</p>
-<p>JMX</p>
-<p>Thread pool</p>
-<p>Pool size</p>
-<p>The average number of threads in pool.</p>
-<p>JMX</p>
-<p>Thread pool</p>
-<p>Active threads</p>
-<p>The number of active threads that are serving requests.</p>
-<p>JMX</p>
-<p>Servlet</p>
-<p>Request count</p>
-<p>The total number of requests that a servlet processed.</p>
-<p>JMX</p>
 <p>Websphere Application Server specific metrics:</p>
-<p>Metric group</p>
-<p>Metric</p>
-<p>Metric description</p>
-<p>Source</p>
-<p>JDBC connection pool</p>
-<p>Pool size</p>
-<p>The size of the connection pool.</p>
-<p>PMI</p>
-<p>JDBC connection pool</p>
-<p>Free pool size</p>
-<p>The number of managed connections that are in the free pool.</p>
-<p>PMI</p>
-<p>JDBC connection pool</p>
-<p>Concurrent waiters</p>
-<p>The number of threads that are currently waiting for a connection.</p>
-<p>PMI</p>
-<p>JDBC connection pool</p>
-<p>Average wait time</p>
-<p>The average waiting time in milliseconds until a connection is granted if a connection is not currently available.</p>
-<p>PMI</p>
-<p>JDBC connection pool</p>
-<p>Average use time</p>
-<p>The average time in milliseconds that a connection is in use.</p>
-<p>PMI</p>
-<p>JDBC connection pool</p>
-<p>Percent used</p>
-<p>The percent of the pool that is in use.</p>
-<p>PMI</p>
-<p>Thread pool</p>
-<p>Pool size</p>
-<p>The average number of threads in pool.</p>
-<p>PMI</p>
-<p>Thread pool</p>
-<p>Active threads</p>
-<p>The number of concurrently active threads.</p>
-<p>PMI</p>
-<p>Servlet</p>
-<p>Live sessions</p>
-<p>The number of local sessions that are currently cached in memory from the time at which this metric is enabled.</p>
-<p>PMI</p>
-<p>Servlet</p>
-<p>Total requests</p>
-<p>The total number of requests that a servlet processed.</p>
-<p>PMI</p>
 <h3 id="can-i-monitor-custom-jmx-metrics-with-the-zos-java-module">Can I monitor custom JMX metrics with the z/OS Java module?<a class="headerlink" href="#can-i-monitor-custom-jmx-metrics-with-the-zos-java-module" title="Permanent link">&para;</a></h3>
 <p>Yes, you can use the z/OS Java module to monitor custom JMX metrics. For more information, see <a href="/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/monitoring/zos-java-custom-jmx-metrics" title="Learn how to set up JMX metrics monitoring for your Java applications on z/OS.">Monitor JMX metrics on z/OS</a>.</p>
 <h2 id="prerequisite">Prerequisite<a class="headerlink" href="#prerequisite" title="Permanent link">&para;</a></h2>
@@ -25860,29 +25708,10 @@
 3. Save your changes and restart the IMS SOAP Gateway.</p>
 <h2 id="logging">Logging<a class="headerlink" href="#logging" title="Permanent link">&para;</a></h2>
 <p>By default, logging is disabled for the z/OS Java module. To enable logging, add one of the following options to the JVM argument:</p>
-<p>Option</p>
-<p>Default value</p>
-<p>Description</p>
-<p>log-stdout</p>
-<p><code>false</code></p>
-<p>If <code>true</code>, write logs to the standard output stream.</p>
-<p>log-stderr</p>
-<p><code>false</code></p>
-<p>If <code>true</code>, write logs to the standard error stream.</p>
-<p>log-file</p>
-<p><code>false</code></p>
-<p>If <code>true</code>, write logs to a file using file rotation (persisting the file with index 0). Naming scheme: <code>dynatrace-oneagent-java.&lt;PID&gt;.&lt;LPAR&gt;.&lt;INDEX&gt;.log</code>.</p>
 <p>If needed, you can log to multiple locations. For example:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>-javaagent:/PATH_TO/dynatrace-oneagent-zos-java.jar=log-stdout=true,log-file=true
 </code></pre></div>
 <p>If needed, you can customize the file logging with the following options:</p>
-<p>Option</p>
-<p>Default value</p>
-<p>Description</p>
-<p>log-file-dir</p>
-<p><code>&lt;CODEMODULE_FOLDER&gt;/logs</code></p>
-<p>By default, write log files to the z/OS Java module folder.</p>
-<p>It's also possible to write the log files to an absolute path (schema: <code>/&lt;PATH_TO&gt;/logs</code>) or to a path relative to the working folder of the process (schema: <code>&lt;PATH_TO&gt;/logs</code>).</p>
 <p>By changing the default folder, ensure that the application server has appropriate write permissions for the folder in which the module should write the log files.</p>
 <h3 id="oneagent-diagnostics">OneAgent diagnostics<a class="headerlink" href="#oneagent-diagnostics" title="Permanent link">&para;</a></h3>
 <p>Dynatrace recommends to write the logs to the shared log folder of the zDC so that they are included into the <a href="/docs/ingest-from/dynatrace-oneagent/oneagent-troubleshooting/oneagent-diagnostics" title="Learn how to run OneAgent diagnostics">OneAgent diagnostics</a> workflow. For example, if the <code>dtzagent</code> binary is located at <code>/u/dt/agent/lib64/dtzagent</code> in the z/OS USS environment, the log folder is <code>/u/dt/log</code>. Typically, a shared zDC log folder already exists and contains some zDC logs.</p>

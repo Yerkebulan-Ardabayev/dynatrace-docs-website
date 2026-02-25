@@ -25484,29 +25484,6 @@
 </ul>
 <p>This page contains Github workflow actions that are available for the GitHub Connector <img alt="GitHub" src="https://dt-cdn.net/images/github-for-workflows-new-lxjn9po-256-94579b3812.png" title="GitHub" /> integration.</p>
 <h3 id="required-token-permissions-to-run-all-github-actions">Required token permissions to run all GitHub actions<a class="headerlink" href="#required-token-permissions-to-run-all-github-actions" title="Permanent link">&para;</a></h3>
-<p>Token type</p>
-<p>Repository type</p>
-<p>Permissions</p>
-<p><strong>Fine-grained personal access token</strong></p>
-<p>public</p>
-<p>Select Repository permissions &gt; Contents &gt; Read and write.</p>
-<p>Select Repository permissions &gt; Pull requests &gt; Read and write.</p>
-<p>Select Repository permissions &gt; Workflows &gt; Read and write.</p>
-<p>Select Repository permissions &gt; Issues &gt; Read and write.</p>
-<p>Select Repository permissions &gt; Actions &gt; Read and write.</p>
-<p><strong>Fine-grained personal access token</strong></p>
-<p>private</p>
-<p>Select Repository permissions &gt; Contents &gt; Read and write.</p>
-<p>Select Repository permissions &gt; Pull requests &gt; Read and write.</p>
-<p>Select Repository permissions &gt; Workflows &gt; Read and write.</p>
-<p>Select Repository permissions &gt; Issues &gt; Read and write.</p>
-<p>Select Repository permissions &gt; Actions &gt; Read and write.</p>
-<p><strong>Token (classic)</strong></p>
-<p>public</p>
-<p>Select scopes &gt; repo &gt; public_repo.</p>
-<p><strong>Token (classic)</strong></p>
-<p>private</p>
-<p>Select scopes &gt; repo (Full control of private repositories).</p>
 <h2 id="get-content">Get content<a class="headerlink" href="#get-content" title="Permanent link">&para;</a></h2>
 <p>The <strong>Get content</strong> action returns the content of an existing file in the repository.</p>
 <h3 id="input">Input<a class="headerlink" href="#input" title="Permanent link">&para;</a></h3>
@@ -25549,21 +25526,6 @@
 <h3 id="output">Output<a class="headerlink" href="#output" title="Permanent link">&para;</a></h3>
 <p>The action returns the <code>content</code> property that contains the plain text content of an existing file in the repository.</p>
 <h3 id="required-token-permissions">Required token permissions<a class="headerlink" href="#required-token-permissions" title="Permanent link">&para;</a></h3>
-<p>Token type</p>
-<p>Repository type</p>
-<p>Permissions</p>
-<p><strong>Fine-grained personal access token</strong></p>
-<p>public</p>
-<p>No additional permissions are required.</p>
-<p><strong>Fine-grained personal access token</strong></p>
-<p>private</p>
-<p>Select Repository permissions &gt; Contents &gt; Read only.</p>
-<p><strong>Token (classic)</strong></p>
-<p>public</p>
-<p>No additional permissions are required.</p>
-<p><strong>Token (classic)</strong></p>
-<p>private</p>
-<p>Select scopes &gt; repo (Full control of private repositories).</p>
 <h2 id="create-or-replace-file">Create or replace file<a class="headerlink" href="#create-or-replace-file" title="Permanent link">&para;</a></h2>
 <p>The <strong>Create or replace file</strong> action creates a new file with the specified content or replaces an existing one. Next, it commits the change to a newly created branch using the specified source branch or the specified existing branch.</p>
 <h3 id="input_1">Input<a class="headerlink" href="#input_1" title="Permanent link">&para;</a></h3>
@@ -25631,22 +25593,6 @@
 <h3 id="output_1">Output<a class="headerlink" href="#output_1" title="Permanent link">&para;</a></h3>
 <p>The action returns the <code>fileMetadata</code> property that contains the full response of the corresponding GitHub API endpoint.</p>
 <h3 id="required-token-permissions_1">Required token permissions<a class="headerlink" href="#required-token-permissions_1" title="Permanent link">&para;</a></h3>
-<p>Token type</p>
-<p>Repository type</p>
-<p>Permissions</p>
-<p><strong>Fine-grained personal access token</strong></p>
-<p>public</p>
-<p>Select Repository permissions &gt; Contents &gt; Read and write.</p>
-<p><strong>Fine-grained personal access token</strong></p>
-<p>private</p>
-<p>Select Repository permissions &gt; Contents &gt; Read and write.</p>
-<p>Select Repository permissions &gt; Workflows &gt; Read and write. (required to modify GitHub workflow files)</p>
-<p><strong>Token (classic)</strong></p>
-<p>public</p>
-<p>Select scopes &gt; repo &gt; public_repo.</p>
-<p><strong>Token (classic)</strong></p>
-<p>private</p>
-<p>Select scopes &gt; repo (Full control of private repositories).</p>
 <h2 id="delete-file">Delete file<a class="headerlink" href="#delete-file" title="Permanent link">&para;</a></h2>
 <p>The <strong>Delete file</strong> action deletes an existing file in the repository and commits the change to either a newly created branch using the specified source branch as a basis or uses the specified existing branch.</p>
 <h3 id="input_2">Input<a class="headerlink" href="#input_2" title="Permanent link">&para;</a></h3>
@@ -25709,21 +25655,6 @@
 <h3 id="output_2">Output<a class="headerlink" href="#output_2" title="Permanent link">&para;</a></h3>
 <p>The action returns the <code>fileMetadata</code> property that contains the full response of the corresponding GitHub API endpoint.</p>
 <h3 id="required-token-permissions_2">Required token permissions<a class="headerlink" href="#required-token-permissions_2" title="Permanent link">&para;</a></h3>
-<p>Token type</p>
-<p>Repository type</p>
-<p>Permissions</p>
-<p><strong>Fine-grained personal access token</strong></p>
-<p>public</p>
-<p>Select Repository permissions &gt; Contents &gt; Read and write.</p>
-<p><strong>Fine-grained personal access token</strong></p>
-<p>private</p>
-<p>Select Repository permissions &gt; Contents &gt; Read and write.</p>
-<p><strong>Token (classic)</strong></p>
-<p>public</p>
-<p>Select scopes &gt; repo &gt; public_repo.</p>
-<p><strong>Token (classic)</strong></p>
-<p>private</p>
-<p>Select scopes &gt; repo (Full control of private repositories).</p>
 <h2 id="create-pull-request">Create pull request<a class="headerlink" href="#create-pull-request" title="Permanent link">&para;</a></h2>
 <p>The <strong>Create pull request</strong> action creates a pull request for an existing branch and the specified target branch. For example: <code>main</code>.</p>
 <h3 id="input_3">Input<a class="headerlink" href="#input_3" title="Permanent link">&para;</a></h3>
@@ -25776,21 +25707,6 @@
 <h3 id="output_3">Output<a class="headerlink" href="#output_3" title="Permanent link">&para;</a></h3>
 <p>The action returns the <code>pullRequest</code> property that contains the full response of the corresponding GitHub API endpoint.</p>
 <h3 id="required-permissions">Required permissions<a class="headerlink" href="#required-permissions" title="Permanent link">&para;</a></h3>
-<p>Token type</p>
-<p>Repository type</p>
-<p>Permissions</p>
-<p><strong>Fine-grained personal access token</strong></p>
-<p>public</p>
-<p>Select Repository permissions &gt; Pull requests &gt; Read and write.</p>
-<p><strong>Fine-grained personal access token</strong></p>
-<p>private</p>
-<p>Select Repository permissions &gt; Pull requests &gt; Read and write.</p>
-<p><strong>Token (classic)</strong></p>
-<p>public</p>
-<p>Select scopes &gt; repo &gt; public_repo.</p>
-<p><strong>Token (classic)</strong></p>
-<p>private</p>
-<p>Select scopes &gt; repo (Full control of private repositories).</p>
 <h2 id="get-pull-request">Get pull request<a class="headerlink" href="#get-pull-request" title="Permanent link">&para;</a></h2>
 <p>The <strong>Get pull request</strong> action returns details about the specified pull request.</p>
 <h3 id="input_4">Input<a class="headerlink" href="#input_4" title="Permanent link">&para;</a></h3>
@@ -25828,21 +25744,6 @@
 <h3 id="output_4">Output<a class="headerlink" href="#output_4" title="Permanent link">&para;</a></h3>
 <p>The action returns the <code>pullRequest</code> property that contains the full response of the corresponding GitHub API endpoint.</p>
 <h3 id="required-permissions_1">Required permissions<a class="headerlink" href="#required-permissions_1" title="Permanent link">&para;</a></h3>
-<p>Token type</p>
-<p>Repository type</p>
-<p>Permissions</p>
-<p><strong>Fine-grained personal access token</strong></p>
-<p>public</p>
-<p>No additional permissions are required.</p>
-<p><strong>Fine-grained personal access token</strong></p>
-<p>private</p>
-<p>Select Repository permissions &gt; Pull requests &gt; Read-only.</p>
-<p><strong>Token (classic)</strong></p>
-<p>public</p>
-<p>No additional permissions are required.</p>
-<p><strong>Token (classic)</strong></p>
-<p>private</p>
-<p>Select scopes &gt; repo (Full control) of private repositories.</p>
 <h2 id="list-pull-requests">List pull requests<a class="headerlink" href="#list-pull-requests" title="Permanent link">&para;</a></h2>
 <p>The <strong>List pull requests</strong> action returns a list of pull requests that match the specified criteria. The limit of 30 pull requests applies.</p>
 <h3 id="input_5">Input<a class="headerlink" href="#input_5" title="Permanent link">&para;</a></h3>
@@ -25880,21 +25781,6 @@
 <h3 id="output_5">Output<a class="headerlink" href="#output_5" title="Permanent link">&para;</a></h3>
 <p>The action returns the <code>pullRequest</code> property that contains the full response of the corresponding GitHub API endpoint.</p>
 <h3 id="required-permissions_2">Required permissions<a class="headerlink" href="#required-permissions_2" title="Permanent link">&para;</a></h3>
-<p>Token type</p>
-<p>Repository type</p>
-<p>Permissions</p>
-<p><strong>Fine-grained personal access token</strong></p>
-<p>public</p>
-<p>No additional permissions are required.</p>
-<p><strong>Fine-grained personal access token</strong></p>
-<p>private</p>
-<p>Select Repository permissions &gt; Pull requests &gt; Read-only.</p>
-<p><strong>Token (classic)</strong></p>
-<p>public</p>
-<p>No additional permissions are required.</p>
-<p><strong>Token (classic)</strong></p>
-<p>private</p>
-<p>Select scopes &gt; repo (Full control of private repositories).</p>
 <h2 id="merge-pull-request">Merge pull request<a class="headerlink" href="#merge-pull-request" title="Permanent link">&para;</a></h2>
 <p>The <strong>Merge pull request</strong> action merges the specified pull request.</p>
 <h3 id="input_6">Input<a class="headerlink" href="#input_6" title="Permanent link">&para;</a></h3>
@@ -25937,21 +25823,6 @@
 <h3 id="output_6">Output<a class="headerlink" href="#output_6" title="Permanent link">&para;</a></h3>
 <p>The action returns the <code>mergeStatus</code> property that contains the full response of the corresponding GitHub API endpoint.</p>
 <h3 id="required-permissions_3">Required permissions<a class="headerlink" href="#required-permissions_3" title="Permanent link">&para;</a></h3>
-<p>Token type</p>
-<p>Repository type</p>
-<p>Permissions</p>
-<p><strong>Fine-grained personal access token</strong></p>
-<p>public</p>
-<p>Select Repository permissions &gt; Contents &gt; Read and write.</p>
-<p><strong>Fine-grained personal access token</strong></p>
-<p>private</p>
-<p>Select Repository permissions &gt; Contents &gt; Read and write.</p>
-<p><strong>Token (classic)</strong></p>
-<p>public</p>
-<p>Select scopes &gt; repo &gt; public_repo.</p>
-<p><strong>Token (classic)</strong></p>
-<p>private</p>
-<p>Select scopes &gt; repo (Full control of private repositories).</p>
 <h2 id="create-issue">Create issue<a class="headerlink" href="#create-issue" title="Permanent link">&para;</a></h2>
 <p>The <strong>Create issue</strong> action creates a new issue in a specified repository.</p>
 <h3 id="input_7">Input<a class="headerlink" href="#input_7" title="Permanent link">&para;</a></h3>
@@ -26004,21 +25875,6 @@
 <h3 id="output_7">Output<a class="headerlink" href="#output_7" title="Permanent link">&para;</a></h3>
 <p>The action returns the <code>issue</code> property that contains the full response of the corresponding GitHub API endpoint.</p>
 <h3 id="required-token-permissions_3">Required token permissions<a class="headerlink" href="#required-token-permissions_3" title="Permanent link">&para;</a></h3>
-<p>Token type</p>
-<p>Repository type</p>
-<p>Permissions</p>
-<p><strong>Fine-grained personal access token</strong></p>
-<p>public</p>
-<p>Select Repository permissions &gt; Issues &gt; Read and write.</p>
-<p><strong>Fine-grained personal access token</strong></p>
-<p>private</p>
-<p>Select Repository permissions &gt; Issues &gt; Read and write.</p>
-<p><strong>Token (classic)</strong></p>
-<p>public</p>
-<p>No additional permissions are required.</p>
-<p><strong>Token (classic)</strong></p>
-<p>private</p>
-<p>Select scopes &gt; repo (Full control of private repositories).</p>
 <h2 id="update-issue">Update issue<a class="headerlink" href="#update-issue" title="Permanent link">&para;</a></h2>
 <p>The <strong>Update issue</strong> action updates an existing issue in a specified repository. Use the <strong>Add Field</strong> option to specify fields for updates.</p>
 <h3 id="input_8">Input<a class="headerlink" href="#input_8" title="Permanent link">&para;</a></h3>
@@ -26081,23 +25937,6 @@
 <h3 id="output_8">Output<a class="headerlink" href="#output_8" title="Permanent link">&para;</a></h3>
 <p>The action returns the <code>issue</code> property that contains the full response of the corresponding GitHub API endpoint.</p>
 <h3 id="required-token-permissions_4">Required token permissions<a class="headerlink" href="#required-token-permissions_4" title="Permanent link">&para;</a></h3>
-<p>Token type</p>
-<p>Repository type</p>
-<p>Permissions</p>
-<p><strong>Fine-grained personal access token</strong></p>
-<p>public</p>
-<p>Select Repository permissions &gt; Issues &gt; Read and write.</p>
-<p>Select Repository permissions &gt; Pull requests &gt; Read and write.</p>
-<p><strong>Fine-grained personal access token</strong></p>
-<p>private</p>
-<p>Select Repository permissions &gt; Issues &gt; Read and write.</p>
-<p>Select Repository permissions &gt; Pull requests &gt; Read and write.</p>
-<p><strong>Token (classic)</strong></p>
-<p>public</p>
-<p>No additional permissions are required.</p>
-<p><strong>Token (classic)</strong></p>
-<p>private</p>
-<p>Select scopes &gt; repo (Full control of private repositories).</p>
 <h2 id="create-comment">Create comment<a class="headerlink" href="#create-comment" title="Permanent link">&para;</a></h2>
 <p>The <strong>Create comment</strong> action creates a new comment on an issue or pull request in a specified repository.</p>
 <h3 id="input_9">Input<a class="headerlink" href="#input_9" title="Permanent link">&para;</a></h3>
@@ -26140,23 +25979,6 @@
 <h3 id="output_9">Output<a class="headerlink" href="#output_9" title="Permanent link">&para;</a></h3>
 <p>The action returns the <code>comment</code> property that contains the full response of the corresponding GitHub API endpoint.</p>
 <h3 id="required-token-permissions_5">Required token permissions<a class="headerlink" href="#required-token-permissions_5" title="Permanent link">&para;</a></h3>
-<p>Token type</p>
-<p>Repository type</p>
-<p>Permissions</p>
-<p><strong>Fine-grained personal access token</strong></p>
-<p>public</p>
-<p>Select Repository permissions &gt; Issues &gt; Read and write.</p>
-<p>Select Repository permissions &gt; Pull requests &gt; Read and write.</p>
-<p><strong>Fine-grained personal access token</strong></p>
-<p>private</p>
-<p>Select Repository permissions &gt; Issues &gt; Read and write.</p>
-<p>Select Repository permissions &gt; Pull requests &gt; Read and write.</p>
-<p><strong>Token (classic)</strong></p>
-<p>public</p>
-<p>No additional permissions are required.</p>
-<p><strong>Token (classic)</strong></p>
-<p>private</p>
-<p>Select scopes &gt; repo (Full control of private repositories).</p>
 <h2 id="trigger-workflow-run">Trigger workflow run<a class="headerlink" href="#trigger-workflow-run" title="Permanent link">&para;</a></h2>
 <p>The <strong>Trigger workflow run</strong> action triggers a workflow in a specified repository. The workflow must be configured to run on the <code>workflow_dispatch</code> event. If the workflow calls reuseable workflows from other private repositories, you can make them accessible in <strong>Settings</strong> &gt; <strong>Actions</strong> &gt; <strong>General</strong> &gt; <strong>Access</strong> on GitHub.</p>
 <h3 id="input_10">Input<a class="headerlink" href="#input_10" title="Permanent link">&para;</a></h3>
@@ -26204,21 +26026,6 @@
 <h3 id="output_10">Output<a class="headerlink" href="#output_10" title="Permanent link">&para;</a></h3>
 <p>The action returns no result.</p>
 <h3 id="required-token-permissions_6">Required token permissions<a class="headerlink" href="#required-token-permissions_6" title="Permanent link">&para;</a></h3>
-<p>Token type</p>
-<p>Repository type</p>
-<p>Permissions</p>
-<p><strong>Fine-grained personal access token</strong></p>
-<p>public</p>
-<p>Select Repository permissions &gt; Actions &gt; Read and write.</p>
-<p><strong>Fine-grained personal access token</strong></p>
-<p>private</p>
-<p>Select Repository permissions &gt; Actions &gt; Read and write.</p>
-<p><strong>Token (classic)</strong></p>
-<p>public</p>
-<p>No additional permissions are required.</p>
-<p><strong>Token (classic)</strong></p>
-<p>private</p>
-<p>Select scopes &gt; repo (Full control of private repositories).</p>
 <h2 id="get-latest-workflow-run">Get latest workflow run<a class="headerlink" href="#get-latest-workflow-run" title="Permanent link">&para;</a></h2>
 <p>The <strong>Get latest workflow run</strong> action retrieves data from the latest run workflow in a specified repository.</p>
 <h3 id="input_11">Input<a class="headerlink" href="#input_11" title="Permanent link">&para;</a></h3>
@@ -26261,21 +26068,6 @@
 <h3 id="output_11">Output<a class="headerlink" href="#output_11" title="Permanent link">&para;</a></h3>
 <p>The action returns the <code>workflowRun</code> property that contains the full response of the corresponding GitHub API endpoint.</p>
 <h3 id="required-token-permissions_7">Required token permissions<a class="headerlink" href="#required-token-permissions_7" title="Permanent link">&para;</a></h3>
-<p>Token type</p>
-<p>Repository type</p>
-<p>Permissions</p>
-<p><strong>Fine-grained personal access token</strong></p>
-<p>public</p>
-<p>Select Repository permissions &gt; Actions &gt; Read.</p>
-<p><strong>Fine-grained personal access token</strong></p>
-<p>private</p>
-<p>Select Repository permissions &gt; Actions &gt; Read.</p>
-<p><strong>Token (classic)</strong></p>
-<p>public</p>
-<p>No additional permissions are required.</p>
-<p><strong>Token (classic)</strong></p>
-<p>private</p>
-<p>Select scopes &gt; repo (Full control of private repositories).</p>
 <h2 id="related-topics">Related topics<a class="headerlink" href="#related-topics" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="/docs/analyze-explore-automate/workflows/actions/github/github-workflows-setup" title="Learn how to set up GitHub Connector.">Set up GitHub Connector</a></li>

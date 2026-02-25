@@ -25626,46 +25626,6 @@
 <p>Node types used by Smartscape on Grail might be different from classic entity types. This means that the entity or node ID might also be different (for example, <code>CLOUD_APPLICATION_INSTANCE</code> is called <code>K8S_POD</code> in Smartscape on Grail). To avoid confusion, Smartscape nodes include an <code>id_classic</code> field that contains the entity ID of the corresponding classic entity. Classic entity IDs are available for K8s entities, core entities, and services.</p>
 <p>If there are no corresponding classic entities (for example, with <a href="/docs/observe/infrastructure-observability/cloud-platform-monitoring" title="The cloud platforms Dynatrace can monitor">Clouds</a>), there are no <code>id_classic</code> fields on those nodes.</p>
 <h2 id="differences-between-classic-entities-and-smartscape-on-grail">Differences between classic entities and Smartscape on Grail<a class="headerlink" href="#differences-between-classic-entities-and-smartscape-on-grail" title="Permanent link">&para;</a></h2>
-<p>Feature</p>
-<p>Classic entity store</p>
-<p>Smartscape on Grail</p>
-<p>Query all entities regardless of their type</p>
-<p><em>Not supported</em></p>
-<p><code>smartscapeNodes "*"</code></p>
-<p>Query HOST entities</p>
-<p><code>fetch dt.entity.host</code></p>
-<p><code>smartscapeNodes HOST</code></p>
-<p>Query all relationships regardless of type, source or target</p>
-<p><em>Not supported</em></p>
-<p><code>smartscapeEdges "*"</code></p>
-<p>References in Signal data</p>
-<p><code>dt.entity.__type__</code></p>
-<p><code>dt.smartscape.__type__</code></p>
-<p>Enrich entity name</p>
-<p><code>entityName(dt.entity.__type__)</code></p>
-<p><code>getNodeName(dt.smartscape.__type__)</code></p>
-<p>Enrich any other field (for example, tags)</p>
-<p><code>entityAttr(dt.entity.__type__, "tags")</code></p>
-<p><code>getNodeField(dt.smartscape.__type__, "tags")</code></p>
-<p>Get a list of entity IDs based on entity selector</p>
-<p><code>classicEntitySelector("type(HOST),toRelationships.runsOn(type(SERVICE),tag("owner:Joe"))")</code></p>
-<p><em>Not supported</em></p>
-<p>Get a list of entity IDs based on entity traversal</p>
-<p><em>Not supported</em></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>smartscapeNodes SERVICE
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>
-<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>| filter tags[owner] == &quot;Joe&quot;
-<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>
-<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>
-<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>
-<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>| traverse runs_on, HOST
-<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>
-<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>
-<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>
-<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>| fields id
-</code></pre></div>
 <h2 id="smartscape-segments">Smartscape segments<a class="headerlink" href="#smartscape-segments" title="Permanent link">&para;</a></h2>
 <p>Smartscape nodes can be filtered with the help of</p>
 <ul>

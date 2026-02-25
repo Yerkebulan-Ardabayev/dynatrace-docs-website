@@ -25533,7 +25533,7 @@
 <h2 id="step-3-optional-automatically-instrument-your-application-optional">Step 3 optional Automatically instrument your application Optional<a class="headerlink" href="#step-3-optional-automatically-instrument-your-application-optional" title="Permanent link">&para;</a></h2>
 <p>.NET automatic instrumentation can be configured either during development or later after deployment.</p>
 <p>Enrichment with OneAgent</p>
-<p>It is currently not possible to <a href="/docs/ingest-from/extend-dynatrace/extend-data" title="Learn how to automatically enrich your telemetry data with Dynatrace-specific dimensions.">enrich</a> automatically instrumented services with host-relevant information. To achieve this, you'd need to switch to manual instrumentation.</p>
+<p>It is currently not possible to <a href="/docs/ingest-from/extend-dynatrace/extend-data" title="Learn how to automatically enrich your telemetry data with Dynatrace-specific fields.">enrich</a> automatically instrumented services with host-relevant information. To achieve this, you'd need to switch to manual instrumentation.</p>
 <p>During development</p>
 <p>After deployment</p>
 <ol>
@@ -25889,7 +25889,7 @@
 <a id="__codelineno-6-240" name="__codelineno-6-240" href="#__codelineno-6-240"></a>
 <a id="__codelineno-6-241" name="__codelineno-6-241" href="#__codelineno-6-241"></a>}
 </code></pre></div>
-<p>The file read operations, parsing the <code>dt_metadata</code> files in the example code, attempt to read the <a href="/docs/ingest-from/extend-dynatrace/extend-data" title="Learn how to automatically enrich your telemetry data with Dynatrace-specific dimensions.">OneAgent data files</a> to enrich the OTLP request and ensure that all relevant topology information is available within Dynatrace.</p>
+<p>The file read operations, parsing the <code>dt_metadata</code> files in the example code, attempt to read the <a href="/docs/ingest-from/extend-dynatrace/extend-data" title="Learn how to automatically enrich your telemetry data with Dynatrace-specific fields.">OneAgent data files</a> to enrich the OTLP request and ensure that all relevant topology information is available within Dynatrace.</p>
 <ol>
 <li>Install the following packages.</li>
 </ol>
@@ -26262,7 +26262,7 @@
 <a id="__codelineno-10-272" name="__codelineno-10-272" href="#__codelineno-10-272"></a>
 <a id="__codelineno-10-273" name="__codelineno-10-273" href="#__codelineno-10-273"></a>}
 </code></pre></div>
-<p>The file read operations, parsing the <code>dt_metadata</code> files in the example code, attempt to read the <a href="/docs/ingest-from/extend-dynatrace/extend-data" title="Learn how to automatically enrich your telemetry data with Dynatrace-specific dimensions.">OneAgent data files</a> to enrich the OTLP request and ensure that all relevant topology information is available within Dynatrace.</p>
+<p>The file read operations, parsing the <code>dt_metadata</code> files in the example code, attempt to read the <a href="/docs/ingest-from/extend-dynatrace/extend-data" title="Learn how to automatically enrich your telemetry data with Dynatrace-specific fields.">OneAgent data files</a> to enrich the OTLP request and ensure that all relevant topology information is available within Dynatrace.</p>
 <h3 id="add-tracing">Add tracing<a class="headerlink" href="#add-tracing" title="Permanent link">&para;</a></h3>
 <p>Using <code>MyActivitySource</code> from the <a href="#setup">setup step</a>, we can now start new activities (traces):</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>using var activity = Startup.MyActivitySource.StartActivity(&quot;Call to /myendpoint&quot;, ActivityKind.Consumer, parentContext.ActivityContext);
@@ -26386,7 +26386,7 @@
 <p>For metrics and logs, go to <strong>Metrics</strong> or <img alt="Logs and Events" src="https://dt-cdn.net/images/logs-and-events-512-4b43bbadbe.png" title="Logs and Events" /> <strong>Logs &amp; Events Classic</strong>.</p>
 <h2 id="related-topics">Related topics<a class="headerlink" href="#related-topics" title="Permanent link">&para;</a></h2>
 <ul>
-<li><a href="/docs/ingest-from/extend-dynatrace/extend-data" title="Learn how to automatically enrich your telemetry data with Dynatrace-specific dimensions.">Enrich ingested data with Dynatrace-specific dimensions</a></li>
+<li><a href="/docs/ingest-from/extend-dynatrace/extend-data" title="Learn how to automatically enrich your telemetry data with Dynatrace-specific fields.">Enrich ingested data with Dynatrace-specific fields</a></li>
 </ul>
 
 

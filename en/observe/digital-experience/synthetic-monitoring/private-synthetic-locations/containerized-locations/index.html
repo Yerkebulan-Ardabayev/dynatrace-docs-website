@@ -25496,8 +25496,8 @@
 <li>Can be deployed faster while minimizing downtime.</li>
 <li>Are automatically tracked for resource utilization as a part of auto-scaling operations.</li>
 </ul>
-<p>You can execute scheduled as well as <a href="/docs/observe/digital-experience/synthetic-monitoring/general-information/on-demand-executions" title="Execute synthetic monitors on demand from public or private locations">on-demand</a> executions of all <a href="/docs/observe/digital-experience/synthetic-monitoring/general-information/types-of-synthetic-monitors" title="Learn about Dynatrace synthetic monitor types.">types of synthetic monitors</a> on containerized locations.</p>
 <p>You can manage Kubernetes/OpenShift locations via the Dynatrace web UI and the existing <a href="/docs/dynatrace-api/environment-api/synthetic-v2/synthetic-locations-v2" title="Manage synthetic locations via the Synthetic v2 API.">Synthetic - Locations, nodes, and configuration API v2</a>. Additional Early Adopter endpoints in this API facilitate the deployment of Kubernetes locations; the new endpoints help you generate the commands that need to be executed on the Kubernetes cluster.</p>
+<p>You can execute scheduled as well as <a href="/docs/observe/digital-experience/synthetic-monitoring/general-information/on-demand-executions" title="Execute synthetic monitors on demand from public or private locations">on-demand</a> executions of all <a href="/docs/observe/digital-experience/synthetic-monitoring/general-information/types-of-synthetic-monitors" title="Learn about Dynatrace synthetic monitor types.">types of synthetic monitors</a> on containerized locations.</p>
 <h2 id="architecture">Architecture<a class="headerlink" href="#architecture" title="Permanent link">&para;</a></h2>
 <p>Containerized private Synthetic locations are deployed as a whole.</p>
 <ul>
@@ -25517,9 +25517,9 @@
 <p>There is one horizontal pod auto-scaler per location.</p>
 <p><img alt="Containerized locations for synthetic monitoring" src="https://dt-cdn.net/images/k8s-synthetic-locations-1769-41775c85f2.jpg" /></p>
 <h2 id="requirements">Requirements<a class="headerlink" href="#requirements" title="Permanent link">&para;</a></h2>
-<p>Containerized private Synthetic locations are supported with Dynatrace version 1.264+ on <strong>Kubernetes 1.22â1.25</strong> with persistent volume and <code>kubectl</code> support.</p>
+<p>Containerized private Synthetic locations are supported with Dynatrace version 1.264+ on Kubernetes 1.22-1.25 with persistent volume and <code>kubectl</code> support.</p>
 <ul>
-<li>Additional support for <strong>Kubernetes 1.26+</strong> is available in the <a href="#install">installation workflow</a>.</li>
+<li>Additional support for Kubernetes 1.26+ is available in the <a href="#install">installation workflow</a>.</li>
 <li>All kinds of Kubernetes implementations are supported, whether cloud or local (for example, Amazon EKS or Minikube).</li>
 <li>OpenShift versions compatible with the supported Kubernetes versions are supported.</li>
 </ul>
@@ -25905,7 +25905,7 @@
 </tbody>
 </table>
 <h3 id="best-practices-and-caveats">Best practices and caveats<a class="headerlink" href="#best-practices-and-caveats" title="Permanent link">&para;</a></h3>
-<p><strong>ActiveGates</strong></p>
+<h4 id="activegates">ActiveGates<a class="headerlink" href="#activegates" title="Permanent link">&para;</a></h4>
 <ul>
 <li>We recommend the <strong>S</strong> ActiveGate size and a minimum of two ActiveGates per location.</li>
 <li>When considering node size, keep in mind the possible limitations specific to the Kubernetes service you will be relying on.</li>
@@ -25915,14 +25915,14 @@
 <li>You cannot combine containerized and non-containerized ActiveGates in the same location.</li>
 <li>The image for Synthetic-enabled ActiveGate is in a public registry; this image location is referenced by the template file.</li>
 </ul>
-<p><strong>Locations</strong></p>
+<h4 id="locations">Locations<a class="headerlink" href="#locations" title="Permanent link">&para;</a></h4>
 <ul>
 <li>We recommend installing each location in its own namespace.</li>
 <li>If deploying more than one location per namespace, use different names for the respective ActiveGate resourcesâsee <a href="#install">Install a containerized location</a> below.</li>
 <li>Locations that share a single Kubernetes namespace must be connected to the same Dynatrace environment as the Synthetic metric adapter in order to be auto-scalable. For example, assume that Location A and the metric adapter are configured for Environment X. However, Location A shares a namespace with Location B, which is configured for Environment Y. In such a case, Location A is auto-scalable; Location B is not auto-scalable.</li>
 <li>If you want to install a location in the same namespace as other Dynatrace resources such as <a href="/docs/ingest-from/setup-on-k8s/guides/deployment-and-configuration/resource-management/dto-resource-limits" title="Set resource limits for Dynatrace Operator components.">Dynatrace Operator</a>, be aware of the more demanding <a href="#requirements">hardware and system requirements</a> for containerized Synthetic-enabled ActiveGates.</li>
 </ul>
-<p><strong>Synthetic metric adapter</strong></p>
+<h4 id="synthetic-metric-adapter">Synthetic metric adapter<a class="headerlink" href="#synthetic-metric-adapter" title="Permanent link">&para;</a></h4>
 <ul>
 <li>The best practice is to deploy the Synthetic metric adapter in its own namespace per Kubernetes cluster. The Synthetic metric adapter can share a namespace with a location. However, deploying the metric adapter in its own namespace ensures that it isn't deleted when a location is taken down.</li>
 <li>The metric adapter can only communicate with a single Dynatrace environment, so location auto-scaling works just for that environment.</li>
@@ -25930,7 +25930,7 @@
 </ul>
 <h3 id="auto-scaling-specifics">Auto-scaling specifics<a class="headerlink" href="#auto-scaling-specifics" title="Permanent link">&para;</a></h3>
 <p>For auto-scaling purposes, the Synthetic metric adapter needs access to and extends the Kubernetes API by specifying a new API serviceâ<code>v1beta1.external.metrics.k8s.io</code>.</p>
-<p>This API service is defined in the Synthetic metric adapter templateâsee &lt;#install&gt; below.</p>
+<p>This API service is defined in the Synthetic metric adapter templateâsee <a href="#install">Install and deploy a containerized location</a> below.</p>
 <p>API service definition in the metric adapter template</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>apiVersion: apiregistration.k8s.io/v1
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
@@ -26539,7 +26539,7 @@ The recommended solution is to prepare a custom Security Context Constraint.</p>
 To learn more about it, see <a href="https://learn.microsoft.com/en-us/azure/openshift/howto-bring-nsg">Bring your own Network Security Group (NSG) to an Azure Red Hat OpenShift (ARO) clusterï»¿</a>.</p>
 <p>Running the cluster with default settings will only allow for using ICMP NAM monitors for resources inside the OpenShift cluster. Any requests going outside the cluster will fail.</p>
 <h2 id="proxy-configuration">Proxy configuration<a class="headerlink" href="#proxy-configuration" title="Permanent link">&para;</a></h2>
-<p>Add the following code at the top of your <a href="#deploy-location">location template file</a> to insert a ConfigMap resource containing your proxy server information.</p>
+<p>Add the following code at the top of your <a href="#install">location template file</a> to insert a ConfigMap resource containing your proxy server information.</p>
 <p>In the code sample below:</p>
 <ul>
 <li>The proxy server is used for connections to the Dynatrace Cluster and tested resources.</li>
@@ -26650,7 +26650,7 @@ To learn more about it, see <a href="https://learn.microsoft.com/en-us/azure/ope
 2. No <code>synthetic-vuc-worker</code> containers are included
 3. No <code>chromium-cache</code> volume is specified or mounted</p>
 <h2 id="kerberos-authentication-configuration">Kerberos authentication configuration<a class="headerlink" href="#kerberos-authentication-configuration" title="Permanent link">&para;</a></h2>
-<p>Add the following code at the top of your <a href="#deploy-location">location template file</a> to insert a ConfigMap resource containing your Kerberos server information.</p>
+<p>Add the following code at the top of your <a href="#install">location template file</a> to insert a ConfigMap resource containing your Kerberos server information.</p>
 <p>In the code sample below:</p>
 <ul>
 <li>The <code>EXAMPLE.COM</code> realm is used in Kerberos authentication.</li>
@@ -26802,7 +26802,7 @@ To learn more about it, see <a href="https://learn.microsoft.com/en-us/azure/ope
 <a id="__codelineno-25-8" name="__codelineno-25-8" href="#__codelineno-25-8"></a>
 <a id="__codelineno-25-9" name="__codelineno-25-9" href="#__codelineno-25-9"></a>subPath: krb5.conf
 </code></pre></div>
-<h2 id="synthetic-metric-adapter">Synthetic metric adapter<a class="headerlink" href="#synthetic-metric-adapter" title="Permanent link">&para;</a></h2>
+<h2 id="synthetic-metric-adapter_1">Synthetic metric adapter<a class="headerlink" href="#synthetic-metric-adapter_1" title="Permanent link">&para;</a></h2>
 <h3 id="disable-domain-certificate-validation">Disable domain certificate validation<a class="headerlink" href="#disable-domain-certificate-validation" title="Permanent link">&para;</a></h3>
 <p>Add the following code to Synthetic metric adapter template under <code>env:</code></p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>- name: TLS_SECURE
@@ -26811,7 +26811,7 @@ To learn more about it, see <a href="https://learn.microsoft.com/en-us/azure/ope
 <a id="__codelineno-26-4" name="__codelineno-26-4" href="#__codelineno-26-4"></a>
 <a id="__codelineno-26-5" name="__codelineno-26-5" href="#__codelineno-26-5"></a>value: &quot;false&quot;
 </code></pre></div>
-<p>This disables certificate validation for the Synthetic metric adapter connection to the Dynatrace Cluster (by default, it is enabled).</p>
+<p>This deactivates certificate validation for the Synthetic metric adapter connection to the Dynatrace Cluster (by default, it is activated).</p>
 <h3 id="proxy-configuration_1">Proxy configuration<a class="headerlink" href="#proxy-configuration_1" title="Permanent link">&para;</a></h3>
 <p>Add the following code to Synthetic metric adapter template under <code>env:</code></p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a>- name: HTTPS_PROXY
@@ -26846,8 +26846,8 @@ To learn more about it, see <a href="https://learn.microsoft.com/en-us/azure/ope
 <p>You can automate the deployment of and manage containerized locations via the existing <a href="/docs/dynatrace-api/environment-api/synthetic-v2/synthetic-locations-v2" title="Manage synthetic locations via the Synthetic v2 API.">Synthetic - Locations, nodes, and configuration API v2</a>. Early Adopter endpoints added to this API to facilitate the deployment of Kubernetes locations. The new endpoints help generate the commands you need to execute on the Kubernetes cluster.</p>
 <p><img alt="New endpoints for Kubernetes location deployment" src="https://dt-cdn.net/images/k8s-locations-endpoints-3168-a8f5b7f158.png" /></p>
 <ul>
-<li>The GET location YAML endpoint (<code>/synthetic/locations/{LocationId}/yaml</code>) fetches the <a href="#deploy-location">location template file</a> based on the location ID of the <a href="#initial-setup">location you initially set up</a> for containerized deployment.</li>
-<li>The GET apply commands endpoint (<code>synthetic/locations/commands/apply</code>) fetches the list of commands to <a href="#deploy-location">deploy a location</a> on Kubernetes/Openshift.</li>
+<li>The GET location YAML endpoint (<code>/synthetic/locations/{LocationId}/yaml</code>) fetches the <a href="#install">location template file</a> based on the location ID of the <a href="#install">location you initially set up</a> for containerized deployment.</li>
+<li>The GET apply commands endpoint (<code>synthetic/locations/commands/apply</code>) fetches the list of commands to <a href="#install">deploy a location</a> on Kubernetes/Openshift.</li>
 <li>The GET delete commands endpoint (<code>synthetic/locations/{LocationId}/commands/delete</code>)fetches the commands to delete a containerized location.</li>
 </ul>
 <h2 id="related-topics">Related topics<a class="headerlink" href="#related-topics" title="Permanent link">&para;</a></h2>

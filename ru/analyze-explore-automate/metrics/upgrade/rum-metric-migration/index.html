@@ -25486,49 +25486,6 @@
 <p>You can access the full list of available metrics and their details directly in the latest Dynatrace. Press <strong>CTRL</strong>/<strong>CMD</strong>+<strong>K</strong>, type <code>dt.frontend</code> and select <strong>Show more</strong>.</p>
 <p>The <a href="/docs/observe/digital-experience/new-rum-experience" title="Discover the New RUM Experience for unmatched visibility into user behavior and frontend performance.">New RUM Experience</a>, which brings RUM to Grail, introduces numerous built-in metrics with the prefix <code>dt.frontend</code>. Because it uses a different data model than RUM Classic, there are no direct equivalents for <a href="/docs/analyze-explore-automate/metrics-classic/built-in-metrics#applications" title="Explore the complete list of built-in Dynatrace metrics.">RUM Classic metrics</a>, which use the prefix <code>builtin:apps</code>. However, many metrics have replacements that serve an analogous purpose, as shown in the table below. Note that metrics with the prefix <code>builtin:apps</code> that do not appear in the table have no replacement.</p>
 <p>Differences in metric values between the <code>builtin:apps</code> metrics and their replacements are expected and result from underlying data model changes.</p>
-<p>RUM Classic metric</p>
-<p>Replacement in the New RUM Experience</p>
-<p>builtin:apps.web.actionCount.*</p>
-<p>builtin:apps.other.uaCount.*</p>
-<p>dt.frontend.user_action.count</p>
-<p>builtin:apps.web.actionDuration.*</p>
-<p>builtin:apps.other.uaDuration.*</p>
-<p>dt.frontend.user_action.duration</p>
-<p>builtin:apps.other.crashCount.*</p>
-<p>builtin:apps.web.countOfErrors*</p>
-<p>builtin:apps.web.jsErrors*</p>
-<p>builtin:apps.other.requestErrorCount.*</p>
-<p>builtin:apps.web.countOfStandaloneErrors</p>
-<p>builtin:apps.mobile.reportedErrorCount</p>
-<p>dt.frontend.error.count</p>
-<p>builtin:apps.other.requestErrorRate.*</p>
-<p>dt.frontend.error.count</p>
-<p>dt.frontend.request.count</p>
-<p>builtin:apps.web.cumulativeLayoutShift.load.*</p>
-<p>dt.frontend.web.page.cumulative_layout_shift</p>
-<p>builtin:apps.web.domInteractive.load.*</p>
-<p>dt.frontend.web.navigation.dom_interactive</p>
-<p>builtin:apps.web.firstInputDelay.load.*</p>
-<p>dt.frontend.web.page.first_input_delay</p>
-<p>builtin:apps.web.interactionToNextPaint</p>
-<p>dt.frontend.web.page.interaction_to_next_paint</p>
-<p>builtin:apps.web.largestContentfulPaint.load.*</p>
-<p>dt.frontend.web.page.largest_contentful_paint</p>
-<p>builtin:apps.web.loadEventEnd.*</p>
-<p>dt.frontend.web.navigation.load_event_end</p>
-<p>builtin:apps.other.requestCount.*</p>
-<p>dt.frontend.request.count</p>
-<p>builtin:apps.other.requestTimes.*</p>
-<p>dt.frontend.request.duration</p>
-<p>builtin:apps.web.activeSessions</p>
-<p>builtin:apps.mobile.sessionCount</p>
-<p>builtin:apps.other.sessionCount.*</p>
-<p>dt.frontend.session.active.estimated_count</p>
-<p>builtin:apps.web.firstByte.load.*</p>
-<p>dt.frontend.web.navigation.time_to_first_byte</p>
-<p>builtin:apps.other.userCount.*</p>
-<p>builtin:apps.web.activeUsersEst</p>
-<p>dt.frontend.user.active.estimated_count</p>
 <h2 id="related-topics">Related topics<a class="headerlink" href="#related-topics" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="/docs/observe/digital-experience/new-rum-experience" title="Discover the New RUM Experience for unmatched visibility into user behavior and frontend performance.">New Real User Monitoring Experience</a></li>

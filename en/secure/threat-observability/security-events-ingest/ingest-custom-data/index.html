@@ -25501,54 +25501,10 @@
 <p>To start ingesting data, use one of the options below.</p>
 <p>Built-in API endpoint</p>
 <p>Custom API endpoint</p>
-<p>Endpoint URL</p>
-<p>Method</p>
-<p>Authentication</p>
-<p>Scope</p>
-<p>Payload</p>
-<p><code>https://{your-environment-id}.live.dynatrace.com/platform/ingest/v1/security.events</code></p>
-<p>POST</p>
-<p><a href="/docs/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens#create-api-token" title="Learn the concept of an access token and its scopes.">Access token</a></p>
-<p><code>openpipeline.events_security</code></p>
-<p><code>application/json</code></p>
-<p>Endpoint URL</p>
-<p>Method</p>
-<p>Authentication</p>
-<p>Scope</p>
-<p>Payload</p>
-<p><code>https://{your-environment-id}.live.dynatrace.com/platform/ingest/custom/security.events/&lt;your-custom-endpoint-name&gt;</code></p>
-<p>POST</p>
-<p><a href="/docs/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens#create-api-token" title="Learn the concept of an access token and its scopes.">Access token</a></p>
-<p><code>openpipeline.events_security.custom</code></p>
-<p><code>application/json</code></p>
 <p>For details on how to perform the API ingest, see <a href="https://dt-url.net/1r03q9s">Learn moreï»¿</a>.</p>
 <h2 id="details">Details<a class="headerlink" href="#details" title="Permanent link">&para;</a></h2>
 <h3 id="how-it-works">How it works<a class="headerlink" href="#how-it-works" title="Permanent link">&para;</a></h3>
 <p>You ingest your data into Grail via our <a href="#default">built-in API endpoint</a> or a <a href="#custom">custom API endpoint</a>. Then, depending on the ingest option chosen, you can either analyze data in your format or manually map data to the <a href="https://dt-url.net/3q03pb0">Semantic Dictionary conventionsï»¿</a>.</p>
-<p>Ingest options</p>
-<p>Built-in API endpoint</p>
-<p>Custom API endpoint</p>
-<p>Description</p>
-<p>You can use and extend our built-in security events endpoint to ingest custom security events via API.</p>
-<p>You can <a href="https://dt-url.net/jd23q7s">createï»¿</a> and <a href="https://dt-url.net/k203p5t">configureï»¿</a> from scratch a generic endpoint to ingest custom security events via API.</p>
-<p>Details</p>
-<ul>
-<li><strong>Preset bucket</strong>: Security events are stored in a bucket called <code>default_securityevents</code> (for details, see: <a href="/docs/platform/grail/organize-data#built-in-grail-buckets" title="Insights on the Grail data model consisting of buckets, tables, and views.">Built-in Grail buckets</a>).</li>
-<li><strong>Fixed endpoint URL</strong>: One URL for all use cases and products.</li>
-<li><strong>Data enrichment</strong>: A static <code>event.kind == "SECURITY_EVENT"</code> field is added to the event to mark it as a security event.</li>
-<li>
-<p><strong>Mapping</strong>: No mapping is applied; data stays in the original format. This means you can analyze data based on your format and create custom dashboards and workflows.</p>
-</li>
-<li>
-<p>Alternatively, you can <a href="https://dt-url.net/k203p5t">configure a processing pipelineï»¿</a> to map data manually to the <a href="https://dt-url.net/3q03pb0">Semantic Dictionary conventionsï»¿</a>. This way you can use our sample <a href="https://dt-url.net/j923p97">dashboardï»¿</a>, <a href="https://dt-url.net/l103p3t">Jira workflowï»¿</a>, and <a href="https://dt-url.net/a643qqd">Slack workflowï»¿</a> to visualize data and automatize notifications.</p>
-</li>
-<li>
-<p><strong>Custom bucket</strong>: You can select or create the bucket where the security events will be stored.</p>
-</li>
-<li><strong>Custom endpoint URL</strong>: You can configure dedicated URLs for specific use cases or products.</li>
-<li><strong>Data enrichment</strong>: You can define custom data enrichments.</li>
-<li><strong>Mapping</strong>: You can configure your endpoint to map data to the <a href="https://dt-url.net/3q03pb0">Semantic Dictionary conventionsï»¿</a>. This way you can use our sample <a href="https://dt-url.net/j923p97">dashboardï»¿</a>, <a href="https://dt-url.net/l103p3t">Jira workflowï»¿</a>, and <a href="https://dt-url.net/a643qqd">Slack workflowï»¿</a> to visualize data and automatize notifications. For details, see <a href="https://dt-url.net/k203p5t">Configure a processing pipelineï»¿</a>.</li>
-</ul>
 <h3 id="response-codes">Response codes<a class="headerlink" href="#response-codes" title="Permanent link">&para;</a></h3>
 <table>
 <thead>

@@ -25479,7 +25479,7 @@
 <ul>
 <li>Latest Dynatrace</li>
 <li>Extension</li>
-<li>Updated on Oct 07, 2025</li>
+<li>Updated on Feb 23, 2026</li>
 </ul>
 <p>This page has been updated to align with the new Grail security events table. For the complete list of updates and actions needed to accomplish the migration, follow the steps in the <a href="/docs/secure/threat-observability/migration" title="Understand the changes in the new Grail security table and learn how to migrate to it.">Grail security table migration guide</a>.</p>
 <p>Ingest SonarQube security and quality events, metrics, and audit logs into Dynatrace as security events.</p>
@@ -25662,7 +25662,7 @@
 <h3 id="how-do-we-normalize-the-risk-score-for-sonarqube-findings">How do we normalize the risk score for SonarQube findings?<a class="headerlink" href="#how-do-we-normalize-the-risk-score-for-sonarqube-findings" title="Permanent link">&para;</a></h3>
 <p>Dynatrace normalizes severity and risk scores for all findings ingested through the current integration. This helps you to prioritize findings consistently, regardless of their source.<br />
 For details on how normalization works, see <a href="/docs/secure/threat-observability/concepts#normalization" title="Basic concepts related to Threat Observability">Severity and score normalization</a>.</p>
-<p>The Dynatrace risk levels and scores are mapped from the original <a href="https://docs.sonarsource.com/sonarqube-server/10.4/user-guide/issues/#issue-severity">SonarQube severitiesï»¿</a>.</p>
+<p>The Dynatrace risk levels and scores are mapped from the original <a href="https://docs.sonarsource.com/sonarqube-server/instance-administration/analysis-functions/instance-mode/standard-experience#se-severity">SonarQube severitiesï»¿</a>.</p>
 <ul>
 <li><code>dt.security.risk.level</code> is taken from the SonarQube severity level and mapped from the original values in <code>finding.severity</code>.</li>
 <li><code>dt.security.risk.score</code> is mapped from the SonarQube provided severity level to static scores.</li>
@@ -25676,7 +25676,11 @@ For details on how normalization works, see <a href="/docs/secure/threat-observa
 </thead>
 <tbody>
 <tr>
-<td>BLOCKER/CRITICAL/HIGH  HIGH</td>
+<td>BLOCKER  CRITICAL</td>
+<td>10.0</td>
+</tr>
+<tr>
+<td>CRITICAL/HIGH  HIGH</td>
 <td>8.9</td>
 </tr>
 <tr>
@@ -25686,6 +25690,10 @@ For details on how normalization works, see <a href="/docs/secure/threat-observa
 <tr>
 <td>MINOR/INFO/LOW  LOW</td>
 <td>3.9</td>
+</tr>
+<tr>
+<td>INFO  NONE</td>
+<td>0.0</td>
 </tr>
 </tbody>
 </table>

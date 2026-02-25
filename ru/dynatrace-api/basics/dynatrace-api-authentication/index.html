@@ -25,7 +25,7 @@
     
     
       
-        <title>Dynatrace API - Токены и аутентификация - Dynatrace Managed - Документация</title>
+        <title>Dynatrace API - Tokens and authentication - Dynatrace Managed - Документация</title>
       
     
     
@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#dynatrace-api-" class="md-skip">
+        <a href="#dynatrace-api-tokens-and-authentication" class="md-skip">
           Перейти к содержанию
         </a>
       
@@ -114,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Dynatrace API - Токены и аутентификация
+              Dynatrace API - Tokens and authentication
             
           </span>
         </div>
@@ -25474,66 +25474,66 @@
 
 
 
-<h1 id="dynatrace-api-">Dynatrace API - Токены и аутентификация<a class="headerlink" href="#dynatrace-api-" title="Permanent link">&para;</a></h1>
-<h1 id="dynatrace-api-_1">Dynatrace API - Токены и аутентификация<a class="headerlink" href="#dynatrace-api-_1" title="Permanent link">&para;</a></h1>
+<h1 id="dynatrace-api-tokens-and-authentication">Dynatrace API - Tokens and authentication<a class="headerlink" href="#dynatrace-api-tokens-and-authentication" title="Permanent link">&para;</a></h1>
+<h1 id="dynatrace-api-tokens-and-authentication_1">Dynatrace API - Tokens and authentication<a class="headerlink" href="#dynatrace-api-tokens-and-authentication_1" title="Permanent link">&para;</a></h1>
 <ul>
-<li>Ссылка</li>
-<li>Опубликовано 23 августа 2018 г.</li>
+<li>Reference</li>
+<li>Published Aug 23, 2018</li>
 </ul>
-<p>Чтобы быть аутентифицированным для использования Dynatrace API, вам нужен действительный <a href="/docs/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens" title="Узнайте о концепции токена доступа и его областях.">токен доступа</a> или действительный <a href="/docs/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens/personal-access-token" title="Узнайте о концепции личного токена доступа и его областях.">личный токен доступа</a>. Доступ к API является детализированным, то есть вам также нужны соответствующие области, назначенные токену. См. описание каждого запроса, чтобы узнать, какие области необходимы для его использования.</p>
-<p>Для получения подробной информации об OAuth-клиентах см. <a href="/docs/manage/identity-access-management/access-tokens-and-oauth-clients/oauth-clients" title="Управляйте аутентификацией и разрешениями пользователей с помощью OAuth-клиентов.">OAuth-клиенты</a>.</p>
-<h2 id="_1">Формат токена<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<p>Dynatrace использует уникальный формат токена, состоящий из трех компонентов, разделенных точками (<code>.</code>).</p>
-<h3 id="_2">Пример токена<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<p>To be authenticated to use the Dynatrace API, you need a valid <a href="/docs/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens" title="Learn the concept of an access token and its scopes.">access token</a> or a valid <a href="/docs/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens/personal-access-token" title="Learn the concept of a personal access token and its scopes.">personal access token</a>. Access to the API is fine-grained, meaning that you also need the proper scopes assigned to the token. See the description of each request to find out which scopes are required to use it.</p>
+<p>For details on OAuth clients, see <a href="/docs/manage/identity-access-management/access-tokens-and-oauth-clients/oauth-clients" title="Manage authentication and user permissions using OAuth clients.">OAuth clients</a>.</p>
+<h2 id="token-format">Token format<a class="headerlink" href="#token-format" title="Permanent link">&para;</a></h2>
+<p>Dynatrace uses a unique token format consisting of three components separated by dots (<code>.</code>).</p>
+<h3 id="token-example">Token example<a class="headerlink" href="#token-example" title="Permanent link">&para;</a></h3>
 <p><code>&lt;DYNATRACE_TOKEN_PLACEHOLDER&gt;</code></p>
-<h3 id="_3">Компоненты токена<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
-<h3 id="_4">Префиксы токена<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
-<h2 id="_5">Генерация токена<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
-<p>Токен доступа</p>
-<p>Личный токен доступа</p>
-<p>Чтобы сгенерировать токен доступа:</p>
+<h3 id="token-components">Token components<a class="headerlink" href="#token-components" title="Permanent link">&para;</a></h3>
+<h3 id="token-prefixes">Token prefixes<a class="headerlink" href="#token-prefixes" title="Permanent link">&para;</a></h3>
+<h2 id="generate-a-token">Generate a token<a class="headerlink" href="#generate-a-token" title="Permanent link">&para;</a></h2>
+<p>Access token</p>
+<p>Personal access token</p>
+<p>To generate an access token:</p>
 <ol>
-<li>Перейдите к <img alt="Токены доступа" src="https://dt-cdn.net/images/access-tokens-512-a766b810b8.png" title="Токены доступа" /> <strong>Токены доступа</strong>.</li>
-<li>Выберите <strong>Сгенерировать новый токен</strong>.</li>
-<li>Введите имя для вашего токена.<br />
-   Dynatrace не обеспечивает уникальность имен токенов. Вы можете создать несколько токенов с одинаковым именем. Убедитесь, что вы предоставили осмысленное имя для каждого сгенерированного токена. Правильное именование помогает вам эффективно управлять вашими токенами и, возможно, удалять их, когда они больше не нужны.</li>
-<li>Выберите необходимые области для токена.</li>
-<li>Выберите <strong>Сгенерировать токен</strong>.</li>
-<li>Скопируйте сгенерированный токен в буфер обмена. Храните токен в менеджере паролей для будущего использования.</li>
+<li>Go to <img alt="Access tokens" src="https://dt-cdn.net/images/access-tokens-512-a766b810b8.png" title="Access tokens" /> <strong>Access Tokens</strong>.</li>
+<li>Select <strong>Generate new token</strong>.</li>
+<li>Enter a name for your token.<br />
+   Dynatrace doesn't enforce unique token names. You can create multiple tokens with the same name. Be sure to provide a meaningful name for each token you generate. Proper naming helps you to efficiently manage your tokens and perhaps delete them when they're no longer needed.</li>
+<li>Select the required scopes for the token.</li>
+<li>Select <strong>Generate token</strong>.</li>
+<li>Copy the generated token to the clipboard. Store the token in a password manager for future use.</li>
 </ol>
-<p>Вы можете получить доступ к вашему токену только один раз при его создании. Вы не сможете раскрыть его позже.</p>
-<p>Чтобы сгенерировать личный токен доступа</p>
+<p>You can only access your token once upon creation. You can't reveal it afterward.</p>
+<p>To generate a personal access token</p>
 <ol>
-<li>Перейдите к <strong>Личным токенам доступа</strong> (доступно через <a href="/docs/discover-dynatrace/get-started/dynatrace-ui#user-menu-previous-dynatrace" title="Навигация по последней версии Dynatrace">меню пользователя</a> в предыдущей версии Dynatrace).</li>
-<li>Выберите <strong>Сгенерировать новый токен</strong>.</li>
-<li>Введите имя для вашего токена.<br />
-   Dynatrace не обеспечивает уникальность имен токенов. Вы можете создать несколько токенов с одинаковым именем. Убедитесь, что вы предоставили осмысленное имя для каждого сгенерированного токена. Правильное именование помогает вам эффективно управлять вашими токенами и, возможно, удалять их, когда они больше не нужны.</li>
-<li>Выберите необходимые области для токена.</li>
-<li>Выберите <strong>Сгенерировать токен</strong>.</li>
-<li>Скопируйте сгенерированный токен в буфер обмена. Храните токен в менеджере паролей для будущего использования.</li>
+<li>Go to <strong>Personal Access Tokens</strong> (accessible via the <a href="/docs/discover-dynatrace/get-started/dynatrace-ui#user-menu-previous-dynatrace" title="Navigate the latest Dynatrace">user menu</a> in the previous Dynatrace).</li>
+<li>Select <strong>Generate new token</strong>.</li>
+<li>Enter a name for your token.<br />
+   Dynatrace doesn't enforce unique token names. You can create multiple tokens with the same name. Be sure to provide a meaningful name for each token you generate. Proper naming helps you to efficiently manage your tokens and perhaps delete them when they're no longer needed.</li>
+<li>Select the required scopes for the token.</li>
+<li>Select <strong>Generate token</strong>.</li>
+<li>Copy the generated token to the clipboard. Store the token in a password manager for future use.</li>
 </ol>
-<p>Вы можете получить доступ к вашему токену только один раз при его создании. Вы не сможете раскрыть его позже.</p>
-<p>Вы можете назначить несколько областей одному токену или сгенерировать несколько токенов, каждый с разными уровнями доступа, и использовать их соответствующим образом - проверьте политику безопасности вашей организации для лучшей практики.</p>
-<p>Чтобы изменить область существующего токена, используйте вызов <a href="/docs/dynatrace-api/environment-api/tokens-v2/api-tokens/put-token" title="Обновите токен доступа с помощью Dynatrace API.">PUT токена</a> API токенов доступа. Обратите внимание, что вам необходимо отправить существующие области, если вы хотите сохранить их. Любая существующая область, отсутствующая в полезной нагрузке, удаляется.</p>
-<p>Альтернативно вы можете использовать вызов <a href="/docs/dynatrace-api/environment-api/tokens-v2/api-tokens/post-token" title="Создайте токен доступа с помощью Dynatrace API.">POST токена</a> для генерации токена.</p>
-<h2 id="_6">Области токена<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
-<p>Токен доступа</p>
-<p>Личный токен доступа</p>
+<p>You can only access your token once upon creation. You can't reveal it afterward.</p>
+<p>You can assign multiple scopes to a single token, or you can generate several tokens, each with different access levels and use them accordinglyâcheck your organization's security policies for the best practice.</p>
+<p>To change the scope of an existing token, use the <a href="/docs/dynatrace-api/environment-api/tokens-v2/api-tokens/put-token" title="Update an access token via Dynatrace API.">PUT a token call</a> of the Access tokens API. Note that you need to submit the existing scopes if you want to keep them. Any existing scope missing in the payload is removed.</p>
+<p>Alternatively, you can use the <a href="/docs/dynatrace-api/environment-api/tokens-v2/api-tokens/post-token" title="Create an access token via Dynatrace API.">POST a token</a> call to generate a token.</p>
+<h2 id="token-scopes">Token scopes<a class="headerlink" href="#token-scopes" title="Permanent link">&para;</a></h2>
+<p>Access token</p>
+<p>Personal access token</p>
 <h3 id="openpipeline">OpenPipeline<a class="headerlink" href="#openpipeline" title="Permanent link">&para;</a></h3>
 <h3 id="api-v2">API v2<a class="headerlink" href="#api-v2" title="Permanent link">&para;</a></h3>
 <h3 id="api-v1">API v1<a class="headerlink" href="#api-v1" title="Permanent link">&para;</a></h3>
 <h3 id="paas">PaaS<a class="headerlink" href="#paas" title="Permanent link">&para;</a></h3>
-<h3 id="_7">Другое<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
-<p>Dynatrace предоставляет следующие разрешения для личных токенов доступа. Вы можете установить их в веб-интерфейсе, как описано выше, или с помощью <a href="/docs/dynatrace-api/environment-api/tokens-v2/api-tokens" title="Управляйте токенами аутентификации Dynatrace API.">API токенов доступа</a>.</p>
-<h2 id="_8">Аутентификация<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
-<p>У вас есть два варианта передачи токена API: в заголовке HTTP <strong>Authorization</strong> или в параметре запроса <strong>api-token</strong>.</p>
-<p>Мы рекомендуем использовать заголовок <strong>Authorization</strong>, поскольку URL-адреса (вместе с токенами, переданными в них) могут быть записаны в различных местах. Пользователи также могут добавлять в закладки URL-адреса или делиться ими в открытом тексте. Следовательно, размещение токенов аутентификации в URL-адресе увеличивает риск того, что они будут перехвачены злоумышленником.</p>
-<p>Заголовок HTTP</p>
-<p>Параметр запроса</p>
-<p>Вы можете аутентифицироваться, присоединив токен к заголовку HTTP <strong>Authorization</strong>, предшествующему области <strong>Api-Token</strong>.</p>
+<h3 id="other">Other<a class="headerlink" href="#other" title="Permanent link">&para;</a></h3>
+<p>Dynatrace provides the following permissions for personal access tokens. You can set them in the web UI as described above or via the <a href="/docs/dynatrace-api/environment-api/tokens-v2/api-tokens" title="Manage Dynatrace API authentication tokens."><strong>Access tokens</strong> API</a>.</p>
+<h2 id="authenticate">Authenticate<a class="headerlink" href="#authenticate" title="Permanent link">&para;</a></h2>
+<p>You have two options to pass your API token: in the <strong>Authorization</strong> HTTP header or in the <strong>api-token</strong> query parameter.</p>
+<p>We recommend that you use the <strong>Authorization</strong> header, as URLs (along with tokens passed within them) might be logged in various locations. Users might also bookmark the URLs or share them in plain text. Therefore, placing authentication tokens into the URL increases the risk that they will be captured by an attacker.</p>
+<p>HTTP header</p>
+<p>Query parameter</p>
+<p>You can authenticate by attaching the token to the <strong>Authorization</strong> HTTP header preceding the <strong>Api-Token</strong> realm.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>--header &#39;Authorization: Api-Token dt0c01.abc123.abcdefjhij1234567890&#39;
 </code></pre></div>
-<p>В следующем примере показана аутентификация через заголовок HTTP.</p>
+<p>The following example shows authentication via HTTP header.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>curl --request GET \
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
 <a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
@@ -25544,19 +25544,19 @@
 <a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>
 <a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>--header &#39;Authorization: Api-Token dt0c01.abc123.abcdefjhij1234567890&#39;
 </code></pre></div>
-<p>Вы можете аутентифицироваться, добавив токен в качестве значения параметра запроса <strong>api-token</strong>.</p>
+<p>You can authenticate by adding the token as the value of the <strong>api-token</strong> query parameter.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>curl --request GET \
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
 <a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
 <a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
 <a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>--url &#39;https://mySampleEnv.live.dynatrace.com/api/v1/config/clusterversion?api-token=abcdefjhij1234567890&#39; \
 </code></pre></div>
-<h3 id="api-explorer">Аутентификация в API Explorer<a class="headerlink" href="#api-explorer" title="Permanent link">&para;</a></h3>
-<p>Выберите значок замка <img alt="Замок" src="https://dt-cdn.net/images/blue-lock-icon-77090b9928.svg" title="Замок" /> рядом с любым конечной точкой, чтобы отобразить информацию о токенах OAuth 2.0, которые защищают эту конечную точку. Каждая конечная точка требует определенного типа токена.</p>
-<p>Вы также можете разблокировать все конечные точки, выбрав <strong>Авторизовать</strong>. В отображаемом диалоговом окне вы можете увидеть, какие разрешения токена необходимы для каждой конечной точки API. Вводя ваш токен OAuth 2.0 в глобальный диалог <strong>Доступные авторизации</strong>, вы можете разблокировать все связанные конечные точки API.</p>
-<h2 id="_9">Связанные темы<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
+<h3 id="authentication-in-the-api-explorer">Authentication in the API Explorer<a class="headerlink" href="#authentication-in-the-api-explorer" title="Permanent link">&para;</a></h3>
+<p>Select the lock <img alt="Lock" src="https://dt-cdn.net/images/blue-lock-icon-77090b9928.svg" title="Lock" /> icon next to any end point to display information about the OAuth 2.0 tokens that secure that endpoint. Each endpoint requires a specific token type.</p>
+<p>You can also unlock all endpoints by selecting <strong>Authorize</strong>. In the displayed dialog, you can then see which token permissions are necessary for each API endpoint. By entering your OAuth 2.0 token into the global <strong>Available authorizations</strong> dialog, you can unlock all related API endpoints.</p>
+<h2 id="related-topics">Related topics<a class="headerlink" href="#related-topics" title="Permanent link">&para;</a></h2>
 <ul>
-<li><a href="/docs/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens" title="Узнайте о концепции токена доступа и его областях.">Классические токены доступа</a></li>
+<li><a href="/docs/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens" title="Learn the concept of an access token and its scopes.">Access tokens classic</a></li>
 </ul>
 
 

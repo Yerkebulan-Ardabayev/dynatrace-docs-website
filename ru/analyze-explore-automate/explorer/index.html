@@ -25769,35 +25769,6 @@ The baseline calculation is based on the <a href="/docs/dynatrace-intelligence/r
 <li>Baselines are not added to the dashboard tile when you pin a chart to a dashboard.</li>
 <li>The timeframe used to infer the baseline is determined by the currently selected resolution:</li>
 </ul>
-<p>Resolution range</p>
-<p>Resolution examples</p>
-<p>Baseline timeframe</p>
-<p>resolution &lt; 5 minutes</p>
-<ul>
-<li>1 minute</li>
-</ul>
-<p><strong>previous 14 days</strong></p>
-<p>5 minutes â¥ resolution &lt; 1 hour</p>
-<ul>
-<li>5 minutes</li>
-<li>10 minutes</li>
-<li>30 minutes</li>
-</ul>
-<p><strong>previous 28 days</strong></p>
-<p>1 hour â¥ resolution &lt; 1 day</p>
-<ul>
-<li>1 hour</li>
-<li>6 hours</li>
-<li>12 hours</li>
-</ul>
-<p><strong>400 days</strong></p>
-<p>resolution â¥ 1 day</p>
-<ul>
-<li>1 day</li>
-<li>1 week</li>
-<li>1 month</li>
-</ul>
-<p><strong>5 years</strong></p>
 <h3 id="add-a-baseline">Add a baseline<a class="headerlink" href="#add-a-baseline" title="Permanent link">&para;</a></h3>
 <ol>
 <li>On the graph, select the line for the metric you want to baseline.</li>
@@ -25813,29 +25784,6 @@ The baseline calculation is based on the <a href="/docs/dynatrace-intelligence/r
 </ol>
 <h3 id="compared-to-metric-event-baselines">Compared to metric event baselines<a class="headerlink" href="#compared-to-metric-event-baselines" title="Permanent link">&para;</a></h3>
 <p>You may notice differences between baselines in Data Explorer and metric events. These features offer different approaches to suit their different contexts. In general, the Data Explorer configuration is fixed, while the metric events configuration is configurable.</p>
-<p><strong>Data Explorer</strong></p>
-<p><strong>Metric events</strong></p>
-<p><strong>Samples</strong></p>
-<p><code>5</code></p>
-<p>Configurable</p>
-<p><strong>Violating samples</strong></p>
-<p><code>3</code></p>
-<p>Configurable</p>
-<p><strong>Dealerting samples</strong></p>
-<p><code>5</code></p>
-<p>Configurable</p>
-<p><strong>Alert on no data</strong></p>
-<p><code>false</code></p>
-<p>Configurable</p>
-<p><strong>Tolerance</strong> (affects width of confidence band)</p>
-<p><code>4</code></p>
-<p>Configurable (range: <code>0.1</code> to <code>10</code>)</p>
-<p><strong>Resolution</strong> (affects granularity)</p>
-<p>Configurable</p>
-<p><code>1</code> minute</p>
-<p><strong>Training time</strong></p>
-<p>Instantaneous</p>
-<p>Daily</p>
 <p>For details on seasonal baselining, see <a href="/docs/dynatrace-intelligence/reference/ai-models/seasonal-baseline" title="How Dynatrace Intelligence suggests seasonal baseline thresholds for a scope of entities.">Seasonal baseline</a>.</p>
 <h3 id="baselines-faq">Baselines FAQ<a class="headerlink" href="#baselines-faq" title="Permanent link">&para;</a></h3>
 <p>How is the baseline calculated?</p>
@@ -26092,21 +26040,6 @@ The baseline calculation is based on the <a href="/docs/dynatrace-intelligence/r
 * To prevent performance issues on dashboard tiles created with Data Explorer, the maximum number of data points for a query on a dashboard tile is 4,000. Based on the selected timeframe and the applied custom resolution, Dynatrace projects the number of data points for the query result. If the projected number of data points exceeds 4,000, Dynatrace automatically switches to a resolution high enough to keep the number of data points below 4,000.</p>
 <p>Note that this does not apply to visualizations in Data Explorer itself, where you can have more than 4,000 data points. It applies only to dashboard tiles created with Data Explorer where the resolution/timeframe combination selected on the dashboard results in more than 4,000 data points.
 * Examples of order-of-magnitude notation in Dynatrace:</p>
-<p>Notation</p>
-<p>Factor</p>
-<p>Meaning</p>
-<p>k</p>
-<p>10^3</p>
-<p>kilo, thousand</p>
-<p>M</p>
-<p>10^6</p>
-<p>mega, million</p>
-<p>G</p>
-<p>10^9</p>
-<p>giga, billion</p>
-<p>T</p>
-<p>10^12</p>
-<p>tera, trillion</p>
 <p>For details, see <a href="/docs/discover-dynatrace/get-started/dynatrace-ui/order-of-magnitude-notation" title="Dynatrace order-of-magnitude notation for displaying metric values">Order-of-magnitude notation</a>.</p>
 <h3 id="fold-transformation-and-resolution">Fold transformation and resolution<a class="headerlink" href="#fold-transformation-and-resolution" title="Permanent link">&para;</a></h3>
 <p>Be aware that the <strong>Fold transformation</strong> setting affects the resolution.</p>

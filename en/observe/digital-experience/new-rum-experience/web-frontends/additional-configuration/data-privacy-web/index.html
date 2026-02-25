@@ -25496,21 +25496,6 @@
 <p>Dynatrace captures full URIs of requests that are sent from desktop and mobile browsers, as well as URIs of requests that are sent and received within monitored server-side processes. URIs may contain personal data, such as user names, passwords, or IDs.</p>
 <p>When <strong>Mask personal data in URIs</strong> is turned on, Dynatrace detects personal dataâemail addresses, IBANs, payment card numbers, IP addresses, UUIDs, and other IDsâin URIs, headers, exception messages, and data captured for request attributes. It masks this data at storage by replacing it with the <code>&lt;masked&gt;</code> string. It also replaces query parameter values with the <code>&lt;masked&gt;</code> string. IDs and numbers must have at least 5 decimal or hexadecimal digits to be masked.</p>
 <p>URI masking examples</p>
-<p>Type of personal data</p>
-<p>Example before masking</p>
-<p>Example after masking</p>
-<p>Email address</p>
-<p><code>https://example.com/user/john.doe@example.com/profile</code></p>
-<p><code>https://example.com/user/&lt;masked&gt;/profile</code></p>
-<p>Query parameter value</p>
-<p><code>https://example.com?country=Austria&amp;city=Linz</code></p>
-<p><code>https://example.com?country=&lt;masked&gt;&amp;city=&lt;masked&gt;</code></p>
-<p>Payment card number</p>
-<p><code>https://example.com/checkout?card=4111111111111111</code></p>
-<p><code>https://example.com/checkout?card=&lt;masked&gt;</code></p>
-<p>IP address</p>
-<p><code>https://192.168.10.25/dashboard</code></p>
-<p><code>https://&lt;masked&gt;/dashboard</code></p>
 <p>As a result, personal data appearing in URIs is masked in user events.</p>
 <h2 id="use-persistent-cookies-for-user-tracking">Use persistent cookies for user tracking<a class="headerlink" href="#use-persistent-cookies-for-user-tracking" title="Permanent link">&para;</a></h2>
 <p>To access this setting, select <strong>Data Privacy</strong> &gt; <strong>General</strong>.</p>
