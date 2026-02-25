@@ -1,7 +1,7 @@
 ---
 title: Log custom attributes (Logs Classic)
 source: https://www.dynatrace.com/docs/analyze-explore-automate/log-monitoring/analyze-log-data/log-custom-attributes
-scraped: 2026-02-24T21:27:34.704073
+scraped: 2026-02-25T21:34:36.416365
 ---
 
 # Log custom attributes (Logs Classic)

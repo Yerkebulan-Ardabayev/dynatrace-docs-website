@@ -1,7 +1,7 @@
 ---
 title: .NET
 source: https://www.dynatrace.com/docs/ingest-from/technology-support/application-software/dotnet
-scraped: 2026-02-23T21:23:22.151693
+scraped: 2026-02-25T21:21:09.632544
 ---
 
 # .NET
@@ -32,201 +32,21 @@ See our [supported technologies matrix](/docs/ingest-from/technology-support#net
 
 ## Supported .NET versions
 
-Version
-
-Vendor released
-
-Vendor End of life
-
-First supported Dynatrace OneAgent version
-
-Last supported Dynatrace OneAgent version
-
-Dynatrace support until
-
-[Dynatrace support level](/docs/ingest-from/technology-support#support-levels)
-
-10
-
-2025-11-11
-
--
-
-1.325
-
--
-
--
-
-Supported
-
-9
-
-2024-11-12
-
--
-
-1.305
-
--
-
--
-
-Supported
-
-8
-
-2023-11-14
-
--
-
-1.277
-
--
-
--
-
-Supported
-
-7
-
-2022-11-08
-
--
-
-1.263
-
--
-
--
-
-Supported
-
-6
-
-2021-11-08
-
--
-
-1.229
-
--
-
--
-
-Supported
-
-5
-
-2020-11-10
-
--
-
-1.203
-
--
-
--
-
-Supported
-
-Core 3.1
-
-2019-12-03
-
--
-
-1.183
-
--
-
--
-
-Supported
-
-Core 3.0
-
-2019-09-23
-
--
-
-1.177
-
--
-
--
-
-Supported
-
-Core 2.2
-
--
-
-2019-12-23
-
--
-
--
-
--
-
-Supported
-
-Core 2.1
-
--
-
--
-
--
-
--
-
--
-
-Supported
-
-Core 2.0
-
--
-
-2018-10-01
-
--
-
-1.297
-
-2024-08-31
-
-Limited[1](#fn-net-and-net-core-1-def)
-
-Core 1.1
-
--
-
-2019-06-27
-
--
-
-1.177
-
-2019-12-01
-
-Not supported
-
-Core 1.0
-
--
-
-2019-06-27
-
--
-
-1.177
-
-2019-12-01
-
-Not supported
+| Version | Vendor released | Vendor End of life | First supported Dynatrace OneAgent version | Last supported Dynatrace OneAgent version | Dynatrace support until | [Dynatrace support level](/docs/ingest-from/technology-support#support-levels) |
+| --- | --- | --- | --- | --- | --- | --- |
+| 10 | 2025-11-11 | - | 1.325 | - | - | Supported |
+| 9 | 2024-11-12 | - | 1.305 | - | - | Supported |
+| 8 | 2023-11-14 | - | 1.277 | - | - | Supported |
+| 7 | 2022-11-08 | - | 1.263 | - | - | Supported |
+| 6 | 2021-11-08 | - | 1.229 | - | - | Supported |
+| 5 | 2020-11-10 | - | 1.203 | - | - | Supported |
+| Core 3.1 | 2019-12-03 | - | 1.183 | - | - | Supported |
+| Core 3.0 | 2019-09-23 | - | 1.177 | - | - | Supported |
+| Core 2.2 | - | 2019-12-23 | - | - | - | Supported |
+| Core 2.1 | - | - | - | - | - | Supported |
+| Core 2.0 | - | 2018-10-01 | - | 1.297 | 2024-08-31 | Limited[1](#fn-net-and-net-core-1-def) |
+| Core 1.1 | - | 2019-06-27 | - | 1.177 | 2019-12-01 | Not supported |
+| Core 1.0 | - | 2019-06-27 | - | 1.177 | 2019-12-01 | Not supported |
 
 1
 
@@ -234,89 +54,13 @@ Limited support: Dynatrace can only solve problems that can be reproduced on sup
 
 ## Supported .NET Framework versions
 
-Version
-
-Vendor released
-
-Vendor End of life
-
-First supported Dynatrace OneAgent version
-
-Last supported Dynatrace OneAgent version
-
-Dynatrace support until
-
-[Dynatrace support level](/docs/ingest-from/technology-support#support-levels)
-
-4.5.2 - 4.8
-
--
-
--
-
--
-
--
-
--
-
-Supported
-
-4.5.1
-
--
-
-2016-01-12
-
--
-
--
-
--
-
-Limited[1](#fn-net-framework-1-def)
-
-4.5
-
--
-
-2016-01-12
-
--
-
--
-
--
-
-Limited[1](#fn-net-framework-1-def)
-
-4
-
--
-
-2016-01-12
-
--
-
--
-
--
-
-Limited[1](#fn-net-framework-1-def)
-
-3.5 SP1
-
--
-
--
-
--
-
--
-
--
-
-Supported
+| Version | Vendor released | Vendor End of life | First supported Dynatrace OneAgent version | Last supported Dynatrace OneAgent version | Dynatrace support until | [Dynatrace support level](/docs/ingest-from/technology-support#support-levels) |
+| --- | --- | --- | --- | --- | --- | --- |
+| 4.5.2 - 4.8 | - | - | - | - | - | Supported |
+| 4.5.1 | - | 2016-01-12 | - | - | - | Limited[1](#fn-net-framework-1-def) |
+| 4.5 | - | 2016-01-12 | - | - | - | Limited[1](#fn-net-framework-1-def) |
+| 4 | - | 2016-01-12 | - | - | - | Limited[1](#fn-net-framework-1-def) |
+| 3.5 SP1 | - | - | - | - | - | Supported |
 
 1
 

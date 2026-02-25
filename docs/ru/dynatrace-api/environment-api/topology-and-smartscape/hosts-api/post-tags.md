@@ -1,7 +1,7 @@
 ---
 title: Hosts API - POST tags
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/topology-and-smartscape/hosts-api/post-tags
-scraped: 2026-02-23T21:21:36.132557
+scraped: 2026-02-25T21:21:51.537116
 ---
 
 # Hosts API - POST tags

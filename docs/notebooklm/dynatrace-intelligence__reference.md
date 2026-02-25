@@ -1,157 +1,155 @@
 # Документация Dynatrace: dynatrace-intelligence/reference
 Язык: Русский (RU)
-Сгенерировано: 2026-02-24
+Сгенерировано: 2026-02-25
 Файлов в разделе: 4
 ---
 
 ## dynatrace-intelligence/reference/ai-models/forecast-analysis.md
 
 ---
-title: Dynatrace Intelligence predictive AI analysis
+title: Dynatrace Intelligence прогнозный анализ ИИ
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/reference/ai-models/forecast-analysis
-scraped: 2026-02-24T21:14:58.238486
+scraped: 2026-02-25T21:14:23.121204
 ---
 
-# Dynatrace Intelligence predictive AI analysis
+# Dynatrace Intelligence прогнозный анализ ИИ
 
-# Dynatrace Intelligence predictive AI analysis
+# Dynatrace Intelligence прогнозный анализ ИИ
 
-* Latest Dynatrace
-* Explanation
-* 14-min read
-* Updated on Jan 28, 2026
+* Последнее Dynatrace
+* Объяснение
+* 14-минутное чтение
+* Обновлено 28 января 2026 г.
 
-The forecast analysis predicts future values of any time series of numeric values. The forecast analyzer is not limited to stored metric dataâyou can bring your own data, use a metric query, or run a data query that results in a time series of numeric values.
+Прогнозный анализ предсказывает будущие значения любого временного ряда числовых значений. Анализатор прогноза не ограничивается хранимыми данными метрик — вы можете принести свои собственные данные, использовать запрос метрики или выполнить запрос данных, в результате которого получается временной ряд числовых значений.
 
-The analysis is agnostic to the distribution of the input data. The forecast is calculated without any assumption about specific data distribution and works for both symmetric and non-symmetric distributions.
+Анализ не зависит от распределения входных данных. Прогноз рассчитывается без каких-либо предположений о конкретном распределении данных и работает как для симметричных, так и для несимметричных распределений.
 
-You can trigger a forecast analysis from your [notebook](/docs/dynatrace-intelligence/dynatrace-intelligence-integrations/davis-for-notebooks "Run AI analysis in Dynatrace Notebooks.").
+Вы можете запустить прогнозный анализ из своей [тетради](/docs/dynatrace-intelligence/dynatrace-intelligence-integrations/davis-for-notebooks "Выполнить анализ ИИ в Dynatrace Notebooks.").
 
-## Analyzer input
+## Входные данные анализатора
 
-## Analysis methodology
+## Методология анализа
 
-When you trigger a forecast analysis, the time series is sent to an appropriate forecaster that produces the forecast. Then the [forecast quality](#quality) is evaluated, and the forecast and evaluation are returned as analysis results.
+Когда вы запускаете прогнозный анализ, временной ряд отправляется в подходящий прогнозист, который производит прогноз. Затем оценивается [качество прогноза](#quality), и прогноз и оценка возвращаются в качестве результатов анализа.
 
-![Analysis methodology](https://dt-cdn.net/images/analyser-methodology-1132-7fef138e18.png)
+![Методология анализа](https://dt-cdn.net/images/analyser-methodology-1132-7fef138e18.png)
 
-### Algorithm selection
+### Выбор алгоритма
 
-The analysis uses one of the two forecasters:
+Анализ использует один из двух прогнозистов:
 
-* [Sampling forecaster](#sampling)
-* [Linear extrapolation forecaster](#linear-extrapolation)
+* [Прогнозист выборки](#sampling)
+* [Прогнозист линейной экстраполяции](#linear-extrapolation)
 
-The sampling forecaster is used if the variance of the **linear history timeframe** is larger than the maximum value of the `0.1` and `0.001 Ã input time series variance` pair. The linear history timeframe is the X most recent data points, with X being in the range from `14` to `20`.
+Прогнозист выборки используется, если дисперсия **линейной истории временного ряда** больше максимального значения пары `0.1` и `0.001 × дисперсия входного временного ряда`. Линейная история временного ряда — это X наиболее недавних точек данных, где X находится в диапазоне от `14` до `20`.
 
-In any other case (including the case when training of the sampling forecaster fails), the linear extrapolation forecaster is used.
+В любом другом случае (включая случай, когда обучение прогнозиста выборки завершается неудачно), используется прогнозист линейной экстраполяции.
 
-## Sampling forecaster
+## Прогнозист выборки
 
-The sampling forecaster provides multi-step forecasts based on seasonal patterns. Its architecture is shown in the image below.
+Прогнозист выборки обеспечивает многоступенчатые прогнозы на основе сезонных закономерностей. Его архитектура показана на изображении ниже.
 
-![General forecaster algorithm](https://dt-cdn.net/images/generic-forecaster-analyser-940-f6f15f47fc.png)
+![Общий алгоритм прогнозиста](https://dt-cdn.net/images/generic-forecaster-analyser-940-f6f15f47fc.png)
 
-First, the path transformer is applied to the input time series, and then the forecaster is trained on it. If the resulting model is invalid, the linear extrapolation forecaster is used instead. If the model is valid, sampling paths are created by the seasonal forecaster. Those paths are then inverse transformed before applying the quantiles on each time step.
+Сначала к входному временному ряду применяется преобразователь пути, а затем прогнозист обучается на нем. Если в результате полученная модель недействительна, вместо нее используется прогнозист линейной экстраполяции. Если модель действительна, создают пути выборки с помощью сезонного прогнозиста. Эти пути затем обратно преобразуются до применения квантилей на каждом временном шаге.
 
-### Seasonal patterns
+### Сезонные закономерности
 
-The forecaster always looks for various seasonal patterns in the input time series. The input time series must contain enough data to detect seasonality reliably.
+Прогнозист всегда ищет различные сезонные закономерности во входном временном ряде. Входной временной ряд должен содержать достаточно данных, чтобы обнаружить сезонность надежно.
 
-| Seasonal pattern | Required time series duration |
+| Сезонная закономерность | Требуемая продолжительность временного ряда |
 | --- | --- |
-| 1 hour | 2+ hours |
-| 1 day (24 hours) | 7+ days |
-| 1 week (7 days) | 14+ days |
-| Day of week | 7+ days |
-| Time of day | 2+ days |
-| Minute of hour | 2+ hours |
+| 1 час | 2+ часа |
+| 1 день (24 часа) | 7+ дней |
+| 1 неделя (7 дней) | 14+ дней |
+| День недели | 7+ дней |
+| Время дня | 2+ дня |
+| Минута часа | 2+ часа |
 
-Apart from those natural patterns, the forecaster looks for any repetitive patterns in the time series by breaking them based on a certain time window.
+Помимо этих естественных закономерностей, прогнозист ищет любые повторяющиеся закономерности во временном ряде, разбивая их на основе определенного временного окна.
 
-### Forecast step-by-step
+### Прогноз пошагово
 
-1. The seasonal forecaster estimates quartiles of the time series distribution at the time stamp of the next data point.
+1. Сезонный прогнозист оценивает квартили распределения временного ряда на отметке времени следующей точки данных.
 
-   ![Multi-step prediction algorithm - step 1](https://dt-cdn.net/images/multi-step-prediction-1-547-f8edff4ed6.png)
-2. The distribution for the value at the next time step is estimated from the quartiles. The bell curve in the image is for illustrative purposes and doesn't represent the distribution used in the sampling forecaster.
+   ![Многоступенчатый алгоритм прогнозирования - шаг 1](https://dt-cdn.net/images/multi-step-prediction-1-547-f8edff4ed6.png)
+2. Распределение для значения на следующем временном шаге оценивается из квартилей. Колоколообразная кривая на изображении приведена для иллюстрации и не представляет собой распределение, используемое в прогнозисте выборки.
 
-   ![Multi-step prediction algorithm - step 2](https://dt-cdn.net/images/multi-step-prediction-2-553-d30631c97f.png)
-3. The value for the next time step is sampled from the distribution obtained in step 2.
+   ![Многоступенчатый алгоритм прогнозирования - шаг 2](https://dt-cdn.net/images/multi-step-prediction-2-553-d30631c97f.png)
+3. Значение для следующего временного шага выбирается из распределения, полученного на шаге 2.
 
-   ![Multi-step prediction algorithm - step 3](https://dt-cdn.net/images/multi-step-prediction-3-565-fe5b638654.png)
-4. The value obtained in step 3 is now considered a part of the time series, and the forecaster repeats steps 1 to 4 until it reaches the forecast horizon.
+   ![Многоступенчатый алгоритм прогнозирования - шаг 3](https://dt-cdn.net/images/multi-step-prediction-3-565-fe5b638654.png)
+4. Значение, полученное на шаге 3, теперь считается частью временного ряда, и прогнозист повторяет шаги 1-4, пока не достигнет горизонта прогноза.
 
-   ![Multi-step prediction algorithm - step 4](https://dt-cdn.net/images/multi-step-prediction-4-559-33e251190f.png)
-5. The predicted data points form a single sampling path (shown in red in the image below).
+   ![Многоступенчатый алгоритм прогнозирования - шаг 4](https://dt-cdn.net/images/multi-step-prediction-4-559-33e251190f.png)
+5. Предсказанные точки данных образуют один путь выборки (показан красным на изображении ниже).
 
-   ![Multi-step prediction algorithm - step 5](https://dt-cdn.net/images/multi-step-prediction-5-1051-f971c5a471.png)
-6. The forecaster repeats this process N times, creating multiple sampling paths.
+   ![Многоступенчатый алгоритм прогнозирования - шаг 5](https://dt-cdn.net/images/multi-step-prediction-5-1051-f971c5a471.png)
+6. Прогнозист повторяет этот процесс N раз, создавая несколько путей выборки.
 
-   ![Multi-step prediction algorithm - step 6](https://dt-cdn.net/images/multi-step-prediction-6-1049-931db96b7b.png)
-7. The forecaster takes the sought-after quantile at each time step, forming the prediction interval (shown in light purple in the image below).
+   ![Многоступенчатый алгоритм прогнозирования - шаг 6](https://dt-cdn.net/images/multi-step-prediction-6-1049-931db96b7b.png)
+7. Прогнозист берет искомую квартилю на каждом временном шаге, образуя интервал прогноза (показан светло-фиолетовым на изображении ниже).
 
-   ![Multi-step prediction algorithm - step 7](https://dt-cdn.net/images/multi-step-prediction-7-1049-68f5d98212.png)
+   ![Многоступенчатый алгоритм прогнозирования - шаг 7](https://dt-cdn.net/images/multi-step-prediction-7-1049-68f5d98212.png)
 
-## Linear extrapolation forecaster
+## Прогнозист линейной экстраполяции
 
-The linear extrapolation forecaster is an algorithm that uses [simple linear regressionï»¿](https://en.wikipedia.org/wiki/Simple_linear_regression) to find the best-fitting line through a number of data points and extend this line into the future. The number of data points used to train the forecaster is determined as follows
+Прогнозист линейной экстраполяции — это алгоритм, который использует [простую линейную регрессию](https://en.wikipedia.org/wiki/Simple_linear_regression) для нахождения лучшей линии, проходящей через набор точек данных, и расширения этой линии в будущее. Количество точек данных, используемых для обучения прогнозиста, определяется следующим образом
 
-![Historical data points formula](https://dt-cdn.net/images/nhistory-286-b4c31416bc.webp)
+![Формула исторических точек данных](https://dt-cdn.net/images/nhistory-286-b4c31416bc.webp)
 
-where `n` is the length of the input time series.
+где `n` — длина входного временного ряда.
 
-To train the linear extrapolation forecaster, `nHistory` must contain **at least 14** non-null data points.
+Для обучения прогнозиста линейной экстраполяции `nHistory` должно содержать **не менее 14** не-null точек данных.
 
-For the sake of simplicity, we calculate the confidence interval under the assumption that the residuals are normally distributed as follows:
+Для простоты мы рассчитываем доверительный интервал, предполагая, что остатки распределены нормально, следующим образом:
 
-![Residuals distribution](https://dt-cdn.net/images/formula-1-280-ecc49db59c.png)
+![Распределение остатков](https://dt-cdn.net/images/formula-1-280-ecc49db59c.png)
 
-where tcrit is the 95th percentile of the [Student's *t*-distributionï»¿](https://en.wikipedia.org/wiki/Student's_t-distribution). The standard error is
+где tcrit — 95-й процентиль [распределения Стьюдента](https://en.wikipedia.org/wiki/Student's_t-distribution). Стандартная ошибка равна
 
-![Standard error](https://dt-cdn.net/images/formula-2-540-88b340f223.png)
+![Стандартная ошибка](https://dt-cdn.net/images/formula-2-540-88b340f223.png)
 
-where `XÌ` is the mean value of x, the sums taken over the training data, and `s` is the sample standard error of the last `nHistory` points of the input time series.
+где `XÌ` — среднее значение x, суммы берутся по обучающим данным, а `s` — выборочная стандартная ошибка последних `nHistory` точек входного временного ряда.
 
-![Linear extrapolation forecast](https://dt-cdn.net/images/linear-extrapolation-forecaster-976-e7c59a3803.png)
+![Прогноз линейной экстраполяции](https://dt-cdn.net/images/linear-extrapolation-forecaster-976-e7c59a3803.png)
 
-## Forecast quality assessment
+## Оценка качества прогноза
 
-After the predictions are generated, we assess their quality to spot potential numerical problems. To assess the forecast quality, the analyzer compares the standard deviation of the prediction to the standard deviation of the input time series (SDinput).
+После генерации прогнозов мы оцениваем их качество, чтобы обнаружить потенциальные численные проблемы. Для оценки качества прогноза анализатор сравнивает стандартное отклонение прогноза с стандартным отклонением входного временного ряда (SDinput).
 
-The standard deviation of the predictions (SDprediction) is calculated as the maximum standard deviation of the lower and upper bounds of the prediction interval as well as the standard deviation of the point prediction.
+Стандартное отклонение прогноза (SDprediction) рассчитывается как максимальное стандартное отклонение нижней и верхней границ прогнозного интервала, а также стандартное отклонение точечного прогноза.
 
-To account for acceptable trends in the predictions, the analyzer uses a scaling factor (SCF). When the length of the prediction data (Nprediction) is large compared to the input time series (Ninput), we allow a larger standard deviation of the prediction than for a small prediction.
+Чтобы учесть допустимые тенденции в прогнозах, анализатор использует коэффициент масштабирования (SCF). Когда длина прогнозных данных (Nprediction) велика по сравнению с входным временным рядом (Ninput), мы разрешаем большее стандартное отклонение прогноза, чем для небольшого прогноза.
 
-Additional input into the scale factor is the **Standard deviation factor** (SDfactor), with a default value of `100`. The scale factor is calculated as follows:
+Дополнительным входом в коэффициент масштабирования является **Коэффициент стандартного отклонения** (SDfactor) со значением по умолчанию `100`. Коэффициент масштабирования рассчитывается следующим образом:
 
-![Scale factor](https://dt-cdn.net/images/formula-4-341-b9b7afb192.png)
+![Коэффициент масштабирования](https://dt-cdn.net/images/formula-4-341-b9b7afb192.png)
 
-The forecast is evaluated by the following condition:
+Прогноз оценивается по следующему условию:
 
-![Assessment criterion](https://dt-cdn.net/images/formula-5-298-ca5993874c.png)
+![Критерий оценки](https://dt-cdn.net/images/formula-5-298-ca5993874c.png)
 
-If the condition is satisfied, the forecast is assessed as valid. Otherwise, the forecast is invalid.
+Если условие выполнено, прогноз оценивается как действительный. В противном случае прогноз считается недействительным.
 
-## Write DQL queries for forecasting
+## Запись DQL запросов для прогнозирования
 
-When using the forecast analysis in one of your [notebooks](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace."), you can write any DQL query that returns time series data in the [time series record format](#time-series-record-format).
+При использовании прогнозного анализа в одной из своих [тетрадей](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks "Анализ, визуализация и обмен идеями из ваших данных наблюдаемости — все в одном совместном, настраиваемом рабочем пространстве.") вы можете записать любой DQL запрос, который возвращает данные временного ряда в [формате записи временного ряда](#time-series-record-format).
 
-* If the data does not comply with one of the above formats, the forecast analysis fails.
-* Every numerical value in a data array must have at least one decimal point (for example, `1.0`).
+* Если данные не соответствуют одному из вышеуказанных форматов, прогнозный анализ завершается неудачно.
+* Каждое числовое значение в массиве данных должно иметь хотя бы одну десятичную точку (например, `1.0`).
 
-### Example queries
+### Примеры запросов
 
+Примеры запросов DQL ниже возвращают действительные ответы.
 
+* Команда [`timeseries`](/docs/platform/grail/dynatrace-query-language/commands/metric-commands#timeseries "DQL metric commands") DQL всегда возвращает ответ в формате записи временного ряда.
+* Вы также можете писать запросы, используя команду [`fetch`](/docs/platform/grail/dynatrace-query-language/commands/data-source-commands#fetch "DQL data source commands") вместе с командой [`summarize`](/docs/platform/grail/dynatrace-query-language/commands/aggregation-commands#summarize "DQL aggregation commands"). Эти запросы будут возвращать данные в формате единичного значения. Все записи должны иметь одинаковое расстояние (интервал) между ними. Это гарантировано при использовании команды `summarize`, поскольку она будет агрегировать и группировать значения для определенных временных интервалов. Каждая запись должна иметь поле с именем `value` типа double (см. [Формат единичного значения](#single-value-format) для получения дополнительной информации).
 
-The example DQL queries below yield valid responses.
+#### DQL команда timeseries
 
-* The [`timeseries`](/docs/platform/grail/dynatrace-query-language/commands/metric-commands#timeseries "DQL metric commands") DQL command always returns a response in the time series record format.
-* You can also write queries using the [`fetch`](/docs/platform/grail/dynatrace-query-language/commands/data-source-commands#fetch "DQL data source commands") command together with the [`summarize`](/docs/platform/grail/dynatrace-query-language/commands/aggregation-commands#summarize "DQL aggregation commands") command. Those queries will return data in the [single value format](#single-value-format). All records must have the same distance (interval) between them. This is guaranteed when using the `summarize` command, as it will aggregate and group values for the defined time bins. Every record needs to have a field named `value` of type double (see [Single value format](#single-value-format) for more info).
-
-#### DQL timeseries command
-
-The DQL `timeseries` command returns a result in the [time series record format](#time-series-record-format).
+Команда DQL `timeseries` возвращает результат в формате записи временного ряда.
 
 ```
 timeseries avg(dt.cloud.aws.rds.cpu.usage)
@@ -165,9 +163,9 @@ timeseries avg(dt.host.cpu.usage), interval: 1h, by: {dt.entity.host}, from: -3d
 timeseries avg(dt.host.disk.used), interval: 15m, by: {dt.entity.disk}, from: now()-2d, to: now()
 ```
 
-#### DQL fetch and summarize query
+#### DQL запрос fetch и summarize
 
-A DQL query using `fetch` and `summarize` commands returns a result in the [single value format](#single-value-format).
+Запрос DQL, использующий команды `fetch` и `summarize`, возвращает результат в формате единичного значения.
 
 ```
 fetch logs
@@ -193,11 +191,11 @@ fetch events, from: -3d
 | fieldsRename value=`count()`
 ```
 
-#### DQL data command
+#### DQL команда data
 
-You can use the DQL [`data`](/docs/platform/grail/dynatrace-query-language/commands/data-source-commands#data "DQL data source commands") command to generate a forecast for your own data. Any data can be used, as long as it conforms to one of the two formats.
+Вы можете использовать команду DQL [`data`](/docs/platform/grail/dynatrace-query-language/commands/data-source-commands#data "DQL data source commands") для генерации прогноза для своих собственных данных. Любые данные можно использовать, если они соответствуют одному из двух форматов.
 
-The following DQL `data` command returns a result in the [time series record format](#time-series-record-format).
+Следующая команда DQL `data` возвращает результат в формате записи временного ряда.
 
 ```
 data record(
@@ -367,28 +365,28 @@ data=array(
 )
 ```
 
-### Time series record format
+### Формат записи временного ряда
 
-In the time series record format, time series are defined as **simple double arrays**.
+В формате записи временного ряда временные ряды определяются как **простые массивы double**.
 
-* There can be multiple arrays per record entry and multiple separate record entries.
-* A valid time series response contains only time series records.
+* Может быть несколько массивов на одну запись и несколько отдельных записей.
+* Действительный ответ временного ряда содержит только записи временного ряда.
 
-A time series record must contain:
+Запись временного ряда должна содержать:
 
-* Exactly one field of type timeframe that contains a start and end [timestamp](/docs/platform/grail/dynatrace-query-language/data-types#timestamp "A list of DQL data types.")
-* Exactly one field of type [duration](/docs/platform/grail/dynatrace-query-language/data-types#duration "A list of DQL data types.")
-* One or more fields of type `array` that contain only [double](/docs/platform/grail/dynatrace-query-language/data-types#double "A list of DQL data types.") or [long](/docs/platform/grail/dynatrace-query-language/data-types#long "A list of DQL data types.") values and null
+* Именно одно поле типа timeframe, содержащее начало и конец [метки времени](/docs/platform/grail/dynatrace-query-language/data-types#timestamp "Список DQL типов данных.")
+* Именно одно поле типа [duration](/docs/platform/grail/dynatrace-query-language/data-types#duration "Список DQL типов данных.")
+* Одно или несколько полей типа `array`, содержащих только [double](/docs/platform/grail/dynatrace-query-language/data-types#double "Список DQL типов данных.") или [long](/docs/platform/grail/dynatrace-query-language/data-types#long "Список DQL типов данных.") значения и null
 
-  + All numeric arrays must have as many values as there are time steps of width duration between the start and end of the timeframe `(end-start)/duration`
-* Fields in a time series record other than the timeframe, duration, and numeric data arrays are considered to be dimensions
+  + Все числовые массивы должны иметь столько же значений, сколько шагов времени шириной duration между началом и концом timeframe `(end-start)/duration`
+* Поля в записи временного ряда, кроме timeframe, duration и числовых массивов данных, считаются измерениями
 
-DQL response in the time series record format
+DQL ответ в формате записи временного ряда
 
-The following JSON describes the structure of the record format.
+Следующий JSON описывает структуру формата записи.
 
-* The types of the record fields are specified in the `types` section.
-* The actual value of a field of type [duration](/docs/platform/grail/dynatrace-query-language/data-types#duration "A list of DQL data types.") is given in nanoseconds.
+* Типы полей записи указаны в разделе `types`.
+* Фактическое значение поля типа [duration](/docs/platform/grail/dynatrace-query-language/data-types#duration "Список DQL типов данных.") указано в наносекундах.
 
 ```
 {
@@ -435,7 +433,7 @@ The following JSON describes the structure of the record format.
 
 
 
-}
+)
 
 
 
@@ -495,15 +493,11 @@ The following JSON describes the structure of the record format.
 
 
 
-"mappings": {
+"mappings":?
 
 
 
 "element": { "type": "double" }
-
-
-
-}
 
 
 
@@ -519,27 +513,27 @@ The following JSON describes the structure of the record format.
 
 
 
-"secondTimeSeries": {
+"secondTimeSeries":?
 
 
 
-"type": "array",
+"type": "array",?
 
 
 
-"types": [
+"types":?
 
 
 
-{
+{?
 
 
 
-"indexRange": [0, 4],
+"indexRange": [0, 4],?
 
 
 
-"mappings": {
+"mappings":?
 
 
 
@@ -547,11 +541,7 @@ The following JSON describes the structure of the record format.
 
 
 
-}
-
-
-
-}
+?
 
 
 
@@ -559,15 +549,23 @@ The following JSON describes the structure of the record format.
 
 
 
-}
+?
 
 
 
-}
+?
 
 
 
-}
+]
+
+
+
+?
+
+
+
+]
 
 
 
@@ -578,42 +576,39 @@ The following JSON describes the structure of the record format.
 }
 ```
 
-### Single value format
+### Формат единичного значения
 
+В формате единичного значения каждая запись в наборе данных указывает единственное значение в временном ряду. Допускается ровно одно числовое поле на запись.
 
+Запись в допустимом формате единичного значения должна содержать:
 
-In the single value format, each record entry specifies a single value in the time series. Exactly one numeric field is allowed per record.
+* Ровно одно поле с именем `value` типа [double](/docs/platform/grail/dynatrace-query-language/data-types#double "Список DQL типов данных.")
+  или [long](/docs/platform/grail/dynatrace-query-language/data-types#long "Список DQL типов данных.")
+* Информацию о времени в виде:
+  + поля с именем `timestamp` типа [timestamp](/docs/platform/grail/dynatrace-query-language/data-types#timestamp "Список DQL типов данных.")
+  + поля с именем `timeframe` типа `timeframe`, содержащего начало и конец [timestamp](/docs/platform/grail/dynatrace-query-language/data-types#timestamp "Список DQL типов данных.")
 
-A record in a valid single value format response must contain:
+#### Интервал
 
-* Exactly one field named `value` of type [double](/docs/platform/grail/dynatrace-query-language/data-types#double "A list of DQL data types.")
-  values or [long](/docs/platform/grail/dynatrace-query-language/data-types#long "A list of DQL data types.")
-* Time information as either:
+Наименьший допустимый интервал (временная разница между двумя записями) составляет одну минуту.
 
-  + a field named `timestamp` of type [timestamp](/docs/platform/grail/dynatrace-query-language/data-types#timestamp "A list of DQL data types.")
-  + a field named `timeframe` of type `timeframe` that contains a start and end [timestamp](/docs/platform/grail/dynatrace-query-language/data-types#timestamp "A list of DQL data types.")
+* Интервал можно указать, добавив поле `interval` типа [duration](/docs/platform/grail/dynatrace-query-language/data-types#duration "Список DQL типов данных.").
+* Это поле также можно назвать `frequency`, хотя `interval` имеет приоритет, если оба указаны.
+* Если `interval`/`frequency` задан, он должен иметь одинаковое значение в каждой записи.
 
-#### Interval
+#### Измерения
 
-The smallest allowed interval (time difference between two records) is one minute.
+Измерения можно добавлять в виде дополнительных свойств.
 
-* An interval can be specified by adding a field `interval` of type [duration](/docs/platform/grail/dynatrace-query-language/data-types#duration "A list of DQL data types.").
-* This field can be named `frequency` as well, although `interval` takes precedence if both are specified.
-* If `interval`/`frequency` is set, it must have the same value in each entry.
+* Дополнительные свойства могут иметь только строковые значения.
+* Серия определяется на основе уникальных значений для каждого измерения. Записи с одинаковыми измерениями (строковые свойства) считаются принадлежащими к одной и той же временной серии.
 
-#### Dimensions
+DQL ответ в формате единичного значения
 
-Dimensions can be added as additional properties.
+Следующий JSON описывает структуру формата единичного значения.
 
-* Additional properties can have only string values.
-* A series is defined based on the distinct values for each dimension. Record entries with the same dimensions (string properties) are considered to belong to the same time series.
-
-DQL response in the single value format
-
-The following JSON describes the structure of the single value format.
-
-* The types of the record fields are specified in the `types` section.
-* The actual value of a field of type [duration](/docs/platform/grail/dynatrace-query-language/data-types#duration "A list of DQL data types.") is given in nanoseconds.
+* Типы полей записи указаны в разделе `types`.
+* Фактическое значение поля типа [duration](/docs/platform/grail/dynatrace-query-language/data-types#duration "Список DQL типов данных.") задается в наносекундах.
 
 ```
 {
@@ -732,7 +727,7 @@ The following JSON describes the structure of the single value format.
 
 
 
-}
+)
 
 
 
@@ -832,7 +827,7 @@ The following JSON describes the structure of the single value format.
 
 
 
-}
+)
 
 
 
@@ -876,11 +871,11 @@ The following JSON describes the structure of the single value format.
 
 
 
-}
+)
 
 
 
-}
+)
 
 
 
@@ -891,175 +886,175 @@ The following JSON describes the structure of the single value format.
 }
 ```
 
-## Example forecasts
+## Примеры прогнозов
 
-The quality of the forecast depends on the quality of data you're feeding to the analyzer and the width of the timeframe you want to predict. The best results are derived for a short timeframe from data without noise and with clear seasonal patterns. Here are some examples of forecasts for various types of data.
+Качество прогноза зависит от качества данных, которые вы подаете анализатору, и ширины временного интервала, который вы хотите спрогнозировать. Лучшие результаты получаются для короткого временного интервала из данных без шума и с четкими сезонными закономерностями. Вот некоторые примеры прогнозов для различных типов данных.
 
-No seasonality, downward trend
+Нет сезонности, нисходящая тенденция
 
-This example shows the forecast for an available disk metric. There's no seasonal pattern in the data, and there's a downward trend. Here, the [linear extrapolation forecaster](#linear-extrapolation) is used, producing a wide forecasted interval.
+Этот пример показывает прогноз для доступного дискового метрика. В данных нет сезонной закономерности, и есть нисходящая тенденция. Здесь используется [линейный экстраполятор](#linear-extrapolation), производящий широкий интервал прогноза.
 
-![Forecast - Disk capacity](https://dt-cdn.net/images/disk-capacity-notebook-forecast-result-1541-792e2fa2cf.png)
+![Прогноз - Емкость диска](https://dt-cdn.net/images/disk-capacity-notebook-forecast-result-1541-792e2fa2cf.png)
 
-Seasonal data with noise
+Сезонные данные со шумом
 
-This example shows the forecast for a 1.5-hour timeframe. Notice that the forecasted interval is not smooth, reflecting the noise in input data.
+Этот пример показывает прогноз для временного интервала 1,5 часа. Обратите внимание, что интервал прогноза не гладкий, отражая шум в входных данных.
 
-![Seasonal forecast with noise](https://dt-cdn.net/images/seasonal-forecast-with-noise-result-1731-9d50baa8e5.png)
+![Сезонный прогноз со шумом](https://dt-cdn.net/images/seasonal-forecast-with-noise-result-1731-9d50baa8e5.png)
 
-Seasonal data with noise on an extended timeframe
+Сезонные данные со шумом на расширенном временном интервале
 
-This example shows the forecast for a 6-hours timeframe. Apart from an extensive forecast timeframe, the data itself has some noise and a downward trend that affect forecast qualityâthe forecasted interval widens more and more as it goes into the future.
+Этот пример показывает прогноз для временного интервала 6 часов. Помимо обширного временного интервала прогноза, сами данные имеют некоторый шум и нисходящую тенденцию, которые влияют на качество прогноза - интервал прогноза становится все шире и шире, когда он продвигается в будущее.
 
-![Seasonal forecast with noise over 6-hour timeframe](https://dt-cdn.net/images/seasonal-forecast-with-noise-result-6h-1730-75d0e7ceb1.png)
+![Сезонный прогноз со шумом за 6-часовой временной интервал](https://dt-cdn.net/images/seasonal-forecast-with-noise-result-6h-1730-75d0e7ceb1.png)
 
 ---
 
 ## dynatrace-intelligence/reference/ai-models/seasonal-baseline.md
 
 ---
-title: Seasonal baseline
+title: Сезонная базовая линия
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/reference/ai-models/seasonal-baseline
-scraped: 2026-02-24T21:20:32.035896
+scraped: 2026-02-25T21:32:42.856962
 ---
 
-# Seasonal baseline
+# Сезонная базовая линия
 
-# Seasonal baseline
+# Сезонная базовая линия
 
-* Latest Dynatrace
-* Explanation
-* 5-min read
-* Updated on Jan 28, 2026
+* Последнее Dynatrace
+* Объяснение
+* 5-минутное чтение
+* Обновлено 28 января 2026 г.
 
-A seasonal baseline represents a dynamic approach to baselining where the systems have distinct seasonality patterns. An example of a seasonal pattern is a metric that rises during business hours and lies low outside of them. For such a case, it is difficult to set up an alerting configuration based on a static or auto-adaptive threshold. If you set a fixed threshold based on business hours' behavior, you'll miss an anomaly outside of business hours. Dynatrace Intelligence **learns the seasonal behavior** of your metrics and automatically creates a confidence band for it.
+Сезонная базовая линия представляет собой динамический подход к базовой линии, где системы имеют разные сезонные закономерности. Примером сезонной закономерности является метрика, которая увеличивается в течение рабочих часов и остается низкой вне их. В таком случае сложно настроить конфигурацию оповещения на основе статического или автоадаптивного порога. Если вы установите фиксированный порог на основе поведения в рабочие часы, вы пропустите аномалию вне рабочих часов. Dynatrace Intelligence **изучает сезонное поведение** ваших метрик и автоматически создает доверительный интервал для него.
 
-When the configuration of a metric event includes multiple entities, each entity receives its own seasonal baseline, and each baseline is evaluated independently. For example, if the scope of an event includes five services, Dynatrace calculates and evaluates five independent baselines.
+Когда конфигурация события метрики включает несколько сущностей, каждая сущность получает свою собственную сезонную базовую линию, и каждая базовая линия оценивается независимо. Например, если область действия события включает пять сервисов, Dynatrace вычисляет и оценивает пять независимых базовых линий.
 
-## Baseline example
+## Пример базовой линии
 
-In this example, we're looking at the number of user actions in an application. Real user interactions often follow the seasonality of business hours and weekends, and our time series also shows daily peaks.
+В этом примере мы рассматриваем количество действий пользователей в приложении. Реальные взаимодействия пользователей часто следуют сезонности рабочих часов и выходных, и наш временной ряд также показывает ежедневные пики.
 
-When evaluated by a static threshold, those daily peaks result in false-positive alarms (red annotation within the chart).
+Когда оценивается статическим порогом, эти ежедневные пики приводят к ложноположительным сигналам тревоги (красная аннотация на графике).
 
-![Static threshold based anomaly detection producing false-positive alarms in case of seasonal timeseries behavior.](https://dt-cdn.net/images/notebook-static-threshold-anomalies-1920-b17476b1bd.png)
+![Статический порог обнаружения аномалий, производящий ложноположительные сигналы тревоги в случае сезонного поведения временного ряда.](https://dt-cdn.net/images/notebook-static-threshold-anomalies-1920-b17476b1bd.png)
 
-Dynatrace Intelligence automatically detects seasonal behavior in the time series and creates a confidence band based on that pattern. As you can see on the chart below, the model recognizes seasonality and doesn't generate false alarms on the peaks. However, it will still trigger an alert should a spike occur at a different time.
+Dynatrace Intelligence автоматически обнаруживает сезонное поведение во временном ряду и создает доверительный интервал на основе этой закономерности. Как вы можете видеть на графике ниже, модель распознает сезонность и не генерирует ложные сигналы тревоги на пиках. Однако она все равно сработает, если происходит скачок в другое время.
 
-![Seasonal anomaly detection model correctly follows the seasonal behavior of a timeseries and avoids false-positive alarms.](https://dt-cdn.net/images/notebooks-seasonal-baseline-1920-c6aa3be336.png)
+![Сезонная модель обнаружения аномалий правильно следует сезонному поведению временного ряда и избегает ложноположительных сигналов тревоги.](https://dt-cdn.net/images/notebooks-seasonal-baseline-1920-c6aa3be336.png)
 
-## Parameters of the baseline model
+## Параметры модели базовой линии
 
-The seasonal baseline model uses the metric values for each minute during the **last 14 days** as the reference for the baseline calculation. The model learns the usual behavior of the metric and aims to detect regularly repeating patterns. It uses **probabilistic prediction** to compute the confidence band, which covers the expected range of a future point.
+Модель сезонной базовой линии использует значения метрик за каждую минуту за **последние 14 дней** в качестве эталона для расчета базовой линии. Модель изучает обычное поведение метрики и стремится обнаружить регулярно повторяющиеся закономерности. Она использует **вероятностное прогнозирование** для расчета доверительного интервала, который охватывает ожидаемый диапазон будущей точки.
 
-You can adapt the width of the confidence band via the **tolerance** parameter. A higher tolerance means a broader confidence band, leading to fewer triggered events. The allowed range for the tolerance is from `0.1` to `10`, with `4` as the default value.
+Вы можете адаптировать ширину доверительного интервала с помощью параметра **допустимой погрешности**. Более высокая допустимая погрешность означает более широкий доверительный интервал, что приводит к меньшему количеству срабатываний событий. Разрешенный диапазон для допустимой погрешности составляет от `0,1` до `10`, с `4` в качестве значения по умолчанию.
 
-As the name suggests, the seasonal model is beneficial for data with seasonal patterns (for example, daily peaks). As it consumes significant resources and needs more time to learn the behavior, there are some validation checks to ensure optimal performance. The [validation](#training) evaluates each tuple (unique combinations of metricâdimensionâdimension value). If there's no pass, a simple model is used instead, with the respective message appearing in the preview.
+Как следует из названия, сезонная модель полезна для данных с сезонными закономерностями (например, ежедневными пиками). Поскольку она потребляет значительные ресурсы и требует больше времени для изучения поведения, существуют некоторые проверки валидации для обеспечения оптимальной производительности. [Валидация](#training) оценивает каждую пару (уникальные комбинации метрики - размерность - значение размерности). Если проверка не проходит, используется простая модель, и соответствующее сообщение появляется в предварительном просмотре.
 
-The simple model calculates the confidence band based on the robust estimation of the distribution of the input data and its calculated interval stays constant over time. For the simple model, the **tolerance** parameter controls the width of the confidence band in the same manner as for the seasonal model.
+Простая модель рассчитывает доверительный интервал на основе робастного оценщика распределения входных данных, и его рассчитанный интервал остается постоянным во времени. Для простой модели параметр **допустимой погрешности** контролирует ширину доверительного интервала таким же образом, как и для сезонной модели.
 
-If **metric boundaries** (minimum or maximum value of the metric) are set in the metric metadata they are automatically considered in the model. If no metric boundaries are set and the input data contains only positive values, the model automatically sets a minimum boundary value of `0`. If a minimum or maximum value is found, the confidence band does not exceed this value.
+Если **границы метрик** (минимальное или максимальное значение метрики) заданы в метаданных метрики, они автоматически учитываются в модели. Если границы метрик не заданы и входные данные содержат только положительные значения, модель автоматически задает минимальное значение границы `0`. Если найдено минимальное или максимальное значение, доверительный интервал не превышает это значение.
 
-The model (be it seasonal or simple) is updated daily.
+Модель (сезонная или простая) обновляется ежедневно.
 
-Another important parameter for seasonal baselines is the [sliding window](/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-configuration#sliding-window "How to set up an alert for missing measurements.") that is used to compare current measurements against the confidence band. It defines how often the confidence band must be violated within a sliding window of time to raise an event (violations don't have to be successive). This approach helps to reduce the number of false positives when alerting. You can set the sliding window to a maximum of 60 minutes.
+Другим важным параметром для сезонных базовых линий является [скользящее окно](/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-configuration#sliding-window "Настройка оповещения для пропущенных измерений.") , которое используется для сравнения текущих измерений с доверительным интервалом. Оно определяет, как часто доверительный интервал должен быть нарушен в течение скользящего окна времени, чтобы сработать событие (нарушения не должны быть последовательными). Этот подход помогает уменьшить количество ложных положительных сигналов при оповещении. Вы можете задать скользящее окно до максимально 60 минут.
 
-## Training of the baseline model
+## Обучение модели базовой линии
 
-The seasonal baseline model uses the metric values for each minute during the last 14 days for training and is trained per tuple (unique combinations of metricâdimensionâdimension value). The training happens on daily basis.
+Модель сезонной базовой линии использует значения метрик за каждую минуту за последние 14 дней для обучения и обучается по паре (уникальные комбинации метрики - размерность - значение размерности). Обучение происходит ежедневно.
 
-The image below provides an overview of the training process.
+Ниже представлена схема процесса обучения.
 
-![seasonal baseline model overview](https://dt-cdn.net/images/seasonal-baseline-model-training-1187-8bd05de831.png)
+![Обзор модели сезонной базовой линии](https://dt-cdn.net/images/seasonal-baseline-model-training-1187-8bd05de831.png)
 
-The first step, **data validation**, ensures that it is reasonable to train a seasonal model on the metric data. Here are some reasons to switch to a simple model:
+Первый шаг, **валидация данных**, гарантирует, что обучение сезонной модели на данных метрик является разумным. Вот некоторые причины для перехода на простую модель:
 
-* the data has many missing values
-* the data has many outliers
-* there is not enough variability in the data
-* there is no seasonality detectable in the data.
+* данные имеют много пропущенных значений
+* данные имеют много выбросов
+* в данных недостаточно вариативности
+* в данных нет обнаруживаемой сезонности.
 
-If this validation fails, the **simple model** is used instead. If the validation is successful, the next step is the **pre-processing of the input data**. In this step the data is prepared for training the quantile regression model which learns the seasonal behavior from three main characteristics (features) of data:
+Если эта валидация не проходит, используется **простая модель**. Если валидация проходит успешно, следующим шагом является **предварительная обработка входных данных**. На этом этапе данные готовятся для обучения модели квантильной регрессии, которая изучает сезонное поведение из трех основных характеристик (фич) данных:
 
-* **Autoregressive features** are the ten most recent historic data points (small gaps are interpolated)
-* **Time and day features** identify a day or a specific time of a day which can help to learn a pattern occurring only on a specific day
-* **Robust seasonal patterns** describe regular repeating patterns extracted via Fourier transformation.
+* **Авторегрессивные фичи** - это десять наиболее недавних исторических точек данных (маленькие разрывы интерполируются)
+* **Фичи времени и дня** идентифицируют день или конкретное время дня, которое может помочь изучить закономерность, возникающую только в конкретный день
+* **Робастные сезонные закономерности** описывают регулярно повторяющиеся закономерности, извлеченные с помощью преобразования Фурье.
 
-These features are used to train the **Quantile regression model**, a probabilistic regression model, that is robust against outliers due to estimating quantiles.
+Эти фичи используются для обучения **модели квантильной регрессии**, вероятностной регрессионной модели, которая является робастной против выбросов благодаря оценке квантилей.
 
-The next step is the **Model validation**, which verifies the reliability of the forecasted quantiles on a subset of data. If this validation fails, the **simple model** is used instead.
+Следующим шагом является **валидация модели**, которая проверяет надежность прогнозируемых квантилей на подмножестве данных. Если эта валидация не проходит, используется **простая модель**.
 
-After the training is finished, Dynatrace uses the seasonal model to detect anomalies. Each minute the model produces a **one-step-ahead forecast** of the confidence band for the next minute. Once the actual data point arrives, the predicted confidence interval is compared with the actual value to check whether the value is within the predicted boundaries.
+После завершения обучения Dynatrace использует сезонную модель для обнаружения аномалий. Каждую минуту модель производит **прогноз доверительного интервала** на следующую минуту. Как только фактическая точка данных приходит, прогнозируемый доверительный интервал сравнивается с фактическим значением, чтобы проверить, находится ли значение в пределах прогнозируемого интервала.
 
-## Related topics
+## Связанные темы
 
-* [Metrics Classic](/docs/analyze-explore-automate/metrics-classic "Learn about metrics classic that Dynatrace offers.")
+* [Метрики Classic](/docs/analyze-explore-automate/metrics-classic "Узнайте о метриках Classic, которые Dynatrace предлагает.")
 
 ---
 
 ## dynatrace-intelligence/reference/ai-models.md
 
 ---
-title: AI models
+title: Модели ИИ
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/reference/ai-models
-scraped: 2026-02-22T21:19:21.837923
+scraped: 2026-02-25T21:17:24.853968
 ---
 
-# AI models
+# Модели ИИ
 
-# AI models
+# Модели ИИ
 
-* Latest Dynatrace
-* Overview
-* 1-min read
-* Updated on Jan 28, 2026
+* Последнее Dynatrace
+* Обзор
+* 1-минутное чтение
+* Обновлено 28 января 2026 г.
 
-Dynatrace Intelligence uses specialized AI models to analyze your environment and provide actionable insights. These models power different capabilities, from anomaly detection and root cause analysis to predictive analytics and performance optimization. Each model is designed for specific use cases and provides different types of intelligence to help you understand and improve your systems.
+Интеллект Dynatrace использует специализированные модели ИИ для анализа вашей среды и предоставления действенных рекомендаций. Эти модели обеспечивают различные возможности, от обнаружения аномалий и анализа коренной причины до прогностического анализа и оптимизации производительности. Каждая модель предназначена для конкретных случаев использования и предоставляет разные типы интеллекта, чтобы помочь вам понять и улучшить ваши системы.
 
-[#### Dynatrace Intelligence causal correlation analysis
+[#### Анализ причинно-следственной корреляции интеллекта Dynatrace
 
-Learn how Dynatrace Intelligence causal correlation analysis finds related metrics across your environment.
+Узнайте, как анализ причинно-следственной корреляции интеллекта Dynatrace находит связанные метрики во всей вашей среде.
 
-* Explanation
+* Объяснение
 
-Read this explanation](/docs/dynatrace-intelligence/reference/ai-models/causal-correlation-analysis)[#### Dynatrace Intelligence predictive AI analysis
+Прочитайте это объяснение](/docs/dynatrace-intelligence/reference/ai-models/causal-correlation-analysis)[#### Прогностический анализ ИИ интеллекта Dynatrace
 
-Learn how Dynatrace Intelligence predictive AI generates forecasts.
+Узнайте, как прогностический ИИ интеллекта Dynatrace генерирует прогнозы.
 
-* Explanation
+* Объяснение
 
-Read this explanation](/docs/dynatrace-intelligence/reference/ai-models/forecast-analysis)[#### Seasonal baseline
+Прочитайте это объяснение](/docs/dynatrace-intelligence/reference/ai-models/forecast-analysis)[#### Сезонная базовая линия
 
-How Dynatrace Intelligence suggests seasonal baseline thresholds for a scope of entities.
+Как интеллект Dynatrace предлагает пороги сезонной базовой линии для области сущностей.
 
-* Explanation
+* Объяснение
 
-Read this explanation](/docs/dynatrace-intelligence/reference/ai-models/seasonal-baseline)
+Прочитайте это объяснение](/docs/dynatrace-intelligence/reference/ai-models/seasonal-baseline)
 
 ---
 
 ## dynatrace-intelligence/reference/davis-ai-limits.md
 
 ---
-title: Dynatrace Intelligence limits
+title: Dynatrace Intelligence ограничения
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/reference/davis-ai-limits
-scraped: 2026-02-23T21:25:01.988893
+scraped: 2026-02-25T21:31:18.511061
 ---
 
-# Dynatrace Intelligence limits
+# Dynatrace Intelligence ограничения
 
-# Dynatrace Intelligence limits
+# Dynatrace Intelligence ограничения
 
-* Latest Dynatrace
-* Reference
-* 5-min read
-* Updated on Feb 04, 2026
+* Последнее Dynatrace
+* Справочник
+* 5-минутное чтение
+* Обновлено 4 февраля 2026 г.
 
-The following page lists the default limits of Dynatrace Intelligence components.
+На этой странице перечислены ограничения компонентов Dynatrace Intelligence по умолчанию.
 
-## Problems and events
+## Проблемы и события
 
-Some of the problems and events limits apply per provider. The following providers are subject to limits:
+Некоторые ограничения проблем и событий применяются для каждого поставщика. Следующие поставщики подлежат ограничениям:
 
 * `AGENT_LOCAL_REST_API_INGEST`
 * `AVAILABILITY`
@@ -1074,207 +1069,48 @@ Some of the problems and events limits apply per provider. The following provide
 * `REAL_USER_MONITORING`
 * `SYNTHETIC`
 
-### Number of simultaneously active Davis problems
+### Количество одновременно активных проблем Davis
 
-The maximum number of simultaneously active Davis problems within a single environment is 10,000.
+Максимальное количество одновременно активных проблем Davis в одной среде составляет 10 000.
 
-### Number of simultaneously active Davis events
+### Количество одновременно активных событий Davis
 
-The maximum number of simultaneously active Davis events within a single environment, across all event providers, is 15,000.
+Максимальное количество одновременно активных событий Davis в одной среде, во всех поставщиках событий, составляет 15 000.
 
-### Number of simultaneously active Davis events per provider
+### Количество одновременно активных событий Davis на поставщика
 
-The maximum number of simultaneously active Davis events per event provider is 4,000. Example of the event provider: `event.provider = "AVAILABILITY"`.
+Максимальное количество одновременно активных событий Davis на поставщика событий составляет 4 000. Пример поставщика событий: `event.provider = "AVAILABILITY"`.
 
-### Number of Davis events processed every hour
+### Количество обработанных событий Davis в час
 
-The maximum number of Davis events per event provider that can be processed within an hour is 100,000. This limit is replenished every hour.
+Максимальное количество событий Davis на поставщика, которые можно обработать в течение часа, составляет 100 000. Это ограничение пополняется каждый час.
 
-Certain events override default limits. See the table below for more information.
+Определенные события переопределяют ограничения по умолчанию. См. таблицу ниже для получения дополнительной информации.
 
-Event provider
+### Максимальный срок жизни события
 
-Maximum limit
+Максимальный срок жизни для активных событий составляет 60 дней. Если основная аномалия не исчезает после 60 дней, соответствующее событие закрывается и создается новое.
 
-`AVAILABILITY`
+### Временной интервал слияния проблем
 
-200,000 Davis events processed per hour.
+Максимальный временной интервал слияния проблем составляет 90 минут. Если проблема остается нерешенной более 90 минут, после этого в нее не будут объединены новые события.
 
-`METRIC_EVENTS`
+Эта мера гарантирует, что Dynatrace Intelligence избегает сбора не связанной информации для длительных инцидентов.
 
-200,000 Davis events processed per hour.
+## Обнаружение аномалий - новое **Обнаружение аномалий**
 
-* `AGENT_LOCAL_REST_API_INGEST`
-* `BASELINING`
-* `EVENTS_REST_API_INGEST`
-* `KUBERNETES_ANOMALY_DETECTION`
-* `KUBERNETES_EVENT`
-* `LOG_EVENTS`
-* `ONEAGENT`
-* `OPENPIPELINE_DATA_EXTRACTION`
-* `REAL_USER_MONITORING`
-* `SYNTHETIC`
+### Пользовательские оповещения
 
-The default of 100,000 Davis events processed per hour applies.
+### События метрик
 
-### Event maximum lifetime
+#### Общие
 
-The maximum lifetime for active events is 60 days. If the underlying anomaly doesn't disappear after 60 days, the respective event is closed and a new one is created.
+#### События селекторов метрик
 
-### Problem merging timeframe
+#### События ключей метрик
 
-The maximum problem merging timeframe is 90 minutes. If the problem remains unresolved for more than 90 minutes, no new events will be merged into it after that.
+### Симуляция ноутбука и панели управления
 
-This measure ensures that Dynatrace Intelligence avoids collecting unrelated information for long-lasting incidents.
-
-## Anomaly Detection - new **Anomaly Detection**
-
-### Custom alerts
-
-Item
-
-Maximum limit
-
-Description
-
-Number of custom alert configurations
-
-1,000 per environment
-
-The maximum number of custom alerts that can be configured.
-
-Grail query request timeout
-
-10 seconds
-
-The maximum time limit for the query execution.
-
-Number of auto-adaptive threshold monitored dimensions
-
-10,000 per configuration
-
-The maximum number of auto-adaptive threshold monitored dimensions. Once the limit is reached, no additional dimensions will be monitored.
-
-Number of seasonal baseline monitored dimensions
-
-10,000 per configuration
-
-The maximum number of seasonal baseline monitored dimensions. Once the limit is reached, no additional dimensions will be monitored.
-
-### Metric events
-
-#### General
-
-Item
-
-Maximum limit
-
-Description
-
-Number of metric events
-
-10,000 per environment
-
-The maximum number of metric events that can be configured.
-
-#### Metric selector events
-
-Item
-
-Maximum limit
-
-Description
-
-Number of monitored dimensions
-
-100,000
-
-This limit applies across all customer-defined metric selector metric events.
-
-Dynatrace also counts aggregated dimensions towards the limit. Once the limit is reached, no additional dimensions will be monitored.
-
-Number of static threshold metric event configurations
-
-100
-
-The maximum number of static threshold model metric event configurations created with metric selector.
-
-Number of static threshold monitored dimensions
-
-1,000 per configuration
-
-The maximum number of static threshold monitored dimensions. Once the limit is reached, no additional dimensions will be monitored.
-
-Number of auto-adaptive threshold metric event configurations
-
-100
-
-The maximum number of metric event configurations that use the auto-adaptive threshold model.
-
-Number of auto-adaptive threshold monitored dimensions
-
-1,000 per configuration
-
-The maximum number of auto-adaptive threshold monitored dimensions. Once the limit is reached, no additional dimensions will be monitored.
-
-Number of seasonal baseline metric event configurations
-
-100
-
-The maximum number of metric event configurations that use the seasonal baseline model.
-
-Number of seasonal baseline monitored dimensions
-
-500 per configuration
-
-The maximum number of seasonal baseline monitored dimensions. Once the limit is reached, no additional dimensions will be monitored.
-
-Hard monitored dimension limit
-
-10,000 per configuration
-
-If the number of monitored dimensions exceeds the hard limit, the query will start failing.
-
-#### Metric key events
-
-Item
-
-Maximum limit
-
-Description
-
-Number of simultaneously active alerts
-
-200 per configuration
-
-The maximum number of simultaneously active alerts per metric key-based configuration.
-
-### Notebook & Dashboard Simulation
-
-Item
-
-Maximum limit
-
-Description
-
-Data records
-
-1,000
-
-The maximum number of timeseries data records that can be uniquely simulated per single data analyzer execution.
-
-## Dynatrace Intelligence generative AI
-
-Item
-
-Maximum limit
-
-Individual user requests
-
-25 requests per 15 minutes
-
-All user requests across the environment
-
-60 requests per 15 minutes
+## Dynatrace Intelligence генеративный ИИ
 
 ---

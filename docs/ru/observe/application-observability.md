@@ -1,7 +1,7 @@
 ---
 title: Application Observability
 source: https://www.dynatrace.com/docs/observe/application-observability
-scraped: 2026-02-24T21:15:55.778940
+scraped: 2026-02-25T21:13:32.050835
 ---
 
 # Application Observability

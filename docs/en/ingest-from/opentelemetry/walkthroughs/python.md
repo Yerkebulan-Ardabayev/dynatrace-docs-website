@@ -1,7 +1,7 @@
 ---
 title: Instrument your Python application with OpenTelemetry
 source: https://www.dynatrace.com/docs/ingest-from/opentelemetry/walkthroughs/python
-scraped: 2026-02-24T21:16:30.440995
+scraped: 2026-02-25T21:21:22.105360
 ---
 
 # Instrument your Python application with OpenTelemetry
@@ -29,5 +29,5 @@ The following features are currently supported by OpenTelemetry Python.
 
 ## Related topics
 
-* [Enrich ingested data with Dynatrace-specific dimensions](/docs/ingest-from/extend-dynatrace/extend-data "Learn how to automatically enrich your telemetry data with Dynatrace-specific dimensions.")
-* [Get started](/docs/observe/dynatrace-for-ai-observability/get-started "Learn how to set up OpenLLMetry to observe an AI/ML model.")
+* [Enrich ingested data with Dynatrace-specific fields](/docs/ingest-from/extend-dynatrace/extend-data "Learn how to automatically enrich your telemetry data with Dynatrace-specific fields.")
+* [Get started](/docs/observe/dynatrace-for-ai-observability/get-started "Get started with OpenLLMetry and OpenTelemetry for AI Observability.")

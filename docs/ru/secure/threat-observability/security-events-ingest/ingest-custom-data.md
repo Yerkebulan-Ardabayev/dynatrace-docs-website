@@ -1,7 +1,7 @@
 ---
 title: Ingest custom security events via API
 source: https://www.dynatrace.com/docs/secure/threat-observability/security-events-ingest/ingest-custom-data
-scraped: 2026-02-22T21:20:14.682188
+scraped: 2026-02-25T21:20:03.648438
 ---
 
 # Ingest custom security events via API
@@ -45,46 +45,6 @@ Built-in API endpoint
 
 Custom API endpoint
 
-Endpoint URL
-
-Method
-
-Authentication
-
-Scope
-
-Payload
-
-`https://{your-environment-id}.live.dynatrace.com/platform/ingest/v1/security.events`
-
-POST
-
-[Access token](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens#create-api-token "Learn the concept of an access token and its scopes.")
-
-`openpipeline.events_security`
-
-`application/json`
-
-Endpoint URL
-
-Method
-
-Authentication
-
-Scope
-
-Payload
-
-`https://{your-environment-id}.live.dynatrace.com/platform/ingest/custom/security.events/<your-custom-endpoint-name>`
-
-POST
-
-[Access token](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens#create-api-token "Learn the concept of an access token and its scopes.")
-
-`openpipeline.events_security.custom`
-
-`application/json`
-
 For details on how to perform the API ingest, see [Learn moreï»¿](https://dt-url.net/1r03q9s).
 
 ## Details
@@ -92,32 +52,6 @@ For details on how to perform the API ingest, see [Learn moreï»¿](https://dt-
 ### How it works
 
 You ingest your data into Grail via our [built-in API endpoint](#default) or a [custom API endpoint](#custom). Then, depending on the ingest option chosen, you can either analyze data in your format or manually map data to the [Semantic Dictionary conventionsï»¿](https://dt-url.net/3q03pb0).
-
-Ingest options
-
-Built-in API endpoint
-
-Custom API endpoint
-
-Description
-
-You can use and extend our built-in security events endpoint to ingest custom security events via API.
-
-You can [createï»¿](https://dt-url.net/jd23q7s) and [configureï»¿](https://dt-url.net/k203p5t) from scratch a generic endpoint to ingest custom security events via API.
-
-Details
-
-* **Preset bucket**: Security events are stored in a bucket called `default_securityevents` (for details, see: [Built-in Grail buckets](/docs/platform/grail/organize-data#built-in-grail-buckets "Insights on the Grail data model consisting of buckets, tables, and views.")).
-* **Fixed endpoint URL**: One URL for all use cases and products.
-* **Data enrichment**: A static `event.kind == "SECURITY_EVENT"` field is added to the event to mark it as a security event.
-* **Mapping**: No mapping is applied; data stays in the original format. This means you can analyze data based on your format and create custom dashboards and workflows.
-
-  + Alternatively, you can [configure a processing pipelineï»¿](https://dt-url.net/k203p5t) to map data manually to the [Semantic Dictionary conventionsï»¿](https://dt-url.net/3q03pb0). This way you can use our sample [dashboardï»¿](https://dt-url.net/j923p97), [Jira workflowï»¿](https://dt-url.net/l103p3t), and [Slack workflowï»¿](https://dt-url.net/a643qqd) to visualize data and automatize notifications.
-
-* **Custom bucket**: You can select or create the bucket where the security events will be stored.
-* **Custom endpoint URL**: You can configure dedicated URLs for specific use cases or products.
-* **Data enrichment**: You can define custom data enrichments.
-* **Mapping**: You can configure your endpoint to map data to the [Semantic Dictionary conventionsï»¿](https://dt-url.net/3q03pb0). This way you can use our sample [dashboardï»¿](https://dt-url.net/j923p97), [Jira workflowï»¿](https://dt-url.net/l103p3t), and [Slack workflowï»¿](https://dt-url.net/a643qqd) to visualize data and automatize notifications. For details, see [Configure a processing pipelineï»¿](https://dt-url.net/k203p5t).
 
 ### Response codes
 

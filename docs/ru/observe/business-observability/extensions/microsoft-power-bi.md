@@ -1,7 +1,7 @@
 ---
 title: Microsoft Power BI
 source: https://www.dynatrace.com/docs/observe/business-observability/extensions/microsoft-power-bi
-scraped: 2026-02-24T21:28:52.628921
+scraped: 2026-02-25T21:17:58.122381
 ---
 
 # Microsoft Power BI

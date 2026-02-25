@@ -1,19 +1,19 @@
 ---
-title: Впрыск данных
+title: Ингестируйте данные
 source: https://www.dynatrace.com/docs/ingest-from
-scraped: 2026-02-24T21:17:30.379638
+scraped: 2026-02-25T21:17:13.421398
 ---
 
-# Впрыск данных
+# Ингестируйте данные
 
-# Впрыск данных
+# Ингестируйте данные
 
 * Последнее Dynatrace
 * Обзор
-* 1-мин чтение
+* 1-минутное чтение
 * Опубликовано 15 ноября 2017 г.
 
-Dynatrace обеспечивает мониторинг инфраструктуры, а также полноэкранный мониторинг ваших приложений и сервисов посредством автоматической инструментации с помощью нашей технологии OneAgent. Узнайте, как развернуть Dynatrace на [поддерживаемых платформах](/docs/ingest-from/technology-support "Найдите технические детали, связанные с поддержкой Dynatrace для конкретных платформ и фреймворков разработки.").
+Dynatrace обеспечивает мониторинг инфраструктуры, а также полноэкранный мониторинг ваших приложений и сервисов посредством автоматической инструментовки с помощью нашей технологии OneAgent. Узнайте, как развернуть Dynatrace на [поддерживаемых платформах](/docs/ingest-from/technology-support "Найдите технические подробности, связанные с поддержкой Dynatrace для конкретных платформ и фреймворков разработки.").
 
 ## Облачные платформы
 
@@ -79,18 +79,18 @@ Dynatrace обеспечивает мониторинг инфраструкту
 
 ### Discovery & Coverage
 
-Обнаружьте слепые пятна и включите правильный уровень наблюдаемости в правильных местах легко в большом масштабе.](/docs/ingest-from/discovery-coverage-app "Обнаружьте и исправьте пробелы в покрытии мониторинга в большом масштабе.")
+Обнаружьте слепые пятна и включите правильный уровень наблюдаемости в правильных местах легко и в крупном масштабе.](/docs/ingest-from/discovery-coverage-app "Обнаружьте и устраните пробелы в покрытии мониторинга в крупном масштабе.")
 
 [![Frontend](https://dt-cdn.net/images/frontend-512-e5705a0aec.png "Frontend")
 
 ### Бесагентное Real User Monitoring
 
-Не можете установить OneAgent на ваши серверы приложений? Попробуйте бесагентный мониторинг.](/docs/observe/digital-experience/web-applications/initial-setup/set-up-agentless-real-user-monitoring "Настройте бесагентный мониторинг для ваших веб-приложений.")[![Synthetic Classic](https://dt-cdn.net/images/synthetic-512-83ec796e54.png "Synthetic Classic")
+Нельзя установить OneAgent на ваши серверы приложений? Попробуйте бесагентный мониторинг.](/docs/observe/digital-experience/web-applications/initial-setup/set-up-agentless-real-user-monitoring "Настройте бесагентный мониторинг для ваших веб-приложений.")[![Synthetic Classic](https://dt-cdn.net/images/synthetic-512-83ec796e54.png "Synthetic Classic")
 
 ### Synthetic Monitoring
 
-Вам нужно отслеживать доступность и производительность ваших приложений 24/7 из глобальных мест? Настройте Synthetic Monitoring.](/docs/observe/digital-experience/synthetic-monitoring "Узнайте о Synthetic Monitoring и о том, как создать монитор браузера для одного URL, кликпата или HTTP-монитора.")[![Extensions Classic](https://dt-cdn.net/images/extensions-512-1b8ed0c785.png "Extensions Classic")
+Вам нужно отслеживать доступность и производительность ваших приложений 24/7 из глобальных местоположений? Настройте Synthetic Monitoring.](/docs/observe/digital-experience/synthetic-monitoring "Узнайте о Synthetic Monitoring и том, как создать монитор браузера для одного URL, кликпата или HTTP-монитора.")[![Extensions Classic](https://dt-cdn.net/images/extensions-512-1b8ed0c785.png "Extensions Classic")
 
-### Расширить
+### Расширение
 
 Вы можете расширить данные наблюдаемости, собранные по умолчанию, с помощью данных, предоставляемых стандартами и фреймворками наблюдаемости, а также фреймворками расширения, предоставляемыми Dynatrace.](/docs/ingest-from/extend-dynatrace "Узнайте, какие механизмы расширения предлагаются Dynatrace.")

@@ -1,7 +1,7 @@
 ---
 title: Proxy for private locations
 source: https://www.dynatrace.com/docs/observe/digital-experience/synthetic-on-grail/synthetic-app/private-locations/proxy-for-private-locations
-scraped: 2026-02-23T21:40:22.511575
+scraped: 2026-02-25T21:30:14.716025
 ---
 
 # Proxy for private locations
@@ -21,67 +21,6 @@ You can incorporate [proxies, load balancers, and reverse proxies in your Dynatr
 ## Proxy configuration properties
 
 You can use the following properties when configuring a proxy for your Synthetic-enabled ActiveGate:
-
-Property
-
-Description
-
-`proxy-server`
-
-Server address (hostname or IP address)
-
-`proxy-port`
-
-Port Optional
-
-If left empty, the default `8080` port is used.
-
-`proxy-scheme`
-
-Scheme Optional
-
-If left empty, the default `http` scheme is used. This applies the most common setup, where the connection to the proxy is initiated using HTTP and automatically upgraded to a secure one. All further ActiveGate communication through the proxy is secured by SSL/TLS.
-
-Must be set to `https` for proxies that do not support HTTP at all.
-
-`proxy-user`
-
-User name Optional
-
-`proxy-domain`
-
-User domain in the case of NTLM authentication
-
-`proxy-password`
-
-Password Optional
-
-The password provided in the `proxy-password` property is obfuscated after ActiveGate restart, and the obfuscated password is stored in the `proxy-password-encr` property.
-
-If a comma (`,`) is part of a value, you need to add an escape backslash (`\`) before the comma. For example, `proxy-password = foo\,bar`.
-
-`proxy-off`
-
-If set to `true`, causes proxy to be disabled for the particular type of communication.
-
-`proxy-non-proxy-hosts`
-
-A list of hosts for communication with which proxy should not be used by ActiveGate
-
-The hosts in the list should be separated by `|` characters. You can also use an asterisk `*` as a wildcard character to match any string. There can be only one wildcard character, either at the beginning or the end of the hostname. For example, `proxy-non-proxy-hosts=*.foo.com|localhost` indicates that every host in the `foo.com` domain and the `localhost` should be accessed directly even if a proxy server is specified. For a full description of allowed syntax, see the syntax for the `http.nonProxyHosts` parameter in [Networking Propertiesï»¿](https://dt-url.net/kk02v8r).
-
-`proxy-authentication-schemes`
-
-ActiveGate version 1.271+
-
-A list of proxy authentication schemes Optional
-
-This is a prioritized list of proxy authentication schemes that ActiveGate should use when authenticating with the proxy server.
-
-* Starting with the first scheme on the list, ActiveGate will attempt to authenticate and, in case of failure, proceed to the next scheme on the list.
-* If this property is not defined, ActiveGate will try to authenticate using all available schemes.
-
-Supported values: `NTLM`, `BASIC`
 
 ## Proxy connection scenarios
 

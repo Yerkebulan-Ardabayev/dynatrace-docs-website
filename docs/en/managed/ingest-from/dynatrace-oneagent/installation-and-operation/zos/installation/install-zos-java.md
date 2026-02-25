@@ -1,7 +1,7 @@
 ---
 title: Install the z/OS Java module
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-zos-java
-scraped: 2026-02-23T21:24:14.567258
+scraped: 2026-02-25T21:25:09.093487
 ---
 
 # Install the z/OS Java module
@@ -13,39 +13,6 @@ scraped: 2026-02-23T21:24:14.567258
 * Updated on Nov 18, 2025
 
 With the z/OS Java module, you can get observability for your Java applications including IBM MQ and database calls.
-
-Observability for
-
-Including
-
-WebSphere Application Server
-
-WebSphere Liberty
-
-* Incoming web requests on WebSphere Application Server and Liberty
-* Outgoing web requests from WebSphere Application Server and Liberty via the Apache HttpClient
-* Outgoing CICS Transaction Gateway requests from WebSphere Application Server and Liberty via the CTG client
-* Websphere Application Server Websphere Liberty specific metrics (PMI and JMX)
-* JVM specific managed memory metrics (JMX)
-
-z/OS Connect
-
-* Incoming web requests on z/OS Connect
-* Outgoing requests from z/OS Connect via the CICS, IMS, and IBM MQ service providers
-* z/OS Connect specific metrics (JMX)
-* JVM specific managed memory metrics (JMX)
-
-CICS/IMS transactions
-
-Transactions initiated using
-
-* IBM MQ and JMS
-* CICS SOAP and CICS Transaction Gateway
-* IMS SOAP Gateway
-
-Database calls
-
-Database calls with their SQL statements from Java applications to Db2 via JDBC
 
 Trace your Java applications end-to-end with Dynatrace and quickly detect any anomalies
 
@@ -79,259 +46,9 @@ Understand the health and performance of your application servers with technolog
 
 JVM specific metrics:
 
-Metric group
-
-Metric
-
-Source
-
-JVM memory
-
-Garbage collection total activation count
-
-JMX
-
-JVM memory
-
-Garbage collection total collection time
-
-JMX
-
-JVM memory pool
-
-Garbage collection count
-
-JMX
-
-JVM memory pool
-
-Garbage collection time
-
-JMX
-
-JVM memory pool
-
-Heap memory pool maximum bytes
-
-JMX
-
-JVM memory pool
-
-Heap memory pool committed bytes
-
-JMX
-
-JVM memory pool
-
-Heap memory pool used bytes
-
-JMX
-
-JVM memory runtime
-
-Runtime maximum memory
-
-JMX
-
-JVM memory runtime
-
-Runtime total memory
-
-JMX
-
-JVM memory runtime
-
-Runtime free memory
-
-JMX
-
-JVM threads
-
-Thread count
-
-JMX
-
-JVM classes
-
-Total number of loaded classes
-
-JMX
-
-JVM classes
-
-Number of loaded classes
-
-JMX
-
-JVM classes
-
-Number of unloaded classes
-
-JMX
-
 WebSphere Liberty and z/OS Connect specific metrics:
 
-Metric group
-
-Metric
-
-Metric description
-
-Source
-
-JDBC connection pool
-
-In use connections
-
-The number of connections in use. This number might include multiple connections that are shared from a single managed connection.
-
-JMX
-
-JDBC connection pool
-
-Free connections
-
-The number of managed connections in the free pool.
-
-JMX
-
-JDBC connection pool
-
-Managed connections
-
-The total number of managed connections in the free, shared, and unshared pools.
-
-JMX
-
-JDBC connection pool
-
-In use time
-
-The average time in milliseconds that a connection is in use.
-
-JMX
-
-JDBC connection pool
-
-Wait time
-
-The average waiting time in milliseconds until a connection is granted if a connection is not currently available.
-
-JMX
-
-Thread pool
-
-Pool size
-
-The average number of threads in pool.
-
-JMX
-
-Thread pool
-
-Active threads
-
-The number of active threads that are serving requests.
-
-JMX
-
-Servlet
-
-Request count
-
-The total number of requests that a servlet processed.
-
-JMX
-
 Websphere Application Server specific metrics:
-
-Metric group
-
-Metric
-
-Metric description
-
-Source
-
-JDBC connection pool
-
-Pool size
-
-The size of the connection pool.
-
-PMI
-
-JDBC connection pool
-
-Free pool size
-
-The number of managed connections that are in the free pool.
-
-PMI
-
-JDBC connection pool
-
-Concurrent waiters
-
-The number of threads that are currently waiting for a connection.
-
-PMI
-
-JDBC connection pool
-
-Average wait time
-
-The average waiting time in milliseconds until a connection is granted if a connection is not currently available.
-
-PMI
-
-JDBC connection pool
-
-Average use time
-
-The average time in milliseconds that a connection is in use.
-
-PMI
-
-JDBC connection pool
-
-Percent used
-
-The percent of the pool that is in use.
-
-PMI
-
-Thread pool
-
-Pool size
-
-The average number of threads in pool.
-
-PMI
-
-Thread pool
-
-Active threads
-
-The number of concurrently active threads.
-
-PMI
-
-Servlet
-
-Live sessions
-
-The number of local sessions that are currently cached in memory from the time at which this metric is enabled.
-
-PMI
-
-Servlet
-
-Total requests
-
-The total number of requests that a servlet processed.
-
-PMI
 
 ### Can I monitor custom JMX metrics with the z/OS Java module?
 
@@ -572,30 +289,6 @@ IMS SOAP Gateway
 
 By default, logging is disabled for the z/OS Java module. To enable logging, add one of the following options to the JVM argument:
 
-Option
-
-Default value
-
-Description
-
-log-stdout
-
-`false`
-
-If `true`, write logs to the standard output stream.
-
-log-stderr
-
-`false`
-
-If `true`, write logs to the standard error stream.
-
-log-file
-
-`false`
-
-If `true`, write logs to a file using file rotation (persisting the file with index 0). Naming scheme: `dynatrace-oneagent-java.<PID>.<LPAR>.<INDEX>.log`.
-
 If needed, you can log to multiple locations. For example:
 
 ```
@@ -603,20 +296,6 @@ If needed, you can log to multiple locations. For example:
 ```
 
 If needed, you can customize the file logging with the following options:
-
-Option
-
-Default value
-
-Description
-
-log-file-dir
-
-`<CODEMODULE_FOLDER>/logs`
-
-By default, write log files to the z/OS Java module folder.
-
-It's also possible to write the log files to an absolute path (schema: `/<PATH_TO>/logs`) or to a path relative to the working folder of the process (schema: `<PATH_TO>/logs`).
 
 By changing the default folder, ensure that the application server has appropriate write permissions for the folder in which the module should write the log files.
 

@@ -1,7 +1,7 @@
 ---
 title: OpenTelemetry interoperability in Node.js
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/opentelemetry-interoperability/lambda-otel-bridge-nodejs
-scraped: 2026-02-21T21:27:13.586558
+scraped: 2026-02-25T21:32:39.119366
 ---
 
 # OpenTelemetry interoperability in Node.js
@@ -1041,25 +1041,6 @@ You can trace SQS messages forwarded from
 * An SNS topic
 
   For SNS messages that are forwarded to SQS, the message format depends on the [raw message deliveryï»¿](https://docs.aws.amazon.com/sns/latest/dg/sns-large-payload-raw-message-delivery.html) configuration on the SNS subscription.
-
-  Raw message delivery
-
-  Message format
-
-  Example
-
-  Enabled
-
-  The SNS message attributes are converted to SQS message attributes and the parent can be directly extracted from the `MessageAttributes` of the SQS message.
-
-  + [Receive a batch of multiple messages](#receive-example)
-
-  Disabled
-
-  The SNS message and its `MessageAttributes` are delivered as a serialized JSON string in the body of the received SQS message. To correctly link the receive span, the parent needs to be extracted from the `MessageAttributes` of the serialized SNS message.
-
-  + [Receive a batch of multiple messages](#receive-example)
-    Additional configuration is required for this example. When calling the `extractParent` method, set the value of the `fromSnsPayload` parameter to `true`.
 
 AWS Lambda functions that are triggered by SNS are supported out of the box when monitored with the Dynatrace AWS Lambda extension.
 

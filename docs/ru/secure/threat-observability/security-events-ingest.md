@@ -1,7 +1,7 @@
 ---
 title: Security integrations
 source: https://www.dynatrace.com/docs/secure/threat-observability/security-events-ingest
-scraped: 2026-02-24T21:15:29.201932
+scraped: 2026-02-25T21:13:55.860971
 ---
 
 # Security integrations

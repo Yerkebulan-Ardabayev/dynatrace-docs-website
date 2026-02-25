@@ -1,7 +1,7 @@
 ---
 title: Amazon EKS (Elastic Kubernetes Service)
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-eks
-scraped: 2026-02-24T21:33:47.869979
+scraped: 2026-02-25T21:30:58.621927
 ---
 
 # Amazon EKS (Elastic Kubernetes Service)

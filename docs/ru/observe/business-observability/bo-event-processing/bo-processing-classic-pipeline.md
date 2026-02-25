@@ -1,7 +1,7 @@
 ---
 title: Business event processing via classic pipeline
 source: https://www.dynatrace.com/docs/observe/business-observability/bo-event-processing/bo-processing-classic-pipeline
-scraped: 2026-02-22T21:17:54.660089
+scraped: 2026-02-25T21:18:13.122294
 ---
 
 # Business event processing via classic pipeline
@@ -85,36 +85,6 @@ In the below examples, you can see how ingest pipeline processing can be used to
   + **Matcher**: `matchesValue(action, "buy")`
   + **Transformation fields**:
 
-  Name
-
-  Type
-
-  Optional
-
-  is Array
-
-  Read-only
-
-  amount
-
-  double
-
-  false
-
-  false
-
-  true
-
-  price
-
-  double
-
-  false
-
-  false
-
-  true
-
   + **Processor definition**: `FIELDS_ADD(trading_volume: price*amount)`
 * Example 2. Mask your data.  
   You need to hide the CVV field on your credit card in an incoming JSON payload.
@@ -147,26 +117,6 @@ In the below examples, you can see how ingest pipeline processing can be used to
   + **Matcher**: `matchesValue(action, "payment")`
   + **Transformation fields**:
 
-  Name
-
-  Type
-
-  Optional
-
-  is Array
-
-  Read-only
-
-  cvv
-
-  string
-
-  false
-
-  false
-
-  false
-
   + **Processor definition**: `FIELDS_ADD(cvv: SHA1(cvv))`
 * Example 3. Drop event attribute.  
   You need to drop the birthdate field in an incoming JSON payload.
@@ -198,26 +148,6 @@ In the below examples, you can see how ingest pipeline processing can be used to
   + **Rule name**: Drop field
   + **Matcher**: `matchesValue(action, "newUser")`
   + **Transformation fields**:
-
-  Name
-
-  Type
-
-  Optional
-
-  is Array
-
-  Read-only
-
-  birthDate
-
-  string
-
-  false
-
-  false
-
-  false
 
   + **Processor definition**: `FIELDS_REMOVE(birthDate)`
 * Example 4. Parse nested JSON.  
@@ -263,26 +193,6 @@ In the below examples, you can see how ingest pipeline processing can be used to
   + **Matcher**: `matchesValue(action, "sell")`
   + **Transformation fields**:
 
-  Name
-
-  Type
-
-  Optional
-
-  is Array
-
-  Read-only
-
-  details
-
-  string
-
-  false
-
-  false
-
-  false
-
   + **Processor definition**: `PARSE(details,"JSON{INTEGER:accountId,INTEGER:amount,INTEGER:instrumentId,DOUBLE:price}(flat=true)") | FIELDS_REMOVE(details)`
 * Example 5. Parse error message.
 
@@ -315,26 +225,6 @@ In the below examples, you can see how ingest pipeline processing can be used to
   + **Rule name**: Parse error message
   + **Matcher**: `matchesValue(error.messageKey, "error.voucher ")`
   + **Transformation fields**:
-
-  Name
-
-  Type;
-
-  Optional
-
-  is Array
-
-  Read-only
-
-  error.message
-
-  string
-
-  no
-
-  no
-
-  no
 
   + **Processor definition**:
     `FIELDS_ADD(final:REPLACE_PATTERN(error.message, "LD:p1 '[' LD:to_be_masked ']' LD:p2 ", "${p1}${p2}"))`

@@ -1,7 +1,7 @@
 ---
 title: Dynatrace Intelligence generative AI overview
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/copilot/copilot-overview
-scraped: 2026-02-24T21:27:38.713201
+scraped: 2026-02-25T21:23:48.801091
 ---
 
 # Dynatrace Intelligence generative AI overview

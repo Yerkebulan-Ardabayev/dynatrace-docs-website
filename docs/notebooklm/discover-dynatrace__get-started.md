@@ -1,6 +1,6 @@
 # Документация Dynatrace: discover-dynatrace/get-started
 Язык: Русский (RU)
-Сгенерировано: 2026-02-24
+Сгенерировано: 2026-02-25
 Файлов в разделе: 11
 ---
 
@@ -9,7 +9,7 @@
 ---
 title: Accessibility
 source: https://www.dynatrace.com/docs/discover-dynatrace/get-started/dynatrace-ui/accessibility
-scraped: 2026-02-24T21:29:47.997683
+scraped: 2026-02-25T21:29:08.796740
 ---
 
 # Accessibility
@@ -96,7 +96,7 @@ Common interactions and features of data visualizations in the latest Dynatrace.
 ---
 title: Launchpads
 source: https://www.dynatrace.com/docs/discover-dynatrace/get-started/dynatrace-ui/launchpads
-scraped: 2026-02-24T21:23:10.288317
+scraped: 2026-02-25T21:23:13.338628
 ---
 
 # Launchpads
@@ -271,7 +271,7 @@ Use this page to solve problems with signing in to your Dynatrace account.
 ---
 title: Share documents
 source: https://www.dynatrace.com/docs/discover-dynatrace/get-started/dynatrace-ui/share
-scraped: 2026-02-24T21:14:46.979338
+scraped: 2026-02-25T21:14:18.765238
 ---
 
 # Share documents
@@ -577,7 +577,7 @@ Sharing exceptions
 ---
 title: Filter field
 source: https://www.dynatrace.com/docs/discover-dynatrace/get-started/dynatrace-ui/ui-filter-field
-scraped: 2026-02-24T21:18:42.670469
+scraped: 2026-02-25T21:19:24.841622
 ---
 
 # Filter field
@@ -726,7 +726,7 @@ Access nested fields in JSON data with dot or bracket notation. JSON filters may
 ---
 title: Navigate the Dynatrace platform
 source: https://www.dynatrace.com/docs/discover-dynatrace/get-started/dynatrace-ui
-scraped: 2026-02-24T21:20:06.203474
+scraped: 2026-02-25T21:34:29.953963
 ---
 
 # Navigate the Dynatrace platform
@@ -916,7 +916,7 @@ The contents of this user menu depend on your deployment type, configuration, an
 ---
 title: What is a monitoring environment?
 source: https://www.dynatrace.com/docs/discover-dynatrace/get-started/monitoring-environment
-scraped: 2026-02-24T21:16:13.823136
+scraped: 2026-02-25T21:14:05.370788
 ---
 
 # What is a monitoring environment?
@@ -1618,7 +1618,7 @@ Gartner, Top Strategic Technology Trends for 2024, Bart Willemsen, Gary Olliffe,
 ---
 title: Serverless monitoring
 source: https://www.dynatrace.com/docs/discover-dynatrace/get-started/serverless-monitoring
-scraped: 2026-02-22T21:18:15.440502
+scraped: 2026-02-25T21:17:19.951878
 ---
 
 # Serverless monitoring
@@ -1711,7 +1711,7 @@ Be sure to watch for the recommendations within the Dynatrace web UI to enable a
 ---
 title: Get started with Dynatrace
 source: https://www.dynatrace.com/docs/discover-dynatrace/get-started
-scraped: 2026-02-24T21:13:29.498031
+scraped: 2026-02-25T21:13:09.629728
 ---
 
 # Get started with Dynatrace

@@ -1,7 +1,7 @@
 ---
 title: DQL compared to SQL and more
 source: https://www.dynatrace.com/docs/platform/grail/dynatrace-query-language/dql-comparison
-scraped: 2026-02-24T21:18:26.127806
+scraped: 2026-02-25T21:23:26.494366
 ---
 
 # DQL compared to SQL and more

@@ -1,7 +1,7 @@
 ---
 title: Global field reference
 source: https://www.dynatrace.com/docs/semantic-dictionary/fields
-scraped: 2026-02-24T21:15:47.227318
+scraped: 2026-02-25T21:15:05.243423
 ---
 
 # Global field reference
@@ -10,7 +10,7 @@ scraped: 2026-02-24T21:15:47.227318
 
 * Latest Dynatrace
 * Overview
-* Updated on Feb 11, 2026
+* Updated on Feb 23, 2026
 
 The following reference contains a list of global fields that have a well defined semantic meaning in Dynatrace and can be used across different monitoring types. The fields are organized in namespaces that are separated with dots.
 
@@ -309,6 +309,17 @@ Fields that can come from applications running on AWS.
 | `aws.s3.source.object_version` | string | experimental Version of the source object to copy. By default, the latest version is copied. | `3sL4kqtJlcpXroDTDmJ+rmSpXd3dIbrHY+MTRCxf3vjVBH40Nr8X8gdRQBpUMLUo` |
 | `aws.s3.upload_id` | string | experimental Upload ID identifying the multipart upload targeted by an operation (abort/complete/upload/â¦). | `dfRtDYWFbkRONycy.Yxwh66Yjlx.cph0gtNBtJ` |
 | `aws.xray.trace_id` | string | experimental Contains the [AWS X-Rayï»¿](https://docs.aws.amazon.com/xray/latest/devguide/aws-xray.html) trace id (e.g., value of the `x-amzn-trace-id` HTTP header, `_X_AMZN_TRACE_ID` environment variable on AWS lambda) | `Root=1-63441c4a-abcdef012345678912345678`; `Self=1-63441c4a-12456789abcdef012345678;Root=1-67891233-abcdef012345678912345678` |
+
+#### Log attributes
+
+| Attribute | Type | Description | Examples |
+| --- | --- | --- | --- |
+| `aws.route53.edge_location_id` | string | experimental The Route 53 edge location that responded to the query. Each edge location is identified by a three-letter code and an arbitrary number. | `FRA54-SN1`; `DFW3` |
+| `aws.route53.hostedzone_id` | string | experimental The ID of the hosted zone that is associated with all the DNS queries in this log. | `Z1234567890ABCDEFGHIJ` |
+| `aws.route53.resolver_ip_address` | string | experimental The IP address of the DNS resolver that submitted the request to Route 53. | `192.168.1.1`; `2001:db8::1234` |
+| `dns.question.name` | string | experimental The domain or subdomain that was specified in the request. | `example.com`; `support.dynatrace.com/` |
+| `dns.question.type` | string | experimental Either the DNS record type that was specified in the request, or ANY. | `A`; `AAAA`; `CNAME`; `TXT`; `ANY` |
+| `dns.response_code` | string | experimental The DNS response code that Route 53 returned in response to the DNS query. | `NOERROR`; `NXDOMAIN` |
 
 
 
@@ -651,6 +662,7 @@ For some technologies compilation of code might be a significant contributor to 
 | Attribute | Type | Description | Examples |
 | --- | --- | --- | --- |
 | `container.id` | string | resource experimental Container ID. Usually a UUID, as for example used to [identify Docker containersï»¿](https://docs.docker.com/engine/containers/run/#container-identification). The UUID might be abbreviated. | `a3bf90e006b2` |
+| `container.image.digest` | string | resource experimental Immutable SHAâ256 hash of an image that uniquely identifies the exact image content in a registry. | `sha256:aa1ed41571fa937da61b5bcd7cf842981c7f026b516c18655bc2f3a9362b1fa5` |
 | `container.image.name` | string | resource experimental Name of the image the container was built on. | `gcr.io/opentelemetry/operator` |
 | `container.image.version` | string | resource experimental | `0.1` |
 | `container.name` | string | resource experimental Container name used by container runtime. | `opentelemetry-autoconf` |
@@ -1306,6 +1318,8 @@ Attributes defined in this namespace are used by Dynatrace to describe different
 | `dt.host_group.id` | string | resource stable See [Organize your environment using host groups](/docs/observe/infrastructure-observability/hosts/configuration/organize-your-environment-using-host-groups "Find out how Dynatrace enables you to organize your hosts, processes, and services using host groups."). Note that host groups are identified by their name, not by the entity ID of the host group entity. For details on the entity ID, see `dt.entity.host_group`. Tags: `permission` `primary-field` | `myHostGroup` |
 | `dt.metrics.source` | string | resource experimental The source from which metrics are ingested. [1](#fn-7-1-def) | `telegraf`; `com.dynatrace.extension.sql-oracle` |
 | `dt.network_zone.id` | string | resource experimental The ID of the network zone. See [Dynatrace Documentation](/docs/dynatrace-api/environment-api/network-zones/get-network-zone "View the configuration of a network zone via the Dynatrace API.") | `vpc-123` |
+| `dt.openpipeline.forwarding.config_id` | string | resource experimental ID of the forwarding configuration in OpenPipeline. | `v00zu89AAABADJidWlsdGluOmh5cGVyc2NhbGVyLWF1dGhlbnRpY2F0aW9uLmNvpb25zLmF3cwAGdGVuYW50AGZ7ZW5hbnQAJDNlOTM1YmE3LTkzODUtMzczZS1hMWJiLW9uioQwNDFmNzIyMb7vVN4V2t6t` |
+| `dt.openpipeline.forwarding.datatype` | string | resource experimental Forwarded datatype | `Logs` |
 | `dt.pg_detection.cluster.id` | string | resource experimental `DT_CLUSTER_ID` environment variable; also see [Process group detection](/docs/observe/infrastructure-observability/process-groups/configuration/pg-detection "Ways to customize process-group detection") |  |
 | `dt.pg_detection.custom_entry` | string | resource experimental also see [Define metadata via environment variables](/docs/observe/infrastructure-observability/process-groups/configuration/define-your-own-process-group-metadata#variables "Configure your own process-related metadata based on the unique needs of your organization or environment.") |  |
 | `dt.pg_detection.declarative.id` | string | resource experimental |  |
@@ -1316,7 +1330,7 @@ Attributes defined in this namespace are used by Dynatrace to describe different
 | `dt.security_context` | string | resource stable The security context is used in access permissions to limit the visibility. Learn more about the [Dynatrace permission model](/docs/platform/grail/dynatrace-grail "Grail is the Dynatrace data lakehouse that's designed explicitly for observability and security data and acts as single unified storage for logs, metrics, traces, events, and more.") Tags: `permission` |  |
 | `dt.smartscape_source.id` | smartscapeId | resource experimental The ID of the entity considered the source of the signal. The string represents an entity ID of an entity that is stored in the Smartscape storage. [2](#fn-7-2-def) Tags: `smartscape-id` | `K8S_CLUSTER-E0D8F94D9065F24F`; `AWS_LAMBDA_FUNCTION-E0D8F94D9065F24F` |
 | `dt.smartscape_source.type` | string | resource stable The entity type of the entity whose identifier is held in dt.smartscape\_source.id. | `K8S_CLUSTER`; `AWS_LAMBDA_FUNCTION` |
-| `dt.source_entity` | string[] | resource stable The IDs of the entities considered as the sources of the signal. The strings represent the entity IDs of entities that are stored in the classic entity storage. [3](#fn-7-3-def) Tags: `entity-id` | `['HOST-E0D8F94D9065F24F', 'PROCESS_GROUP_INSTANCE-E0D8F94D9065F24F']` |
+| `dt.source_entity` | string | resource stable The ID of the entity considered the source of the signal. The string represents an entity ID of an entity that is stored in the classic entity storage. [3](#fn-7-3-def) Tags: `entity-id` | `HOST-E0D8F94D9065F24F`; `PROCESS_GROUP_INSTANCE-E0D8F94D9065F24F` |
 | `dt.source_entity.type` | string | resource stable The entity type of the entity whose identifier is held in dt.source\_entity. The value must be a valid entity type and consistent with `dt.source_entity`. Note, however, that the type identifiers are expected to be lowercased in alignment with suffixes of dt.entity.\* keys. | `host`; `process_group_instance`; `cloud:azure:resource_group` |
 
 1
@@ -2018,7 +2032,7 @@ The frontend namespace contains information on the monitored frontend.
 
 | Attribute | Type | Description | Examples |
 | --- | --- | --- | --- |
-| `frontend.name` | string | experimental The frontend name determined at ingest. Tags: `permission` | `my_frontend` |
+| `frontend.name` | string | stable The frontend name determined at ingest. Tags: `permission` | `my_frontend` |
 
 ## Google Cloud Platform
 
@@ -2368,6 +2382,18 @@ If the Kubernetes isn't present, the OneAgent attempts to determine the `host.na
 | `k8s.workload.annotation.__attribute_name__` | string | resource experimental Kubernetes workload annotation that should be enriched on ingest signals and service metrics. The \_\_attribute\_name\_\_ is a placeholder that can freely be chosen. | `k8s.workload.annotation.team=a_team` |
 | `k8s.workload.label.__attribute_name__` | string | resource experimental Kubernetes workload label that should be enriched on ingest signals and service metrics. The \_\_attribute\_name\_\_ is a placeholder that can freely be chosen. | `k8s.workload.label.env=dev` |
 
+## Apache Kafka
+
+### Fields
+
+| Attribute | Type | Description | Examples |
+| --- | --- | --- | --- |
+| `messaging.kafka.broker_id` | string | experimental The ID of the Kafka broker. | `0`; `1`; `2` |
+| `messaging.kafka.component` | string | experimental The component of the Kafka Connect worker. | `GroupCoordinator 1` |
+| `messaging.kafka.connect.connector_name` | string | experimental The name of the Kafka Connect connector. | `my-s3-connector`; `jdbc-source-connector` |
+| `messaging.kafka.connect.task_id` | string | experimental The ID of the Kafka Connect task. | `0`; `1`; `2` |
+| `messaging.kafka.connect.worker_id` | string | experimental The ID of the Kafka Connect worker. | `10.0.0.1:8083`; `worker-1` |
+
 ## Standard fields used for log events
 
 Fields relevant for log events
@@ -2687,13 +2713,31 @@ Fields relevant for network flows
 | `nodejs.app.name` | string | resource experimental |  |
 | `nodejs.script.name` | string | resource experimental |  |
 
+## Elasticsearch
+
+### Fields
+
+
+
+| Attribute | Type | Description | Examples |
+| --- | --- | --- | --- |
+| `opensearch.document_id` | string | experimental ID of the document stored in OpenSearch. | `2kuZ25sBo9KPhzL41rsg` |
+| `opensearch.id` | string | experimental X-Opaque-Id http header if one was used. | `152220` |
+| `opensearch.index` | string | experimental The name of the OpenSearch index. | `opensearch-index`; `index-2024.01.01` |
+| `opensearch.node_id` | string | experimental The ID of the node. | `80f333333b31623f94213a9a43cef6b1` |
+| `opensearch.routing` | string | experimental Custom routing value. | `user42` |
+| `opensearch.shard_id` | string | experimental The ID of the OpenSearch shard. | `VzblS9m1Q9CBaTHoEbKLnT` |
+| `opensearch.stats` | string | experimental Search group defined in the query. | `autocomplete`; `dashboard_query` |
+| `opensearch.took` | string | experimental Execution time of the request. | `56ms` |
+| `opensearch.took_millis` | string | experimental Execution time of the request. | `56` |
+| `opensearch.total_hits` | string | experimental Total number of hits returned by the search. | `0 hits`; `4 hits` |
+| `opensearch.total_shards` | string | experimental Total number of shards. | `1`; `9` |
+
 ## OpenStack
 
 Fields that can come from applications running on OpenStack.
 
 ### Fields
-
-
 
 #### Resource attributes
 

@@ -1,7 +1,7 @@
 ---
 title: Automate and orchestrate security findings
 source: https://www.dynatrace.com/docs/secure/use-cases/automate-and-orchestrate-security-findings
-scraped: 2026-02-24T21:25:44.725211
+scraped: 2026-02-25T21:18:30.245354
 ---
 
 # Automate and orchestrate security findings

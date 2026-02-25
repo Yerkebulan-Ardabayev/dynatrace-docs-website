@@ -1,25 +1,25 @@
 ---
-title: Управление сервисными пользователями API
+title: Service user management API
 source: https://www.dynatrace.com/docs/dynatrace-api/account-management-api/service-user-management-api
-scraped: 2026-02-24T21:28:14.939077
+scraped: 2026-02-25T21:31:53.520983
 ---
 
-# Управление сервисными пользователями API
+# Service user management API
 
-# Управление сервисными пользователями API
+# Service user management API
 
-* Последнее Dynatrace
-* Справочник
-* Опубликовано Дек 04, 2025
+* Latest Dynatrace
+* Reference
+* Published Dec 04, 2025
 
-[### Список всех сервисных пользователей
+[### List all service users
 
-Получите обзор всех сервисных пользователей в вашем Dynatrace аккаунте.](/docs/dynatrace-api/account-management-api/service-user-management-api/get-all-service-users "Получите обзор сервисных пользователей в вашем Dynatrace аккаунте через Dynatrace API.")[### Создание сервисного пользователя
+Get an overview of all service users in your Dynatrace account.](/docs/dynatrace-api/account-management-api/service-user-management-api/get-all-service-users "Get an overview of service users in your Dynatrace account via the Dynatrace API.")[### Create a service user
 
-Добавьте нового сервисного пользователя в ваш Dynatrace аккаунт.](/docs/dynatrace-api/account-management-api/service-user-management-api/post-service-user "Создайте сервисного пользователя в вашем Dynatrace аккаунте через Dynatrace API.")[### Просмотр сервисного пользователя
+Add a new service user to your Dynatrace account.](/docs/dynatrace-api/account-management-api/service-user-management-api/post-service-user "Create a service user in your Dynatrace account via the Dynatrace API.")[### View a service user
 
-Просмотрите подробную информацию о выбранном сервисном пользователе.](/docs/dynatrace-api/account-management-api/service-user-management-api/get-service-user "Получите обзор сервисного пользователя в аккаунте через Dynatrace API.")[### Редактирование сервисного пользователя
+View details of a selected service user.](/docs/dynatrace-api/account-management-api/service-user-management-api/get-service-user "Get an overview of a service user in an account via the Dynatrace API.")[### Edit a service user
 
-Отредактируйте подробную информацию о сервисном пользователе.](/docs/dynatrace-api/account-management-api/service-user-management-api/put-service-user "Отредактируйте сервисного пользователя в вашем Dynatrace аккаунте через Dynatrace API.")[### Удаление сервисного пользователя
+Edit details of a service user.](/docs/dynatrace-api/account-management-api/service-user-management-api/put-service-user "Edit a service user in your Dynatrace account via the Dynatrace API.")[### Delete a service user
 
-Удалите сервисного пользователя.](/docs/dynatrace-api/account-management-api/service-user-management-api/delete-service-user "Удалите сервисного пользователя из вашего Dynatrace аккаунта через Dynatrace API.")
+Delete a service user.](/docs/dynatrace-api/account-management-api/service-user-management-api/delete-service-user "Delete a service user from your Dynatrace account via the Dynatrace API.")

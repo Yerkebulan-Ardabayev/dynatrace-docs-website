@@ -1,7 +1,7 @@
 ---
 title: Log ingestion via OneAgent
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa
-scraped: 2026-02-23T21:31:55.306766
+scraped: 2026-02-25T21:27:05.811424
 ---
 
 # Log ingestion via OneAgent
@@ -334,66 +334,6 @@ For more information, see [Log Monitoring configuration](/docs/ingest-from/dynat
 4. Adjust settings and **Save changes**.
 
 ### Default OneAgent settings
-
-Setting
-
-Default
-
-**Detect open log files**
-
-enabled
-
-**Detect system logs**
-
-enabled
-
-**Detect logs of containerized applications**
-
-enabled
-
-**Detect IIS logs**
-
-enabled
-
-**Detect logs on network file systems**
-
-disabled
-
-**Allow OneAgent to monitor Dynatrace logs**
-
-disabled
-
-**Detect container time zones**
-
-enabled
-
-**Default timezone for agents**
-
-Local time zone
-
-**Timestamp search limit**
-
-`64` bytes
-
-**Severity search chars limit**
-
-`100` bytes
-
-**Severity search lines limit**
-
-`2`
-
-**Maximum of log group instances per entity limit - count**
-
-`200`
-
-**Windows Event Log query timeout**
-
-`5` seconds
-
-**Minimal log file size to perform binary detection**
-
-`512` bytes
 
 ## Confirm that log monitoring is enabled
 

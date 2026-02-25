@@ -1,6 +1,6 @@
 # Документация Dynatrace: deliver/pipeline-observability-sdlc-events
 Язык: Русский (RU)
-Сгенерировано: 2026-02-24
+Сгенерировано: 2026-02-25
 Файлов в разделе: 2
 ---
 

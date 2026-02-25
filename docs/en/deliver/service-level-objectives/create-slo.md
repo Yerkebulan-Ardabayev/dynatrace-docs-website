@@ -1,7 +1,7 @@
 ---
 title: Create service-level objectives
 source: https://www.dynatrace.com/docs/deliver/service-level-objectives/create-slo
-scraped: 2026-02-24T21:35:39.211489
+scraped: 2026-02-25T21:33:57.854482
 ---
 
 # Create service-level objectives

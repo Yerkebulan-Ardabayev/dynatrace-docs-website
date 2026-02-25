@@ -1,7 +1,7 @@
 ---
 title: What is Dynatrace
 source: https://www.dynatrace.com/docs/discover-dynatrace/what-is-dynatrace
-scraped: 2026-02-24T21:13:45.472290
+scraped: 2026-02-25T21:13:11.821961
 ---
 
 # What is Dynatrace

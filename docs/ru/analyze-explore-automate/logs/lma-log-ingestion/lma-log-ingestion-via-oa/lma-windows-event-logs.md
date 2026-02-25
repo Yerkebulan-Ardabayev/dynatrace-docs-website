@@ -1,7 +1,7 @@
 ---
 title: Windows event logs
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-windows-event-logs
-scraped: 2026-02-24T21:32:54.083850
+scraped: 2026-02-25T21:30:53.349888
 ---
 
 # Windows event logs

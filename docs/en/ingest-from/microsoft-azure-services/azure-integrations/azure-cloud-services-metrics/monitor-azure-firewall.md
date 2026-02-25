@@ -1,7 +1,7 @@
 ---
 title: Azure Firewall monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-firewall
-scraped: 2026-02-24T21:20:25.526618
+scraped: 2026-02-25T21:34:16.937888
 ---
 
 # Azure Firewall monitoring

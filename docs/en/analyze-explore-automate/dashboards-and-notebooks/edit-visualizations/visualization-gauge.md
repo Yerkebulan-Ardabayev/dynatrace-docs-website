@@ -1,7 +1,7 @@
 ---
 title: Gauge chart
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-gauge
-scraped: 2026-02-22T21:13:27.806089
+scraped: 2026-02-25T21:22:40.812811
 ---
 
 # Gauge chart
@@ -39,35 +39,6 @@ timeseries avg(dt.host.cpu.usage)
 
 The **Visual** tab settings are as follows:
 
-Section
-
-Settings
-
-Data mapping
-
-* **Gauge value** = `CPU`
-
-Gauge bar
-
-* **Show label** = turned off
-* **Min value** = set to `Auto`
-* **Max value** = set to `Auto`
-
-Color
-
-* **Bar color** = `62903c`
-* **Custom colors** =
-
-  + `60` and (for the custom color) `dc671e`
-  + `80` and (for the custom color) `cd3c44`
-
-Units and formats
-
-* Selected value = `CPU`
-* **Unit** = `Percent (%)`
-* **Displayed unit** = `Auto`
-* **Decimals** = `0.00`
-
 ### Example 2
 
 ![Gauge visualization: example 2](https://dt-cdn.net/images/gauge-example-02-476-681bd11f53.png)
@@ -99,32 +70,6 @@ fetch dt.davis.problems
 ```
 
 The **Visual** tab settings are as follows:
-
-Section
-
-Settings
-
-Data mapping
-
-* **Gauge value** = `pctActive`
-
-Gauge bar
-
-* **Show label** = turned on and set to `Percentage of Open Problems`
-* **Min value** = set to `Auto`
-* **Max value** = set to `Auto`
-
-Color
-
-* **Bar color** = `438FB1`
-* **Custom colors** = `90` and (for the custom color) `c21930`
-
-Units and formats
-
-* Selected value = `pctActive`
-* **Unit** = `Percent (%)`
-* **Displayed unit** = `Auto`
-* **Decimals** = `0`
 
 ## Title
 

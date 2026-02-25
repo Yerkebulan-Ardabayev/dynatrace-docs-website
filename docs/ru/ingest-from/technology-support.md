@@ -1,7 +1,7 @@
 ---
 title: Technology support
 source: https://www.dynatrace.com/docs/ingest-from/technology-support
-scraped: 2026-02-24T21:16:17.089709
+scraped: 2026-02-25T21:14:00.173393
 ---
 
 # Technology support
@@ -60,7 +60,7 @@ Supported CPU architectures
 | Supported OS | Versions | CPU architectures |
 | --- | --- | --- |
 | [AlmaLinux](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux "Learn how to install OneAgent on Linux, how to customize installation, and more.") | 8, 9, 10 | ARM64 (AArch64), PPCLE, s390, x86-64 |
-| [Alpine Linux (musl libc) for containers](/docs/ingest-from/technology-support/oneagent-platform-and-capability-support-matrix "Learn which capabilities are supported by OneAgent on different operating systems and platforms.") | 3.10 - 3.21[1](#fn-supported-os-1-def) | x86-64 |
+| [Alpine Linux (musl libc) for containers](/docs/ingest-from/technology-support/oneagent-platform-and-capability-support-matrix "Learn which capabilities are supported by OneAgent on different operating systems and platforms.") | 3.10 - 3.23[1](#fn-supported-os-1-def) | x86-64 |
 | [Azure Linux](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux "Learn how to install OneAgent on Linux, how to customize installation, and more.") | 2, 3 | x86-64 |
 | [Bottlerocket](/docs/ingest-from/setup-on-k8s/deployment/application-observability "Deploy Dynatrace Operator in application monitoring mode to Kubernetes") | 1[2](#fn-supported-os-2-def) | ARM64 (AArch64), x86-64 |
 | [CentOS Stream](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux "Learn how to install OneAgent on Linux, how to customize installation, and more.") | 9 | ARM64 (AArch64), PPCLE, x86-64 |
@@ -78,7 +78,7 @@ Supported CPU architectures
 
 1
 
-Only supported in containers that are monitored in OneAgent full-stack or application-only monitoring mode (musl libc 1.1.14 - 1.2.9). Binaries built against GNU C Library (glibc) running via gcompat library are not supported.
+Only supported in containers that are monitored in OneAgent full-stack or application-only monitoring mode (musl libc 1.1.14 - 1.2.5). Binaries built against GNU C Library (glibc) running via gcompat library are not supported.
 
 2
 

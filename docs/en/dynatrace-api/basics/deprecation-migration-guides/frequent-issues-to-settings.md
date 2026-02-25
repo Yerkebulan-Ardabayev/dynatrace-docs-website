@@ -1,7 +1,7 @@
 ---
 title: Migrate from Frequent issue detection API to Settings API
 source: https://www.dynatrace.com/docs/dynatrace-api/basics/deprecation-migration-guides/frequent-issues-to-settings
-scraped: 2026-02-24T21:34:48.922892
+scraped: 2026-02-25T21:26:42.173064
 ---
 
 # Migrate from Frequent issue detection API to Settings API

@@ -1,7 +1,7 @@
 ---
 title: Business Flow
 source: https://www.dynatrace.com/docs/observe/business-observability/business-flow
-scraped: 2026-02-23T21:30:29.210655
+scraped: 2026-02-25T21:18:00.609785
 ---
 
 # Business Flow
@@ -47,10 +47,6 @@ Recommended
 
 The following table describes the required permissions.
 
-Permission
-
-Description
-
 app-engine:functions:run
 
 Run Business Flow calculations
@@ -90,16 +86,6 @@ Read settings objects
 settings:objects:write
 
 Write settings objects
-
-10
-
-rows per page
-
-Page
-
-1
-
-of 1
 
 ## Installation
 

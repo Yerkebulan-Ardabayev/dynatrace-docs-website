@@ -1,7 +1,7 @@
 ---
 title: Containerized, auto-scalable private Synthetic locations on Kubernetes
 source: https://www.dynatrace.com/docs/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/containerized-locations
-scraped: 2026-02-24T21:23:34.979106
+scraped: 2026-02-25T21:30:57.359504
 ---
 
 # Containerized, auto-scalable private Synthetic locations on Kubernetes
@@ -27,9 +27,9 @@ Kubernetes and OpenShift aren't just additional supported ActiveGate platforms a
 * Can be deployed faster while minimizing downtime.
 * Are automatically tracked for resource utilization as a part of auto-scaling operations.
 
-You can execute scheduled as well as [on-demand](/docs/observe/digital-experience/synthetic-monitoring/general-information/on-demand-executions "Execute synthetic monitors on demand from public or private locations") executions of all [types of synthetic monitors](/docs/observe/digital-experience/synthetic-monitoring/general-information/types-of-synthetic-monitors "Learn about Dynatrace synthetic monitor types.") on containerized locations.
-
 You can manage Kubernetes/OpenShift locations via the Dynatrace web UI and the existing [Synthetic - Locations, nodes, and configuration API v2](/docs/dynatrace-api/environment-api/synthetic-v2/synthetic-locations-v2 "Manage synthetic locations via the Synthetic v2 API."). Additional Early Adopter endpoints in this API facilitate the deployment of Kubernetes locations; the new endpoints help you generate the commands that need to be executed on the Kubernetes cluster.
+
+You can execute scheduled as well as [on-demand](/docs/observe/digital-experience/synthetic-monitoring/general-information/on-demand-executions "Execute synthetic monitors on demand from public or private locations") executions of all [types of synthetic monitors](/docs/observe/digital-experience/synthetic-monitoring/general-information/types-of-synthetic-monitors "Learn about Dynatrace synthetic monitor types.") on containerized locations.
 
 ## Architecture
 
@@ -59,9 +59,9 @@ Locations are scaled automatically by adjusting the number of ActiveGates per lo
 
 ## Requirements
 
-Containerized private Synthetic locations are supported with Dynatrace version 1.264+ on **Kubernetes 1.22â1.25** with persistent volume and `kubectl` support.
+Containerized private Synthetic locations are supported with Dynatrace version 1.264+ on Kubernetes 1.22-1.25 with persistent volume and `kubectl` support.
 
-* Additional support for **Kubernetes 1.26+** is available in the [installation workflow](#install).
+* Additional support for Kubernetes 1.26+ is available in the [installation workflow](#install).
 * All kinds of Kubernetes implementations are supported, whether cloud or local (for example, Amazon EKS or Minikube).
 * OpenShift versions compatible with the supported Kubernetes versions are supported.
 
@@ -117,7 +117,7 @@ M node
 
 ### Best practices and caveats
 
-**ActiveGates**
+#### ActiveGates
 
 * We recommend the **S** ActiveGate size and a minimum of two ActiveGates per location.
 * When considering node size, keep in mind the possible limitations specific to the Kubernetes service you will be relying on.
@@ -127,14 +127,14 @@ M node
 * You cannot combine containerized and non-containerized ActiveGates in the same location.
 * The image for Synthetic-enabled ActiveGate is in a public registry; this image location is referenced by the template file.
 
-**Locations**
+#### Locations
 
 * We recommend installing each location in its own namespace.
 * If deploying more than one location per namespace, use different names for the respective ActiveGate resourcesâsee [Install a containerized location](#install) below.
 * Locations that share a single Kubernetes namespace must be connected to the same Dynatrace environment as the Synthetic metric adapter in order to be auto-scalable. For example, assume that Location A and the metric adapter are configured for Environment X. However, Location A shares a namespace with Location B, which is configured for Environment Y. In such a case, Location A is auto-scalable; Location B is not auto-scalable.
 * If you want to install a location in the same namespace as other Dynatrace resources such as [Dynatrace Operator](/docs/ingest-from/setup-on-k8s/guides/deployment-and-configuration/resource-management/dto-resource-limits "Set resource limits for Dynatrace Operator components."), be aware of the more demanding [hardware and system requirements](#requirements) for containerized Synthetic-enabled ActiveGates.
 
-**Synthetic metric adapter**
+#### Synthetic metric adapter
 
 * The best practice is to deploy the Synthetic metric adapter in its own namespace per Kubernetes cluster. The Synthetic metric adapter can share a namespace with a location. However, deploying the metric adapter in its own namespace ensures that it isn't deleted when a location is taken down.
 * The metric adapter can only communicate with a single Dynatrace environment, so location auto-scaling works just for that environment.
@@ -144,7 +144,7 @@ M node
 
 For auto-scaling purposes, the Synthetic metric adapter needs access to and extends the Kubernetes API by specifying a new API serviceâ`v1beta1.external.metrics.k8s.io`.
 
-This API service is defined in the Synthetic metric adapter templateâsee <#install> below.
+This API service is defined in the Synthetic metric adapter templateâsee [Install and deploy a containerized location](#install) below.
 
 API service definition in the metric adapter template
 
@@ -835,7 +835,7 @@ Running the cluster with default settings will only allow for using ICMP NAM mon
 
 ## Proxy configuration
 
-Add the following code at the top of your [location template file](#deploy-location) to insert a ConfigMap resource containing your proxy server information.
+Add the following code at the top of your [location template file](#install) to insert a ConfigMap resource containing your proxy server information.
 
 In the code sample below:
 
@@ -961,7 +961,7 @@ Compared to the regular template, following changes are introduced:
 
 ## Kerberos authentication configuration
 
-Add the following code at the top of your [location template file](#deploy-location) to insert a ConfigMap resource containing your Kerberos server information.
+Add the following code at the top of your [location template file](#install) to insert a ConfigMap resource containing your Kerberos server information.
 
 In the code sample below:
 
@@ -1136,7 +1136,7 @@ Add the following code to Synthetic metric adapter template under `env:`
 value: "false"
 ```
 
-This disables certificate validation for the Synthetic metric adapter connection to the Dynatrace Cluster (by default, it is enabled).
+This deactivates certificate validation for the Synthetic metric adapter connection to the Dynatrace Cluster (by default, it is activated).
 
 ### Proxy configuration
 
@@ -1187,8 +1187,8 @@ You can automate the deployment of and manage containerized locations via the ex
 
 ![New endpoints for Kubernetes location deployment](https://dt-cdn.net/images/k8s-locations-endpoints-3168-a8f5b7f158.png)
 
-* The GET location YAML endpoint (`/synthetic/locations/{LocationId}/yaml`) fetches the [location template file](#deploy-location) based on the location ID of the [location you initially set up](#initial-setup) for containerized deployment.
-* The GET apply commands endpoint (`synthetic/locations/commands/apply`) fetches the list of commands to [deploy a location](#deploy-location) on Kubernetes/Openshift.
+* The GET location YAML endpoint (`/synthetic/locations/{LocationId}/yaml`) fetches the [location template file](#install) based on the location ID of the [location you initially set up](#install) for containerized deployment.
+* The GET apply commands endpoint (`synthetic/locations/commands/apply`) fetches the list of commands to [deploy a location](#install) on Kubernetes/Openshift.
 * The GET delete commands endpoint (`synthetic/locations/{LocationId}/commands/delete`)fetches the commands to delete a containerized location.
 
 ## Related topics

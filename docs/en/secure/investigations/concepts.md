@@ -1,7 +1,7 @@
 ---
 title: Investigations concepts
 source: https://www.dynatrace.com/docs/secure/investigations/concepts
-scraped: 2026-02-24T21:25:25.616205
+scraped: 2026-02-25T21:33:59.227680
 ---
 
 # Investigations concepts

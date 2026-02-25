@@ -1,7 +1,7 @@
 ---
 title: Mask sensitive data with the OpenTelemetry Collector
 source: https://www.dynatrace.com/docs/ingest-from/opentelemetry/collector/use-cases/redact
-scraped: 2026-02-24T21:34:20.585453
+scraped: 2026-02-25T21:27:16.633010
 ---
 
 # Mask sensitive data with the OpenTelemetry Collector
@@ -548,4 +548,4 @@ Under `service`, we eventually assemble all the configured objects into pipeline
 
 ## Related topics
 
-* [Enrich ingested data with Dynatrace-specific dimensions](/docs/ingest-from/extend-dynatrace/extend-data "Learn how to automatically enrich your telemetry data with Dynatrace-specific dimensions.")
+* [Enrich ingested data with Dynatrace-specific fields](/docs/ingest-from/extend-dynatrace/extend-data "Learn how to automatically enrich your telemetry data with Dynatrace-specific fields.")

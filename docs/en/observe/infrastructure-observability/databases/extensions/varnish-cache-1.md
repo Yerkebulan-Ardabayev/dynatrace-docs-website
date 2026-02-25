@@ -1,7 +1,7 @@
 ---
 title: Varnish Cache extension
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/databases/extensions/varnish-cache-1
-scraped: 2026-02-23T21:23:32.601006
+scraped: 2026-02-25T21:21:27.303667
 ---
 
 # Varnish Cache extension
@@ -73,6 +73,51 @@ In highly segmented networks, feature sets can reflect the segments of your envi
 All metrics that aren't categorized into any feature set are considered to be the default and are always reported.
 
 A metric inherits the feature set of a subgroup, which in turn inherits the feature set of a group. Also, the feature set defined on the metric level overrides the feature set defined on the subgroup level, which in turn overrides the feature set defined on the group level.
+
+default
+
+| Metric name | Metric key | Description |
+| --- | --- | --- |
+| Return code | varnish.cache.returncode | Return code of the varnishstat command |
+
+smf
+
+| Metric name | Metric key | Description |
+| --- | --- | --- |
+| Allocator requests | varnish.cache.smf.c\_req.count | Number of times the storage has been asked to provide a storage segment. |
+| Allocator failures | varnish.cache.smf.c\_fail.count | Number of times the storage has failed to provide a storage segment. |
+| Bytes allocated | varnish.cache.smf.c\_bytes.count | Number of total bytes allocated by this storage. |
+| Bytes freed | varnish.cache.smf.c\_freed.count | Number of total bytes returned to this storage. |
+| Allocations outstanding | varnish.cache.smf.g\_alloc | Number of storage allocations outstanding. |
+| Bytes outstanding | varnish.cache.smf.g\_bytes | Number of bytes allocated from the storage. |
+| Bytes available | varnish.cache.smf.g\_space | Number of bytes left in the storage. |
+| N struct smf | varnish.cache.smf.g\_smf | N struct smf |
+| N small free smf | varnish.cache.smf.g\_smf\_frag | N small free smf |
+| N large free smf | varnish.cache.smf.g\_smf\_large | N large free smf |
+
+smu
+
+| Metric name | Metric key | Description |
+| --- | --- | --- |
+| Allocator requests | varnish.cache.smu.c\_req.count | Number of times the storage has been asked to provide a storage segment. |
+| Allocator failures | varnish.cache.smu.c\_fail.count | Number of times the storage has failed to provide a storage segment. |
+| Bytes allocated | varnish.cache.smu.c\_bytes.count | Number of total bytes allocated by this storage. |
+| Bytes freed | varnish.cache.smu.c\_freed.count | Number of total bytes returned to this storage. |
+| Allocations outstanding | varnish.cache.smu.g\_alloc | Number of storage allocations outstanding. |
+| Bytes outstanding | varnish.cache.smu.g\_bytes | Number of bytes allocated from the storage. |
+| Bytes available | varnish.cache.smu.g\_space | Number of bytes left in the storage. |
+
+sma
+
+| Metric name | Metric key | Description |
+| --- | --- | --- |
+| Allocator requests | varnish.cache.sma.c\_req.count | Number of times the storage has been asked to provide a storage segment. |
+| Allocator failures | varnish.cache.sma.c\_fail.count | Number of times the storage has failed to provide a storage segment. |
+| Bytes allocated | varnish.cache.sma.c\_bytes.count | Number of total bytes allocated by this storage. |
+| Bytes freed | varnish.cache.sma.c\_freed.count | Number of total bytes returned to this storage. |
+| Allocations outstanding | varnish.cache.sma.g\_alloc | Number of storage allocations outstanding. |
+| Bytes outstanding | varnish.cache.sma.g\_bytes | Number of bytes allocated from the storage. |
+| Bytes available | varnish.cache.sma.g\_space | Number of bytes left in the storage. |
 
 main
 
@@ -287,51 +332,6 @@ mgt
 | Child process died (signal) | varnish.cache.mgt.child\_died.count | Number of times the child process has died due to signals |
 | Child process core dumped | varnish.cache.mgt.child\_dump.count | Number of times the child process has produced core dumps |
 | Child process panic | varnish.cache.mgt.child\_panic.count | Number of times the management process has caught a child panic |
-
-default
-
-| Metric name | Metric key | Description |
-| --- | --- | --- |
-| Return code | varnish.cache.returncode | Return code of the varnishstat command |
-
-smf
-
-| Metric name | Metric key | Description |
-| --- | --- | --- |
-| Allocator requests | varnish.cache.smf.c\_req.count | Number of times the storage has been asked to provide a storage segment. |
-| Allocator failures | varnish.cache.smf.c\_fail.count | Number of times the storage has failed to provide a storage segment. |
-| Bytes allocated | varnish.cache.smf.c\_bytes.count | Number of total bytes allocated by this storage. |
-| Bytes freed | varnish.cache.smf.c\_freed.count | Number of total bytes returned to this storage. |
-| Allocations outstanding | varnish.cache.smf.g\_alloc | Number of storage allocations outstanding. |
-| Bytes outstanding | varnish.cache.smf.g\_bytes | Number of bytes allocated from the storage. |
-| Bytes available | varnish.cache.smf.g\_space | Number of bytes left in the storage. |
-| N struct smf | varnish.cache.smf.g\_smf | N struct smf |
-| N small free smf | varnish.cache.smf.g\_smf\_frag | N small free smf |
-| N large free smf | varnish.cache.smf.g\_smf\_large | N large free smf |
-
-smu
-
-| Metric name | Metric key | Description |
-| --- | --- | --- |
-| Allocator requests | varnish.cache.smu.c\_req.count | Number of times the storage has been asked to provide a storage segment. |
-| Allocator failures | varnish.cache.smu.c\_fail.count | Number of times the storage has failed to provide a storage segment. |
-| Bytes allocated | varnish.cache.smu.c\_bytes.count | Number of total bytes allocated by this storage. |
-| Bytes freed | varnish.cache.smu.c\_freed.count | Number of total bytes returned to this storage. |
-| Allocations outstanding | varnish.cache.smu.g\_alloc | Number of storage allocations outstanding. |
-| Bytes outstanding | varnish.cache.smu.g\_bytes | Number of bytes allocated from the storage. |
-| Bytes available | varnish.cache.smu.g\_space | Number of bytes left in the storage. |
-
-sma
-
-| Metric name | Metric key | Description |
-| --- | --- | --- |
-| Allocator requests | varnish.cache.sma.c\_req.count | Number of times the storage has been asked to provide a storage segment. |
-| Allocator failures | varnish.cache.sma.c\_fail.count | Number of times the storage has failed to provide a storage segment. |
-| Bytes allocated | varnish.cache.sma.c\_bytes.count | Number of total bytes allocated by this storage. |
-| Bytes freed | varnish.cache.sma.c\_freed.count | Number of total bytes returned to this storage. |
-| Allocations outstanding | varnish.cache.sma.g\_alloc | Number of storage allocations outstanding. |
-| Bytes outstanding | varnish.cache.sma.g\_bytes | Number of bytes allocated from the storage. |
-| Bytes available | varnish.cache.sma.g\_space | Number of bytes left in the storage. |
 
 [![Hub](https://dt-cdn.net/images/hub-512-82db3c583e.png "Hub")
 

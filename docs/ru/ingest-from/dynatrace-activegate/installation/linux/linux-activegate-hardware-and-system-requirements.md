@@ -1,7 +1,7 @@
 ---
 title: Hardware and system requirements for routing/monitoring ActiveGates on Linux
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-activegate/installation/linux/linux-activegate-hardware-and-system-requirements
-scraped: 2026-02-22T21:20:55.134857
+scraped: 2026-02-25T21:19:32.244453
 ---
 
 # Hardware and system requirements for routing/monitoring ActiveGates on Linux
@@ -45,76 +45,8 @@ For large environments, you may need to use a machine with additional CPU and me
 **Space allocation per directory, for installation purposes:**  
 **(for more detailed allocation, refer to [ActiveGate directories](/docs/ingest-from/dynatrace-activegate/configuration/where-can-i-find-activegate-files "Find out where ActiveGate files are stored on Windows and Linux systems."))**
 
-**Top-level directory**
-
-**Disk space requirements**
-
-ActiveGate and autoupdater executable files, libraries, and related files  
-default: `/opt/dynatrace`  
-relative to installation parameter: `<INSTALL>`
-
-300 MB
-
-ActiveGate configuration and related directories  
-For Environment ActiveGate, it also contains Extensions configuration  
-default: `/var/lib/dynatrace`  
-relative to installation parameter: `<CONFIG>`
-
-2 MB
-
-For Environment ActiveGate only: Extensions executable files, libraries, and related files
-default: `/opt/dynatrace/remotepluginmodule`  
-relative to installation parameter: `<INSTALL>/remotepluginmodule`
-
-1.2 GB
-
 **Space allocation per directory, for ActiveGate operation:**  
 **(for more detailed allocation, refer to [ActiveGate directories](/docs/ingest-from/dynatrace-activegate/configuration/where-can-i-find-activegate-files "Find out where ActiveGate files are stored on Windows and Linux systems."))**
-
-**Top-level directory**
-
-**Disk space requirements**
-
-ActiveGate and autoupdater logs  
-default: `/var/log/dynatrace`  
-installation parameter: `<LOG>`
-
-700 MB
-
-ActiveGate packages directory for auto-update installer downloads  
-default: `/var/lib/dynatrace/packages`  
-installation parameter: `<PACKAGES_DIR>`
-
-500 MB
-
-ActiveGate temporary files  
-default: `/var/tmp/dynatrace/gateway`  
-path relative to installation parameter TEMP: `<TEMP>/gateway`
-
-4 GB (including 3 GB for cached OneAgent installers and container images)
-
-Dump files uploaded to ActiveGate by OneAgent  
-`/var/lib/dynatrace/gateway/dump`
-
-Functionality off by default, not configurable at installation time.  
-When activated, can take configurable maximum size: default 100 GB.
-
-For Environment ActiveGate only: ActiveGate Extensions logs, cache, run-time work area  
-default: `/var/lib/dynatrace/remotepluginmodule`  
-path relative to installation parameter CONFIG: `<CONFIG>/remotepluginmodule`
-
-2 GB
-
-For Environment ActiveGate only: ActiveGate extensions upload directory  
-default: `/opt/dynatrace/remotepluginmodule/plugin_deployment`  
-path relative to installation parameter INSTALL: `<INSTALL>/remotepluginmodule/plugin_deployment`
-
-Depending on uploaded extensions
-
-Extension Execution Controller logs retransmission persistence directory
-`/var/lib/dynatrace/remotepluginmodule/agent/runtime/extensions/persistence`
-
-Up to 600 MB by default. [1](#fn-1-1-def)
 
 1
 
@@ -139,21 +71,6 @@ The reliability mechanism ensures the persistence of Extension Execution Control
 Windows configuration file: `C:\ProgramData\dynatrace\remotepluginmodule\agent\conf\extensionsuser.conf`
 
 Linux configuration file: `/var/lib/dynatrace/remotepluginmodule/agent/conf/extensionsuser.conf`
-
-**Variable**
-
-**Description**
-
-`persistence.reliable_mode`
-
-`true` - reliable mode turned on; SFM logs genereted if space requirement not met
-`false` - reliable mode turned off; log ingest will be transmitted without the reliability mechanism
-
-`persistence.total_limit_kb`
-
-Maximum volume limit for Extensions Log Persistence in kilobytes.
-By default: 600 MB
-Can be modified manually if the requirement can't be met on the host.
 
 ## Supported operating systems
 
@@ -184,8 +101,6 @@ For ActiveGates running synthetic monitors from a private location, see [Require
 For ActiveGates with the zRemote module, see [Install the zRemote module: System requirements: Supported operating systems](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-zremote#supported-operating-systems "Prepare and install the zRemote for z/OS monitoring.").
 
 ## System requirements
-
-
 
 * Ensure that you have proper [network port configuration](/docs/ingest-from/dynatrace-activegate/supported-connectivity-schemes-for-activegates "Learn about the connectivity priorities between ActiveGate types as well as the priorities between ActiveGates and OneAgents.").
 * Your operating system must handle at least 500,000 open files for the `dtuserag` user.  
@@ -240,146 +155,10 @@ The real number of hosts may be different depending on the monitored technologie
 
 The C6i machine instances and the estimates:
 
-Instance
-
-vCPU
-
-Mem (GiB)
-
-Storage
-
-Dedicated EBS bandwidth (Mbps)
-
-Network performance
-
-Estimated number of hosts
-
-c6i.large
-
-2
-
-3.75
-
-EBS-Only
-
-500
-
-Moderate
-
-800
-
-c6i.xlarge
-
-4
-
-7.5
-
-EBS-Only
-
-750
-
-High
-
-1800
-
-c6i.2xlarge
-
-8
-
-15
-
-EBS-Only
-
-1,000
-
-High
-
-2500
-
 ### ARM64 (AArch64) architecture
 
 The C7g machine instances and the estimates:
 
-Instance
-
-vCPU
-
-Mem (GiB)
-
-Storage
-
-Dedicated EBS bandwidth (Mbps)
-
-Network performance
-
-Estimated number of hosts
-
-c7g.large
-
-2
-
-3.75
-
-EBS-Only
-
-500
-
-Moderate
-
-1300
-
-c7g.xlarge
-
-4
-
-7.5
-
-EBS-Only
-
-750
-
-High
-
-2700
-
-c7g.2xlarge
-
-8
-
-15
-
-EBS-Only
-
-1,000
-
-High
-
-5500
-
 ### s390 architecture
 
 Machine sizes and estimates:
-
-Machine size
-
-CPU
-
-Mem (GiB)
-
-Estimated number of hosts
-
-S
-
-2
-
-4
-
-800
-
-M
-
-4
-
-8
-
-1500

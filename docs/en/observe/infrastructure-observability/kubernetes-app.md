@@ -1,7 +1,7 @@
 ---
 title: Kubernetes
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/kubernetes-app
-scraped: 2026-02-24T21:13:42.601516
+scraped: 2026-02-25T21:13:20.364846
 ---
 
 # Kubernetes

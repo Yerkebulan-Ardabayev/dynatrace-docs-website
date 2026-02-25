@@ -1,6 +1,6 @@
 # Документация Dynatrace: deliver/configuration-as-code
 Язык: Русский (RU)
-Сгенерировано: 2026-02-24
+Сгенерировано: 2026-02-25
 Файлов в разделе: 14
 ---
 
@@ -1978,7 +1978,7 @@ When using the [download command](/docs/deliver/configuration-as-code/monaco/ref
 ---
 title: Monaco configuration YAML file - list of type fields
 source: https://www.dynatrace.com/docs/deliver/configuration-as-code/monaco/configuration/yaml-configuration-saas-type-fields
-scraped: 2026-02-22T21:30:00.112601
+scraped: 2026-02-25T21:34:15.621122
 ---
 
 # Monaco configuration YAML file - list of type fields
@@ -3166,7 +3166,7 @@ While this sample shows users, service users, policies, and groups defined in a 
 ---
 title: Monaco configuration YAML file structure
 source: https://www.dynatrace.com/docs/deliver/configuration-as-code/monaco/configuration/yaml-configuration-saas
-scraped: 2026-02-24T21:30:50.679602
+scraped: 2026-02-25T21:27:04.451850
 ---
 
 # Monaco configuration YAML file structure
@@ -4329,7 +4329,7 @@ skip: true
 ---
 title: Monaco API support and access permission handling
 source: https://www.dynatrace.com/docs/deliver/configuration-as-code/monaco/monaco-api-support-and-access-handling
-scraped: 2026-02-24T21:30:55.029638
+scraped: 2026-02-25T21:30:21.743290
 ---
 
 # Monaco API support and access permission handling
@@ -4515,7 +4515,7 @@ Dynatrace resource configuration
 ---
 title: Manage configurations with Monaco
 source: https://www.dynatrace.com/docs/deliver/configuration-as-code/monaco/monaco-getting-started
-scraped: 2026-02-24T21:31:59.111271
+scraped: 2026-02-25T21:31:11.961864
 ---
 
 # Manage configurations with Monaco
@@ -5023,7 +5023,7 @@ Verify that your Dynatrace config has been deleted from your Dynatrace environme
 ---
 title: Work with Dynatrace Monaco CLI commands for Latest Dynatrace
 source: https://www.dynatrace.com/docs/deliver/configuration-as-code/monaco/reference/commands-saas
-scraped: 2026-02-24T21:33:14.033868
+scraped: 2026-02-25T21:34:18.416654
 ---
 
 # Work with Dynatrace Monaco CLI commands for Latest Dynatrace
@@ -5501,7 +5501,7 @@ They are useful for troubleshooting any errors that you might encounter.
 ---
 title: Terraform API support and access permission handling
 source: https://www.dynatrace.com/docs/deliver/configuration-as-code/terraform/terraform-api-support-access-permission-handling
-scraped: 2026-02-24T21:26:33.683363
+scraped: 2026-02-25T21:28:24.652891
 ---
 
 # Terraform API support and access permission handling
@@ -5809,7 +5809,7 @@ The reasons are added as comments at the beginning of each file.
 ---
 title: Configure automated notifications using Terraform and Configuration as Code
 source: https://www.dynatrace.com/docs/deliver/configuration-as-code/terraform/tutorials/terraform-tutorial-set-up-automated-notification
-scraped: 2026-02-24T21:29:16.815942
+scraped: 2026-02-25T21:32:18.901776
 ---
 
 # Configure automated notifications using Terraform and Configuration as Code
@@ -7060,7 +7060,7 @@ We provide a tutorial to help you [Configure automated notifications using Terra
 ---
 title: Configuration as Code overview
 source: https://www.dynatrace.com/docs/deliver/configuration-as-code
-scraped: 2026-02-24T21:21:04.012667
+scraped: 2026-02-25T21:29:14.070583
 ---
 
 # Configuration as Code overview

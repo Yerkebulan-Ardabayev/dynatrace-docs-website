@@ -1,7 +1,7 @@
 ---
 title: Set up Grail permissions for OpenTelemetry
 source: https://www.dynatrace.com/docs/ingest-from/opentelemetry/opentelemetry-security-context
-scraped: 2026-02-24T21:17:38.285190
+scraped: 2026-02-25T21:31:45.422287
 ---
 
 # Set up Grail permissions for OpenTelemetry
@@ -52,6 +52,6 @@ To use the [`OTEL_RESOURCE_ATTRIBUTES`](/docs/deliver/release-monitoring/version
 
 ### Security context via OneAgent metadata file
 
-Dynatrace OneAgent provides enrichment files or environment variables to [add attributes directly in your application code](/docs/ingest-from/extend-dynatrace/extend-data#operator-enrichment-directory "Learn how to automatically enrich your telemetry data with Dynatrace-specific dimensions.").
+Dynatrace OneAgent provides enrichment files or environment variables to [add attributes directly in your application code](/docs/ingest-from/extend-dynatrace/extend-data#operator-enrichment-directory "Learn how to automatically enrich your telemetry data with Dynatrace-specific fields.").
 
 To read more about enrichment options and setup, see how to [enrich via environment variable](/docs/ingest-from/setup-on-k8s/guides/metadata-automation/k8s-metadata-telemetry-enrichment#expand--enrich-via-environment-variable--4 "Guides for telemetry enrichment on Kubernetes").

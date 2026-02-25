@@ -1,23 +1,23 @@
 ---
-title: Dynatrace Intelligence limits
+title: Dynatrace Intelligence ограничения
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/reference/davis-ai-limits
-scraped: 2026-02-23T21:25:01.988893
+scraped: 2026-02-25T21:31:18.511061
 ---
 
-# Dynatrace Intelligence limits
+# Dynatrace Intelligence ограничения
 
-# Dynatrace Intelligence limits
+# Dynatrace Intelligence ограничения
 
-* Latest Dynatrace
-* Reference
-* 5-min read
-* Updated on Feb 04, 2026
+* Последнее Dynatrace
+* Справочник
+* 5-минутное чтение
+* Обновлено 4 февраля 2026 г.
 
-The following page lists the default limits of Dynatrace Intelligence components.
+На этой странице перечислены ограничения компонентов Dynatrace Intelligence по умолчанию.
 
-## Problems and events
+## Проблемы и события
 
-Some of the problems and events limits apply per provider. The following providers are subject to limits:
+Некоторые ограничения проблем и событий применяются для каждого поставщика. Следующие поставщики подлежат ограничениям:
 
 * `AGENT_LOCAL_REST_API_INGEST`
 * `AVAILABILITY`
@@ -32,205 +32,46 @@ Some of the problems and events limits apply per provider. The following provide
 * `REAL_USER_MONITORING`
 * `SYNTHETIC`
 
-### Number of simultaneously active Davis problems
+### Количество одновременно активных проблем Davis
 
-The maximum number of simultaneously active Davis problems within a single environment is 10,000.
+Максимальное количество одновременно активных проблем Davis в одной среде составляет 10 000.
 
-### Number of simultaneously active Davis events
+### Количество одновременно активных событий Davis
 
-The maximum number of simultaneously active Davis events within a single environment, across all event providers, is 15,000.
+Максимальное количество одновременно активных событий Davis в одной среде, во всех поставщиках событий, составляет 15 000.
 
-### Number of simultaneously active Davis events per provider
+### Количество одновременно активных событий Davis на поставщика
 
-The maximum number of simultaneously active Davis events per event provider is 4,000. Example of the event provider: `event.provider = "AVAILABILITY"`.
+Максимальное количество одновременно активных событий Davis на поставщика событий составляет 4 000. Пример поставщика событий: `event.provider = "AVAILABILITY"`.
 
-### Number of Davis events processed every hour
+### Количество обработанных событий Davis в час
 
-The maximum number of Davis events per event provider that can be processed within an hour is 100,000. This limit is replenished every hour.
+Максимальное количество событий Davis на поставщика, которые можно обработать в течение часа, составляет 100 000. Это ограничение пополняется каждый час.
 
-Certain events override default limits. See the table below for more information.
+Определенные события переопределяют ограничения по умолчанию. См. таблицу ниже для получения дополнительной информации.
 
-Event provider
+### Максимальный срок жизни события
 
-Maximum limit
+Максимальный срок жизни для активных событий составляет 60 дней. Если основная аномалия не исчезает после 60 дней, соответствующее событие закрывается и создается новое.
 
-`AVAILABILITY`
+### Временной интервал слияния проблем
 
-200,000 Davis events processed per hour.
+Максимальный временной интервал слияния проблем составляет 90 минут. Если проблема остается нерешенной более 90 минут, после этого в нее не будут объединены новые события.
 
-`METRIC_EVENTS`
+Эта мера гарантирует, что Dynatrace Intelligence избегает сбора не связанной информации для длительных инцидентов.
 
-200,000 Davis events processed per hour.
+## Обнаружение аномалий - новое **Обнаружение аномалий**
 
-* `AGENT_LOCAL_REST_API_INGEST`
-* `BASELINING`
-* `EVENTS_REST_API_INGEST`
-* `KUBERNETES_ANOMALY_DETECTION`
-* `KUBERNETES_EVENT`
-* `LOG_EVENTS`
-* `ONEAGENT`
-* `OPENPIPELINE_DATA_EXTRACTION`
-* `REAL_USER_MONITORING`
-* `SYNTHETIC`
+### Пользовательские оповещения
 
-The default of 100,000 Davis events processed per hour applies.
+### События метрик
 
-### Event maximum lifetime
+#### Общие
 
-The maximum lifetime for active events is 60 days. If the underlying anomaly doesn't disappear after 60 days, the respective event is closed and a new one is created.
+#### События селекторов метрик
 
-### Problem merging timeframe
+#### События ключей метрик
 
-The maximum problem merging timeframe is 90 minutes. If the problem remains unresolved for more than 90 minutes, no new events will be merged into it after that.
+### Симуляция ноутбука и панели управления
 
-This measure ensures that Dynatrace Intelligence avoids collecting unrelated information for long-lasting incidents.
-
-## Anomaly Detection - new **Anomaly Detection**
-
-### Custom alerts
-
-Item
-
-Maximum limit
-
-Description
-
-Number of custom alert configurations
-
-1,000 per environment
-
-The maximum number of custom alerts that can be configured.
-
-Grail query request timeout
-
-10 seconds
-
-The maximum time limit for the query execution.
-
-Number of auto-adaptive threshold monitored dimensions
-
-10,000 per configuration
-
-The maximum number of auto-adaptive threshold monitored dimensions. Once the limit is reached, no additional dimensions will be monitored.
-
-Number of seasonal baseline monitored dimensions
-
-10,000 per configuration
-
-The maximum number of seasonal baseline monitored dimensions. Once the limit is reached, no additional dimensions will be monitored.
-
-### Metric events
-
-#### General
-
-Item
-
-Maximum limit
-
-Description
-
-Number of metric events
-
-10,000 per environment
-
-The maximum number of metric events that can be configured.
-
-#### Metric selector events
-
-Item
-
-Maximum limit
-
-Description
-
-Number of monitored dimensions
-
-100,000
-
-This limit applies across all customer-defined metric selector metric events.
-
-Dynatrace also counts aggregated dimensions towards the limit. Once the limit is reached, no additional dimensions will be monitored.
-
-Number of static threshold metric event configurations
-
-100
-
-The maximum number of static threshold model metric event configurations created with metric selector.
-
-Number of static threshold monitored dimensions
-
-1,000 per configuration
-
-The maximum number of static threshold monitored dimensions. Once the limit is reached, no additional dimensions will be monitored.
-
-Number of auto-adaptive threshold metric event configurations
-
-100
-
-The maximum number of metric event configurations that use the auto-adaptive threshold model.
-
-Number of auto-adaptive threshold monitored dimensions
-
-1,000 per configuration
-
-The maximum number of auto-adaptive threshold monitored dimensions. Once the limit is reached, no additional dimensions will be monitored.
-
-Number of seasonal baseline metric event configurations
-
-100
-
-The maximum number of metric event configurations that use the seasonal baseline model.
-
-Number of seasonal baseline monitored dimensions
-
-500 per configuration
-
-The maximum number of seasonal baseline monitored dimensions. Once the limit is reached, no additional dimensions will be monitored.
-
-Hard monitored dimension limit
-
-10,000 per configuration
-
-If the number of monitored dimensions exceeds the hard limit, the query will start failing.
-
-#### Metric key events
-
-Item
-
-Maximum limit
-
-Description
-
-Number of simultaneously active alerts
-
-200 per configuration
-
-The maximum number of simultaneously active alerts per metric key-based configuration.
-
-### Notebook & Dashboard Simulation
-
-Item
-
-Maximum limit
-
-Description
-
-Data records
-
-1,000
-
-The maximum number of timeseries data records that can be uniquely simulated per single data analyzer execution.
-
-## Dynatrace Intelligence generative AI
-
-Item
-
-Maximum limit
-
-Individual user requests
-
-25 requests per 15 minutes
-
-All user requests across the environment
-
-60 requests per 15 minutes
+## Dynatrace Intelligence генеративный ИИ

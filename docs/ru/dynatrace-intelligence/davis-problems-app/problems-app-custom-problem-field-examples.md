@@ -1,120 +1,120 @@
 ---
-title: Dynatrace Intelligence causal AI use cases
+title: Dynatrace Intelligence причинно-следственный AI сценарии
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/davis-problems-app/problems-app-custom-problem-field-examples
-scraped: 2026-02-24T21:15:51.928778
+scraped: 2026-02-25T21:14:58.584354
 ---
 
-# Dynatrace Intelligence causal AI use cases
+# Dynatrace Intelligence причинно-следственный AI сценарии
 
-# Dynatrace Intelligence causal AI use cases
+# Dynatrace Intelligence причинно-следственный AI сценарии
 
-* Latest Dynatrace
-* Tutorial
-* 5-min read
-* Updated on Jan 28, 2026
+* Последнее Dynatrace
+* Учебник
+* 5-минутное чтение
+* Обновлено 28 января 2026 г.
 
-This article focuses on use cases where custom fields are necessary and provides examples of how to create custom problems fields to achieve the desired result.
+Эта статья фокусируется на сценариях, где необходимы пользовательские поля, и предоставляет примеры того, как создать пользовательские поля проблем, чтобы достичь желаемого результата.
 
-## Surface incident ownership in the problems table
+## Отображение владения инцидентами в таблице проблем
 
-Event sources can attach important metadata, such as `dt.owner` or `app-id`, as event fields. This allows you to define custom event fields directly within the configurations of their respective event sources.
+Источники событий могут присоединять важные метаданные, такие как `dt.owner` или `app-id`, в качестве полей событий. Это позволяет вам определять пользовательские поля событий直接 в конфигурациях своих источников событий.
 
-Assume that you have a team-specific custom alert that needs to be configured on top of a DQL query to continuously monitor a metric and report a violation event if abnormal behavior is detected. The team's automation framework needs to automatically define a custom event field, `dt.owner`, containing the owning team's name.
+Предположим, что у вас есть командный пользовательский оповещение, которое необходимо настроить поверх запроса DQL, чтобы непрерывно мониторить метрику и сообщать о событии нарушения, если обнаружено аномальное поведение. Автоматизированная структура команды должна автоматически определять пользовательское поле события `dt.owner`, содержащее имя владеющей команды.
 
-To do this, you need to define your own `dt.owner` and `app-id` event fields within the custom alert configuration.
+Для этого вам нужно определить свои собственные поля событий `dt.owner` и `app-id` в конфигурации пользовательского оповещения.
 
-Steps
+Шаги
 
-1. Go to ![Anomaly Detection - new](https://dt-cdn.net/images/davis-anomalydetection-256-105da91594.png "Anomaly Detection - new") **Anomaly Detection**.
-2. Select ![Add](https://dt-cdn.net/images/dashboards-app-menu-plus-7e9b7c3547.svg "Add") **New alert** > **Create your own custom alert**.
-3. Give your configuration a meaningful **Title**.
-4. Expand **Configure your query** and provide the [DQL query](/docs/platform/grail/dynatrace-query-language/dql-guide "Find out how DQL works and what are DQL key concepts.") to fetch your data.
+1. Перейдите к ![Обнаружение аномалий - новое](https://dt-cdn.net/images/davis-anomalydetection-256-105da91594.png "Обнаружение аномалий - новое") **Обнаружение аномалий**.
+2. Выберите ![Добавить](https://dt-cdn.net/images/dashboards-app-menu-plus-7e9b7c3547.svg "Добавить") **Новое оповещение** > **Создайте свое собственное пользовательское оповещение**.
+3. Дайте вашей конфигурации осмысленное **Название**.
+4. Разверните **Настройка запроса** и предоставьте запрос DQL, чтобы получить ваши данные.
 
-   We recommend that you use the `interval: 1m` parameter to ensure proper data resolution for the analysis.
-5. Expand **Customize parameters** and define the analyzer and its parameters. For details, see [Analyzer type and parameters](/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-configuration#analyzer "How to set up an alert for missing measurements.").
-6. Expand **Create an event template** and configure the event triggered by the configuration.
+   Мы рекомендуем использовать параметр `interval: 1m`, чтобы обеспечить правильное разрешение данных для анализа.
+5. Разверните **Настройка параметров** и определите анализатор и его параметры. Для подробностей см. [Тип анализатора и параметры](/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-configuration#analyzer "Как настроить оповещение для пропущенных измерений.").
+6. Разверните **Создание шаблона события** и настройте событие, запускаемое конфигурацией.
 
-Event name
+Имя события
 
-1. Set the **Event name** to `Abnormally high network traffic`.
+1. Установите **Имя события** на `Аномально высокий сетевой трафик`.
 
-Event description
+Описание события
 
-1. Set the **Event description** to `Abnormally high network traffic was detected for cluster 23`.
+1. Установите **Описание события** на `Аномально высокий сетевой трафик был обнаружен для кластера 23`.
 
-Event properties
+Свойства события
 
-1. Set the following **Event properties**:
+1. Установите следующие **Свойства события**:
 
-2. Select **Create**.
+2. Выберите **Создать**.
 
-After you add the fields `dt.owner` and `app-id` to your custom alert configuration, each resulting violation event will be tagged with these new fields. The next step is to propagate these fields from the single violation events to problems.
+После того, как вы добавите поля `dt.owner` и `app-id` в свою конфигурацию пользовательского оповещения, каждое результирующее событие нарушения будет помечено этими новыми полями. Следующий шаг - распространить эти поля из отдельных событий нарушения на проблемы.
 
-To add a new field mapping
+Чтобы добавить новое сопоставление полей
 
-1. In **Dynatrace**, go to **Settings** > **Analyze and alert** > **Root cause analysis** > **Problem fields**.
-2. Select  **New field**.
-3. Set **Event name** and **Problem field** to `dt.owner`.
-4. Select **Add more**.
-5. Set **Event name** and **Problem field** to `app-id`.
-6. Select **Create**.
+1. В **Dynatrace** перейдите в **Настройки** > **Анализ и оповещение** > **Анализ коренной причины** > **Поля проблем**.
+2. Выберите **Новое поле**.
+3. Установите **Имя события** и **Поле проблемы** на `dt.owner`.
+4. Выберите **Добавить еще**.
+5. Установите **Имя события** и **Поле проблемы** на `app-id`.
+6. Выберите **Создать**.
 
-Once this configuration is saved, all newly created problems will automatically include field values from the single events for these keys.
+Как только эта конфигурация будет сохранена, все новые созданные проблемы будут автоматически включать значения полей из отдельных событий для этих ключей.
 
-Problem records in Grail are immutable. This means that you can modify the field mapping configuration at any time, but previously recorded problems that were closed before the modifications will not change. Any changes in field mapping or field naming will only apply after the configuration change.
+Записи проблем в **Grail** являются неизменными. Это означает, что вы можете изменить конфигурацию сопоставления полей в любое время, но ранее записанные проблемы, которые были закрыты до изменений, не изменятся. Любые изменения в сопоставлении полей или именовании полей будут применяться только после изменения конфигурации.
 
-Once this configuration step is complete, you can write DQL queries to filter problems using your newly introduced fields. The problem feed will automatically include your custom fields within the table and the filter bar at the top, as shown below:
+Как только этот шаг конфигурации будет завершен, вы можете написать запросы DQL, чтобы фильтровать проблемы, используя ваши недавно введенные поля. Поток проблем будет автоматически включать ваши пользовательские поля в таблицу и строку фильтра вверху, как показано ниже:
 
-![An example of Problems table containing custom problem fields, cloud.provider and k8s.workload.kind](https://dt-cdn.net/images/problems-app-custom-problem-fields-1920-3b6023a219.png)
+![Пример таблицы проблем, содержащей пользовательские поля проблем, cloud.provider и k8s.workload.kind](https://dt-cdn.net/images/problems-app-custom-problem-fields-1920-3b6023a219.png)
 
-## Manage the access to problem records
+## Управление доступом к записям проблем
 
-All fields that occur on single violation events and are defined by the Dynatrace permission system as record permissions are automatically mapped onto problems. This allows you to segregate and manage access to the Dynatrace Grail data lake based on reading permissions for various user groups.
+Все поля, которые происходят на отдельных событиях нарушения и определяются системой разрешений Dynatrace в качестве разрешений на запись, автоматически сопоставляются с проблемами. Это позволяет вам разделить и управлять доступом к хранилищу данных Dynatrace Grail на основе разрешений на чтение для различных групп пользователей.
 
-Assume you need to apply a policy to problems and Davis events that will allow your team to see the `dt.security_context` field. You can do so by setting the policy boundaries within your teamâs group permissions.
+Предположим, что вам нужно применить политику к проблемам и событиям Davis, которая позволит вашей команде видеть поле `dt.security_context`. Вы можете сделать это, установив границы политики в разрешениях группы вашей команды.
 
-First, you need to configure `dt.security_context` field within the problem field mapping settings.
+Сначала вам нужно настроить поле `dt.security_context` в настройках сопоставления полей проблем.
 
-Steps
+Шаги
 
-1. In **Dynatrace**, go to **Settings** > **Analyze and alert** > **Root cause analysis** > **Problem fields**.
-2. Select  **New field**.
-3. Set **Event name** to `app_id`.
-4. Set **Problem field** to `dt.security_context`.
-5. Select **Create**.
+1. В **Dynatrace** перейдите в **Настройки** > **Анализ и оповещение** > **Анализ коренной причины** > **Поля проблем**.
+2. Выберите **Новое поле**.
+3. Установите **Имя события** на `app_id`.
+4. Установите **Поле проблемы** на `dt.security_context`.
+5. Выберите **Создать**.
 
-Once the `security_context` field is successfully mapped on your problems, you can define a new policy boundary that uses the previously mapped `security_context` field.
+Как только поле `security_context` будет успешно сопоставлено с вашими проблемами, вы можете определить новую границу политики, которая использует ранее сопоставленное поле `security_context`.
 
-Steps
+Шаги
 
-1. Go to the **Account Management** console of your tenant.
-2. Go to **Identity & access management** > **Policy management**.
-3. On the **Boundaries** tab, select  **Boundary**.
-4. Set **Boundary name** to `Team 23 boundary`.
-5. Set **Boundary query** to `storage:dt.security_context IN ("app-23");`.
-6. Select **Save** to create a policy boundary.
+1. Перейдите в консоль управления учетной записью вашего арендатора.
+2. Перейдите в **Управление идентификацией и доступом** > **Управление политиками**.
+3. На вкладке **Границы** выберите **Граница**.
+4. Установите **Имя границы** на `Граница команды 23`.
+5. Установите **Запрос границы** на `storage:dt.security_context IN ("app-23");`.
+6. Выберите **Сохранить**, чтобы создать границу политики.
 
-Next, create a new **Event Read** permission and use it to assign the newly created boundary. The result should look similar to the example below:
+Далее создайте новое разрешение **Чтение события** и используйте его, чтобы присвоить недавно созданную границу. Результат должен выглядеть подобно примеру ниже:
 
-![An example of a new "Event Read" for custom problem fields use case](https://dt-cdn.net/images/problems-app-custom-problem-fields-new-permission-example-7680-98c4ab3748.png)
+![Пример нового "Чтение события" для сценария пользовательских полей проблем](https://dt-cdn.net/images/problems-app-custom-problem-fields-new-permission-example-7680-98c4ab3748.png)
 
-Finally, map the new permission to an existing group of users.
+Наконец, сопоставьте новое разрешение с существующей группой пользователей.
 
-In addition to applying the policy to problems and Davis events, setting the policy boundary allows you to apply the policy to all available Grail tables consistently. This avoids the unnecessary creation of many policy configs for each Grail table separately and allows a more efficient management of access within large-scale environments.
+Помимо применения политики к проблемам и событиям Davis, установка границы политики позволяет вам применить политику ко всем доступным таблицам Grail последовательно. Это избегает ненужного создания многих конфигураций политики для каждой таблицы Grail отдельно и позволяет более эффективное управление доступом в крупномасштабных средах.
 
-## Filter your personal problem email notifications and segments
+## Фильтрация личных уведомлений о проблемах по электронной почте и сегментов
 
-Since problem fields are natively stored in Grail, they eliminate the need for costly DQL joins. These fields are also natively transmitted through OpenPipeline and therefore can be used as workflow triggers, ensuring seamless integration.
+Поскольку поля проблем хранятся в Grail, они исключают необходимость в дорогостоящих соединениях DQL. Эти поля также передаются через OpenPipeline и, следовательно, могут быть использованы в качестве триггеров рабочего процесса, обеспечивая бесшовную интеграцию.
 
-Setting up filters based on problem fields offers several advantages:
+Настройка фильтров на основе полей проблем предлагает несколько преимуществ:
 
-* Scalability: filters can handle large volumes of data efficiently
-* Reliability: native storage and transmission ensure consistent and dependable filtering
-* Transparency: provides clear insights into the criteria used for filtering problems
+* Масштабируемость: фильтры могут обрабатывать большие объемы данных эффективно
+* Надежность: родное хранение и передача обеспечивают последовательную и надежную фильтрацию
+* Прозрачность: обеспечивает четкое понимание критериев, используемых для фильтрации проблем
 
-You can use problem field filters to:
+Вы можете использовать фильтры полей проблем, чтобы:
 
-* Efficiently filter incoming problems within personal email notifications, workflow triggers, and segments.
-* Streamline the management of incoming problems, ensuring that relevant issues are promptly identified and addressed.
+* Эффективно фильтровать входящие проблемы в личных уведомлениях по электронной почте, триггерах рабочего процесса и сегментах.
+* Упростить управление входящими проблемами, гарантируя, что соответствующие проблемы будут своевременно выявлены и устранены.
 
-This approach allows you to enhance the overall efficiency and effectiveness of your monitoring and alerting processes.
+Этот подход позволяет вам повысить общую эффективность и результативность ваших процессов мониторинга и оповещения.

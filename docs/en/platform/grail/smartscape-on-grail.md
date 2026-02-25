@@ -1,7 +1,7 @@
 ---
 title: Smartscape on Grail
 source: https://www.dynatrace.com/docs/platform/grail/smartscape-on-grail
-scraped: 2026-02-22T21:13:59.859577
+scraped: 2026-02-25T21:19:20.011086
 ---
 
 # Smartscape on Grail
@@ -206,74 +206,6 @@ Node types used by Smartscape on Grail might be different from classic entity ty
 If there are no corresponding classic entities (for example, with [Clouds](/docs/observe/infrastructure-observability/cloud-platform-monitoring "The cloud platforms Dynatrace can monitor")), there are no `id_classic` fields on those nodes.
 
 ## Differences between classic entities and Smartscape on Grail
-
-Feature
-
-Classic entity store
-
-Smartscape on Grail
-
-Query all entities regardless of their type
-
-*Not supported*
-
-`smartscapeNodes "*"`
-
-Query HOST entities
-
-`fetch dt.entity.host`
-
-`smartscapeNodes HOST`
-
-Query all relationships regardless of type, source or target
-
-*Not supported*
-
-`smartscapeEdges "*"`
-
-References in Signal data
-
-`dt.entity.__type__`
-
-`dt.smartscape.__type__`
-
-Enrich entity name
-
-`entityName(dt.entity.__type__)`
-
-`getNodeName(dt.smartscape.__type__)`
-
-Enrich any other field (for example, tags)
-
-`entityAttr(dt.entity.__type__, "tags")`
-
-`getNodeField(dt.smartscape.__type__, "tags")`
-
-Get a list of entity IDs based on entity selector
-
-`classicEntitySelector("type(HOST),toRelationships.runsOn(type(SERVICE),tag("owner:Joe"))")`
-
-*Not supported*
-
-Get a list of entity IDs based on entity traversal
-
-*Not supported*
-
-```
-smartscapeNodes SERVICE
-
-
-
-| filter tags[owner] == "Joe"
-
-
-
-| traverse runs_on, HOST
-
-
-
-| fields id
-```
 
 ## Smartscape segments
 

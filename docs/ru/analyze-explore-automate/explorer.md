@@ -1,7 +1,7 @@
 ---
 title: Data Explorer
 source: https://www.dynatrace.com/docs/analyze-explore-automate/explorer
-scraped: 2026-02-22T21:13:04.748702
+scraped: 2026-02-25T21:29:50.224333
 ---
 
 # Data Explorer
@@ -302,42 +302,6 @@ The baseline calculation is based on the [Seasonal baseline](/docs/dynatrace-int
 * Baselines are not added to the dashboard tile when you pin a chart to a dashboard.
 * The timeframe used to infer the baseline is determined by the currently selected resolution:
 
-  Resolution range
-
-  Resolution examples
-
-  Baseline timeframe
-
-  resolution < 5 minutes
-
-  + 1 minute
-
-  **previous 14 days**
-
-  5 minutes â¥ resolution < 1 hour
-
-  + 5 minutes
-  + 10 minutes
-  + 30 minutes
-
-  **previous 28 days**
-
-  1 hour â¥ resolution < 1 day
-
-  + 1 hour
-  + 6 hours
-  + 12 hours
-
-  **400 days**
-
-  resolution â¥ 1 day
-
-  + 1 day
-  + 1 week
-  + 1 month
-
-  **5 years**
-
 ### Add a baseline
 
 1. On the graph, select the line for the metric you want to baseline.
@@ -356,52 +320,6 @@ Baselines are listed separately in the chart legend. For example, if you add a b
 ### Compared to metric event baselines
 
 You may notice differences between baselines in Data Explorer and metric events. These features offer different approaches to suit their different contexts. In general, the Data Explorer configuration is fixed, while the metric events configuration is configurable.
-
-**Data Explorer**
-
-**Metric events**
-
-**Samples**
-
-`5`
-
-Configurable
-
-**Violating samples**
-
-`3`
-
-Configurable
-
-**Dealerting samples**
-
-`5`
-
-Configurable
-
-**Alert on no data**
-
-`false`
-
-Configurable
-
-**Tolerance** (affects width of confidence band)
-
-`4`
-
-Configurable (range: `0.1` to `10`)
-
-**Resolution** (affects granularity)
-
-Configurable
-
-`1` minute
-
-**Training time**
-
-Instantaneous
-
-Daily
 
 For details on seasonal baselining, see [Seasonal baseline](/docs/dynatrace-intelligence/reference/ai-models/seasonal-baseline "How Dynatrace Intelligence suggests seasonal baseline thresholds for a scope of entities.").
 
@@ -710,36 +628,6 @@ In this variation, the host metric is extended by host group.
 
   Note that this does not apply to visualizations in Data Explorer itself, where you can have more than 4,000 data points. It applies only to dashboard tiles created with Data Explorer where the resolution/timeframe combination selected on the dashboard results in more than 4,000 data points.
 * Examples of order-of-magnitude notation in Dynatrace:
-
-  Notation
-
-  Factor
-
-  Meaning
-
-  k
-
-  10^3
-
-  kilo, thousand
-
-  M
-
-  10^6
-
-  mega, million
-
-  G
-
-  10^9
-
-  giga, billion
-
-  T
-
-  10^12
-
-  tera, trillion
 
   For details, see [Order-of-magnitude notation](/docs/discover-dynatrace/get-started/dynatrace-ui/order-of-magnitude-notation "Dynatrace order-of-magnitude notation for displaying metric values").
 

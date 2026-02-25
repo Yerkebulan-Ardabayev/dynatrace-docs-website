@@ -1,7 +1,7 @@
 ---
 title: Log viewer (Logs Classic)
 source: https://www.dynatrace.com/docs/analyze-explore-automate/log-monitoring/analyze-log-data/log-viewer
-scraped: 2026-02-23T21:38:28.091819
+scraped: 2026-02-25T21:33:52.522193
 ---
 
 # Log viewer (Logs Classic)
@@ -38,142 +38,6 @@ In the advanced mode, you can run an empty query to return unfiltered log data.
 
 Dynatrace search query language
 
-Category
-
-Description
-
-Example
-
-Text search
-
-Text searches help you find individual word occurrences. You can search text without any syntax (as long as no special characters or keywords are present, such as `OR` `"` `=` `\` ) In this text search we identify words and ignore any non alphanumeric (whitespaces, interpunction) characters between them.
-
-Spaces are interpreted as AND operators:  
-`search words` is equivalent to `content="search" AND content="words"`.
-
-Also, this mode allows you to use double quotes:  
-`"search phrase" more` is equivalent to `content="search phrase" AND content="more"`.
-
-Searches are case-sensitive for attribute names, and case-insensitive for attribute values.
-`content="SEARCH"` is equivalent to `content="search"`, but `MyAttribute="MyValue"` in NOT equivalent to `myattribute="MyValue"`.
-
-The query has a limit of 20 relations: logical operators (AND, OR) or comparison operators (`=`, `!=`).
-
-```
-error
-
-
-
-search words
-
-
-
-"search phrase" more
-
-
-
-content="SEARCH"
-```
-
-Attributes
-
-Search for records that have a specified attribute with a specified value.  
-Search for records that do not have a specified attribute with a specified value.  
-Search for records that do not contain a specified phrase in the content field.  
-You can write numbers without quotes, including positive and negative decimals (for example, -123.34)
-
-```
-host.name="HOST1"
-
-
-
-host.name!="HOST1"
-
-
-
-content!="search text"
-
-
-
-http.code=123
-```
-
-Phrases
-
-A phrase is a group of words surrounded by double quotes. Phrases are treated just like single-word terms in queries. This allows you to search log data for a specified phrase in the content field. It returns only those records in which the entire phrase matches. In this example, the word `search` must be immediately followed by the word `text`.
-
-Keep in mind that using a phrase search for content takes into account only alphanumeric characters in the same manner as the text search described above.
-
-```
-content="search text"
-```
-
-Boolean operators
-
-Allowed operators are `AND`, `OR` and can be written in either uppercase or lowercase. Log data matches `AND` when it contains both surrounding strings. Log data matches `OR` when it contains at least one of the surrounding strings. The logical operator `AND` is automatically inserted between single-word terms that are not surrounded by parentheses.  
-**Precedence**: `AND`, `OR`
-
-```
-status="INFO" AND host.name="HOST1"
-```
-
-```
-status="INFO" OR host.name="HOST1"
-```
-
-Grouping
-
-Parentheses `( )` can be used to group clauses into sub-queries.
-
-```
-status="INFO" AND
-
-
-
-(host.name="HOST1" OR host.name="HOST2")
-```
-
-Wildcards
-
-Wildcards can be used to represent a variable or unknown alphanumeric characters in search terms. An asterisk `*` can be used to represent any string composed of alphanumeric characters. The `*` wildcard is only acceptable at the end of the search term. The search term cannot start with the `*` wildcard and the `*` wildcard cannot be used within the search term itself.
-
-```
-host.name="host*"
-```
-
-Special characters
-
-Escaping special characters in attribute names or attribute values:
-
-For attribute names:  
-An attribute can contain any chars but `"=!\` or white space. If an attribute contains any of the special characters or keywords (like `AND` or `OR`), you need to wrap the whole name in backticks (`). Additionally, if an attribute name contains a backtick, you need to escape it with a backslash (\).
-
-For attribute values:  
-Special chars: `*` `"` `\` must be escaped with `\`.
-
-For free text search mode:  
-Wrap keywords with double quotes.
-
-Values that contain special characters must be wrapped with double quotes and special characters must be escaped with `\`
-
-```
-`attri=bute`="\"abc"
-```
-
-Entity Selector[1](#fn-1-1-def)
-
-Search for records using entity selector.
-
-For more information, see [Environment API v2 - Entity selector](/docs/dynatrace-api/environment-api/entity-v2/entity-selector "Configure the entity selector for Environment API endpoints.").
-
-```
-attribute inEntitySelector "$(entitySelector)"
-```
-
-```
-dt.source_entity inEntitySelector "type(\"HOST\")"
-```
-
 1
 
 Not applicable for log events, log metrics, and processing.
@@ -207,7 +71,5 @@ To export table data
 **Available attributes** (displayed to the left of the table) provide you with an overview and the ability to filter the log data. **Available attributes** are automatically detected attributes of the data presented in the table. You can use them to quickly filter the result table data for a specific log data attribute. Each available attribute displays up to ten most popular values for that attribute. To filter all values for a particular attribute, create and run a query in the log viewer search.
 
 ## Log details
-
-
 
 Unique log data attributes (high-cardinality attributes) such as `span_id` and `trace_id` generate unnecessarily excessive lists of available attributes that may impact log viewer performance. Because of this, they aren't listed in **Available attributes**. You can still use them in an advanced search query.

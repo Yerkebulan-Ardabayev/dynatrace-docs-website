@@ -1,6 +1,6 @@
 # Документация Dynatrace: license/capabilities
 Язык: Русский (RU)
-Сгенерировано: 2026-02-24
+Сгенерировано: 2026-02-25
 Файлов в разделе: 17
 ---
 
@@ -9,7 +9,7 @@
 ---
 title: Calculate your consumption of Foundation & Discovery (DPS)
 source: https://www.dynatrace.com/docs/license/capabilities/app-infra-observability/foundation-and-discovery
-scraped: 2026-02-22T21:18:10.374126
+scraped: 2026-02-25T21:18:43.809802
 ---
 
 # Calculate your consumption of Foundation & Discovery (DPS)
@@ -547,7 +547,7 @@ When using the metric "(DPS) Total metric data points billed for Full-Stack moni
 ---
 title: Calculate your consumption of Infrastructure Monitoring (DPS)
 source: https://www.dynatrace.com/docs/license/capabilities/app-infra-observability/infrastructure-monitoring
-scraped: 2026-02-22T21:18:03.878498
+scraped: 2026-02-25T21:18:35.957974
 ---
 
 # Calculate your consumption of Infrastructure Monitoring (DPS)
@@ -584,7 +584,7 @@ The figure below illustrates how host-hour consumption per host is calculated at
 ### Metrics
 
 This section assumes that you have followed the Dynatrace-recommended deployment options.
-If you implement a custom deployment, the charging of included Metrics may still work as describedâbut this is not guaranteed by Dynatrace.
+If you implement a custom deployment, the charging of included metrics may still work as describedâbut this is not guaranteed by Dynatrace.
 
 Dynatrace Infrastructure Monitoring includes Infrastructure Monitoring metrics and [other built-in metrics](/docs/license/capabilities/metrics/dps-metrics-ingest#billable-and-non-billable-metrics "Learn how your consumption of the Metrics - Ingest & Process DPS capability is billed and charged.").
 These metrics are included and never produce any charge.
@@ -599,28 +599,6 @@ Metric data points that exceed your included volume are charged as:
 
 * If Metrics powered by Grail exists on your rate card, these are charged as [Metrics powered by Grail](/docs/license/capabilities/metrics "Learn how Dynatrace Metrics powered by Grail consumption is calculated using the Dynatrace Platform Subscription model.").
 * If Metrics powered by Grail does not exist on your rate card, these are charged as [Custom Metrics Classic](/docs/license/capabilities/platform-extensions/custom-metrics-classic "Learn how your consumption of the Dynatrace Custom Metrics Classic DPS capability is billed and charged.").
-
-Origin
-
-Examples (including but not limited to)
-
-An Infrastructure-monitored host and sent via the [OneAgent metric API](/docs/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/oneagent-metric-api "Use the Dynatrace API to retrieve the metrics of monitored entities.")
-
-* OpenTelemetry metrics
-* Spring Micrometer
-* StatsD
-* JMX
-* Extensions run locally on the host by OneAgent
-* a host-local Telegraf
-
-An Infrastructure-monitored Kubernetes node
-
-* OpenTelemetry metrics
-* Spring Micrometer
-* JMX
-* [Prometheus metrics via ActiveGate](/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-prometheus-metrics "Metric ingestion from Prometheus endpoints in Kubernetes, metrics alerts, and monitoring consumption.")
-
-* Metrics sent via the Dynatrace Collector [1](#fn-1-1-def) or OpenTelemetry Collector [2](#fn-1-2-def)
 
 1
 
@@ -720,8 +698,6 @@ Here is the list of metrics you can use to monitor the consumption details for I
 
     Description: Number of metric data points billed for all Infrastructure-monitored hosts.
 
-
-
 ### Monitor host-hour consumption
 
 You can monitor the total host-hour consumption for different intervals (15 min, hour, day, or week) for any selected timeframe using the "(DPS) Infrastructure Monitoring billing usage" metric.
@@ -735,6 +711,8 @@ The example below shows the list of all hosts that reported consumption.
 ![Infrastructure Monitoring (DPS)](https://dt-cdn.net/images/image013-1099-cb1470f609.png)
 
 ### Monitor metric consumption for Infrastructure monitored hosts
+
+
 
 Use the metric "(DPS) Total metric data points billed for Infrastructure hosts" to monitor the number of metric data points that are billed for Infrastructure monitored hosts, as shown in the example below.
 
@@ -938,7 +916,7 @@ For each OneAgent installed in your infrastructure, you can choose the monitorin
 ---
 title: AppEngine Functions (Serverless Functions) overview (DPS)
 source: https://www.dynatrace.com/docs/license/capabilities/appengine-functions
-scraped: 2026-02-22T21:25:44.595259
+scraped: 2026-02-25T21:26:44.948196
 ---
 
 # AppEngine Functions (Serverless Functions) overview (DPS)
@@ -982,7 +960,7 @@ AppEngine Functions work out-of-the-box: no external hosting is required, and th
 ---
 title: Application Security overview (DPS)
 source: https://www.dynatrace.com/docs/license/capabilities/application-security
-scraped: 2026-02-23T21:31:22.692602
+scraped: 2026-02-25T21:30:00.852824
 ---
 
 # Application Security overview (DPS)
@@ -1039,7 +1017,7 @@ This includes [Kubernetes Security Posture Management (KSPM)](/docs/ingest-from/
 ---
 title: Automation Workflow capability overview (DPS)
 source: https://www.dynatrace.com/docs/license/capabilities/automation
-scraped: 2026-02-23T21:39:33.277366
+scraped: 2026-02-25T21:32:13.441513
 ---
 
 # Automation Workflow capability overview (DPS)
@@ -1268,7 +1246,7 @@ The following details apply to metric data points:
 ---
 title: Events powered by Grail overview (DPS)
 source: https://www.dynatrace.com/docs/license/capabilities/events
-scraped: 2026-02-22T21:20:42.845442
+scraped: 2026-02-25T21:19:21.094290
 ---
 
 # Events powered by Grail overview (DPS)
@@ -1318,46 +1296,6 @@ Included events
 
 The table below describes events that are included with a separate rate-card capability package.
 
-Built-in event kind
-
-Relevant capability
-
-Ingest & Process
-
-Retain[1](#fn-1-1-def)
-
-Query
-
-Dynatrace Intelligence problems and events
-
-Full-Stack Monitoring
-
-Included
-
-First 15 months are included
-
-Included
-
-Kubernetes warning events
-
-Kubernetes Platform Monitoring
-
-60 warning events per pod-hour are included
-
-First 15 months are included
-
-Queries generated from within ![Kubernetes (new)](https://dt-cdn.net/images/kubernetes-new-1024-45d3de15d1.webp "Kubernetes (new)") **Kubernetes** are included
-
-Built-in security events
-
-Runtime Vulnerability Analytics (RVA)
-
-Included
-
-First 3 years are included
-
-Queries generated from within ![Vulnerabilities](https://dt-cdn.net/images/vulnerabilities-highresolution-1025-9279da9743.png "Vulnerabilities") **Vulnerabilities** are included
-
 1
 
 Retention beyond the included timeframe is billable as Events powered by Grail - Retain.
@@ -1366,62 +1304,9 @@ Retention beyond the included timeframe is billable as Events powered by Grail -
 
 Here's what's included with the Ingest & Process data-usage dimension:
 
-Concept
-
-Explanation
-
-Data delivery
-
-Delivery of events via OneAgent, RUM JavaScript, or Generic Event Ingestion API (via ActiveGate)
-
-Topology enrichment
-
-Enrichment of events with data source and topology metadata
-
-Data transformation
-
-* Add, edit, or drop any business event attribute
-* Perform mathematical transformations on numerical values (for example, creating new attributes based on calculations of existing fields)
-* Extract business, infrastructure, application, or other data from raw business events.
-  This can be a single character, string, number, array of values, or other.
-  Extracted data can be turned into a new field, allowing additional querying, filtering, etc.
-* Mask sensitive data by replacing specific business attributes with a masked string
-
-Data-retention control
-
-Manage data retention periods of incoming events based on bucket assignment rules
-
-Conversion to timeseries
-
-Create metrics from event attributes (note that creating custom metrics generates additional consumption beyond the consumption for ingestion and processing.)
-
 ## Events - Retain feature overview
 
 Here's what's included with the Retain data-usage dimension:
-
-Concept
-
-Explanation
-
-Data availability
-
-Retained data is accessible for analysis and querying until the end of the retention period.
-Events retention is defined at the bucket level, ensuring tailored retention periods for specific events.
-
-Retention periods
-
-Choose a retention period
-
-* 10 days (10 days)
-* 2 weeks (15 days)
-* 1 month (35 days) (this is the default period)
-* 3 months (95 days)
-* 1 year (372 days)
-* 15 months (462 days)
-* 3 years (1,102 days)
-* 5 years (1,832 days)
-* 7 years (2,562 days)
-* 10 years (3,657 days)
 
 ## Events - Query feature overview
 
@@ -1432,27 +1317,6 @@ Query data usage occurs when:
 * Executing DQL queries in Notebooks, Dashboards, Workflows, Custom apps, and via API.
 
 Here's what's included with the Query data-usage dimension:
-
-Concept
-
-Explanation
-
-On-read parsing
-
-* Use DQL to query historical events in storage and extract business, infrastructure, or other data across any timeframe, and use extracted data for follow-up analysis.
-* No upfront indexes or schema required for on-read parsing
-
-Aggregation
-
-Perform aggregation, summarization, or statistical analysis of data in events across specific timeframes or time patterns (for example, data occurrences in 30-second or 10-minute intervals), mathematical, or logical functions.
-
-Reporting
-
-Create reports or summaries with customized fields (columns) by adding, modifying, or dropping existing event attributes.
-
-Context
-
-Use DQL to analyze event data in context with relevant data on the Dynatrace platform, for example, user sessions or distributed traces.
 
 ## Related topics
 
@@ -1470,7 +1334,7 @@ Use DQL to analyze event data in context with relevant data on the Dynatrace pla
 ---
 title: Calculate your consumption of Log Management & Analytics - Query (DPS)
 source: https://www.dynatrace.com/docs/license/capabilities/log-analytics/dps-log-query
-scraped: 2026-02-24T21:14:22.374101
+scraped: 2026-02-25T21:14:36.371342
 ---
 
 # Calculate your consumption of Log Management & Analytics - Query (DPS)
@@ -1604,7 +1468,7 @@ You can query metrics via the [Environment API - Metrics API v2](/docs/dynatrace
 ---
 title: Log Analytics (DPS)
 source: https://www.dynatrace.com/docs/license/capabilities/log-analytics
-scraped: 2026-02-24T21:19:17.153120
+scraped: 2026-02-25T21:18:14.203916
 ---
 
 # Log Analytics (DPS)
@@ -1724,7 +1588,7 @@ Alternatively, if the Retain with Included Query option does not meet your use c
 ---
 title: Metrics powered by Grail overview (DPS)
 source: https://www.dynatrace.com/docs/license/capabilities/metrics
-scraped: 2026-02-24T21:21:06.689200
+scraped: 2026-02-25T21:19:23.502771
 ---
 
 # Metrics powered by Grail overview (DPS)
@@ -1851,7 +1715,7 @@ Dynatrace also allows you to ingest logs from your serverless cloud functions.
 ---
 title: Traces powered by Grail overview (DPS)
 source: https://www.dynatrace.com/docs/license/capabilities/traces
-scraped: 2026-02-24T21:17:49.198680
+scraped: 2026-02-25T21:24:46.096941
 ---
 
 # Traces powered by Grail overview (DPS)
@@ -1942,7 +1806,7 @@ When other data types are also read in a query, this can result in consumption o
 ---
 title: Understanding DPS capabilities
 source: https://www.dynatrace.com/docs/license/capabilities
-scraped: 2026-02-24T21:18:08.816373
+scraped: 2026-02-25T21:24:08.166684
 ---
 
 # Understanding DPS capabilities

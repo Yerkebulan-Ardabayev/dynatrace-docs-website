@@ -1,7 +1,7 @@
 ---
 title: Metrics browser
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-classic/metrics-browser
-scraped: 2026-02-24T21:19:44.279674
+scraped: 2026-02-25T21:35:21.739761
 ---
 
 # Metrics browser

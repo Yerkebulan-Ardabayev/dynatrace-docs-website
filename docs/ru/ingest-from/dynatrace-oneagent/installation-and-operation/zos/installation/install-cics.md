@@ -1,7 +1,7 @@
 ---
 title: Install the CICS module
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-cics
-scraped: 2026-02-23T21:24:21.291429
+scraped: 2026-02-25T21:24:47.530826
 ---
 
 # Install the CICS module
@@ -13,31 +13,6 @@ scraped: 2026-02-23T21:24:21.291429
 * Updated on Jan 28, 2026
 
 With the CICS module, you can get observability for your CICS transactions and programs including DB2, DLI, and VSAM calls.
-
-Observability for
-
-Including
-
-CICS transactions
-
-Transactions initiated using
-
-* IBM MQ Bridge and Trigger Monitor
-* CICS Transaction Gateway, HTTP/S, SOAP over HTTP/S, JSON using non-Java JSON pipeline
-* 3270 terminal
-
-CICS programs
-
-* Programs invoked using CICS LINK
-* Transaction details for DPL LINK and START TRANSACTION requests in a distributed trace
-
-Database calls
-
-Database calls with their SQL statements from CICS to Db2 and IMS DB via the DL/I access method
-
-File access
-
-[File access](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/monitoring/monitor-cics-file-access "File access monitoring of CICS applications using the CICS module.") from CICS via the VSAM and BDAM access methods.
 
 Trace your CICS transactions end-to-end with Dynatrace
 

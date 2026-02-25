@@ -1,7 +1,7 @@
 ---
 title: Send Telegraf metrics to Dynatrace
 source: https://www.dynatrace.com/docs/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/telegraf
-scraped: 2026-02-24T21:30:13.021516
+scraped: 2026-02-25T21:16:45.153150
 ---
 
 # Send Telegraf metrics to Dynatrace
@@ -327,7 +327,7 @@ Enable for a host group
 
 ## Topology awareness
 
-When OneAgent and Telegraf are installed on the same host, the host ID and host name context are automatically added to each metric as dimensions. Learn how to [enrich your metrics with other Dynatrace-specific dimensions](/docs/ingest-from/extend-dynatrace/extend-data "Learn how to automatically enrich your telemetry data with Dynatrace-specific dimensions.") and apply Dynatrace-AI causation details to your ingested data.
+When OneAgent and Telegraf are installed on the same host, the host ID and host name context are automatically added to each metric as dimensions. Learn how to [enrich your metrics with other Dynatrace-specific dimensions](/docs/ingest-from/extend-dynatrace/extend-data "Learn how to automatically enrich your telemetry data with Dynatrace-specific fields.") and apply Dynatrace-AI causation details to your ingested data.
 
 ## Metric format
 

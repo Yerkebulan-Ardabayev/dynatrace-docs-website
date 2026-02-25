@@ -1,7 +1,7 @@
 ---
 title: Browser monitors reporting results
 source: https://www.dynatrace.com/docs/observe/digital-experience/synthetic-on-grail/synthetic-app/browser-monitors-results-reporting
-scraped: 2026-02-22T21:20:32.797325
+scraped: 2026-02-25T21:19:05.014914
 ---
 
 # Browser monitors reporting results
@@ -238,6 +238,14 @@ The **Synthetic steps and actions** card shows details for each browser step the
 
 Select the expand icon  for a step to see the response time of individual executions in a specific timeframe (for example, the last hour). It allows you to evaluate the overall step performance. The expand icon is unavailable and can't be selected if there is no performance data for the step.
 
+## Events
+
+The **Events** card shows all events that compose problems. Events for active as well as resolved problems show up in the list and timeline.
+
+Hover over a time slot in the event timeline to see the type and number of events generated at that interval. Select a time slot to view a tooltip with the events that took place in it.
+
+Select an event type to see the list of events. An event is created per location where, for example, your monitor violates step- or monitor-level performance thresholds. Select an individual event to see details.
+
 ## Errors
 
 The **Errors** card displays errors found in the selected timeframe.
@@ -246,16 +254,6 @@ On the card, you can:
 
 * See the details of an error in the form of a table with the step and number of occurrences.
 * Select **Analyze errors** .
-
-  You are directed to the **Multidimensional analysis** page in Dynatrace Classic, where you are provided with in-depth error analysis.
-
-## Events
-
-The **Events** card shows all events that compose problems. Events for active as well as resolved problems show up in the list and timeline.
-
-Hover over a time slot in the event timeline to see the type and number of events generated at that interval. Select a time slot to view a tooltip with the events that took place in it.
-
-Select an event type to see the list of events. An event is created per location where, for example, your monitor violates step- or monitor-level performance thresholds. Select an individual event to see details.
 
 ## Frontends
 

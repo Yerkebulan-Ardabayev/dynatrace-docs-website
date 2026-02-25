@@ -1,7 +1,7 @@
 ---
 title: Supported Go versions
 source: https://www.dynatrace.com/docs/ingest-from/technology-support/application-software/go/support/supported-go-versions
-scraped: 2026-02-23T21:23:29.914495
+scraped: 2026-02-25T21:21:37.118128
 ---
 
 # Supported Go versions
@@ -20,75 +20,12 @@ to support each Go version at least half a year longer so that you have enough t
 
 ### Official [Golang toolchainï»¿](https://dt-url.net/go)
 
-Go version
-
-Vendor released
-
-Vendor End of life
-
-First supported Dynatrace OneAgent version
-
-Last supported Dynatrace OneAgent version
-
-Dynatrace support until
-
-[Dynatrace support level](/docs/ingest-from/technology-support#support-levels)
-
-1.25
-
-2025-08-12
-
-2026-08-12
-
-1.325
-
--
-
-2027-08-12
-
-Supported
-
-1.24
-
-2025-02-11
-
-2026-02-11
-
-1.311
-
--
-
-2027-02-11
-
-Supported
-
-1.23
-
-2024-08-13
-
-2025-08-13
-
-1.301
-
--
-
-2026-08-13
-
-Supported
-
-1.22
-
-2024-02-06
-
-2025-02-06
-
-1.287
-
--
-
-2026-02-28
-
-Supported
+| Go version | Vendor released | Vendor End of life | First supported Dynatrace OneAgent version | Last supported Dynatrace OneAgent version | Dynatrace support until | [Dynatrace support level](/docs/ingest-from/technology-support#support-levels) |
+| --- | --- | --- | --- | --- | --- | --- |
+| 1.25 | 2025-08-12 | 2026-08-12 | 1.325 | - | 2027-08-12 | Supported |
+| 1.24 | 2025-02-11 | 2026-02-11 | 1.311 | - | 2027-02-11 | Supported |
+| 1.23 | 2024-08-13 | 2025-08-13 | 1.301 | - | 2026-08-13 | Supported |
+| 1.22 | 2024-02-06 | 2025-02-06 | 1.287 | - | 2026-02-28 | Supported |
 
 ### Golang toolchain with FIPS ([openssl-fipsï»¿](https://dt-url.net/golang-fips)) modifications
 
@@ -98,117 +35,15 @@ Prerequisites
 
   To enable the feature, go to **Settings** > **Preferences** > **OneAgent features** and turn on **Go FIPS**.
 
-Go version
-
-Vendor released
-
-Vendor End of life
-
-First supported Dynatrace OneAgent version
-
-Last supported Dynatrace OneAgent version
-
-Dynatrace support until
-
-[Dynatrace support level](/docs/ingest-from/technology-support#support-levels)
-
-1.25.3
-
-2025-08-12
-
-2026-08-12
-
-1.331
-
--
-
-2027-08-12
-
-Supported
-
-1.24.6
-
-2025-02-11
-
-2026-02-11
-
-1.325
-
--
-
-2027-02-11
-
-Supported
-
-1.24.4
-
-2025-02-11
-
-2026-02-11
-
-1.323
-
--
-
-2027-02-11
-
-Supported
-
-1.23.9
-
-2024-08-13
-
-2025-08-13
-
-1.323
-
--
-
-2026-08-13
-
-Supported
-
-1.23.6
-
-2024-08-13
-
-2025-08-13
-
-1.315
-
--
-
-2026-08-13
-
-Supported
-
-1.22.9
-
-2024-02-06
-
-2025-02-06
-
-1.309
-
--
-
-2026-02-28
-
-Supported
-
-1.22.7
-
-2024-02-06
-
-2025-02-06
-
-1.307
-
--
-
-2026-02-28
-
-Supported
+| Go version | Vendor released | Vendor End of life | First supported Dynatrace OneAgent version | Last supported Dynatrace OneAgent version | Dynatrace support until | [Dynatrace support level](/docs/ingest-from/technology-support#support-levels) |
+| --- | --- | --- | --- | --- | --- | --- |
+| 1.25.3 | 2025-08-12 | 2026-08-12 | 1.331 | - | 2027-08-12 | Supported |
+| 1.24.6 | 2025-02-11 | 2026-02-11 | 1.325 | - | 2027-02-11 | Supported |
+| 1.24.4 | 2025-02-11 | 2026-02-11 | 1.323 | - | 2027-02-11 | Supported |
+| 1.23.9 | 2024-08-13 | 2025-08-13 | 1.323 | - | 2026-08-13 | Supported |
+| 1.23.6 | 2024-08-13 | 2025-08-13 | 1.315 | - | 2026-08-13 | Supported |
+| 1.22.9 | 2024-02-06 | 2025-02-06 | 1.309 | - | 2026-02-28 | Supported |
+| 1.22.7 | 2024-02-06 | 2025-02-06 | 1.307 | - | 2026-02-28 | Supported |
 
 ## Version matrix
 

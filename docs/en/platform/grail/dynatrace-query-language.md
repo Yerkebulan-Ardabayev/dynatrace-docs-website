@@ -1,7 +1,7 @@
 ---
 title: Dynatrace Query Language
 source: https://www.dynatrace.com/docs/platform/grail/dynatrace-query-language
-scraped: 2026-02-24T21:14:10.429833
+scraped: 2026-02-25T21:14:21.518968
 ---
 
 # Dynatrace Query Language

@@ -1,7 +1,7 @@
 ---
 title: New Real User Monitoring Experience
 source: https://www.dynatrace.com/docs/observe/digital-experience/new-rum-experience
-scraped: 2026-02-22T21:18:30.486107
+scraped: 2026-02-25T21:15:59.664245
 ---
 
 # New Real User Monitoring Experience
@@ -11,7 +11,7 @@ scraped: 2026-02-22T21:18:30.486107
 * Latest Dynatrace
 * Explanation
 * 1-min read
-* Updated on Jan 15, 2026
+* Updated on Feb 23, 2026
 
 The New Real User Monitoring (RUM) Experience brings RUM capabilities to the latest Dynatrace and allows you to:
 
@@ -21,6 +21,12 @@ The New Real User Monitoring (RUM) Experience brings RUM capabilities to the lat
 * Leverage platform apps such as ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**, ![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**, ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Workflows**, and preinstalled [RUM-specific apps](#new-rum-experience-apps).
 * Use [OpenPipeline](/docs/platform/openpipeline "Scale Dynatrace platform data handling with Dynatrace OpenPipeline.") to customize ingested user events and sessions, and extract data and metrics.
 * Explore and analyze user events and sessions using the [Dynatrace Query Language](/docs/platform/grail/dynatrace-query-language "How to use Dynatrace Query Language.").
+
+## Already using RUM Classic?
+
+Upgrading to the New RUM Experience is straightforward and unlocks enhanced monitoring capabilities.
+
+[Learn more](/docs/observe/digital-experience/new-rum-experience/transition-from-rum-classic)
 
 ## New RUM Experience apps
 
@@ -52,9 +58,7 @@ Explore the key concepts behind the New RUM Experience.](/docs/observe/digital-e
 
 Learn how to configure and use the New RUM Experience for your web frontends.](/docs/observe/digital-experience/new-rum-experience/web-frontends "Discover the key concepts behind web frontends and learn how to configure them in the New RUM Experience.")[#### Mobile frontends
 
-Learn how to configure and use the New RUM Experience for your mobile frontends.](/docs/observe/digital-experience/new-rum-experience/mobile-frontends "Learn how to configure and use the New RUM Experience for your mobile frontends.")[#### Relationship to RUM Classic
-
-Learn how the New RUM Experience works alongside RUM Classic.](/docs/observe/digital-experience/new-rum-experience/relationship-to-rum-classic "Learn how the New RUM Experience works alongside RUM Classic.")[#### New RUM Experience permissions
+Learn how to configure and use the New RUM Experience for your mobile frontends.](/docs/observe/digital-experience/new-rum-experience/mobile-frontends "Learn how to configure and use the New RUM Experience for your mobile frontends.")[#### New RUM Experience permissions
 
 See what permissions you need to set up the New RUM Experience.](/docs/observe/digital-experience/new-rum-experience/permissions "See what permissions you need to set up the New RUM Experience.")[#### Data privacy
 

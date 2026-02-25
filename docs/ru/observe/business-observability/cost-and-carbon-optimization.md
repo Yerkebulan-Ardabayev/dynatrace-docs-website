@@ -1,7 +1,7 @@
 ---
 title: Cost & Carbon Optimization
 source: https://www.dynatrace.com/docs/observe/business-observability/cost-and-carbon-optimization
-scraped: 2026-02-24T21:20:51.154904
+scraped: 2026-02-25T21:18:02.110104
 ---
 
 # Cost & Carbon Optimization

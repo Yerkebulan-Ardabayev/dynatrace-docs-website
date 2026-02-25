@@ -1,6 +1,6 @@
 # Документация Dynatrace: ingest-from/dynatrace-oneagent
 Язык: Русский (RU)
-Сгенерировано: 2026-02-24
+Сгенерировано: 2026-02-25
 Файлов в разделе: 63
 ---
 
@@ -9,7 +9,7 @@
 ---
 title: Adaptive Traffic Management concepts
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/adaptive-traffic-management/adaptive-traffic-management-concepts
-scraped: 2026-02-24T21:31:21.446056
+scraped: 2026-02-25T21:35:26.022937
 ---
 
 # Adaptive Traffic Management concepts
@@ -952,7 +952,7 @@ We're aware that global read and write permissions on OneAgent directories get f
 ---
 title: Automated injection of deep-code monitoring on AIX
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/aix/operation/enable-auto-injection
-scraped: 2026-02-24T21:23:16.880411
+scraped: 2026-02-25T21:29:30.462358
 ---
 
 # Automated injection of deep-code monitoring on AIX
@@ -1263,7 +1263,7 @@ Run `oneagentctl` with the `--version` parameter. For more information, see [One
 ---
 title: AIX
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/aix
-scraped: 2026-02-24T21:15:38.465827
+scraped: 2026-02-25T21:15:55.610292
 ---
 
 # AIX
@@ -2085,7 +2085,7 @@ If you need to change the proxy address after installation, use `--set-proxy` in
 ---
 title: Install OneAgent on Linux
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/install-oneagent-on-linux
-scraped: 2026-02-23T21:24:07.613366
+scraped: 2026-02-25T21:25:10.402999
 ---
 
 # Install OneAgent on Linux
@@ -3227,7 +3227,7 @@ Run `oneagentctl` with the `--version` parameter. For more information, see [One
 ---
 title: OneAgent on Linux
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux
-scraped: 2026-02-24T21:15:37.125037
+scraped: 2026-02-25T21:15:54.277941
 ---
 
 # OneAgent on Linux
@@ -3817,7 +3817,7 @@ For more details on setting up Oracle WebLogic monitoring, see [Configure Oracle
 ---
 title: Uninstall OneAgent on Solaris
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/solaris/uninstall-oneagent-on-solaris
-scraped: 2026-02-24T21:30:37.026362
+scraped: 2026-02-25T21:26:19.398183
 ---
 
 # Uninstall OneAgent on Solaris
@@ -3903,7 +3903,7 @@ Use one of these methods to check which version of OneAgent you currently have i
 ---
 title: Solaris
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/solaris
-scraped: 2026-02-24T21:15:32.087921
+scraped: 2026-02-25T21:15:50.478172
 ---
 
 # Solaris
@@ -5269,7 +5269,7 @@ Run `oneagentctl` with the `--version` parameter. For more information, see [One
 ---
 title: OneAgent on Windows
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/windows
-scraped: 2026-02-24T21:15:35.773589
+scraped: 2026-02-25T21:15:56.901923
 ---
 
 # OneAgent on Windows
@@ -5317,7 +5317,7 @@ You can install OneAgent on Windows using installer provided as a self-extractin
 ---
 title: Install the CICS module
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-cics
-scraped: 2026-02-23T21:24:21.291429
+scraped: 2026-02-25T21:24:47.530826
 ---
 
 # Install the CICS module
@@ -5329,31 +5329,6 @@ scraped: 2026-02-23T21:24:21.291429
 * Updated on Jan 28, 2026
 
 With the CICS module, you can get observability for your CICS transactions and programs including DB2, DLI, and VSAM calls.
-
-Observability for
-
-Including
-
-CICS transactions
-
-Transactions initiated using
-
-* IBM MQ Bridge and Trigger Monitor
-* CICS Transaction Gateway, HTTP/S, SOAP over HTTP/S, JSON using non-Java JSON pipeline
-* 3270 terminal
-
-CICS programs
-
-* Programs invoked using CICS LINK
-* Transaction details for DPL LINK and START TRANSACTION requests in a distributed trace
-
-Database calls
-
-Database calls with their SQL statements from CICS to Db2 and IMS DB via the DL/I access method
-
-File access
-
-[File access](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/monitoring/monitor-cics-file-access "File access monitoring of CICS applications using the CICS module.") from CICS via the VSAM and BDAM access methods.
 
 Trace your CICS transactions end-to-end with Dynatrace
 
@@ -5878,7 +5853,7 @@ severe  [native] CICS14CR1[asid = 108] is trying to initialize with an invalid p
 ---
 title: Install the IMS module
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-ims
-scraped: 2026-02-23T21:24:10.219264
+scraped: 2026-02-25T21:25:13.295169
 ---
 
 # Install the IMS module
@@ -5890,29 +5865,6 @@ scraped: 2026-02-23T21:24:10.219264
 * Updated on Nov 18, 2025
 
 With the IMS module, you can get observability for your IMS transactions and programs including IBM MQ and database calls.
-
-Observability for
-
-Including
-
-Transactions
-
-* IMS
-* Fast Path
-* [BMPï»¿](https://www.ibm.com/docs/en/ims/15.1.0?topic=bmps-batch-message-processing-transaction-oriented)
-
-Transactions initiated using
-
-* IBM MQ Bridge and Trigger Monitor
-* IMS TM Resource Adapter, IMS SOAP Gateway, and IMS Connect
-* 3270 terminal
-
-Database calls
-
-Database calls with their SQL statements from IMS to Db2 and IMS DB via
-
-* the DL/I access method
-* the Fast Path access methods
 
 ## Installation
 
@@ -6008,152 +5960,6 @@ Below is the complete list and description of the positional parameters of the i
 ```
 
 The injection utility parameters can be specified as either positional or keyword parameters. There are seven positional parameters. Keyword parameters must be specified in a SYSIN file. The positional parameters on the EXEC JCL statement are still valid, however any new parameters added in the future will only be added as SYSIN keyword values. If an EXEC PARM parameter value is found, no SYSIN parameters will be considered. The recommended method is to use a SYSIN file and keyword parameters.
-
-Symbol
-
-Position
-
-Keyword
-
-Description
-
-Required
-
-`<IMS_Id>`
-
-1
-
-IMSID=
-
-The four-character IMSID of the control region.
-
-This parameter is not needed when you're using the garbage collection function to reclaim ECSA storage that contains no longer used IMS modules.
-
-Required
-
-`<zDC_Id>`
-
-2
-
-ZDC=
-
-The four-character zDCID used in the SUBSYSTEM\_ID() parameter of the target zDC.
-
-This parameter is not needed when the requested target zDC is the DEFAULT zDC. In that case type in the asterisk (`*`) or omit the parameter.
-
-Required
-
-`<ActionCode>|<PathTableSize>`
-
-3
-
-ACTION= | SIZE=
-
-The one-character action code or the value for `pathid` table size.
-
-#### Action code
-
-Action codes specify an action to be taken on the previously injected IMS module. An action code is not applicable to the initial injection of the IMS module and is mutually exclusive with the `pathid` table size value.
-
-If a valid action code is specified, the injection program doesn't re-inject the IMS module and performs the specified action on the already injected module. This means that no new versions of the IMS modules will be loaded.
-
-Action codes are:
-
-* **E**: Enable (switch on) an injected IMS module that was previously disabled.
-* **D**: Disable (switch off) an injected IMS module. The IMS module is no longer invoked. Use the `E` action code to re-enable it.
-* **G**: Garbage collection. If the IMS module has been updated and injected, ECSA storage for the old (unused) load modules of the IMS module is reclaimed with this function. See the [Garbage collection notes](#gc-notes) section for more information.
-* **M**: Modify the recovery option of the injected IMS module when this value is used in conjunction with the fifth parameter, `<Y|N>`.  
-  Alternatively, modify the size of any previously allocated path tables, when used in conjunction with the sixth parameter `<PathTableSegm>`, and optionally the seventh parameter `<PathTableIms>`.  
-  Alternatively, modify the size of any previously allocated Fast Path SMO (Shared Memory Object) when used in conjunction with the `FPATHSIZE=` statement.
-* **F**: Free all resource locks and reset the `pathid` table pointers. This action code should never be used unless the `E` action has failed because a IMS module resource is locked or as directed by Dynatrace Support.
-
-#### Table size value
-
-The `pathid` tables size value is used for the initial IMS module injection and is mutually exclusive with actions codes. If the IMS module is already injected, the table size value is ignored.
-
-The table size value can be expressed as SEGM=nnnn, where nnnn is up to a 4 digit number of 1-megabyte segments
-
-The actual number of usable entries may be higher, as the storage is allocated above the specified quota. The number of entries will be adjusted upwards to use all available allocated storage.
-
-If the parameter is omitted upon initial IMS module injection, a default of four segments (4 MB) is used. This provides space for 8,191 entries (approximately 2,048 entries per segment).
-
-The number of allocated entries should correspond to the expected number of IMS distributed traces during any one-minute interval. When the number of traced IMS transactions exceeds the number of available table slots, new distributed traces are not recorded.
-
-#### No third parameter specified
-
-If no third parameter is set, the injection program injects the IMS module.
-
-You can also use this option to update the IMS module. In that case existing table size will remain intact.
-
-Optional
-
-`<WaitZdcMin>`
-
-4
-
-ZDCWAIT=
-
-The wait time for the target zDC to initialize, in minutes (max two digits).
-
-The default value is 30 minutes. The target zDC must have been initialized at least once since the last system IPL before the IMS module can complete initialization.
-
-Optional
-
-`<Y|N>`
-
-5
-
-DUMP=
-
-Indicates whether the IMS module should capture an SVC dump when ABEND recovery is driven.
-
-This parameter can be specified during initial injection of the IMS module or in conjunction with the `M` or `E` action codes (parameter number 3) to toggle on/off the dump capture during recovery for the previously injected IMS module.
-
-The default value is `Y`, which means dump capture is enabled.
-
-Optional
-
-`<PathTableSegm>`
-
-6
-
-SEGM=
-
-The value that resizes `pathid` tables.
-
-This parameter is only applicable in conjunction with the `M` action code (parameter number 3). The format of value is `SEGM=nnnn`, where `nnnn` is the number (up to 4 digits) of 1-megabyte segments.
-
-Optional
-
-`<PathTableIms>`
-
-7
-
-PATHIMS=
-
-The value (up to 4 characters) that specifies the IMSID for which the pathid table is to be resized.
-
-This parameter is only applicable in conjunction with the `M` action code (parameter number 3) and the `<PathTableSegm>` value (parameter number 6).
-
-If an IMSID is specified, only the pathid table for that IMS is resized.  
-If the parameter is omitted, only the `pathid` table for the local IMS (specified as parameter number 1) is resized.  
-If the asterisk (`*`) is specified, the `pathid` table for the local IMS **and** `pathid` tables allocated locally for all remote IMSIDs are resized.
-
-Optional
-
-n/a
-
-n/a
-
-REMOTESEGM=
-
-Sets the number of segments to use when allocating remote pathid tables. The format of the value is `REMOTESEGM=nnnn`, where `nnnn` is the number (up to 4 digits) of 1-megabyte segments.
-
-The parameter is optional, valid only as a `SYSIN` parameter, and ignored when the `ACTION=` keyword is specified. When omitted, the default value of `4` megabytes is used.
-
-This parameter doesn't change the size of any existing remote pathid tables. To change the allocation of an existing remote pathid table you must use the `ACTION=M`, `SEGM=`, and `PATHIMS=` keywords.
-
-Optional
 
 Example 1. Inject the IMS module into IMS IB01 for zDC ZDC1.
 
@@ -6473,50 +6279,7 @@ ZDC=ZDC1
 REMOTESEGM=2
 ```
 
-
-
 ### Fast Path transaction tracing
-
-Symbol
-
-Position
-
-Keyword
-
-Description
-
-Required
-
-n/a
-
-n/a
-
-FPATH=
-
-Indicates whether to activate Fast Path transaction tracing:
-
-* **Y**: Inject and enable Fast Path hooks. Enables hooks that are injected but disabled.
-* **N** (Default): Does not inject Fast Path hooks. Disables hooks that are injected and enabled.
-
-Valid only as a SYSIN parameter and only for IMS Version 15 or later.
-
-If omitted or specified incorrectly, no action is taken.
-
-Optional
-
-n/a
-
-n/a
-
-FPATHSIZE=
-
-The size of the Fast Path SMO (Shared Memory Object) for Fast Path transaction tracing, in 1 MB segments. The range is `1`-`9999`. The default is `4`.
-
-This value can be used on the initial injection of the IMS module, or in conjunction with a modify action statement (`ACTION=M`) to resize the Fast Path SMO.
-
-Valid only as a SYSIN parameter and only for IMS Version 15 or later.
-
-Optional
 
 Example 9: Inject and enable Fast Path transaction tracing.
 
@@ -6642,34 +6405,9 @@ FPATHSIZE=2
 
 IMS module version 1.259+
 
-Symbol
-
-Position
-
-Keyword
-
-Description
-
-Required
-
-n/a
-
-n/a
-
-BMP=
-
-Indicates whether to activate transaction tracing for BMP regions:
-
-* **Y**: Enables transaction tracing for BMP regions.
-* **N** (Default): Disables transaction tracing for BMP regions.
-
-Valid only as a SYSIN parameter.
-
-If omitted or specified incorrectly, BMP transaction tracing will be disabled.
-
-Optional
-
 ## BMP transaction tracing notes
+
+
 
 Automatic tracking for transaction-oriented BMPs (message input is from the IMS message queues) will be the same as currently exists for MPP/IFP regions: if the input message is being tracked by a control region sensor, a path will be started for the transaction in the BMP region.
 Automatic tracking for work performed by batch (non-transaction oriented) BMPs can only be done if the input message is via an MQGET (see restrictions below). Otherwise, batch BMP support means the agent performs initialization services for the BMP region (allocates work areas and places sensors) but does not start any paths.
@@ -6802,8 +6540,6 @@ You can access the IMS module logs via the [zRemote logs](/docs/ingest-from/dyna
 
 ## Update without region restart
 
-
-
 To update your IMS module to a newer version without restarting the region
 
 1. [Download z/OS product datasets](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/zosmf-installer/download-zos-datasets#download-pax "Download and install the Dynatrace product datasets for z/OS.") and [extract them](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/zosmf-installer/download-zos-datasets#extract-datasets "Download and install the Dynatrace product datasets for z/OS.").
@@ -6820,6 +6556,8 @@ To update your IMS module to a newer version without restarting the region
 4. To recover the ECSA used by the old version of the IMS module see section [Garbage collection notes](#gc-notes).
 
 ## FAQ
+
+
 
 How can I deactivate the IMS module?
 
@@ -7445,7 +7183,7 @@ useOldImsPgiCalc=true
 ---
 title: Install the zRemote module
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-zremote
-scraped: 2026-02-22T21:20:56.555194
+scraped: 2026-02-25T21:19:33.612105
 ---
 
 # Install the zRemote module
@@ -7467,66 +7205,6 @@ The hardware requirements of the machine where the zRemote module runs depend on
 * For CICS and IMS development environments: a small or medium-sized machine.
 * For CICS and IMS production environments: a large or extra-large machine.
 * For z/OS Java environments: a small or medium-sized machine.
-
-Hardware requirements
-
-Small (DEV)
-
-Medium (DEV)
-
-Large (PROD)
-
-X-Large (PROD)
-
-**Anticipated monitored CICS/IMS transactions per second**
-
-**4,000**
-
-**7,500**
-
-**15,000**
-
-**30,000**
-
-Required CPU cores on x86-64 architecture (Xeon E5-2600 series)
-
-2
-
-4
-
-8
-
-16
-
-Required [IFL processorsï»¿](https://www.ibm.com/products/integrated-facility-for-linux) on s390 architecture
-
-1
-
-1
-
-1
-
-2
-
-Required memory
-
-4GB
-
-6GB
-
-8GB
-
-16GB
-
-Required disk space
-
-20GB
-
-20GB
-
-20GB
-
-20GB
 
 * The hardware requirements are for the case when the zRemote module and its ActiveGate are used for mainframe monitoring only.
 * Multiple [zDC subsystems](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-zdc "Set up the z/OS Data Collection subsystem (zDC).") can be connected to a single zRemote as long as the number of monitored transactions matches the hardware requirements.
@@ -7573,78 +7251,6 @@ Base path: `C:/Program Files/dynatrace/zremote`
 
 All of the following directories are not retained in the event of a zRemote update or uninstallation. If you make changes here, they will be overwritten or deleted.
 
-Directory
-
-Component
-
-Description
-
-`agent/lib64`
-
-noneagentz
-
-The zRemote binary
-
-`agent/lib64`
-
-oneagentzwatchdog
-
-A binary that provides the service capabilities for the zRemote service and controls resource limits
-
-`agent/lib64`
-
-oneagentdumpproc
-
-A binary that supports creating dumps when the main application crashes
-
-`agent/lib64/zos-s390-64/<version>`
-
-dtzagent
-
-A binary deployed to the UNIX part of the mainframe to support OneAget communications. For more details, see [Install the zDC subsystem](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-zdc "Set up the z/OS Data Collection subsystem (zDC).")
-
-`agent/lib64/zos-s390-64/<version>`
-
-libdtzagent.so
-
-A binary deployed to the UNIX part of the mainframe to support agent communications. For more details, see [Install the zDC subsystem](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-zdc "Set up the z/OS Data Collection subsystem (zDC).")
-
-`agent/conf`
-
-ruxitagent.conf
-
-The default zRemote configuration file
-
-`agent/conf`
-
-oneagentzwatchdog.ini
-
-The default watchdog configuration file
-
-`agent/conf`
-
-.pem
-
-Application certificates
-
-`agent`
-
-installer.version
-
-The installer version of the zRemote binary, which is usually the same as the zRemote version
-
-`agent`
-
-zremote
-
-Linux only The service script for running the zRemote application
-
-uninstallation.sh
-
-Linux only The service script for uninstalling the zRemote application.
-
-It removes everything except the persistent user configuration and log files.
-
 ### zRemote configuration and installation directories
 
 Linux
@@ -7657,53 +7263,7 @@ Base path: `C:/Program Files/dynatrace/zremote`
 
 All of the following directories are not retained during zRemote update or uninstallation. If you make changes here, they will be overwritten or deleted.
 
-Directory
-
-Component
-
-Description
-
-`agent`
-
-runtime
-
-Contains the connection details as specified by your Dynatrace environment.
-
-`config`
-
-instance.properties
-
-Contains the ID of the currently registered instance.
-
-`config`
-
-version.properties
-
-Contains the full version number of the zRemote module.
-
-state
-
-Contains the address of the last successful server connection to indicate a properly established connection.
-
 The following directories are retained in case of update or uninstallation. You can make changes here. For more details, see [Customize the zRemote module](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-zremote/customize-zremote "Customize the zRemote module for your needs.").
-
-Directory
-
-Component
-
-Description
-
-`agent/conf`
-
-zremoteagentuserconfig.conf
-
-The configuration file for zRemote module customization
-
-`agent/conf`
-
-watchdoguserconfig.conf
-
-The configuration file for watchdog customization
 
 ## Installation
 
@@ -7722,8 +7282,6 @@ For details on the default installation settings, see ActiveGate default install
 For details on customizing the installation, see customize ActiveGate installation on [Linux](/docs/ingest-from/dynatrace-activegate/installation/linux/linux-customize-installation-for-activegate "Learn about the command-line parameters that you can use with ActiveGate on Linux.") or [Windows](/docs/ingest-from/dynatrace-activegate/installation/windows/windows-customize-installation-for-activegate "Learn about the parameters that you can use with ActiveGate on Windows.").
 
 ## Logging
-
-
 
 The zRemote logs are created on the machine where the zRemote module is installed, in the default directories for [Linux](/docs/ingest-from/dynatrace-activegate/installation/linux/linux-default-settings "Learn about the default settings with which ActiveGate is installed on Linux") and [Windows](/docs/ingest-from/dynatrace-activegate/installation/windows/windows-default-settings "Learn about the default settings with which ActiveGate is installed on Windows."). You can view the zRemote logs either directly on the machine hosting the zRemote or by requesting them from Dynatrace via the [OneAgent diagnostics](/docs/ingest-from/dynatrace-oneagent/oneagent-troubleshooting/oneagent-diagnostics "Learn how to run OneAgent diagnostics") workflow.
 
@@ -7759,6 +7317,8 @@ Windows
 3. [Install the zRemote module](/docs/ingest-from/dynatrace-activegate/installation/windows/windows-install-an-environment-activegate "Read the step-by-step procedure for installing an Environment ActiveGate on Windows.") by executing the installer.
 
 ### Operations
+
+
 
 To stop, start, or restart the zRemote module, you can use the following commands.
 
@@ -8401,7 +7961,7 @@ Depending on your team, a single individual may be able to administer more than 
 ---
 title: Monitor file access of CICS applications
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/monitoring/monitor-cics-file-access
-scraped: 2026-02-23T21:24:32.106159
+scraped: 2026-02-25T21:24:57.828372
 ---
 
 # Monitor file access of CICS applications
@@ -8443,7 +8003,7 @@ To turn off file access monitoring, toggle the `z/OS CICS file monitoring` senso
 ---
 title: Monitor z/OS logs
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/monitoring/monitor-zos-logs
-scraped: 2026-02-24T21:19:23.713556
+scraped: 2026-02-25T21:25:02.058697
 ---
 
 # Monitor z/OS logs
@@ -8541,7 +8101,7 @@ This metadata is used to map the logs to the entity model of z/OS processes.
 ---
 title: Monitor JMX metrics on z/OS
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/monitoring/zos-java-custom-jmx-metrics
-scraped: 2026-02-24T21:22:01.778974
+scraped: 2026-02-25T21:25:04.868936
 ---
 
 # Monitor JMX metrics on z/OS
@@ -9461,7 +9021,7 @@ You can find the **Attribute key** of your spans on the [Distributed traces](/do
 ---
 title: Set up IBM MQ tracing on z/OS
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/operation/ibm-mq-monitoring
-scraped: 2026-02-24T21:26:36.275798
+scraped: 2026-02-25T21:34:46.754928
 ---
 
 # Set up IBM MQ tracing on z/OS
@@ -9523,7 +9083,7 @@ Settings API for IBM MQ tracing:
 ---
 title: Dynatrace for z/OS
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos
-scraped: 2026-02-24T21:15:34.442161
+scraped: 2026-02-25T21:15:51.852116
 ---
 
 # Dynatrace for z/OS
@@ -9709,7 +9269,7 @@ With Dynatrace, you can get [Full-Stack Monitoring with Host monitoring (DPS)](/
 ---
 title: Install OneAgent on a server
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation
-scraped: 2026-02-24T21:13:41.151449
+scraped: 2026-02-25T21:13:26.788139
 ---
 
 # Install OneAgent on a server
@@ -9892,7 +9452,7 @@ Dependent on OneAgent code module, memory demand might peak at application start
 ---
 title: OneAgent file aging mechanism
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/oneagent-aging-mechanism
-scraped: 2026-02-24T21:33:36.930749
+scraped: 2026-02-25T21:35:29.998515
 ---
 
 # OneAgent file aging mechanism
@@ -10038,7 +9598,7 @@ To prevent unnecessary delays in your application's startup, the OneAgent bulk p
 ---
 title: Enable the OpenTelemetry Span Sensor for OneAgent
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/oneagent-and-opentelemetry/configuration
-scraped: 2026-02-24T21:34:16.304175
+scraped: 2026-02-25T21:25:37.546331
 ---
 
 # Enable the OpenTelemetry Span Sensor for OneAgent
@@ -10367,7 +9927,7 @@ Such spans are skipped only by OneAgent. Exports to third parties (for example, 
 ---
 title: Use OneAgent with OpenTelemetry data
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/oneagent-and-opentelemetry/oneagent-otel
-scraped: 2026-02-24T21:18:52.997436
+scraped: 2026-02-25T21:16:38.184593
 ---
 
 # Use OneAgent with OpenTelemetry data
@@ -11523,7 +11083,7 @@ Set the `--set-osagent-cap-setuid-enabled` parameter to `true` or `false` to dis
 ---
 title: OneAgent features
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/oneagent-features
-scraped: 2026-02-24T21:13:59.404362
+scraped: 2026-02-25T21:15:21.121782
 ---
 
 # OneAgent features
@@ -11696,7 +11256,7 @@ To use the Settings API
 ---
 title: OneAgent health overview
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/oneagent-health
-scraped: 2026-02-24T21:27:48.547753
+scraped: 2026-02-25T21:24:41.080750
 ---
 
 # OneAgent health overview
@@ -12285,7 +11845,7 @@ export DT_HOME=/opt/dynatrace/oneagent
 ---
 title: Dynatrace OneAgent
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent
-scraped: 2026-02-24T21:13:52.336801
+scraped: 2026-02-25T21:15:31.402369
 ---
 
 # Dynatrace OneAgent

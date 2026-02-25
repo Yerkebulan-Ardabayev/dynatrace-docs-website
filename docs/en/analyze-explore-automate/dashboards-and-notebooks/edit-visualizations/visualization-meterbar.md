@@ -1,7 +1,7 @@
 ---
 title: Meter bar chart
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-meterbar
-scraped: 2026-02-22T21:13:21.233780
+scraped: 2026-02-25T21:22:42.189419
 ---
 
 # Meter bar chart
@@ -39,34 +39,6 @@ timeseries avg(dt.host.cpu.usage)
 
 The **Visual** tab settings are as follows:
 
-Section
-
-Settings
-
-Data mapping
-
-* **Meter value** = `CPU`
-
-Meter bar
-
-* **Show label** = turned on and set to `CPU Usage`
-* **Show icon** = turned on and set to `HostsIcon`
-
-Color
-
-* **Bar color** = `62903c`
-* **Custom colors** =
-
-  + `60` and (for the custom color) `d56b1a`
-  + `80` and (for the custom color) `8a0012`
-
-Units and formats
-
-* Selected value = `CPU`
-* **Unit** = `Percent (%)`
-* **Displayed unit** = `Auto`
-* **Decimals** = `0.00`
-
 ### Example 2
 
 ![Meter Bar visualization: example 2](https://dt-cdn.net/images/meter-bar-example-02-474-3cf8cba784.png)
@@ -98,31 +70,6 @@ fetch dt.davis.problems
 ```
 
 The **Visual** tab settings are as follows:
-
-Section
-
-Settings
-
-Data mapping
-
-* **Meter value** = `pctActive`
-
-Meter bar
-
-* **Show label** = turned on and set to `Percentage of Open Problems`
-* **Show icon** = turned on and set to `DavisAiSignetIcon`
-
-Color
-
-* **Bar color** = `438FB1`
-* **Custom colors** = `90` and (for the custom color) `c21930`
-
-Units and formats
-
-* Selected value = `pctActive`
-* **Unit** = `Percent (%)`
-* **Displayed unit** = `Auto`
-* **Decimals** = `0`
 
 ## Chart interactions
 

@@ -1,7 +1,7 @@
 ---
 title: Supported connectivity schemes for ActiveGates
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-activegate/supported-connectivity-schemes-for-activegates
-scraped: 2026-02-24T21:30:34.360413
+scraped: 2026-02-25T21:19:36.212831
 ---
 
 # Supported connectivity schemes for ActiveGates
@@ -51,6 +51,22 @@ The diagram below shows all possible proxy and load balancer (reverse proxy) pla
 ## ActiveGate headers
 
 You can configure the ActiveGate headers in your firewall.
+
+1
+
+Example values:   
+ **Environment and Multi-environment ActiveGate**: `ruxit/1.229.163.20211109-103203 0x37badd8e c04442b4-7ea6-4ec4-a5c4-7f94c7cf25fa`.   
+ **Cluster ActiveGate**: `ruxit/1.229.163.20211109-103203 0x37badd8e`.
+
+2
+
+Example value:   
+ `DynatraceSynthetic/1.258.0.20221207-142354`.
+
+3
+
+Example value:   
+ `Mozilla/5.0 (Windows NT 6.3;WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36 RuxitSynthetic/1.258.0.20221207-142354`.
 
 ## Related topics
 

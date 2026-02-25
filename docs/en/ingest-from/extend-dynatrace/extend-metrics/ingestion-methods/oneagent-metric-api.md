@@ -1,7 +1,7 @@
 ---
 title: OneAgent metric API
 source: https://www.dynatrace.com/docs/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/oneagent-metric-api
-scraped: 2026-02-23T21:33:44.687883
+scraped: 2026-02-25T21:16:33.163761
 ---
 
 # OneAgent metric API
@@ -59,7 +59,7 @@ If you want to change your limits for EEC resource consumption, see [Performance
 
 ## Topology awareness
 
-Using the local API endpoint, the host ID and host name context are automatically added to each metric as dimensions. Learn how to [enrich your metrics with other Dynatrace-specific dimensions](/docs/ingest-from/extend-dynatrace/extend-data "Learn how to automatically enrich your telemetry data with Dynatrace-specific dimensions.") and apply Dynatrace-AI causation details to your ingested data.
+Using the local API endpoint, the host ID and host name context are automatically added to each metric as dimensions. Learn how to [enrich your metrics with other Dynatrace-specific dimensions](/docs/ingest-from/extend-dynatrace/extend-data "Learn how to automatically enrich your telemetry data with Dynatrace-specific fields.") and apply Dynatrace-AI causation details to your ingested data.
 
 ## Metric format
 

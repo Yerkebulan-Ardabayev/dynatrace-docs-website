@@ -1,6 +1,6 @@
 # Документация Dynatrace: dynatrace-intelligence/copilot
 Язык: Русский (RU)
-Сгенерировано: 2026-02-24
+Сгенерировано: 2026-02-25
 Файлов в разделе: 9
 ---
 
@@ -512,7 +512,7 @@ Agentic  **Dynatrace Assist** doesn't provide any PII masking. In order to prote
 ---
 title: Discover relevant troubleshooting guides with Dynatrace Intelligence generative AI
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/copilot/copilot-find-relevant-troubleshooting-guides
-scraped: 2026-02-24T21:15:43.784122
+scraped: 2026-02-25T21:15:06.635196
 ---
 
 # Discover relevant troubleshooting guides with Dynatrace Intelligence generative AI
@@ -789,11 +789,9 @@ Once the newly created notebook is attached to the AI-detected problem, you'll b
 
 ## Related topics
 
-
-
-* [Dynatrace Intelligence generative AI overview](/docs/dynatrace-intelligence/copilot/copilot-overview "Learn about data security and other aspects of Dynatrace Intelligence generative AI.")
-* [Get started with Dynatrace Intelligence generative AI](/docs/dynatrace-intelligence/copilot/copilot-getting-started "Learn how to set up Dynatrace Intelligence generative AI.")
-* [Problems app](/docs/dynatrace-intelligence/davis-problems-app "Use the Problems app to quickly get to the root cause of incidents in your environment.")
+* [Dynatrace Intelligence генеративный ИИ обзор](/docs/dynatrace-intelligence/copilot/copilot-overview "Узнайте о безопасности данных и других аспектах Dynatrace Intelligence генеративного ИИ.")
+* [Начало работы с Dynatrace Intelligence генеративным ИИ](/docs/dynatrace-intelligence/copilot/copilot-getting-started "Узнайте, как настроить Dynatrace Intelligence генеративный ИИ.")
+* [Проблемы приложения](/docs/dynatrace-intelligence/davis-problems-app "Используйте приложение Проблемы, чтобы быстро найти коренную причину инцидентов в вашей среде.")
 
 ---
 
@@ -802,7 +800,7 @@ Once the newly created notebook is attached to the AI-detected problem, you'll b
 ---
 title: Get started with Dynatrace Intelligence generative AI
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/copilot/copilot-getting-started
-scraped: 2026-02-23T21:32:35.265936
+scraped: 2026-02-25T21:24:43.698888
 ---
 
 # Get started with Dynatrace Intelligence generative AI
@@ -902,7 +900,7 @@ To configure your data access
 ---
 title: Dynatrace Intelligence generative AI overview
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/copilot/copilot-overview
-scraped: 2026-02-24T21:27:38.713201
+scraped: 2026-02-25T21:23:48.801091
 ---
 
 # Dynatrace Intelligence generative AI overview
@@ -966,7 +964,7 @@ If you would like to learn more about Dynatrace Intelligence generative AI, visi
 ---
 title: Dynatrace Intelligence generative AI - Tips for writing better prompts
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/copilot/quick-analysis-copilot-dql/copilot-tips
-scraped: 2026-02-23T21:32:25.368320
+scraped: 2026-02-25T21:29:01.016242
 ---
 
 # Dynatrace Intelligence generative AI - Tips for writing better prompts
@@ -1081,7 +1079,7 @@ We are actively working on improving and extending the Dynatrace Intelligence ge
 ---
 title: Query with natural language
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/copilot/quick-analysis-copilot-dql
-scraped: 2026-02-21T21:16:27.902748
+scraped: 2026-02-25T21:35:16.124839
 ---
 
 # Query with natural language
@@ -1259,119 +1257,119 @@ Do not share personal or confidential information in your feedback.
 ## dynatrace-intelligence/copilot.md
 
 ---
-title: Dynatrace Intelligence agentic and generative AI
+title: Dynatrace Intelligence агентное и генеративное ИИ
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/copilot
-scraped: 2026-02-24T21:32:18.435666
+scraped: 2026-02-25T21:17:27.202770
 ---
 
-# Dynatrace Intelligence agentic and generative AI
+# Dynatrace Intelligence агентное и генеративное ИИ
 
-# Dynatrace Intelligence agentic and generative AI
+# Dynatrace Intelligence агентное и генеративное ИИ
 
-* Latest Dynatrace
-* App
-* 2-min read
-* Updated on Jan 28, 2026
+* Последнее Dynatrace
+* Приложение
+* 2-минутное чтение
+* Обновлено 28 января 2026 г.
 
-Dynatrace Intelligence generative AI developed by Dynatrace allows you to explore data through natural language, helping with onboarding and boosting productivity. Dynatrace Intelligence generative AI takes your prompt and translates it to DQL, and is capable of auto-executing generated DQL queries.
+Dynatrace Intelligence генеративный ИИ, разработанный Dynatrace, позволяет исследовать данные с помощью естественного языка, помогая в настройке и повышении производительности. Dynatrace Intelligence генеративный ИИ принимает ваш запрос и переводит его в DQL, и способен автоматически выполнять сгенерированные запросы DQL.
 
-## Use cases
+## Случаи использования
 
-* Get familiar with DQL faster by translating natural language requests into ready-to-use queries.
-* Save time by generating and executing generated DQL queries instead of writing them manually.
-* Get answers to your help and onboarding questions quickly, without needing to access documentation or other Dynatrace support resources.
-* Get a better understanding of existing DQL by getting query summaries and explanations.
-* Ask Dynatrace Assist to provide contextual insights:
+* Быстрее ознакомиться с DQL, переводя запросы на естественном языке в готовые к использованию запросы.
+* Сэкономить время, генерируя и выполняя сгенерированные запросы DQL вместо того, чтобы писать их вручную.
+* Получить ответы на вопросы о помощи и настройке быстро, без необходимости доступа к документации или другим ресурсам поддержки Dynatrace.
+* Лучше понять существующие DQL, получая краткие описания и объяснения запросов.
+* Попросите Dynatrace Assist предоставить контекстные сведения:
 
-  + Get clear summaries of problems, their root causes, and the suggested remediation steps in the Problems app.
-  + Get explanations of warning signals in the Kubernetes app.
-  + Get natural language explanations of execution plans in the Databases app.
-* Discover relevant troubleshooting guides to speed up problem remediation.
+  + Получите четкие описания проблем, их коренных причин и предложенных шагов по исправлению в приложении Problems.
+  + Получите объяснения сигналов предупреждения в приложении Kubernetes.
+  + Получите объяснения планов выполнения на естественном языке в приложении Databases.
+* Откройте для себя актуальные руководства по устранению неполадок, чтобы ускорить процесс исправления проблем.
 
-[#### Dynatrace Intelligence generative AI overview
+[#### Dynatrace Intelligence генеративный ИИ обзор
 
-Learn about data security and other aspects of Dynatrace Intelligence generative AI.
+Узнайте о безопасности данных и других аспектах Dynatrace Intelligence генеративного ИИ.
 
-* Explanation
+* Объяснение
 
-Read this explanation](/docs/dynatrace-intelligence/copilot/copilot-overview)[#### Get started with Dynatrace Intelligence generative AI
+Прочитайте это объяснение](/docs/dynatrace-intelligence/copilot/copilot-overview)[#### Начало работы с Dynatrace Intelligence генеративным ИИ
 
-Learn how to set up Dynatrace Intelligence generative AI.
+Узнайте, как настроить Dynatrace Intelligence генеративный ИИ.
 
-* How-to guide
+* Руководство по началу работы
 
-Read this guide](/docs/dynatrace-intelligence/copilot/copilot-getting-started)
+Прочитайте это руководство](/docs/dynatrace-intelligence/copilot/copilot-getting-started)
 
-## Analyze data with generative AI
+## Анализ данных с помощью генеративного ИИ
 
-[#### Query with natural language
+[#### Запрос с помощью естественного языка
 
-Use Dynatrace Intelligence generative AI to translate your natural language questions into DQL queries
+Используйте Dynatrace Intelligence генеративный ИИ, чтобы перевести ваши запросы на естественном языке в запросы DQL
 
-* Overview
+* Обзор
 
-See the overview](/docs/dynatrace-intelligence/copilot/quick-analysis-copilot-dql)[#### Dynatrace Intelligence generative AI - Tips for writing better prompts
+Прочитайте обзор](/docs/dynatrace-intelligence/copilot/quick-analysis-copilot-dql)[#### Dynatrace Intelligence генеративный ИИ - Советы по написанию лучших запросов
 
-Learn best practices for writing more accurate prompts.
+Узнайте лучшие практики для написания более точных запросов.
 
-* Reference
+* Справочник
 
-Read this reference](/docs/dynatrace-intelligence/copilot/quick-analysis-copilot-dql/copilot-tips)[#### Generative AI quick analysis examples
+Прочитайте этот справочник](/docs/dynatrace-intelligence/copilot/quick-analysis-copilot-dql/copilot-tips)[#### Примеры быстрого анализа с помощью генеративного ИИ
 
-Learn more about what kind of prompts work well in Dynatrace Intelligence generative AI.
+Узнайте больше о том, какие запросы хорошо работают в Dynatrace Intelligence генеративном ИИ.
 
-* Reference
+* Справочник
 
-Read this reference](/docs/dynatrace-intelligence/use-cases/copilot-examples)[#### Summarize and explain queries
+Прочитайте этот справочник](/docs/dynatrace-intelligence/use-cases/copilot-examples)[#### Суммирование и объяснение запросов
 
-Learn how to summarize and explain queries using Dynatrace Intelligence generative AI DQL2NL skill.
+Узнайте, как суммировать и объяснять запросы с помощью Dynatrace Intelligence генеративного ИИ DQL2NL.
 
-* Tutorial
+* Учебник
 
-Read this tutorial](/docs/dynatrace-intelligence/copilot/explain-queries-with-davis-copilot)
+Прочитайте этот учебник](/docs/dynatrace-intelligence/copilot/explain-queries-with-davis-copilot)
 
-## Ask Dynatrace Assist
+## Спросите Dynatrace Assist
 
 [#### Dynatrace Assist
 
-Ask questions using natural language and get quick answers from Dynatrace Assist, your generative AI assistant.
+Задайте вопросы с помощью естественного языка и получите быстрые ответы от Dynatrace Assist, вашего генеративного ИИ-помощника.
 
-* App
+* Приложение
 
-Explore this app](/docs/dynatrace-intelligence/copilot/chat-with-davis-copilot)[#### Embedded conversation starters
+Изучите это приложение](/docs/dynatrace-intelligence/copilot/chat-with-davis-copilot)[#### Встроенные стартовые разговоры
 
-Learn how to trigger predefined prompts in various Dynatrace applications.
+Узнайте, как запустить предопределенные запросы в различных приложениях Dynatrace.
 
-* Reference
+* Справочник
 
-Read this reference](/docs/dynatrace-intelligence/copilot/chat-with-davis-copilot/copilot-conv-starters)
+Прочитайте этот справочник](/docs/dynatrace-intelligence/copilot/chat-with-davis-copilot/copilot-conv-starters)
 
-For more information about what kind of prompts work well in  **Dynatrace Assist**, see [prompt examples](/docs/dynatrace-intelligence/copilot/chat-with-davis-copilot/dynatrace-assist-prompts "Learn what kind of prompts work well in Dynatrace Assist.").
+Для получения более подробной информации о том, какие запросы хорошо работают в **Dynatrace Assist**, см. [примеры запросов](/docs/dynatrace-intelligence/copilot/chat-with-davis-copilot/dynatrace-assist-prompts "Узнайте, какие запросы хорошо работают в Dynatrace Assist.").
 
-## Vector-based document matching
+## Векторное совпадение документов
 
-[#### Discover relevant troubleshooting guides with Dynatrace Intelligence generative AI
+[#### Откройте для себя актуальные руководства по устранению неполадок с помощью Dynatrace Intelligence генеративного ИИ
 
-Learn how Dynatrace Intelligence generative AI can suggest troubleshooting guides for problem remediation.
+Узнайте, как Dynatrace Intelligence генеративный ИИ может предложить руководства по устранению неполадок для исправления проблем.
 
-* Tutorial
+* Учебник
 
-Read this tutorial](/docs/dynatrace-intelligence/copilot/copilot-find-relevant-troubleshooting-guides)
+Прочитайте этот учебник](/docs/dynatrace-intelligence/copilot/copilot-find-relevant-troubleshooting-guides)
 
-## Learn more
+## Узнайте больше
 
-[#### Dynatrace Intelligence generative AI data privacy and security
+[#### Dynatrace Intelligence генеративный ИИ политика безопасности и конфиденциальности данных
 
-Learn about Dynatrace Intelligence generative AI data privacy and security policy.
+Узнайте о политике безопасности и конфиденциальности данных Dynatrace Intelligence генеративного ИИ.
 
-* Explanation
+* Объяснение
 
-Read this explanation](/docs/dynatrace-intelligence/copilot/copilot-data-privacy)[#### Dynatrace Intelligence generative AI FAQ
+Прочитайте это объяснение](/docs/dynatrace-intelligence/copilot/copilot-data-privacy)[#### Dynatrace Intelligence генеративный ИИ ЧаВО
 
-Learn about frequently asked questions and find your answers.
+Узнайте о часто задаваемых вопросах и найдите ответы.
 
-* Troubleshooting
+* Устранение неполадок
 
-Read this troubleshooting guide](/docs/dynatrace-intelligence/copilot/copilot-faq)
+Прочитайте это руководство по устранению неполадок](/docs/dynatrace-intelligence/copilot/copilot-faq)
 
 ---

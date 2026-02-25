@@ -1,7 +1,7 @@
 ---
 title: Migrate from Maintenance windows API to Settings API
 source: https://www.dynatrace.com/docs/dynatrace-api/basics/deprecation-migration-guides/maintenance-windows-to-settings
-scraped: 2026-02-24T21:24:14.367536
+scraped: 2026-02-25T21:32:49.677872
 ---
 
 # Migrate from Maintenance windows API to Settings API

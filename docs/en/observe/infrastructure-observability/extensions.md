@@ -1,7 +1,7 @@
 ---
 title: Extensions
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/extensions
-scraped: 2026-02-22T21:18:17.941374
+scraped: 2026-02-25T21:17:09.526898
 ---
 
 # Extensions
@@ -22,8 +22,6 @@ Filter by
 Select an option
 
 Type to filter
-
-Unable to render DataTable. Check configuration.
 
 [![Hub](https://dt-cdn.net/images/hub-512-82db3c583e.png "Hub")
 

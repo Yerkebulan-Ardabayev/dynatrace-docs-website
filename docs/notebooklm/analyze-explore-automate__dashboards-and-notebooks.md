@@ -1,6 +1,6 @@
 # Документация Dynatrace: analyze-explore-automate/dashboards-and-notebooks
 Язык: Русский (RU)
-Сгенерировано: 2026-02-24
+Сгенерировано: 2026-02-25
 Файлов в разделе: 38
 ---
 
@@ -9,7 +9,7 @@
 ---
 title: Add code to a dashboard
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new/components/dashboard-component-code
-scraped: 2026-02-24T21:14:48.360567
+scraped: 2026-02-25T21:14:13.351070
 ---
 
 # Add code to a dashboard
@@ -226,7 +226,7 @@ To see more examples, open the  menu at the top of your dashboard and browse the
 ---
 title: Add data to a dashboard
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new/components/dashboard-component-data
-scraped: 2026-02-24T21:14:54.032822
+scraped: 2026-02-25T21:14:11.912971
 ---
 
 # Add data to a dashboard
@@ -424,7 +424,7 @@ Select **Run query**.
 ---
 title: Add Markdown to dashboard
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new/components/dashboard-component-markdown
-scraped: 2026-02-24T21:14:44.024489
+scraped: 2026-02-25T21:14:14.677007
 ---
 
 # Add Markdown to dashboard
@@ -599,7 +599,7 @@ For details on variables, see [Add a variable to a dashboard](/docs/analyze-expl
 ---
 title: Add a snippet to a dashboard
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new/components/dashboard-component-snippet
-scraped: 2026-02-24T21:14:55.437737
+scraped: 2026-02-25T21:14:17.333551
 ---
 
 # Add a snippet to a dashboard
@@ -708,7 +708,7 @@ When you find something interesting:
 ---
 title: Add a variable to a dashboard
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new/components/dashboard-component-variable
-scraped: 2026-02-24T21:14:59.749023
+scraped: 2026-02-25T21:14:20.222600
 ---
 
 # Add a variable to a dashboard
@@ -1231,7 +1231,7 @@ In this example, we selected `Variable1` to display the variable definition and 
 ---
 title: Dashboards
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new
-scraped: 2026-02-24T21:13:37.459284
+scraped: 2026-02-25T21:13:16.357835
 ---
 
 # Dashboards
@@ -2471,7 +2471,7 @@ To delete multiple tiles simultaneously
 ---
 title: API for Dashboards and Notebooks
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/document-api
-scraped: 2026-02-24T21:25:04.264988
+scraped: 2026-02-25T21:27:19.550491
 ---
 
 # API for Dashboards and Notebooks
@@ -2521,7 +2521,7 @@ To see the full API documentation for the documents service
 ---
 title: Manage document versions
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/document-version
-scraped: 2026-02-24T21:15:01.114133
+scraped: 2026-02-25T21:14:10.785112
 ---
 
 # Manage document versions
@@ -2640,7 +2640,7 @@ The **Actions** column displays all of the actions available from the **History*
 ---
 title: Drilldowns and navigation
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/drilldowns-and-navigation
-scraped: 2026-02-24T21:14:51.287458
+scraped: 2026-02-25T21:14:08.118817
 ---
 
 # Drilldowns and navigation
@@ -3048,7 +3048,7 @@ Try the full example on the [Dynatrace playgroundï»¿](https://wkf10640.apps.d
 ---
 title: Area chart visualization
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-chart-area
-scraped: 2026-02-22T21:13:17.171459
+scraped: 2026-02-25T21:23:47.475895
 ---
 
 # Area chart visualization
@@ -3093,62 +3093,6 @@ To access the chart tools:
   When you hover over the chart, the chart toolbar is displayed by default in the lower-right corner of the chart and is collapsed.
 
 ### Toolbar options
-
-**Icon**
-
-**Name**
-
-**Keyboard shortcut**
-
-**Action**
-
-**Move**
-
-none
-
-Move the chart toolbar. Select and drag the  icon.
-
-**Explore**
-
-`E`
-
-Explore a section of the chart. Select **Explore**, and then click and drag left or right to select a section of the chart. The chart zooms to display the selected area.
-
-**Pan**
-
-`P`
-
-Pan the chart to the left or right. Select **Pan**, and then click and drag left or right.
-
-**Zoom in**
-
-`Ctrl+Up`
-
-Zoom in to the chart.
-
-**Zoom out**
-
-`Ctrl+Down`
-
-Zoom out from the chart.
-
-**Reset**
-
-`R`
-
-Restore the chart zoom level and timeframe to their original states.
-
-**Collapse**
-
-none
-
-Shrink the chart toolbar to just  and .
-
-**Expand**
-
-none
-
-Show the entire chart toolbar.
 
 ### Zoom rules
 
@@ -3258,8 +3202,6 @@ After applying these changes, the data mapping will correctly allow suitable fie
 
 ### Visualization-specific data mapping settings
 
-
-
 An area chart graphs one or more values over time, so the mapping needs to include the following:
 
 * **Time**: the column of your result that is used for the X-axis ([timestamp](/docs/platform/grail/dynatrace-query-language/data-types#timestamp "A list of DQL data types.") or [timeframe](/docs/platform/grail/dynatrace-query-language/data-types#timeframe "A list of DQL data types.")).
@@ -3278,6 +3220,8 @@ You can select a color palette from the list under **Color palettes**.
 For a line chart, area chart, or bar chart, you can optionally [override the selected color palette](#series-overrides) for any series as needed.
 
 ### Legend position
+
+
 
 Select where to display the visualization legend:
 
@@ -3522,7 +3466,7 @@ To reset to defaults (discard override settings for the selected metric), select
 ---
 title: Band chart visualization
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-chart-band
-scraped: 2026-02-22T21:13:31.867457
+scraped: 2026-02-25T21:23:43.220786
 ---
 
 # Band chart visualization
@@ -3889,7 +3833,7 @@ To reset to defaults (discard override settings for the selected metric), select
 ---
 title: Categorical chart visualization
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-chart-bar-categorical
-scraped: 2026-02-22T21:13:25.276529
+scraped: 2026-02-25T21:23:33.541457
 ---
 
 # Categorical chart visualization
@@ -4214,7 +4158,7 @@ To reset to defaults (discard override settings for the selected metric), select
 ---
 title: Bar chart visualization
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-chart-bar
-scraped: 2026-02-22T21:13:13.047739
+scraped: 2026-02-25T21:23:41.751617
 ---
 
 # Bar chart visualization
@@ -4259,62 +4203,6 @@ To access the chart tools:
   When you hover over the chart, the chart toolbar is displayed by default in the lower-right corner of the chart and is collapsed.
 
 ### Toolbar options
-
-**Icon**
-
-**Name**
-
-**Keyboard shortcut**
-
-**Action**
-
-**Move**
-
-none
-
-Move the chart toolbar. Select and drag the  icon.
-
-**Explore**
-
-`E`
-
-Explore a section of the chart. Select **Explore**, and then click and drag left or right to select a section of the chart. The chart zooms to display the selected area.
-
-**Pan**
-
-`P`
-
-Pan the chart to the left or right. Select **Pan**, and then click and drag left or right.
-
-**Zoom in**
-
-`Ctrl+Up`
-
-Zoom in to the chart.
-
-**Zoom out**
-
-`Ctrl+Down`
-
-Zoom out from the chart.
-
-**Reset**
-
-`R`
-
-Restore the chart zoom level and timeframe to their original states.
-
-**Collapse**
-
-none
-
-Shrink the chart toolbar to just  and .
-
-**Expand**
-
-none
-
-Show the entire chart toolbar.
 
 ### Zoom rules
 
@@ -4424,8 +4312,6 @@ After applying these changes, the data mapping will correctly allow suitable fie
 
 ### Visualization-specific data mapping settings
 
-
-
 A bar chart graphs one or more values over time, so the mapping needs to include the following:
 
 * **Time**: the column of your result that is used for the X-axis ([timestamp](/docs/platform/grail/dynatrace-query-language/data-types#timestamp "A list of DQL data types.") or [timeframe](/docs/platform/grail/dynatrace-query-language/data-types#timeframe "A list of DQL data types.")).
@@ -4444,6 +4330,8 @@ You can select a color palette from the list under **Color palettes**.
 For a line chart, area chart, or bar chart, you can optionally [override the selected color palette](#series-overrides) for any series as needed.
 
 ### Legend position
+
+
 
 Select where to display the visualization legend:
 
@@ -4688,7 +4576,7 @@ To reset to defaults (discard override settings for the selected metric), select
 ---
 title: Donut visualization
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-chart-donut
-scraped: 2026-02-22T21:13:29.138148
+scraped: 2026-02-25T21:23:39.209187
 ---
 
 # Donut visualization
@@ -4974,7 +4862,7 @@ To reset to defaults (discard override settings for the selected metric), select
 ---
 title: Line chart visualization
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-chart-line
-scraped: 2026-02-22T21:13:35.927925
+scraped: 2026-02-25T21:23:32.153450
 ---
 
 # Line chart visualization
@@ -5221,62 +5109,6 @@ To access the chart tools:
   When you hover over the chart, the chart toolbar is displayed by default in the lower-right corner of the chart and is collapsed.
 
 ### Toolbar options
-
-**Icon**
-
-**Name**
-
-**Keyboard shortcut**
-
-**Action**
-
-**Move**
-
-none
-
-Move the chart toolbar. Select and drag the  icon.
-
-**Explore**
-
-`E`
-
-Explore a section of the chart. Select **Explore**, and then click and drag left or right to select a section of the chart. The chart zooms to display the selected area.
-
-**Pan**
-
-`P`
-
-Pan the chart to the left or right. Select **Pan**, and then click and drag left or right.
-
-**Zoom in**
-
-`Ctrl+Up`
-
-Zoom in to the chart.
-
-**Zoom out**
-
-`Ctrl+Down`
-
-Zoom out from the chart.
-
-**Reset**
-
-`R`
-
-Restore the chart zoom level and timeframe to their original states.
-
-**Collapse**
-
-none
-
-Shrink the chart toolbar to just  and .
-
-**Expand**
-
-none
-
-Show the entire chart toolbar.
 
 ### Zoom rules
 
@@ -5650,7 +5482,7 @@ To reset to defaults (discard override settings for the selected metric), select
 ---
 title: Pie visualization
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-chart-pie
-scraped: 2026-02-22T21:13:39.872238
+scraped: 2026-02-25T21:23:34.970679
 ---
 
 # Pie visualization
@@ -6007,7 +5839,7 @@ To reset to defaults (discard override settings for the selected metric), select
 ---
 title: Single value visualization
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-chart-single-value
-scraped: 2026-02-22T21:13:22.631053
+scraped: 2026-02-25T21:22:49.480706
 ---
 
 # Single value visualization
@@ -6595,7 +6427,7 @@ To reset to defaults (discard threshold settings), select the trash can  next to
 ---
 title: Gauge chart
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-gauge
-scraped: 2026-02-22T21:13:27.806089
+scraped: 2026-02-25T21:22:40.812811
 ---
 
 # Gauge chart
@@ -6633,35 +6465,6 @@ timeseries avg(dt.host.cpu.usage)
 
 The **Visual** tab settings are as follows:
 
-Section
-
-Settings
-
-Data mapping
-
-* **Gauge value** = `CPU`
-
-Gauge bar
-
-* **Show label** = turned off
-* **Min value** = set to `Auto`
-* **Max value** = set to `Auto`
-
-Color
-
-* **Bar color** = `62903c`
-* **Custom colors** =
-
-  + `60` and (for the custom color) `dc671e`
-  + `80` and (for the custom color) `cd3c44`
-
-Units and formats
-
-* Selected value = `CPU`
-* **Unit** = `Percent (%)`
-* **Displayed unit** = `Auto`
-* **Decimals** = `0.00`
-
 ### Example 2
 
 ![Gauge visualization: example 2](https://dt-cdn.net/images/gauge-example-02-476-681bd11f53.png)
@@ -6693,32 +6496,6 @@ fetch dt.davis.problems
 ```
 
 The **Visual** tab settings are as follows:
-
-Section
-
-Settings
-
-Data mapping
-
-* **Gauge value** = `pctActive`
-
-Gauge bar
-
-* **Show label** = turned on and set to `Percentage of Open Problems`
-* **Min value** = set to `Auto`
-* **Max value** = set to `Auto`
-
-Color
-
-* **Bar color** = `438FB1`
-* **Custom colors** = `90` and (for the custom color) `c21930`
-
-Units and formats
-
-* Selected value = `pctActive`
-* **Unit** = `Percent (%)`
-* **Displayed unit** = `Auto`
-* **Decimals** = `0`
 
 ## Title
 
@@ -6809,8 +6586,6 @@ Determines where the gauge ends on the right.
 
 ## Units and formats
 
-
-
 To override the default units and formats in a dashboard or notebook visualization
 
 1. Select  to edit the visualization tile.
@@ -6874,7 +6649,7 @@ To reset to defaults (discard override settings for the selected metric), select
 ---
 title: Heatmap visualization
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-heatmap
-scraped: 2026-02-22T21:13:18.470794
+scraped: 2026-02-25T21:23:37.666506
 ---
 
 # Heatmap visualization
@@ -7124,7 +6899,7 @@ To reset to defaults (discard override settings for the selected metric), select
 ---
 title: Histogram visualization
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-histogram
-scraped: 2026-02-22T21:13:30.543743
+scraped: 2026-02-25T21:23:46.072976
 ---
 
 # Histogram visualization
@@ -7552,7 +7327,7 @@ To reset to defaults (discard override settings for the selected metric), select
 ---
 title: Honeycomb visualization
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-honeycomb
-scraped: 2026-02-22T21:13:33.059848
+scraped: 2026-02-25T21:23:40.359998
 ---
 
 # Honeycomb visualization
@@ -7834,7 +7609,7 @@ To reset to defaults (discard override settings for the selected metric), select
 ---
 title: Bubble map visualization
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-map-bubble
-scraped: 2026-02-22T21:13:37.251076
+scraped: 2026-02-25T21:22:43.618703
 ---
 
 # Bubble map visualization
@@ -8177,7 +7952,7 @@ To reset to defaults (discard override settings for the selected metric), select
 ---
 title: Choropleth map visualization
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-map-choropleth
-scraped: 2026-02-22T21:13:34.459305
+scraped: 2026-02-25T21:22:45.036661
 ---
 
 # Choropleth map visualization
@@ -8555,7 +8330,7 @@ To reset to defaults (discard override settings for the selected metric), select
 ---
 title: Connection map visualization
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-map-connection
-scraped: 2026-02-22T21:13:26.610102
+scraped: 2026-02-25T21:22:47.945459
 ---
 
 # Connection map visualization
@@ -8895,7 +8670,7 @@ To reset to defaults (discard override settings for the selected metric), select
 ---
 title: Dot map visualization
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-map-dot
-scraped: 2026-02-22T21:13:23.950812
+scraped: 2026-02-25T21:22:46.530248
 ---
 
 # Dot map visualization
@@ -9024,20 +8799,6 @@ record(geo.location.latitude = 55.676098, geo.location.longitude = 12.568337, re
 
 Important visualization settings for this example include:
 
-Section
-
-Settings
-
-Data mapping
-
-* **Latitude** = `geo.location.latitude`
-* **Longtude** = `geo.location.longitude`
-* **Color value** = `revenue`
-
-Shape
-
-* **Style** = **Icon** (`Shop`)
-
 ### Example 3
 
 ![Dot map example: with a bearing field](https://dt-cdn.net/images/dot-03-973-cfe4ef9ef4.png)
@@ -9089,20 +8850,6 @@ record(geo.location.latitude = 55.676098, geo.location.longitude = 12.568337, be
 ```
 
 Important visualization settings for this example include:
-
-Section
-
-Settings
-
-Data mapping
-
-* **Latitude** = `geo.location.latitude`
-* **Longtude** = `geo.location.longitude`
-
-Shape
-
-* **Style** = **Icon** (`Airplane Filled`)
-* **Bearing** = **Data** (`bearing`)
 
 ### Example 4
 
@@ -9156,23 +8903,6 @@ record(geo.location.latitude = 55.676098, geo.location.longitude = 12.568337, La
 
 Important visualization settings for this example include:
 
-Section
-
-Settings
-
-Data mapping
-
-* **Latitude** = `geo.location.latitude`
-* **Longtude** = `geo.location.longitude`
-
-Shape
-
-* **Style** = **Icon** (`Office Filled`)
-
-Legend and tooltip
-
-* **Show custom fields** = `Lab` (to display the lab name in the tooltip)
-
 ## Chart interactions
 
 ### Selection interactions
@@ -9218,8 +8948,6 @@ If you aren't sure that you chose the right visualization, use the [visualizatio
 
 ## View
 
-
-
 * **Default zoom**
 
   Set a default zoom level for the map by selecting one of the following options:
@@ -9232,6 +8960,8 @@ If you aren't sure that you chose the right visualization, use the [visualizatio
   Turn this on to show region outlines within countries.
 
 ## Data mapping
+
+
 
 The data mapping section shows how a column of your result is mapped to the visualization.
 
@@ -9439,7 +9169,7 @@ To reset to defaults (discard override settings for the selected metric), select
 ---
 title: Meter bar chart
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-meterbar
-scraped: 2026-02-22T21:13:21.233780
+scraped: 2026-02-25T21:22:42.189419
 ---
 
 # Meter bar chart
@@ -9477,34 +9207,6 @@ timeseries avg(dt.host.cpu.usage)
 
 The **Visual** tab settings are as follows:
 
-Section
-
-Settings
-
-Data mapping
-
-* **Meter value** = `CPU`
-
-Meter bar
-
-* **Show label** = turned on and set to `CPU Usage`
-* **Show icon** = turned on and set to `HostsIcon`
-
-Color
-
-* **Bar color** = `62903c`
-* **Custom colors** =
-
-  + `60` and (for the custom color) `d56b1a`
-  + `80` and (for the custom color) `8a0012`
-
-Units and formats
-
-* Selected value = `CPU`
-* **Unit** = `Percent (%)`
-* **Displayed unit** = `Auto`
-* **Decimals** = `0.00`
-
 ### Example 2
 
 ![Meter Bar visualization: example 2](https://dt-cdn.net/images/meter-bar-example-02-474-3cf8cba784.png)
@@ -9536,31 +9238,6 @@ fetch dt.davis.problems
 ```
 
 The **Visual** tab settings are as follows:
-
-Section
-
-Settings
-
-Data mapping
-
-* **Meter value** = `pctActive`
-
-Meter bar
-
-* **Show label** = turned on and set to `Percentage of Open Problems`
-* **Show icon** = turned on and set to `DavisAiSignetIcon`
-
-Color
-
-* **Bar color** = `438FB1`
-* **Custom colors** = `90` and (for the custom color) `c21930`
-
-Units and formats
-
-* Selected value = `pctActive`
-* **Unit** = `Percent (%)`
-* **Displayed unit** = `Auto`
-* **Decimals** = `0`
 
 ## Chart interactions
 
@@ -9743,7 +9420,7 @@ To reset to defaults (discard override settings for the selected metric), select
 ---
 title: Raw visualization
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-raw
-scraped: 2026-02-22T21:13:14.314024
+scraped: 2026-02-25T21:23:36.279828
 ---
 
 # Raw visualization
@@ -9906,7 +9583,7 @@ To reset to defaults (discard override settings for the selected metric), select
 ---
 title: Record list
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-record-list
-scraped: 2026-02-22T21:13:38.542633
+scraped: 2026-02-25T21:23:44.596561
 ---
 
 # Record list
@@ -10103,7 +9780,7 @@ To reset to defaults (discard override settings for the selected metric), select
 ---
 title: Scatterplot visualization
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-scatterplot
-scraped: 2026-02-24T21:22:15.316728
+scraped: 2026-02-25T21:23:30.647866
 ---
 
 # Scatterplot visualization
@@ -10395,7 +10072,7 @@ To reset to defaults (discard override settings for the selected metric), select
 ---
 title: Table visualization
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-table
-scraped: 2026-02-22T21:13:15.736334
+scraped: 2026-02-25T21:23:01.366609
 ---
 
 # Table visualization
@@ -10725,7 +10402,7 @@ To reset to defaults (discard threshold settings), select the trash can  next to
 ---
 title: Edit visualizations for Notebooks and Dashboards
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations
-scraped: 2026-02-24T21:14:49.803603
+scraped: 2026-02-25T21:14:25.722838
 ---
 
 # Edit visualizations for Notebooks and Dashboards
@@ -10893,7 +10570,7 @@ For details, see [Scatterplot visualization](/docs/analyze-explore-automate/dash
 ---
 title: Explore data
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/explore-data
-scraped: 2026-02-24T21:14:45.538758
+scraped: 2026-02-25T21:14:27.199827
 ---
 
 # Explore data
@@ -11524,7 +11201,7 @@ That's what makes this a great tool for beginners and experts.
 ---
 title: Notebooks
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks
-scraped: 2026-02-24T21:15:50.576457
+scraped: 2026-02-25T21:15:01.398270
 ---
 
 # Notebooks
@@ -13025,7 +12702,7 @@ Try the full example on the [Dynatrace playgroundï»¿](https://wkf10640.apps.d
 ---
 title: Ready-made dashboards
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/ready-made-documents/ready-made-dashboards
-scraped: 2026-02-24T21:13:40.015863
+scraped: 2026-02-25T21:13:13.262186
 ---
 
 # Ready-made dashboards
@@ -13463,7 +13140,7 @@ Related Dynatrace app: ![Synthetic](https://dt-cdn.net/images/synthetic-new-256-
 ---
 title: Ready-made documents
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/ready-made-documents
-scraped: 2026-02-22T21:15:25.743410
+scraped: 2026-02-25T21:24:38.395363
 ---
 
 # Ready-made documents
@@ -13533,7 +13210,7 @@ When you open a document (dashboard or notebook) for which you don't have write 
 ---
 title: Remote environment data
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/remote-environment-data
-scraped: 2026-02-22T21:25:33.208290
+scraped: 2026-02-25T21:31:33.344418
 ---
 
 # Remote environment data

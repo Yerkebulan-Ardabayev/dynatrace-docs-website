@@ -1,59 +1,59 @@
 ---
-title: Перейти от Problems API v1 к Problems API v2
+title: Migrate from Problems API v1 to Problems API v2
 source: https://www.dynatrace.com/docs/dynatrace-api/basics/deprecation-migration-guides/problems-v1-to-v2
-scraped: 2026-02-24T21:31:28.440060
+scraped: 2026-02-25T21:26:47.733772
 ---
 
-# Перейти от Problems API v1 к Problems API v2
+# Migrate from Problems API v1 to Problems API v2
 
-# Перейти от Problems API v1 к Problems API v2
+# Migrate from Problems API v1 to Problems API v2
 
-* Ссылка
-* Опубликовано 30 ноября 2022 г.
+* Reference
+* Published Nov 30, 2022
 
-[Problems API v1](/docs/dynatrace-api/environment-api/problems "Узнайте, что предлагает Dynatrace Problems v1 API.") был заменен на [Dynatrace версию 1.243](/docs/whats-new/dynatrace-api/sprint-243 "Журнал изменений для Dynatrace API версии 1.243"). Его заменой является [Problems API v2](/docs/dynatrace-api/environment-api/problems-v2 "Узнайте, что предлагает Dynatrace Problems v2 API."). Мы рекомендуем перейти на новую версию API как можно скорее.
+[Problems API v1](/docs/dynatrace-api/environment-api/problems "Find out what the Dynatrace Problems v1 API offers.") has been deprecated with [Dynatrace version 1.243](/docs/whats-new/dynatrace-api/sprint-243 "Changelog for Dynatrace API version 1.243"). Its replacement is [Problems API v2](/docs/dynatrace-api/environment-api/problems-v2 "Find out what the Dynatrace Problems v2 API offers."). We recommend that you migrate to the new API at your earliest convenience.
 
-Миграция влияет на URL-адреса конечных точек, параметры запросов и параметры тела запроса/ответа, а также на область действия токена для аутентификации запросов.
+The migration affects endpoint URLs, query parameters, and response/request body parameters, as well as the scope of the token for request authentication.
 
-## Новые функции
+## New features
 
-События API v2 предлагают следующие новые функции:
+Events API v2 offers you the following new features:
 
-* [Селектор сущностей](/docs/dynatrace-api/environment-api/entity-v2/entity-selector "Настройте селектор сущностей для Environment API конечных точек.") помогает фильтровать проблемы в запросах на чтение.
-* Улучшенный фильтр проблем с помощью селектора проблем.
-* Унифицированный селектор временного интервала.
+* The [entity selector](/docs/dynatrace-api/environment-api/entity-v2/entity-selector "Configure the entity selector for Environment API endpoints.") helps you to filter problems in read requests.
+* Improved problem filtering via a problem selector.
+* Unified timeframe selector.
 
-## Базовый URL
+## Base URL
 
-| новая Problems v2 | старая Problems v1 |
+| new Problems v2 | old Problems v1 |
 | --- | --- |
 | `/api/v2/problems` | `/api/v1/problem` |
 
-## Область действия токена аутентификации
+## Authentication token scope
 
-| новая Problems v2 | старая Problems v1 |
+| new Problems v2 | old Problems v1 |
 | --- | --- |
-| **Чтение проблем** (`problems.read`) **Запись проблем** (`problems.write`) | **Доступ к ленте проблем и событий, метрикам и топологии** (`DataExport`) |
+| **Read problems** (`problems.read`) **Write problems** (`problems.write`) | **Access problem and event feed, metrics, and topology** (`DataExport`) |
 
-## Параметры
+## Parameters
 
-Чтобы узнать о новых параметрах запроса/тела, см. документацию отдельных запросов в [Problems API v2](/docs/dynatrace-api/environment-api/problems-v2 "Узнайте, что предлагает Dynatrace Problems v2 API.").
+To learn about new query/body parameters, see the documentation of individual requests in [Problems API v2](/docs/dynatrace-api/environment-api/problems-v2 "Find out what the Dynatrace Problems v2 API offers.").
 
-## Пример
+## Example
 
-В этом примере мы запрашиваем список открытых проблем на хостах, которые произошли в течение последних двух часов.
+In this example, we query a list of open problems on hosts that happened within the last two hours.
 
 Problems v2
 
 Problems v1
 
-#### URL-адрес запроса
+#### Request URL
 
 ```
 GET https://mySampleEnv.live.dynatrace.com/api/v2/problems?from=now-2h&problemSelector=status("open")&entitySelector=type("HOST")
 ```
 
-#### Тело ответа
+#### Response body
 
 ```
 {
@@ -84,19 +84,19 @@ GET https://mySampleEnv.live.dynatrace.com/api/v2/problems?from=now-2h&problemSe
 
 
 
-"title": "Хост или мониторинг недоступен",
+"title": "Host or monitoring unavailable",
 
 
 
-"impactLevel": "ИНФРАСТРУКТУРА",
+"impactLevel": "INFRASTRUCTURE",
 
 
 
-"severityLevel": "ДОСТУПНОСТЬ",
+"severityLevel": "AVAILABILITY",
 
 
 
-"status": "ОТКРЫТ",
+"status": "OPEN",
 
 
 
@@ -164,7 +164,7 @@ GET https://mySampleEnv.live.dynatrace.com/api/v2/problems?from=now-2h&problemSe
 
 
 
-)
+}
 
 
 
@@ -188,7 +188,7 @@ GET https://mySampleEnv.live.dynatrace.com/api/v2/problems?from=now-2h&problemSe
 
 
 
-"name": "Инфраструктура Linux"
+"name": "Infrastructure Linux"
 
 
 
@@ -296,7 +296,7 @@ GET https://mySampleEnv.live.dynatrace.com/api/v2/problems?from=now-2h&problemSe
 
 
 
-"name": "Оповещения инфраструктуры"
+"name": "Infrastructure alerts"
 
 
 
@@ -312,7 +312,7 @@ GET https://mySampleEnv.live.dynatrace.com/api/v2/problems?from=now-2h&problemSe
 
 
 
-"name": "Оповещения frontend"
+"name": "Frontend alerts"
 
 
 
@@ -348,19 +348,19 @@ GET https://mySampleEnv.live.dynatrace.com/api/v2/problems?from=now-2h&problemSe
 
 
 
-"title": "Высокое использование памяти",
+"title": "High memory usage",
 
 
 
-"impactLevel": "ИНФРАСТРУКТУРА",
+"impactLevel": "INFRASTRUCTURE",
 
 
 
-"severityLevel": "Пользовательское оповещение",
+"severityLevel": "CUSTOM_ALERT",
 
 
 
-"status": "ОТКРЫТ",
+"status": "OPEN",
 
 
 
@@ -372,11 +372,7 @@ GET https://mySampleEnv.live.dynatrace.com/api/v2/problems?from=now-2h&problemSe
 
 
 
-"entityId": 
-
-
-
-
+"entityId": {
 
 
 
@@ -412,11 +408,7 @@ GET https://mySampleEnv.live.dynatrace.com/api/v2/problems?from=now-2h&problemSe
 
 
 
-"entityId": 
-
-
-
-
+"entityId": {
 
 
 
@@ -436,7 +428,7 @@ GET https://mySampleEnv.live.dynatrace.com/api/v2/problems?from=now-2h&problemSe
 
 
 
-)
+}
 
 
 
@@ -476,7 +468,7 @@ GET https://mySampleEnv.live.dynatrace.com/api/v2/problems?from=now-2h&problemSe
 
 
 
-"name": "Инфраструктура Windows"
+"name": "Infrastructure windows"
 
 
 
@@ -492,7 +484,7 @@ GET https://mySampleEnv.live.dynatrace.com/api/v2/problems?from=now-2h&problemSe
 
 
 
-"name": "Сервис бронирования"
+"name": "Booking service"
 
 
 
@@ -568,7 +560,7 @@ GET https://mySampleEnv.live.dynatrace.com/api/v2/problems?from=now-2h&problemSe
 
 
 
-"name": "Оповещения инфраструктуры"
+"name": "Infrastructure alerts"
 
 
 
@@ -584,7 +576,7 @@ GET https://mySampleEnv.live.dynatrace.com/api/v2/problems?from=now-2h&problemSe
 
 
 
-"name": "Оповещения сервиса бронирования"
+"name": "Booking service alerts"
 
 
 
@@ -604,7 +596,7 @@ GET https://mySampleEnv.live.dynatrace.com/api/v2/problems?from=now-2h&problemSe
 
 
 
-)
+}
 
 
 
@@ -619,26 +611,22 @@ GET https://mySampleEnv.live.dynatrace.com/api/v2/problems?from=now-2h&problemSe
 }
 ```
 
-В событиях API v1 невозможно выбрать несколько сущностей с помощью селектора сущностей. Вам приходится полагаться на теги. Для иллюстрации в примере показано одно и то же проблемы, но вам приходится находить их в полезной нагрузке внешними средствами.
+In Events API v1, it is not possible to select multiple entities via the entity selector. You have to rely on tags. For illustration purposes, the example payload shows the same problems, but you would have to find them in the payload by external means.
 
-#### URL-адрес запроса
+#### Request URL
 
 ```
 GET https://mySampleEnv.live.dynatrace.com/api/v1/problem/feed?relativeTime=2hours&status=OPEN&tag=stage:dev
 ```
 
-#### Тело ответа
+#### Response body
 
 ```
 {
 
 
 
-"result": 
-
-
-
-
+"result": {
 
 
 
@@ -666,15 +654,15 @@ GET https://mySampleEnv.live.dynatrace.com/api/v1/problem/feed?relativeTime=2hou
 
 
 
-"impactLevel": "ИНФРАСТРУКТУРА",
+"impactLevel": "INFRASTRUCTURE",
 
 
 
-"status": "ОТКРЫТ",
+"status": "OPEN",
 
 
 
-"severityLevel": "ДОСТУПНОСТЬ",
+"severityLevel": "AVAILABILITY",
 
 
 
@@ -718,7 +706,7 @@ GET https://mySampleEnv.live.dynatrace.com/api/v1/problem/feed?relativeTime=2hou
 
 
 
-)
+}
 
 
 
@@ -742,11 +730,11 @@ GET https://mySampleEnv.live.dynatrace.com/api/v1/problem/feed?relativeTime=2hou
 
 
 
-"severityLevel": "ДОСТУПНОСТЬ",
+"severityLevel": "AVAILABILITY",
 
 
 
-"impactLevel": "ИНФРАСТРУКТУРА",
+"impactLevel": "INFRASTRUCTURE",
 
 
 
@@ -754,7 +742,7 @@ GET https://mySampleEnv.live.dynatrace.com/api/v1/problem/feed?relativeTime=2hou
 
 
 
-)
+}
 
 
 
@@ -762,11 +750,7 @@ GET https://mySampleEnv.live.dynatrace.com/api/v1/problem/feed?relativeTime=2hou
 
 
 
-"affectedCounts": 
-
-
-
-
+"affectedCounts": {
 
 
 
@@ -790,11 +774,7 @@ GET https://mySampleEnv.live.dynatrace.com/api/v1/problem/feed?relativeTime=2hou
 
 
 
-"recoveredCounts": 
-
-
-
-
+"recoveredCounts": {
 
 
 
@@ -846,15 +826,15 @@ GET https://mySampleEnv.live.dynatrace.com/api/v1/problem/feed?relativeTime=2hou
 
 
 
-"impactLevel": "ИНФРАСТРУКТУРА",
+"impactLevel": "INFRASTRUCTURE",
 
 
 
-"status": "ОТКРЫТ",
+"status": "OPEN",
 
 
 
-"severityLevel": "Пользовательское оповещение",
+"severityLevel": "CUSTOM_ALERT",
 
 
 
@@ -898,7 +878,7 @@ GET https://mySampleEnv.live.dynatrace.com/api/v1/problem/feed?relativeTime=2hou
 
 
 
-)
+}
 
 
 
@@ -922,19 +902,19 @@ GET https://mySampleEnv.live.dynatrace.com/api/v1/problem/feed?relativeTime=2hou
 
 
 
-"severityLevel": "Пользовательское оповещение",
+"severityLevel": "CUSTOM_ALERT",
 
 
 
-"impactLevel": "ИНФРАСТРУКТУРА",
+"impactLevel": "INFRASTRUCTURE",
 
 
 
-"eventType": "Пользовательское оповещение"
+"eventType": "CUSTOM_ALERT"
 
 
 
-)
+}
 
 
 
@@ -942,11 +922,7 @@ GET https://mySampleEnv.live.dynatrace.com/api/v1/problem/feed?relativeTime=2hou
 
 
 
-"affectedCounts": 
-
-
-
-
+"affectedCounts": {
 
 
 
@@ -970,11 +946,7 @@ GET https://mySampleEnv.live.dynatrace.com/api/v1/problem/feed?relativeTime=2hou
 
 
 
-"recoveredCounts": 
-
-
-
-
+"recoveredCounts": {
 
 
 
@@ -1002,7 +974,7 @@ GET https://mySampleEnv.live.dynatrace.com/api/v1/problem/feed?relativeTime=2hou
 
 
 
-)
+}
 
 
 
@@ -1017,7 +989,7 @@ GET https://mySampleEnv.live.dynatrace.com/api/v1/problem/feed?relativeTime=2hou
 }
 ```
 
-## Связанные темы
+## Related topics
 
-* [Problems API v2](/docs/dynatrace-api/environment-api/problems-v2 "Узнайте, что предлагает Dynatrace Problems v2 API.")
-* [Problems API v1](/docs/dynatrace-api/environment-api/problems "Узнайте, что предлагает Dynatrace Problems v1 API.")
+* [Problems API v2](/docs/dynatrace-api/environment-api/problems-v2 "Find out what the Dynatrace Problems v2 API offers.")
+* [Problems API v1](/docs/dynatrace-api/environment-api/problems "Find out what the Dynatrace Problems v1 API offers.")

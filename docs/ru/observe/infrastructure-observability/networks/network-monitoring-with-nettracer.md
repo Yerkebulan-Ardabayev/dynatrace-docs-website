@@ -1,7 +1,7 @@
 ---
 title: Extended network monitoring
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/networks/network-monitoring-with-nettracer
-scraped: 2026-02-23T21:38:42.193306
+scraped: 2026-02-25T21:31:56.151925
 ---
 
 # Extended network monitoring
@@ -48,30 +48,6 @@ By default, NetTracer is included as the binary `oneagentnettracer` with every O
 ## NetTracer supported platforms
 
 NetTracer officially supports Linux kernel versions 4.15 and higher, but other Dynatrace components that coexist with NetTracer on a particular host have specific requirements and are supported on particular Linux distributions. The following table lists the tested and safest Linux distributions to use when planning to use NetTracer with Dynatrace.
-
-Distribution
-
-Architecture
-
-Release
-
-RedHat Enterprise Linux
-
-x86\_64
-
-8.0 and higher
-
-CentOS
-
-x86\_64
-
-8.0 and higher
-
-Ubuntu
-
-x86\_64
-
-18.04 LTS and higher
 
 ## Enable NetTracer
 
@@ -124,86 +100,6 @@ The following metrics available for NetTracer are calculated:
 
 ## Dimensions for NetTracer
 
-Metric key
-
-Dimension
-
-Value
-
-Unit
-
-`builtin:tech.nettracer.bytes_rx`
-
-`dt.entity.process_group_instance`  
-`dt.entity.process_group`  
-`dt.entity.host`
-
-Gauge, where:
-
-sum = number of bytes from all sessions in the given timeframe
-
-avg/min/max = average/minimal/maximal bytes per session in the given timeframe
-
-count = number of sessions in the given timeframe
-
-Bytes
-
-`builtin:tech.nettracer.bytes_tx`
-
-`dt.entity.process_group_instance`  
-`dt.entity.process_group`  
-`dt.entity.host`
-
-Gauge, where:
-
-sum = number of bytes from all sessions in the given timeframe
-
-avg/min/max = average/minimal/maximal bytes per session in the given timeframe
-
-count = number of sessions in the given timeframe
-
-Bytes
-
-`builtin:tech.nettracer.pkts_rx`
-
-`dt.entity.process_group_instance`  
-`dt.entity.process_group`  
-`dt.entity.host`
-
-Count, sending deltas/resetting counter
-
-Count
-
-`builtin:tech.nettracer.pkts_tx`
-
-`dt.entity.process_group_instance`  
-`dt.entity.process_group`  
-`dt.entity.host`
-
-Count, sending deltas/resetting counter
-
-Count
-
-`builtin:tech.nettracer.pkts_retr`
-
-`dt.entity.process_group_instance`  
-`dt.entity.process_group`  
-`dt.entity.host`
-
-Count, sending deltas/resetting counter
-
-Count
-
-`builtin:tech.nettracer.rtt`
-
-`dt.entity.process_group_instance`  
-`dt.entity.process_group`  
-`dt.entity.host`
-
-Gauge
-
-Miliseconds
-
 ### Container dimensions for NetTracer
 
 If the process is running in a container, the following dimensions are added:
@@ -212,19 +108,6 @@ If the process is running in a container, the following dimensions are added:
 * `dt.entity.container_group`
 
 Additional container dimensions are added depending on the deployment type.
-
-Kubernetes
-
-Docker (no Kubernetes)
-
-`container.image.name` (if it's available)  
-`k8s.container.name`  
-`k8s.namespace.name`  
-`k8s.pod.name`  
-`k8s.pod.uid`
-
-`container.image.name`  
-`container.name`
 
 ## Where can I see NetTracer data?
 

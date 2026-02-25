@@ -1,7 +1,7 @@
 ---
 title: Manage WMI extensions
 source: https://www.dynatrace.com/docs/ingest-from/extensions/supported-extensions/data-sources/wmi
-scraped: 2026-02-23T21:33:40.854736
+scraped: 2026-02-25T21:16:42.153161
 ---
 
 # Manage WMI extensions
@@ -107,8 +107,6 @@ Filter by
 Select an option
 
 Type to filter
-
-Unable to render DataTable. Check configuration.
 
 ## Related topics
 

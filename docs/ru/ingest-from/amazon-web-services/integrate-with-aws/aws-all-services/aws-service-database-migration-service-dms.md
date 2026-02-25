@@ -1,7 +1,7 @@
 ---
 title: AWS DMS (Database Migration Service) monitoring
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-database-migration-service-dms
-scraped: 2026-02-24T21:29:45.559660
+scraped: 2026-02-25T21:30:19.107353
 ---
 
 # AWS DMS (Database Migration Service) monitoring
@@ -840,7 +840,7 @@ To check the availability of preset dashboards for each AWS service, see the lis
 
 ## Available metrics
 
-`ReplicationInstanceIdentifier` является основной размерностью.
+`ReplicationInstanceIdentifier` is the main dimension.
 
 | Name | Description | Unit | Statistics | Dimensions | Recommended |
 | --- | --- | --- | --- | --- | --- |

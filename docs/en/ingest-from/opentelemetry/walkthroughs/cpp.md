@@ -1,7 +1,7 @@
 ---
 title: Instrument your C++ application with OpenTelemetry
 source: https://www.dynatrace.com/docs/ingest-from/opentelemetry/walkthroughs/cpp
-scraped: 2026-02-24T21:28:01.946269
+scraped: 2026-02-25T21:21:18.146276
 ---
 
 # Instrument your C++ application with OpenTelemetry
@@ -918,7 +918,7 @@ To generate an access token, in Dynatrace, go to ![Access tokens](https://dt-cdn
    }
    ```
 
-   The file read operations, parsing the `dt_metadata` files in the example code, attempt to read the [OneAgent data files](/docs/ingest-from/extend-dynatrace/extend-data "Learn how to automatically enrich your telemetry data with Dynatrace-specific dimensions.") to enrich the OTLP request and ensure that all relevant topology information is available within Dynatrace.
+   The file read operations, parsing the `dt_metadata` files in the example code, attempt to read the [OneAgent data files](/docs/ingest-from/extend-dynatrace/extend-data "Learn how to automatically enrich your telemetry data with Dynatrace-specific fields.") to enrich the OTLP request and ensure that all relevant topology information is available within Dynatrace.
 3. Configure `DT_API_URL` and `DT_API_TOKEN` for the [Dynatrace URL](#base-url) and [access token](#access-token) in `otel.h`.
 
 ## Step 3 Instrument your application
@@ -1266,4 +1266,4 @@ For metrics and logs, go to **Metrics** or ![Logs and Events](https://dt-cdn.net
 
 ## Related topics
 
-* [Enrich ingested data with Dynatrace-specific dimensions](/docs/ingest-from/extend-dynatrace/extend-data "Learn how to automatically enrich your telemetry data with Dynatrace-specific dimensions.")
+* [Enrich ingested data with Dynatrace-specific fields](/docs/ingest-from/extend-dynatrace/extend-data "Learn how to automatically enrich your telemetry data with Dynatrace-specific fields.")

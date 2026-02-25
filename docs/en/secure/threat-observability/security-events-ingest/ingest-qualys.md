@@ -1,7 +1,7 @@
 ---
 title: Ingest Qualys vulnerability findings, scan events, and audit logs
 source: https://www.dynatrace.com/docs/secure/threat-observability/security-events-ingest/ingest-qualys
-scraped: 2026-02-22T21:19:52.799408
+scraped: 2026-02-25T21:19:58.097615
 ---
 
 # Ingest Qualys vulnerability findings, scan events, and audit logs
@@ -137,7 +137,7 @@ For billing information, see [Events powered by Grail](/docs/license/capabilitie
 * [**Vulnerability scan events**](/docs/semantic-dictionary/model/security-events#vulnerability-scan-events "Get to know the Semantic Dictionary models related to security events.") indicate coverage of scans for individual artifacts.
 * [**Audit logs**](/docs/semantic-dictionary/model/log#audit-logs "Get to know the Semantic Dictionary models related to Log Analytics.") represent user activity logs in Qualys.
 
-### Which SonarQube security findings are imported into Dynatrace?
+### Which Qualys security findings are imported into Dynatrace?
 
 * The Qualys VMDR findings are reported by default.
 * On the first ingest run, integration ingests all findings updated in the last `m` hours, where `m` is the first ingest interval configured in the monitoring configuration.

@@ -1,6 +1,6 @@
 # Документация Dynatrace: dynatrace-intelligence/use-cases
 Язык: Русский (RU)
-Сгенерировано: 2026-02-24
+Сгенерировано: 2026-02-25
 Файлов в разделе: 6
 ---
 
@@ -276,7 +276,7 @@ To use Dynatrace Intelligence (Preview), ensure that you have:
 ---
 title: Summarize open problems with Workflows
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/use-cases/copilot-in-workflows-examples
-scraped: 2026-02-24T21:31:25.522175
+scraped: 2026-02-25T21:25:47.019131
 ---
 
 # Summarize open problems with Workflows
@@ -482,7 +482,7 @@ Once a new problem appears, you should receive an email from `no-reply@dev.apps.
 ---
 title: Create log alerts for a log event or summary of log data
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/use-cases/create-alert-in-logs
-scraped: 2026-02-24T21:27:08.168202
+scraped: 2026-02-25T21:28:55.817477
 ---
 
 # Create log alerts for a log event or summary of log data
@@ -634,7 +634,7 @@ If you followed these steps, now you know how to create log alerts for specific 
 ---
 title: Dynatrace Intelligence DQL examples
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/use-cases/davis-dql-examples
-scraped: 2026-02-24T21:18:22.552249
+scraped: 2026-02-25T21:23:19.202237
 ---
 
 # Dynatrace Intelligence DQL examples

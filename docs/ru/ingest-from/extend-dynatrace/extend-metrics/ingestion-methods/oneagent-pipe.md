@@ -1,7 +1,7 @@
 ---
 title: Metric scripting integration
 source: https://www.dynatrace.com/docs/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/oneagent-pipe
-scraped: 2026-02-24T21:22:37.719314
+scraped: 2026-02-25T21:16:51.534849
 ---
 
 # Metric scripting integration
@@ -63,7 +63,7 @@ The tool location depends on whether or not you've customized the OneAgent insta
 
 ## Topology awareness
 
-Using the `dynatrace_ingest` based scripting integration, the host ID and host name context are added to each metric as dimensions automatically. Learn how to [enrich your metrics with other Dynatrace-specific dimensions](/docs/ingest-from/extend-dynatrace/extend-data "Learn how to automatically enrich your telemetry data with Dynatrace-specific dimensions.") and apply Dynatrace-AI causation details to your ingested data.
+Using the `dynatrace_ingest` based scripting integration, the host ID and host name context are added to each metric as dimensions automatically. Learn how to [enrich your metrics with other Dynatrace-specific dimensions](/docs/ingest-from/extend-dynatrace/extend-data "Learn how to automatically enrich your telemetry data with Dynatrace-specific fields.") and apply Dynatrace-AI causation details to your ingested data.
 
 ## Metric format
 

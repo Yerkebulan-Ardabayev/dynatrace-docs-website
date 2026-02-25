@@ -1,7 +1,7 @@
 ---
 title: Metrics API - FAQ
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/metric-v2/metric-faq
-scraped: 2026-02-24T21:25:46.126997
+scraped: 2026-02-25T21:26:23.394027
 ---
 
 # Metrics API - FAQ

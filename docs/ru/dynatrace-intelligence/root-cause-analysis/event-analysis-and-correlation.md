@@ -1,138 +1,134 @@
 ---
-title: Event analysis and correlation
+title: Анализ и корреляция событий
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/root-cause-analysis/event-analysis-and-correlation
-scraped: 2026-02-24T21:25:24.280294
+scraped: 2026-02-25T21:33:44.701592
 ---
 
-# Event analysis and correlation
+# Анализ и корреляция событий
 
-# Event analysis and correlation
+* Последнее Dynatrace
+* Объяснение
+* 9-минутное чтение
+* Обновлено 28 января 2026 г.
 
-* Latest Dynatrace
-* Explanation
-* 9-min read
-* Updated on Jan 28, 2026
+События представляют собой различные типы единичных аномалий, такие как превышение метрики порога, ухудшение базовой линии или события в определенный момент времени, такие как крахи процессов. Dynatrace также обнаруживает и обрабатывает информационные события, такие как новые развертывания программного обеспечения, изменения конфигурации и другие типы событий.
 
-Events represent different types of singular anomalies, such as a metric breaching a threshold, baseline degradations, or point-in-time events, such as process crashes. Dynatrace also detects and processes informational events such as new software deployments, configuration changes, and other event types.
+Dynatrace принимает и хранит события из нескольких источников. Эти события могут запускать анализ коренной причины, автоматизацию или служить сырыми данными для панелей управления и отчетов. Вместе с журналами, метриками и трассами события обеспечивают ввод для анализа коренной причины и воздействия.
 
-Dynatrace ingests and stores events from multiple sources. Those events can trigger root cause analysis, an automation, or serve as raw data for dashboards and reports. Together with logs, metrics, and traces, events provide the input for root cause and impact analysis.
+## Корреляция событий
 
-## Event correlation
+Корреляция событий автоматизирует анализ потока отдельных событий, поступающих из тысяч различных источников и инструментов. Она поддерживает события, поступающие из OneAgent, внешних инструментов оповещения, облачных платформ и сотен интеграций наблюдаемости, доступных через Dynatrace Hub.
 
-Event correlation automates the analysis of the flood of individual events coming from thousands of various sources and tools. It supports events coming from OneAgent, external alerting tools, cloud platforms, and hundreds of observability integrations available through Dynatrace Hub.
+Цель корреляции событий - извлечь проблемы из входящих событий и получить действенные идеи, позволяющие вашим командам быстро устранять инциденты.
 
-The goal of event correlation is to extract problems from incoming events and derive actionable insights, allowing your teams to remediate incidents quickly.
+## Обработка и анализ событий
 
-## Event processing and analysis
+Обработка и анализ событий в Dynatrace - это многоступенчатый процесс, который, из входящих событий, поднимает проблемы, показывая коренную причину и бизнес-воздействие. Он включает следующие шаги:
 
-Event processing and analysis in Dynatrace is a multi-step process that, from incoming events, raises problems, showing the root cause and business impact. It includes the following steps:
+* [Принятие](#ingest)
+* [Нормализация](#normalization)
+* [Создание топологии](#topology-creation)
+* [Агрегация](#aggregation)
+* [Удаление дубликатов](#deduplication)
 
-* [Ingestion](#ingest)
-* [Normalization](#normalization)
-* [Topology creation](#topology-creation)
-* [Aggregation](#aggregation)
-* [Deduplication](#deduplication)
+![Принятие событий](https://dt-cdn.net/images/event-ingest-1624-fe34b0377c.png)
 
-![Event ingestion](https://dt-cdn.net/images/event-ingest-1624-fe34b0377c.png)
+### Принятие событий
 
-### Event ingestion
+Как платформа полной наблюдаемости, Dynatrace предлагает широкий спектр источников событий, включая OneAgent, встроенные интеграции и прием из инструментов третьих сторон. Для получения дополнительной информации см. [Принятие данных](https://dt-url.net/d003q22).
+Последнее Dynatrace также предлагает OpenPipeline для целей приема. Для получения дополнительной информации см. [OpenPipeline](/docs/platform/openpipeline "Масштабируйте обработку данных платформы Dynatrace с помощью Dynatrace OpenPipeline.").
 
-As a full-stack observability platform, Dynatrace offers a wide spectrum of event sources, including OneAgent, built-in integrations, and ingestion from third-party tools. For more information, see [Ingest dataï»¿](https://dt-url.net/d003q22).
-Latest Dynatrace also offers OpenPipeline for your ingestion purposes. For more information, see [OpenPipeline](/docs/platform/openpipeline "Scale Dynatrace platform data handling with Dynatrace OpenPipeline.").
+### Нормализация событий
 
-### Event normalization
+Нормализация событий преобразует все принятые события в один семантический формат, который позволяет Dynatrace Intelligence коррелировать эти данные.
 
-Event normalization transforms all ingested events into the same semantic format, which allows Dynatrace Intelligence causal AI to correlate this data.
+При нормализации событий оцениваются базовые ограничения свойств событий, чтобы убедиться, например, что:
 
-In event normalization, basic event property constraints are evaluated to make sure, for example, that:
+* Время создания события действителен
+* Тип события действителен
+* Имена свойств событий уникальны
 
-* Event creation time is valid
-* Event type is valid
-* Names of event properties are unique
+Нормализация также гарантирует, что входящие свойства событий правильно сопоставляются с Dynatrace Семантическим Словарем.
 
-Normalization also ensures that incoming event properties are mapped correctly to the Dynatrace Semantic Dictionary.
+Если источник события присоединил ссылки на существующие сущности, нормализация гарантирует, что эти ссылки правильно сопоставляются с вашей Smartscape топологией.
 
-If the event source attached references to existing entities, normalization ensures that these references are correctly mapped to your Smartscape topology.
+### Создание топологии
 
-### Topology creation
+[Smartscape топология](/docs/analyze-explore-automate/smartscape-classic "Узнайте, как Smartscape Classic визуализирует все сущности и зависимости в вашей среде.") - это реальное представление всех причинно-следственных отношений в работающей программной среде, включая информацию о развертывании, а также высокодинамичные отношения трассировки. Топология автоматически создается и обновляется из принятых данных, таких как метрики, события, журналы и трассы.
 
-[Smartscape topology](/docs/analyze-explore-automate/smartscape-classic "Learn how Smartscape Classic visualizes all the entities and dependencies in your environment.") is a real-time representation of all the causal relationships within a running software environment, including deployment information as well as highly dynamic trace relationships. The topology is automatically created and updated from ingested data such as metrics, events, logs, and traces.
+Все встроенные технологические поддержки в Dynatrace поставляются с автоматическими возможностями создания топологии - вам не нужно ничего настраивать вручную. Кроме того, вы можете использовать настраиваемое извлечение топологии, чтобы автоматически создать топологию и отношения из принятых данных, таких как события. Настройка создания топологии работает независимо от OneAgent и не требует запущенного экземпляра OneAgent. Вы можете легко реализовать свои собственные доменные модели на основе принятых данных.
 
-All the built-in technology support in Dynatrace comes with automatic topology creation capabilitiesâyou don't have to configure anything manually. Moreover, you can use custom topology extraction to automatically create the topology and relationships from ingested data such as events. Custom topology creation works independently from OneAgent and doesn't even require a running OneAgent instance. You can easily implement your own domain-specific models based on the ingested data.
+Чтобы узнать, как реализовать настраиваемую модель топологии, см. [Настраиваемая модель топологии](/docs/ingest-from/extend-dynatrace/extend-topology "Обеспечьте, чтобы все входящие наблюдения были контекстно-богатыми и анализировались в контексте контролируемых сущностей, к которым они относятся.").
 
-To learn how to implement a custom topology model, see [Custom topology model](/docs/ingest-from/extend-dynatrace/extend-topology "Ensure that all incoming observations are context-rich and analyzed in the context of the monitored entities they relate to.").
+### Агрегация
 
-### Aggregation
+Агрегация собирает и маршрутизирует все входящие данные из различных источников в одно место. Например, она консолидирует события, журналы, метрики и трассы рабочей нагрузки Kubernetes и представляет их в одном месте, связанном с рабочей нагрузкой.
 
-Aggregation collects and routes all incoming data from various sources into a single location. For example, it consolidates events, logs, metrics, and traces of a Kubernetes workload and presents it in a single workload-related location.
+Dynatrace агрегирует данные на основе динамически созданной топологии. Каждая наблюдаемая сущность имеет специальную страницу сущности, суммирующую все собранные данные в одном месте, обеспечивая последовательный вид данных из нескольких источников.
 
-Dynatrace aggregates data on top of the dynamically created topology. Every observed entity has a dedicated entity page summarizing all collected data in a single location, ensuring a consistent view of data from multiple sources.
+Кроме того, топология позволяет динамически перечислять все связанные сущности в этом представлении. Например, хост может показать список дисков, сетевых интерфейсов и экземпляров групп процессов, работающих на хосте.
 
-Additionally, the topology enables dynamic listing of all related entities in that view. For example, a host can show a list of disks, network interfaces, and process group instances running on the host.
+### Удаление дубликатов
 
-### Deduplication
+Удаление дубликатов пытается сгруппировать несколько событий в единую проблему, где все события имеют одну и ту же коренную причину. Например, один неудачный бэкенд-сервис может вызвать hundreds апстрим-сервисов, чтобы сообщить о событиях нарушения. Удаление дубликатов автоматически группирует все эти события в одну проблему. По умолчанию Dynatrace удаляет дубликаты событий по источнику, во времени и по причинно-следственной топологии.
 
-Deduplication attempts to group multiple events into a unified problem where all the events share the same root cause. For example, a single failing backend service can cause hundreds of upstream services to report violation events. Deduplication automatically groups all those events into a single problem. By default, Dynatrace deduplicates events on source, over time, and on causal topology.
+#### Удаление дубликатов по источнику события
 
-#### Deduplication on event source
+При удалении дубликатов по источнику события события группируются, когда они имеют одинаковый семантический тип и исходят из одного и того же источника. (Примечание: "источник" здесь означает контролируемую сущность, сообщающую о событии, а не инструмент, который захватил событие).
 
-In deduplication on event source, events are grouped when they are of the same semantic type and from the same source. (Note that "source" here means the monitored entity reporting the event, not the tool that captured the event).
+Изображение ниже показывает пример, где три разных инструмента сообщают три события типа **насыщения ЦП** из одного и того же источника (**Server-23**) в одно и то же время. В этом случае причинно-следственный ИИ удаляет дубликаты всех трех событий в одну проблему. Та же логика применяется ко всем типам сущностей в Dynatrace.
 
-The image below shows an example where three different tools report three events of the **CPU saturation** semantic type from the same source (**Server-23**) at the same time. In this case, causal AI deduplicates all three events into a single problem. The same logic applies to all entity types in Dynatrace.
+![Удаление дубликатов событий по источнику](https://dt-cdn.net/images/event-deduplication-source-606-42cfeaeb29.png)
 
-![Event deduplication on source](https://dt-cdn.net/images/event-deduplication-source-606-42cfeaeb29.png)
+#### Удаление дубликатов во времени
 
-#### Deduplication over time
+При удалении дубликатов во времени события группируются, когда они имеют одинаковый тип и исходят из одного и того же источника, но имеют немного разные времена начала.
 
-In deduplication over time, events are grouped when they are of the same type and from the same source, but with slightly different start times.
+Обнаружение аномалий Dynatrace предлагает 3-из-5-минутное окно наблюдения, чтобы сохранить события активными во время обнаруженных аномалий. Окно наблюдения предотвращает шум от нескольких отдельных событий в случае колебания аномалии. Вы можете адаптировать чувствительность окна наблюдения. Увеличение чувствительности производит больше шума, уменьшение приводит к событиям, которые остаются открытыми в течение более длительного времени. Удаление дубликатов во времени еще больше снижает шум событий, группируя одни и те же события нарушения в одну проблему.
 
-Dynatrace anomaly detection offers a 3-out-of-5-minutes observation time window to keep events active during detected anomalies. The observation window prevents noise from multiple single events in case of anomaly fluctuation. You can adapt the sensitivity of the observation window. Increasing sensitivity produces more noise, decreasing leads to events that stay open for longer. Deduplication over times further reduces the event noise by grouping the same violation events into a single problem.
+Изображение ниже показывает пример, в котором три события **насыщения ЦП** колеблются во времени. Причинно-следственный ИИ удаляет дубликаты их в одну проблему.
 
-The image below shows an example in which three **CPU saturation** events fluctuate over time. Causal AI deduplicates them into a single problem.
+![Удаление дубликатов событий во времени](https://dt-cdn.net/images/event-deduplication-time-606-d002576297.png)
 
-![Event deduplication over time](https://dt-cdn.net/images/event-deduplication-time-606-d002576297.png)
+#### Удаление дубликатов по причинно-следственной топологии
 
-#### Deduplication over the causal topology
+При удалении дубликатов по причинно-следственной топологии события группируются, если они были сообщены для одной и той же ситуации. "Одна и та же ситуация" здесь означает, что все источники событий являются частью причинно-следственной графа в Smartscape топологии. Причинно-следственный граф может включать вертикальный стек программного обеспечения или горизонтальные отношения между сервисами.
 
-In deduplication over the causal topology, events are grouped if they were reported for the same situation. The "same situation" here means that all those event sources are part of a causal graph within the Smartscape topology. The causal graph can include the vertical deployment software stack or the horizontal service-to-service call relationships.
+Изображение ниже показывает пример, где фронтенд-сервис напрямую и косвенно вызывает три других сервиса. Все эти сервисы показывают событие замедления около одного и того же времени. Причинно-следственный ИИ анализирует причинно-следственную топологию этих четырех сервисов и заключает, что четыре события принадлежат одной и той же аномалии, поэтому причинно-следственный ИИ группирует четыре события в одну проблему.
 
-The image below shows an example where a frontend service, directly and indirectly, calls three other services. All those services show a slowdown event around the same time. causal AI analyzes the causal topology of those four services and concludes that the four events belong to the same anomaly, so causal AI groups the four events into a single problem.
+![Удаление дубликатов событий по топологии](https://dt-cdn.net/images/event-deduplication-topology-606-eca1a0f402.png)
 
-![Event deduplication over topology](https://dt-cdn.net/images/event-deduplication-topology-606-eca1a0f402.png)
+Примечание, что причинно-следственная топология может охватывать сотни сущностей, где их события варьируются во времени из-за индивидуальных окон наблюдения и ситуации с нагрузкой.
 
-Note that the causal topology can span hundreds of entities where their events vary over time due to individual observation windows and load situation.
+Удаление дубликатов событий на основе причинно-следственной топологии - это высоко сложный процесс, который, из-за своей природы, уже принадлежит шагу [анализа коренной причины](#root-cause).
 
-Deduplication of events based on the causal topology is a highly sophisticated process that, due to its nature, already belongs to the [root cause analysis](#root-cause) step.
+### Настройка корреляции событий
 
-### Custom-defined event correlation
+Хотя корреляция событий и удаление дубликатов полностью автоматические, некоторые случаи использования требуют более тонкого контроля удаления дубликатов. Чтобы добиться этого, вы можете использовать свойства управления событиями Dynatrace Intelligence. Например, **dt.event.allow\_davis\_merge** определяет, может ли Dynatrace Intelligence объединить события в более крупную проблему. Такие свойства агностичны к каналу приема. См. список доступных свойств ниже.
 
-While event correlation and deduplication are fully automatic, some use cases require more fine-grained control of deduplication. To achieve that, you can use Dynatrace Intelligence control properties of ingested events. For example, **dt.event.allow\_davis\_merge** defines whether Dynatrace Intelligence can merge events into a larger problem. Such properties are agnostic to the ingestion channel. See the list of available properties below.
+Кроме того, обработка событий может быть подвержена влиянию отправителя события или источника с помощью поля `event.davis`, определенного в Семантическом Словаре. Для получения дополнительной информации см. [Семантический Словарь](/docs/semantic-dictionary/model/davis#davis-ai-events "Узнайте о моделях Семантического Словаря, связанных с Davis AI.").
 
-Additionally, the processing of events can be influenced by the event sender or the source using `event.davis` field defined in the Semantic Dictionary. For more information, see [Semantic Dictionary](/docs/semantic-dictionary/model/davis#davis-ai-events "Get to know the Semantic Dictionary models related to Davis AI.").
+## Анализ коренной причины
 
-## Root cause analysis
+Анализ коренной причины автоматически оценивает всю захваченную и обработанную информацию и выделяет сущности в причинно-следственной топологии, определенные как коренная причина сложной ситуации.
 
+Во время анализа причинно-следственный ИИ проходит через причинно-следственную топологию, посещает каждую затронутую сущность и оценивает все результаты, такие как события и их степень тяжести. Кроме того, обнаружение коренной причины Dynatrace Intelligence запускает анализы метрик из затронутых сущностей для выявления аномального поведения путем автоматического обнаружения точек изменения метрик.
 
+Обнаружение точек изменения метрик не только подтверждает или отклоняет события, основанные на метриках, но также обнаруживает дополнительные неизвестные метрики без активного пользовательского оповещения.
 
-Root cause analysis automatically evaluates all captured and ingested information and highlights entities within the causal topology identified as the root cause of a complex situation.
+После того, как все связанные проблемы будут выявлены, алгоритм ранжирования определяет наиболее высокий кандидат на коренную причину. Сущность с наивысшим ранжированием, вместе с ее вертикальным стеком, представляется как коренная причина проблемы.
 
-During the analysis, causal AI traverses the causal topology, visits each affected entity, and evaluates all the findings, such as events and their severities. In addition, Dynatrace Intelligence root cause detection triggers on-demand analyses of metrics from the affected entities to identify abnormal behavior by automatically detecting metric change points.
+Различия в анализе коренной причины между предыдущим Dynatrace и последним Dynatrace
 
-Metric change point detection not only confirms or rejects metric-based events, but also discovers additional unknowns in metrics without an active custom alert.
+В последнем Dynatrace проблема Davis в Grail может в некоторых случаях иметь больше затронутых сущностей по сравнению с соответствующей проблемой в предыдущем Dynatrace. Этот подход обеспечивает более подробное и точное представление о влиянии проблемы.
 
-After all related problems are identified, a ranking algorithm identifies the highest-ranking root cause candidate. The highest-ranking entity, along with its vertical stack, is presented as the root cause of the problem.
+* В предыдущем Dynatrace, во время анализа коренной причины, любые результаты обнаружения точек изменения на сущностях без событий не рассматривались как затронутая сущность.
+* В последнем Dynatrace, все результаты обнаружения точек изменения обрабатываются в Grail как события Davis.
 
-Root cause analysis differences between the previous Dynatrace and the latest Dynatrace
+Эта разница может стать очевидной, например, при сравнении результатов плитки здоровья в Dashboards Classic с соответствующими результатами в последнем Dynatrace.
 
-In the latest Dynatrace, a Davis problem in Grail might, in some cases, have more affected entities compared to the corresponding problem in the previous Dynatrace. This current approach provides a more detailed and accurate representation of the problem's impact.
+## Влияние на бизнес
 
-* In the previous Dynatrace, during root cause analysis, any change point findings on entities without events were not treated as an affected entity.
-* In the latest Dynatrace, all change point findings are ingested to Grail as Davis events.
+Помимо определения коренной причины проблемы, Dynatrace Intelligence проходит через причинно-следственную графу в обратном направлении, чтобы найти все затронутые точки входа приложений и услуг. Эти точки входа также являются частью затронутой топологии и являются точками соприкосновения с реальным пользовательским опытом.
 
-This difference can become apparent when, for example, comparing health tile results in Dashboards Classic to the corresponding results in the latest Dynatrace.
-
-## Business impact
-
-In addition to finding the root cause of the problem, Dynatrace Intelligence traverses the causal graph in reverse to find all affected entry point applications and services. These entry points are also part of the affected topology and are touch points for real user experience.
-
-Business impact analysis shows the number of potentially affected real users (collected from the incoming traces), the number of traces, and their service endpoints. It also provides a statistical evaluation of how strongly the individual endpoint and user actions are affected by the problem.
+Анализ влияния на бизнес показывает количество потенциально затронутых реальных пользователей (собранных из входящих трасс), количество трасс и их конечных точек сервиса. Он также предоставляет статистическую оценку того, насколько сильно отдельные конечные точки и действия пользователей затронуты проблемой.

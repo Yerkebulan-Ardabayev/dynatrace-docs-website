@@ -1,7 +1,7 @@
 ---
 title: Create and configure a browser monitor
 source: https://www.dynatrace.com/docs/observe/digital-experience/synthetic-on-grail/synthetic-app/create-configure-browser-monitors
-scraped: 2026-02-22T21:20:20.602578
+scraped: 2026-02-25T21:19:00.832716
 ---
 
 # Create and configure a browser monitor
@@ -50,7 +50,7 @@ Advanced settings
 
    The default Dynatrace user agent during recording and local playback is in the format `Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/{version} Safari/537.36 RuxitSynthetic/1.0 v0 t0 cfeatureHash=7efgijmoqtvx caes=1 ccux=1 sia=1 smf=1`, where:
 
-   * `{version}` is the current Chrome version used for recording.
+   * `{version}` is the current browser version used for recording.
    * `v0` and `t0` identify Synthetic Monitoring traffic.
    * `sia=1` indicates faster RUM JavaScript injection (value can be `1` or `0`).
    * `smf=1` indicates monitoring of pages in frames (if **Capture performance metrics for pages loaded in frames** is switched on in [**Advanced setup**](#other); value is `0` if not switched on).

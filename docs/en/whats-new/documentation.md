@@ -1,7 +1,7 @@
 ---
 title: New Documentation articles
 source: https://www.dynatrace.com/docs/whats-new/documentation
-scraped: 2026-02-24T21:14:32.935007
+scraped: 2026-02-25T21:15:12.590382
 ---
 
 # New Documentation articles
@@ -17,7 +17,7 @@ This page lists all new or significantly changed Dynatrace Documentation topics,
 ## Feb 23, 2026
 
 * [Alerting and notifications](/docs/analyze-explore-automate/alerting-and-notifications "Utilize anomaly detection, problem detection, and workflows for external notifications to ensure that critical problems never go unnoticed.")
-* [OpenTelemetry](/docs/observe/dynatrace-for-ai-observability/get-started/opentelemetry "Learn how to instrument AI applications with OpenTelemetry and the GenAI semantic conventions.")
+* [OpenTelemetry](/docs/observe/dynatrace-for-ai-observability/get-started/opentelemetry "Use OpenTelemetry and the GenAI semantic conventions to collect observability data from AI applications.")
 * [OpenAI Observability](/docs/observe/dynatrace-for-ai-observability/sample-use-cases/openai-observability "Learn about Dynatrace for OpenAI Observability, how Dynatrace observes OpenAI SaaS services, and much more.")
 * [OpenTelemetry Host Monitoring extension](/docs/observe/infrastructure-observability/extensions/opentelemetry-host-monitoring "Generate topology and screens for your OpenTelemetry host data for quicker display and easier analysis of the data.")
 * [Security Posture Management compliance standards](/docs/secure/application-security/spm/compliance-standards "Technical details about the supported compliance standards.")
@@ -78,7 +78,7 @@ This page lists all new or significantly changed Dynatrace Documentation topics,
 * [Monitor service message processing](/docs/observe/application-observability/services/monitor-service-message-processing "Monitor service message processing")
 * [Response time analysis](/docs/observe/application-observability/services/response-time-analysis "Response time analysis helps you quickly the key contributors to slow service performance in Dynatrace.")
 * [Data privacy in the New RUM Experience](/docs/observe/digital-experience/new-rum-experience/data-privacy "Learn how to ensure that your RUM setup complies with the data privacy regulations of your region.")
-* [Radware Alteon Load Balancer extension](/docs/observe/infrastructure-observability/extensions/radware-alteon-load-balancer "Monitor your Radware Alteon Network Load Balancers through SNMP")
+* [Radware Alteon Load Balancer extension](/docs/observe/infrastructure-observability/extensions/radware-alteon-load-balancer "Monitor your Radware Alteon Network Load Balancer devices and interfaces through SNMP.")
 * [Reduce span-based and metric-based cardinality](/docs/platform/openpipeline/use-cases/reduce-span-metric-cardinality "Leverage three different views in the Services app to normalize span and metric data, ensuring aggregations and analysis remain reliable and usable.")
 * [Ingest JSON and TXT logs](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-api/lma-ingest-json-txt-logs "Understand how JSON and TXT logs are processed, whether in flattened or raw mode.")
 * [Sizing guide for Dynatrace ActiveGate](/docs/ingest-from/setup-on-k8s/guides/deployment-and-configuration/resource-management/ag-resource-limits "Set resource limits for Dynatrace ActiveGates")
@@ -93,7 +93,7 @@ This page lists all new or significantly changed Dynatrace Documentation topics,
 
 ## Jan 12, 2026
 
-* [Radware Alteon Load Balancer extension](/docs/observe/infrastructure-observability/extensions/radware-alteon-load-balancer "Monitor your Radware Alteon Network Load Balancers through SNMP")
+* [Radware Alteon Load Balancer extension](/docs/observe/infrastructure-observability/extensions/radware-alteon-load-balancer "Monitor your Radware Alteon Network Load Balancer devices and interfaces through SNMP.")
 * [Owner-based access control in OpenPipeline](/docs/platform/openpipeline/concepts/access-control "Learn the roles and permissions available in OpenPipeline.")
 * [Set access control in OpenPipeline](/docs/platform/openpipeline/getting-started/set-access-control "Distribute OpenPipeline ingest source and pipeline management via owner-based access control.")
 * [Extract a metric from user events](/docs/observe/digital-experience/new-rum-experience/use-cases/extract-custom-metrics-from-user-events "Turn user events into actionable insights by extracting custom metrics for long-term analysis.")
@@ -1603,7 +1603,7 @@ This page lists all new or significantly changed Dynatrace Documentation topics,
 * [Version detection strategies](/docs/deliver/release-monitoring/version-detection-strategies "Metadata for version detection in different technologies")
 * [Monitor releases with Dynatrace](/docs/deliver/release-monitoring/monitor-releases-with-dynatrace "Analyze data related to each release version of your software.")
 * [Issue-tracking integration](/docs/deliver/release-monitoring/issue-tracking-integration "Integrate your issue tracker into Dynatrace to pull statistics for monitored entities.")
-* [Enrich metrics with Dynatrace-specific dimensions](/docs/ingest-from/extend-dynatrace/extend-data "Learn how to automatically enrich your telemetry data with Dynatrace-specific dimensions.")
+* [Enrich metrics with Dynatrace-specific dimensions](/docs/ingest-from/extend-dynatrace/extend-data "Learn how to automatically enrich your telemetry data with Dynatrace-specific fields.")
 * [Davis Security Score calculations](/docs/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/davis-security-score "Calculate the Davis Security Score and predict potential vulnerability risks with Davis AI.")
 * [Release monitoring](/docs/deliver/release-monitoring "Detect versions of monitored applications and analyze the software product lifecycle of your releases.")
 

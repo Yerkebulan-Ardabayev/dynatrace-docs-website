@@ -1,7 +1,7 @@
 ---
 title: Hardware and system requirements for routing/monitoring ActiveGates on Windows
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-activegate/installation/windows/windows-activegate-hardware-and-system-requirements
-scraped: 2026-02-22T21:20:53.925895
+scraped: 2026-02-25T21:19:42.854449
 ---
 
 # Hardware and system requirements for routing/monitoring ActiveGates on Windows
@@ -43,68 +43,8 @@ For large environments, you may need to use a machine with additional CPU and me
 **Space allocation per directory, for installation purposes:**  
 **(for more detailed allocation, refer to [ActiveGate directories](/docs/ingest-from/dynatrace-activegate/configuration/where-can-i-find-activegate-files "Find out where ActiveGate files are stored on Windows and Linux systems."))**
 
-**Top-level directory**
-
-**Disk space requirements**
-
-ActiveGate and autoupdater executable files, libraries, and related files  
-`%PROGRAMFILES%\dynatrace\gateway`  
-relative to installation parameter: `<INSTALL>\gateway`  
-also configurable in GUI during installation
-
-300 MB
-
-ActiveGate configuration and related directories  
-For Environment ActiveGate, it also contains Extensions configuration  
-`%PROGRAMDATA%\dynatrace`
-
-2 MB
-
-For Environment ActiveGate only: Extensions executable files, libraries, and related files
-`%PROGRAMFILES%\dynatrace\remotepluginmodule`  
-relative to installation parameter: `<INSTALL>\remotepluginmodule`  
-also configurable in GUI during installation
-
-850 MB
-
 **Space allocation per directory, for ActiveGate operation:**  
 **(for more detailed allocation, refer to [ActiveGate directories](/docs/ingest-from/dynatrace-activegate/configuration/where-can-i-find-activegate-files "Find out where ActiveGate files are stored on Windows and Linux systems."))**
-
-**Top-level directory**
-
-**Disk space requirements**
-
-ActiveGate and autoupdater logs  
-ActiveGate packages directory for auto-update installer downloads  
-`%PROGRAMDATA%\dynatrace`
-
-1.2 GB
-
-ActiveGate temporary files  
-`%PROGRAMDATA%\dynatrace\gateway\tmp`
-
-4 GB (including 3 GB for cached OneAgent installers and container images)
-
-Dump files uploaded to ActiveGate by OneAgent  
-`%PROGRAMDATA%\dynatrace\gateway\dump`
-
-Functionality off by default.
-When activated, can take configurable maximum size: default 100 GB.
-
-For Environment ActiveGate only: ActiveGate Extensions logs, cache, run-time work area  
-`%PROGRAMDATA%\dynatrace\remotepluginmodule`
-
-2 GB
-
-For Environment ActiveGate only: ActiveGate extensions upload directory  
-`%PROGRAMFILES%\dynatrace\remotepluginmodule\plugin_deployment`
-
-Depending on uploaded extensions
-
-Extension Execution Controller logs retransmission persistence directory
-`%PROGRAMDATA%\dynatrace\remotepluginmodule\agent\runtime\extensions\persistence`
-
-Up to 600 MB by default. [1](#fn-1-1-def)
 
 1
 
@@ -129,21 +69,6 @@ The reliability mechanism ensures the persistence of Extension Execution Control
 Windows configuration file: `C:\ProgramData\dynatrace\remotepluginmodule\agent\conf\extensionsuser.conf`
 
 Linux configuration file: `/var/lib/dynatrace/remotepluginmodule/agent/conf/extensionsuser.conf`
-
-**Variable**
-
-**Description**
-
-`persistence.reliable_mode`
-
-`true` - reliable mode turned on; SFM logs genereted if space requirement not met
-`false` - reliable mode turned off; log ingest will be transmitted without the reliability mechanism
-
-`persistence.total_limit_kb`
-
-Maximum volume limit for Extensions Log Persistence in kilobytes.
-By default: 600 MB
-Can be modified manually if the requirement can't be met on the host.
 
 ## Supported operating systems
 
@@ -175,59 +100,3 @@ The real number of hosts may be different depending on the monitored technologie
 ### x86-64 architecture
 
 The C6i machine instances and the estimates:
-
-Instance
-
-vCPU
-
-Mem (GiB)
-
-Storage
-
-Dedicated EBS bandwidth (Mbps)
-
-Network performance
-
-Estimated number of hosts
-
-c6i.large
-
-2
-
-3.75
-
-EBS-Only
-
-500
-
-Moderate
-
-800
-
-c6i.xlarge
-
-4
-
-7.5
-
-EBS-Only
-
-750
-
-High
-
-1800
-
-c6i.2xlarge
-
-8
-
-15
-
-EBS-Only
-
-1,000
-
-High
-
-2500

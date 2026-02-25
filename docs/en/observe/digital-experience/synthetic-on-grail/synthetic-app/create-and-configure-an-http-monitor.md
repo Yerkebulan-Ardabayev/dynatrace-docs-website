@@ -1,7 +1,7 @@
 ---
 title: Create and configure an HTTP monitor
 source: https://www.dynatrace.com/docs/observe/digital-experience/synthetic-on-grail/synthetic-app/create-and-configure-an-http-monitor
-scraped: 2026-02-24T21:27:15.921877
+scraped: 2026-02-25T21:19:15.914973
 ---
 
 # Create and configure an HTTP monitor
@@ -229,13 +229,13 @@ In **Visual** mode, you can also:
 
 Two factors make up your monitoring scheduleâhow frequently your browser monitor runs and the number of locations it's executed from.
 
-Dynatrace offers a global network of [public Synthetic Monitoring locations](/docs/observe/digital-experience/synthetic-monitoring/general-information/public-synthetic-locations "Learn about all currently available public Synthetic Monitoring locations.") out-of-the-box. You can also [create private Synthetic locations](/docs/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/create-a-private-synthetic-location "Learn how to create a private location for synthetic monitoring.") within your own network infrastructure. Both public and private locations appear on this settings page.
+Dynatrace offers a global network of [public Synthetic Monitoring locations](/docs/observe/digital-experience/synthetic-monitoring/general-information/public-synthetic-locations "Learn about all currently available public Synthetic Monitoring locations.") out of the box. You can also [create private Synthetic locations](/docs/observe/digital-experience/synthetic-on-grail/synthetic-app/private-locations "Learn how to manage private locations in the Synthetic app.") within your own network infrastructure. Both public and private locations appear on this settings page.
 
 The frequency and number of locations determine the number of monitor executions per hour. For example, running a monitor from 3 locations every 15 minutes results in 12 executions per hour (4 times per hour from each of the 3 locations). Monitor executions are evenly spaced within the selected interval. That is, for a monitor running from 3 locations every 15 minutes, executions are triggered at 5-minute intervals.
 
-You can choose a frequency of every **5**, **10**, **15**, or **30** minutes; or **1**, **2**, or **4** hours. You can also set up your monitor to be executed [**On demand only**](/docs/observe/digital-experience/synthetic-monitoring/general-information/on-demand-executions "Execute synthetic monitors on demand from public or private locations"). You can select multiple global locations from where your browser monitor is to be executed.
+You can choose a frequency of every **5**, **10**, **15**, or **30** minutes; or **1**, **2**, or **4** hours. You can also set up your monitor to be executed [**On demand only**](/docs/observe/digital-experience/synthetic-on-grail/synthetic-app/on-demand-executions "Learn about how to perform on-demand executions."). You can select multiple global locations from where your browser monitor is to be executed.
 
-Note that all public Synthetic locations are set to Coordinated Universal Time, or UTC. If your monitor script requires the local time or time zone, you can use the [`api.getContext()` method](/docs/observe/digital-experience/synthetic-monitoring/browser-monitors/browser-clickpath-events#retrieve-data "Learn about the event types created when recording a browser clickpath.") and the system clock to implement conditional logic.
+Note that all public Synthetic locations are set to Coordinated Universal Time, or UTC. If your monitor script requires the local time or time zone, you can use the [`api.getContext()` method](/docs/observe/digital-experience/synthetic-on-grail/synthetic-app/create-configure-browser-monitors/browser-clickpath-steps#retrieve-data "Learn about the step types created when recording a browser clickpath") and the system clock to implement conditional logic.
 
 ### Outage and performance
 
@@ -258,7 +258,7 @@ For **Performance thresholds**, you can turn on:
 
 ### Summary
 
-See the summary of all the steps and the estimated monthly number of requests.
+See the summary of all the steps and the estimated monthly number of actions. If everything's OK, and no more adjustments are needed, **Save** the newly configured monitor.
 
 See [HTTP monitors reporting results](/docs/observe/digital-experience/synthetic-on-grail/synthetic-app/synthetic-details-for-http-monitors "Learn about the Synthetic details page for HTTP monitors.") for monitoring analytics of each monitor.
 

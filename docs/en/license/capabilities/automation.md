@@ -1,7 +1,7 @@
 ---
 title: Automation Workflow capability overview (DPS)
 source: https://www.dynatrace.com/docs/license/capabilities/automation
-scraped: 2026-02-23T21:39:33.277366
+scraped: 2026-02-25T21:32:13.441513
 ---
 
 # Automation Workflow capability overview (DPS)

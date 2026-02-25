@@ -1,7 +1,7 @@
 ---
 title: OpenPipeline processing examples
 source: https://www.dynatrace.com/docs/platform/openpipeline/use-cases/processing-examples
-scraped: 2026-02-22T21:15:16.728303
+scraped: 2026-02-25T21:17:43.783049
 ---
 
 # OpenPipeline processing examples
@@ -59,66 +59,6 @@ A stored event from an application (`myLogSource`) in the log viewer is missing 
       ```
 2. Go to ![Settings](https://dt-cdn.net/images/settings-icon-256-38e1321b51.webp "Settings") **Settings** > **Process and contextualize** > **OpenPipeline**: > **Logs** > **Pipelines** and select (or create) the pipeline for the log ingest source.
 3. Configure a **DQL processor** in the **Processing** stage as follows.
-
-   **Matching condition**
-
-   The `matchesValue()` function that you copied.
-
-   **Sample data**
-
-   ```
-   {
-
-
-
-   "content":"April 24, 2022 09:59:52 [myPool-thread-1] INFO Lorem ipsum dolor sit amet",
-
-
-
-   "status":"NONE",
-
-
-
-   "timestamp":"1650889391528",
-
-
-
-   "log.source":"myLogSource",
-
-
-
-   "loglevel":"NONE"
-
-
-
-   }
-   ```
-
-   **DQL processor definition**
-
-   ```
-   parse content, "TIMESTAMP('MMMMM d, yyyy HH:mm:ss'):timestamp ' [' LD:'thread.name' '] ' UPPER:loglevel
-
-
-
-   // Parses out the timestamp, thread name, and log level.
-
-
-
-   // `TIMESTAMP` looks for the specific datetime format. The matched value is set as the existing timestamp log attribute.
-
-
-
-   // `LD` matches any chars between literals `' ['` and `'] '`.
-
-
-
-   // `UPPER` matches uppercase letters.
-
-
-
-   // The remaining part of the content is not matched.
-   ```
 4. Save the pipeline.
 
 Conclusion

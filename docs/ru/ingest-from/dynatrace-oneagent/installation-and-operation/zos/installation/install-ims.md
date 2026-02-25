@@ -1,7 +1,7 @@
 ---
 title: Install the IMS module
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-ims
-scraped: 2026-02-23T21:24:10.219264
+scraped: 2026-02-25T21:25:13.295169
 ---
 
 # Install the IMS module
@@ -13,29 +13,6 @@ scraped: 2026-02-23T21:24:10.219264
 * Updated on Nov 18, 2025
 
 With the IMS module, you can get observability for your IMS transactions and programs including IBM MQ and database calls.
-
-Observability for
-
-Including
-
-Transactions
-
-* IMS
-* Fast Path
-* [BMPï»¿](https://www.ibm.com/docs/en/ims/15.1.0?topic=bmps-batch-message-processing-transaction-oriented)
-
-Transactions initiated using
-
-* IBM MQ Bridge and Trigger Monitor
-* IMS TM Resource Adapter, IMS SOAP Gateway, and IMS Connect
-* 3270 terminal
-
-Database calls
-
-Database calls with their SQL statements from IMS to Db2 and IMS DB via
-
-* the DL/I access method
-* the Fast Path access methods
 
 ## Installation
 
@@ -131,152 +108,6 @@ Below is the complete list and description of the positional parameters of the i
 ```
 
 The injection utility parameters can be specified as either positional or keyword parameters. There are seven positional parameters. Keyword parameters must be specified in a SYSIN file. The positional parameters on the EXEC JCL statement are still valid, however any new parameters added in the future will only be added as SYSIN keyword values. If an EXEC PARM parameter value is found, no SYSIN parameters will be considered. The recommended method is to use a SYSIN file and keyword parameters.
-
-Symbol
-
-Position
-
-Keyword
-
-Description
-
-Required
-
-`<IMS_Id>`
-
-1
-
-IMSID=
-
-The four-character IMSID of the control region.
-
-This parameter is not needed when you're using the garbage collection function to reclaim ECSA storage that contains no longer used IMS modules.
-
-Required
-
-`<zDC_Id>`
-
-2
-
-ZDC=
-
-The four-character zDCID used in the SUBSYSTEM\_ID() parameter of the target zDC.
-
-This parameter is not needed when the requested target zDC is the DEFAULT zDC. In that case type in the asterisk (`*`) or omit the parameter.
-
-Required
-
-`<ActionCode>|<PathTableSize>`
-
-3
-
-ACTION= | SIZE=
-
-The one-character action code or the value for `pathid` table size.
-
-#### Action code
-
-Action codes specify an action to be taken on the previously injected IMS module. An action code is not applicable to the initial injection of the IMS module and is mutually exclusive with the `pathid` table size value.
-
-If a valid action code is specified, the injection program doesn't re-inject the IMS module and performs the specified action on the already injected module. This means that no new versions of the IMS modules will be loaded.
-
-Action codes are:
-
-* **E**: Enable (switch on) an injected IMS module that was previously disabled.
-* **D**: Disable (switch off) an injected IMS module. The IMS module is no longer invoked. Use the `E` action code to re-enable it.
-* **G**: Garbage collection. If the IMS module has been updated and injected, ECSA storage for the old (unused) load modules of the IMS module is reclaimed with this function. See the [Garbage collection notes](#gc-notes) section for more information.
-* **M**: Modify the recovery option of the injected IMS module when this value is used in conjunction with the fifth parameter, `<Y|N>`.  
-  Alternatively, modify the size of any previously allocated path tables, when used in conjunction with the sixth parameter `<PathTableSegm>`, and optionally the seventh parameter `<PathTableIms>`.  
-  Alternatively, modify the size of any previously allocated Fast Path SMO (Shared Memory Object) when used in conjunction with the `FPATHSIZE=` statement.
-* **F**: Free all resource locks and reset the `pathid` table pointers. This action code should never be used unless the `E` action has failed because a IMS module resource is locked or as directed by Dynatrace Support.
-
-#### Table size value
-
-The `pathid` tables size value is used for the initial IMS module injection and is mutually exclusive with actions codes. If the IMS module is already injected, the table size value is ignored.
-
-The table size value can be expressed as SEGM=nnnn, where nnnn is up to a 4 digit number of 1-megabyte segments
-
-The actual number of usable entries may be higher, as the storage is allocated above the specified quota. The number of entries will be adjusted upwards to use all available allocated storage.
-
-If the parameter is omitted upon initial IMS module injection, a default of four segments (4 MB) is used. This provides space for 8,191 entries (approximately 2,048 entries per segment).
-
-The number of allocated entries should correspond to the expected number of IMS distributed traces during any one-minute interval. When the number of traced IMS transactions exceeds the number of available table slots, new distributed traces are not recorded.
-
-#### No third parameter specified
-
-If no third parameter is set, the injection program injects the IMS module.
-
-You can also use this option to update the IMS module. In that case existing table size will remain intact.
-
-Optional
-
-`<WaitZdcMin>`
-
-4
-
-ZDCWAIT=
-
-The wait time for the target zDC to initialize, in minutes (max two digits).
-
-The default value is 30 minutes. The target zDC must have been initialized at least once since the last system IPL before the IMS module can complete initialization.
-
-Optional
-
-`<Y|N>`
-
-5
-
-DUMP=
-
-Indicates whether the IMS module should capture an SVC dump when ABEND recovery is driven.
-
-This parameter can be specified during initial injection of the IMS module or in conjunction with the `M` or `E` action codes (parameter number 3) to toggle on/off the dump capture during recovery for the previously injected IMS module.
-
-The default value is `Y`, which means dump capture is enabled.
-
-Optional
-
-`<PathTableSegm>`
-
-6
-
-SEGM=
-
-The value that resizes `pathid` tables.
-
-This parameter is only applicable in conjunction with the `M` action code (parameter number 3). The format of value is `SEGM=nnnn`, where `nnnn` is the number (up to 4 digits) of 1-megabyte segments.
-
-Optional
-
-`<PathTableIms>`
-
-7
-
-PATHIMS=
-
-The value (up to 4 characters) that specifies the IMSID for which the pathid table is to be resized.
-
-This parameter is only applicable in conjunction with the `M` action code (parameter number 3) and the `<PathTableSegm>` value (parameter number 6).
-
-If an IMSID is specified, only the pathid table for that IMS is resized.  
-If the parameter is omitted, only the `pathid` table for the local IMS (specified as parameter number 1) is resized.  
-If the asterisk (`*`) is specified, the `pathid` table for the local IMS **and** `pathid` tables allocated locally for all remote IMSIDs are resized.
-
-Optional
-
-n/a
-
-n/a
-
-REMOTESEGM=
-
-Sets the number of segments to use when allocating remote pathid tables. The format of the value is `REMOTESEGM=nnnn`, where `nnnn` is the number (up to 4 digits) of 1-megabyte segments.
-
-The parameter is optional, valid only as a `SYSIN` parameter, and ignored when the `ACTION=` keyword is specified. When omitted, the default value of `4` megabytes is used.
-
-This parameter doesn't change the size of any existing remote pathid tables. To change the allocation of an existing remote pathid table you must use the `ACTION=M`, `SEGM=`, and `PATHIMS=` keywords.
-
-Optional
 
 Example 1. Inject the IMS module into IMS IB01 for zDC ZDC1.
 
@@ -596,50 +427,7 @@ ZDC=ZDC1
 REMOTESEGM=2
 ```
 
-
-
 ### Fast Path transaction tracing
-
-Symbol
-
-Position
-
-Keyword
-
-Description
-
-Required
-
-n/a
-
-n/a
-
-FPATH=
-
-Indicates whether to activate Fast Path transaction tracing:
-
-* **Y**: Inject and enable Fast Path hooks. Enables hooks that are injected but disabled.
-* **N** (Default): Does not inject Fast Path hooks. Disables hooks that are injected and enabled.
-
-Valid only as a SYSIN parameter and only for IMS Version 15 or later.
-
-If omitted or specified incorrectly, no action is taken.
-
-Optional
-
-n/a
-
-n/a
-
-FPATHSIZE=
-
-The size of the Fast Path SMO (Shared Memory Object) for Fast Path transaction tracing, in 1 MB segments. The range is `1`-`9999`. The default is `4`.
-
-This value can be used on the initial injection of the IMS module, or in conjunction with a modify action statement (`ACTION=M`) to resize the Fast Path SMO.
-
-Valid only as a SYSIN parameter and only for IMS Version 15 or later.
-
-Optional
 
 Example 9: Inject and enable Fast Path transaction tracing.
 
@@ -765,34 +553,9 @@ FPATHSIZE=2
 
 IMS module version 1.259+
 
-Symbol
-
-Position
-
-Keyword
-
-Description
-
-Required
-
-n/a
-
-n/a
-
-BMP=
-
-Indicates whether to activate transaction tracing for BMP regions:
-
-* **Y**: Enables transaction tracing for BMP regions.
-* **N** (Default): Disables transaction tracing for BMP regions.
-
-Valid only as a SYSIN parameter.
-
-If omitted or specified incorrectly, BMP transaction tracing will be disabled.
-
-Optional
-
 ## BMP transaction tracing notes
+
+
 
 Automatic tracking for transaction-oriented BMPs (message input is from the IMS message queues) will be the same as currently exists for MPP/IFP regions: if the input message is being tracked by a control region sensor, a path will be started for the transaction in the BMP region.
 Automatic tracking for work performed by batch (non-transaction oriented) BMPs can only be done if the input message is via an MQGET (see restrictions below). Otherwise, batch BMP support means the agent performs initialization services for the BMP region (allocates work areas and places sensors) but does not start any paths.
@@ -925,8 +688,6 @@ You can access the IMS module logs via the [zRemote logs](/docs/ingest-from/dyna
 
 ## Update without region restart
 
-
-
 To update your IMS module to a newer version without restarting the region
 
 1. [Download z/OS product datasets](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/zosmf-installer/download-zos-datasets#download-pax "Download and install the Dynatrace product datasets for z/OS.") and [extract them](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/zosmf-installer/download-zos-datasets#extract-datasets "Download and install the Dynatrace product datasets for z/OS.").
@@ -943,6 +704,8 @@ To update your IMS module to a newer version without restarting the region
 4. To recover the ECSA used by the old version of the IMS module see section [Garbage collection notes](#gc-notes).
 
 ## FAQ
+
+
 
 How can I deactivate the IMS module?
 

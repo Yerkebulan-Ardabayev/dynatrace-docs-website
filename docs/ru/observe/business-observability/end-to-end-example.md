@@ -1,7 +1,7 @@
 ---
 title: Business events end-to-end example
 source: https://www.dynatrace.com/docs/observe/business-observability/end-to-end-example
-scraped: 2026-02-23T21:25:50.236106
+scraped: 2026-02-25T21:18:06.273754
 ---
 
 # Business events end-to-end example
@@ -106,36 +106,6 @@ You also need to define the data items of the quick-buy-asset request. For examp
 
    1. Select **Add data field**.
    2. Set the **Field name**, **Source**, and **Path** values according to the following table:
-
-      Field name
-
-      Source
-
-      Path
-
-      accountId
-
-      Request-Body
-
-      accountId
-
-      amount
-
-      Request-Body
-
-      amount
-
-      instrumentId
-
-      Request-Body
-
-      instrumentID
-
-      price
-
-      Request-Body
-
-      price
 10. Select **Save changes**.
 
 2. Add fields
@@ -312,46 +282,6 @@ trading_volume= if(event.type == "com.easytrade.quick-sell",(amount*price))
 Run in Playground
 
 Results table:
-
-accountid
-
-max(trading\_volume)
-
-sum(buyAssets)
-
-sum(moneyTransfered)
-
-sum(trading\_volume)
-
-6
-
-19924.3187495
-
-609491
-
-1340160.809059129
-
-526623.1340707905
-
-7
-
-47827.65870614
-
-593648
-
-1287203.0690401047
-
-922284.0555854205
-
-8
-
-16718.08125
-
-615123
-
-1288892.9309932007
-
-550042.8770441795
 
 7. Display your results
 

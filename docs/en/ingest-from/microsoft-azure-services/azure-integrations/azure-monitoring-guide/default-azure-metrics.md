@@ -1,7 +1,7 @@
 ---
 title: Classic (formerly 'built-in') Azure metrics
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-monitoring-guide/default-azure-metrics
-scraped: 2026-02-24T21:34:23.558041
+scraped: 2026-02-25T21:34:24.134791
 ---
 
 # Classic (formerly 'built-in') Azure metrics

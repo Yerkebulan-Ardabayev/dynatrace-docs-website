@@ -1,7 +1,7 @@
 ---
 title: Send Micrometer metrics to Dynatrace
 source: https://www.dynatrace.com/docs/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/micrometer
-scraped: 2026-02-23T21:34:41.906586
+scraped: 2026-02-25T21:16:43.765687
 ---
 
 # Send Micrometer metrics to Dynatrace
@@ -179,7 +179,7 @@ management.dynatrace.metrics.export.v2.default-dimensions.region=us-east-1
 ```
 
 Dynatrace Operator configures Dynatrace Micrometer registry by providing ingest URL, credentials and Kubernetes metadata. For configuration examples, see our [Dynakube examplesï»¿](https://github.com/Dynatrace/dynatrace-operator/tree/main/assets/samples/dynakube).
-For more information about metadata enrichment, see [the documentation on enrichment files](/docs/ingest-from/extend-dynatrace/extend-data#operator-enrichment-directory "Learn how to automatically enrich your telemetry data with Dynatrace-specific dimensions.").
+For more information about metadata enrichment, see [the documentation on enrichment files](/docs/ingest-from/extend-dynatrace/extend-data#operator-enrichment-directory "Learn how to automatically enrich your telemetry data with Dynatrace-specific fields.").
 
 * This feature is available when using Dynatrace Micrometer registry versions 1.9.0 and above.
 * An app using the Dynatrace Micrometer registry and running in Kubernetes with a Dynatrace Operator does not require any explicit configuration. Dynatrace Operator and the registry will work together and automatically export Micrometer metrics to Dynatrace.
@@ -364,7 +364,7 @@ DynatraceMeterRegistry registry = DynatraceMeterRegistry.builder(config).build()
 ```
 
 Dynatrace Operator configures Dynatrace Micrometer registry by providing ingest URL, credentials and Kubernetes metadata. For configuration examples, see our [Dynakube examplesï»¿](https://github.com/Dynatrace/dynatrace-operator/tree/main/assets/samples/dynakube).
-For more information about metadata enrichment, see [the documentation on enrichment files](/docs/ingest-from/extend-dynatrace/extend-data#operator-enrichment-directory "Learn how to automatically enrich your telemetry data with Dynatrace-specific dimensions.").
+For more information about metadata enrichment, see [the documentation on enrichment files](/docs/ingest-from/extend-dynatrace/extend-data#operator-enrichment-directory "Learn how to automatically enrich your telemetry data with Dynatrace-specific fields.").
 
 * This feature is available when using Dynatrace Micrometer registry versions 1.9.0 and above.
 * An app using the Dynatrace Micrometer registry and running in Kubernetes with a Dynatrace Operator does not require any explicit configuration. Dynatrace Operator and the registry will work together and automatically export Micrometer metrics to Dynatrace.
@@ -540,8 +540,6 @@ After you have sent your metrics, verify the data in the [Data Explorer](/docs/a
 
 ## Configuration properties
 
-
-
 To set up the Dynatrace Micrometer registry, you can use the Dynatrace configuration object (`DynatraceConfig`). The object contains the parameters of metric ingestion and is used to construct the Dynatrace registry (`DynatraceMeterRegistry`), which is registered with Micrometer to ingest metrics to Dynatrace. You can set the following parameters:
 
 Spring Boot
@@ -549,124 +547,6 @@ Spring Boot
 Directly in Micrometer
 
 When using Spring Boot, entries in your `application.properties` or `application.yaml` files will be mapped to the `DynatraceConfig` object automatically.
-
-Property
-
-Description
-
-Required
-
-api-version
-
-The version of the Dynatrace API to ingest data to Dynatrace:
-
-* `V2` (default): [Metrics API v2](/docs/dynatrace-api/environment-api/metric-v2/post-ingest-metrics "Ingest custom metrics to Dynatrace via Metrics v2 API.").
-* `V1`: [Timeseries API v1](/docs/dynatrace-api/environment-api/metric-v1/custom-metrics "Manage custom metrics via the Timeseries v1 API.")
-
-Optional
-
-uri
-
-The ingestion endpoint of the API.
-
-Optional
-
-metric-key-prefix
-
-The prefix to be added to all ingested metric keys (for example, a namespace).
-
-Optional
-
-enrich-with-dynatrace-metadata
-
-[Enrich](/docs/ingest-from/extend-dynatrace/extend-data "Learn how to automatically enrich your telemetry data with Dynatrace-specific dimensions.") (`true`) or do not enrich (`false`) ingested metrics with additional metadata.
-
-If not set, `true` is used.
-
-Optional
-
-default-dimensions
-
-A list of dimensions to be added to the ingested metrics.
-
-Dimensions are defined as key-value pairs.
-
-Optional
-
-use-dynatrace-summary-instruments
-
-Micrometer versions 1.9.x+ Ignore the Dynatrace-specific implementation for summary instruments (`Timer` and `DistributionSummary`).
-
-The default (`true`) uses the new Instruments. Use `false` to fall back to 1.8.x behavior.
-
-Optional
-
-export-meter-metadata
-
-Micrometer versions 1.12.x+ Turn meter metadata export (unit & description) on or off.
-
-The default (`true`) configures the registry to export meter metadata. Use `false` to turn off metadata exporting.
-
-Optional
-
-Property
-
-Description
-
-Required
-
-apiVersion
-
-The version of the Dynatrace API to ingest data to Dynatrace:
-
-* `V2` (default): [Metrics API v2](/docs/dynatrace-api/environment-api/metric-v2/post-ingest-metrics "Ingest custom metrics to Dynatrace via Metrics v2 API.").
-* `V1`: [Timeseries API v1](/docs/dynatrace-api/environment-api/metric-v1/custom-metrics "Manage custom metrics via the Timeseries v1 API.")
-
-Optional
-
-uri
-
-The ingestion endpoint of the API.
-
-Optional
-
-metricKeyPrefix
-
-The prefix to be added to all ingested metric keys (for example, a namespace).
-
-Optional
-
-enrichWithDynatraceMetadata
-
-[Enrich](/docs/ingest-from/extend-dynatrace/extend-data "Learn how to automatically enrich your telemetry data with Dynatrace-specific dimensions.") (`true`) or do not enrich (`false`) ingested metrics with additional metadata.
-
-If not set, `true` is used.
-
-Optional
-
-defaultDimensions
-
-A list of dimensions to be added to the ingested metrics.
-
-Dimensions are defined as key-value pairs.
-
-Optional
-
-useDynatraceSummaryInstruments
-
-Micrometer versions 1.9.x+ Ignore the Dynatrace-specific implementation for summary instruments (`Timer` and `DistributionSummary`).
-
-The default (`true`) uses the new Instruments. Use `false` to fall back to 1.8.x behavior.
-
-Optional
-
-exportMeterMetadata
-
-Micrometer versions 1.12.x+ Turn meter metadata export (unit & description) on or off.
-
-The default (`true`) configures the registry to export meter metadata. Use `false` to turn off metadata exporting.
-
-Optional
 
 Code snippet to set properties
 
@@ -884,42 +764,6 @@ return null; // Accept the rest of the defaults
 
 All metrics are transformed to follow the [Metric ingestion protocol types](/docs/ingest-from/extend-dynatrace/extend-metrics/reference/metric-ingestion-protocol "Learn how the data ingestion protocol for Dynatrace Metrics API works.") used by Dynatrace.
 
-Micrometer instrument
-
-Dynatrace metric type
-
-Gauge
-
-`gauge,X`
-
-Counter
-
-`count,delta=X`
-
-Timer
-
-`gauge,min=X,max=Y,sum=Z,count=N`
-
-DistributionSummary
-
-`gauge,min=X,max=Y,sum=Z,count=N`
-
-LongTaskTimer
-
-`gauge,min=X,max=Y,sum=Z,count=N`
-
-TimeGauge
-
-`gauge,X`
-
-FunctionCounter
-
-`count,delta=X`
-
-FunctionTimer
-
-`gauge,min=X,max=Y,sum=Z,count=N`
-
 Note that the `count` for LongTaskTimers can be misleading as it is likely to double-count depending on the export frequency. In case you require the current number of active tasks, exporting a separate Gauge is more reliable.
 
 ### Meter metadata
@@ -1026,6 +870,8 @@ OneAgent cannot be used for Micrometer metric ingestion on Kubernetes nodes. You
 
 ### Capture JVM metrics in Micrometer
 
+
+
 By default, JVM metrics are turned off when running Micrometer without Spring Boot. To learn how to enable them, see the [Micrometer documentationï»¿](https://docs.micrometer.io/micrometer/reference/reference/jvm.html). After they are enabled and registered with the Dynatrace registry (`DynatraceMeterRegistry`), JVM metrics are recorded and sent to Dynatrace automatically.
 
 On hosts that are monitored by OneAgent, these metrics might already be captured by OneAgent.
@@ -1125,8 +971,6 @@ management.metrics.enable.all=false
 
 management.metrics.enable.jvm=true
 ```
-
-
 
 ### Disable metrics in code
 
