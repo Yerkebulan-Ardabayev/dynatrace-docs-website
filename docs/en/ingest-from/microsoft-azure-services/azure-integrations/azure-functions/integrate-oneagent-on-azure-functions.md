@@ -1,7 +1,7 @@
 ---
 title: Monitor Azure Functions on App Service Plan for Windows
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-functions/integrate-oneagent-on-azure-functions
-scraped: 2026-02-23T21:22:49.919872
+scraped: 2026-02-25T21:21:30.136692
 ---
 
 # Monitor Azure Functions on App Service Plan for Windows
@@ -227,110 +227,6 @@ After installation is complete, go to Azure Portal and restart the App Function 
 After you install the Dynatrace OneAgent site extension, you can use the **Kudu REST API** to automate installation and update of the Dynatrace OneAgent site extension. See the [automation setup page on GitHubï»¿](https://github.com/Dynatrace/snippets/tree/master/technologies/azure/automate-appservice-siteextension-setup) for details.
 
 The root URL to access the REST API is `https://<Your-AppService-Subdomain>.scm.azurewebsites.net/dynatrace/`, where you need to replace `<Your-AppService-Subdomain>` with your own value. To authenticate, you can use either the user publishing credentials or the site-level credentials. See [Accessing the Kudu serviceï»¿](https://github.com/projectkudu/kudu/wiki/Accessing-the-kudu-service) for details.
-
-Method
-
-Endpoint
-
-Description
-
-Response
-
-GET
-
-`/api/status`
-
-Returns the current status of the OneAgent installation.
-
-The returned "state" field can be:
-
-* `NotInstalled`
-* `Downloading`
-* `Installing`
-* `Installed`
-* `Failed`
-
-For automation, use **isAgentInstalled** and **isUpgradeAvailable** to determine whether OneAgent is installed and whether an upgrade is available.
-
-```
-{
-
-
-
-"state": "Installed",
-
-
-
-"message": "OneAgent installed",
-
-
-
-"version": "1.157",
-
-
-
-"isAgentInstalled": true,
-
-
-
-"isUpgradeAvailable": false,
-
-
-
-"isFunction": false,
-
-
-
-"functionAppSettings": null
-
-
-
-}
-```
-
-GET
-
-`/api/settings`
-
-Returns the current settings, including Dynatrace credentials.
-
-The value for `apiUrl` can be left empty for a SaaS environment.
-
-```
-{
-
-
-
-"apiUrl": "",
-
-
-
-"apiToken": "<your-api-token>",
-
-
-
-"environmentId": "<your-environment-id>",
-
-
-
-"sslMode": "Default"
-
-
-
-}
-```
-
-PUT
-
-`/api/settings`
-
-Starts OneAgent installation with the given settings. These settings are stored only if the installation finishes successfully.
-
-In the payload, you need to send the data in the format received by the `GET /dynatrace/api/settings` request.
-
-If an update is available in the status request, this `PUT` request can be used to start the upgrade.
-
-Empty response
 
 ## Override OneAgent configuration
 

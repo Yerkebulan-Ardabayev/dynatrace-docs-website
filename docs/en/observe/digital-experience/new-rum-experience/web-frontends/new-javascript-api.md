@@ -1,7 +1,7 @@
 ---
 title: Customize web frontend monitoring using the JavaScript API
 source: https://www.dynatrace.com/docs/observe/digital-experience/new-rum-experience/web-frontends/new-javascript-api
-scraped: 2026-02-24T21:29:30.584994
+scraped: 2026-02-25T21:27:22.102880
 ---
 
 # Customize web frontend monitoring using the JavaScript API

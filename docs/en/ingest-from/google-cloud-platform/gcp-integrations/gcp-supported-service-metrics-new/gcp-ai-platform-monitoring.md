@@ -1,7 +1,7 @@
 ---
 title: Google Cloud AI Platform monitoring (deprecated)
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new/gcp-ai-platform-monitoring
-scraped: 2026-02-23T21:25:34.258763
+scraped: 2026-02-25T21:33:36.312761
 ---
 
 # Google Cloud AI Platform monitoring (deprecated)

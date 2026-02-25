@@ -1,7 +1,7 @@
 ---
 title: Configure automated notifications using Terraform and Configuration as Code
 source: https://www.dynatrace.com/docs/deliver/configuration-as-code/terraform/tutorials/terraform-tutorial-set-up-automated-notification
-scraped: 2026-02-24T21:29:16.815942
+scraped: 2026-02-25T21:32:18.901776
 ---
 
 # Configure automated notifications using Terraform and Configuration as Code

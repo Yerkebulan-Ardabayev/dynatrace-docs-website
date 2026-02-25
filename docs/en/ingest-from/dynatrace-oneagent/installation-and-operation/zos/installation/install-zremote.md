@@ -1,7 +1,7 @@
 ---
 title: Install the zRemote module
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-zremote
-scraped: 2026-02-22T21:20:56.555194
+scraped: 2026-02-25T21:19:33.612105
 ---
 
 # Install the zRemote module
@@ -23,66 +23,6 @@ The hardware requirements of the machine where the zRemote module runs depend on
 * For CICS and IMS development environments: a small or medium-sized machine.
 * For CICS and IMS production environments: a large or extra-large machine.
 * For z/OS Java environments: a small or medium-sized machine.
-
-Hardware requirements
-
-Small (DEV)
-
-Medium (DEV)
-
-Large (PROD)
-
-X-Large (PROD)
-
-**Anticipated monitored CICS/IMS transactions per second**
-
-**4,000**
-
-**7,500**
-
-**15,000**
-
-**30,000**
-
-Required CPU cores on x86-64 architecture (Xeon E5-2600 series)
-
-2
-
-4
-
-8
-
-16
-
-Required [IFL processorsï»¿](https://www.ibm.com/products/integrated-facility-for-linux) on s390 architecture
-
-1
-
-1
-
-1
-
-2
-
-Required memory
-
-4GB
-
-6GB
-
-8GB
-
-16GB
-
-Required disk space
-
-20GB
-
-20GB
-
-20GB
-
-20GB
 
 * The hardware requirements are for the case when the zRemote module and its ActiveGate are used for mainframe monitoring only.
 * Multiple [zDC subsystems](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-zdc "Set up the z/OS Data Collection subsystem (zDC).") can be connected to a single zRemote as long as the number of monitored transactions matches the hardware requirements.
@@ -129,78 +69,6 @@ Base path: `C:/Program Files/dynatrace/zremote`
 
 All of the following directories are not retained in the event of a zRemote update or uninstallation. If you make changes here, they will be overwritten or deleted.
 
-Directory
-
-Component
-
-Description
-
-`agent/lib64`
-
-noneagentz
-
-The zRemote binary
-
-`agent/lib64`
-
-oneagentzwatchdog
-
-A binary that provides the service capabilities for the zRemote service and controls resource limits
-
-`agent/lib64`
-
-oneagentdumpproc
-
-A binary that supports creating dumps when the main application crashes
-
-`agent/lib64/zos-s390-64/<version>`
-
-dtzagent
-
-A binary deployed to the UNIX part of the mainframe to support OneAget communications. For more details, see [Install the zDC subsystem](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-zdc "Set up the z/OS Data Collection subsystem (zDC).")
-
-`agent/lib64/zos-s390-64/<version>`
-
-libdtzagent.so
-
-A binary deployed to the UNIX part of the mainframe to support agent communications. For more details, see [Install the zDC subsystem](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-zdc "Set up the z/OS Data Collection subsystem (zDC).")
-
-`agent/conf`
-
-ruxitagent.conf
-
-The default zRemote configuration file
-
-`agent/conf`
-
-oneagentzwatchdog.ini
-
-The default watchdog configuration file
-
-`agent/conf`
-
-.pem
-
-Application certificates
-
-`agent`
-
-installer.version
-
-The installer version of the zRemote binary, which is usually the same as the zRemote version
-
-`agent`
-
-zremote
-
-Linux only The service script for running the zRemote application
-
-uninstallation.sh
-
-Linux only The service script for uninstalling the zRemote application.
-
-It removes everything except the persistent user configuration and log files.
-
 ### zRemote configuration and installation directories
 
 Linux
@@ -213,53 +81,7 @@ Base path: `C:/Program Files/dynatrace/zremote`
 
 All of the following directories are not retained during zRemote update or uninstallation. If you make changes here, they will be overwritten or deleted.
 
-Directory
-
-Component
-
-Description
-
-`agent`
-
-runtime
-
-Contains the connection details as specified by your Dynatrace environment.
-
-`config`
-
-instance.properties
-
-Contains the ID of the currently registered instance.
-
-`config`
-
-version.properties
-
-Contains the full version number of the zRemote module.
-
-state
-
-Contains the address of the last successful server connection to indicate a properly established connection.
-
 The following directories are retained in case of update or uninstallation. You can make changes here. For more details, see [Customize the zRemote module](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-zremote/customize-zremote "Customize the zRemote module for your needs.").
-
-Directory
-
-Component
-
-Description
-
-`agent/conf`
-
-zremoteagentuserconfig.conf
-
-The configuration file for zRemote module customization
-
-`agent/conf`
-
-watchdoguserconfig.conf
-
-The configuration file for watchdog customization
 
 ## Installation
 

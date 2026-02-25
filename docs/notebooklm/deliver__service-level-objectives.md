@@ -1,6 +1,6 @@
 # Документация Dynatrace: deliver/service-level-objectives
 Язык: Русский (RU)
-Сгенерировано: 2026-02-24
+Сгенерировано: 2026-02-25
 Файлов в разделе: 7
 ---
 
@@ -9,7 +9,7 @@
 ---
 title: Create service-level objectives
 source: https://www.dynatrace.com/docs/deliver/service-level-objectives/create-slo
-scraped: 2026-02-24T21:35:39.211489
+scraped: 2026-02-25T21:33:57.854482
 ---
 
 # Create service-level objectives
@@ -110,7 +110,7 @@ You can create, edit, list, delete, and evaluate your SLOs via API.
 ---
 title: Permissions for service-level objective (SLO) tiles in a dashboard
 source: https://www.dynatrace.com/docs/deliver/service-level-objectives/service-level-objective-permissions
-scraped: 2026-02-24T21:27:10.616364
+scraped: 2026-02-25T21:28:47.652727
 ---
 
 # Permissions for service-level objective (SLO) tiles in a dashboard
@@ -370,7 +370,7 @@ You can view details of your SLO tile in your dashboard.
 ---
 title: Upgrade Classic SLOs
 source: https://www.dynatrace.com/docs/deliver/service-level-objectives/service-level-objective-upgrade-classic
-scraped: 2026-02-24T21:25:02.060353
+scraped: 2026-02-25T21:30:35.178825
 ---
 
 # Upgrade Classic SLOs
@@ -564,7 +564,7 @@ For further optimization and guidance, contact your Dynatrace support team to ma
 ---
 title: Service-Level Objectives
 source: https://www.dynatrace.com/docs/deliver/service-level-objectives
-scraped: 2026-02-24T21:28:59.282528
+scraped: 2026-02-25T21:29:18.064254
 ---
 
 # Service-Level Objectives

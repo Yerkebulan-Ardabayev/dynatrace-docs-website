@@ -1,7 +1,7 @@
 ---
 title: Network availability monitoring
 source: https://www.dynatrace.com/docs/observe/digital-experience/synthetic-monitoring/network-availability-monitors/network-availability-monitoring
-scraped: 2026-02-24T21:25:32.127183
+scraped: 2026-02-25T21:35:09.500059
 ---
 
 # Network availability monitoring

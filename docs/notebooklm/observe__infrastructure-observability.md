@@ -1,6 +1,6 @@
 # Документация Dynatrace: observe/infrastructure-observability
 Язык: Русский (RU)
-Сгенерировано: 2026-02-24
+Сгенерировано: 2026-02-25
 Файлов в разделе: 88
 ---
 
@@ -113,7 +113,7 @@ Tracking of services and dependencies is not limited to Azure. Thanks to Dynatra
 ---
 title: Create a new AWS connection
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/cloud-platform-monitoring/clouds-app/create-aws-connection
-scraped: 2026-02-23T21:28:14.957893
+scraped: 2026-02-25T21:19:22.416430
 ---
 
 # Create a new AWS connection
@@ -161,7 +161,7 @@ To set up a new AWS connection
 ---
 title: Clouds app
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/cloud-platform-monitoring/clouds-app
-scraped: 2026-02-24T21:15:22.365272
+scraped: 2026-02-25T21:13:52.134777
 ---
 
 # Clouds app
@@ -517,7 +517,7 @@ All metrics published to the Operations API (formerly Stackdriver) can be automa
 ---
 title: Use cases
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/cloud-platform-monitoring/use-cases
-scraped: 2026-02-22T21:28:12.324798
+scraped: 2026-02-25T21:27:13.905605
 ---
 
 # Use cases
@@ -591,7 +591,7 @@ To learn how to analyze monitoring results in Dynatrace, see [Cloud Foundry metr
 ---
 title: Monitor container groups
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/container-platform-monitoring/container-groups
-scraped: 2026-02-24T21:31:08.262777
+scraped: 2026-02-25T21:17:14.724777
 ---
 
 # Monitor container groups
@@ -665,7 +665,7 @@ Select  in the upper-right corner of a chart to:
 ---
 title: Container monitoring rules
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/container-platform-monitoring/container-monitoring-rules
-scraped: 2026-02-22T21:18:14.125940
+scraped: 2026-02-25T21:17:17.398511
 ---
 
 # Container monitoring rules
@@ -1340,7 +1340,7 @@ Explorer — это общий интерфейс Dynatrace для монито�
 ---
 title: Alert on common Kubernetes/OpenShift issues
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/alert-on-kubernetes-issues
-scraped: 2026-02-24T21:27:31.984651
+scraped: 2026-02-25T21:24:13.568510
 ---
 
 # Alert on common Kubernetes/OpenShift issues
@@ -1678,7 +1678,7 @@ The following expression returns the number of pending and running pods in the r
 ---
 title: Global default monitoring settings for Kubernetes/OpenShift
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/default-monitoring-settings
-scraped: 2026-02-22T21:15:05.854026
+scraped: 2026-02-25T21:24:12.141182
 ---
 
 # Global default monitoring settings for Kubernetes/OpenShift
@@ -1749,7 +1749,7 @@ To use the default settings when connecting a cluster, the [Connection settings 
 ---
 title: Organize Kubernetes/OpenShift deployments by tags
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/leverage-tags-defined-in-kubernetes-deployments
-scraped: 2026-02-22T21:14:59.190560
+scraped: 2026-02-25T21:24:29.128316
 ---
 
 # Organize Kubernetes/OpenShift deployments by tags
@@ -2061,7 +2061,7 @@ By selecting a specific node, you can access the host details at the top of the 
 ---
 title: Monitor Kubernetes/OpenShift events
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-events-kubernetes
-scraped: 2026-02-22T21:14:52.087381
+scraped: 2026-02-25T21:24:26.863167
 ---
 
 # Monitor Kubernetes/OpenShift events
@@ -2262,7 +2262,7 @@ DDU consumption applies to Kubernetes event monitoring. For details, see [DDUs f
 ---
 title: Istio/Envoy proxy metrics
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-istio-metrics
-scraped: 2026-02-24T21:23:24.875607
+scraped: 2026-02-25T21:24:18.994357
 ---
 
 # Istio/Envoy proxy metrics
@@ -2316,7 +2316,7 @@ Istio monitoring by OneAgent is supported for the classic full-stack, cloud-nati
 ---
 title: Monitor Kubernetes/OpenShift metrics
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-metrics-kubernetes
-scraped: 2026-02-24T21:25:12.263320
+scraped: 2026-02-25T21:24:17.715230
 ---
 
 # Monitor Kubernetes/OpenShift metrics
@@ -2371,7 +2371,7 @@ For a list of all available metrics, see [Workload metrics](/docs/analyze-explor
 ---
 title: Monitor Prometheus metrics
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-prometheus-metrics
-scraped: 2026-02-24T21:31:29.729725
+scraped: 2026-02-25T21:24:15.303763
 ---
 
 # Monitor Prometheus metrics
@@ -3172,7 +3172,7 @@ To troubleshoot Prometheus integration issues, download the [Kubernetes Monitori
 ---
 title: Monitor persistent volume claims on Kubernetes/OpenShift
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-pvc-metrics
-scraped: 2026-02-24T21:32:38.869795
+scraped: 2026-02-25T21:24:30.413561
 ---
 
 # Monitor persistent volume claims on Kubernetes/OpenShift
@@ -3233,7 +3233,7 @@ This feature is available only if your Kubernetes cluster is [connected to a loc
 ---
 title: Monitor Kubernetes/OpenShift services
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-services-kubernetes
-scraped: 2026-02-23T21:26:35.911498
+scraped: 2026-02-25T21:24:21.474967
 ---
 
 # Monitor Kubernetes/OpenShift services
@@ -3311,7 +3311,7 @@ Existing management zones need to be manually updated to cover Kubernetes servic
 ---
 title: Monitor service-level objectives in Kubernetes/OpenShift
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-slos-kubernetes
-scraped: 2026-02-22T21:14:48.462298
+scraped: 2026-02-25T21:24:24.212402
 ---
 
 # Monitor service-level objectives in Kubernetes/OpenShift
@@ -3375,7 +3375,7 @@ If no SLOs are found, you can
 ---
 title: Monitor vulnerabilities in Kubernetes/OpenShift
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-vulnerabilities-kubernetes
-scraped: 2026-02-24T21:22:27.931993
+scraped: 2026-02-25T21:24:25.514718
 ---
 
 # Monitor vulnerabilities in Kubernetes/OpenShift
@@ -3429,7 +3429,7 @@ If you're missing the [security permissions](/docs/secure/application-security#p
 ---
 title: Monitor Kubernetes/OpenShift workloads
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-workloads-kubernetes
-scraped: 2026-02-23T21:24:45.617854
+scraped: 2026-02-25T21:24:27.955268
 ---
 
 # Monitor Kubernetes/OpenShift workloads
@@ -3536,7 +3536,7 @@ You can use management zones to control user access to the monitoring data of sp
 ---
 title: Kubernetes Classic
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring
-scraped: 2026-02-24T21:15:41.080457
+scraped: 2026-02-25T21:14:54.516014
 ---
 
 # Kubernetes Classic
@@ -3634,7 +3634,7 @@ Address Kubernetes issues using out-of-the-box alerting mechanisms.](/docs/obser
 ---
 title: Container platform monitoring
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/container-platform-monitoring
-scraped: 2026-02-22T21:18:16.673277
+scraped: 2026-02-25T21:17:10.854452
 ---
 
 # Container platform monitoring
@@ -3676,7 +3676,7 @@ Monitor Heroku with Dynatrace.](/docs/observe/infrastructure-observability/conta
 ---
 title: Data collected with Dynatrace database monitoring
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/databases/database-app/data-collected
-scraped: 2026-02-24T21:32:02.092932
+scraped: 2026-02-25T21:18:56.894889
 ---
 
 # Data collected with Dynatrace database monitoring
@@ -3786,7 +3786,7 @@ This architecture ensures that monitoring remains lightweight and scalable, even
 ---
 title: Monitor IBM DB2 database
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/databases/database-app/get-started/ibm-db2
-scraped: 2026-02-23T21:25:33.090406
+scraped: 2026-02-25T21:28:23.339837
 ---
 
 # Monitor IBM DB2 database
@@ -3947,7 +3947,7 @@ Check these use case scenarios for more details.
 ---
 title: Monitor MySQL database
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/databases/database-app/get-started/mysql
-scraped: 2026-02-24T21:31:51.022608
+scraped: 2026-02-25T21:31:44.129798
 ---
 
 # Monitor MySQL database
@@ -3983,7 +3983,7 @@ For complete details, go to the [FAQ](/docs/observe/infrastructure-observability
 ---
 title: Monitor Oracle database
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/databases/database-app/get-started/oracle
-scraped: 2026-02-22T21:22:21.573779
+scraped: 2026-02-25T21:33:30.908388
 ---
 
 # Monitor Oracle database
@@ -4027,7 +4027,7 @@ Oracle Database monitoring helps you understand your application's database inte
 ---
 title: Monitor SAP HANA database
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/databases/database-app/get-started/sap-hana
-scraped: 2026-02-24T21:29:13.922147
+scraped: 2026-02-25T21:29:34.690411
 ---
 
 # Monitor SAP HANA database
@@ -4077,7 +4077,7 @@ For complete details, go to the [FAQ](/docs/observe/infrastructure-observability
 ---
 title: Monitor Snowflake database
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/databases/database-app/get-started/snowflake
-scraped: 2026-02-24T21:24:29.725543
+scraped: 2026-02-25T21:33:01.535583
 ---
 
 # Monitor Snowflake database
@@ -4123,7 +4123,7 @@ You can benefit from Snowflake monitoring in these [use cases](/docs/observe/inf
 ---
 title: Get started with database monitoring
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/databases/database-app/get-started
-scraped: 2026-02-24T21:24:59.302446
+scraped: 2026-02-25T21:18:57.980417
 ---
 
 # Get started with database monitoring
@@ -4199,7 +4199,7 @@ scraped: 2026-02-23T21:36:09.557295
 ---
 title: Databases app
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/databases/database-app
-scraped: 2026-02-24T21:15:18.487727
+scraped: 2026-02-25T21:13:49.544672
 ---
 
 # Databases app
@@ -4209,7 +4209,7 @@ scraped: 2026-02-24T21:15:18.487727
 * Latest Dynatrace
 * App
 * 4-min read
-* Updated on Jan 28, 2026
+* Updated on Feb 26, 2026
 
 The Dynatrace ![Databases](https://dt-cdn.net/images/dynatrace-database-256-1afe08286e.webp "Databases") **Databases** enables you to monitor, analyze, and optimize database environments with clarity and control. It offers detailed insights into performance, health, and configuration, helping you identify issues early and maintain reliable operations.
 
@@ -4273,6 +4273,20 @@ Read logs from Grail
 storage:metrics:read
 
 Read metrics from Grail
+
+#### Limit data access
+
+In general, the Database app users need a basic `storage:**` permissions to access data from the Grail.
+
+However, for the strict access, you can create a custom policy limiting the access to the `default_database_monitoring` Grail bucket.
+
+The `default_database_monitoring` bucket is where all the database extension-retrived data is stored, including logs. You can use the following statement to create a policy:
+
+```
+ALLOW storage:buckets:read WHERE storage:bucket-name = 'default_database_monitoring'
+```
+
+For more information see, [Working with policies](/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies "Working with policies") and [Grant access to Grail](/docs/manage/identity-access-management/use-cases/access-grail "Grant access to Grail").
 
 ### Installation steps
 
@@ -4373,6 +4387,8 @@ Insights highlight patterns, anomalies, and trends based on built-in domain expe
 
 ### Deployment flexibility
 
+
+
 ![Databases](https://dt-cdn.net/images/dynatrace-database-256-1afe08286e.webp "Databases") **Databases** supports diverse deployment models:
 
 * **On-premises**: Monitor traditional database setups.
@@ -4387,8 +4403,6 @@ Insights highlight patterns, anomalies, and trends based on built-in domain expe
 
 * Tracks performance indicators such as query execution times, resource utilization, and connection issues.
 * Highlights anomalies and potential risks affecting database reliability.
-
-
 
 ### Analyze and optimize query performance
 
@@ -4435,7 +4449,7 @@ Get an overview of all your extension-monitored databases.](https://www.dynatrac
 ---
 title: Analyze database services (new page)
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/databases/database-services-classic/analyze-database-services-new
-scraped: 2026-02-24T21:30:07.703878
+scraped: 2026-02-25T21:28:07.959311
 ---
 
 # Analyze database services (new page)
@@ -4817,7 +4831,7 @@ To mitigate this, you should either use this feature for troubleshooting only or
 ---
 title: Varnish Cache extension
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/databases/extensions/varnish-cache-1
-scraped: 2026-02-23T21:23:32.601006
+scraped: 2026-02-25T21:21:27.303667
 ---
 
 # Varnish Cache extension
@@ -4889,6 +4903,51 @@ In highly segmented networks, feature sets can reflect the segments of your envi
 All metrics that aren't categorized into any feature set are considered to be the default and are always reported.
 
 A metric inherits the feature set of a subgroup, which in turn inherits the feature set of a group. Also, the feature set defined on the metric level overrides the feature set defined on the subgroup level, which in turn overrides the feature set defined on the group level.
+
+default
+
+| Metric name | Metric key | Description |
+| --- | --- | --- |
+| Return code | varnish.cache.returncode | Return code of the varnishstat command |
+
+smf
+
+| Metric name | Metric key | Description |
+| --- | --- | --- |
+| Allocator requests | varnish.cache.smf.c\_req.count | Number of times the storage has been asked to provide a storage segment. |
+| Allocator failures | varnish.cache.smf.c\_fail.count | Number of times the storage has failed to provide a storage segment. |
+| Bytes allocated | varnish.cache.smf.c\_bytes.count | Number of total bytes allocated by this storage. |
+| Bytes freed | varnish.cache.smf.c\_freed.count | Number of total bytes returned to this storage. |
+| Allocations outstanding | varnish.cache.smf.g\_alloc | Number of storage allocations outstanding. |
+| Bytes outstanding | varnish.cache.smf.g\_bytes | Number of bytes allocated from the storage. |
+| Bytes available | varnish.cache.smf.g\_space | Number of bytes left in the storage. |
+| N struct smf | varnish.cache.smf.g\_smf | N struct smf |
+| N small free smf | varnish.cache.smf.g\_smf\_frag | N small free smf |
+| N large free smf | varnish.cache.smf.g\_smf\_large | N large free smf |
+
+smu
+
+| Metric name | Metric key | Description |
+| --- | --- | --- |
+| Allocator requests | varnish.cache.smu.c\_req.count | Number of times the storage has been asked to provide a storage segment. |
+| Allocator failures | varnish.cache.smu.c\_fail.count | Number of times the storage has failed to provide a storage segment. |
+| Bytes allocated | varnish.cache.smu.c\_bytes.count | Number of total bytes allocated by this storage. |
+| Bytes freed | varnish.cache.smu.c\_freed.count | Number of total bytes returned to this storage. |
+| Allocations outstanding | varnish.cache.smu.g\_alloc | Number of storage allocations outstanding. |
+| Bytes outstanding | varnish.cache.smu.g\_bytes | Number of bytes allocated from the storage. |
+| Bytes available | varnish.cache.smu.g\_space | Number of bytes left in the storage. |
+
+sma
+
+| Metric name | Metric key | Description |
+| --- | --- | --- |
+| Allocator requests | varnish.cache.sma.c\_req.count | Number of times the storage has been asked to provide a storage segment. |
+| Allocator failures | varnish.cache.sma.c\_fail.count | Number of times the storage has failed to provide a storage segment. |
+| Bytes allocated | varnish.cache.sma.c\_bytes.count | Number of total bytes allocated by this storage. |
+| Bytes freed | varnish.cache.sma.c\_freed.count | Number of total bytes returned to this storage. |
+| Allocations outstanding | varnish.cache.sma.g\_alloc | Number of storage allocations outstanding. |
+| Bytes outstanding | varnish.cache.sma.g\_bytes | Number of bytes allocated from the storage. |
+| Bytes available | varnish.cache.sma.g\_space | Number of bytes left in the storage. |
 
 main
 
@@ -5103,51 +5162,6 @@ mgt
 | Child process died (signal) | varnish.cache.mgt.child\_died.count | Number of times the child process has died due to signals |
 | Child process core dumped | varnish.cache.mgt.child\_dump.count | Number of times the child process has produced core dumps |
 | Child process panic | varnish.cache.mgt.child\_panic.count | Number of times the management process has caught a child panic |
-
-default
-
-| Metric name | Metric key | Description |
-| --- | --- | --- |
-| Return code | varnish.cache.returncode | Return code of the varnishstat command |
-
-smf
-
-| Metric name | Metric key | Description |
-| --- | --- | --- |
-| Allocator requests | varnish.cache.smf.c\_req.count | Number of times the storage has been asked to provide a storage segment. |
-| Allocator failures | varnish.cache.smf.c\_fail.count | Number of times the storage has failed to provide a storage segment. |
-| Bytes allocated | varnish.cache.smf.c\_bytes.count | Number of total bytes allocated by this storage. |
-| Bytes freed | varnish.cache.smf.c\_freed.count | Number of total bytes returned to this storage. |
-| Allocations outstanding | varnish.cache.smf.g\_alloc | Number of storage allocations outstanding. |
-| Bytes outstanding | varnish.cache.smf.g\_bytes | Number of bytes allocated from the storage. |
-| Bytes available | varnish.cache.smf.g\_space | Number of bytes left in the storage. |
-| N struct smf | varnish.cache.smf.g\_smf | N struct smf |
-| N small free smf | varnish.cache.smf.g\_smf\_frag | N small free smf |
-| N large free smf | varnish.cache.smf.g\_smf\_large | N large free smf |
-
-smu
-
-| Metric name | Metric key | Description |
-| --- | --- | --- |
-| Allocator requests | varnish.cache.smu.c\_req.count | Number of times the storage has been asked to provide a storage segment. |
-| Allocator failures | varnish.cache.smu.c\_fail.count | Number of times the storage has failed to provide a storage segment. |
-| Bytes allocated | varnish.cache.smu.c\_bytes.count | Number of total bytes allocated by this storage. |
-| Bytes freed | varnish.cache.smu.c\_freed.count | Number of total bytes returned to this storage. |
-| Allocations outstanding | varnish.cache.smu.g\_alloc | Number of storage allocations outstanding. |
-| Bytes outstanding | varnish.cache.smu.g\_bytes | Number of bytes allocated from the storage. |
-| Bytes available | varnish.cache.smu.g\_space | Number of bytes left in the storage. |
-
-sma
-
-| Metric name | Metric key | Description |
-| --- | --- | --- |
-| Allocator requests | varnish.cache.sma.c\_req.count | Number of times the storage has been asked to provide a storage segment. |
-| Allocator failures | varnish.cache.sma.c\_fail.count | Number of times the storage has failed to provide a storage segment. |
-| Bytes allocated | varnish.cache.sma.c\_bytes.count | Number of total bytes allocated by this storage. |
-| Bytes freed | varnish.cache.sma.c\_freed.count | Number of total bytes returned to this storage. |
-| Allocations outstanding | varnish.cache.sma.g\_alloc | Number of storage allocations outstanding. |
-| Bytes outstanding | varnish.cache.sma.g\_bytes | Number of bytes allocated from the storage. |
-| Bytes available | varnish.cache.sma.g\_space | Number of bytes left in the storage. |
 
 [![Hub](https://dt-cdn.net/images/hub-512-82db3c583e.png "Hub")
 
@@ -5465,7 +5479,7 @@ DPS (Metric data points): `(60 + (8 * Interfaces)) * 525,600 metric data points/
 ---
 title: Stonebranch Universal Automation Center extension
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/extensions/stonebranch-uac
-scraped: 2026-02-23T21:30:07.595383
+scraped: 2026-02-25T21:26:15.430692
 ---
 
 # Stonebranch Universal Automation Center extension
@@ -5685,7 +5699,7 @@ If some tiles do not show data, check if the user has access to read the metrics
 ---
 title: Extensions
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/extensions
-scraped: 2026-02-22T21:18:17.941374
+scraped: 2026-02-25T21:17:09.526898
 ---
 
 # Extensions
@@ -5706,8 +5720,6 @@ Filter by
 Select an option
 
 Type to filter
-
-Unable to render DataTable. Check configuration.
 
 [![Hub](https://dt-cdn.net/images/hub-512-82db3c583e.png "Hub")
 
@@ -5730,7 +5742,7 @@ With ![Extensions](https://dt-cdn.net/images/dynatrace-extensions-256-9cb05e0f55
 ---
 title: Exclude disks and network traffic from host monitoring
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/hosts/configuration/exclude-disks-and-network-traffic
-scraped: 2026-02-24T21:21:16.384409
+scraped: 2026-02-25T21:34:27.156587
 ---
 
 # Exclude disks and network traffic from host monitoring
@@ -5832,7 +5844,7 @@ The following disks are not monitored by OneAgent. To exclude an additional file
 ---
 title: Organize your environment using host groups
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/hosts/configuration/organize-your-environment-using-host-groups
-scraped: 2026-02-23T21:32:10.768248
+scraped: 2026-02-25T21:24:42.407079
 ---
 
 # Organize your environment using host groups
@@ -5929,7 +5941,7 @@ Host groups can also be used in [tagging rules](/docs/manage/tags-and-metadata/s
 ---
 title: Host-level settings
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/hosts/configuration
-scraped: 2026-02-24T21:15:30.697715
+scraped: 2026-02-25T21:15:58.339608
 ---
 
 # Host-level settings
@@ -6273,7 +6285,7 @@ For details on Linux and Windows core crash dumps, see [Crash analysis](/docs/ob
 ---
 title: Host availability
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/hosts/monitoring/host-monitoring/host-availability
-scraped: 2026-02-24T21:28:33.548715
+scraped: 2026-02-25T21:31:31.762390
 ---
 
 # Host availability
@@ -7498,7 +7510,7 @@ Learn how to run OneAgent diagnostics.](/docs/ingest-from/dynatrace-oneagent/one
 ---
 title: Containers
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/infrastructure-and-operations/containers
-scraped: 2026-02-22T21:12:45.133179
+scraped: 2026-02-25T21:17:04.333824
 ---
 
 # Containers
@@ -7560,7 +7572,7 @@ Other perspectives provide additional columns, including **Containerization type
 ---
 title: Data centers
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/infrastructure-and-operations/data-centers
-scraped: 2026-02-22T21:12:43.887802
+scraped: 2026-02-25T21:17:05.636273
 ---
 
 # Data centers
@@ -7610,7 +7622,7 @@ Here's what each column in the  **Data centers** view stands for.
 ---
 title: Hosts
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/infrastructure-and-operations/hosts
-scraped: 2026-02-22T21:12:37.453642
+scraped: 2026-02-25T21:17:06.978479
 ---
 
 # Hosts
@@ -7675,7 +7687,7 @@ Read this guide](/docs/platform/oneagent/monitoring-modes/enable-monitoring-mode
 ---
 title: Networks
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/infrastructure-and-operations/networks
-scraped: 2026-02-22T21:12:33.509962
+scraped: 2026-02-25T21:17:03.007350
 ---
 
 # Networks
@@ -7722,7 +7734,7 @@ The **Health** perspective includes the following default columns:
 ---
 title: Processes
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/infrastructure-and-operations/processes
-scraped: 2026-02-22T21:12:36.186417
+scraped: 2026-02-25T21:17:18.653007
 ---
 
 # Processes
@@ -7782,7 +7794,7 @@ The **Health** perspective includes the following default columns:
 ---
 title: Infrastructure & Operations
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/infrastructure-and-operations
-scraped: 2026-02-24T21:15:25.133136
+scraped: 2026-02-25T21:13:53.271548
 ---
 
 # Infrastructure & Operations
@@ -8095,7 +8107,7 @@ View the status of all data centers and hosts and identify the root cause of inf
 ---
 title: Enable Kubernetes experience for existing clusters
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/kubernetes-app/enable-k8s-experience/existing-clusters
-scraped: 2026-02-24T21:15:39.805961
+scraped: 2026-02-25T21:14:55.822150
 ---
 
 # Enable Kubernetes experience for existing clusters
@@ -8386,7 +8398,7 @@ A quick video tutorial on how to install Dynatrace Operator.](https://dt-cdn.net
 ---
 title: Permissions
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/kubernetes-app/reference/permissions
-scraped: 2026-02-24T21:15:42.412043
+scraped: 2026-02-25T21:14:52.105157
 ---
 
 # Permissions
@@ -9140,7 +9152,7 @@ Explore further how Dynatrace can transform your approach to Kubernetes manageme
 ---
 title: Kubernetes
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/kubernetes-app
-scraped: 2026-02-24T21:13:42.601516
+scraped: 2026-02-25T21:13:20.364846
 ---
 
 # Kubernetes
@@ -9359,7 +9371,7 @@ Automated change impact analysis for your deployment and release processes.
 ---
 title: Ingest NetFlow records into Dynatrace
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/networks/ingest-netflow-records
-scraped: 2026-02-24T21:20:20.254013
+scraped: 2026-02-25T21:35:37.920425
 ---
 
 # Ingest NetFlow records into Dynatrace
@@ -9594,7 +9606,7 @@ fetch logs
 ---
 title: Extended network monitoring
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/networks/network-monitoring-with-nettracer
-scraped: 2026-02-23T21:38:42.193306
+scraped: 2026-02-25T21:31:56.151925
 ---
 
 # Extended network monitoring
@@ -9641,30 +9653,6 @@ By default, NetTracer is included as the binary `oneagentnettracer` with every O
 ## NetTracer supported platforms
 
 NetTracer officially supports Linux kernel versions 4.15 and higher, but other Dynatrace components that coexist with NetTracer on a particular host have specific requirements and are supported on particular Linux distributions. The following table lists the tested and safest Linux distributions to use when planning to use NetTracer with Dynatrace.
-
-Distribution
-
-Architecture
-
-Release
-
-RedHat Enterprise Linux
-
-x86\_64
-
-8.0 and higher
-
-CentOS
-
-x86\_64
-
-8.0 and higher
-
-Ubuntu
-
-x86\_64
-
-18.04 LTS and higher
 
 ## Enable NetTracer
 
@@ -9717,86 +9705,6 @@ The following metrics available for NetTracer are calculated:
 
 ## Dimensions for NetTracer
 
-Metric key
-
-Dimension
-
-Value
-
-Unit
-
-`builtin:tech.nettracer.bytes_rx`
-
-`dt.entity.process_group_instance`  
-`dt.entity.process_group`  
-`dt.entity.host`
-
-Gauge, where:
-
-sum = number of bytes from all sessions in the given timeframe
-
-avg/min/max = average/minimal/maximal bytes per session in the given timeframe
-
-count = number of sessions in the given timeframe
-
-Bytes
-
-`builtin:tech.nettracer.bytes_tx`
-
-`dt.entity.process_group_instance`  
-`dt.entity.process_group`  
-`dt.entity.host`
-
-Gauge, where:
-
-sum = number of bytes from all sessions in the given timeframe
-
-avg/min/max = average/minimal/maximal bytes per session in the given timeframe
-
-count = number of sessions in the given timeframe
-
-Bytes
-
-`builtin:tech.nettracer.pkts_rx`
-
-`dt.entity.process_group_instance`  
-`dt.entity.process_group`  
-`dt.entity.host`
-
-Count, sending deltas/resetting counter
-
-Count
-
-`builtin:tech.nettracer.pkts_tx`
-
-`dt.entity.process_group_instance`  
-`dt.entity.process_group`  
-`dt.entity.host`
-
-Count, sending deltas/resetting counter
-
-Count
-
-`builtin:tech.nettracer.pkts_retr`
-
-`dt.entity.process_group_instance`  
-`dt.entity.process_group`  
-`dt.entity.host`
-
-Count, sending deltas/resetting counter
-
-Count
-
-`builtin:tech.nettracer.rtt`
-
-`dt.entity.process_group_instance`  
-`dt.entity.process_group`  
-`dt.entity.host`
-
-Gauge
-
-Miliseconds
-
 ### Container dimensions for NetTracer
 
 If the process is running in a container, the following dimensions are added:
@@ -9805,19 +9713,6 @@ If the process is running in a container, the following dimensions are added:
 * `dt.entity.container_group`
 
 Additional container dimensions are added depending on the deployment type.
-
-Kubernetes
-
-Docker (no Kubernetes)
-
-`container.image.name` (if it's available)  
-`k8s.container.name`  
-`k8s.namespace.name`  
-`k8s.pod.name`  
-`k8s.pod.uid`
-
-`container.image.name`  
-`container.name`
 
 ## Where can I see NetTracer data?
 
@@ -9936,7 +9831,7 @@ Read this guide](/docs/observe/infrastructure-observability/networks/ingest-netf
 ---
 title: Which are the most important processes?
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/process-groups/basic-concepts/which-are-the-most-important-processes
-scraped: 2026-02-24T21:16:12.708401
+scraped: 2026-02-25T21:14:01.460350
 ---
 
 # Which are the most important processes?
@@ -9993,7 +9888,7 @@ If you run Apache HTTP Server, for example, you may be accustomed to seeing long
 ---
 title: Process group detection
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/process-groups/configuration/pg-detection
-scraped: 2026-02-24T21:19:02.290574
+scraped: 2026-02-25T21:21:45.481859
 ---
 
 # Process group detection
@@ -10660,7 +10555,7 @@ If short-lived processes that start up frequently are being injected, disable th
 ---
 title: Process groups
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/process-groups
-scraped: 2026-02-22T21:18:12.962957
+scraped: 2026-02-25T21:17:12.147136
 ---
 
 # Process groups
@@ -11718,7 +11613,7 @@ Example of a management zone based on the entity selector
 ---
 title: Configure message queue monitoring
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/queues/configuration
-scraped: 2026-02-22T21:26:44.146727
+scraped: 2026-02-25T21:28:37.060477
 ---
 
 # Configure message queue monitoring
@@ -11734,22 +11629,6 @@ Dynatrace automatically detects how messages are processed within your environme
 ## Manual configuration
 
 Review the following table to determine whether some manual configuration is needed.
-
-If this is trueâ¦
-
-â¦then this manual configuration is needed
-
-The application uses non-standard or non-event-based message queue handlers.
-
-Define a [custom messaging service](/docs/observe/application-observability/services/service-detection/service-detection-v1/service-types/define-messaging-services "Set up custom messaging services to trace message queues.").
-
-You're using IBM MQ.
-
-Define your [IBM MQ](/docs/observe/infrastructure-observability/queues/configuration/ibm-mq-tracing "Configure Dynatrace for IBM MQ tracing.") configuration in Dynatrace to get a continuous service flow.
-
-The messaging client isn't compatible with Dynatrace, or you're using an unsupported protocol.
-
-Extend the traces with [OpenTelemetry](/docs/ingest-from/dynatrace-oneagent/oneagent-and-opentelemetry/oneagent-otel "Learn how to send OpenTelemetry data to a Dynatrace OneAgent.") or [OneAgent SDK](/docs/ingest-from/extend-dynatrace/extend-tracing/oneagent-sdk "The Dynatrace OneAgent SDK enables you to instrument your application manually to extend end-to-end visibility for frameworks and technologies for which there is no code module yet available.") (see also [OneAgent SDK on GitHubï»¿](https://github.com/Dynatrace/OneAgent-SDK#trace-messaging)).
 
 ## Process group detection
 
@@ -11907,7 +11786,7 @@ The following is a distributed trace example with a producer service, queue enti
 ---
 title: Message queues
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/queues
-scraped: 2026-02-24T21:27:20.072251
+scraped: 2026-02-25T21:17:16.049720
 ---
 
 # Message queues
@@ -12195,7 +12074,7 @@ You can use the [Settings API](/docs/dynatrace-api/environment-api/settings "Fin
 ---
 title: Infrastructure Observability
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability
-scraped: 2026-02-24T21:16:01.053148
+scraped: 2026-02-25T21:13:37.168115
 ---
 
 # Infrastructure Observability

@@ -1,7 +1,7 @@
 ---
 title: Supported timestamp formats (Logs Classic)
 source: https://www.dynatrace.com/docs/analyze-explore-automate/log-monitoring/log-monitoring-configuration/timestamp-data-format
-scraped: 2026-02-24T21:27:33.305713
+scraped: 2026-02-25T21:33:56.555248
 ---
 
 # Supported timestamp formats (Logs Classic)

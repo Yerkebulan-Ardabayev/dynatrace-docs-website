@@ -1,7 +1,7 @@
 ---
 title: Security Posture Management compliance standards
 source: https://www.dynatrace.com/docs/secure/application-security/spm/compliance-standards
-scraped: 2026-02-24T21:34:13.284385
+scraped: 2026-02-25T21:34:03.245025
 ---
 
 # Security Posture Management compliance standards
@@ -138,12 +138,14 @@ Supported version is VDA ISA 5.1.
 
 ## VMware SCG
 
-Руководства по безопасности VMware предоставляют рекомендации по развертыванию и эксплуатации продуктов VMware в безопасном режиме на основе [Руководства по безопасности и конфигурации VMware](https://www.vmware.com/solutions/security/hardening-guides).
 
-### Поддержка версий VMware SCG
 
-Поддерживаемая версия — vCenter Server 8.0 Update 3.
+VMware Security Configuration Guides provides guidance on how to deploy and operate VMware products in a secure manner based on the [VMware Security Configuration Guideï»¿](https://www.vmware.com/solutions/security/hardening-guides).
 
-## Связанные темы
+### VMware SCG version support
 
-* [Управление безопасностью](/docs/secure/xspm "Обнаружение, управление и принятие мер по результатам безопасности и соответствия требованиям.")
+Supported version is vCenter Server 8.0 Update 3.
+
+## Related topics
+
+* [Security Posture Management](/docs/secure/xspm "Detect, manage, and take action on security and compliance findings.")

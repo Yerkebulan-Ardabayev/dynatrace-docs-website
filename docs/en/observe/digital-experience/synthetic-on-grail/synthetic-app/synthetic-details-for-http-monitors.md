@@ -1,7 +1,7 @@
 ---
 title: HTTP monitors reporting results
 source: https://www.dynatrace.com/docs/observe/digital-experience/synthetic-on-grail/synthetic-app/synthetic-details-for-http-monitors
-scraped: 2026-02-24T21:30:20.900750
+scraped: 2026-02-25T21:19:03.614875
 ---
 
 # HTTP monitors reporting results
@@ -271,15 +271,6 @@ The **Status codes** tab shows the timeline of returned HTTP status codes for a 
 
 When a request violates its [event-specific performance threshold](/docs/observe/digital-experience/synthetic-on-grail/synthetic-app/create-and-configure-an-http-monitor#outage-and-performance "Learn how to set up and edit an HTTP monitor to check the performance and availability of your site."), it is highlighted in red. Expand the request to see the performance timings and the threshold violated. A solid red line for the problem duration appears above the stacked graph; the request threshold appears as a dotted red line. Select the solid red bar to display a link to the problem overview page.
 
-## Errors
-
-The **Errors** card displays errors found in the selected time frame.
-
-The Problems section lists all problems, both open and closed. On top of that, you can:
-
-* See the details of an error in the form of a table with the request and number of occurrences.
-* Select **Analyze errors**  for an in-depth error analysis.
-
 ## Response size
 
 The **Response size** card shows trend lines for minimum and maximum response size for the sum of all requests, with any shaded area representing the difference between the two values at any given time. The trend lines might coincide, as when your monitor runs from a single location. However, response size might vary, for example, when different responses are sent based on location.
@@ -296,12 +287,6 @@ Select an event type, for example, **HTTP monitor location slowdown**, to see th
 
 The [`api.fail()` method](/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic#end "Learn how to apply pre and post scripts to your requests") can be used to define a custom **Failure message** that appears in the Events card in case of failure. Custom log messages also appear in the `customLogs` attribute in [HTTP monitor execution details](#analyze-last-execution).
 
-## Properties and tags
-
-This informational card shows the number of steps, locations, frequency of monitor execution, and any applied tags.
-
-Select  **Edit** to edit or apply additional tags.
-
 ## Changes
 
 The **Changes** card shows the history log that displays:
@@ -309,9 +294,32 @@ The **Changes** card shows the history log that displays:
 * When the monitor was created and who created it.
 * Who changed the monitor properties, when the change was made, and which properties were changed in the selected timeframe.
 
+## Errors
+
+The **Errors** card displays errors found in the selected timeframe.
+
+On the card, you can:
+
+* See the details of an error in the form of a table with the step and number of occurrences.
+* Select **Analyze errors** .
+
 ## Frontends
 
 The **Frontends** card displays the frontends to which the monitor is assigned.
+
+## Locations
+
+The **Locations** card shows the status of the last monitor execution for each location. The status is displayed with colors:
+
+* Greenâthe location was available during the last monitor execution.
+* Redâan outage was detected during the last monitor execution.
+* Grayâthere is no data about executions for this location.
+
+## Properties and tags
+
+This informational card shows the number of steps, the number and list of locations, frequency of monitor execution, and any applied tags.
+
+Select  **Edit** to edit or apply additional tags.
 
 ## Services
 

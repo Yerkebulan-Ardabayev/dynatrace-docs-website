@@ -1,7 +1,7 @@
 ---
 title: Automated injection of deep-code monitoring on AIX
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/aix/operation/enable-auto-injection
-scraped: 2026-02-24T21:23:16.880411
+scraped: 2026-02-25T21:29:30.462358
 ---
 
 # Automated injection of deep-code monitoring on AIX

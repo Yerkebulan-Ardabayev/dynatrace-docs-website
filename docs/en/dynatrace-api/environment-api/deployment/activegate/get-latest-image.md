@@ -1,7 +1,7 @@
 ---
 title: Deployment API - GET the latest available ActiveGate image version
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/deployment/activegate/get-latest-image
-scraped: 2026-02-24T21:25:30.757334
+scraped: 2026-02-25T21:32:05.555120
 ---
 
 # Deployment API - GET the latest available ActiveGate image version

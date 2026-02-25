@@ -1,7 +1,7 @@
 ---
 title: Migrate from classic full-stack to cloud-native full-stack mode
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/guides/migration/classic-to-cloud-native
-scraped: 2026-02-23T21:34:26.862486
+scraped: 2026-02-25T21:28:10.466688
 ---
 
 # Migrate from classic full-stack to cloud-native full-stack mode
@@ -251,34 +251,3 @@ Follow these instructions to successfully migrate from classic full-stack mode:
 ## Changes in Kubernetes resources
 
 This migration impacts several Kubernetes resources, altering their functions or introducing new components to support cloud-native injection mode. Key changes include:
-
-Component
-
-classic full-stack
-
-cloud-native full-stack
-
-OneAgent
-
-* Deployed as a DaemonSet
-* Collect host metrics on nodes
-* Inject code modules into application pods
-
-* Deployed as a DaemonSet
-* Collect host metrics on nodes
-
-Dynatrace Webhook Server
-
-* Validates DynaKube definitions
-
-* Validates DynaKube definitions
-* Inject code modules into application pods by modifying pod definitions
-
-[Dynatrace Operator CSI driver](/docs/ingest-from/setup-on-k8s/how-it-works#csi-driver "In-depth description on how the deployment on Kubernetes works.")
-
-Required
-
-* Not present
-
-* Deployed as a DaemonSet
-* Optimizes the download of code modules to speed up pod injection and reduce storage consumption

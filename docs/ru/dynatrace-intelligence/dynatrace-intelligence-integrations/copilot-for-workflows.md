@@ -1,81 +1,81 @@
 ---
-title: Dynatrace Intelligence (Preview) app
+title: Dynatrace Intelligence (Предварительный просмотр) приложение
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/dynatrace-intelligence-integrations/copilot-for-workflows
-scraped: 2026-02-24T21:24:31.080256
+scraped: 2026-02-25T21:25:29.758066
 ---
 
-# Dynatrace Intelligence (Preview) app
+# Dynatrace Intelligence (Предварительный просмотр) приложение
 
-# Dynatrace Intelligence (Preview) app
+# Dynatrace Intelligence (Предварительный просмотр) приложение
 
-* Latest Dynatrace
-* How-to guide
-* 3-min read
-* Updated on Feb 04, 2026
-* Preview
+* Последнее Dynatrace
+* Руководство по настройке
+* 3-минутное чтение
+* Обновлено 4 февраля 2026 г.
+* Предварительный просмотр
 
-With ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Workflows**, you can automate requests to Dynatrace Intelligence generative AI and have it react to changes in the environment as they happen, summarizing events and daily activities and suggesting optimal solutions for open problems and changes within the code.
+С помощью ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Workflows** вы можете автоматизировать запросы к Dynatrace Intelligence генеративному ИИ и иметь возможность реагировать на изменения в окружении по мере их возникновения, суммируя события и ежедневные действия, а также предлагая оптимальные решения для открытых проблем и изменений в коде.
 
-You can also schedule the repeated workflow execution and configure it to send Dynatrace Intelligence generative AI responses to your email or Slack channels.
-The scheduled and repeated workflow execution helps save time and lets you focus on other tasks while Dynatrace Intelligence generative AI reviews and analyzes the incoming changes for you.
+Вы также можете запланировать повторное выполнение рабочего процесса и настроить его на отправку ответов Dynatrace Intelligence генеративного ИИ на ваш электронный адрес или в каналы Slack.
+Планируемое и повторное выполнение рабочего процесса помогает сэкономить время и позволяет вам сосредоточиться на других задачах, пока Dynatrace Intelligence генеративный ИИ проверяет и анализирует входящие изменения для вас.
 
-## Use cases
+## Варианты использования
 
-## Prerequisites
+## Предварительные условия
 
-To use the Dynatrace Intelligence generative AI workflow action, ensure that you have the following permission:
+Чтобы использовать действие рабочего процесса Dynatrace Intelligence генеративного ИИ, убедитесь, что у вас есть следующее разрешение:
 
-* **Conversational recommender** `ALLOW davis-copilot:conversations:execute;`
+* **Рекомендатель по разговорам** `ALLOW davis-copilot:conversations:execute;`
 
-  For more information about assigning the **Conversational recommender** permission, see [User permissions](/docs/dynatrace-intelligence/copilot/copilot-getting-started#davis-copilot-user-permissions "Learn how to set up Dynatrace Intelligence generative AI.").
+  Для получения дополнительной информации о назначении разрешения **Рекомендатель по разговорам**, см. [Разрешения пользователей](/docs/dynatrace-intelligence/copilot/copilot-getting-started#davis-copilot-user-permissions "Узнайте, как настроить Dynatrace Intelligence генеративный ИИ.").
 
-To use  **Dynatrace Intelligence (Preview)**, you need to
+Чтобы использовать **Dynatrace Intelligence (Предварительный просмотр)**, вам необходимо
 
-1. Ensure that you have a Hub subscription for the Dynatrace Intelligence generative AI Preview channel.
+1. Убедитесь, что у вас есть подписка Hub на канал предварительного просмотра Dynatrace Intelligence генеративного ИИ.
 
-   If you don't have a subscription, please reach out to your Customer Success Manager (CSM).
-2. Install  **Dynatrace Intelligence (Preview)**.
+   Если у вас нет подписки, обратитесь к вашему менеджеру по успеху клиентов (CSM).
+2. Установите **Dynatrace Intelligence (Предварительный просмотр)**.
 
-To install  **Dynatrace Intelligence (Preview)**
+Чтобы установить **Dynatrace Intelligence (Предварительный просмотр)**
 
-1. In ![Hub](https://dt-cdn.net/images/hub-512-82db3c583e.png "Hub") Dynatrace Hub, search for  **Dynatrace Intelligence (Preview)**.
-2. Select  **Dynatrace Intelligence (Preview)** and select **Install**.
+1. В ![Hub](https://dt-cdn.net/images/hub-512-82db3c583e.png "Hub") Dynatrace Hub, найдите **Dynatrace Intelligence (Предварительный просмотр)**.
+2. Выберите **Dynatrace Intelligence (Предварительный просмотр)** и выберите **Установить**.
 
-## Limits
+## Ограничения
 
-Standard usage limits for  **Generative AI** are also applied to  **Dynatrace Intelligence (Preview)**:
+Стандартные ограничения использования для **Генеративного ИИ** также применяются к **Dynatrace Intelligence (Предварительный просмотр)**:
 
-This means that, if you schedule the automatic workflow execution to run frequently, all other Dynatrace Intelligence generative AI functionality might get throttled due to reaching the request limit. If you do run into the usage limit, please reach out to your CSM or let us know in the [Agentic AI Preview User Groupï»¿](https://dt-url.net/copilot-community) in our Community.
+Это означает, что если вы запланируете автоматическое выполнение рабочего процесса для частого запуска, все остальные функции Dynatrace Intelligence генеративного ИИ могут быть ограничены из-за достижения лимита запросов. Если вы столкнетесь с ограничением использования, обратитесь к вашему CSM или сообщите нам в [Agentic AI Preview User Group](https://dt-url.net/copilot-community) в нашем сообществе.
 
-## Set up a Dynatrace Intelligence generative AI workflow action
+## Настройка действия рабочего процесса Dynatrace Intelligence генеративного ИИ
 
-To create a workflow with  **Dynatrace Intelligence (Preview)** action
+Чтобы создать рабочий процесс с действием **Dynatrace Intelligence (Предварительный просмотр)**
 
-1. In Dynatrace, go to ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Workflows**.
-2. Select  **Workflow** to create a new workflow.
-3. Choose a [workflow trigger](/docs/analyze-explore-automate/workflows/trigger "Introduction to workflow automation triggers for workflows.") that will prompt the execution of the workflow.
-4. Select  **Add task**.
-5. Type `Dynatrace Intelligence` into the  search field or select  **Dynatrace Intelligence** >  **Define prompt**.
-6. Configure the action:
+1. В Dynatrace, перейдите к ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Workflows**.
+2. Выберите **Рабочий процесс**, чтобы создать новый рабочий процесс.
+3. Выберите [триггер рабочего процесса](/docs/analyze-explore-automate/workflows/trigger "Введение в триггеры автоматизации рабочих процессов для рабочих процессов."), который будет запускать выполнение рабочего процесса.
+4. Выберите **Добавить задачу**.
+5. Введите `Dynatrace Intelligence` в поле поиска или выберите **Dynatrace Intelligence** > **Определить подсказку**.
+6. Настройте действие:
 
-   * In the **Prompt** field, enter your question or request. You can also add specific formatting instructions to better suit your use case.
+   * В поле **Подсказка** введите ваш вопрос или запрос. Вы также можете добавить конкретные инструкции по форматированию, чтобы лучше соответствовать вашему варианту использования.
 
-     You can enter a maximum of 5,000 characters in this field.
-   * Optional In the **Additional context** field, provide any additional context (for example, a code snippet or a supplementary information about a problem or event) you want Dynatrace Intelligence generative AI to reference when executing your prompt. You can reference an output from a previous workflow action in this field.
+     Вы можете ввести максимум 5 000 символов в этом поле.
+   * Необязательно В поле **Дополнительный контекст** предоставьте любой дополнительный контекст (например, фрагмент кода или дополнительную информацию о проблеме или событии), который вы хотите, чтобы Dynatrace Intelligence генеративный ИИ использовал при выполнении вашей подсказки. Вы можете ссылаться на вывод предыдущего действия рабочего процесса в этом поле.
 
-     You can enter a maximum of 20,000 characters in this field.
-   * Enable **Auto-trim** to automatically trim your prompt and additional context if the character limit is exceeded. If **Auto-trim** is disabled and your prompt or additional context exceed the character limit, the action execution will fail.
-   * Set **Document retrieval** to `Dynatrace` if you want Dynatrace Intelligence generative AI to look up Dynatrace sources like Documentation, Community and Developer Portal to enrich its answers. If **Document retrieval** is set to `Disabled`, generative AI will rely on its foundational model to execute your prompt.
-7. Optional Add any additional workflow action before or after Dynatrace Intelligence generative AI action to support your use case.
-8. Select  **Save**.
-9. Next, select  **Run** to execute the workflow.
+     Вы можете ввести максимум 20 000 символов в этом поле.
+   * Включите **Автоматическое обрезание**, чтобы автоматически обрезать вашу подсказку и дополнительный контекст, если превышен лимит символов. Если **Автоматическое обрезание** отключено и ваша подсказка или дополнительный контекст превышают лимит символов, выполнение действия завершится неудачно.
+   * Установите **Получение документа** в `Dynatrace`, если вы хотите, чтобы Dynatrace Intelligence генеративный ИИ искал источники Dynatrace, такие как Документация, Сообщество и Портал разработчиков, чтобы обогатить свои ответы. Если **Получение документа** установлено в `Отключено`, генеративный ИИ будет полагаться на свою базовую модель для выполнения вашей подсказки.
+7. Необязательно Добавьте любое дополнительное действие рабочего процесса до или после действия Dynatrace Intelligence генеративного ИИ, чтобы поддержать ваш вариант использования.
+8. Выберите **Сохранить**.
+9. Далее выберите **Выполнить**, чтобы выполнить рабочий процесс.
 
-To learn about specific use cases and how you can use the Dynatrace Intelligence generative AI workflow action, see [Summarize open problems with Dynatrace Intelligence (Preview)](/docs/dynatrace-intelligence/use-cases/copilot-in-workflows-examples "Use Dynatrace Intelligence (Preview) to summarize open problems and suggest remediation steps.").
+Чтобы узнать о конкретных вариантах использования и о том, как вы можете использовать действие рабочего процесса Dynatrace Intelligence генеративного ИИ, см. [Суммируйте открытые проблемы с помощью Dynatrace Intelligence (Предварительный просмотр)](/docs/dynatrace-intelligence/use-cases/copilot-in-workflows-examples "Используйте Dynatrace Intelligence (Предварительный просмотр), чтобы суммировать открытые проблемы и предлагать шаги по исправлению.").
 
-## Related topics
+## Связанные темы
 
-* [Workflows](/docs/analyze-explore-automate/workflows "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services.")
-* [Dynatrace Intelligence generative AI overview](/docs/dynatrace-intelligence/copilot/copilot-overview "Learn about data security and other aspects of Dynatrace Intelligence generative AI.")
-* [Dynatrace Assist](/docs/dynatrace-intelligence/copilot/chat-with-davis-copilot "Ask questions using natural language and get quick answers from Dynatrace Assist, your generative AI assistant.")
-* [Summarize open problems with Workflows](/docs/dynatrace-intelligence/use-cases/copilot-in-workflows-examples "Use Dynatrace Intelligence (Preview) to summarize open problems and suggest remediation steps.")
-* [Agentic workflows](/docs/dynatrace-intelligence/dynatrace-intelligence-integrations/agentic-workflows "Basic concepts of using agentic workflows to automate complex, data-driven tasks more flexibly by leveraging generative and agentic AI.")
+* [Рабочие процессы](/docs/analyze-explore-automate/workflows "Автоматизируйте ИТ-процессы с помощью рабочих процессов Dynatrace — реагируйте на события, планируйте задачи и подключайте сервисы.")
+* [Обзор генеративного ИИ Dynatrace Intelligence](/docs/dynatrace-intelligence/copilot/copilot-overview "Узнайте о безопасности данных и других аспектах генеративного ИИ Dynatrace Intelligence.")
+* [Помощник Dynatrace](/docs/dynatrace-intelligence/copilot/chat-with-davis-copilot "Задавайте вопросы на естественном языке и получайте быстрые ответы от помощника Dynatrace, вашего генеративного ИИ-помощника.")
+* [Суммируйте открытые проблемы с помощью рабочих процессов](/docs/dynatrace-intelligence/use-cases/copilot-in-workflows-examples "Используйте Dynatrace Intelligence (Предварительный просмотр), чтобы суммировать открытые проблемы и предлагать шаги по исправлению.")
+* [Agentic рабочие процессы](/docs/dynatrace-intelligence/dynatrace-intelligence-integrations/agentic-workflows "Базовые понятия использования агентных рабочих процессов для автоматизации сложных, данных-ориентированных задач более гибким способом с помощью генеративного и агентного ИИ.")

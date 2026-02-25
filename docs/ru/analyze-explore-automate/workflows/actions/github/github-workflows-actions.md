@@ -1,7 +1,7 @@
 ---
 title: Actions for GitHub Connector
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/github/github-workflows-actions
-scraped: 2026-02-23T21:34:36.729890
+scraped: 2026-02-25T21:33:42.069840
 ---
 
 # Actions for GitHub Connector
@@ -16,52 +16,6 @@ scraped: 2026-02-23T21:34:36.729890
 This page contains Github workflow actions that are available for the GitHub Connector ![GitHub](https://dt-cdn.net/images/github-for-workflows-new-lxjn9po-256-94579b3812.png "GitHub") integration.
 
 ### Required token permissions to run all GitHub actions
-
-Token type
-
-Repository type
-
-Permissions
-
-**Fine-grained personal access token**
-
-public
-
-Select Repository permissions > Contents > Read and write.
-
-Select Repository permissions > Pull requests > Read and write.
-
-Select Repository permissions > Workflows > Read and write.
-
-Select Repository permissions > Issues > Read and write.
-
-Select Repository permissions > Actions > Read and write.
-
-**Fine-grained personal access token**
-
-private
-
-Select Repository permissions > Contents > Read and write.
-
-Select Repository permissions > Pull requests > Read and write.
-
-Select Repository permissions > Workflows > Read and write.
-
-Select Repository permissions > Issues > Read and write.
-
-Select Repository permissions > Actions > Read and write.
-
-**Token (classic)**
-
-public
-
-Select scopes > repo > public\_repo.
-
-**Token (classic)**
-
-private
-
-Select scopes > repo (Full control of private repositories).
 
 ## Get content
 
@@ -82,36 +36,6 @@ The **Get content** action returns the content of an existing file in the reposi
 The action returns the `content` property that contains the plain text content of an existing file in the repository.
 
 ### Required token permissions
-
-Token type
-
-Repository type
-
-Permissions
-
-**Fine-grained personal access token**
-
-public
-
-No additional permissions are required.
-
-**Fine-grained personal access token**
-
-private
-
-Select Repository permissions > Contents > Read only.
-
-**Token (classic)**
-
-public
-
-No additional permissions are required.
-
-**Token (classic)**
-
-private
-
-Select scopes > repo (Full control of private repositories).
 
 ## Create or replace file
 
@@ -138,38 +62,6 @@ The action returns the `fileMetadata` property that contains the full response o
 
 ### Required token permissions
 
-Token type
-
-Repository type
-
-Permissions
-
-**Fine-grained personal access token**
-
-public
-
-Select Repository permissions > Contents > Read and write.
-
-**Fine-grained personal access token**
-
-private
-
-Select Repository permissions > Contents > Read and write.
-
-Select Repository permissions > Workflows > Read and write. (required to modify GitHub workflow files)
-
-**Token (classic)**
-
-public
-
-Select scopes > repo > public\_repo.
-
-**Token (classic)**
-
-private
-
-Select scopes > repo (Full control of private repositories).
-
 ## Delete file
 
 The **Delete file** action deletes an existing file in the repository and commits the change to either a newly created branch using the specified source branch as a basis or uses the specified existing branch.
@@ -194,36 +86,6 @@ The action returns the `fileMetadata` property that contains the full response o
 
 ### Required token permissions
 
-Token type
-
-Repository type
-
-Permissions
-
-**Fine-grained personal access token**
-
-public
-
-Select Repository permissions > Contents > Read and write.
-
-**Fine-grained personal access token**
-
-private
-
-Select Repository permissions > Contents > Read and write.
-
-**Token (classic)**
-
-public
-
-Select scopes > repo > public\_repo.
-
-**Token (classic)**
-
-private
-
-Select scopes > repo (Full control of private repositories).
-
 ## Create pull request
 
 The **Create pull request** action creates a pull request for an existing branch and the specified target branch. For example: `main`.
@@ -246,36 +108,6 @@ The action returns the `pullRequest` property that contains the full response of
 
 ### Required permissions
 
-Token type
-
-Repository type
-
-Permissions
-
-**Fine-grained personal access token**
-
-public
-
-Select Repository permissions > Pull requests > Read and write.
-
-**Fine-grained personal access token**
-
-private
-
-Select Repository permissions > Pull requests > Read and write.
-
-**Token (classic)**
-
-public
-
-Select scopes > repo > public\_repo.
-
-**Token (classic)**
-
-private
-
-Select scopes > repo (Full control of private repositories).
-
 ## Get pull request
 
 The **Get pull request** action returns details about the specified pull request.
@@ -295,43 +127,11 @@ The action returns the `pullRequest` property that contains the full response of
 
 ### Required permissions
 
-Token type
-
-Repository type
-
-Permissions
-
-**Fine-grained personal access token**
-
-public
-
-No additional permissions are required.
-
-**Fine-grained personal access token**
-
-private
-
-Select Repository permissions > Pull requests > Read-only.
-
-**Token (classic)**
-
-public
-
-No additional permissions are required.
-
-**Token (classic)**
-
-private
-
-Select scopes > repo (Full control) of private repositories.
-
 ## List pull requests
 
 The **List pull requests** action returns a list of pull requests that match the specified criteria. The limit of 30 pull requests applies.
 
 ### Input
-
-
 
 | Field | Description | Required |
 | --- | --- | --- |
@@ -345,36 +145,6 @@ The **List pull requests** action returns a list of pull requests that match the
 The action returns the `pullRequest` property that contains the full response of the corresponding GitHub API endpoint.
 
 ### Required permissions
-
-Token type
-
-Repository type
-
-Permissions
-
-**Fine-grained personal access token**
-
-public
-
-No additional permissions are required.
-
-**Fine-grained personal access token**
-
-private
-
-Select Repository permissions > Pull requests > Read-only.
-
-**Token (classic)**
-
-public
-
-No additional permissions are required.
-
-**Token (classic)**
-
-private
-
-Select scopes > repo (Full control of private repositories).
 
 ## Merge pull request
 
@@ -395,36 +165,6 @@ The **Merge pull request** action merges the specified pull request.
 The action returns the `mergeStatus` property that contains the full response of the corresponding GitHub API endpoint.
 
 ### Required permissions
-
-Token type
-
-Repository type
-
-Permissions
-
-**Fine-grained personal access token**
-
-public
-
-Select Repository permissions > Contents > Read and write.
-
-**Fine-grained personal access token**
-
-private
-
-Select Repository permissions > Contents > Read and write.
-
-**Token (classic)**
-
-public
-
-Select scopes > repo > public\_repo.
-
-**Token (classic)**
-
-private
-
-Select scopes > repo (Full control of private repositories).
 
 ## Create issue
 
@@ -448,41 +188,13 @@ The action returns the `issue` property that contains the full response of the c
 
 ### Required token permissions
 
-Token type
-
-Repository type
-
-Permissions
-
-**Fine-grained personal access token**
-
-public
-
-Select Repository permissions > Issues > Read and write.
-
-**Fine-grained personal access token**
-
-private
-
-Select Repository permissions > Issues > Read and write.
-
-**Token (classic)**
-
-public
-
-No additional permissions are required.
-
-**Token (classic)**
-
-private
-
-Select scopes > repo (Full control of private repositories).
-
 ## Update issue
 
 The **Update issue** action updates an existing issue in a specified repository. Use the **Add Field** option to specify fields for updates.
 
 ### Input
+
+
 
 | Field | Description | Required |
 | --- | --- | --- |
@@ -501,40 +213,6 @@ The **Update issue** action updates an existing issue in a specified repository.
 The action returns the `issue` property that contains the full response of the corresponding GitHub API endpoint.
 
 ### Required token permissions
-
-Token type
-
-Repository type
-
-Permissions
-
-**Fine-grained personal access token**
-
-public
-
-Select Repository permissions > Issues > Read and write.
-
-Select Repository permissions > Pull requests > Read and write.
-
-**Fine-grained personal access token**
-
-private
-
-Select Repository permissions > Issues > Read and write.
-
-Select Repository permissions > Pull requests > Read and write.
-
-**Token (classic)**
-
-public
-
-No additional permissions are required.
-
-**Token (classic)**
-
-private
-
-Select scopes > repo (Full control of private repositories).
 
 ## Create comment
 
@@ -555,40 +233,6 @@ The **Create comment** action creates a new comment on an issue or pull request 
 The action returns the `comment` property that contains the full response of the corresponding GitHub API endpoint.
 
 ### Required token permissions
-
-Token type
-
-Repository type
-
-Permissions
-
-**Fine-grained personal access token**
-
-public
-
-Select Repository permissions > Issues > Read and write.
-
-Select Repository permissions > Pull requests > Read and write.
-
-**Fine-grained personal access token**
-
-private
-
-Select Repository permissions > Issues > Read and write.
-
-Select Repository permissions > Pull requests > Read and write.
-
-**Token (classic)**
-
-public
-
-No additional permissions are required.
-
-**Token (classic)**
-
-private
-
-Select scopes > repo (Full control of private repositories).
 
 ## Trigger workflow run
 
@@ -611,43 +255,11 @@ The action returns no result.
 
 ### Required token permissions
 
-Token type
-
-Repository type
-
-Permissions
-
-**Fine-grained personal access token**
-
-public
-
-Select Repository permissions > Actions > Read and write.
-
-**Fine-grained personal access token**
-
-private
-
-Select Repository permissions > Actions > Read and write.
-
-**Token (classic)**
-
-public
-
-No additional permissions are required.
-
-**Token (classic)**
-
-private
-
-Select scopes > repo (Full control of private repositories).
-
 ## Get latest workflow run
 
 The **Get latest workflow run** action retrieves data from the latest run workflow in a specified repository.
 
 ### Input
-
-
 
 | Field | Description | Required |
 | --- | --- | --- |
@@ -662,36 +274,6 @@ The **Get latest workflow run** action retrieves data from the latest run workfl
 The action returns the `workflowRun` property that contains the full response of the corresponding GitHub API endpoint.
 
 ### Required token permissions
-
-Token type
-
-Repository type
-
-Permissions
-
-**Fine-grained personal access token**
-
-public
-
-Select Repository permissions > Actions > Read.
-
-**Fine-grained personal access token**
-
-private
-
-Select Repository permissions > Actions > Read.
-
-**Token (classic)**
-
-public
-
-No additional permissions are required.
-
-**Token (classic)**
-
-private
-
-Select scopes > repo (Full control of private repositories).
 
 ## Related topics
 

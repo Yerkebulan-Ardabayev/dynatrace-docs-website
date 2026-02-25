@@ -1,7 +1,7 @@
 ---
 title: Processes API - GET a process
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/topology-and-smartscape/processes-api/get-a-process
-scraped: 2026-02-23T21:21:47.280601
+scraped: 2026-02-25T21:21:53.533734
 ---
 
 # Processes API - GET a process

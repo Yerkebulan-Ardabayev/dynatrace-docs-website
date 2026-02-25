@@ -1,36 +1,36 @@
 ---
-title: AI models
+title: Модели ИИ
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/reference/ai-models
-scraped: 2026-02-22T21:19:21.837923
+scraped: 2026-02-25T21:17:24.853968
 ---
 
-# AI models
+# Модели ИИ
 
-# AI models
+# Модели ИИ
 
-* Latest Dynatrace
-* Overview
-* 1-min read
-* Updated on Jan 28, 2026
+* Последнее Dynatrace
+* Обзор
+* 1-минутное чтение
+* Обновлено 28 января 2026 г.
 
-Dynatrace Intelligence uses specialized AI models to analyze your environment and provide actionable insights. These models power different capabilities, from anomaly detection and root cause analysis to predictive analytics and performance optimization. Each model is designed for specific use cases and provides different types of intelligence to help you understand and improve your systems.
+Интеллект Dynatrace использует специализированные модели ИИ для анализа вашей среды и предоставления действенных рекомендаций. Эти модели обеспечивают различные возможности, от обнаружения аномалий и анализа коренной причины до прогностического анализа и оптимизации производительности. Каждая модель предназначена для конкретных случаев использования и предоставляет разные типы интеллекта, чтобы помочь вам понять и улучшить ваши системы.
 
-[#### Dynatrace Intelligence causal correlation analysis
+[#### Анализ причинно-следственной корреляции интеллекта Dynatrace
 
-Learn how Dynatrace Intelligence causal correlation analysis finds related metrics across your environment.
+Узнайте, как анализ причинно-следственной корреляции интеллекта Dynatrace находит связанные метрики во всей вашей среде.
 
-* Explanation
+* Объяснение
 
-Read this explanation](/docs/dynatrace-intelligence/reference/ai-models/causal-correlation-analysis)[#### Dynatrace Intelligence predictive AI analysis
+Прочитайте это объяснение](/docs/dynatrace-intelligence/reference/ai-models/causal-correlation-analysis)[#### Прогностический анализ ИИ интеллекта Dynatrace
 
-Learn how Dynatrace Intelligence predictive AI generates forecasts.
+Узнайте, как прогностический ИИ интеллекта Dynatrace генерирует прогнозы.
 
-* Explanation
+* Объяснение
 
-Read this explanation](/docs/dynatrace-intelligence/reference/ai-models/forecast-analysis)[#### Seasonal baseline
+Прочитайте это объяснение](/docs/dynatrace-intelligence/reference/ai-models/forecast-analysis)[#### Сезонная базовая линия
 
-How Dynatrace Intelligence suggests seasonal baseline thresholds for a scope of entities.
+Как интеллект Dynatrace предлагает пороги сезонной базовой линии для области сущностей.
 
-* Explanation
+* Объяснение
 
-Read this explanation](/docs/dynatrace-intelligence/reference/ai-models/seasonal-baseline)
+Прочитайте это объяснение](/docs/dynatrace-intelligence/reference/ai-models/seasonal-baseline)

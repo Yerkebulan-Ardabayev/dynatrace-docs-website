@@ -1,7 +1,7 @@
 ---
 title: Application observability
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/how-it-works/application-monitoring
-scraped: 2026-02-23T21:22:42.911764
+scraped: 2026-02-25T21:20:34.608713
 ---
 
 # Application observability
@@ -25,7 +25,7 @@ You can use the automatic injection strategy for application Pods. Dynatrace inj
 * Dynatrace injects code modules into Pods using the Kubernetes admission controller.
 * Get granular control over the instrumented Pods using namespaces and annotations.
 * Route Pod metrics to different Dynatrace environments within the same Kubernetes cluster.
-* [Enable data enrichment for Kubernetes environments](/docs/ingest-from/extend-dynatrace/extend-data#dynatrace-kubernetes-operator "Learn how to automatically enrich your telemetry data with Dynatrace-specific dimensions.").
+* [Enable data enrichment for Kubernetes environments](/docs/ingest-from/extend-dynatrace/extend-data#dynatrace-kubernetes-operator "Learn how to automatically enrich your telemetry data with Dynatrace-specific fields.").
 
 ### Current limitations
 

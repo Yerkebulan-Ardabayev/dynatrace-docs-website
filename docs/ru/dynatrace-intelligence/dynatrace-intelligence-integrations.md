@@ -1,60 +1,60 @@
 ---
-title: Dynatrace Intelligence integrations
+title: Dynatrace Интеллектуальные интеграции
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/dynatrace-intelligence-integrations
-scraped: 2026-02-22T21:19:24.387132
+scraped: 2026-02-25T21:17:22.539570
 ---
 
-# Dynatrace Intelligence integrations
+# Dynatrace Интеллектуальные интеграции
 
-# Dynatrace Intelligence integrations
+# Dynatrace Интеллектуальные интеграции
 
-* Latest Dynatrace
-* Overview
-* 1-min read
-* Updated on Jan 28, 2026
+* Последнее Dynatrace
+* Обзор
+* 1-минутное чтение
+* Обновлено 28 января 2026 г.
 
-## Notebooks
+## Тетради
 
-[![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks")
+[![Тетради](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Тетради")
 
-#### Dynatrace Intelligence for Notebooks
+#### Dynatrace Интеллект для тетрадей
 
-Run AI analysis in Dynatrace Notebooks.
+Запустите анализ ИИ в Dynatrace тетрадях.
 
-* How-to guide
+* Руководство по началу работы
 
-Read this guide](/docs/dynatrace-intelligence/dynatrace-intelligence-integrations/davis-for-notebooks)
+Прочитайте это руководство](/docs/dynatrace-intelligence/dynatrace-intelligence-integrations/davis-for-notebooks)
 
-## Dynatrace MCP server
+## Dynatrace Сервер MCP
 
-[#### Dynatrace MCP server
+[#### Dynatrace Сервер MCP
 
-Learn about the Dynatrace MCP server and how you can connect to it.
+Узнайте о Dynatrace сервере MCP и о том, как можно к нему подключиться.
 
-* Overview
+* Обзор
 
-See the overview](/docs/dynatrace-intelligence/dynatrace-intelligence-integrations/dynatrace-mcp)
+Прочитайте обзор](/docs/dynatrace-intelligence/dynatrace-intelligence-integrations/dynatrace-mcp)
 
-## Workflows
+## Рабочие процессы
 
-See Workflows-based use cases for Dynatrace Intelligence.
+Посмотрите на случаи использования Dynatrace Интеллекта на основе рабочих процессов.
 
-[#### Optimize DQL cost with Workflows
+[#### Оптимизируйте стоимость DQL с помощью рабочих процессов
 
-Use Dynatrace Intelligence (Preview) to optimize the cost of your queries.
+Используйте Dynatrace Интеллект (Предварительный просмотр), чтобы оптимизировать стоимость ваших запросов.
 
-* Tutorial
+* Учебник
 
-Read this tutorial](/docs/dynatrace-intelligence/use-cases/copilot-in-workflows-dql)[#### Summarize open problems with Workflows
+Прочитайте этот учебник](/docs/dynatrace-intelligence/use-cases/copilot-in-workflows-dql)[#### Суммируйте открытые проблемы с помощью рабочих процессов
 
-Use Dynatrace Intelligence (Preview) to summarize open problems and suggest remediation steps.
+Используйте Dynatrace Интеллект (Предварительный просмотр), чтобы суммировать открытые проблемы и предложить шаги по исправлению.
 
-* Tutorial
+* Учебник
 
-Read this tutorial](/docs/dynatrace-intelligence/use-cases/copilot-in-workflows-examples)[#### AI in Workflows - Predictive maintenance of cloud disks
+Прочитайте этот учебник](/docs/dynatrace-intelligence/use-cases/copilot-in-workflows-examples)[#### ИИ в рабочих процессах - прогнозное обслуживание облачных дисков
 
-Automate predictive maintenance of cloud resources with Dynatrace Intelligence within AutomationEngine.
+Автоматизируйте прогнозное обслуживание облачных ресурсов с помощью Dynatrace Интеллекта в AutomationEngine.
 
-* Tutorial
+* Учебник
 
-Read this tutorial](/docs/dynatrace-intelligence/use-cases/davis-for-workflows)
+Прочитайте этот учебник](/docs/dynatrace-intelligence/use-cases/davis-for-workflows)

@@ -1,7 +1,7 @@
 ---
 title: ServiceNow
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/service-now
-scraped: 2026-02-22T21:10:43.228740
+scraped: 2026-02-25T21:23:55.107519
 ---
 
 # ServiceNow
@@ -73,72 +73,6 @@ To configure a connection
 ## Available actions
 
 The following workflow actions are available for the ServiceNow integration. Each action corresponds to an endpoint of the ServiceNow API.
-
-Action
-
-Description
-
-ServiceNow API endpoint
-
-**Create Incident**
-
-Creates an incident in your ServiceNow environment. An incident represents a problem or an issue that needs to be addressed and resolved.
-
-`POST /api/now/v2/table/incident`
-
-**Create a vulnerability item**
-
-Creates a vulnerability item in your ServiceNow environment.
-
-`POST /api/now/v2/table/sn_vul_vulnerable_item`
-
-**Get Groups**
-
-Get groups from your ServiceNow environment.
-
-`GET /api/now/v2/table/sys_user_group`
-
-**Comment**
-
-Create a comment on an entry in your ServiceNow environment.
-
-`PUT /api/now/v2/table/${tableName}/${sysId}`
-
-**Comment on an incident**
-
-Add a new comment to a ServiceNow incident record.
-
-`PUT /api/now/v2/table/incident/${sys_id}`
-
-**Search**
-
-Generic search action that allows searching your ServiceNow environment.
-
-`GET /api/now/v2/table/${tableName}`
-
-**Search incidents**
-
-Query ServiceNow to retrieve a list of incidents matching specified criteria.
-
-`GET /api/now/v2/table/incident`
-
-**Resolve incident**
-
-Update a ServiceNow incident to mark it as resolved.
-
-`PUT /api/now/v2/table/incident/${sys_id}`
-
-**Create record**
-
-Create a new record in a specified ServiceNow table.
-
-`POST /api/now/v2/table/${tableName}`
-
-**Update record**
-
-Update an existing record in a specified ServiceNow table.
-
-`PUT /api/now/v2/table/${tableName}/${sys_id}`
 
 ## Create a ServiceNow incident
 

@@ -1,7 +1,7 @@
 ---
 title: EdgeConnect release notes
 source: https://www.dynatrace.com/docs/whats-new/edgeconnect
-scraped: 2026-02-24T21:14:35.729920
+scraped: 2026-02-25T21:15:15.413168
 ---
 
 # EdgeConnect release notes

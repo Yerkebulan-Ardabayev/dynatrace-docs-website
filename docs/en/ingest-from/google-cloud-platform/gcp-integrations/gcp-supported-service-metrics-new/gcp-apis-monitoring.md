@@ -1,7 +1,7 @@
 ---
 title: Google Cloud APIs monitoring
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new/gcp-apis-monitoring
-scraped: 2026-02-24T21:26:27.167826
+scraped: 2026-02-25T21:34:44.196243
 ---
 
 # Google Cloud APIs monitoring

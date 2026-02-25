@@ -1,7 +1,7 @@
 ---
 title: Set up Dynatrace on Microsoft Azure
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services
-scraped: 2026-02-24T21:16:44.639152
+scraped: 2026-02-25T21:16:18.899725
 ---
 
 # Set up Dynatrace on Microsoft Azure

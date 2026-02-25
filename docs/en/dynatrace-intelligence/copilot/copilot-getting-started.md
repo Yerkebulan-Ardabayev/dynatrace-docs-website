@@ -1,7 +1,7 @@
 ---
 title: Get started with Dynatrace Intelligence generative AI
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/copilot/copilot-getting-started
-scraped: 2026-02-23T21:32:35.265936
+scraped: 2026-02-25T21:24:43.698888
 ---
 
 # Get started with Dynatrace Intelligence generative AI

@@ -1,7 +1,7 @@
 ---
 title: Log processing with classic pipeline
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-classic-log-processing
-scraped: 2026-02-24T21:26:22.739399
+scraped: 2026-02-25T21:24:37.090318
 ---
 
 # Log processing with classic pipeline

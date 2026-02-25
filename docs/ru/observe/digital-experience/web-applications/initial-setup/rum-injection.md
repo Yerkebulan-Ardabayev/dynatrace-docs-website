@@ -1,7 +1,7 @@
 ---
 title: Configure automatic injection
 source: https://www.dynatrace.com/docs/observe/digital-experience/web-applications/initial-setup/rum-injection
-scraped: 2026-02-23T21:23:02.107722
+scraped: 2026-02-25T21:21:19.488784
 ---
 
 # Configure automatic injection
@@ -32,183 +32,6 @@ OneAgent tries to inject the RUM JavaScript as the first script on the page, whi
 
 ### Automatic injection rules specification
 
-Name
-
-Condition
-
-Action
-
-Overrules
-
-<!DOCTYPE>
-
-The `<!DOCTYPE>` tag is not `<!DOCTYPE html>`.
-
-Abort and do not inject. Note that only a single Doctype declaration is allowed.
-
-initial tag
-
-A tag appears before `<html>` that is not one of the following:
-
-* `<!DOCTYPE ...>`
-* `<html>`
-* `<link>`
-* `<meta>`
-* `<script>`
-* `<style>`
-
-Abort without injecting.
-
-<?xml?>
-
-an `<?xml ...?>` specification is encountered.
-
-Ignore and continue to scan the document.
-
-non-<meta> tag
-
-non-<head> tag
-
-initial tag
-
-<html> tag
-
-The `<html>` tag is encountered.
-
-If a potential injection point is found earlier, inject there, and do not scan further. If there are multiple potential injection points, the earliest one is used.
-
-Otherwise continue to scan the document
-
-<script src> tag
-
-A `<script src="...">` tag is found within `<head>`.
-
-If a potential injection point is found earlier, inject there, and do not scan further. If there are multiple potential injection points, the earliest one is used.
-
-Otherwise, inject before this `<script>` tag and do not scan further.
-
-non-<meta> tag
-
-<base>/<meta> tag
-
-<title>/<noscript> tag
-
-The `<title>` or the `<noscript>` tag is encountered.
-
-Ignore everything until the `</title>` or the `</noscript>` tag, then continue to scan the document.
-
-<body> tag
-
-<base>/<meta> tag
-
-Either the `<base>` or the `<meta>` tag is encountered.
-
-Discard any conditional injection point found earlier. Continue to scan the document.
-
-any conditional injection point found earlier by:
-
-non-<meta> tag
-
-unclosed <meta>
-
-non-<head> tag
-
-non-<meta> tag
-
-A tag is found within `<head>` that is neither `<meta>` nor `<title>`.
-
-Inject before it (conditional injection).
-
-Continue to scan the document, in case this injection choice is overruled.
-
-unclosed <meta>
-
-The `</head>` tag arrives after a `<meta>` tag that isn't closed either by the closing `</meta>` tag or by the XML-style `<meta ... />` tag.
-
-Add `</meta>` followed by the injection, both before the `</head>` (conditional injection).
-
-Continue to scan the document, in case this injection choice is overruled.
-
-comment
-
-The `<!- comment ->` tag is encountered.
-
-Ignore and continue to scan the document.
-
-non-<meta> tag
-
-non-<head> tag
-
-non-<head> tag
-
-A tag is found after `<html>` but before `<head>` that is neither `<head>` nor `<body>`.
-
-Inject before it (conditional injection).
-
-Continue to scan the document, in case this injection choice is overruled.
-
-</head> tag
-
-The `</head>` tag encountered.
-
-If a potential injection point is found earlier, inject there, and do not scan further. If there are multiple potential injection points, the earliest is used
-
-Otherwise, continue to scan the document.
-
-flush
-
-Java only
-
-Flush is called on the injecting stream/writer outside of the `<head></head>` section and a conditional injection awaits confirmation.
-
-Discard the conditional injection point, propagate the flush, and continue to scan the document for a new injection point.
-
-any conditional injection point found before by:
-
-non-<head> tag
-
-flush in <head>
-
-Java only
-
-Flush is called on the injecting stream/writer inside `<head></head>` and conditional injection awaits confirmation.
-
-Keep the injection point and continue to scan the document.
-
-Disregard the flush.
-
-<body> tag
-
-The `<body>` tag is encountered.
-
-Document scan stops. Any potential injection point found earlier is used. If there are multiple potential injection points, the earliest one is used
-
-If no rule matched earlier, inject after the `<body>`.
-
-end of file
-
-End of file is reached and scanning didn't terminate before that.
-
-Don't perform an injection.
-
-any conditional injection point found before by:
-
-non-<meta> tag
-
-unclosed <meta>
-
-non-<head tag
-
-parse error
-
-The document's contents don't appear to exhibit the basic structure expected from HTML tags and attributes
-
-Document scan stops.
-
-If a potential injection point is found earlier, inject there, and do not scan further. If there are multiple potential injection points, the earliest one is used.
-
-If no rule provides an earlier injection point, don't perform an injection
-
 If you're unsure whether the RUM JavaScript was injected successfully or you're experiencing issues with your RUM setup, refer to [Web applications: Issues with RUM JavaScriptï»¿](https://dt-url.net/up03l19).
 
 ## Explicitly specify where the RUM JavaScript should be injected
@@ -227,8 +50,6 @@ To create a custom injection rule that specifies the injection point in the HTML
 8. Select **Save changes** to create the custom injection rule.
 
 ## Disable injection for particular pages
-
-
 
 To disable injection for one or more pages within your application
 
@@ -312,6 +133,8 @@ When the application consists of multiple instrumented tiers, the changes to the
 OneAgent does not alter the `Expires` and `Cache-Control` headers, which explicitly define resource expiration times. To ensure timely updates, we recommend setting shorter expiration durations in these headers.
 
 ### Disabling cache control header optimizations
+
+
 
 In rare cases, cache control header optimizations may interfere with your application's functionality. If this occurs, you can disable the feature.
 When disabled, the rollout of new RUM configurations will depend entirely on your application's existing caching behavior.

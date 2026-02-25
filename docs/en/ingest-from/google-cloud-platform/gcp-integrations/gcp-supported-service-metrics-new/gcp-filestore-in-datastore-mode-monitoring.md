@@ -1,7 +1,7 @@
 ---
 title: Google Cloud Firestore in Datastore mode monitoring
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new/gcp-filestore-in-datastore-mode-monitoring
-scraped: 2026-02-23T21:27:21.889225
+scraped: 2026-02-25T21:27:20.857027
 ---
 
 # Google Cloud Firestore in Datastore mode monitoring

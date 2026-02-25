@@ -1,7 +1,7 @@
 ---
 title: Monitor Google Cloud Run managed
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/cloudrun
-scraped: 2026-02-24T21:16:54.497217
+scraped: 2026-02-25T21:24:56.529318
 ---
 
 # Monitor Google Cloud Run managed

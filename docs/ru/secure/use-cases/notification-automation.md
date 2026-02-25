@@ -1,7 +1,7 @@
 ---
 title: CSPM Notification Automation
 source: https://www.dynatrace.com/docs/secure/use-cases/notification-automation
-scraped: 2026-02-22T21:18:53.828533
+scraped: 2026-02-25T21:18:31.859349
 ---
 
 # CSPM Notification Automation

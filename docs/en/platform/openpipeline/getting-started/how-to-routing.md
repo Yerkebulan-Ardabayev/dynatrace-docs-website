@@ -1,7 +1,7 @@
 ---
 title: Route data
 source: https://www.dynatrace.com/docs/platform/openpipeline/getting-started/how-to-routing
-scraped: 2026-02-22T21:15:20.598001
+scraped: 2026-02-25T21:24:35.728845
 ---
 
 # Route data
@@ -79,36 +79,6 @@ Create a route for each pipeline.
    * The target pipeline
 
    The following table contains example conditions based on the Kubernetes namespace and deployment to route each service's logs to the corresponding pipeline.
-
-   Name
-
-   Matching condition
-
-   Target pipeline
-
-   Checkout service
-
-   `k8s.deployment.name == "checkoutservice-*"`
-
-   Checkout service pipeline
-
-   Currency service
-
-   `k8s.deployment.name == "currencyservice-*"`
-
-   Currency service pipeline
-
-   Email service
-
-   `k8s.deployment.name == "emailservice-*"`
-
-   Email service pipeline
-
-   Payment service
-
-   `k8s.deployment.name == "paymentservice-*"`
-
-   Payment service pipeline
 
 Logs that match the routing condition are routed to the target pipeline. The routing table now includes the new routes.
 

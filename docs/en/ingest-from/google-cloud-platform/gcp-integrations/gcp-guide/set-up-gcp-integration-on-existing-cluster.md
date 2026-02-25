@@ -1,7 +1,7 @@
 ---
 title: Set up the Dynatrace Google Cloud log and metric integration on an existing GKE cluster
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/set-up-gcp-integration-on-existing-cluster
-scraped: 2026-02-24T21:23:49.868654
+scraped: 2026-02-25T21:26:49.256817
 ---
 
 # Set up the Dynatrace Google Cloud log and metric integration on an existing GKE cluster

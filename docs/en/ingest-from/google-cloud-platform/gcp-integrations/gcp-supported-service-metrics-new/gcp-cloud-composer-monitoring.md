@@ -1,7 +1,7 @@
 ---
 title: Google Cloud Composer monitoring
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new/gcp-cloud-composer-monitoring
-scraped: 2026-02-23T21:32:13.729472
+scraped: 2026-02-25T21:26:46.143143
 ---
 
 # Google Cloud Composer monitoring

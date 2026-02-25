@@ -1,7 +1,7 @@
 ---
 title: Databases app
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/databases/database-app
-scraped: 2026-02-24T21:15:18.487727
+scraped: 2026-02-25T21:13:49.544672
 ---
 
 # Databases app
@@ -11,7 +11,7 @@ scraped: 2026-02-24T21:15:18.487727
 * Latest Dynatrace
 * App
 * 4-min read
-* Updated on Jan 28, 2026
+* Updated on Feb 26, 2026
 
 The Dynatrace ![Databases](https://dt-cdn.net/images/dynatrace-database-256-1afe08286e.webp "Databases") **Databases** enables you to monitor, analyze, and optimize database environments with clarity and control. It offers detailed insights into performance, health, and configuration, helping you identify issues early and maintain reliable operations.
 
@@ -75,6 +75,20 @@ Read logs from Grail
 storage:metrics:read
 
 Read metrics from Grail
+
+#### Limit data access
+
+In general, the Database app users need a basic `storage:**` permissions to access data from the Grail.
+
+However, for the strict access, you can create a custom policy limiting the access to the `default_database_monitoring` Grail bucket.
+
+The `default_database_monitoring` bucket is where all the database extension-retrived data is stored, including logs. You can use the following statement to create a policy:
+
+```
+ALLOW storage:buckets:read WHERE storage:bucket-name = 'default_database_monitoring'
+```
+
+For more information see, [Working with policies](/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies "Working with policies") and [Grant access to Grail](/docs/manage/identity-access-management/use-cases/access-grail "Grant access to Grail").
 
 ### Installation steps
 

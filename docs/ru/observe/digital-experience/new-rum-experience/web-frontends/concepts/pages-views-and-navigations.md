@@ -1,7 +1,7 @@
 ---
 title: Pages, views, and navigations in the New RUM Experience
 source: https://www.dynatrace.com/docs/observe/digital-experience/new-rum-experience/web-frontends/concepts/pages-views-and-navigations
-scraped: 2026-02-23T21:39:48.358070
+scraped: 2026-02-25T21:32:36.088644
 ---
 
 # Pages, views, and navigations in the New RUM Experience
@@ -37,30 +37,6 @@ The **page load** of each new page instance is captured as an event with the fol
 [Google Web Vitalsï»¿](https://web.dev/articles/vitals) are critical for understanding the user experience on a page. These metrics are captured with every page summary event. For details, see [Web vitals attributes](/docs/semantic-dictionary/model/rum/user-events/navigation-related#page-summary-web-vitals-attributes) in the Semantic Dictionary. As Google's official Web Vitals specification is page-based, the built-in Web Vitals metrics in the New RUM Experience are based on the values in page summaries, even though Web Vitals are also captured in [view summary events](#views).
 
 Built-in metrics for Web Vitals
-
-Web vital
-
-Built-in metric
-
-Largest Contentful Paint (LCP)
-
-dt.frontend.web.page.largest\_contentful\_paint
-
-Interaction to Next Paint (INP)
-
-dt.frontend.web.page.interaction\_to\_next\_paint
-
-Cumulative Layout Shift (CLS)
-
-dt.frontend.web.page.cumulative\_layout\_shift
-
-First Input Delay (FID)
-
-dt.frontend.web.page.first\_input\_delay
-
-Time to First Byte (TTFB)
-
-dt.frontend.web.navigation.time\_to\_first\_byte
 
 ### Example DQL query
 
@@ -204,8 +180,6 @@ For a soft navigation, a standalone navigation event is reported with the charac
 
 ### Example of hard and soft navigations
 
-
-
 The diagram below illustrates how view and page summaries are reported during hard and soft navigations, along with the corresponding navigation events.
 
 ![Pages, views and navigations](https://dt-cdn.net/images/pages-views-navigations-3296-b049928613.png)
@@ -215,6 +189,8 @@ The diagram below illustrates how view and page summaries are reported during ha
 * When the page is left, both the view summary and the page summary are sent together.
 
 ### Example DQL query
+
+
 
 The following DQL query retrieves the amount of hard and soft navigations.
 

@@ -1,6 +1,6 @@
 # Документация Dynatrace: analyze-explore-automate/workflows
 Язык: Русский (RU)
-Сгенерировано: 2026-02-24
+Сгенерировано: 2026-02-25
 Файлов в разделе: 31
 ---
 
@@ -9,7 +9,7 @@
 ---
 title: Email
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/email
-scraped: 2026-02-24T21:20:29.501622
+scraped: 2026-02-25T21:27:46.236898
 ---
 
 # Email
@@ -233,7 +233,7 @@ The message size is limited to 256 KiB. Larger payloads will result in an action
 ---
 title: Actions for GitHub Connector
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/github/github-workflows-actions
-scraped: 2026-02-23T21:34:36.729890
+scraped: 2026-02-25T21:33:42.069840
 ---
 
 # Actions for GitHub Connector
@@ -248,52 +248,6 @@ scraped: 2026-02-23T21:34:36.729890
 This page contains Github workflow actions that are available for the GitHub Connector ![GitHub](https://dt-cdn.net/images/github-for-workflows-new-lxjn9po-256-94579b3812.png "GitHub") integration.
 
 ### Required token permissions to run all GitHub actions
-
-Token type
-
-Repository type
-
-Permissions
-
-**Fine-grained personal access token**
-
-public
-
-Select Repository permissions > Contents > Read and write.
-
-Select Repository permissions > Pull requests > Read and write.
-
-Select Repository permissions > Workflows > Read and write.
-
-Select Repository permissions > Issues > Read and write.
-
-Select Repository permissions > Actions > Read and write.
-
-**Fine-grained personal access token**
-
-private
-
-Select Repository permissions > Contents > Read and write.
-
-Select Repository permissions > Pull requests > Read and write.
-
-Select Repository permissions > Workflows > Read and write.
-
-Select Repository permissions > Issues > Read and write.
-
-Select Repository permissions > Actions > Read and write.
-
-**Token (classic)**
-
-public
-
-Select scopes > repo > public\_repo.
-
-**Token (classic)**
-
-private
-
-Select scopes > repo (Full control of private repositories).
 
 ## Get content
 
@@ -314,36 +268,6 @@ The **Get content** action returns the content of an existing file in the reposi
 The action returns the `content` property that contains the plain text content of an existing file in the repository.
 
 ### Required token permissions
-
-Token type
-
-Repository type
-
-Permissions
-
-**Fine-grained personal access token**
-
-public
-
-No additional permissions are required.
-
-**Fine-grained personal access token**
-
-private
-
-Select Repository permissions > Contents > Read only.
-
-**Token (classic)**
-
-public
-
-No additional permissions are required.
-
-**Token (classic)**
-
-private
-
-Select scopes > repo (Full control of private repositories).
 
 ## Create or replace file
 
@@ -370,38 +294,6 @@ The action returns the `fileMetadata` property that contains the full response o
 
 ### Required token permissions
 
-Token type
-
-Repository type
-
-Permissions
-
-**Fine-grained personal access token**
-
-public
-
-Select Repository permissions > Contents > Read and write.
-
-**Fine-grained personal access token**
-
-private
-
-Select Repository permissions > Contents > Read and write.
-
-Select Repository permissions > Workflows > Read and write. (required to modify GitHub workflow files)
-
-**Token (classic)**
-
-public
-
-Select scopes > repo > public\_repo.
-
-**Token (classic)**
-
-private
-
-Select scopes > repo (Full control of private repositories).
-
 ## Delete file
 
 The **Delete file** action deletes an existing file in the repository and commits the change to either a newly created branch using the specified source branch as a basis or uses the specified existing branch.
@@ -426,36 +318,6 @@ The action returns the `fileMetadata` property that contains the full response o
 
 ### Required token permissions
 
-Token type
-
-Repository type
-
-Permissions
-
-**Fine-grained personal access token**
-
-public
-
-Select Repository permissions > Contents > Read and write.
-
-**Fine-grained personal access token**
-
-private
-
-Select Repository permissions > Contents > Read and write.
-
-**Token (classic)**
-
-public
-
-Select scopes > repo > public\_repo.
-
-**Token (classic)**
-
-private
-
-Select scopes > repo (Full control of private repositories).
-
 ## Create pull request
 
 The **Create pull request** action creates a pull request for an existing branch and the specified target branch. For example: `main`.
@@ -478,36 +340,6 @@ The action returns the `pullRequest` property that contains the full response of
 
 ### Required permissions
 
-Token type
-
-Repository type
-
-Permissions
-
-**Fine-grained personal access token**
-
-public
-
-Select Repository permissions > Pull requests > Read and write.
-
-**Fine-grained personal access token**
-
-private
-
-Select Repository permissions > Pull requests > Read and write.
-
-**Token (classic)**
-
-public
-
-Select scopes > repo > public\_repo.
-
-**Token (classic)**
-
-private
-
-Select scopes > repo (Full control of private repositories).
-
 ## Get pull request
 
 The **Get pull request** action returns details about the specified pull request.
@@ -527,43 +359,11 @@ The action returns the `pullRequest` property that contains the full response of
 
 ### Required permissions
 
-Token type
-
-Repository type
-
-Permissions
-
-**Fine-grained personal access token**
-
-public
-
-No additional permissions are required.
-
-**Fine-grained personal access token**
-
-private
-
-Select Repository permissions > Pull requests > Read-only.
-
-**Token (classic)**
-
-public
-
-No additional permissions are required.
-
-**Token (classic)**
-
-private
-
-Select scopes > repo (Full control) of private repositories.
-
 ## List pull requests
 
 The **List pull requests** action returns a list of pull requests that match the specified criteria. The limit of 30 pull requests applies.
 
 ### Input
-
-
 
 | Field | Description | Required |
 | --- | --- | --- |
@@ -577,36 +377,6 @@ The **List pull requests** action returns a list of pull requests that match the
 The action returns the `pullRequest` property that contains the full response of the corresponding GitHub API endpoint.
 
 ### Required permissions
-
-Token type
-
-Repository type
-
-Permissions
-
-**Fine-grained personal access token**
-
-public
-
-No additional permissions are required.
-
-**Fine-grained personal access token**
-
-private
-
-Select Repository permissions > Pull requests > Read-only.
-
-**Token (classic)**
-
-public
-
-No additional permissions are required.
-
-**Token (classic)**
-
-private
-
-Select scopes > repo (Full control of private repositories).
 
 ## Merge pull request
 
@@ -627,36 +397,6 @@ The **Merge pull request** action merges the specified pull request.
 The action returns the `mergeStatus` property that contains the full response of the corresponding GitHub API endpoint.
 
 ### Required permissions
-
-Token type
-
-Repository type
-
-Permissions
-
-**Fine-grained personal access token**
-
-public
-
-Select Repository permissions > Contents > Read and write.
-
-**Fine-grained personal access token**
-
-private
-
-Select Repository permissions > Contents > Read and write.
-
-**Token (classic)**
-
-public
-
-Select scopes > repo > public\_repo.
-
-**Token (classic)**
-
-private
-
-Select scopes > repo (Full control of private repositories).
 
 ## Create issue
 
@@ -680,41 +420,13 @@ The action returns the `issue` property that contains the full response of the c
 
 ### Required token permissions
 
-Token type
-
-Repository type
-
-Permissions
-
-**Fine-grained personal access token**
-
-public
-
-Select Repository permissions > Issues > Read and write.
-
-**Fine-grained personal access token**
-
-private
-
-Select Repository permissions > Issues > Read and write.
-
-**Token (classic)**
-
-public
-
-No additional permissions are required.
-
-**Token (classic)**
-
-private
-
-Select scopes > repo (Full control of private repositories).
-
 ## Update issue
 
 The **Update issue** action updates an existing issue in a specified repository. Use the **Add Field** option to specify fields for updates.
 
 ### Input
+
+
 
 | Field | Description | Required |
 | --- | --- | --- |
@@ -733,40 +445,6 @@ The **Update issue** action updates an existing issue in a specified repository.
 The action returns the `issue` property that contains the full response of the corresponding GitHub API endpoint.
 
 ### Required token permissions
-
-Token type
-
-Repository type
-
-Permissions
-
-**Fine-grained personal access token**
-
-public
-
-Select Repository permissions > Issues > Read and write.
-
-Select Repository permissions > Pull requests > Read and write.
-
-**Fine-grained personal access token**
-
-private
-
-Select Repository permissions > Issues > Read and write.
-
-Select Repository permissions > Pull requests > Read and write.
-
-**Token (classic)**
-
-public
-
-No additional permissions are required.
-
-**Token (classic)**
-
-private
-
-Select scopes > repo (Full control of private repositories).
 
 ## Create comment
 
@@ -787,40 +465,6 @@ The **Create comment** action creates a new comment on an issue or pull request 
 The action returns the `comment` property that contains the full response of the corresponding GitHub API endpoint.
 
 ### Required token permissions
-
-Token type
-
-Repository type
-
-Permissions
-
-**Fine-grained personal access token**
-
-public
-
-Select Repository permissions > Issues > Read and write.
-
-Select Repository permissions > Pull requests > Read and write.
-
-**Fine-grained personal access token**
-
-private
-
-Select Repository permissions > Issues > Read and write.
-
-Select Repository permissions > Pull requests > Read and write.
-
-**Token (classic)**
-
-public
-
-No additional permissions are required.
-
-**Token (classic)**
-
-private
-
-Select scopes > repo (Full control of private repositories).
 
 ## Trigger workflow run
 
@@ -843,43 +487,11 @@ The action returns no result.
 
 ### Required token permissions
 
-Token type
-
-Repository type
-
-Permissions
-
-**Fine-grained personal access token**
-
-public
-
-Select Repository permissions > Actions > Read and write.
-
-**Fine-grained personal access token**
-
-private
-
-Select Repository permissions > Actions > Read and write.
-
-**Token (classic)**
-
-public
-
-No additional permissions are required.
-
-**Token (classic)**
-
-private
-
-Select scopes > repo (Full control of private repositories).
-
 ## Get latest workflow run
 
 The **Get latest workflow run** action retrieves data from the latest run workflow in a specified repository.
 
 ### Input
-
-
 
 | Field | Description | Required |
 | --- | --- | --- |
@@ -895,36 +507,6 @@ The action returns the `workflowRun` property that contains the full response of
 
 ### Required token permissions
 
-Token type
-
-Repository type
-
-Permissions
-
-**Fine-grained personal access token**
-
-public
-
-Select Repository permissions > Actions > Read.
-
-**Fine-grained personal access token**
-
-private
-
-Select Repository permissions > Actions > Read.
-
-**Token (classic)**
-
-public
-
-No additional permissions are required.
-
-**Token (classic)**
-
-private
-
-Select scopes > repo (Full control of private repositories).
-
 ## Related topics
 
 * [Set up GitHub Connector](/docs/analyze-explore-automate/workflows/actions/github/github-workflows-setup "Learn how to set up GitHub Connector.")
@@ -936,7 +518,7 @@ Select scopes > repo (Full control of private repositories).
 ---
 title: Set up GitHub Connector
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/github/github-workflows-setup
-scraped: 2026-02-24T21:31:04.287873
+scraped: 2026-02-25T21:28:22.054947
 ---
 
 # Set up GitHub Connector
@@ -1049,7 +631,7 @@ Learn about available actions used by GitHub Connector integration for automatin
 ---
 title: Actions for GitLab Connector
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/gitlab/gitlab-workflows-actions
-scraped: 2026-02-24T21:19:33.154930
+scraped: 2026-02-25T21:27:10.016810
 ---
 
 # Actions for GitLab Connector
@@ -1347,7 +929,7 @@ Returns fields as described in the [Jobs API - Run a jobï»¿](https://dt-url.n
 ---
 title: Set up GitLab Connector
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/gitlab/gitlab-workflows-setup
-scraped: 2026-02-23T21:32:54.637076
+scraped: 2026-02-25T21:26:30.133443
 ---
 
 # Set up GitLab Connector
@@ -2228,7 +1810,7 @@ To create a workflow that sends an event to Event-Driven Ansible
 ---
 title: ServiceNow
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/service-now
-scraped: 2026-02-22T21:10:43.228740
+scraped: 2026-02-25T21:23:55.107519
 ---
 
 # ServiceNow
@@ -2300,72 +1882,6 @@ To configure a connection
 ## Available actions
 
 The following workflow actions are available for the ServiceNow integration. Each action corresponds to an endpoint of the ServiceNow API.
-
-Action
-
-Description
-
-ServiceNow API endpoint
-
-**Create Incident**
-
-Creates an incident in your ServiceNow environment. An incident represents a problem or an issue that needs to be addressed and resolved.
-
-`POST /api/now/v2/table/incident`
-
-**Create a vulnerability item**
-
-Creates a vulnerability item in your ServiceNow environment.
-
-`POST /api/now/v2/table/sn_vul_vulnerable_item`
-
-**Get Groups**
-
-Get groups from your ServiceNow environment.
-
-`GET /api/now/v2/table/sys_user_group`
-
-**Comment**
-
-Create a comment on an entry in your ServiceNow environment.
-
-`PUT /api/now/v2/table/${tableName}/${sysId}`
-
-**Comment on an incident**
-
-Add a new comment to a ServiceNow incident record.
-
-`PUT /api/now/v2/table/incident/${sys_id}`
-
-**Search**
-
-Generic search action that allows searching your ServiceNow environment.
-
-`GET /api/now/v2/table/${tableName}`
-
-**Search incidents**
-
-Query ServiceNow to retrieve a list of incidents matching specified criteria.
-
-`GET /api/now/v2/table/incident`
-
-**Resolve incident**
-
-Update a ServiceNow incident to mark it as resolved.
-
-`PUT /api/now/v2/table/incident/${sys_id}`
-
-**Create record**
-
-Create a new record in a specified ServiceNow table.
-
-`POST /api/now/v2/table/${tableName}`
-
-**Update record**
-
-Update an existing record in a specified ServiceNow table.
-
-`PUT /api/now/v2/table/${tableName}/${sys_id}`
 
 ## Create a ServiceNow incident
 
@@ -2446,8 +1962,6 @@ To create a comment on an entry in a ServiceNow table in your workflow ![Workflo
 
 ## Comment on an incident in ServiceNow
 
-
-
 To comment on an incident in your workflow ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows")
 
 1. In the **Choose action** pane, search for ServiceNow and select **Comment on an incident**.
@@ -2462,6 +1976,8 @@ To comment on an incident in your workflow ![Workflows](https://dt-cdn.net/image
    For more details, see the [official ServiceNow documentationï»¿](https://dt-url.net/vc039n0).
 
 ## Search in ServiceNow
+
+
 
 To search ServiceNow in your workflow ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows")
 
@@ -2558,7 +2074,7 @@ The following is a solution to a problem some people have.
 ---
 title: Slack Connector
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/slack
-scraped: 2026-02-24T21:27:51.206272
+scraped: 2026-02-25T21:30:40.940055
 ---
 
 # Slack Connector
@@ -3450,7 +2966,7 @@ The following are solutions to problems some people had with Slack integration.
 ---
 title: Actions for Text Processing Connector
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/text-processing/automation-workflows-text-processing-actions
-scraped: 2026-02-24T21:35:57.178592
+scraped: 2026-02-25T21:26:16.794176
 ---
 
 # Actions for Text Processing Connector
@@ -3801,7 +3317,7 @@ Supports multi-document YAML files.
 ---
 title: Text Processing
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/text-processing
-scraped: 2026-02-24T21:24:12.777186
+scraped: 2026-02-25T21:35:14.788316
 ---
 
 # Text Processing
@@ -3832,7 +3348,7 @@ For more information on how to start a workflow to use Text Processing, see [Wor
 ---
 title: Workflows Connectors
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions
-scraped: 2026-02-22T21:10:41.919763
+scraped: 2026-02-25T21:23:53.955683
 ---
 
 # Workflows Connectors
@@ -3945,7 +3461,7 @@ Text Processing provides a set of `set` and `get` actions for manipulating conte
 ---
 title: DQL query action for Workflows
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/default-workflow-actions/dql-query-workflow-action
-scraped: 2026-02-24T21:35:11.029897
+scraped: 2026-02-25T21:31:25.309739
 ---
 
 # DQL query action for Workflows
@@ -3972,7 +3488,7 @@ You can find the results in the **Result** tab of the **Execution** that you cou
 ---
 title: HTTP request action for Workflows
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/default-workflow-actions/http-request-workflow-action
-scraped: 2026-02-24T21:20:26.837337
+scraped: 2026-02-25T21:35:28.765632
 ---
 
 # HTTP request action for Workflows
@@ -4022,7 +3538,7 @@ The result of the HTTP request action is a JSON structure that includes
 ---
 title: Run JavaScript action for Workflows
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/default-workflow-actions/run-javascript-workflow-action
-scraped: 2026-02-23T21:28:12.481135
+scraped: 2026-02-25T21:25:17.358258
 ---
 
 # Run JavaScript action for Workflows
@@ -4361,7 +3877,7 @@ console.log( ex.params.event);
 ---
 title: Workflows actions
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/default-workflow-actions
-scraped: 2026-02-23T21:35:30.965828
+scraped: 2026-02-25T21:32:11.116080
 ---
 
 # Workflows actions
@@ -4410,7 +3926,7 @@ Use the **Run Workflow** action to modularize workflow usage.](/docs/analyze-exp
 ---
 title: Access workflow management functionality
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/manage-workflows/workflows-access-management
-scraped: 2026-02-24T21:21:49.380863
+scraped: 2026-02-25T21:26:18.110552
 ---
 
 # Access workflow management functionality
@@ -4455,7 +3971,7 @@ To access various workflow management commands:
 ---
 title: Manage live or draft workflows
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/manage-workflows/workflows-manage-live-mode
-scraped: 2026-02-24T21:25:21.764532
+scraped: 2026-02-25T21:35:08.211650
 ---
 
 # Manage live or draft workflows
@@ -5323,7 +4839,7 @@ Design a workflow to manage high-volume AWS alerts by filtering out noise and su
 ---
 title: Workflows
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows
-scraped: 2026-02-24T21:17:58.769579
+scraped: 2026-02-25T21:17:00.602095
 ---
 
 # Workflows

@@ -1,7 +1,7 @@
 ---
 title: Info.plist file
 source: https://www.dynatrace.com/docs/observe/digital-experience/mobile-applications/instrument-ios-app/instrumentation/info-plist-file
-scraped: 2026-02-23T21:35:02.668149
+scraped: 2026-02-25T21:29:03.616723
 ---
 
 # Info.plist file

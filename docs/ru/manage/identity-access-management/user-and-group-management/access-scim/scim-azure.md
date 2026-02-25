@@ -1,7 +1,7 @@
 ---
 title: Azure SCIM configuration for Dynatrace
 source: https://www.dynatrace.com/docs/manage/identity-access-management/user-and-group-management/access-scim/scim-azure
-scraped: 2026-02-20T21:26:53.974925
+scraped: 2026-02-25T21:26:00.585952
 ---
 
 # Azure SCIM configuration for Dynatrace
@@ -89,22 +89,6 @@ In **Microsoft Entra ID** with your application selected
 7. You can leave all **Target Object Actions** selected.  
    Dynatrace SCIM supports all of these actions.
 8. Set **Attribute Mappings** as follows:
-
-   Microsoft Entra ID Attribute
-
-   customappsso Attribute
-
-   `displayName`
-
-   `displayName`
-
-   `objectId`
-
-   `externalId`
-
-   `members`
-
-   `members`
 9. Select **Save** on the **Attribute Mapping** page.
 
 ## Step 4 Configure user mappings
@@ -128,30 +112,6 @@ To create a filtering rule for users
 7. You can leave all **Target Object Actions** selected.  
    Dynatrace SCIM supports all of these actions.
 8. Limit **Attribute Mappings** to the following:
-
-   Microsoft Entra ID Attribute
-
-   customappsso Attribute
-
-   `userPrincipalName`
-
-   `userName`
-
-   `Switch([IsSoftDeleted],,"False","True","True","False")`
-
-   `active`
-
-   `displayName`
-
-   `displayName`
-
-   `givenName`
-
-   `name.givenName`
-
-   `surname`
-
-   `name.familyName`
 9. Select **Show advanced options** in **Attribute Mappings**, and select **Edit attribute list for customappsso**.
 10. Make sure the following checkboxes are selected.
 

@@ -1,7 +1,7 @@
 ---
 title: User actions
 source: https://www.dynatrace.com/docs/observe/digital-experience/rum-concepts/user-actions
-scraped: 2026-02-23T21:22:11.578745
+scraped: 2026-02-25T21:22:36.796926
 ---
 
 # User actions
@@ -40,159 +40,6 @@ The action duration is the time required for the complete load action. More spec
 
 The following measures are used to chart the duration of specific steps in the load action process.
 
-Measure
-
-Description
-
-Definition in terms of W3C specification
-
-**DNS lookup**
-
-The time taken to resolve the hostname for a target URL
-
-`window.performance.timing.domainLookupEnd` â `window.performance.timing.domainLookupStart`
-
-**TCP connect**
-
-The time taken to establish a TCP connection to the server (including SSL)
-
-`window.performance.timing.connectEnd` â `window.performance.timing.connectStart`
-
-**Secure connect**
-
-The time taken to secure the connection established to the server  
-This includes the SSL handshake and SOCKS.
-
-`window.performance.timing.connectEnd` â `window.performance.timing.secureConnectionStart`
-
-**Redirect time**
-
-The time taken to follow any HTTP redirects
-
-`window.performance.timing.redirectEnd` â `window.performance.timing.redirectStart`
-
-**Request**
-
-The time taken to request the page from the server until the first byte is received
-
-`window.performance.timing.responseStart` â `window.performance.timing.requestStart`
-
-**Response**
-
-The time taken to receive the response
-
-`window.performance.timing.responseEnd` â `window.performance.timing.responseStart`
-
-**Time to first byte (TTFB)**
-
-The time taken until the first byte of the response is received from the server, relevant application caches, or a local resource
-
-`window.performance.timing.responseStart`
-
-**Server time**
-
-The time spent on server-side processing for a page
-
-`window.performance.timing.responseStart` â `window.performance.timing.requestStart`
-
-**Network time**
-
-The time taken to request and receive resources (including DNS lookup, redirect, and TCP connect time)
-
-`window.performance.timing.responseEnd` â `window.performance.timing.fetchStart` â (`window.performance.timing.responseStart` â `window.performance.timing.requestStart`)
-
-**Frontend time**
-
-The time taken by the browser to render a page
-
-`User action duration` â `Server time` â `Network time`
-
-**Processing**
-
-The time between DOM loading and Load event start
-
-`window.performance.timing.loadEventStart` â `window.performance.timing.domLoading`
-
-**Application cache**
-
-The time spent checking any relevant application caches  
-This includes the time before the connection to the server is established.
-
-`window.performance.timing.domainLookupStart` â `window.performance.timing.fetchStart`
-
-**OnDomContentLoaded**
-
-The time taken to execute `OnDomContentLoaded` handlers
-
-`window.performance.timing.domContentLoaded` â `window.performance.timing.domLoading`
-
-**OnLoad**
-
-The time taken to process the load event
-
-`window.performance.timing.loadEventEnd` â `window.performance.timing.loadEventStart`
-
-**Callback**
-
-The time taken to execute XHR callbacks
-
-N/A
-
-**First paint**
-
-The time taken to render the first non-default background element
-
-N/A
-
-**First input start**
-
-The moment when the user first interacts with a page, for example, clicks a UI control
-
-N/A
-
-**First input delay**
-
-The time from the first interaction with the page to when the user agent can respond to that interaction
-
-N/A
-
-**First contentful paint**
-
-The time taken to render the first bit of content, such as text or images
-
-N/A
-
-**Largest contentful paint**
-
-The time taken to render the largest element in the viewport
-
-N/A
-
-**Cumulative layout shift**
-
-The score measuring the unexpected shifting of visible webpage elements for a load action
-
-N/A
-
-**Visually complete**
-
-The time taken to fully render content in the viewport
-
-N/A
-
-**Speed index**
-
-The score measuring how quickly the visible parts of the page are rendered
-
-N/A
-
-**User action duration**
-
-The time taken to complete the page load  
-This includes load time of XHR requests initiated before `loadEventEnd` and load time of dynamic resources and script executions triggered by DOM modifications.
-
-N/A
-
 ### XHR actions
 
 Dynatrace continuously tracks user interactions with each page. If user interaction leads to `XmlHttpRequests` or `fetch()` calls, an XHR action is created. Dynatrace also detects if there are additional XHRs triggered in the callback of the initial XHR and so on. In this case, Dynatrace waits until all requests are finished. By monitoring the DOM, Dynatrace can also identify resources that have been added in the callbacks. Dynatrace then waits until those resources have finished downloading before ending the action.
@@ -218,8 +65,6 @@ User actions based on the Fetch API appear in Dynatrace as XHR actions. You can 
 Rather than relying on default user action generation, you may want to fine-tune your Real User Monitoring by adding additional user actions directly into your application's HTML. This can be useful if our automated user-action generation doesn't catch specific actions or you want to introduce specific fine-grained timings into your application monitoring. For example, you can measure how long it takes to open a JavaScript-only dropdown menu, or you can measure the duration time of some JavaScript code. To define custom actions, use the [RUM JavaScript API](/docs/observe/digital-experience/web-applications/additional-configuration/customize-rum "Find out how to customize Real User Monitoring using the JavaScript API.").
 
 ## User action duration
-
-
 
 Below, you can find information on the maximum user action duration in Dynatrace and the user action contributors for web applications.
 
@@ -296,6 +141,8 @@ User action contributors aggregated for the entire application
 
 ## User action naming rules
 
+
+
 Many applications allow users to accomplish the same goal using different UI controls and following different paths. When monitoring such applications, it can be difficult to differentiate between actions that have the same result and goal but are executed using different parts of the application UI. Likewise, if the application is translated into multiple languages, the same application function or UI element can appear under varying names. With user action naming rules, Dynatrace can detect such subtle variations and intelligently group user actions that achieve the same goal into logical groups for monitoring.
 
 Dynatrace automatically removes certain common `sessionid` tokens from user action names, for example, `jsessionid` for Java containers, default `sessionid` for PHP, and `CFID` and `CFTOKEN` for ColdFusion. Nonetheless, there are numerous session ID variations that may be present in your environment. If Dynatrace doesn't automatically recognize and remove session IDs from certain user action names you encounter, you'll need to configure custom naming rules for your [web](/docs/observe/digital-experience/web-applications/initial-setup/create-custom-names-for-user-actions "Customize automatically generated user action names for your web applications."), [mobile](/docs/observe/digital-experience/mobile-applications/additional-configuration/naming-rules-mobile "Customize automatically generated user action names for your mobile applications."), and [custom applications](/docs/observe/digital-experience/custom-applications/additional-configuration/naming-rules-custom "Customize automatically generated user action names for your custom applications.").
@@ -303,8 +150,6 @@ Dynatrace automatically removes certain common `sessionid` tokens from user acti
 When you configure custom naming rules for your web, mobile, and custom applications, remember that your input in the **Add placeholder** and **Add naming rule** sections is case-sensitive. Only the already configured user action name can be set to case-insensitive.
 
 ## Child actions
-
-
 
 Child actions are actions attached to the main, or parent, user action. You can create child actions for web, mobile, and custom applications.
 

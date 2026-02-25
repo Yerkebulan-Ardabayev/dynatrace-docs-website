@@ -1,7 +1,7 @@
 ---
 title: Ingest SonarQube security and quality events, metrics, and audit logs
 source: https://www.dynatrace.com/docs/secure/threat-observability/security-events-ingest/ingest-sonarqube-data
-scraped: 2026-02-24T21:33:49.275620
+scraped: 2026-02-25T21:19:59.483797
 ---
 
 # Ingest SonarQube security and quality events, metrics, and audit logs
@@ -10,7 +10,7 @@ scraped: 2026-02-24T21:33:49.275620
 
 * Latest Dynatrace
 * Extension
-* Updated on Oct 07, 2025
+* Updated on Feb 23, 2026
 
 This page has been updated to align with the new Grail security events table. For the complete list of updates and actions needed to accomplish the migration, follow the steps in the [Grail security table migration guide](/docs/secure/threat-observability/migration "Understand the changes in the new Grail security table and learn how to migrate to it.").
 
@@ -218,16 +218,18 @@ Example fields:
 Dynatrace normalizes severity and risk scores for all findings ingested through the current integration. This helps you to prioritize findings consistently, regardless of their source.  
 For details on how normalization works, see [Severity and score normalization](/docs/secure/threat-observability/concepts#normalization "Basic concepts related to Threat Observability").
 
-The Dynatrace risk levels and scores are mapped from the original [SonarQube severitiesï»¿](https://docs.sonarsource.com/sonarqube-server/10.4/user-guide/issues/#issue-severity).
+The Dynatrace risk levels and scores are mapped from the original [SonarQube severitiesï»¿](https://docs.sonarsource.com/sonarqube-server/instance-administration/analysis-functions/instance-mode/standard-experience#se-severity).
 
 * `dt.security.risk.level` is taken from the SonarQube severity level and mapped from the original values in `finding.severity`.
 * `dt.security.risk.score` is mapped from the SonarQube provided severity level to static scores.
 
 | `dt.security.risk.level` (mapped from `finding.severity`) | `dt.security.risk.score` (mapped from `dt.security.risk.level`) |
 | --- | --- |
-| BLOCKER/CRITICAL/HIGH  HIGH | 8.9 |
+| BLOCKER  CRITICAL | 10.0 |
+| CRITICAL/HIGH  HIGH | 8.9 |
 | MEDIUM/MAJOR  MEDIUM | 6.9 |
 | MINOR/INFO/LOW  LOW | 3.9 |
+| INFO  NONE | 0.0 |
 
 [![Hub](https://dt-cdn.net/images/hub-512-82db3c583e.png "Hub")
 

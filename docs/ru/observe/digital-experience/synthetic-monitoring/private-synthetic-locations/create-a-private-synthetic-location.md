@@ -1,7 +1,7 @@
 ---
 title: Create a private Synthetic location
 source: https://www.dynatrace.com/docs/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/create-a-private-synthetic-location
-scraped: 2026-02-22T21:20:16.417614
+scraped: 2026-02-25T21:19:09.221694
 ---
 
 # Create a private Synthetic location
@@ -10,7 +10,7 @@ scraped: 2026-02-22T21:20:16.417614
 
 * How-to guide
 * 24-min read
-* Updated on Jan 12, 2026
+* Updated on Feb 11, 2026
 
 You can run your Dynatrace synthetic monitors from a private Synthetic location, which is a location in your private network infrastructure where you install one or more Synthetic-enabled ActiveGate instances.
 
@@ -26,8 +26,6 @@ Private Synthetic locations support all [types of Dynatrace synthetic monitors](
 ## System and hardware requirements for private locations
 
 Make sure the target host you plan to use for running synthetic monitors complies with [system and hardware requirements for private Synthetic locations](/docs/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/system-and-hardware-requirements-for-private-synthetic "Supported operating systems, Chromium versions, and hardware requirements for running synthetic monitors from private locations"). Note that Synthetic-enabled ActiveGates have more demanding hardware and system requirements than a regular Environment or Cluster ActiveGate.
-
-Synthetic-enabled ActiveGate installed on Ubuntu 20.04 LTS and 22.04 LTS only You can use [`TEMP`](/docs/ingest-from/dynatrace-activegate/installation/linux/linux-customize-installation-for-activegate#temporary "Learn about the command-line parameters that you can use with ActiveGate on Linux.") to customize the [default temporary directory for private Synthetic files](/docs/ingest-from/dynatrace-activegate/configuration/where-can-i-find-activegate-files#default-activegate-directories--linux "Find out where ActiveGate files are stored on Windows and Linux systems.")â`/var/tmp/dynatrace/synthetic`. However, the path must begin with `/var/tmp`, for example, `TEMP=/var/tmp/syn`. Dynatrace requires write access to `/var/tmp` for the installation of Chromium snap packages.
 
 End-of-support information
 
@@ -45,6 +43,8 @@ End-of-support information
   Additionally, with Dynatrace version 1.306, we have introduced mechanisms preventing Synthetic-enabled ActiveGates on Red Hat/CentOS 7 from being updated beyond version 1.305.
 
   + Since Red Hat Enterprise Linux 7 reached [End of Maintenanceï»¿](https://dt-url.net/af03uea) support on June 30, 2024, all of its packages have been archived. This means that it may not be possible to find the required dependencies for update. For more details, see the [Red Hat Enterprise Linux 7 statusï»¿](https://dt-url.net/e623zr1)
+* Until version 1.329 Synthetic-enabled ActiveGates on Ubuntu 20 and Ubuntu 22 use Chromium snap. When customizing the [default temporary directory for private Synthetic files](/docs/ingest-from/dynatrace-activegate/configuration/where-can-i-find-activegate-files#default-activegate-directories--linux "Find out where ActiveGate files are stored on Windows and Linux systems.")â`/var/tmp/dynatrace/synthetic`, the path must begin with `/var/tmp`, for example, `TEMP=/var/tmp/syn`. Dynatrace requires write access to `/var/tmp` for the installation of Chromium snap packages.
+  Since version 1.331, these restrictions no longer apply. The latest ActiveGate version on Ubuntu 20 and Ubuntu 22 uses Chrome for Testing, just like Ubuntu 24.
 
 ### Before you begin
 
@@ -52,9 +52,9 @@ End-of-support information
 * You can create a private location using a clean-installed Synthetic-enabled Environment ActiveGate version 1.169+ or Cluster ActiveGate with Dynatrace Managed version 1.176+. If you want to use an existing ActiveGate host, [uninstall ActiveGate](/docs/ingest-from/dynatrace-activegate/operation/uninstall-activegate "Learn how to remove ActiveGate from Windows or Linux-based systems.") first.
 * Synthetic-enabled ActiveGate is used exclusively to run synthetic monitors. A clean ActiveGate installation for the purpose of synthetic monitoring disables all other ActiveGate features, including communication with OneAgents.
 * Make sure that the ActiveGate can connect to other [Dynatrace components](/docs/ingest-from/dynatrace-activegate/supported-connectivity-schemes-for-activegates "Learn about the connectivity priorities between ActiveGate types as well as the priorities between ActiveGates and OneAgents.") as well as the resource you want to test. See [Set up a proxy for private synthetic monitoring](/docs/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/setting-up-proxy-for-private-synthetic "Learn how to configure ActiveGate properties to set up a proxy for private synthetic monitoring.").
-* Only **IPv4** and **DNS UDP** are supported for network configuration.
-* Synthetic-enabled ActiveGate needs access to the **Amazon S3** service to upload and access browser monitor screenshots from private locations. Ensure that your firewall configuration allows connections to `*.s3-accelerate.amazonaws.com` on port `443`. You can also [set up your proxy](/docs/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/setting-up-proxy-for-private-synthetic "Learn how to configure ActiveGate properties to set up a proxy for private synthetic monitoring.") to connect to the Amazon S3 service. (Screenshots are stored in a different folder for each monitoring environment, but the S3 Bucket is the same (`ruxit-synth-screencap`). Data is encrypted by [Amazon S3-managed keyï»¿](https://dt-url.net/4a02xvx).)
-* Both manual and automatic Chromium updates require access to `https://synthetic-packages.s3.amazonaws.com`. For security reasons, public access to the S3 bucket is enabled only for specific files; trying anything else will result in a 403 error.
+* Only IPv4 and DNS UDP are supported for network configuration.
+* Synthetic-enabled ActiveGate needs access to the Amazon S3 service to upload and access browser monitor screenshots from private locations. Ensure that your firewall configuration allows connections to `*.s3-accelerate.amazonaws.com` on port `443`. You can also [set up your proxy](/docs/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/setting-up-proxy-for-private-synthetic "Learn how to configure ActiveGate properties to set up a proxy for private synthetic monitoring.") to connect to the Amazon S3 service. (Screenshots are stored in a different folder for each monitoring environment, but the S3 Bucket is the same (`ruxit-synth-screencap`). Data is encrypted by [Amazon S3-managed keyï»¿](https://dt-url.net/4a02xvx).)
+* Both manual and automatic browser updates require access to `https://synthetic-packages.s3.amazonaws.com`. For security reasons, public access to the S3 bucket is enabled only for specific files; trying anything else will result in a 403 error.
 
 ## Install a Synthetic-enabled ActiveGate
 
@@ -68,7 +68,7 @@ Synthetic-enabled ActiveGate is used exclusively to run synthetic monitors. A cl
 
 Manual installation
 
-If this web UI-guided installation fails, or you prefer to prepare the host for the Synthetic engine yourself, you can [manually install Chromium and other dependencies via S3](#manual). You can also [install Chromium from a custom, local repository](#custom-repo).
+If this web UI-guided installation fails, or you prefer to prepare the host for the Synthetic engine yourself, you can [manually install the browser and other dependencies via S3](#manual). You can also [install the browser from a custom, local repository](#custom-repo).
 
 1. For Environment ActiveGate, in Dynatrace Hub, select **ActiveGate** > **Set up**.
 
@@ -89,7 +89,7 @@ If this web UI-guided installation fails, or you prefer to prepare the host for 
 11. Linux only Select a Linux distribution.
 12. Run the installer and any other commandsâmake sure you use the exact commands displayed in the UI.
 
-    Linux only The installer automatically downloads Chromium and the dependencies required by the Synthetic engine. On Red Hat, Oracle Linux, and Rocky Linux you also need to enable repositories from which the installer downloads the dependencies. As a prerequisite for enabling proprietary repositories on Red Hat, you need to register your Red Hat instance. The web UI provides you with all the required commands for doing so, as shown in the example below.
+    Linux only The installer automatically downloads the browser and dependencies required by the Synthetic engine. On Red Hat, Oracle Linux, and Rocky Linux you also need to enable repositories from which the installer downloads the dependencies. As a prerequisite for enabling proprietary repositories on Red Hat, you need to register your Red Hat instance. The web UI provides you with all the required commands for doing so, as shown in the example below.
 
     ![Commands to install ActiveGate on Red Hat 9](https://dt-cdn.net/images/synth-ag-commands-red-hat-9-2025-11-17-723-eef29810b5.png)
 13. Verify the ActiveGate installation (**Show deployment status**).
@@ -114,27 +114,27 @@ The instructions below describe how to add a private location in previous Dynatr
 
 Now, when you create your HTTP or browser monitor, select the location you've just created from the list of all available locations. For more information, see [Create an HTTP monitor](/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/create-an-http-monitor-classic "Learn how to set up an HTTP monitor to check the performance and availability of your site."), [Create a single-URL browser monitor](/docs/observe/digital-experience/synthetic-monitoring/browser-monitors/create-a-single-url-browser-monitor "Learn how to set up a single-URL browser monitor to check the availability of your site."), or [Record a browser clickpath](/docs/observe/digital-experience/synthetic-monitoring/browser-monitors/record-a-browser-clickpath "Learn how to record a browser clickpath to monitor the availability and performance of your application.").
 
-## Linux only Install Chromium and dependencies manually from S3
+## Linux only Install the browser and dependencies manually from S3
 
-This section is not relevant for Browserless locations.
+This section is not relevant for browserless locations.
 
-Amazon Linux 2023, Ubuntu 24, and Oracle Linux 9
+Amazon Linux 2023, Ubuntu and Oracle Linux 9
 
-Amazon Linux 2023, Ubuntu 24, and Oracle Linux 9 use Chrome for Testing instead of Chromium. For manual installation of Chrome for Testing on these operating systems, see [Amazon Linux 2023, Ubuntu 24, and Oracle Linux 9 (Chrome for Testing)](#chrome-for-testing).
+Amazon Linux 2023, Ubuntu and Oracle Linux 9 use Chrome for Testing instead of Chromium. For manual installation of Chrome for Testing on these operating systems, see [Amazon Linux 2023, Ubuntu and Oracle Linux 9 (Chrome for Testing)](#chrome-for-testing).
 
-If the [web UI-guided installation](#install) fails or you prefer to prepare the host for the Synthetic engine yourself, you can install Chromium and other dependencies using the procedure below. Ensure that you can connect to `https://synthetic-packages.s3.amazonaws.com` to access Chromium and dependencies. For security reasons, public access to the S3 bucket is enabled only for specific files; trying anything else will result in a 403 error.
+If the [web UI-guided installation](#install) fails or you prefer to prepare the host for the Synthetic engine yourself, you can install the browser and other dependencies using the procedure below. Ensure that you can connect to `https://synthetic-packages.s3.amazonaws.com` to access the browser and dependencies. For security reasons, public access to the S3 bucket is enabled only for specific files; trying anything else will result in a 403 error.
 
-Also see [Install Chromium from a custom repository](#custom-repo) below.
+Also see [Install the browser from a custom repository](#custom-repo) below.
 
-See [how to update Chromium manually](/docs/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/manage-private-synthetic-locations#chromium-manual "Analyze and manage capacity usage at your private Synthetic locations.") in [Manage private Synthetic locations](/docs/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/manage-private-synthetic-locations "Analyze and manage capacity usage at your private Synthetic locations."). We strongly recommend that you keep your Linux-based Synthetic-enabled ActiveGates and Chromium versions updatedâDynatrace supports Chromium versions that are no more than two versions behind the [latest Dynatrace-supported version](/docs/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/system-and-hardware-requirements-for-private-synthetic#chromium-linux "Supported operating systems, Chromium versions, and hardware requirements for running synthetic monitors from private locations") for a specific ActiveGate release.
+See [how to update the browser manually](/docs/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/manage-private-synthetic-locations#browser-manual "Analyze and manage capacity usage at your private Synthetic locations.") in [Manage private Synthetic locations](/docs/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/manage-private-synthetic-locations "Analyze and manage capacity usage at your private Synthetic locations."). We strongly recommend that you keep your Linux-based Synthetic-enabled ActiveGates and browser versions updatedâDynatrace supports browser versions that are no more than two versions behind the [latest Dynatrace-supported version](/docs/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/system-and-hardware-requirements-for-private-synthetic#browser-linux "Supported operating systems, Chromium versions, and hardware requirements for running synthetic monitors from private locations") for a specific ActiveGate release.
 
-### Ubuntu Server
+### Ubuntu Server 20.04 and 22.04
 
 
+
+This section is only relevant for releases 1.329 and earlier.
 
 1. Install Synthetic engine dependencies:
-
-   Ubuntu 20.04 and 22.04
 
    Synthetic engine dependencies:
 
@@ -153,11 +153,9 @@ See [how to update Chromium manually](/docs/observe/digital-experience/synthetic
    ```
 2. Download and install Chromium.
 
-   * Download the snap (Ubuntu 20.04 and 22.04) package archive. This is a safe and verified archive hosted by Dynatrace.
+   * Download the snap (Ubuntu Server 20.04 and 22.04) package archive. This is a safe and verified archive hosted by Dynatrace.
 
      ActiveGate version 1.329
-
-     ##### Ubuntu 20.04 and 22.04
 
      ```
      curl --output chromium.tgz https://synthetic-packages.s3.amazonaws.com/Chromium/snap/chromium-142.0.7444.175-3313.tgz
@@ -165,15 +163,11 @@ See [how to update Chromium manually](/docs/observe/digital-experience/synthetic
 
      ActiveGate version 1.327
 
-     ##### Ubuntu 20.04 and 22.04
-
      ```
      curl --output chromium.tgz https://synthetic-packages.s3.amazonaws.com/Chromium/snap/chromium-141.0.7390.122-3285.tgz
      ```
 
      ActiveGate version 1.325
-
-     ##### Ubuntu 20.04 and 22.04
 
      ```
      curl --output chromium.tgz https://synthetic-packages.s3.amazonaws.com/Chromium/snap/chromium-140.0.7339.185-3251.tgz
@@ -181,15 +175,11 @@ See [how to update Chromium manually](/docs/observe/digital-experience/synthetic
 
      ActiveGate version 1.323
 
-     ##### Ubuntu 20.04 and 22.04
-
      ```
      curl --output chromium.tgz https://synthetic-packages.s3.amazonaws.com/Chromium/snap/chromium-139.0.7258.138-3235.tgz
      ```
 
      ActiveGate version 1.321
-
-     ##### Ubuntu 20.04 and 22.04
 
      ```
      curl --output chromium.tgz https://synthetic-packages.s3.amazonaws.com/Chromium/snap/chromium-138.0.7204.157-3203.tgz
@@ -197,15 +187,11 @@ See [how to update Chromium manually](/docs/observe/digital-experience/synthetic
 
      ActiveGate version 1.319
 
-     ##### Ubuntu 20.04 and 22.04
-
      ```
      curl --output chromium.tgz https://synthetic-packages.s3.amazonaws.com/Chromium/snap/chromium-138.0.7204.100-3199.tgz
      ```
 
      ActiveGate version 1.317
-
-     ##### Ubuntu 20.04 and 22.04
 
      ```
      curl --output chromium.tgz https://synthetic-packages.s3.amazonaws.com/Chromium/snap/chromium-137.0.7151.103-3169.tgz
@@ -213,15 +199,11 @@ See [how to update Chromium manually](/docs/observe/digital-experience/synthetic
 
      ActiveGate version 1.315
 
-     ##### Ubuntu 20.04 and 22.04
-
      ```
      curl --output chromium.tgz https://synthetic-packages.s3.amazonaws.com/Chromium/snap/chromium-136.0.7103.59-3121.tgz
      ```
 
      ActiveGate version 1.313
-
-     ##### Ubuntu 20.04 and 22.04
 
      ```
      curl --output chromium.tgz https://synthetic-packages.s3.amazonaws.com/Chromium/snap/chromium-135.0.7049.95-3110.tgz
@@ -229,15 +211,11 @@ See [how to update Chromium manually](/docs/observe/digital-experience/synthetic
 
      ActiveGate version 1.311
 
-     ##### Ubuntu 20.04 and 22.04
-
      ```
      curl --output chromium.tgz https://synthetic-packages.s3.amazonaws.com/Chromium/snap/chromium-134.0.6998.35-3060.tgz
      ```
 
      ActiveGate version 1.309
-
-     ##### Ubuntu 20.04 and 22.04
 
      ```
      curl --output chromium.tgz https://synthetic-packages.s3.amazonaws.com/Chromium/snap/chromium-132.0.6834.159-3036.tgz
@@ -245,26 +223,8 @@ See [how to update Chromium manually](/docs/observe/digital-experience/synthetic
 
      ActiveGate version 1.307
 
-     ##### Ubuntu 20.04 and 22.04
-
      ```
      curl --output chromium.tgz https://synthetic-packages.s3.amazonaws.com/Chromium/snap/chromium-131.0.6778.85-3002.tgz
-     ```
-
-     ActiveGate version 1.305
-
-     ##### Ubuntu 20.04 and 22.04
-
-     ```
-     curl --output chromium.tgz https://synthetic-packages.s3.amazonaws.com/Chromium/snap/chromium-130.0.6723.69-2985.tgz
-     ```
-
-     ActiveGate version 1.303
-
-     ##### Ubuntu 20.04 and 22.04
-
-     ```
-     curl --output chromium.tgz https://synthetic-packages.s3.amazonaws.com/Chromium/snap/chromium-129.0.6668.89-2965.tgz
      ```
 
      You can [verify the authenticity of the packages](#verify) using the signature files stored together with the package archives.
@@ -276,8 +236,6 @@ See [how to update Chromium manually](/docs/observe/digital-experience/synthetic
 
      This creates a `/tmp/chromium` directory and extracts the packages into it.
    * Install the extracted packages.
-
-     Ubuntu 20.04 and 22.04
 
      ```
      sudo chown -R root:root /tmp/snap-private-tmp
@@ -304,14 +262,16 @@ See [how to update Chromium manually](/docs/observe/digital-experience/synthetic
    /bin/bash ./Dynatrace-ActiveGate-Linux.sh --enable-synthetic=manual
    ```
 
-### Red Hat Enterprise Linux, Oracle Linux, and Rocky Linux
+You can [verify the authenticity of the packages](#verify) using the signature files stored together with the package archives.
+
+### Red Hat Enterprise Linux, Oracle Linux 8, and Rocky Linux
 
 * Chromium development for Red Hat/CentOS 7 and Amazon Linux 2 stopped at version 126.
 
   + Since Red Hat Enterprise Linux 7 reached [End of Maintenanceï»¿](https://dt-url.net/af03uea) support on June 30, 2024, all of its packages have been archived. This means that it may not be possible to find the required dependencies for update. For more details, see the [Red Hat Enterprise Linux 7 statusï»¿](https://dt-url.net/e623zr1)
 * Chromium installation when a proxy is required for internet access.
 
-  + If you need to download and install Chromium, and your system requires a proxy for internet access, you should configure `curl`to use the correct proxy. Specify your proxy and port details by running the commands as in this example:
+  + If you need to download and install Chromium, and your system requires a proxy for internet access, you should configure `curl` to use the correct proxy. Specify your proxy and port details by running the commands as in this example:
 
     ```
     vi /root/.curlrc
@@ -493,6 +453,14 @@ See [how to update Chromium manually](/docs/observe/digital-experience/synthetic
 
    * Download the rpm package archive. This is a safe and verified archive hosted by Dynatrace.
 
+     ActiveGate version 1.331
+
+     ##### Red Hat Enterprise Linux/Rocky Linux 9
+
+     ```
+     curl --output chromium.tgz https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-143.0.7499.192-1.el9.tgz
+     ```
+
      ActiveGate version 1.329
 
      ##### Red Hat Enterprise Linux/Rocky Linux 9
@@ -655,48 +623,6 @@ See [how to update Chromium manually](/docs/observe/digital-experience/synthetic
      curl --output chromium.tgz https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-131.0.6778.204-1.el9.tgz
      ```
 
-     ActiveGate version 1.305
-
-     ##### Red Hat Enterprise Linux/CentOS 7, Amazon Linux 2
-
-     ```
-     curl --output chromium.tgz https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-126.0.6478.114-1.el7.tgz
-     ```
-
-     ##### Red Hat Enterprise Linux/Oracle/Rocky Linux 8
-
-     ```
-     curl --output chromium.tgz https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-130.0.6723.69-1.el8.tgz
-     ```
-
-     ##### Red Hat Enterprise Linux/Rocky Linux 9
-
-     ```
-     curl --output chromium.tgz https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-130.0.6723.116-1.el9.tgz
-     ```
-
-     ActiveGate version 1.303
-
-     ##### Red Hat Enterprise Linux/CentOS 7, Amazon Linux 2
-
-     ```
-     curl --output chromium.tgz https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-126.0.6478.114-1.el7.tgz
-     ```
-
-     ##### Red Hat Enterprise Linux/Oracle/Rocky Linux 8
-
-     ```
-     curl --output chromium.tgz https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-129.0.6668.89-1.el8.tgz
-     ```
-
-     ##### Red Hat Enterprise Linux/Rocky Linux 9
-
-     Requires Chromium 130, previous version `129.0.6668.89-1.el9` cannot be installed anymore, please refer to [troubleshooting guideï»¿](https://dt-url.net/x303x5f) for details.
-
-     ```
-     curl --output chromium.tgz https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-130.0.6723.116-1.el9.tgz
-     ```
-
      You can [verify the authenticity of the packages](#verify) using the signature files stored together with the package archives.
    * Extract the installation packages. Go to the directory where you saved the archive and run the following command:
 
@@ -704,7 +630,7 @@ See [how to update Chromium manually](/docs/observe/digital-experience/synthetic
      mkdir /tmp/chromium ; tar xzf chromium.tgz -C /tmp/chromium
      ```
 
-     This creates a `/tmp/chromium` directory and extract the packages into it.
+     This creates a `/tmp/chromium` directory and extracts the packages into it.
    * Install extracted packages.
 
      ```
@@ -736,17 +662,21 @@ See [how to update Chromium manually](/docs/observe/digital-experience/synthetic
    /bin/bash ./Dynatrace-ActiveGate-Linux.sh --enable-synthetic=manual
    ```
 
+You can [verify the authenticity of the packages](#verify) using the signature files stored together with the package archives.
 
 
-### Amazon Linux 2023, Ubuntu 24, and Oracle Linux 9 (Chrome for Testing)
+
+### Amazon Linux 2023, Ubuntu, and Oracle Linux 9 (Chrome for Testing)
+
+See [how to update Chrome for Testing manually](/docs/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/manage-private-synthetic-locations#browser-manual "Analyze and manage capacity usage at your private Synthetic locations.") in [Manage private Synthetic locations](/docs/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/manage-private-synthetic-locations "Analyze and manage capacity usage at your private Synthetic locations."). We strongly recommend that you keep your Linux-based Synthetic-enabled ActiveGates and Chrome for Testing versions updatedâDynatrace supports Chrome for Testing versions that are no more than two versions behind the [latest Dynatrace-supported version](/docs/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/system-and-hardware-requirements-for-private-synthetic#browser-linux "Supported operating systems, Chromium versions, and hardware requirements for running synthetic monitors from private locations") for a specific ActiveGate release.
 
 Unlike Chromium on other distributions, Chrome for Testing updates do not use package managers. You manually manage the Chrome binaries while dependencies are managed by the system package manager.
 
-See [how to update Chrome for Testing manually](/docs/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/manage-private-synthetic-locations#chromium-manual "Analyze and manage capacity usage at your private Synthetic locations.") in [Manage private Synthetic locations](/docs/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/manage-private-synthetic-locations "Analyze and manage capacity usage at your private Synthetic locations."). We strongly recommend that you keep your Linux-based Synthetic-enabled ActiveGates and Chrome for Testing versions updatedâDynatrace supports Chrome for Testing versions that are no more than two versions behind the [latest Dynatrace-supported version](/docs/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/system-and-hardware-requirements-for-private-synthetic#chromium-linux "Supported operating systems, Chromium versions, and hardware requirements for running synthetic monitors from private locations") for a specific ActiveGate release.
+On Ubuntu Server 20.04 and 22.04 Chrome for Testing is supported since 1.331
 
 1. Set up repositories and install dependencies.
 
-   Ubuntu 24
+   Ubuntu
 
    Amazon Linux 2023
 
@@ -803,6 +733,12 @@ See [how to update Chrome for Testing manually](/docs/observe/digital-experience
      ```
    * Download the Chrome for Testing package archive to a temporary location. This is a safe and verified archive hosted by Dynatrace.
 
+     ActiveGate version 1.331
+
+     ```
+     curl --output /tmp/chrome.zip https://synthetic-packages.s3.amazonaws.com/Chrome/chrome-for-testing-linux64/chrome-for-testing-linux64-143.0.7499.192.zip
+     ```
+
      ActiveGate version 1.329
 
      ```
@@ -840,77 +776,77 @@ See [how to update Chrome for Testing manually](/docs/observe/digital-experience
    /bin/bash ./Dynatrace-ActiveGate-Linux.sh --enable-synthetic=manual
    ```
 
-   Custom Chrome for Testing directory: If you want to use a different directory than the default `/usr/lib/chrome_for_testing`, specify it by setting the `synthetic_chrome_for_testing_path` property in the `custom.properties` file after installation. The new directory will be used after the upgrade of Synthetic module.
+* Custom Chrome for Testing directory: If you want to use a different directory than the default `/usr/lib/chrome_for_testing`, specify it by setting the `synthetic_chrome_for_testing_path` property in the `custom.properties` file after installation. The new directory will be used after the upgrade of Synthetic module.
+* Chrome for Testing files are preserved during ActiveGate uninstallation. If you uninstall the ActiveGate, the Chrome for Testing directory and its contents will remain on the system and can be reused during reinstallation.
+* You can [verify the authenticity of the packages](#verify) using the signature files stored together with the package archives.
 
-   Chrome for Testing files are preserved during ActiveGate uninstallation. If you uninstall the ActiveGate, the Chrome for Testing directory and its contents will remain on the system and can be reused during reinstallation.
+## Linux only Install the browser from a custom repository
 
-## Linux only Install Chromium from a custom repository
 
-ActiveGate version 1.243+ In addition to [web UI-guided ActiveGate installation](#install) and [manual installation of Chromium and dependencies](#manual), you can also **install ActiveGate by pointing to a custom, local repository for Chromium components**. As this repository is an HTTP server that you set up within your network, the advantage of this method is that it can be used in environments with intranet-only or limited network access.
 
-This method of installing Chromium broadly consists of:
+ActiveGate version 1.243+ In addition to [web UI-guided ActiveGate installation](#install) and [manual installation of the browser and dependencies](#manual), you can also **install ActiveGate by pointing to a custom, local repository for browser components**. As this repository is an HTTP server that you set up within your network, the advantage of this method is that it can be used in environments with intranet-only or limited network access.
+
+This method of installing the browser broadly consists of:
 
 * Downloading the required Dynatrace-hosted deb, snap, or rpm package archives and their corresponding signature files.
-* Installing and running a locally hosted web server where the downloaded Chromium components reside.
+* Installing and running a locally hosted web server where the downloaded browser components reside.
 * Downloading and running the ActiveGate installer on the target host with an environment variable pointing to the location of the custom repository on the HTTP server.
 
-* A custom Chromium repository can be used only for Chromium components, not their dependencies. Installing Chromium from a custom repository will only work if all dependencies have been resolved before installation.
-* Custom repositories can only be used for **Chromium installation and autoupdate**âsee [Chromium autoupdate from a custom repository in Manage private Synthetic locations](/docs/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/manage-private-synthetic-locations#autoupdate-custom-repo "Analyze and manage capacity usage at your private Synthetic locations.") for details.
+* A custom browser repository can be used only for the browser components, not their dependencies. Installing the browser from a custom repository will only work if all dependencies have been resolved before installation.
+* Custom repositories can only be used for **Browser installation and autoupdate**âsee [Browser autoupdate from a custom repository in Manage private Synthetic locations](/docs/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/manage-private-synthetic-locations#autoupdate-custom-repo "Analyze and manage capacity usage at your private Synthetic locations.") for details.
 
-1. Download the Chromium componentsâthe package archive and signature fileâfrom the safe and verified archive hosted by Dynatrace. See [Requirements for private Synthetic locations](/docs/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/system-and-hardware-requirements-for-private-synthetic "Supported operating systems, Chromium versions, and hardware requirements for running synthetic monitors from private locations") for links to the latest supported and provided Chromium versions.
+1. Download the browser componentsâthe package archive and signature fileâfrom the safe and verified archive hosted by Dynatrace. See [Requirements for private Synthetic locations](/docs/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/system-and-hardware-requirements-for-private-synthetic "Supported operating systems, Chromium versions, and hardware requirements for running synthetic monitors from private locations") for links to the latest supported and provided browser versions.
 
-   We recommend keeping your Linux-based Synthetic-enabled ActiveGates and Chromium versions up to date; choose the latest provided Chromium version for ActiveGate.
+   We recommend keeping your Linux-based Synthetic-enabled ActiveGates and browser versions up to date; choose the latest provided browser version for ActiveGate.
 
-   For example, for ActiveGate version 1.255 on Ubuntu 22. the required files are:
+   For example, for ActiveGate version 1.331 on Ubuntu 24 the required files are:
 
-   * Package archiveâ`https://synthetic-packages.s3.amazonaws.com/Chromium/snap/chromium-107.0.5304.87-2168.tgz`
-   * Signature fileâ`https://synthetic-packages.s3.amazonaws.com/Chromium/snap/chromium-107.0.5304.87-2168.tgz.sig`
+   * Package archiveâ`https://synthetic-packages.s3.amazonaws.com/Chrome/chrome-for-testing-linux64/chrome-for-testing-linux64-143.0.7499.192.zip`
+   * Signature fileâ`https://synthetic-packages.s3.amazonaws.com/Chrome/chrome-for-testing-linux64/chrome-for-testing-linux64-143.0.7499.192.zip.sig`
 
    The corresponding download commands are:
 
    ```
-   curl -o chromium-107.0.5304.87-2168.tgz https://synthetic-packages.s3.amazonaws.com/Chromium/snap/chromium-107.0.5304.87-2168.tgz
+   curl -o chrome-for-testing-linux64-143.0.7499.192.zip https://synthetic-packages.s3.amazonaws.com/Chrome/chrome-for-testing-linux64/chrome-for-testing-linux64-143.0.7499.192.zip
    ```
 
    ```
-   curl -o chromium-107.0.5304.87-2168.tgz.sig https://synthetic-packages.s3.amazonaws.com/Chromium/snap/chromium-107.0.5304.87-2168.tgz.sig
+   curl -o chrome-for-testing-linux64-143.0.7499.192.zip.sig https://synthetic-packages.s3.amazonaws.com/Chrome/chrome-for-testing-linux64/chrome-for-testing-linux64-143.0.7499.192.zip.sig
    ```
-2. Install a web server of your choice and create a directory, for example, `chromium-repo`, to serve the Chromium components to the ActiveGate host. Copy the downloaded Chromium components to this directory.
+2. Install a web server of your choice and create a directory, for example, `chromium-repo`, to serve the browser components to the ActiveGate host. Copy the downloaded browser components to this directory.
 3. Download the ActiveGate installer from Dynatrace Hub.
-4. Resolve all dependencies and enable repositories as required as shown in [Install Chromium and dependencies manually from S3](#manual) above. The custom repository can be used only for Chromium packages, not their dependencies.
+4. Resolve all dependencies and enable repositories as required as shown in [Install the browser and dependencies manually from S3](#manual) above. The custom repository can be used only for browser packages, not their dependencies.
 5. Install the ActiveGate with the Synthetic module enabled (`--enable-synthetic`) and the `DYNATRACE_SYNTHETIC_CUSTOM_CHROMIUM_REPO` environment variable pointing to the location of the custom repository (`https://172.18.0.100/chromium-repo` in this example).
 
    ```
-   sudo DYNATRACE_SYNTHETIC_CUSTOM_CHROMIUM_REPO=http://172.18.0.100:8000/chromium-repo  /bin/bash Dynatrace-ActiveGate-Linux-x86-1.257.0.20221129-155835.sh --enable-synthetic
+   sudo DYNATRACE_SYNTHETIC_CUSTOM_CHROMIUM_REPO=http://172.18.0.100:8000/chromium-repo  /bin/bash Dynatrace-ActiveGate-Linux-x86-*.sh --enable-synthetic
    ```
 
    You can use the hostname of the HTTP server instead of the IP address so long as the ActiveGate host can resolve the hostname.
 
-Once you've installed Chromium in this way from a custom repository, it can only be autoupdated. See [Chromium autoupdate from a custom repository in Manage private Synthetic locations](/docs/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/manage-private-synthetic-locations#autoupdate-custom-repo "Analyze and manage capacity usage at your private Synthetic locations.") for details and update alternatives.
+Once you've installed the browser in this way from a custom repository, it can only be autoupdated. See [Browser autoupdate from a custom repository in Manage private Synthetic locations](/docs/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/manage-private-synthetic-locations#autoupdate-custom-repo "Analyze and manage capacity usage at your private Synthetic locations.") for details and update alternatives.
 
-## Custom Chromium version
+## Custom browser version
 
+You can install a custom browser version, that is, override the browser version that the ActiveGate installer looks for. This is applicable for manual ActiveGate installation, as described in [Browser installation via S3](#manual) or via a [custom repository](#custom-repo).
 
-
-You can install a custom Chromium version, that is, override the Chromium version that the ActiveGate installer looks for. This is applicable for manual ActiveGate installation, as described in [Chromium installation via S3](#manual) or via a [custom repository](#custom-repo).
-
-In this command for manual ActiveGate installation via S3, an environment variable points to an explicit Chromium version number `107.0.5304.87-2168`, which is part of the package archive for Ubuntu 20 or 22.
+In this command for manual ActiveGate installation via S3, an environment variable points to an explicit browser version number `143.0.7499.192`, which is part of the Chrome for Testing package archive.
 
 ```
-sudo /bin/bash -c "export DYNATRACE_SYNTHETIC_EXPLICIT_CHROMIUM_VERSION=107.0.5304.87-2168; /bin/bash Dynatrace-ActiveGate-Linux-x86-1.257.0.20221129-155835.sh --enable-synthetic"
+sudo /bin/bash -c "export DYNATRACE_SYNTHETIC_EXPLICIT_CHROMIUM_VERSION=143.0.7499.192; /bin/bash Dynatrace-ActiveGate-Linux-x86-*.sh --enable-synthetic"
 ```
 
-This command searches for the Chromium version `107.0.5304.87-2168` in the custom repository `https://172.18.0.100/chromium-repo`.
+This command searches for the browser version `143.0.7499.192` in the custom repository `https://172.18.0.100/chromium-repo`.
 
 ```
-sudo DYNATRACE_SYNTHETIC_EXPLICIT_CHROMIUM_VERSION=107.0.5304.87-2168 DYNATRACE_SYNTHETIC_CUSTOM_CHROMIUM_REPO=http://172.18.0.100:8000/chromium-repo  /bin/bash Dynatrace-ActiveGate-Linux-x86-1.257.0.20221129-155835.sh --enable-synthetic
+sudo DYNATRACE_SYNTHETIC_EXPLICIT_CHROMIUM_VERSION=143.0.7499.192 DYNATRACE_SYNTHETIC_CUSTOM_CHROMIUM_REPO=http://172.18.0.100:8000/chromium-repo  /bin/bash Dynatrace-ActiveGate-Linux-x86-*.sh --enable-synthetic
 ```
 
 ## Browserless Synthetic-enabled ActiveGate
 
-In general, we recommend the deployment of Synthetic-enabled ActiveGate to support the execution of all types synthetic monitors (HTTP, browser, NAM).
+In general, we recommend the deployment of a Synthetic-enabled ActiveGate to support the execution of all types of synthetic monitors (HTTP, browser, NAM).
 
-If you don't need to execute browser monitors, however, you might want to consider deploying your node in a special browserless mode. Such a node will be deployed without the browser. The resulting deployment requires less hardware resources, but browser monitors cannot be executed from such a node.
+If you donât need to run browser monitors, consider deploying your node in browserless mode. This mode deploys the node without a browser, reducing hardware requirements. However, browser monitors canât run on a browserless node.
 
 Consider browserless nodes as an alternative to nodes with browser monitor support when you're focused purely on:
 
@@ -919,7 +855,7 @@ Consider browserless nodes as an alternative to nodes with browser monitor suppo
 
 ## Kerberos client setup
 
-If you want to run Browser Monitor tests using Kerberos authentication, the private location should be configured to be able to get ticket from the Kerberos Key Distribution Center.
+If you want to run browser monitors using Kerberos authentication, the private location should be configured to be able to get a ticket from the Kerberos Key Distribution Center.
 
 Windows
 
@@ -965,7 +901,7 @@ To install Synthetic-enabled ActiveGate in FIPS compliant mode you need to add `
 ```
 
 Please note that FIPS-compliant mode cannot be changed after installation. To change the mode, you need to uninstall ActiveGate and reinstall it with the desired settings.
-Additionally, if you intend to execute browser monitors additional setup will be required as described in [Proxy configuration for FIPS mode](/docs/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/setting-up-proxy-for-private-synthetic#fips-proxy "Learn how to configure ActiveGate properties to set up a proxy for private synthetic monitoring.") and [Proxy configuration for FIPS mode with corporate proxy](/docs/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/setting-up-proxy-for-private-synthetic#fips-corporate-proxy "Learn how to configure ActiveGate properties to set up a proxy for private synthetic monitoring.")
+Additionally, if you intend to execute browser monitors, additional setup will be required as described in [Proxy configuration for FIPS mode](/docs/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/setting-up-proxy-for-private-synthetic#fips-proxy "Learn how to configure ActiveGate properties to set up a proxy for private synthetic monitoring.") and [Proxy configuration for FIPS mode with corporate proxy](/docs/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/setting-up-proxy-for-private-synthetic#fips-corporate-proxy "Learn how to configure ActiveGate properties to set up a proxy for private synthetic monitoring.")
 
 ### Requirements and limitations
 
@@ -977,6 +913,8 @@ Additionally, if you intend to execute browser monitors additional setup will be
 * Private Synthetic locations on Kubernetes are not supported at the moment.
 
 ### Ensuring compliance
+
+
 
 To ensure the browser monitor traffic is FIPS compliant, it must be routed through a local intercepting proxy that encrypts traffic with a FIPS-certified crypto library. See [Proxy configuration for FIPS mode](/docs/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/setting-up-proxy-for-private-synthetic#fips-proxy "Learn how to configure ActiveGate properties to set up a proxy for private synthetic monitoring.") for details.
 
@@ -1101,7 +1039,5 @@ Manually editing the `custom.properties` file is not enough to enable the Active
 Visit the [Troubleshooting forum in the Dynatrace Communityï»¿](https://dt-url.net/dy122xtf) for more troubleshooting information.
 
 ## Related topics
-
-
 
 * [Synthetic locations API v2 - POST a location](/docs/dynatrace-api/environment-api/synthetic-v2/synthetic-locations-v2/post-a-location "Create a private synthetic location via the Synthetic v2 API.")

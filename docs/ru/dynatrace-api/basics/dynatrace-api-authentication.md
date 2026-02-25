@@ -1,73 +1,73 @@
 ---
-title: Dynatrace API - Токены и аутентификация
+title: Dynatrace API - Tokens and authentication
 source: https://www.dynatrace.com/docs/dynatrace-api/basics/dynatrace-api-authentication
-scraped: 2026-02-24T21:23:14.182670
+scraped: 2026-02-25T21:28:42.174717
 ---
 
-# Dynatrace API - Токены и аутентификация
+# Dynatrace API - Tokens and authentication
 
-# Dynatrace API - Токены и аутентификация
+# Dynatrace API - Tokens and authentication
 
-* Ссылка
-* Опубликовано 23 августа 2018 г.
+* Reference
+* Published Aug 23, 2018
 
-Чтобы быть аутентифицированным для использования Dynatrace API, вам нужен действительный [токен доступа](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens "Узнайте о концепции токена доступа и его областях.") или действительный [личный токен доступа](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens/personal-access-token "Узнайте о концепции личного токена доступа и его областях."). Доступ к API является детализированным, то есть вам также нужны соответствующие области, назначенные токену. См. описание каждого запроса, чтобы узнать, какие области необходимы для его использования.
+To be authenticated to use the Dynatrace API, you need a valid [access token](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens "Learn the concept of an access token and its scopes.") or a valid [personal access token](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens/personal-access-token "Learn the concept of a personal access token and its scopes."). Access to the API is fine-grained, meaning that you also need the proper scopes assigned to the token. See the description of each request to find out which scopes are required to use it.
 
-Для получения подробной информации об OAuth-клиентах см. [OAuth-клиенты](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/oauth-clients "Управляйте аутентификацией и разрешениями пользователей с помощью OAuth-клиентов.").
+For details on OAuth clients, see [OAuth clients](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/oauth-clients "Manage authentication and user permissions using OAuth clients.").
 
-## Формат токена
+## Token format
 
-Dynatrace использует уникальный формат токена, состоящий из трех компонентов, разделенных точками (`.`).
+Dynatrace uses a unique token format consisting of three components separated by dots (`.`).
 
-### Пример токена
+### Token example
 
 `<DYNATRACE_TOKEN_PLACEHOLDER>`
 
-### Компоненты токена
+### Token components
 
-### Префиксы токена
+### Token prefixes
 
-## Генерация токена
+## Generate a token
 
-Токен доступа
+Access token
 
-Личный токен доступа
+Personal access token
 
-Чтобы сгенерировать токен доступа:
+To generate an access token:
 
-1. Перейдите к ![Токены доступа](https://dt-cdn.net/images/access-tokens-512-a766b810b8.png "Токены доступа") **Токены доступа**.
-2. Выберите **Сгенерировать новый токен**.
-3. Введите имя для вашего токена.  
-   Dynatrace не обеспечивает уникальность имен токенов. Вы можете создать несколько токенов с одинаковым именем. Убедитесь, что вы предоставили осмысленное имя для каждого сгенерированного токена. Правильное именование помогает вам эффективно управлять вашими токенами и, возможно, удалять их, когда они больше не нужны.
-4. Выберите необходимые области для токена.
-5. Выберите **Сгенерировать токен**.
-6. Скопируйте сгенерированный токен в буфер обмена. Храните токен в менеджере паролей для будущего использования.
+1. Go to ![Access tokens](https://dt-cdn.net/images/access-tokens-512-a766b810b8.png "Access tokens") **Access Tokens**.
+2. Select **Generate new token**.
+3. Enter a name for your token.  
+   Dynatrace doesn't enforce unique token names. You can create multiple tokens with the same name. Be sure to provide a meaningful name for each token you generate. Proper naming helps you to efficiently manage your tokens and perhaps delete them when they're no longer needed.
+4. Select the required scopes for the token.
+5. Select **Generate token**.
+6. Copy the generated token to the clipboard. Store the token in a password manager for future use.
 
-   Вы можете получить доступ к вашему токену только один раз при его создании. Вы не сможете раскрыть его позже.
+   You can only access your token once upon creation. You can't reveal it afterward.
 
-Чтобы сгенерировать личный токен доступа
+To generate a personal access token
 
-1. Перейдите к **Личным токенам доступа** (доступно через [меню пользователя](/docs/discover-dynatrace/get-started/dynatrace-ui#user-menu-previous-dynatrace "Навигация по последней версии Dynatrace") в предыдущей версии Dynatrace).
-2. Выберите **Сгенерировать новый токен**.
-3. Введите имя для вашего токена.  
-   Dynatrace не обеспечивает уникальность имен токенов. Вы можете создать несколько токенов с одинаковым именем. Убедитесь, что вы предоставили осмысленное имя для каждого сгенерированного токена. Правильное именование помогает вам эффективно управлять вашими токенами и, возможно, удалять их, когда они больше не нужны.
-4. Выберите необходимые области для токена.
-5. Выберите **Сгенерировать токен**.
-6. Скопируйте сгенерированный токен в буфер обмена. Храните токен в менеджере паролей для будущего использования.
+1. Go to **Personal Access Tokens** (accessible via the [user menu](/docs/discover-dynatrace/get-started/dynatrace-ui#user-menu-previous-dynatrace "Navigate the latest Dynatrace") in the previous Dynatrace).
+2. Select **Generate new token**.
+3. Enter a name for your token.  
+   Dynatrace doesn't enforce unique token names. You can create multiple tokens with the same name. Be sure to provide a meaningful name for each token you generate. Proper naming helps you to efficiently manage your tokens and perhaps delete them when they're no longer needed.
+4. Select the required scopes for the token.
+5. Select **Generate token**.
+6. Copy the generated token to the clipboard. Store the token in a password manager for future use.
 
-   Вы можете получить доступ к вашему токену только один раз при его создании. Вы не сможете раскрыть его позже.
+   You can only access your token once upon creation. You can't reveal it afterward.
 
-Вы можете назначить несколько областей одному токену или сгенерировать несколько токенов, каждый с разными уровнями доступа, и использовать их соответствующим образом - проверьте политику безопасности вашей организации для лучшей практики.
+You can assign multiple scopes to a single token, or you can generate several tokens, each with different access levels and use them accordinglyâcheck your organization's security policies for the best practice.
 
-Чтобы изменить область существующего токена, используйте вызов [PUT токена](/docs/dynatrace-api/environment-api/tokens-v2/api-tokens/put-token "Обновите токен доступа с помощью Dynatrace API.") API токенов доступа. Обратите внимание, что вам необходимо отправить существующие области, если вы хотите сохранить их. Любая существующая область, отсутствующая в полезной нагрузке, удаляется.
+To change the scope of an existing token, use the [PUT a token call](/docs/dynatrace-api/environment-api/tokens-v2/api-tokens/put-token "Update an access token via Dynatrace API.") of the Access tokens API. Note that you need to submit the existing scopes if you want to keep them. Any existing scope missing in the payload is removed.
 
-Альтернативно вы можете использовать вызов [POST токена](/docs/dynatrace-api/environment-api/tokens-v2/api-tokens/post-token "Создайте токен доступа с помощью Dynatrace API.") для генерации токена.
+Alternatively, you can use the [POST a token](/docs/dynatrace-api/environment-api/tokens-v2/api-tokens/post-token "Create an access token via Dynatrace API.") call to generate a token.
 
-## Области токена
+## Token scopes
 
-Токен доступа
+Access token
 
-Личный токен доступа
+Personal access token
 
 ### OpenPipeline
 
@@ -77,27 +77,27 @@ Dynatrace использует уникальный формат токена, �
 
 ### PaaS
 
-### Другое
+### Other
 
-Dynatrace предоставляет следующие разрешения для личных токенов доступа. Вы можете установить их в веб-интерфейсе, как описано выше, или с помощью [API токенов доступа](/docs/dynatrace-api/environment-api/tokens-v2/api-tokens "Управляйте токенами аутентификации Dynatrace API.").
+Dynatrace provides the following permissions for personal access tokens. You can set them in the web UI as described above or via the [**Access tokens** API](/docs/dynatrace-api/environment-api/tokens-v2/api-tokens "Manage Dynatrace API authentication tokens.").
 
-## Аутентификация
+## Authenticate
 
-У вас есть два варианта передачи токена API: в заголовке HTTP **Authorization** или в параметре запроса **api-token**.
+You have two options to pass your API token: in the **Authorization** HTTP header or in the **api-token** query parameter.
 
-Мы рекомендуем использовать заголовок **Authorization**, поскольку URL-адреса (вместе с токенами, переданными в них) могут быть записаны в различных местах. Пользователи также могут добавлять в закладки URL-адреса или делиться ими в открытом тексте. Следовательно, размещение токенов аутентификации в URL-адресе увеличивает риск того, что они будут перехвачены злоумышленником.
+We recommend that you use the **Authorization** header, as URLs (along with tokens passed within them) might be logged in various locations. Users might also bookmark the URLs or share them in plain text. Therefore, placing authentication tokens into the URL increases the risk that they will be captured by an attacker.
 
-Заголовок HTTP
+HTTP header
 
-Параметр запроса
+Query parameter
 
-Вы можете аутентифицироваться, присоединив токен к заголовку HTTP **Authorization**, предшествующему области **Api-Token**.
+You can authenticate by attaching the token to the **Authorization** HTTP header preceding the **Api-Token** realm.
 
 ```
 --header 'Authorization: Api-Token dt0c01.abc123.abcdefjhij1234567890'
 ```
 
-В следующем примере показана аутентификация через заголовок HTTP.
+The following example shows authentication via HTTP header.
 
 ```
 curl --request GET \
@@ -111,7 +111,7 @@ curl --request GET \
 --header 'Authorization: Api-Token dt0c01.abc123.abcdefjhij1234567890'
 ```
 
-Вы можете аутентифицироваться, добавив токен в качестве значения параметра запроса **api-token**.
+You can authenticate by adding the token as the value of the **api-token** query parameter.
 
 ```
 curl --request GET \
@@ -121,12 +121,12 @@ curl --request GET \
 --url 'https://mySampleEnv.live.dynatrace.com/api/v1/config/clusterversion?api-token=abcdefjhij1234567890' \
 ```
 
-### Аутентификация в API Explorer
+### Authentication in the API Explorer
 
-Выберите значок замка ![Замок](https://dt-cdn.net/images/blue-lock-icon-77090b9928.svg "Замок") рядом с любым конечной точкой, чтобы отобразить информацию о токенах OAuth 2.0, которые защищают эту конечную точку. Каждая конечная точка требует определенного типа токена.
+Select the lock ![Lock](https://dt-cdn.net/images/blue-lock-icon-77090b9928.svg "Lock") icon next to any end point to display information about the OAuth 2.0 tokens that secure that endpoint. Each endpoint requires a specific token type.
 
-Вы также можете разблокировать все конечные точки, выбрав **Авторизовать**. В отображаемом диалоговом окне вы можете увидеть, какие разрешения токена необходимы для каждой конечной точки API. Вводя ваш токен OAuth 2.0 в глобальный диалог **Доступные авторизации**, вы можете разблокировать все связанные конечные точки API.
+You can also unlock all endpoints by selecting **Authorize**. In the displayed dialog, you can then see which token permissions are necessary for each API endpoint. By entering your OAuth 2.0 token into the global **Available authorizations** dialog, you can unlock all related API endpoints.
 
-## Связанные темы
+## Related topics
 
-* [Классические токены доступа](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens "Узнайте о концепции токена доступа и его областях.")
+* [Access tokens classic](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens "Learn the concept of an access token and its scopes.")

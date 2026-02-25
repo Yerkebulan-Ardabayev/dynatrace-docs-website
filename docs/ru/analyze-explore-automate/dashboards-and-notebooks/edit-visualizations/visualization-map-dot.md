@@ -1,7 +1,7 @@
 ---
 title: Dot map visualization
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-map-dot
-scraped: 2026-02-22T21:13:23.950812
+scraped: 2026-02-25T21:22:46.530248
 ---
 
 # Dot map visualization
@@ -130,20 +130,6 @@ record(geo.location.latitude = 55.676098, geo.location.longitude = 12.568337, re
 
 Important visualization settings for this example include:
 
-Section
-
-Settings
-
-Data mapping
-
-* **Latitude** = `geo.location.latitude`
-* **Longtude** = `geo.location.longitude`
-* **Color value** = `revenue`
-
-Shape
-
-* **Style** = **Icon** (`Shop`)
-
 ### Example 3
 
 ![Dot map example: with a bearing field](https://dt-cdn.net/images/dot-03-973-cfe4ef9ef4.png)
@@ -195,20 +181,6 @@ record(geo.location.latitude = 55.676098, geo.location.longitude = 12.568337, be
 ```
 
 Important visualization settings for this example include:
-
-Section
-
-Settings
-
-Data mapping
-
-* **Latitude** = `geo.location.latitude`
-* **Longtude** = `geo.location.longitude`
-
-Shape
-
-* **Style** = **Icon** (`Airplane Filled`)
-* **Bearing** = **Data** (`bearing`)
 
 ### Example 4
 
@@ -262,23 +234,6 @@ record(geo.location.latitude = 55.676098, geo.location.longitude = 12.568337, La
 
 Important visualization settings for this example include:
 
-Section
-
-Settings
-
-Data mapping
-
-* **Latitude** = `geo.location.latitude`
-* **Longtude** = `geo.location.longitude`
-
-Shape
-
-* **Style** = **Icon** (`Office Filled`)
-
-Legend and tooltip
-
-* **Show custom fields** = `Lab` (to display the lab name in the tooltip)
-
 ## Chart interactions
 
 ### Selection interactions
@@ -324,8 +279,6 @@ If you aren't sure that you chose the right visualization, use the [visualizatio
 
 ## View
 
-
-
 * **Default zoom**
 
   Set a default zoom level for the map by selecting one of the following options:
@@ -338,6 +291,8 @@ If you aren't sure that you chose the right visualization, use the [visualizatio
   Turn this on to show region outlines within countries.
 
 ## Data mapping
+
+
 
 The data mapping section shows how a column of your result is mapped to the visualization.
 

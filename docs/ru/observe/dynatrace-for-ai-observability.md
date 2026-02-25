@@ -1,7 +1,7 @@
 ---
 title: AI and LLM Observability
 source: https://www.dynatrace.com/docs/observe/dynatrace-for-ai-observability
-scraped: 2026-02-24T21:16:06.437710
+scraped: 2026-02-25T21:13:39.571631
 ---
 
 # AI and LLM Observability
@@ -29,7 +29,7 @@ Get a holistic view of the AI-generated parts of your system such as LLM, vector
 
 Dynatrace unifies metrics, logs, traces, problem analytics, and root cause information in dashboards and notebooks, providing a single operational view of your AI-powered cloud applications end-to-end.
 
-Use Dynatrace with [Traceloop OpenLLMetry](/docs/observe/dynatrace-for-ai-observability/get-started "Learn how to set up OpenLLMetry to observe an AI/ML model.") or [OpenTelemetry with GenAI semantic conventionsï»¿](https://opentelemetry.io/docs/specs/semconv/gen-ai/) to gain detailed insights into your generative AI stack.
+Use Dynatrace with [Traceloop OpenLLMetry](/docs/observe/dynatrace-for-ai-observability/get-started "Get started with OpenLLMetry and OpenTelemetry for AI Observability.") or [OpenTelemetry with GenAI semantic conventionsï»¿](https://opentelemetry.io/docs/specs/semconv/gen-ai/) to gain detailed insights into your generative AI stack.
 
 ![Full AI/ML observability with Dynatrace](https://dt-cdn.net/images/ai-obs-tech-stack-latest-1892-88a8b44f2c.png)
 

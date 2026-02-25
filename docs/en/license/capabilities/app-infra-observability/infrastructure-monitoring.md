@@ -1,7 +1,7 @@
 ---
 title: Calculate your consumption of Infrastructure Monitoring (DPS)
 source: https://www.dynatrace.com/docs/license/capabilities/app-infra-observability/infrastructure-monitoring
-scraped: 2026-02-22T21:18:03.878498
+scraped: 2026-02-25T21:18:35.957974
 ---
 
 # Calculate your consumption of Infrastructure Monitoring (DPS)
@@ -38,7 +38,7 @@ The figure below illustrates how host-hour consumption per host is calculated at
 ### Metrics
 
 This section assumes that you have followed the Dynatrace-recommended deployment options.
-If you implement a custom deployment, the charging of included Metrics may still work as describedâbut this is not guaranteed by Dynatrace.
+If you implement a custom deployment, the charging of included metrics may still work as describedâbut this is not guaranteed by Dynatrace.
 
 Dynatrace Infrastructure Monitoring includes Infrastructure Monitoring metrics and [other built-in metrics](/docs/license/capabilities/metrics/dps-metrics-ingest#billable-and-non-billable-metrics "Learn how your consumption of the Metrics - Ingest & Process DPS capability is billed and charged.").
 These metrics are included and never produce any charge.
@@ -53,28 +53,6 @@ Metric data points that exceed your included volume are charged as:
 
 * If Metrics powered by Grail exists on your rate card, these are charged as [Metrics powered by Grail](/docs/license/capabilities/metrics "Learn how Dynatrace Metrics powered by Grail consumption is calculated using the Dynatrace Platform Subscription model.").
 * If Metrics powered by Grail does not exist on your rate card, these are charged as [Custom Metrics Classic](/docs/license/capabilities/platform-extensions/custom-metrics-classic "Learn how your consumption of the Dynatrace Custom Metrics Classic DPS capability is billed and charged.").
-
-Origin
-
-Examples (including but not limited to)
-
-An Infrastructure-monitored host and sent via the [OneAgent metric API](/docs/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/oneagent-metric-api "Use the Dynatrace API to retrieve the metrics of monitored entities.")
-
-* OpenTelemetry metrics
-* Spring Micrometer
-* StatsD
-* JMX
-* Extensions run locally on the host by OneAgent
-* a host-local Telegraf
-
-An Infrastructure-monitored Kubernetes node
-
-* OpenTelemetry metrics
-* Spring Micrometer
-* JMX
-* [Prometheus metrics via ActiveGate](/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-prometheus-metrics "Metric ingestion from Prometheus endpoints in Kubernetes, metrics alerts, and monitoring consumption.")
-
-* Metrics sent via the Dynatrace Collector [1](#fn-1-1-def) or OpenTelemetry Collector [2](#fn-1-2-def)
 
 1
 

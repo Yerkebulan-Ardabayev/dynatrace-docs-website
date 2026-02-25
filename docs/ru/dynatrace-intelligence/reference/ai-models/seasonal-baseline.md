@@ -1,77 +1,77 @@
 ---
-title: Seasonal baseline
+title: Сезонная базовая линия
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/reference/ai-models/seasonal-baseline
-scraped: 2026-02-24T21:20:32.035896
+scraped: 2026-02-25T21:32:42.856962
 ---
 
-# Seasonal baseline
+# Сезонная базовая линия
 
-# Seasonal baseline
+# Сезонная базовая линия
 
-* Latest Dynatrace
-* Explanation
-* 5-min read
-* Updated on Jan 28, 2026
+* Последнее Dynatrace
+* Объяснение
+* 5-минутное чтение
+* Обновлено 28 января 2026 г.
 
-A seasonal baseline represents a dynamic approach to baselining where the systems have distinct seasonality patterns. An example of a seasonal pattern is a metric that rises during business hours and lies low outside of them. For such a case, it is difficult to set up an alerting configuration based on a static or auto-adaptive threshold. If you set a fixed threshold based on business hours' behavior, you'll miss an anomaly outside of business hours. Dynatrace Intelligence **learns the seasonal behavior** of your metrics and automatically creates a confidence band for it.
+Сезонная базовая линия представляет собой динамический подход к базовой линии, где системы имеют разные сезонные закономерности. Примером сезонной закономерности является метрика, которая увеличивается в течение рабочих часов и остается низкой вне их. В таком случае сложно настроить конфигурацию оповещения на основе статического или автоадаптивного порога. Если вы установите фиксированный порог на основе поведения в рабочие часы, вы пропустите аномалию вне рабочих часов. Dynatrace Intelligence **изучает сезонное поведение** ваших метрик и автоматически создает доверительный интервал для него.
 
-When the configuration of a metric event includes multiple entities, each entity receives its own seasonal baseline, and each baseline is evaluated independently. For example, if the scope of an event includes five services, Dynatrace calculates and evaluates five independent baselines.
+Когда конфигурация события метрики включает несколько сущностей, каждая сущность получает свою собственную сезонную базовую линию, и каждая базовая линия оценивается независимо. Например, если область действия события включает пять сервисов, Dynatrace вычисляет и оценивает пять независимых базовых линий.
 
-## Baseline example
+## Пример базовой линии
 
-In this example, we're looking at the number of user actions in an application. Real user interactions often follow the seasonality of business hours and weekends, and our time series also shows daily peaks.
+В этом примере мы рассматриваем количество действий пользователей в приложении. Реальные взаимодействия пользователей часто следуют сезонности рабочих часов и выходных, и наш временной ряд также показывает ежедневные пики.
 
-When evaluated by a static threshold, those daily peaks result in false-positive alarms (red annotation within the chart).
+Когда оценивается статическим порогом, эти ежедневные пики приводят к ложноположительным сигналам тревоги (красная аннотация на графике).
 
-![Static threshold based anomaly detection producing false-positive alarms in case of seasonal timeseries behavior.](https://dt-cdn.net/images/notebook-static-threshold-anomalies-1920-b17476b1bd.png)
+![Статический порог обнаружения аномалий, производящий ложноположительные сигналы тревоги в случае сезонного поведения временного ряда.](https://dt-cdn.net/images/notebook-static-threshold-anomalies-1920-b17476b1bd.png)
 
-Dynatrace Intelligence automatically detects seasonal behavior in the time series and creates a confidence band based on that pattern. As you can see on the chart below, the model recognizes seasonality and doesn't generate false alarms on the peaks. However, it will still trigger an alert should a spike occur at a different time.
+Dynatrace Intelligence автоматически обнаруживает сезонное поведение во временном ряду и создает доверительный интервал на основе этой закономерности. Как вы можете видеть на графике ниже, модель распознает сезонность и не генерирует ложные сигналы тревоги на пиках. Однако она все равно сработает, если происходит скачок в другое время.
 
-![Seasonal anomaly detection model correctly follows the seasonal behavior of a timeseries and avoids false-positive alarms.](https://dt-cdn.net/images/notebooks-seasonal-baseline-1920-c6aa3be336.png)
+![Сезонная модель обнаружения аномалий правильно следует сезонному поведению временного ряда и избегает ложноположительных сигналов тревоги.](https://dt-cdn.net/images/notebooks-seasonal-baseline-1920-c6aa3be336.png)
 
-## Parameters of the baseline model
+## Параметры модели базовой линии
 
-The seasonal baseline model uses the metric values for each minute during the **last 14 days** as the reference for the baseline calculation. The model learns the usual behavior of the metric and aims to detect regularly repeating patterns. It uses **probabilistic prediction** to compute the confidence band, which covers the expected range of a future point.
+Модель сезонной базовой линии использует значения метрик за каждую минуту за **последние 14 дней** в качестве эталона для расчета базовой линии. Модель изучает обычное поведение метрики и стремится обнаружить регулярно повторяющиеся закономерности. Она использует **вероятностное прогнозирование** для расчета доверительного интервала, который охватывает ожидаемый диапазон будущей точки.
 
-You can adapt the width of the confidence band via the **tolerance** parameter. A higher tolerance means a broader confidence band, leading to fewer triggered events. The allowed range for the tolerance is from `0.1` to `10`, with `4` as the default value.
+Вы можете адаптировать ширину доверительного интервала с помощью параметра **допустимой погрешности**. Более высокая допустимая погрешность означает более широкий доверительный интервал, что приводит к меньшему количеству срабатываний событий. Разрешенный диапазон для допустимой погрешности составляет от `0,1` до `10`, с `4` в качестве значения по умолчанию.
 
-As the name suggests, the seasonal model is beneficial for data with seasonal patterns (for example, daily peaks). As it consumes significant resources and needs more time to learn the behavior, there are some validation checks to ensure optimal performance. The [validation](#training) evaluates each tuple (unique combinations of metricâdimensionâdimension value). If there's no pass, a simple model is used instead, with the respective message appearing in the preview.
+Как следует из названия, сезонная модель полезна для данных с сезонными закономерностями (например, ежедневными пиками). Поскольку она потребляет значительные ресурсы и требует больше времени для изучения поведения, существуют некоторые проверки валидации для обеспечения оптимальной производительности. [Валидация](#training) оценивает каждую пару (уникальные комбинации метрики - размерность - значение размерности). Если проверка не проходит, используется простая модель, и соответствующее сообщение появляется в предварительном просмотре.
 
-The simple model calculates the confidence band based on the robust estimation of the distribution of the input data and its calculated interval stays constant over time. For the simple model, the **tolerance** parameter controls the width of the confidence band in the same manner as for the seasonal model.
+Простая модель рассчитывает доверительный интервал на основе робастного оценщика распределения входных данных, и его рассчитанный интервал остается постоянным во времени. Для простой модели параметр **допустимой погрешности** контролирует ширину доверительного интервала таким же образом, как и для сезонной модели.
 
-If **metric boundaries** (minimum or maximum value of the metric) are set in the metric metadata they are automatically considered in the model. If no metric boundaries are set and the input data contains only positive values, the model automatically sets a minimum boundary value of `0`. If a minimum or maximum value is found, the confidence band does not exceed this value.
+Если **границы метрик** (минимальное или максимальное значение метрики) заданы в метаданных метрики, они автоматически учитываются в модели. Если границы метрик не заданы и входные данные содержат только положительные значения, модель автоматически задает минимальное значение границы `0`. Если найдено минимальное или максимальное значение, доверительный интервал не превышает это значение.
 
-The model (be it seasonal or simple) is updated daily.
+Модель (сезонная или простая) обновляется ежедневно.
 
-Another important parameter for seasonal baselines is the [sliding window](/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-configuration#sliding-window "How to set up an alert for missing measurements.") that is used to compare current measurements against the confidence band. It defines how often the confidence band must be violated within a sliding window of time to raise an event (violations don't have to be successive). This approach helps to reduce the number of false positives when alerting. You can set the sliding window to a maximum of 60 minutes.
+Другим важным параметром для сезонных базовых линий является [скользящее окно](/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-configuration#sliding-window "Настройка оповещения для пропущенных измерений.") , которое используется для сравнения текущих измерений с доверительным интервалом. Оно определяет, как часто доверительный интервал должен быть нарушен в течение скользящего окна времени, чтобы сработать событие (нарушения не должны быть последовательными). Этот подход помогает уменьшить количество ложных положительных сигналов при оповещении. Вы можете задать скользящее окно до максимально 60 минут.
 
-## Training of the baseline model
+## Обучение модели базовой линии
 
-The seasonal baseline model uses the metric values for each minute during the last 14 days for training and is trained per tuple (unique combinations of metricâdimensionâdimension value). The training happens on daily basis.
+Модель сезонной базовой линии использует значения метрик за каждую минуту за последние 14 дней для обучения и обучается по паре (уникальные комбинации метрики - размерность - значение размерности). Обучение происходит ежедневно.
 
-The image below provides an overview of the training process.
+Ниже представлена схема процесса обучения.
 
-![seasonal baseline model overview](https://dt-cdn.net/images/seasonal-baseline-model-training-1187-8bd05de831.png)
+![Обзор модели сезонной базовой линии](https://dt-cdn.net/images/seasonal-baseline-model-training-1187-8bd05de831.png)
 
-The first step, **data validation**, ensures that it is reasonable to train a seasonal model on the metric data. Here are some reasons to switch to a simple model:
+Первый шаг, **валидация данных**, гарантирует, что обучение сезонной модели на данных метрик является разумным. Вот некоторые причины для перехода на простую модель:
 
-* the data has many missing values
-* the data has many outliers
-* there is not enough variability in the data
-* there is no seasonality detectable in the data.
+* данные имеют много пропущенных значений
+* данные имеют много выбросов
+* в данных недостаточно вариативности
+* в данных нет обнаруживаемой сезонности.
 
-If this validation fails, the **simple model** is used instead. If the validation is successful, the next step is the **pre-processing of the input data**. In this step the data is prepared for training the quantile regression model which learns the seasonal behavior from three main characteristics (features) of data:
+Если эта валидация не проходит, используется **простая модель**. Если валидация проходит успешно, следующим шагом является **предварительная обработка входных данных**. На этом этапе данные готовятся для обучения модели квантильной регрессии, которая изучает сезонное поведение из трех основных характеристик (фич) данных:
 
-* **Autoregressive features** are the ten most recent historic data points (small gaps are interpolated)
-* **Time and day features** identify a day or a specific time of a day which can help to learn a pattern occurring only on a specific day
-* **Robust seasonal patterns** describe regular repeating patterns extracted via Fourier transformation.
+* **Авторегрессивные фичи** - это десять наиболее недавних исторических точек данных (маленькие разрывы интерполируются)
+* **Фичи времени и дня** идентифицируют день или конкретное время дня, которое может помочь изучить закономерность, возникающую только в конкретный день
+* **Робастные сезонные закономерности** описывают регулярно повторяющиеся закономерности, извлеченные с помощью преобразования Фурье.
 
-These features are used to train the **Quantile regression model**, a probabilistic regression model, that is robust against outliers due to estimating quantiles.
+Эти фичи используются для обучения **модели квантильной регрессии**, вероятностной регрессионной модели, которая является робастной против выбросов благодаря оценке квантилей.
 
-The next step is the **Model validation**, which verifies the reliability of the forecasted quantiles on a subset of data. If this validation fails, the **simple model** is used instead.
+Следующим шагом является **валидация модели**, которая проверяет надежность прогнозируемых квантилей на подмножестве данных. Если эта валидация не проходит, используется **простая модель**.
 
-After the training is finished, Dynatrace uses the seasonal model to detect anomalies. Each minute the model produces a **one-step-ahead forecast** of the confidence band for the next minute. Once the actual data point arrives, the predicted confidence interval is compared with the actual value to check whether the value is within the predicted boundaries.
+После завершения обучения Dynatrace использует сезонную модель для обнаружения аномалий. Каждую минуту модель производит **прогноз доверительного интервала** на следующую минуту. Как только фактическая точка данных приходит, прогнозируемый доверительный интервал сравнивается с фактическим значением, чтобы проверить, находится ли значение в пределах прогнозируемого интервала.
 
-## Related topics
+## Связанные темы
 
-* [Metrics Classic](/docs/analyze-explore-automate/metrics-classic "Learn about metrics classic that Dynatrace offers.")
+* [Метрики Classic](/docs/analyze-explore-automate/metrics-classic "Узнайте о метриках Classic, которые Dynatrace предлагает.")

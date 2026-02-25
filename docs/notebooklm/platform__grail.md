@@ -1,6 +1,6 @@
 # Документация Dynatrace: platform/grail
 Язык: Русский (RU)
-Сгенерировано: 2026-02-24
+Сгенерировано: 2026-02-25
 Файлов в разделе: 23
 ---
 
@@ -9,7 +9,7 @@
 ---
 title: What is Dynatrace Grail?
 source: https://www.dynatrace.com/docs/platform/grail/dynatrace-grail
-scraped: 2026-02-24T21:13:53.659146
+scraped: 2026-02-25T21:14:57.210992
 ---
 
 # What is Dynatrace Grail?
@@ -145,7 +145,7 @@ NoSQL databases like Cassandra, Redis, and Amazon DynamoDB are examples of stora
 ---
 title: DPL Architect
 source: https://www.dynatrace.com/docs/platform/grail/dynatrace-pattern-language/dpl-architect
-scraped: 2026-02-23T21:35:19.198645
+scraped: 2026-02-25T21:35:01.639933
 ---
 
 # DPL Architect
@@ -294,71 +294,9 @@ For faster access, preset patterns are logically divided into a folder structure
 
 See below for the list of preset patterns.
 
-Pattern
-
-Description
-
-`apache/access`
-
-Apache HTTP servers access log pattern. See: [Apache log filesï»¿](https://dt-url.net/lb038dx)
-
-`apache/error-default`
-
-Apache HTTP servers error log pattern. See: [Apache log filesï»¿](https://dt-url.net/lb038dx)
-
-`aws/cloudfront`
-
-AWS CloudFront default log pattern. See: [Standard log file fieldsï»¿](https://dt-url.net/8l238a9)
-
-`aws/cloudtrail`
-
-Extracts all the fields from AWS CloudTrail JSON-formatted log record. See: [CloudTrail log file examplesï»¿](https://dt-url.net/hg43865)
-
-`aws/elb`
-
-Extracts all the fields from AWS Elastic Load Balancer log record. See: [Access logs for your Application Load Balancerï»¿](https://dt-url.net/67m386h)
-
-`aws/route53-query`
-
-Extracts all the fields from JSON-formatted AWS Route53 resolver query log record. See: [Route 53 Resolver query log exampleï»¿](https://dt-url.net/b76389g)
-
-`aws/s3-server-access`
-
-Extracts all the fields from AWS S3 server access log records. See: [Amazon S3 server access log formatï»¿](https://dt-url.net/4i838sr)
-
-`aws/vpc-flow-default`
-
-Extracts all the fields from the AWS VPC Flow logs default format. See: [Flow log recordsï»¿](https://dt-url.net/tsa38nd)
-
-`aws/vpc-flow-default`
-
-Extracts the fields from the AWS VPC Flow logs custom format, when all the fields have been added in the default order. See: [Flow log recordsï»¿](https://dt-url.net/tsa38nd)
-
-`gcp/scc`
-
-Extracts the relevant fields from GPC Security Command Centers' records. See: [REST Resource: organizations.sources.findingsï»¿](https://dt-url.net/6gc38t3)
-
-`haproxy/http`
-
-Extracts all the fields from HAProxy HTTP default log records. See: [HAProxy Configuration Manualï»¿](https://dt-url.net/74e38p0)
-
-`iis/default`
-
-Extracts all the fields from Microsoft IIS access logs. See: [Configure Logging in IISï»¿](https://dt-url.net/g8g38i7)
-
-`k8s/audit`
-
-Extracts all the fields from JSON-formatted Kubernetes apiservers' audit log records. See: [kube-apiserver Audit Configurationï»¿](https://dt-url.net/3yi38ir)
-
-`k8s/coredns-query`
-
-Extracts all the fields from CoreDNS default query logs. See: [CoreDNS logï»¿](https://dt-url.net/pfk38xe)
-
 ## Use case
 
 ### Investigate security incidents in Kubernetes clusters
-
-
 
 Application Security
 
@@ -389,7 +327,7 @@ For additional insights into DPL Architect, see
 ---
 title: DPL Positional Matchers
 source: https://www.dynatrace.com/docs/platform/grail/dynatrace-pattern-language/log-processing-positional-matchers
-scraped: 2026-02-24T21:22:52.281142
+scraped: 2026-02-25T21:33:47.337290
 ---
 
 # DPL Positional Matchers
@@ -547,7 +485,7 @@ Parsing results: UUID is extracted from the string.
 ---
 title: Dynatrace Pattern Language
 source: https://www.dynatrace.com/docs/platform/grail/dynatrace-pattern-language
-scraped: 2026-02-23T21:39:19.814986
+scraped: 2026-02-25T21:18:47.750264
 ---
 
 # Dynatrace Pattern Language
@@ -749,7 +687,7 @@ If the engine encounters data for which it is unable to find a match, it resets 
 ---
 title: DQL commands
 source: https://www.dynatrace.com/docs/platform/grail/dynatrace-query-language/commands
-scraped: 2026-02-24T21:18:36.158763
+scraped: 2026-02-25T21:23:15.832130
 ---
 
 # DQL commands
@@ -798,7 +736,7 @@ This page provides a list of DQL commands grouped by categories. To get more in-
 ---
 title: DQL data types
 source: https://www.dynatrace.com/docs/platform/grail/dynatrace-query-language/data-types
-scraped: 2026-02-24T21:18:30.271421
+scraped: 2026-02-25T21:23:22.444738
 ---
 
 # DQL data types
@@ -1465,7 +1403,7 @@ Similarly, if you need to sort by a field named 'not':
 ---
 title: DQL compared to SQL and more
 source: https://www.dynatrace.com/docs/platform/grail/dynatrace-query-language/dql-comparison
-scraped: 2026-02-24T21:18:26.127806
+scraped: 2026-02-25T21:23:26.494366
 ---
 
 # DQL compared to SQL and more
@@ -1870,7 +1808,7 @@ events
 ---
 title: Use DQL queries
 source: https://www.dynatrace.com/docs/platform/grail/dynatrace-query-language/dql-guide
-scraped: 2026-02-24T21:18:34.803188
+scraped: 2026-02-25T21:23:23.779932
 ---
 
 # Use DQL queries
@@ -2066,7 +2004,7 @@ You can learn DQL through hands-on experience with interactive tutorials in the 
 ---
 title: DQL language reference
 source: https://www.dynatrace.com/docs/platform/grail/dynatrace-query-language/dql-reference
-scraped: 2026-02-24T21:18:24.946470
+scraped: 2026-02-25T21:23:25.123824
 ---
 
 # DQL language reference
@@ -4050,7 +3988,7 @@ Query result:
 ---
 title: DQL functions
 source: https://www.dynatrace.com/docs/platform/grail/dynatrace-query-language/functions
-scraped: 2026-02-24T21:18:23.779955
+scraped: 2026-02-25T21:23:14.740708
 ---
 
 # DQL functions
@@ -4137,7 +4075,7 @@ Functions with a general purpose.
 ---
 title: DQL operators
 source: https://www.dynatrace.com/docs/platform/grail/dynatrace-query-language/operators
-scraped: 2026-02-24T21:18:33.657610
+scraped: 2026-02-25T21:23:17.816425
 ---
 
 # DQL operators
@@ -4574,7 +4512,7 @@ The operator searches the pattern in the tokens of a string. Its behavior depend
 ---
 title: Dynatrace Query Language
 source: https://www.dynatrace.com/docs/platform/grail/dynatrace-query-language
-scraped: 2026-02-24T21:14:10.429833
+scraped: 2026-02-25T21:14:21.518968
 ---
 
 # Dynatrace Query Language
@@ -4628,7 +4566,7 @@ Use DQL to query your metric observability data.](/docs/analyze-explore-automate
 ---
 title: Lookup data in Grail
 source: https://www.dynatrace.com/docs/platform/grail/lookup-data
-scraped: 2026-02-24T21:32:46.922161
+scraped: 2026-02-25T21:27:38.278848
 ---
 
 # Lookup data in Grail
@@ -5068,7 +5006,7 @@ You can also use [policy boundaries](/docs/manage/identity-access-management/per
 ---
 title: Permissions in Grail
 source: https://www.dynatrace.com/docs/platform/grail/organize-data/assign-permissions-in-grail
-scraped: 2026-02-24T21:17:37.151298
+scraped: 2026-02-25T21:18:46.636629
 ---
 
 # Permissions in Grail
@@ -5621,7 +5559,7 @@ ALLOW storage:system:read;
 ---
 title: Organize data
 source: https://www.dynatrace.com/docs/platform/grail/organize-data
-scraped: 2026-02-24T21:23:59.525940
+scraped: 2026-02-25T21:18:45.175488
 ---
 
 # Organize data
@@ -6141,7 +6079,7 @@ Entity relationships in the previous Dynatrace (for example, the environment API
 ---
 title: Smartscape on Grail
 source: https://www.dynatrace.com/docs/platform/grail/smartscape-on-grail
-scraped: 2026-02-22T21:13:59.859577
+scraped: 2026-02-25T21:19:20.011086
 ---
 
 # Smartscape on Grail
@@ -6347,74 +6285,6 @@ If there are no corresponding classic entities (for example, with [Clouds](/docs
 
 ## Differences between classic entities and Smartscape on Grail
 
-Feature
-
-Classic entity store
-
-Smartscape on Grail
-
-Query all entities regardless of their type
-
-*Not supported*
-
-`smartscapeNodes "*"`
-
-Query HOST entities
-
-`fetch dt.entity.host`
-
-`smartscapeNodes HOST`
-
-Query all relationships regardless of type, source or target
-
-*Not supported*
-
-`smartscapeEdges "*"`
-
-References in Signal data
-
-`dt.entity.__type__`
-
-`dt.smartscape.__type__`
-
-Enrich entity name
-
-`entityName(dt.entity.__type__)`
-
-`getNodeName(dt.smartscape.__type__)`
-
-Enrich any other field (for example, tags)
-
-`entityAttr(dt.entity.__type__, "tags")`
-
-`getNodeField(dt.smartscape.__type__, "tags")`
-
-Get a list of entity IDs based on entity selector
-
-`classicEntitySelector("type(HOST),toRelationships.runsOn(type(SERVICE),tag("owner:Joe"))")`
-
-*Not supported*
-
-Get a list of entity IDs based on entity traversal
-
-*Not supported*
-
-```
-smartscapeNodes SERVICE
-
-
-
-| filter tags[owner] == "Joe"
-
-
-
-| traverse runs_on, HOST
-
-
-
-| fields id
-```
-
 ## Smartscape segments
 
 Smartscape nodes can be filtered with the help of
@@ -6433,8 +6303,6 @@ Only Smartscape nodes can be filtered using segments, meaning that Smartscape ed
 
 ## Related topics
 
-
-
 * [DQL Smartscape commands](/docs/platform/grail/dynatrace-query-language/commands/smartscape-commands "DQL Smartscape commands")
 * [Join functions](/docs/platform/grail/dynatrace-query-language/functions/join-functions "A list of DQL join functions.")
 * [Conversion and casting functions](/docs/platform/grail/dynatrace-query-language/functions/conversion-and-casting-functions "A list of DQL conversion and casting functions.")
@@ -6448,7 +6316,7 @@ Only Smartscape nodes can be filtered using segments, meaning that Smartscape ed
 ---
 title: Grail
 source: https://www.dynatrace.com/docs/platform/grail
-scraped: 2026-02-24T21:16:08.658379
+scraped: 2026-02-25T21:13:47.129518
 ---
 
 # Grail

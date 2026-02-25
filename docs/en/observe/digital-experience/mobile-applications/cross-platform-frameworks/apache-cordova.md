@@ -1,7 +1,7 @@
 ---
 title: Instrument mobile apps with Dynatrace Cordova plugin
 source: https://www.dynatrace.com/docs/observe/digital-experience/mobile-applications/cross-platform-frameworks/apache-cordova
-scraped: 2026-02-23T21:23:04.549330
+scraped: 2026-02-25T21:20:37.219094
 ---
 
 # Instrument mobile apps with Dynatrace Cordova plugin

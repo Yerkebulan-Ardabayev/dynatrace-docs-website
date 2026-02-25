@@ -1,7 +1,7 @@
 ---
 title: Ingest business events via API
 source: https://www.dynatrace.com/docs/observe/business-observability/bo-api-ingest
-scraped: 2026-02-22T21:17:44.011994
+scraped: 2026-02-25T21:18:09.063432
 ---
 
 # Ingest business events via API
@@ -1359,46 +1359,6 @@ You can use the [OAuth client](#oauth-client) to obtain an OAuth 2.0 bearer toke
 * MethodâPOST
 * `Content-Type` headerâ`application/x-www-form-urlencoded`
 * Keys/parametersâYou can send the following keys or parameters in the request body. Make sure to URL encode all values.
-
-  Key/Parameter
-
-  Value
-
-  Required
-
-  `grant_type`
-
-  `client_credentials`
-
-  Required
-
-  `client_id`
-
-  `dt0s02.****`âThis is the client ID generated when you created an [OAuth client](#oauth-client).
-
-  Required
-
-  `client_secret`
-
-  `dt0s02.***.****`âThis is the client secret generated when you created an [OAuth client](#oauth-client).
-
-  Required
-
-  `scope`
-
-  A list of required scopes separated by a space, for example, `storage:bizevents:read storage:buckets:read storage:events:write`
-
-  You can assign multiple scopes to a single token, or you can generate several tokens, each with different access levels and use them accordinglyâcheck your organization's security policies for the best practice.
-
-  Required
-
-  `resource`
-
-  `urn:dtaccount:{your-account-UUID}`
-
-  Optional if not defined in the client
-
-  Required if defined in the client, with the same value as in the client
 
 Example API request
 

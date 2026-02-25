@@ -1,7 +1,7 @@
 ---
 title: Services API - POST tags
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/topology-and-smartscape/services-api/post-tags
-scraped: 2026-02-23T21:21:40.470024
+scraped: 2026-02-25T21:22:00.306639
 ---
 
 # Services API - POST tags

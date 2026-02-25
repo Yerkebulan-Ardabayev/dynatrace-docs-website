@@ -1,7 +1,7 @@
 ---
 title: Bar chart visualization
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-chart-bar
-scraped: 2026-02-22T21:13:13.047739
+scraped: 2026-02-25T21:23:41.751617
 ---
 
 # Bar chart visualization
@@ -46,62 +46,6 @@ To access the chart tools:
   When you hover over the chart, the chart toolbar is displayed by default in the lower-right corner of the chart and is collapsed.
 
 ### Toolbar options
-
-**Icon**
-
-**Name**
-
-**Keyboard shortcut**
-
-**Action**
-
-**Move**
-
-none
-
-Move the chart toolbar. Select and drag the  icon.
-
-**Explore**
-
-`E`
-
-Explore a section of the chart. Select **Explore**, and then click and drag left or right to select a section of the chart. The chart zooms to display the selected area.
-
-**Pan**
-
-`P`
-
-Pan the chart to the left or right. Select **Pan**, and then click and drag left or right.
-
-**Zoom in**
-
-`Ctrl+Up`
-
-Zoom in to the chart.
-
-**Zoom out**
-
-`Ctrl+Down`
-
-Zoom out from the chart.
-
-**Reset**
-
-`R`
-
-Restore the chart zoom level and timeframe to their original states.
-
-**Collapse**
-
-none
-
-Shrink the chart toolbar to just  and .
-
-**Expand**
-
-none
-
-Show the entire chart toolbar.
 
 ### Zoom rules
 
@@ -211,8 +155,6 @@ After applying these changes, the data mapping will correctly allow suitable fie
 
 ### Visualization-specific data mapping settings
 
-
-
 A bar chart graphs one or more values over time, so the mapping needs to include the following:
 
 * **Time**: the column of your result that is used for the X-axis ([timestamp](/docs/platform/grail/dynatrace-query-language/data-types#timestamp "A list of DQL data types.") or [timeframe](/docs/platform/grail/dynatrace-query-language/data-types#timeframe "A list of DQL data types.")).
@@ -231,6 +173,8 @@ You can select a color palette from the list under **Color palettes**.
 For a line chart, area chart, or bar chart, you can optionally [override the selected color palette](#series-overrides) for any series as needed.
 
 ### Legend position
+
+
 
 Select where to display the visualization legend:
 

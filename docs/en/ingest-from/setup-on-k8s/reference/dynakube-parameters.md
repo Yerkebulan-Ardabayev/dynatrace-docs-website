@@ -1,7 +1,7 @@
 ---
 title: DynaKube parameters for Dynatrace Operator
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/reference/dynakube-parameters
-scraped: 2026-02-23T21:32:47.975133
+scraped: 2026-02-25T21:28:53.094986
 ---
 
 # DynaKube parameters for Dynatrace Operator
@@ -78,7 +78,8 @@ Recommended
 | --- | --- | --- | --- |
 | `annotations` | Add custom OneAgent annotations. | Not applicable | map[string]string |
 | `args` | Set additional arguments to the OneAgent installer. For available options, see [Linux custom installation](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/customize-oneagent-installation-on-linux "Learn how to use the Linux installer with command line parameters."). For the list of limitations, see [Limitations](/docs/ingest-from/setup-on-container-platforms/docker/set-up-dynatrace-oneagent-as-docker-container#limitations "Install and update Dynatrace OneAgent as a Docker container."). | Not applicable | []string |
-| `codeModulesImage` | The OneAgent image that is used to inject into pods | Not applicable | string |
+| `codeModulesImage` | Specifies the OneAgent CodeModules image used for injection into application pods. Updates are applied only when the image reference changes. If a floating tag (for example, `latest`) is used, new images pushed under the same tag are not automatically picked up on existing nodes. It is recommended to use a unique tag for each OneAgent CodeModule image version. |  |  |
+| Not applicable | string |  |  |
 | `dnsPolicy` | Set the DNS policy for OneAgent pods. For details, see [Pods DNS Policyï»¿](https://dt-url.net/2t2375a). | `ClusterFirstWithHostNet` | string |
 | `env` | Set additional environment variables for the OneAgent pods. | Not applicable | []EnvVar |
 | `image` | Use a custom OneAgent Docker image. | The image from the Dynatrace cluster. | string |
@@ -119,7 +120,7 @@ Recommended
 
 | **Parameter** | **Description** | **Default value** | **Data type** |
 | --- | --- | --- | --- |
-| `codeModulesImage` | The OneAgent image that is used to inject into pods | Not applicable | string |
+| `codeModulesImage` | Specifies the OneAgent CodeModules image used for injection into application pods. Updates are applied only when the image reference changes. If a floating tag (for example, `latest`) is used, new images pushed under the same tag are not automatically picked up on existing nodes. It is recommended to use a unique tag for each OneAgent CodeModule image version. | Not applicable | string |
 | `initResources` | Define resources requests and limits for the initContainer. For details, see [Managing resources for containersï»¿](https://dt-url.net/atc371q). | Not applicable | ResourceRequirements |
 | `namespaceSelector` | The namespaces where you want Dynatrace Operator to inject. For more information, see [Configure monitoring for namespaces and Pods](/docs/ingest-from/setup-on-k8s/guides/deployment-and-configuration/monitoring-and-instrumentation/annotate "Configure monitoring for namespaces and pods"). | - | LabelSelector |
 | `version` | The OneAgent version to be used. | The latest version is used by default. | string |
@@ -714,7 +715,7 @@ Recommended
 | `annotations` | Add custom OneAgent annotations. | Not applicable | map[string]string |
 | `args` | Set additional arguments to the OneAgent installer. For available options, see [Linux custom installation](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/customize-oneagent-installation-on-linux "Learn how to use the Linux installer with command line parameters."). For the list of limitations, see [Limitations](/docs/ingest-from/setup-on-container-platforms/docker/set-up-dynatrace-oneagent-as-docker-container#limitations "Install and update Dynatrace OneAgent as a Docker container."). | Not applicable | []string |
 | `autoUpdate` (**deprecated**) | Deprecated field to be removed in a future release. [Pin the OneAgent version on your tenant to configure auto-update](/docs/ingest-from/setup-on-k8s/guides/deployment-and-configuration/updates-and-maintenance/auto-update-components#configure-oneagent-auto-update "Configure auto-updates for components managed by Dynatrace Operator (OneAgent, ActiveGate, and EdgeConnect)."). Auto-update is disabled when the `version` or `image` fields are set. | `true` | boolean |
-| `codeModulesImage` | The OneAgent image that is used to inject into pods | Not applicable | string |
+| `codeModulesImage` | Specifies the OneAgent CodeModules image used for injection into application pods. Updates are applied only when the image reference changes. If a floating tag (for example, `latest`) is used, new images pushed under the same tag are not automatically picked up on existing nodes. It is recommended to use a unique tag for each OneAgent CodeModule image version. | Not applicable | string |
 | `dnsPolicy` | Set the DNS policy for OneAgent pods. For details, see [Pods DNS Policyï»¿](https://dt-url.net/2t2375a). | `ClusterFirstWithHostNet` | string |
 | `env` | Set additional environment variables for the OneAgent pods. | Not applicable | []EnvVar |
 | `image` | Use a custom OneAgent Docker image. | The image from the Dynatrace cluster. | string |
@@ -756,7 +757,7 @@ Recommended
 
 | **Parameter** | **Description** | **Default value** | **Data type** |
 | --- | --- | --- | --- |
-| `codeModulesImage` | The OneAgent image that is used to inject into pods | Not applicable | string |
+| `codeModulesImage` | Specifies the OneAgent CodeModules image used for injection into application pods. Updates are applied only when the image reference changes. If a floating tag (for example, `latest`) is used, new images pushed under the same tag are not automatically picked up on existing nodes. It is recommended to use a unique tag for each OneAgent CodeModule image version. | Not applicable | string |
 | `initResources` | Define resources requests and limits for the initContainer. For details, see [Managing resources for containersï»¿](https://dt-url.net/atc371q). | Not applicable | ResourceRequirements |
 | `namespaceSelector` | The namespaces where you want Dynatrace Operator to inject. For more information, see [Configure monitoring for namespaces and Pods](/docs/ingest-from/setup-on-k8s/guides/deployment-and-configuration/monitoring-and-instrumentation/annotate "Configure monitoring for namespaces and pods"). | - | LabelSelector |
 | `version` | The OneAgent version to be used. | The latest version is used by default. | string |
@@ -1065,7 +1066,7 @@ Recommended
 | `annotations` | Add custom OneAgent annotations. | Not applicable | map[string]string |
 | `args` | Set additional arguments to the OneAgent installer. For available options, see [Linux custom installation](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/customize-oneagent-installation-on-linux "Learn how to use the Linux installer with command line parameters."). For the list of limitations, see [Limitations](/docs/ingest-from/setup-on-container-platforms/docker/set-up-dynatrace-oneagent-as-docker-container#limitations "Install and update Dynatrace OneAgent as a Docker container."). | Not applicable | []string |
 | `autoUpdate` (**deprecated**) | Deprecated field to be removed in a future release. [Pin the OneAgent version on your tenant to configure auto-update](/docs/ingest-from/setup-on-k8s/guides/deployment-and-configuration/updates-and-maintenance/auto-update-components#configure-oneagent-auto-update "Configure auto-updates for components managed by Dynatrace Operator (OneAgent, ActiveGate, and EdgeConnect)."). Auto-update is disabled when the `version` or `image` fields are set. | `true` | boolean |
-| `codeModulesImage` | The OneAgent image that is used to inject into Pods | Not applicable | string |
+| `codeModulesImage` | Specifies the OneAgent CodeModules image used for injection into application pods. Updates are applied only when the image reference changes. If a floating tag (for example, `latest`) is used, new images pushed under the same tag are not automatically picked up on existing nodes. It is recommended to use a unique tag for each OneAgent CodeModule image version. | Not applicable | string |
 | `dnsPolicy` | Set the DNS Policy for OneAgent Pods. For details, see [Pods DNS Policyï»¿](https://dt-url.net/2t2375a). | `ClusterFirstWithHostNet` | string |
 | `env` | Set additional environment variables for the OneAgent Pods. | Not applicable | []EnvVar |
 | `image` | Use a custom OneAgent Docker image. | The image from the Dynatrace cluster. | string |
@@ -1107,7 +1108,7 @@ Recommended
 
 | **Parameter** | **Description** | **Default value** | **Data type** |
 | --- | --- | --- | --- |
-| `codeModulesImage` | The OneAgent image that is used to inject into Pods | Not applicable | string |
+| `codeModulesImage` | Specifies the OneAgent CodeModules image used for injection into application pods. Updates are applied only when the image reference changes. If a floating tag (for example, `latest`) is used, new images pushed under the same tag are not automatically picked up on existing nodes. It is recommended to use a unique tag for each OneAgent CodeModule image version. | Not applicable | string |
 | `initResources` | Define resources requests and limits for the initContainer. For details, see [Managing resources for containersï»¿](https://dt-url.net/atc371q). | Not applicable | ResourceRequirements |
 | `namespaceSelector` | The namespaces where you want Dynatrace Operator to inject. For more information, see [Configure monitoring for namespaces and Pods](/docs/ingest-from/setup-on-k8s/guides/deployment-and-configuration/monitoring-and-instrumentation/annotate "Configure monitoring for namespaces and pods"). | - | LabelSelector |
 | `version` | The OneAgent version to be used. | The latest version is used by default. | string |

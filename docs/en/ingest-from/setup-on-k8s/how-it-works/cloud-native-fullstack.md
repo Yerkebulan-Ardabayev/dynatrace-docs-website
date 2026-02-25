@@ -1,7 +1,7 @@
 ---
 title: Full-stack observability
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/how-it-works/cloud-native-fullstack
-scraped: 2026-02-23T21:22:50.999872
+scraped: 2026-02-25T21:20:28.194738
 ---
 
 # Full-stack observability
@@ -20,7 +20,7 @@ See the [`.spec.oneAgent.cloudNativeFullStack`](/docs/ingest-from/setup-on-k8s/r
 
 * Offers similar functionality to the classic full-stack injection.
 * Uses mutating webhooks to inject code modules into application Pods.
-* Enables data enrichment for Kubernetes environments via [enrichment files](/docs/ingest-from/extend-dynatrace/extend-data#dynatrace-kubernetes-operator "Learn how to automatically enrich your telemetry data with Dynatrace-specific dimensions.").
+* Enables data enrichment for Kubernetes environments via [enrichment files](/docs/ingest-from/extend-dynatrace/extend-data#dynatrace-kubernetes-operator "Learn how to automatically enrich your telemetry data with Dynatrace-specific fields.").
 
 ### Current limitations
 

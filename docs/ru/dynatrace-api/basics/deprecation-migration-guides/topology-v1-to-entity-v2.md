@@ -1,95 +1,95 @@
 ---
-title: Перейти от Topology и Smartscape API к Monitored entities API
+title: Migrate from Topology and Smartscape API to Monitored entities API
 source: https://www.dynatrace.com/docs/dynatrace-api/basics/deprecation-migration-guides/topology-v1-to-entity-v2
-scraped: 2026-02-23T21:21:54.396191
+scraped: 2026-02-25T21:22:12.249202
 ---
 
-# Перейти от Topology и Smartscape API к Monitored entities API
+# Migrate from Topology and Smartscape API to Monitored entities API
 
-# Перейти от Topology и Smartscape API к Monitored entities API
+# Migrate from Topology and Smartscape API to Monitored entities API
 
-* Ссылка
-* Опубликовано 22 марта 2023 г.
+* Reference
+* Published Mar 22, 2023
 
-[Topology и Smartscape API](/docs/dynatrace-api/environment-api/topology-and-smartscape "Узнайте о Dynatrace Topology и Smartscape API.") был заменен с [Dynatrace версии 1.263](/docs/whats-new/dynatrace-api/sprint-242 "Журнал изменений для Dynatrace API версии 1.242"). Его заменой является [Monitored entities API](/docs/dynatrace-api/environment-api/entity-v2 "Узнайте о Dynatrace Monitored entities API."). Мы рекомендуем перейти на новую API как можно скорее.
+The [Topology and Smartscape API](/docs/dynatrace-api/environment-api/topology-and-smartscape "Learn about the Dynatrace Topology and Smartscape API.") has been deprecated with [Dynatrace version 1.263](/docs/whats-new/dynatrace-api/sprint-242 "Changelog for Dynatrace API version 1.242"). Its replacement is the [Monitored entities API](/docs/dynatrace-api/environment-api/entity-v2 "Learn about the Dynatrace Monitored entities API."). We recommend that you migrate to the new API at your earliest convenience.
 
-Этот переход затрагивает URL-адреса конечных точек, параметры запроса и параметры тела запроса/ответа, а также область действия токена для аутентификации запросов.
+This migration affects endpoint URLs, query parameters, and response/request body parameters, as well as the scope of the token for request authentication.
 
-## Новые функции
+## New features
 
-Monitored entities API предлагает следующие новые функции:
+The Monitored entities API offers you the following new features:
 
-* Конечная точка, независимая от типа сущности — вы можете запрашивать любой тип сущности через один и тот же URL
-* Мощный [селектор сущностей](/docs/dynatrace-api/environment-api/entity-v2/entity-selector "Настройте селектор сущностей для Environment API конечных точек.") для фильтрации сущностей, которые вы хотите прочитать
-* Унифицированный селектор временного интервала
-* Настраиваемое возвращаемое значение — вы можете контролировать, какие свойства сущности включены в ответ
-* Конечные точки типов сущностей
-* Конечные точки пользовательских тегов
+* Entity type agnostic endpointâyou can query every type of entity via the same URL
+* Powerful [entity selector](/docs/dynatrace-api/environment-api/entity-v2/entity-selector "Configure the entity selector for Environment API endpoints.") that helps you to filter entities you want to read
+* Unified timeframe selector
+* Customizable return valueâyou can control which entity properties are included in the response
+* Entity types endpoints
+* Custom tags endpoints
 
-## Базовый URL
+## Base URL
 
-| новые Monitored entities | старый Topology и Smartscape |
+| new Monitored entities | old Topology and Smartscape |
 | --- | --- |
 | `/api/v2/entities` | `/api/v1/entity/applications` `/api/v1/entity/infrastrucutre/hosts` `/api/v1/entity/infrastrucutre/processes` `/api/v1/entity/infrastrucutre/process-groups` `/api/v1/entity/services` |
 | `/api/v2/entities/custom` | `/api/v1/entity/infrastructure/custom/{customDeviceId}` |
 | `/api/v2/tags` | `/api/v1/entity/applications/{meIdentifier}` `/api/v1/entity/infrastrucutre/hosts/{meIdentifier}` `/api/v1/entity/infrastrucutre/process-groups/{meIdentifier}` `/api/v1/entity/services/{meIdentifier}` |
 
-## Область действия токена аутентификации
+## Authentication token scope
 
-| новые Monitored entities | старый Topology и Smartscape |
+| new Monitored entities | old Topology and Smartscape |
 | --- | --- |
-| **Чтение сущностей** (`entities.read`) **Запись сущностей** (`entities.write`) | **Доступ к ленте проблем и событий, метрикам и топологии** (`DataExport`) |
+| **Read entities** (`entities.read`) **Write entities** (`entities.write`) | **Access problem and event feed, metrics, and topology** (`DataExport`) |
 
-## Параметры
+## Parameters
 
-Чтобы узнать о новых параметрах запроса/тела, см. документацию отдельных запросов в [Monitored entities API](/docs/dynatrace-api/environment-api/entity-v2 "Узнайте о Dynatrace Monitored entities API.").
+To learn about new query/body parameters, see the documentation of individual requests in [Monitored entities API](/docs/dynatrace-api/environment-api/entity-v2 "Learn about the Dynatrace Monitored entities API.").
 
-## Изменения в рабочем процессе
+## Changes in workflow
 
-С переходом на Monitored entities API некоторые рабочие процессы требуют отправки дополнительных запросов или вызова дополнительных конечных точек. Убедитесь, что вы адаптируете свою автоматизацию соответственно.
+With the upgrade to the Monitored entities API, some workflows require sending additional requests or calling additional endpoints. Be sure to adapt your automation accordingly.
 
-### Пагинация
+### Pagination
 
-При запросе сущностей в批ке используется пагинация для уменьшения размера полезной нагрузки.
+When you query entities in a bulk, pagination is used to reduce the payload size.
 
-1. Укажите количество сущностей на странице в параметре запроса **pageSize**.
-2. Используйте курсор из поля **nextPageKey** предыдущего ответа в параметре запроса **nextPageKey**, чтобы получить последующие страницы.
+1. Specify the number of entities per page in the **pageSize** query parameter.
+2. Use the cursor from the **nextPageKey** field of the previous response in the **nextPageKey** query parameter to obtain subsequent pages.
 
-### Создание пользовательских устройств
+### Create custom devices
 
-В Monitored entities API вы не можете присвоить теги пользовательскому устройству при его создании. Если вам нужно присвоить теги вашему пользовательскому устройству, используйте отдельный запрос к конечной точке [POST пользовательские теги](/docs/dynatrace-api/environment-api/custom-tags/post-tags "Присвойте пользовательские теги отслеживаемым сущностям через Dynatrace API.").
+In the Monitored entities API, you can't assign tags to the custom device upon creation. If you need to assign tags to your custom device, use a separate request to the [POST custom tags](/docs/dynatrace-api/environment-api/custom-tags/post-tags "Assign custom tags to monitored entities via Dynatrace API.") endpoint.
 
-### Отчет данных в пользовательские устройства
+### Report data to custom devices
 
-В Monitored entities API вы не можете отчитаться о данных в пользовательские устройства. Вместо этого используйте вызов [POST принять метрики](/docs/dynatrace-api/environment-api/metric-v2/post-ingest-metrics "Принять пользовательские метрики в Dynatrace через Metrics v2 API.").
+In the Monitored entities API, you can't report data to custom devices. Use the [POST ingest data points](/docs/dynatrace-api/environment-api/metric-v2/post-ingest-metrics "Ingest custom metrics to Dynatrace via Metrics v2 API.") call instead.
 
-## Примеры
+## Examples
 
-Вот некоторые примеры различий в использовании API.
+Here are some examples of differences in API usage.
 
-### Список сущностей
+### List entities
 
-В этом примере мы запрашиваем список хостов, которые были активны в течение последних 2 часов. Кроме того, нам не нужна полная информация о хосте: нам нужен только режим мониторинга и список тегов, присвоенных хосту. Результат усечен до двух записей.
+In this example, we're querying the list of hosts that were active within the last 2 hours. Also, we don't need the full information about the host: we only need monitoring mode and the list of tags, assigned to the host. The result is truncated to two entries.
 
-Сравните следующие вкладки, чтобы увидеть, как мы делаем это, используя новые Monitored entities API и устаревший Topology и Smartscape API:
+Compare the following tabs to see how we do this using the new Monitored entities API and the deprecated Topology and Smartscape API:
 
 Monitored entities API
 
-Topology и Smartscape API
+Topology and Smartscape API
 
-В Monitored entities API:
+In the Monitored entities API:
 
-* Вы можете контролировать, какие поля возвращаются (с помощью параметра **fields**). В этом примере мы используем поля **monitoringMode** и **tags**. Тип, отображаемое имя и идентификатор сущности всегда включены в ответ.
-* Временной интервал определяется с помощью параметра запроса **from**. Он поддерживает несколько форматов; см. документацию отдельных запросов, чтобы узнать больше о них.
-* Результат запроса разделен на страницы. Вы можете контролировать размер страницы с помощью параметра **pageSize**. В этом примере параметр не установлен; поэтому используется значение по умолчанию — 50 записей на странице.
+* You can control which fields are returned (via the **fields** parameter). In this example, we use the **monitoringMode** and **tags** fields. Type, display name, and entity ID are always included in the response.
+* The timeframe is defined via the **from** query parameter. It supports multiple formats; see the individual request documentation to learn more about them.
+* The result of the query is split into pages. You can control the page size with the **pageSize** parameter. In this example, the parameter is not set; therefore, the default of 50 entries per page is used.
 
-#### URL-адрес запроса
+#### Request URL
 
 ```
 https://mySampleEnv.live.dynatrace.com/api/v2/entities?fields=properties.monitoringMode,tags&entitySelector=type(%22HOST%22)&from=now-2h
 ```
 
-#### Параметры запроса
+#### Query parameters
 
 ```
 fields=properties.monitoringMode,tags
@@ -103,7 +103,7 @@ entitySelector=type("HOST")
 from=now-2h
 ```
 
-#### Тело ответа
+#### Response body
 
 ```
 {
@@ -142,7 +142,7 @@ from=now-2h
 
 
 
-"properties":).
+"properties": {
 
 
 
@@ -250,7 +250,7 @@ from=now-2h
 
 
 
-"properties":.
+"properties": {
 
 
 
@@ -349,19 +349,19 @@ from=now-2h
 }
 ```
 
-В Topology и Smartscape API:
+In the Topology and Smartscape API:
 
-* У вас ограниченный контроль над возвращаемыми полями — вы можете использовать **includeDetails**, чтобы удалить некоторые свойства, но вы не можете выбрать конкретные поля для включения.
-* Временной интервал определяется с помощью параметра запроса **relativeTime**, который предоставляет ограниченное количество предопределенных значений. Альтернативно вы можете использовать поля **startTimestamp** и **endTimestamp**. Кроме того, размер временного интервала ограничен 3 днями.
-* Все сущности возвращаются в одном полезном нагрузке; пагинация недоступна.
+* You have limited control over returned fieldsâyou can use **includeDetails** to remove some properties, but you can't select particular fields to be included.
+* The timeframe is defined via the **relativeTime** query parameter, which provides a limited amount of pre-defined values. Alternatively, you can use **startTimestamp** and **endTimestamp** fields. Additionally, the timeframe size is restricted to 3 days.
+* All the entities are returned in a single payload; pagination is not available.
 
-#### URL-адрес запроса
+#### Request URL
 
 ```
 https://mySampleEnv.live.dynatrace.com/api/v1/entity/infrastructure/hosts?relativeTime=2hours&includeDetails=false
 ```
 
-#### Параметры запроса
+#### Query parameters
 
 ```
 relativeTime=2hours
@@ -371,7 +371,7 @@ relativeTime=2hours
 includeDetails=false
 ```
 
-#### Тело ответа
+#### Response body
 
 ```
 [
@@ -522,7 +522,7 @@ includeDetails=false
 
 
 
-"agentVersion":.
+"agentVersion": {
 
 
 
@@ -754,7 +754,7 @@ includeDetails=false
 
 
 
-"agentVersion":.
+"agentVersion": {
 
 
 
@@ -814,7 +814,7 @@ includeDetails=false
 
 
 
-)
+}
 
 
 
@@ -838,15 +838,7 @@ includeDetails=false
 
 
 
-)
-
-
-
-]
-
-
-
-)
+}
 
 
 
@@ -855,33 +847,39 @@ includeDetails=false
 
 
 }
+
+
+
+]
 ```
 
-### Присвоение тегов сущности
+### Assign entity tags
 
-В этом примере мы присваиваем дополнительные теги (**Datacenter:Linz** и **Rack:014**) хостам из списка сущностей example.
 
-Сравните следующие вкладки, чтобы увидеть, как мы делаем это с помощью новых Мониторинговых сущностей API и устаревшей топологии и Smartscape API:
 
-Мониторинговые сущности API
+In this example, we assign additional tags (**Datacenter:Linz** and **Rack:014**) to hosts from the list entities example.
 
-Топология и Smartscape API
+Compare the following tabs to see how we do this using the new Monitored entities API and the deprecated Topology and Smartscape API:
 
-В новых Мониторинговых сущностях API вы можете присваивать теги нескольким сущностям одновременно, выбирая их через [селектор сущностей](/docs/dynatrace-api/environment-api/entity-v2/entity-selector "Настройте селектор сущностей для Environment API конечных точек."). В этом примере мы выбираем хосты по их идентификаторам сущностей.
+Monitored entities API
 
-#### URL запроса
+Topology and Smartscape API
+
+In the new Monitored entities API, you can assign tags to multiple entities at the same time by selecting them via the [entity selector](/docs/dynatrace-api/environment-api/entity-v2/entity-selector "Configure the entity selector for Environment API endpoints."). In this example, we select hosts by their entity IDs.
+
+#### Request URL
 
 ```
 https://mySampleEnv.live.dynatrace.com/api/v2/tags?entitySelector=entityId(%22HOST-01A00204B50FF735%22,%22HOST-0AF138A0258C7DFF%22)
 ```
 
-#### Параметры запроса
+#### Query parameters
 
 ```
 entitySelector=entityId("HOST-01A00204B50FF735","HOST-0AF138A0258C7DFF")
 ```
 
-#### Тело запроса
+#### Request body
 
 ```
 {
@@ -931,7 +929,7 @@ entitySelector=entityId("HOST-01A00204B50FF735","HOST-0AF138A0258C7DFF")
 }
 ```
 
-#### Тело ответа
+#### Response body
 
 ```
 {
@@ -990,7 +988,7 @@ entitySelector=entityId("HOST-01A00204B50FF735","HOST-0AF138A0258C7DFF")
 
 
 
-)
+}
 
 
 
@@ -1001,17 +999,17 @@ entitySelector=entityId("HOST-01A00204B50FF735","HOST-0AF138A0258C7DFF")
 }
 ```
 
-В устаревшей топологии и Smartscape API вы можете присваивать теги только одной сущности за раз. В примере показано присваивание тега только одному из двух хостов. Для присваивания тегов другому хосту требуется второй запрос с тем же полезным содержимым.
+In the deprecated Topology and Smartscape API, you can assign tags to one entity at a time. The example shows the tag assignment for only one of two hosts. A second request with the same payload is needed to assign tags to another host.
 
-Кроме того, теги не хранятся в формате `key:value`. Вы можете задать только часть `key` тега через этот API.
+Moreover, the tags are not stored in the `key:value` format. You can only set the `key` part of the tag via this API.
 
-#### URL запроса
+#### Request URL
 
 ```
 https://mySampleEnv.live.dynatrace.com/api/v1/entity/infrastructure/hosts/HOST-01A00204B50FF735
 ```
 
-#### Тело запроса
+#### Request body
 
 ```
 {
@@ -1037,27 +1035,27 @@ https://mySampleEnv.live.dynatrace.com/api/v1/entity/infrastructure/hosts/HOST-0
 }
 ```
 
-### Создание пользовательских устройств
+### Create custom devices
 
-В этом примере мы создаем пользовательское устройство с идентификатором `restExample` и следующими параметрами:
+In this example, we create a custom device with the ID of `restExample` and the following parameters:
 
-* тип: `F5-Firewall`
-* IP-адрес `172.16.115.211`
-* порт прослушивания `9999`
+* type: `F5-Firewall`
+* IP address `172.16.115.211`
+* listen port `9999`
 
-Сравните следующие вкладки, чтобы увидеть, как мы делаем это с помощью новых Мониторинговых сущностей API и устаревшей топологии и Smartscape API:
+Compare the following tabs to see how we do this using the new Monitored entities API and the deprecated Topology and Smartscape API:
 
-Мониторинговые сущности API
+Monitored entities API
 
-Топология и Smartscape API
+Topology and Smartscape API
 
-#### URL запроса
+#### Request URL
 
 ```
 https://mySampleEnv.live.dynatrace.com/api/v2/entities/custom
 ```
 
-#### Тело запроса
+#### Request body
 
 ```
 {
@@ -1092,7 +1090,7 @@ https://mySampleEnv.live.dynatrace.com/api/v2/entities/custom
 
 
 
-"properties": 
+"properties": {
 
 
 
@@ -1100,14 +1098,14 @@ https://mySampleEnv.live.dynatrace.com/api/v2/entities/custom
 
 
 
-)
+}
 
 
 
 }
 ```
 
-#### Тело ответа
+#### Response body
 
 ```
 {
@@ -1125,13 +1123,13 @@ https://mySampleEnv.live.dynatrace.com/api/v2/entities/custom
 }
 ```
 
-#### URL запроса
+#### Request URL
 
 ```
 https://mySampleEnv.live.dynatrace.com/api/v1/entity/infrastructure/custom/restExample
 ```
 
-#### Тело запроса
+#### Request body
 
 ```
 {
@@ -1166,7 +1164,7 @@ https://mySampleEnv.live.dynatrace.com/api/v1/entity/infrastructure/custom/restE
 
 
 
-"properties": 
+"properties": {
 
 
 
@@ -1174,14 +1172,14 @@ https://mySampleEnv.live.dynatrace.com/api/v1/entity/infrastructure/custom/restE
 
 
 
-)
+}
 
 
 
 }
 ```
 
-#### Тело ответа
+#### Response body
 
 ```
 {
@@ -1199,7 +1197,7 @@ https://mySampleEnv.live.dynatrace.com/api/v1/entity/infrastructure/custom/restE
 }
 ```
 
-## Связанные темы
+## Related topics
 
-* [Токены доступа API](/docs/dynatrace-api/environment-api/tokens-v2/api-tokens "Управление Dynatrace API аутентификационными токенами.")
-* [Токены API v1](/docs/dynatrace-api/environment-api/tokens-v1 "Узнайте, как управлять Dynatrace API аутентификационными токенами в вашей среде.")
+* [Access tokens API](/docs/dynatrace-api/environment-api/tokens-v2/api-tokens "Manage Dynatrace API authentication tokens.")
+* [Tokens API v1](/docs/dynatrace-api/environment-api/tokens-v1 "Learn how to manage Dynatrace API authentication tokens in your environment.")

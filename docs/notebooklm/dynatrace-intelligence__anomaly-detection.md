@@ -1,6 +1,6 @@
 # Документация Dynatrace: dynatrace-intelligence/anomaly-detection
 Язык: Русский (RU)
-Сгенерировано: 2026-02-24
+Сгенерировано: 2026-02-25
 Файлов в разделе: 16
 ---
 
@@ -117,7 +117,7 @@ To change threshold settings for a specific host
 ---
 title: Adjust the sensitivity of anomaly detection
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/anomaly-detection/adjust-sensitivity-anomaly-detection
-scraped: 2026-02-22T21:14:23.206594
+scraped: 2026-02-25T21:23:04.024444
 ---
 
 # Adjust the sensitivity of anomaly detection
@@ -167,7 +167,7 @@ To configure detection sensitivity on the global level
 ---
 title: Anomaly Detection status types
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-app/anomaly-detection-status-types
-scraped: 2026-02-24T21:34:55.473950
+scraped: 2026-02-25T21:23:06.696788
 ---
 
 # Anomaly Detection status types
@@ -489,7 +489,7 @@ When creating a custom alert:
 ---
 title: Anomaly Detection DQL optimization guide
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-app/davis-ad-dql-optimization
-scraped: 2026-02-24T21:19:41.725367
+scraped: 2026-02-25T21:27:55.622185
 ---
 
 # Anomaly Detection DQL optimization guide
@@ -701,7 +701,7 @@ To optimize filtering and avoid including redundant fields, we recommend trying 
 ---
 title: Anomaly Detection app
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-app
-scraped: 2026-02-22T21:14:20.734098
+scraped: 2026-02-25T21:17:25.970505
 ---
 
 # Anomaly Detection app
@@ -720,10 +720,6 @@ Prerequisites
 ### Permissions
 
 The following table describes the required permissions.
-
-Permission
-
-Description
 
 settings:schemas:read
 
@@ -764,16 +760,6 @@ Read user settings
 davis:analyzers:execute
 
 Execute Threshold Suggestion Analyzer
-
-10
-
-rows per page
-
-Page
-
-1
-
-of 1
 
 User permissions can only be changed by your Dynatrace administrator in **Account Management** > **Identity and Access Management**. To learn more about user groups and assigning permissions, see [Working with policies](/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies "Working with policies").
 
@@ -867,7 +853,7 @@ Detect anomalies in timeseries using ![Anomaly Detection - new](https://dt-cdn.n
 ---
 title: Anomaly detection configuration
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-configuration
-scraped: 2026-02-24T21:30:10.414974
+scraped: 2026-02-25T21:23:05.363856
 ---
 
 # Anomaly detection configuration
@@ -995,7 +981,7 @@ You can provide additional parameters as key-value pairs. For a list of possible
 ---
 title: Auto-adaptive thresholds for anomaly detection
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/anomaly-detection/auto-adaptive-threshold
-scraped: 2026-02-24T21:26:39.026414
+scraped: 2026-02-25T21:23:12.037315
 ---
 
 # Auto-adaptive thresholds for anomaly detection
@@ -1045,7 +1031,7 @@ By default, any 3 minutes out of a sliding window of 5 minutes must violate your
 ---
 title: Automated multi-dimensional baselining
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/anomaly-detection/automated-multidimensional-baselining
-scraped: 2026-02-22T21:14:25.688860
+scraped: 2026-02-25T21:23:08.008975
 ---
 
 # Automated multi-dimensional baselining
@@ -1164,7 +1150,7 @@ You should consider this design choice when configuring alerting settings to ens
 ---
 title: Metric key events
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/anomaly-detection/metric-events/metric-key-events
-scraped: 2026-02-24T21:29:20.949344
+scraped: 2026-02-25T21:25:31.041294
 ---
 
 # Metric key events
@@ -1350,7 +1336,7 @@ If there are sparse counts across many entities (for example, an error count acr
 ---
 title: Metric events
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/anomaly-detection/metric-events
-scraped: 2026-02-24T21:17:59.992857
+scraped: 2026-02-25T21:20:12.993761
 ---
 
 # Metric events
@@ -1472,7 +1458,7 @@ batchjob.executions,dt.entity.host=HOST-2222222,dt.entity.process_group_instance
 ---
 title: Automate alerts with API
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/anomaly-detection/set-up-anomaly-detectors-via-api
-scraped: 2026-02-22T21:14:22.046360
+scraped: 2026-02-25T21:23:10.725473
 ---
 
 # Automate alerts with API
@@ -1922,7 +1908,7 @@ You have learned how to set up and configure a custom alert via API. Now you can
 ---
 title: Static thresholds for anomaly detection
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/anomaly-detection/static-thresholds
-scraped: 2026-02-24T21:24:28.443315
+scraped: 2026-02-25T21:23:09.361798
 ---
 
 # Static thresholds for anomaly detection
@@ -1959,90 +1945,90 @@ By default, any 3 minutes out of a sliding window of 5 minutes must violate your
 ## dynatrace-intelligence/anomaly-detection.md
 
 ---
-title: Anomaly detection
+title: Обнаружение аномалий
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/anomaly-detection
-scraped: 2026-02-24T21:14:56.550729
+scraped: 2026-02-25T21:14:15.990478
 ---
 
-# Anomaly detection
+# Обнаружение аномалий
 
-# Anomaly detection
+# Обнаружение аномалий
 
-* Latest Dynatrace
-* Overview
-* 2-min read
-* Updated on Jan 28, 2026
+* Последнее Dynatrace
+* Обзор
+* 2-минутное чтение
+* Обновлено 28 января 2026 г.
 
-Dynatrace continuously monitors the performance of every aspect of your applications, services, and infrastructure to automatically learn all baseline metrics and the overall health of each component in your environment, including the response times of your applications and services. Variables such as geolocation, browser type, operating system, connection bandwidth, and user actions are factored in automatically. This intelligent [automated baselining](/docs/dynatrace-intelligence/anomaly-detection/automated-multidimensional-baselining "Learn how Dynatrace AI automatically calculates baselines based on a multi-dimensional baselining scheme.") allows Dynatrace to detect anomalies at a highly granular level and to notify you of detected problems in real time. You can customize the thresholds generated through automated baselining either by [adapting the sensitivity of problem detection](/docs/dynatrace-intelligence/anomaly-detection/adjust-sensitivity-anomaly-detection "Learn how to adapt the sensitivity of problem detection in Dynatrace.") or, if necessary, by defining your own static thresholds.
+Dynatrace непрерывно отслеживает производительность каждого аспекта ваших приложений, сервисов и инфраструктуры, чтобы автоматически изучить все базовые метрики и общее состояние каждого компонента в вашей среде, включая время ответа ваших приложений и сервисов. Переменные, такие как геолокация, тип браузера, операционная система, пропускная способность подключения и действия пользователя, учитываются автоматически. Этот интеллектуальный [автоматический базелинг](/docs/dynatrace-intelligence/anomaly-detection/automated-multidimensional-baselining "Узнайте, как Dynatrace AI автоматически рассчитывает базовые значения на основе многомерной схемы базелинга.") позволяет Dynatrace обнаруживать аномалии на высоком уровне детализации и уведомлять вас о обнаруженных проблемах в реальном времени. Вы можете настроить пороги, сгенерированные с помощью автоматического базелинга, либо путем [адаптации чувствительности обнаружения проблем](/docs/dynatrace-intelligence/anomaly-detection/adjust-sensitivity-anomaly-detection "Узнайте, как адаптировать чувствительность обнаружения проблем в Dynatrace.") или, если необходимо, путем определения собственных статических порогов.
 
-## Use cases
+## Сценарии использования
 
-* Create a custom alert to get notified about problems in your environment.
-* Configure manually or use an auto-adaptive threshold to detect abnormal behavior.
-* Set up alerts for custom events.
+* Создайте пользовательское оповещение, чтобы получать уведомления о проблемах в вашей среде.
+* Настройте вручную или используйте автоадаптивный порог для обнаружения необычного поведения.
+* Настройте оповещения для пользовательских событий.
 
-## Concepts
+## Концепции
 
-[#### Auto-adaptive thresholds for anomaly detection
+[#### Автоадаптивные пороги для обнаружения аномалий
 
-How Dynatrace adapts thresholds for multiple entities within the scope of an anomaly detection configuration.
+Как Dynatrace адаптирует пороги для нескольких сущностей в рамках конфигурации обнаружения аномалий.
 
-* Explanation
+* Объяснение
 
-Read this explanation](/docs/dynatrace-intelligence/anomaly-detection/auto-adaptive-threshold)[#### Static thresholds for anomaly detection
+Прочитайте это объяснение](/docs/dynatrace-intelligence/anomaly-detection/auto-adaptive-threshold)[#### Статические пороги для обнаружения аномалий
 
-When to use a static threshold for your anomaly detection.
+Когда использовать статический порог для обнаружения аномалий.
 
-* Explanation
+* Объяснение
 
-Read this explanation](/docs/dynatrace-intelligence/anomaly-detection/static-thresholds)[#### Anomaly detection configuration
+Прочитайте это объяснение](/docs/dynatrace-intelligence/anomaly-detection/static-thresholds)[#### Конфигурация обнаружения аномалий
 
-How to set up an alert for missing measurements.
+Как настроить оповещение для отсутствующих измерений.
 
-* Explanation
+* Объяснение
 
-Read this explanation](/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-configuration)[#### Automated multi-dimensional baselining
+Прочитайте это объяснение](/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-configuration)[#### Автоматический многомерный базелинг
 
-Learn how Dynatrace AI automatically calculates baselines based on a multi-dimensional baselining scheme.
+Узнайте, как Dynatrace AI автоматически рассчитывает базовые значения на основе многомерной схемы базелинга.
 
-* Explanation
+* Объяснение
 
-Read this explanation](/docs/dynatrace-intelligence/anomaly-detection/automated-multidimensional-baselining)[#### Anomaly Detection status types
+Прочитайте это объяснение](/docs/dynatrace-intelligence/anomaly-detection/automated-multidimensional-baselining)[#### Типы статуса обнаружения аномалий
 
-An explanation of Anomaly Detection status types
+Объяснение типов статуса обнаружения аномалий
 
-* Explanation
+* Объяснение
 
-Read this explanation](/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-app/anomaly-detection-status-types)
+Прочитайте это объяснение](/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-app/anomaly-detection-status-types)
 
-## Getting started
+## Начало работы
 
-[#### Adjust the sensitivity of anomaly detection
+[#### Настройка чувствительности обнаружения аномалий
 
-Learn how to adapt the sensitivity of problem detection in Dynatrace.
+Узнайте, как адаптировать чувствительность обнаружения проблем в Dynatrace.
 
-* Explanation
+* Объяснение
 
-Read this explanation](/docs/dynatrace-intelligence/anomaly-detection/adjust-sensitivity-anomaly-detection)[![Anomaly Detection - new](https://dt-cdn.net/images/davis-anomalydetection-256-105da91594.png "Anomaly Detection - new")
+Прочитайте это объяснение](/docs/dynatrace-intelligence/anomaly-detection/adjust-sensitivity-anomaly-detection)[![Обнаружение аномалий - новое](https://dt-cdn.net/images/davis-anomalydetection-256-105da91594.png "Обнаружение аномалий - новое")
 
-#### Anomaly Detection app
+#### Приложение для обнаружения аномалий
 
-Explore anomaly detection configurations using the Anomaly Detection app.
+Изучите конфигурации обнаружения аномалий с помощью приложения для обнаружения аномалий.
 
-* App
+* Приложение
 
-Explore this app](/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-app)[#### Metric events
+Изучите это приложение](/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-app)[#### События метрик
 
-Learn about metric events in Dynatrace
+Узнайте о событиях метрик в Dynatrace
 
-* Overview
+* Обзор
 
-See the overview](/docs/dynatrace-intelligence/anomaly-detection/metric-events)[#### Automate alerts with API
+Смотрите обзор](/docs/dynatrace-intelligence/anomaly-detection/metric-events)[#### Автоматизация оповещений с помощью API
 
-Learn how to set up an Anomaly Detection custom alert via API.
+Узнайте, как настроить пользовательское оповещение для обнаружения аномалий через API.
 
-* Tutorial
+* Учебник
 
-Read this tutorial](/docs/dynatrace-intelligence/anomaly-detection/set-up-anomaly-detectors-via-api)
+Прочитайте этот учебник](/docs/dynatrace-intelligence/anomaly-detection/set-up-anomaly-detectors-via-api)
 
 ---

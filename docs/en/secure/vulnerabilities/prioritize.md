@@ -1,7 +1,7 @@
 ---
 title: Prioritize vulnerabilities
 source: https://www.dynatrace.com/docs/secure/vulnerabilities/prioritize
-scraped: 2026-02-17T21:27:05.420356
+scraped: 2026-02-25T21:35:31.290285
 ---
 
 # Prioritize vulnerabilities
@@ -157,6 +157,6 @@ For GCP deployments, data may lag behind the CISA KEV catalog by approximately t
 
 ## Prioritize by coverage
 
-Coverage of library vulnerabilities shows how well your environment's processes and hosts are monitored by Runtime Vulnerability Analytics (RVA). By reviewing coverage, you can identify monitoring gaps, understand which entities are most affected in runtime, and track exposure trends over time. This context helps you prioritize remediation where it matters most.
+Coverage of library vulnerabilities shows how well your environment's processes and hosts are monitored by Runtime Vulnerability Analytics (RVA). By reviewing coverage, you can identify monitoring gaps, understand which entities are most affected at runtime, and track exposure trends over time. This context helps you prioritize remediation where it matters most.
 
 For details, see [Assess coverage](/docs/secure/vulnerabilities/assess-coverage "Evaluate your environment's RVA process and host coverage with the Vulnerability coverage dashboard.").

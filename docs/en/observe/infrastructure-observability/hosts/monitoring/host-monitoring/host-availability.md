@@ -1,7 +1,7 @@
 ---
 title: Host availability
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/hosts/monitoring/host-monitoring/host-availability
-scraped: 2026-02-24T21:28:33.548715
+scraped: 2026-02-25T21:31:31.762390
 ---
 
 # Host availability

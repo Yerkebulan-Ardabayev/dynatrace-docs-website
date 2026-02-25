@@ -1,7 +1,7 @@
 ---
 title: DPL Architect
 source: https://www.dynatrace.com/docs/platform/grail/dynatrace-pattern-language/dpl-architect
-scraped: 2026-02-23T21:35:19.198645
+scraped: 2026-02-25T21:35:01.639933
 ---
 
 # DPL Architect
@@ -149,66 +149,6 @@ For faster access, preset patterns are logically divided into a folder structure
 ### List of preset patterns
 
 See below for the list of preset patterns.
-
-Pattern
-
-Description
-
-`apache/access`
-
-Apache HTTP servers access log pattern. See: [Apache log filesï»¿](https://dt-url.net/lb038dx)
-
-`apache/error-default`
-
-Apache HTTP servers error log pattern. See: [Apache log filesï»¿](https://dt-url.net/lb038dx)
-
-`aws/cloudfront`
-
-AWS CloudFront default log pattern. See: [Standard log file fieldsï»¿](https://dt-url.net/8l238a9)
-
-`aws/cloudtrail`
-
-Extracts all the fields from AWS CloudTrail JSON-formatted log record. See: [CloudTrail log file examplesï»¿](https://dt-url.net/hg43865)
-
-`aws/elb`
-
-Extracts all the fields from AWS Elastic Load Balancer log record. See: [Access logs for your Application Load Balancerï»¿](https://dt-url.net/67m386h)
-
-`aws/route53-query`
-
-Extracts all the fields from JSON-formatted AWS Route53 resolver query log record. See: [Route 53 Resolver query log exampleï»¿](https://dt-url.net/b76389g)
-
-`aws/s3-server-access`
-
-Extracts all the fields from AWS S3 server access log records. See: [Amazon S3 server access log formatï»¿](https://dt-url.net/4i838sr)
-
-`aws/vpc-flow-default`
-
-Extracts all the fields from the AWS VPC Flow logs default format. See: [Flow log recordsï»¿](https://dt-url.net/tsa38nd)
-
-`aws/vpc-flow-default`
-
-Extracts the fields from the AWS VPC Flow logs custom format, when all the fields have been added in the default order. See: [Flow log recordsï»¿](https://dt-url.net/tsa38nd)
-
-`gcp/scc`
-
-Extracts the relevant fields from GPC Security Command Centers' records. See: [REST Resource: organizations.sources.findingsï»¿](https://dt-url.net/6gc38t3)
-
-`haproxy/http`
-
-Extracts all the fields from HAProxy HTTP default log records. See: [HAProxy Configuration Manualï»¿](https://dt-url.net/74e38p0)
-
-`iis/default`
-
-Extracts all the fields from Microsoft IIS access logs. See: [Configure Logging in IISï»¿](https://dt-url.net/g8g38i7)
-
-`k8s/audit`
-
-Extracts all the fields from JSON-formatted Kubernetes apiservers' audit log records. See: [kube-apiserver Audit Configurationï»¿](https://dt-url.net/3yi38ir)
-
-`k8s/coredns-query`
-
-Extracts all the fields from CoreDNS default query logs. See: [CoreDNS logï»¿](https://dt-url.net/pfk38xe)
 
 ## Use case
 
