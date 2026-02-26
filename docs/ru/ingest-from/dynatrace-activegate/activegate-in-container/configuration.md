@@ -1,7 +1,7 @@
 ---
 title: Containerized ActiveGate configuration
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-activegate/activegate-in-container/configuration
-scraped: 2026-02-24T21:25:19.300675
+scraped: 2026-02-26T21:34:15.351793
 ---
 
 # Containerized ActiveGate configuration

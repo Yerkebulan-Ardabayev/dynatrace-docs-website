@@ -1,7 +1,7 @@
 ---
 title: Allocate your DPS costs
 source: https://www.dynatrace.com/docs/license/cost-allocation
-scraped: 2026-02-25T21:23:59.074510
+scraped: 2026-02-26T21:18:39.538210
 ---
 
 # Allocate your DPS costs

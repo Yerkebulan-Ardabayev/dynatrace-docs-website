@@ -1,6 +1,6 @@
 # Документация Dynatrace: observe/dynatrace-for-ai-observability
 Язык: Русский (RU)
-Сгенерировано: 2026-02-25
+Сгенерировано: 2026-02-26
 Файлов в разделе: 15
 ---
 
@@ -9,7 +9,7 @@
 ---
 title: AI Observability
 source: https://www.dynatrace.com/docs/observe/dynatrace-for-ai-observability/ai-observability-app
-scraped: 2026-02-24T21:32:29.271587
+scraped: 2026-02-26T21:29:08.040428
 ---
 
 # AI Observability
@@ -1368,7 +1368,7 @@ The following attributes are available for GenAI Spans.
 ---
 title: NVIDIA NIM
 source: https://www.dynatrace.com/docs/observe/dynatrace-for-ai-observability/models-and-platforms/nvidia-nim
-scraped: 2026-02-25T21:17:35.495919
+scraped: 2026-02-26T21:27:17.939271
 ---
 
 # NVIDIA NIM
@@ -1693,7 +1693,7 @@ The following attributes are available for GenAI Spans.
 ---
 title: TensorFlow Keras observability
 source: https://www.dynatrace.com/docs/observe/dynatrace-for-ai-observability/models-and-platforms/tensorflow-keras-observability
-scraped: 2026-02-25T21:31:29.219216
+scraped: 2026-02-26T21:28:08.391646
 ---
 
 # TensorFlow Keras observability
@@ -2315,7 +2315,7 @@ Now you can:
 ---
 title: OpenAI Observability
 source: https://www.dynatrace.com/docs/observe/dynatrace-for-ai-observability/sample-use-cases/openai-observability
-scraped: 2026-02-24T21:34:41.826649
+scraped: 2026-02-26T21:33:50.435943
 ---
 
 # OpenAI Observability
@@ -2356,7 +2356,7 @@ In the sample, you:
 2. Point `api_endpoint` to your Dynatrace OTLP endpoint.
 3. Authenticate with a Dynatrace API token (the sample reads it from `/etc/secrets/dynatrace_otel`).
 
-For more configuration options, see the [Get started with AI Observability](/docs/observe/dynatrace-for-ai-observability/get-started "Learn how to set up OpenLLMetry to observe an AI/ML model.") guide.
+For more configuration options, see the [Get started with AI Observability](/docs/observe/dynatrace-for-ai-observability/get-started "Get started with OpenLLMetry and OpenTelemetry for AI Observability.") guide.
 
 ### Run the sample
 
@@ -2540,7 +2540,7 @@ Our simple example of a Node.js service entirely depends on the ChatGPT model re
 ---
 title: AI and LLM Observability
 source: https://www.dynatrace.com/docs/observe/dynatrace-for-ai-observability
-scraped: 2026-02-25T21:13:39.571631
+scraped: 2026-02-26T21:15:15.609042
 ---
 
 # AI and LLM Observability

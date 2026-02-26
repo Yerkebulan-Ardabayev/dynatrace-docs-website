@@ -1,6 +1,6 @@
 # Документация Dynatrace: deliver/site-reliability-guardian
 Язык: Русский (RU)
-Сгенерировано: 2026-02-25
+Сгенерировано: 2026-02-26
 Файлов в разделе: 4
 ---
 
@@ -9,7 +9,7 @@
 ---
 title: Site Reliability guardian event structure
 source: https://www.dynatrace.com/docs/deliver/site-reliability-guardian/event-structure
-scraped: 2026-02-25T21:28:46.356603
+scraped: 2026-02-26T21:28:32.674730
 ---
 
 # Site Reliability guardian event structure
@@ -195,7 +195,7 @@ When you want to integrate business guardian validation results with a [dashboar
 ---
 title: Guardian execution context
 source: https://www.dynatrace.com/docs/deliver/site-reliability-guardian/execution-context
-scraped: 2026-02-25T21:33:07.052560
+scraped: 2026-02-26T21:28:28.826840
 ---
 
 # Guardian execution context
@@ -388,7 +388,7 @@ You can view older results by opening a guardian and selecting a different timef
 ---
 title: Site Reliability Guardian
 source: https://www.dynatrace.com/docs/deliver/site-reliability-guardian
-scraped: 2026-02-25T21:16:59.278993
+scraped: 2026-02-26T21:27:26.694585
 ---
 
 # Site Reliability Guardian

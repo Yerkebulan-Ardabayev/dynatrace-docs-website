@@ -1,7 +1,7 @@
 ---
 title: Set up Grail permissions for telemetry from Kubernetes and Kubernetes workloads
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/k8-security-context
-scraped: 2026-02-24T21:28:37.483787
+scraped: 2026-02-26T21:28:35.160881
 ---
 
 # Set up Grail permissions for telemetry from Kubernetes and Kubernetes workloads
@@ -64,7 +64,7 @@ annotations:
 metadata.dynatrace.com/dt.security_context: foo
 ```
 
-This works automatically for OneAgent and OpenTelemetry scenarios where you are enriching [attributes directly in your application code](/docs/ingest-from/extend-dynatrace/extend-data#operator-enrichment-directory "Learn how to automatically enrich your telemetry data with Dynatrace-specific dimensions.").
+This works automatically for OneAgent and OpenTelemetry scenarios where you are enriching [attributes directly in your application code](/docs/ingest-from/extend-dynatrace/extend-data#operator-enrichment-directory "Learn how to automatically enrich your telemetry data with Dynatrace-specific fields.").
 
 For details, see [security context and cost allocation](/docs/ingest-from/setup-on-k8s/guides/metadata-automation/k8s-metadata-telemetry-enrichment#security-context-and-cost-allocation "Guides for telemetry enrichment on Kubernetes").
 

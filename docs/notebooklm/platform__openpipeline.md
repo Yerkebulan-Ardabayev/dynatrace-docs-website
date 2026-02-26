@@ -1,6 +1,6 @@
 # Документация Dynatrace: platform/openpipeline
 Язык: Русский (RU)
-Сгенерировано: 2026-02-25
+Сгенерировано: 2026-02-26
 Файлов в разделе: 18
 ---
 
@@ -9,7 +9,7 @@
 ---
 title: Owner-based access control in OpenPipeline
 source: https://www.dynatrace.com/docs/platform/openpipeline/concepts/access-control
-scraped: 2026-02-25T21:29:06.211962
+scraped: 2026-02-26T21:27:55.117477
 ---
 
 # Owner-based access control in OpenPipeline
@@ -256,7 +256,7 @@ Storage and retention for system events is not configurable.
 ---
 title: Processing in OpenPipeline
 source: https://www.dynatrace.com/docs/platform/openpipeline/concepts/processing
-scraped: 2026-02-25T21:17:39.572173
+scraped: 2026-02-26T21:16:44.225195
 ---
 
 # Processing in OpenPipeline
@@ -631,7 +631,7 @@ To change how logs are processed, you can modify the matching condition to exclu
 ---
 title: Set access control in OpenPipeline
 source: https://www.dynatrace.com/docs/platform/openpipeline/getting-started/set-access-control
-scraped: 2026-02-25T21:34:32.479733
+scraped: 2026-02-26T21:33:28.111615
 ---
 
 # Set access control in OpenPipeline
@@ -1565,7 +1565,7 @@ Contrary to `matchesValue` function, `strict equality` operator performs case-se
 ---
 title: OpenPipeline limits
 source: https://www.dynatrace.com/docs/platform/openpipeline/reference/limits
-scraped: 2026-02-25T21:17:50.177583
+scraped: 2026-02-26T21:16:06.408713
 ---
 
 # OpenPipeline limits
@@ -2834,7 +2834,7 @@ Conclusion
 ---
 title: Reduce span-based and metric-based cardinality
 source: https://www.dynatrace.com/docs/platform/openpipeline/use-cases/reduce-span-metric-cardinality
-scraped: 2026-02-25T21:15:46.543898
+scraped: 2026-02-26T21:14:37.249778
 ---
 
 # Reduce span-based and metric-based cardinality
@@ -3320,7 +3320,7 @@ After applying these rules, queues with high cardinality will either have `messa
 ---
 title: Extract metrics from spans and distributed traces
 source: https://www.dynatrace.com/docs/platform/openpipeline/use-cases/tutorial-extract-metrics-from-spans
-scraped: 2026-02-25T21:17:38.235124
+scraped: 2026-02-26T21:20:24.775515
 ---
 
 # Extract metrics from spans and distributed traces
@@ -4331,7 +4331,7 @@ You successfully structured syslog logs according to pre-defined processing rule
 ---
 title: OpenPipeline
 source: https://www.dynatrace.com/docs/platform/openpipeline
-scraped: 2026-02-25T21:13:40.894097
+scraped: 2026-02-26T21:15:20.080820
 ---
 
 # OpenPipeline

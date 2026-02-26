@@ -1,7 +1,7 @@
 ---
 title: OneAgent files and disk space requirements on Windows
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/windows/installation/disk-space-requirements-for-oneagent-installation-and-update-on-windows
-scraped: 2026-02-22T21:11:58.081068
+scraped: 2026-02-26T21:19:19.986331
 ---
 
 # OneAgent files and disk space requirements on Windows
@@ -108,18 +108,3 @@ The reliability mechanism ensures the persistence of Extension Execution Control
 Windows configuration file: `C:\ProgramData\dynatrace\remotepluginmodule\agent\conf\extensionsuser.conf`
 
 Linux configuration file: `/var/lib/dynatrace/remotepluginmodule/agent/conf/extensionsuser.conf`
-
-**Variable**
-
-**Description**
-
-`persistence.reliable_mode`
-
-`true` - reliable mode turned on; SFM logs genereted if space requirement not met
-`false` - reliable mode turned off; log ingest will be transmitted without the reliability mechanism
-
-`persistence.total_limit_kb`
-
-Maximum volume limit for Extensions Log Persistence in kilobytes.
-By default: 600 MB
-Can be modified manually if the requirement can't be met on the host.

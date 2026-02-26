@@ -1,7 +1,7 @@
 ---
 title: Update Dynatrace OneAgent on AIX
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/aix/operation/update-oneagent-on-aix
-scraped: 2026-02-22T21:11:51.753344
+scraped: 2026-02-26T21:19:50.658304
 ---
 
 # Update Dynatrace OneAgent on AIX

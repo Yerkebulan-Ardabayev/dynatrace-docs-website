@@ -1,7 +1,7 @@
 ---
 title: Red Hat Ansible Automation
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/red-hat/redhat-ansible
-scraped: 2026-02-21T21:23:10.090670
+scraped: 2026-02-26T21:33:03.781043
 ---
 
 # Red Hat Ansible Automation
@@ -82,33 +82,6 @@ You have a new EdgeConnect connection.
 
 The following workflow actions are available for the Red Hat Ansible Automation integration.
 Each action corresponds to an endpoint of the Red Hat Ansible API. For details on endpoints, see the [Ansible Tower API Reference Guideï»¿](https://dt-url.net/0w4392o).
-
-Action
-
-Description
-
-Red Hat Ansible API endpoint
-
-Launch job template
-
-Launch a job template on Red Hat Ansible
-
-`POST /api/v2/job_templates/{id}/launch/`   
-Launch a Job Template
-
-List job status
-
-List job status on Red Hat Ansible
-
-`GET /api/v2/jobs/{id}/`   
-Retrieve a Job Host Summary
-
-Relaunch job
-
-Relaunch a job on Red Hat Ansible
-
-`POST /api/v2/jobs/{id}/relaunch/`   
-Relaunch a Job
 
 ## Launch a job template
 

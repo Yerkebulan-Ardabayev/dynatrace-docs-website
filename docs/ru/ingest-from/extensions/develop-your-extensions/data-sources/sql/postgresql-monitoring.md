@@ -1,7 +1,7 @@
 ---
 title: PostgreSQL monitoring configuration
 source: https://www.dynatrace.com/docs/ingest-from/extensions/develop-your-extensions/data-sources/sql/postgresql-monitoring
-scraped: 2026-02-25T21:26:14.077351
+scraped: 2026-02-26T21:21:44.809551
 ---
 
 # PostgreSQL monitoring configuration

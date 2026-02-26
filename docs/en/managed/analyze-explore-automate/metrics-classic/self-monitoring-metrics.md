@@ -1,7 +1,7 @@
 ---
 title: Self-monitoring metrics
 source: https://www.dynatrace.com/docs/analyze-explore-automate/metrics-classic/self-monitoring-metrics
-scraped: 2026-02-24T21:36:14.469521
+scraped: 2026-02-26T21:29:46.298320
 ---
 
 # Self-monitoring metrics

@@ -1,7 +1,7 @@
 ---
 title: Treat diagnostic messages
 source: https://www.dynatrace.com/docs/observe/application-observability/distributed-traces/analysis/diagnostic-messages
-scraped: 2026-02-23T21:31:35.665344
+scraped: 2026-02-26T21:21:25.908747
 ---
 
 # Treat diagnostic messages
@@ -52,21 +52,3 @@ While limits that protect your environment's resources can't usually be removed,
 * Adapt the full-trace view to visualize the data you need.
 
   The full-trace view in Dynatrace is typically large enough to display the most important information for the entire trace. However, formatting can be modified to help you visualize all the data you need.
-
-  Format element
-
-  Initial setup
-
-  Adaptation
-
-  Time range
-
-  For the current time range, select **More** (**â¦**) in the upper-right corner of the full-trace view and hover over **Refine analysis**.
-
-  To increase the time range, select **Refine analysis**.
-
-  Visible requests
-
-  In the [**Code level** tab](/docs/observe/application-observability/distributed-traces/analysis/get-started#code-level-tab "Get started with distributed trace analysis in Dynatrace."), you can see service calls up to 100,000 nodes.
-
-  To change this limit, contact a Dynatrace product expert via live chat within your Dynatrace environment.

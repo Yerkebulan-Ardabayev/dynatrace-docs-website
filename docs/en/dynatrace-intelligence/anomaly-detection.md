@@ -1,7 +1,7 @@
 ---
 title: Anomaly detection
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/anomaly-detection
-scraped: 2026-02-25T21:14:15.990478
+scraped: 2026-02-26T21:15:04.550947
 ---
 
 # Anomaly detection

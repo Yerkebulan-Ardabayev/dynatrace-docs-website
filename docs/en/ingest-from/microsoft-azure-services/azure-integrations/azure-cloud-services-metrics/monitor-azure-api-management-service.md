@@ -1,7 +1,7 @@
 ---
 title: Azure API Management Service monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-api-management-service
-scraped: 2026-02-25T21:26:34.063881
+scraped: 2026-02-26T21:33:53.897087
 ---
 
 # Azure API Management Service monitoring

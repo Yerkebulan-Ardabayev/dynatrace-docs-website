@@ -1,55 +1,55 @@
 ---
-title: Dynatrace Платформа Подписки API
+title: Dynatrace Platform Subscription API
 source: https://www.dynatrace.com/docs/dynatrace-api/account-management-api/dynatrace-platform-subscription-api
-scraped: 2026-02-24T21:30:57.547043
+scraped: 2026-02-26T21:28:14.864379
 ---
 
-# Dynatrace Платформа Подписки API
+# Dynatrace Platform Subscription API
 
-# Dynatrace Платформа Подписки API
+# Dynatrace Platform Subscription API
 
-* Последнее Dynatrace
-* Справка
-* Опубликовано 30 марта 2023 г.
+* Latest Dynatrace
+* Reference
+* Published Mar 30, 2023
 
-[### Список подписок
+[### List subscriptions
 
-Получите обзор ваших подписок.](/docs/dynatrace-api/account-management-api/dynatrace-platform-subscription-api/subscriptions/get-all "Список всех Dynatrace Платформ Подписки через Управление Учетной Записью API.")[### Просмотр подписки
+Get an overview of your subscriptions.](/docs/dynatrace-api/account-management-api/dynatrace-platform-subscription-api/subscriptions/get-all "List all Dynatrace Platform Subscriptions via the Account Management API.")[### View subscription
 
-Проверьте детали подписки.](/docs/dynatrace-api/account-management-api/dynatrace-platform-subscription-api/subscriptions/get-subscription "Просмотр информации о Dynatrace Платформе Подписки через Управление Учетной Записью API.")
+Check the details of a subscription.](/docs/dynatrace-api/account-management-api/dynatrace-platform-subscription-api/subscriptions/get-subscription "View info about a Dynatrace Platform Subscription via the Account Management API.")
 
-## Использование
+## Usage
 
-[### Просмотр использования
+[### View usage
 
-Получите обзор того, как используется ваша Dynatrace Платформа Подписки.](/docs/dynatrace-api/account-management-api/dynatrace-platform-subscription-api/usage/get-usage "Проверьте, как используется ваша Dynatrace Платформа Подписки через Управление Учетной Записью API.")[### Просмотр использования по среде
+Get an overview of how your Dynatrace Platform Subscription is used.](/docs/dynatrace-api/account-management-api/dynatrace-platform-subscription-api/usage/get-usage "Check how your Dynatrace Platform Subscription is used via the Account Management API.")[### View usage per environment
 
-Посмотрите, как каждая среда мониторинга потребляет вашу Dynatrace Платформу Подписки.](/docs/dynatrace-api/account-management-api/dynatrace-platform-subscription-api/usage/get-usage-environment "Проверьте, как каждая среда мониторинга потребляет вашу Dynatrace Платформу Подписки через Управление Учетной Записью API.")
+See how every monitoring environment consumes your Dynatrace Platform Subscription.](/docs/dynatrace-api/account-management-api/dynatrace-platform-subscription-api/usage/get-usage-environment "Check how every monitoring environment consumes your Dynatrace Platform Subscription via the Account Management API.")
 
-## Стоимость
+## Cost
 
-[### Просмотр стоимости
+[### View cost
 
-Получите обзор стоимости вашей Dynatrace Платформы Подписки.](/docs/dynatrace-api/account-management-api/dynatrace-platform-subscription-api/cost/get-cost "Проверьте стоимость вашей Dynatrace Платформы Подписки через Управление Учетной Записью API.")[### Просмотр стоимости по среде
+Get an overview of the costs of your Dynatrace Platform Subscription.](/docs/dynatrace-api/account-management-api/dynatrace-platform-subscription-api/cost/get-cost "Check the cost of your Dynatrace Platform Subscription via the Account Management API.")[### View cost per environment
 
-Посмотрите, сколько каждая среда мониторинга вносит вклад в стоимость вашей Dynatrace Платформы Подписки.](/docs/dynatrace-api/account-management-api/dynatrace-platform-subscription-api/cost/get-cost-environment "Проверьте стоимость вашей Dynatrace Платформы Подписки по среде через Управление Учетной Записью API.")
+See how much every monitoring environment contributes to the cost of your Dynatrace Platform Subscription.](/docs/dynatrace-api/account-management-api/dynatrace-platform-subscription-api/cost/get-cost-environment "Check the cost of your Dynatrace Platform Subscription per environment via the Account Management API.")
 
-## Мониторинг стоимости
+## Cost monitor
 
-[### Просмотр прогноза стоимости
+[### View cost forecast
 
-Получите прогнозную стоимость вашей Dynatrace Платформы Подписки.](/docs/dynatrace-api/account-management-api/dynatrace-platform-subscription-api/cost-monitors/get-forecast "Автоматизируйте управление вашей Dynatrace Платформой Подписки через наш API.")[### Просмотр событий стоимости
+Get a forecasted cost of your Dynatrace Platform Subscription.](/docs/dynatrace-api/account-management-api/dynatrace-platform-subscription-api/cost-monitors/get-forecast "Automate the management of your Dynatrace Platform Subscription via our API.")[### View cost events
 
-Получите события стоимости и прогноза, обнаруженные Управлением Учетной Записью.](/docs/dynatrace-api/account-management-api/dynatrace-platform-subscription-api/cost-monitors/get-events "Автоматизируйте управление вашей Dynatrace Платформой Подписки через наш API.")
+Get cost and forecast events detected by Account Management.](/docs/dynatrace-api/account-management-api/dynatrace-platform-subscription-api/cost-monitors/get-events "Automate the management of your Dynatrace Platform Subscription via our API.")
 
-## Распределение стоимости
+## Cost allocation
 
-[![распределение-стоимости](https://cdn.bfldr.com/B686QPH3/at/9vhmq6x4kh88sq7hq4qbwg9t/DT0634.svg?auto=webp&width=72&height=72 "распределение-стоимости")
+[![cost-allocation](https://cdn.bfldr.com/B686QPH3/at/9vhmq6x4kh88sq7hq4qbwg9t/DT0634.svg?auto=webp&width=72&height=72 "cost-allocation")
 
-### Просмотр распределения стоимости
+### View cost allocation
 
-Посмотрите, как стоимость и использование Dynatrace Платформы Подписки распределяются по продукту и центрам затрат.](/docs/dynatrace-api/account-management-api/dynatrace-platform-subscription-api/cost-allocation/get-cost-allocation "Посмотрите, как стоимость и использование Dynatrace Платформы Подписки распределяются по продукту и центрам затрат.")[![распределение-стоимости](https://cdn.bfldr.com/B686QPH3/at/9vhmq6x4kh88sq7hq4qbwg9t/DT0634.svg?auto=webp&width=72&height=72 "распределение-стоимости")
+See how Dynatrace Platform Subscription cost and usage are allocated to product and cost centers.](/docs/dynatrace-api/account-management-api/dynatrace-platform-subscription-api/cost-allocation/get-cost-allocation "See how Dynatrace Platform Subscription cost and usage are allocated to product and cost centers.")[![cost-allocation](https://cdn.bfldr.com/B686QPH3/at/9vhmq6x4kh88sq7hq4qbwg9t/DT0634.svg?auto=webp&width=72&height=72 "cost-allocation")
 
-### Управление распределением стоимости
+### Manage cost allocation
 
-Управляйте распределением стоимости и использования Dynatrace Платформы Подписки по продукту и центрам затрат.](/docs/dynatrace-api/account-management-api/dynatrace-platform-subscription-api/cost-allocation/manage-cost-allocation "Управляйте распределением стоимости и использования Dynatrace Платформы Подписки по продукту и центрам затрат.")
+Manage Dynatrace Platform Subscription cost and usage are allocated to product and cost centers.](/docs/dynatrace-api/account-management-api/dynatrace-platform-subscription-api/cost-allocation/manage-cost-allocation "Manage Dynatrace Platform Subscription cost and usage are allocated to product and cost centers.")

@@ -1,7 +1,7 @@
 ---
 title: Kubernetes Enhanced Object Visibility Preview
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/kubernetes-app/preview/enhanced-object-vis-preview
-scraped: 2026-02-24T21:27:59.067677
+scraped: 2026-02-26T21:26:51.996335
 ---
 
 # Kubernetes Enhanced Object Visibility Preview

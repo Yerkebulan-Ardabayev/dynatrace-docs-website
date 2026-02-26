@@ -1,7 +1,7 @@
 ---
 title: Leverage user action and user session properties for mobile applications
 source: https://www.dynatrace.com/docs/observe/digital-experience/mobile-applications/analyze-and-use/action-and-session-properties-mobile
-scraped: 2026-02-25T21:29:29.202625
+scraped: 2026-02-26T21:24:25.344679
 ---
 
 # Leverage user action and user session properties for mobile applications

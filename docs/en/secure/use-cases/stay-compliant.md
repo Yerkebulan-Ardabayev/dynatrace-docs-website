@@ -1,7 +1,7 @@
 ---
 title: Stay compliant with Security Posture Management
 source: https://www.dynatrace.com/docs/secure/use-cases/stay-compliant
-scraped: 2026-02-25T21:29:54.512625
+scraped: 2026-02-26T21:32:09.523106
 ---
 
 # Stay compliant with Security Posture Management

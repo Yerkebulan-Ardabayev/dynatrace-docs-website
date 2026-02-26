@@ -1,7 +1,7 @@
 ---
 title: Extend event observability
 source: https://www.dynatrace.com/docs/ingest-from/extend-dynatrace/extend-events
-scraped: 2026-02-24T21:19:47.240092
+scraped: 2026-02-26T21:31:12.804456
 ---
 
 # Extend event observability

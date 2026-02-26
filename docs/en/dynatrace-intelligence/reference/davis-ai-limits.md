@@ -1,7 +1,7 @@
 ---
 title: Dynatrace Intelligence limits
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/reference/davis-ai-limits
-scraped: 2026-02-25T21:31:18.511061
+scraped: 2026-02-26T21:34:21.744390
 ---
 
 # Dynatrace Intelligence limits

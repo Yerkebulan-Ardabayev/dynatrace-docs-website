@@ -1,7 +1,7 @@
 ---
 title: Terraform CLI commands
 source: https://www.dynatrace.com/docs/deliver/configuration-as-code/terraform/terraform-cli-commands
-scraped: 2026-02-22T21:24:07.527572
+scraped: 2026-02-26T21:25:22.750950
 ---
 
 # Terraform CLI commands
@@ -98,70 +98,6 @@ By default, ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.pn
 
 The table below describes various use cases for the Dynatrace-specific `export` command, as well example commands to achieve the desired outcome.
 For simplicity, only Linux examples are provided.
-
-Use case
-
-Example
-
-Export all configurations without data sources/dependencies.
-
-```
-./terraform-provider-dynatrace -export
-```
-
-Export all configurations with data sources/dependencies and include commented IDs.
-
-```
-./terraform-provider-dynatrace -export -ref -id
-```
-
-Export all configurations with data sources/dependencies including specified resources in the exclusion list.
-
-```
-./terraform-provider-dynatrace -export -ref * dynatrace_document dynatrace_platform_slo
-```
-
-Export specific configuration.
-
-```
-./terraform-provider-dynatrace -export dynatrace_document dynatrace_platform_slo
-```
-
-Export specific configurations and their dependencies.
-
-```
-./terraform-provider-dynatrace -export -ref dynatrace_platform_slo dynatrace_automation_workflow
-```
-
-Export specific alerting profiles by their IDs.
-
-```
-./terraform-provider-dynatrace -export -ref dynatrace_automation_workflow=4f5942d4-3450-40a8-818f-c5faeb3563d0 dynatrace_automation_workflow=9c4b75f1-9a64-4b44-a8e4-149154fd5325
-```
-
-Export multiple resources including dependencies.
-
-```
-./terraform-provider-dynatrace -export -ref dynatrace_document dynatrace_automation_workflow=4f5942d4-3450-40a8-818f-c5faeb3563d0
-```
-
-Export all configurations and import them into the state.
-
-```
-./terraform-provider-dynatrace -export -import-state
-```
-
-Export all service-level objectives and import them into the state.
-
-```
-./terraform-provider-dynatrace -export -import-state dynatrace_platform_slo
-```
-
-Export all configurations except specified resources.
-
-```
-./terraform-provider-dynatrace -export -ref -exclude dynatrace_platform_slo dynatrace_automation_workflow
-```
 
 ## Additional information
 

@@ -1,7 +1,7 @@
 ---
 title: Workflows
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows
-scraped: 2026-02-25T21:17:00.602095
+scraped: 2026-02-26T21:16:13.055479
 ---
 
 # Workflows

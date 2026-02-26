@@ -1,7 +1,7 @@
 ---
 title: Calculate your consumption of Log Management & Analytics - Query (DPS)
 source: https://www.dynatrace.com/docs/license/capabilities/log-analytics/dps-log-query
-scraped: 2026-02-25T21:14:36.371342
+scraped: 2026-02-26T21:14:20.475966
 ---
 
 # Calculate your consumption of Log Management & Analytics - Query (DPS)

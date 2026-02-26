@@ -1,7 +1,7 @@
 ---
 title: Manually deploy ActiveGate as a StatefulSet
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/deployment/other/ag-statefulset
-scraped: 2026-02-24T21:23:27.820512
+scraped: 2026-02-26T21:29:54.162929
 ---
 
 # Manually deploy ActiveGate as a StatefulSet

@@ -1,7 +1,7 @@
 ---
 title: WMI data source tutorial
 source: https://www.dynatrace.com/docs/ingest-from/extensions/develop-your-extensions/data-sources/wmi-extensions/wmi-tutorial
-scraped: 2026-02-24T21:21:30.574400
+scraped: 2026-02-26T21:27:31.599412
 ---
 
 # WMI data source tutorial

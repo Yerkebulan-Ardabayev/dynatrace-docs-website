@@ -1,7 +1,7 @@
 ---
 title: Dynatrace OTLP API endpoints
 source: https://www.dynatrace.com/docs/ingest-from/opentelemetry/otlp-api
-scraped: 2026-02-24T21:18:43.794855
+scraped: 2026-02-26T21:17:36.933371
 ---
 
 # Dynatrace OTLP API endpoints
@@ -78,7 +78,7 @@ Information enrichment
 
 Vanilla OTLP exports to ActiveGate require manual enrichment of Dynatrace host information to have the proper topology information.
 
-To do so, make sure your traces have the correct mapping resource attributes set. The list of applicable attributes can be found in (or imported from) the [enrichment files](/docs/ingest-from/extend-dynatrace/extend-data "Learn how to automatically enrich your telemetry data with Dynatrace-specific dimensions.").
+To do so, make sure your traces have the correct mapping resource attributes set. The list of applicable attributes can be found in (or imported from) the [enrichment files](/docs/ingest-from/extend-dynatrace/extend-data "Learn how to automatically enrich your telemetry data with Dynatrace-specific fields.").
 
 ### API limitations
 

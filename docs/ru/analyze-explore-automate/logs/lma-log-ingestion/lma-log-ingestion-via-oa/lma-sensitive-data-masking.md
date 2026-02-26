@@ -1,7 +1,7 @@
 ---
 title: Sensitive data masking in OneAgent
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-sensitive-data-masking
-scraped: 2026-02-22T21:13:08.976823
+scraped: 2026-02-26T21:20:08.351487
 ---
 
 # Sensitive data masking in OneAgent
@@ -33,97 +33,6 @@ You can configure sensitive data masking on the host, host group or environment 
    * If you select **replace with string**, set **Replacement** to the string that is meant to replace your sensitive data.
 6. Select **Add condition** to create a specific match for this rule and narrow down the scope for that rule. You can include multiple matchers in one rule. For example, the masking rule can be applied to logs from a specific container, namespace, or log source.
 7. Select the matching attribute.
-
-   Attribute
-
-   Description
-
-   Search dropdown logic
-
-   **Process group**
-
-   Matching is based on the process group ID.
-
-   Attributes visible in the last 3 days are listed.
-
-   **Log source**
-
-   Matching is based on a log path; wildcards are supported in form of an asterisk. Autocompletion for **Log source** is only partial. You can either choose one of the predefined values or enter your log source.
-
-   Can be entered manually. No time limit.
-
-   **Log source origin**[1](#fn-1-1-def)
-
-   Matching is based on the detector was used by the log agent to discover the log file.
-
-   Can be entered manually. No time limit.
-
-   **Host tag**[2](#fn-1-2-def)[3](#fn-1-3-def)
-
-   Matching is based on the host tag. The attribute only supports the tags set with the [OneAgent command line tool](/docs/observe/infrastructure-observability/hosts/configuration/define-tags-and-metadata-for-hosts "Learn how to tag and set additional properties for a monitored host.") or with the [Remote configuration](/docs/ingest-from/bulk-configuration "Perform OneAgent and ActiveGate configuration on hosts from the Deployment status page or at scale using the Dynatrace API.") in a `key=value` pair format. They can be distinguished by the `[Environment]` prefix on the UI, but you should use the value without the prefix.
-   Multiple tags can be specified in a single matcher, but each tag needs to have the same key, such as `logscope=frontend`, `logscope=backend`.
-
-   Can be entered manually. No time limit.
-
-   **Kubernetes container name**
-
-   Matching is based on the name of the Kubernetes container.
-
-   Attributes visible in the last 90 days are listed.
-
-   **Kubernetes namespace name**
-
-   Matching is based on the name of the Kubernetes namespace.
-
-   Attributes visible in the last 90 days are listed.
-
-   **Kubernetes deployment name**
-
-   Matching is based on the name of the Kubernetes deployment.
-
-   Attributes visible in the last 90 days are listed.
-
-   **Kubernetes pod annotation**[4](#fn-1-4-def)[5](#fn-1-5-def)
-
-   Matching is based on any of the selected pod annotations. The correct format is `key=value`. It requires either the OneAgent Log Module managed by Dynatrace Operator or the **Collect all container** logs feature flag to be enabled.
-
-   Can be entered manually.
-
-   **Kubernetes pod label**[4](#fn-1-4-def)[5](#fn-1-5-def)
-
-   Matching is based on any of the selected pod labels. The correct format is `key=value`. It requires either the OneAgent Log Module managed by Dynatrace Operator or the **Collect all container logs** feature flag to be enabled.
-
-   Can be entered manually.
-
-   **Kubernetes workload name**[4](#fn-1-4-def)[5](#fn-1-5-def)
-
-   Matching is based on any of the selected workload names. It requires either the OneAgent Log Module managed by Dynatrace Operator or the **Collect all container logs** feature flag to be enabled.
-
-   Can be entered manually.
-
-   **Kubernetes workload kind**[4](#fn-1-4-def)[5](#fn-1-5-def)
-
-   Matching is based on any of the selected workload kinds. It requires either the OneAgent Log Module managed by Dynatrace Operator or the **Collect all container logs** feature flag to be enabled.
-
-   Can be entered manually.
-
-   **Docker container name**
-
-   Matching is based on the name of the container.
-
-   Attributes visible in the last 90 days are listed.
-
-   **DT entity container group ID**
-
-   Matching is based on any of the selected container groups.
-
-   Can be entered manually. No time limit.
-
-   **Process technology**
-
-   Matching is based on the technology name.
-
-   Can be entered manually. No time limit.
 
    1
 
@@ -196,8 +105,6 @@ The environment scope is available in the settings menu.
 2. Configure data masking by adding rules with a set of matchers that identify your sensitive data.
 
 ## REST API
-
-
 
 You can use the Settings API to manage your sensitive data masking configuration:
 
@@ -344,6 +251,8 @@ Username: John Doe, CreditCardNumber: 7e938e089861f3975b38cff3a93cc3aa659f7779
 ```
 
 ### Mask phone number
+
+
 
 In this example, you will configure a sensitive data masking rule that targets all phone numbers in the following log record for all log files.
 
@@ -1047,26 +956,6 @@ The scenario with one rule with a matcher that has two values:
 
 The common regex formats for sensitive data include:
 
-Sensitive data type
-
-ReGEx
-
-IPv4
-
-`\b\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}\b`
-
-Email address
-
-`\b[\w\-\._]+?@[\w\-\._]+?\.\w{2,10}?\b`
-
-Credit card number
-
-`\b[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{4}\b`
-
-Phone number
-
-`\+?[0-9]{3}-?[0-9]{6,12}\b`
-
 ### Unsupported regular expressions
 
 Data masking occurs within the entire expression or a capturing group. An expression has to match the regular expression engine syntax, and it cannot:
@@ -1085,8 +974,6 @@ You can execute sensitive data masking in your environment so that the confident
 How many capturing groups are supported?
 
 One. If none is provided, then the entire scope of the regular expression you provide is treated as one capturing group.
-
-
 
 ## Sensitive data masking limits
 

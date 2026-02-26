@@ -1,7 +1,7 @@
 ---
 title: Calculate your consumption of Full-Stack Monitoring (DPS)
 source: https://www.dynatrace.com/docs/license/capabilities/app-infra-observability/full-stack-monitoring
-scraped: 2026-02-22T21:12:48.900559
+scraped: 2026-02-26T21:19:43.151289
 ---
 
 # Calculate your consumption of Full-Stack Monitoring (DPS)
@@ -11,7 +11,7 @@ scraped: 2026-02-22T21:12:48.900559
 * Latest Dynatrace
 * Explanation
 * 5-min read
-* Updated on Dec 10, 2025
+* Updated on Jan 26, 2026
 
 Full-Stack Monitoring for hosts and containers offers comprehensive application performance monitoring.
 Application performance monitoring includes: distributed tracing, code-level visibility, CPU profiling, memory profiling, and deep process monitoring for hosts and containers.
@@ -110,8 +110,10 @@ Certain monitoring scenarios have their own calculations for GiB-hour consumptio
 
 ## Metrics
 
-This section assumes that you have followed the Dynatrace-recommended deployment options.
-If you implement a custom deployment, the charging of included Metrics may still work as describedâbut this is not guaranteed by Dynatrace.
+This section assumes that you have followed the Dynatrace-recommended deployment options, especially regarding telemetry enrichment.
+If you implement a custom deployment, the charging of included metrics may still work as describedâbut this is not guaranteed by Dynatrace.
+
+For more information, see [Supported deployment options](#deployment-options).
 
 Full-Stack Monitoring includes all Infrastructure Monitoring metrics, application performance monitoring metrics, and [other built-in metrics](/docs/license/capabilities/metrics/dps-metrics-ingest#billable-and-non-billable-metrics "Learn how your consumption of the Metrics - Ingest & Process DPS capability is billed and charged.").
 These metrics are included and never produce any charge.
@@ -143,42 +145,6 @@ Metric data points that exceed your included volume are charged as:
 
 Your environment's included metric data points are applied automatically to metrics that originate at hosts and containers that are monitored by OneAgent in Full-Stack Monitoring mode.
 This applies to custom metrics as described in the table below.
-
-Origin
-
-Examples (including but not limited to)
-
-A Full-Stack monitored host sending metrics via the [OneAgent metric API](/docs/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/oneagent-metric-api "Use the Dynatrace API to retrieve the metrics of monitored entities.")
-
-* OpenTelemetry metrics
-* Spring Micrometer
-* StatsD
-* JMX
-* Extensions run locally on the host by OneAgent
-* a host-local Telegraf
-
-An application monitored with Container-based application-only Full-Stack Monitoring via the OneAgent code module
-
-* OpenTelemetry metrics
-* Spring Micrometer
-* JMX
-
-A Full-Stack monitored Kubernetes node or container, either via [Cloud Native Full-Stack](/docs/ingest-from/setup-on-k8s/deployment/full-stack-observability "Deploy Dynatrace Operator in cloud-native full-stack mode to Kubernetes"), [Classic Full-Stack](/docs/ingest-from/setup-on-k8s/deployment/other/classic-full-stack "Deploy Dynatrace Operator in classic full-stack mode to Kubernetes"), or [Application Observability](/docs/ingest-from/setup-on-k8s/deployment/application-observability "Deploy Dynatrace Operator in application monitoring mode to Kubernetes") [1](#fn-2-1-def)
-
-* OpenTelemetry metrics
-* Spring Micrometer
-* JMX
-* [Prometheus metrics via ActiveGate](/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-prometheus-metrics "Metric ingestion from Prometheus endpoints in Kubernetes, metrics alerts, and monitoring consumption.")
-* Metrics sent via the Dynatrace Collector [2](#fn-2-2-def) or OpenTelemetry Collector [3](#fn-2-3-def)
-
-[Service monitoring](/docs/observe/application-observability/services "Learn how to monitor and analyze your services, define and use request attributes, and more.") from a Full-Stack monitored application either via [Cloud Native Full-Stack](/docs/ingest-from/setup-on-k8s/deployment/full-stack-observability "Deploy Dynatrace Operator in cloud-native full-stack mode to Kubernetes"), [Classic Full-Stack](/docs/ingest-from/setup-on-k8s/deployment/other/classic-full-stack "Deploy Dynatrace Operator in classic full-stack mode to Kubernetes"), or [Application Observability](/docs/ingest-from/setup-on-k8s/deployment/application-observability "Deploy Dynatrace Operator in application monitoring mode to Kubernetes") [1](#fn-2-1-def)
-
-* `dt.service.request.count`
-* `dt.service.request.failure_count`
-* `dt.service.request.response_time`
-* `dt.service.request.service_mesh.count`
-* `dt.service.request.service_mesh.failure_count`
-* `dt.service.request.service_mesh.response_time`
 
 1
 
@@ -232,6 +198,11 @@ Full-Stack Monitoring trace data comes from two sources and takes one of two for
   OpenTelemetry traces that are sent this way count against the included trace data volume (200 KiB of trace data per minute), and any trace data that exceeds the include trace data volume is charged as [Traces - Ingest & Process](/docs/license/capabilities/traces#trace-ingest-usage "Learn how Dynatrace Traces powered by Grail consumption is calculated using the Dynatrace Platform Subscription (DPS) model.").
 
   Note that traces sent via the Custom Trace API and not coming from a Full-Stack Monitoring host or application are always charged as [Traces - Ingest & Process](/docs/license/capabilities/traces#trace-ingest-usage "Learn how Dynatrace Traces powered by Grail consumption is calculated using the Dynatrace Platform Subscription (DPS) model.").
+
+  For OpenTelemetry traces, this section assumes that you have followed the Dynatrace-recommended deployment options, especially regarding telemetry enrichment.
+  If you implement a custom deployment, the charging of included traces from OpenTelemetry sources may still work as describedâbut this is not guaranteed by Dynatrace.
+
+  For more information, see [Supported deployment options](#deployment-options).
 
 What about the included trace volume in DPS prior to Traces powered by Grail
 
@@ -287,6 +258,24 @@ During the 2 peak hours per day though about half the trace ingest volume will b
 Full-Stack Monitoring includes [CPU](/docs/observe/application-observability/profiling-and-optimization/cpu-profiling "Learn how you can use Dynatrace to perform enhanced code analysis."), [memory](/docs/observe/application-observability/profiling-and-optimization/memory-profiling "Analyze memory allocation with Dynatrace."), and thread profiling for technologies like Java, .NET, Go, Node.js, and PHP.
 OneAgent uses an intelligent patented mechanism to manage the volume of profiling data.
 Dynatrace [retains the total amount of ingested profiling data](/docs/manage/data-privacy-and-security/data-privacy/data-retention-periods#purepath "Check retention times for various data types.") from your environment for 10 days.
+
+## Supported deployment options
+
+To ensure that your OpenTelemetry traces and custom metrics benefit from the included trace and metric volumes, you need to enable telemetry enrichment according to the Dynatrace-recommended deployment options.
+
+Automatic telemetry enrichment is enabled for:
+
+* Custom metrics and OpenTelemetry spans that originate from any:
+
+  + Full-Stack monitored host or container, when you use OneAgent or follow the steps described in [Enrich ingested data with Dynatrace-specific fields](/docs/ingest-from/extend-dynatrace/extend-data "Learn how to automatically enrich your telemetry data with Dynatrace-specific fields.").
+  + Full-Stack monitored Kubernetes container, when you use Dynatrace Operator and [metadata enrichment is enabled](/docs/ingest-from/setup-on-k8s/guides/metadata-automation/metadata-enrichment "Metadata enrichment in the Dynatrace Operator adds context to Kubernetes pods by attaching relevant metadata to entities like pods, hosts, and processes for better observability.").
+  + Cloud-native Full-Stack monitored Kubernetes node, when you use Dynatrace Operator and [metadata enrichment is enabled](/docs/ingest-from/setup-on-k8s/guides/metadata-automation/metadata-enrichment "Metadata enrichment in the Dynatrace Operator adds context to Kubernetes pods by attaching relevant metadata to entities like pods, hosts, and processes for better observability.").
+    This includes any containers running on the monitored Kubernetes node.
+* Custom metrics that are sent from any Full-Stack monitored host via the OneAgent local metric API. For more information, see [OneAgent metric API](/docs/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/oneagent-metric-api "Use the Dynatrace API to retrieve the metrics of monitored entities.").
+
+* OpenTelemetry traces that are sent from any Full-Stack monitored host via the OneAgent local trace API. For more information, see [Send OpenTelemetry traces to the OTLP endpoint exposed by OneAgent](/docs/ingest-from/dynatrace-oneagent/oneagent-and-opentelemetry/oneagent-otel#send-opentelemetry-traces-to-the-otlp-endpoint-exposed-by-oneagent "Learn how to send OpenTelemetry data to a Dynatrace OneAgent.").
+
+If you implement a custom deployment, the charging of traces and metrics may still work as describedâbut this is not guaranteed by Dynatrace.
 
 ## Consumption details: Full-Stack
 

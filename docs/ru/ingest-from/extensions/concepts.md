@@ -1,7 +1,7 @@
 ---
 title: About Extensions
 source: https://www.dynatrace.com/docs/ingest-from/extensions/concepts
-scraped: 2026-02-24T21:30:16.798160
+scraped: 2026-02-26T21:32:44.115996
 ---
 
 # About Extensions

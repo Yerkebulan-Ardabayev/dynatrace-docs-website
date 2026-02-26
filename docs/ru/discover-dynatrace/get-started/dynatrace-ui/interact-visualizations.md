@@ -1,7 +1,7 @@
 ---
 title: Data visualizations
 source: https://www.dynatrace.com/docs/discover-dynatrace/get-started/dynatrace-ui/interact-visualizations
-scraped: 2026-02-23T21:27:46.890359
+scraped: 2026-02-26T21:27:32.835194
 ---
 
 # Data visualizations

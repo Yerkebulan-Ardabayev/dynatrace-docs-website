@@ -1,7 +1,7 @@
 ---
 title: Dynatrace Operator security
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/reference/security
-scraped: 2026-02-21T21:18:03.808637
+scraped: 2026-02-26T21:33:37.025891
 ---
 
 # Dynatrace Operator security

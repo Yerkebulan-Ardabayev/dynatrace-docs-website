@@ -1,6 +1,6 @@
 # Документация Dynatrace: deliver/service-level-objectives
 Язык: Русский (RU)
-Сгенерировано: 2026-02-25
+Сгенерировано: 2026-02-26
 Файлов в разделе: 7
 ---
 
@@ -9,7 +9,7 @@
 ---
 title: Create service-level objectives
 source: https://www.dynatrace.com/docs/deliver/service-level-objectives/create-slo
-scraped: 2026-02-25T21:33:57.854482
+scraped: 2026-02-26T21:24:06.557577
 ---
 
 # Create service-level objectives
@@ -110,7 +110,7 @@ You can create, edit, list, delete, and evaluate your SLOs via API.
 ---
 title: Permissions for service-level objective (SLO) tiles in a dashboard
 source: https://www.dynatrace.com/docs/deliver/service-level-objectives/service-level-objective-permissions
-scraped: 2026-02-25T21:28:47.652727
+scraped: 2026-02-26T21:28:26.267624
 ---
 
 # Permissions for service-level objective (SLO) tiles in a dashboard
@@ -144,7 +144,7 @@ For the SLO details view
 ---
 title: Add a service-level objective (SLO) tile to a dashboard
 source: https://www.dynatrace.com/docs/deliver/service-level-objectives/service-level-objective-tile-add-to-dashboard
-scraped: 2026-02-24T21:25:26.939381
+scraped: 2026-02-26T21:34:06.579840
 ---
 
 # Add a service-level objective (SLO) tile to a dashboard
@@ -227,7 +227,7 @@ Due to the intersection, the result contains only the evaluations related to S-2
 ---
 title: Edit a service-level objective (SLO) tile in a dashboard
 source: https://www.dynatrace.com/docs/deliver/service-level-objectives/service-level-objective-tile-edit-in-dashboard
-scraped: 2026-02-24T21:36:01.562205
+scraped: 2026-02-26T21:29:36.489973
 ---
 
 # Edit a service-level objective (SLO) tile in a dashboard
@@ -338,7 +338,7 @@ To copy and paste multiple tiles simultaneously
 ---
 title: View the details of a service-level objective (SLO) tile in a dashboard
 source: https://www.dynatrace.com/docs/deliver/service-level-objectives/service-level-objective-tile-view
-scraped: 2026-02-23T21:26:39.575621
+scraped: 2026-02-26T21:21:54.264403
 ---
 
 # View the details of a service-level objective (SLO) tile in a dashboard

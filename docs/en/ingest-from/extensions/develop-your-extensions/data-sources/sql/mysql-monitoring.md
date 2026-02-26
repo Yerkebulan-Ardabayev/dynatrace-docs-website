@@ -1,7 +1,7 @@
 ---
 title: MySQL monitoring configuration
 source: https://www.dynatrace.com/docs/ingest-from/extensions/develop-your-extensions/data-sources/sql/mysql-monitoring
-scraped: 2026-02-24T21:33:12.508837
+scraped: 2026-02-26T21:23:18.423587
 ---
 
 # MySQL monitoring configuration

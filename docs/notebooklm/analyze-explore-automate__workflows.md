@@ -1,6 +1,6 @@
 # Документация Dynatrace: analyze-explore-automate/workflows
 Язык: Русский (RU)
-Сгенерировано: 2026-02-25
+Сгенерировано: 2026-02-26
 Файлов в разделе: 31
 ---
 
@@ -9,7 +9,7 @@
 ---
 title: Email
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/email
-scraped: 2026-02-25T21:27:46.236898
+scraped: 2026-02-26T21:22:08.968606
 ---
 
 # Email
@@ -518,7 +518,7 @@ The action returns the `workflowRun` property that contains the full response of
 ---
 title: Set up GitHub Connector
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/github/github-workflows-setup
-scraped: 2026-02-25T21:28:22.054947
+scraped: 2026-02-26T21:26:28.823641
 ---
 
 # Set up GitHub Connector
@@ -595,7 +595,7 @@ We strongly recommend that you limit the permissions of your personal access tok
 ---
 title: GitHub Connector
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/github
-scraped: 2026-02-18T05:52:33.957113
+scraped: 2026-02-26T21:31:32.494641
 ---
 
 # GitHub Connector
@@ -631,7 +631,7 @@ Learn about available actions used by GitHub Connector integration for automatin
 ---
 title: Actions for GitLab Connector
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/gitlab/gitlab-workflows-actions
-scraped: 2026-02-25T21:27:10.016810
+scraped: 2026-02-26T21:25:21.509589
 ---
 
 # Actions for GitLab Connector
@@ -929,7 +929,7 @@ Returns fields as described in the [Jobs API - Run a jobï»¿](https://dt-url.n
 ---
 title: Set up GitLab Connector
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/gitlab/gitlab-workflows-setup
-scraped: 2026-02-25T21:26:30.133443
+scraped: 2026-02-26T21:23:32.287864
 ---
 
 # Set up GitLab Connector
@@ -1033,7 +1033,7 @@ Learn about available actions used by GitLab Connector integration for automatin
 ---
 title: Set up Jenkins Connector
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/jenkins/jenkins-workflows-setup
-scraped: 2026-02-24T21:21:29.198340
+scraped: 2026-02-26T21:21:04.042185
 ---
 
 # Set up Jenkins Connector
@@ -1095,7 +1095,7 @@ To configure a connection
 ---
 title: Jira Connector
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/jira
-scraped: 2026-02-24T21:23:51.174470
+scraped: 2026-02-26T21:32:23.619308
 ---
 
 # Jira Connector
@@ -1144,7 +1144,7 @@ The following are solutions to problems some people had with Jira Connector acti
 ---
 title: Microsoft Entra ID Connector
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/microsoft-entra-id
-scraped: 2026-02-24T21:23:53.940384
+scraped: 2026-02-26T21:20:58.803507
 ---
 
 # Microsoft Entra ID Connector
@@ -1388,7 +1388,7 @@ The following are solutions to problems some people have.
 ---
 title: Red Hat Ansible Automation
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/red-hat/redhat-ansible
-scraped: 2026-02-21T21:23:10.090670
+scraped: 2026-02-26T21:33:03.781043
 ---
 
 # Red Hat Ansible Automation
@@ -1469,33 +1469,6 @@ You have a new EdgeConnect connection.
 
 The following workflow actions are available for the Red Hat Ansible Automation integration.
 Each action corresponds to an endpoint of the Red Hat Ansible API. For details on endpoints, see the [Ansible Tower API Reference Guideï»¿](https://dt-url.net/0w4392o).
-
-Action
-
-Description
-
-Red Hat Ansible API endpoint
-
-Launch job template
-
-Launch a job template on Red Hat Ansible
-
-`POST /api/v2/job_templates/{id}/launch/`   
-Launch a Job Template
-
-List job status
-
-List job status on Red Hat Ansible
-
-`GET /api/v2/jobs/{id}/`   
-Retrieve a Job Host Summary
-
-Relaunch job
-
-Relaunch a job on Red Hat Ansible
-
-`POST /api/v2/jobs/{id}/relaunch/`   
-Relaunch a Job
 
 ## Launch a job template
 
@@ -2074,7 +2047,7 @@ The following is a solution to a problem some people have.
 ---
 title: Slack Connector
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/slack
-scraped: 2026-02-25T21:30:40.940055
+scraped: 2026-02-26T21:33:12.212451
 ---
 
 # Slack Connector
@@ -2966,7 +2939,7 @@ The following are solutions to problems some people had with Slack integration.
 ---
 title: Actions for Text Processing Connector
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/text-processing/automation-workflows-text-processing-actions
-scraped: 2026-02-25T21:26:16.794176
+scraped: 2026-02-26T21:20:49.967611
 ---
 
 # Actions for Text Processing Connector
@@ -3317,7 +3290,7 @@ Supports multi-document YAML files.
 ---
 title: Text Processing
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/text-processing
-scraped: 2026-02-25T21:35:14.788316
+scraped: 2026-02-26T21:20:35.850899
 ---
 
 # Text Processing
@@ -3488,7 +3461,7 @@ You can find the results in the **Result** tab of the **Execution** that you cou
 ---
 title: HTTP request action for Workflows
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/default-workflow-actions/http-request-workflow-action
-scraped: 2026-02-25T21:35:28.765632
+scraped: 2026-02-26T21:21:12.869115
 ---
 
 # HTTP request action for Workflows
@@ -3877,7 +3850,7 @@ console.log( ex.params.event);
 ---
 title: Workflows actions
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/default-workflow-actions
-scraped: 2026-02-25T21:32:11.116080
+scraped: 2026-02-26T21:29:34.009343
 ---
 
 # Workflows actions
@@ -3926,7 +3899,7 @@ Use the **Run Workflow** action to modularize workflow usage.](/docs/analyze-exp
 ---
 title: Access workflow management functionality
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/manage-workflows/workflows-access-management
-scraped: 2026-02-25T21:26:18.110552
+scraped: 2026-02-26T21:20:23.405957
 ---
 
 # Access workflow management functionality
@@ -3971,7 +3944,7 @@ To access various workflow management commands:
 ---
 title: Manage live or draft workflows
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/manage-workflows/workflows-manage-live-mode
-scraped: 2026-02-25T21:35:08.211650
+scraped: 2026-02-26T21:22:57.862448
 ---
 
 # Manage live or draft workflows
@@ -4009,7 +3982,7 @@ To access various **Live** or **Draft** workflow management commands
 ---
 title: Get notified about workflow changes
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/manage-workflows/workflows-notifications
-scraped: 2026-02-24T21:30:14.120795
+scraped: 2026-02-26T21:26:54.451246
 ---
 
 # Get notified about workflow changes
@@ -4268,7 +4241,7 @@ For more information, see [Service users](/docs/manage/identity-access-managemen
 ---
 title: Event triggers for workflows
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/trigger/event-trigger
-scraped: 2026-02-23T21:34:00.776407
+scraped: 2026-02-26T21:27:25.522661
 ---
 
 # Event triggers for workflows
@@ -4839,7 +4812,7 @@ Design a workflow to manage high-volume AWS alerts by filtering out noise and su
 ---
 title: Workflows
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows
-scraped: 2026-02-25T21:17:00.602095
+scraped: 2026-02-26T21:16:13.055479
 ---
 
 # Workflows

@@ -1,7 +1,7 @@
 ---
 title: Resource attributes
 source: https://www.dynatrace.com/docs/platform/oneagent/resource-attributes
-scraped: 2026-02-25T21:28:09.333914
+scraped: 2026-02-26T21:33:21.524686
 ---
 
 # Resource attributes

@@ -1,7 +1,7 @@
 ---
 title: OpenTelemetry interoperability in Node.js
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/opentelemetry-interoperability/lambda-otel-bridge-nodejs
-scraped: 2026-02-25T21:32:39.119366
+scraped: 2026-02-26T21:33:24.553517
 ---
 
 # OpenTelemetry interoperability in Node.js

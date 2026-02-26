@@ -1,7 +1,7 @@
 ---
 title: Stream Kubernetes logs with Dynatrace Log Module
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-logs-from-kubernetes
-scraped: 2026-02-20T21:16:35.562713
+scraped: 2026-02-26T21:23:14.520248
 ---
 
 # Stream Kubernetes logs with Dynatrace Log Module
@@ -40,90 +40,6 @@ Standard log processing features from OneAgent, including [sensitive data maskin
 
 Use the following recommended matching attributes when configuring log ingestion from Kubernetes.
 
-Attribute
-
-Description
-
-Search dropdown logic
-
-**Kubernetes namespace name**
-
-Matching is based on the name of the Kubernetes namespace.
-
-Attributes visible in the last 90 days are listed.
-
-**Kubernetes container name**
-
-Matching is based on the name of the Kubernetes container.
-
-Attributes visible in the last 90 days are listed.
-
-**Kubernetes deployment name**
-
-Matching is based on the name of the Kubernetes workload.[1](#fn-1-1-def)
-
-Attributes visible in the last 90 days are listed.
-
-**Kubernetes pod annotation**
-
-Matching is based on any of the selected pod annotations. The correct format is `key=value`.
-
-Can be entered manually.
-
-**Kubernetes pod label**
-
-Matching is based on any of the selected pod labels. The correct format is `key=value`.
-
-Can be entered manually.
-
-**Kubernetes workload name**
-
-Matching is based on any of the selected workload names.
-
-Can be entered manually.
-
-**Kubernetes workload kind**
-
-Matching is based on any of the selected workload kinds.
-
-Can be entered manually.
-
-**Log content**
-
-Matching is based on the content of the log; wildcards are supported in the form of an asterisk.
-
-Can be entered manually. No time limit.
-
-**Log record level**[2](#fn-1-2-def)
-
-Matching is based on the level of the log record. It supports the following values: `alert`, `critical`, `debug`, `emergency`, `error`, `info`, `none`, `notice`, `severe`, `warn`.
-
-Can be entered manually. No time limit.
-
-**Log source origin**
-
-Matching is based on the detector was used by OneAgent to discover the log file.
-
-Can be entered manually. No time limit.
-
-**Process group**
-
-Matching is based on the process group ID. It also requires running a OneAgent on the node.
-
-Entities visible in the last 3 days are listed.
-
-**Process technology**
-
-Matching is based on the technology name. It also requires running a OneAgent on the node.
-
-Can be entered manually. No time limit.
-
-**DT entity container group ID**
-
-Matching is based on any of the selected container groups. It also requires running a OneAgent on the node.
-
-Can be entered manually. No time limit.
-
 1
 
 Subject to change in the future versions of OneAgent. Separate matchers for each workload kind would be available. We recommend using the Kubernetes workload name and Kubernetes workload kind instead.
@@ -149,8 +65,6 @@ Consult the [Configuration scopes](/docs/analyze-explore-automate/logs/lma-log-i
 
 ## Use cases
 
-
-
 Explore the following use cases for log ingestion from Kubernetes environments using Dynatrace. By configuring log ingestion with different matchers, you can control which logs are captured in the system. The use cases below offer guidance on configuring Dynatrace to capture logs based on your specific monitoring needs, whether it's from a particular namespace, container, or other criteria.
 
 For detailed instructions on how to configure log ingestion, see [Log ingest rules](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-log-storage-configuration "Include and exclude specific log sources already known to OneAgent for storage and analysis.").
@@ -168,6 +82,8 @@ For detailed instructions on how to configure log ingestion, see [Log ingest rul
 You can now analyze the logs in the log viewer or notebooks after fitering the proper namespace. You can also find the logs in context in the Kubernetes application by selecting the **Logs** tab.
 
 ### Ingest logs from a specific namespace and container
+
+
 
 1. Go to **Settings** and select **Log Monitoring** > **Log ingest rules**.
 2. Select **Add rule** and provide the name for your configuration in the **Rule name** field.  

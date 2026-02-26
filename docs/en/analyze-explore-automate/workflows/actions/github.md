@@ -1,7 +1,7 @@
 ---
 title: GitHub Connector
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/github
-scraped: 2026-02-18T05:52:33.957113
+scraped: 2026-02-26T21:31:32.494641
 ---
 
 # GitHub Connector

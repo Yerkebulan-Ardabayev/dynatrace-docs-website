@@ -1,7 +1,7 @@
 ---
 title: Azure Synapse Analytics (Synapse Workspace, Apache Spark pool, SQL pool) monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-synapse-analytics
-scraped: 2026-02-24T21:35:04.217670
+scraped: 2026-02-26T21:22:04.051246
 ---
 
 # Azure Synapse Analytics (Synapse Workspace, Apache Spark pool, SQL pool) monitoring

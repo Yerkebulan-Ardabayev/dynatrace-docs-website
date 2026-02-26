@@ -1,7 +1,7 @@
 ---
 title: Stream Kubernetes logs with Dynatrace Log Module
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-logs-from-kubernetes
-scraped: 2026-02-20T21:16:35.562713
+scraped: 2026-02-26T21:23:14.520248
 ---
 
 # Stream Kubernetes logs with Dynatrace Log Module
@@ -39,90 +39,6 @@ You can control logs from Kubernetes ingestion with log ingest rules in Dynatrac
 Standard log processing features from OneAgent, including [sensitive data masking](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-sensitive-data-masking "Mask sensitive information in your log data using Log Management and Analytics."), [timestamp configuration](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-timestamp-configuration "Define a specific date format using timestamp rules that specify what should be considered a timestamp in a log record."), [log boundary definition](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-log-entry-boundary "Define a specific date format using timestamp rules that specify what should be considered a timestamp in a log record."), and [automatic enrichment](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-log-data-transformation-oa "Generic log ingestion automatically transforms log data into output values for the loglevel attribute.") of log records, are also available and enabled here.
 
 Use the following recommended matching attributes when configuring log ingestion from Kubernetes.
-
-Attribute
-
-Description
-
-Search dropdown logic
-
-**Kubernetes namespace name**
-
-Matching is based on the name of the Kubernetes namespace.
-
-Attributes visible in the last 90 days are listed.
-
-**Kubernetes container name**
-
-Matching is based on the name of the Kubernetes container.
-
-Attributes visible in the last 90 days are listed.
-
-**Kubernetes deployment name**
-
-Matching is based on the name of the Kubernetes workload.[1](#fn-1-1-def)
-
-Attributes visible in the last 90 days are listed.
-
-**Kubernetes pod annotation**
-
-Matching is based on any of the selected pod annotations. The correct format is `key=value`.
-
-Can be entered manually.
-
-**Kubernetes pod label**
-
-Matching is based on any of the selected pod labels. The correct format is `key=value`.
-
-Can be entered manually.
-
-**Kubernetes workload name**
-
-Matching is based on any of the selected workload names.
-
-Can be entered manually.
-
-**Kubernetes workload kind**
-
-Matching is based on any of the selected workload kinds.
-
-Can be entered manually.
-
-**Log content**
-
-Matching is based on the content of the log; wildcards are supported in the form of an asterisk.
-
-Can be entered manually. No time limit.
-
-**Log record level**[2](#fn-1-2-def)
-
-Matching is based on the level of the log record. It supports the following values: `alert`, `critical`, `debug`, `emergency`, `error`, `info`, `none`, `notice`, `severe`, `warn`.
-
-Can be entered manually. No time limit.
-
-**Log source origin**
-
-Matching is based on the detector was used by OneAgent to discover the log file.
-
-Can be entered manually. No time limit.
-
-**Process group**
-
-Matching is based on the process group ID. It also requires running a OneAgent on the node.
-
-Entities visible in the last 3 days are listed.
-
-**Process technology**
-
-Matching is based on the technology name. It also requires running a OneAgent on the node.
-
-Can be entered manually. No time limit.
-
-**DT entity container group ID**
-
-Matching is based on any of the selected container groups. It also requires running a OneAgent on the node.
-
-Can be entered manually. No time limit.
 
 1
 

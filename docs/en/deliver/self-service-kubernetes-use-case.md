@@ -1,7 +1,7 @@
 ---
 title: Predict and autoscale Kubernetes workloads
 source: https://www.dynatrace.com/docs/deliver/self-service-kubernetes-use-case
-scraped: 2026-02-24T21:34:52.511885
+scraped: 2026-02-26T21:21:49.377527
 ---
 
 # Predict and autoscale Kubernetes workloads

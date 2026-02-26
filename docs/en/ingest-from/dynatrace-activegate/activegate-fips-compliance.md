@@ -1,7 +1,7 @@
 ---
 title: ActiveGate FIPS compliance
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-activegate/activegate-fips-compliance
-scraped: 2026-02-23T21:26:00.129709
+scraped: 2026-02-26T21:29:26.721520
 ---
 
 # ActiveGate FIPS compliance
@@ -28,37 +28,13 @@ ActiveGate deployed in FIPS-compliant mode uses FIPS-certified cryptographic lib
 
 ## ActiveGate purposes compatibility
 
-Purpose
-
-x86-64
-
-arm64
-
-[Routing-monitoring](/docs/ingest-from/dynatrace-activegate/capabilities#functional_tbl "Learn the capabilities and uses of ActiveGate.")
-
-![Applicable](https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg "Applicable")
-
-![Applicable](https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg "Applicable")[1](#fn-1-1-def)
-
-[Synthetic monitoring in a private location](/docs/ingest-from/dynatrace-activegate/capabilities/synthetic-purpose "ActiveGates purposed for synthetic monitoring of internal and external resources from private Synthetic locations")
-
-![Applicable](https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg "Applicable")[2](#fn-1-2-def)
-
-![Not applicable](https://dt-cdn.net/images/icon-red-cross-1f1142a5dc.svg "Not applicable")
-
-[z/OS monitoring](/docs/ingest-from/dynatrace-activegate/capabilities/zremote-purpose "Learn about installing the zRemote module for z/OS monitoring.")
-
-![Applicable](https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg "Applicable")
-
-![Not applicable](https://dt-cdn.net/images/icon-red-cross-1f1142a5dc.svg "Not applicable")
-
 1
 
 excluding [Extension Execution Controller module](/docs/ingest-from/dynatrace-activegate/capabilities/routing-monitoring-purpose#extn "Learn about the routing and monitoring capabilities and uses of ActiveGate.") (same as regular, non-FIPS ActiveGate).
 
 2
 
-refer to [Requirements and limitations](/docs/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/create-a-private-synthetic-location#fips-compliat-limitation "Learn how to create a private location for synthetic monitoring.") for Synthetic FIPS compliance.
+refer to [Requirements and limitations](/docs/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/create-a-private-synthetic-location#fips-compliant-limitation "Learn how to create a private location for synthetic monitoring.") for Synthetic FIPS compliance.
 
 ### Host-based ActiveGate deployment
 
@@ -143,47 +119,3 @@ To get logs from a specific pod, use the following command:
 `kubectl -n <NAMESPACE> logs pod/<DYNAKUBE_NAME>-activegate-<REPLICA_NUMBER>`
 
 ## Supported cipher suites
-
-Cipher suite
-
-TLS version
-
-[`TLS_AES_256_GCM_SHA384`ï»¿](https://ciphersuite.info/cs/TLS_AES_256_GCM_SHA384)
-
-TLS1.3
-
-[`TLS_AES_128_GCM_SHA256`ï»¿](https://ciphersuite.info/cs/TLS_AES_128_GCM_SHA256)
-
-TLS1.3
-
-[`TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384`ï»¿](https://ciphersuite.info/cs/TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384)
-
-TLS1.2, TLS1.3
-
-[`TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256`ï»¿](https://ciphersuite.info/cs/TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256)
-
-TLS1.2, TLS1.3
-
-[`TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384`ï»¿](https://ciphersuite.info/cs/TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384)
-
-TLS1.2, TLS1.3
-
-[`TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256`ï»¿](https://ciphersuite.info/cs/TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256)
-
-TLS1.2, TLS1.3
-
-[`TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384`ï»¿](https://ciphersuite.info/cs/TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384)
-
-TLS1.2, TLS1.3
-
-[`TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256`ï»¿](https://ciphersuite.info/cs/TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256)
-
-TLS1.2, TLS1.3
-
-[`TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384`ï»¿](https://ciphersuite.info/cs/TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384)
-
-TLS1.2, TLS1.3
-
-[`TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256`ï»¿](https://ciphersuite.info/cs/TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256)
-
-TLS1.2, TLS1.3

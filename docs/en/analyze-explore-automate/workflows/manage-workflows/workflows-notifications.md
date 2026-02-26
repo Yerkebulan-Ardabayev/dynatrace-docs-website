@@ -1,7 +1,7 @@
 ---
 title: Get notified about workflow changes
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/manage-workflows/workflows-notifications
-scraped: 2026-02-24T21:30:14.120795
+scraped: 2026-02-26T21:26:54.451246
 ---
 
 # Get notified about workflow changes

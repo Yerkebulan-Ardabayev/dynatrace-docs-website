@@ -1,7 +1,7 @@
 ---
 title: Log Monitoring in Kubernetes (Logs Classic)
 source: https://www.dynatrace.com/docs/analyze-explore-automate/log-monitoring/acquire-log-data/log-monitoring-kubernetes
-scraped: 2026-02-23T21:28:45.331736
+scraped: 2026-02-26T21:34:18.034984
 ---
 
 # Log Monitoring in Kubernetes (Logs Classic)
@@ -49,90 +49,6 @@ Standard log processing features from OneAgent, including [sensitive data maskin
 
 Use the following recommended matching attributes when configuring log ingestion from Kubernetes.
 
-Attribute
-
-Description
-
-Search dropdown logic
-
-**Kubernetes namespace name**
-
-Matching is based on the name of the Kubernetes namespace.
-
-Attributes visible in the last 90 days are listed.
-
-**Kubernetes container name**
-
-Matching is based on the name of the Kubernetes container.
-
-Attributes visible in the last 90 days are listed.
-
-**Kubernetes deployment name**
-
-Matching is based on the name of the Kubernetes workload.[1](#fn-1-1-def)
-
-Attributes visible in the last 90 days are listed.
-
-**Kubernetes pod annotation**
-
-Matching is based on any of the selected pod annotations. The correct format is `key=value`.
-
-Can be entered manually.
-
-**Kubernetes pod label**
-
-Matching is based on any of the selected pod labels. The correct format is `key=value`.
-
-Can be entered manually.
-
-**Kubernetes workload name**
-
-Matching is based on any of the selected workload names.
-
-Can be entered manually.
-
-**Kubernetes workload kind**
-
-Matching is based on any of the selected workload kinds.
-
-Can be entered manually.
-
-**Log content**
-
-Matching is based on the content of the log; wildcards are supported in the form of an asterisk.
-
-Can be entered manually. No time limit.
-
-**Log record level**[2](#fn-1-2-def)
-
-Matching is based on the level of the log record. It supports the following values: `alert`, `critical`, `debug`, `emergency`, `error`, `info`, `none`, `notice`, `severe`, `warn`.
-
-Can be entered manually. No time limit.
-
-**Log source origin**
-
-Matching is based on the detector was used by OneAgent to discover the log file.
-
-Can be entered manually. No time limit.
-
-**Process group**
-
-Matching is based on the process group ID. It also requires running a OneAgent on the node.
-
-Entities visible in the last 3 days are listed.
-
-**Process technology**
-
-Matching is based on the technology name. It also requires running a OneAgent on the node.
-
-Can be entered manually. No time limit.
-
-**DT entity container group ID**
-
-Matching is based on any of the selected container groups. It also requires running a OneAgent on the node.
-
-Can be entered manually. No time limit.
-
 1
 
 Subject to change in the future versions of OneAgent. Separate matchers for each workload kind would be available. We recommend using the Kubernetes workload name and Kubernetes workload kind instead.
@@ -143,49 +59,9 @@ Log record level attribute, transformed by OneAgent Log Module, is different tha
 
 ## Configure log ingest from Kubernetes
 
-
-
 Ingesting logs from Kubernetes requires log ingest rules definition. The configuration is based on a hierarchy of rules that use matchers for Kubernetes and other common log entry attributes. These rules determine which log files, among those detected by OneAgent are ingested.
 
 Use the following recommended matching attributes when configuring log ingestion from Kubernetes.
-
-Attribute
-
-Description
-
-Search dropdown logic
-
-**K8s namespace name**
-
-Matching is based on the name of the Kubernetes namespace.
-
-Attributes visible in the last 90 days are listed.
-
-**K8s container name**
-
-Matching is based on the name of the Kubernetes container.
-
-Attributes visible in the last 90 days are listed.
-
-**K8s deployment name**
-
-Matching is based on the name of the Kubernetes pod.
-
-Subject to change in the future versions of log agent. Separate matchers for each workload kind would be available. We recommend using the K8s container name instead.
-
-Attributes visible in the last 90 days are listed.
-
-**Log content**
-
-Matching is based on the content of the log; wildcards are supported in the form of an asterisk.
-
-Can be entered manually. No time limit.
-
-**Log record level**[1](#fn-2-1-def)[2](#fn-2-2-def)
-
-Matching is based on the level of the log record. It supports the following values: `alert`, `critical`, `debug`, `emergency`, `error`, `info`, `none`, `notice`, `severe`, `warn`.
-
-Can be entered manually. No time limit.
 
 1
 
@@ -196,36 +72,6 @@ Log record level attribute, transformed by OneAgent, is different than the log `
 The minimum required OneAgent version is 1.273.
 
 You can also use the following general matching attributes when configuring log ingestion from Kubernetes.
-
-Attribute
-
-Description
-
-Search dropdown logic
-
-**Container name**
-
-Matching is based on the name of the container. It is used for non-orchestrated container environments, for example Docker.
-
-Attributes visible in the last 90 days are listed.
-
-**Log source**
-
-Matching is based on a **Log source** attribute. In case of Kubernetes logs, it is always set to **Container Output**; wildcards are supported in form of an asterisk.
-
-Can be entered manually. No time limit.
-
-**Process group**
-
-Matching is based on the process group ID.
-
-Entities visible in the last 3 days are listed.
-
-**Process technology**
-
-Matching is based on the technology name.
-
-Can be entered manually. No time limit.
 
 ### Log ingest rule hierarchy
 
@@ -269,6 +115,8 @@ You can now analyze the logs in the log viewer or notebooks after fitering the p
 You can now analyze the logs in the log viewer or notebooks after fitering the proper namespace and container. You can also find the logs in context in the Kubernetes application by selecting the **Logs** tab.
 
 ### Ingest all Kubernetes logs excluding specific namespaces
+
+
 
 1. Go to **Settings** and select **Log Monitoring** > **Log ingest rules**.
 2. Select **Add rule** and provide the name for your configuration in the **Rule name** field.  
@@ -512,8 +360,6 @@ This task requires setting one rule with one matcher.
 ```
 
 ### Example 2: Send logs from a specific namespace and containers with content containing 'ERROR'
-
-
 
 This task requires setting one rule with three matchers.
 

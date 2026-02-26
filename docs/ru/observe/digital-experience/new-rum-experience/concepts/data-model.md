@@ -1,7 +1,7 @@
 ---
 title: Data model of the New RUM Experience
 source: https://www.dynatrace.com/docs/observe/digital-experience/new-rum-experience/concepts/data-model
-scraped: 2026-02-25T21:25:24.280559
+scraped: 2026-02-26T21:30:37.168540
 ---
 
 # Data model of the New RUM Experience

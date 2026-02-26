@@ -1,6 +1,6 @@
 # Документация Dynatrace: ingest-from/dynatrace-oneagent
 Язык: Русский (RU)
-Сгенерировано: 2026-02-25
+Сгенерировано: 2026-02-26
 Файлов в разделе: 63
 ---
 
@@ -82,7 +82,7 @@ To control how much of your [Full-Stack included trace volume](#full-stack-inclu
 ---
 title: Adaptive Traffic Management for distributed tracing
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/adaptive-traffic-management
-scraped: 2026-02-24T21:16:39.429562
+scraped: 2026-02-26T21:16:27.562525
 ---
 
 # Adaptive Traffic Management for distributed tracing
@@ -111,7 +111,7 @@ Discover Adaptive Traffic Management for Dynatrace classic license and learn how
 ---
 title: Customize OneAgent installation on AIX
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/aix/installation/customize-oneagent-installation-on-aix
-scraped: 2026-02-22T21:11:47.444632
+scraped: 2026-02-26T21:19:49.394918
 ---
 
 # Customize OneAgent installation on AIX
@@ -526,7 +526,7 @@ For supported platforms, see [Technology support](/docs/ingest-from/technology-s
 ---
 title: OneAgent files and disk space requirements on AIX
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/aix/installation/disk-space-requirements-for-oneagent-installation-and-update-on-aix
-scraped: 2026-02-22T21:11:38.296579
+scraped: 2026-02-26T21:19:53.218406
 ---
 
 # OneAgent files and disk space requirements on AIX
@@ -633,21 +633,6 @@ Windows configuration file: `C:\ProgramData\dynatrace\remotepluginmodule\agent\c
 
 Linux configuration file: `/var/lib/dynatrace/remotepluginmodule/agent/conf/extensionsuser.conf`
 
-**Variable**
-
-**Description**
-
-`persistence.reliable_mode`
-
-`true` - reliable mode turned on; SFM logs genereted if space requirement not met
-`false` - reliable mode turned off; log ingest will be transmitted without the reliability mechanism
-
-`persistence.total_limit_kb`
-
-Maximum volume limit for Extensions Log Persistence in kilobytes.
-By default: 600 MB
-Can be modified manually if the requirement can't be met on the host.
-
 ---
 
 ## ingest-from/dynatrace-oneagent/installation-and-operation/aix/installation/install-oneagent-on-aix.md
@@ -655,7 +640,7 @@ Can be modified manually if the requirement can't be met on the host.
 ---
 title: Install OneAgent on AIX
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/aix/installation/install-oneagent-on-aix
-scraped: 2026-02-22T21:11:41.147198
+scraped: 2026-02-26T21:19:44.379044
 ---
 
 # Install OneAgent on AIX
@@ -852,7 +837,7 @@ One last thing: to monitor your processes, you need to restart them. At any time
 ---
 title: OneAgent security on AIX
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/aix/installation/oneagent-security-aix
-scraped: 2026-02-24T21:25:40.312725
+scraped: 2026-02-26T21:19:51.908944
 ---
 
 # OneAgent security on AIX
@@ -952,7 +937,7 @@ We're aware that global read and write permissions on OneAgent directories get f
 ---
 title: Automated injection of deep-code monitoring on AIX
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/aix/operation/enable-auto-injection
-scraped: 2026-02-25T21:29:30.462358
+scraped: 2026-02-26T21:19:48.051759
 ---
 
 # Automated injection of deep-code monitoring on AIX
@@ -993,7 +978,7 @@ If you manually configured your AIX host to inject OneAgent code modules, we rec
 ---
 title: Stop/restart OneAgent on AIX
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/aix/operation/stop-restart-oneagent-on-aix
-scraped: 2026-02-22T21:11:46.140604
+scraped: 2026-02-26T21:19:46.844780
 ---
 
 # Stop/restart OneAgent on AIX
@@ -1032,7 +1017,7 @@ Learn more about [how OneAgent interacts with your OS](/docs/ingest-from/dynatra
 ---
 title: Uninstall OneAgent on AIX
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/aix/operation/uninstall-oneagent-on-aix
-scraped: 2026-02-22T21:11:42.391673
+scraped: 2026-02-26T21:19:45.593813
 ---
 
 # Uninstall OneAgent on AIX
@@ -1066,7 +1051,7 @@ For a complete OneAgent uninstallation, remove the following:
 ---
 title: Update Dynatrace OneAgent on AIX
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/aix/operation/update-oneagent-on-aix
-scraped: 2026-02-22T21:11:51.753344
+scraped: 2026-02-26T21:19:50.658304
 ---
 
 # Update Dynatrace OneAgent on AIX
@@ -1263,7 +1248,7 @@ Run `oneagentctl` with the `--version` parameter. For more information, see [One
 ---
 title: AIX
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/aix
-scraped: 2026-02-25T21:15:55.610292
+scraped: 2026-02-26T21:14:33.523642
 ---
 
 # AIX
@@ -1360,7 +1345,7 @@ Read this troubleshooting guide](/docs/ingest-from/dynatrace-oneagent/oneagent-t
 ---
 title: Customize OneAgent installation on Linux
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/customize-oneagent-installation-on-linux
-scraped: 2026-02-22T21:12:17.947796
+scraped: 2026-02-26T21:18:59.922879
 ---
 
 # Customize OneAgent installation on Linux
@@ -1903,7 +1888,7 @@ For supported platforms, see [Technology support](/docs/ingest-from/technology-s
 ---
 title: OneAgent files and disk space requirements on Linux
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/disk-space-requirements-for-oneagent-installation-and-update-on-linux
-scraped: 2026-02-22T21:12:09.017555
+scraped: 2026-02-26T21:19:05.961527
 ---
 
 # OneAgent files and disk space requirements on Linux
@@ -2021,21 +2006,6 @@ Windows configuration file: `C:\ProgramData\dynatrace\remotepluginmodule\agent\c
 
 Linux configuration file: `/var/lib/dynatrace/remotepluginmodule/agent/conf/extensionsuser.conf`
 
-**Variable**
-
-**Description**
-
-`persistence.reliable_mode`
-
-`true` - reliable mode turned on; SFM logs genereted if space requirement not met
-`false` - reliable mode turned off; log ingest will be transmitted without the reliability mechanism
-
-`persistence.total_limit_kb`
-
-Maximum volume limit for Extensions Log Persistence in kilobytes.
-By default: 600 MB
-Can be modified manually if the requirement can't be met on the host.
-
 ---
 
 ## ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/how-to-pass-a-proxy-address-during-oneagent-installation-on-linux.md
@@ -2043,7 +2013,7 @@ Can be modified manually if the requirement can't be met on the host.
 ---
 title: How to pass a proxy address during OneAgent installation on Linux
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/how-to-pass-a-proxy-address-during-oneagent-installation-on-linux
-scraped: 2026-02-22T21:12:23.014870
+scraped: 2026-02-26T21:19:03.640046
 ---
 
 # How to pass a proxy address during OneAgent installation on Linux
@@ -2085,7 +2055,7 @@ If you need to change the proxy address after installation, use `--set-proxy` in
 ---
 title: Install OneAgent on Linux
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/install-oneagent-on-linux
-scraped: 2026-02-25T21:25:10.402999
+scraped: 2026-02-26T21:18:57.213513
 ---
 
 # Install OneAgent on Linux
@@ -2305,7 +2275,7 @@ Depending on your firewall policy, you may need to explicitly allow certain outg
 ---
 title: OneAgent non-privileged mode on Linux
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/linux-non-privileged
-scraped: 2026-02-22T21:12:12.823618
+scraped: 2026-02-26T21:18:56.114052
 ---
 
 # OneAgent non-privileged mode on Linux
@@ -2468,7 +2438,7 @@ The installer prints a message at the end of OneAgent installation. Depending on
 ---
 title: OneAgent security on Linux
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/oneagent-security-linux
-scraped: 2026-02-24T21:34:34.232330
+scraped: 2026-02-26T21:19:08.381369
 ---
 
 # OneAgent security on Linux
@@ -2600,7 +2570,7 @@ We're aware that global read and write permissions on OneAgent directories get f
 ---
 title: Flatcar support on SELinux
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/operation/flatcar-os
-scraped: 2026-02-22T21:12:20.480185
+scraped: 2026-02-26T21:19:01.158940
 ---
 
 # Flatcar support on SELinux
@@ -2629,7 +2599,7 @@ OneAgent can now be deployed on [Flatcarï»¿](https://dt-url.net/u5034bo). How
 ---
 title: How to enable deep monitoring for applications confined by AppArmor
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/operation/how-to-enable-deep-monitoring-for-applications-confined-by-apparmor
-scraped: 2026-02-22T21:12:25.559949
+scraped: 2026-02-26T21:19:14.129698
 ---
 
 # How to enable deep monitoring for applications confined by AppArmor
@@ -2871,7 +2841,7 @@ Although this step is optional because failed injections of OneAgent to other pr
 ---
 title: Stop/restart OneAgent on Linux
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/operation/stop-restart-oneagent-on-linux
-scraped: 2026-02-22T21:12:15.319211
+scraped: 2026-02-26T21:19:10.662226
 ---
 
 # Stop/restart OneAgent on Linux
@@ -2937,7 +2907,7 @@ Learn more about [how Dynatrace interacts with your OS](/docs/ingest-from/dynatr
 ---
 title: Uninstall OneAgent on Linux
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/operation/uninstall-oneagent-on-linux
-scraped: 2026-02-22T21:12:19.242864
+scraped: 2026-02-26T21:19:12.830301
 ---
 
 # Uninstall OneAgent on Linux
@@ -2975,7 +2945,7 @@ For a complete OneAgent uninstallation, remove the following:
 ---
 title: Update OneAgent on Linux
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/operation/update-oneagent-on-linux
-scraped: 2026-02-22T21:12:24.292665
+scraped: 2026-02-26T21:19:07.294722
 ---
 
 # Update OneAgent on Linux
@@ -3171,7 +3141,7 @@ Run `oneagentctl` with the `--version` parameter. For more information, see [One
 ---
 title: Update OneAgent on PPC BE Linux
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/operation/update-oneagent-on-ppc-be-linux
-scraped: 2026-02-22T21:12:21.739278
+scraped: 2026-02-26T21:19:09.590867
 ---
 
 # Update OneAgent on PPC BE Linux
@@ -3227,7 +3197,7 @@ Run `oneagentctl` with the `--version` parameter. For more information, see [One
 ---
 title: OneAgent on Linux
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux
-scraped: 2026-02-25T21:15:54.277941
+scraped: 2026-02-26T21:14:27.592597
 ---
 
 # OneAgent on Linux
@@ -3286,7 +3256,7 @@ Dynatrace supports OneAgent installation on Linux. For analytical information ab
 ---
 title: Install OneAgent on Solaris
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/solaris/install-oneagent-on-solaris
-scraped: 2026-02-22T21:11:56.821720
+scraped: 2026-02-26T21:18:54.995954
 ---
 
 # Install OneAgent on Solaris
@@ -3629,7 +3599,7 @@ One last thing: to monitor your processes, you need to restart them. At any time
 ---
 title: Troubleshooting OneAgent installation on Solaris
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/solaris/troubleshoot-oneagent-installation-on-solaris
-scraped: 2026-02-22T21:11:55.518681
+scraped: 2026-02-26T21:18:51.157750
 ---
 
 # Troubleshooting OneAgent installation on Solaris
@@ -3817,7 +3787,7 @@ For more details on setting up Oracle WebLogic monitoring, see [Configure Oracle
 ---
 title: Uninstall OneAgent on Solaris
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/solaris/uninstall-oneagent-on-solaris
-scraped: 2026-02-25T21:26:19.398183
+scraped: 2026-02-26T21:18:52.422193
 ---
 
 # Uninstall OneAgent on Solaris
@@ -3855,7 +3825,7 @@ If the configuration files are removed and OneAgent is reinstalled, the host wil
 ---
 title: Update OneAgent on Solaris
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/solaris/update-oneagent-on-solaris
-scraped: 2026-02-22T21:11:52.991454
+scraped: 2026-02-26T21:18:53.655691
 ---
 
 # Update OneAgent on Solaris
@@ -3903,7 +3873,7 @@ Use one of these methods to check which version of OneAgent you currently have i
 ---
 title: Solaris
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/solaris
-scraped: 2026-02-25T21:15:50.478172
+scraped: 2026-02-26T21:14:26.479994
 ---
 
 # Solaris
@@ -3935,7 +3905,7 @@ Dynatrace supports Oracle Solaris (x86 and SPARC) for Java, Apache HTTP server a
 ---
 title: Customize OneAgent installation on Windows
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/windows/installation/customize-oneagent-installation-on-windows
-scraped: 2026-02-22T21:12:01.936989
+scraped: 2026-02-26T21:19:22.287830
 ---
 
 # Customize OneAgent installation on Windows
@@ -4453,34 +4423,6 @@ Example:
 
 **Possible values:**
 
-Value
-
-Description
-
-`npcap`
-
-`PCAP_DRIVER=npcap` installs the `Npcap` driver.
-
-This option uninstalls any installation of WinPcap or outdated Npcap previously installed by OneAgent. If you installed WinPcap or Npcap manually, however, you'll need to uninstall it yourself.
-
-`winpcap`
-
-`PCAP_DRIVER=winpcap` installs the `WinPcap` driver.
-
-This option does **NOT** uninstall or overlay any existing installation of `Npcap` or `WinPcap`.
-
-`auto`
-
-Deprecated with OneAgent version 1.255+
-
-`PCAP_DRIVER=auto` automatically determines which driver to install. This option does **NOT** uninstall or overlay any existing installation of `Npcap` or `WinPcap`. During installation, if no packet capture driver is found, `Npcap` is installed by default.
-
-`disabled`
-
-Available with OneAgent version 1.249+
-
-`PCAP_DRIVER=disabled` disables the installation of any packet capture driver and disables the OneAgent network monitoring module. If any packet capture driver is already installed on the host, you'll need to uninstall manually.
-
 * This parameter is not supported by the installer web UI.
 * The value of this parameter persists through updates.
 * If you install `Npcap` during OneAgent installation, the installer creates a scheduled task called `npcapwatchdog`.
@@ -4519,7 +4461,7 @@ For supported platforms, see [Technology support](/docs/ingest-from/technology-s
 ---
 title: OneAgent files and disk space requirements on Windows
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/windows/installation/disk-space-requirements-for-oneagent-installation-and-update-on-windows
-scraped: 2026-02-22T21:11:58.081068
+scraped: 2026-02-26T21:19:19.986331
 ---
 
 # OneAgent files and disk space requirements on Windows
@@ -4627,21 +4569,6 @@ Windows configuration file: `C:\ProgramData\dynatrace\remotepluginmodule\agent\c
 
 Linux configuration file: `/var/lib/dynatrace/remotepluginmodule/agent/conf/extensionsuser.conf`
 
-**Variable**
-
-**Description**
-
-`persistence.reliable_mode`
-
-`true` - reliable mode turned on; SFM logs genereted if space requirement not met
-`false` - reliable mode turned off; log ingest will be transmitted without the reliability mechanism
-
-`persistence.total_limit_kb`
-
-Maximum volume limit for Extensions Log Persistence in kilobytes.
-By default: 600 MB
-Can be modified manually if the requirement can't be met on the host.
-
 ---
 
 ## ingest-from/dynatrace-oneagent/installation-and-operation/windows/installation/how-to-pass-a-proxy-address-during-oneagent-installation-on-windows.md
@@ -4649,7 +4576,7 @@ Can be modified manually if the requirement can't be met on the host.
 ---
 title: How to pass a proxy address during OneAgent installation on Windows
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/windows/installation/how-to-pass-a-proxy-address-during-oneagent-installation-on-windows
-scraped: 2026-02-22T21:12:00.568402
+scraped: 2026-02-26T21:19:24.641980
 ---
 
 # How to pass a proxy address during OneAgent installation on Windows
@@ -4685,7 +4612,7 @@ If you need to change the proxy address after installation, use `--set-proxy` in
 ---
 title: Install OneAgent on Windows
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/windows/installation/install-oneagent-on-windows
-scraped: 2026-02-22T21:11:59.345176
+scraped: 2026-02-26T21:19:21.087839
 ---
 
 # Install OneAgent on Windows
@@ -4813,7 +4740,7 @@ One last thing: to monitor your processes, you need to restart them. At any time
 ---
 title: OneAgent security on Windows
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/windows/installation/oneagent-security-windows
-scraped: 2026-02-24T21:34:29.117532
+scraped: 2026-02-26T21:19:16.312111
 ---
 
 # OneAgent security on Windows
@@ -4949,7 +4876,7 @@ Starting with OneAgent version 1.225, the installer is signed using the SHA-2 al
 ---
 title: Stop/restart OneAgent on Windows
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/windows/operation/stop-restart-oneagent-on-windows
-scraped: 2026-02-22T21:12:07.749251
+scraped: 2026-02-26T21:19:17.516321
 ---
 
 # Stop/restart OneAgent on Windows
@@ -4998,7 +4925,7 @@ Learn more about [how Dynatrace interacts with your OS](/docs/ingest-from/dynatr
 ---
 title: Uninstall Dynatrace OneAgent on Windows
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/windows/operation/uninstall-oneagent-on-windows
-scraped: 2026-02-22T21:12:05.204622
+scraped: 2026-02-26T21:19:23.358484
 ---
 
 # Uninstall Dynatrace OneAgent on Windows
@@ -5073,7 +5000,7 @@ For a complete OneAgent uninstallation, remove the following:
 ---
 title: Update Dynatrace OneAgent on Windows
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/windows/operation/update-oneagent-on-windows
-scraped: 2026-02-22T21:12:06.518813
+scraped: 2026-02-26T21:19:18.762113
 ---
 
 # Update Dynatrace OneAgent on Windows
@@ -5269,7 +5196,7 @@ Run `oneagentctl` with the `--version` parameter. For more information, see [One
 ---
 title: OneAgent on Windows
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/windows
-scraped: 2026-02-25T21:15:56.901923
+scraped: 2026-02-26T21:14:30.006764
 ---
 
 # OneAgent on Windows
@@ -6598,7 +6525,7 @@ severe  [native] IMS14CR1[asid = 108] is trying to initialize with an invalid pr
 ---
 title: Customize the zRemote module
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-zremote/customize-zremote
-scraped: 2026-02-23T21:26:26.674668
+scraped: 2026-02-26T21:26:47.098742
 ---
 
 # Customize the zRemote module
@@ -6642,38 +6569,6 @@ Windows
 `C:/ProgramData/dynatrace/zremote/agent/conf/watchdoguserconfig.conf`
 
 Available parameters for configuration:
-
-Parameter
-
-Unit
-
-Default value
-
-Description
-
--healthcheck.heartbeat.timeout
-
-Seconds
-
-900
-
-The connection timeout between the zRemote service and your Dynatrace environment
-
--healthcheck.memory.limit\_absolute
-
-MiB
-
-500
-
-Absolute input for the memory calculation limit of the child process
-
--healthcheck.memory.limit\_percentage
-
-%
-
-20
-
-Percentage input for the memory calculation limit of the child process
 
 Effective memory limit calculation
 
@@ -6991,9 +6886,9 @@ TTLSKeyringParms               <keyring-parms>
 
 
 
-
-
 #   must be loaded into RACF and connected to the Keyring here.
+
+
 
 
 
@@ -7363,7 +7258,7 @@ sc query "Dynatrace zRemote"
 ---
 title: Download z/OS product datasets
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/zosmf-installer/download-zos-datasets
-scraped: 2026-02-24T21:35:42.008594
+scraped: 2026-02-26T21:24:39.277199
 ---
 
 # Download z/OS product datasets
@@ -7926,7 +7821,7 @@ DEFINE ALIAS(NAME('DT.DYNTRC.SZDTLOAD') RELATE('DT.R12770.SZDTLOAD'))
 ---
 title: z/OS installation overview
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation
-scraped: 2026-02-22T21:12:51.450743
+scraped: 2026-02-26T21:19:39.762021
 ---
 
 # z/OS installation overview
@@ -8003,7 +7898,7 @@ To turn off file access monitoring, toggle the `z/OS CICS file monitoring` senso
 ---
 title: Monitor z/OS logs
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/monitoring/monitor-zos-logs
-scraped: 2026-02-25T21:25:02.058697
+scraped: 2026-02-26T21:28:39.756239
 ---
 
 # Monitor z/OS logs
@@ -8101,7 +7996,7 @@ This metadata is used to map the logs to the entity model of z/OS processes.
 ---
 title: Monitor JMX metrics on z/OS
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/monitoring/zos-java-custom-jmx-metrics
-scraped: 2026-02-25T21:25:04.868936
+scraped: 2026-02-26T21:27:46.101278
 ---
 
 # Monitor JMX metrics on z/OS
@@ -8482,7 +8377,7 @@ To get a list of metrics available in your monitoring environment, Go to **Metri
 ---
 title: Extend traces using OpenTelemetry
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/monitoring/zos-opentelemetry
-scraped: 2026-02-22T21:12:50.220371
+scraped: 2026-02-26T21:19:38.581526
 ---
 
 # Extend traces using OpenTelemetry
@@ -9083,7 +8978,7 @@ Settings API for IBM MQ tracing:
 ---
 title: Dynatrace for z/OS
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos
-scraped: 2026-02-25T21:15:51.852116
+scraped: 2026-02-26T21:14:32.276314
 ---
 
 # Dynatrace for z/OS
@@ -9269,7 +9164,7 @@ With Dynatrace, you can get [Full-Stack Monitoring with Host monitoring (DPS)](/
 ---
 title: Install OneAgent on a server
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation
-scraped: 2026-02-25T21:13:26.788139
+scraped: 2026-02-26T21:13:36.530309
 ---
 
 # Install OneAgent on a server
@@ -9360,7 +9255,7 @@ OneAgent is now set up and monitoring your host. See [Get started with Dynatrace
 ---
 title: OneAgent requirements
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/oa-requirements
-scraped: 2026-02-24T21:16:45.946177
+scraped: 2026-02-26T21:16:29.976378
 ---
 
 # OneAgent requirements
@@ -9452,7 +9347,7 @@ Dependent on OneAgent code module, memory demand might peak at application start
 ---
 title: OneAgent file aging mechanism
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/oneagent-aging-mechanism
-scraped: 2026-02-25T21:35:29.998515
+scraped: 2026-02-26T21:19:11.750588
 ---
 
 # OneAgent file aging mechanism
@@ -9598,7 +9493,7 @@ To prevent unnecessary delays in your application's startup, the OneAgent bulk p
 ---
 title: Enable the OpenTelemetry Span Sensor for OneAgent
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/oneagent-and-opentelemetry/configuration
-scraped: 2026-02-25T21:25:37.546331
+scraped: 2026-02-26T21:27:30.356125
 ---
 
 # Enable the OpenTelemetry Span Sensor for OneAgent
@@ -9927,7 +9822,7 @@ Such spans are skipped only by OneAgent. Exports to third parties (for example, 
 ---
 title: Use OneAgent with OpenTelemetry data
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/oneagent-and-opentelemetry/oneagent-otel
-scraped: 2026-02-25T21:16:38.184593
+scraped: 2026-02-26T21:17:28.495188
 ---
 
 # Use OneAgent with OpenTelemetry data
@@ -11083,7 +10978,7 @@ Set the `--set-osagent-cap-setuid-enabled` parameter to `true` or `false` to dis
 ---
 title: OneAgent features
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/oneagent-features
-scraped: 2026-02-25T21:15:21.121782
+scraped: 2026-02-26T21:14:03.339456
 ---
 
 # OneAgent features
@@ -11256,7 +11151,7 @@ To use the Settings API
 ---
 title: OneAgent health overview
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/oneagent-health
-scraped: 2026-02-25T21:24:41.080750
+scraped: 2026-02-26T21:21:36.227275
 ---
 
 # OneAgent health overview
@@ -11317,7 +11212,7 @@ The following conditions are applied to your OneAgent modules and result in spec
 ---
 title: Set up Grail permissions for OneAgent
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/oneagent-security-context
-scraped: 2026-02-24T21:17:40.800100
+scraped: 2026-02-26T21:16:50.589252
 ---
 
 # Set up Grail permissions for OneAgent
@@ -11376,7 +11271,7 @@ The `dt.security_context` is utilized by many features in Dynatrace and availabl
 ---
 title: Troubleshooting OneAgent deep-monitoring issues
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/oneagent-troubleshooting/troubleshoot-oneagent-deep-monitoring-issues
-scraped: 2026-02-24T21:17:43.489152
+scraped: 2026-02-26T21:17:19.583887
 ---
 
 # Troubleshooting OneAgent deep-monitoring issues
@@ -11447,7 +11342,7 @@ To turn a feature on or off for a particular process or group of processes
 ---
 title: Troubleshooting OneAgent installation
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/oneagent-troubleshooting/troubleshoot-oneagent-installation
-scraped: 2026-02-22T21:11:39.762647
+scraped: 2026-02-26T21:18:58.394233
 ---
 
 # Troubleshooting OneAgent installation
@@ -11845,7 +11740,7 @@ export DT_HOME=/opt/dynatrace/oneagent
 ---
 title: Dynatrace OneAgent
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent
-scraped: 2026-02-25T21:15:31.402369
+scraped: 2026-02-26T21:13:52.449528
 ---
 
 # Dynatrace OneAgent

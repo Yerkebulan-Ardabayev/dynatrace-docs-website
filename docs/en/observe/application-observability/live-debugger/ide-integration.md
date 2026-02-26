@@ -1,7 +1,7 @@
 ---
 title: Use Live Debugger with your IDE
 source: https://www.dynatrace.com/docs/observe/application-observability/live-debugger/ide-integration
-scraped: 2026-02-24T21:26:40.406848
+scraped: 2026-02-26T21:24:17.909647
 ---
 
 # Use Live Debugger with your IDE

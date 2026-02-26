@@ -1,7 +1,7 @@
 ---
 title: Share Dynatrace dashboards
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-classic/dashboards/share-dashboards
-scraped: 2026-02-25T21:31:13.299540
+scraped: 2026-02-26T21:22:05.511436
 ---
 
 # Share Dynatrace dashboards

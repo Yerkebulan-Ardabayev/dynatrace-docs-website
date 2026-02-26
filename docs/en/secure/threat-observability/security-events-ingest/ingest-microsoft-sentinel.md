@@ -1,7 +1,7 @@
 ---
 title: Ingest Microsoft Sentinel security events
 source: https://www.dynatrace.com/docs/secure/threat-observability/security-events-ingest/ingest-microsoft-sentinel
-scraped: 2026-02-25T21:19:56.654643
+scraped: 2026-02-26T21:20:27.319964
 ---
 
 # Ingest Microsoft Sentinel security events

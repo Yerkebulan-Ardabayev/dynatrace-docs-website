@@ -1,13 +1,13 @@
 ---
-title: OneAgent примечания к выпуску
+title: OneAgent release notes
 source: https://www.dynatrace.com/docs/whats-new/oneagent
-scraped: 2026-02-25T21:13:05.720128
+scraped: 2026-02-26T21:13:30.656904
 ---
 
-# OneAgent примечания к выпуску
+# OneAgent release notes
 
-# OneAgent примечания к выпуску
+# OneAgent release notes
 
-* Последний Dynatrace
-* Примечания к выпуску
-* Обновлено 3 февраля 2026 года
+* Latest Dynatrace
+* Release notes
+* Updated on Feb 03, 2026

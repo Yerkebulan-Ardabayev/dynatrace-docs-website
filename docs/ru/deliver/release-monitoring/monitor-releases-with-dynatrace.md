@@ -1,7 +1,7 @@
 ---
 title: Monitor releases with Dynatrace
 source: https://www.dynatrace.com/docs/deliver/release-monitoring/monitor-releases-with-dynatrace
-scraped: 2026-02-24T21:27:57.915595
+scraped: 2026-02-26T21:29:01.951931
 ---
 
 # Monitor releases with Dynatrace

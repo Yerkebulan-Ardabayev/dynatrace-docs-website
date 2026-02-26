@@ -1,7 +1,7 @@
 ---
 title: OpenTelemetry interoperability in Python
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/opentelemetry-interoperability/lambda-otel-bridge-python
-scraped: 2026-02-23T21:29:19.480101
+scraped: 2026-02-26T21:27:51.384122
 ---
 
 # OpenTelemetry interoperability in Python
@@ -410,6 +410,8 @@ return {
 ```
 
 ### Step 3 Receive an SQS/SNS message
+
+
 
 SQS
 
@@ -832,37 +834,15 @@ You can trace SQS messages forwarded from
 
   For SNS messages that are forwarded to SQS, the message format depends on the [raw message deliveryï»¿](https://docs.aws.amazon.com/sns/latest/dg/sns-large-payload-raw-message-delivery.html) configuration on the SNS subscription.
 
-  Raw message delivery
-
-  Message format
-
-  Example
-
-  Enabled
-
-  The SNS message attributes are converted to SQS message attributes and the parent can be directly extracted from the `MessageAttributes` of the SQS message.
-
-  + [Call the SQS receive APIs manually](#manual-receive)
-  + [Receive messages with AWS Lambda SQS trigger](#py-sqs-trigger).
-
-  Disabled
-
-  The SNS message and its `MessageAttributes` are delivered as a serialized JSON string in the body of the received SQS message. To correctly link the receive span, the parent needs to be extracted from the `MessageAttributes` of the serialized SNS message.
-
-  + [Call the SQS receive APIs manually](#manual-receive)
-  + [Receive messages with AWS Lambda SQS trigger](#py-sqs-trigger).
-
-  Additional configuration is required for both examples; when calling the `_extract_parent` method, set the value of the `from_sns_payload` parameter to `True`.
-
 AWS Lambda functions that are triggered by SNS are supported out of the box when monitored with the Dynatrace AWS Lambda extension.
 
 SNS topics can be configured via a subscription to forward messages to an SQS queue. Messages in the SQS queue can then be consumed by a Lambda function. Tracing the received messages in the SQS-triggered AWS Lambda function works out of the box when AWS Lambda is monitored with the Dynatrace AWS Lambda extension. However, the tracer can only select a single parent, and if your Lambda function receives batches of multiple messages, special handling is required to track each message separately.
 
 For details, see how to [receive an SQS message](#receive-sqs-python).
 
-
-
 ## Related topics
+
+
 
 * [OpenTelemetry interoperability](/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/opentelemetry-interoperability "Enable and use OpenTelemetry interoperability in AWS Lambda.")
 * [Trace Python, Node.js, and Java Lambda functions](/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/aws-lambda-extension "Monitor Lambda functions written in Python, Node.js, and Java.")

@@ -1,7 +1,7 @@
 ---
 title: Generative AI quick analysis examples
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/use-cases/copilot-examples
-scraped: 2026-02-24T21:28:17.597844
+scraped: 2026-02-26T21:29:10.421488
 ---
 
 # Generative AI quick analysis examples

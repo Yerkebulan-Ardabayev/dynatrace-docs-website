@@ -1,7 +1,7 @@
 ---
 title: Version detection strategies for deep-monitored processes
 source: https://www.dynatrace.com/docs/deliver/release-monitoring/version-detection-strategies
-scraped: 2026-02-25T21:31:27.754830
+scraped: 2026-02-26T21:29:11.685520
 ---
 
 # Version detection strategies for deep-monitored processes

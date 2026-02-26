@@ -1,7 +1,7 @@
 ---
 title: Host-level settings
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/hosts/configuration
-scraped: 2026-02-25T21:15:58.339608
+scraped: 2026-02-26T21:14:34.660775
 ---
 
 # Host-level settings

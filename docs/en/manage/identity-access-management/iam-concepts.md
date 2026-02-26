@@ -1,7 +1,7 @@
 ---
 title: Overview of Dynatrace IAM
 source: https://www.dynatrace.com/docs/manage/identity-access-management/iam-concepts
-scraped: 2026-02-25T21:29:58.402675
+scraped: 2026-02-26T21:27:13.246989
 ---
 
 # Overview of Dynatrace IAM

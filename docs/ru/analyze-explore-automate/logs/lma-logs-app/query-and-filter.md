@@ -1,7 +1,7 @@
 ---
 title: Query and filter logs
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-logs-app/query-and-filter
-scraped: 2026-02-25T21:14:28.519379
+scraped: 2026-02-26T21:14:25.227591
 ---
 
 # Query and filter logs

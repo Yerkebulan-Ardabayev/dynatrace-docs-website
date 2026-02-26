@@ -1,7 +1,7 @@
 ---
 title: AWS OpsWorks monitoring
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-opsworks
-scraped: 2026-02-24T21:26:42.102269
+scraped: 2026-02-26T21:31:45.487473
 ---
 
 # AWS OpsWorks monitoring

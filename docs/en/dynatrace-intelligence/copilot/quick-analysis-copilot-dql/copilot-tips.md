@@ -1,7 +1,7 @@
 ---
 title: Dynatrace Intelligence generative AI - Tips for writing better prompts
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/copilot/quick-analysis-copilot-dql/copilot-tips
-scraped: 2026-02-25T21:29:01.016242
+scraped: 2026-02-26T21:20:57.526666
 ---
 
 # Dynatrace Intelligence generative AI - Tips for writing better prompts
