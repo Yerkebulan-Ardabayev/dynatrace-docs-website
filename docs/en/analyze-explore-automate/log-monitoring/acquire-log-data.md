@@ -1,7 +1,7 @@
 ---
 title: Log ingest & process (Logs Classic)
 source: https://www.dynatrace.com/docs/analyze-explore-automate/log-monitoring/acquire-log-data
-scraped: 2026-02-25T21:30:23.067564
+scraped: 2026-02-26T21:30:42.334319
 ---
 
 # Log ingest & process (Logs Classic)

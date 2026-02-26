@@ -1,7 +1,7 @@
 ---
 title: Customize OneAgent installation on Windows
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/windows/installation/customize-oneagent-installation-on-windows
-scraped: 2026-02-22T21:12:01.936989
+scraped: 2026-02-26T21:19:22.287830
 ---
 
 # Customize OneAgent installation on Windows
@@ -512,34 +512,6 @@ Example:
 **Default value**: `npcap`
 
 **Possible values:**
-
-Value
-
-Description
-
-`npcap`
-
-`PCAP_DRIVER=npcap` installs the `Npcap` driver.
-
-This option uninstalls any installation of WinPcap or outdated Npcap previously installed by OneAgent. If you installed WinPcap or Npcap manually, however, you'll need to uninstall it yourself.
-
-`winpcap`
-
-`PCAP_DRIVER=winpcap` installs the `WinPcap` driver.
-
-This option does **NOT** uninstall or overlay any existing installation of `Npcap` or `WinPcap`.
-
-`auto`
-
-Deprecated with OneAgent version 1.255+
-
-`PCAP_DRIVER=auto` automatically determines which driver to install. This option does **NOT** uninstall or overlay any existing installation of `Npcap` or `WinPcap`. During installation, if no packet capture driver is found, `Npcap` is installed by default.
-
-`disabled`
-
-Available with OneAgent version 1.249+
-
-`PCAP_DRIVER=disabled` disables the installation of any packet capture driver and disables the OneAgent network monitoring module. If any packet capture driver is already installed on the host, you'll need to uninstall manually.
 
 * This parameter is not supported by the installer web UI.
 * The value of this parameter persists through updates.

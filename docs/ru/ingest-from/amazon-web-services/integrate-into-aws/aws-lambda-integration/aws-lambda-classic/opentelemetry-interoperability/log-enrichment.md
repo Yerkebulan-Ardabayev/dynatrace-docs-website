@@ -1,7 +1,7 @@
 ---
 title: AWS Lambda logs in context of traces
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/opentelemetry-interoperability/log-enrichment
-scraped: 2026-02-24T21:16:27.964634
+scraped: 2026-02-26T21:16:39.527507
 ---
 
 # AWS Lambda logs in context of traces

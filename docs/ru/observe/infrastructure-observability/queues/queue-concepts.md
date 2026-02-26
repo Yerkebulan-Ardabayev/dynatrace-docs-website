@@ -1,7 +1,7 @@
 ---
 title: Queue concepts
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/queues/queue-concepts
-scraped: 2026-02-23T21:35:16.530424
+scraped: 2026-02-26T21:28:48.436910
 ---
 
 # Queue concepts
@@ -31,36 +31,6 @@ OneAgent automatically detects queues and topics when monitored applications int
 
 Dynatrace creates **Queue** entities for all detected queues and topics that are part of distributed traces. These entities are shown in the **Queues and topics** table on the **Queues** page.
 
-Entity
-
-Type
-
-Naming schema
-
-Queue
-
-Queue
-
-`<queue-name>`
-
-Queue
-
-Topic
-
-`<topic-name>`
-
-Queue
-
-IBM MQ queue
-
-`<queue-manager-name>.<queue-name>`
-
-Queue
-
-IBM MQ topic
-
-`<queue-manager-name>.<topic-name>`
-
 Limitation
 
 Dynatrace extensions can detect queues and topics that are available on the messaging server, but they don't result in **Queue** entities in Dynatrace. Hence, they aren't visible in the **Queues and topics** table. Dynatrace extensions can only add technology-specific metrics to entities created by OneAgent.
@@ -77,26 +47,6 @@ Dynatrace extensions can detect queues and topics that are available on the mess
 * In a JMS-based application (Java message service), there can be also a synchronous consumer service. In this scenario, a client can request the next message from a `MessageConsumer` synchronously by using one of its [receive methodsï»¿](https://docs.oracle.com/javaee/7/api/javax/jms/MessageConsumer.html) (for example, the client can poll or wait for the next message).
 
 To provide you with a continuous view of service flows, Dynatrace uses the following identifiers to trace messages across queues and topics
-
-Identifier
-
-Type
-
-`traceparent` and `tracestate`
-
-HTTP request header
-
-`x-dynatrace`
-
-Custom HTTP header
-
-`dtdTraceTagInfo`
-
-Custom message property
-
-Unique key (generated based on message properties)
-
--
 
 ### Listener services
 

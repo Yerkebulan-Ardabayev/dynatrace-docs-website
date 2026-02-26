@@ -1,7 +1,7 @@
 ---
 title: Security Posture Management
 source: https://www.dynatrace.com/docs/secure/xspm
-scraped: 2026-02-25T21:34:40.393255
+scraped: 2026-02-26T21:28:23.474972
 ---
 
 # Security Posture Management

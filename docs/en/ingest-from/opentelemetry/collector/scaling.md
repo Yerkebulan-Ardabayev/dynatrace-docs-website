@@ -1,7 +1,7 @@
 ---
 title: How to scale the OpenTelemetry Collector
 source: https://www.dynatrace.com/docs/ingest-from/opentelemetry/collector/scaling
-scraped: 2026-02-23T21:37:24.969362
+scraped: 2026-02-26T21:33:40.653073
 ---
 
 # How to scale the OpenTelemetry Collector

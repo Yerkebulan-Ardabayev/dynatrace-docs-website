@@ -1,7 +1,7 @@
 ---
 title: Upgrade to the latest Dynatrace
 source: https://www.dynatrace.com/docs/platform/upgrade
-scraped: 2026-02-23T21:34:38.170316
+scraped: 2026-02-26T21:33:25.790598
 ---
 
 # Upgrade to the latest Dynatrace
@@ -70,72 +70,6 @@ Security policies for data access in Grail
 While management zones are a very versatile tool for setting up complex permissions, this flexibility also turned out to be a bottleneck in large enterprise environments that store large amounts of data. To successfully use management zones, the ingested data needs to be related to a monitored entity. Data access management with Grail is based on data, data type, and data organization. Security policies can be defined to allow access only to specific data even without any entity relation.
 
 Out-of-the-box permission-relevant fields can be used in most cases for access control. Additionally, we've added the `dt.security_context` field, which is reserved for environment-specific details. All Dynatrace components will ensure that these table-relevant permission fields are available on each record (event, log, span) or metric. This allows for a consistent permission concept for the entire environment.
-
-Field name
-
-IAM condition
-
-Supported IAM tables
-
-`event.kind`
-
-`storage:event.kind`
-
-`events`, `bizevents`, `system`
-
-`event.type`
-
-`storage:event.type`
-
-`events`, `bizevents`, `system`
-
-`event.provider`
-
-`storage:event.provider`
-
-`events`, `bizevents`, `system`
-
-`k8s.namespace.name`
-
-`storage:k8s.namespace.name`
-
-`events`, `bizevents`, `logs`, `metrics`, `spans`
-
-`k8s.cluster.name`
-
-`storage:k8s.cluster.name`
-
-`events`, `bizevents`, `logs`, `metrics`, `spans`
-
-`host.name`
-
-`storage:host.name`
-
-`events`, `bizevents`, `logs`, `metrics`, `spans`
-
-`dt.host_group.id`
-
-`storage:dt.host_group.id`
-
-`events`, `bizevents`, `logs`, `metrics`, `spans`
-
-`metric.key`
-
-`storage:metric.key`
-
-`metrics`
-
-`log.source`
-
-`storage:log.source`
-
-`logs`
-
-`dt.security_context`
-
-`storage:dt.security_context`
-
-`events`, `bizevents`, `system`, `logs`, `metrics`, `spans`, `entities`
 
 For more information, see [Identity and access management (IAM)](/docs/manage/identity-access-management "Configure users, groups and permissions.").
 

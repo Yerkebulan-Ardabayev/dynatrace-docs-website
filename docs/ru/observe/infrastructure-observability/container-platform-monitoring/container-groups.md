@@ -1,7 +1,7 @@
 ---
 title: Monitor container groups
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/container-platform-monitoring/container-groups
-scraped: 2026-02-25T21:17:14.724777
+scraped: 2026-02-26T21:21:21.226586
 ---
 
 # Monitor container groups

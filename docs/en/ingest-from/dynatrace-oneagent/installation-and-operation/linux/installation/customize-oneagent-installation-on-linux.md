@@ -1,7 +1,7 @@
 ---
 title: Customize OneAgent installation on Linux
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/customize-oneagent-installation-on-linux
-scraped: 2026-02-22T21:12:17.947796
+scraped: 2026-02-26T21:18:59.922879
 ---
 
 # Customize OneAgent installation on Linux

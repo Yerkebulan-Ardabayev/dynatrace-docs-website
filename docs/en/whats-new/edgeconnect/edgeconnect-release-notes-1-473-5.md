@@ -1,7 +1,7 @@
 ---
 title: EdgeConnect release notes version 1.473.5
 source: https://www.dynatrace.com/docs/whats-new/edgeconnect/edgeconnect-release-notes-1-473-5
-scraped: 2026-02-23T21:24:35.923330
+scraped: 2026-02-26T21:20:15.722373
 ---
 
 # EdgeConnect release notes version 1.473.5

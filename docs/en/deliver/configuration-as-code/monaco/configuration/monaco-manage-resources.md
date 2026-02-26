@@ -1,7 +1,7 @@
 ---
 title: Monaco resources
 source: https://www.dynatrace.com/docs/deliver/configuration-as-code/monaco/configuration/monaco-manage-resources
-scraped: 2026-02-23T21:33:12.841556
+scraped: 2026-02-26T21:31:15.370704
 ---
 
 # Monaco resources
@@ -245,36 +245,6 @@ A grouping project offers a simplified way of grouping multiple projects togethe
 * Required `name`: used as a prefix for the resulting simple project.
 * A dot (`.`) will be used as separator of `<project.name>.<subfolder_name>`.
 
-  A given file structure
-
-  With the following project definition
-
-  Yields two projects
-
-  general/  
-  âââ infrastructure/  
-  âââ zones/
-
-  ```
-  projects:
-
-
-
-  - name: general
-
-
-
-  path: general
-
-
-
-  type: grouping
-  ```
-
-  `general.infrastructure`
-
-  `general.zones`
-
 ### environmentGroups
 
 An environment is a Dynatrace environment.
@@ -372,118 +342,6 @@ The configuration files consist of
 
 * [configs YAML file](/docs/deliver/configuration-as-code/monaco/configuration/yaml-configuration-saas "The Monaco configuration YAML file is structure."), defining parameters, dependencies, name, and template
 * JSON template file
-
-config.yaml
-
-slo-cpu-usage.json
-
-```
-configs:
-
-
-
-- id: newCpuUsageSLO
-
-
-
-config:
-
-
-
-parameters:
-
-
-
-target: 95
-
-
-
-title: myNewSLO
-
-
-
-entityScope: HOST-#######
-
-
-
-template: slo-cpu-usage.json
-
-
-
-skip: false
-
-
-
-type: slo-v2
-```
-
-```
-{
-
-
-
-"name": "{{ .title }}",
-
-
-
-"description": "test SLO for template test",
-
-
-
-"tags": [],
-
-
-
-"customSli": {
-
-
-
-"filterSegments": [],
-
-
-
-"indicator": "timeseries sli=avg(dt.host.cpu.usage)\n, by: { \"{{ .entityScope }}\" } \n  , filter: in(dt.entity.host, { $hosts })\n  | fieldsAdd entityName(dt.entity.host)"
-
-
-
-},
-
-
-
-"criteria": [
-
-
-
-{
-
-
-
-"target": {{ .target }},
-
-
-
-"timeframeFrom": "now-7d",
-
-
-
-"timeframeTo": "now",
-
-
-
-"warning": 99
-
-
-
-}
-
-
-
-]
-
-
-
-}
-```
 
 The Dynatrace Monaco CLI uses Go templates, which allow you to define more complex templates. Still, we recommend keeping templates simpleâreferencing variables via `{{ .PARAMETER_NAME }}` should be sufficient.
 

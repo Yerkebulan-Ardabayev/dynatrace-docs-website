@@ -1,7 +1,7 @@
 ---
 title: Log rotation patterns (Logs Classic)
 source: https://www.dynatrace.com/docs/analyze-explore-automate/log-monitoring/acquire-log-data/log-rotation-patterns
-scraped: 2026-02-23T21:28:27.017884
+scraped: 2026-02-26T21:33:45.667546
 ---
 
 # Log rotation patterns (Logs Classic)
@@ -103,19 +103,3 @@ Dynatrace supports the main types of log generation, including:
 ## Log rotation limits
 
 Scenarios that are not supported in the rotated log monitoring process include:
-
-Type
-
-Description
-
-Rotated log generation with a directory change
-
-The potential consequence is the creation of duplicates and/or incomplete logs.
-
-Rotated log generation with immediate compression
-
-If a rotation criterion is met (for example, the required file size is reached), the file is moved to another location and immediately compressed. Example: `/var/log/application.log -> /var/log/application.log.1.gz -> /var/log/application.log.2.gz -> /var/log/application.log.3.gz`. This process might again lead to incomplete log ingest. There should be at least one uncompressed rotated file.
-
-Rotated log generation with queue logic
-
-The oldest log records are removed whenever new content is added to a file, resulting in a relatively constant log file size. This scenario can be easily replaced with a supported rotation scheme by, for example, starting a new file when the current file reaches a predefined size.

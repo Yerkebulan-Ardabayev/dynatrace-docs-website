@@ -1,6 +1,6 @@
 # Документация Dynatrace: dynatrace-intelligence/copilot
 Язык: Русский (RU)
-Сгенерировано: 2026-02-25
+Сгенерировано: 2026-02-26
 Файлов в разделе: 9
 ---
 
@@ -9,7 +9,7 @@
 ---
 title: Embedded conversation starters
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/copilot/chat-with-davis-copilot/copilot-conv-starters
-scraped: 2026-02-24T21:26:49.944676
+scraped: 2026-02-26T21:25:20.347027
 ---
 
 # Embedded conversation starters
@@ -263,7 +263,7 @@ If you have any feedback, you can provide it directly in the chat window. For mo
 ---
 title: Dynatrace Assist
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/copilot/chat-with-davis-copilot
-scraped: 2026-02-24T21:26:44.628717
+scraped: 2026-02-26T21:27:38.735193
 ---
 
 # Dynatrace Assist
@@ -275,53 +275,53 @@ scraped: 2026-02-24T21:26:44.628717
 * 2-min read
 * Updated on Feb 11, 2026
 
-**Dynatrace Assist** allows you to chat with Dynatrace Intelligence and ask questions about the data in your environment, as well as general questions to help you with onboarding to Dynatrace and understanding our core concepts.
+**Dynatrace Assist** позволяет вам общаться с Dynatrace Intelligence и задавать вопросы о данных в вашей среде, а также общие вопросы, чтобы помочь вам с настройкой Dynatrace и пониманием наших основных концепций.
 
-### Permissions
+### Права доступа
 
-The following table describes the required permissions.
+В следующей таблице описаны необходимые права доступа.
 
 document:documents:write
 
-store conversations in document store
+хранить разговоры в хранилище документов
 
 document:documents:read
 
-read conversations from document store
+читать разговоры из хранилища документов
 
 document:documents:delete
 
-delete conversations from document store
+удалять разговоры из хранилища документов
 
 davis-copilot:conversations:execute
 
-use copilot conversation feature
+использовать функцию разговора с копилотом
 
 hub:catalog:read
 
-reading the catalog to display which app triggered a conversation
+чтение каталога для отображения приложения, которое запустило разговор
 
 davis-copilot:nl2dql:execute
 
-use copilot agentic feature
+использовать функцию агентного копилота
 
 davis-copilot:dql2nl:execute
 
-use copilot agentic feature
+использовать функцию агентного копилота
 
 mcp-gateway:servers:invoke
 
-use copilot agentic feature
+использовать функцию агентного копилота
 
 mcp-gateway:servers:read
 
-use copilot agentic feature
+использовать функцию агентного копилота
 
 davis:analyzers:read
 
-use copilot agentic feature
+использовать функцию агентного копилота
 
-To use  **Dynatrace Assist** with generative AI features, you only need the following permissions:
+Чтобы использовать **Dynatrace Assist** с функциями генеративного ИИ, вам необходимы только следующие права доступа:
 
 * `document:documents:write`
 * `document:documents:read`
@@ -329,112 +329,112 @@ To use  **Dynatrace Assist** with generative AI features, you only need the foll
 * `davis-copilot:conversations:execute`
 * `hub:catalog:read`
 
-You require the remaining permissions in the table only if you want to use the full extent of agentic Dynatrace Assist capabilities. For more information, see [Dynatrace Assist agentic permissions](#assist-agentic-permissions).
+Остальные права доступа в таблице необходимы только в том случае, если вы хотите использовать полный объем возможностей агентного Dynatrace Assist. Для получения дополнительной информации см. [Права доступа агентного Dynatrace Assist](#assist-agentic-permissions).
 
-For more information, see [Getting started with Dynatrace Intelligence generative AI](/docs/dynatrace-intelligence/copilot/copilot-getting-started "Learn how to set up Dynatrace Intelligence generative AI.").
+Для получения дополнительной информации см. [Начало работы с Dynatrace Intelligence генеративным ИИ](/docs/dynatrace-intelligence/copilot/copilot-getting-started "Узнайте, как настроить Dynatrace Intelligence генеративный ИИ.").
 
-## Get started
+## Начало работы
 
-![Get started quickly and easily by asking Dynatrace Assist a question. Try out one of the examples to see what's possible.](https://cdn.hub.central.dynatrace.com/hub/console/dynatrace.davis.copilot/media/efd72baf-d142-45ee-b52a-51aea2450093.png)![Ask Dynatrace Assist to summarize all open problems to get a quick overview of your environment.](https://cdn.hub.central.dynatrace.com/hub/console/dynatrace.davis.copilot/media/8d9a51ac-e9a7-4152-9158-235e6e1fef66.png)![Ask Dynatrace Assist to explain your logs to quickly get the insights, potential impact, likely causes and recommended next steps.](https://cdn.hub.central.dynatrace.com/hub/console/dynatrace.davis.copilot/media/e9aa5b44-ceb3-4113-894c-4cdc32f5d94e.png)![Get help with identifying and fixing vulnerabilities, such as SQL injections.](https://cdn.hub.central.dynatrace.com/hub/console/dynatrace.davis.copilot/media/9282285e-db29-48d0-b368-92ac20460a5f.png)
+![Начните работу быстро и легко, задав Dynatrace Assist вопрос. Попробуйте один из примеров, чтобы увидеть, что возможно.](https://cdn.hub.central.dynatrace.com/hub/console/dynatrace.davis.copilot/media/efd72baf-d142-45ee-b52a-51aea2450093.png)![Попросите Dynatrace Assist суммировать все открытые проблемы, чтобы получить быстрый обзор вашей среды.](https://cdn.hub.central.dynatrace.com/hub/console/dynatrace.davis.copilot/media/8d9a51ac-e9a7-4152-9158-235e6e1fef66.png)![Попросите Dynatrace Assist объяснить ваши журналы, чтобы быстро получить информацию, потенциальное влияние, вероятные причины и рекомендуемые следующие шаги.](https://cdn.hub.central.dynatrace.com/hub/console/dynatrace.davis.copilot/media/e9aa5b44-ceb3-4113-894c-4cdc32f5d94e.png)![Получите помощь в выявлении и исправлении уязвимостей, таких как SQL-инъекции.](https://cdn.hub.central.dynatrace.com/hub/console/dynatrace.davis.copilot/media/9282285e-db29-48d0-b368-92ac20460a5f.png)
 
-1 of 4Get started quickly and easily by asking Dynatrace Assist a question. Try out one of the examples to see what's possible.
+1 из 4Начните работу быстро и легко, задав Dynatrace Assist вопрос. Попробуйте один из примеров, чтобы увидеть, что возможно.
 
-### Use Dynatrace Assist conversational interface
+### Использование интерфейса разговора Dynatrace Assist
 
-After enabling Dynatrace Intelligence generative AI on your environment and setting the user permissions, you should see a new icon  below the **Search**  in the dock.
+После включения Dynatrace Intelligence генеративного ИИ в вашей среде и настройки прав доступа пользователя, вы должны увидеть новую иконку ниже **Поиск** в доке.
 
-1. In Dynatrace, select  **Dynatrace Assist**.
-2. A new window opens with the chat interface.
-3. Type your question. See [examples](/docs/dynatrace-intelligence/copilot/chat-with-davis-copilot/dynatrace-assist-prompts "Learn what kind of prompts work well in Dynatrace Assist.") for inspiration.
-4. Select **Run** ![Run](https://dt-cdn.net/images/run-c2f8c2f63c.svg "Run") and wait for the response to be generated.
+1. В Dynatrace, выберите **Dynatrace Assist**.
+2. Откроется новое окно с интерфейсом разговора.
+3. Введите ваш вопрос. См. [Примеры](/docs/dynatrace-intelligence/copilot/chat-with-davis-copilot/dynatrace-assist-prompts "Узнайте, какие типы подсказок работают хорошо в Dynatrace Assist.") для вдохновения.
+4. Выберите **Выполнить** ![Выполнить](https://dt-cdn.net/images/run-c2f8c2f63c.svg "Выполнить") и подождите, пока ответ будет сгенерирован.
 
-   * You can ask follow-up questions.
-   * Every response contains a list of sources that were retrieved to generate the answer. You can consult these [sources](#sources) for further information.
-   * Conversations are saved automatically. These can be renamed or deleted from the overview list of conversations.
-   * You can cancel the response generation, refine your prompt, and then re-send the question.
-   * You can use the chat interface on top of any application.
+* Вы можете задавать дополнительные вопросы.
+* Каждый ответ содержит список источников, которые были получены для генерации ответа. Вы можете обратиться к этим [источникам](#sources) для получения дополнительной информации.
+* Разговоры сохраняются автоматически. Их можно переименовать или удалить из списка разговоров.
+* Вы можете отменить генерацию ответа, уточнить вашу подсказку и затем отправить вопрос снова.
+* Вы можете использовать интерфейс разговора поверх любого приложения.
 
-Answers are generated based on Dynatrace-related resources. If the model is unable to respond to your question, you'll see an error message:
+Ответы генерируются на основе ресурсов, связанных с Dynatrace. Если модель не может ответить на ваш вопрос, вы увидите сообщение об ошибке:
 
-* I'm sorry, but I can't respond to this request. Please try rephrasing it or adding additional context.
+* Извините, но я не могу ответить на этот запрос. Пожалуйста, попробуйте перефразировать его или добавить дополнительный контекст.
 
-### Use agentic Dynatrace Assist
+### Использование агентного Dynatrace Assist
 
-**Dynatrace Assist** allows you to use Dynatrace agentic AI and [MCP tools and capabilities](/docs/dynatrace-intelligence/dynatrace-intelligence-integrations/dynatrace-mcp#server "Learn about the Dynatrace MCP server and how you can connect to it.") to access and analyze your environment data and use it to perform tasks (such as listing problems or generating and executing DQL queries) in addition to answering general questions about Dynatrace.
+**Dynatrace Assist** позволяет вам использовать Dynatrace агентный ИИ и [инструменты и возможности MCP](/docs/dynatrace-intelligence/dynatrace-intelligence-integrations/dynatrace-mcp#server "Узнайте о сервере Dynatrace MCP и том, как вы можете подключиться к нему.") для доступа и анализа данных вашей среды и использования их для выполнения задач (таких как перечисление проблем или генерация и выполнение запросов DQL) в дополнение к ответам на общие вопросы о Dynatrace.
 
-Agentic  **Dynatrace Assist** shares some additional information, such as tool call results, with enterprise vendors hosting the LLMs that Dynatrace agentic and generative AI are based on. For more information about third parties, see [Is my data used to train Dynatrace Intelligence generative AI?](/docs/dynatrace-intelligence/copilot/copilot-faq#copilot-training-on-data "Learn about frequently asked questions and find your answers.").
+Агентный **Dynatrace Assist** делится некоторой дополнительной информацией, такой как результаты вызовов инструментов, с предприятиями, которые размещают LLM, на основе которых построены Dynatrace агентный и генеративный ИИ. Для получения дополнительной информации о третьих сторонах см. [Используется ли моя информация для обучения Dynatrace Intelligence генеративного ИИ?](/docs/dynatrace-intelligence/copilot/copilot-faq#copilot-training-on-data "Узнайте о часто задаваемых вопросах и найдите ответы.").
 
-With agentic AI enabled, you can ask  **Dynatrace Assist** to analyze and provide insights on the data and security of your environment. For examples, see [Ask about the data in your environment](/docs/dynatrace-intelligence/copilot/chat-with-davis-copilot/dynatrace-assist-prompts#assist-ask-about-the-data "Learn what kind of prompts work well in Dynatrace Assist.").
+С включенным агентным ИИ вы можете попросить **Dynatrace Assist** проанализировать и предоставить информацию о данных и безопасности вашей среды. Для примеров см. [Спросите о данных в вашей среде](/docs/dynatrace-intelligence/copilot/chat-with-davis-copilot/dynatrace-assist-prompts#assist-ask-about-the-data "Узнайте, какие типы подсказок работают хорошо в Dynatrace Assist.").
 
-#### **Dynatrace Assist** agentic permissions
+#### Права доступа агентного Dynatrace Assist
 
-**Dynatrace Assist** respects your user permissions. This means that all agentic  **Dynatrace Assist** calls are done within the scope of your user permissions and the results won't include anything outside of it.
+**Dynatrace Assist** уважает ваши права доступа пользователя. Это означает, что все агентные вызовы **Dynatrace Assist** выполняются в рамках ваших прав доступа пользователя, и результаты не будут включать ничего вне этого.
 
-To use the agentic  **Dynatrace Assist**, you need to
+Чтобы использовать агентный **Dynatrace Assist**, вам необходимо:
 
-* Have sufficient permissions.
-* Have agentic AI enabled for  **Dynatrace Assist**. To enable agentic AI
+* Иметь достаточные права доступа.
+* Включить агентный ИИ для **Dynatrace Assist**. Чтобы включить агентный ИИ:
 
-  1. Go to ![Settings](https://dt-cdn.net/images/settings-icon-256-38e1321b51.webp "Settings") **Settings** >  **Dynatrace Intelligence** > **Generative and agentic AI**.
-  2. Ensure that **Enable generative AI** is turned on.
-  3. Turn on **Enable agentic AI**.
+  1. Перейдите к ![Настройки](https://dt-cdn.net/images/settings-icon-256-38e1321b51.webp "Настройки") **Настройки** > **Dynatrace Intelligence** > **Генеративный и агентный ИИ**.
+  2. Убедитесь, что **Включить генеративный ИИ** включен.
+  3. Включите **Включить агентный ИИ**.
 
-Agentic  **Dynatrace Assist** might not be available for you if you don't meet the prerequisites mentioned above or if you access  **Dynatrace Assist** from the [Embedded conversation starters](/docs/dynatrace-intelligence/copilot/chat-with-davis-copilot/copilot-conv-starters "Learn how to trigger predefined prompts in various Dynatrace applications.").
+Агентный **Dynatrace Assist** может быть недоступен для вас, если вы не соответствуете необходимым условиям, указанным выше, или если вы доступ к **Dynatrace Assist** из [Встроенных стартовых точек разговора](/docs/dynatrace-intelligence/copilot/chat-with-davis-copilot/copilot-conv-starters "Узнайте, как запустить предопределенные подсказки в различных приложениях Dynatrace.").
 
-You will also need additional permissions for calling the agentic AI tools. For the list of tools and permissions they require, see [MCP tools](/docs/dynatrace-intelligence/dynatrace-intelligence-integrations/dynatrace-mcp#server "Learn about the Dynatrace MCP server and how you can connect to it.").
+Вам также потребуются дополнительные права доступа для вызова агентных инструментов. Для списка инструментов и прав доступа, необходимых для них, см. [Инструменты MCP](/docs/dynatrace-intelligence/dynatrace-intelligence-integrations/dynatrace-mcp#server "Узнайте о сервере Dynatrace MCP и том, как вы можете подключиться к нему.").
 
-#### PII masking
+#### Маскирование ПII
 
-Agentic  **Dynatrace Assist** doesn't provide any PII masking. In order to protect your data, when  **Dynatrace Assist** detects PII in the user prompt, the request is automatically blocked and the prompt isn't sent to the LLM for processing.
+Агентный **Dynatrace Assist** не предоставляет никакого маскирования ПII. Чтобы защитить ваши данные, когда **Dynatrace Assist** обнаруживает ПII в подсказке пользователя, запрос автоматически блокируется и подсказка не отправляется в LLM для обработки.
 
-#### Calling multiple tools
+#### Вызов нескольких инструментов
 
-While interacting with  **Dynatrace Assist** in agentic mode, **Assist** can call up to 10 internal MCP tools per response. If your request requires  **Dynatrace Assist** to call more than 10 tools simultaneously, it'll be unable to complete the interaction.
+При взаимодействии с **Dynatrace Assist** в агентном режиме **Assist** может вызвать до 10 внутренних инструментов MCP за один ответ. Если ваш запрос требует от **Dynatrace Assist** вызвать более 10 инструментов одновременно, он не сможет выполнить взаимодействие.
 
-### Give feedback
+### Оставьте отзыв
 
-You can provide feedback using the built-in feedback mechanism.
+Вы можете оставить отзыв, используя встроенный механизм отзыва.
 
-Select ![Thumb up](https://dt-cdn.net/images/thumbsup-65185abaeb.svg "Thumb up") if Dynatrace Assist has generated a response that has met your expectations and interpreted your prompt correctly.
+Выберите ![Большой палец вверх](https://dt-cdn.net/images/thumbsup-65185abaeb.svg "Большой палец вверх") если Dynatrace Assist сгенерировал ответ, который соответствует вашим ожиданиям и правильно интерпретировал вашу подсказку.
 
-Select ![Thumb down](https://dt-cdn.net/images/thumbsdown-b83de466e8.svg "Thumb down") if Dynatrace Assist has generated a response that has failed to meet your expectations or has incorrectly interpreted your prompt. Please provide additional context for us to understand how we can improve this functionality to meet your needs and expectations.
+Выберите ![Большой палец вниз](https://dt-cdn.net/images/thumbsdown-b83de466e8.svg "Большой палец вниз") если Dynatrace Assist сгенерировал ответ, который не соответствует вашим ожиданиям или неправильно интерпретировал вашу подсказку. Пожалуйста, предоставьте дополнительный контекст, чтобы мы могли понять, как мы можем улучшить эту функциональность, чтобы она соответствовала вашим потребностям и ожиданиям.
 
-Your feedback isn't used to automatically train any models. It's reviewed only by the product team to monitor the response quality and improve the core product offering.
+Ваш отзыв не используется для автоматического обучения моделей. Он рассматривается только командой продукта для мониторинга качества ответов и улучшения основного предложения продукта.
 
-### Sources consulted to generate responses
+### Источники, использованные для генерации ответов
 
-**Dynatrace Assist** enriches its answers based on the official Dynatrace sources, such as:
+**Dynatrace Assist** обогащает свои ответы на основе официальных источников Dynatrace, таких как:
 
-* Dynatrace Documentation
-* [Dynatrace Developerï»¿](https://developer.dynatrace.com/)
-* [Dynatrace Communityï»¿](https://community.dynatrace.com/)
-* [Dynatrace Hubï»¿](https://www.dynatrace.com/hub/)
-* [Dynatrace news and resourcesï»¿](https://www.dynatrace.com/news/product-news/)
-* [Dynatrace websiteï»¿](https://www.dynatrace.com/)
+* Документация Dynatrace
+* [Разработчик Dynatrace](https://developer.dynatrace.com/)
+* [Сообщество Dynatrace](https://community.dynatrace.com/)
+* [Хаб Dynatrace](https://www.dynatrace.com/hub/)
+* [Новости и ресурсы Dynatrace](https://www.dynatrace.com/news/product-news/)
+* [Веб-сайт Dynatrace](https://www.dynatrace.com/)
 
-## Concepts
+## Концепции
 
-Go through the following process to learn using  **Dynatrace Assist**
+Пройдите следующий процесс, чтобы научиться использовать **Dynatrace Assist**
 
-[01Embedded conversation starters
+[01Встроенные стартовые точки разговора
 
-* Reference
-* Learn how to trigger predefined prompts in various Dynatrace applications.](/docs/dynatrace-intelligence/copilot/chat-with-davis-copilot/copilot-conv-starters)[02Dynatrace Assist prompt examples
+* Справка
+* Узнайте, как запустить предопределенные подсказки в различных приложениях Dynatrace.](/docs/dynatrace-intelligence/copilot/chat-with-davis-copilot/copilot-conv-starters)[02Примеры подсказок Dynatrace Assist
 
-* Reference
-* Learn what kind of prompts work well in Dynatrace Assist.](/docs/dynatrace-intelligence/copilot/chat-with-davis-copilot/dynatrace-assist-prompts)
+* Справка
+* Узнайте, какие типы подсказок работают хорошо в Dynatrace Assist.](/docs/dynatrace-intelligence/copilot/chat-with-davis-copilot/dynatrace-assist-prompts)
 
-## Use cases
+## Сценарии использования
 
-You can use agentic  **Dynatrace Assist** to:
+Вы можете использовать агентный **Dynatrace Assist** для:
 
-* Ask general questions about the Dynatrace product.
-* Make use of the MCP tools and capabilities.
-* Perform tasks without the need to open the app or drill-down to another app.
-* Combine tools in one request to perform multiple tasks.
-* Combine tools to perform tasks and get answers to general questions at the same time.
+* Задания общих вопросов о продукте Dynatrace.
+* Использования инструментов и возможностей MCP.
+* Выполнения задач без необходимости открывать приложение или перехода к другому приложению.
+* Объединения инструментов в одном запросе для выполнения нескольких задач.
+* Объединения инструментов для выполнения задач и получения ответов на общие вопросы одновременно.
 
-## Related topics
+## Связанные темы
 
 
 
@@ -510,98 +510,98 @@ Agentic  **Dynatrace Assist** doesn't provide any PII masking. In order to prote
 ## dynatrace-intelligence/copilot/copilot-find-relevant-troubleshooting-guides.md
 
 ---
-title: Discover relevant troubleshooting guides with Dynatrace Intelligence generative AI
+title: Обнаружение релевантных руководств по устранению неполадок с помощью Dynatrace Intelligence generative AI
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/copilot/copilot-find-relevant-troubleshooting-guides
-scraped: 2026-02-25T21:15:06.635196
+scraped: 2026-02-26T21:15:39.079581
 ---
 
-# Discover relevant troubleshooting guides with Dynatrace Intelligence generative AI
+# Обнаружение релевантных руководств по устранению неполадок с помощью Dynatrace Intelligence generative AI
 
-# Discover relevant troubleshooting guides with Dynatrace Intelligence generative AI
+# Обнаружение релевантных руководств по устранению неполадок с помощью Dynatrace Intelligence generative AI
 
-* Latest Dynatrace
-* Tutorial
-* Updated on Jan 28, 2026
+* Последнее Dynatrace
+* Учебник
+* Обновлено 28 января 2026 г.
 
-Dynatrace Intelligence generative AI helps you resolve problems faster by automatically surfacing relevant troubleshooting guides, such as notebooks or dashboards created by your team.
+Dynatrace Intelligence generative AI помогает решать проблемы быстрее, автоматически выделяя релевантные руководства по устранению неполадок, такие как тетради или панели управления, созданные вашей командой.
 
-To reduce the mean time to repair (MTTR), you can leverage Dynatrace Intelligence generative AI document suggestions in ![Problems app - new](https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp "Problems app - new") **Problems** to check if your team has created any troubleshooting guides for problems similar to the one you've encountered.
+Чтобы уменьшить среднее время ремонта (MTTR), вы можете использовать предложения документов Dynatrace Intelligence generative AI в приложении ![Проблемы - новое](https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp "Проблемы - новое") **Проблемы**, чтобы проверить, создала ли ваша команда какие-либо руководства по устранению неполадок для проблем, подобных той, с которой вы столкнулись.
 
-## Who this is for
+## Для кого это
 
-This article is for any users who want to quickly and effectively troubleshoot and remediate active problems in their environment.
+Эта статья предназначена для любых пользователей, которые хотят быстро и эффективно устранять и исправлять активные проблемы в своей среде.
 
-## What you will learn
+## Что вы узнаете
 
-In this article, you'll learn how Dynatrace Intelligence generative AI can suggest relevant troubleshooting guides to assist with problem remediation.
+В этой статье вы узнаете, как Dynatrace Intelligence generative AI может предлагать релевантные руководства по устранению неполадок, чтобы помочь в решении проблем.
 
-## Before you begin
+## Перед началом
 
-Dynatrace Intelligence generative AI periodically indexes notebooks and dashboards that have been labeled as troubleshooting guides and shared within the environment.
+Dynatrace Intelligence generative AI периодически индексирует тетради и панели управления, которые были помечены как руководства по устранению неполадок и共享ены в среде.
 
-* By default, semantic vector indexing of the guides occurs every 6 hours.
-* In order for Dynatrace Intelligence generative AI to index and suggest your document, you have to share it with all users in your environment. Dynatrace Intelligence generative AI won't index or suggest any private documents or documents shared only with specific users. To learn more about sharing documents, see [Share documents](/docs/discover-dynatrace/get-started/dynatrace-ui/share "Share Dynatrace documents (dashboards, notebooks, and launchpads) with other Dynatrace users in your company.").
+* По умолчанию, семантическая векторная индексация руководств происходит каждые 6 часов.
+* Чтобы Dynatrace Intelligence generative AI мог индексировать и предлагать ваш документ, вы должны поделиться им со всеми пользователями в вашей среде. Dynatrace Intelligence generative AI не будет индексировать или предлагать какие-либо приватные документы или документы, поделиться которыми можно только с определенными пользователями. Чтобы узнать больше о том, как делиться документами, см. [Поделиться документами](/docs/discover-dynatrace/get-started/dynatrace-ui/share "Поделиться документами Dynatrace (панелями управления, тетрадями и запусками) с другими пользователями Dynatrace в вашей компании.").
 
-### Prior knowledge
+### Предварительные знания
 
-* [Dynatrace Intelligence generative AI overview](/docs/dynatrace-intelligence/copilot/copilot-overview "Learn about data security and other aspects of Dynatrace Intelligence generative AI.")
-* [Getting started with Dynatrace Intelligence generative AI](/docs/dynatrace-intelligence/copilot/copilot-getting-started "Learn how to set up Dynatrace Intelligence generative AI.")
-* [Problems app](/docs/dynatrace-intelligence/davis-problems-app "Use the Problems app to quickly get to the root cause of incidents in your environment.")
+* [Обзор Dynatrace Intelligence generative AI](/docs/dynatrace-intelligence/copilot/copilot-overview "Узнайте о безопасности данных и других аспектах Dynatrace Intelligence generative AI.")
+* [Начало работы с Dynatrace Intelligence generative AI](/docs/dynatrace-intelligence/copilot/copilot-getting-started "Узнайте, как настроить Dynatrace Intelligence generative AI.")
+* [Приложение Проблемы](/docs/dynatrace-intelligence/davis-problems-app "Используйте приложение Проблемы, чтобы быстро добраться до коренной причины инцидентов в вашей среде.")
 
-### Prerequisites
+### Предварительные условия
 
-* Dynatrace SaaS environment.
-* You have completed the Dynatrace Intelligence generative AI setup described in [Getting started with Dynatrace Intelligence generative AI](/docs/dynatrace-intelligence/copilot/copilot-getting-started "Learn how to set up Dynatrace Intelligence generative AI.").
-* You have document suggestions enabled in your environment. Document indexing enablement is a part of the [Enable Dynatrace Intelligence generative AI on your environment](/docs/dynatrace-intelligence/copilot/copilot-getting-started#enable-davis-copilot "Learn how to set up Dynatrace Intelligence generative AI.") guide.
-* You have the `ALLOW davis-copilot:document-search:execute;` permission. To learn how to set up the permissions, see [Permissions in Grail](/docs/platform/grail/organize-data/assign-permissions-in-grail "Find out how to assign permissions to buckets and tables in Grail.").
+* Среда Dynatrace SaaS.
+* Вы завершили настройку Dynatrace Intelligence generative AI, описанную в [Начало работы с Dynatrace Intelligence generative AI](/docs/dynatrace-intelligence/copilot/copilot-getting-started "Узнайте, как настроить Dynatrace Intelligence generative AI.").
+* У вас включено предложение документов в вашей среде. Включение индексации документов является частью руководства [Включить Dynatrace Intelligence generative AI в вашей среде](/docs/dynatrace-intelligence/copilot/copilot-getting-started#enable-davis-copilot "Узнайте, как настроить Dynatrace Intelligence generative AI.").
+* У вас есть разрешение `ALLOW davis-copilot:document-search:execute;`. Чтобы узнать, как настроить разрешения, см. [Разрешения в Grail](/docs/platform/grail/organize-data/assign-permissions-in-grail "Узнайте, как назначать разрешения для бакетов и таблиц в Grail.").
 
-## Get document suggestions to remediate problems
+## Получить предложения документов для решения проблем
 
-1. Go to ![Problems app - new](https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp "Problems app - new") **Problems** and open the problem you need to resolve.
-2. On the problem details page, select **Troubleshooting**. You will be able to see any troubleshooting guides you have created for the problem, as well as any relevant documents suggested by Dynatrace Intelligence generative AI.
+1. Перейдите в приложение ![Проблемы - новое](https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp "Проблемы - новое") **Проблемы** и откройте проблему, которую вы хотите решить.
+2. На странице деталей проблемы выберите **Устранение неполадок**. Вы сможете увидеть любые руководства по устранению неполадок, которые вы создали для проблемы, а также любые релевантные документы, предложенные Dynatrace Intelligence generative AI.
 
-   Dynatrace Intelligence generative AI only indexes documents that are recognized as troubleshooting guides. Dashboards and notebooks created directly from ![Problems app - new](https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp "Problems app - new") **Problems** are automatically recognized as troubleshooting guides and do not require the `[TSG]` prefix.
+ Dynatrace Intelligence generative AI индексирует только документы, которые распознаются как руководства по устранению неполадок. Панели управления и тетради, созданные直接 из приложения ![Проблемы - новое](https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp "Проблемы - новое") **Проблемы**, автоматически распознаются как руководства по устранению неполадок и не требуют префикса `[TSG]`.
 
-   If you create a troubleshooting guide directly from ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards** or ![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**, you have to prefix the document title with `[TSG]` to indicate it is a troubleshooting guide.
+ Если вы создаете руководство по устранению неполадок напрямую из приложения ![Панели управления](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Панели управления") **Панели управления** или ![Тетради](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Тетради") **Тетради**, вы должны добавить префикс `[TSG]` к названию документа, чтобы указать, что это руководство по устранению неполадок.
 
-   Regardless of how the document was created, it still has to be shared at the environment level to be indexed by Dynatrace Intelligence generative AI.
-3. Optional Provide the keywords or part of a keyword in the **Name**  search field to filter the suggested documents by name.
-4. Optional Select the **Type** (`Notebooks`, `Dashboards`) to filter the suggested documents by type. By default, both types are selected for document suggestions.
-5. Select **View â¦** on the document you want to view. This action will take you to the troubleshooting guide for further investigation.
+ Независимо от того, как был создан документ, он должен быть поделен на уровне среды, чтобы быть проиндексированным Dynatrace Intelligence generative AI.
+3. Необязательно Введите ключевые слова или часть ключевого слова в поле поиска **Имя**, чтобы отфильтровать предложенные документы по имени.
+4. Необязательно Выберите **Тип** (`Тетради`, `Панели управления`), чтобы отфильтровать предложенные документы по типу. По умолчанию, оба типа выбраны для предложений документов.
+5. Выберите **Просмотр...** на документ, который вы хотите просмотреть. Это действие перенесет вас на руководство по устранению неполадок для дальнейшего расследования.
 
-## Pin documents directly to a problem
+## Закрепить документы непосредственно к проблеме
 
-When you create a document from a problem details page, it is automatically pinned to that specific problem. Pinned documents aren't included in the suggested document list. Instead, the TSGs are linked to the problem from which they were created. This ensures that documents created within a problem remain attached and prevents scenarios where the AI might exclude them from the suggested list due to a lack of similarity.
+Когда вы создаете документ из страницы деталей проблемы, он автоматически закрепляется к этой конкретной проблеме. Закрепленные документы не включаются в список предложенных документов. Вместо этого, руководства по устранению неполадок связаны с проблемой, из которой они были созданы. Это гарантирует, что документы, созданные в проблеме, остаются прикрепленными и предотвращает сценарии, в которых ИИ может исключить их из списка предложенных из-за отсутствия сходства.
 
-The documents are pinned to problems by setting the `id` field within the document store. The pattern used for problem pinning consists of:
+Документы закрепляются к проблемам, установкой поля `id` в хранилище документов. Шаблон, используемый для закрепления проблемы, состоит из:
 
-* A string `problem-TSG`.
-* A dash `-`.
-* A problem ID (`event.id` in the Problem Grail record).
-* A dash `-`.
-* A random UUID represented by a string.
+* Строки `problem-TSG`.
+* Тире `-`.
+* Идентификатора проблемы (`event.id` в записи Проблемы Grail).
+* Тире `-`.
+* Случайного UUID, представленного строкой.
 
-You can see the general pattern in the example below:
+Вы можете увидеть общий шаблон в примере ниже:
 
 `problem-TSG-{problem_ID}-{random-UUID}`
 
-Since underscore `_` present in a problem ID isn't supported by the document identifier, it needs to be replaced by a dash `-`, as seen in the example below:
+Поскольку подчеркивание `_` в идентификаторе проблемы не поддерживается идентификатором документа, его необходимо заменить тире `-`, как показано в примере ниже:
 
 `problem-TSG-1589269324049748129-1747888020000V2-225b65bd-ab67-4efe-9d71-742de9b87387`
 
-The random UUID appended to the end of the pattern ensures the uniqueness of each document and allows multiple documents to be pinned to the same problem without conflicts.
+Случайный UUID, добавленный в конец шаблона, гарантирует уникальность каждого документа и позволяет нескольким документам быть закрепленными к одной и той же проблеме без конфликтов.
 
-Pinning documents to problems allows you to attach additional analysis results and domain-specific knowledge directly to the detected problems. You can pin a document to a problem via workflows or API for seamless external integrations.
+Закрепление документов к проблемам позволяет прикрепить дополнительные результаты анализа и доменные знания непосредственно к обнаруженным проблемам. Вы можете закрепить документ к проблеме через рабочие процессы или API для бесшовной внешней интеграции.
 
-### Create and attach a notebook to a detected problem via Workflows
+### Создать и прикрепить тетрадь к обнаруженной проблеме через Рабочие процессы
 
-By using a JavaScript workflow action, you can automatically create and attach a document (notebook or dashboard) with your domain-specific analysis results to a detected problem.
+Используя действие рабочего процесса JavaScript, вы можете автоматически создать и прикрепить документ (тетрадь или панель управления) с вашими доменными результатами анализа к обнаруженной проблеме.
 
-1. Go to **Workflows** ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") and select  to create a new workflow.
-2. Select the preferred trigger type.
-3. Select  **Add task**.
-4. In the **Choose action** section, select **Run JavaScript**.
-5. In the **Input** section, enter the following script:
+1. Перейдите в **Рабочие процессы** ![Рабочие процессы](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Рабочие процессы") и выберите , чтобы создать новый рабочий процесс.
+2. Выберите предпочитаемый тип триггера.
+3. Выберите  **Добавить задачу**.
+4. В разделе **Выберите действие** выберите **Выполнить JavaScript**.
+5. В разделе **Ввод** введите следующий скрипт:
 
    ```
    import { documentsClient } from "@dynatrace-sdk/client-document";
@@ -640,7 +640,7 @@ By using a JavaScript workflow action, you can automatically create and attach a
 
 
 
-   export default async function ({ execution_id }) {
+   export default async function ({ execution_id })).
 
 
 
@@ -656,19 +656,19 @@ By using a JavaScript workflow action, you can automatically create and attach a
 
 
 
-   problem_id = problem_id.replace('_', '-'); // Replace the unsupported character
+   problem_id = problem_id.replace('_', '-'); // Замените неподдерживаемый символ
 
 
 
-   // Create a new Notebook and pin it to the triggering problem
+   // Создайте новую тетрадь и прикрепите ее к триггерной проблеме
 
 
 
-   try {
+   try 
 
 
 
-   const notebookContent = {
+   const notebookContent = 
 
 
 
@@ -680,11 +680,11 @@ By using a JavaScript workflow action, you can automatically create and attach a
 
 
 
-   sections: [
+   sections: 
 
 
 
-   {"id":"19ebed94-69a9-4a6e-b392-7bb7b0deb330","type":"markdown","markdown":"# Domain Analysis Results\n\nHere goes the external, domain-specific analysis results"}
+   {"id":"19ebed94-69a9-4a6e-b392-7bb7b0deb330","type":"markdown","markdown":"# Доменные результаты анализа\n\nЗдесь находятся внешние, доменные результаты анализа"}
 
 
 
@@ -700,11 +700,11 @@ By using a JavaScript workflow action, you can automatically create and attach a
 
 
 
-   body: {
+   body: 
 
 
 
-   name: "[TSG] Domain Analysis Results",
+   name: "[TSG] Доменные результаты анализа",
 
 
 
@@ -712,7 +712,7 @@ By using a JavaScript workflow action, you can automatically create and attach a
 
 
 
-   description: "A notebook containing domain specific analysis results",
+   description: "Тетрадь, содержащая доменные результаты анализа",
 
 
 
@@ -732,7 +732,7 @@ By using a JavaScript workflow action, you can automatically create and attach a
 
 
 
-   // Make the document public
+   // Сделайте документ публичным
 
 
 
@@ -748,7 +748,7 @@ By using a JavaScript workflow action, you can automatically create and attach a
 
 
 
-   body: {
+   body: 
 
 
 
@@ -764,11 +764,11 @@ By using a JavaScript workflow action, you can automatically create and attach a
 
 
 
-   } catch (error) {
+   } catch (error) 
 
 
 
-   console.error("Error creating notebook:", error);
+   console.error("Ошибка создания тетради:", error);
 
 
 
@@ -783,15 +783,15 @@ By using a JavaScript workflow action, you can automatically create and attach a
    }
    ```
 
-Once the newly created notebook is attached to the AI-detected problem, you'll be able to see it in the troubleshooting section. The document will also be suggested to you for similar problems in the future.
+Как только созданная тетрадь будет прикреплена к проблеме, обнаруженной ИИ, вы сможете увидеть ее в разделе устранения неполадок. Документ также будет предложен вам для подобных проблем в будущем.
 
-![An example of analysis results in the Problems app.](https://dt-cdn.net/images/problems-analysis-results-2147-303c6e5b9b.png)
+![Пример результатов анализа в приложении Проблемы.](https://dt-cdn.net/images/problems-analysis-results-2147-303c6e5b9b.png)
 
-## Related topics
+## Связанные темы
 
 * [Dynatrace Intelligence генеративный ИИ обзор](/docs/dynatrace-intelligence/copilot/copilot-overview "Узнайте о безопасности данных и других аспектах Dynatrace Intelligence генеративного ИИ.")
 * [Начало работы с Dynatrace Intelligence генеративным ИИ](/docs/dynatrace-intelligence/copilot/copilot-getting-started "Узнайте, как настроить Dynatrace Intelligence генеративный ИИ.")
-* [Проблемы приложения](/docs/dynatrace-intelligence/davis-problems-app "Используйте приложение Проблемы, чтобы быстро найти коренную причину инцидентов в вашей среде.")
+* [Проблемы приложения](/docs/dynatrace-intelligence/davis-problems-app "Используйте приложение Проблемы, чтобы быстро добраться до коренной причины инцидентов в вашей среде.")
 
 ---
 
@@ -964,7 +964,7 @@ If you would like to learn more about Dynatrace Intelligence generative AI, visi
 ---
 title: Dynatrace Intelligence generative AI - Tips for writing better prompts
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/copilot/quick-analysis-copilot-dql/copilot-tips
-scraped: 2026-02-25T21:29:01.016242
+scraped: 2026-02-26T21:20:57.526666
 ---
 
 # Dynatrace Intelligence generative AI - Tips for writing better prompts
@@ -1259,7 +1259,7 @@ Do not share personal or confidential information in your feedback.
 ---
 title: Dynatrace Intelligence агентное и генеративное ИИ
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/copilot
-scraped: 2026-02-25T21:17:27.202770
+scraped: 2026-02-26T21:31:59.723084
 ---
 
 # Dynatrace Intelligence агентное и генеративное ИИ
@@ -1276,17 +1276,17 @@ Dynatrace Intelligence генеративный ИИ, разработанный
 ## Случаи использования
 
 * Быстрее ознакомиться с DQL, переводя запросы на естественном языке в готовые к использованию запросы.
-* Сэкономить время, генерируя и выполняя сгенерированные запросы DQL вместо того, чтобы писать их вручную.
+* Сэкономить время, генерируя и выполняя сгенерированные запросы DQL вместо написания их вручную.
 * Получить ответы на вопросы о помощи и настройке быстро, без необходимости доступа к документации или другим ресурсам поддержки Dynatrace.
 * Лучше понять существующие DQL, получая краткие описания и объяснения запросов.
 * Попросите Dynatrace Assist предоставить контекстные сведения:
 
-  + Получите четкие описания проблем, их коренных причин и предложенных шагов по исправлению в приложении Problems.
+  + Получите четкие описания проблем, их коренных причин и рекомендуемых шагов по исправлению в приложении Problems.
   + Получите объяснения сигналов предупреждения в приложении Kubernetes.
-  + Получите объяснения планов выполнения на естественном языке в приложении Databases.
-* Откройте для себя актуальные руководства по устранению неполадок, чтобы ускорить процесс исправления проблем.
+  + Получите описания планов выполнения на естественном языке в приложении Databases.
+* Откройте для себя релевантные руководства по устранению неполадок, чтобы ускорить исправление проблем.
 
-[#### Dynatrace Intelligence генеративный ИИ обзор
+[#### Обзор Dynatrace Intelligence генеративного ИИ
 
 Узнайте о безопасности данных и других аспектах Dynatrace Intelligence генеративного ИИ.
 
@@ -1304,11 +1304,11 @@ Dynatrace Intelligence генеративный ИИ, разработанный
 
 [#### Запрос с помощью естественного языка
 
-Используйте Dynatrace Intelligence генеративный ИИ, чтобы перевести ваши запросы на естественном языке в запросы DQL
+Используйте Dynatrace Intelligence генеративный ИИ, чтобы перевести ваши вопросы на естественном языке в запросы DQL
 
 * Обзор
 
-Прочитайте обзор](/docs/dynatrace-intelligence/copilot/quick-analysis-copilot-dql)[#### Dynatrace Intelligence генеративный ИИ - Советы по написанию лучших запросов
+Посмотрите обзор](/docs/dynatrace-intelligence/copilot/quick-analysis-copilot-dql)[#### Dynatrace Intelligence генеративный ИИ - Советы по написанию лучших запросов
 
 Узнайте лучшие практики для написания более точных запросов.
 
@@ -1316,19 +1316,19 @@ Dynatrace Intelligence генеративный ИИ, разработанный
 
 Прочитайте этот справочник](/docs/dynatrace-intelligence/copilot/quick-analysis-copilot-dql/copilot-tips)[#### Примеры быстрого анализа с помощью генеративного ИИ
 
-Узнайте больше о том, какие запросы хорошо работают в Dynatrace Intelligence генеративном ИИ.
+Узнайте больше о том, какие запросы работают хорошо в Dynatrace Intelligence генеративном ИИ.
 
 * Справочник
 
-Прочитайте этот справочник](/docs/dynatrace-intelligence/use-cases/copilot-examples)[#### Суммирование и объяснение запросов
+Прочитайте этот справочник](/docs/dynatrace-intelligence/use-cases/copilot-examples)[#### Суммировать и объяснить запросы
 
-Узнайте, как суммировать и объяснять запросы с помощью Dynatrace Intelligence генеративного ИИ DQL2NL.
+Узнайте, как суммировать и объяснить запросы с помощью Dynatrace Intelligence генеративного ИИ DQL2NL.
 
-* Учебник
+* Урок
 
-Прочитайте этот учебник](/docs/dynatrace-intelligence/copilot/explain-queries-with-davis-copilot)
+Прочитайте этот урок](/docs/dynatrace-intelligence/copilot/explain-queries-with-davis-copilot)
 
-## Спросите Dynatrace Assist
+## Попросите Dynatrace Assist
 
 [#### Dynatrace Assist
 
@@ -1344,32 +1344,32 @@ Dynatrace Intelligence генеративный ИИ, разработанный
 
 Прочитайте этот справочник](/docs/dynatrace-intelligence/copilot/chat-with-davis-copilot/copilot-conv-starters)
 
-Для получения более подробной информации о том, какие запросы хорошо работают в **Dynatrace Assist**, см. [примеры запросов](/docs/dynatrace-intelligence/copilot/chat-with-davis-copilot/dynatrace-assist-prompts "Узнайте, какие запросы хорошо работают в Dynatrace Assist.").
+Для получения более подробной информации о том, какие запросы работают хорошо в **Dynatrace Assist**, посмотрите [примеры запросов](/docs/dynatrace-intelligence/copilot/chat-with-davis-copilot/dynatrace-assist-prompts "Узнайте, какие запросы работают хорошо в Dynatrace Assist.").
 
 ## Векторное совпадение документов
 
-[#### Откройте для себя актуальные руководства по устранению неполадок с помощью Dynatrace Intelligence генеративного ИИ
+[#### Откройте для себя релевантные руководства по устранению неполадок с помощью Dynatrace Intelligence генеративного ИИ
 
 Узнайте, как Dynatrace Intelligence генеративный ИИ может предложить руководства по устранению неполадок для исправления проблем.
 
-* Учебник
+* Урок
 
-Прочитайте этот учебник](/docs/dynatrace-intelligence/copilot/copilot-find-relevant-troubleshooting-guides)
+Прочитайте этот урок](/docs/dynatrace-intelligence/copilot/copilot-find-relevant-troubleshooting-guides)
 
 ## Узнайте больше
 
-[#### Dynatrace Intelligence генеративный ИИ политика безопасности и конфиденциальности данных
+[#### Dynatrace Intelligence генеративный ИИ: политика безопасности и конфиденциальности данных
 
 Узнайте о политике безопасности и конфиденциальности данных Dynatrace Intelligence генеративного ИИ.
 
 * Объяснение
 
-Прочитайте это объяснение](/docs/dynatrace-intelligence/copilot/copilot-data-privacy)[#### Dynatrace Intelligence генеративный ИИ ЧаВО
+Прочитайте это объяснение](/docs/dynatrace-intelligence/copilot/copilot-data-privacy)[#### Dynatrace Intelligence генеративный ИИ: часто задаваемые вопросы
 
 Узнайте о часто задаваемых вопросах и найдите ответы.
 
-* Устранение неполадок
+* Руководство по устранению неполадок
 
-Прочитайте это руководство по устранению неполадок](/docs/dynatrace-intelligence/copilot/copilot-faq)
+Прочитайте это руководство](/docs/dynatrace-intelligence/copilot/copilot-faq)
 
 ---

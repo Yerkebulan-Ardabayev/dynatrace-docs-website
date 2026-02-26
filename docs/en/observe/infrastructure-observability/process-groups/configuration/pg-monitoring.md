@@ -1,7 +1,7 @@
 ---
 title: Process deep monitoring
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/process-groups/configuration/pg-monitoring
-scraped: 2026-02-22T21:12:55.407074
+scraped: 2026-02-26T21:19:59.232778
 ---
 
 # Process deep monitoring
@@ -129,22 +129,6 @@ You can add a process group and define its monitoring states at the host level.
 4. In the host settings, select **Process group monitoring**.
 5. Select **Add process group** and choose a process group from the dropdown list.
 6. Set the **Monitoring state** (`Monitor`, `Do not monitor`, or `Default`).
-
-   Monitoring state option
-
-   Description
-
-   **Monitor**
-
-   Process group settings at the host level override the corresponding settings at the host group and environment levels.
-
-   **Do not monitor**
-
-   Process group settings at the host level override the corresponding settings at the host group and environment levels.
-
-   **Default**
-
-   Monitoring state is inherited from the previous level settings.
 
 ## Limitations
 

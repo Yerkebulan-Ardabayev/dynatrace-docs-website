@@ -1,7 +1,7 @@
 ---
 title: OpenAI Observability
 source: https://www.dynatrace.com/docs/observe/dynatrace-for-ai-observability/sample-use-cases/openai-observability
-scraped: 2026-02-24T21:34:41.826649
+scraped: 2026-02-26T21:33:50.435943
 ---
 
 # OpenAI Observability
@@ -42,7 +42,7 @@ In the sample, you:
 2. Point `api_endpoint` to your Dynatrace OTLP endpoint.
 3. Authenticate with a Dynatrace API token (the sample reads it from `/etc/secrets/dynatrace_otel`).
 
-For more configuration options, see the [Get started with AI Observability](/docs/observe/dynatrace-for-ai-observability/get-started "Learn how to set up OpenLLMetry to observe an AI/ML model.") guide.
+For more configuration options, see the [Get started with AI Observability](/docs/observe/dynatrace-for-ai-observability/get-started "Get started with OpenLLMetry and OpenTelemetry for AI Observability.") guide.
 
 ### Run the sample
 

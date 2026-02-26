@@ -1,7 +1,7 @@
 ---
 title: Oracle Database monitoring configuration
 source: https://www.dynatrace.com/docs/ingest-from/extensions/develop-your-extensions/data-sources/sql/oracle-monitoring
-scraped: 2026-02-20T21:24:33.004437
+scraped: 2026-02-26T21:27:48.688420
 ---
 
 # Oracle Database monitoring configuration
@@ -455,33 +455,3 @@ Enable this option when connecting to databases using custom certificates.
 ## Resource consumption
 
 Resource consumption depends on the number of Oracle endpoints. The first endpoint consumes 110 MB of RAM and 0.1%â0.5% of CPU. Every following endpoint consumes 0.5â1.0 MB of RAM and ~0.01% of CPU.
-
-Endpoints
-
-Average CPU
-
-Max CPU
-
-RAM (MB)
-
-Host (EC2 instance type)
-
-100
-
-0.6%
-
-0.6% (spike at beginning)
-
-160
-
-XS (`c5.large`)
-
-1
-
-0.1%
-
-0.5% (spike at beginning)
-
-110
-
-XS (`c5.large`)

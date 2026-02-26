@@ -1,7 +1,7 @@
 ---
 title: Filter field
 source: https://www.dynatrace.com/docs/discover-dynatrace/get-started/dynatrace-ui/ui-filter-field
-scraped: 2026-02-25T21:19:24.841622
+scraped: 2026-02-26T21:18:22.999792
 ---
 
 # Filter field

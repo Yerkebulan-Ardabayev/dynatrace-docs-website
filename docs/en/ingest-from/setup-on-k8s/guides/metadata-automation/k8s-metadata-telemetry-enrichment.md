@@ -1,7 +1,7 @@
 ---
 title: Metadata enrichment of all telemetry originating from Kubernetes
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/guides/metadata-automation/k8s-metadata-telemetry-enrichment
-scraped: 2026-02-24T21:17:31.657921
+scraped: 2026-02-26T21:16:45.675758
 ---
 
 # Metadata enrichment of all telemetry originating from Kubernetes
@@ -140,7 +140,7 @@ For OTLP setups without OneAgent, additional steps for signal enrichment are req
 
 ### Enrich via code changes
 
-This option is suitable for standalone OTLP setups without OneAgent injection. For optimal results, enrich your OTLP telemetry by parsing Dynatrace metadata files and adding the metadata directly in your code, as outlined in [Enrich ingested data with Dynatrace-specific dimensions](/docs/ingest-from/extend-dynatrace/extend-data#operator-enrichment-directory "Learn how to automatically enrich your telemetry data with Dynatrace-specific dimensions."). You can find code samples in our OpenTelemetry section, like here for [Java](/docs/ingest-from/opentelemetry/walkthroughs/java/java-manual#add-telemetry-signals-manually "Learn how to instrument your Java application using OpenTelemetry and Dynatrace.").
+This option is suitable for standalone OTLP setups without OneAgent injection. For optimal results, enrich your OTLP telemetry by parsing Dynatrace metadata files and adding the metadata directly in your code, as outlined in [Enrich ingested data with Dynatrace-specific fields](/docs/ingest-from/extend-dynatrace/extend-data#operator-enrichment-directory "Learn how to automatically enrich your telemetry data with Dynatrace-specific fields."). You can find code samples in our OpenTelemetry section, like here for [Java](/docs/ingest-from/opentelemetry/walkthroughs/java/java-manual#add-telemetry-signals-manually "Learn how to instrument your Java application using OpenTelemetry and Dynatrace.").
 This approach provides enrichment comparable to the OneAgent case.
 
 ### Enrich via environment variable
@@ -672,6 +672,6 @@ k8s.namespace.label.domain: finance
 
 ## Related topics
 
-* [Enrich ingested data with Dynatrace-specific dimensions](/docs/ingest-from/extend-dynatrace/extend-data "Learn how to automatically enrich your telemetry data with Dynatrace-specific dimensions.")
+* [Enrich ingested data with Dynatrace-specific fields](/docs/ingest-from/extend-dynatrace/extend-data "Learn how to automatically enrich your telemetry data with Dynatrace-specific fields.")
 * [Enrich OTLP requests with Kubernetes data](/docs/ingest-from/opentelemetry/collector/use-cases/kubernetes/k8s-enrich "Configure the OpenTelemetry Collector to enrich OTLP requests with Kubernetes data.")
 * [Configure enrichment directory](/docs/ingest-from/setup-on-k8s/guides/metadata-automation/metadata-enrichment "Metadata enrichment in the Dynatrace Operator adds context to Kubernetes pods by attaching relevant metadata to entities like pods, hosts, and processes for better observability.")

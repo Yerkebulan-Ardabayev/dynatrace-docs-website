@@ -1,7 +1,7 @@
 ---
 title: Manage WMI extensions
 source: https://www.dynatrace.com/docs/ingest-from/extensions/supported-extensions/data-sources/wmi
-scraped: 2026-02-25T21:16:42.153161
+scraped: 2026-02-26T21:32:31.302437
 ---
 
 # Manage WMI extensions

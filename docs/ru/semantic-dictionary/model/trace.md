@@ -1,7 +1,7 @@
 ---
 title: Traces
 source: https://www.dynatrace.com/docs/semantic-dictionary/model/trace
-scraped: 2026-02-24T21:17:54.461437
+scraped: 2026-02-26T21:16:08.203398
 ---
 
 # Traces
@@ -10,7 +10,7 @@ scraped: 2026-02-24T21:17:54.461437
 
 * Latest Dynatrace
 * Reference
-* Updated on Feb 11, 2026
+* Published Feb 23, 2026
 
 Distributed traces are used to capture transactions flowing through a system. Traces are
 made of spans, which represent the units of work within a distributed trace.

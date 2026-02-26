@@ -1,7 +1,7 @@
 ---
 title: Roll out RUM selectively for your frontends in the New RUM Experience
 source: https://www.dynatrace.com/docs/observe/digital-experience/new-rum-experience/web-frontends/initial-setup/selective-rum-rollout
-scraped: 2026-02-24T21:29:53.510756
+scraped: 2026-02-26T21:20:38.329654
 ---
 
 # Roll out RUM selectively for your frontends in the New RUM Experience

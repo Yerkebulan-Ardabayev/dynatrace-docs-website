@@ -1,6 +1,6 @@
 # Документация Dynatrace: dynatrace-intelligence/use-cases
 Язык: Русский (RU)
-Сгенерировано: 2026-02-25
+Сгенерировано: 2026-02-26
 Файлов в разделе: 6
 ---
 
@@ -9,7 +9,7 @@
 ---
 title: Generative AI quick analysis examples
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/use-cases/copilot-examples
-scraped: 2026-02-24T21:28:17.597844
+scraped: 2026-02-26T21:29:10.421488
 ---
 
 # Generative AI quick analysis examples
@@ -276,7 +276,7 @@ To use Dynatrace Intelligence (Preview), ensure that you have:
 ---
 title: Summarize open problems with Workflows
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/use-cases/copilot-in-workflows-examples
-scraped: 2026-02-25T21:25:47.019131
+scraped: 2026-02-26T21:24:15.521433
 ---
 
 # Summarize open problems with Workflows
@@ -634,7 +634,7 @@ If you followed these steps, now you know how to create log alerts for specific 
 ---
 title: Dynatrace Intelligence DQL examples
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/use-cases/davis-dql-examples
-scraped: 2026-02-25T21:23:19.202237
+scraped: 2026-02-26T21:17:18.351078
 ---
 
 # Dynatrace Intelligence DQL examples
@@ -895,7 +895,7 @@ fetch dt.davis.events, from:now()-7d, to:now()
 ---
 title: AI in Workflows - Predictive maintenance of cloud disks
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/use-cases/davis-for-workflows
-scraped: 2026-02-24T21:22:46.935376
+scraped: 2026-02-26T21:31:10.311755
 ---
 
 # AI in Workflows - Predictive maintenance of cloud disks

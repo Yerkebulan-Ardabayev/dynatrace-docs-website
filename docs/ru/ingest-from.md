@@ -1,19 +1,19 @@
 ---
-title: Ингестируйте данные
+title: Ввод данных
 source: https://www.dynatrace.com/docs/ingest-from
-scraped: 2026-02-25T21:17:13.421398
+scraped: 2026-02-26T21:17:38.190576
 ---
 
-# Ингестируйте данные
+# Ввод данных
 
-# Ингестируйте данные
+# Ввод данных
 
 * Последнее Dynatrace
 * Обзор
-* 1-минутное чтение
-* Опубликовано 15 ноября 2017 г.
+* 1-мин чтение
+* Опубликовано 15 нояб. 2017 г.
 
-Dynatrace обеспечивает мониторинг инфраструктуры, а также полноэкранный мониторинг ваших приложений и сервисов посредством автоматической инструментовки с помощью нашей технологии OneAgent. Узнайте, как развернуть Dynatrace на [поддерживаемых платформах](/docs/ingest-from/technology-support "Найдите технические подробности, связанные с поддержкой Dynatrace для конкретных платформ и фреймворков разработки.").
+Dynatrace обеспечивает мониторинг инфраструктуры, а также полноценный мониторинг ваших приложений и сервисов посредством автоматической инструментализации с помощью нашей технологии OneAgent. Узнайте, как развернуть Dynatrace на [поддерживаемых платформах](/docs/ingest-from/technology-support "Найдите технические подробности, связанные с поддержкой Dynatrace для конкретных платформ и фреймворков разработки.").
 
 ## Облачные платформы
 
@@ -21,15 +21,15 @@ Dynatrace обеспечивает мониторинг инфраструкту
 
 ### AWS
 
-Настройте и.configure мониторинг для Amazon Web Services.](/docs/ingest-from/amazon-web-services "Настройте и.configure мониторинг для Amazon Web Services.")[![Azure](https://dt-cdn.net/images/azure-512-a93a37d351.png "Azure")
+Настройте и настройте мониторинг для Amazon Web Services.](/docs/ingest-from/amazon-web-services "Настройте и настройте мониторинг для Amazon Web Services.")[![Azure](https://dt-cdn.net/images/azure-512-a93a37d351.png "Azure")
 
 ### Azure
 
-Настройте и.configure мониторинг для Microsoft Azure.](/docs/ingest-from/microsoft-azure-services "Настройте и.configure мониторинг для Microsoft Azure.")[![Google Cloud](https://dt-cdn.net/images/gcp-512-db85a455ae.webp "Google Cloud")
+Настройте и настройте мониторинг для Microsoft Azure.](/docs/ingest-from/microsoft-azure-services "Настройте и настройте мониторинг для Microsoft Azure.")[![Google Cloud](https://dt-cdn.net/images/gcp-512-db85a455ae.webp "Google Cloud")
 
 ### Google Cloud
 
-Настройте и.configure мониторинг для Google Cloud.](/docs/ingest-from/google-cloud-platform "Мониторьте Google Cloud с помощью Dynatrace.")
+Настройте и настройте мониторинг для Google Cloud.](/docs/ingest-from/google-cloud-platform "Мониторьте Google Cloud с помощью Dynatrace.")
 
 ## Kubernetes
 
@@ -37,7 +37,7 @@ Dynatrace обеспечивает мониторинг инфраструкту
 
 ### Kubernetes
 
-Настройте и.configure Dynatrace на Kubernetes.](/docs/ingest-from/setup-on-k8s "Способы развертывания и настройки Dynatrace на Kubernetes")
+Настройте и настройте Dynatrace на Kubernetes.](/docs/ingest-from/setup-on-k8s "Способы развертывания и настройки Dynatrace на Kubernetes")
 
 ## Другие контейнерные и PaaS-платформы
 
@@ -45,11 +45,11 @@ Dynatrace обеспечивает мониторинг инфраструкту
 
 ### Cloud Foundry
 
-Настройте и.configure Dynatrace на Cloud Foundry.](/docs/ingest-from/setup-on-container-platforms/cloud-foundry "Настройте и.configure Dynatrace на Cloud Foundry.")[![Docker](https://dt-cdn.net/images/docker-512-0c0977826e.webp "Docker")
+Настройте и настройте Dynatrace на Cloud Foundry.](/docs/ingest-from/setup-on-container-platforms/cloud-foundry "Настройте и настройте Dynatrace на Cloud Foundry.")[![Docker](https://dt-cdn.net/images/docker-512-0c0977826e.webp "Docker")
 
 ### Docker
 
-Настройте и.configure Dynatrace на Docker.](/docs/ingest-from/setup-on-container-platforms/docker "Разверните OneAgent на Docker.")[![Heroku](https://dt-cdn.net/images/heroku-512-984aa81b41.webp "Heroku")
+Настройте и настройте Dynatrace на Docker.](/docs/ingest-from/setup-on-container-platforms/docker "Разверните OneAgent на Docker.")[![Heroku](https://dt-cdn.net/images/heroku-512-984aa81b41.webp "Heroku")
 
 ### Heroku
 
@@ -57,7 +57,7 @@ Dynatrace обеспечивает мониторинг инфраструкту
 
 ### Mesos
 
-Настройте и.configure Dynatrace на Mesos/Marathon.](/docs/ingest-from/setup-on-container-platforms/deploy-dynatrace-oneagent-on-mesos-marathon "Узнайте, как развернуть OneAgent на Mesos/Marathon.")
+Настройте и настройте Dynatrace на Mesos/Marathon.](/docs/ingest-from/setup-on-container-platforms/deploy-dynatrace-oneagent-on-mesos-marathon "Узнайте, как развернуть OneAgent на Mesos/Marathon.")
 
 ## Серверы
 
@@ -79,18 +79,18 @@ Dynatrace обеспечивает мониторинг инфраструкту
 
 ### Discovery & Coverage
 
-Обнаружьте слепые пятна и включите правильный уровень наблюдаемости в правильных местах легко и в крупном масштабе.](/docs/ingest-from/discovery-coverage-app "Обнаружьте и устраните пробелы в покрытии мониторинга в крупном масштабе.")
+Обнаружьте слепые пятна и включите правильный уровень наблюдаемости в правильных местах легко в большом масштабе.](/docs/ingest-from/discovery-coverage-app "Обнаружьте и устраните пробелы в покрытии мониторинга в большом масштабе.")
 
 [![Frontend](https://dt-cdn.net/images/frontend-512-e5705a0aec.png "Frontend")
 
-### Бесагентное Real User Monitoring
+### Безагентное Real User Monitoring
 
-Нельзя установить OneAgent на ваши серверы приложений? Попробуйте бесагентный мониторинг.](/docs/observe/digital-experience/web-applications/initial-setup/set-up-agentless-real-user-monitoring "Настройте бесагентный мониторинг для ваших веб-приложений.")[![Synthetic Classic](https://dt-cdn.net/images/synthetic-512-83ec796e54.png "Synthetic Classic")
+Не можете установить OneAgent на ваши серверы приложений? Попробуйте безагентный мониторинг.](/docs/observe/digital-experience/web-applications/initial-setup/set-up-agentless-real-user-monitoring "Настройте безагентный мониторинг для ваших веб-приложений.")[![Synthetic Classic](https://dt-cdn.net/images/synthetic-512-83ec796e54.png "Synthetic Classic")
 
 ### Synthetic Monitoring
 
-Вам нужно отслеживать доступность и производительность ваших приложений 24/7 из глобальных местоположений? Настройте Synthetic Monitoring.](/docs/observe/digital-experience/synthetic-monitoring "Узнайте о Synthetic Monitoring и том, как создать монитор браузера для одного URL, кликпата или HTTP-монитора.")[![Extensions Classic](https://dt-cdn.net/images/extensions-512-1b8ed0c785.png "Extensions Classic")
+Вам нужно отслеживать доступность и производительность ваших приложений 24/7 из глобальных местоположений? Настройте Synthetic Monitoring.](/docs/observe/digital-experience/synthetic-monitoring "Узнайте о Synthetic Monitoring и о том, как создать монитор браузера для одного URL, кликпата браузера или монитора HTTP.")[![Extensions Classic](https://dt-cdn.net/images/extensions-512-1b8ed0c785.png "Extensions Classic")
 
-### Расширение
+### Расширить
 
 Вы можете расширить данные наблюдаемости, собранные по умолчанию, с помощью данных, предоставляемых стандартами и фреймворками наблюдаемости, а также фреймворками расширения, предоставляемыми Dynatrace.](/docs/ingest-from/extend-dynatrace "Узнайте, какие механизмы расширения предлагаются Dynatrace.")

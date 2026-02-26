@@ -1,6 +1,6 @@
 # Документация Dynatrace: deliver/configuration-as-code
 Язык: Русский (RU)
-Сгенерировано: 2026-02-25
+Сгенерировано: 2026-02-26
 Файлов в разделе: 14
 ---
 
@@ -624,7 +624,7 @@ Dedicated commands exist for account resources: [Account](/docs/deliver/configur
 ---
 title: Monaco resources
 source: https://www.dynatrace.com/docs/deliver/configuration-as-code/monaco/configuration/monaco-manage-resources
-scraped: 2026-02-23T21:33:12.841556
+scraped: 2026-02-26T21:31:15.370704
 ---
 
 # Monaco resources
@@ -868,39 +868,7 @@ A grouping project offers a simplified way of grouping multiple projects togethe
 * Required `name`: used as a prefix for the resulting simple project.
 * A dot (`.`) will be used as separator of `<project.name>.<subfolder_name>`.
 
-  A given file structure
-
-  With the following project definition
-
-  Yields two projects
-
-  general/  
-  âââ infrastructure/  
-  âââ zones/
-
-  ```
-  projects:
-
-
-
-  - name: general
-
-
-
-  path: general
-
-
-
-  type: grouping
-  ```
-
-  `general.infrastructure`
-
-  `general.zones`
-
 ### environmentGroups
-
-
 
 An environment is a Dynatrace environment.
 You can group these environments together in single environment group using the `environmentGroups` type.
@@ -997,118 +965,6 @@ The configuration files consist of
 
 * [configs YAML file](/docs/deliver/configuration-as-code/monaco/configuration/yaml-configuration-saas "The Monaco configuration YAML file is structure."), defining parameters, dependencies, name, and template
 * JSON template file
-
-config.yaml
-
-slo-cpu-usage.json
-
-```
-configs:
-
-
-
-- id: newCpuUsageSLO
-
-
-
-config:
-
-
-
-parameters:
-
-
-
-target: 95
-
-
-
-title: myNewSLO
-
-
-
-entityScope: HOST-#######
-
-
-
-template: slo-cpu-usage.json
-
-
-
-skip: false
-
-
-
-type: slo-v2
-```
-
-```
-{
-
-
-
-"name": "{{ .title }}",
-
-
-
-"description": "test SLO for template test",
-
-
-
-"tags": [],
-
-
-
-"customSli": {
-
-
-
-"filterSegments": [],
-
-
-
-"indicator": "timeseries sli=avg(dt.host.cpu.usage)\n, by: { \"{{ .entityScope }}\" } \n  , filter: in(dt.entity.host, { $hosts })\n  | fieldsAdd entityName(dt.entity.host)"
-
-
-
-},
-
-
-
-"criteria": [
-
-
-
-{
-
-
-
-"target": {{ .target }},
-
-
-
-"timeframeFrom": "now-7d",
-
-
-
-"timeframeTo": "now",
-
-
-
-"warning": 99
-
-
-
-}
-
-
-
-]
-
-
-
-}
-```
 
 The Dynatrace Monaco CLI uses Go templates, which allow you to define more complex templates. Still, we recommend keeping templates simpleâreferencing variables via `{{ .PARAMETER_NAME }}` should be sufficient.
 
@@ -1978,7 +1834,7 @@ When using the [download command](/docs/deliver/configuration-as-code/monaco/ref
 ---
 title: Monaco configuration YAML file - list of type fields
 source: https://www.dynatrace.com/docs/deliver/configuration-as-code/monaco/configuration/yaml-configuration-saas-type-fields
-scraped: 2026-02-25T21:34:15.621122
+scraped: 2026-02-26T21:32:52.136895
 ---
 
 # Monaco configuration YAML file - list of type fields
@@ -3166,7 +3022,7 @@ While this sample shows users, service users, policies, and groups defined in a 
 ---
 title: Monaco configuration YAML file structure
 source: https://www.dynatrace.com/docs/deliver/configuration-as-code/monaco/configuration/yaml-configuration-saas
-scraped: 2026-02-25T21:27:04.451850
+scraped: 2026-02-26T21:30:03.200219
 ---
 
 # Monaco configuration YAML file structure
@@ -4329,7 +4185,7 @@ skip: true
 ---
 title: Monaco API support and access permission handling
 source: https://www.dynatrace.com/docs/deliver/configuration-as-code/monaco/monaco-api-support-and-access-handling
-scraped: 2026-02-25T21:30:21.743290
+scraped: 2026-02-26T21:22:48.963384
 ---
 
 # Monaco API support and access permission handling
@@ -4515,7 +4371,7 @@ Dynatrace resource configuration
 ---
 title: Manage configurations with Monaco
 source: https://www.dynatrace.com/docs/deliver/configuration-as-code/monaco/monaco-getting-started
-scraped: 2026-02-25T21:31:11.961864
+scraped: 2026-02-26T21:30:14.130529
 ---
 
 # Manage configurations with Monaco
@@ -5023,7 +4879,7 @@ Verify that your Dynatrace config has been deleted from your Dynatrace environme
 ---
 title: Work with Dynatrace Monaco CLI commands for Latest Dynatrace
 source: https://www.dynatrace.com/docs/deliver/configuration-as-code/monaco/reference/commands-saas
-scraped: 2026-02-25T21:34:18.416654
+scraped: 2026-02-26T21:32:02.164148
 ---
 
 # Work with Dynatrace Monaco CLI commands for Latest Dynatrace
@@ -5501,7 +5357,7 @@ They are useful for troubleshooting any errors that you might encounter.
 ---
 title: Terraform API support and access permission handling
 source: https://www.dynatrace.com/docs/deliver/configuration-as-code/terraform/terraform-api-support-access-permission-handling
-scraped: 2026-02-25T21:28:24.652891
+scraped: 2026-02-26T21:25:57.592055
 ---
 
 # Terraform API support and access permission handling
@@ -5629,7 +5485,7 @@ Information can be found at [IAM policy reference](/docs/manage/identity-access-
 ---
 title: Terraform CLI commands
 source: https://www.dynatrace.com/docs/deliver/configuration-as-code/terraform/terraform-cli-commands
-scraped: 2026-02-22T21:24:07.527572
+scraped: 2026-02-26T21:25:22.750950
 ---
 
 # Terraform CLI commands
@@ -5727,70 +5583,6 @@ By default, ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.pn
 The table below describes various use cases for the Dynatrace-specific `export` command, as well example commands to achieve the desired outcome.
 For simplicity, only Linux examples are provided.
 
-Use case
-
-Example
-
-Export all configurations without data sources/dependencies.
-
-```
-./terraform-provider-dynatrace -export
-```
-
-Export all configurations with data sources/dependencies and include commented IDs.
-
-```
-./terraform-provider-dynatrace -export -ref -id
-```
-
-Export all configurations with data sources/dependencies including specified resources in the exclusion list.
-
-```
-./terraform-provider-dynatrace -export -ref * dynatrace_document dynatrace_platform_slo
-```
-
-Export specific configuration.
-
-```
-./terraform-provider-dynatrace -export dynatrace_document dynatrace_platform_slo
-```
-
-Export specific configurations and their dependencies.
-
-```
-./terraform-provider-dynatrace -export -ref dynatrace_platform_slo dynatrace_automation_workflow
-```
-
-Export specific alerting profiles by their IDs.
-
-```
-./terraform-provider-dynatrace -export -ref dynatrace_automation_workflow=4f5942d4-3450-40a8-818f-c5faeb3563d0 dynatrace_automation_workflow=9c4b75f1-9a64-4b44-a8e4-149154fd5325
-```
-
-Export multiple resources including dependencies.
-
-```
-./terraform-provider-dynatrace -export -ref dynatrace_document dynatrace_automation_workflow=4f5942d4-3450-40a8-818f-c5faeb3563d0
-```
-
-Export all configurations and import them into the state.
-
-```
-./terraform-provider-dynatrace -export -import-state
-```
-
-Export all service-level objectives and import them into the state.
-
-```
-./terraform-provider-dynatrace -export -import-state dynatrace_platform_slo
-```
-
-Export all configurations except specified resources.
-
-```
-./terraform-provider-dynatrace -export -ref -exclude dynatrace_platform_slo dynatrace_automation_workflow
-```
-
 ## Additional information
 
 During a Terraform export, it's possible that certain files cannot be processed correctly.
@@ -5809,7 +5601,7 @@ The reasons are added as comments at the beginning of each file.
 ---
 title: Configure automated notifications using Terraform and Configuration as Code
 source: https://www.dynatrace.com/docs/deliver/configuration-as-code/terraform/tutorials/terraform-tutorial-set-up-automated-notification
-scraped: 2026-02-25T21:32:18.901776
+scraped: 2026-02-26T21:28:46.157320
 ---
 
 # Configure automated notifications using Terraform and Configuration as Code
@@ -7037,7 +6829,7 @@ To modify the Terraform configuration
 ---
 title: Terraform tutorials overview
 source: https://www.dynatrace.com/docs/deliver/configuration-as-code/terraform/tutorials
-scraped: 2026-02-24T21:26:02.975649
+scraped: 2026-02-26T21:32:36.416202
 ---
 
 # Terraform tutorials overview

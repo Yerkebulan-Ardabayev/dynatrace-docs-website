@@ -1,7 +1,7 @@
 ---
 title: User privacy for iOS
 source: https://www.dynatrace.com/docs/manage/data-privacy-and-security/data-privacy/user-privacy-for-ios
-scraped: 2026-02-25T21:32:22.849868
+scraped: 2026-02-26T21:30:16.579290
 ---
 
 # User privacy for iOS

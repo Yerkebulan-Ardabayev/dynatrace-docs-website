@@ -1,7 +1,7 @@
 ---
 title: Customize OneAgent installation on AIX
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/aix/installation/customize-oneagent-installation-on-aix
-scraped: 2026-02-22T21:11:47.444632
+scraped: 2026-02-26T21:19:49.394918
 ---
 
 # Customize OneAgent installation on AIX

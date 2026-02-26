@@ -1,7 +1,7 @@
 ---
 title: Transform and filter data with the OpenTelemetry Collector
 source: https://www.dynatrace.com/docs/ingest-from/opentelemetry/collector/use-cases/transform
-scraped: 2026-02-23T21:25:52.886883
+scraped: 2026-02-26T21:26:11.722421
 ---
 
 # Transform and filter data with the OpenTelemetry Collector
@@ -315,52 +315,9 @@ See the [OpenTelemetry documentation of the transform processorï»¿](https://g
 
 The sample configuration above uses the following statements:
 
-Statement
-
-Description
-
-[`keep_matching_keys`ï»¿](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/v0.145.0/pkg/ottl/ottlfuncs/README.md#keep_matching_keys)
-
-Evaluates the attribute key names and only keeps those, whose names match the given regular expressions of `^(aaa|bbb|ccc).*` for resource attributes and `(^xyz.pqr$)|(^(aaa|bbb|ccc).*)` for span attributes.
-
-[`set`ï»¿](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/v0.145.0/pkg/ottl/ottlfuncs/README.md#set)
-
-Adds/changes the following two span attributes:
-
-* `svc.marker`, with the static value `purchasing`
-* `purchase.id`, coverting its value to uppercase, using [`ConvertCase`ï»¿](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/v0.145.0/pkg/ottl/ottlfuncs/README.md#convertcase)
-
-[`delete_key`ï»¿](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/v0.145.0/pkg/ottl/ottlfuncs/README.md#delete_key)
-
-Deletes attributes named `message`.
-
-[`replace_pattern`ï»¿](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/v0.145.0/pkg/ottl/ottlfuncs/README.md#replace_pattern)
-
-Matches a string against a given regular expression and perform a string substitution on all matching entries.
-
-In our example, we first use it for traces to match the name against the regular expression `^.*(DataSubmission-\d+).*$` and replace its content with the first capture group (`$$1`) of our expression. This essentially means, we search strings for `DataSubmission` suffixed by a number and â if found â only keep the value of the found match.
-
-We also use the function for metrics with the regular expression `(.*)_bad$`, to change the `_bad` suffix to `_invalid`.
-
 #### Filter
 
 In addition, we also configure an instance of the [`filter` processorï»¿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.145.0/processor/filterprocessor), to filter signal based on the following criteria:
-
-Signal
-
-Description
-
-Traces
-
-Uses [`IsMatch`ï»¿](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/v0.145.0/pkg/ottl/ottlfuncs/README.md#ismatch) to match the name of resource attributes against the regular expression `^my-pod-name.*`, dropping spans with attributes whose names start with `my-pod-name`.
-
-Metrics
-
-Uses [`HasAttrKeyOnDatapoint`ï»¿](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/v0.145.0/processor/filterprocessor/README.md#HasAttrKeyOnDatapoint) to evalute if datapoints have attributes with the name `bad.metric`.
-
-Logs
-
-Uses a strict string match of the resource attribute `service.name` against the strings `service1` and `service2`.
 
 See the [OpenTelemetry documentation of the filter processorï»¿](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/v0.145.0/processor/filterprocessor/README.md) for more details on the individual configuration options.
 
@@ -379,8 +336,6 @@ Under `service`, we assemble our receiver, processor, and exporter objects into 
 
 ## Limits and limitations
 
-
-
 Data is ingested using the OpenTelemetry protocol (OTLP) via the [Dynatrace OTLP APIs](/docs/ingest-from/opentelemetry/otlp-api "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.") and is subject to the API's limits and restrictions.
 For more information see:
 
@@ -390,4 +345,4 @@ For more information see:
 
 ## Related topics
 
-* [Enrich ingested data with Dynatrace-specific dimensions](/docs/ingest-from/extend-dynatrace/extend-data "Learn how to automatically enrich your telemetry data with Dynatrace-specific dimensions.")
+* [Enrich ingested data with Dynatrace-specific fields](/docs/ingest-from/extend-dynatrace/extend-data "Learn how to automatically enrich your telemetry data with Dynatrace-specific fields.")

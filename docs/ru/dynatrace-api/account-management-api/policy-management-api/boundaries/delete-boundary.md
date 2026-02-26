@@ -1,49 +1,51 @@
 ---
-title: Управление политиками API - УДАЛИТЬ границу политики
+title: Policy management API - DELETE a policy boundary
 source: https://www.dynatrace.com/docs/dynatrace-api/account-management-api/policy-management-api/boundaries/delete-boundary
-scraped: 2026-02-24T21:28:10.566786
+scraped: 2026-02-26T21:31:58.612809
 ---
 
-# Управление политиками API - УДАЛИТЬ границу политики
+# Policy management API - DELETE a policy boundary
+
+# Policy management API - DELETE a policy boundary
 
 * Latest Dynatrace
 * Reference
 * Published Nov 20, 2025
 
-Удаляет границу политики по uuid внутри уровня. Вы не можете удалить глобальную границу, поскольку они управляются Dynatrace.
+Deletes a policy boundary by uuid within a level. You can't delete a global-level boundary, as these are managed by Dynatrace.
 
-## Аутентификация
+## Authentication
 
-Чтобы выполнить этот запрос, вам необходимо иметь разрешение **Allow IAM policy configuration for environments** (`iam-policies-management`) назначенное вашему токену. Чтобы узнать, как получить и использовать его, см. [OAuth-клиенты](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/oauth-clients "Управление аутентификацией и разрешениями пользователей с помощью OAuth-клиентов.").
+To execute this request, you need the **Allow IAM policy configuration for environments** (`iam-policies-management`) permission assigned to your token. To learn how to obtain and use it, see [OAuth clients](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/oauth-clients "Manage authentication and user permissions using OAuth clients.").
 
-## Параметры
+## Parameters
 
-| Параметр | Тип | Описание | В | Обязательный |
+| Parameter | Type | Description | In | Required |
 | --- | --- | --- | --- | --- |
-| policyBoundaryUuid | - | ID необходимой границы. | path | Обязательный |
-| accountId | - | ID уровня границы политики. Используйте UUID учетной записи. | path | Обязательный |
+| policyBoundaryUuid | - | The ID of the required boundary. | path | Required |
+| accountId | - | The ID of the policy boundary level. Use the UUID of the account. | path | Required |
 
-## Ответ
+## Response
 
-### Код ответа
+### Response codes
 
-| Код | Тип | Описание |
+| Code | Type | Description |
 | --- | --- | --- |
-| **204** | - | Успешный ответ - граница политики удалена |
-| **400** | [ErrorDto](#openapi-definition-ErrorDto) | Неудача. Запрос недействителен |
-| **404** | [ErrorDto](#openapi-definition-ErrorDto) | Неудача. Указанный ресурс не найден. |
+| **204** | - | Successful response - policy boundary deleted |
+| **400** | [ErrorDto](#openapi-definition-ErrorDto) | Failed. The request is invalid |
+| **404** | [ErrorDto](#openapi-definition-ErrorDto) | Failed. The specified resource is not found. |
 
-### Объекты тела ответа
+### Response body objects
 
-#### Объект `ErrorDto`
+#### The `ErrorDto` object
 
-| Элемент | Тип | Описание |
+| Element | Type | Description |
 | --- | --- | --- |
-| code | number | Код ошибки. |
-| message | string | Краткое описание ошибки. |
+| code | number | The code of the error. |
+| message | string | A short description of the error. |
 | errorsMap | object | - |
 
-### Модели тела ответа JSON
+### Response body JSON models
 
 ```
 {
@@ -65,9 +67,9 @@ scraped: 2026-02-24T21:28:10.566786
 }
 ```
 
-## Пример
+## Example
 
-В этом примере запрос удаляет границу политики с UUID границы политики **9a7b6c54-3d2e-4f10-a8b2-7cde9012f345** для `accountID` **f1a2b3c4-d5e6-7890-ab12-34cd56ef7890**.
+In this example, the request deletes a policy boundary with policy boundary `UUID` of **9a7b6c54-3d2e-4f10-a8b2-7cde9012f345** for the `accountID` **f1a2b3c4-d5e6-7890-ab12-34cd56ef7890**.
 
 #### Curl
 
@@ -83,12 +85,12 @@ curl --request DELETE \
 --header 'Authorization: Bearer abcdefjhij1234567890'
 ```
 
-#### URL запроса
+#### Request URL
 
 ```
 https://api.dynatrace.com/iam/v1/repo/account/f1a2b3c4-d5e6-7890-ab12-34cd56ef7890/boundaries/9a7b6c54-3d2e-4f10-a8b2-7cde9012f345
 ```
 
-#### Код ответа
+#### Response code
 
-204 - Успешный ответ - граница политики удалена.
+204 - Successful response - policy boundary deleted.

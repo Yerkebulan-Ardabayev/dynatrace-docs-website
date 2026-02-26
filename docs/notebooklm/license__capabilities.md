@@ -1,6 +1,6 @@
 # Документация Dynatrace: license/capabilities
 Язык: Русский (RU)
-Сгенерировано: 2026-02-25
+Сгенерировано: 2026-02-26
 Файлов в разделе: 17
 ---
 
@@ -115,7 +115,7 @@ These metrics are also available via the Environment API and your **Account Mana
 ---
 title: Calculate your consumption of Full-Stack Monitoring (DPS)
 source: https://www.dynatrace.com/docs/license/capabilities/app-infra-observability/full-stack-monitoring
-scraped: 2026-02-22T21:12:48.900559
+scraped: 2026-02-26T21:19:43.151289
 ---
 
 # Calculate your consumption of Full-Stack Monitoring (DPS)
@@ -125,7 +125,7 @@ scraped: 2026-02-22T21:12:48.900559
 * Latest Dynatrace
 * Explanation
 * 5-min read
-* Updated on Dec 10, 2025
+* Updated on Jan 26, 2026
 
 Full-Stack Monitoring for hosts and containers offers comprehensive application performance monitoring.
 Application performance monitoring includes: distributed tracing, code-level visibility, CPU profiling, memory profiling, and deep process monitoring for hosts and containers.
@@ -226,8 +226,10 @@ Certain monitoring scenarios have their own calculations for GiB-hour consumptio
 
 
 
-This section assumes that you have followed the Dynatrace-recommended deployment options.
-If you implement a custom deployment, the charging of included Metrics may still work as describedâbut this is not guaranteed by Dynatrace.
+This section assumes that you have followed the Dynatrace-recommended deployment options, especially regarding telemetry enrichment.
+If you implement a custom deployment, the charging of included metrics may still work as describedâbut this is not guaranteed by Dynatrace.
+
+For more information, see [Supported deployment options](#deployment-options).
 
 Full-Stack Monitoring includes all Infrastructure Monitoring metrics, application performance monitoring metrics, and [other built-in metrics](/docs/license/capabilities/metrics/dps-metrics-ingest#billable-and-non-billable-metrics "Learn how your consumption of the Metrics - Ingest & Process DPS capability is billed and charged.").
 These metrics are included and never produce any charge.
@@ -259,42 +261,6 @@ Metric data points that exceed your included volume are charged as:
 
 Your environment's included metric data points are applied automatically to metrics that originate at hosts and containers that are monitored by OneAgent in Full-Stack Monitoring mode.
 This applies to custom metrics as described in the table below.
-
-Origin
-
-Examples (including but not limited to)
-
-A Full-Stack monitored host sending metrics via the [OneAgent metric API](/docs/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/oneagent-metric-api "Use the Dynatrace API to retrieve the metrics of monitored entities.")
-
-* OpenTelemetry metrics
-* Spring Micrometer
-* StatsD
-* JMX
-* Extensions run locally on the host by OneAgent
-* a host-local Telegraf
-
-An application monitored with Container-based application-only Full-Stack Monitoring via the OneAgent code module
-
-* OpenTelemetry metrics
-* Spring Micrometer
-* JMX
-
-A Full-Stack monitored Kubernetes node or container, either via [Cloud Native Full-Stack](/docs/ingest-from/setup-on-k8s/deployment/full-stack-observability "Deploy Dynatrace Operator in cloud-native full-stack mode to Kubernetes"), [Classic Full-Stack](/docs/ingest-from/setup-on-k8s/deployment/other/classic-full-stack "Deploy Dynatrace Operator in classic full-stack mode to Kubernetes"), or [Application Observability](/docs/ingest-from/setup-on-k8s/deployment/application-observability "Deploy Dynatrace Operator in application monitoring mode to Kubernetes") [1](#fn-2-1-def)
-
-* OpenTelemetry metrics
-* Spring Micrometer
-* JMX
-* [Prometheus metrics via ActiveGate](/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-prometheus-metrics "Metric ingestion from Prometheus endpoints in Kubernetes, metrics alerts, and monitoring consumption.")
-* Metrics sent via the Dynatrace Collector [2](#fn-2-2-def) or OpenTelemetry Collector [3](#fn-2-3-def)
-
-[Service monitoring](/docs/observe/application-observability/services "Learn how to monitor and analyze your services, define and use request attributes, and more.") from a Full-Stack monitored application either via [Cloud Native Full-Stack](/docs/ingest-from/setup-on-k8s/deployment/full-stack-observability "Deploy Dynatrace Operator in cloud-native full-stack mode to Kubernetes"), [Classic Full-Stack](/docs/ingest-from/setup-on-k8s/deployment/other/classic-full-stack "Deploy Dynatrace Operator in classic full-stack mode to Kubernetes"), or [Application Observability](/docs/ingest-from/setup-on-k8s/deployment/application-observability "Deploy Dynatrace Operator in application monitoring mode to Kubernetes") [1](#fn-2-1-def)
-
-* `dt.service.request.count`
-* `dt.service.request.failure_count`
-* `dt.service.request.response_time`
-* `dt.service.request.service_mesh.count`
-* `dt.service.request.service_mesh.failure_count`
-* `dt.service.request.service_mesh.response_time`
 
 1
 
@@ -328,8 +294,6 @@ An equal number of data points can be consumed:
 
 ## Distributed traces
 
-
-
 Full-Stack Monitoring includes a defined amount of trace data volume.
 Every contributing GiB of host or application memory adds 200 KiB of trace data per minute, for a total of 3000 KiB of trace data in each 15-minute interval of the [Monitoring environment](/docs/discover-dynatrace/get-started/monitoring-environment "Understand and learn how to work with monitoring environments.").
 This volume addresses the majority of customer use cases.
@@ -351,6 +315,11 @@ Full-Stack Monitoring trace data comes from two sources and takes one of two for
 
   Note that traces sent via the Custom Trace API and not coming from a Full-Stack Monitoring host or application are always charged as [Traces - Ingest & Process](/docs/license/capabilities/traces#trace-ingest-usage "Learn how Dynatrace Traces powered by Grail consumption is calculated using the Dynatrace Platform Subscription (DPS) model.").
 
+  For OpenTelemetry traces, this section assumes that you have followed the Dynatrace-recommended deployment options, especially regarding telemetry enrichment.
+  If you implement a custom deployment, the charging of included traces from OpenTelemetry sources may still work as describedâbut this is not guaranteed by Dynatrace.
+
+  For more information, see [Supported deployment options](#deployment-options).
+
 What about the included trace volume in DPS prior to Traces powered by Grail
 
 While the uncompressed amount of spans and traces has not changed, the way Dynatrace measures this has changed with the release of Traces powered by Grail.
@@ -362,6 +331,8 @@ For non-Grail enabled DPS:
 * Each environment has a minimum trace peak volume of 14 MiB/min.
 
 ### Peak trace volume/minute calculation example
+
+
 
 * First 15-minute interval: `200 KiB (peak trace volume) Ã 1350 (GiB memory) = 263.67 MiB/minute`
 * Second 15-minute interval: `200 KiB (peak trace volume) Ã 950 (GiB memory) = 185.55 MiB/minute`
@@ -406,9 +377,25 @@ Full-Stack Monitoring includes [CPU](/docs/observe/application-observability/pro
 OneAgent uses an intelligent patented mechanism to manage the volume of profiling data.
 Dynatrace [retains the total amount of ingested profiling data](/docs/manage/data-privacy-and-security/data-privacy/data-retention-periods#purepath "Check retention times for various data types.") from your environment for 10 days.
 
+## Supported deployment options
+
+To ensure that your OpenTelemetry traces and custom metrics benefit from the included trace and metric volumes, you need to enable telemetry enrichment according to the Dynatrace-recommended deployment options.
+
+Automatic telemetry enrichment is enabled for:
+
+* Custom metrics and OpenTelemetry spans that originate from any:
+
+  + Full-Stack monitored host or container, when you use OneAgent or follow the steps described in [Enrich ingested data with Dynatrace-specific fields](/docs/ingest-from/extend-dynatrace/extend-data "Learn how to automatically enrich your telemetry data with Dynatrace-specific fields.").
+  + Full-Stack monitored Kubernetes container, when you use Dynatrace Operator and [metadata enrichment is enabled](/docs/ingest-from/setup-on-k8s/guides/metadata-automation/metadata-enrichment "Metadata enrichment in the Dynatrace Operator adds context to Kubernetes pods by attaching relevant metadata to entities like pods, hosts, and processes for better observability.").
+  + Cloud-native Full-Stack monitored Kubernetes node, when you use Dynatrace Operator and [metadata enrichment is enabled](/docs/ingest-from/setup-on-k8s/guides/metadata-automation/metadata-enrichment "Metadata enrichment in the Dynatrace Operator adds context to Kubernetes pods by attaching relevant metadata to entities like pods, hosts, and processes for better observability.").
+    This includes any containers running on the monitored Kubernetes node.
+* Custom metrics that are sent from any Full-Stack monitored host via the OneAgent local metric API. For more information, see [OneAgent metric API](/docs/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/oneagent-metric-api "Use the Dynatrace API to retrieve the metrics of monitored entities.").
+
+* OpenTelemetry traces that are sent from any Full-Stack monitored host via the OneAgent local trace API. For more information, see [Send OpenTelemetry traces to the OTLP endpoint exposed by OneAgent](/docs/ingest-from/dynatrace-oneagent/oneagent-and-opentelemetry/oneagent-otel#send-opentelemetry-traces-to-the-otlp-endpoint-exposed-by-oneagent "Learn how to send OpenTelemetry data to a Dynatrace OneAgent.").
+
+If you implement a custom deployment, the charging of traces and metrics may still work as describedâbut this is not guaranteed by Dynatrace.
+
 ## Consumption details: Full-Stack
-
-
 
 Dynatrace provides built-in usage metrics that help you understand and analyze your organization's consumption of Full-Stack Monitoring.
 To use these metrics, in ![Data Explorer](https://dt-cdn.net/images/data-explorer-512-743267b1fc.png "Data Explorer") **Data Explorer**, enter `DPS` in the **Search** field.
@@ -480,6 +467,8 @@ Here are the metrics you can use to monitor the consumption of Dynatrace Full-St
     Description: Number of consumed included metric data points for Full-Stack monitored hosts.
 
 ### Monitor memory-GiB-hour consumption for Full-Stack monitored hosts
+
+
 
 You can monitor the total memory-GiB-hour consumption aggregated across all Full-Stack monitored hosts for different intervals (15 min, hour, day, or week) for any selected timeframe using the "(DPS) Full-Stack Monitoring billing usage" metric.
 The example below shows memory GiB monitored in 1-hour intervals.
@@ -742,7 +731,7 @@ The example below shows that one of the Infrastructure monitored hosts reported 
 ---
 title: Calculate your consumption of Mainframe Monitoring (DPS)
 source: https://www.dynatrace.com/docs/license/capabilities/app-infra-observability/mainframe
-scraped: 2026-02-22T21:12:46.396623
+scraped: 2026-02-26T21:19:37.143592
 ---
 
 # Calculate your consumption of Mainframe Monitoring (DPS)
@@ -916,7 +905,7 @@ For each OneAgent installed in your infrastructure, you can choose the monitorin
 ---
 title: AppEngine Functions (Serverless Functions) overview (DPS)
 source: https://www.dynatrace.com/docs/license/capabilities/appengine-functions
-scraped: 2026-02-25T21:26:44.948196
+scraped: 2026-02-26T21:25:51.606971
 ---
 
 # AppEngine Functions (Serverless Functions) overview (DPS)
@@ -1017,7 +1006,7 @@ This includes [Kubernetes Security Posture Management (KSPM)](/docs/ingest-from/
 ---
 title: Automation Workflow capability overview (DPS)
 source: https://www.dynatrace.com/docs/license/capabilities/automation
-scraped: 2026-02-25T21:32:13.441513
+scraped: 2026-02-26T21:23:19.661563
 ---
 
 # Automation Workflow capability overview (DPS)
@@ -1246,7 +1235,7 @@ The following details apply to metric data points:
 ---
 title: Events powered by Grail overview (DPS)
 source: https://www.dynatrace.com/docs/license/capabilities/events
-scraped: 2026-02-25T21:19:21.094290
+scraped: 2026-02-26T21:21:20.147502
 ---
 
 # Events powered by Grail overview (DPS)
@@ -1334,7 +1323,7 @@ Here's what's included with the Query data-usage dimension:
 ---
 title: Calculate your consumption of Log Management & Analytics - Query (DPS)
 source: https://www.dynatrace.com/docs/license/capabilities/log-analytics/dps-log-query
-scraped: 2026-02-25T21:14:36.371342
+scraped: 2026-02-26T21:14:20.475966
 ---
 
 # Calculate your consumption of Log Management & Analytics - Query (DPS)
@@ -1468,7 +1457,7 @@ You can query metrics via the [Environment API - Metrics API v2](/docs/dynatrace
 ---
 title: Log Analytics (DPS)
 source: https://www.dynatrace.com/docs/license/capabilities/log-analytics
-scraped: 2026-02-25T21:18:14.203916
+scraped: 2026-02-26T21:18:46.403147
 ---
 
 # Log Analytics (DPS)
@@ -1588,7 +1577,7 @@ Alternatively, if the Retain with Included Query option does not meet your use c
 ---
 title: Metrics powered by Grail overview (DPS)
 source: https://www.dynatrace.com/docs/license/capabilities/metrics
-scraped: 2026-02-25T21:19:23.502771
+scraped: 2026-02-26T21:29:40.347366
 ---
 
 # Metrics powered by Grail overview (DPS)
@@ -1637,7 +1626,7 @@ Here's what's included with the Query data-usage dimension:
 ---
 title: Platform extensions overview (DPS)
 source: https://www.dynatrace.com/docs/license/capabilities/platform-extensions
-scraped: 2026-02-24T21:25:47.221608
+scraped: 2026-02-26T21:29:32.750123
 ---
 
 # Platform extensions overview (DPS)
@@ -1715,7 +1704,7 @@ Dynatrace also allows you to ingest logs from your serverless cloud functions.
 ---
 title: Traces powered by Grail overview (DPS)
 source: https://www.dynatrace.com/docs/license/capabilities/traces
-scraped: 2026-02-25T21:24:46.096941
+scraped: 2026-02-26T21:16:10.869383
 ---
 
 # Traces powered by Grail overview (DPS)
@@ -1806,7 +1795,7 @@ When other data types are also read in a query, this can result in consumption o
 ---
 title: Understanding DPS capabilities
 source: https://www.dynatrace.com/docs/license/capabilities
-scraped: 2026-02-25T21:24:08.166684
+scraped: 2026-02-26T21:18:42.965685
 ---
 
 # Understanding DPS capabilities

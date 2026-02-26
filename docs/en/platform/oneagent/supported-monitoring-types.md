@@ -1,7 +1,7 @@
 ---
 title: OneAgent monitoring capabilities
 source: https://www.dynatrace.com/docs/platform/oneagent/supported-monitoring-types
-scraped: 2026-02-25T21:16:22.869844
+scraped: 2026-02-26T21:16:21.405093
 ---
 
 # OneAgent monitoring capabilities

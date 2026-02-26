@@ -1,7 +1,7 @@
 ---
 title: Context-based Apdex analysis
 source: https://www.dynatrace.com/docs/observe/digital-experience/session-segmentation/apdex-analysis
-scraped: 2026-02-25T21:32:12.364723
+scraped: 2026-02-26T21:31:05.213312
 ---
 
 # Context-based Apdex analysis

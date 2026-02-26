@@ -1,7 +1,7 @@
 ---
 title: Log Monitoring configuration (Logs Classic)
 source: https://www.dynatrace.com/docs/analyze-explore-automate/log-monitoring/log-monitoring-configuration
-scraped: 2026-02-25T21:28:16.050578
+scraped: 2026-02-26T21:22:15.475334
 ---
 
 # Log Monitoring configuration (Logs Classic)

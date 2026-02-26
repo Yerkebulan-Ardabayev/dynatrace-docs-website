@@ -1,7 +1,7 @@
 ---
 title: Google Cloud DNS monitoring
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new/gcp-cloud-dns-monitoring
-scraped: 2026-02-22T21:29:31.614021
+scraped: 2026-02-26T21:33:39.504502
 ---
 
 # Google Cloud DNS monitoring

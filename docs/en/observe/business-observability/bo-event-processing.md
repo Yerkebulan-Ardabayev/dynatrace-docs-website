@@ -1,7 +1,7 @@
 ---
 title: Business event processing
 source: https://www.dynatrace.com/docs/observe/business-observability/bo-event-processing
-scraped: 2026-02-23T21:31:36.931588
+scraped: 2026-02-26T21:21:23.607886
 ---
 
 # Business event processing

@@ -1,7 +1,7 @@
 ---
 title: Log Management and Analytics default limits
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-limits
-scraped: 2026-02-25T21:24:33.034582
+scraped: 2026-02-26T21:24:34.248946
 ---
 
 # Log Management and Analytics default limits

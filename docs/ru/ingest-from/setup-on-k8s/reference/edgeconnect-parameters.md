@@ -1,7 +1,7 @@
 ---
 title: EdgeConnect parameters for Dynatrace Operator
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/reference/edgeconnect-parameters
-scraped: 2026-02-24T21:26:08.789419
+scraped: 2026-02-26T21:27:58.767969
 ---
 
 # EdgeConnect parameters for Dynatrace Operator

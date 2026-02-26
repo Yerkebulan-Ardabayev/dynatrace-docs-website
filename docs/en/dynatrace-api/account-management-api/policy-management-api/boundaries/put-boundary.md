@@ -1,7 +1,7 @@
 ---
 title: Policy management API - PUT a policy boundary
 source: https://www.dynatrace.com/docs/dynatrace-api/account-management-api/policy-management-api/boundaries/put-boundary
-scraped: 2026-02-24T21:31:15.135917
+scraped: 2026-02-26T21:23:09.151514
 ---
 
 # Policy management API - PUT a policy boundary

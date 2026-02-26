@@ -1,7 +1,7 @@
 ---
 title: Business event enrichment
 source: https://www.dynatrace.com/docs/observe/business-observability/bo-events-enrichment
-scraped: 2026-02-25T21:35:39.279261
+scraped: 2026-02-26T21:21:40.004611
 ---
 
 # Business event enrichment

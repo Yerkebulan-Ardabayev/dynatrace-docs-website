@@ -1,7 +1,7 @@
 ---
 title: Set up the Dynatrace Google Cloud log integration in a Kubernetes container (GKE)
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/set-up-gcp-integration-logs-only
-scraped: 2026-02-22T21:22:25.563125
+scraped: 2026-02-26T21:20:53.721518
 ---
 
 # Set up the Dynatrace Google Cloud log integration in a Kubernetes container (GKE)
@@ -348,121 +348,6 @@ The Helm deployment package contains a `values.yaml` file with the necessary con
 
 You might want to store this file somewhere for future updates, since it will be needed in case of redeployments. Also, keep in mind that its schema can change. In such case, you should use the new file and only copy over the parameter values.
 
-**Parameter name**
-
-**Description**
-
-**Default value**
-
-`gcpProjectId`
-
-Required The ID of the Google Cloud project you've selected for deployment.
-
-Your current project ID
-
-`deploymentType`
-
-Required Set to `logs`.
-
-`all`
-
-`dynatraceAccessKey`
-
-Required Your [Dynatrace API token](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens#create-api-token "Learn the concept of an access token and its scopes.") with the [required permissions](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/deploy-k8#api "Set up log and metric monitoring for GCP services on a new GKE Autopilot cluster.").
-
-`dynatraceAccessKeySecretName`
-
-Optional You can specify the key to fetch the endpoint from Google Cloud Secret Manager, instead of using `dynatraceAccessKey`.
-
-`dynatraceUrlSecretName`
-
-Optional You can specify the key to fetch the endpoint from Google Cloud Secret Manager, instead of using `dynatraceUrl`.
-
-`dtSecurityContext`
-
-Optional Assign the attribute value used for data segmentation, analysis, and permission mapping within the Dynatrace platform. Refer to [Grant access to entities with security context](/docs/manage/identity-access-management/use-cases/access-security-context "Grant access to entities with security context") for more information. If left empty, the value of `gcpProjectId` will be assigned automatically.
-
-Value of `gcpProjectId`
-
-`dynatraceUrl`
-
-Required For SaaS log ingestion, it's your environment URL (`https://<your-environment-id>.live.dynatrace.com`).
-
-`logsSubscriptionId`
-
-Required The ID of your log Sink Pub/Sub subscription. For details, see [Configure log export](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/deploy-k8#pubsub "Set up log and metric monitoring for GCP services on a new GKE Autopilot cluster.").
-
-`requireValidCertificate`
-
-Optional If set to `true`, Dynatrace requires the SSL certificate of your Dynatrace environment.  
-For SaaS log ingestion, we recommend leaving the default value.
-
-`true`
-
-`selfMonitoringEnabled`
-
-Optional Send custom metrics to Google Cloud to quickly diagnose if `dynatrace-gcp-monitor` processes and sends logs to Dynatrace properly.For details, see [Self-monitoring metrics for the Dynatrace Google Cloud integration](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/deploy-k8/self-monitoring-gcp "Determine if your self-monitoring function is properly processing and sending logs to Dynatrace.").
-
-`false`
-
-`serviceAccount`
-
-Optional Name of the service account to be created.
-
-`dockerImage`
-
-OptionalDynatrace Google Cloud Monitor Docker image. We recommend using the default value, but you can adapt it if needed.
-
-`dynatrace/dynatrace-gcp-monitor:v1-latest`
-
-`logIngestContentMaxLength`
-
-Optional The maximum content length of a log event. Should be less than or equal to the setting on your Dynatrace environment.
-
-`8192`
-
-`logIngestAttributeValueMaxLength`
-
-Optional The maximum length of the log event attribute value. If it exceeds the server limit, content will be truncated.
-
-`250`
-
-`logIngestRequestMaxEvents`
-
-Optional The maximum number of log events in a single payload to the logs ingestion endpoint. If it exceeds the server limit, payload will be rejected with code `413`.
-
-`5000`
-
-`logIngestRequestMaxSize`
-
-Optional The maximum size in bytes of a single payload to the logs ingestion endpoint. If it exceeds the server limit, payload will be rejected with code `413`.
-
-`1048576`
-
-`logIngestEventMaxAgeSeconds`
-
-Optional Determines the maximum age of a forwarded log event. Should be less than or equal to the setting on your Dynatrace environment.
-
-`86400`
-
-`clusterIpv4Cidr`
-
-Optional Set the IP address range for the pods in this cluster in CIDR notation, if you want to use a custom range.
-
-`servicesIpv4Cidr`
-
-Optional Set the IP range for the services IPs. It can be specified as a netmask size or as in the CIDR notion.
-
-`useCustomMasterCidr`
-
-Optional If set to `true`, you can specify the IPv4 CIDR range to use for the master network.
-
-`false`
-
-`masterIpv4Cidr`
-
-Optional IPv4 CIDR range to use for the master network. Requires the `useCustomMasterCidr` value to be true.
-
 For DDU consumptiom information, see [Monitoring consumption](#ddu).
 
 ### Step 3 Connect your Kubernetes cluster
@@ -675,44 +560,6 @@ To investigate potential deployment and connectivity issues
 The default container with 1.25vCPU and 1Gi (with default configuration) can handle 8 GB of log throughput per hour. Achieving more throughput requires allocating more resources to the container (scale up), increasing the number of container replicas (scale out), and changing configuration numbers to use allocated resources efficiently. All config variables can be found and changed in `dynatrace-gcp-monitor-config`.
 
 The following table presents tested configuration and achieved throughput with scaled up&out containers:
-
-Achieved throughput
-
-Machine resources
-
-Replica sets
-
-Config variable values
-
-~8MB/s => ~480MB/min
-
-4vCPU 4Gi RAM
-
-1
-
-`PARALLEL_PROCESSES=4`,  
- `NUMBER_OF_CONCURRENT_MESSAGE_PULL_COROUTINES = 30`,  
- `NUMBER_OF_CONCURRENT_PUSH_COROUTINES=20`
-
-~25MB/s => ~1.5GB/min => ~2TB/day
-
-4vCPU 4Gi RAM
-
-4
-
-`PARALLEL_PROCESSES=4`,  
- `NUMBER_OF_CONCURRENT_MESSAGE_PULL_COROUTINES = 30`,  
- `NUMBER_OF_CONCURRENT_PUSH_COROUTINES=20`
-
-~46MB/s => ~2.7GB/min => ~4TB/day
-
-4vCPU 4Gi RAM
-
-6
-
-`PARALLEL_PROCESSES=4`,  
- `NUMBER_OF_CONCURRENT_MESSAGE_PULL_COROUTINES = 30`,  
- `NUMBER_OF_CONCURRENT_PUSH_COROUTINES=20`
 
 ## Autoscaling guide for logs
 

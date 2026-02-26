@@ -1,6 +1,6 @@
 # Документация Dynatrace: ingest-from/extensions
 Язык: Русский (RU)
-Сгенерировано: 2026-02-25
+Сгенерировано: 2026-02-26
 Файлов в разделе: 38
 ---
 
@@ -9,7 +9,7 @@
 ---
 title: Distribute custom dashboards with your extensions
 source: https://www.dynatrace.com/docs/ingest-from/extensions/advanced-configuration/custom-dashboards
-scraped: 2026-02-22T21:27:09.343443
+scraped: 2026-02-26T21:25:24.015061
 ---
 
 # Distribute custom dashboards with your extensions
@@ -383,7 +383,7 @@ To configure the ActiveGate for the dedicated performance profile
 ---
 title: Extension Execution Controller custom configuration
 source: https://www.dynatrace.com/docs/ingest-from/extensions/advanced-configuration/eec-custom-configuration
-scraped: 2026-02-24T21:22:34.941722
+scraped: 2026-02-26T21:30:04.290220
 ---
 
 # Extension Execution Controller custom configuration
@@ -517,7 +517,7 @@ Only Dynatrace extensions can be elevated, while custom ones cannot. In case an 
 ---
 title: Customize data with extensions
 source: https://www.dynatrace.com/docs/ingest-from/extensions/advanced-configuration/extension-customize
-scraped: 2026-02-24T21:33:21.797089
+scraped: 2026-02-26T21:24:20.298411
 ---
 
 # Customize data with extensions
@@ -922,7 +922,7 @@ sampleLog: |
 ---
 title: About Extensions
 source: https://www.dynatrace.com/docs/ingest-from/extensions/concepts
-scraped: 2026-02-24T21:30:16.798160
+scraped: 2026-02-26T21:32:44.115996
 ---
 
 # About Extensions
@@ -1535,7 +1535,7 @@ type: gauge_statcounter
 ---
 title: JMX data source
 source: https://www.dynatrace.com/docs/ingest-from/extensions/develop-your-extensions/data-sources/jmx
-scraped: 2026-02-25T21:32:48.127607
+scraped: 2026-02-26T21:22:42.659805
 ---
 
 # JMX data source
@@ -1757,7 +1757,7 @@ See [Prometheus data source reference](/docs/ingest-from/extensions/develop-your
 ---
 title: Dynatrace Extensions Python SDK
 source: https://www.dynatrace.com/docs/ingest-from/extensions/develop-your-extensions/data-sources/python
-scraped: 2026-02-24T21:19:26.526389
+scraped: 2026-02-26T21:25:45.566711
 ---
 
 # Dynatrace Extensions Python SDK
@@ -1794,7 +1794,7 @@ For more information, see:
 ---
 title: Troubleshooting
 source: https://www.dynatrace.com/docs/ingest-from/extensions/develop-your-extensions/data-sources/snmp-extensions/troubleshooting
-scraped: 2026-02-24T21:30:52.030053
+scraped: 2026-02-26T21:33:10.899674
 ---
 
 # Troubleshooting
@@ -1866,7 +1866,7 @@ Monitoring configurations are provided with a set of advanced settings that affe
 ---
 title: SNMP data source
 source: https://www.dynatrace.com/docs/ingest-from/extensions/develop-your-extensions/data-sources/snmp-extensions
-scraped: 2026-02-23T21:25:43.496767
+scraped: 2026-02-26T21:32:05.782658
 ---
 
 # SNMP data source
@@ -2304,7 +2304,7 @@ Replace `<ActiveGate-group-name>` with the actual name.
 ---
 title: JDBC monitoring configuration
 source: https://www.dynatrace.com/docs/ingest-from/extensions/develop-your-extensions/data-sources/sql/jdbc-monitoring
-scraped: 2026-02-25T21:33:22.365090
+scraped: 2026-02-26T21:26:01.293602
 ---
 
 # JDBC monitoring configuration
@@ -2675,7 +2675,7 @@ Replace `<ActiveGate-group-name>` with the actual name.
 ---
 title: MySQL monitoring configuration
 source: https://www.dynatrace.com/docs/ingest-from/extensions/develop-your-extensions/data-sources/sql/mysql-monitoring
-scraped: 2026-02-24T21:33:12.508837
+scraped: 2026-02-26T21:23:18.423587
 ---
 
 # MySQL monitoring configuration
@@ -3068,7 +3068,7 @@ Replace `<ActiveGate-group-name>` with the actual name.
 ---
 title: Oracle Database monitoring configuration
 source: https://www.dynatrace.com/docs/ingest-from/extensions/develop-your-extensions/data-sources/sql/oracle-monitoring
-scraped: 2026-02-20T21:24:33.004437
+scraped: 2026-02-26T21:27:48.688420
 ---
 
 # Oracle Database monitoring configuration
@@ -3521,39 +3521,7 @@ Enable this option when connecting to databases using custom certificates.
 
 ## Resource consumption
 
-
-
 Resource consumption depends on the number of Oracle endpoints. The first endpoint consumes 110 MB of RAM and 0.1%â0.5% of CPU. Every following endpoint consumes 0.5â1.0 MB of RAM and ~0.01% of CPU.
-
-Endpoints
-
-Average CPU
-
-Max CPU
-
-RAM (MB)
-
-Host (EC2 instance type)
-
-100
-
-0.6%
-
-0.6% (spike at beginning)
-
-160
-
-XS (`c5.large`)
-
-1
-
-0.1%
-
-0.5% (spike at beginning)
-
-110
-
-XS (`c5.large`)
 
 ---
 
@@ -3562,7 +3530,7 @@ XS (`c5.large`)
 ---
 title: PostgreSQL monitoring configuration
 source: https://www.dynatrace.com/docs/ingest-from/extensions/develop-your-extensions/data-sources/sql/postgresql-monitoring
-scraped: 2026-02-25T21:26:14.077351
+scraped: 2026-02-26T21:21:44.809551
 ---
 
 # PostgreSQL monitoring configuration
@@ -3955,7 +3923,7 @@ Replace `<ActiveGate-group-name>` with the actual name.
 ---
 title: SAP Hana Database monitoring configuration
 source: https://www.dynatrace.com/docs/ingest-from/extensions/develop-your-extensions/data-sources/sql/sap-hana-monitoring
-scraped: 2026-02-25T21:35:32.647435
+scraped: 2026-02-26T21:26:49.611942
 ---
 
 # SAP Hana Database monitoring configuration
@@ -4284,7 +4252,7 @@ To define the SAP Hana Database server, put `ngdbc.jar` file in the following lo
 ---
 title: Snowflake Database monitoring configuration
 source: https://www.dynatrace.com/docs/ingest-from/extensions/develop-your-extensions/data-sources/sql/snowflake-monitoring
-scraped: 2026-02-25T21:29:12.783253
+scraped: 2026-02-26T21:32:32.632535
 ---
 
 # Snowflake Database monitoring configuration
@@ -5584,7 +5552,7 @@ The monitoring configuration format depends on the database provider. For more i
 ---
 title: SQL data source
 source: https://www.dynatrace.com/docs/ingest-from/extensions/develop-your-extensions/data-sources/sql
-scraped: 2026-02-24T21:36:15.805689
+scraped: 2026-02-26T21:27:29.133665
 ---
 
 # SQL data source
@@ -5647,7 +5615,7 @@ The SQL data source supports remote database access using various authentication
 ---
 title: WMI data source tutorial
 source: https://www.dynatrace.com/docs/ingest-from/extensions/develop-your-extensions/data-sources/wmi-extensions/wmi-tutorial
-scraped: 2026-02-24T21:21:30.574400
+scraped: 2026-02-26T21:27:31.599412
 ---
 
 # WMI data source tutorial
@@ -5735,7 +5703,7 @@ Your Dynatrace environment is ready to start creating your WMI extension.
 ---
 title: WMI data source
 source: https://www.dynatrace.com/docs/ingest-from/extensions/develop-your-extensions/data-sources/wmi-extensions
-scraped: 2026-02-25T21:30:24.337560
+scraped: 2026-02-26T21:33:35.602208
 ---
 
 # WMI data source
@@ -5846,7 +5814,7 @@ For more information, see [Setting Up a Fixed Port for WMIï»¿](https://docs.m
 ---
 title: Extension YAML file
 source: https://www.dynatrace.com/docs/ingest-from/extensions/develop-your-extensions/extension-yaml
-scraped: 2026-02-24T21:22:40.555548
+scraped: 2026-02-26T21:22:46.560504
 ---
 
 # Extension YAML file
@@ -6384,7 +6352,7 @@ The filtering logic is different for WMI extensions, where you pass the conditio
 ---
 title: Sign extensions
 source: https://www.dynatrace.com/docs/ingest-from/extensions/develop-your-extensions/sign-extensions
-scraped: 2026-02-24T21:22:56.014711
+scraped: 2026-02-26T21:29:52.702818
 ---
 
 # Sign extensions
@@ -6456,7 +6424,7 @@ Save the `root.pem` certificate file in the following location:
 ---
 title: Develop your own Extensions
 source: https://www.dynatrace.com/docs/ingest-from/extensions/develop-your-extensions
-scraped: 2026-02-25T21:18:49.051464
+scraped: 2026-02-26T21:33:09.828679
 ---
 
 # Develop your own Extensions
@@ -7192,7 +7160,7 @@ Type to filter
 ---
 title: Manage IBM Database extensions
 source: https://www.dynatrace.com/docs/ingest-from/extensions/supported-extensions/data-sources/sql/ibm-db
-scraped: 2026-02-25T21:30:16.045397
+scraped: 2026-02-26T21:25:10.335725
 ---
 
 # Manage IBM Database extensions
@@ -7375,7 +7343,7 @@ The extension activation wizard contains a dynamically updated JSON payload with
 ---
 title: Manage MySQL extensions
 source: https://www.dynatrace.com/docs/ingest-from/extensions/supported-extensions/data-sources/sql/mysql
-scraped: 2026-02-25T21:26:21.981577
+scraped: 2026-02-26T21:23:23.242416
 ---
 
 # Manage MySQL extensions
@@ -7469,7 +7437,7 @@ The extension activation wizard contains a dynamically updated JSON payload with
 ---
 title: Manage Oracle Database extensions
 source: https://www.dynatrace.com/docs/ingest-from/extensions/supported-extensions/data-sources/sql/oraclesql
-scraped: 2026-02-25T21:16:35.818031
+scraped: 2026-02-26T21:24:12.711193
 ---
 
 # Manage Oracle Database extensions
@@ -7671,7 +7639,7 @@ The extension activation wizard contains a dynamically updated JSON payload with
 ---
 title: Manage SAP Hana Database extensions
 source: https://www.dynatrace.com/docs/ingest-from/extensions/supported-extensions/data-sources/sql/sap-hana
-scraped: 2026-02-24T21:26:14.595119
+scraped: 2026-02-26T21:22:33.408851
 ---
 
 # Manage SAP Hana Database extensions
@@ -7782,7 +7750,7 @@ The extension activation wizard contains a dynamically updated JSON payload with
 ---
 title: Manage Snowflake Database extensions
 source: https://www.dynatrace.com/docs/ingest-from/extensions/supported-extensions/data-sources/sql/snowflake-sql
-scraped: 2026-02-24T21:30:30.423460
+scraped: 2026-02-26T21:22:51.683873
 ---
 
 # Manage Snowflake Database extensions
@@ -7880,7 +7848,7 @@ The extension activation wizard contains a dynamically updated JSON payload with
 ---
 title: Manage WMI extensions
 source: https://www.dynatrace.com/docs/ingest-from/extensions/supported-extensions/data-sources/wmi
-scraped: 2026-02-25T21:16:42.153161
+scraped: 2026-02-26T21:32:31.302437
 ---
 
 # Manage WMI extensions
@@ -8118,7 +8086,7 @@ With ![Extensions](https://dt-cdn.net/images/dynatrace-extensions-256-9cb05e0f55
 ---
 title: Extensions
 source: https://www.dynatrace.com/docs/ingest-from/extensions
-scraped: 2026-02-25T21:13:48.224447
+scraped: 2026-02-26T21:15:47.607394
 ---
 
 # Extensions
