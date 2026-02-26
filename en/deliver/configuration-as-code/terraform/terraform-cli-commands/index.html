@@ -25544,38 +25544,6 @@ It isn't intended to be used in conjunction with other options.</p>
 <h2 id="example-usage">Example usage<a class="headerlink" href="#example-usage" title="Permanent link">&para;</a></h2>
 <p>The table below describes various use cases for the Dynatrace-specific <code>export</code> command, as well example commands to achieve the desired outcome.
 For simplicity, only Linux examples are provided.</p>
-<p>Use case</p>
-<p>Example</p>
-<p>Export all configurations without data sources/dependencies.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>./terraform-provider-dynatrace -export
-</code></pre></div>
-<p>Export all configurations with data sources/dependencies and include commented IDs.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>./terraform-provider-dynatrace -export -ref -id
-</code></pre></div>
-<p>Export all configurations with data sources/dependencies including specified resources in the exclusion list.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>./terraform-provider-dynatrace -export -ref * dynatrace_document dynatrace_platform_slo
-</code></pre></div>
-<p>Export specific configuration.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>./terraform-provider-dynatrace -export dynatrace_document dynatrace_platform_slo
-</code></pre></div>
-<p>Export specific configurations and their dependencies.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>./terraform-provider-dynatrace -export -ref dynatrace_platform_slo dynatrace_automation_workflow
-</code></pre></div>
-<p>Export specific alerting profiles by their IDs.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>./terraform-provider-dynatrace -export -ref dynatrace_automation_workflow=4f5942d4-3450-40a8-818f-c5faeb3563d0 dynatrace_automation_workflow=9c4b75f1-9a64-4b44-a8e4-149154fd5325
-</code></pre></div>
-<p>Export multiple resources including dependencies.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>./terraform-provider-dynatrace -export -ref dynatrace_document dynatrace_automation_workflow=4f5942d4-3450-40a8-818f-c5faeb3563d0
-</code></pre></div>
-<p>Export all configurations and import them into the state.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>./terraform-provider-dynatrace -export -import-state
-</code></pre></div>
-<p>Export all service-level objectives and import them into the state.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>./terraform-provider-dynatrace -export -import-state dynatrace_platform_slo
-</code></pre></div>
-<p>Export all configurations except specified resources.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>./terraform-provider-dynatrace -export -ref -exclude dynatrace_platform_slo dynatrace_automation_workflow
-</code></pre></div>
 <h2 id="additional-information">Additional information<a class="headerlink" href="#additional-information" title="Permanent link">&para;</a></h2>
 <p>During a Terraform export, it's possible that certain files cannot be processed correctly.
 These files are moved to the following directories in the export folder, see <a href="/docs/deliver/configuration-as-code/terraform/terraform-cli-commands#export" title="This is a list of Terraform CLI commands.">Using the export utility</a>.

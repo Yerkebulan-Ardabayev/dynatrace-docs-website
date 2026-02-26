@@ -25479,7 +25479,7 @@
 <ul>
 <li>How-to guide</li>
 <li>7-min read</li>
-<li>Updated on Oct 07, 2025</li>
+<li>Updated on Feb 18, 2026</li>
 </ul>
 <p>This page describes how to enable and customize Session Replay for your Android apps.</p>
 <h2 id="full-session-replay">Full Session Replay<a class="headerlink" href="#full-session-replay" title="Permanent link">&para;</a></h2>
@@ -25697,8 +25697,8 @@
 <h4 id="mask-views-using-a-masking-tag">Mask views using a masking tag<a class="headerlink" href="#mask-views-using-a-masking-tag" title="Permanent link">&para;</a></h4>
 <p>You can also mask a view by adding the <code>data-dtrum-mask</code> masking tag to the view's <code>android:tag</code>. A view with this masking tag is always masked.</p>
 <h4 id="mask-jetpack-compose-composables">Mask Jetpack Compose composables<a class="headerlink" href="#mask-jetpack-compose-composables" title="Permanent link">&para;</a></h4>
-<p>Jetpack Compose provides manual masking functionality that allows you to control which composables are masked in Session Replay. To mask a composable, use the <code>dynatraceSessionReplayMasked</code> modifier.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>import com.dynatrace.android.api.dynatraceSessionReplayMasked
+<p>Jetpack Compose provides manual masking functionality that allows you to control which composables are masked in Session Replay. To mask a composable, use the <code>dtMask</code> modifier.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>import com.dynatrace.agent.compose.api.dtMask
 <a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
 <a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>
 <a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>
@@ -25722,7 +25722,7 @@
 <a id="__codelineno-6-22" name="__codelineno-6-22" href="#__codelineno-6-22"></a>
 <a id="__codelineno-6-23" name="__codelineno-6-23" href="#__codelineno-6-23"></a>
 <a id="__codelineno-6-24" name="__codelineno-6-24" href="#__codelineno-6-24"></a>
-<a id="__codelineno-6-25" name="__codelineno-6-25" href="#__codelineno-6-25"></a>modifier = Modifier.dynatraceSessionReplayMasked()
+<a id="__codelineno-6-25" name="__codelineno-6-25" href="#__codelineno-6-25"></a>modifier = Modifier.dtMask()
 <a id="__codelineno-6-26" name="__codelineno-6-26" href="#__codelineno-6-26"></a>
 <a id="__codelineno-6-27" name="__codelineno-6-27" href="#__codelineno-6-27"></a>
 <a id="__codelineno-6-28" name="__codelineno-6-28" href="#__codelineno-6-28"></a>

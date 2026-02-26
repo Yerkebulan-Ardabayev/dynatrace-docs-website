@@ -25483,16 +25483,6 @@
 </ul>
 <p>Dynatrace can automatically create a continuous <a href="/docs/observe/application-observability/services-classic/service-flow" title="Find out how Dynatrace can help you trace the sequence of service calls that are triggered by each service request in your environment.">service flow</a> for IBM MQ when the producer and consumer services use the same queue or topic name. If the producer and consumer services refer to different queue or topic names, IBM MQ configuration might be required to create a continuous service flow.</p>
 <p>Without IBM MQ configuration, Dynatrace can still trace all messages, but the service flow will be broken.</p>
-<p>Technology</p>
-<p>IBM MQ message</p>
-<p>IBM MQ configuration required</p>
-<p>z/OS Java .NET</p>
-<p><img alt="Applicable" src="https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg" title="Applicable" /></p>
-<p>IBM App Connect EnterpriseIBM Integration Bus</p>
-<p><code>MQRFH2.usr</code> folder not present</p>
-<p><code>MQRFH2.usr</code> folder present</p>
-<p><img alt="Applicable" src="https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg" title="Applicable" /></p>
-<p><img alt="Not applicable" src="https://dt-cdn.net/images/icon-red-cross-1f1142a5dc.svg" title="Not applicable" /></p>
 <p>IBM MQ continuous service flow example</p>
 <p><img alt="IBM MQ service flow" src="https://dt-cdn.net/images/ibm-mq-service-flow-1938-06750bfc7d.png" /></p>
 <p>IBM MQ distributed trace example</p>
@@ -25531,18 +25521,6 @@
 <p>To be able to use the API you need an access token with <strong>Read settings</strong> (<code>settings.read</code>) and <strong>Write settings</strong> (<code>settings.write</code>) scopes. To learn how to obtain it, see <a href="/docs/dynatrace-api/basics/dynatrace-api-authentication#create-token" title="Find out how to get authenticated to use the Dynatrace API.">Create an access token</a>.</p>
 <h2 id="configuration-items">Configuration items<a class="headerlink" href="#configuration-items" title="Permanent link">&para;</a></h2>
 <p>The table lists the available IBM MQ configuration items for queues and topics.</p>
-<p>Item</p>
-<p>Description</p>
-<p>Your action</p>
-<p>Queue manager</p>
-<p>Queue manager with its queues</p>
-<p>Define your queue managers, including alias queues, remote queues, and cluster queues within a single configuration item.</p>
-<p>z/OS Queue sharing group</p>
-<p>Group of queue managers that access the same shared queues</p>
-<p>Specify which queue managers and shared queues belong to a queue-sharing group within a single configuration item.</p>
-<p>z/OS IMS bridge</p>
-<p>The IBM MQ component that allows direct access to the IMS system</p>
-<p>Specify which queue managers and queues belong to an IMS bridge within a single configuration item.</p>
 <p>Follow the procedures below to create or update a configuration item. Note that the scope of these items is always an environment. Before starting, learn the format of the settings object by querying its schema via the <a href="/docs/dynatrace-api/environment-api/settings/schemas/get-schema" title="View a settings schema via the Dynatrace API.">GET a schema</a> call.</p>
 <p>Create a configuration item</p>
 <p>Update an existing configuration item</p>

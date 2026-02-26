@@ -25491,22 +25491,10 @@
 <li>BouncyCastle 2.0.0 (see <a href="https://csrc.nist.gov/projects/cryptographic-module-validation-program/certificate/4743">Certificate #4743ï»¿</a>)</li>
 </ul>
 <h2 id="activegate-purposes-compatibility">ActiveGate purposes compatibility<a class="headerlink" href="#activegate-purposes-compatibility" title="Permanent link">&para;</a></h2>
-<p>Purpose</p>
-<p>x86-64</p>
-<p>arm64</p>
-<p><a href="/docs/ingest-from/dynatrace-activegate/capabilities#functional_tbl" title="Learn the capabilities and uses of ActiveGate.">Routing-monitoring</a></p>
-<p><img alt="Applicable" src="https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg" title="Applicable" /></p>
-<p><img alt="Applicable" src="https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg" title="Applicable" /><a href="#fn-1-1-def">1</a></p>
-<p><a href="/docs/ingest-from/dynatrace-activegate/capabilities/synthetic-purpose" title="ActiveGates purposed for synthetic monitoring of internal and external resources from private Synthetic locations">Synthetic monitoring in a private location</a></p>
-<p><img alt="Applicable" src="https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg" title="Applicable" /><a href="#fn-1-2-def">2</a></p>
-<p><img alt="Not applicable" src="https://dt-cdn.net/images/icon-red-cross-1f1142a5dc.svg" title="Not applicable" /></p>
-<p><a href="/docs/ingest-from/dynatrace-activegate/capabilities/zremote-purpose" title="Learn about installing the zRemote module for z/OS monitoring.">z/OS monitoring</a></p>
-<p><img alt="Applicable" src="https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg" title="Applicable" /></p>
-<p><img alt="Not applicable" src="https://dt-cdn.net/images/icon-red-cross-1f1142a5dc.svg" title="Not applicable" /></p>
 <p>1</p>
 <p>excluding <a href="/docs/ingest-from/dynatrace-activegate/capabilities/routing-monitoring-purpose#extn" title="Learn about the routing and monitoring capabilities and uses of ActiveGate.">Extension Execution Controller module</a> (same as regular, non-FIPS ActiveGate).</p>
 <p>2</p>
-<p>refer to <a href="/docs/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/create-a-private-synthetic-location#fips-compliat-limitation" title="Learn how to create a private location for synthetic monitoring.">Requirements and limitations</a> for Synthetic FIPS compliance.</p>
+<p>refer to <a href="/docs/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/create-a-private-synthetic-location#fips-compliant-limitation" title="Learn how to create a private location for synthetic monitoring.">Requirements and limitations</a> for Synthetic FIPS compliance.</p>
 <h3 id="host-based-activegate-deployment">Host-based ActiveGate deployment<a class="headerlink" href="#host-based-activegate-deployment" title="Permanent link">&para;</a></h3>
 <p>FIPS-compliant mode can be enabled during ActiveGate installation. For details, see <a href="/docs/ingest-from/dynatrace-activegate/installation/linux/linux-customize-installation-for-activegate#fips-compliant-mode" title="Learn about the command-line parameters that you can use with ActiveGate on Linux.">Customize ActiveGate installation on Linux</a>.</p>
 <h4 id="requirements">Requirements<a class="headerlink" href="#requirements" title="Permanent link">&para;</a></h4>
@@ -25570,28 +25558,6 @@ In case there are multiple replicas configured, logs from a single pod will be r
 <p>To get logs from a specific pod, use the following command:
 <code>kubectl -n &lt;NAMESPACE&gt; logs pod/&lt;DYNAKUBE_NAME&gt;-activegate-&lt;REPLICA_NUMBER&gt;</code></p>
 <h2 id="supported-cipher-suites">Supported cipher suites<a class="headerlink" href="#supported-cipher-suites" title="Permanent link">&para;</a></h2>
-<p>Cipher suite</p>
-<p>TLS version</p>
-<p><a href="https://ciphersuite.info/cs/TLS_AES_256_GCM_SHA384"><code>TLS_AES_256_GCM_SHA384</code>ï»¿</a></p>
-<p>TLS1.3</p>
-<p><a href="https://ciphersuite.info/cs/TLS_AES_128_GCM_SHA256"><code>TLS_AES_128_GCM_SHA256</code>ï»¿</a></p>
-<p>TLS1.3</p>
-<p><a href="https://ciphersuite.info/cs/TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384"><code>TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384</code>ï»¿</a></p>
-<p>TLS1.2, TLS1.3</p>
-<p><a href="https://ciphersuite.info/cs/TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256"><code>TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256</code>ï»¿</a></p>
-<p>TLS1.2, TLS1.3</p>
-<p><a href="https://ciphersuite.info/cs/TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384"><code>TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384</code>ï»¿</a></p>
-<p>TLS1.2, TLS1.3</p>
-<p><a href="https://ciphersuite.info/cs/TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256"><code>TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256</code>ï»¿</a></p>
-<p>TLS1.2, TLS1.3</p>
-<p><a href="https://ciphersuite.info/cs/TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384"><code>TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384</code>ï»¿</a></p>
-<p>TLS1.2, TLS1.3</p>
-<p><a href="https://ciphersuite.info/cs/TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256"><code>TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256</code>ï»¿</a></p>
-<p>TLS1.2, TLS1.3</p>
-<p><a href="https://ciphersuite.info/cs/TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384"><code>TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384</code>ï»¿</a></p>
-<p>TLS1.2, TLS1.3</p>
-<p><a href="https://ciphersuite.info/cs/TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256"><code>TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256</code>ï»¿</a></p>
-<p>TLS1.2, TLS1.3</p>
 
 
 

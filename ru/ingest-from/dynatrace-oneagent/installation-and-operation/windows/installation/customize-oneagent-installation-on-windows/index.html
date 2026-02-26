@@ -25828,20 +25828,6 @@ For more information on command-line syntax, see <a href="#silent-installation">
 </code></pre></div>
 <p><strong>Default value</strong>: <code>npcap</code></p>
 <p><strong>Possible values:</strong></p>
-<p>Value</p>
-<p>Description</p>
-<p><code>npcap</code></p>
-<p><code>PCAP_DRIVER=npcap</code> installs the <code>Npcap</code> driver.</p>
-<p>This option uninstalls any installation of WinPcap or outdated Npcap previously installed by OneAgent. If you installed WinPcap or Npcap manually, however, you'll need to uninstall it yourself.</p>
-<p><code>winpcap</code></p>
-<p><code>PCAP_DRIVER=winpcap</code> installs the <code>WinPcap</code> driver.</p>
-<p>This option does <strong>NOT</strong> uninstall or overlay any existing installation of <code>Npcap</code> or <code>WinPcap</code>.</p>
-<p><code>auto</code></p>
-<p>Deprecated with OneAgent version 1.255+</p>
-<p><code>PCAP_DRIVER=auto</code> automatically determines which driver to install. This option does <strong>NOT</strong> uninstall or overlay any existing installation of <code>Npcap</code> or <code>WinPcap</code>. During installation, if no packet capture driver is found, <code>Npcap</code> is installed by default.</p>
-<p><code>disabled</code></p>
-<p>Available with OneAgent version 1.249+</p>
-<p><code>PCAP_DRIVER=disabled</code> disables the installation of any packet capture driver and disables the OneAgent network monitoring module. If any packet capture driver is already installed on the host, you'll need to uninstall manually.</p>
 <ul>
 <li>This parameter is not supported by the installer web UI.</li>
 <li>The value of this parameter persists through updates.</li>

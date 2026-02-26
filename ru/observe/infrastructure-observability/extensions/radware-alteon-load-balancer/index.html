@@ -25479,19 +25479,18 @@
 <ul>
 <li>Latest Dynatrace</li>
 <li>Extension</li>
-<li>Published Dec 15, 2025</li>
+<li>Updated on Feb 25, 2026</li>
 </ul>
-<p>Monitor your Radware Alteon Network Load Balancers through SNMP.</p>
+<p>Monitor your Radware Alteon Network Load Balancer devices and interfaces through SNMP.</p>
 <h2 id="get-started">Get started<a class="headerlink" href="#get-started" title="Permanent link">&para;</a></h2>
 <h3 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h3>
-<p>Monitor your Radware Alteon Network Load Balancer devices and interfaces through SNMP.</p>
 <p>This extension collects infrastructure metrics to monitor the health and performance of your Radware Alteon Load Balancer devices.</p>
 <p><img alt="radware-1" src="https://dt-cdn.net/images/radware-dashboard-resized-2107-7e41f877d2.png" /></p>
 <p><img alt="radware-2" src="https://dt-cdn.net/images/radware-device-resized-2085-dbb5255a5b.png" /></p>
 <h3 id="use-cases">Use cases<a class="headerlink" href="#use-cases" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Monitor important device metrics such as uptime, CPU and memory usage, as well as additional hardware status metrics for temperature, fan, and power supply.</li>
-<li>Monitor device interfaces to report metrics including bytes, discards, and errors in/out.</li>
+<li>Monitor device interfaces to report metrics including bytes, discards, and inbound and outbound errors.</li>
 <li>Collect additional device data, including virtual server utilization, HTTP and SSL statistics, throughput, and session counts. The full list of monitored metrics can be viewed under <strong>Feature Sets</strong>.</li>
 <li>Detect device anomalies and avoid outages.</li>
 </ul>
@@ -25527,10 +25526,486 @@
 <li>ALTEON-CHEETAH-SWITCH-MIB</li>
 <li>ALTEON-ROOT-MIB</li>
 </ul>
-<h3 id="licensing-and-costs">Licensing and costs<a class="headerlink" href="#licensing-and-costs" title="Permanent link">&para;</a></h3>
+<h3 id="licensing-and-cost">Licensing and cost<a class="headerlink" href="#licensing-and-cost" title="Permanent link">&para;</a></h3>
 <p>Calculations are based on the assumption that you monitor all metrics for every feature set every minute:</p>
 <p>DDUs: <code>(60 + (8 * Interfaces)) * 525.6 DDUs/year, per device</code></p>
 <p>DPS (Metric data points): <code>(60 + (8 * Interfaces)) * 525,600 metric data points/year, per device</code></p>
+<h2 id="feature-sets">Feature sets<a class="headerlink" href="#feature-sets" title="Permanent link">&para;</a></h2>
+<p>Software_Status_SP</p>
+<table>
+<thead>
+<tr>
+<th>Metric name</th>
+<th>Metric key</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SP CPU utilization</td>
+<td>com.dynatrace.extension.network_device.sp.cpu_usage</td>
+<td>SP CPU utilization</td>
+</tr>
+</tbody>
+</table>
+<p>Virtual_Server_Utilization_Virtual</p>
+<table>
+<thead>
+<tr>
+<th>Metric name</th>
+<th>Metric key</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Virtual server current sessions</td>
+<td>radware_alteon.slbstat.enh.vserver.currsessions</td>
+<td>The number of sessions that are currently handled by the virtual server.</td>
+</tr>
+<tr>
+<td>Virtual server total sessions</td>
+<td>radware_alteon.slbstat.enh.vserver.totalsessions</td>
+<td>The total number of sessions that are handled by the virtual server.</td>
+</tr>
+<tr>
+<td>Virtual server highest sessions handled</td>
+<td>radware_alteon.slbstat.enh.vserver.highestsessions</td>
+<td>The highest number of sessions that have been handled by the virtual server.</td>
+</tr>
+<tr>
+<td>Total octets received and transmitted by the virtual server</td>
+<td>radware_alteon.slbstat.enh.vserver.hc.octets</td>
+<td>The total octets received and transmitted by the virtual server.</td>
+</tr>
+<tr>
+<td>Sessions handled by the virtual server</td>
+<td>radware_alteon.slbstat.enh.vserver.sessions</td>
+<td>Number of Sessions handled by the virtual server per second.</td>
+</tr>
+<tr>
+<td>Real server runtime status per virtual server</td>
+<td>radware_alteon.slbstat.enh.vserver.real.status</td>
+<td>The runtime Real Server Status per Virtual service. (0)Up, (1)Down, (2)Admin-Down, (3)Warning, (4)Shutdown, (5)Error</td>
+</tr>
+<tr>
+<td>Backend server concurrent connections for virtual service</td>
+<td>radware_alteon.commng.enh.perservstats.servconn</td>
+<td>The number of concurrent backend server connections for virtual service.</td>
+</tr>
+<tr>
+<td>Virtual service client requests passed to AX</td>
+<td>radware_alteon.commng.enh.perservstats.clireq</td>
+<td>Number of client requests passed to AX for virtual service.</td>
+</tr>
+<tr>
+<td>Virtual service security policy peak bandwidth (secPolPerServBwPeak)</td>
+<td>radware_alteon.secpol.perserv.bw.peak</td>
+<td>Virtual service security policy stats - Bandwidth peak value.</td>
+</tr>
+<tr>
+<td>Virtual service security policy bandwidth ( secPolPerServBwCurVal)</td>
+<td>radware_alteon.secpol.perserv.bw.curval</td>
+<td>Virtual service security policy stats - Bandwidth current value.</td>
+</tr>
+<tr>
+<td>Virtual service security policy PPS current (secPolPerServPPSCurVal)</td>
+<td>radware_alteon.secpol.perserv.pps.curval</td>
+<td>Virtual service security policy stats - PPS current value.</td>
+</tr>
+<tr>
+<td>Virtual service security policy PPS peak (secPolPerServPPSPeak)</td>
+<td>radware_alteon.secpol.perserv.pps.peak</td>
+<td>Virtual service security policy stats - PPS peak value.</td>
+</tr>
+<tr>
+<td>Virtual service security policy CPS current (secPolPerServCPSCurVal)</td>
+<td>radware_alteon.secpol.perserv.cps.curval</td>
+<td>Virtual service security policy stats - CPS current value.</td>
+</tr>
+<tr>
+<td>Virtual service security policy CPS peak (secPolPerServCPSPeak)</td>
+<td>radware_alteon.secpol.perserv.cps.peak</td>
+<td>Virtual service security policy stats - CPS peak value.</td>
+</tr>
+<tr>
+<td>Virtual service security policy latency current (secPolPerServLatencyCurVal)</td>
+<td>radware_alteon.secpol.perserv.latency.curval</td>
+<td>Virtual service security policy stats - latency current value.</td>
+</tr>
+<tr>
+<td>Virtual service security policy latency peak (secPolPerServLatencyPeak)</td>
+<td>radware_alteon.secpol.perserv.latency.peak</td>
+<td>Virtual service security policy stats - latency peak value.</td>
+</tr>
+</tbody>
+</table>
+<p>Backend_Server_Utilization_Virtual</p>
+<table>
+<thead>
+<tr>
+<th>Metric name</th>
+<th>Metric key</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Real-server current sessions</td>
+<td>radware_alteon.slbstat.enh.rserver.currsessions</td>
+<td>Real-server current sessions.</td>
+</tr>
+<tr>
+<td>Real-server total sessions</td>
+<td>radware_alteon.slbstat.enh.rserver.totalsessions</td>
+<td>Real-server total sessions.</td>
+</tr>
+<tr>
+<td>Real-server highest sessions</td>
+<td>radware_alteon.slbstat.enh.rserver.highestsessions</td>
+<td>Real-server highest sessions.</td>
+</tr>
+<tr>
+<td>Real-server total rx/tx octets</td>
+<td>radware_alteon.slbstat.enh.rserver.hc.octets</td>
+<td>Real-server total rx/tx octets.</td>
+</tr>
+<tr>
+<td>Real server max concurrent connections</td>
+<td>radware_alteon.slbcur.cfg.realserver.maxconns</td>
+<td>The Maximum allowed number of concurrent connections per real server in the configuration.</td>
+</tr>
+<tr>
+<td>SP current memory</td>
+<td>radware_alteon.spmemusagestats.currentmemory</td>
+<td>The current memory of SP in kilobytes.</td>
+</tr>
+<tr>
+<td>Real-server group current sessions</td>
+<td>radware_alteon.slbstat.enh.group.currsessions</td>
+<td>The number of sessions that are currently handled by the real server group.</td>
+</tr>
+<tr>
+<td>Real-server group total sessions</td>
+<td>radware_alteon.slbstat.enh.group.totalsessions</td>
+<td>The total number of sessions that have been handled by the real server group.</td>
+</tr>
+<tr>
+<td>Real-server group highest sessions</td>
+<td>radware_alteon.slbstat.enh.group.highestsessions</td>
+<td>The highest sessions that have been handled by the real server group.</td>
+</tr>
+</tbody>
+</table>
+<p>Throughput_Physical_Virtual</p>
+<table>
+<thead>
+<tr>
+<th>Metric name</th>
+<th>Metric key</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Peak throughput of ports</td>
+<td>radware_alteon.peakthroughputusage.count</td>
+<td>Peak throughput of ports in bits per second.</td>
+</tr>
+<tr>
+<td>Current throughput of ports</td>
+<td>radware_alteon.curthroughputusage.count</td>
+<td>Current throughput of ports in bits per second.</td>
+</tr>
+</tbody>
+</table>
+<p>default</p>
+<table>
+<thead>
+<tr>
+<th>Metric name</th>
+<th>Metric key</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>â</td>
+<td>com.dynatrace.extension.network_device.sysuptime</td>
+<td>â</td>
+</tr>
+<tr>
+<td>â</td>
+<td>com.dynatrace.extension.network_device.cpu_usage</td>
+<td>â</td>
+</tr>
+<tr>
+<td>â</td>
+<td>com.dynatrace.extension.network_device.memory_total</td>
+<td>â</td>
+</tr>
+<tr>
+<td>â</td>
+<td>com.dynatrace.extension.network_device.memory_free</td>
+<td>â</td>
+</tr>
+<tr>
+<td>â</td>
+<td>com.dynatrace.extension.network_device.memory_used</td>
+<td>â</td>
+</tr>
+<tr>
+<td>â</td>
+<td>com.dynatrace.extension.network_device.if.status</td>
+<td>â</td>
+</tr>
+<tr>
+<td>â</td>
+<td>com.dynatrace.extension.network_device.if.bytes_in.count</td>
+<td>â</td>
+</tr>
+<tr>
+<td>â</td>
+<td>com.dynatrace.extension.network_device.if.bytes_out.count</td>
+<td>â</td>
+</tr>
+<tr>
+<td>â</td>
+<td>com.dynatrace.extension.network_device.if.in.discards.count</td>
+<td>â</td>
+</tr>
+<tr>
+<td>â</td>
+<td>com.dynatrace.extension.network_device.if.out.discards.count</td>
+<td>â</td>
+</tr>
+<tr>
+<td>â</td>
+<td>com.dynatrace.extension.network_device.if.in.errors.count</td>
+<td>â</td>
+</tr>
+<tr>
+<td>â</td>
+<td>com.dynatrace.extension.network_device.if.out.errors.count</td>
+<td>â</td>
+</tr>
+</tbody>
+</table>
+<p>Session_Table_Utilization_Virtual</p>
+<table>
+<thead>
+<tr>
+<th>Metric name</th>
+<th>Metric key</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Session table maximum entries</td>
+<td>radware_alteon.slbstat.maint.maximumsessions</td>
+<td>The maximum number entries in the session table.</td>
+</tr>
+<tr>
+<td>Ipv6 session count</td>
+<td>radware_alteon.slbstat.maint.ip6currsessions.count</td>
+<td>The number of sessions for ipv6.</td>
+</tr>
+<tr>
+<td>Curent sessions in session table</td>
+<td>radware_alteon.slbstat.maint.curbindings</td>
+<td>The current number of sessions in the session table.</td>
+</tr>
+</tbody>
+</table>
+<p>Hardware_Status_Physical</p>
+<table>
+<thead>
+<tr>
+<th>Metric name</th>
+<th>Metric key</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Temperature sensor status</td>
+<td>radware_alteon.temperature.status</td>
+<td>The status of the temperature sensor. ok(1), exceed(2)</td>
+</tr>
+<tr>
+<td>Temperature warning threshold</td>
+<td>radware_alteon.temperature.threshold.warning</td>
+<td>The temperature warning threshold</td>
+</tr>
+<tr>
+<td>Temperature shutdown threshold</td>
+<td>radware_alteon.temperature.threshold.shutdown</td>
+<td>The temperature shutdown threshold</td>
+</tr>
+<tr>
+<td>Hardware fan status</td>
+<td>radware_alteon.fan.status</td>
+<td>Hardware fan status. ok(1), fail(2), unplug(3)</td>
+</tr>
+<tr>
+<td>Powersupply status</td>
+<td>radware_alteon.powersupply.status</td>
+<td>Powersupply status. singlePowerSupplyOk(1), firstPowerSupplyFailed(2), secondPowerSupplyFailed(3), doublePowerSupplyOk(4), unknownPowerSupplyFailed(5)</td>
+</tr>
+</tbody>
+</table>
+<p>SSL_Statistics_Virtual</p>
+<table>
+<thead>
+<tr>
+<th>Metric name</th>
+<th>Metric key</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TCP sessions using SSL service</td>
+<td>radware_alteon.sslslbstat.cursessions</td>
+<td>The current number of different TCP sessions using SSL service.</td>
+</tr>
+<tr>
+<td>Total TCP sessions using SSL service</td>
+<td>radware_alteon.sslslbstat.totalsessions.count</td>
+<td>The total number of different TCP sessions using SSL service.</td>
+</tr>
+<tr>
+<td>TCP sessions using SSL service high water mark</td>
+<td>radware_alteon.sslslbstat.highestsessions.count</td>
+<td>The high water mark of current sessions of different TCP sessions using SSL service.</td>
+</tr>
+<tr>
+<td>SSL handshakes between clients and AAS per second</td>
+<td>radware_alteon.ssloff.newhandShake</td>
+<td>New SSL handshakes between clients and AAS per second.</td>
+</tr>
+<tr>
+<td>New SSL handshakes between Clients and AAS per second (sslOffPerEnhServNewhandShake)</td>
+<td>radware_alteon.ssloffper.enh.serv.newhandshake</td>
+<td>Number of New SSL handshakes between Clients and AAS per second for this virtual service.</td>
+</tr>
+<tr>
+<td>Number of expired SSL certificates per second for virtual service (sslOffPerEnhServExpiredCertificates)</td>
+<td>radware_alteon.ssloffper.enh.serv.expiredcertificates</td>
+<td>Number of expired SSL certificates per second for virtual service.</td>
+</tr>
+</tbody>
+</table>
+<p>Advanced interfaces</p>
+<table>
+<thead>
+<tr>
+<th>Metric name</th>
+<th>Metric key</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>â</td>
+<td>com.dynatrace.extension.network_device.if.lastchange</td>
+<td>â</td>
+</tr>
+</tbody>
+</table>
+<p>High_Availability_Physical</p>
+<table>
+<thead>
+<tr>
+<th>Metric name</th>
+<th>Metric key</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>High availability (HA) service group state</td>
+<td>radware_alteon.ha.group.state</td>
+<td>High availability (HA) service group state</td>
+</tr>
+<tr>
+<td>High availability (HA) switch state</td>
+<td>radware_alteon.ha.switch.state</td>
+<td>High availability (HA) switch state</td>
+</tr>
+<tr>
+<td>High availability (HA) mode</td>
+<td>radware_alteon.ha.curcfg.mode</td>
+<td>High availability (HA) mode</td>
+</tr>
+</tbody>
+</table>
+<p>Per_Device_HTTP_Statistics_Virtual</p>
+<table>
+<thead>
+<tr>
+<th>Metric name</th>
+<th>Metric key</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HTTP 2.0 connection count</td>
+<td>radware_alteon.httpstatsumm.http20connection.count</td>
+<td>HTTP 2.0 connection count.</td>
+</tr>
+<tr>
+<td>HTTP 1.1 connection count</td>
+<td>radware_alteon.httpstatsumm.http11connection.count</td>
+<td>HTTP 1.1 connection count.</td>
+</tr>
+<tr>
+<td>HTTP 1.0 connection count</td>
+<td>radware_alteon.httpstatsumm.http10connection.count</td>
+<td>HTTP 1.0 connection count.</td>
+</tr>
+<tr>
+<td>HTTP 2.0 connection peak count</td>
+<td>radware_alteon.httpstatsumm.http20connection.peak.count</td>
+<td>HTTP 2.0 connection peak count.</td>
+</tr>
+<tr>
+<td>HTTP 1.1 connection peak count</td>
+<td>radware_alteon.httpstatsumm.http11connection.peak.count</td>
+<td>HTTP 1.1 connection peak count.</td>
+</tr>
+<tr>
+<td>HTTP 1.0 connection peak count</td>
+<td>radware_alteon.httpstatsumm.http10connection.peak.count</td>
+<td>HTTP 1.0 connection peak count.</td>
+</tr>
+<tr>
+<td>HTTP 2.0 request count</td>
+<td>radware_alteon.httpstatsumm.http20connection.request.count</td>
+<td>HTTP 2.0 request count.</td>
+</tr>
+<tr>
+<td>HTTP 1.1 request count</td>
+<td>radware_alteon.httpstatsumm.http11connection.request.count</td>
+<td>HTTP 1.1 request count.</td>
+</tr>
+<tr>
+<td>HTTP 1.0 request count</td>
+<td>radware_alteon.httpstatsumm.http10connection.request.count</td>
+<td>HTTP 1.0 request count.</td>
+</tr>
+<tr>
+<td>HTTP transactions per second</td>
+<td>radware_alteon.httptranssumm.trans.rate</td>
+<td>HTTP transactions per second.</td>
+</tr>
+</tbody>
+</table>
+<p>[<img alt="Hub" src="https://dt-cdn.net/images/hub-512-82db3c583e.png" title="Hub" /></p>
+<h3 id="explore-in-dynatrace-hub">Explore in Dynatrace Hub<a class="headerlink" href="#explore-in-dynatrace-hub" title="Permanent link">&para;</a></h3>
+<p>Monitor your Radware Alteon Network Load Balancers through SNMP.](https://www.dynatrace.com/hub/detail/radware-alteon-load-balancer/)</p>
 
 
 

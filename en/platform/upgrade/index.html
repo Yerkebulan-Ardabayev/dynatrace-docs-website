@@ -25511,39 +25511,6 @@
 :   Control access to monitoring data based on permission-relevant fields and the newly introduced security context.</p>
 <p>While management zones are a very versatile tool for setting up complex permissions, this flexibility also turned out to be a bottleneck in large enterprise environments that store large amounts of data. To successfully use management zones, the ingested data needs to be related to a monitored entity. Data access management with Grail is based on data, data type, and data organization. Security policies can be defined to allow access only to specific data even without any entity relation.</p>
 <p>Out-of-the-box permission-relevant fields can be used in most cases for access control. Additionally, we've added the <code>dt.security_context</code> field, which is reserved for environment-specific details. All Dynatrace components will ensure that these table-relevant permission fields are available on each record (event, log, span) or metric. This allows for a consistent permission concept for the entire environment.</p>
-<p>Field name</p>
-<p>IAM condition</p>
-<p>Supported IAM tables</p>
-<p><code>event.kind</code></p>
-<p><code>storage:event.kind</code></p>
-<p><code>events</code>, <code>bizevents</code>, <code>system</code></p>
-<p><code>event.type</code></p>
-<p><code>storage:event.type</code></p>
-<p><code>events</code>, <code>bizevents</code>, <code>system</code></p>
-<p><code>event.provider</code></p>
-<p><code>storage:event.provider</code></p>
-<p><code>events</code>, <code>bizevents</code>, <code>system</code></p>
-<p><code>k8s.namespace.name</code></p>
-<p><code>storage:k8s.namespace.name</code></p>
-<p><code>events</code>, <code>bizevents</code>, <code>logs</code>, <code>metrics</code>, <code>spans</code></p>
-<p><code>k8s.cluster.name</code></p>
-<p><code>storage:k8s.cluster.name</code></p>
-<p><code>events</code>, <code>bizevents</code>, <code>logs</code>, <code>metrics</code>, <code>spans</code></p>
-<p><code>host.name</code></p>
-<p><code>storage:host.name</code></p>
-<p><code>events</code>, <code>bizevents</code>, <code>logs</code>, <code>metrics</code>, <code>spans</code></p>
-<p><code>dt.host_group.id</code></p>
-<p><code>storage:dt.host_group.id</code></p>
-<p><code>events</code>, <code>bizevents</code>, <code>logs</code>, <code>metrics</code>, <code>spans</code></p>
-<p><code>metric.key</code></p>
-<p><code>storage:metric.key</code></p>
-<p><code>metrics</code></p>
-<p><code>log.source</code></p>
-<p><code>storage:log.source</code></p>
-<p><code>logs</code></p>
-<p><code>dt.security_context</code></p>
-<p><code>storage:dt.security_context</code></p>
-<p><code>events</code>, <code>bizevents</code>, <code>system</code>, <code>logs</code>, <code>metrics</code>, <code>spans</code>, <code>entities</code></p>
 <p>For more information, see <a href="/docs/manage/identity-access-management" title="Configure users, groups and permissions.">Identity and access management (IAM)</a>.</p>
 <h2 id="data-in-grail">Data in Grail<a class="headerlink" href="#data-in-grail" title="Permanent link">&para;</a></h2>
 <p>The <a href="/docs/platform/grail/organize-data" title="Insights on the Grail data model consisting of buckets, tables, and views.">Grail data model</a> consists of Grail buckets, tables, and views.</p>

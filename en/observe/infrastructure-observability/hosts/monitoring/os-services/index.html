@@ -25747,12 +25747,6 @@ Also, <code>Auto-start Windows OS Services</code> and <code>Auto-start Linux OS 
 <li><code>$or($eq(enabled),$eq(disabled))</code> - Matches services that are either enabled or disabled.</li>
 </ul>
 <p>Use one of the following values as a parameter for this condition:</p>
-<p><code>enabled</code>, <code>enabled-runtime</code></p>
-<p>The service is marked as ready for startup.</p>
-<p><code>static</code></p>
-<p>The unit file is not enabled and has no provisions for enabling in the install unit file section. Static units are installed as dependencies and can only be masked, but are not always executed. They will be executed only if another unit depends on them or if they're manually started.</p>
-<p><code>disabled</code></p>
-<p>The unit file is not enabled, but it contains an install section with installation instructions.</p>
 <ol>
 <li>Add custom properties</li>
 </ol>

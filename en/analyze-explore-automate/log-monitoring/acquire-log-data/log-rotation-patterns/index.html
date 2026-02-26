@@ -25557,14 +25557,6 @@ or<br />
 </ul>
 <h2 id="log-rotation-limits">Log rotation limits<a class="headerlink" href="#log-rotation-limits" title="Permanent link">&para;</a></h2>
 <p>Scenarios that are not supported in the rotated log monitoring process include:</p>
-<p>Type</p>
-<p>Description</p>
-<p>Rotated log generation with a directory change</p>
-<p>The potential consequence is the creation of duplicates and/or incomplete logs.</p>
-<p>Rotated log generation with immediate compression</p>
-<p>If a rotation criterion is met (for example, the required file size is reached), the file is moved to another location and immediately compressed. Example: <code>/var/log/application.log -&gt; /var/log/application.log.1.gz -&gt; /var/log/application.log.2.gz -&gt; /var/log/application.log.3.gz</code>. This process might again lead to incomplete log ingest. There should be at least one uncompressed rotated file.</p>
-<p>Rotated log generation with queue logic</p>
-<p>The oldest log records are removed whenever new content is added to a file, resulting in a relatively constant log file size. This scenario can be easily replaced with a supported rotation scheme by, for example, starting a new file when the current file reaches a predefined size.</p>
 
 
 

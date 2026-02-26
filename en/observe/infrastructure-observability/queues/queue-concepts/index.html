@@ -25493,21 +25493,6 @@
 <h2 id="queue-entity-types-queues-and-topics">Queue entity types: queues and topics<a class="headerlink" href="#queue-entity-types-queues-and-topics" title="Permanent link">&para;</a></h2>
 <p>OneAgent automatically detects queues and topics when monitored applications interact with them by instrumenting compatible messaging clients. When queues and topics aren't used by applications, OneAgent can't access them even if they're available on the messaging server. To check the compatible clients, see <a href="/docs/ingest-from/technology-support" title="Find technical details related to Dynatrace support for specific platforms and development frameworks.">Technology support</a>.</p>
 <p>Dynatrace creates <strong>Queue</strong> entities for all detected queues and topics that are part of distributed traces. These entities are shown in the <strong>Queues and topics</strong> table on the <strong>Queues</strong> page.</p>
-<p>Entity</p>
-<p>Type</p>
-<p>Naming schema</p>
-<p>Queue</p>
-<p>Queue</p>
-<p><code>&lt;queue-name&gt;</code></p>
-<p>Queue</p>
-<p>Topic</p>
-<p><code>&lt;topic-name&gt;</code></p>
-<p>Queue</p>
-<p>IBM MQ queue</p>
-<p><code>&lt;queue-manager-name&gt;.&lt;queue-name&gt;</code></p>
-<p>Queue</p>
-<p>IBM MQ topic</p>
-<p><code>&lt;queue-manager-name&gt;.&lt;topic-name&gt;</code></p>
 <p>Limitation</p>
 <p>Dynatrace extensions can detect queues and topics that are available on the messaging server, but they don't result in <strong>Queue</strong> entities in Dynatrace. Hence, they aren't visible in the <strong>Queues and topics</strong> table. Dynatrace extensions can only add technology-specific metrics to entities created by OneAgent.</p>
 <h2 id="messaging-services">Messaging services<a class="headerlink" href="#messaging-services" title="Permanent link">&para;</a></h2>
@@ -25524,16 +25509,6 @@
 <li>In a JMS-based application (Java message service), there can be also a synchronous consumer service. In this scenario, a client can request the next message from a <code>MessageConsumer</code> synchronously by using one of its <a href="https://docs.oracle.com/javaee/7/api/javax/jms/MessageConsumer.html">receive methodsï»¿</a> (for example, the client can poll or wait for the next message).</li>
 </ul>
 <p>To provide you with a continuous view of service flows, Dynatrace uses the following identifiers to trace messages across queues and topics</p>
-<p>Identifier</p>
-<p>Type</p>
-<p><code>traceparent</code> and <code>tracestate</code></p>
-<p>HTTP request header</p>
-<p><code>x-dynatrace</code></p>
-<p>Custom HTTP header</p>
-<p><code>dtdTraceTagInfo</code></p>
-<p>Custom message property</p>
-<p>Unique key (generated based on message properties)</p>
-<p>-</p>
 <h3 id="listener-services">Listener services<a class="headerlink" href="#listener-services" title="Permanent link">&para;</a></h3>
 <p>A listener service, or queue listener service, represents your queue listener or topic listener. It counts how many messages have been dequeued, but it doesn't give you insight into the message processing itself.</p>
 <p>Dynatrace automatically detects an event-based message queue handler based on its class name and creates a queue listener service for it. A listener service is always followed by a consumer service, which gives you insight into the message processing details.</p>

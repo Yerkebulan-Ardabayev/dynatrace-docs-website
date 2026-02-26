@@ -25789,64 +25789,6 @@ For more information, see <a href="https://dt-url.net/cl038gj">Route logs to sup
 <h3 id="step-2-configure-parameter-values">Step 2 Configure parameter values<a class="headerlink" href="#step-2-configure-parameter-values" title="Permanent link">&para;</a></h3>
 <p>The Helm deployment package contains a <code>values.yaml</code> file with the necessary configuration for this deployment. Go to <code>helm-deployment-package/dynatrace-gcp-monitor</code>and edit the <code>values.yaml</code> file, setting the required and optional parameter values as follows.</p>
 <p>You might want to store this file somewhere for future updates, since it will be needed in case of redeployments. Also, keep in mind that its schema can change. In such case, you should use the new file and only copy over the parameter values.</p>
-<p><strong>Parameter name</strong></p>
-<p><strong>Description</strong></p>
-<p><strong>Default value</strong></p>
-<p><code>gcpProjectId</code></p>
-<p>Required The ID of the Google Cloud project you've selected for deployment.</p>
-<p>Your current project ID</p>
-<p><code>deploymentType</code></p>
-<p>Required Set to <code>logs</code>.</p>
-<p><code>all</code></p>
-<p><code>dynatraceAccessKey</code></p>
-<p>Required Your <a href="/docs/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens#create-api-token" title="Learn the concept of an access token and its scopes.">Dynatrace API token</a> with the <a href="/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/deploy-k8#api" title="Set up log and metric monitoring for GCP services on a new GKE Autopilot cluster.">required permissions</a>.</p>
-<p><code>dynatraceAccessKeySecretName</code></p>
-<p>Optional You can specify the key to fetch the endpoint from Google Cloud Secret Manager, instead of using <code>dynatraceAccessKey</code>.</p>
-<p><code>dynatraceUrlSecretName</code></p>
-<p>Optional You can specify the key to fetch the endpoint from Google Cloud Secret Manager, instead of using <code>dynatraceUrl</code>.</p>
-<p><code>dtSecurityContext</code></p>
-<p>Optional Assign the attribute value used for data segmentation, analysis, and permission mapping within the Dynatrace platform. Refer to <a href="/docs/manage/identity-access-management/use-cases/access-security-context" title="Grant access to entities with security context">Grant access to entities with security context</a> for more information. If left empty, the value of <code>gcpProjectId</code> will be assigned automatically.</p>
-<p>Value of <code>gcpProjectId</code></p>
-<p><code>dynatraceUrl</code></p>
-<p>Required For SaaS log ingestion, it's your environment URL (<code>https://&lt;your-environment-id&gt;.live.dynatrace.com</code>).</p>
-<p><code>logsSubscriptionId</code></p>
-<p>Required The ID of your log Sink Pub/Sub subscription. For details, see <a href="/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/deploy-k8#pubsub" title="Set up log and metric monitoring for GCP services on a new GKE Autopilot cluster.">Configure log export</a>.</p>
-<p><code>requireValidCertificate</code></p>
-<p>Optional If set to <code>true</code>, Dynatrace requires the SSL certificate of your Dynatrace environment.<br />
-For SaaS log ingestion, we recommend leaving the default value.</p>
-<p><code>true</code></p>
-<p><code>selfMonitoringEnabled</code></p>
-<p>Optional Send custom metrics to Google Cloud to quickly diagnose if <code>dynatrace-gcp-monitor</code> processes and sends logs to Dynatrace properly.For details, see <a href="/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/deploy-k8/self-monitoring-gcp" title="Determine if your self-monitoring function is properly processing and sending logs to Dynatrace.">Self-monitoring metrics for the Dynatrace Google Cloud integration</a>.</p>
-<p><code>false</code></p>
-<p><code>serviceAccount</code></p>
-<p>Optional Name of the service account to be created.</p>
-<p><code>dockerImage</code></p>
-<p>OptionalDynatrace Google Cloud Monitor Docker image. We recommend using the default value, but you can adapt it if needed.</p>
-<p><code>dynatrace/dynatrace-gcp-monitor:v1-latest</code></p>
-<p><code>logIngestContentMaxLength</code></p>
-<p>Optional The maximum content length of a log event. Should be less than or equal to the setting on your Dynatrace environment.</p>
-<p><code>8192</code></p>
-<p><code>logIngestAttributeValueMaxLength</code></p>
-<p>Optional The maximum length of the log event attribute value. If it exceeds the server limit, content will be truncated.</p>
-<p><code>250</code></p>
-<p><code>logIngestRequestMaxEvents</code></p>
-<p>Optional The maximum number of log events in a single payload to the logs ingestion endpoint. If it exceeds the server limit, payload will be rejected with code <code>413</code>.</p>
-<p><code>5000</code></p>
-<p><code>logIngestRequestMaxSize</code></p>
-<p>Optional The maximum size in bytes of a single payload to the logs ingestion endpoint. If it exceeds the server limit, payload will be rejected with code <code>413</code>.</p>
-<p><code>1048576</code></p>
-<p><code>logIngestEventMaxAgeSeconds</code></p>
-<p>Optional Determines the maximum age of a forwarded log event. Should be less than or equal to the setting on your Dynatrace environment.</p>
-<p><code>86400</code></p>
-<p><code>clusterIpv4Cidr</code></p>
-<p>Optional Set the IP address range for the pods in this cluster in CIDR notation, if you want to use a custom range.</p>
-<p><code>servicesIpv4Cidr</code></p>
-<p>Optional Set the IP range for the services IPs. It can be specified as a netmask size or as in the CIDR notion.</p>
-<p><code>useCustomMasterCidr</code></p>
-<p>Optional If set to <code>true</code>, you can specify the IPv4 CIDR range to use for the master network.</p>
-<p><code>false</code></p>
-<p><code>masterIpv4Cidr</code></p>
-<p>Optional IPv4 CIDR range to use for the master network. Requires the <code>useCustomMasterCidr</code> value to be true.</p>
 <p>For DDU consumptiom information, see <a href="#ddu">Monitoring consumption</a>.</p>
 <h3 id="step-3-connect-your-kubernetes-cluster">Step 3 Connect your Kubernetes cluster<a class="headerlink" href="#step-3-connect-your-kubernetes-cluster" title="Permanent link">&para;</a></h3>
 <ul>
@@ -26020,28 +25962,6 @@ For SaaS log ingestion, we recommend leaving the default value.</p>
 <h2 id="scaling-guide-for-logs">Scaling guide for logs<a class="headerlink" href="#scaling-guide-for-logs" title="Permanent link">&para;</a></h2>
 <p>The default container with 1.25vCPU and 1Gi (with default configuration) can handle 8 GB of log throughput per hour. Achieving more throughput requires allocating more resources to the container (scale up), increasing the number of container replicas (scale out), and changing configuration numbers to use allocated resources efficiently. All config variables can be found and changed in <code>dynatrace-gcp-monitor-config</code>.</p>
 <p>The following table presents tested configuration and achieved throughput with scaled up&amp;out containers:</p>
-<p>Achieved throughput</p>
-<p>Machine resources</p>
-<p>Replica sets</p>
-<p>Config variable values</p>
-<p>~8MB/s =&gt; ~480MB/min</p>
-<p>4vCPU 4Gi RAM</p>
-<p>1</p>
-<p><code>PARALLEL_PROCESSES=4</code>,<br />
-<code>NUMBER_OF_CONCURRENT_MESSAGE_PULL_COROUTINES = 30</code>,<br />
-<code>NUMBER_OF_CONCURRENT_PUSH_COROUTINES=20</code></p>
-<p>~25MB/s =&gt; ~1.5GB/min =&gt; ~2TB/day</p>
-<p>4vCPU 4Gi RAM</p>
-<p>4</p>
-<p><code>PARALLEL_PROCESSES=4</code>,<br />
-<code>NUMBER_OF_CONCURRENT_MESSAGE_PULL_COROUTINES = 30</code>,<br />
-<code>NUMBER_OF_CONCURRENT_PUSH_COROUTINES=20</code></p>
-<p>~46MB/s =&gt; ~2.7GB/min =&gt; ~4TB/day</p>
-<p>4vCPU 4Gi RAM</p>
-<p>6</p>
-<p><code>PARALLEL_PROCESSES=4</code>,<br />
-<code>NUMBER_OF_CONCURRENT_MESSAGE_PULL_COROUTINES = 30</code>,<br />
-<code>NUMBER_OF_CONCURRENT_PUSH_COROUTINES=20</code></p>
 <h2 id="autoscaling-guide-for-logs">Autoscaling guide for logs<a class="headerlink" href="#autoscaling-guide-for-logs" title="Permanent link">&para;</a></h2>
 <p>Autoscaling works only for <code>logs</code> type of deployment, not <code>all</code>.</p>
 <p>We recommend manually scaling the container to have a 4vCPU 4Gi machine and then enabling autoscaling.</p>

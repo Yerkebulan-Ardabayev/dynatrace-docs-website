@@ -25500,48 +25500,6 @@
 <p>You can control logs from Kubernetes ingestion with log ingest rules in Dynatrace. You can configure these rules at the Kubernetes cluster level to allow cluster-specific log ingestion. The rules use matchers for Kubernetes metadata and other common log entry attributes to determine which logs are to be ingested.
 Standard log processing features from OneAgent, including <a href="/docs/analyze-explore-automate/log-monitoring/methods-of-masking-sensitive-data" title="Choose the optimal method to mask your sensitive data.">sensitive data masking</a>, <a href="/docs/analyze-explore-automate/log-monitoring/log-monitoring-configuration/timestamp-configuration" title="Define log monitoring rules that control log data timestamps.">timestamp configuration</a>, and <a href="/docs/analyze-explore-automate/log-monitoring/acquire-log-data/lm-log-data-transformation" title="Generic log ingestion automatically transforms log data into output values for the loglevel attribute.">automatic enrichment</a> of log records, are also available and enabled here.</p>
 <p>Use the following recommended matching attributes when configuring log ingestion from Kubernetes.</p>
-<p>Attribute</p>
-<p>Description</p>
-<p>Search dropdown logic</p>
-<p><strong>Kubernetes namespace name</strong></p>
-<p>Matching is based on the name of the Kubernetes namespace.</p>
-<p>Attributes visible in the last 90 days are listed.</p>
-<p><strong>Kubernetes container name</strong></p>
-<p>Matching is based on the name of the Kubernetes container.</p>
-<p>Attributes visible in the last 90 days are listed.</p>
-<p><strong>Kubernetes deployment name</strong></p>
-<p>Matching is based on the name of the Kubernetes workload.<a href="#fn-1-1-def">1</a></p>
-<p>Attributes visible in the last 90 days are listed.</p>
-<p><strong>Kubernetes pod annotation</strong></p>
-<p>Matching is based on any of the selected pod annotations. The correct format is <code>key=value</code>.</p>
-<p>Can be entered manually.</p>
-<p><strong>Kubernetes pod label</strong></p>
-<p>Matching is based on any of the selected pod labels. The correct format is <code>key=value</code>.</p>
-<p>Can be entered manually.</p>
-<p><strong>Kubernetes workload name</strong></p>
-<p>Matching is based on any of the selected workload names.</p>
-<p>Can be entered manually.</p>
-<p><strong>Kubernetes workload kind</strong></p>
-<p>Matching is based on any of the selected workload kinds.</p>
-<p>Can be entered manually.</p>
-<p><strong>Log content</strong></p>
-<p>Matching is based on the content of the log; wildcards are supported in the form of an asterisk.</p>
-<p>Can be entered manually. No time limit.</p>
-<p><strong>Log record level</strong><a href="#fn-1-2-def">2</a></p>
-<p>Matching is based on the level of the log record. It supports the following values: <code>alert</code>, <code>critical</code>, <code>debug</code>, <code>emergency</code>, <code>error</code>, <code>info</code>, <code>none</code>, <code>notice</code>, <code>severe</code>, <code>warn</code>.</p>
-<p>Can be entered manually. No time limit.</p>
-<p><strong>Log source origin</strong></p>
-<p>Matching is based on the detector was used by OneAgent to discover the log file.</p>
-<p>Can be entered manually. No time limit.</p>
-<p><strong>Process group</strong></p>
-<p>Matching is based on the process group ID. It also requires running a OneAgent on the node.</p>
-<p>Entities visible in the last 3 days are listed.</p>
-<p><strong>Process technology</strong></p>
-<p>Matching is based on the technology name. It also requires running a OneAgent on the node.</p>
-<p>Can be entered manually. No time limit.</p>
-<p><strong>DT entity container group ID</strong></p>
-<p>Matching is based on any of the selected container groups. It also requires running a OneAgent on the node.</p>
-<p>Can be entered manually. No time limit.</p>
 <p>1</p>
 <p>Subject to change in the future versions of OneAgent. Separate matchers for each workload kind would be available. We recommend using the Kubernetes workload name and Kubernetes workload kind instead.</p>
 <p>2</p>
@@ -25549,45 +25507,11 @@ Standard log processing features from OneAgent, including <a href="/docs/analyze
 <h2 id="configure-log-ingest-from-kubernetes">Configure log ingest from Kubernetes<a class="headerlink" href="#configure-log-ingest-from-kubernetes" title="Permanent link">&para;</a></h2>
 <p>Ingesting logs from Kubernetes requires log ingest rules definition. The configuration is based on a hierarchy of rules that use matchers for Kubernetes and other common log entry attributes. These rules determine which log files, among those detected by OneAgent are ingested.</p>
 <p>Use the following recommended matching attributes when configuring log ingestion from Kubernetes.</p>
-<p>Attribute</p>
-<p>Description</p>
-<p>Search dropdown logic</p>
-<p><strong>K8s namespace name</strong></p>
-<p>Matching is based on the name of the Kubernetes namespace.</p>
-<p>Attributes visible in the last 90 days are listed.</p>
-<p><strong>K8s container name</strong></p>
-<p>Matching is based on the name of the Kubernetes container.</p>
-<p>Attributes visible in the last 90 days are listed.</p>
-<p><strong>K8s deployment name</strong></p>
-<p>Matching is based on the name of the Kubernetes pod.</p>
-<p>Subject to change in the future versions of log agent. Separate matchers for each workload kind would be available. We recommend using the K8s container name instead.</p>
-<p>Attributes visible in the last 90 days are listed.</p>
-<p><strong>Log content</strong></p>
-<p>Matching is based on the content of the log; wildcards are supported in the form of an asterisk.</p>
-<p>Can be entered manually. No time limit.</p>
-<p><strong>Log record level</strong><a href="#fn-2-1-def">1</a><a href="#fn-2-2-def">2</a></p>
-<p>Matching is based on the level of the log record. It supports the following values: <code>alert</code>, <code>critical</code>, <code>debug</code>, <code>emergency</code>, <code>error</code>, <code>info</code>, <code>none</code>, <code>notice</code>, <code>severe</code>, <code>warn</code>.</p>
-<p>Can be entered manually. No time limit.</p>
 <p>1</p>
 <p>Log record level attribute, transformed by OneAgent, is different than the log <code>status</code> attribute transformed by the Dynatrace server. Learn more by accessing the <a href="/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-log-data-transformation-oa#transform-all-types-of-logs" title="Generic log ingestion automatically transforms log data into output values for the loglevel attribute.">Automatic log enrichment</a> page.</p>
 <p>2</p>
 <p>The minimum required OneAgent version is 1.273.</p>
 <p>You can also use the following general matching attributes when configuring log ingestion from Kubernetes.</p>
-<p>Attribute</p>
-<p>Description</p>
-<p>Search dropdown logic</p>
-<p><strong>Container name</strong></p>
-<p>Matching is based on the name of the container. It is used for non-orchestrated container environments, for example Docker.</p>
-<p>Attributes visible in the last 90 days are listed.</p>
-<p><strong>Log source</strong></p>
-<p>Matching is based on a <strong>Log source</strong> attribute. In case of Kubernetes logs, it is always set to <strong>Container Output</strong>; wildcards are supported in form of an asterisk.</p>
-<p>Can be entered manually. No time limit.</p>
-<p><strong>Process group</strong></p>
-<p>Matching is based on the process group ID.</p>
-<p>Entities visible in the last 3 days are listed.</p>
-<p><strong>Process technology</strong></p>
-<p>Matching is based on the technology name.</p>
-<p>Can be entered manually. No time limit.</p>
 <h3 id="log-ingest-rule-hierarchy">Log ingest rule hierarchy<a class="headerlink" href="#log-ingest-rule-hierarchy" title="Permanent link">&para;</a></h3>
 <p>Log ingest rules can be defined on environment scope but also on host or host group. The matching hierarchy is as follows:</p>
 <ol>

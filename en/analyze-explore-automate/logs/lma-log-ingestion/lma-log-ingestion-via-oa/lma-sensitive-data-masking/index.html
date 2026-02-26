@@ -25502,52 +25502,6 @@
 <li>Select <strong>Add condition</strong> to create a specific match for this rule and narrow down the scope for that rule. You can include multiple matchers in one rule. For example, the masking rule can be applied to logs from a specific container, namespace, or log source.</li>
 <li>Select the matching attribute.</li>
 </ol>
-<p>Attribute</p>
-<p>Description</p>
-<p>Search dropdown logic</p>
-<p><strong>Process group</strong></p>
-<p>Matching is based on the process group ID.</p>
-<p>Attributes visible in the last 3 days are listed.</p>
-<p><strong>Log source</strong></p>
-<p>Matching is based on a log path; wildcards are supported in form of an asterisk. Autocompletion for <strong>Log source</strong> is only partial. You can either choose one of the predefined values or enter your log source.</p>
-<p>Can be entered manually. No time limit.</p>
-<p><strong>Log source origin</strong><a href="#fn-1-1-def">1</a></p>
-<p>Matching is based on the detector was used by the log agent to discover the log file.</p>
-<p>Can be entered manually. No time limit.</p>
-<p><strong>Host tag</strong><a href="#fn-1-2-def">2</a><a href="#fn-1-3-def">3</a></p>
-<p>Matching is based on the host tag. The attribute only supports the tags set with the <a href="/docs/observe/infrastructure-observability/hosts/configuration/define-tags-and-metadata-for-hosts" title="Learn how to tag and set additional properties for a monitored host.">OneAgent command line tool</a> or with the <a href="/docs/ingest-from/bulk-configuration" title="Perform OneAgent and ActiveGate configuration on hosts from the Deployment status page or at scale using the Dynatrace API.">Remote configuration</a> in a <code>key=value</code> pair format. They can be distinguished by the <code>[Environment]</code> prefix on the UI, but you should use the value without the prefix.
-   Multiple tags can be specified in a single matcher, but each tag needs to have the same key, such as <code>logscope=frontend</code>, <code>logscope=backend</code>.</p>
-<p>Can be entered manually. No time limit.</p>
-<p><strong>Kubernetes container name</strong></p>
-<p>Matching is based on the name of the Kubernetes container.</p>
-<p>Attributes visible in the last 90 days are listed.</p>
-<p><strong>Kubernetes namespace name</strong></p>
-<p>Matching is based on the name of the Kubernetes namespace.</p>
-<p>Attributes visible in the last 90 days are listed.</p>
-<p><strong>Kubernetes deployment name</strong></p>
-<p>Matching is based on the name of the Kubernetes deployment.</p>
-<p>Attributes visible in the last 90 days are listed.</p>
-<p><strong>Kubernetes pod annotation</strong><a href="#fn-1-4-def">4</a><a href="#fn-1-5-def">5</a></p>
-<p>Matching is based on any of the selected pod annotations. The correct format is <code>key=value</code>. It requires either the OneAgent Log Module managed by Dynatrace Operator or the <strong>Collect all container</strong> logs feature flag to be enabled.</p>
-<p>Can be entered manually.</p>
-<p><strong>Kubernetes pod label</strong><a href="#fn-1-4-def">4</a><a href="#fn-1-5-def">5</a></p>
-<p>Matching is based on any of the selected pod labels. The correct format is <code>key=value</code>. It requires either the OneAgent Log Module managed by Dynatrace Operator or the <strong>Collect all container logs</strong> feature flag to be enabled.</p>
-<p>Can be entered manually.</p>
-<p><strong>Kubernetes workload name</strong><a href="#fn-1-4-def">4</a><a href="#fn-1-5-def">5</a></p>
-<p>Matching is based on any of the selected workload names. It requires either the OneAgent Log Module managed by Dynatrace Operator or the <strong>Collect all container logs</strong> feature flag to be enabled.</p>
-<p>Can be entered manually.</p>
-<p><strong>Kubernetes workload kind</strong><a href="#fn-1-4-def">4</a><a href="#fn-1-5-def">5</a></p>
-<p>Matching is based on any of the selected workload kinds. It requires either the OneAgent Log Module managed by Dynatrace Operator or the <strong>Collect all container logs</strong> feature flag to be enabled.</p>
-<p>Can be entered manually.</p>
-<p><strong>Docker container name</strong></p>
-<p>Matching is based on the name of the container.</p>
-<p>Attributes visible in the last 90 days are listed.</p>
-<p><strong>DT entity container group ID</strong></p>
-<p>Matching is based on any of the selected container groups.</p>
-<p>Can be entered manually. No time limit.</p>
-<p><strong>Process technology</strong></p>
-<p>Matching is based on the technology name.</p>
-<p>Can be entered manually. No time limit.</p>
 <p>1</p>
 <p>The minimum required OneAgent version is 1.295.</p>
 <p>2</p>
@@ -26405,16 +26359,6 @@ The hierarchy is as follows:</p>
 </code></pre></div>
 <h2 id="regex-examples">Regex examples<a class="headerlink" href="#regex-examples" title="Permanent link">&para;</a></h2>
 <p>The common regex formats for sensitive data include:</p>
-<p>Sensitive data type</p>
-<p>ReGEx</p>
-<p>IPv4</p>
-<p><code>\b\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}\b</code></p>
-<p>Email address</p>
-<p><code>\b[\w\-\._]+?@[\w\-\._]+?\.\w{2,10}?\b</code></p>
-<p>Credit card number</p>
-<p><code>\b[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{4}\b</code></p>
-<p>Phone number</p>
-<p><code>\+?[0-9]{3}-?[0-9]{6,12}\b</code></p>
 <h3 id="unsupported-regular-expressions">Unsupported regular expressions<a class="headerlink" href="#unsupported-regular-expressions" title="Permanent link">&para;</a></h3>
 <p>Data masking occurs within the entire expression or a capturing group. An expression has to match the regular expression engine syntax, and it cannot:</p>
 <ul>
