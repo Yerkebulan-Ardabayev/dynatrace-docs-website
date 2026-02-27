@@ -25490,29 +25490,6 @@
 <p><img alt="Top web requests page" src="https://dt-cdn.net/images/top-web-requests-page-3518-5c4cc7fb02.png" /></p>
 <h2 id="configure-view">Configure view<a class="headerlink" href="#configure-view" title="Permanent link">&para;</a></h2>
 <p>The <strong>Top web requests</strong> page lists all web requests that occurred during the selected timeframe and within the selected management zone. In <strong>Configure view</strong>, you can set up multiple filtering capabilities. The view updates automatically as you change the parameters.</p>
-<p>Parameter</p>
-<p>Description</p>
-<p>Metric</p>
-<p>The metric to be analyzedâset by default to <strong>Request count</strong>.</p>
-<p>Aggregation</p>
-<p>How the metric values are aggregatedâavailable aggregations depend on the selected metric.</p>
-<p>Split mode</p>
-<p>How dimensions specified in <strong>Split by dimension</strong> are treated.</p>
-<ul>
-<li><strong>Split by services</strong>âeach dimension is displayed separately for each service.</li>
-<li><strong>Merge by services</strong>âsame dimensions from different services are merged into one.</li>
-</ul>
-<p>Split by dimension</p>
-<p>A list of dimensions by which the requests are split. By default the request name (<code>{Request:Name}</code>) dimension is set.</p>
-<p>You can specify several dimensions. Place your cursor in the input field to see the available options. The requests are split by dimension in the specified order.</p>
-<p>Filter requests</p>
-<p>Filter the requests to be included to the view. By default the following criteria are set:</p>
-<ul>
-<li><strong>Service type</strong>: <code>Web service</code></li>
-<li><strong>Service type</strong>: <code>Web request service</code></li>
-</ul>
-<p>You can provide additional criteria. Place your cursor in the input field to see the available options.</p>
-<p>Criteria of the same type are grouped by the OR logic. Criteria of different types are grouped by the AND logic.</p>
 <p>Once the view is configured, you can save it for quick access in the future. Just select <strong>Save view</strong> and provide a name.</p>
 <p>You can also save the configuration as a calculated service metric and use it as any other metric in Dynatrace (for example, for <a href="/docs/dynatrace-intelligence/anomaly-detection/metric-events" title="Learn about metric events in Dynatrace">alerting</a>).</p>
 <p>You can export the table data in a comma-separated values (CSV) file.</p>
@@ -25521,18 +25498,6 @@
 </ol>
 <p><img alt="Show export menu" src="https://dt-cdn.net/images/show-export-menu-107-2a8a76c9a2.png" />
 2. Select <strong>Export visible data</strong> or <strong>Export table data</strong>.</p>
-<p>Option</p>
-<p>Exported data</p>
-<p>Fields</p>
-<p>Number of entries</p>
-<p><strong>Export visible data</strong></p>
-<p>The currently displayed area of the table, taking into account applied filters</p>
-<p>Only visible data</p>
-<p>Up to 100 top dimensions</p>
-<p><strong>Export table data</strong></p>
-<p>All table data</p>
-<p>All the available data related to top dimensions</p>
-<p>Up to 100 top dimensions</p>
 <h2 id="view">View<a class="headerlink" href="#view" title="Permanent link">&para;</a></h2>
 <ul>
 <li>The chart on the <strong>Top web requests</strong> page shows the top 15 dimensions (all other dimensions are aggregated into a single dimension), and the table beneath contains up to 85 more dimensions, bringing the total number of chartable dimensions to 100. The view instantly adapts to the changes you make in the <strong>Configure view</strong> pane.</li>

@@ -25777,42 +25777,6 @@
 <h2 id="installation-parameters">Installation parameters<a class="headerlink" href="#installation-parameters" title="Permanent link">&para;</a></h2>
 <p>The <code>DynatraceOneAgent</code> distributor package provides a number of Dynatrace-specific parameters that map directly to the following OneAgent installation parameters.</p>
 <p>Learn more about customizing OneAgent installation on <a href="/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/customize-oneagent-installation-on-linux" title="Learn how to use the Linux installer with command line parameters.">Linux</a> and <a href="/docs/ingest-from/dynatrace-oneagent/installation-and-operation/windows/installation/customize-oneagent-installation-on-windows" title="Learn how to use the OneAgent installer for Windows.">Windows</a>.</p>
-<p>Distributor parameter</p>
-<p>Maps to OneAgent parameter</p>
-<p>Default value</p>
-<p>Description</p>
-<p><code>SSM_DYNATRACE_URL</code></p>
-<p><code>--set-server</code></p>
-<p>environment specific</p>
-<p>The address of the OneAgent communication endpoint, which is a Dynatrace component that OneAgent sends data to. Depending on your deployment, it can be a Dynatrace SaaS cluster or an ActiveGate. A Dynatrace Managed Cluster is currently not supported. <strong>Note</strong>: Make sure you add a trailing slash at the end of URL (for example, <code>https://environment.live.dynatrace.com/</code>).</p>
-<p><code>SSM_DYNATRACE_HOST_GROUP</code></p>
-<p><code>--set-host-group</code></p>
-<p>unset</p>
-<p>The name of a <a href="/docs/observe/infrastructure-observability/hosts/configuration/organize-your-environment-using-host-groups" title="Find out how Dynatrace enables you to organize your hosts, processes, and services using host groups.">host group</a> you want to assign the host to.</p>
-<p><code>SSM_DYNATRACE_MONITORING_MODE</code></p>
-<p><code>--set-monitoring-mode</code></p>
-<p>fullstack</p>
-<p>When set to <code>infra-only</code>, activates <a href="/docs/platform/oneagent/monitoring-modes/monitoring-modes" title="Find out more about the available monitoring modes when using OneAgent.">Infrastructure Monitoring mode</a>, in place of Full-Stack Monitoring mode. With this approach, you receive infrastructure-only health data, with no application or user performance data.</p>
-<p><code>SSM_DYNATRACE_APP_LOG_CONTENT_ACCESS</code></p>
-<p><code>--set-app-log-content-access</code></p>
-<p>true</p>
-<p>When set to <code>true</code>, allows OneAgent to access log files for the purpose of <a href="/docs/analyze-explore-automate/log-monitoring" title="Learn how to enable Log Monitoring, the insights that Log Monitoring can provide, and more.">Log Monitoring</a>.</p>
-<p><code>SSM_DYNATRACE_TOKEN_SECRET_ID</code> <a href="#fn-2-1-def">1</a></p>
-<p>N/A</p>
-<p>N/A</p>
-<p>The <a href="/docs/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens-legacy" title="Get acquainted with the concept of access tokens.">PaaS token</a> <strong>secret</strong> name or ARN in Secrets Manager, used to get the <a href="/docs/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens-legacy" title="Get acquainted with the concept of access tokens.">PaaS token</a> value.</p>
-<p><code>SSM_DYNATRACE_TOKEN_PARAMETER_NAME</code> <a href="#fn-2-1-def">1</a></p>
-<p>N/A</p>
-<p>N/A</p>
-<p>The <a href="/docs/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens-legacy" title="Get acquainted with the concept of access tokens.">PaaS token</a> <strong>parameter</strong> name in Parameter Store, used to get the <a href="/docs/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens-legacy" title="Get acquainted with the concept of access tokens.">PaaS token</a> value.</p>
-<p><code>SSM_DYNATRACE_TOKEN_REGION</code></p>
-<p>N/A</p>
-<p>N/A</p>
-<p>Optional AWS region used to get a secret from a different region. If not set, <strong>the AWS CLI auto discovers the instance region</strong>. (This parameter is <strong>required</strong> if you're running AWS CLI v1, as it can't discover the instance region from EC2 IMDS).</p>
-<p><code>SSM_DYNATRACE_TOKEN</code> not-recommended</p>
-<p>N/A</p>
-<p>N/A</p>
-<p>The <a href="/docs/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens-legacy" title="Get acquainted with the concept of access tokens.">PaaS token</a> used to download the OneAgent installer. Using the <code>SSM_DYNATRACE_TOKEN</code> parameter is not secure because the PaaS token will be visible in the Run Command history. Use AWS Secrets Manager or AWS Systems Manager Parameter Store.</p>
 <p>1</p>
 <p>Remember that <code>SSM_DYNATRACE_TOKEN_PARAMETER_NAME</code> and <code>SSM_DYNATRACE_TOKEN_SECRET_ID</code> are mutually exclusive. Choose either one.</p>
 <h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h2>

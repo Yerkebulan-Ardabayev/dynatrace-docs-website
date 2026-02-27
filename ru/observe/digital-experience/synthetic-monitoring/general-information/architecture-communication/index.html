@@ -25504,7 +25504,7 @@
 </ol>
 <p>The cluster provides the configuration, monitors definitions, and schedules executions. The data is encrypted through the <a href="/docs/ingest-from/dynatrace-activegate/activegate-security" title="Secure ActiveGates with dedicated tokens.">ActiveGate token</a>.
 2. <strong>Synthetic engine to ActiveGate</strong></p>
-<p>The Synthetic engine requests the configuration, and monitors definitions and executions from clusters via ActiveGate. The data is encrypted through the <code>synthetic token</code>, which is created on the ActiveGate start and stored in the <code>synthetic.token</code> file within your <code>config</code> foler. This token file is shared between ActiveGate and the Synthetic engine.
+<p>The Synthetic engine requests the configuration, and monitors definitions and executions from clusters via ActiveGate. The data is encrypted through the <code>synthetic token</code>, which is created on the ActiveGate start and stored in the <code>synthetic.token</code> file within your <code>config</code> folder. This token file is shared between ActiveGate and the Synthetic engine.
 3. <strong>Synthetic engine to beacon forwarder</strong></p>
 <p>The Synthetic engine sends results of the executions. The data is encrypted through the <code>synthetic monitors</code> token. The Dynatrace Cluster generates this token on a tenant level, and it rotates every 24 hours. Once a day, tokens that are older than 48 hours get deleted. The token is provided to the engine with execution details, and the communication is secured with the <a href="/docs/ingest-from/dynatrace-activegate/activegate-security" title="Secure ActiveGates with dedicated tokens.">ActiveGate token</a>.
 4. <strong>Beacon forwarder to Dynatrace cluster</strong></p>

@@ -25480,7 +25480,7 @@
 <li>Latest Dynatrace</li>
 <li>Explanation</li>
 <li>2-min read</li>
-<li>Updated on Nov 04, 2025</li>
+<li>Updated on Feb 18, 2026</li>
 </ul>
 <p>Dynatrace version 1.254+</p>
 <p>This page provides information about how Dynatrace ingests and enriches OpenTelemetry metrics.</p>
@@ -25545,73 +25545,20 @@ For more information, see <a href="https://community.dynatrace.com/t5/Open-Q-A/M
 <p>2</p>
 <p>For exponential histograms, Dynatrace ingests the histogram's <code>min|max|sum|count</code> but doesn't ingest the buckets.</p>
 <h2 id="api-limits-and-validations">API limits and validations<a class="headerlink" href="#api-limits-and-validations" title="Permanent link">&para;</a></h2>
-<p>When ingesting OpenTelemetry metrics, the following limits and validations apply.</p>
-<table>
-<thead>
-<tr>
-<th>Entity</th>
-<th>Limit</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Metric key length, characters</td>
-<td>Min: 2, Max: 255</td>
-<td>The length of a metric key.</td>
-</tr>
-<tr>
-<td>Dimension key length, characters</td>
-<td>Min: 1, Max: 100</td>
-<td>The length of a dimension key. If the maximum length is exceeded, the key is truncated to 100 characters.</td>
-</tr>
-<tr>
-<td>Dimension value length, characters</td>
-<td>Min: 1, Max: 255</td>
-<td>The length of a dimension value. If the maximum length is exceeded, the dimension value is truncated to 255 characters.</td>
-</tr>
-<tr>
-<td>Number of dimensions per metric data point</td>
-<td>50</td>
-<td>The maximum total number of dimensions in a single metric data point. If the number of dimensions is exceeded, the whole data point is dropped.</td>
-</tr>
-<tr>
-<td>Total number of possible metric keys per environment</td>
-<td>100,000</td>
-<td>The maximum number of metric keys that can be active at the same time.</td>
-</tr>
-<tr>
-<td>Number of tuples per month per metric</td>
-<td>1,000,000</td>
-<td>The maximum number of tuples (unique metric-dimension key-value type combinations) for each metric key for the last 30 days.</td>
-</tr>
-<tr>
-<td>Number of tuples per month for all custom metrics</td>
-<td>50,000,000</td>
-<td>The maximum number of tuples (unique metric-dimension key-value type combinations) for all custom metrics for the last 30 days.</td>
-</tr>
-<tr>
-<td>Instrument unit, characters</td>
-<td>63</td>
-<td>The maximum total length of the instrument unit. If the maximum length is exceeded, the unit is dropped.</td>
-</tr>
-<tr>
-<td>Instrument description, characters</td>
-<td>1,023</td>
-<td>The maximum total length of the instrument description. If the maximum length is exceeded, the instrument description is truncated to 1,023 characters.</td>
-</tr>
-<tr>
-<td>Request size</td>
-<td>4 MB</td>
-<td>The maximum uncompressed size of an OTLP request with a metrics payload. If the limit is exceeded, the entire request is dropped.</td>
-</tr>
-<tr>
-<td>Metric data points</td>
-<td>15,000</td>
-<td>The maximum number of metric data points in an OTLP request with a metrics payload. If the limit is exceeded, the entire request is dropped.</td>
-</tr>
-</tbody>
-</table>
+<p>When ingesting OpenTelemetry metrics, limits and validations apply as described in the tables below.</p>
+<ul>
+<li>
+<p>When <a href="/docs/license/capabilities/metrics" title="Learn how Dynatrace Metrics powered by Grail consumption is calculated using the Dynatrace Platform Subscription model.">Metrics powered by Grail overview (DPS)</a> is on your rate card:</p>
+</li>
+<li>
+<p>Latest Dynatrace If <strong>Advanced OTLP metric dimensions</strong> is configured, the limits in <strong>Advanced OTLP Metric dimensions limits</strong> apply.</p>
+</li>
+<li>If <strong>Advanced OTLP metric dimensions</strong> is not configured, the limits in <strong>Default limits</strong> apply.</li>
+<li>When <a href="/docs/license/capabilities/platform-extensions/custom-metrics-classic" title="Learn how your consumption of the Dynatrace Custom Metrics Classic DPS capability is billed and charged.">Custom Metrics Classic (DPS)</a> is on your rate card, the limits in <strong>Default limits</strong> apply</li>
+</ul>
+<p>For more information about advanced OTLP metric dimensions, see <a href="https://community.dynatrace.com/t5/Product-news/Important-OTLP-Metric-Dimensions-Changes/ba-p/293109">Important: OTLP Metric Dimensions Changesï»¿</a> in the Dynatrace Community.</p>
+<p>Default limits</p>
+<p>Advanced OTLP metric dimensions limits</p>
 <h3 id="attribute-ingestion">Attribute ingestion<a class="headerlink" href="#attribute-ingestion" title="Permanent link">&para;</a></h3>
 <p>OpenTelemetry supports attributes on different levels in an OpenTelemetry metric request (that is, data points, scopes, and resources).
 Because attributes are saved in a flattened fashion on the Dynatrace side, there may be name collisions if attributes on different levels share the same name.</p>

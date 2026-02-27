@@ -25479,7 +25479,7 @@
 <ul>
 <li>How-to guide</li>
 <li>2-min read</li>
-<li>Updated on Feb 04, 2026</li>
+<li>Updated on Feb 24, 2026</li>
 </ul>
 <p>Service Detection v2 (SDv2) allows you to identify specific endpoints into your services.
 You can use the default Dynatrace detection rules and also define your own custom rules.</p>
@@ -25510,68 +25510,11 @@ You can use the default Dynatrace detection rules and also define your own custo
 <li>You can add custom endpoint detection rules as described in <a href="#create-new-rule">Create new rule</a>.</li>
 </ul>
 <p>Any tenant created with Dynatrace version 1.330+ uses these configurable rules. Older tenants can be opted in to the configurable rule set; see the <a href="#new-default-endpoint-rules-opt-in">New endpoint detection opt-in</a> section.</p>
-<p>Priority</p>
-<p>Condition</p>
-<p>Endpoint</p>
-<p>1</p>
-<p><code>span.kind == "server"</code> + <code>rpc.service</code> + <code>rpc.method</code></p>
-<p><code>{rpc.service}.{rpc.method}</code></p>
-<p>2</p>
-<p><code>span.kind == "server"</code> + <code>rpc.method</code></p>
-<p><code>{rpc.method}</code></p>
-<p>3<a href="#fn-1-1-def">1</a></p>
-<p><code>span.kind == "server"</code> + <code>http.request.method</code> + <code>url.path.pattern</code></p>
-<p><code>{http.request.method} {url.path.pattern}</code></p>
-<p>4</p>
-<p><code>span.kind == "server"</code> + <code>http.request.method</code> + <code>url.truncated_path</code></p>
-<p><code>{http.request.method} {url.truncated_path}</code></p>
-<p>5</p>
-<p><code>span.kind == "server"</code> + <code>http.request.method</code> + <code>http.route</code></p>
-<p><code>{http.request.method} {http.route}</code></p>
-<p>6</p>
-<p><code>span.kind == "server"</code> + <code>http.request.method</code></p>
-<p><code>{http.request.method} /*</code></p>
-<p>7</p>
-<p><code>span.kind == "server"</code> + <code>span.name</code></p>
-<p><code>{span.name}</code></p>
-<p>8</p>
-<p><code>span.kind == "consumer"</code> + <code>span.name</code></p>
-<p><code>{span.name}</code></p>
 <p>1</p>
 <p>Rule available with Dynatrace SaaS version 1.330+. See <a href="/docs/observe/application-observability/services/service-detection/service-detection-v2/url-pattern-matching-v2" title="Find out how to get better endpoint names for frameworks without route templates by setting up URL pattern matching rules.">Configure URL path pattern matching in Service Detection v2</a> for details.</p>
 <h3 id="legacy-default-rules">Legacy default rules<a class="headerlink" href="#legacy-default-rules" title="Permanent link">&para;</a></h3>
 <p>Legacy endpoint detection rules apply also to all trace root spans (span without a parent span)âwhether client, consumer, internal, or producer span. This broad approach captured comprehensive system activity but created noise in service health monitoring, since outbound call failures typically indicate problems with the called service rather than the calling service.
 However, you can still add custom endpoint rules to the new endpoint detection to restore exactly this behavior.</p>
-<p>Priority</p>
-<p>Condition</p>
-<p>Endpoint name</p>
-<p>1</p>
-<p><code>service.name</code> starts with <code>istio-</code></p>
-<p><code>/</code></p>
-<p>2</p>
-<p><code>rpc.service</code> + <code>rpc.method</code> + <code>span.kind</code> is <code>server</code></p>
-<p><code>&lt;rpc.method&gt;.&lt;rpc.service&gt;</code> or <code>&lt;rpc.method&gt;</code></p>
-<p>3</p>
-<p><code>adobe.em.env_type</code> + <code>url.truncated_path</code> + <code>span.kind</code> is <code>server</code></p>
-<p><code>&lt;url.truncated_path&gt;</code></p>
-<p>4</p>
-<p><code>adobe.em.env_type</code> + <code>url.path</code> is <code>/system/probes/health</code> OR <code>http.request.method</code> is <code>HEAD</code></p>
-<p><code>Health Check</code></p>
-<p>5</p>
-<p><code>http.route</code> + <code>span.kind</code> is <code>server</code></p>
-<p><code>&lt;http.route&gt;</code></p>
-<p>6</p>
-<p><code>http.method</code> + <code>span.kind</code> is <code>server</code> + <code>telemetry.sdk.language</code> is <code>apache</code>, <code>cpp</code>, or <code>nginx</code></p>
-<p><code>/</code></p>
-<p>7</p>
-<p><code>faas.name</code></p>
-<p><code>invoke</code></p>
-<p>8</p>
-<p><code>code.namespace</code> + <code>code.function</code></p>
-<p><code>&lt;code.namespace&gt;.&lt;code.function&gt;</code> or <code>&lt;code.function&gt;</code> or <code>&lt;code.namespace&gt;</code></p>
-<p>9</p>
-<p><code>span.name</code></p>
-<p><code>&lt;span.name&gt;</code></p>
 <h2 id="steps">Steps<a class="headerlink" href="#steps" title="Permanent link">&para;</a></h2>
 <p>Endpoint detection is customized in <img alt="Settings" src="https://dt-cdn.net/images/settings-icon-256-38e1321b51.webp" title="Settings" /> <strong>Settings</strong> &gt; <strong>Process and contextualize</strong> &gt; <strong>Services</strong> &gt; <strong>Endpoint detection</strong>.</p>
 <h3 id="create-new-rule">Create new rule<a class="headerlink" href="#create-new-rule" title="Permanent link">&para;</a></h3>
@@ -25626,7 +25569,19 @@ However, you can still add custom endpoint rules to the new endpoint detection t
 <li>Start by creating endpoint rules for the most critical endpoints.</li>
 <li>Use consistent naming conventions for your endpoints.</li>
 <li>Regularly review your custom endpoint rules to ensure that they still match your application architecture.</li>
+<li>Use the <strong>Endpoint Cardinality Dashboard</strong> to see which services have the most endpoints and act accordingly. For more information, see <a href="#dashboard-endpoint-heavy-service">Dashboard with endpoint-heavy services</a>.</li>
 </ul>
+<h2 id="dashboard-with-endpoint-heavy-services">Dashboard with endpoint-heavy services<a class="headerlink" href="#dashboard-with-endpoint-heavy-services" title="Permanent link">&para;</a></h2>
+<p>The <strong>Endpoint Cardinality Dashboard</strong> displays services with the most endpoints (SDv1 and SDv2 services).</p>
+<p>This dashboard allows you to quickly identify endpoint-heavy services for which you could adjust the <a href="/docs/observe/application-observability/services/service-detection/service-detection-v1/set-up-request-naming" title="Adjust request naming and define the operations your services offer.">request naming rules (SDv1)</a> or <a href="/docs/observe/application-observability/services/service-detection/service-detection-v2/endpoint-detection-v2" title="Find out how to detect endpoints that are entry points into your service.">endpoint detection rules (SDv2)</a>.</p>
+<p>To view services with the most endpoints</p>
+<ol>
+<li>Go to <img alt="Dashboards" src="https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png" title="Dashboards" /> <strong>Dashboards</strong>.</li>
+<li>In the <strong>Dashboards</strong> panel on the left, select  <strong>All dashboards</strong>.</li>
+<li>In <strong>Search by name</strong>, enter <strong>Endpoint Cardinality Dashboard</strong>.</li>
+<li>Select the dashboard to open it.</li>
+</ol>
+<p>To display additional endpoint-heavy services, <a href="/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new#dashboards-duplicate" title="Create interactive, customizable views to visualize, analyze, and share your observability data in real time.">duplicate this dashboard</a> and edit the DQL query behind the service list (for example, change <code>100</code> in <code>limit 100</code> to the required value). Alternatively, you can add this query to <a href="/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks" title="Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace."><img alt="Notebooks" src="https://dt-cdn.net/images/notebooks-768-046137830a.webp" title="Notebooks" /> <strong>Notebooks</strong></a> and modify it there.</p>
 <h2 id="related-topics">Related topics<a class="headerlink" href="#related-topics" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="/docs/observe/application-observability/services/service-detection/service-detection-v2" title="Find out how to detect, name, and split services from OpenTelemetry and OneAgent spans.">Service Detection v2</a></li>

@@ -25629,7 +25629,7 @@
 <p>This is mainly for demonstration purposes. You can specify any other valid receiver here (for example, <code>zipkin</code>).</p>
 <h3 id="processors">Processors<a class="headerlink" href="#processors" title="Permanent link">&para;</a></h3>
 <p>Under <code>processors</code>, we specify the <a href="https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/v0.145.0/processor/resourcedetectionprocessor"><code>resourcedetection</code> processorï»¿</a> and configure it with the <a href="https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/v0.145.0/processor/resourcedetectionprocessor/README.md#dynatrace">Dynatrace-specific detector <code>dynatrace</code>ï»¿</a>.</p>
-<p>With this configuration, the resource detector processor will attempt to load the following three attributes from the <a href="/docs/ingest-from/extend-dynatrace/extend-data#dynatrace-oneagent" title="Learn how to automatically enrich your telemetry data with Dynatrace-specific dimensions.">OneAgent enrichment file</a>:</p>
+<p>With this configuration, the resource detector processor will attempt to load the following three attributes from the <a href="/docs/ingest-from/extend-dynatrace/extend-data#dynatrace-oneagent" title="Learn how to automatically enrich your telemetry data with Dynatrace-specific fields.">OneAgent enrichment file</a>:</p>
 <ul>
 <li><code>dt.entity.host</code></li>
 <li><code>host.name</code></li>

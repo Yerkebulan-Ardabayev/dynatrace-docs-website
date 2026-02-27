@@ -25621,11 +25621,17 @@
 <p>Classic cloud connections (AWS, Azure, GCP)</p>
 <p>New cloud connections (AWS, Preview for Azure)</p>
 <p>Classic cloud connections (AWS, Azure, GCP)</p>
-<p>Use the following guide to set up and configure a new AWS cloud connection in Dynatrace.</p>
+<p>Use the following guide to set up and configure a new cloud connection in Dynatrace.</p>
 <p>[01Create a new AWS connection</p>
 <ul>
 <li>How-to guide</li>
-<li>Learn how to create a new AWS connection in the Clouds app.](/docs/observe/infrastructure-observability/cloud-platform-monitoring/clouds-app/create-aws-connection)</li>
+<li>
+<p>Learn how to create a new AWS connection in the Clouds app.](/docs/observe/infrastructure-observability/cloud-platform-monitoring/clouds-app/create-aws-connection)[02Create a new Azure connection</p>
+</li>
+<li>
+<p>How-to guide</p>
+</li>
+<li>Learn how to create a new Azure connection in the Clouds app.](/docs/observe/infrastructure-observability/cloud-platform-monitoring/clouds-app/create-azure-connection)</li>
 </ul>
 <p>In <img alt="Clouds" src="https://dt-cdn.net/images/clouds-1025-170946931c.png" title="Clouds" /> <strong>Clouds</strong>, use the app header bar and select  <strong>Create connection</strong> &gt; <strong>AWS (Classic connections)</strong> or  <strong>Create connection</strong> &gt; <strong>Azure (Classic connections)</strong> or  <strong>Create connection</strong> &gt; <strong>GCP (Classic connections)</strong>.</p>
 <p>All data originating from classic connections can be analyzed in the <strong>Explorer (Classic connections)</strong> tab.</p>
@@ -25741,7 +25747,7 @@
 </ul>
 <p><img alt="Clouds app | Dashboard navigation" src="https://dt-cdn.net/images/clouds-app-dashboard-navigation-3840-d0998aa51b.png" /></p>
 <h3 id="segments-new-connections">Segments (New connections)<a class="headerlink" href="#segments-new-connections" title="Permanent link">&para;</a></h3>
-<p><a href="/docs/manage/segments" title="Segments logically structure monitoring data in Grail and function as convenient filters for data that users are allowed to access based on permissions.">Segments</a> allow you to logically structure and conveniently filter observability data across apps on the Dynatrace platform. Segments are available within the new <strong>Explorer New</strong> tab and can be defined easily for new cloud connections, since all data (including <a href="/docs/platform/grail/smartscape-on-grail" title="Learn about Smartscape on Grail features and how Smartscape uses the power of DQL.">Smartscape nodes</a>) is stored in Grail.</p>
+<p><a href="/docs/manage/segments" title="Use segments to logically structure and conveniently filter observability data across apps.">Segments</a> allow you to logically structure and conveniently filter observability data across apps on the Dynatrace platform. Segments are available within the new <strong>Explorer New</strong> tab and can be defined easily for new cloud connections, since all data (including <a href="/docs/platform/grail/smartscape-on-grail" title="Learn about Smartscape on Grail features and how Smartscape uses the power of DQL.">Smartscape nodes</a>) is stored in Grail.</p>
 <p>For a step-by-step guide on how to define segments for Smartscape nodes, see <a href="/docs/manage/segments/getting-started/segments-getting-started-filter-smartscape-nodes" title="Learn how to filter Smartscape nodes by using segments in Dashboards.">Filter Smartscape nodes with segments</a>. You can use any primary Grail field (and, in the future, also tags) to conveniently define simple segments across <strong>All data</strong>:</p>
 <ul>
 <li><a href="/docs/platform/grail/organize-data/assign-permissions-in-grail#grail-permissions-table-record" title="Find out how to assign permissions to buckets and tables in Grail.">Primary Grail fields</a> (for example, <code>aws.account.id</code>, <code>aws.region</code>)</li>

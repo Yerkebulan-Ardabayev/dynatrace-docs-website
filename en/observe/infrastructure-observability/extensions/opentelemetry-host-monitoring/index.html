@@ -25479,7 +25479,7 @@
 <ul>
 <li>Latest Dynatrace</li>
 <li>Extension</li>
-<li>Published Feb 20, 2026</li>
+<li>Updated on Feb 25, 2026</li>
 </ul>
 <p>Generate topology and screens for your OpenTelemetry host data for quicker display and easier analysis of the data.</p>
 <h2 id="get-started">Get started<a class="headerlink" href="#get-started" title="Permanent link">&para;</a></h2>
@@ -25534,6 +25534,10 @@
 </tbody>
 </table>
 <p>These entities enable Dynatrace to correlate your metrics, logs, and spans and provide unified context across your monitored environment.</p>
+<h4 id="enrich-application-telemetry">Enrich application telemetry<a class="headerlink" href="#enrich-application-telemetry" title="Permanent link">&para;</a></h4>
+<p>If you send your application telemetry to your local host OpenTelemetry Collector, it will automatically enrich the data with the required host attributes so that the signals are correctly attached to the OpenTelemetry Host entity.</p>
+<p>To enrich application telemetry with the corresponding process entity, all signals (metrics, logs, and spans) need to have the <code>process.executable.name</code> resource attribute. For logs and spans to have this attribute, you need to initialize your OTel SDK with the <a href="https://opentelemetry.io/docs/languages/go/resources/">process resource detectorï»¿</a>.
+If this is not implemented for your technology's OTel SDK, you can always set the <code>process.executable.name</code> attribute through the <code>OTEL_RESOURCE_ATTRIBUTES</code> <a href="https://opentelemetry.io/docs/specs/otel/configuration/sdk-environment-variables/#general-sdk-configuration">environment variableï»¿</a>.</p>
 <h3 id="screens">Screens<a class="headerlink" href="#screens" title="Permanent link">&para;</a></h3>
 <p>The extension provides screens and dashboards that display entity information, metrics, and more. The data is displayed in a smart and structured way for easier navigation and a clearer understanding of the insights.</p>
 <p>To find a list of your OTel hosts and processes, go to <img alt="Infrastructure &amp; Operations" src="https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png" title="Infrastructure &amp; Operations" /> <strong>Infrastructure &amp; Operations</strong> &gt; <strong>Technologies</strong>.</p>

@@ -25480,7 +25480,7 @@
 <li>Latest Dynatrace</li>
 <li>Reference</li>
 <li>4-min read</li>
-<li>Updated on Jan 28, 2026</li>
+<li>Updated on Feb 26, 2026</li>
 </ul>
 <p>The following page lists the default limits of Dynatrace OpenPipeline.</p>
 <h2 id="configuration-scope-limits">Configuration scope limits<a class="headerlink" href="#configuration-scope-limits" title="Permanent link">&para;</a></h2>
@@ -25608,7 +25608,7 @@
 <p>If the record doesn't have a <code>timestamp</code> field, the field <code>timestamp</code> is set to ingest time.</p>
 <h2 id="processing">Processing<a class="headerlink" href="#processing" title="Permanent link">&para;</a></h2>
 <h3 id="processing-memory-exhaustion">Processing memory exhaustion<a class="headerlink" href="#processing-memory-exhaustion" title="Permanent link">&para;</a></h3>
-<p>Each record can occupy maximum 16 MB of processing memory. Each change to the record (e.g. parsing a field) decreases the available processing memory. Once the available processing memory is exhausted, the record is dropped, and the metric <code>dt.sfm.openpipeline.not_stored.records</code> with dimension <code>reason</code> set to <code>buffer_overflow</code> reports it.</p>
+<p>Processing memory is limited. Each change to a recordâfor example, parsing a fieldâdecreases the available processing memory. Once the available processing memory is exhausted, the record is dropped. This is reported in metric <code>dt.sfm.openpipeline.not_stored.records</code> with dimension <code>reason</code> set to <code>buffer_overflow</code>.</p>
 <h3 id="size-of-record-after-processing">Size of record after processing<a class="headerlink" href="#size-of-record-after-processing" title="Permanent link">&para;</a></h3>
 <p>The maximum size of a record after processing is 16 MB.</p>
 <h3 id="size-of-extracted-log-attributes">Size of extracted log attributes<a class="headerlink" href="#size-of-extracted-log-attributes" title="Permanent link">&para;</a></h3>
@@ -25655,6 +25655,13 @@ When log attributes are added to the event template, the size of each attribute 
 <li>Whitespaces</li>
 <li>Consecutive dots (<code>..</code>)</li>
 <li><code>Null</code> or empty input</li>
+</ul>
+<h2 id="pipeline-groups">Pipeline groups<a class="headerlink" href="#pipeline-groups" title="Permanent link">&para;</a></h2>
+<ul>
+<li>The maximum number of composition pipelines per pipeline group is 10.</li>
+<li>The maximum number of member pipelines per pipeline group is 100.</li>
+<li>The pipeline role is permanent.
+  Converting rolesâfrom member to composition, or composition to memberâisn't supported.</li>
 </ul>
 
 

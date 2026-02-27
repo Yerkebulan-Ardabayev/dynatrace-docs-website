@@ -25495,7 +25495,7 @@
 
 <h1 id="dynatrace-observeinfrastructure-observability">Документация Dynatrace: observe/infrastructure-observability<a class="headerlink" href="#dynatrace-observeinfrastructure-observability" title="Permanent link">&para;</a></h1>
 <p>Язык: Русский (RU)
-Сгенерировано: 2026-02-26
+Сгенерировано: 2026-02-27
 Файлов в разделе: 88</p>
 <hr />
 <h2 id="observeinfrastructure-observabilitycloud-platform-monitoringaws-monitoringmd">observe/infrastructure-observability/cloud-platform-monitoring/aws-monitoring.md<a class="headerlink" href="#observeinfrastructure-observabilitycloud-platform-monitoringaws-monitoringmd" title="Permanent link">&para;</a></h2>
@@ -25567,7 +25567,7 @@ scraped: 2026-02-06T16:29:13.189649</p>
 <hr />
 <p>title: Create a new AWS connection
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/cloud-platform-monitoring/clouds-app/create-aws-connection
-scraped: 2026-02-26T21:24:16.805789</p>
+scraped: 2026-02-27T21:19:37.497199</p>
 <hr />
 <h1 id="create-a-new-aws-connection">Create a new AWS connection<a class="headerlink" href="#create-a-new-aws-connection" title="Permanent link">&para;</a></h1>
 <h1 id="create-a-new-aws-connection_1">Create a new AWS connection<a class="headerlink" href="#create-a-new-aws-connection_1" title="Permanent link">&para;</a></h1>
@@ -25579,7 +25579,7 @@ scraped: 2026-02-26T21:24:16.805789</p>
 <li>Preview</li>
 </ul>
 <p>If this is the first time you are creating a connection, first see the <a href="/docs/ingest-from/amazon-web-services/create-an-aws-connection" title="See the differences between creating your AWS connections via API or ::app-settings::.">onboarding instructions</a> and its prerequisites.</p>
-<p>If you have an existing classic connection and want to start the new cloud platform monitoring, delete the classic connection first and only then create a new cloud connection for the respective AWS Account or Azure subscription.</p>
+<p>If you have an existing classic connection and want to start the new cloud platform monitoring, delete the classic connection first and only then create a new cloud connection for the respective AWS Account.</p>
 <p>To set up a new AWS connection</p>
 <ol>
 <li>Go to <img alt="Clouds" src="https://dt-cdn.net/images/clouds-1025-170946931c.png" title="Clouds" /> <strong>Clouds</strong>.</li>
@@ -25609,7 +25609,7 @@ scraped: 2026-02-26T21:24:16.805789</p>
 <hr />
 <p>title: Clouds app
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/cloud-platform-monitoring/clouds-app
-scraped: 2026-02-26T21:15:44.188492</p>
+scraped: 2026-02-27T21:11:25.382975</p>
 <hr />
 <h1 id="clouds-app">Clouds app<a class="headerlink" href="#clouds-app" title="Permanent link">&para;</a></h1>
 <h1 id="clouds-app_1">Clouds app<a class="headerlink" href="#clouds-app_1" title="Permanent link">&para;</a></h1>
@@ -25683,11 +25683,17 @@ scraped: 2026-02-26T21:15:44.188492</p>
 <p>Classic cloud connections (AWS, Azure, GCP)</p>
 <p>New cloud connections (AWS, Preview for Azure)</p>
 <p>Classic cloud connections (AWS, Azure, GCP)</p>
-<p>Use the following guide to set up and configure a new AWS cloud connection in Dynatrace.</p>
+<p>Use the following guide to set up and configure a new cloud connection in Dynatrace.</p>
 <p>[01Create a new AWS connection</p>
 <ul>
 <li>How-to guide</li>
-<li>Learn how to create a new AWS connection in the Clouds app.](/docs/observe/infrastructure-observability/cloud-platform-monitoring/clouds-app/create-aws-connection)</li>
+<li>
+<p>Learn how to create a new AWS connection in the Clouds app.](/docs/observe/infrastructure-observability/cloud-platform-monitoring/clouds-app/create-aws-connection)[02Create a new Azure connection</p>
+</li>
+<li>
+<p>How-to guide</p>
+</li>
+<li>Learn how to create a new Azure connection in the Clouds app.](/docs/observe/infrastructure-observability/cloud-platform-monitoring/clouds-app/create-azure-connection)</li>
 </ul>
 <p>In <img alt="Clouds" src="https://dt-cdn.net/images/clouds-1025-170946931c.png" title="Clouds" /> <strong>Clouds</strong>, use the app header bar and select  <strong>Create connection</strong> &gt; <strong>AWS (Classic connections)</strong> or  <strong>Create connection</strong> &gt; <strong>Azure (Classic connections)</strong> or  <strong>Create connection</strong> &gt; <strong>GCP (Classic connections)</strong>.</p>
 <p>All data originating from classic connections can be analyzed in the <strong>Explorer (Classic connections)</strong> tab.</p>
@@ -25803,7 +25809,7 @@ scraped: 2026-02-26T21:15:44.188492</p>
 </ul>
 <p><img alt="Clouds app | Dashboard navigation" src="https://dt-cdn.net/images/clouds-app-dashboard-navigation-3840-d0998aa51b.png" /></p>
 <h3 id="segments-new-connections">Segments (New connections)<a class="headerlink" href="#segments-new-connections" title="Permanent link">&para;</a></h3>
-<p><a href="/docs/manage/segments" title="Segments logically structure monitoring data in Grail and function as convenient filters for data that users are allowed to access based on permissions.">Segments</a> allow you to logically structure and conveniently filter observability data across apps on the Dynatrace platform. Segments are available within the new <strong>Explorer New</strong> tab and can be defined easily for new cloud connections, since all data (including <a href="/docs/platform/grail/smartscape-on-grail" title="Learn about Smartscape on Grail features and how Smartscape uses the power of DQL.">Smartscape nodes</a>) is stored in Grail.</p>
+<p><a href="/docs/manage/segments" title="Use segments to logically structure and conveniently filter observability data across apps.">Segments</a> allow you to logically structure and conveniently filter observability data across apps on the Dynatrace platform. Segments are available within the new <strong>Explorer New</strong> tab and can be defined easily for new cloud connections, since all data (including <a href="/docs/platform/grail/smartscape-on-grail" title="Learn about Smartscape on Grail features and how Smartscape uses the power of DQL.">Smartscape nodes</a>) is stored in Grail.</p>
 <p>For a step-by-step guide on how to define segments for Smartscape nodes, see <a href="/docs/manage/segments/getting-started/segments-getting-started-filter-smartscape-nodes" title="Learn how to filter Smartscape nodes by using segments in Dashboards.">Filter Smartscape nodes with segments</a>. You can use any primary Grail field (and, in the future, also tags) to conveniently define simple segments across <strong>All data</strong>:</p>
 <ul>
 <li><a href="/docs/platform/grail/organize-data/assign-permissions-in-grail#grail-permissions-table-record" title="Find out how to assign permissions to buckets and tables in Grail.">Primary Grail fields</a> (for example, <code>aws.account.id</code>, <code>aws.region</code>)</li>
@@ -25911,7 +25917,7 @@ scraped: 2026-02-06T16:28:51.845671</p>
 <hr />
 <p>title: Monitor container groups
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/container-platform-monitoring/container-groups
-scraped: 2026-02-26T21:21:21.226586</p>
+scraped: 2026-02-27T21:14:43.996743</p>
 <hr />
 <h1 id="monitor-container-groups">Monitor container groups<a class="headerlink" href="#monitor-container-groups" title="Permanent link">&para;</a></h1>
 <h1 id="monitor-container-groups_1">Monitor container groups<a class="headerlink" href="#monitor-container-groups_1" title="Permanent link">&para;</a></h1>
@@ -25968,7 +25974,7 @@ scraped: 2026-02-26T21:21:21.226586</p>
 <hr />
 <p>title: Container monitoring rules
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/container-platform-monitoring/container-monitoring-rules
-scraped: 2026-02-25T21:17:17.398511</p>
+scraped: 2026-02-27T21:14:45.316102</p>
 <hr />
 <h1 id="container-monitoring-rules">Container monitoring rules<a class="headerlink" href="#container-monitoring-rules" title="Permanent link">&para;</a></h1>
 <h1 id="container-monitoring-rules_1">Container monitoring rules<a class="headerlink" href="#container-monitoring-rules_1" title="Permanent link">&para;</a></h1>
@@ -27696,7 +27702,7 @@ scraped: 2026-02-25T21:24:26.863167</p>
 <hr />
 <p>title: Istio/Envoy proxy metrics
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-istio-metrics
-scraped: 2026-02-26T21:26:20.414095</p>
+scraped: 2026-02-27T21:22:00.734399</p>
 <hr />
 <h1 id="istioenvoy-proxy-metrics">Istio/Envoy proxy metrics<a class="headerlink" href="#istioenvoy-proxy-metrics" title="Permanent link">&para;</a></h1>
 <h1 id="istioenvoy-proxy-metrics_1">Istio/Envoy proxy metrics<a class="headerlink" href="#istioenvoy-proxy-metrics_1" title="Permanent link">&para;</a></h1>
@@ -27738,7 +27744,7 @@ scraped: 2026-02-26T21:26:20.414095</p>
 <hr />
 <p>title: Monitor Kubernetes/OpenShift metrics
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-metrics-kubernetes
-scraped: 2026-02-26T21:27:00.546538</p>
+scraped: 2026-02-27T21:19:48.242528</p>
 <hr />
 <h1 id="monitor-kubernetesopenshift-metrics">Monitor Kubernetes/OpenShift metrics<a class="headerlink" href="#monitor-kubernetesopenshift-metrics" title="Permanent link">&para;</a></h1>
 <h1 id="monitor-kubernetesopenshift-metrics_1">Monitor Kubernetes/OpenShift metrics<a class="headerlink" href="#monitor-kubernetesopenshift-metrics_1" title="Permanent link">&para;</a></h1>
@@ -28467,7 +28473,7 @@ that selects the pod. If no such service exists, you can create a new service ju
 <hr />
 <p>title: Monitor persistent volume claims on Kubernetes/OpenShift
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-pvc-metrics
-scraped: 2026-02-26T21:34:22.926083</p>
+scraped: 2026-02-27T21:31:33.043186</p>
 <hr />
 <h1 id="monitor-persistent-volume-claims-on-kubernetesopenshift">Monitor persistent volume claims on Kubernetes/OpenShift<a class="headerlink" href="#monitor-persistent-volume-claims-on-kubernetesopenshift" title="Permanent link">&para;</a></h1>
 <h1 id="monitor-persistent-volume-claims-on-kubernetesopenshift_1">Monitor persistent volume claims on Kubernetes/OpenShift<a class="headerlink" href="#monitor-persistent-volume-claims-on-kubernetesopenshift_1" title="Permanent link">&para;</a></h1>
@@ -28510,7 +28516,7 @@ scraped: 2026-02-26T21:34:22.926083</p>
 <hr />
 <p>title: Monitor Kubernetes/OpenShift services
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-services-kubernetes
-scraped: 2026-02-26T21:23:51.195276</p>
+scraped: 2026-02-27T21:18:31.983571</p>
 <hr />
 <h1 id="monitor-kubernetesopenshift-services">Monitor Kubernetes/OpenShift services<a class="headerlink" href="#monitor-kubernetesopenshift-services" title="Permanent link">&para;</a></h1>
 <h1 id="monitor-kubernetesopenshift-services_1">Monitor Kubernetes/OpenShift services<a class="headerlink" href="#monitor-kubernetesopenshift-services_1" title="Permanent link">&para;</a></h1>
@@ -28570,7 +28576,7 @@ scraped: 2026-02-26T21:23:51.195276</p>
 <hr />
 <p>title: Monitor service-level objectives in Kubernetes/OpenShift
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-slos-kubernetes
-scraped: 2026-02-26T21:29:30.419658</p>
+scraped: 2026-02-27T21:19:30.967901</p>
 <hr />
 <h1 id="monitor-service-level-objectives-in-kubernetesopenshift">Monitor service-level objectives in Kubernetes/OpenShift<a class="headerlink" href="#monitor-service-level-objectives-in-kubernetesopenshift" title="Permanent link">&para;</a></h1>
 <h1 id="monitor-service-level-objectives-in-kubernetesopenshift_1">Monitor service-level objectives in Kubernetes/OpenShift<a class="headerlink" href="#monitor-service-level-objectives-in-kubernetesopenshift_1" title="Permanent link">&para;</a></h1>
@@ -28631,7 +28637,7 @@ scraped: 2026-02-26T21:29:30.419658</p>
 <hr />
 <p>title: Monitor vulnerabilities in Kubernetes/OpenShift
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-vulnerabilities-kubernetes
-scraped: 2026-02-26T21:23:11.965106</p>
+scraped: 2026-02-27T21:25:56.773693</p>
 <hr />
 <h1 id="monitor-vulnerabilities-in-kubernetesopenshift">Monitor vulnerabilities in Kubernetes/OpenShift<a class="headerlink" href="#monitor-vulnerabilities-in-kubernetesopenshift" title="Permanent link">&para;</a></h1>
 <h1 id="monitor-vulnerabilities-in-kubernetesopenshift_1">Monitor vulnerabilities in Kubernetes/OpenShift<a class="headerlink" href="#monitor-vulnerabilities-in-kubernetesopenshift_1" title="Permanent link">&para;</a></h1>
@@ -28745,7 +28751,7 @@ Metrics for the number of running and desired pods are also available under the 
 <hr />
 <p>title: Kubernetes Classic
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring
-scraped: 2026-02-26T21:15:52.269830</p>
+scraped: 2026-02-27T21:10:44.341483</p>
 <hr />
 <h1 id="kubernetes-classic">Kubernetes Classic<a class="headerlink" href="#kubernetes-classic" title="Permanent link">&para;</a></h1>
 <h1 id="kubernetes-classic_1">Kubernetes Classic<a class="headerlink" href="#kubernetes-classic_1" title="Permanent link">&para;</a></h1>
@@ -28829,7 +28835,7 @@ scraped: 2026-02-06T16:29:09.689987</p>
 <hr />
 <p>title: Container platform monitoring
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/container-platform-monitoring
-scraped: 2026-02-25T21:17:10.854452</p>
+scraped: 2026-02-27T21:14:34.756195</p>
 <hr />
 <h1 id="container-platform-monitoring">Container platform monitoring<a class="headerlink" href="#container-platform-monitoring" title="Permanent link">&para;</a></h1>
 <h1 id="container-platform-monitoring_1">Container platform monitoring<a class="headerlink" href="#container-platform-monitoring_1" title="Permanent link">&para;</a></h1>
@@ -28971,7 +28977,7 @@ scraped: 2026-02-26T21:31:33.713277</p>
 <hr />
 <p>title: Monitor MariaDB database
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/databases/database-app/get-started/mariadb
-scraped: 2026-02-26T21:22:36.635403</p>
+scraped: 2026-02-27T21:21:11.005888</p>
 <hr />
 <h1 id="monitor-mariadb-database">Monitor MariaDB database<a class="headerlink" href="#monitor-mariadb-database" title="Permanent link">&para;</a></h1>
 <h1 id="monitor-mariadb-database_1">Monitor MariaDB database<a class="headerlink" href="#monitor-mariadb-database_1" title="Permanent link">&para;</a></h1>
@@ -29005,7 +29011,7 @@ scraped: 2026-02-26T21:22:36.635403</p>
 <hr />
 <p>title: Monitor Microsoft SQL database
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/databases/database-app/get-started/microsoft-sql
-scraped: 2026-02-24T21:29:39.863604</p>
+scraped: 2026-02-27T21:28:20.803058</p>
 <hr />
 <h1 id="monitor-microsoft-sql-database">Monitor Microsoft SQL database<a class="headerlink" href="#monitor-microsoft-sql-database" title="Permanent link">&para;</a></h1>
 <h1 id="monitor-microsoft-sql-database_1">Monitor Microsoft SQL database<a class="headerlink" href="#monitor-microsoft-sql-database_1" title="Permanent link">&para;</a></h1>
@@ -29068,7 +29074,7 @@ Refer to the sections below to learn more about each feature set.</p>
 <hr />
 <p>title: Monitor MySQL database
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/databases/database-app/get-started/mysql
-scraped: 2026-02-26T21:22:25.800210</p>
+scraped: 2026-02-27T21:27:36.460140</p>
 <hr />
 <h1 id="monitor-mysql-database">Monitor MySQL database<a class="headerlink" href="#monitor-mysql-database" title="Permanent link">&para;</a></h1>
 <h1 id="monitor-mysql-database_1">Monitor MySQL database<a class="headerlink" href="#monitor-mysql-database_1" title="Permanent link">&para;</a></h1>
@@ -29091,7 +29097,7 @@ scraped: 2026-02-26T21:22:25.800210</p>
 <hr />
 <p>title: Monitor Oracle database
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/databases/database-app/get-started/oracle
-scraped: 2026-02-26T21:28:17.335050</p>
+scraped: 2026-02-27T21:31:44.161034</p>
 <hr />
 <h1 id="monitor-oracle-database">Monitor Oracle database<a class="headerlink" href="#monitor-oracle-database" title="Permanent link">&para;</a></h1>
 <h1 id="monitor-oracle-database_1">Monitor Oracle database<a class="headerlink" href="#monitor-oracle-database_1" title="Permanent link">&para;</a></h1>
@@ -29120,7 +29126,7 @@ scraped: 2026-02-26T21:28:17.335050</p>
 <hr />
 <p>title: Monitor SAP HANA database
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/databases/database-app/get-started/sap-hana
-scraped: 2026-02-25T21:29:34.690411</p>
+scraped: 2026-02-27T21:23:43.303267</p>
 <hr />
 <h1 id="monitor-sap-hana-database">Monitor SAP HANA database<a class="headerlink" href="#monitor-sap-hana-database" title="Permanent link">&para;</a></h1>
 <h1 id="monitor-sap-hana-database_1">Monitor SAP HANA database<a class="headerlink" href="#monitor-sap-hana-database_1" title="Permanent link">&para;</a></h1>
@@ -29156,7 +29162,7 @@ scraped: 2026-02-25T21:29:34.690411</p>
 <hr />
 <p>title: Monitor Snowflake database
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/databases/database-app/get-started/snowflake
-scraped: 2026-02-26T21:32:21.181647</p>
+scraped: 2026-02-27T21:23:31.758095</p>
 <hr />
 <h1 id="monitor-snowflake-database">Monitor Snowflake database<a class="headerlink" href="#monitor-snowflake-database" title="Permanent link">&para;</a></h1>
 <h1 id="monitor-snowflake-database_1">Monitor Snowflake database<a class="headerlink" href="#monitor-snowflake-database_1" title="Permanent link">&para;</a></h1>
@@ -29190,7 +29196,7 @@ scraped: 2026-02-26T21:32:21.181647</p>
 <hr />
 <p>title: Get started with database monitoring
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/databases/database-app/get-started
-scraped: 2026-02-26T21:27:52.733547</p>
+scraped: 2026-02-27T21:17:25.816849</p>
 <hr />
 <h1 id="get-started-with-database-monitoring">Get started with database monitoring<a class="headerlink" href="#get-started-with-database-monitoring" title="Permanent link">&para;</a></h1>
 <h1 id="get-started-with-database-monitoring_1">Get started with database monitoring<a class="headerlink" href="#get-started-with-database-monitoring_1" title="Permanent link">&para;</a></h1>
@@ -29227,7 +29233,7 @@ scraped: 2026-02-26T21:27:52.733547</p>
 <hr />
 <p>title: Troubleshooting
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/databases/database-app/troubleshooting
-scraped: 2026-02-26T21:24:19.142694</p>
+scraped: 2026-02-27T21:30:04.298717</p>
 <hr />
 <h1 id="troubleshooting_1">Troubleshooting<a class="headerlink" href="#troubleshooting_1" title="Permanent link">&para;</a></h1>
 <h1 id="troubleshooting_2">Troubleshooting<a class="headerlink" href="#troubleshooting_2" title="Permanent link">&para;</a></h1>
@@ -29241,7 +29247,7 @@ scraped: 2026-02-26T21:24:19.142694</p>
 <hr />
 <p>title: Databases app
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/databases/database-app
-scraped: 2026-02-26T21:15:42.983315</p>
+scraped: 2026-02-27T21:11:28.025417</p>
 <hr />
 <h1 id="databases-app">Databases app<a class="headerlink" href="#databases-app" title="Permanent link">&para;</a></h1>
 <h1 id="databases-app_1">Databases app<a class="headerlink" href="#databases-app_1" title="Permanent link">&para;</a></h1>
@@ -29568,7 +29574,7 @@ scraped: 2026-02-26T21:21:10.367442</p>
 <hr />
 <p>title: Improve database performance
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/databases/database-services-classic/improve-database-performance
-scraped: 2026-02-26T21:29:20.096294</p>
+scraped: 2026-02-27T21:18:59.449928</p>
 <hr />
 <h1 id="improve-database-performance">Improve database performance<a class="headerlink" href="#improve-database-performance" title="Permanent link">&para;</a></h1>
 <h1 id="improve-database-performance_1">Improve database performance<a class="headerlink" href="#improve-database-performance_1" title="Permanent link">&para;</a></h1>
@@ -31068,14 +31074,14 @@ scraped: 2026-02-26T21:19:55.683671</p>
 <hr />
 <p>title: OpenTelemetry Host Monitoring extension
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/extensions/opentelemetry-host-monitoring
-scraped: 2026-02-24T21:31:53.484173</p>
+scraped: 2026-02-27T21:30:22.189457</p>
 <hr />
 <h1 id="opentelemetry-host-monitoring-extension">OpenTelemetry Host Monitoring extension<a class="headerlink" href="#opentelemetry-host-monitoring-extension" title="Permanent link">&para;</a></h1>
 <h1 id="opentelemetry-host-monitoring-extension_1">OpenTelemetry Host Monitoring extension<a class="headerlink" href="#opentelemetry-host-monitoring-extension_1" title="Permanent link">&para;</a></h1>
 <ul>
 <li>Latest Dynatrace</li>
 <li>Extension</li>
-<li>Published Feb 20, 2026</li>
+<li>Updated on Feb 25, 2026</li>
 </ul>
 <p>Generate topology and screens for your OpenTelemetry host data for quicker display and easier analysis of the data.</p>
 <h2 id="get-started_4">Get started<a class="headerlink" href="#get-started_4" title="Permanent link">&para;</a></h2>
@@ -31130,6 +31136,10 @@ scraped: 2026-02-24T21:31:53.484173</p>
 </tbody>
 </table>
 <p>These entities enable Dynatrace to correlate your metrics, logs, and spans and provide unified context across your monitored environment.</p>
+<h4 id="enrich-application-telemetry">Enrich application telemetry<a class="headerlink" href="#enrich-application-telemetry" title="Permanent link">&para;</a></h4>
+<p>If you send your application telemetry to your local host OpenTelemetry Collector, it will automatically enrich the data with the required host attributes so that the signals are correctly attached to the OpenTelemetry Host entity.</p>
+<p>To enrich application telemetry with the corresponding process entity, all signals (metrics, logs, and spans) need to have the <code>process.executable.name</code> resource attribute. For logs and spans to have this attribute, you need to initialize your OTel SDK with the <a href="https://opentelemetry.io/docs/languages/go/resources/">process resource detectorï»¿</a>.
+If this is not implemented for your technology's OTel SDK, you can always set the <code>process.executable.name</code> attribute through the <code>OTEL_RESOURCE_ATTRIBUTES</code> <a href="https://opentelemetry.io/docs/specs/otel/configuration/sdk-environment-variables/#general-sdk-configuration">environment variableï»¿</a>.</p>
 <h3 id="screens">Screens<a class="headerlink" href="#screens" title="Permanent link">&para;</a></h3>
 <p>The extension provides screens and dashboards that display entity information, metrics, and more. The data is displayed in a smart and structured way for easier navigation and a clearer understanding of the insights.</p>
 <p>To find a list of your OTel hosts and processes, go to <img alt="Infrastructure &amp; Operations" src="https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png" title="Infrastructure &amp; Operations" /> <strong>Infrastructure &amp; Operations</strong> &gt; <strong>Technologies</strong>.</p>
@@ -31164,7 +31174,7 @@ scraped: 2026-02-24T21:31:53.484173</p>
 <hr />
 <p>title: Radware Alteon Load Balancer extension
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/extensions/radware-alteon-load-balancer
-scraped: 2026-02-26T21:31:36.234488</p>
+scraped: 2026-02-27T21:31:48.122962</p>
 <hr />
 <h1 id="radware-alteon-load-balancer-extension">Radware Alteon Load Balancer extension<a class="headerlink" href="#radware-alteon-load-balancer-extension" title="Permanent link">&para;</a></h1>
 <h1 id="radware-alteon-load-balancer-extension_1">Radware Alteon Load Balancer extension<a class="headerlink" href="#radware-alteon-load-balancer-extension_1" title="Permanent link">&para;</a></h1>
@@ -31223,7 +31233,7 @@ scraped: 2026-02-26T21:31:36.234488</p>
 <p>DDUs: <code>(60 + (8 * Interfaces)) * 525.6 DDUs/year, per device</code></p>
 <p>DPS (Metric data points): <code>(60 + (8 * Interfaces)) * 525,600 metric data points/year, per device</code></p>
 <h2 id="feature-sets_10">Feature sets<a class="headerlink" href="#feature-sets_10" title="Permanent link">&para;</a></h2>
-<p>Software_Status_SP</p>
+<p>SSL_Statistics_Virtual</p>
 <table>
 <thead>
 <tr>
@@ -31234,9 +31244,249 @@ scraped: 2026-02-26T21:31:36.234488</p>
 </thead>
 <tbody>
 <tr>
-<td>SP CPU utilization</td>
-<td>com.dynatrace.extension.network_device.sp.cpu_usage</td>
-<td>SP CPU utilization</td>
+<td>TCP sessions using SSL service</td>
+<td>radware_alteon.sslslbstat.cursessions</td>
+<td>The current number of different TCP sessions using SSL service.</td>
+</tr>
+<tr>
+<td>Total TCP sessions using SSL service</td>
+<td>radware_alteon.sslslbstat.totalsessions.count</td>
+<td>The total number of different TCP sessions using SSL service.</td>
+</tr>
+<tr>
+<td>TCP sessions using SSL service high water mark</td>
+<td>radware_alteon.sslslbstat.highestsessions.count</td>
+<td>The high water mark of current sessions of different TCP sessions using SSL service.</td>
+</tr>
+<tr>
+<td>SSL handshakes between clients and AAS per second</td>
+<td>radware_alteon.ssloff.newhandShake</td>
+<td>New SSL handshakes between clients and AAS per second.</td>
+</tr>
+<tr>
+<td>New SSL handshakes between Clients and AAS per second (sslOffPerEnhServNewhandShake)</td>
+<td>radware_alteon.ssloffper.enh.serv.newhandshake</td>
+<td>Number of New SSL handshakes between Clients and AAS per second for this virtual service.</td>
+</tr>
+<tr>
+<td>Number of expired SSL certificates per second for virtual service (sslOffPerEnhServExpiredCertificates)</td>
+<td>radware_alteon.ssloffper.enh.serv.expiredcertificates</td>
+<td>Number of expired SSL certificates per second for virtual service.</td>
+</tr>
+</tbody>
+</table>
+<p>Hardware_Status_Physical</p>
+<table>
+<thead>
+<tr>
+<th>Metric name</th>
+<th>Metric key</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Temperature sensor status</td>
+<td>radware_alteon.temperature.status</td>
+<td>The status of the temperature sensor. ok(1), exceed(2)</td>
+</tr>
+<tr>
+<td>Temperature warning threshold</td>
+<td>radware_alteon.temperature.threshold.warning</td>
+<td>The temperature warning threshold</td>
+</tr>
+<tr>
+<td>Temperature shutdown threshold</td>
+<td>radware_alteon.temperature.threshold.shutdown</td>
+<td>The temperature shutdown threshold</td>
+</tr>
+<tr>
+<td>Hardware fan status</td>
+<td>radware_alteon.fan.status</td>
+<td>Hardware fan status. ok(1), fail(2), unplug(3)</td>
+</tr>
+<tr>
+<td>Powersupply status</td>
+<td>radware_alteon.powersupply.status</td>
+<td>Powersupply status. singlePowerSupplyOk(1), firstPowerSupplyFailed(2), secondPowerSupplyFailed(3), doublePowerSupplyOk(4), unknownPowerSupplyFailed(5)</td>
+</tr>
+</tbody>
+</table>
+<p>Session_Table_Utilization_Virtual</p>
+<table>
+<thead>
+<tr>
+<th>Metric name</th>
+<th>Metric key</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Session table maximum entries</td>
+<td>radware_alteon.slbstat.maint.maximumsessions</td>
+<td>The maximum number entries in the session table.</td>
+</tr>
+<tr>
+<td>Ipv6 session count</td>
+<td>radware_alteon.slbstat.maint.ip6currsessions.count</td>
+<td>The number of sessions for ipv6.</td>
+</tr>
+<tr>
+<td>Curent sessions in session table</td>
+<td>radware_alteon.slbstat.maint.curbindings</td>
+<td>The current number of sessions in the session table.</td>
+</tr>
+</tbody>
+</table>
+<p>default</p>
+<table>
+<thead>
+<tr>
+<th>Metric name</th>
+<th>Metric key</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>â</td>
+<td>com.dynatrace.extension.network_device.sysuptime</td>
+<td>â</td>
+</tr>
+<tr>
+<td>â</td>
+<td>com.dynatrace.extension.network_device.cpu_usage</td>
+<td>â</td>
+</tr>
+<tr>
+<td>â</td>
+<td>com.dynatrace.extension.network_device.memory_total</td>
+<td>â</td>
+</tr>
+<tr>
+<td>â</td>
+<td>com.dynatrace.extension.network_device.memory_free</td>
+<td>â</td>
+</tr>
+<tr>
+<td>â</td>
+<td>com.dynatrace.extension.network_device.memory_used</td>
+<td>â</td>
+</tr>
+<tr>
+<td>â</td>
+<td>com.dynatrace.extension.network_device.if.status</td>
+<td>â</td>
+</tr>
+<tr>
+<td>â</td>
+<td>com.dynatrace.extension.network_device.if.bytes_in.count</td>
+<td>â</td>
+</tr>
+<tr>
+<td>â</td>
+<td>com.dynatrace.extension.network_device.if.bytes_out.count</td>
+<td>â</td>
+</tr>
+<tr>
+<td>â</td>
+<td>com.dynatrace.extension.network_device.if.in.discards.count</td>
+<td>â</td>
+</tr>
+<tr>
+<td>â</td>
+<td>com.dynatrace.extension.network_device.if.out.discards.count</td>
+<td>â</td>
+</tr>
+<tr>
+<td>â</td>
+<td>com.dynatrace.extension.network_device.if.in.errors.count</td>
+<td>â</td>
+</tr>
+<tr>
+<td>â</td>
+<td>com.dynatrace.extension.network_device.if.out.errors.count</td>
+<td>â</td>
+</tr>
+</tbody>
+</table>
+<p>Throughput_Physical_Virtual</p>
+<table>
+<thead>
+<tr>
+<th>Metric name</th>
+<th>Metric key</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Peak throughput of ports</td>
+<td>radware_alteon.peakthroughputusage.count</td>
+<td>Peak throughput of ports in bits per second.</td>
+</tr>
+<tr>
+<td>Current throughput of ports</td>
+<td>radware_alteon.curthroughputusage.count</td>
+<td>Current throughput of ports in bits per second.</td>
+</tr>
+</tbody>
+</table>
+<p>Backend_Server_Utilization_Virtual</p>
+<table>
+<thead>
+<tr>
+<th>Metric name</th>
+<th>Metric key</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Real-server current sessions</td>
+<td>radware_alteon.slbstat.enh.rserver.currsessions</td>
+<td>Real-server current sessions.</td>
+</tr>
+<tr>
+<td>Real-server total sessions</td>
+<td>radware_alteon.slbstat.enh.rserver.totalsessions</td>
+<td>Real-server total sessions.</td>
+</tr>
+<tr>
+<td>Real-server highest sessions</td>
+<td>radware_alteon.slbstat.enh.rserver.highestsessions</td>
+<td>Real-server highest sessions.</td>
+</tr>
+<tr>
+<td>Real-server total rx/tx octets</td>
+<td>radware_alteon.slbstat.enh.rserver.hc.octets</td>
+<td>Real-server total rx/tx octets.</td>
+</tr>
+<tr>
+<td>Real server max concurrent connections</td>
+<td>radware_alteon.slbcur.cfg.realserver.maxconns</td>
+<td>The Maximum allowed number of concurrent connections per real server in the configuration.</td>
+</tr>
+<tr>
+<td>SP current memory</td>
+<td>radware_alteon.spmemusagestats.currentmemory</td>
+<td>The current memory of SP in kilobytes.</td>
+</tr>
+<tr>
+<td>Real-server group current sessions</td>
+<td>radware_alteon.slbstat.enh.group.currsessions</td>
+<td>The number of sessions that are currently handled by the real server group.</td>
+</tr>
+<tr>
+<td>Real-server group total sessions</td>
+<td>radware_alteon.slbstat.enh.group.totalsessions</td>
+<td>The total number of sessions that have been handled by the real server group.</td>
+</tr>
+<tr>
+<td>Real-server group highest sessions</td>
+<td>radware_alteon.slbstat.enh.group.highestsessions</td>
+<td>The highest sessions that have been handled by the real server group.</td>
 </tr>
 </tbody>
 </table>
@@ -31332,7 +31582,7 @@ scraped: 2026-02-26T21:31:36.234488</p>
 </tr>
 </tbody>
 </table>
-<p>Backend_Server_Utilization_Virtual</p>
+<p>Software_Status_SP</p>
 <table>
 <thead>
 <tr>
@@ -31343,293 +31593,9 @@ scraped: 2026-02-26T21:31:36.234488</p>
 </thead>
 <tbody>
 <tr>
-<td>Real-server current sessions</td>
-<td>radware_alteon.slbstat.enh.rserver.currsessions</td>
-<td>Real-server current sessions.</td>
-</tr>
-<tr>
-<td>Real-server total sessions</td>
-<td>radware_alteon.slbstat.enh.rserver.totalsessions</td>
-<td>Real-server total sessions.</td>
-</tr>
-<tr>
-<td>Real-server highest sessions</td>
-<td>radware_alteon.slbstat.enh.rserver.highestsessions</td>
-<td>Real-server highest sessions.</td>
-</tr>
-<tr>
-<td>Real-server total rx/tx octets</td>
-<td>radware_alteon.slbstat.enh.rserver.hc.octets</td>
-<td>Real-server total rx/tx octets.</td>
-</tr>
-<tr>
-<td>Real server max concurrent connections</td>
-<td>radware_alteon.slbcur.cfg.realserver.maxconns</td>
-<td>The Maximum allowed number of concurrent connections per real server in the configuration.</td>
-</tr>
-<tr>
-<td>SP current memory</td>
-<td>radware_alteon.spmemusagestats.currentmemory</td>
-<td>The current memory of SP in kilobytes.</td>
-</tr>
-<tr>
-<td>Real-server group current sessions</td>
-<td>radware_alteon.slbstat.enh.group.currsessions</td>
-<td>The number of sessions that are currently handled by the real server group.</td>
-</tr>
-<tr>
-<td>Real-server group total sessions</td>
-<td>radware_alteon.slbstat.enh.group.totalsessions</td>
-<td>The total number of sessions that have been handled by the real server group.</td>
-</tr>
-<tr>
-<td>Real-server group highest sessions</td>
-<td>radware_alteon.slbstat.enh.group.highestsessions</td>
-<td>The highest sessions that have been handled by the real server group.</td>
-</tr>
-</tbody>
-</table>
-<p>Throughput_Physical_Virtual</p>
-<table>
-<thead>
-<tr>
-<th>Metric name</th>
-<th>Metric key</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Peak throughput of ports</td>
-<td>radware_alteon.peakthroughputusage.count</td>
-<td>Peak throughput of ports in bits per second.</td>
-</tr>
-<tr>
-<td>Current throughput of ports</td>
-<td>radware_alteon.curthroughputusage.count</td>
-<td>Current throughput of ports in bits per second.</td>
-</tr>
-</tbody>
-</table>
-<p>default</p>
-<table>
-<thead>
-<tr>
-<th>Metric name</th>
-<th>Metric key</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>â</td>
-<td>com.dynatrace.extension.network_device.sysuptime</td>
-<td>â</td>
-</tr>
-<tr>
-<td>â</td>
-<td>com.dynatrace.extension.network_device.cpu_usage</td>
-<td>â</td>
-</tr>
-<tr>
-<td>â</td>
-<td>com.dynatrace.extension.network_device.memory_total</td>
-<td>â</td>
-</tr>
-<tr>
-<td>â</td>
-<td>com.dynatrace.extension.network_device.memory_free</td>
-<td>â</td>
-</tr>
-<tr>
-<td>â</td>
-<td>com.dynatrace.extension.network_device.memory_used</td>
-<td>â</td>
-</tr>
-<tr>
-<td>â</td>
-<td>com.dynatrace.extension.network_device.if.status</td>
-<td>â</td>
-</tr>
-<tr>
-<td>â</td>
-<td>com.dynatrace.extension.network_device.if.bytes_in.count</td>
-<td>â</td>
-</tr>
-<tr>
-<td>â</td>
-<td>com.dynatrace.extension.network_device.if.bytes_out.count</td>
-<td>â</td>
-</tr>
-<tr>
-<td>â</td>
-<td>com.dynatrace.extension.network_device.if.in.discards.count</td>
-<td>â</td>
-</tr>
-<tr>
-<td>â</td>
-<td>com.dynatrace.extension.network_device.if.out.discards.count</td>
-<td>â</td>
-</tr>
-<tr>
-<td>â</td>
-<td>com.dynatrace.extension.network_device.if.in.errors.count</td>
-<td>â</td>
-</tr>
-<tr>
-<td>â</td>
-<td>com.dynatrace.extension.network_device.if.out.errors.count</td>
-<td>â</td>
-</tr>
-</tbody>
-</table>
-<p>Session_Table_Utilization_Virtual</p>
-<table>
-<thead>
-<tr>
-<th>Metric name</th>
-<th>Metric key</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Session table maximum entries</td>
-<td>radware_alteon.slbstat.maint.maximumsessions</td>
-<td>The maximum number entries in the session table.</td>
-</tr>
-<tr>
-<td>Ipv6 session count</td>
-<td>radware_alteon.slbstat.maint.ip6currsessions.count</td>
-<td>The number of sessions for ipv6.</td>
-</tr>
-<tr>
-<td>Curent sessions in session table</td>
-<td>radware_alteon.slbstat.maint.curbindings</td>
-<td>The current number of sessions in the session table.</td>
-</tr>
-</tbody>
-</table>
-<p>Hardware_Status_Physical</p>
-<table>
-<thead>
-<tr>
-<th>Metric name</th>
-<th>Metric key</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Temperature sensor status</td>
-<td>radware_alteon.temperature.status</td>
-<td>The status of the temperature sensor. ok(1), exceed(2)</td>
-</tr>
-<tr>
-<td>Temperature warning threshold</td>
-<td>radware_alteon.temperature.threshold.warning</td>
-<td>The temperature warning threshold</td>
-</tr>
-<tr>
-<td>Temperature shutdown threshold</td>
-<td>radware_alteon.temperature.threshold.shutdown</td>
-<td>The temperature shutdown threshold</td>
-</tr>
-<tr>
-<td>Hardware fan status</td>
-<td>radware_alteon.fan.status</td>
-<td>Hardware fan status. ok(1), fail(2), unplug(3)</td>
-</tr>
-<tr>
-<td>Powersupply status</td>
-<td>radware_alteon.powersupply.status</td>
-<td>Powersupply status. singlePowerSupplyOk(1), firstPowerSupplyFailed(2), secondPowerSupplyFailed(3), doublePowerSupplyOk(4), unknownPowerSupplyFailed(5)</td>
-</tr>
-</tbody>
-</table>
-<p>SSL_Statistics_Virtual</p>
-<table>
-<thead>
-<tr>
-<th>Metric name</th>
-<th>Metric key</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>TCP sessions using SSL service</td>
-<td>radware_alteon.sslslbstat.cursessions</td>
-<td>The current number of different TCP sessions using SSL service.</td>
-</tr>
-<tr>
-<td>Total TCP sessions using SSL service</td>
-<td>radware_alteon.sslslbstat.totalsessions.count</td>
-<td>The total number of different TCP sessions using SSL service.</td>
-</tr>
-<tr>
-<td>TCP sessions using SSL service high water mark</td>
-<td>radware_alteon.sslslbstat.highestsessions.count</td>
-<td>The high water mark of current sessions of different TCP sessions using SSL service.</td>
-</tr>
-<tr>
-<td>SSL handshakes between clients and AAS per second</td>
-<td>radware_alteon.ssloff.newhandShake</td>
-<td>New SSL handshakes between clients and AAS per second.</td>
-</tr>
-<tr>
-<td>New SSL handshakes between Clients and AAS per second (sslOffPerEnhServNewhandShake)</td>
-<td>radware_alteon.ssloffper.enh.serv.newhandshake</td>
-<td>Number of New SSL handshakes between Clients and AAS per second for this virtual service.</td>
-</tr>
-<tr>
-<td>Number of expired SSL certificates per second for virtual service (sslOffPerEnhServExpiredCertificates)</td>
-<td>radware_alteon.ssloffper.enh.serv.expiredcertificates</td>
-<td>Number of expired SSL certificates per second for virtual service.</td>
-</tr>
-</tbody>
-</table>
-<p>Advanced interfaces</p>
-<table>
-<thead>
-<tr>
-<th>Metric name</th>
-<th>Metric key</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>â</td>
-<td>com.dynatrace.extension.network_device.if.lastchange</td>
-<td>â</td>
-</tr>
-</tbody>
-</table>
-<p>High_Availability_Physical</p>
-<table>
-<thead>
-<tr>
-<th>Metric name</th>
-<th>Metric key</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>High availability (HA) service group state</td>
-<td>radware_alteon.ha.group.state</td>
-<td>High availability (HA) service group state</td>
-</tr>
-<tr>
-<td>High availability (HA) switch state</td>
-<td>radware_alteon.ha.switch.state</td>
-<td>High availability (HA) switch state</td>
-</tr>
-<tr>
-<td>High availability (HA) mode</td>
-<td>radware_alteon.ha.curcfg.mode</td>
-<td>High availability (HA) mode</td>
+<td>SP CPU utilization</td>
+<td>com.dynatrace.extension.network_device.sp.cpu_usage</td>
+<td>SP CPU utilization</td>
 </tr>
 </tbody>
 </table>
@@ -31692,6 +31658,50 @@ scraped: 2026-02-26T21:31:36.234488</p>
 <td>HTTP transactions per second</td>
 <td>radware_alteon.httptranssumm.trans.rate</td>
 <td>HTTP transactions per second.</td>
+</tr>
+</tbody>
+</table>
+<p>High_Availability_Physical</p>
+<table>
+<thead>
+<tr>
+<th>Metric name</th>
+<th>Metric key</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>High availability (HA) service group state</td>
+<td>radware_alteon.ha.group.state</td>
+<td>High availability (HA) service group state</td>
+</tr>
+<tr>
+<td>High availability (HA) switch state</td>
+<td>radware_alteon.ha.switch.state</td>
+<td>High availability (HA) switch state</td>
+</tr>
+<tr>
+<td>High availability (HA) mode</td>
+<td>radware_alteon.ha.curcfg.mode</td>
+<td>High availability (HA) mode</td>
+</tr>
+</tbody>
+</table>
+<p>Advanced interfaces</p>
+<table>
+<thead>
+<tr>
+<th>Metric name</th>
+<th>Metric key</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>â</td>
+<td>com.dynatrace.extension.network_device.if.lastchange</td>
+<td>â</td>
 </tr>
 </tbody>
 </table>
@@ -31905,7 +31915,7 @@ To estimate annual DDU usage, take the result of the above formula for annual da
 <hr />
 <p>title: Extensions
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/extensions
-scraped: 2026-02-25T21:17:09.526898</p>
+scraped: 2026-02-27T21:14:40.057131</p>
 <hr />
 <h1 id="extensions">Extensions<a class="headerlink" href="#extensions" title="Permanent link">&para;</a></h1>
 <h1 id="extensions_1">Extensions<a class="headerlink" href="#extensions_1" title="Permanent link">&para;</a></h1>
@@ -31932,7 +31942,7 @@ scraped: 2026-02-25T21:17:09.526898</p>
 <hr />
 <p>title: Exclude disks and network traffic from host monitoring
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/hosts/configuration/exclude-disks-and-network-traffic
-scraped: 2026-02-26T21:26:12.818260</p>
+scraped: 2026-02-27T21:31:46.776701</p>
 <hr />
 <h1 id="exclude-disks-and-network-traffic-from-host-monitoring">Exclude disks and network traffic from host monitoring<a class="headerlink" href="#exclude-disks-and-network-traffic-from-host-monitoring" title="Permanent link">&para;</a></h1>
 <h1 id="exclude-disks-and-network-traffic-from-host-monitoring_1">Exclude disks and network traffic from host monitoring<a class="headerlink" href="#exclude-disks-and-network-traffic-from-host-monitoring_1" title="Permanent link">&para;</a></h1>
@@ -32103,7 +32113,7 @@ scraped: 2026-02-26T21:21:06.355276</p>
 <hr />
 <p>title: Host-level settings
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/hosts/configuration
-scraped: 2026-02-26T21:14:34.660775</p>
+scraped: 2026-02-27T21:10:52.272802</p>
 <hr />
 <h1 id="host-level-settings">Host-level settings<a class="headerlink" href="#host-level-settings" title="Permanent link">&para;</a></h1>
 <h1 id="host-level-settings_1">Host-level settings<a class="headerlink" href="#host-level-settings_1" title="Permanent link">&para;</a></h1>
@@ -32415,7 +32425,7 @@ scraped: 2026-02-26T21:14:34.660775</p>
 <hr />
 <p>title: Host availability
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/hosts/monitoring/host-monitoring/host-availability
-scraped: 2026-02-26T21:33:52.803306</p>
+scraped: 2026-02-27T21:20:46.176516</p>
 <hr />
 <h1 id="host-availability">Host availability<a class="headerlink" href="#host-availability" title="Permanent link">&para;</a></h1>
 <h1 id="host-availability_1">Host availability<a class="headerlink" href="#host-availability_1" title="Permanent link">&para;</a></h1>
@@ -32854,7 +32864,7 @@ Also, <code>Auto-start Windows OS Services</code> and <code>Auto-start Linux OS 
 <hr />
 <p>title: Process availability
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/hosts/monitoring/process-availability
-scraped: 2026-02-26T21:20:01.610054</p>
+scraped: 2026-02-27T21:18:56.865777</p>
 <hr />
 <h1 id="process-availability_1">Process availability<a class="headerlink" href="#process-availability_1" title="Permanent link">&para;</a></h1>
 <h1 id="process-availability_2">Process availability<a class="headerlink" href="#process-availability_2" title="Permanent link">&para;</a></h1>
@@ -33550,7 +33560,7 @@ scraped: 2026-02-06T16:20:45.488376</p>
 <hr />
 <p>title: Host metrics
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/hosts/reference/metrics
-scraped: 2026-02-24T21:33:07.904820</p>
+scraped: 2026-02-27T21:25:03.186818</p>
 <hr />
 <h1 id="host-metrics">Host metrics<a class="headerlink" href="#host-metrics" title="Permanent link">&para;</a></h1>
 <h1 id="host-metrics_1">Host metrics<a class="headerlink" href="#host-metrics_1" title="Permanent link">&para;</a></h1>
@@ -34268,7 +34278,7 @@ scraped: 2026-02-06T16:29:11.779328</p>
 <hr />
 <p>title: Containers
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/infrastructure-and-operations/containers
-scraped: 2026-02-26T21:19:34.662934</p>
+scraped: 2026-02-27T21:14:38.758973</p>
 <hr />
 <h1 id="containers">Containers<a class="headerlink" href="#containers" title="Permanent link">&para;</a></h1>
 <h1 id="containers_1">Containers<a class="headerlink" href="#containers_1" title="Permanent link">&para;</a></h1>
@@ -34313,7 +34323,7 @@ scraped: 2026-02-26T21:19:34.662934</p>
 <hr />
 <p>title: Data centers
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/infrastructure-and-operations/data-centers
-scraped: 2026-02-26T21:19:25.868981</p>
+scraped: 2026-02-27T21:14:33.455425</p>
 <hr />
 <h1 id="data-centers">Data centers<a class="headerlink" href="#data-centers" title="Permanent link">&para;</a></h1>
 <h1 id="data-centers_1">Data centers<a class="headerlink" href="#data-centers_1" title="Permanent link">&para;</a></h1>
@@ -34360,7 +34370,7 @@ scraped: 2026-02-26T21:19:25.868981</p>
 <hr />
 <p>title: Hosts
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/infrastructure-and-operations/hosts
-scraped: 2026-02-26T21:19:35.874123</p>
+scraped: 2026-02-27T21:14:29.582693</p>
 <hr />
 <h1 id="hosts_2">Hosts<a class="headerlink" href="#hosts_2" title="Permanent link">&para;</a></h1>
 <h1 id="hosts_3">Hosts<a class="headerlink" href="#hosts_3" title="Permanent link">&para;</a></h1>
@@ -34410,7 +34420,7 @@ scraped: 2026-02-26T21:19:35.874123</p>
 <hr />
 <p>title: Networks
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/infrastructure-and-operations/networks
-scraped: 2026-02-26T21:19:33.441751</p>
+scraped: 2026-02-27T21:14:30.866063</p>
 <hr />
 <h1 id="networks">Networks<a class="headerlink" href="#networks" title="Permanent link">&para;</a></h1>
 <h1 id="networks_1">Networks<a class="headerlink" href="#networks_1" title="Permanent link">&para;</a></h1>
@@ -34447,7 +34457,7 @@ scraped: 2026-02-26T21:19:33.441751</p>
 <hr />
 <p>title: Processes
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/infrastructure-and-operations/processes
-scraped: 2026-02-26T21:19:32.227374</p>
+scraped: 2026-02-27T21:14:32.158361</p>
 <hr />
 <h1 id="processes">Processes<a class="headerlink" href="#processes" title="Permanent link">&para;</a></h1>
 <h1 id="processes_1">Processes<a class="headerlink" href="#processes_1" title="Permanent link">&para;</a></h1>
@@ -34492,7 +34502,7 @@ scraped: 2026-02-26T21:19:32.227374</p>
 <hr />
 <p>title: Infrastructure &amp; Operations
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/infrastructure-and-operations
-scraped: 2026-02-26T21:14:31.153002</p>
+scraped: 2026-02-27T21:10:48.306842</p>
 <hr />
 <h1 id="infrastructure-operations">Infrastructure &amp; Operations<a class="headerlink" href="#infrastructure-operations" title="Permanent link">&para;</a></h1>
 <h1 id="infrastructure-operations_1">Infrastructure &amp; Operations<a class="headerlink" href="#infrastructure-operations_1" title="Permanent link">&para;</a></h1>
@@ -34586,7 +34596,7 @@ scraped: 2026-02-26T21:14:31.153002</p>
 <li>Add entities and topology. Select from the available options in the menu.</li>
 <li>Select <strong>Save</strong>.</li>
 </ol>
-<p>For more details on managing segments, refer to <a href="/docs/manage/segments" title="Segments logically structure monitoring data in Grail and function as convenient filters for data that users are allowed to access based on permissions.">Segments</a>.</p>
+<p>For more details on managing segments, refer to <a href="/docs/manage/segments" title="Use segments to logically structure and conveniently filter observability data across apps.">Segments</a>.</p>
 <h3 id="analyze-overview-charts">Analyze overview charts<a class="headerlink" href="#analyze-overview-charts" title="Permanent link">&para;</a></h3>
 <p>You can define which metrics are displayed in the charts by selecting <img alt="Expand menu" src="https://dt-cdn.net/images/dashboards-app-menu-expand-3398af0cdf.svg" title="Expand menu" /> in the upper left corner of each graph or chart.</p>
 <h4 id="export-data-to-notebooks">Export data to Notebooks<a class="headerlink" href="#export-data-to-notebooks" title="Permanent link">&para;</a></h4>
@@ -34771,7 +34781,7 @@ scraped: 2026-02-26T21:14:31.153002</p>
 <hr />
 <p>title: Enable Kubernetes experience for existing clusters
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/kubernetes-app/enable-k8s-experience/existing-clusters
-scraped: 2026-02-26T21:15:51.198191</p>
+scraped: 2026-02-27T21:10:45.636513</p>
 <hr />
 <h1 id="enable-kubernetes-experience-for-existing-clusters">Enable Kubernetes experience for existing clusters<a class="headerlink" href="#enable-kubernetes-experience-for-existing-clusters" title="Permanent link">&para;</a></h1>
 <h1 id="enable-kubernetes-experience-for-existing-clusters_1">Enable Kubernetes experience for existing clusters<a class="headerlink" href="#enable-kubernetes-experience-for-existing-clusters_1" title="Permanent link">&para;</a></h1>
@@ -34802,7 +34812,7 @@ scraped: 2026-02-26T21:15:51.198191</p>
 <hr />
 <p>title: Kubernetes Enhanced Object Visibility Preview
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/kubernetes-app/preview/enhanced-object-vis-preview
-scraped: 2026-02-26T21:26:51.996335</p>
+scraped: 2026-02-27T21:22:45.392475</p>
 <hr />
 <h1 id="kubernetes-enhanced-object-visibility-preview">Kubernetes Enhanced Object Visibility Preview<a class="headerlink" href="#kubernetes-enhanced-object-visibility-preview" title="Permanent link">&para;</a></h1>
 <h1 id="kubernetes-enhanced-object-visibility-preview_1">Kubernetes Enhanced Object Visibility Preview<a class="headerlink" href="#kubernetes-enhanced-object-visibility-preview_1" title="Permanent link">&para;</a></h1>
@@ -35009,7 +35019,7 @@ Please note, that labels and annotation are not part of this field, but are stor
 <hr />
 <p>title: Permissions
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/kubernetes-app/reference/permissions
-scraped: 2026-02-26T21:15:50.126449</p>
+scraped: 2026-02-27T21:10:43.036650</p>
 <hr />
 <h1 id="permissions_4">Permissions<a class="headerlink" href="#permissions_4" title="Permanent link">&para;</a></h1>
 <h1 id="permissions_5">Permissions<a class="headerlink" href="#permissions_5" title="Permanent link">&para;</a></h1>
@@ -35051,7 +35061,7 @@ scraped: 2026-02-26T21:15:50.126449</p>
 <hr />
 <p>title: Alert on common Kubernetes misconfigurations and detect anomalies with Kubernetes metrics
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/kubernetes-app/use-cases/alert-use-case
-scraped: 2026-02-24T21:28:00.172296</p>
+scraped: 2026-02-27T21:28:40.733340</p>
 <hr />
 <h1 id="alert-on-common-kubernetes-misconfigurations-and-detect-anomalies-with-kubernetes-metrics">Alert on common Kubernetes misconfigurations and detect anomalies with Kubernetes metrics<a class="headerlink" href="#alert-on-common-kubernetes-misconfigurations-and-detect-anomalies-with-kubernetes-metrics" title="Permanent link">&para;</a></h1>
 <h1 id="alert-on-common-kubernetes-misconfigurations-and-detect-anomalies-with-kubernetes-metrics_1">Alert on common Kubernetes misconfigurations and detect anomalies with Kubernetes metrics<a class="headerlink" href="#alert-on-common-kubernetes-misconfigurations-and-detect-anomalies-with-kubernetes-metrics_1" title="Permanent link">&para;</a></h1>
@@ -35095,7 +35105,7 @@ scraped: 2026-02-24T21:28:00.172296</p>
 <hr />
 <p>title: Predictive Kubernetes operations
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/kubernetes-app/use-cases/predictive-operations
-scraped: 2026-02-26T21:33:07.488489</p>
+scraped: 2026-02-27T21:21:08.388766</p>
 <hr />
 <h1 id="predictive-kubernetes-operations">Predictive Kubernetes operations<a class="headerlink" href="#predictive-kubernetes-operations" title="Permanent link">&para;</a></h1>
 <h1 id="predictive-kubernetes-operations_1">Predictive Kubernetes operations<a class="headerlink" href="#predictive-kubernetes-operations_1" title="Permanent link">&para;</a></h1>
@@ -35688,7 +35698,7 @@ scraped: 2026-02-26T21:33:07.488489</p>
 <hr />
 <p>title: Kubernetes
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/kubernetes-app
-scraped: 2026-02-26T21:13:46.369444</p>
+scraped: 2026-02-27T21:09:12.665890</p>
 <hr />
 <h1 id="kubernetes_4">Kubernetes<a class="headerlink" href="#kubernetes_4" title="Permanent link">&para;</a></h1>
 <h1 id="kubernetes_5">Kubernetes<a class="headerlink" href="#kubernetes_5" title="Permanent link">&para;</a></h1>
@@ -35885,7 +35895,7 @@ scraped: 2026-02-26T21:13:46.369444</p>
 <hr />
 <p>title: Ingest NetFlow records into Dynatrace
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/networks/ingest-netflow-records
-scraped: 2026-02-26T21:33:17.492345</p>
+scraped: 2026-02-27T21:27:43.023509</p>
 <hr />
 <h1 id="ingest-netflow-records-into-dynatrace">Ingest NetFlow records into Dynatrace<a class="headerlink" href="#ingest-netflow-records-into-dynatrace" title="Permanent link">&para;</a></h1>
 <h1 id="ingest-netflow-records-into-dynatrace_1">Ingest NetFlow records into Dynatrace<a class="headerlink" href="#ingest-netflow-records-into-dynatrace_1" title="Permanent link">&para;</a></h1>
@@ -36083,7 +36093,7 @@ scraped: 2026-02-26T21:33:17.492345</p>
 <hr />
 <p>title: Extended network monitoring
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/networks/network-monitoring-with-nettracer
-scraped: 2026-02-26T21:20:00.506001</p>
+scraped: 2026-02-27T21:18:34.636591</p>
 <hr />
 <h1 id="extended-network-monitoring">Extended network monitoring<a class="headerlink" href="#extended-network-monitoring" title="Permanent link">&para;</a></h1>
 <h1 id="extended-network-monitoring_1">Extended network monitoring<a class="headerlink" href="#extended-network-monitoring_1" title="Permanent link">&para;</a></h1>
@@ -36323,7 +36333,7 @@ scraped: 2026-02-06T16:29:04.150090</p>
 <hr />
 <p>title: Which are the most important processes?
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/process-groups/basic-concepts/which-are-the-most-important-processes
-scraped: 2026-02-26T21:14:52.123088</p>
+scraped: 2026-02-27T21:11:15.734557</p>
 <hr />
 <h1 id="which-are-the-most-important-processes">Which are the most important processes?<a class="headerlink" href="#which-are-the-most-important-processes" title="Permanent link">&para;</a></h1>
 <h1 id="which-are-the-most-important-processes_1">Which are the most important processes?<a class="headerlink" href="#which-are-the-most-important-processes_1" title="Permanent link">&para;</a></h1>
@@ -36391,7 +36401,7 @@ scraped: 2026-02-26T21:14:52.123088</p>
 <hr />
 <p>title: Process group detection
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/process-groups/configuration/pg-detection
-scraped: 2026-02-26T21:18:26.506817</p>
+scraped: 2026-02-27T21:15:27.722577</p>
 <hr />
 <h1 id="process-group-detection">Process group detection<a class="headerlink" href="#process-group-detection" title="Permanent link">&para;</a></h1>
 <h1 id="process-group-detection_1">Process group detection<a class="headerlink" href="#process-group-detection_1" title="Permanent link">&para;</a></h1>
@@ -36993,7 +37003,7 @@ scraped: 2026-02-26T21:19:59.232778</p>
 <hr />
 <p>title: Process groups
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/process-groups
-scraped: 2026-02-25T21:17:12.147136</p>
+scraped: 2026-02-27T21:14:46.416643</p>
 <hr />
 <h1 id="process-groups_1">Process groups<a class="headerlink" href="#process-groups_1" title="Permanent link">&para;</a></h1>
 <h1 id="process-groups_2">Process groups<a class="headerlink" href="#process-groups_2" title="Permanent link">&para;</a></h1>
@@ -37787,7 +37797,7 @@ scraped: 2026-02-26T21:26:36.616023</p>
 <hr />
 <p>title: Queue tags and management zones
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/queues/configuration/tags-and-management-zones
-scraped: 2026-02-19T21:21:48.717362</p>
+scraped: 2026-02-27T21:24:42.077264</p>
 <hr />
 <h1 id="queue-tags-and-management-zones">Queue tags and management zones<a class="headerlink" href="#queue-tags-and-management-zones" title="Permanent link">&para;</a></h1>
 <h1 id="queue-tags-and-management-zones_1">Queue tags and management zones<a class="headerlink" href="#queue-tags-and-management-zones_1" title="Permanent link">&para;</a></h1>
@@ -37865,7 +37875,7 @@ scraped: 2026-02-19T21:21:48.717362</p>
 <hr />
 <p>title: Configure message queue monitoring
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/queues/configuration
-scraped: 2026-02-25T21:28:37.060477</p>
+scraped: 2026-02-27T21:28:35.353266</p>
 <hr />
 <h1 id="configure-message-queue-monitoring">Configure message queue monitoring<a class="headerlink" href="#configure-message-queue-monitoring" title="Permanent link">&para;</a></h1>
 <h1 id="configure-message-queue-monitoring_1">Configure message queue monitoring<a class="headerlink" href="#configure-message-queue-monitoring_1" title="Permanent link">&para;</a></h1>
@@ -37894,7 +37904,7 @@ scraped: 2026-02-25T21:28:37.060477</p>
 <hr />
 <p>title: Queue concepts
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/queues/queue-concepts
-scraped: 2026-02-26T21:28:48.436910</p>
+scraped: 2026-02-27T21:24:34.057616</p>
 <hr />
 <h1 id="queue-concepts">Queue concepts<a class="headerlink" href="#queue-concepts" title="Permanent link">&para;</a></h1>
 <h1 id="queue-concepts_1">Queue concepts<a class="headerlink" href="#queue-concepts_1" title="Permanent link">&para;</a></h1>
@@ -37956,7 +37966,7 @@ scraped: 2026-02-26T21:28:48.436910</p>
 <hr />
 <p>title: Message queues
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/queues
-scraped: 2026-02-26T21:34:09.081444</p>
+scraped: 2026-02-27T21:14:41.390305</p>
 <hr />
 <h1 id="message-queues">Message queues<a class="headerlink" href="#message-queues" title="Permanent link">&para;</a></h1>
 <h1 id="message-queues_1">Message queues<a class="headerlink" href="#message-queues_1" title="Permanent link">&para;</a></h1>
@@ -38017,7 +38027,7 @@ scraped: 2026-02-26T21:34:09.081444</p>
 <hr />
 <p>title: Limit VMware infrastructure monitoring using permissions
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/vmware-vsphere-monitoring/limit-infrastructure-monitoring-using-permissions
-scraped: 2026-02-26T21:33:26.874150</p>
+scraped: 2026-02-27T21:25:11.195542</p>
 <hr />
 <h1 id="limit-vmware-infrastructure-monitoring-using-permissions">Limit VMware infrastructure monitoring using permissions<a class="headerlink" href="#limit-vmware-infrastructure-monitoring-using-permissions" title="Permanent link">&para;</a></h1>
 <h1 id="limit-vmware-infrastructure-monitoring-using-permissions_1">Limit VMware infrastructure monitoring using permissions<a class="headerlink" href="#limit-vmware-infrastructure-monitoring-using-permissions_1" title="Permanent link">&para;</a></h1>
@@ -38158,7 +38168,7 @@ For <strong>Dynatrace Managed</strong> you can use the embedded ActiveGate runni
 <hr />
 <p>title: Infrastructure Observability
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability
-scraped: 2026-02-26T21:15:30.389511</p>
+scraped: 2026-02-27T21:09:43.025921</p>
 <hr />
 <h1 id="infrastructure-observability">Infrastructure Observability<a class="headerlink" href="#infrastructure-observability" title="Permanent link">&para;</a></h1>
 <h1 id="infrastructure-observability_1">Infrastructure Observability<a class="headerlink" href="#infrastructure-observability_1" title="Permanent link">&para;</a></h1>
