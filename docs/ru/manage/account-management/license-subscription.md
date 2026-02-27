@@ -1,7 +1,7 @@
 ---
 title: Subscription or license overview
 source: https://www.dynatrace.com/docs/manage/account-management/license-subscription
-scraped: 2026-02-26T21:25:17.765843
+scraped: 2026-02-27T21:26:43.420795
 ---
 
 # Subscription or license overview

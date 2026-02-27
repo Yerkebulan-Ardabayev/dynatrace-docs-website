@@ -1,7 +1,7 @@
 ---
 title: OpenPipeline limits
 source: https://www.dynatrace.com/docs/platform/openpipeline/reference/limits
-scraped: 2026-02-26T21:16:06.408713
+scraped: 2026-02-27T21:14:03.489254
 ---
 
 # OpenPipeline limits
@@ -11,7 +11,7 @@ scraped: 2026-02-26T21:16:06.408713
 * Latest Dynatrace
 * Reference
 * 4-min read
-* Updated on Jan 28, 2026
+* Updated on Feb 26, 2026
 
 The following page lists the default limits of Dynatrace OpenPipeline.
 
@@ -134,7 +134,7 @@ If the record doesn't have a `timestamp` field, the field `timestamp` is set to 
 
 ### Processing memory exhaustion
 
-Each record can occupy maximum 16 MB of processing memory. Each change to the record (e.g. parsing a field) decreases the available processing memory. Once the available processing memory is exhausted, the record is dropped, and the metric `dt.sfm.openpipeline.not_stored.records` with dimension `reason` set to `buffer_overflow` reports it.
+Processing memory is limited. Each change to a recordâfor example, parsing a fieldâdecreases the available processing memory. Once the available processing memory is exhausted, the record is dropped. This is reported in metric `dt.sfm.openpipeline.not_stored.records` with dimension `reason` set to `buffer_overflow`.
 
 ### Size of record after processing
 
@@ -178,3 +178,10 @@ Endpoint path doesn't support:
 * Whitespaces
 * Consecutive dots (`..`)
 * `Null` or empty input
+
+## Pipeline groups
+
+* The maximum number of composition pipelines per pipeline group is 10.
+* The maximum number of member pipelines per pipeline group is 100.
+* The pipeline role is permanent.
+  Converting rolesâfrom member to composition, or composition to memberâisn't supported.

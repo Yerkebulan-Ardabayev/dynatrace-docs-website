@@ -1,7 +1,7 @@
 ---
 title: Problems app
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/davis-problems-app
-scraped: 2026-02-26T21:13:43.807847
+scraped: 2026-02-27T21:09:20.820167
 ---
 
 # Problems app
@@ -178,7 +178,7 @@ Screenshot example of defining a segment for Problems filtering
 
 Segment filters are directly applied to the problem Grail records. Consequently, no entity filters are applied to the problem unless the entity ID is chosen as a primary field of the filtered problem.
 
-For more information on segments and how they work, see [Segments](/docs/manage/segments "Segments logically structure monitoring data in Grail and function as convenient filters for data that users are allowed to access based on permissions.") ![Segments](https://dt-cdn.net/images/segments-256-8e66310720.webp "Segments").
+For more information on segments and how they work, see [Segments](/docs/manage/segments "Use segments to logically structure and conveniently filter observability data across apps.") ![Segments](https://dt-cdn.net/images/segments-256-8e66310720.webp "Segments").
 
 ### Activate auto refresh
 

@@ -1,7 +1,7 @@
 ---
 title: Configure the beacon origin allowlist
 source: https://www.dynatrace.com/docs/observe/digital-experience/new-rum-experience/web-frontends/additional-configuration/configure-beacon-origin-allowlist
-scraped: 2026-02-23T21:31:16.992813
+scraped: 2026-02-27T21:21:50.289286
 ---
 
 # Configure the beacon origin allowlist

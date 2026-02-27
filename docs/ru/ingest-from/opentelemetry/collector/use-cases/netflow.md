@@ -1,7 +1,7 @@
 ---
 title: Ingest NetFlow with the OpenTelemetry Collector
 source: https://www.dynatrace.com/docs/ingest-from/opentelemetry/collector/use-cases/netflow
-scraped: 2026-02-26T21:28:54.406527
+scraped: 2026-02-27T21:24:28.786216
 ---
 
 # Ingest NetFlow with the OpenTelemetry Collector

@@ -1,7 +1,7 @@
 ---
 title: Synthetic architecture and communication
 source: https://www.dynatrace.com/docs/observe/digital-experience/synthetic-monitoring/general-information/architecture-communication
-scraped: 2026-02-24T21:33:35.642288
+scraped: 2026-02-27T21:17:41.966156
 ---
 
 # Synthetic architecture and communication
@@ -43,7 +43,7 @@ Public location communication
    The cluster provides the configuration, monitors definitions, and schedules executions. The data is encrypted through the [ActiveGate token](/docs/ingest-from/dynatrace-activegate/activegate-security "Secure ActiveGates with dedicated tokens.").
 2. **Synthetic engine to ActiveGate**
 
-   The Synthetic engine requests the configuration, and monitors definitions and executions from clusters via ActiveGate. The data is encrypted through the `synthetic token`, which is created on the ActiveGate start and stored in the `synthetic.token` file within your `config` foler. This token file is shared between ActiveGate and the Synthetic engine.
+   The Synthetic engine requests the configuration, and monitors definitions and executions from clusters via ActiveGate. The data is encrypted through the `synthetic token`, which is created on the ActiveGate start and stored in the `synthetic.token` file within your `config` folder. This token file is shared between ActiveGate and the Synthetic engine.
 3. **Synthetic engine to beacon forwarder**
 
    The Synthetic engine sends results of the executions. The data is encrypted through the `synthetic monitors` token. The Dynatrace Cluster generates this token on a tenant level, and it rotates every 24 hours. Once a day, tokens that are older than 48 hours get deleted. The token is provided to the engine with execution details, and the communication is secured with the [ActiveGate token](/docs/ingest-from/dynatrace-activegate/activegate-security "Secure ActiveGates with dedicated tokens.").

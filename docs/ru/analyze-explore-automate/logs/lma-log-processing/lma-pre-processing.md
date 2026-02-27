@@ -1,7 +1,7 @@
 ---
 title: Log pre-processing with OpenPipeline with ready-made bundles
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-log-processing/lma-pre-processing
-scraped: 2026-02-23T21:27:10.793074
+scraped: 2026-02-27T21:29:18.993429
 ---
 
 # Log pre-processing with OpenPipeline with ready-made bundles
@@ -44,78 +44,6 @@ Technology bundles are automatically applied and can't be customized.
 ### List of technology bundles
 
 To find the list of out-of-the-box coverage for popular technologies as **Ingest sources**, go to ![Settings](https://dt-cdn.net/images/settings-icon-256-38e1321b51.webp "Settings") **Settings** > **Process and contextualize** > **OpenPipeline** > **Logs** .
-
-**Ingest sources**
-
-**Processor**
-
-Amazon Data Firehose
-
-* AWS App Runner
-* AWS Cloud Trail
-* Amazon Relational Database Service (RDS)
-* Amazon Simple Notification Service (SNS)
-* AWS Common
-* Amazon Aurora
-* Amazon API Gateway
-* AWS Lambda
-* Amazon Virtual Private Cloud Flow Default
-* AWS Transit Gateway
-* AWS WAF
-* Amazon Cloudfront
-
-Data Acquisition - AWS Data Firehose
-
-* AWS Lambda
-* AWS App Runner
-* Amazon Relational Database Service (RDS)
-* Amazon Aurora
-* Amazon Simple Notification Service (SNS)
-* Amazon API Gateway
-
-Log ingestion API
-
-* Amazon API Gateway
-* Amazon Aurora
-* Amazon CloudFront
-* Amazon Virtual Private Cloud Flow Default
-* AWS App Runner
-* AWS Cloud Trail
-* AWS Common
-* AWS Lambda
-* Amazon Relational Database Service (RDS)
-* Amazon Simple Notification Service (SNS)
-* AWS Transit Gateway
-* AWS WAF
-* Azure Services
-* Azure Entra ID Audit Logs
-
-OneAgent
-
-* Elasticsearch
-* Cassandra
-* PostgreSQL
-* Redis
-* NodeJS
-* PHP
-* Java
-* Python
-* .NET
-* Ruby
-* Go
-* RabbitMQ
-* Apache Kafka
-* Nginx
-* HAProxy
-* Apache Tomcat
-* Apache HTTP
-* JBoss
-* Microsoft IIS
-* Syslog
-
-OpenTelemetry
-
-None
 
 ## Related topics
 

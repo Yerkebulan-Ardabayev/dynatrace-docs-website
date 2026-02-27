@@ -1,7 +1,7 @@
 ---
 title: Notebooks
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks
-scraped: 2026-02-26T21:15:40.598510
+scraped: 2026-02-27T21:11:46.885985
 ---
 
 # Notebooks
@@ -602,7 +602,7 @@ The available edit options will vary depending on the type of section you're edi
 
 ### Select section segments
 
-To filter data for a section, you can specify [segments](/docs/manage/segments "Segments logically structure monitoring data in Grail and function as convenient filters for data that users are allowed to access based on permissions.") for a section.
+To filter data for a section, you can specify [segments](/docs/manage/segments "Use segments to logically structure and conveniently filter observability data across apps.") for a section.
 
 1. In the action bar for that section, select  and, in **Filter by segments**, select a segment.
 2. If the segment requires an additional value selection, select it now.

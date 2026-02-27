@@ -1,7 +1,7 @@
 ---
 title: AWS Transit Gateway monitoring
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-transit-gateway
-scraped: 2026-02-26T21:22:12.889549
+scraped: 2026-02-27T21:29:10.335955
 ---
 
 # AWS Transit Gateway monitoring

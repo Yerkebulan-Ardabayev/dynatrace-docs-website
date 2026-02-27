@@ -1,7 +1,7 @@
 ---
 title: Platform tokens
 source: https://www.dynatrace.com/docs/manage/identity-access-management/access-tokens-and-oauth-clients/platform-tokens
-scraped: 2026-02-26T21:30:41.105287
+scraped: 2026-02-27T21:18:48.524365
 ---
 
 # Platform tokens

@@ -1,7 +1,7 @@
 ---
 title: Upgrade Classic SLOs
 source: https://www.dynatrace.com/docs/deliver/service-level-objectives/service-level-objective-upgrade-classic
-scraped: 2026-02-25T21:30:35.178825
+scraped: 2026-02-27T21:24:21.743170
 ---
 
 # Upgrade Classic SLOs
@@ -37,7 +37,7 @@ The table below highlights the new functionality and shows the many reasons you 
 | Capability | SLOs Classic **Service-Level Objectives Classic** | SLOs **Service-Level Objectives** | Business impact |
 | --- | --- | --- | --- |
 | Supported input for SLI definition | Limited to built-in or custom-calculated metrics | Supporting all data types in Grail, incl. biz-events, logs, spans, and time series | SLOs allow a finer granular configuration and tailored definition of the SLI. |
-| Segmenting, data filtering for SLO evaluation | ManagementZones | [Segments](/docs/manage/segments "Segments logically structure monitoring data in Grail and function as convenient filters for data that users are allowed to access based on permissions.") | [Segments](/docs/manage/segments "Segments logically structure monitoring data in Grail and function as convenient filters for data that users are allowed to access based on permissions.") allow detailed filtering of the dataset used for the SLO evaluation. |
+| Segmenting, data filtering for SLO evaluation | ManagementZones | [Segments](/docs/manage/segments "Use segments to logically structure and conveniently filter observability data across apps.") | [Segments](/docs/manage/segments "Use segments to logically structure and conveniently filter observability data across apps.") allow detailed filtering of the dataset used for the SLO evaluation. |
 | Adding SLO tags | â | SLO tags | Add SLO tags (key-value pairs) and then use them to filter SLOs when querying them via the API. |
 | Customized dashboard tiles | Classic dashboard tile | New [dashboard SLO tiles](/docs/deliver/service-level-objectives/service-level-objective-tile-view "View your service-level objective (SLO) tile details directly in your dashboard.") | New [dashboard SLO tiles](/docs/deliver/service-level-objectives/service-level-objective-tile-view "View your service-level objective (SLO) tile details directly in your dashboard.") allow more visual customization options, including what data should be shown and colorized. An additional SLO wizard overview allows for creating and editing SLOs in Dashboards **Dashboards**. |
 | Integration with other Dynatrace apps | Integrated with classic Dynatrace Apps | Integrated with latest Dynatrace Apps |  |

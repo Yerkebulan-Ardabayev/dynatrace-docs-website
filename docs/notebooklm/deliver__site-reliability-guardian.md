@@ -1,6 +1,6 @@
 # Документация Dynatrace: deliver/site-reliability-guardian
 Язык: Русский (RU)
-Сгенерировано: 2026-02-26
+Сгенерировано: 2026-02-27
 Файлов в разделе: 4
 ---
 
@@ -9,7 +9,7 @@
 ---
 title: Site Reliability guardian event structure
 source: https://www.dynatrace.com/docs/deliver/site-reliability-guardian/event-structure
-scraped: 2026-02-26T21:28:32.674730
+scraped: 2026-02-27T21:20:36.384446
 ---
 
 # Site Reliability guardian event structure
@@ -388,7 +388,7 @@ You can view older results by opening a guardian and selecting a different timef
 ---
 title: Site Reliability Guardian
 source: https://www.dynatrace.com/docs/deliver/site-reliability-guardian
-scraped: 2026-02-26T21:27:26.694585
+scraped: 2026-02-27T21:14:20.631704
 ---
 
 # Site Reliability Guardian
@@ -701,7 +701,7 @@ After the validation of each objective is done, the guarding uses the most sever
 
 ### 10. Segments
 
-Leverage [Segments](/docs/manage/segments "Segments logically structure monitoring data in Grail and function as convenient filters for data that users are allowed to access based on permissions.") in DQL-based objectives to logically structure and conveniently filter observability data.
+Leverage [Segments](/docs/manage/segments "Use segments to logically structure and conveniently filter observability data across apps.") in DQL-based objectives to logically structure and conveniently filter observability data.
 
 ## Use cases
 

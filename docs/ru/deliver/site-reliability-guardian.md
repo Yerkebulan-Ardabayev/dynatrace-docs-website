@@ -1,7 +1,7 @@
 ---
 title: Site Reliability Guardian
 source: https://www.dynatrace.com/docs/deliver/site-reliability-guardian
-scraped: 2026-02-26T21:27:26.694585
+scraped: 2026-02-27T21:14:20.631704
 ---
 
 # Site Reliability Guardian
@@ -314,7 +314,7 @@ After the validation of each objective is done, the guarding uses the most sever
 
 ### 10. Segments
 
-Leverage [Segments](/docs/manage/segments "Segments logically structure monitoring data in Grail and function as convenient filters for data that users are allowed to access based on permissions.") in DQL-based objectives to logically structure and conveniently filter observability data.
+Leverage [Segments](/docs/manage/segments "Use segments to logically structure and conveniently filter observability data across apps.") in DQL-based objectives to logically structure and conveniently filter observability data.
 
 ## Use cases
 

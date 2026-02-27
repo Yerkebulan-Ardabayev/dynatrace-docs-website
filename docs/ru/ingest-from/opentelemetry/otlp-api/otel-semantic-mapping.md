@@ -1,7 +1,7 @@
 ---
 title: OpenTelemetry to Dynatrace semantic mapping
 source: https://www.dynatrace.com/docs/ingest-from/opentelemetry/otlp-api/otel-semantic-mapping
-scraped: 2026-02-24T21:25:05.569340
+scraped: 2026-02-27T21:30:38.550915
 ---
 
 # OpenTelemetry to Dynatrace semantic mapping

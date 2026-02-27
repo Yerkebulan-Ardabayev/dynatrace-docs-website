@@ -1,7 +1,7 @@
 ---
 title: Azure AI - QnA Maker monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-ai-qna-maker
-scraped: 2026-02-26T21:31:14.020619
+scraped: 2026-02-27T21:23:10.471138
 ---
 
 # Azure AI - QnA Maker monitoring

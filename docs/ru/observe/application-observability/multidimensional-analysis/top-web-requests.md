@@ -1,7 +1,7 @@
 ---
 title: Top web requests
 source: https://www.dynatrace.com/docs/observe/application-observability/multidimensional-analysis/top-web-requests
-scraped: 2026-02-23T21:33:18.872680
+scraped: 2026-02-27T21:24:36.984598
 ---
 
 # Top web requests
@@ -25,42 +25,6 @@ To access the **Top web requests** analysis page
 
 The **Top web requests** page lists all web requests that occurred during the selected timeframe and within the selected management zone. In **Configure view**, you can set up multiple filtering capabilities. The view updates automatically as you change the parameters.
 
-Parameter
-
-Description
-
-Metric
-
-The metric to be analyzedâset by default to **Request count**.
-
-Aggregation
-
-How the metric values are aggregatedâavailable aggregations depend on the selected metric.
-
-Split mode
-
-How dimensions specified in **Split by dimension** are treated.
-
-* **Split by services**âeach dimension is displayed separately for each service.
-* **Merge by services**âsame dimensions from different services are merged into one.
-
-Split by dimension
-
-A list of dimensions by which the requests are split. By default the request name (`{Request:Name}`) dimension is set.
-
-You can specify several dimensions. Place your cursor in the input field to see the available options. The requests are split by dimension in the specified order.
-
-Filter requests
-
-Filter the requests to be included to the view. By default the following criteria are set:
-
-* **Service type**: `Web service`
-* **Service type**: `Web request service`
-
-You can provide additional criteria. Place your cursor in the input field to see the available options.
-
-Criteria of the same type are grouped by the OR logic. Criteria of different types are grouped by the AND logic.
-
 Once the view is configured, you can save it for quick access in the future. Just select **Save view** and provide a name.
 
 You can also save the configuration as a calculated service metric and use it as any other metric in Dynatrace (for example, for [alerting](/docs/dynatrace-intelligence/anomaly-detection/metric-events "Learn about metric events in Dynatrace")).
@@ -71,30 +35,6 @@ You can export the table data in a comma-separated values (CSV) file.
 
    ![Show export menu](https://dt-cdn.net/images/show-export-menu-107-2a8a76c9a2.png)
 2. Select **Export visible data** or **Export table data**.
-
-   Option
-
-   Exported data
-
-   Fields
-
-   Number of entries
-
-   **Export visible data**
-
-   The currently displayed area of the table, taking into account applied filters
-
-   Only visible data
-
-   Up to 100 top dimensions
-
-   **Export table data**
-
-   All table data
-
-   All the available data related to top dimensions
-
-   Up to 100 top dimensions
 
 ## View
 

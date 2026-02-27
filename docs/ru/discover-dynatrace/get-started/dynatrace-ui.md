@@ -1,7 +1,7 @@
 ---
 title: Navigate the Dynatrace platform
 source: https://www.dynatrace.com/docs/discover-dynatrace/get-started/dynatrace-ui
-scraped: 2026-02-26T21:24:59.983969
+scraped: 2026-02-27T21:31:14.608684
 ---
 
 # Navigate the Dynatrace platform
@@ -33,7 +33,7 @@ The upper part of the Dock includes:
 * [**Dynatrace**](#dynatrace) is your home.
 * [**Search**](#search) enables you to search the platform.
 * [**Apps**](#apps)
-* [Pinned and active apps](#pinned), depending on your configuration and activity. In this example, the ![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") [Notebooks](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace."), ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") [Dashboards](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new "Create interactive, customizable views to visualize, analyze, and share your observability data in real time."), and ![Segments](https://dt-cdn.net/images/segments-256-8e66310720.webp "Segments") [Segments](/docs/manage/segments "Segments logically structure monitoring data in Grail and function as convenient filters for data that users are allowed to access based on permissions.") apps are all listed.
+* [Pinned and active apps](#pinned), depending on your configuration and activity. In this example, the ![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") [Notebooks](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace."), ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") [Dashboards](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new "Create interactive, customizable views to visualize, analyze, and share your observability data in real time."), and ![Segments](https://dt-cdn.net/images/segments-256-8e66310720.webp "Segments") [Segments](/docs/manage/segments "Use segments to logically structure and conveniently filter observability data across apps.") apps are all listed.
 
 ![Dock: bottom](https://dt-cdn.net/images/dock-all-4-bottom-280-1767392d75.png)
 
@@ -124,7 +124,7 @@ To open the user menu, select your name in the lower-left corner, at the bottom 
 * **[your name]** ![Configurable](https://dt-cdn.net/images/configurable-490-8b015913d4.svg "Configurable") displays **User settings**, where you can change settings such as the display language, timezone, and light mode/dark mode.
 * **Environments** lists links to your available environments.
 * **Appearance** offers a quick switch to light, dark, or browser theme mode.
-* **Account Management** opens [Account Management](/docs/manage/account-management "Manage your Dynatrace license, subscriptions, and platform adoption and environment health.") in a new tab.
+* **Account Management** opens [Account Management](/docs/manage/account-management "Manage your Dynatrace license, accounts, platform adoption, and environment health.") in a new tab.
 * **Latest Dynatrace** toggles the latest Dynatrace on and off.
 * **Sign out** signs you out of Dynatrace.
 

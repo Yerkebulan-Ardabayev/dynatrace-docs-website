@@ -1,7 +1,7 @@
 ---
 title: What is a monitoring environment?
 source: https://www.dynatrace.com/docs/discover-dynatrace/get-started/monitoring-environment
-scraped: 2026-02-26T21:14:49.594807
+scraped: 2026-02-27T21:11:20.241186
 ---
 
 # What is a monitoring environment?
@@ -40,7 +40,7 @@ Each environment that you monitor with Dynatrace is identified with a unique cha
 
   For example, for the Dynatrace environment `https://abc123a.dynatrace.com`, the environment ID is `abc123a`.
 
-  You can also find your environment ID in [Account Management](/docs/manage/account-management "Manage your Dynatrace license, subscriptions, and platform adoption and environment health.").
+  You can also find your environment ID in [Account Management](/docs/manage/account-management "Manage your Dynatrace license, accounts, platform adoption, and environment health.").
 
   1. Go to [**Account Management**ï»¿](https://myaccount.dynatrace.com/). If you have more than one account, select the account you want to manage.
   2. Select **Settings** > **Environments**.

@@ -1,7 +1,7 @@
 ---
 title: Retain trace data for long periods
 source: https://www.dynatrace.com/docs/observe/application-observability/distributed-tracing/data-retention
-scraped: 2026-02-26T21:15:32.699676
+scraped: 2026-02-27T21:11:48.267428
 ---
 
 # Retain trace data for long periods

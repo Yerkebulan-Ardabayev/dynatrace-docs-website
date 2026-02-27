@@ -1,7 +1,7 @@
 ---
 title: OpenTelemetry Host Monitoring extension
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/extensions/opentelemetry-host-monitoring
-scraped: 2026-02-24T21:31:53.484173
+scraped: 2026-02-27T21:30:22.189457
 ---
 
 # OpenTelemetry Host Monitoring extension
@@ -10,7 +10,7 @@ scraped: 2026-02-24T21:31:53.484173
 
 * Latest Dynatrace
 * Extension
-* Published Feb 20, 2026
+* Updated on Feb 25, 2026
 
 Generate topology and screens for your OpenTelemetry host data for quicker display and easier analysis of the data.
 
@@ -68,6 +68,13 @@ This extension automatically generates topology for infrastructure monitored via
 | OpenTelemetry Process | dt.entity.otel:process |
 
 These entities enable Dynatrace to correlate your metrics, logs, and spans and provide unified context across your monitored environment.
+
+#### Enrich application telemetry
+
+If you send your application telemetry to your local host OpenTelemetry Collector, it will automatically enrich the data with the required host attributes so that the signals are correctly attached to the OpenTelemetry Host entity.
+
+To enrich application telemetry with the corresponding process entity, all signals (metrics, logs, and spans) need to have the `process.executable.name` resource attribute. For logs and spans to have this attribute, you need to initialize your OTel SDK with the [process resource detectorï»¿](https://opentelemetry.io/docs/languages/go/resources/).
+If this is not implemented for your technology's OTel SDK, you can always set the `process.executable.name` attribute through the `OTEL_RESOURCE_ATTRIBUTES` [environment variableï»¿](https://opentelemetry.io/docs/specs/otel/configuration/sdk-environment-variables/#general-sdk-configuration).
 
 ### Screens
 

@@ -1,7 +1,7 @@
 ---
 title: Customize cost alerts
 source: https://www.dynatrace.com/docs/license/cost-monitors
-scraped: 2026-02-26T21:18:35.805910
+scraped: 2026-02-27T21:16:24.264405
 ---
 
 # Customize cost alerts
@@ -200,5 +200,5 @@ License administrators will be notified by email that alerts them when something
 
 ## Related topics
 
-* [Account Management](/docs/manage/account-management "Manage your Dynatrace license, subscriptions, and platform adoption and environment health.")
+* [Account Management](/docs/manage/account-management "Manage your Dynatrace license, accounts, platform adoption, and environment health.")
 * [Dynatrace pricingï»¿](https://www.dynatrace.com/pricing/)

@@ -1,7 +1,7 @@
 ---
 title: Monaco configuration YAML file - list of type fields
 source: https://www.dynatrace.com/docs/deliver/configuration-as-code/monaco/configuration/yaml-configuration-saas-type-fields
-scraped: 2026-02-26T21:32:52.136895
+scraped: 2026-02-27T21:21:41.260289
 ---
 
 # Monaco configuration YAML file - list of type fields
@@ -790,7 +790,7 @@ Monaco can retrieve and update configurations, but can't create or delete new on
 ## segment type field
 
 Since Dynatrace Monaco CLI version 2.19.0+, the `segment` type is supported.
-[Segments](/docs/manage/segments "Segments logically structure monitoring data in Grail and function as convenient filters for data that users are allowed to access based on permissions.") are used to structure and filter data for tailored views in Dynatrace.
+[Segments](/docs/manage/segments "Use segments to logically structure and conveniently filter observability data across apps.") are used to structure and filter data for tailored views in Dynatrace.
 
 The `type` field `segment` can be defined as follows.
 

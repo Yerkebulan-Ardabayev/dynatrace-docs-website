@@ -1,7 +1,7 @@
 ---
 title: Span settings
 source: https://www.dynatrace.com/docs/ingest-from/extend-dynatrace/extend-tracing/span-settings
-scraped: 2026-02-26T21:14:05.786275
+scraped: 2026-02-27T21:09:54.412595
 ---
 
 # Span settings

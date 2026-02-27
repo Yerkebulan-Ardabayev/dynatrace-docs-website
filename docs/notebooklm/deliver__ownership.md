@@ -1,6 +1,6 @@
 # Документация Dynatrace: deliver/ownership
 Язык: Русский (RU)
-Сгенерировано: 2026-02-26
+Сгенерировано: 2026-02-27
 Файлов в разделе: 4
 ---
 
@@ -9,7 +9,7 @@
 ---
 title: Assign ownership teams to monitored entities
 source: https://www.dynatrace.com/docs/deliver/ownership/assign-ownership
-scraped: 2026-02-26T21:33:18.745570
+scraped: 2026-02-27T21:23:29.137224
 ---
 
 # Assign ownership teams to monitored entities
@@ -460,7 +460,7 @@ See [Format for applying ownership information](#format) on all existing key-val
 
 ### Tagging methods
 
-You can use tags to apply ownership in [key-value pairs](#format) to any monitored entityâread more about [tagging](/docs/manage/tags-and-metadata "Learn how to define tags and metadata. Understand how to use tags and metadata to organize your environment.").
+You can use tags to apply ownership in [key-value pairs](#format) to any monitored entityâread more about [tagging](/docs/manage/tags-and-metadata "Use tags and metadata to organize data in your Dynatrace environment.").
 
 ![Ownership via a manual tag](https://dt-cdn.net/images/ownership-manual-tag-1004-f7c90a9b42.png)
 
@@ -514,7 +514,7 @@ Select ![Expand row](https://dt-cdn.net/images/expand-row-icon-9c4950fc2e.svg "E
 * [Set up Dynatrace on Kubernetes](/docs/ingest-from/setup-on-k8s "Ways to deploy and configure Dynatrace on Kubernetes")
 * [Define tags and metadata for hosts](/docs/observe/infrastructure-observability/hosts/configuration/define-tags-and-metadata-for-hosts "Learn how to tag and set additional properties for a monitored host.")
 * [Define your own process group metadata](/docs/observe/infrastructure-observability/process-groups/configuration/define-your-own-process-group-metadata "Configure your own process-related metadata based on the unique needs of your organization or environment.")
-* [Tags and metadata](/docs/manage/tags-and-metadata "Learn how to define tags and metadata. Understand how to use tags and metadata to organize your environment.")
+* [Tags and metadata](/docs/manage/tags-and-metadata "Use tags and metadata to organize data in your Dynatrace environment.")
 * [Custom tags API](/docs/dynatrace-api/environment-api/custom-tags "Manage custom tags of the monitored entities via the Dynatrace API.")
 * [Best practices for scaling tagging and management-zone rules](/docs/manage/tags-and-metadata/basic-concepts/best-practice-tagging-at-scale "Optimize auto-tagging and management-zone rules to speed up the automatic assignment process.")
 * [Kubernetes labelsï»¿](https://dt-url.net/g442yn5 "Official Kubernetes documentation on labels")
@@ -528,7 +528,7 @@ Select ![Expand row](https://dt-cdn.net/images/expand-row-icon-9c4950fc2e.svg "E
 ---
 title: Best practices for entity ownership
 source: https://www.dynatrace.com/docs/deliver/ownership/best-practices
-scraped: 2026-02-26T21:33:55.006893
+scraped: 2026-02-27T21:30:31.802182
 ---
 
 # Best practices for entity ownership
@@ -894,7 +894,7 @@ The API snippets for reading, creating, updating, and deleting teams are availab
 ---
 title: Ownership Classic
 source: https://www.dynatrace.com/docs/deliver/ownership
-scraped: 2026-02-25T21:34:33.752818
+scraped: 2026-02-27T21:29:33.008369
 ---
 
 # Ownership Classic

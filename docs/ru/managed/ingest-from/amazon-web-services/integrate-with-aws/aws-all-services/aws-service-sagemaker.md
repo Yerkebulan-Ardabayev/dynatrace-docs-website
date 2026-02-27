@@ -1,7 +1,7 @@
 ---
 title: Amazon SageMaker (Batch Transform Jobs, Endpoint Instances, Endpoints, Ground Truth, Processing Jobs, Training Jobs) monitoring
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-sagemaker
-scraped: 2026-02-25T21:30:39.434462
+scraped: 2026-02-27T21:17:50.308435
 ---
 
 # Amazon SageMaker (Batch Transform Jobs, Endpoint Instances, Endpoints, Ground Truth, Processing Jobs, Training Jobs) monitoring

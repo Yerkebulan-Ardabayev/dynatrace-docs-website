@@ -1,7 +1,7 @@
 ---
 title: Vulnerabilities API - POST mute vulnerabilities
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/application-security/vulnerabilities/post-mute-vulnerabilities
-scraped: 2026-02-24T21:31:38.272104
+scraped: 2026-02-27T21:30:59.902609
 ---
 
 # Vulnerabilities API - POST mute vulnerabilities

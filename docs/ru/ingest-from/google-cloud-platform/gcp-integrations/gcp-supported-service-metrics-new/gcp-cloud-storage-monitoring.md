@@ -1,7 +1,7 @@
 ---
 title: Google Cloud Storage monitoring
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new/gcp-cloud-storage-monitoring
-scraped: 2026-02-24T21:27:24.045593
+scraped: 2026-02-27T21:28:56.807555
 ---
 
 # Google Cloud Storage monitoring

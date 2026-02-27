@@ -1,7 +1,7 @@
 ---
 title: Monitor PostgreSQL database
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/databases/database-app/get-started/postgres
-scraped: 2026-02-24T21:28:23.228205
+scraped: 2026-02-27T21:26:44.752159
 ---
 
 # Monitor PostgreSQL database
@@ -10,7 +10,7 @@ scraped: 2026-02-24T21:28:23.228205
 
 * Latest Dynatrace
 * How-to guide
-* Published Jan 20, 2026
+* Updated on Feb 23, 2026
 
 Monitor PostgreSQL databases with the Dynatrace Extension Framework to collect performance data and understand database impact on your applications.
 
@@ -31,8 +31,7 @@ Monitor PostgreSQL databases with the Dynatrace Extension Framework to collect p
 
 ### Compatibility information
 
-* Supported from PostgreSQL version 11+.
-* Postgres 14, 15, 16, and 17 are fully supported.
+* Compatible with [all currently maintained Postgres versionsï»¿](https://www.postgresql.org/support/versioning/).
 
 ## Set up the PostgreSQL extension for monitoring
 

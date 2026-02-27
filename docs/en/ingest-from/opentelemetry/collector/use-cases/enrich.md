@@ -1,7 +1,7 @@
 ---
 title: Enrich OTLP with OneAgent data (non-containerized)
 source: https://www.dynatrace.com/docs/ingest-from/opentelemetry/collector/use-cases/enrich
-scraped: 2026-02-24T21:35:09.684815
+scraped: 2026-02-27T21:27:56.865046
 ---
 
 # Enrich OTLP with OneAgent data (non-containerized)
@@ -174,7 +174,7 @@ This is mainly for demonstration purposes. You can specify any other valid recei
 
 Under `processors`, we specify the [`resourcedetection` processorï»¿](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/v0.145.0/processor/resourcedetectionprocessor) and configure it with the [Dynatrace-specific detector `dynatrace`ï»¿](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/v0.145.0/processor/resourcedetectionprocessor/README.md#dynatrace).
 
-With this configuration, the resource detector processor will attempt to load the following three attributes from the [OneAgent enrichment file](/docs/ingest-from/extend-dynatrace/extend-data#dynatrace-oneagent "Learn how to automatically enrich your telemetry data with Dynatrace-specific dimensions."):
+With this configuration, the resource detector processor will attempt to load the following three attributes from the [OneAgent enrichment file](/docs/ingest-from/extend-dynatrace/extend-data#dynatrace-oneagent "Learn how to automatically enrich your telemetry data with Dynatrace-specific fields."):
 
 * `dt.entity.host`
 * `host.name`

@@ -1,7 +1,7 @@
 ---
 title: Radware Alteon Load Balancer extension
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/extensions/radware-alteon-load-balancer
-scraped: 2026-02-26T21:31:36.234488
+scraped: 2026-02-27T21:31:48.122962
 ---
 
 # Radware Alteon Load Balancer extension
@@ -71,11 +71,72 @@ DPS (Metric data points): `(60 + (8 * Interfaces)) * 525,600 metric data points/
 
 ## Feature sets
 
-Software\_Status\_SP
+SSL\_Statistics\_Virtual
 
 | Metric name | Metric key | Description |
 | --- | --- | --- |
-| SP CPU utilization | com.dynatrace.extension.network\_device.sp.cpu\_usage | SP CPU utilization |
+| TCP sessions using SSL service | radware\_alteon.sslslbstat.cursessions | The current number of different TCP sessions using SSL service. |
+| Total TCP sessions using SSL service | radware\_alteon.sslslbstat.totalsessions.count | The total number of different TCP sessions using SSL service. |
+| TCP sessions using SSL service high water mark | radware\_alteon.sslslbstat.highestsessions.count | The high water mark of current sessions of different TCP sessions using SSL service. |
+| SSL handshakes between clients and AAS per second | radware\_alteon.ssloff.newhandShake | New SSL handshakes between clients and AAS per second. |
+| New SSL handshakes between Clients and AAS per second (sslOffPerEnhServNewhandShake) | radware\_alteon.ssloffper.enh.serv.newhandshake | Number of New SSL handshakes between Clients and AAS per second for this virtual service. |
+| Number of expired SSL certificates per second for virtual service (sslOffPerEnhServExpiredCertificates) | radware\_alteon.ssloffper.enh.serv.expiredcertificates | Number of expired SSL certificates per second for virtual service. |
+
+Hardware\_Status\_Physical
+
+| Metric name | Metric key | Description |
+| --- | --- | --- |
+| Temperature sensor status | radware\_alteon.temperature.status | The status of the temperature sensor. ok(1), exceed(2) |
+| Temperature warning threshold | radware\_alteon.temperature.threshold.warning | The temperature warning threshold |
+| Temperature shutdown threshold | radware\_alteon.temperature.threshold.shutdown | The temperature shutdown threshold |
+| Hardware fan status | radware\_alteon.fan.status | Hardware fan status. ok(1), fail(2), unplug(3) |
+| Powersupply status | radware\_alteon.powersupply.status | Powersupply status. singlePowerSupplyOk(1), firstPowerSupplyFailed(2), secondPowerSupplyFailed(3), doublePowerSupplyOk(4), unknownPowerSupplyFailed(5) |
+
+Session\_Table\_Utilization\_Virtual
+
+| Metric name | Metric key | Description |
+| --- | --- | --- |
+| Session table maximum entries | radware\_alteon.slbstat.maint.maximumsessions | The maximum number entries in the session table. |
+| Ipv6 session count | radware\_alteon.slbstat.maint.ip6currsessions.count | The number of sessions for ipv6. |
+| Curent sessions in session table | radware\_alteon.slbstat.maint.curbindings | The current number of sessions in the session table. |
+
+default
+
+| Metric name | Metric key | Description |
+| --- | --- | --- |
+| â | com.dynatrace.extension.network\_device.sysuptime | â |
+| â | com.dynatrace.extension.network\_device.cpu\_usage | â |
+| â | com.dynatrace.extension.network\_device.memory\_total | â |
+| â | com.dynatrace.extension.network\_device.memory\_free | â |
+| â | com.dynatrace.extension.network\_device.memory\_used | â |
+| â | com.dynatrace.extension.network\_device.if.status | â |
+| â | com.dynatrace.extension.network\_device.if.bytes\_in.count | â |
+| â | com.dynatrace.extension.network\_device.if.bytes\_out.count | â |
+| â | com.dynatrace.extension.network\_device.if.in.discards.count | â |
+| â | com.dynatrace.extension.network\_device.if.out.discards.count | â |
+| â | com.dynatrace.extension.network\_device.if.in.errors.count | â |
+| â | com.dynatrace.extension.network\_device.if.out.errors.count | â |
+
+Throughput\_Physical\_Virtual
+
+| Metric name | Metric key | Description |
+| --- | --- | --- |
+| Peak throughput of ports | radware\_alteon.peakthroughputusage.count | Peak throughput of ports in bits per second. |
+| Current throughput of ports | radware\_alteon.curthroughputusage.count | Current throughput of ports in bits per second. |
+
+Backend\_Server\_Utilization\_Virtual
+
+| Metric name | Metric key | Description |
+| --- | --- | --- |
+| Real-server current sessions | radware\_alteon.slbstat.enh.rserver.currsessions | Real-server current sessions. |
+| Real-server total sessions | radware\_alteon.slbstat.enh.rserver.totalsessions | Real-server total sessions. |
+| Real-server highest sessions | radware\_alteon.slbstat.enh.rserver.highestsessions | Real-server highest sessions. |
+| Real-server total rx/tx octets | radware\_alteon.slbstat.enh.rserver.hc.octets | Real-server total rx/tx octets. |
+| Real server max concurrent connections | radware\_alteon.slbcur.cfg.realserver.maxconns | The Maximum allowed number of concurrent connections per real server in the configuration. |
+| SP current memory | radware\_alteon.spmemusagestats.currentmemory | The current memory of SP in kilobytes. |
+| Real-server group current sessions | radware\_alteon.slbstat.enh.group.currsessions | The number of sessions that are currently handled by the real server group. |
+| Real-server group total sessions | radware\_alteon.slbstat.enh.group.totalsessions | The total number of sessions that have been handled by the real server group. |
+| Real-server group highest sessions | radware\_alteon.slbstat.enh.group.highestsessions | The highest sessions that have been handled by the real server group. |
 
 Virtual\_Server\_Utilization\_Virtual
 
@@ -98,86 +159,11 @@ Virtual\_Server\_Utilization\_Virtual
 | Virtual service security policy latency current (secPolPerServLatencyCurVal) | radware\_alteon.secpol.perserv.latency.curval | Virtual service security policy stats - latency current value. |
 | Virtual service security policy latency peak (secPolPerServLatencyPeak) | radware\_alteon.secpol.perserv.latency.peak | Virtual service security policy stats - latency peak value. |
 
-Backend\_Server\_Utilization\_Virtual
+Software\_Status\_SP
 
 | Metric name | Metric key | Description |
 | --- | --- | --- |
-| Real-server current sessions | radware\_alteon.slbstat.enh.rserver.currsessions | Real-server current sessions. |
-| Real-server total sessions | radware\_alteon.slbstat.enh.rserver.totalsessions | Real-server total sessions. |
-| Real-server highest sessions | radware\_alteon.slbstat.enh.rserver.highestsessions | Real-server highest sessions. |
-| Real-server total rx/tx octets | radware\_alteon.slbstat.enh.rserver.hc.octets | Real-server total rx/tx octets. |
-| Real server max concurrent connections | radware\_alteon.slbcur.cfg.realserver.maxconns | The Maximum allowed number of concurrent connections per real server in the configuration. |
-| SP current memory | radware\_alteon.spmemusagestats.currentmemory | The current memory of SP in kilobytes. |
-| Real-server group current sessions | radware\_alteon.slbstat.enh.group.currsessions | The number of sessions that are currently handled by the real server group. |
-| Real-server group total sessions | radware\_alteon.slbstat.enh.group.totalsessions | The total number of sessions that have been handled by the real server group. |
-| Real-server group highest sessions | radware\_alteon.slbstat.enh.group.highestsessions | The highest sessions that have been handled by the real server group. |
-
-Throughput\_Physical\_Virtual
-
-| Metric name | Metric key | Description |
-| --- | --- | --- |
-| Peak throughput of ports | radware\_alteon.peakthroughputusage.count | Peak throughput of ports in bits per second. |
-| Current throughput of ports | radware\_alteon.curthroughputusage.count | Current throughput of ports in bits per second. |
-
-default
-
-| Metric name | Metric key | Description |
-| --- | --- | --- |
-| â | com.dynatrace.extension.network\_device.sysuptime | â |
-| â | com.dynatrace.extension.network\_device.cpu\_usage | â |
-| â | com.dynatrace.extension.network\_device.memory\_total | â |
-| â | com.dynatrace.extension.network\_device.memory\_free | â |
-| â | com.dynatrace.extension.network\_device.memory\_used | â |
-| â | com.dynatrace.extension.network\_device.if.status | â |
-| â | com.dynatrace.extension.network\_device.if.bytes\_in.count | â |
-| â | com.dynatrace.extension.network\_device.if.bytes\_out.count | â |
-| â | com.dynatrace.extension.network\_device.if.in.discards.count | â |
-| â | com.dynatrace.extension.network\_device.if.out.discards.count | â |
-| â | com.dynatrace.extension.network\_device.if.in.errors.count | â |
-| â | com.dynatrace.extension.network\_device.if.out.errors.count | â |
-
-Session\_Table\_Utilization\_Virtual
-
-| Metric name | Metric key | Description |
-| --- | --- | --- |
-| Session table maximum entries | radware\_alteon.slbstat.maint.maximumsessions | The maximum number entries in the session table. |
-| Ipv6 session count | radware\_alteon.slbstat.maint.ip6currsessions.count | The number of sessions for ipv6. |
-| Curent sessions in session table | radware\_alteon.slbstat.maint.curbindings | The current number of sessions in the session table. |
-
-Hardware\_Status\_Physical
-
-| Metric name | Metric key | Description |
-| --- | --- | --- |
-| Temperature sensor status | radware\_alteon.temperature.status | The status of the temperature sensor. ok(1), exceed(2) |
-| Temperature warning threshold | radware\_alteon.temperature.threshold.warning | The temperature warning threshold |
-| Temperature shutdown threshold | radware\_alteon.temperature.threshold.shutdown | The temperature shutdown threshold |
-| Hardware fan status | radware\_alteon.fan.status | Hardware fan status. ok(1), fail(2), unplug(3) |
-| Powersupply status | radware\_alteon.powersupply.status | Powersupply status. singlePowerSupplyOk(1), firstPowerSupplyFailed(2), secondPowerSupplyFailed(3), doublePowerSupplyOk(4), unknownPowerSupplyFailed(5) |
-
-SSL\_Statistics\_Virtual
-
-| Metric name | Metric key | Description |
-| --- | --- | --- |
-| TCP sessions using SSL service | radware\_alteon.sslslbstat.cursessions | The current number of different TCP sessions using SSL service. |
-| Total TCP sessions using SSL service | radware\_alteon.sslslbstat.totalsessions.count | The total number of different TCP sessions using SSL service. |
-| TCP sessions using SSL service high water mark | radware\_alteon.sslslbstat.highestsessions.count | The high water mark of current sessions of different TCP sessions using SSL service. |
-| SSL handshakes between clients and AAS per second | radware\_alteon.ssloff.newhandShake | New SSL handshakes between clients and AAS per second. |
-| New SSL handshakes between Clients and AAS per second (sslOffPerEnhServNewhandShake) | radware\_alteon.ssloffper.enh.serv.newhandshake | Number of New SSL handshakes between Clients and AAS per second for this virtual service. |
-| Number of expired SSL certificates per second for virtual service (sslOffPerEnhServExpiredCertificates) | radware\_alteon.ssloffper.enh.serv.expiredcertificates | Number of expired SSL certificates per second for virtual service. |
-
-Advanced interfaces
-
-| Metric name | Metric key | Description |
-| --- | --- | --- |
-| â | com.dynatrace.extension.network\_device.if.lastchange | â |
-
-High\_Availability\_Physical
-
-| Metric name | Metric key | Description |
-| --- | --- | --- |
-| High availability (HA) service group state | radware\_alteon.ha.group.state | High availability (HA) service group state |
-| High availability (HA) switch state | radware\_alteon.ha.switch.state | High availability (HA) switch state |
-| High availability (HA) mode | radware\_alteon.ha.curcfg.mode | High availability (HA) mode |
+| SP CPU utilization | com.dynatrace.extension.network\_device.sp.cpu\_usage | SP CPU utilization |
 
 Per\_Device\_HTTP\_Statistics\_Virtual
 
@@ -193,6 +179,20 @@ Per\_Device\_HTTP\_Statistics\_Virtual
 | HTTP 1.1 request count | radware\_alteon.httpstatsumm.http11connection.request.count | HTTP 1.1 request count. |
 | HTTP 1.0 request count | radware\_alteon.httpstatsumm.http10connection.request.count | HTTP 1.0 request count. |
 | HTTP transactions per second | radware\_alteon.httptranssumm.trans.rate | HTTP transactions per second. |
+
+High\_Availability\_Physical
+
+| Metric name | Metric key | Description |
+| --- | --- | --- |
+| High availability (HA) service group state | radware\_alteon.ha.group.state | High availability (HA) service group state |
+| High availability (HA) switch state | radware\_alteon.ha.switch.state | High availability (HA) switch state |
+| High availability (HA) mode | radware\_alteon.ha.curcfg.mode | High availability (HA) mode |
+
+Advanced interfaces
+
+| Metric name | Metric key | Description |
+| --- | --- | --- |
+| â | com.dynatrace.extension.network\_device.if.lastchange | â |
 
 [![Hub](https://dt-cdn.net/images/hub-512-82db3c583e.png "Hub")
 

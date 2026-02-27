@@ -1,7 +1,7 @@
 ---
 title: Data privacy in the New RUM Experience
 source: https://www.dynatrace.com/docs/observe/digital-experience/new-rum-experience/data-privacy
-scraped: 2026-02-26T21:28:38.545307
+scraped: 2026-02-27T21:17:56.955101
 ---
 
 # Data privacy in the New RUM Experience

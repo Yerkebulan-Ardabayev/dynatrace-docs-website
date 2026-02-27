@@ -1,7 +1,7 @@
 ---
 title: Develop your own Extensions
 source: https://www.dynatrace.com/docs/ingest-from/extensions/develop-your-extensions
-scraped: 2026-02-26T21:33:09.828679
+scraped: 2026-02-27T21:27:39.003789
 ---
 
 # Develop your own Extensions

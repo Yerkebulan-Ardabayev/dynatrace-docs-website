@@ -1,7 +1,7 @@
 ---
 title: Monitor AWS App Runner
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-into-aws/app-runner
-scraped: 2026-02-26T21:17:41.913252
+scraped: 2026-02-27T21:16:27.964283
 ---
 
 # Monitor AWS App Runner

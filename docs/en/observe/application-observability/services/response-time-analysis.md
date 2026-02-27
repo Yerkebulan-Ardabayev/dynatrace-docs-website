@@ -1,7 +1,7 @@
 ---
 title: Response time analysis
 source: https://www.dynatrace.com/docs/observe/application-observability/services/response-time-analysis
-scraped: 2026-02-26T21:14:40.495802
+scraped: 2026-02-27T21:11:53.648487
 ---
 
 # Response time analysis
@@ -43,7 +43,7 @@ To explore services and see which are slowest, go to the **Response Time** tab i
 To find out what's slow
 
 1. Go to [![Services](https://dt-cdn.net/hub/logos/services.png "Services") **Services**](/docs/observe/application-observability/services/services-app "Maintain centralized control over service health, performance, and resources with the Services app.") and select the **Response Time** tab.
-2. Apply [segments](/docs/manage/segments "Segments logically structure monitoring data in Grail and function as convenient filters for data that users are allowed to access based on permissions.") and filters to focus on relevant services/endpoints.
+2. Apply [segments](/docs/manage/segments "Use segments to logically structure and conveniently filter observability data across apps.") and filters to focus on relevant services/endpoints.
 
    For single service analysis, you also get a contribution breakdown that classifies the calls to:
 

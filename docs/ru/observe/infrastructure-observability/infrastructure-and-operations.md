@@ -1,7 +1,7 @@
 ---
 title: Infrastructure & Operations
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/infrastructure-and-operations
-scraped: 2026-02-26T21:14:31.153002
+scraped: 2026-02-27T21:10:48.306842
 ---
 
 # Infrastructure & Operations
@@ -129,7 +129,7 @@ Some of the advantages of using segments are
    * Add entities and topology. Select from the available options in the menu.
 6. Select **Save**.
 
-For more details on managing segments, refer to [Segments](/docs/manage/segments "Segments logically structure monitoring data in Grail and function as convenient filters for data that users are allowed to access based on permissions.").
+For more details on managing segments, refer to [Segments](/docs/manage/segments "Use segments to logically structure and conveniently filter observability data across apps.").
 
 ### Analyze overview charts
 

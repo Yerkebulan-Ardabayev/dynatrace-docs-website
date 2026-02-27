@@ -1,7 +1,7 @@
 ---
 title: PagerDuty
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/pagerduty
-scraped: 2026-02-24T21:21:15.028945
+scraped: 2026-02-27T21:31:38.521293
 ---
 
 # PagerDuty

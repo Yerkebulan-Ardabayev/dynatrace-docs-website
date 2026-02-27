@@ -1,7 +1,7 @@
 ---
 title: Explore Business Events
 source: https://www.dynatrace.com/docs/observe/business-observability/explore-business-events
-scraped: 2026-02-25T21:18:07.603639
+scraped: 2026-02-27T21:12:14.971944
 ---
 
 # Explore Business Events

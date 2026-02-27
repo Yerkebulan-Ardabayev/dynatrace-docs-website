@@ -1,7 +1,7 @@
 ---
 title: Dynatrace Assist
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/copilot/chat-with-davis-copilot
-scraped: 2026-02-26T21:27:38.735193
+scraped: 2026-02-27T21:24:10.532873
 ---
 
 # Dynatrace Assist
@@ -13,53 +13,53 @@ scraped: 2026-02-26T21:27:38.735193
 * 2-min read
 * Updated on Feb 11, 2026
 
-**Dynatrace Assist** позволяет вам общаться с Dynatrace Intelligence и задавать вопросы о данных в вашей среде, а также общие вопросы, чтобы помочь вам с настройкой Dynatrace и пониманием наших основных концепций.
+**Dynatrace Assist** allows you to chat with Dynatrace Intelligence and ask questions about the data in your environment, as well as general questions to help you with onboarding to Dynatrace and understanding our core concepts.
 
-### Права доступа
+### Permissions
 
-В следующей таблице описаны необходимые права доступа.
+The following table describes the required permissions.
 
 document:documents:write
 
-хранить разговоры в хранилище документов
+store conversations in document store
 
 document:documents:read
 
-читать разговоры из хранилища документов
+read conversations from document store
 
 document:documents:delete
 
-удалять разговоры из хранилища документов
+delete conversations from document store
 
 davis-copilot:conversations:execute
 
-использовать функцию разговора с копилотом
+use copilot conversation feature
 
 hub:catalog:read
 
-чтение каталога для отображения приложения, которое запустило разговор
+reading the catalog to display which app triggered a conversation
 
 davis-copilot:nl2dql:execute
 
-использовать функцию агентного копилота
+use copilot agentic feature
 
 davis-copilot:dql2nl:execute
 
-использовать функцию агентного копилота
+use copilot agentic feature
 
 mcp-gateway:servers:invoke
 
-использовать функцию агентного копилота
+use copilot agentic feature
 
 mcp-gateway:servers:read
 
-использовать функцию агентного копилота
+use copilot agentic feature
 
 davis:analyzers:read
 
-использовать функцию агентного копилота
+use copilot agentic feature
 
-Чтобы использовать **Dynatrace Assist** с функциями генеративного ИИ, вам необходимы только следующие права доступа:
+To use  **Dynatrace Assist** with generative AI features, you only need the following permissions:
 
 * `document:documents:write`
 * `document:documents:read`
@@ -67,116 +67,114 @@ davis:analyzers:read
 * `davis-copilot:conversations:execute`
 * `hub:catalog:read`
 
-Остальные права доступа в таблице необходимы только в том случае, если вы хотите использовать полный объем возможностей агентного Dynatrace Assist. Для получения дополнительной информации см. [Права доступа агентного Dynatrace Assist](#assist-agentic-permissions).
+You require the remaining permissions in the table only if you want to use the full extent of agentic Dynatrace Assist capabilities. For more information, see [Dynatrace Assist agentic permissions](#assist-agentic-permissions).
 
-Для получения дополнительной информации см. [Начало работы с Dynatrace Intelligence генеративным ИИ](/docs/dynatrace-intelligence/copilot/copilot-getting-started "Узнайте, как настроить Dynatrace Intelligence генеративный ИИ.").
+For more information, see [Getting started with Dynatrace Intelligence generative AI](/docs/dynatrace-intelligence/copilot/copilot-getting-started "Learn how to set up Dynatrace Intelligence generative AI.").
 
-## Начало работы
+## Get started
 
-![Начните работу быстро и легко, задав Dynatrace Assist вопрос. Попробуйте один из примеров, чтобы увидеть, что возможно.](https://cdn.hub.central.dynatrace.com/hub/console/dynatrace.davis.copilot/media/efd72baf-d142-45ee-b52a-51aea2450093.png)![Попросите Dynatrace Assist суммировать все открытые проблемы, чтобы получить быстрый обзор вашей среды.](https://cdn.hub.central.dynatrace.com/hub/console/dynatrace.davis.copilot/media/8d9a51ac-e9a7-4152-9158-235e6e1fef66.png)![Попросите Dynatrace Assist объяснить ваши журналы, чтобы быстро получить информацию, потенциальное влияние, вероятные причины и рекомендуемые следующие шаги.](https://cdn.hub.central.dynatrace.com/hub/console/dynatrace.davis.copilot/media/e9aa5b44-ceb3-4113-894c-4cdc32f5d94e.png)![Получите помощь в выявлении и исправлении уязвимостей, таких как SQL-инъекции.](https://cdn.hub.central.dynatrace.com/hub/console/dynatrace.davis.copilot/media/9282285e-db29-48d0-b368-92ac20460a5f.png)
+![Get started quickly and easily by asking Dynatrace Assist a question. Try out one of the examples to see what's possible.](https://cdn.hub.central.dynatrace.com/hub/console/dynatrace.davis.copilot/media/efd72baf-d142-45ee-b52a-51aea2450093.png)![Ask Dynatrace Assist to summarize all open problems to get a quick overview of your environment.](https://cdn.hub.central.dynatrace.com/hub/console/dynatrace.davis.copilot/media/8d9a51ac-e9a7-4152-9158-235e6e1fef66.png)![Ask Dynatrace Assist to explain your logs to quickly get the insights, potential impact, likely causes and recommended next steps.](https://cdn.hub.central.dynatrace.com/hub/console/dynatrace.davis.copilot/media/e9aa5b44-ceb3-4113-894c-4cdc32f5d94e.png)![Get help with identifying and fixing vulnerabilities, such as SQL injections.](https://cdn.hub.central.dynatrace.com/hub/console/dynatrace.davis.copilot/media/9282285e-db29-48d0-b368-92ac20460a5f.png)
 
-1 из 4Начните работу быстро и легко, задав Dynatrace Assist вопрос. Попробуйте один из примеров, чтобы увидеть, что возможно.
+1 of 4Get started quickly and easily by asking Dynatrace Assist a question. Try out one of the examples to see what's possible.
 
-### Использование интерфейса разговора Dynatrace Assist
+### Use Dynatrace Assist conversational interface
 
-После включения Dynatrace Intelligence генеративного ИИ в вашей среде и настройки прав доступа пользователя, вы должны увидеть новую иконку ниже **Поиск** в доке.
+After enabling Dynatrace Intelligence generative AI on your environment and setting the user permissions, you should see a new icon  below the **Search**  in the dock.
 
-1. В Dynatrace, выберите **Dynatrace Assist**.
-2. Откроется новое окно с интерфейсом разговора.
-3. Введите ваш вопрос. См. [Примеры](/docs/dynatrace-intelligence/copilot/chat-with-davis-copilot/dynatrace-assist-prompts "Узнайте, какие типы подсказок работают хорошо в Dynatrace Assist.") для вдохновения.
-4. Выберите **Выполнить** ![Выполнить](https://dt-cdn.net/images/run-c2f8c2f63c.svg "Выполнить") и подождите, пока ответ будет сгенерирован.
+1. In Dynatrace, select  **Dynatrace Assist**.
+2. A new window opens with the chat interface.
+3. Type your question. See [examples](/docs/dynatrace-intelligence/copilot/chat-with-davis-copilot/dynatrace-assist-prompts "Learn what kind of prompts work well in Dynatrace Assist.") for inspiration.
+4. Select **Run** ![Run](https://dt-cdn.net/images/run-c2f8c2f63c.svg "Run") and wait for the response to be generated.
 
-* Вы можете задавать дополнительные вопросы.
-* Каждый ответ содержит список источников, которые были получены для генерации ответа. Вы можете обратиться к этим [источникам](#sources) для получения дополнительной информации.
-* Разговоры сохраняются автоматически. Их можно переименовать или удалить из списка разговоров.
-* Вы можете отменить генерацию ответа, уточнить вашу подсказку и затем отправить вопрос снова.
-* Вы можете использовать интерфейс разговора поверх любого приложения.
+   * You can ask follow-up questions.
+   * Every response contains a list of sources that were retrieved to generate the answer. You can consult these [sources](#sources) for further information.
+   * Conversations are saved automatically. These can be renamed or deleted from the overview list of conversations.
+   * You can cancel the response generation, refine your prompt, and then re-send the question.
+   * You can use the chat interface on top of any application.
 
-Ответы генерируются на основе ресурсов, связанных с Dynatrace. Если модель не может ответить на ваш вопрос, вы увидите сообщение об ошибке:
+Answers are generated based on Dynatrace-related resources. If the model is unable to respond to your question, you'll see an error message:
 
-* Извините, но я не могу ответить на этот запрос. Пожалуйста, попробуйте перефразировать его или добавить дополнительный контекст.
+* I'm sorry, but I can't respond to this request. Please try rephrasing it or adding additional context.
 
-### Использование агентного Dynatrace Assist
+### Use agentic Dynatrace Assist
 
-**Dynatrace Assist** позволяет вам использовать Dynatrace агентный ИИ и [инструменты и возможности MCP](/docs/dynatrace-intelligence/dynatrace-intelligence-integrations/dynatrace-mcp#server "Узнайте о сервере Dynatrace MCP и том, как вы можете подключиться к нему.") для доступа и анализа данных вашей среды и использования их для выполнения задач (таких как перечисление проблем или генерация и выполнение запросов DQL) в дополнение к ответам на общие вопросы о Dynatrace.
+**Dynatrace Assist** allows you to use Dynatrace agentic AI and [MCP tools and capabilities](/docs/dynatrace-intelligence/dynatrace-intelligence-integrations/dynatrace-mcp#server "Learn about the Dynatrace MCP server and how you can connect to it.") to access and analyze your environment data and use it to perform tasks (such as listing problems or generating and executing DQL queries) in addition to answering general questions about Dynatrace.
 
-Агентный **Dynatrace Assist** делится некоторой дополнительной информацией, такой как результаты вызовов инструментов, с предприятиями, которые размещают LLM, на основе которых построены Dynatrace агентный и генеративный ИИ. Для получения дополнительной информации о третьих сторонах см. [Используется ли моя информация для обучения Dynatrace Intelligence генеративного ИИ?](/docs/dynatrace-intelligence/copilot/copilot-faq#copilot-training-on-data "Узнайте о часто задаваемых вопросах и найдите ответы.").
+Agentic  **Dynatrace Assist** shares some additional information, such as tool call results, with enterprise vendors hosting the LLMs that Dynatrace agentic and generative AI are based on. For more information about third parties, see [Is my data used to train Dynatrace Intelligence generative AI?](/docs/dynatrace-intelligence/copilot/copilot-faq#copilot-training-on-data "Learn about frequently asked questions and find your answers.").
 
-С включенным агентным ИИ вы можете попросить **Dynatrace Assist** проанализировать и предоставить информацию о данных и безопасности вашей среды. Для примеров см. [Спросите о данных в вашей среде](/docs/dynatrace-intelligence/copilot/chat-with-davis-copilot/dynatrace-assist-prompts#assist-ask-about-the-data "Узнайте, какие типы подсказок работают хорошо в Dynatrace Assist.").
+With agentic AI enabled, you can ask  **Dynatrace Assist** to analyze and provide insights on the data and security of your environment. For examples, see [Ask about the data in your environment](/docs/dynatrace-intelligence/copilot/chat-with-davis-copilot/dynatrace-assist-prompts#assist-ask-about-the-data "Learn what kind of prompts work well in Dynatrace Assist.").
 
-#### Права доступа агентного Dynatrace Assist
+#### **Dynatrace Assist** agentic permissions
 
-**Dynatrace Assist** уважает ваши права доступа пользователя. Это означает, что все агентные вызовы **Dynatrace Assist** выполняются в рамках ваших прав доступа пользователя, и результаты не будут включать ничего вне этого.
+**Dynatrace Assist** respects your user permissions. This means that all agentic  **Dynatrace Assist** calls are done within the scope of your user permissions and the results won't include anything outside of it.
 
-Чтобы использовать агентный **Dynatrace Assist**, вам необходимо:
+To use the agentic  **Dynatrace Assist**, you need to
 
-* Иметь достаточные права доступа.
-* Включить агентный ИИ для **Dynatrace Assist**. Чтобы включить агентный ИИ:
+* Have sufficient permissions.
+* Have agentic AI enabled for  **Dynatrace Assist**. To enable agentic AI
 
-  1. Перейдите к ![Настройки](https://dt-cdn.net/images/settings-icon-256-38e1321b51.webp "Настройки") **Настройки** > **Dynatrace Intelligence** > **Генеративный и агентный ИИ**.
-  2. Убедитесь, что **Включить генеративный ИИ** включен.
-  3. Включите **Включить агентный ИИ**.
+  1. Go to ![Settings](https://dt-cdn.net/images/settings-icon-256-38e1321b51.webp "Settings") **Settings** >  **Dynatrace Intelligence** > **Generative and agentic AI**.
+  2. Ensure that **Enable generative AI** is turned on.
+  3. Turn on **Enable agentic AI**.
 
-Агентный **Dynatrace Assist** может быть недоступен для вас, если вы не соответствуете необходимым условиям, указанным выше, или если вы доступ к **Dynatrace Assist** из [Встроенных стартовых точек разговора](/docs/dynatrace-intelligence/copilot/chat-with-davis-copilot/copilot-conv-starters "Узнайте, как запустить предопределенные подсказки в различных приложениях Dynatrace.").
+Agentic  **Dynatrace Assist** might not be available for you if you don't meet the prerequisites mentioned above or if you access  **Dynatrace Assist** from the [Embedded conversation starters](/docs/dynatrace-intelligence/copilot/chat-with-davis-copilot/copilot-conv-starters "Learn how to trigger predefined prompts in various Dynatrace applications.").
 
-Вам также потребуются дополнительные права доступа для вызова агентных инструментов. Для списка инструментов и прав доступа, необходимых для них, см. [Инструменты MCP](/docs/dynatrace-intelligence/dynatrace-intelligence-integrations/dynatrace-mcp#server "Узнайте о сервере Dynatrace MCP и том, как вы можете подключиться к нему.").
+You will also need additional permissions for calling the agentic AI tools. For the list of tools and permissions they require, see [MCP tools](/docs/dynatrace-intelligence/dynatrace-intelligence-integrations/dynatrace-mcp#server "Learn about the Dynatrace MCP server and how you can connect to it.").
 
-#### Маскирование ПII
+#### PII masking
 
-Агентный **Dynatrace Assist** не предоставляет никакого маскирования ПII. Чтобы защитить ваши данные, когда **Dynatrace Assist** обнаруживает ПII в подсказке пользователя, запрос автоматически блокируется и подсказка не отправляется в LLM для обработки.
+Agentic  **Dynatrace Assist** doesn't provide any PII masking. In order to protect your data, when  **Dynatrace Assist** detects PII in the user prompt, the request is automatically blocked and the prompt isn't sent to the LLM for processing.
 
-#### Вызов нескольких инструментов
+#### Calling multiple tools
 
-При взаимодействии с **Dynatrace Assist** в агентном режиме **Assist** может вызвать до 10 внутренних инструментов MCP за один ответ. Если ваш запрос требует от **Dynatrace Assist** вызвать более 10 инструментов одновременно, он не сможет выполнить взаимодействие.
+While interacting with  **Dynatrace Assist** in agentic mode, **Assist** can call up to 10 internal MCP tools per response. If your request requires  **Dynatrace Assist** to call more than 10 tools simultaneously, it'll be unable to complete the interaction.
 
-### Оставьте отзыв
+### Give feedback
 
-Вы можете оставить отзыв, используя встроенный механизм отзыва.
+You can provide feedback using the built-in feedback mechanism.
 
-Выберите ![Большой палец вверх](https://dt-cdn.net/images/thumbsup-65185abaeb.svg "Большой палец вверх") если Dynatrace Assist сгенерировал ответ, который соответствует вашим ожиданиям и правильно интерпретировал вашу подсказку.
+Select ![Thumb up](https://dt-cdn.net/images/thumbsup-65185abaeb.svg "Thumb up") if Dynatrace Assist has generated a response that has met your expectations and interpreted your prompt correctly.
 
-Выберите ![Большой палец вниз](https://dt-cdn.net/images/thumbsdown-b83de466e8.svg "Большой палец вниз") если Dynatrace Assist сгенерировал ответ, который не соответствует вашим ожиданиям или неправильно интерпретировал вашу подсказку. Пожалуйста, предоставьте дополнительный контекст, чтобы мы могли понять, как мы можем улучшить эту функциональность, чтобы она соответствовала вашим потребностям и ожиданиям.
+Select ![Thumb down](https://dt-cdn.net/images/thumbsdown-b83de466e8.svg "Thumb down") if Dynatrace Assist has generated a response that has failed to meet your expectations or has incorrectly interpreted your prompt. Please provide additional context for us to understand how we can improve this functionality to meet your needs and expectations.
 
-Ваш отзыв не используется для автоматического обучения моделей. Он рассматривается только командой продукта для мониторинга качества ответов и улучшения основного предложения продукта.
+Your feedback isn't used to automatically train any models. It's reviewed only by the product team to monitor the response quality and improve the core product offering.
 
-### Источники, использованные для генерации ответов
+### Sources consulted to generate responses
 
-**Dynatrace Assist** обогащает свои ответы на основе официальных источников Dynatrace, таких как:
+**Dynatrace Assist** enriches its answers based on the official Dynatrace sources, such as:
 
-* Документация Dynatrace
-* [Разработчик Dynatrace](https://developer.dynatrace.com/)
-* [Сообщество Dynatrace](https://community.dynatrace.com/)
-* [Хаб Dynatrace](https://www.dynatrace.com/hub/)
-* [Новости и ресурсы Dynatrace](https://www.dynatrace.com/news/product-news/)
-* [Веб-сайт Dynatrace](https://www.dynatrace.com/)
+* Dynatrace Documentation
+* [Dynatrace Developerï»¿](https://developer.dynatrace.com/)
+* [Dynatrace Communityï»¿](https://community.dynatrace.com/)
+* [Dynatrace Hubï»¿](https://www.dynatrace.com/hub/)
+* [Dynatrace news and resourcesï»¿](https://www.dynatrace.com/news/product-news/)
+* [Dynatrace websiteï»¿](https://www.dynatrace.com/)
 
-## Концепции
+## Concepts
 
-Пройдите следующий процесс, чтобы научиться использовать **Dynatrace Assist**
+Go through the following process to learn using  **Dynatrace Assist**
 
-[01Встроенные стартовые точки разговора
+[01Embedded conversation starters
 
-* Справка
-* Узнайте, как запустить предопределенные подсказки в различных приложениях Dynatrace.](/docs/dynatrace-intelligence/copilot/chat-with-davis-copilot/copilot-conv-starters)[02Примеры подсказок Dynatrace Assist
+* Reference
+* Learn how to trigger predefined prompts in various Dynatrace applications.](/docs/dynatrace-intelligence/copilot/chat-with-davis-copilot/copilot-conv-starters)[02Dynatrace Assist prompt examples
 
-* Справка
-* Узнайте, какие типы подсказок работают хорошо в Dynatrace Assist.](/docs/dynatrace-intelligence/copilot/chat-with-davis-copilot/dynatrace-assist-prompts)
+* Reference
+* Learn what kind of prompts work well in Dynatrace Assist.](/docs/dynatrace-intelligence/copilot/chat-with-davis-copilot/dynatrace-assist-prompts)
 
-## Сценарии использования
+## Use cases
 
-Вы можете использовать агентный **Dynatrace Assist** для:
+You can use agentic  **Dynatrace Assist** to:
 
-* Задания общих вопросов о продукте Dynatrace.
-* Использования инструментов и возможностей MCP.
-* Выполнения задач без необходимости открывать приложение или перехода к другому приложению.
-* Объединения инструментов в одном запросе для выполнения нескольких задач.
-* Объединения инструментов для выполнения задач и получения ответов на общие вопросы одновременно.
+* Ask general questions about the Dynatrace product.
+* Make use of the MCP tools and capabilities.
+* Perform tasks without the need to open the app or drill-down to another app.
+* Combine tools in one request to perform multiple tasks.
+* Combine tools to perform tasks and get answers to general questions at the same time.
 
-## Связанные темы
+## Related topics
 
-
-
-* [Get started with Dynatrace Intelligence generative AI](/docs/dynatrace-intelligence/copilot/copilot-getting-started "Learn how to set up Dynatrace Intelligence generative AI.")
-* [Embedded conversation starters](/docs/dynatrace-intelligence/copilot/chat-with-davis-copilot/copilot-conv-starters "Learn how to trigger predefined prompts in various Dynatrace applications.")
-* [Dynatrace Intelligence generative AI FAQ](/docs/dynatrace-intelligence/copilot/copilot-faq "Learn about frequently asked questions and find your answers.")
-* [Dynatrace MCP server](/docs/dynatrace-intelligence/dynatrace-intelligence-integrations/dynatrace-mcp "Learn about the Dynatrace MCP server and how you can connect to it.")
+* [Начало работы с Dynatrace Intelligence генеративным ИИ](/docs/dynatrace-intelligence/copilot/copilot-getting-started "Узнайте, как настроить Dynatrace Intelligence генеративный ИИ.")
+* [Встроенные стартовые разговоры](/docs/dynatrace-intelligence/copilot/chat-with-davis-copilot/copilot-conv-starters "Узнайте, как запустить предопределенные подсказки в различных приложениях Dynatrace. ")
+* [Часто задаваемые вопросы о Dynatrace Intelligence генеративном ИИ](/docs/dynatrace-intelligence/copilot/copilot-faq "Узнайте о часто задаваемых вопросах и найдите ответы.")
+* [Сервер Dynatrace MCP](/docs/dynatrace-intelligence/dynatrace-intelligence-integrations/dynatrace-mcp "Узнайте о сервере Dynatrace MCP и о том, как вы можете подключиться к нему.")

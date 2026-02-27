@@ -1,6 +1,6 @@
 # Документация Dynatrace: license/capabilities
 Язык: Русский (RU)
-Сгенерировано: 2026-02-26
+Сгенерировано: 2026-02-27
 Файлов в разделе: 17
 ---
 
@@ -9,7 +9,7 @@
 ---
 title: Calculate your consumption of Foundation & Discovery (DPS)
 source: https://www.dynatrace.com/docs/license/capabilities/app-infra-observability/foundation-and-discovery
-scraped: 2026-02-25T21:18:43.809802
+scraped: 2026-02-27T21:12:32.750961
 ---
 
 # Calculate your consumption of Foundation & Discovery (DPS)
@@ -536,7 +536,7 @@ When using the metric "(DPS) Total metric data points billed for Full-Stack moni
 ---
 title: Calculate your consumption of Infrastructure Monitoring (DPS)
 source: https://www.dynatrace.com/docs/license/capabilities/app-infra-observability/infrastructure-monitoring
-scraped: 2026-02-25T21:18:35.957974
+scraped: 2026-02-27T21:12:38.205638
 ---
 
 # Calculate your consumption of Infrastructure Monitoring (DPS)
@@ -872,7 +872,7 @@ The following details apply to metric data points:
 ---
 title: Application & Infrastructure Observability overview (DPS)
 source: https://www.dynatrace.com/docs/license/capabilities/app-infra-observability
-scraped: 2026-02-24T21:25:03.169982
+scraped: 2026-02-27T21:23:33.089849
 ---
 
 # Application & Infrastructure Observability overview (DPS)
@@ -949,7 +949,7 @@ AppEngine Functions work out-of-the-box: no external hosting is required, and th
 ---
 title: Application Security overview (DPS)
 source: https://www.dynatrace.com/docs/license/capabilities/application-security
-scraped: 2026-02-25T21:30:00.852824
+scraped: 2026-02-27T21:25:09.895565
 ---
 
 # Application Security overview (DPS)
@@ -1141,7 +1141,7 @@ You can query metrics via the [Environment API - Metrics API v2](/docs/dynatrace
 ---
 title: Digital Experience Monitoring (DEM) overview (DPS)
 source: https://www.dynatrace.com/docs/license/capabilities/digital-experience-monitoring
-scraped: 2026-02-24T21:23:19.436279
+scraped: 2026-02-27T21:29:24.231386
 ---
 
 # Digital Experience Monitoring (DEM) overview (DPS)
@@ -1235,7 +1235,7 @@ The following details apply to metric data points:
 ---
 title: Events powered by Grail overview (DPS)
 source: https://www.dynatrace.com/docs/license/capabilities/events
-scraped: 2026-02-26T21:21:20.147502
+scraped: 2026-02-27T21:19:33.573730
 ---
 
 # Events powered by Grail overview (DPS)
@@ -1323,7 +1323,7 @@ Here's what's included with the Query data-usage dimension:
 ---
 title: Calculate your consumption of Log Management & Analytics - Query (DPS)
 source: https://www.dynatrace.com/docs/license/capabilities/log-analytics/dps-log-query
-scraped: 2026-02-26T21:14:20.475966
+scraped: 2026-02-27T21:11:34.430579
 ---
 
 # Calculate your consumption of Log Management & Analytics - Query (DPS)
@@ -1457,7 +1457,7 @@ You can query metrics via the [Environment API - Metrics API v2](/docs/dynatrace
 ---
 title: Log Analytics (DPS)
 source: https://www.dynatrace.com/docs/license/capabilities/log-analytics
-scraped: 2026-02-26T21:18:46.403147
+scraped: 2026-02-27T21:13:01.486939
 ---
 
 # Log Analytics (DPS)
@@ -1577,7 +1577,7 @@ Alternatively, if the Retain with Included Query option does not meet your use c
 ---
 title: Metrics powered by Grail overview (DPS)
 source: https://www.dynatrace.com/docs/license/capabilities/metrics
-scraped: 2026-02-26T21:29:40.347366
+scraped: 2026-02-27T21:31:25.441082
 ---
 
 # Metrics powered by Grail overview (DPS)
@@ -1626,7 +1626,7 @@ Here's what's included with the Query data-usage dimension:
 ---
 title: Platform extensions overview (DPS)
 source: https://www.dynatrace.com/docs/license/capabilities/platform-extensions
-scraped: 2026-02-26T21:29:32.750123
+scraped: 2026-02-27T21:20:19.394926
 ---
 
 # Platform extensions overview (DPS)
@@ -1704,7 +1704,7 @@ Dynatrace also allows you to ingest logs from your serverless cloud functions.
 ---
 title: Traces powered by Grail overview (DPS)
 source: https://www.dynatrace.com/docs/license/capabilities/traces
-scraped: 2026-02-26T21:16:10.869383
+scraped: 2026-02-27T21:14:59.535483
 ---
 
 # Traces powered by Grail overview (DPS)
@@ -1795,7 +1795,7 @@ When other data types are also read in a query, this can result in consumption o
 ---
 title: Understanding DPS capabilities
 source: https://www.dynatrace.com/docs/license/capabilities
-scraped: 2026-02-26T21:18:42.965685
+scraped: 2026-02-27T21:16:21.626528
 ---
 
 # Understanding DPS capabilities
@@ -1812,7 +1812,7 @@ Each platform capability has a price point defined in the rate card that's inclu
 
 Your organization's usage of each Dynatrace capability accrues costs towards your annual commitment as defined in the rate card.
 **Account Management** provides daily updates about accrued usage and related costs.
-You can access these details anytime via [Account Management](/docs/manage/account-management "Manage your Dynatrace license, subscriptions, and platform adoption and environment health.") or the [Dynatrace Platform Subscription API](/docs/dynatrace-api/account-management-api/dynatrace-platform-subscription-api "Query the data about your Dynatrace Platform Subscription via the Account Management API.").
+You can access these details anytime via [Account Management](/docs/manage/account-management "Manage your Dynatrace license, accounts, platform adoption, and environment health.") or the [Dynatrace Platform Subscription API](/docs/dynatrace-api/account-management-api/dynatrace-platform-subscription-api "Query the data about your Dynatrace Platform Subscription via the Account Management API.").
 
 Once your annual commitment is reached, you can continue to use Dynatrace while incurring on-demand usage.
 Dynatrace applies the same rate card for on-demand usage without additional fees or premium pricing.

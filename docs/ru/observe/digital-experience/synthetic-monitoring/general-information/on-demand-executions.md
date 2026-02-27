@@ -1,7 +1,7 @@
 ---
 title: On-demand synthetic monitor executions for CI/CD
 source: https://www.dynatrace.com/docs/observe/digital-experience/synthetic-monitoring/general-information/on-demand-executions
-scraped: 2026-02-26T21:28:27.618775
+scraped: 2026-02-27T21:28:18.142254
 ---
 
 # On-demand synthetic monitor executions for CI/CD

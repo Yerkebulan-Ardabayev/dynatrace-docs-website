@@ -1,7 +1,7 @@
 ---
 title: Stream Kubernetes logs with Fluent Bit (Logs Classic)
 source: https://www.dynatrace.com/docs/analyze-explore-automate/log-monitoring/acquire-log-data/lm-fluent-bit-logs-k8s
-scraped: 2026-02-25T21:33:02.997531
+scraped: 2026-02-27T21:28:48.143739
 ---
 
 # Stream Kubernetes logs with Fluent Bit (Logs Classic)

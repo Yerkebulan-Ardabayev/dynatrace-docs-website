@@ -1,6 +1,6 @@
 # Документация Dynatrace: observe/dynatrace-for-ai-observability
 Язык: Русский (RU)
-Сгенерировано: 2026-02-26
+Сгенерировано: 2026-02-27
 Файлов в разделе: 15
 ---
 
@@ -9,7 +9,7 @@
 ---
 title: AI Observability
 source: https://www.dynatrace.com/docs/observe/dynatrace-for-ai-observability/ai-observability-app
-scraped: 2026-02-26T21:29:08.040428
+scraped: 2026-02-27T21:21:47.523711
 ---
 
 # AI Observability
@@ -229,7 +229,7 @@ Review all observable AI technologies in the Dynatrace Hub.](https://www.dynatra
 ---
 title: Kong AI Gateway
 source: https://www.dynatrace.com/docs/observe/dynatrace-for-ai-observability/ai-traffic-management-and-security/kong
-scraped: 2026-02-25T21:26:53.491468
+scraped: 2026-02-27T21:26:17.695902
 ---
 
 # Kong AI Gateway
@@ -1274,7 +1274,7 @@ In the example below, Dynatrace Intelligence automatically reported a slowdown o
 ---
 title: Get started
 source: https://www.dynatrace.com/docs/observe/dynatrace-for-ai-observability/get-started
-scraped: 2026-02-25T21:17:32.799461
+scraped: 2026-02-27T21:13:16.359355
 ---
 
 # Get started
@@ -1309,7 +1309,7 @@ Instrument your AI application with OpenTelemetry.](/docs/observe/dynatrace-for-
 ---
 title: Amazon Bedrock
 source: https://www.dynatrace.com/docs/observe/dynatrace-for-ai-observability/models-and-platforms/bedrock
-scraped: 2026-02-25T21:17:29.838506
+scraped: 2026-02-27T21:13:12.376026
 ---
 
 # Amazon Bedrock
@@ -1368,7 +1368,7 @@ The following attributes are available for GenAI Spans.
 ---
 title: NVIDIA NIM
 source: https://www.dynatrace.com/docs/observe/dynatrace-for-ai-observability/models-and-platforms/nvidia-nim
-scraped: 2026-02-26T21:27:17.939271
+scraped: 2026-02-27T21:13:18.835896
 ---
 
 # NVIDIA NIM
@@ -1578,7 +1578,7 @@ Additionally, the following metrics are reported.
 ---
 title: Ollama
 source: https://www.dynatrace.com/docs/observe/dynatrace-for-ai-observability/models-and-platforms/ollama
-scraped: 2026-02-25T21:17:36.812571
+scraped: 2026-02-27T21:13:17.652624
 ---
 
 # Ollama
@@ -1628,7 +1628,7 @@ The following attributes are available for GenAI Spans.
 ---
 title: OpenAI
 source: https://www.dynatrace.com/docs/observe/dynatrace-for-ai-observability/models-and-platforms/openai
-scraped: 2026-02-25T21:17:34.157775
+scraped: 2026-02-27T21:13:11.077441
 ---
 
 # OpenAI
@@ -2074,7 +2074,7 @@ The screenshot below shows a Data Explorer visualization of the accuracy metric 
 ---
 title: LangChain
 source: https://www.dynatrace.com/docs/observe/dynatrace-for-ai-observability/orchestration-frameworks/langchain
-scraped: 2026-02-25T21:17:28.506544
+scraped: 2026-02-27T21:13:13.691387
 ---
 
 # LangChain
@@ -2129,7 +2129,7 @@ The following attributes are available for GenAI Spans.
 ---
 title: AI data governance with Amazon Bedrock
 source: https://www.dynatrace.com/docs/observe/dynatrace-for-ai-observability/sample-use-cases/data-governance
-scraped: 2026-02-24T21:23:01.737606
+scraped: 2026-02-27T21:29:41.675645
 ---
 
 # AI data governance with Amazon Bedrock
@@ -2315,7 +2315,7 @@ Now you can:
 ---
 title: OpenAI Observability
 source: https://www.dynatrace.com/docs/observe/dynatrace-for-ai-observability/sample-use-cases/openai-observability
-scraped: 2026-02-26T21:33:50.435943
+scraped: 2026-02-27T21:26:04.104314
 ---
 
 # OpenAI Observability
@@ -2540,7 +2540,7 @@ Our simple example of a Node.js service entirely depends on the ChatGPT model re
 ---
 title: AI and LLM Observability
 source: https://www.dynatrace.com/docs/observe/dynatrace-for-ai-observability
-scraped: 2026-02-26T21:15:15.609042
+scraped: 2026-02-27T21:09:32.504402
 ---
 
 # AI and LLM Observability

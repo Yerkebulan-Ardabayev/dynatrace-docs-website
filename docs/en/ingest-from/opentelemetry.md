@@ -1,7 +1,7 @@
 ---
 title: OpenTelemetry and Dynatrace
 source: https://www.dynatrace.com/docs/ingest-from/opentelemetry
-scraped: 2026-02-26T21:18:02.277635
+scraped: 2026-02-27T21:13:39.946351
 ---
 
 # OpenTelemetry and Dynatrace

@@ -1,7 +1,7 @@
 ---
 title: Optimize DQL cost with Workflows
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/use-cases/copilot-in-workflows-dql
-scraped: 2026-02-24T21:22:48.283491
+scraped: 2026-02-27T21:20:56.925637
 ---
 
 # Optimize DQL cost with Workflows

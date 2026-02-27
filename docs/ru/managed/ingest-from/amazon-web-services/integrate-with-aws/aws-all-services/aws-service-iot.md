@@ -1,7 +1,7 @@
 ---
 title: AWS IoT monitoring
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-iot
-scraped: 2026-02-26T21:23:10.739131
+scraped: 2026-02-27T21:18:20.054890
 ---
 
 # AWS IoT monitoring

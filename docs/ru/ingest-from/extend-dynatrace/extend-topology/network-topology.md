@@ -1,7 +1,7 @@
 ---
 title: Generic network topology
 source: https://www.dynatrace.com/docs/ingest-from/extend-dynatrace/extend-topology/network-topology
-scraped: 2026-02-26T21:19:31.004987
+scraped: 2026-02-27T21:28:02.304214
 ---
 
 # Generic network topology

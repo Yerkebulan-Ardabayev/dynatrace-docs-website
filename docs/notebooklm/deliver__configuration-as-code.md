@@ -1,6 +1,6 @@
 # Документация Dynatrace: deliver/configuration-as-code
 Язык: Русский (RU)
-Сгенерировано: 2026-02-26
+Сгенерировано: 2026-02-27
 Файлов в разделе: 14
 ---
 
@@ -994,7 +994,7 @@ Some configuration types have special requirements for their JSON payloads and m
 ---
 title: Monaco configuration YAML file - list of special configuration types
 source: https://www.dynatrace.com/docs/deliver/configuration-as-code/monaco/configuration/special-configuration-types-saas
-scraped: 2026-02-24T21:35:43.500489
+scraped: 2026-02-27T21:21:35.595578
 ---
 
 # Monaco configuration YAML file - list of special configuration types
@@ -1834,7 +1834,7 @@ When using the [download command](/docs/deliver/configuration-as-code/monaco/ref
 ---
 title: Monaco configuration YAML file - list of type fields
 source: https://www.dynatrace.com/docs/deliver/configuration-as-code/monaco/configuration/yaml-configuration-saas-type-fields
-scraped: 2026-02-26T21:32:52.136895
+scraped: 2026-02-27T21:21:41.260289
 ---
 
 # Monaco configuration YAML file - list of type fields
@@ -2623,7 +2623,7 @@ Monaco can retrieve and update configurations, but can't create or delete new on
 ## segment type field
 
 Since Dynatrace Monaco CLI version 2.19.0+, the `segment` type is supported.
-[Segments](/docs/manage/segments "Segments logically structure monitoring data in Grail and function as convenient filters for data that users are allowed to access based on permissions.") are used to structure and filter data for tailored views in Dynatrace.
+[Segments](/docs/manage/segments "Use segments to logically structure and conveniently filter observability data across apps.") are used to structure and filter data for tailored views in Dynatrace.
 
 The `type` field `segment` can be defined as follows.
 
@@ -3022,7 +3022,7 @@ While this sample shows users, service users, policies, and groups defined in a 
 ---
 title: Monaco configuration YAML file structure
 source: https://www.dynatrace.com/docs/deliver/configuration-as-code/monaco/configuration/yaml-configuration-saas
-scraped: 2026-02-26T21:30:03.200219
+scraped: 2026-02-27T21:31:17.557800
 ---
 
 # Monaco configuration YAML file structure
@@ -4185,7 +4185,7 @@ skip: true
 ---
 title: Monaco API support and access permission handling
 source: https://www.dynatrace.com/docs/deliver/configuration-as-code/monaco/monaco-api-support-and-access-handling
-scraped: 2026-02-26T21:22:48.963384
+scraped: 2026-02-27T21:18:15.556915
 ---
 
 # Monaco API support and access permission handling
@@ -4313,7 +4313,7 @@ Note that most Configuration APIs are deprecated in favor of Settings 2.0, see [
 ---
 title: Monaco concepts
 source: https://www.dynatrace.com/docs/deliver/configuration-as-code/monaco/monaco-concepts
-scraped: 2026-02-24T21:33:00.875646
+scraped: 2026-02-27T21:25:42.790588
 ---
 
 # Monaco concepts
@@ -4371,7 +4371,7 @@ Dynatrace resource configuration
 ---
 title: Manage configurations with Monaco
 source: https://www.dynatrace.com/docs/deliver/configuration-as-code/monaco/monaco-getting-started
-scraped: 2026-02-26T21:30:14.130529
+scraped: 2026-02-27T21:20:12.766662
 ---
 
 # Manage configurations with Monaco
@@ -5357,7 +5357,7 @@ They are useful for troubleshooting any errors that you might encounter.
 ---
 title: Terraform API support and access permission handling
 source: https://www.dynatrace.com/docs/deliver/configuration-as-code/terraform/terraform-api-support-access-permission-handling
-scraped: 2026-02-26T21:25:57.592055
+scraped: 2026-02-27T21:29:37.206809
 ---
 
 # Terraform API support and access permission handling
@@ -5485,7 +5485,7 @@ Information can be found at [IAM policy reference](/docs/manage/identity-access-
 ---
 title: Terraform CLI commands
 source: https://www.dynatrace.com/docs/deliver/configuration-as-code/terraform/terraform-cli-commands
-scraped: 2026-02-26T21:25:22.750950
+scraped: 2026-02-27T21:28:50.803420
 ---
 
 # Terraform CLI commands
@@ -5601,7 +5601,7 @@ The reasons are added as comments at the beginning of each file.
 ---
 title: Configure automated notifications using Terraform and Configuration as Code
 source: https://www.dynatrace.com/docs/deliver/configuration-as-code/terraform/tutorials/terraform-tutorial-set-up-automated-notification
-scraped: 2026-02-26T21:28:46.157320
+scraped: 2026-02-27T21:30:43.151079
 ---
 
 # Configure automated notifications using Terraform and Configuration as Code
@@ -6829,7 +6829,7 @@ To modify the Terraform configuration
 ---
 title: Terraform tutorials overview
 source: https://www.dynatrace.com/docs/deliver/configuration-as-code/terraform/tutorials
-scraped: 2026-02-26T21:32:36.416202
+scraped: 2026-02-27T21:23:55.517552
 ---
 
 # Terraform tutorials overview
@@ -6852,7 +6852,7 @@ We provide a tutorial to help you [Configure automated notifications using Terra
 ---
 title: Configuration as Code overview
 source: https://www.dynatrace.com/docs/deliver/configuration-as-code
-scraped: 2026-02-25T21:29:14.070583
+scraped: 2026-02-27T21:31:45.433027
 ---
 
 # Configuration as Code overview
