@@ -1,7 +1,7 @@
 ---
 title: Configure the beacon endpoint for web frontends in the New RUM Experience
 source: https://www.dynatrace.com/docs/observe/digital-experience/new-rum-experience/web-frontends/initial-setup/configure-beacon-endpoint
-scraped: 2026-02-26T21:26:41.556817
+scraped: 2026-02-27T21:18:00.945233
 ---
 
 # Configure the beacon endpoint for web frontends in the New RUM Experience

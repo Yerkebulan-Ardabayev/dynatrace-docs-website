@@ -1,7 +1,7 @@
 ---
 title: Monitor Azure App Service
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-appservice
-scraped: 2026-02-26T21:18:10.014588
+scraped: 2026-02-27T21:16:30.702048
 ---
 
 # Monitor Azure App Service

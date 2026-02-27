@@ -1,6 +1,6 @@
 # Документация Dynatrace: analyze-explore-automate/smartscape
 Язык: Русский (RU)
-Сгенерировано: 2026-02-26
+Сгенерировано: 2026-02-27
 Файлов в разделе: 12
 ---
 
@@ -125,7 +125,7 @@ By optimizing the graph's size, you can ensure a stable and uninterrupted experi
 ---
 title: View topology
 source: https://www.dynatrace.com/docs/analyze-explore-automate/smartscape/smartscape-modals/smartscape-view-topology
-scraped: 2026-02-26T21:28:55.497958
+scraped: 2026-02-27T21:20:47.505270
 ---
 
 # View topology
@@ -578,7 +578,7 @@ To use **Kubernetes overview** effectively, we recommend that you:
 ---
 title: Problem graph
 source: https://www.dynatrace.com/docs/analyze-explore-automate/smartscape/smartscape-views/problem-graph
-scraped: 2026-02-24T21:21:45.479163
+scraped: 2026-02-27T21:22:35.775875
 ---
 
 # Problem graph
@@ -641,7 +641,7 @@ To use ![Smartscape](https://dt-cdn.net/images/smartscapes-256-eb41c7cddc.png "S
 ---
 title: Service dependency graph
 source: https://www.dynatrace.com/docs/analyze-explore-automate/smartscape/smartscape-views/service-dependency-graph
-scraped: 2026-02-26T21:25:31.135693
+scraped: 2026-02-27T21:21:59.411531
 ---
 
 # Service dependency graph
@@ -799,7 +799,7 @@ Visualize your AWS EC2 ecosystem and resource relationships.](/docs/analyze-expl
 ---
 title: Smartscape
 source: https://www.dynatrace.com/docs/analyze-explore-automate/smartscape
-scraped: 2026-02-25T21:31:09.196517
+scraped: 2026-02-27T21:21:38.254106
 ---
 
 # Smartscape

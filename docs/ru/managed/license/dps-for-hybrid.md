@@ -1,7 +1,7 @@
 ---
 title: Dynatrace Platform Subscription for hybrid setups (DPS for Hybrid)
 source: https://www.dynatrace.com/docs/license/dps-for-hybrid
-scraped: 2026-02-26T21:18:40.634742
+scraped: 2026-02-27T21:16:16.463276
 ---
 
 # Dynatrace Platform Subscription for hybrid setups (DPS for Hybrid)

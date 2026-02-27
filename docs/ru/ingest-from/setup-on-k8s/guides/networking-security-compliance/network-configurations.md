@@ -1,7 +1,7 @@
 ---
 title: Network configurations
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/guides/networking-security-compliance/network-configurations
-scraped: 2026-02-26T21:21:45.989659
+scraped: 2026-02-27T21:19:26.739860
 ---
 
 # Network configurations

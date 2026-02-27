@@ -1,7 +1,7 @@
 ---
 title: OneAgent security on Linux
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/oneagent-security-linux
-scraped: 2026-02-26T21:19:08.381369
+scraped: 2026-02-27T21:18:25.307490
 ---
 
 # OneAgent security on Linux

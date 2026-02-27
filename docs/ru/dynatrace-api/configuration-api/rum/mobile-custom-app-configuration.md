@@ -1,48 +1,48 @@
 ---
-title: Мобильные и пользовательские приложения API
+title: Mobile and custom app API
 source: https://www.dynatrace.com/docs/dynatrace-api/configuration-api/rum/mobile-custom-app-configuration
-scraped: 2026-02-24T21:25:28.252272
+scraped: 2026-02-27T21:27:24.599999
 ---
 
-# Мобильные и пользовательские приложения API
+# Mobile and custom app API
 
-# Мобильные и пользовательские приложения API
+# Mobile and custom app API
 
-* Справка
-* Опубликовано 05 нояб. 2020 г.
+* Reference
+* Published Nov 05, 2020
 
-[### Список всех приложений
+[### List all apps
 
-Получить обзор всех мобильных и пользовательских приложений.](/docs/dynatrace-api/configuration-api/rum/mobile-custom-app-configuration/apps/get-all "Список всех мобильных и пользовательских приложений через Dynatrace API.")[### Просмотр приложения
+Get an overview of all mobile and custom apps.](/docs/dynatrace-api/configuration-api/rum/mobile-custom-app-configuration/apps/get-all "List all mobile and custom apps applications via the Dynatrace API.")[### View an app
 
-Получить параметры приложения по его ID.](/docs/dynatrace-api/configuration-api/rum/mobile-custom-app-configuration/apps/get-app "Просмотр параметров мобильного или пользовательского приложения через Dynatrace API.")
+Get parameters of an app by its ID.](/docs/dynatrace-api/configuration-api/rum/mobile-custom-app-configuration/apps/get-app "View parameters of a mobile or custom app via the Dynatrace API.")
 
-[### Создание приложения
+[### Create an app
 
-Создать новое мобильное или пользовательское приложение с необходимыми параметрами.](/docs/dynatrace-api/configuration-api/rum/mobile-custom-app-configuration/apps/post-app "Создание мобильного или пользовательского приложения через Dynatrace API.")[### Редактирование приложения
+Create a new mobile or custom app with the exact parameters you need.](/docs/dynatrace-api/configuration-api/rum/mobile-custom-app-configuration/apps/post-app "Create a mobile or custom app via the Dynatrace API.")[### Edit an app
 
-Обновить существующее мобильное или пользовательское приложение или создать новое приложение с указанным ID.](/docs/dynatrace-api/configuration-api/rum/mobile-custom-app-configuration/apps/put-app "Обновление параметров мобильного или пользовательского приложения через Dynatrace API.")[### Удаление приложения
+Update an existing mobile or custom application or create a new app with the specified ID.](/docs/dynatrace-api/configuration-api/rum/mobile-custom-app-configuration/apps/put-app "Update parameters of a mobile or custom app via the Dynatrace API.")[### Delete an app
 
-Удалить приложение, которое больше не нужно.](/docs/dynatrace-api/configuration-api/rum/mobile-custom-app-configuration/apps/delete-app "Удаление мобильного или пользовательского приложения через Dynatrace API.")
+Delete an app you don't need anymore.](/docs/dynatrace-api/configuration-api/rum/mobile-custom-app-configuration/apps/delete-app "Delete a mobile or custom app via the Dynatrace API.")
 
-[### Просмотр ключевых действий пользователя
+[### View key user actions
 
-Получить список ключевых действий пользователя в указанном приложении.](/docs/dynatrace-api/configuration-api/rum/mobile-custom-app-configuration/key-user-actions/get-configuration "Просмотр ключевых действий пользователя мобильного или пользовательского приложения через Dynatrace API.")[### Редактирование списка ключевых действий пользователя
+Get the list of key user actions in the specified application.](/docs/dynatrace-api/configuration-api/rum/mobile-custom-app-configuration/key-user-actions/get-configuration "View key user actions of a mobile or custom app via the Dynatrace API.")[### Edit key user actions list
 
-Отметить действие пользователя как ключевое действие в указанном приложении.](/docs/dynatrace-api/configuration-api/rum/mobile-custom-app-configuration/key-user-actions/post-configuration "Добавление ключевого действия пользователя к мобильному или пользовательскому приложению через Dynatrace API.")[### Удаление ключевого действия пользователя
+Mark a user action as the key action in the specified application.](/docs/dynatrace-api/configuration-api/rum/mobile-custom-app-configuration/key-user-actions/post-configuration "Add a key user action to a mobile or custom app via the Dynatrace API.")[### Delete a key user action
 
-Удалить действие пользователя из списка ключевых действий в указанном приложении.](/docs/dynatrace-api/configuration-api/rum/mobile-custom-app-configuration/key-user-actions/del-configuration "Удаление ключевого действия пользователя из мобильного или пользовательского приложения через Dynatrace API.")
+Remove a user action from the list of key actions in the specified application.](/docs/dynatrace-api/configuration-api/rum/mobile-custom-app-configuration/key-user-actions/del-configuration "Remove a key user action from a mobile or custom app via the Dynatrace API.")
 
-[### Список всех свойств сессии пользователя
+[### List all user session properties
 
-Получить обзор всех свойств сессии приложения.](/docs/dynatrace-api/configuration-api/rum/mobile-custom-app-configuration/user-action-and-session-properties/get-all "Просмотр всех свойств сессии пользователя мобильного или пользовательского приложения через Dynatrace API.")[### Просмотр свойства сессии пользователя
+Get an overview of all session properties of an app.](/docs/dynatrace-api/configuration-api/rum/mobile-custom-app-configuration/user-action-and-session-properties/get-all "View all user session properties a mobile or custom app via the Dynatrace API.")[### View a user session property
 
-Получить параметры свойства сессии по его ID.](/docs/dynatrace-api/configuration-api/rum/mobile-custom-app-configuration/user-action-and-session-properties/get-property "Просмотр свойства сессии пользователя мобильного или пользовательского приложения через Dynatrace API.")
+Get parameters of a session property its ID.](/docs/dynatrace-api/configuration-api/rum/mobile-custom-app-configuration/user-action-and-session-properties/get-property "View user session property a mobile or custom app via the Dynatrace API.")
 
-[### Создание свойства сессии пользователя
+[### Create a user session property
 
-Создать новое свойство сессии пользователя для мобильного или пользовательского приложения.](/docs/dynatrace-api/configuration-api/rum/mobile-custom-app-configuration/user-action-and-session-properties/post-property "Создание свойства сессии пользователя мобильного или пользовательского приложения через Dynatrace API.")[### Редактирование свойства сессии пользователя
+Create a new user session property for your mobile or custom app.](/docs/dynatrace-api/configuration-api/rum/mobile-custom-app-configuration/user-action-and-session-properties/post-property "Create user session property a mobile or custom app via the Dynatrace API.")[### Edit a user session property
 
-Обновить существующее свойство сессии пользователя для мобильного или пользовательского приложения.](/docs/dynatrace-api/configuration-api/rum/mobile-custom-app-configuration/user-action-and-session-properties/put-property "Обновление свойства сессии пользователя мобильного или пользовательского приложения через Dynatrace API.")[### Удаление свойства сессии пользователя
+Update an existing user session property for your mobile or custom app.](/docs/dynatrace-api/configuration-api/rum/mobile-custom-app-configuration/user-action-and-session-properties/put-property "Update user session property a mobile or custom app via the Dynatrace API.")[### Delete a user session property
 
-Удалить свойство сессии пользователя, которое больше не нужно.](/docs/dynatrace-api/configuration-api/rum/mobile-custom-app-configuration/user-action-and-session-properties/delete-property "Удаление свойства сессии пользователя мобильного или пользовательского приложения через Dynatrace API.")
+Delete a user session property you don't need anymore.](/docs/dynatrace-api/configuration-api/rum/mobile-custom-app-configuration/user-action-and-session-properties/delete-property "Delete user session property a mobile or custom app via the Dynatrace API.")

@@ -1,7 +1,7 @@
 ---
 title: Troubleshooting Azure monitoring setup
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-monitoring-guide/troubleshoot-azure-monitoring-setup
-scraped: 2026-02-26T21:22:14.148860
+scraped: 2026-02-27T21:20:04.706046
 ---
 
 # Troubleshooting Azure monitoring setup

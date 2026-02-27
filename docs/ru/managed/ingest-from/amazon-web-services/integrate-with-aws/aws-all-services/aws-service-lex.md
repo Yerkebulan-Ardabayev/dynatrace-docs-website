@@ -1,7 +1,7 @@
 ---
 title: Amazon Lex monitoring
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-lex
-scraped: 2026-02-25T21:27:01.261528
+scraped: 2026-02-27T21:24:02.624257
 ---
 
 # Amazon Lex monitoring

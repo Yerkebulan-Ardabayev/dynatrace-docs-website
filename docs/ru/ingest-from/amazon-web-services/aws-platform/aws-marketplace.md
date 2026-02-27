@@ -1,7 +1,7 @@
 ---
 title: AWS Marketplace private offer
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/aws-platform/aws-marketplace
-scraped: 2026-02-26T21:33:08.700219
+scraped: 2026-02-27T21:30:13.884525
 ---
 
 # AWS Marketplace private offer

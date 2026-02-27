@@ -1,7 +1,7 @@
 ---
 title: Azure Web Application Firewall (WAF) Policy on Azure CDN monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-web-application-firewall-policies
-scraped: 2026-02-26T21:29:24.217349
+scraped: 2026-02-27T21:25:26.446209
 ---
 
 # Azure Web Application Firewall (WAF) Policy on Azure CDN monitoring

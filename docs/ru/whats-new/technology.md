@@ -1,7 +1,7 @@
 ---
 title: New technology support
 source: https://www.dynatrace.com/docs/whats-new/technology
-scraped: 2026-02-26T21:14:47.249468
+scraped: 2026-02-27T21:10:19.700726
 ---
 
 # New technology support
@@ -41,6 +41,16 @@ Definition of the technology support version schema with examples:
 * **The minimum required version is 5+**
 
   + All major, minor, and patch versions starting from version 5 are supported, like 5, 5.1, 5.1.1, and 6
+
+## 1.331 OneAgent
+
+Rollout starts Feb 10, 2026, for OneAgent
+
+* NGINX 1.29.4 (NGINX module)
+* Go toolchain with FIPS v1.25.3 (openssl-fips)
+* gRPC 1.78 (Go module)
+* Undici HTTP client (Node.js module)
+* Amazon SNS v1.15â1.38 for Go
 
 ## 1.329 OneAgent
 

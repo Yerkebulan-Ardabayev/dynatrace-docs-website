@@ -1,7 +1,7 @@
 ---
 title: Deployment
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/deployment
-scraped: 2026-02-26T21:18:11.115952
+scraped: 2026-02-27T21:16:50.064996
 ---
 
 # Deployment

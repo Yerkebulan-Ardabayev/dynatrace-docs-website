@@ -1,7 +1,7 @@
 ---
 title: Customize endpoint detection in Service Detection v2
 source: https://www.dynatrace.com/docs/observe/application-observability/services/service-detection/service-detection-v2/endpoint-detection-v2
-scraped: 2026-02-23T21:25:04.253572
+scraped: 2026-02-27T21:21:34.091380
 ---
 
 # Customize endpoint detection in Service Detection v2
@@ -10,7 +10,7 @@ scraped: 2026-02-23T21:25:04.253572
 
 * How-to guide
 * 2-min read
-* Updated on Feb 04, 2026
+* Updated on Feb 24, 2026
 
 Service Detection v2 (SDv2) allows you to identify specific endpoints into your services.
 You can use the default Dynatrace detection rules and also define your own custom rules.
@@ -51,60 +51,6 @@ These rules focus on actual service health by considering only service entry poi
 
 Any tenant created with Dynatrace version 1.330+ uses these configurable rules. Older tenants can be opted in to the configurable rule set; see the [New endpoint detection opt-in](#new-default-endpoint-rules-opt-in) section.
 
-Priority
-
-Condition
-
-Endpoint
-
-1
-
-`span.kind == "server"` + `rpc.service` + `rpc.method`
-
-`{rpc.service}.{rpc.method}`
-
-2
-
-`span.kind == "server"` + `rpc.method`
-
-`{rpc.method}`
-
-3[1](#fn-1-1-def)
-
-`span.kind == "server"` + `http.request.method` + `url.path.pattern`
-
-`{http.request.method} {url.path.pattern}`
-
-4
-
-`span.kind == "server"` + `http.request.method` + `url.truncated_path`
-
-`{http.request.method} {url.truncated_path}`
-
-5
-
-`span.kind == "server"` + `http.request.method` + `http.route`
-
-`{http.request.method} {http.route}`
-
-6
-
-`span.kind == "server"` + `http.request.method`
-
-`{http.request.method} /*`
-
-7
-
-`span.kind == "server"` + `span.name`
-
-`{span.name}`
-
-8
-
-`span.kind == "consumer"` + `span.name`
-
-`{span.name}`
-
 1
 
 Rule available with Dynatrace SaaS version 1.330+. See [Configure URL path pattern matching in Service Detection v2](/docs/observe/application-observability/services/service-detection/service-detection-v2/url-pattern-matching-v2 "Find out how to get better endpoint names for frameworks without route templates by setting up URL pattern matching rules.") for details.
@@ -113,66 +59,6 @@ Rule available with Dynatrace SaaS version 1.330+. See [Configure URL path patte
 
 Legacy endpoint detection rules apply also to all trace root spans (span without a parent span)âwhether client, consumer, internal, or producer span. This broad approach captured comprehensive system activity but created noise in service health monitoring, since outbound call failures typically indicate problems with the called service rather than the calling service.
 However, you can still add custom endpoint rules to the new endpoint detection to restore exactly this behavior.
-
-Priority
-
-Condition
-
-Endpoint name
-
-1
-
-`service.name` starts with `istio-`
-
-`/`
-
-2
-
-`rpc.service` + `rpc.method` + `span.kind` is `server`
-
-`<rpc.method>.<rpc.service>` or `<rpc.method>`
-
-3
-
-`adobe.em.env_type` + `url.truncated_path` + `span.kind` is `server`
-
-`<url.truncated_path>`
-
-4
-
-`adobe.em.env_type` + `url.path` is `/system/probes/health` OR `http.request.method` is `HEAD`
-
-`Health Check`
-
-5
-
-`http.route` + `span.kind` is `server`
-
-`<http.route>`
-
-6
-
-`http.method` + `span.kind` is `server` + `telemetry.sdk.language` is `apache`, `cpp`, or `nginx`
-
-`/`
-
-7
-
-`faas.name`
-
-`invoke`
-
-8
-
-`code.namespace` + `code.function`
-
-`<code.namespace>.<code.function>` or `<code.function>` or `<code.namespace>`
-
-9
-
-`span.name`
-
-`<span.name>`
 
 ## Steps
 
@@ -230,6 +116,22 @@ It's not possible to delete built-in rules, however you can deactivate built-in 
 * Start by creating endpoint rules for the most critical endpoints.
 * Use consistent naming conventions for your endpoints.
 * Regularly review your custom endpoint rules to ensure that they still match your application architecture.
+* Use the **Endpoint Cardinality Dashboard** to see which services have the most endpoints and act accordingly. For more information, see [Dashboard with endpoint-heavy services](#dashboard-endpoint-heavy-service).
+
+## Dashboard with endpoint-heavy services
+
+The **Endpoint Cardinality Dashboard** displays services with the most endpoints (SDv1 and SDv2 services).
+
+This dashboard allows you to quickly identify endpoint-heavy services for which you could adjust the [request naming rules (SDv1)](/docs/observe/application-observability/services/service-detection/service-detection-v1/set-up-request-naming "Adjust request naming and define the operations your services offer.") or [endpoint detection rules (SDv2)](/docs/observe/application-observability/services/service-detection/service-detection-v2/endpoint-detection-v2 "Find out how to detect endpoints that are entry points into your service.").
+
+To view services with the most endpoints
+
+1. Go to ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**.
+2. In the **Dashboards** panel on the left, select  **All dashboards**.
+3. In **Search by name**, enter **Endpoint Cardinality Dashboard**.
+4. Select the dashboard to open it.
+
+To display additional endpoint-heavy services, [duplicate this dashboard](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new#dashboards-duplicate "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.") and edit the DQL query behind the service list (for example, change `100` in `limit 100` to the required value). Alternatively, you can add this query to [![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.") and modify it there.
 
 ## Related topics
 

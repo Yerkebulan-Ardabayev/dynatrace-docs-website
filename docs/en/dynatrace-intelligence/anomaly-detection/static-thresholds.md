@@ -1,7 +1,7 @@
 ---
 title: Static thresholds for anomaly detection
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/anomaly-detection/static-thresholds
-scraped: 2026-02-25T21:23:09.361798
+scraped: 2026-02-27T21:18:24.000882
 ---
 
 # Static thresholds for anomaly detection

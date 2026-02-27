@@ -1,7 +1,7 @@
 ---
 title: DQL best practices
 source: https://www.dynatrace.com/docs/platform/grail/dynatrace-query-language/dql-best-practices
-scraped: 2026-02-26T21:17:27.327904
+scraped: 2026-02-27T21:15:15.231905
 ---
 
 # DQL best practices

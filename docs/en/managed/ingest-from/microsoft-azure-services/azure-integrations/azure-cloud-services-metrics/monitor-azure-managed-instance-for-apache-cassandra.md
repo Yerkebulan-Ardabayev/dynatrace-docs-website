@@ -1,7 +1,7 @@
 ---
 title: Azure Managed Instance for Apache Cassandra Monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-managed-instance-for-apache-cassandra
-scraped: 2026-02-26T21:20:47.022221
+scraped: 2026-02-27T21:17:34.858946
 ---
 
 # Azure Managed Instance for Apache Cassandra Monitoring

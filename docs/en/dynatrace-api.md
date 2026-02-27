@@ -1,7 +1,7 @@
 ---
 title: Dynatrace API
 source: https://www.dynatrace.com/docs/dynatrace-api
-scraped: 2026-02-26T21:16:15.436313
+scraped: 2026-02-27T21:13:31.018693
 ---
 
 # Dynatrace API
@@ -9,7 +9,7 @@ scraped: 2026-02-26T21:16:15.436313
 # Dynatrace API
 
 * Reference
-* Published Jul 19, 2017
+* Updated on Feb 26, 2026
 
 Use the Dynatrace API to automate your monitoring tasks and export different types of data into your third-party reporting and analysis tools. API communication ensures safety by using secured communication via the HTTPS protocol.
 

@@ -1,6 +1,6 @@
 # Документация Dynatrace: platform/oneagent
 Язык: Русский (RU)
-Сгенерировано: 2026-02-26
+Сгенерировано: 2026-02-27
 Файлов в разделе: 6
 ---
 
@@ -9,7 +9,7 @@
 ---
 title: How OneAgent works
 source: https://www.dynatrace.com/docs/platform/oneagent/how-one-agent-works
-scraped: 2026-02-25T21:16:21.491222
+scraped: 2026-02-27T21:12:47.359192
 ---
 
 # How OneAgent works
@@ -61,7 +61,7 @@ OneAgent reports its collected data via HTTP/S requests to the ActiveGates or th
 ---
 title: Enable OneAgent monitoring modes
 source: https://www.dynatrace.com/docs/platform/oneagent/monitoring-modes/enable-monitoring-modes
-scraped: 2026-02-25T21:16:17.573473
+scraped: 2026-02-27T21:12:59.143524
 ---
 
 # Enable OneAgent monitoring modes
@@ -266,7 +266,7 @@ For details on how Application Security works in Discovery mode, see [Applicatio
 ---
 title: OneAgent monitoring modes
 source: https://www.dynatrace.com/docs/platform/oneagent/monitoring-modes/monitoring-modes
-scraped: 2026-02-26T21:14:28.804501
+scraped: 2026-02-27T21:10:49.509012
 ---
 
 # OneAgent monitoring modes
@@ -427,7 +427,7 @@ Disabled OneAgents effectively stop monitoring your environment. However, the co
 ---
 title: Resource attributes
 source: https://www.dynatrace.com/docs/platform/oneagent/resource-attributes
-scraped: 2026-02-26T21:33:21.524686
+scraped: 2026-02-27T21:28:49.442702
 ---
 
 # Resource attributes
@@ -523,7 +523,7 @@ By default, the global dimension limit is equal to `100` and the customer-define
 ---
 title: OneAgent monitoring capabilities
 source: https://www.dynatrace.com/docs/platform/oneagent/supported-monitoring-types
-scraped: 2026-02-26T21:16:21.405093
+scraped: 2026-02-27T21:12:46.295403
 ---
 
 # OneAgent monitoring capabilities
@@ -573,7 +573,7 @@ For a complete list of the technologies that can be monitored by OneAgent, pleas
 ---
 title: OneAgent
 source: https://www.dynatrace.com/docs/platform/oneagent
-scraped: 2026-02-26T21:15:23.507023
+scraped: 2026-02-27T21:09:30.145118
 ---
 
 # OneAgent

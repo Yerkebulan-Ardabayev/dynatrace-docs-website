@@ -1,7 +1,7 @@
 ---
 title: DPS permissions
 source: https://www.dynatrace.com/docs/license/dps-permissions
-scraped: 2026-02-26T21:18:45.316663
+scraped: 2026-02-27T21:16:15.174484
 ---
 
 # DPS permissions
@@ -21,4 +21,4 @@ For a detailed view, see [Working with policies](/docs/manage/identity-access-ma
 ## Related topics
 
 * [License Dynatrace](/docs/license "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.")
-* [Account Management](/docs/manage/account-management "Manage your Dynatrace license, subscriptions, and platform adoption and environment health.")
+* [Account Management](/docs/manage/account-management "Manage your Dynatrace license, accounts, platform adoption, and environment health.")

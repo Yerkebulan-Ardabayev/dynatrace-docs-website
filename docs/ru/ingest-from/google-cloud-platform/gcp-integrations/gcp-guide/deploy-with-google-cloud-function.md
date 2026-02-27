@@ -1,7 +1,7 @@
 ---
 title: Deploy the Dynatrace Google Cloud metric integration in Google Cloud Functions
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/deploy-with-google-cloud-function
-scraped: 2026-02-26T21:24:48.763246
+scraped: 2026-02-27T21:23:01.024600
 ---
 
 # Deploy the Dynatrace Google Cloud metric integration in Google Cloud Functions

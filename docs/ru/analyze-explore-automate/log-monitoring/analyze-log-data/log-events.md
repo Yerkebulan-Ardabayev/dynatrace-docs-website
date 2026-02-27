@@ -1,7 +1,7 @@
 ---
 title: Log events (Logs Classic)
 source: https://www.dynatrace.com/docs/analyze-explore-automate/log-monitoring/analyze-log-data/log-events
-scraped: 2026-02-26T21:22:30.934144
+scraped: 2026-02-27T21:18:33.293795
 ---
 
 # Log events (Logs Classic)

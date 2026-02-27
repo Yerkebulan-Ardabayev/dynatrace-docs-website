@@ -1,7 +1,7 @@
 ---
 title: Custom queries, segmentation, and aggregation of session data
 source: https://www.dynatrace.com/docs/observe/digital-experience/session-segmentation/custom-queries-segmentation-and-aggregation-of-session-data
-scraped: 2026-02-26T21:16:56.003842
+scraped: 2026-02-27T21:15:44.069977
 ---
 
 # Custom queries, segmentation, and aggregation of session data

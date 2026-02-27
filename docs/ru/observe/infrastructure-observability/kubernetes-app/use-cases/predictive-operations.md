@@ -1,7 +1,7 @@
 ---
 title: Predictive Kubernetes operations
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/kubernetes-app/use-cases/predictive-operations
-scraped: 2026-02-26T21:33:07.488489
+scraped: 2026-02-27T21:21:08.388766
 ---
 
 # Predictive Kubernetes operations

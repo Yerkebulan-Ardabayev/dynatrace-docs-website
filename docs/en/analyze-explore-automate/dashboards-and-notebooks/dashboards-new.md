@@ -1,7 +1,7 @@
 ---
 title: Dashboards
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new
-scraped: 2026-02-26T21:13:41.464018
+scraped: 2026-02-27T21:09:11.297803
 ---
 
 # Dashboards
@@ -421,7 +421,7 @@ If you need more control over how a filter is applied, however, you might want t
 * Variables allow you to fully control the underlying query or within your Explore section or tile, determining where and how they are applied. For example, you can specify how they connect with other filters applied (**AND**, **OR**) and you can control which operator is used for your filter (such as `equals`, `contains`, `startsWith`, and `endsWith`).
 * Additionally, use variables when you need fine-grained control over how filters are interdependent.
 
-* For details on segments, see [Segments](/docs/manage/segments "Segments logically structure monitoring data in Grail and function as convenient filters for data that users are allowed to access based on permissions.")
+* For details on segments, see [Segments](/docs/manage/segments "Use segments to logically structure and conveniently filter observability data across apps.")
 * For a ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**-specific segments use case, see [Analyze monitoring data with segments](/docs/manage/segments/getting-started/segments-getting-started-analyze-monitoring-data "Learn how to analyze monitoring data more efficiently by using segments in Dashboards.")
 
 #### Dashboard-level segments

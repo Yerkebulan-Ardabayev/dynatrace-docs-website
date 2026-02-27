@@ -1,7 +1,7 @@
 ---
 title: Amazon EC2 API
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics/cloudwatch-ec2/ec2-api
-scraped: 2026-02-26T21:26:04.152439
+scraped: 2026-02-27T21:26:19.282395
 ---
 
 # Amazon EC2 API

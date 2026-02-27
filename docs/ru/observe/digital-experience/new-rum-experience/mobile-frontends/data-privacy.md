@@ -1,7 +1,7 @@
 ---
 title: Configure data privacy settings for mobile frontends
 source: https://www.dynatrace.com/docs/observe/digital-experience/new-rum-experience/mobile-frontends/data-privacy
-scraped: 2026-02-24T21:23:55.286860
+scraped: 2026-02-27T21:28:23.549850
 ---
 
 # Configure data privacy settings for mobile frontends
@@ -73,7 +73,7 @@ If you haven't configured user tagging and custom event or value reporting, the 
 
 ## User tracking
 
-OneAgent for Mobile uses the `x-dynatrace` header for tagging HTTP requests. Dynatrace uses this header to link the mobile part of the web request to the service part captured by another OneAgent.
+For RUM Classic, OneAgent for Mobile tags HTTP requests with the `x-dynatrace` header. Dynatrace uses this header to link the mobile part of a web request with the service part captured by another OneAgent. For the New RUM Experience, OneAgent for Mobile tags HTTP requests using the `traceparent` and `tracestate` headers.
 
 For hybrid applications, the `dtAdk` cookie allows to join a session from OneAgent for Mobile and a session from the RUM JavaScript so that these sessions appear as a single session, while the `dtAdkSettings` cookie is used for syncing settings between OneAgent for Mobile and the RUM JavaScript.
 

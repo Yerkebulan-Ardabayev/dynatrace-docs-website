@@ -1,7 +1,7 @@
 ---
 title: OpenPipeline API
 source: https://www.dynatrace.com/docs/platform/openpipeline/reference/openpipeline-api
-scraped: 2026-02-25T21:17:55.484569
+scraped: 2026-02-27T21:14:02.170914
 ---
 
 # OpenPipeline API

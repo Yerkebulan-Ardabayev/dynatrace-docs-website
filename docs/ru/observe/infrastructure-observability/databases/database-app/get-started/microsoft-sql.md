@@ -1,7 +1,7 @@
 ---
 title: Monitor Microsoft SQL database
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/databases/database-app/get-started/microsoft-sql
-scraped: 2026-02-24T21:29:39.863604
+scraped: 2026-02-27T21:28:20.803058
 ---
 
 # Monitor Microsoft SQL database

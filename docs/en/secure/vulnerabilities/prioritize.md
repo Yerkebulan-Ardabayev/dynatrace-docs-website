@@ -1,7 +1,7 @@
 ---
 title: Prioritize vulnerabilities
 source: https://www.dynatrace.com/docs/secure/vulnerabilities/prioritize
-scraped: 2026-02-26T21:25:58.888047
+scraped: 2026-02-27T21:20:23.390348
 ---
 
 # Prioritize vulnerabilities

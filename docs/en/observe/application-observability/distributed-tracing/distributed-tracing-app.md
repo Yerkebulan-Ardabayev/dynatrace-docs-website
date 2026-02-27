@@ -1,7 +1,7 @@
 ---
 title: Distributed Tracing app
 source: https://www.dynatrace.com/docs/observe/application-observability/distributed-tracing/distributed-tracing-app
-scraped: 2026-02-26T21:14:14.600963
+scraped: 2026-02-27T21:09:57.030660
 ---
 
 # Distributed Tracing app
@@ -47,7 +47,7 @@ By entering a query in the [filter field](/docs/discover-dynatrace/get-started/d
 You can narrow your results by timeframe or segments.
 
 * To refresh the result for the selected timeframe, select  **Refresh**.
-* To choose [segments](/docs/manage/segments "Segments logically structure monitoring data in Grail and function as convenient filters for data that users are allowed to access based on permissions."), select .
+* To choose [segments](/docs/manage/segments "Use segments to logically structure and conveniently filter observability data across apps."), select .
 
 The filter field is automatically modified when you apply other filtering selections, such as [facets](#facets). To update the results after you change the filter field query, select  **Update**.
 

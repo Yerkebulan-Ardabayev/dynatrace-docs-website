@@ -1,7 +1,7 @@
 ---
 title: Extract a metric from user events
 source: https://www.dynatrace.com/docs/observe/digital-experience/new-rum-experience/use-cases/extract-custom-metrics-from-user-events
-scraped: 2026-02-26T21:31:30.201804
+scraped: 2026-02-27T21:13:59.528086
 ---
 
 # Extract a metric from user events

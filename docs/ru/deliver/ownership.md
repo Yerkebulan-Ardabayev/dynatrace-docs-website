@@ -1,7 +1,7 @@
 ---
 title: Ownership Classic
 source: https://www.dynatrace.com/docs/deliver/ownership
-scraped: 2026-02-25T21:34:33.752818
+scraped: 2026-02-27T21:29:33.008369
 ---
 
 # Ownership Classic

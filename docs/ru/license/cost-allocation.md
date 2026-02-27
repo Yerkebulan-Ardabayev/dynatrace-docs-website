@@ -1,7 +1,7 @@
 ---
 title: Allocate your DPS costs
 source: https://www.dynatrace.com/docs/license/cost-allocation
-scraped: 2026-02-26T21:18:39.538210
+scraped: 2026-02-27T21:16:20.349678
 ---
 
 # Allocate your DPS costs
@@ -7598,7 +7598,7 @@ If you can't find Cost Allocation data:
 
 ## Related topics
 
-* [Account Management](/docs/manage/account-management "Manage your Dynatrace license, subscriptions, and platform adoption and environment health.")
+* [Account Management](/docs/manage/account-management "Manage your Dynatrace license, accounts, platform adoption, and environment health.")
 * [Set up Cost Allocation for OneAgent deployments](/docs/ingest-from/dynatrace-oneagent/oneagent-cost-allocation "Learn how to allocate costs from OneAgent to cost centers and products.")
 * [Set up Cost Allocation for Kubernetes deployments](/docs/ingest-from/setup-on-k8s/kubernetes-cost-allocation "Learn how to allocate costs from Kubernetes deployments to cost centers and products.")
 * [Dynatrace pricingï»¿](https://www.dynatrace.com/pricing/)

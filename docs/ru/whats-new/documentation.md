@@ -1,7 +1,7 @@
 ---
 title: New Documentation articles
 source: https://www.dynatrace.com/docs/whats-new/documentation
-scraped: 2026-02-26T21:14:46.055526
+scraped: 2026-02-27T21:10:18.207783
 ---
 
 # New Documentation articles
@@ -225,7 +225,7 @@ This page lists all new or significantly changed Dynatrace Documentation topics,
 
 ## Oct 13, 2025
 
-* [Settings](/docs/manage/settings "Introduction to Dynatrace settings")
+* [Settings](/docs/manage/settings "Introduction to the Dynatrace Settings app.")
 * [Send email notifications for problems](/docs/analyze-explore-automate/alerting-and-notifications/workflows-tutorial-problems-email "Learn how to send email notifications for problems using a simple workflow.")
 * [Send Slack notifications for problems](/docs/analyze-explore-automate/alerting-and-notifications/workflows-tutorial-problems-slack "Learn how to send Slack notifications for problems using a simple workflow.")
 * [Scaling](/docs/ingest-from/opentelemetry/collector/scaling "How to scale the OpenTelemetry Collector.")
@@ -701,7 +701,7 @@ This page lists all new or significantly changed Dynatrace Documentation topics,
 * [Infrastructure & Operations](/docs/observe/infrastructure-observability/infrastructure-and-operations "Monitor hosts, VMs, processes, and networks to detect issues and improve infrastructure performance.")
 * [Dynatrace Extensions Python SDK](/docs/ingest-from/extensions/develop-your-extensions/data-sources/python "Python library and a toolbox for building Python extensions for Dynatrace Extensions.")
 * [Account configuration for Monaco account management](/docs/deliver/configuration-as-code/monaco/configuration/account-configuration "Configure accounts for Monaco account management.")
-* [Instant Intrusion Response](/docs/secure/use-cases/instant-intrusion-response "Triage security incidents in minutes with instant schema-on-read queries.")
+* [Instant Intrusion Response](/docs/secure/use-cases "Use case scenarios for Application Security and Threat Observability.")
 * [Databases app](/docs/observe/infrastructure-observability/databases/database-app "The Databases app gives you an overview of all your Extensions Framework 2.0-monitored databases.")
 * [Email for Workflows](/docs/analyze-explore-automate/workflows/actions/email "Automate sending out-of-the-box emails based on the events and schedules defined for your workflows.")
 * [Event triggers for workflows](/docs/analyze-explore-automate/workflows/trigger/event-trigger "Guide to creating workflow automation event triggers in Dynatrace Workflows.")

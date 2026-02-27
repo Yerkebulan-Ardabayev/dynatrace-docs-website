@@ -1,6 +1,6 @@
 # Документация Dynatrace: analyze-explore-automate/logs
 Язык: Русский (RU)
-Сгенерировано: 2026-02-26
+Сгенерировано: 2026-02-27
 Файлов в разделе: 51
 ---
 
@@ -9,7 +9,7 @@
 ---
 title: Log alerts
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/alerting-on-logs
-scraped: 2026-02-25T21:18:23.418441
+scraped: 2026-02-27T21:13:05.692456
 ---
 
 # Log alerts
@@ -92,7 +92,7 @@ For detailed instructions, see [Create log alerts for a log event or summary of 
 ---
 title: Log content analysis
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-analysis
-scraped: 2026-02-26T21:17:03.187306
+scraped: 2026-02-27T21:17:06.625535
 ---
 
 # Log content analysis
@@ -546,7 +546,7 @@ This step grants users access to only specific buckets.
 ---
 title: Configure data storage and retention for logs
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-bucket-assignment
-scraped: 2026-02-26T21:25:06.618841
+scraped: 2026-02-27T21:13:09.691747
 ---
 
 # Configure data storage and retention for logs
@@ -1063,7 +1063,7 @@ If you use Environmental Active Gate, the throughput is 3.3GB/min with RTT <= 20
 ---
 title: Connect log data to traces
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-log-enrichment
-scraped: 2026-02-26T21:13:57.733416
+scraped: 2026-02-27T21:09:45.732935
 ---
 
 # Connect log data to traces
@@ -3172,7 +3172,7 @@ Visit Dynatrace Community for troubleshooting guides, as well as see [Troublesho
 ---
 title: Ingest JSON and TXT logs
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-api/lma-ingest-json-txt-logs
-scraped: 2026-02-26T21:24:33.156914
+scraped: 2026-02-27T21:19:22.516559
 ---
 
 # Ingest JSON and TXT logs
@@ -4621,7 +4621,7 @@ kubectl logs fluent-bit-5jzlr -n dynatrace-fluent-bit
 ---
 title: Automatic log enrichment
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-log-data-transformation-oa
-scraped: 2026-02-26T21:16:41.995755
+scraped: 2026-02-27T21:14:53.016976
 ---
 
 # Automatic log enrichment
@@ -7927,7 +7927,7 @@ To create a timestamp configuration using the API
 ---
 title: Windows event logs
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-windows-event-logs
-scraped: 2026-02-26T21:30:01.604130
+scraped: 2026-02-27T21:30:15.205669
 ---
 
 # Windows event logs
@@ -8167,7 +8167,7 @@ AttributeKey: winlog.data.Data5, AttributeValue: Test
 ---
 title: Log ingestion via OneAgent
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa
-scraped: 2026-02-26T21:25:16.563767
+scraped: 2026-02-27T21:25:54.139035
 ---
 
 # Log ingestion via OneAgent
@@ -8565,7 +8565,7 @@ Visit Dynatrace Community for troubleshooting guides, as well as see [Troublesho
 ---
 title: Push logs with Cloudflare
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-push-logs-with-cloudflare
-scraped: 2026-02-24T21:31:34.111761
+scraped: 2026-02-27T21:25:13.856688
 ---
 
 # Push logs with Cloudflare
@@ -8916,7 +8916,7 @@ An example JSON response is shown in the code block below.
 ---
 title: Stream syslog to Dynatrace with Fluentd
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-send-syslogs-via-fluentd
-scraped: 2026-02-26T21:28:05.947700
+scraped: 2026-02-27T21:30:34.419687
 ---
 
 # Stream syslog to Dynatrace with Fluentd
@@ -9098,7 +9098,7 @@ Refer to the [Fluentd record\_transformer filter plugin documentationï»¿](htt
 ---
 title: Stream logs to Dynatrace with Fluentd on Kubernetes
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-stream-logs-fluentd-k8s
-scraped: 2026-02-26T21:31:55.732860
+scraped: 2026-02-27T21:13:33.613497
 ---
 
 # Stream logs to Dynatrace with Fluentd on Kubernetes
@@ -9394,7 +9394,7 @@ Visit Dynatrace Community for troubleshooting guides, as well as see [Troublesho
 ---
 title: Log ingestion
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-log-ingestion
-scraped: 2026-02-25T21:18:22.120206
+scraped: 2026-02-27T21:13:08.362253
 ---
 
 # Log ingestion
@@ -9525,7 +9525,7 @@ You can use the local `http://localhost:<port>/v2/logs/ingest` API endpoint to p
 ---
 title: Automatic log processing at ingestion
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-log-processing/lma-automatic-processing
-scraped: 2026-02-24T21:33:30.118175
+scraped: 2026-02-27T21:28:24.808105
 ---
 
 # Automatic log processing at ingestion
@@ -9595,7 +9595,7 @@ Log Monitoring API automatically process ingested logs by:
 ---
 title: Log processing with OpenPipeline
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-log-processing/lma-openpipeline
-scraped: 2026-02-26T21:15:33.872340
+scraped: 2026-02-27T21:11:43.620540
 ---
 
 # Log processing with OpenPipeline
@@ -9696,7 +9696,7 @@ Check the following use cases to learn how to leverage log processing with OpenP
 ---
 title: JSON log processing with unescaped nested JSON strings
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-log-processing/lma-pre-processing/lma-pre-processing-json
-scraped: 2026-02-25T21:31:26.412689
+scraped: 2026-02-27T21:25:37.262317
 ---
 
 # JSON log processing with unescaped nested JSON strings
@@ -9862,7 +9862,7 @@ Unescapingâfor example, removing a forward slashâis skipped when the J
 ---
 title: Log pre-processing with OpenPipeline with ready-made bundles
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-log-processing/lma-pre-processing
-scraped: 2026-02-23T21:27:10.793074
+scraped: 2026-02-27T21:29:18.993429
 ---
 
 # Log pre-processing with OpenPipeline with ready-made bundles
@@ -9906,78 +9906,6 @@ Technology bundles are automatically applied and can't be customized.
 
 To find the list of out-of-the-box coverage for popular technologies as **Ingest sources**, go to ![Settings](https://dt-cdn.net/images/settings-icon-256-38e1321b51.webp "Settings") **Settings** > **Process and contextualize** > **OpenPipeline** > **Logs** .
 
-**Ingest sources**
-
-**Processor**
-
-Amazon Data Firehose
-
-* AWS App Runner
-* AWS Cloud Trail
-* Amazon Relational Database Service (RDS)
-* Amazon Simple Notification Service (SNS)
-* AWS Common
-* Amazon Aurora
-* Amazon API Gateway
-* AWS Lambda
-* Amazon Virtual Private Cloud Flow Default
-* AWS Transit Gateway
-* AWS WAF
-* Amazon Cloudfront
-
-Data Acquisition - AWS Data Firehose
-
-* AWS Lambda
-* AWS App Runner
-* Amazon Relational Database Service (RDS)
-* Amazon Aurora
-* Amazon Simple Notification Service (SNS)
-* Amazon API Gateway
-
-Log ingestion API
-
-* Amazon API Gateway
-* Amazon Aurora
-* Amazon CloudFront
-* Amazon Virtual Private Cloud Flow Default
-* AWS App Runner
-* AWS Cloud Trail
-* AWS Common
-* AWS Lambda
-* Amazon Relational Database Service (RDS)
-* Amazon Simple Notification Service (SNS)
-* AWS Transit Gateway
-* AWS WAF
-* Azure Services
-* Azure Entra ID Audit Logs
-
-OneAgent
-
-* Elasticsearch
-* Cassandra
-* PostgreSQL
-* Redis
-* NodeJS
-* PHP
-* Java
-* Python
-* .NET
-* Ruby
-* Go
-* RabbitMQ
-* Apache Kafka
-* Nginx
-* HAProxy
-* Apache Tomcat
-* Apache HTTP
-* JBoss
-* Microsoft IIS
-* Syslog
-
-OpenTelemetry
-
-None
-
 ## Related topics
 
 * [Log processing with OpenPipeline](/docs/analyze-explore-automate/logs/lma-log-processing/lma-openpipeline "Process logs using Dynatrace OpenPipeline.")
@@ -9989,7 +9917,7 @@ None
 ---
 title: Log processing
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-log-processing
-scraped: 2026-02-25T21:18:18.066176
+scraped: 2026-02-27T21:13:00.394897
 ---
 
 # Log processing
@@ -10044,7 +9972,7 @@ We recommend utilizing log processing with OpenPipeline as a scalable, powerful 
 ---
 title: Filter with facets
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-logs-app/facets
-scraped: 2026-02-26T21:14:22.903129
+scraped: 2026-02-27T21:11:29.404795
 ---
 
 # Filter with facets
@@ -10121,7 +10049,7 @@ If you have previously modified the facets, to revert to the default settings fo
 ---
 title: Limits in Logs
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-logs-app/limits
-scraped: 2026-02-26T21:14:19.256670
+scraped: 2026-02-27T21:11:33.308034
 ---
 
 # Limits in Logs
@@ -10168,7 +10096,7 @@ To adjust the limits for your queries in ![Logs](https://dt-cdn.net/images/logs-
 ---
 title: Spot trends with the log distribution chart
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-logs-app/log-distribution-chart
-scraped: 2026-02-26T21:14:18.036756
+scraped: 2026-02-27T21:11:30.718531
 ---
 
 # Spot trends with the log distribution chart
@@ -10231,7 +10159,7 @@ The log distribution chart may be based on sampled data, which means the display
 ---
 title: Adjust the log message
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-logs-app/message
-scraped: 2026-02-26T21:14:23.987660
+scraped: 2026-02-27T21:11:31.986214
 ---
 
 # Adjust the log message
@@ -10332,7 +10260,7 @@ The log message is detected in a key/value pair for the following keys:
 ---
 title: Query and filter logs
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-logs-app/query-and-filter
-scraped: 2026-02-26T21:14:25.227591
+scraped: 2026-02-27T21:11:35.834711
 ---
 
 # Query and filter logs
@@ -10446,7 +10374,7 @@ Note that suggestions are presented based on actual values queried in the backgr
 ---
 title: View surrounding logs
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-logs-app/surrounding-logs
-scraped: 2026-02-26T21:14:21.670311
+scraped: 2026-02-27T21:11:37.124447
 ---
 
 # View surrounding logs
@@ -10483,7 +10411,7 @@ The surrounding logs are shown for the context provided by the log record.
 ---
 title: Logs app
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-logs-app
-scraped: 2026-02-26T21:13:35.443075
+scraped: 2026-02-27T21:09:19.368239
 ---
 
 # Logs app
@@ -10836,7 +10764,7 @@ More information about event properties is available at:
 ---
 title: Set up custom alerts based on metrics extracted from logs
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-use-cases/lma-alert-log-based-metrics
-scraped: 2026-02-26T21:28:31.341590
+scraped: 2026-02-27T21:23:46.235674
 ---
 
 # Set up custom alerts based on metrics extracted from logs
@@ -10965,7 +10893,7 @@ Detected anomalies can trigger automations using simple workflows as described i
 ---
 title: Detect problems with Logs
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-use-cases/lma-detect-problems-with-logs
-scraped: 2026-02-26T21:29:59.251864
+scraped: 2026-02-27T21:19:21.181771
 ---
 
 # Detect problems with Logs
@@ -11170,7 +11098,7 @@ Otherwise, your next step should be to contact the team responsible for maintain
 ---
 title: Create log metric
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-use-cases/lma-e2e-create-log-metric
-scraped: 2026-02-26T21:17:26.139900
+scraped: 2026-02-27T21:15:13.871077
 ---
 
 # Create log metric
@@ -11298,7 +11226,7 @@ To view the result in Data Explorer
 ---
 title: Observe your logs in real time
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-use-cases/lma-e2e-real-time-observability-logs-dql
-scraped: 2026-02-25T21:18:19.376277
+scraped: 2026-02-27T21:13:04.350396
 ---
 
 # Observe your logs in real time
@@ -11607,7 +11535,7 @@ Best practices:
 ---
 title: Log Management and Analytics use cases
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-use-cases
-scraped: 2026-02-26T21:22:59.078609
+scraped: 2026-02-27T21:13:07.024609
 ---
 
 # Log Management and Analytics use cases
@@ -11706,7 +11634,7 @@ Using a combination of metrics based on logs and [custom alerts](/docs/dynatrace
 ---
 title: Log on Grail examples
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/logs-on-grail-examples
-scraped: 2026-02-26T21:17:17.093639
+scraped: 2026-02-27T21:13:03.000028
 ---
 
 # Log on Grail examples
@@ -12191,7 +12119,7 @@ In this use case, you need to automate anomaly detection. See how you can extrac
 ---
 title: Upgrade Log Monitoring Classic to Log Management and Analytics
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/logs-upgrade/logs-upgrade-to-lma
-scraped: 2026-02-26T21:30:20.959539
+scraped: 2026-02-27T21:27:59.642107
 ---
 
 # Upgrade Log Monitoring Classic to Log Management and Analytics
@@ -12411,7 +12339,7 @@ The user access granting process depends on whether you are a new or existing us
 ---
 title: Log Analytics
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs
-scraped: 2026-02-26T21:15:25.693143
+scraped: 2026-02-27T21:09:31.233143
 ---
 
 # Log Analytics

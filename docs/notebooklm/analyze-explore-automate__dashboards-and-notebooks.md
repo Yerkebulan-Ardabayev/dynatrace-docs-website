@@ -1,6 +1,6 @@
 # Документация Dynatrace: analyze-explore-automate/dashboards-and-notebooks
 Язык: Русский (RU)
-Сгенерировано: 2026-02-26
+Сгенерировано: 2026-02-27
 Файлов в разделе: 38
 ---
 
@@ -9,7 +9,7 @@
 ---
 title: Add code to a dashboard
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new/components/dashboard-component-code
-scraped: 2026-02-26T21:14:59.795303
+scraped: 2026-02-27T21:10:32.095062
 ---
 
 # Add code to a dashboard
@@ -226,7 +226,7 @@ To see more examples, open the  menu at the top of your dashboard and browse the
 ---
 title: Add data to a dashboard
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new/components/dashboard-component-data
-scraped: 2026-02-26T21:15:01.025810
+scraped: 2026-02-27T21:10:30.725772
 ---
 
 # Add data to a dashboard
@@ -317,7 +317,7 @@ If you need more control over how a filter is applied, however, you might want t
 * Variables allow you to fully control the underlying query or within your Explore section or tile, determining where and how they are applied. For example, you can specify how they connect with other filters applied (**AND**, **OR**) and you can control which operator is used for your filter (such as `equals`, `contains`, `startsWith`, and `endsWith`).
 * Additionally, use variables when you need fine-grained control over how filters are interdependent.
 
-* For details on segments, see [Segments](/docs/manage/segments "Segments logically structure monitoring data in Grail and function as convenient filters for data that users are allowed to access based on permissions.")
+* For details on segments, see [Segments](/docs/manage/segments "Use segments to logically structure and conveniently filter observability data across apps.")
 * For a ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**-specific segments use case, see [Analyze monitoring data with segments](/docs/manage/segments/getting-started/segments-getting-started-analyze-monitoring-data "Learn how to analyze monitoring data more efficiently by using segments in Dashboards.")
 
 To select tile-level segments
@@ -424,7 +424,7 @@ Select **Run query**.
 ---
 title: Add Markdown to dashboard
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new/components/dashboard-component-markdown
-scraped: 2026-02-26T21:15:13.300962
+scraped: 2026-02-27T21:10:40.485126
 ---
 
 # Add Markdown to dashboard
@@ -599,7 +599,7 @@ For details on variables, see [Add a variable to a dashboard](/docs/analyze-expl
 ---
 title: Add a snippet to a dashboard
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new/components/dashboard-component-snippet
-scraped: 2026-02-26T21:14:58.662795
+scraped: 2026-02-27T21:10:39.177264
 ---
 
 # Add a snippet to a dashboard
@@ -708,7 +708,7 @@ When you find something interesting:
 ---
 title: Add a variable to a dashboard
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new/components/dashboard-component-variable
-scraped: 2026-02-26T21:15:03.461470
+scraped: 2026-02-27T21:10:33.605320
 ---
 
 # Add a variable to a dashboard
@@ -1231,7 +1231,7 @@ In this example, we selected `Variable1` to display the variable definition and 
 ---
 title: Dashboards
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new
-scraped: 2026-02-26T21:13:41.464018
+scraped: 2026-02-27T21:09:11.297803
 ---
 
 # Dashboards
@@ -1655,7 +1655,7 @@ If you need more control over how a filter is applied, however, you might want t
 * Variables allow you to fully control the underlying query or within your Explore section or tile, determining where and how they are applied. For example, you can specify how they connect with other filters applied (**AND**, **OR**) and you can control which operator is used for your filter (such as `equals`, `contains`, `startsWith`, and `endsWith`).
 * Additionally, use variables when you need fine-grained control over how filters are interdependent.
 
-* For details on segments, see [Segments](/docs/manage/segments "Segments logically structure monitoring data in Grail and function as convenient filters for data that users are allowed to access based on permissions.")
+* For details on segments, see [Segments](/docs/manage/segments "Use segments to logically structure and conveniently filter observability data across apps.")
 * For a ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**-specific segments use case, see [Analyze monitoring data with segments](/docs/manage/segments/getting-started/segments-getting-started-analyze-monitoring-data "Learn how to analyze monitoring data more efficiently by using segments in Dashboards.")
 
 #### Dashboard-level segments
@@ -2521,7 +2521,7 @@ To see the full API documentation for the documents service
 ---
 title: Manage document versions
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/document-version
-scraped: 2026-02-26T21:15:02.130340
+scraped: 2026-02-27T21:10:26.408176
 ---
 
 # Manage document versions
@@ -2640,7 +2640,7 @@ The **Actions** column displays all of the actions available from the **History*
 ---
 title: Drilldowns and navigation
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/drilldowns-and-navigation
-scraped: 2026-02-26T21:15:08.646007
+scraped: 2026-02-27T21:10:25.048659
 ---
 
 # Drilldowns and navigation
@@ -9780,7 +9780,7 @@ To reset to defaults (discard override settings for the selected metric), select
 ---
 title: Scatterplot visualization
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-scatterplot
-scraped: 2026-02-26T21:30:46.832653
+scraped: 2026-02-27T21:23:56.928763
 ---
 
 # Scatterplot visualization
@@ -10402,7 +10402,7 @@ To reset to defaults (discard threshold settings), select the trash can  next to
 ---
 title: Edit visualizations for Notebooks and Dashboards
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations
-scraped: 2026-02-26T21:15:11.004115
+scraped: 2026-02-27T21:10:36.274831
 ---
 
 # Edit visualizations for Notebooks and Dashboards
@@ -10570,7 +10570,7 @@ For details, see [Scatterplot visualization](/docs/analyze-explore-automate/dash
 ---
 title: Explore data
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/explore-data
-scraped: 2026-02-26T21:15:05.868374
+scraped: 2026-02-27T21:10:27.904467
 ---
 
 # Explore data
@@ -11201,7 +11201,7 @@ That's what makes this a great tool for beginners and experts.
 ---
 title: Notebooks
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks
-scraped: 2026-02-26T21:15:40.598510
+scraped: 2026-02-27T21:11:46.885985
 ---
 
 # Notebooks
@@ -11808,7 +11808,7 @@ The available edit options will vary depending on the type of section you're edi
 
 
 
-To filter data for a section, you can specify [segments](/docs/manage/segments "Segments logically structure monitoring data in Grail and function as convenient filters for data that users are allowed to access based on permissions.") for a section.
+To filter data for a section, you can specify [segments](/docs/manage/segments "Use segments to logically structure and conveniently filter observability data across apps.") for a section.
 
 1. In the action bar for that section, select  and, in **Filter by segments**, select a segment.
 2. If the segment requires an additional value selection, select it now.
@@ -12702,7 +12702,7 @@ Try the full example on the [Dynatrace playgroundï»¿](https://wkf10640.apps.d
 ---
 title: Ready-made dashboards
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/ready-made-documents/ready-made-dashboards
-scraped: 2026-02-26T21:13:44.993115
+scraped: 2026-02-27T21:09:18.016328
 ---
 
 # Ready-made dashboards
@@ -14032,7 +14032,7 @@ return null; // Return null or handle gracefully.
 ---
 title: Notebooks and Dashboards use cases
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/use-cases
-scraped: 2026-02-26T21:21:16.420618
+scraped: 2026-02-27T21:24:20.339283
 ---
 
 # Notebooks and Dashboards use cases

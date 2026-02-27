@@ -1,7 +1,7 @@
 ---
 title: Upgrade role-based permissions to Dynatrace IAM policies
 source: https://www.dynatrace.com/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies/advanced/migrate-roles
-scraped: 2026-02-26T21:24:41.795808
+scraped: 2026-02-27T21:27:41.670823
 ---
 
 # Upgrade role-based permissions to Dynatrace IAM policies
@@ -139,7 +139,7 @@ An upgrade plan should start with an assessment of your current RBAC configurati
 
 Consider the steps below to conduct an initial assessment. You can use the Account Management portal to complete the steps or [import](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.") and use the provided notebook to help you. Alternatively, you can also use the provided PowerShell script.
 
-1. Create the required OAuth client in the [Account Management](/docs/manage/account-management "Manage your Dynatrace license, subscriptions, and platform adoption and environment health.") portal with permissions as instructed in the notebook.
+1. Create the required OAuth client in the [Account Management](/docs/manage/account-management "Manage your Dynatrace license, accounts, platform adoption, and environment health.") portal with permissions as instructed in the notebook.
 2. Import the provided **RBAC Assessment** notebook into your Dynatrace or, if itâs more convenient for you, use the provided PowerShell script.
 3. Run the script.
 4. The output will be a table like the example below:
@@ -187,7 +187,7 @@ We could then bind this policy to the `group_na_supp` group and remove the old R
 
 This is where [policy boundaries](/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies/iam-policy-boundaries "Restrict security policies with policy boundaries to provide tailored access to your users.") come into play. We can store the condition `environment:management-zone startsWith "mgmt\_na";` in a policy boundary and then use it with our group, as we bind the group to the **Dynatrace Professional** policy, thus further restricting this permission assignment using the boundary we created.
 
-First, letâs create the policy boundary. In [Account Management](/docs/manage/account-management "Manage your Dynatrace license, subscriptions, and platform adoption and environment health."), under **Identity & Access management** > **Policy management**, we can create a policy boundary specific to North America management zones.
+First, letâs create the policy boundary. In [Account Management](/docs/manage/account-management "Manage your Dynatrace license, accounts, platform adoption, and environment health."), under **Identity & Access management** > **Policy management**, we can create a policy boundary specific to North America management zones.
 
 ![Boundaries](https://dt-cdn.net/images/boundaries-468-08355e2a83.png)
 

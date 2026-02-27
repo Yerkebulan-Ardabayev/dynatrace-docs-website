@@ -1,7 +1,7 @@
 ---
 title: Upgrade to the latest Dynatrace
 source: https://www.dynatrace.com/docs/platform/upgrade
-scraped: 2026-02-26T21:33:25.790598
+scraped: 2026-02-27T21:23:19.738647
 ---
 
 # Upgrade to the latest Dynatrace
@@ -386,7 +386,7 @@ After having organized monitoring data in Grail buckets and mastered the setup o
 
 Segments mirror management zones in some ways, in that they allow you to abstract complex filter conditions and perform lookups to the monitored entity model. Segments, however, are no longer precalculated attributes, but query-time filter conditions instead. This solves the performance bottleneck of management zones, making it possible to both ingest and analyze several orders of magnitude higher volumes of monitoring data in the latest Dynatrace.
 
-For more information, see [Segments](/docs/manage/segments "Segments logically structure monitoring data in Grail and function as convenient filters for data that users are allowed to access based on permissions.").
+For more information, see [Segments](/docs/manage/segments "Use segments to logically structure and conveniently filter observability data across apps.").
 
 ## FAQ
 

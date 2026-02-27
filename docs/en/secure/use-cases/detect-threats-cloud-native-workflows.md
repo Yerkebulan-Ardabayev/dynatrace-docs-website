@@ -1,7 +1,7 @@
 ---
 title: Detect threats in cloud-native environments using workflows
 source: https://www.dynatrace.com/docs/secure/use-cases/detect-threats-cloud-native-workflows
-scraped: 2026-02-26T21:25:26.335867
+scraped: 2026-02-27T21:19:01.980100
 ---
 
 # Detect threats in cloud-native environments using workflows

@@ -1,7 +1,7 @@
 ---
 title: Migrate from OneAgent Operator to Dynatrace Operator
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/guides/migration/migrate-to-dto
-scraped: 2026-02-26T21:24:50.117410
+scraped: 2026-02-27T21:18:22.715137
 ---
 
 # Migrate from OneAgent Operator to Dynatrace Operator

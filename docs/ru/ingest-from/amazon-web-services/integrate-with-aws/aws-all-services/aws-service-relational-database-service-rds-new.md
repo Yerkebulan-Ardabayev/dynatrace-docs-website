@@ -1,7 +1,7 @@
 ---
 title: Amazon RDS (Relational Database Service) monitoring
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-relational-database-service-rds-new
-scraped: 2026-02-26T21:22:35.395126
+scraped: 2026-02-27T21:19:51.557115
 ---
 
 # Amazon RDS (Relational Database Service) monitoring
@@ -826,9 +826,9 @@ To check the availability of preset dashboards for each AWS service, see the lis
 
 ## Available metrics
 
-Эта служба отслеживает часть Amazon RDS (AWS/RDS). Пока эта служба настроена, вы не можете включить службу Amazon RDS (встроенную).
+This service monitors a part of Amazon RDS (AWS/RDS). While you have this service configured, you can't have Amazon RDS (built-in) service turned on.
 
-`DBInstanceIdentifier` является основной размерностью.
+`DBInstanceIdentifier` is the main dimension.
 
 | Name | Description | Dimensions | Unit | Recommended |
 | --- | --- | --- | --- | --- |

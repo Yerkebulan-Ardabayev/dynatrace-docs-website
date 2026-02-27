@@ -1,7 +1,7 @@
 ---
 title: Clouds app
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/cloud-platform-monitoring/clouds-app
-scraped: 2026-02-26T21:15:44.188492
+scraped: 2026-02-27T21:11:25.382975
 ---
 
 # Clouds app
@@ -109,12 +109,15 @@ New cloud connections (AWS, Preview for Azure)
 
 Classic cloud connections (AWS, Azure, GCP)
 
-Use the following guide to set up and configure a new AWS cloud connection in Dynatrace.
+Use the following guide to set up and configure a new cloud connection in Dynatrace.
 
 [01Create a new AWS connection
 
 * How-to guide
-* Learn how to create a new AWS connection in the Clouds app.](/docs/observe/infrastructure-observability/cloud-platform-monitoring/clouds-app/create-aws-connection)
+* Learn how to create a new AWS connection in the Clouds app.](/docs/observe/infrastructure-observability/cloud-platform-monitoring/clouds-app/create-aws-connection)[02Create a new Azure connection
+
+* How-to guide
+* Learn how to create a new Azure connection in the Clouds app.](/docs/observe/infrastructure-observability/cloud-platform-monitoring/clouds-app/create-azure-connection)
 
 In ![Clouds](https://dt-cdn.net/images/clouds-1025-170946931c.png "Clouds") **Clouds**, use the app header bar and select  **Create connection** > **AWS (Classic connections)** or  **Create connection** > **Azure (Classic connections)** or  **Create connection** > **GCP (Classic connections)**.
 
@@ -271,7 +274,7 @@ The ready-made dashboards can be accessed through:
 
 ### Segments (New connections)
 
-[Segments](/docs/manage/segments "Segments logically structure monitoring data in Grail and function as convenient filters for data that users are allowed to access based on permissions.") allow you to logically structure and conveniently filter observability data across apps on the Dynatrace platform. Segments are available within the new **Explorer New** tab and can be defined easily for new cloud connections, since all data (including [Smartscape nodes](/docs/platform/grail/smartscape-on-grail "Learn about Smartscape on Grail features and how Smartscape uses the power of DQL.")) is stored in Grail.
+[Segments](/docs/manage/segments "Use segments to logically structure and conveniently filter observability data across apps.") allow you to logically structure and conveniently filter observability data across apps on the Dynatrace platform. Segments are available within the new **Explorer New** tab and can be defined easily for new cloud connections, since all data (including [Smartscape nodes](/docs/platform/grail/smartscape-on-grail "Learn about Smartscape on Grail features and how Smartscape uses the power of DQL.")) is stored in Grail.
 
 For a step-by-step guide on how to define segments for Smartscape nodes, see [Filter Smartscape nodes with segments](/docs/manage/segments/getting-started/segments-getting-started-filter-smartscape-nodes "Learn how to filter Smartscape nodes by using segments in Dashboards."). You can use any primary Grail field (and, in the future, also tags) to conveniently define simple segments across **All data**:
 

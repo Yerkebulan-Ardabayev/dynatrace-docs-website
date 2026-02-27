@@ -1,7 +1,7 @@
 ---
 title: AWS API Usage monitoring
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-api-usage
-scraped: 2026-02-21T21:23:17.472806
+scraped: 2026-02-27T21:26:02.755802
 ---
 
 # AWS API Usage monitoring

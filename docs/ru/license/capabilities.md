@@ -1,7 +1,7 @@
 ---
 title: Understanding DPS capabilities
 source: https://www.dynatrace.com/docs/license/capabilities
-scraped: 2026-02-26T21:18:42.965685
+scraped: 2026-02-27T21:16:21.626528
 ---
 
 # Understanding DPS capabilities
@@ -18,7 +18,7 @@ Each platform capability has a price point defined in the rate card that's inclu
 
 Your organization's usage of each Dynatrace capability accrues costs towards your annual commitment as defined in the rate card.
 **Account Management** provides daily updates about accrued usage and related costs.
-You can access these details anytime via [Account Management](/docs/manage/account-management "Manage your Dynatrace license, subscriptions, and platform adoption and environment health.") or the [Dynatrace Platform Subscription API](/docs/dynatrace-api/account-management-api/dynatrace-platform-subscription-api "Query the data about your Dynatrace Platform Subscription via the Account Management API.").
+You can access these details anytime via [Account Management](/docs/manage/account-management "Manage your Dynatrace license, accounts, platform adoption, and environment health.") or the [Dynatrace Platform Subscription API](/docs/dynatrace-api/account-management-api/dynatrace-platform-subscription-api "Query the data about your Dynatrace Platform Subscription via the Account Management API.").
 
 Once your annual commitment is reached, you can continue to use Dynatrace while incurring on-demand usage.
 Dynatrace applies the same rate card for on-demand usage without additional fees or premium pricing.

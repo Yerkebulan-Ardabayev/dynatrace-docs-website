@@ -1,7 +1,7 @@
 ---
 title: User permissions for workflows
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/security
-scraped: 2026-02-23T21:37:11.988453
+scraped: 2026-02-27T21:21:19.013473
 ---
 
 # User permissions for workflows
@@ -29,7 +29,7 @@ If the required permission for a workflow task is missing, an attempt to execute
 
 Always make sure:
 
-* You have the required permissions granted in [Account Management](/docs/manage/account-management "Manage your Dynatrace license, subscriptions, and platform adoption and environment health.").
+* You have the required permissions granted in [Account Management](/docs/manage/account-management "Manage your Dynatrace license, accounts, platform adoption, and environment health.").
 * You granted all required permissions for the workflows to run in the authorization settings.
 
 To enable or edit the AutomationEngine authorization settings
@@ -42,28 +42,6 @@ To enable or edit the AutomationEngine authorization settings
 A Workflows user creates, edits, runs, and monitors workflows.
 
 To access the **Workflows** and view workflows, you need at least the following permissions.
-
-Permission
-
-Grants access to
-
-`app-engine:apps:run`
-
-List all apps and read the app bundles.
-
-`automation:workflows:read`
-
-View workflows.
-
-`storage:system:read`
-
-optional `storage:event.provider = "AUTOMATION_ENGINE"` [1](#fn-1-1-def)
-
-`storage:buckets:read`
-
-optional `storage:table-name = "dt.system.events"` [1](#fn-1-1-def)
-
-View the execution history of workflows.
 
 1
 

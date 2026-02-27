@@ -1,7 +1,7 @@
 ---
 title: Metadata enrichment of all telemetry originating from Kubernetes
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/guides/metadata-automation/k8s-metadata-telemetry-enrichment
-scraped: 2026-02-26T21:16:45.675758
+scraped: 2026-02-27T21:15:22.118422
 ---
 
 # Metadata enrichment of all telemetry originating from Kubernetes

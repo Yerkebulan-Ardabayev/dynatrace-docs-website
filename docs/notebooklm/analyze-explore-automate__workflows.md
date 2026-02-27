@@ -1,6 +1,6 @@
 # Документация Dynatrace: analyze-explore-automate/workflows
 Язык: Русский (RU)
-Сгенерировано: 2026-02-26
+Сгенерировано: 2026-02-27
 Файлов в разделе: 31
 ---
 
@@ -9,7 +9,7 @@
 ---
 title: Email
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/email
-scraped: 2026-02-26T21:22:08.968606
+scraped: 2026-02-27T21:17:52.947174
 ---
 
 # Email
@@ -233,7 +233,7 @@ The message size is limited to 256 KiB. Larger payloads will result in an action
 ---
 title: Actions for GitHub Connector
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/github/github-workflows-actions
-scraped: 2026-02-25T21:33:42.069840
+scraped: 2026-02-27T21:22:07.361970
 ---
 
 # Actions for GitHub Connector
@@ -518,7 +518,7 @@ The action returns the `workflowRun` property that contains the full response of
 ---
 title: Set up GitHub Connector
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/github/github-workflows-setup
-scraped: 2026-02-26T21:26:28.823641
+scraped: 2026-02-27T21:27:54.240180
 ---
 
 # Set up GitHub Connector
@@ -595,7 +595,7 @@ We strongly recommend that you limit the permissions of your personal access tok
 ---
 title: GitHub Connector
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/github
-scraped: 2026-02-26T21:31:32.494641
+scraped: 2026-02-27T21:20:54.256284
 ---
 
 # GitHub Connector
@@ -929,7 +929,7 @@ Returns fields as described in the [Jobs API - Run a jobï»¿](https://dt-url.n
 ---
 title: Set up GitLab Connector
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/gitlab/gitlab-workflows-setup
-scraped: 2026-02-26T21:23:32.287864
+scraped: 2026-02-27T21:28:43.631982
 ---
 
 # Set up GitLab Connector
@@ -1033,7 +1033,7 @@ Learn about available actions used by GitLab Connector integration for automatin
 ---
 title: Set up Jenkins Connector
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/jenkins/jenkins-workflows-setup
-scraped: 2026-02-26T21:21:04.042185
+scraped: 2026-02-27T21:28:13.675305
 ---
 
 # Set up Jenkins Connector
@@ -1095,7 +1095,7 @@ To configure a connection
 ---
 title: Jira Connector
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/jira
-scraped: 2026-02-26T21:32:23.619308
+scraped: 2026-02-27T21:23:06.490123
 ---
 
 # Jira Connector
@@ -1282,7 +1282,7 @@ The log of a successful run is shown below.
 ---
 title: PagerDuty
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/pagerduty
-scraped: 2026-02-24T21:21:15.028945
+scraped: 2026-02-27T21:31:38.521293
 ---
 
 # PagerDuty
@@ -2047,7 +2047,7 @@ The following is a solution to a problem some people have.
 ---
 title: Slack Connector
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/slack
-scraped: 2026-02-26T21:33:12.212451
+scraped: 2026-02-27T21:25:20.951412
 ---
 
 # Slack Connector
@@ -2939,7 +2939,7 @@ The following are solutions to problems some people had with Slack integration.
 ---
 title: Actions for Text Processing Connector
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/text-processing/automation-workflows-text-processing-actions
-scraped: 2026-02-26T21:20:49.967611
+scraped: 2026-02-27T21:18:45.651459
 ---
 
 # Actions for Text Processing Connector
@@ -3434,7 +3434,7 @@ Text Processing provides a set of `set` and `get` actions for manipulating conte
 ---
 title: DQL query action for Workflows
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/default-workflow-actions/dql-query-workflow-action
-scraped: 2026-02-25T21:31:25.309739
+scraped: 2026-02-27T21:27:28.592963
 ---
 
 # DQL query action for Workflows
@@ -3461,7 +3461,7 @@ You can find the results in the **Result** tab of the **Execution** that you cou
 ---
 title: HTTP request action for Workflows
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/default-workflow-actions/http-request-workflow-action
-scraped: 2026-02-26T21:21:12.869115
+scraped: 2026-02-27T21:21:09.724820
 ---
 
 # HTTP request action for Workflows
@@ -3850,7 +3850,7 @@ console.log( ex.params.event);
 ---
 title: Workflows actions
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/default-workflow-actions
-scraped: 2026-02-26T21:29:34.009343
+scraped: 2026-02-27T21:18:14.182081
 ---
 
 # Workflows actions
@@ -3899,7 +3899,7 @@ Use the **Run Workflow** action to modularize workflow usage.](/docs/analyze-exp
 ---
 title: Access workflow management functionality
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/manage-workflows/workflows-access-management
-scraped: 2026-02-26T21:20:23.405957
+scraped: 2026-02-27T21:22:37.067356
 ---
 
 # Access workflow management functionality
@@ -3982,7 +3982,7 @@ To access various **Live** or **Draft** workflow management commands
 ---
 title: Get notified about workflow changes
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/manage-workflows/workflows-notifications
-scraped: 2026-02-26T21:26:54.451246
+scraped: 2026-02-27T21:17:31.837531
 ---
 
 # Get notified about workflow changes
@@ -4055,7 +4055,7 @@ To turn off notifications for workflow, select  > **Turn off notifications**.
 ---
 title: User permissions for workflows
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/security
-scraped: 2026-02-23T21:37:11.988453
+scraped: 2026-02-27T21:21:19.013473
 ---
 
 # User permissions for workflows
@@ -4083,7 +4083,7 @@ If the required permission for a workflow task is missing, an attempt to execute
 
 Always make sure:
 
-* You have the required permissions granted in [Account Management](/docs/manage/account-management "Manage your Dynatrace license, subscriptions, and platform adoption and environment health.").
+* You have the required permissions granted in [Account Management](/docs/manage/account-management "Manage your Dynatrace license, accounts, platform adoption, and environment health.").
 * You granted all required permissions for the workflows to run in the authorization settings.
 
 To enable or edit the AutomationEngine authorization settings
@@ -4096,28 +4096,6 @@ To enable or edit the AutomationEngine authorization settings
 A Workflows user creates, edits, runs, and monitors workflows.
 
 To access the **Workflows** and view workflows, you need at least the following permissions.
-
-Permission
-
-Grants access to
-
-`app-engine:apps:run`
-
-List all apps and read the app bundles.
-
-`automation:workflows:read`
-
-View workflows.
-
-`storage:system:read`
-
-optional `storage:event.provider = "AUTOMATION_ENGINE"` [1](#fn-1-1-def)
-
-`storage:buckets:read`
-
-optional `storage:table-name = "dt.system.events"` [1](#fn-1-1-def)
-
-View the execution history of workflows.
 
 1
 
@@ -4812,7 +4790,7 @@ Design a workflow to manage high-volume AWS alerts by filtering out noise and su
 ---
 title: Workflows
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows
-scraped: 2026-02-26T21:16:13.055479
+scraped: 2026-02-27T21:14:19.201382
 ---
 
 # Workflows

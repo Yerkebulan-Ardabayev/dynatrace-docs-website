@@ -1,7 +1,7 @@
 ---
 title: Access your DPS cost overview
 source: https://www.dynatrace.com/docs/license/cost-overview
-scraped: 2026-02-26T21:18:32.210291
+scraped: 2026-02-27T21:16:25.341800
 ---
 
 # Access your DPS cost overview
@@ -82,6 +82,6 @@ For a specific POC, select **View details** to get a breakdown of costs and usag
 
 ## Related topics
 
-* [Account Management](/docs/manage/account-management "Manage your Dynatrace license, subscriptions, and platform adoption and environment health.")
+* [Account Management](/docs/manage/account-management "Manage your Dynatrace license, accounts, platform adoption, and environment health.")
 * [Allocate your DPS costs](/docs/license/cost-allocation "Learn how to allocate costs to cost centers and products.")
 * [Dynatrace pricingï»¿](https://www.dynatrace.com/pricing/)

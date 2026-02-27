@@ -1,7 +1,7 @@
 ---
 title: NetApp on Google Cloud monitoring
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new/gcp-netapp-monitoring
-scraped: 2026-02-26T21:31:02.700586
+scraped: 2026-02-27T21:24:30.123448
 ---
 
 # NetApp on Google Cloud monitoring

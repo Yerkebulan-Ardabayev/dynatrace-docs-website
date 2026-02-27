@@ -1,7 +1,7 @@
 ---
 title: Dynatrace Intelligence (Preview) app
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/dynatrace-intelligence-integrations/copilot-for-workflows
-scraped: 2026-02-26T21:22:11.354618
+scraped: 2026-02-27T21:22:30.049255
 ---
 
 # Dynatrace Intelligence (Preview) app

@@ -1,7 +1,7 @@
 ---
 title: About OTLP metrics ingest
 source: https://www.dynatrace.com/docs/ingest-from/opentelemetry/otlp-api/ingest-otlp-metrics/about-metrics-ingest
-scraped: 2026-02-26T21:32:15.690336
+scraped: 2026-02-27T21:28:28.588007
 ---
 
 # About OTLP metrics ingest
@@ -11,7 +11,7 @@ scraped: 2026-02-26T21:32:15.690336
 * Latest Dynatrace
 * Explanation
 * 2-min read
-* Updated on Nov 04, 2025
+* Updated on Feb 18, 2026
 
 Dynatrace version 1.254+
 
@@ -47,21 +47,19 @@ For exponential histograms, Dynatrace ingests the histogram's `min|max|sum|count
 
 ## API limits and validations
 
-When ingesting OpenTelemetry metrics, the following limits and validations apply.
+When ingesting OpenTelemetry metrics, limits and validations apply as described in the tables below.
 
-| Entity | Limit | Description |
-| --- | --- | --- |
-| Metric key length, characters | Min: 2, Max: 255 | The length of a metric key. |
-| Dimension key length, characters | Min: 1, Max: 100 | The length of a dimension key. If the maximum length is exceeded, the key is truncated to 100 characters. |
-| Dimension value length, characters | Min: 1, Max: 255 | The length of a dimension value. If the maximum length is exceeded, the dimension value is truncated to 255 characters. |
-| Number of dimensions per metric data point | 50 | The maximum total number of dimensions in a single metric data point. If the number of dimensions is exceeded, the whole data point is dropped. |
-| Total number of possible metric keys per environment | 100,000 | The maximum number of metric keys that can be active at the same time. |
-| Number of tuples per month per metric | 1,000,000 | The maximum number of tuples (unique metric-dimension key-value type combinations) for each metric key for the last 30 days. |
-| Number of tuples per month for all custom metrics | 50,000,000 | The maximum number of tuples (unique metric-dimension key-value type combinations) for all custom metrics for the last 30 days. |
-| Instrument unit, characters | 63 | The maximum total length of the instrument unit. If the maximum length is exceeded, the unit is dropped. |
-| Instrument description, characters | 1,023 | The maximum total length of the instrument description. If the maximum length is exceeded, the instrument description is truncated to 1,023 characters. |
-| Request size | 4 MB | The maximum uncompressed size of an OTLP request with a metrics payload. If the limit is exceeded, the entire request is dropped. |
-| Metric data points | 15,000 | The maximum number of metric data points in an OTLP request with a metrics payload. If the limit is exceeded, the entire request is dropped. |
+* When [Metrics powered by Grail overview (DPS)](/docs/license/capabilities/metrics "Learn how Dynatrace Metrics powered by Grail consumption is calculated using the Dynatrace Platform Subscription model.") is on your rate card:
+
+  + Latest Dynatrace If **Advanced OTLP metric dimensions** is configured, the limits in **Advanced OTLP Metric dimensions limits** apply.
+  + If **Advanced OTLP metric dimensions** is not configured, the limits in **Default limits** apply.
+* When [Custom Metrics Classic (DPS)](/docs/license/capabilities/platform-extensions/custom-metrics-classic "Learn how your consumption of the Dynatrace Custom Metrics Classic DPS capability is billed and charged.") is on your rate card, the limits in **Default limits** apply
+
+For more information about advanced OTLP metric dimensions, see [Important: OTLP Metric Dimensions Changesï»¿](https://community.dynatrace.com/t5/Product-news/Important-OTLP-Metric-Dimensions-Changes/ba-p/293109) in the Dynatrace Community.
+
+Default limits
+
+Advanced OTLP metric dimensions limits
 
 ### Attribute ingestion
 

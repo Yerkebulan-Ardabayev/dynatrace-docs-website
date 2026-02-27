@@ -1,6 +1,6 @@
 # Документация Dynatrace: discover-dynatrace/get-started
 Язык: Русский (RU)
-Сгенерировано: 2026-02-26
+Сгенерировано: 2026-02-27
 Файлов в разделе: 11
 ---
 
@@ -9,7 +9,7 @@
 ---
 title: Accessibility
 source: https://www.dynatrace.com/docs/discover-dynatrace/get-started/dynatrace-ui/accessibility
-scraped: 2026-02-25T21:29:08.796740
+scraped: 2026-02-27T21:19:00.686216
 ---
 
 # Accessibility
@@ -48,7 +48,7 @@ Any ACR posted below, or anywhere else on the Dynatrace website, or otherwise pu
 ---
 title: Data visualizations
 source: https://www.dynatrace.com/docs/discover-dynatrace/get-started/dynatrace-ui/interact-visualizations
-scraped: 2026-02-26T21:27:32.835194
+scraped: 2026-02-27T21:21:13.651431
 ---
 
 # Data visualizations
@@ -96,7 +96,7 @@ Common interactions and features of data visualizations in the latest Dynatrace.
 ---
 title: Launchpads
 source: https://www.dynatrace.com/docs/discover-dynatrace/get-started/dynatrace-ui/launchpads
-scraped: 2026-02-26T21:27:23.143813
+scraped: 2026-02-27T21:19:38.836776
 ---
 
 # Launchpads
@@ -248,7 +248,7 @@ To see the full API documentation for the documents service
 ---
 title: Troubleshooting sign-in issues
 source: https://www.dynatrace.com/docs/discover-dynatrace/get-started/dynatrace-ui/login-issues
-scraped: 2026-02-26T21:25:53.923540
+scraped: 2026-02-27T21:27:15.493762
 ---
 
 # Troubleshooting sign-in issues
@@ -271,7 +271,7 @@ Use this page to solve problems with signing in to your Dynatrace account.
 ---
 title: Share documents
 source: https://www.dynatrace.com/docs/discover-dynatrace/get-started/dynatrace-ui/share
-scraped: 2026-02-26T21:15:12.197129
+scraped: 2026-02-27T21:10:29.368483
 ---
 
 # Share documents
@@ -577,7 +577,7 @@ Sharing exceptions
 ---
 title: Filter field
 source: https://www.dynatrace.com/docs/discover-dynatrace/get-started/dynatrace-ui/ui-filter-field
-scraped: 2026-02-26T21:18:22.999792
+scraped: 2026-02-27T21:15:06.959825
 ---
 
 # Filter field
@@ -726,7 +726,7 @@ Access nested fields in JSON data with dot or bracket notation. JSON filters may
 ---
 title: Navigate the Dynatrace platform
 source: https://www.dynatrace.com/docs/discover-dynatrace/get-started/dynatrace-ui
-scraped: 2026-02-26T21:24:59.983969
+scraped: 2026-02-27T21:31:14.608684
 ---
 
 # Navigate the Dynatrace platform
@@ -758,7 +758,7 @@ The upper part of the Dock includes:
 * [**Dynatrace**](#dynatrace) is your home.
 * [**Search**](#search) enables you to search the platform.
 * [**Apps**](#apps)
-* [Pinned and active apps](#pinned), depending on your configuration and activity. In this example, the ![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") [Notebooks](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace."), ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") [Dashboards](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new "Create interactive, customizable views to visualize, analyze, and share your observability data in real time."), and ![Segments](https://dt-cdn.net/images/segments-256-8e66310720.webp "Segments") [Segments](/docs/manage/segments "Segments logically structure monitoring data in Grail and function as convenient filters for data that users are allowed to access based on permissions.") apps are all listed.
+* [Pinned and active apps](#pinned), depending on your configuration and activity. In this example, the ![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") [Notebooks](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace."), ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") [Dashboards](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new "Create interactive, customizable views to visualize, analyze, and share your observability data in real time."), and ![Segments](https://dt-cdn.net/images/segments-256-8e66310720.webp "Segments") [Segments](/docs/manage/segments "Use segments to logically structure and conveniently filter observability data across apps.") apps are all listed.
 
 ![Dock: bottom](https://dt-cdn.net/images/dock-all-4-bottom-280-1767392d75.png)
 
@@ -849,7 +849,7 @@ To open the user menu, select your name in the lower-left corner, at the bottom 
 * **[your name]** ![Configurable](https://dt-cdn.net/images/configurable-490-8b015913d4.svg "Configurable") displays **User settings**, where you can change settings such as the display language, timezone, and light mode/dark mode.
 * **Environments** lists links to your available environments.
 * **Appearance** offers a quick switch to light, dark, or browser theme mode.
-* **Account Management** opens [Account Management](/docs/manage/account-management "Manage your Dynatrace license, subscriptions, and platform adoption and environment health.") in a new tab.
+* **Account Management** opens [Account Management](/docs/manage/account-management "Manage your Dynatrace license, accounts, platform adoption, and environment health.") in a new tab.
 * **Latest Dynatrace** toggles the latest Dynatrace on and off.
 * **Sign out** signs you out of Dynatrace.
 
@@ -916,7 +916,7 @@ The contents of this user menu depend on your deployment type, configuration, an
 ---
 title: What is a monitoring environment?
 source: https://www.dynatrace.com/docs/discover-dynatrace/get-started/monitoring-environment
-scraped: 2026-02-26T21:14:49.594807
+scraped: 2026-02-27T21:11:20.241186
 ---
 
 # What is a monitoring environment?
@@ -955,7 +955,7 @@ Each environment that you monitor with Dynatrace is identified with a unique cha
 
   For example, for the Dynatrace environment `https://abc123a.dynatrace.com`, the environment ID is `abc123a`.
 
-  You can also find your environment ID in [Account Management](/docs/manage/account-management "Manage your Dynatrace license, subscriptions, and platform adoption and environment health.").
+  You can also find your environment ID in [Account Management](/docs/manage/account-management "Manage your Dynatrace license, accounts, platform adoption, and environment health.").
 
   1. Go to [**Account Management**ï»¿](https://myaccount.dynatrace.com/). If you have more than one account, select the account you want to manage.
   2. Select **Settings** > **Environments**.
@@ -1009,7 +1009,7 @@ In some scenarios, however, you might need to connect your environments. For exa
 ---
 title: Platform Engineering
 source: https://www.dynatrace.com/docs/discover-dynatrace/get-started/platform-engineering
-scraped: 2026-02-26T21:20:34.561814
+scraped: 2026-02-27T21:28:07.792152
 ---
 
 # Platform Engineering
@@ -1618,7 +1618,7 @@ Gartner, Top Strategic Technology Trends for 2024, Bart Willemsen, Gary Olliffe,
 ---
 title: Serverless monitoring
 source: https://www.dynatrace.com/docs/discover-dynatrace/get-started/serverless-monitoring
-scraped: 2026-02-25T21:17:19.951878
+scraped: 2026-02-27T21:14:37.451424
 ---
 
 # Serverless monitoring
@@ -1711,7 +1711,7 @@ Be sure to watch for the recommendations within the Dynatrace web UI to enable a
 ---
 title: Get started with Dynatrace
 source: https://www.dynatrace.com/docs/discover-dynatrace/get-started
-scraped: 2026-02-26T21:13:28.288219
+scraped: 2026-02-27T21:09:05.102715
 ---
 
 # Get started with Dynatrace
