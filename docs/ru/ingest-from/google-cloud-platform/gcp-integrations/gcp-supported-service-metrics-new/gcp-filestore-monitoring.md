@@ -1,7 +1,7 @@
 ---
 title: Google Cloud Filestore monitoring
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new/gcp-filestore-monitoring
-scraped: 2026-02-27T21:23:02.440016
+scraped: 2026-02-28T21:30:59.855385
 ---
 
 # Google Cloud Filestore monitoring

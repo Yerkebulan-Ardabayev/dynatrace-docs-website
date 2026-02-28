@@ -1,7 +1,7 @@
 ---
 title: Dynatrace Android Gradle plugin
 source: https://www.dynatrace.com/docs/observe/digital-experience/mobile-applications/instrument-android-app/instrumentation-via-plugin
-scraped: 2026-02-25T21:21:16.386380
+scraped: 2026-02-28T21:16:26.795528
 ---
 
 # Dynatrace Android Gradle plugin

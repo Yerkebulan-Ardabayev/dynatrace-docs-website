@@ -1,7 +1,7 @@
 ---
 title: Java
 source: https://www.dynatrace.com/docs/ingest-from/technology-support/application-software/java
-scraped: 2026-02-25T21:20:46.535040
+scraped: 2026-02-28T21:17:02.912795
 ---
 
 # Java

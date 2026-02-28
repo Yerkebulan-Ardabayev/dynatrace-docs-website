@@ -1,7 +1,7 @@
 ---
 title: Smartscape concepts
 source: https://www.dynatrace.com/docs/analyze-explore-automate/smartscape/smartscape-concepts
-scraped: 2026-02-26T21:23:02.816380
+scraped: 2026-02-28T21:32:55.498950
 ---
 
 # Smartscape concepts
@@ -54,7 +54,7 @@ Working with vast amounts of data such as thousands of nodes in a graph, and try
 
 In nested views, if your segment filters out a parent group, you won't be able to see the child nodes of that group even if those child nodes aren't directly affected by the segment filter.
 
-For more information about Segments, see [Segments](/docs/manage/segments "Segments logically structure monitoring data in Grail and function as convenient filters for data that users are allowed to access based on permissions.").
+For more information about Segments, see [Segments](/docs/manage/segments "Use segments to logically structure and conveniently filter observability data across apps.").
 
 ## Tooltips
 

@@ -1,7 +1,7 @@
 ---
 title: Google Cloud Virtual Private Cloud (VPC) monitoring
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new/gcp-virtual-private-cloud-monitoring
-scraped: 2026-02-27T21:19:34.841583
+scraped: 2026-02-28T21:25:42.378511
 ---
 
 # Google Cloud Virtual Private Cloud (VPC) monitoring

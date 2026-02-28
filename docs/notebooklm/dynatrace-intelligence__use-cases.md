@@ -1,6 +1,6 @@
 # Документация Dynatrace: dynatrace-intelligence/use-cases
 Язык: Русский (RU)
-Сгенерировано: 2026-02-27
+Сгенерировано: 2026-02-28
 Файлов в разделе: 6
 ---
 
@@ -634,7 +634,7 @@ If you followed these steps, now you know how to create log alerts for specific 
 ---
 title: Dynatrace Intelligence DQL examples
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/use-cases/davis-dql-examples
-scraped: 2026-02-27T21:15:50.737980
+scraped: 2026-02-28T21:21:06.215728
 ---
 
 # Dynatrace Intelligence DQL examples
@@ -895,7 +895,7 @@ fetch dt.davis.events, from:now()-7d, to:now()
 ---
 title: AI in Workflows - Predictive maintenance of cloud disks
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/use-cases/davis-for-workflows
-scraped: 2026-02-27T21:18:39.924077
+scraped: 2026-02-28T21:34:09.253678
 ---
 
 # AI in Workflows - Predictive maintenance of cloud disks

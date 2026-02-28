@@ -1,7 +1,7 @@
 ---
 title: Kubernetes metrics migration guide
 source: https://www.dynatrace.com/docs/analyze-explore-automate/metrics/upgrade/kubernetes-metric-migration
-scraped: 2026-02-27T21:26:34.734966
+scraped: 2026-02-28T21:33:01.949234
 ---
 
 # Kubernetes metrics migration guide

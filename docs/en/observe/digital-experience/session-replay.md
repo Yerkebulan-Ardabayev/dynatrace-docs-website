@@ -1,7 +1,7 @@
 ---
 title: Session Replay
 source: https://www.dynatrace.com/docs/observe/digital-experience/session-replay
-scraped: 2026-02-27T21:12:05.354720
+scraped: 2026-02-28T21:12:12.266943
 ---
 
 # Session Replay

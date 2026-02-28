@@ -1,6 +1,6 @@
 # Документация Dynatrace: deliver/ownership
 Язык: Русский (RU)
-Сгенерировано: 2026-02-27
+Сгенерировано: 2026-02-28
 Файлов в разделе: 4
 ---
 
@@ -894,7 +894,7 @@ The API snippets for reading, creating, updating, and deleting teams are availab
 ---
 title: Ownership Classic
 source: https://www.dynatrace.com/docs/deliver/ownership
-scraped: 2026-02-27T21:29:33.008369
+scraped: 2026-02-28T21:33:22.990824
 ---
 
 # Ownership Classic

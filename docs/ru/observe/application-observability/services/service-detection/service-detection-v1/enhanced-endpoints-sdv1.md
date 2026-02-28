@@ -1,7 +1,7 @@
 ---
 title: Leverage enhanced endpoints for SDv1
 source: https://www.dynatrace.com/docs/observe/application-observability/services/service-detection/service-detection-v1/enhanced-endpoints-sdv1
-scraped: 2026-02-26T21:20:13.288225
+scraped: 2026-02-28T21:21:37.604611
 ---
 
 # Leverage enhanced endpoints for SDv1

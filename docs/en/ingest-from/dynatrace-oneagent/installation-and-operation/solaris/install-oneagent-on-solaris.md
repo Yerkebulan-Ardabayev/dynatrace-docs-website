@@ -1,7 +1,7 @@
 ---
 title: Install OneAgent on Solaris
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/solaris/install-oneagent-on-solaris
-scraped: 2026-02-26T21:18:54.995954
+scraped: 2026-02-28T21:10:11.336180
 ---
 
 # Install OneAgent on Solaris

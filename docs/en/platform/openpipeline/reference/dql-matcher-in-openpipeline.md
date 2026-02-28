@@ -1,7 +1,7 @@
 ---
 title: DQL matcher in OpenPipeline
 source: https://www.dynatrace.com/docs/platform/openpipeline/reference/dql-matcher-in-openpipeline
-scraped: 2026-02-25T21:24:34.405015
+scraped: 2026-02-28T21:20:11.243915
 ---
 
 # DQL matcher in OpenPipeline

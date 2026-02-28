@@ -1,7 +1,7 @@
 ---
 title: OneAgent file aging mechanism
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/oneagent-aging-mechanism
-scraped: 2026-02-26T21:19:11.750588
+scraped: 2026-02-28T21:10:14.664134
 ---
 
 # OneAgent file aging mechanism
@@ -10,7 +10,7 @@ scraped: 2026-02-26T21:19:11.750588
 
 * Latest Dynatrace
 * 6-min read
-* Updated on Feb 19, 2026
+* Updated on Feb 25, 2026
 
 OneAgent in the installer-based deployment uses a built-in aging mechanism that makes sure the OneAgent files are kept within a reasonable size.
 
@@ -104,6 +104,7 @@ The OneAgent file aging mechanism checks the subdirectories starting with `0x`. 
 
 * If the `0x*` directory contains a dump subdirectory and all the files in it are older than 3 days, then the dump subdirectory is removed.
 * If all the files and directories in the `0x*` directory are older than 7 days, the whole directory is removed.
+* If the size of all files in the runtime directory exceeds 1GB, the `0x*` directories are removed, starting with the oldest, until the runtime directory size is below 1GB.
 * This directory is also fully cleaned up during OneAgent update.
 
 ### Installation bin directory

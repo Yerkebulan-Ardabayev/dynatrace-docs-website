@@ -1,7 +1,7 @@
 ---
 title: Serverless monitoring
 source: https://www.dynatrace.com/docs/discover-dynatrace/get-started/serverless-monitoring
-scraped: 2026-02-27T21:14:37.451424
+scraped: 2026-02-28T21:14:05.898084
 ---
 
 # Serverless monitoring

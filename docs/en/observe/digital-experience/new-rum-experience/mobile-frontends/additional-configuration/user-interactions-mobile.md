@@ -1,7 +1,7 @@
 ---
 title: Configure user interaction capturing for mobile frontends
 source: https://www.dynatrace.com/docs/observe/digital-experience/new-rum-experience/mobile-frontends/additional-configuration/user-interactions-mobile
-scraped: 2026-02-25T21:32:53.393067
+scraped: 2026-02-28T21:31:47.028193
 ---
 
 # Configure user interaction capturing for mobile frontends

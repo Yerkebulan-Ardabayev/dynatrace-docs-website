@@ -1,7 +1,7 @@
 ---
 title: Azure Batch monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-batch
-scraped: 2026-02-26T21:25:55.166554
+scraped: 2026-02-28T21:34:27.840941
 ---
 
 # Azure Batch monitoring

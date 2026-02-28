@@ -1,7 +1,7 @@
 ---
 title: Dynatrace dashboard timeframe and management zone settings
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-classic/dashboards/dashboard-timeframe
-scraped: 2026-02-25T21:22:31.433849
+scraped: 2026-02-28T21:15:24.237896
 ---
 
 # Dynatrace dashboard timeframe and management zone settings
@@ -14,11 +14,10 @@ scraped: 2026-02-25T21:22:31.433849
 
 [Dashboards Classic](/docs/analyze-explore-automate/dashboards-classic "Learn how to create, manage, and use Dynatrace Dashboards Classic.")
 
-The dashboards discussed here are classic dashboards created using the dashboarding functionality integrated with previous Dynatrace.
+This page refers to classic dashboards created using the ![Dashboards Classic](https://dt-cdn.net/images/dashboards-classic-512-15764940e8.png "Dashboards Classic") **Dashboards Classic** functionality integrated with Dynatrace Classic.
 
-* For more about classic dashboards, see [Dashboards Classic](/docs/analyze-explore-automate/dashboards-classic "Learn how to create, manage, and use Dynatrace Dashboards Classic.").
-* For more about dashboards created with the Dashboards app in the latest Dynatrace, see [Dashboards](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.").
-* To improve your dashboard experience, you can [upgrade existing dashboards](/docs/analyze-explore-automate/dashboards-classic/dashboards-upgrade-classic-to-latest "Upgrade classic dashboards created in the previous Dynatrace to the Dashboards app in the latest Dynatrace.") from Dashboards Classic to the Dashboards app in the latest Dynatrace.
+* If you're already using the ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards** app in the latest Dynatrace, see [Dashboards](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.") for related documentation.
+* If you're still using classic dashboards, we encourage you to [upgrade your dashboards](/docs/analyze-explore-automate/dashboards-classic/dashboards-upgrade-classic-to-latest "Upgrade classic dashboards created in the previous Dynatrace to the Dashboards app in the latest Dynatrace.") and benefit from all the latest dashboarding possibilities made available by the ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards** app in the latest Dynatrace.
 
 The global selectors for timeframe and management zone are available for use across all pages and views. You'll find them in the upper-right corner.
 

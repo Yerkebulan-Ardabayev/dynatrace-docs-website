@@ -1,12 +1,12 @@
 ---
-title: Settings
+title: Settings app
 source: https://www.dynatrace.com/docs/manage/settings
-scraped: 2026-02-26T21:25:50.379973
+scraped: 2026-02-28T21:22:46.629996
 ---
 
-# Settings
+# Settings app
 
-# Settings
+# Settings app
 
 * Latest Dynatrace
 * App

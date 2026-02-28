@@ -1,6 +1,6 @@
 # Документация Dynatrace: license/monitoring-consumption-classic
 Язык: Русский (RU)
-Сгенерировано: 2026-02-27
+Сгенерировано: 2026-02-28
 Файлов в разделе: 5
 ---
 
@@ -9,7 +9,7 @@
 ---
 title: Application and Infrastructure Monitoring (Host Units)
 source: https://www.dynatrace.com/docs/license/monitoring-consumption-classic/application-and-infrastructure-monitoring
-scraped: 2026-02-27T21:12:31.440964
+scraped: 2026-02-28T21:13:04.465603
 ---
 
 # Application and Infrastructure Monitoring (Host Units)
@@ -469,7 +469,7 @@ If you cancel a query execution, all data read before the cancellation will be f
 ---
 title: Dynatrace classic licensing
 source: https://www.dynatrace.com/docs/license/monitoring-consumption-classic
-scraped: 2026-02-27T21:12:33.946076
+scraped: 2026-02-28T21:13:02.784960
 ---
 
 # Dynatrace classic licensing

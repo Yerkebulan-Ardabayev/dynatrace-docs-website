@@ -1,7 +1,7 @@
 ---
 title: Update OneAgent on Solaris
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/solaris/update-oneagent-on-solaris
-scraped: 2026-02-26T21:18:53.655691
+scraped: 2026-02-28T21:10:13.007121
 ---
 
 # Update OneAgent on Solaris

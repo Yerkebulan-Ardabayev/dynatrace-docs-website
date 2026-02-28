@@ -1,7 +1,7 @@
 ---
 title: Browser monitors reporting results
 source: https://www.dynatrace.com/docs/observe/digital-experience/synthetic-on-grail/synthetic-app/browser-monitors-results-reporting
-scraped: 2026-02-25T21:19:05.014914
+scraped: 2026-02-28T21:18:15.075849
 ---
 
 # Browser monitors reporting results

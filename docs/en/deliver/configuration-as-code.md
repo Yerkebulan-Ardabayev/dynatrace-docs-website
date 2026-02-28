@@ -1,7 +1,7 @@
 ---
 title: Configuration as Code overview
 source: https://www.dynatrace.com/docs/deliver/configuration-as-code
-scraped: 2026-02-27T21:31:45.433027
+scraped: 2026-02-28T21:23:17.196039
 ---
 
 # Configuration as Code overview

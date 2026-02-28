@@ -1,7 +1,7 @@
 ---
 title: Enable the OpenTelemetry Span Sensor for OneAgent
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/oneagent-and-opentelemetry/configuration
-scraped: 2026-02-26T21:27:30.356125
+scraped: 2026-02-28T21:30:08.168428
 ---
 
 # Enable the OpenTelemetry Span Sensor for OneAgent

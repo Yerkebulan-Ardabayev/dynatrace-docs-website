@@ -1,7 +1,7 @@
 ---
 title: DynaKube parameters for Dynatrace Operator
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/reference/dynakube-parameters
-scraped: 2026-02-26T21:28:50.788726
+scraped: 2026-02-28T21:26:25.009853
 ---
 
 # DynaKube parameters for Dynatrace Operator
@@ -10,7 +10,7 @@ scraped: 2026-02-26T21:28:50.788726
 
 * Latest Dynatrace
 * 57-min read
-* Updated on Feb 12, 2026
+* Updated on Feb 24, 2026
 
 This page will help you to understand and configure the DynaKube [Kubernetes Custom Resourceï»¿](https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources/), enabling you to optimize your Dynatrace Operator setup according to your specific requirements.
 
@@ -29,7 +29,7 @@ The table below specifies the required Dynatrace Operator versions corresponding
 
 The corresponding DynaKube API versions will be removed from the Dynatrace Operator in the subsequent minor or major release.
 
-See the DynaKube YAML samples on [GitHubï»¿](https://github.com/Dynatrace/dynatrace-operator/tree/v1.5.0/assets/samples/dynakube).
+See the DynaKube YAML samples on [GitHubï»¿](https://github.com/Dynatrace/dynatrace-operator/tree/v1.8.1/assets/samples/dynakube).
 
 v1beta6
 
@@ -461,10 +461,8 @@ Adding this section enables [Kubernetes Security Posture Management (KSPM)](/doc
 
 Available with Dynatrace version 1.306 and OneAgent 1.305
 
-To use Log Monitoring:
+Log Monitoring requires the `kubernetes-monitoring` [ActiveGate capability](#active-gate) to be enabled, but it doesn't have to be configured in the same DynaKube. If `kubernetes-monitoring` is missing or the feature flag `feature.dynatrace.com/automatic-kubernetes-api-monitoring` is set to `false`, the Operator produces a warning but Log Monitoring still deploys.
 
-* `kubernetes-monitoring` is mandatory and has to be added to the [list of ActiveGate capabilities](#active-gate) in `.spec.activeGate.capabilities`
-* The feature flag `feature.dynatrace.com/automatic-kubernetes-api-monitoring` must not be set to `false`.
 * All parameters in `.spec.logMonitoring` are Optional.
 
 | **Parameter** | **Description** | **Default value** | **Data type** |
@@ -860,10 +858,8 @@ Adding this section enables [Kubernetes Security Posture Management (KSPM)](/doc
 
 Available with Dynatrace version 1.306 and OneAgent 1.305
 
-To use Log Monitoring
+Log Monitoring requires the `kubernetes-monitoring` [ActiveGate capability](#active-gate) to be enabled, but it doesn't have to be configured in the same DynaKube. If `kubernetes-monitoring` is missing or the feature flag `feature.dynatrace.com/automatic-kubernetes-api-monitoring` is set to `false`, the Operator produces a warning but Log Monitoring still deploys.
 
-* `kubernetes-monitoring` is mandatory and has to be added to the [list of ActiveGate capabilities](#active-gate) in `.spec.activeGate.capabilities`
-* The feature flag `feature.dynatrace.com/automatic-kubernetes-api-monitoring` must not be set to `false`.
 * All parameters in `.spec.logMonitoring` are Optional.
 
 | **Parameter** | **Description** | **Default value** | **Data type** |
@@ -937,6 +933,8 @@ Enable Dynatrace [telemetry endpoints](/docs/ingest-from/setup-on-k8s/extend-obs
 
 ## `.spec.templates.kspmNodeConfigurationCollector`
 
+
+
 | **Parameter** | **Description** | **Default value** | **Data type** |
 | --- | --- | --- | --- |
 | `updateStrategy` | Define the Node Configuration Collector daemonSet updateStrategy | Not applicable | DaemonSetUpdateStrategy |
@@ -950,8 +948,6 @@ Enable Dynatrace [telemetry endpoints](/docs/ingest-from/setup-on-k8s/extend-obs
 | `tolerations` | Set tolerations for the Node Configuration Collector pods. For details, see [Taints and Tolerationsï»¿](https://dt-url.net/od03765). | Not applicable | []Toleration |
 | `args` | Set additional arguments for the Node Configuration Collector main container. | Not applicable | []string |
 | `env` | Set additional environment variables for the Node Configuration Collector main container. | Not applicable | []string |
-
-
 
 ## `.spec.templates.kspmNodeConfigurationCollector.imageRef`
 
@@ -1048,6 +1044,8 @@ Dynatrace Operator version 1.5.0+
 
 ## `.spec`
 
+
+
 * `apiUrl` parameter is Required and immutable. Once set, it cannot be modified in an existing DynaKube.
 * All other parameters are Optional.
 
@@ -1071,8 +1069,6 @@ Dynatrace Operator version 1.5.0+
 
 ## `.spec.oneAgent.cloudNativeFullStack`
 
-
-
 * All parameters are Optional.
 
 Recommended
@@ -1090,7 +1086,7 @@ Recommended
 | `labels` | Your defined labels for OneAgent Pods in order to structure workloads as desired. | Not applicable | map[string]string |
 | `namespaceSelector` | The namespaces where you want Dynatrace Operator to inject. For more information, see [Configure monitoring for namespaces and Pods](/docs/ingest-from/setup-on-k8s/guides/deployment-and-configuration/monitoring-and-instrumentation/annotate "Configure monitoring for namespaces and pods"). | Not applicable | LabelSelector |
 | `nodeSelector` | Specify the node selector that controls on which nodes OneAgent will be deployed. | Not applicable | map[string]string |
-| `oneAgentResources` | Resource settings for OneAgent container. Consumption of the OneAgent heavily depends on the workload to monitor. You can use the default settings in the [CRï»¿](https://github.com/Dynatrace/dynatrace-operator/tree/v1.5.0/assets/samples/dynakube). `resource.requests` shows the values needed to run; `resource.limits` shows the maximum limits for the Pod. | Not applicable | ResourceRequirements |
+| `oneAgentResources` | Resource settings for OneAgent container. Consumption of the OneAgent heavily depends on the workload to monitor. You can use the default settings in the [CRï»¿](https://github.com/Dynatrace/dynatrace-operator/tree/v1.8.1/assets/samples/dynakube). `resource.requests` shows the values needed to run; `resource.limits` shows the maximum limits for the Pod. | Not applicable | ResourceRequirements |
 | `priorityClassName` | Assign a priority class to the OneAgent Pods. By default, no class is set. For details, see [Pod Priority and Preemptionï»¿](https://dt-url.net/n8437bl). | Not applicable | string |
 | `secCompProfile` | The SecComp Profile that will be configured in order to run in secure computing mode. | - | string |
 | `storageHostPath` | Writeable directory on the host filesystem where OneAgent configurations will be stored. | - | string |
@@ -1098,6 +1094,8 @@ Recommended
 | `version` | The OneAgent version to be used for host monitoring OneAgents running in the dedicated Pod. This setting doesn't affect the OneAgent version used for application monitoring. | The latest version is used by default. | string |
 
 ## `.spec.oneAgent.classicFullStack`
+
+
 
 * All parameters are Optional.
 
@@ -1131,8 +1129,6 @@ Recommended
 
 ## `.spec.oneAgent.hostMonitoring`
 
-
-
 * All parameters are Optional.
 
 | **Parameter** | **Description** | **Default value** | **Data type** |
@@ -1153,6 +1149,8 @@ Recommended
 | `version` | The OneAgent version to be used. | The latest version is used by default. | string |
 
 ## `.spec.activeGate`
+
+
 
 * `capabilities` parameter is Required.
 * `resources` and `group` parameters are Recommended.
@@ -1212,10 +1210,8 @@ Adding this section enables [Kubernetes Security Posture Management (KSPM)](/doc
 
 Available with Dynatrace version 1.306 and OneAgent 1.305
 
-To use Log Monitoring
+Log Monitoring requires the `kubernetes-monitoring` [ActiveGate capability](#active-gate) to be enabled, but it doesn't have to be configured in the same DynaKube. If `kubernetes-monitoring` is missing or the feature flag `feature.dynatrace.com/automatic-kubernetes-api-monitoring` is set to `false`, the Operator produces a warning but Log Monitoring still deploys.
 
-* `kubernetes-monitoring` is mandatory and has to be added to the [list of ActiveGate capabilities](#active-gate) in `.spec.activeGate.capabilities`
-* The feature flag `feature.dynatrace.com/automatic-kubernetes-api-monitoring` must not be set to `false`.
 * All parameters in `.spec.logMonitoring` are Optional.
 
 | **Parameter** | **Description** | **Default value** | **Data type** |
@@ -1223,8 +1219,6 @@ To use Log Monitoring
 | `ingestRuleMatchers` | Specifies the rules and conditions for matching ingest attributes. | Not applicable | [[]IngestRuleMatchers](#log-monitoring-ingest-rule-matchers) |
 
 ### `.spec.logMonitoring.ingestRuleMatchers`
-
-
 
 This field is immutable. Once set, it will no longer be updated.
 
@@ -1314,6 +1308,8 @@ Adding this section deploys the Dynatrace Collector by the Operator.
 
 ## `.spec.templates.logMonitoring`
 
+
+
 Available with Dynatrace version 1.306 and OneAgent 1.305
 
 * `imageRef` parameter is Required.
@@ -1400,8 +1396,6 @@ Dynatrace Operator version 1.4.0+
 
 ## `.spec`
 
-
-
 * `apiUrl` parameter is Required and immutable. Once set, it cannot be modified on an existing DynaKube.
 * All other parameters are Optional.
 
@@ -1424,6 +1418,8 @@ Dynatrace Operator version 1.4.0+
 | `hostGroup` | Specify the name of the group to which you want to assign the host. This method is preferred over the now obsolete `--set-host-group` argument. If both settings are used, this field takes precedence over the `--set-host-group` argument. | Not applicable | string |
 
 ## `.spec.oneAgent.cloudNativeFullStack`
+
+
 
 * All parameters are Optional.
 
@@ -1470,8 +1466,6 @@ Recommended
 
 ## `.spec.oneAgent.applicationMonitoring`
 
-
-
 * All parameters are Optional.
 
 | **Parameter** | **Description** | **Default value** | **Data type** |
@@ -1482,6 +1476,8 @@ Recommended
 | `version` | The OneAgent version to be used. | The latest version is used by default. | string |
 
 ## `.spec.oneAgent.hostMonitoring`
+
+
 
 * All parameters are Optional.
 
@@ -1558,10 +1554,8 @@ Adding this section enables [Kubernetes Security Posture Management (KSPM)](/doc
 
 Available with Dynatrace version 1.306 and OneAgent 1.305
 
-To use Log Monitoring
+Log Monitoring requires the `kubernetes-monitoring` [ActiveGate capability](#active-gate) to be enabled, but it doesn't have to be configured in the same DynaKube. If `kubernetes-monitoring` is missing or the feature flag `feature.dynatrace.com/automatic-kubernetes-api-monitoring` is set to `false`, the Operator produces a warning but Log Monitoring still deploys.
 
-* `kubernetes-monitoring` is mandatory and has to be added to the [list of ActiveGate capabilities](#active-gate) in `.spec.activeGate.capabilities`
-* The feature flag `feature.dynatrace.com/automatic-kubernetes-api-monitoring` must not be set to `false`.
 * All parameters in `.spec.logMonitoring` are Optional.
 
 | **Parameter** | **Description** | **Default value** | **Data type** |
@@ -1569,8 +1563,6 @@ To use Log Monitoring
 | `ingestRuleMatchers` | Specifies the rules and conditions for matching ingest attributes. | Not applicable | [[]IngestRuleMatchers](#log-monitoring-ingest-rule-matchers) |
 
 ### `.spec.logMonitoring.ingestRuleMatchers`
-
-
 
 This field is immutable. Once set, it will no longer be updated.
 
@@ -1624,6 +1616,8 @@ values:
 ## `.spec.templates`
 
 ## `.spec.templates.kspmNodeConfigurationCollector`
+
+
 
 | **Parameter** | **Description** | **Default value** | **Data type** |
 | --- | --- | --- | --- |

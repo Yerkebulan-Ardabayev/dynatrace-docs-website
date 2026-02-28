@@ -1,7 +1,7 @@
 ---
 title: Process groups API - POST tags
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/topology-and-smartscape/process-groups-api/post-tags
-scraped: 2026-02-25T21:22:03.626275
+scraped: 2026-02-28T21:17:24.550707
 ---
 
 # Process groups API - POST tags
@@ -12,7 +12,7 @@ scraped: 2026-02-25T21:22:03.626275
 * Updated on Mar 22, 2023
 * Deprecated
 
-Assigns [custom tags](/docs/manage/tags-and-metadata "Learn how to define tags and metadata. Understand how to use tags and metadata to organize your environment.") to the specified [process group](/docs/observe/infrastructure-observability/process-groups "Analyze process groups and customize process group naming, detection, and monitoring."). You need only provide a tag value. The `CONTEXTLESS` context will be assigned automatically.
+Assigns [custom tags](/docs/manage/tags-and-metadata "Use tags and metadata to organize data in your Dynatrace environment.") to the specified [process group](/docs/observe/infrastructure-observability/process-groups "Analyze process groups and customize process group naming, detection, and monitoring."). You need only provide a tag value. The `CONTEXTLESS` context will be assigned automatically.
 
 The usage of this API is limited to value-only tags. To assign key:value tags, use the [Custom tags API](/docs/dynatrace-api/environment-api/custom-tags/post-tags "Assign custom tags to monitored entities via Dynatrace API.").
 

@@ -1,7 +1,7 @@
 ---
 title: Configure additional settings for Live Debugging
 source: https://www.dynatrace.com/docs/observe/application-observability/live-debugger/additional-settings
-scraped: 2026-02-27T21:31:18.887817
+scraped: 2026-02-28T21:25:45.726529
 ---
 
 # Configure additional settings for Live Debugging

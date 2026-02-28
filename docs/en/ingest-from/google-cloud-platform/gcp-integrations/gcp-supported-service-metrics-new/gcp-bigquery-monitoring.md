@@ -1,7 +1,7 @@
 ---
 title: Google BigQuery monitoring
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new/gcp-bigquery-monitoring
-scraped: 2026-02-27T21:26:24.941929
+scraped: 2026-02-28T21:29:14.079129
 ---
 
 # Google BigQuery monitoring

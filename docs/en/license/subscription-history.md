@@ -1,7 +1,7 @@
 ---
 title: View your previous DPS periods via subscription history
 source: https://www.dynatrace.com/docs/license/subscription-history
-scraped: 2026-02-27T21:24:27.386304
+scraped: 2026-02-28T21:30:09.875801
 ---
 
 # View your previous DPS periods via subscription history

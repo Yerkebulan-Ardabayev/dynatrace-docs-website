@@ -1,6 +1,6 @@
 # Документация Dynatrace: deliver/release-monitoring
 Язык: Русский (RU)
-Сгенерировано: 2026-02-27
+Сгенерировано: 2026-02-28
 Файлов в разделе: 4
 ---
 
@@ -9,7 +9,7 @@
 ---
 title: Issue-tracking integration
 source: https://www.dynatrace.com/docs/deliver/release-monitoring/issue-tracking-integration
-scraped: 2026-02-27T21:22:55.434417
+scraped: 2026-02-28T21:31:35.662286
 ---
 
 # Issue-tracking integration

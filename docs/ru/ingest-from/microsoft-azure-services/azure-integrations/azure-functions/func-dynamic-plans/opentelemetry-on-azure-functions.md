@@ -1,7 +1,7 @@
 ---
 title: Set up OpenTelemetry monitoring for Azure Functions on Consumption Plan
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-functions/func-dynamic-plans/opentelemetry-on-azure-functions
-scraped: 2026-02-24T21:31:24.116988
+scraped: 2026-02-28T21:31:01.539814
 ---
 
 # Set up OpenTelemetry monitoring for Azure Functions on Consumption Plan

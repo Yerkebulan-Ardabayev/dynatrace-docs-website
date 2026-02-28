@@ -1,7 +1,7 @@
 ---
 title: Flatcar support on SELinux
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/operation/flatcar-os
-scraped: 2026-02-26T21:19:01.158940
+scraped: 2026-02-28T21:10:34.233268
 ---
 
 # Flatcar support on SELinux

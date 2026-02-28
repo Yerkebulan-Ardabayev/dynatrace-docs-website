@@ -1,7 +1,7 @@
 ---
 title: OneAgent non-privileged mode on Linux
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/linux-non-privileged
-scraped: 2026-02-26T21:18:56.114052
+scraped: 2026-02-28T21:10:28.103949
 ---
 
 # OneAgent non-privileged mode on Linux

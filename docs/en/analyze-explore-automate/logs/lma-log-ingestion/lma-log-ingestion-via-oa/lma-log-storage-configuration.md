@@ -1,7 +1,7 @@
 ---
 title: Log ingest rules
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-log-storage-configuration
-scraped: 2026-02-26T21:20:06.999905
+scraped: 2026-02-28T21:10:55.772244
 ---
 
 # Log ingest rules
