@@ -1,7 +1,7 @@
 ---
 title: Create an AWS connection via Settings
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/create-an-aws-connection/aws-connection-app-settings
-scraped: 2026-02-25T21:19:26.464553
+scraped: 2026-02-28T21:19:35.035332
 ---
 
 # Create an AWS connection via Settings
@@ -33,7 +33,7 @@ We highly discourage onboarding AWS accounts that are actively monitored by our 
 * GovCloud and China partitions are not supported.
 * Dynatrace is designed to support large and complex AWS environments. By default, a Dynatrace environment can accommodate up to 3,000 AWS connections (each connection representing a single AWS account).
 
-  This is a soft limit. If you plan to exceed this (per Dynatrace environment) we kindly ask you to open a support request so we can proactively increase this limit, ensuring a smooth experience.
+  This is a soft limit. If you plan to exceed it (per Dynatrace environment), please open a support request to increase this limit.
 
 * AWS does not support EventBridge API destinations in all Regions. Therefore, event ingest is not available in Regions that don't support it. See [EventBridge feature availabilityï»¿](https://docs.aws.amazon.com/eventbridge/latest/userguide/feature-availability.html#feature-availability-apid) for details.
 

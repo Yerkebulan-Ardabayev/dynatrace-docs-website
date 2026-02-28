@@ -1,7 +1,7 @@
 ---
 title: Monitor Amazon Elastic Container Service (ECS)
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-ecs
-scraped: 2026-02-27T21:16:37.742958
+scraped: 2026-02-28T21:22:02.395399
 ---
 
 # Monitor Amazon Elastic Container Service (ECS)

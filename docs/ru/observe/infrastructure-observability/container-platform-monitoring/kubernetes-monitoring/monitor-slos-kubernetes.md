@@ -1,7 +1,7 @@
 ---
 title: Monitor service-level objectives in Kubernetes/OpenShift
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-slos-kubernetes
-scraped: 2026-02-27T21:19:30.967901
+scraped: 2026-02-28T21:32:25.803905
 ---
 
 # Monitor service-level objectives in Kubernetes/OpenShift

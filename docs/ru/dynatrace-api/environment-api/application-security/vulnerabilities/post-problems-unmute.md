@@ -1,7 +1,7 @@
 ---
 title: Vulnerabilities API - POST unmute vulnerabilities
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/application-security/vulnerabilities/post-problems-unmute
-scraped: 2026-02-26T21:31:21.219536
+scraped: 2026-02-28T21:26:48.571269
 ---
 
 # Vulnerabilities API - POST unmute vulnerabilities

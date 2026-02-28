@@ -1,6 +1,6 @@
 # Документация Dynatrace: observe/dynatrace-for-ai-observability
 Язык: Русский (RU)
-Сгенерировано: 2026-02-27
+Сгенерировано: 2026-02-28
 Файлов в разделе: 15
 ---
 
@@ -9,7 +9,7 @@
 ---
 title: AI Observability
 source: https://www.dynatrace.com/docs/observe/dynatrace-for-ai-observability/ai-observability-app
-scraped: 2026-02-27T21:21:47.523711
+scraped: 2026-02-28T21:22:44.908993
 ---
 
 # AI Observability
@@ -229,7 +229,7 @@ Review all observable AI technologies in the Dynatrace Hub.](https://www.dynatra
 ---
 title: Kong AI Gateway
 source: https://www.dynatrace.com/docs/observe/dynatrace-for-ai-observability/ai-traffic-management-and-security/kong
-scraped: 2026-02-27T21:26:17.695902
+scraped: 2026-02-28T21:22:17.954138
 ---
 
 # Kong AI Gateway
@@ -491,7 +491,7 @@ Additionally, the following metrics are reported.
 ---
 title: Get started with OpenTelemetry and AI Observability
 source: https://www.dynatrace.com/docs/observe/dynatrace-for-ai-observability/get-started/opentelemetry
-scraped: 2026-02-25T21:29:55.715034
+scraped: 2026-02-28T21:33:14.049265
 ---
 
 # Get started with OpenTelemetry and AI Observability
@@ -501,7 +501,7 @@ scraped: 2026-02-25T21:29:55.715034
 * Latest Dynatrace
 * Getting started guide
 * 5-min read
-* Published Feb 25, 2026
+* Updated on Feb 25, 2026
 
 OpenTelemetry provides a vendor-neutral standard for collecting traces and metrics from AI applications. With the [GenAI semantic conventionsï»¿](https://opentelemetry.io/docs/specs/semconv/gen-ai/), OpenTelemetry defines a consistent way to capture AI-specific attributes such as model names, token counts, latency, and cost metrics across different LLM providers.
 
@@ -566,7 +566,16 @@ Node.js
    ```
    pip install opentelemetry-sdk opentelemetry-exporter-otlp-proto-http
    ```
-2. Initialize the OpenTelemetry SDK.
+2. Optional You can also run the OpenTelemetry auto-instrumentation.
+
+   ```
+   pip install opentelemetry-distro opentelemetry-exporter-otlp
+
+
+
+   opentelemetry-bootstrap -a install
+   ```
+3. Initialize the OpenTelemetry SDK.
    Add the following code at the beginning of your main file.
 
    ```
@@ -1274,7 +1283,7 @@ In the example below, Dynatrace Intelligence automatically reported a slowdown o
 ---
 title: Get started
 source: https://www.dynatrace.com/docs/observe/dynatrace-for-ai-observability/get-started
-scraped: 2026-02-27T21:13:16.359355
+scraped: 2026-02-28T21:14:51.251362
 ---
 
 # Get started
@@ -1309,7 +1318,7 @@ Instrument your AI application with OpenTelemetry.](/docs/observe/dynatrace-for-
 ---
 title: Amazon Bedrock
 source: https://www.dynatrace.com/docs/observe/dynatrace-for-ai-observability/models-and-platforms/bedrock
-scraped: 2026-02-27T21:13:12.376026
+scraped: 2026-02-28T21:14:54.521468
 ---
 
 # Amazon Bedrock
@@ -1368,7 +1377,7 @@ The following attributes are available for GenAI Spans.
 ---
 title: NVIDIA NIM
 source: https://www.dynatrace.com/docs/observe/dynatrace-for-ai-observability/models-and-platforms/nvidia-nim
-scraped: 2026-02-27T21:13:18.835896
+scraped: 2026-02-28T21:14:49.611374
 ---
 
 # NVIDIA NIM
@@ -1578,7 +1587,7 @@ Additionally, the following metrics are reported.
 ---
 title: Ollama
 source: https://www.dynatrace.com/docs/observe/dynatrace-for-ai-observability/models-and-platforms/ollama
-scraped: 2026-02-27T21:13:17.652624
+scraped: 2026-02-28T21:14:52.860713
 ---
 
 # Ollama
@@ -1628,7 +1637,7 @@ The following attributes are available for GenAI Spans.
 ---
 title: OpenAI
 source: https://www.dynatrace.com/docs/observe/dynatrace-for-ai-observability/models-and-platforms/openai
-scraped: 2026-02-27T21:13:11.077441
+scraped: 2026-02-28T21:14:56.236522
 ---
 
 # OpenAI
@@ -1693,7 +1702,7 @@ The following attributes are available for GenAI Spans.
 ---
 title: TensorFlow Keras observability
 source: https://www.dynatrace.com/docs/observe/dynatrace-for-ai-observability/models-and-platforms/tensorflow-keras-observability
-scraped: 2026-02-26T21:28:08.391646
+scraped: 2026-02-28T21:31:03.310841
 ---
 
 # TensorFlow Keras observability
@@ -2074,7 +2083,7 @@ The screenshot below shows a Data Explorer visualization of the accuracy metric 
 ---
 title: LangChain
 source: https://www.dynatrace.com/docs/observe/dynatrace-for-ai-observability/orchestration-frameworks/langchain
-scraped: 2026-02-27T21:13:13.691387
+scraped: 2026-02-28T21:14:57.876432
 ---
 
 # LangChain
@@ -2129,7 +2138,7 @@ The following attributes are available for GenAI Spans.
 ---
 title: AI data governance with Amazon Bedrock
 source: https://www.dynatrace.com/docs/observe/dynatrace-for-ai-observability/sample-use-cases/data-governance
-scraped: 2026-02-27T21:29:41.675645
+scraped: 2026-02-28T21:30:53.204408
 ---
 
 # AI data governance with Amazon Bedrock
@@ -2540,7 +2549,7 @@ Our simple example of a Node.js service entirely depends on the ChatGPT model re
 ---
 title: AI and LLM Observability
 source: https://www.dynatrace.com/docs/observe/dynatrace-for-ai-observability
-scraped: 2026-02-27T21:09:32.504402
+scraped: 2026-02-28T21:06:58.780245
 ---
 
 # AI and LLM Observability

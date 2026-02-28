@@ -1,7 +1,7 @@
 ---
 title: Applications API - POST tags
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/topology-and-smartscape/applications-api/post-tags
-scraped: 2026-02-25T21:21:46.867415
+scraped: 2026-02-28T21:17:53.820736
 ---
 
 # Applications API - POST tags
@@ -12,7 +12,7 @@ scraped: 2026-02-25T21:21:46.867415
 * Updated on Mar 22, 2023
 * Deprecated
 
-Assigns [custom tags](/docs/manage/tags-and-metadata "Learn how to define tags and metadata. Understand how to use tags and metadata to organize your environment.") to the specified application. You only need to provide a tag value. The `CONTEXTLESS` context will be assigned automatically.
+Assigns [custom tags](/docs/manage/tags-and-metadata "Use tags and metadata to organize data in your Dynatrace environment.") to the specified application. You only need to provide a tag value. The `CONTEXTLESS` context will be assigned automatically.
 
 The usage of this API is limited to value-only tags. To assign key:value tags, use the [Custom tags API](/docs/dynatrace-api/environment-api/custom-tags/post-tags "Assign custom tags to monitored entities via Dynatrace API.").
 

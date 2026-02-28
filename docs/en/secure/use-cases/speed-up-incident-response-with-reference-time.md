@@ -1,7 +1,7 @@
 ---
 title: Speed up incident response with Dynatrace Investigations reference time
 source: https://www.dynatrace.com/docs/secure/use-cases/speed-up-incident-response-with-reference-time
-scraped: 2026-02-27T21:23:03.852378
+scraped: 2026-02-28T21:33:46.500677
 ---
 
 # Speed up incident response with Dynatrace Investigations reference time

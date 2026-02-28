@@ -1,7 +1,7 @@
 ---
 title: OneAgent features
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/oneagent-features
-scraped: 2026-02-27T21:10:06.314936
+scraped: 2026-02-28T21:06:26.389794
 ---
 
 # OneAgent features

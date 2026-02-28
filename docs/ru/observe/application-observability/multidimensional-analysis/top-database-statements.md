@@ -1,7 +1,7 @@
 ---
 title: Top database statements
 source: https://www.dynatrace.com/docs/observe/application-observability/multidimensional-analysis/top-database-statements
-scraped: 2026-02-26T21:29:31.674924
+scraped: 2026-02-28T21:26:58.648003
 ---
 
 # Top database statements

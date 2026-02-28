@@ -1,6 +1,6 @@
 # Документация Dynatrace: analyze-explore-automate/smartscape
 Язык: Русский (RU)
-Сгенерировано: 2026-02-27
+Сгенерировано: 2026-02-28
 Файлов в разделе: 12
 ---
 
@@ -9,7 +9,7 @@
 ---
 title: Smartscape concepts
 source: https://www.dynatrace.com/docs/analyze-explore-automate/smartscape/smartscape-concepts
-scraped: 2026-02-26T21:23:02.816380
+scraped: 2026-02-28T21:32:55.498950
 ---
 
 # Smartscape concepts
@@ -62,7 +62,7 @@ Working with vast amounts of data such as thousands of nodes in a graph, and try
 
 In nested views, if your segment filters out a parent group, you won't be able to see the child nodes of that group even if those child nodes aren't directly affected by the segment filter.
 
-For more information about Segments, see [Segments](/docs/manage/segments "Segments logically structure monitoring data in Grail and function as convenient filters for data that users are allowed to access based on permissions.").
+For more information about Segments, see [Segments](/docs/manage/segments "Use segments to logically structure and conveniently filter observability data across apps.").
 
 ## Tooltips
 
@@ -239,7 +239,7 @@ To maximize your efficiency when using ![Smartscape](https://dt-cdn.net/images/s
 ---
 title: Visual Resolution Path
 source: https://www.dynatrace.com/docs/analyze-explore-automate/smartscape/smartscape-modals/visual-resolution-path
-scraped: 2026-02-24T21:24:36.440408
+scraped: 2026-02-28T21:27:07.435700
 ---
 
 # Visual Resolution Path
@@ -437,7 +437,7 @@ To use the **AWS EC2 Instance Ecosystem** effectively, we recommend that you:
 ---
 title: Infrastructure overview
 source: https://www.dynatrace.com/docs/analyze-explore-automate/smartscape/smartscape-views/infrastructure-overview
-scraped: 2026-02-25T21:26:12.703922
+scraped: 2026-02-28T21:31:53.947887
 ---
 
 # Infrastructure overview
@@ -699,7 +699,7 @@ To use **Service dependency graph** effectively, we recommend that you:
 ---
 title: Smartscape on Grail view
 source: https://www.dynatrace.com/docs/analyze-explore-automate/smartscape/smartscape-views/smartscape-on-grail-view
-scraped: 2026-02-26T21:29:43.808757
+scraped: 2026-02-28T21:26:31.692476
 ---
 
 # Smartscape on Grail view
@@ -799,7 +799,7 @@ Visualize your AWS EC2 ecosystem and resource relationships.](/docs/analyze-expl
 ---
 title: Smartscape
 source: https://www.dynatrace.com/docs/analyze-explore-automate/smartscape
-scraped: 2026-02-27T21:21:38.254106
+scraped: 2026-02-28T21:31:11.522066
 ---
 
 # Smartscape

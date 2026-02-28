@@ -1,7 +1,7 @@
 ---
 title: Configure a simple custom alert
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-app/configure-a-simple-ad
-scraped: 2026-02-27T21:21:56.731824
+scraped: 2026-02-28T21:33:37.541096
 ---
 
 # Configure a simple custom alert

@@ -1,7 +1,7 @@
 ---
 title: Dynatrace Operator release notes
 source: https://www.dynatrace.com/docs/whats-new/dynatrace-operator
-scraped: 2026-02-27T21:10:21.005089
+scraped: 2026-02-28T21:08:36.566661
 ---
 
 # Dynatrace Operator release notes

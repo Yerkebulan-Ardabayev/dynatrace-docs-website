@@ -1,7 +1,7 @@
 ---
 title: Amazon MSK (Kafka) monitoring
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-msk-kafka
-scraped: 2026-02-27T21:28:52.543766
+scraped: 2026-02-28T21:33:12.282977
 ---
 
 # Amazon MSK (Kafka) monitoring

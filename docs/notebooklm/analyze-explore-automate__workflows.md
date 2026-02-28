@@ -1,6 +1,6 @@
 # Документация Dynatrace: analyze-explore-automate/workflows
 Язык: Русский (RU)
-Сгенерировано: 2026-02-27
+Сгенерировано: 2026-02-28
 Файлов в разделе: 31
 ---
 
@@ -595,7 +595,7 @@ We strongly recommend that you limit the permissions of your personal access tok
 ---
 title: GitHub Connector
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/github
-scraped: 2026-02-27T21:20:54.256284
+scraped: 2026-02-28T21:31:16.759506
 ---
 
 # GitHub Connector
@@ -631,7 +631,7 @@ Learn about available actions used by GitHub Connector integration for automatin
 ---
 title: Actions for GitLab Connector
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/gitlab/gitlab-workflows-actions
-scraped: 2026-02-26T21:25:21.509589
+scraped: 2026-02-28T21:25:22.872615
 ---
 
 # Actions for GitLab Connector
@@ -1282,7 +1282,7 @@ The log of a successful run is shown below.
 ---
 title: PagerDuty
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/pagerduty
-scraped: 2026-02-27T21:31:38.521293
+scraped: 2026-02-28T21:26:04.735743
 ---
 
 # PagerDuty
@@ -1388,7 +1388,7 @@ The following are solutions to problems some people have.
 ---
 title: Red Hat Ansible Automation
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/red-hat/redhat-ansible
-scraped: 2026-02-26T21:33:03.781043
+scraped: 2026-02-28T21:26:06.389181
 ---
 
 # Red Hat Ansible Automation
@@ -1506,7 +1506,7 @@ The following are solutions to problems some people have.
 ---
 title: Red Hat Event-Driven Ansible
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/red-hat/redhat-even-driven-ansible
-scraped: 2026-02-24T21:23:52.558932
+scraped: 2026-02-28T21:25:57.883348
 ---
 
 # Red Hat Event-Driven Ansible
@@ -1783,7 +1783,7 @@ To create a workflow that sends an event to Event-Driven Ansible
 ---
 title: ServiceNow
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/service-now
-scraped: 2026-02-25T21:23:55.107519
+scraped: 2026-02-28T21:18:11.539147
 ---
 
 # ServiceNow
@@ -2939,7 +2939,7 @@ The following are solutions to problems some people had with Slack integration.
 ---
 title: Actions for Text Processing Connector
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/text-processing/automation-workflows-text-processing-actions
-scraped: 2026-02-27T21:18:45.651459
+scraped: 2026-02-28T21:27:23.044443
 ---
 
 # Actions for Text Processing Connector
@@ -3290,7 +3290,7 @@ Supports multi-document YAML files.
 ---
 title: Text Processing
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/text-processing
-scraped: 2026-02-26T21:20:35.850899
+scraped: 2026-02-28T21:26:18.551149
 ---
 
 # Text Processing
@@ -3321,7 +3321,7 @@ For more information on how to start a workflow to use Text Processing, see [Wor
 ---
 title: Workflows Connectors
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions
-scraped: 2026-02-25T21:23:53.955683
+scraped: 2026-02-28T21:18:08.040237
 ---
 
 # Workflows Connectors
@@ -3461,7 +3461,7 @@ You can find the results in the **Result** tab of the **Execution** that you cou
 ---
 title: HTTP request action for Workflows
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/default-workflow-actions/http-request-workflow-action
-scraped: 2026-02-27T21:21:09.724820
+scraped: 2026-02-28T21:22:21.235741
 ---
 
 # HTTP request action for Workflows
@@ -3511,7 +3511,7 @@ The result of the HTTP request action is a JSON structure that includes
 ---
 title: Run JavaScript action for Workflows
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/default-workflow-actions/run-javascript-workflow-action
-scraped: 2026-02-25T21:25:17.358258
+scraped: 2026-02-28T21:31:09.878769
 ---
 
 # Run JavaScript action for Workflows
@@ -3850,7 +3850,7 @@ console.log( ex.params.event);
 ---
 title: Workflows actions
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/default-workflow-actions
-scraped: 2026-02-27T21:18:14.182081
+scraped: 2026-02-28T21:27:41.047030
 ---
 
 # Workflows actions
@@ -3944,7 +3944,7 @@ To access various workflow management commands:
 ---
 title: Manage live or draft workflows
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/manage-workflows/workflows-manage-live-mode
-scraped: 2026-02-26T21:22:57.862448
+scraped: 2026-02-28T21:24:25.164933
 ---
 
 # Manage live or draft workflows
@@ -4721,7 +4721,7 @@ This workflow is a great starting point for automating incident response and imp
 ---
 title: Workflows use cases
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/use-cases
-scraped: 2026-02-24T21:32:22.600613
+scraped: 2026-02-28T21:31:22.121027
 ---
 
 # Workflows use cases
@@ -4790,7 +4790,7 @@ Design a workflow to manage high-volume AWS alerts by filtering out noise and su
 ---
 title: Workflows
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows
-scraped: 2026-02-27T21:14:19.201382
+scraped: 2026-02-28T21:12:18.619264
 ---
 
 # Workflows

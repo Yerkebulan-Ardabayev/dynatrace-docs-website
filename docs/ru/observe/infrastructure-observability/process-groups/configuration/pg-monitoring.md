@@ -1,7 +1,7 @@
 ---
 title: Process deep monitoring
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/process-groups/configuration/pg-monitoring
-scraped: 2026-02-26T21:19:59.232778
+scraped: 2026-02-28T21:10:50.200662
 ---
 
 # Process deep monitoring

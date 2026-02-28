@@ -1,7 +1,7 @@
 ---
 title: Workflows Connectors
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions
-scraped: 2026-02-25T21:23:53.955683
+scraped: 2026-02-28T21:18:08.040237
 ---
 
 # Workflows Connectors

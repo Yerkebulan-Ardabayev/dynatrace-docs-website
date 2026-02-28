@@ -1,7 +1,7 @@
 ---
 title: Honeycomb visualization
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-honeycomb
-scraped: 2026-02-25T21:23:40.359998
+scraped: 2026-02-28T21:20:53.653330
 ---
 
 # Honeycomb visualization

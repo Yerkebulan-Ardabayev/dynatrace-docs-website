@@ -1,7 +1,7 @@
 ---
 title: Amazon Kinesis (Data Analytics, Data Firehose, Data Streams, Video Streams) monitoring
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-kinesis
-scraped: 2026-02-27T21:17:20.665204
+scraped: 2026-02-28T21:25:27.150974
 ---
 
 # Amazon Kinesis (Data Analytics, Data Firehose, Data Streams, Video Streams) monitoring

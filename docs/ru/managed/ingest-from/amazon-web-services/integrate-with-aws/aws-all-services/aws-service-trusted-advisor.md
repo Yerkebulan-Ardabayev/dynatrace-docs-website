@@ -1,7 +1,7 @@
 ---
 title: AWS Trusted Advisor monitoring
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-trusted-advisor
-scraped: 2026-02-27T21:28:12.378561
+scraped: 2026-02-28T21:28:25.748991
 ---
 
 # AWS Trusted Advisor monitoring

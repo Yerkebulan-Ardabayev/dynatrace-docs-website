@@ -1,7 +1,7 @@
 ---
 title: Enable the New RUM Experience for your RUM Classic web applications
 source: https://www.dynatrace.com/docs/observe/digital-experience/new-rum-experience/web-frontends/initial-setup/enable-new-rum-for-web-apps
-scraped: 2026-02-27T21:31:15.934539
+scraped: 2026-02-28T21:30:28.096551
 ---
 
 # Enable the New RUM Experience for your RUM Classic web applications

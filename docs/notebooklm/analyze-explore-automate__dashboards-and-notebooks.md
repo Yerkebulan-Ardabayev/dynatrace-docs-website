@@ -1,6 +1,6 @@
 # Документация Dynatrace: analyze-explore-automate/dashboards-and-notebooks
 Язык: Русский (RU)
-Сгенерировано: 2026-02-27
+Сгенерировано: 2026-02-28
 Файлов в разделе: 38
 ---
 
@@ -9,7 +9,7 @@
 ---
 title: Add code to a dashboard
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new/components/dashboard-component-code
-scraped: 2026-02-27T21:10:32.095062
+scraped: 2026-02-28T21:08:12.750356
 ---
 
 # Add code to a dashboard
@@ -226,7 +226,7 @@ To see more examples, open the  menu at the top of your dashboard and browse the
 ---
 title: Add data to a dashboard
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new/components/dashboard-component-data
-scraped: 2026-02-27T21:10:30.725772
+scraped: 2026-02-28T21:08:01.656934
 ---
 
 # Add data to a dashboard
@@ -424,7 +424,7 @@ Select **Run query**.
 ---
 title: Add Markdown to dashboard
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new/components/dashboard-component-markdown
-scraped: 2026-02-27T21:10:40.485126
+scraped: 2026-02-28T21:07:58.250517
 ---
 
 # Add Markdown to dashboard
@@ -599,7 +599,7 @@ For details on variables, see [Add a variable to a dashboard](/docs/analyze-expl
 ---
 title: Add a snippet to a dashboard
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new/components/dashboard-component-snippet
-scraped: 2026-02-27T21:10:39.177264
+scraped: 2026-02-28T21:08:03.700032
 ---
 
 # Add a snippet to a dashboard
@@ -708,7 +708,7 @@ When you find something interesting:
 ---
 title: Add a variable to a dashboard
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new/components/dashboard-component-variable
-scraped: 2026-02-27T21:10:33.605320
+scraped: 2026-02-28T21:08:21.806483
 ---
 
 # Add a variable to a dashboard
@@ -1231,7 +1231,7 @@ In this example, we selected `Variable1` to display the variable definition and 
 ---
 title: Dashboards
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new
-scraped: 2026-02-27T21:09:11.297803
+scraped: 2026-02-28T21:06:09.164604
 ---
 
 # Dashboards
@@ -2521,7 +2521,7 @@ To see the full API documentation for the documents service
 ---
 title: Manage document versions
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/document-version
-scraped: 2026-02-27T21:10:26.408176
+scraped: 2026-02-28T21:08:05.371489
 ---
 
 # Manage document versions
@@ -2640,7 +2640,7 @@ The **Actions** column displays all of the actions available from the **History*
 ---
 title: Drilldowns and navigation
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/drilldowns-and-navigation
-scraped: 2026-02-27T21:10:25.048659
+scraped: 2026-02-28T21:08:07.450593
 ---
 
 # Drilldowns and navigation
@@ -3048,7 +3048,7 @@ Try the full example on the [Dynatrace playgroundï»¿](https://wkf10640.apps.d
 ---
 title: Area chart visualization
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-chart-area
-scraped: 2026-02-25T21:23:47.475895
+scraped: 2026-02-28T21:20:26.160453
 ---
 
 # Area chart visualization
@@ -3466,7 +3466,7 @@ To reset to defaults (discard override settings for the selected metric), select
 ---
 title: Band chart visualization
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-chart-band
-scraped: 2026-02-25T21:23:43.220786
+scraped: 2026-02-28T21:20:29.756596
 ---
 
 # Band chart visualization
@@ -3833,7 +3833,7 @@ To reset to defaults (discard override settings for the selected metric), select
 ---
 title: Categorical chart visualization
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-chart-bar-categorical
-scraped: 2026-02-25T21:23:33.541457
+scraped: 2026-02-28T21:20:27.970190
 ---
 
 # Categorical chart visualization
@@ -4158,7 +4158,7 @@ To reset to defaults (discard override settings for the selected metric), select
 ---
 title: Bar chart visualization
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-chart-bar
-scraped: 2026-02-25T21:23:41.751617
+scraped: 2026-02-28T21:20:31.582892
 ---
 
 # Bar chart visualization
@@ -4576,7 +4576,7 @@ To reset to defaults (discard override settings for the selected metric), select
 ---
 title: Donut visualization
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-chart-donut
-scraped: 2026-02-25T21:23:39.209187
+scraped: 2026-02-28T21:20:49.790357
 ---
 
 # Donut visualization
@@ -4862,7 +4862,7 @@ To reset to defaults (discard override settings for the selected metric), select
 ---
 title: Line chart visualization
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-chart-line
-scraped: 2026-02-25T21:23:32.153450
+scraped: 2026-02-28T21:20:51.820964
 ---
 
 # Line chart visualization
@@ -5482,7 +5482,7 @@ To reset to defaults (discard override settings for the selected metric), select
 ---
 title: Pie visualization
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-chart-pie
-scraped: 2026-02-25T21:23:34.970679
+scraped: 2026-02-28T21:20:48.013846
 ---
 
 # Pie visualization
@@ -5839,7 +5839,7 @@ To reset to defaults (discard override settings for the selected metric), select
 ---
 title: Single value visualization
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-chart-single-value
-scraped: 2026-02-25T21:22:49.480706
+scraped: 2026-02-28T21:21:00.357956
 ---
 
 # Single value visualization
@@ -6427,7 +6427,7 @@ To reset to defaults (discard threshold settings), select the trash can  next to
 ---
 title: Gauge chart
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-gauge
-scraped: 2026-02-25T21:22:40.812811
+scraped: 2026-02-28T21:20:40.851248
 ---
 
 # Gauge chart
@@ -6649,7 +6649,7 @@ To reset to defaults (discard override settings for the selected metric), select
 ---
 title: Heatmap visualization
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-heatmap
-scraped: 2026-02-25T21:23:37.666506
+scraped: 2026-02-28T21:20:55.428775
 ---
 
 # Heatmap visualization
@@ -6899,7 +6899,7 @@ To reset to defaults (discard override settings for the selected metric), select
 ---
 title: Histogram visualization
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-histogram
-scraped: 2026-02-25T21:23:46.072976
+scraped: 2026-02-28T21:20:57.231398
 ---
 
 # Histogram visualization
@@ -7327,7 +7327,7 @@ To reset to defaults (discard override settings for the selected metric), select
 ---
 title: Honeycomb visualization
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-honeycomb
-scraped: 2026-02-25T21:23:40.359998
+scraped: 2026-02-28T21:20:53.653330
 ---
 
 # Honeycomb visualization
@@ -7609,7 +7609,7 @@ To reset to defaults (discard override settings for the selected metric), select
 ---
 title: Bubble map visualization
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-map-bubble
-scraped: 2026-02-25T21:22:43.618703
+scraped: 2026-02-28T21:20:39.091075
 ---
 
 # Bubble map visualization
@@ -7952,7 +7952,7 @@ To reset to defaults (discard override settings for the selected metric), select
 ---
 title: Choropleth map visualization
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-map-choropleth
-scraped: 2026-02-25T21:22:45.036661
+scraped: 2026-02-28T21:20:35.244036
 ---
 
 # Choropleth map visualization
@@ -8330,7 +8330,7 @@ To reset to defaults (discard override settings for the selected metric), select
 ---
 title: Connection map visualization
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-map-connection
-scraped: 2026-02-25T21:22:47.945459
+scraped: 2026-02-28T21:20:33.418831
 ---
 
 # Connection map visualization
@@ -8670,7 +8670,7 @@ To reset to defaults (discard override settings for the selected metric), select
 ---
 title: Dot map visualization
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-map-dot
-scraped: 2026-02-25T21:22:46.530248
+scraped: 2026-02-28T21:20:44.528318
 ---
 
 # Dot map visualization
@@ -9169,7 +9169,7 @@ To reset to defaults (discard override settings for the selected metric), select
 ---
 title: Meter bar chart
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-meterbar
-scraped: 2026-02-25T21:22:42.189419
+scraped: 2026-02-28T21:20:58.417254
 ---
 
 # Meter bar chart
@@ -9420,7 +9420,7 @@ To reset to defaults (discard override settings for the selected metric), select
 ---
 title: Raw visualization
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-raw
-scraped: 2026-02-25T21:23:36.279828
+scraped: 2026-02-28T21:20:46.236598
 ---
 
 # Raw visualization
@@ -9583,7 +9583,7 @@ To reset to defaults (discard override settings for the selected metric), select
 ---
 title: Record list
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-record-list
-scraped: 2026-02-25T21:23:44.596561
+scraped: 2026-02-28T21:21:02.129137
 ---
 
 # Record list
@@ -9780,7 +9780,7 @@ To reset to defaults (discard override settings for the selected metric), select
 ---
 title: Scatterplot visualization
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-scatterplot
-scraped: 2026-02-27T21:23:56.928763
+scraped: 2026-02-28T21:20:42.661857
 ---
 
 # Scatterplot visualization
@@ -10072,7 +10072,7 @@ To reset to defaults (discard override settings for the selected metric), select
 ---
 title: Table visualization
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-table
-scraped: 2026-02-25T21:23:01.366609
+scraped: 2026-02-28T21:20:37.079359
 ---
 
 # Table visualization
@@ -10402,7 +10402,7 @@ To reset to defaults (discard threshold settings), select the trash can  next to
 ---
 title: Edit visualizations for Notebooks and Dashboards
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations
-scraped: 2026-02-27T21:10:36.274831
+scraped: 2026-02-28T21:07:59.921824
 ---
 
 # Edit visualizations for Notebooks and Dashboards
@@ -10570,7 +10570,7 @@ For details, see [Scatterplot visualization](/docs/analyze-explore-automate/dash
 ---
 title: Explore data
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/explore-data
-scraped: 2026-02-27T21:10:27.904467
+scraped: 2026-02-28T21:08:11.046222
 ---
 
 # Explore data
@@ -11201,7 +11201,7 @@ That's what makes this a great tool for beginners and experts.
 ---
 title: Notebooks
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks
-scraped: 2026-02-27T21:11:46.885985
+scraped: 2026-02-28T21:07:45.488523
 ---
 
 # Notebooks
@@ -12702,7 +12702,7 @@ Try the full example on the [Dynatrace playgroundï»¿](https://wkf10640.apps.d
 ---
 title: Ready-made dashboards
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/ready-made-documents/ready-made-dashboards
-scraped: 2026-02-27T21:09:18.016328
+scraped: 2026-02-28T21:06:05.081234
 ---
 
 # Ready-made dashboards
@@ -13140,7 +13140,7 @@ Related Dynatrace app: ![Synthetic](https://dt-cdn.net/images/synthetic-new-256-
 ---
 title: Ready-made documents
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/ready-made-documents
-scraped: 2026-02-25T21:24:38.395363
+scraped: 2026-02-28T21:19:54.843060
 ---
 
 # Ready-made documents

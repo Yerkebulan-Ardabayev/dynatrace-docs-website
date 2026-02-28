@@ -1,7 +1,7 @@
 ---
 title: Customize OneAgent installation on Windows
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/windows/installation/customize-oneagent-installation-on-windows
-scraped: 2026-02-26T21:19:22.287830
+scraped: 2026-02-28T21:10:04.389087
 ---
 
 # Customize OneAgent installation on Windows

@@ -1,7 +1,7 @@
 ---
 title: Monaco API support and access permission handling
 source: https://www.dynatrace.com/docs/deliver/configuration-as-code/monaco/monaco-api-support-and-access-handling
-scraped: 2026-02-27T21:18:15.556915
+scraped: 2026-02-28T21:32:39.958983
 ---
 
 # Monaco API support and access permission handling

@@ -1,7 +1,7 @@
 ---
 title: Include data in segments
 source: https://www.dynatrace.com/docs/manage/segments/concepts/segments-concepts-includes
-scraped: 2026-02-25T21:22:59.954917
+scraped: 2026-02-28T21:20:03.158613
 ---
 
 # Include data in segments

@@ -1,7 +1,7 @@
 ---
 title: Pie visualization
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-chart-pie
-scraped: 2026-02-25T21:23:34.970679
+scraped: 2026-02-28T21:20:48.013846
 ---
 
 # Pie visualization

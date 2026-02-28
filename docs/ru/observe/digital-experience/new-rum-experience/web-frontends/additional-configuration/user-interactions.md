@@ -1,7 +1,7 @@
 ---
 title: Configure user interaction capturing for web frontends
 source: https://www.dynatrace.com/docs/observe/digital-experience/new-rum-experience/web-frontends/additional-configuration/user-interactions
-scraped: 2026-02-26T21:25:27.476519
+scraped: 2026-02-28T21:29:57.464130
 ---
 
 # Configure user interaction capturing for web frontends
@@ -10,7 +10,7 @@ scraped: 2026-02-26T21:25:27.476519
 
 * Latest Dynatrace
 * How-to guide
-* Updated on Feb 12, 2026
+* Updated on Feb 26, 2026
 
 Early Access
 
@@ -193,3 +193,7 @@ Learn More
 
 </nav>
 ```
+
+## Customization
+
+For additional context, you can add attributes to your HTML that associate the captured user interactions with features and UI components; see [Associate user interactions with features and UI components](/docs/observe/digital-experience/new-rum-experience/web-frontends/additional-configuration/user-interactions/features-and-components "Learn how to associate user interactions for web frontends with features and UI components."). This customization facilitates powerful queries and deeper analysis of how users engage with your application's UI and functionality.

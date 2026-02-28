@@ -1,7 +1,7 @@
 ---
 title: Execute synthetic monitors from private locations
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-activegate/capabilities/synthetic-purpose
-scraped: 2026-02-25T21:19:38.915003
+scraped: 2026-02-28T21:18:58.376890
 ---
 
 # Execute synthetic monitors from private locations

@@ -1,7 +1,7 @@
 ---
 title: Manage document versions
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/document-version
-scraped: 2026-02-27T21:10:26.408176
+scraped: 2026-02-28T21:08:05.371489
 ---
 
 # Manage document versions

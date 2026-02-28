@@ -1,7 +1,7 @@
 ---
 title: ServiceNow
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/service-now
-scraped: 2026-02-25T21:23:55.107519
+scraped: 2026-02-28T21:18:11.539147
 ---
 
 # ServiceNow

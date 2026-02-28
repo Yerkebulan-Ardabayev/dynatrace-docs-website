@@ -1,7 +1,7 @@
 ---
 title: New RUM APIs for mobile frontends
 source: https://www.dynatrace.com/docs/observe/digital-experience/new-rum-experience/mobile-frontends/new-rum-apis
-scraped: 2026-02-27T21:18:41.207890
+scraped: 2026-02-28T21:27:17.805195
 ---
 
 # New RUM APIs for mobile frontends

@@ -1,7 +1,7 @@
 ---
 title: Ingest JSON and TXT logs
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-api/lma-ingest-json-txt-logs
-scraped: 2026-02-27T21:19:22.516559
+scraped: 2026-02-28T21:23:43.047490
 ---
 
 # Ingest JSON and TXT logs

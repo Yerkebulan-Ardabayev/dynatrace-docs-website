@@ -1,7 +1,7 @@
 ---
 title: License Dynatrace
 source: https://www.dynatrace.com/docs/license
-scraped: 2026-02-27T21:10:11.083393
+scraped: 2026-02-28T21:09:16.742994
 ---
 
 # License Dynatrace

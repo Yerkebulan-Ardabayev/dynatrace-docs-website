@@ -1,7 +1,7 @@
 ---
 title: Install OneAgent on AIX
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/aix/installation/install-oneagent-on-aix
-scraped: 2026-02-26T21:19:44.379044
+scraped: 2026-02-28T21:11:13.100635
 ---
 
 # Install OneAgent on AIX
@@ -63,7 +63,7 @@ Depending on your firewall policy, you may need to explicitly allow certain outg
    * Set a [network zone](/docs/manage/network-zones#deploy-network-zones "Find out how network zones work in Dynatrace.") for this host.
    * If your environment is segmented (for example, into development and production), consider [organizing your hosts into host groups](/docs/observe/infrastructure-observability/hosts/configuration/organize-your-environment-using-host-groups "Find out how Dynatrace enables you to organize your hosts, processes, and services using host groups.").
    * You can override the automatically detected [host name](/docs/observe/infrastructure-observability/hosts/configuration/set-custom-host-names-in-dynamic-environments "Learn how to change a monitored host name."). This is useful in large and dynamic environments, where defined host names can be unintuitive or can change frequently.
-   * You can also apply [tags](/docs/manage/tags-and-metadata "Learn how to define tags and metadata. Understand how to use tags and metadata to organize your environment.") to the host to organize your monitored environments in a meaningful way.
+   * You can also apply [tags](/docs/manage/tags-and-metadata "Use tags and metadata to organize data in your Dynatrace environment.") to the host to organize your monitored environments in a meaningful way.
    * Define [Properties](/docs/observe/infrastructure-observability/hosts/configuration/define-tags-and-metadata-for-hosts#host-metadata "Learn how to tag and set additional properties for a monitored host.") to the host to automatically add metadata.
    * Change the OneAgent mode to Infrastructure Monitoring or Discovery in place of Full-Stack Monitoring. For more information, see [OneAgent monitoring modes](/docs/platform/oneagent/monitoring-modes/monitoring-modes "Find out more about the available monitoring modes when using OneAgent.").
 

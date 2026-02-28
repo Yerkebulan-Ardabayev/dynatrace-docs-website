@@ -1,7 +1,7 @@
 ---
 title: Migrate from cloud-native full-stack to application monitoring mode
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/guides/migration/cloud-native-to-app-monitoring
-scraped: 2026-02-27T21:18:07.625348
+scraped: 2026-02-28T21:25:54.314736
 ---
 
 # Migrate from cloud-native full-stack to application monitoring mode

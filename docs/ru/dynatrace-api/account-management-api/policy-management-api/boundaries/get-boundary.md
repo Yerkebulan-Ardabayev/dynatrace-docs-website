@@ -1,7 +1,7 @@
 ---
 title: Policy management API - GET a policy boundary
 source: https://www.dynatrace.com/docs/dynatrace-api/account-management-api/policy-management-api/boundaries/get-boundary
-scraped: 2026-02-27T21:29:58.742012
+scraped: 2026-02-28T21:34:31.481677
 ---
 
 # Policy management API - GET a policy boundary

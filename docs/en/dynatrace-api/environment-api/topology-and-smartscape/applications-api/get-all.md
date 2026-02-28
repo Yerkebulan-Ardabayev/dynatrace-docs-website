@@ -1,7 +1,7 @@
 ---
 title: Applications API - GET all apps
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/topology-and-smartscape/applications-api/get-all
-scraped: 2026-02-25T21:21:59.002753
+scraped: 2026-02-28T21:17:44.835905
 ---
 
 # Applications API - GET all apps

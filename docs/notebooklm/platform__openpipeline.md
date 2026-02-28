@@ -1,6 +1,6 @@
 # Документация Dynatrace: platform/openpipeline
 Язык: Русский (RU)
-Сгенерировано: 2026-02-27
+Сгенерировано: 2026-02-28
 Файлов в разделе: 19
 ---
 
@@ -107,7 +107,7 @@ Administrators can:
 ---
 title: Data flow in OpenPipeline
 source: https://www.dynatrace.com/docs/platform/openpipeline/concepts/data-flow
-scraped: 2026-02-27T21:14:18.075572
+scraped: 2026-02-28T21:12:50.140215
 ---
 
 # Data flow in OpenPipeline
@@ -256,7 +256,7 @@ Storage and retention for system events is not configurable.
 ---
 title: Processing in OpenPipeline
 source: https://www.dynatrace.com/docs/platform/openpipeline/concepts/processing
-scraped: 2026-02-27T21:14:11.734321
+scraped: 2026-02-28T21:12:37.661850
 ---
 
 # Processing in OpenPipeline
@@ -383,7 +383,7 @@ The following table lists alphabetically all available processors in a pipeline.
 ---
 title: How to ingest data (events)
 source: https://www.dynatrace.com/docs/platform/openpipeline/getting-started/how-to-ingestion
-scraped: 2026-02-27T21:14:04.791253
+scraped: 2026-02-28T21:12:39.380203
 ---
 
 # How to ingest data (events)
@@ -529,7 +529,7 @@ For an overview of the available endpoints, refer to [Ingest sources in OpenPipe
 ---
 title: Route data
 source: https://www.dynatrace.com/docs/platform/openpipeline/getting-started/how-to-routing
-scraped: 2026-02-25T21:24:35.728845
+scraped: 2026-02-28T21:20:12.907838
 ---
 
 # Route data
@@ -631,7 +631,7 @@ To change how logs are processed, you can modify the matching condition to exclu
 ---
 title: Set access control in OpenPipeline
 source: https://www.dynatrace.com/docs/platform/openpipeline/getting-started/set-access-control
-scraped: 2026-02-27T21:25:35.836676
+scraped: 2026-02-28T21:29:53.915472
 ---
 
 # Set access control in OpenPipeline
@@ -780,7 +780,7 @@ Once administrators set permissions and owners set access, users can manage and 
 ---
 title: Configure a processing pipeline
 source: https://www.dynatrace.com/docs/platform/openpipeline/getting-started/tutorial-configure-processing
-scraped: 2026-02-27T21:14:00.901169
+scraped: 2026-02-28T21:12:41.107310
 ---
 
 # Configure a processing pipeline
@@ -902,7 +902,7 @@ You have configured ingest sources, routing, and processing for records of a con
 ---
 title: Ingest sources in OpenPipeline
 source: https://www.dynatrace.com/docs/platform/openpipeline/reference/api-ingestion-reference
-scraped: 2026-02-27T21:14:07.651186
+scraped: 2026-02-28T21:12:46.749842
 ---
 
 # Ingest sources in OpenPipeline
@@ -1344,7 +1344,7 @@ User events & sessions
 ---
 title: DQL matcher in OpenPipeline
 source: https://www.dynatrace.com/docs/platform/openpipeline/reference/dql-matcher-in-openpipeline
-scraped: 2026-02-25T21:24:34.405015
+scraped: 2026-02-28T21:20:11.243915
 ---
 
 # DQL matcher in OpenPipeline
@@ -1565,7 +1565,7 @@ Contrary to `matchesValue` function, `strict equality` operator performs case-se
 ---
 title: OpenPipeline limits
 source: https://www.dynatrace.com/docs/platform/openpipeline/reference/limits
-scraped: 2026-02-27T21:14:03.489254
+scraped: 2026-02-28T21:12:53.533684
 ---
 
 # OpenPipeline limits
@@ -1757,7 +1757,7 @@ Endpoint path doesn't support:
 ---
 title: OpenPipeline API
 source: https://www.dynatrace.com/docs/platform/openpipeline/reference/openpipeline-api
-scraped: 2026-02-27T21:14:02.170914
+scraped: 2026-02-28T21:12:55.198363
 ---
 
 # OpenPipeline API
@@ -1804,7 +1804,7 @@ Replaced by Settings API
 ---
 title: Configure multi-cloud ingest governance with pipeline groups
 source: https://www.dynatrace.com/docs/platform/openpipeline/use-cases/pipeline-groups-multicloud
-scraped: 2026-02-27T21:14:16.730452
+scraped: 2026-02-28T21:12:34.178319
 ---
 
 # Configure multi-cloud ingest governance with pipeline groups
@@ -4370,7 +4370,7 @@ Once the request is successfull, the `memberPipelines` field of the pipeline gro
 ---
 title: OpenPipeline processing examples
 source: https://www.dynatrace.com/docs/platform/openpipeline/use-cases/processing-examples
-scraped: 2026-02-27T21:14:14.671856
+scraped: 2026-02-28T21:12:43.106771
 ---
 
 # OpenPipeline processing examples
@@ -5407,7 +5407,7 @@ Conclusion
 ---
 title: Reduce span-based and metric-based cardinality
 source: https://www.dynatrace.com/docs/platform/openpipeline/use-cases/reduce-span-metric-cardinality
-scraped: 2026-02-27T21:11:52.349890
+scraped: 2026-02-28T21:08:30.249537
 ---
 
 # Reduce span-based and metric-based cardinality
@@ -5893,7 +5893,7 @@ After applying these rules, queues with high cardinality will either have `messa
 ---
 title: Extract metrics from spans and distributed traces
 source: https://www.dynatrace.com/docs/platform/openpipeline/use-cases/tutorial-extract-metrics-from-spans
-scraped: 2026-02-27T21:14:10.436539
+scraped: 2026-02-28T21:12:57.073214
 ---
 
 # Extract metrics from spans and distributed traces
@@ -6221,7 +6221,7 @@ You successfully created a new processor to extract a metric containing the resp
 ---
 title: Parse log lines and extract a metric
 source: https://www.dynatrace.com/docs/platform/openpipeline/use-cases/tutorial-log-processing-pipeline
-scraped: 2026-02-27T21:13:58.139051
+scraped: 2026-02-28T21:12:44.876255
 ---
 
 # Parse log lines and extract a metric
@@ -6528,7 +6528,7 @@ You have successfully created a pipeline to parse log data and extract a metric.
 ---
 title: Extract a metric to track system events
 source: https://www.dynatrace.com/docs/platform/openpipeline/use-cases/tutorial-system-events
-scraped: 2026-02-27T21:14:08.983485
+scraped: 2026-02-28T21:12:35.858162
 ---
 
 # Extract a metric to track system events
@@ -6649,7 +6649,7 @@ You successfully extracted a metric to track app update frequency. All new app l
 ---
 title: Process logs with technology bundle parsers
 source: https://www.dynatrace.com/docs/platform/openpipeline/use-cases/tutorial-technology-processor
-scraped: 2026-02-27T21:14:06.191068
+scraped: 2026-02-28T21:12:48.460052
 ---
 
 # Process logs with technology bundle parsers
@@ -6904,7 +6904,7 @@ You successfully structured syslog logs according to pre-defined processing rule
 ---
 title: OpenPipeline
 source: https://www.dynatrace.com/docs/platform/openpipeline
-scraped: 2026-02-27T21:09:36.320406
+scraped: 2026-02-28T21:06:43.436022
 ---
 
 # OpenPipeline

@@ -1,7 +1,7 @@
 ---
 title: Network zones
 source: https://www.dynatrace.com/docs/manage/network-zones
-scraped: 2026-02-27T21:23:14.509883
+scraped: 2026-02-28T21:31:33.974739
 ---
 
 # Network zones

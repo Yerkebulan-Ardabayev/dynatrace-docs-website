@@ -1,7 +1,7 @@
 ---
 title: Explore supported Extensions
 source: https://www.dynatrace.com/docs/ingest-from/extensions/supported-extensions
-scraped: 2026-02-27T21:29:08.738668
+scraped: 2026-02-28T21:19:46.900091
 ---
 
 # Explore supported Extensions

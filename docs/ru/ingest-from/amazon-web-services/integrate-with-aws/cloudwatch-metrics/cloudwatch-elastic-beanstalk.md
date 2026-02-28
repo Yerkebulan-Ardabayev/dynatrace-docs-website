@@ -1,7 +1,7 @@
 ---
 title: Monitor AWS Elastic Beanstalk with CloudWatch metrics
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics/cloudwatch-elastic-beanstalk
-scraped: 2026-02-27T21:19:57.253267
+scraped: 2026-02-28T21:32:27.847985
 ---
 
 # Monitor AWS Elastic Beanstalk with CloudWatch metrics

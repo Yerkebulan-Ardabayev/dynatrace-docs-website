@@ -1,7 +1,7 @@
 ---
 title: Deployment API - View process module configuration for OneAgent
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/deployment/oneagent/get-processmodule-config
-scraped: 2026-02-27T21:31:22.906745
+scraped: 2026-02-28T21:34:00.718379
 ---
 
 # Deployment API - View process module configuration for OneAgent

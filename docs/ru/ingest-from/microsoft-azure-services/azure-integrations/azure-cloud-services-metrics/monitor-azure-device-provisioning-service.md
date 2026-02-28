@@ -1,7 +1,7 @@
 ---
 title: Azure Device Provisioning Service monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-device-provisioning-service
-scraped: 2026-02-25T21:25:14.580493
+scraped: 2026-02-28T21:23:30.810076
 ---
 
 # Azure Device Provisioning Service monitoring

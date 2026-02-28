@@ -1,7 +1,7 @@
 ---
 title: Install OneAgent on a server
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation
-scraped: 2026-02-27T21:09:13.997038
+scraped: 2026-02-28T21:05:58.749329
 ---
 
 # Install OneAgent on a server

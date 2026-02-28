@@ -1,7 +1,7 @@
 ---
 title: Service user management API
 source: https://www.dynatrace.com/docs/dynatrace-api/account-management-api/service-user-management-api
-scraped: 2026-02-27T21:20:06.043851
+scraped: 2026-02-28T21:28:45.248281
 ---
 
 # Service user management API

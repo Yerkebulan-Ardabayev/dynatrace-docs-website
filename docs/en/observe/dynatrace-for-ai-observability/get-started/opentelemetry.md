@@ -1,7 +1,7 @@
 ---
 title: Get started with OpenTelemetry and AI Observability
 source: https://www.dynatrace.com/docs/observe/dynatrace-for-ai-observability/get-started/opentelemetry
-scraped: 2026-02-25T21:29:55.715034
+scraped: 2026-02-28T21:33:14.049265
 ---
 
 # Get started with OpenTelemetry and AI Observability
@@ -11,7 +11,7 @@ scraped: 2026-02-25T21:29:55.715034
 * Latest Dynatrace
 * Getting started guide
 * 5-min read
-* Published Feb 25, 2026
+* Updated on Feb 25, 2026
 
 OpenTelemetry provides a vendor-neutral standard for collecting traces and metrics from AI applications. With the [GenAI semantic conventionsï»¿](https://opentelemetry.io/docs/specs/semconv/gen-ai/), OpenTelemetry defines a consistent way to capture AI-specific attributes such as model names, token counts, latency, and cost metrics across different LLM providers.
 
@@ -76,7 +76,16 @@ Node.js
    ```
    pip install opentelemetry-sdk opentelemetry-exporter-otlp-proto-http
    ```
-2. Initialize the OpenTelemetry SDK.
+2. Optional You can also run the OpenTelemetry auto-instrumentation.
+
+   ```
+   pip install opentelemetry-distro opentelemetry-exporter-otlp
+
+
+
+   opentelemetry-bootstrap -a install
+   ```
+3. Initialize the OpenTelemetry SDK.
    Add the following code at the beginning of your main file.
 
    ```

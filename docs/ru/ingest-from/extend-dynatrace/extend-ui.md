@@ -1,7 +1,7 @@
 ---
 title: Extend Dynatrace with domain-specific web UI
 source: https://www.dynatrace.com/docs/ingest-from/extend-dynatrace/extend-ui
-scraped: 2026-02-27T21:13:42.637122
+scraped: 2026-02-28T21:14:35.594914
 ---
 
 # Extend Dynatrace with domain-specific web UI

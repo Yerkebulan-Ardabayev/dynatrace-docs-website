@@ -1,7 +1,7 @@
 ---
 title: Enrich threat observables with VirusTotal
 source: https://www.dynatrace.com/docs/secure/threat-observability/security-events-ingest/virustotal-enrich
-scraped: 2026-02-27T21:20:37.710813
+scraped: 2026-02-28T21:19:10.400853
 ---
 
 # Enrich threat observables with VirusTotal

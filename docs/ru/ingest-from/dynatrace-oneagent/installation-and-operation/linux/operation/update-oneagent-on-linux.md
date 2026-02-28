@@ -1,7 +1,7 @@
 ---
 title: Update OneAgent on Linux
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/operation/update-oneagent-on-linux
-scraped: 2026-02-26T21:19:07.294722
+scraped: 2026-02-28T21:10:30.964552
 ---
 
 # Update OneAgent on Linux

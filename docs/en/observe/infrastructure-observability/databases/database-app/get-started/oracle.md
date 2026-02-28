@@ -1,7 +1,7 @@
 ---
 title: Monitor Oracle database
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/databases/database-app/get-started/oracle
-scraped: 2026-02-27T21:31:44.161034
+scraped: 2026-02-28T21:23:51.762266
 ---
 
 # Monitor Oracle database
