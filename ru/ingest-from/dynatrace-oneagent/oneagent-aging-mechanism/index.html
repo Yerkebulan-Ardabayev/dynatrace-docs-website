@@ -25479,7 +25479,7 @@
 <ul>
 <li>Latest Dynatrace</li>
 <li>6-min read</li>
-<li>Updated on Feb 19, 2026</li>
+<li>Updated on Feb 25, 2026</li>
 </ul>
 <p>OneAgent in the installer-based deployment uses a built-in aging mechanism that makes sure the OneAgent files are kept within a reasonable size.</p>
 <p>Aging mechanism is not used in the application-only mode.</p>
@@ -25578,6 +25578,7 @@
 <ul>
 <li>If the <code>0x*</code> directory contains a dump subdirectory and all the files in it are older than 3 days, then the dump subdirectory is removed.</li>
 <li>If all the files and directories in the <code>0x*</code> directory are older than 7 days, the whole directory is removed.</li>
+<li>If the size of all files in the runtime directory exceeds 1GB, the <code>0x*</code> directories are removed, starting with the oldest, until the runtime directory size is below 1GB.</li>
 <li>This directory is also fully cleaned up during OneAgent update.</li>
 </ul>
 <h3 id="installation-bin-directory">Installation bin directory<a class="headerlink" href="#installation-bin-directory" title="Permanent link">&para;</a></h3>

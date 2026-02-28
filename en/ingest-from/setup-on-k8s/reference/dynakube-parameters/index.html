@@ -25479,7 +25479,7 @@
 <ul>
 <li>Latest Dynatrace</li>
 <li>57-min read</li>
-<li>Updated on Feb 12, 2026</li>
+<li>Updated on Feb 24, 2026</li>
 </ul>
 <p>This page will help you to understand and configure the DynaKube <a href="https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources/">Kubernetes Custom Resourceï»¿</a>, enabling you to optimize your Dynatrace Operator setup according to your specific requirements.</p>
 <p>The table below specifies the required Dynatrace Operator versions corresponding to each DynaKube API version.</p>
@@ -25526,7 +25526,7 @@
 </table>
 <p>1</p>
 <p>The corresponding DynaKube API versions will be removed from the Dynatrace Operator in the subsequent minor or major release.</p>
-<p>See the DynaKube YAML samples on <a href="https://github.com/Dynatrace/dynatrace-operator/tree/v1.5.0/assets/samples/dynakube">GitHubï»¿</a>.</p>
+<p>See the DynaKube YAML samples on <a href="https://github.com/Dynatrace/dynatrace-operator/tree/v1.8.1/assets/samples/dynakube">GitHubï»¿</a>.</p>
 <p>v1beta6</p>
 <p>v1beta5</p>
 <p>v1beta4</p>
@@ -26489,10 +26489,8 @@
 </table>
 <h2 id="speclogmonitoring"><code>.spec.logMonitoring</code><a class="headerlink" href="#speclogmonitoring" title="Permanent link">&para;</a></h2>
 <p>Available with Dynatrace version 1.306 and OneAgent 1.305</p>
-<p>To use Log Monitoring:</p>
+<p>Log Monitoring requires the <code>kubernetes-monitoring</code> <a href="#active-gate">ActiveGate capability</a> to be enabled, but it doesn't have to be configured in the same DynaKube. If <code>kubernetes-monitoring</code> is missing or the feature flag <code>feature.dynatrace.com/automatic-kubernetes-api-monitoring</code> is set to <code>false</code>, the Operator produces a warning but Log Monitoring still deploys.</p>
 <ul>
-<li><code>kubernetes-monitoring</code> is mandatory and has to be added to the <a href="#active-gate">list of ActiveGate capabilities</a> in <code>.spec.activeGate.capabilities</code></li>
-<li>The feature flag <code>feature.dynatrace.com/automatic-kubernetes-api-monitoring</code> must not be set to <code>false</code>.</li>
 <li>All parameters in <code>.spec.logMonitoring</code> are Optional.</li>
 </ul>
 <table>
@@ -27777,10 +27775,8 @@
 </table>
 <h2 id="speclogmonitoring_1"><code>.spec.logMonitoring</code><a class="headerlink" href="#speclogmonitoring_1" title="Permanent link">&para;</a></h2>
 <p>Available with Dynatrace version 1.306 and OneAgent 1.305</p>
-<p>To use Log Monitoring</p>
+<p>Log Monitoring requires the <code>kubernetes-monitoring</code> <a href="#active-gate">ActiveGate capability</a> to be enabled, but it doesn't have to be configured in the same DynaKube. If <code>kubernetes-monitoring</code> is missing or the feature flag <code>feature.dynatrace.com/automatic-kubernetes-api-monitoring</code> is set to <code>false</code>, the Operator produces a warning but Log Monitoring still deploys.</p>
 <ul>
-<li><code>kubernetes-monitoring</code> is mandatory and has to be added to the <a href="#active-gate">list of ActiveGate capabilities</a> in <code>.spec.activeGate.capabilities</code></li>
-<li>The feature flag <code>feature.dynatrace.com/automatic-kubernetes-api-monitoring</code> must not be set to <code>false</code>.</li>
 <li>All parameters in <code>.spec.logMonitoring</code> are Optional.</li>
 </ul>
 <table>
@@ -28482,7 +28478,7 @@
 </tr>
 <tr>
 <td><code>oneAgentResources</code></td>
-<td>Resource settings for OneAgent container. Consumption of the OneAgent heavily depends on the workload to monitor. You can use the default settings in the <a href="https://github.com/Dynatrace/dynatrace-operator/tree/v1.5.0/assets/samples/dynakube">CRï»¿</a>. <code>resource.requests</code> shows the values needed to run; <code>resource.limits</code> shows the maximum limits for the Pod.</td>
+<td>Resource settings for OneAgent container. Consumption of the OneAgent heavily depends on the workload to monitor. You can use the default settings in the <a href="https://github.com/Dynatrace/dynatrace-operator/tree/v1.8.1/assets/samples/dynakube">CRï»¿</a>. <code>resource.requests</code> shows the values needed to run; <code>resource.limits</code> shows the maximum limits for the Pod.</td>
 <td>Not applicable</td>
 <td>ResourceRequirements</td>
 </tr>
@@ -28929,10 +28925,8 @@
 </ul>
 <h2 id="speclogmonitoring_2"><code>.spec.logMonitoring</code><a class="headerlink" href="#speclogmonitoring_2" title="Permanent link">&para;</a></h2>
 <p>Available with Dynatrace version 1.306 and OneAgent 1.305</p>
-<p>To use Log Monitoring</p>
+<p>Log Monitoring requires the <code>kubernetes-monitoring</code> <a href="#active-gate">ActiveGate capability</a> to be enabled, but it doesn't have to be configured in the same DynaKube. If <code>kubernetes-monitoring</code> is missing or the feature flag <code>feature.dynatrace.com/automatic-kubernetes-api-monitoring</code> is set to <code>false</code>, the Operator produces a warning but Log Monitoring still deploys.</p>
 <ul>
-<li><code>kubernetes-monitoring</code> is mandatory and has to be added to the <a href="#active-gate">list of ActiveGate capabilities</a> in <code>.spec.activeGate.capabilities</code></li>
-<li>The feature flag <code>feature.dynatrace.com/automatic-kubernetes-api-monitoring</code> must not be set to <code>false</code>.</li>
 <li>All parameters in <code>.spec.logMonitoring</code> are Optional.</li>
 </ul>
 <table>
@@ -30045,10 +30039,8 @@
 </ul>
 <h2 id="speclogmonitoring_3"><code>.spec.logMonitoring</code><a class="headerlink" href="#speclogmonitoring_3" title="Permanent link">&para;</a></h2>
 <p>Available with Dynatrace version 1.306 and OneAgent 1.305</p>
-<p>To use Log Monitoring</p>
+<p>Log Monitoring requires the <code>kubernetes-monitoring</code> <a href="#active-gate">ActiveGate capability</a> to be enabled, but it doesn't have to be configured in the same DynaKube. If <code>kubernetes-monitoring</code> is missing or the feature flag <code>feature.dynatrace.com/automatic-kubernetes-api-monitoring</code> is set to <code>false</code>, the Operator produces a warning but Log Monitoring still deploys.</p>
 <ul>
-<li><code>kubernetes-monitoring</code> is mandatory and has to be added to the <a href="#active-gate">list of ActiveGate capabilities</a> in <code>.spec.activeGate.capabilities</code></li>
-<li>The feature flag <code>feature.dynatrace.com/automatic-kubernetes-api-monitoring</code> must not be set to <code>false</code>.</li>
 <li>All parameters in <code>.spec.logMonitoring</code> are Optional.</li>
 </ul>
 <table>

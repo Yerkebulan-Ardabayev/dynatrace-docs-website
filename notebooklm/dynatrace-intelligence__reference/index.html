@@ -25495,44 +25495,44 @@
 
 <h1 id="dynatrace-dynatrace-intelligencereference">Документация Dynatrace: dynatrace-intelligence/reference<a class="headerlink" href="#dynatrace-dynatrace-intelligencereference" title="Permanent link">&para;</a></h1>
 <p>Язык: Русский (RU)
-Сгенерировано: 2026-02-27
+Сгенерировано: 2026-02-28
 Файлов в разделе: 4</p>
 <hr />
 <h2 id="dynatrace-intelligencereferenceai-modelsforecast-analysismd">dynatrace-intelligence/reference/ai-models/forecast-analysis.md<a class="headerlink" href="#dynatrace-intelligencereferenceai-modelsforecast-analysismd" title="Permanent link">&para;</a></h2>
 <hr />
-<p>title: Dynatrace Интеллект прогностический анализ ИИ
+<p>title: Dynatrace Intelligence прогностический анализ ИИ
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/reference/ai-models/forecast-analysis
-scraped: 2026-02-27T21:10:37.882093</p>
+scraped: 2026-02-28T21:08:14.752369</p>
 <hr />
-<h1 id="dynatrace">Dynatrace Интеллект прогностический анализ ИИ<a class="headerlink" href="#dynatrace" title="Permanent link">&para;</a></h1>
-<h1 id="dynatrace_1">Dynatrace Интеллект прогностический анализ ИИ<a class="headerlink" href="#dynatrace_1" title="Permanent link">&para;</a></h1>
+<h1 id="dynatrace-intelligence">Dynatrace Intelligence прогностический анализ ИИ<a class="headerlink" href="#dynatrace-intelligence" title="Permanent link">&para;</a></h1>
+<h1 id="dynatrace-intelligence_1">Dynatrace Intelligence прогностический анализ ИИ<a class="headerlink" href="#dynatrace-intelligence_1" title="Permanent link">&para;</a></h1>
 <ul>
 <li>Последнее Dynatrace</li>
 <li>Объяснение</li>
 <li>14-минутное чтение</li>
 <li>Обновлено 28 января 2026 г.</li>
 </ul>
-<p>Прогностический анализ предсказывает будущие значения любого временного ряда числовых значений. Анализатор прогноза не ограничивается хранимыми данными метрик — вы можете использовать свои собственные данные, использовать запрос метрики или выполнить запрос данных, который приводит к временному ряду числовых значений.</p>
+<p>Прогностический анализ предсказывает будущие значения любого временного ряда числовых значений. Прогностический анализатор не ограничивается хранимыми метрическими данными - вы можете использовать свои собственные данные, использовать запрос метрики или выполнить запрос данных, который приводит к временному ряду числовых значений.</p>
 <p>Анализ не зависит от распределения входных данных. Прогноз рассчитывается без каких-либо предположений о конкретном распределении данных и работает как для симметричных, так и для несимметричных распределений.</p>
-<p>Вы можете запустить прогностический анализ из своей <a href="/docs/dynatrace-intelligence/dynatrace-intelligence-integrations/davis-for-notebooks" title="Запустить анализ ИИ в Dynatrace Тетради.">тетради</a>.</p>
+<p>Вы можете запустить прогностический анализ из своей <a href="/docs/dynatrace-intelligence/dynatrace-intelligence-integrations/davis-for-notebooks" title="Выполните анализ ИИ в Dynatrace Notebooks.">тетради</a>.</p>
 <h2 id="_1">Входные данные анализатора<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <h2 id="_2">Методология анализа<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<p>Когда вы запускаете прогностический анализ, временной ряд отправляется в соответствующий прогностик, который производит прогноз. Затем оценивается <a href="#качество">качество прогноза</a>, и прогноз и оценка возвращаются в качестве результатов анализа.</p>
+<p>Когда вы запускаете прогностический анализ, временной ряд отправляется в подходящий прогностический анализатор, который производит прогноз. Затем оценивается <a href="#качество">качество прогноза</a>, и прогноз и оценка возвращаются в качестве результатов анализа.</p>
 <p><img alt="Методология анализа" src="https://dt-cdn.net/images/analyser-methodology-1132-7fef138e18.png" /></p>
 <h3 id="_3">Выбор алгоритма<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
-<p>Анализ использует один из двух прогностиков:</p>
+<p>Анализ использует один из двух прогностических анализаторов:</p>
 <ul>
-<li><a href="#выборка">Прогностик выборки</a></li>
-<li><a href="#линейная-экстраполяция">Прогностик линейной экстраполяции</a></li>
+<li><a href="#выборка">Прогностический анализатор выборки</a></li>
+<li><a href="#линейная-экстраполяция">Линейный экстраполяционный прогностический анализатор</a></li>
 </ul>
-<p>Прогностик выборки используется, если дисперсия <strong>линейной истории временного ряда</strong> больше максимального значения пары <code>0,1</code> и <code>0,001 × дисперсия входного временного ряда</code>. Линейная история временного ряда — это X самых недавних точек данных, где X находится в диапазоне от <code>14</code> до <code>20</code>.</p>
-<p>В любом другом случае (включая случай, когда обучение прогностика выборки не удалось) используется прогностик линейной экстраполяции.</p>
-<h2 id="_4">Прогностик выборки<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
-<p>Прогностик выборки обеспечивает многоступенчатые прогнозы на основе сезонных закономерностей. Его архитектура показана на изображении ниже.</p>
-<p><img alt="Общий алгоритм прогностика" src="https://dt-cdn.net/images/generic-forecaster-analyser-940-f6f15f47fc.png" /></p>
-<p>Сначала к входному временному ряду применяется преобразователь пути, а затем прогностик обучается на нем. Если полученная модель недействительна, вместо нее используется прогностик линейной экстраполяции. Если модель действительна, пути выборки создаются сезонным прогностиком. Эти пути затем обратно преобразуются перед применением квантилей на каждом шаге времени.</p>
+<p>Прогностический анализатор выборки используется, если дисперсия <strong>линейной истории временного ряда</strong> больше максимального значения пары <code>0,1</code> и <code>0,001 × дисперсия входного временного ряда</code>. Линейная история временного ряда - это X наиболее недавних точек данных, где X находится в диапазоне от <code>14</code> до <code>20</code>.</p>
+<p>В любом другом случае (включая случай, когда обучение прогностического анализатора выборки не удалось) используется линейный экстраполяционный прогностический анализатор.</p>
+<h2 id="_4">Прогностический анализатор выборки<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p>Прогностический анализатор выборки обеспечивает многоступенчатые прогнозы на основе сезонных закономерностей. Его архитектура показана на изображении ниже.</p>
+<p><img alt="Общий алгоритм прогностического анализатора" src="https://dt-cdn.net/images/generic-forecaster-analyser-940-f6f15f47fc.png" /></p>
+<p>Сначала к входному временному ряду применяется преобразователь пути, а затем прогностический анализатор обучается на нем. Если в результате полученная модель недействительна, вместо нее используется линейный экстраполяционный прогностический анализатор. Если модель действительна, пути выборки создаются сезонным прогностическим анализатором. Эти пути затем обратно преобразуются до применения квантилей на каждом временном шаге.</p>
 <h3 id="_5">Сезонные закономерности<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
-<p>Прогностик всегда ищет различные сезонные закономерности во входном временном ряду. Входной временной ряд должен содержать достаточно данных, чтобы обнаружить сезонность надежно.</p>
+<p>Прогностический анализатор всегда ищет различные сезонные закономерности во входном временном ряде. Входной временной ряд должен содержать достаточно данных, чтобы надежно обнаружить сезонность.</p>
 <table>
 <thead>
 <tr>
@@ -25558,7 +25558,7 @@ scraped: 2026-02-27T21:10:37.882093</p>
 <td>7+ дней</td>
 </tr>
 <tr>
-<td>Время дня</td>
+<td>Время суток</td>
 <td>2+ дня</td>
 </tr>
 <tr>
@@ -25567,55 +25567,55 @@ scraped: 2026-02-27T21:10:37.882093</p>
 </tr>
 </tbody>
 </table>
-<p>Помимо этих естественных закономерностей, прогностик ищет любые повторяющиеся закономерности во временном ряду, разбивая их на основе определенного временного окна.</p>
+<p>Помимо этих естественных закономерностей, прогностический анализатор ищет любые повторяющиеся закономерности во временном ряде, разбивая их на основе определенного временного окна.</p>
 <h3 id="_6">Прогноз шаг за шагом<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
 <ol>
-<li>Сезонный прогностик оценивает квартили распределения временного ряда на моменте следующей точки данных.</li>
+<li>Сезонный прогностический анализатор оценивает квартили распределения временного ряда на отметке времени следующей точки данных.</li>
 </ol>
-<p><img alt="Многоступенчатый алгоритм прогноза - шаг 1" src="https://dt-cdn.net/images/multi-step-prediction-1-547-f8edff4ed6.png" />
-2. Распределение для значения на следующем шаге времени оценивается из квартилей. Колоколообразная кривая на изображении приведена только для иллюстрации и не представляет собой распределение, используемое в прогностике выборки.</p>
-<p><img alt="Многоступенчатый алгоритм прогноза - шаг 2" src="https://dt-cdn.net/images/multi-step-prediction-2-553-d30631c97f.png" />
-3. Значение для следующего шага времени выбирается из распределения, полученного на шаге 2.</p>
-<p><img alt="Многоступенчатый алгоритм прогноза - шаг 3" src="https://dt-cdn.net/images/multi-step-prediction-3-565-fe5b638654.png" />
-4. Значение, полученное на шаге 3, теперь считается частью временного ряда, и прогностик повторяет шаги 1-4, пока не достигнет горизонта прогноза.</p>
-<p><img alt="Многоступенчатый алгоритм прогноза - шаг 4" src="https://dt-cdn.net/images/multi-step-prediction-4-559-33e251190f.png" />
+<p><img alt="Алгоритм многоступенчатого прогноза - шаг 1" src="https://dt-cdn.net/images/multi-step-prediction-1-547-f8edff4ed6.png" />
+2. Распределение для значения на следующем временном шаге оценивается из квартилей. Колоколообразная кривая на изображении приведена для иллюстрации и не представляет собой распределение, используемое в прогностическом анализаторе выборки.</p>
+<p><img alt="Алгоритм многоступенчатого прогноза - шаг 2" src="https://dt-cdn.net/images/multi-step-prediction-2-553-d30631c97f.png" />
+3. Значение для следующего временного шага выбирается из распределения, полученного на шаге 2.</p>
+<p><img alt="Алгоритм многоступенчатого прогноза - шаг 3" src="https://dt-cdn.net/images/multi-step-prediction-3-565-fe5b638654.png" />
+4. Значение, полученное на шаге 3, теперь считается частью временного ряда, и прогностический анализатор повторяет шаги 1-4, пока не достигнет горизонта прогноза.</p>
+<p><img alt="Алгоритм многоступенчатого прогноза - шаг 4" src="https://dt-cdn.net/images/multi-step-prediction-4-559-33e251190f.png" />
 5. Предсказанные точки данных образуют один путь выборки (показан красным на изображении ниже).</p>
-<p><img alt="Многоступенчатый алгоритм прогноза - шаг 5" src="https://dt-cdn.net/images/multi-step-prediction-5-1051-f971c5a471.png" />
-6. Прогностик повторяет этот процесс N раз, создавая несколько путей выборки.</p>
-<p><img alt="Многоступенчатый алгоритм прогноза - шаг 6" src="https://dt-cdn.net/images/multi-step-prediction-6-1049-931db96b7b.png" />
-7. Прогностик берет искомый квантиль на каждом шаге времени, образуя интервал прогноза (показан светло-фиолетовым на изображении ниже).</p>
-<p><img alt="Многоступенчатый алгоритм прогноза - шаг 7" src="https://dt-cdn.net/images/multi-step-prediction-7-1049-68f5d98212.png" /></p>
-<h2 id="_7">Прогностик линейной экстраполяции<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
-<p>Прогностик линейной экстраполяции — это алгоритм, который использует <a href="https://ru.wikipedia.org/wiki/Простая_линейная_регрессия">простую линейную регрессию</a> для нахождения лучшей линии, проходящей через набор точек данных, и продления этой линии в будущее. Количество точек данных, используемых для обучения прогностика, определяется следующим образом</p>
+<p><img alt="Алгоритм многоступенчатого прогноза - шаг 5" src="https://dt-cdn.net/images/multi-step-prediction-5-1051-f971c5a471.png" />
+6. Прогностический анализатор повторяет этот процесс N раз, создавая несколько путей выборки.</p>
+<p><img alt="Алгоритм многоступенчатого прогноза - шаг 6" src="https://dt-cdn.net/images/multi-step-prediction-6-1049-931db96b7b.png" />
+7. Прогностический анализатор берет искомый квантиль на каждом временном шаге, образуя интервал прогноза (показан светло-фиолетовым на изображении ниже).</p>
+<p><img alt="Алгоритм многоступенчатого прогноза - шаг 7" src="https://dt-cdn.net/images/multi-step-prediction-7-1049-68f5d98212.png" /></p>
+<h2 id="_7">Линейный экстраполяционный прогностический анализатор<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<p>Линейный экстраполяционный прогностический анализатор - это алгоритм, который использует <a href="https://en.wikipedia.org/wiki/Simple_linear_regression">простую линейную регрессию</a>, чтобы найти линию, которая лучше всего подходит к набору точек данных, и продлить эту линию в будущее. Количество точек данных, используемых для обучения прогностического анализатора, определяется следующим образом</p>
 <p><img alt="Формула исторических точек данных" src="https://dt-cdn.net/images/nhistory-286-b4c31416bc.webp" /></p>
-<p>где <code>n</code> — длина входного временного ряда.</p>
-<p>Для обучения прогностика линейной экстраполяции <code>nHistory</code> должно содержать <strong>не менее 14</strong> не-null точек данных.</p>
-<p>Для простоты мы рассчитываем доверительный интервал, предполагая, что остатки распределены нормально следующим образом:</p>
+<p>где <code>n</code> - длина входного временного ряда.</p>
+<p>Чтобы обучить линейный экстраполяционный прогностический анализатор, <code>nHistory</code> должно содержать <strong>не менее 14</strong> не-null точек данных.</p>
+<p>Для простоты мы рассчитываем доверительный интервал, предполагая, что остатки распределены нормально, следующим образом:</p>
 <p><img alt="Распределение остатков" src="https://dt-cdn.net/images/formula-1-280-ecc49db59c.png" /></p>
-<p>где tcrit — 95-й процентиль <a href="https://ru.wikipedia.org/wiki/Распределение_Стьюдента">распределения Стьюдента</a>. Стандартная ошибка равна</p>
+<p>где <code>tcrit</code> - 95-й процентиль <a href="https://en.wikipedia.org/wiki/Student's_t-distribution">распределения Стьюдента</a>. Стандартная ошибка равна</p>
 <p><img alt="Стандартная ошибка" src="https://dt-cdn.net/images/formula-2-540-88b340f223.png" /></p>
-<p>где <code>XÌ</code> — среднее значение x, суммы берутся по обучающим данным, а <code>s</code> — выборочная стандартная ошибка последних <code>nHistory</code> точек входного временного ряда.</p>
+<p>где <code>XÌ</code> - среднее значение x, суммы берутся по обучающим данным, а <code>s</code> - стандартная ошибка выборки последних <code>nHistory</code> точек входного временного ряда.</p>
 <p><img alt="Прогноз линейной экстраполяции" src="https://dt-cdn.net/images/linear-extrapolation-forecaster-976-e7c59a3803.png" /></p>
 <h2 id="_8">Оценка качества прогноза<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
-<p>После генерации прогнозов мы оцениваем их качество, чтобы обнаружить потенциальные численные проблемы. Для оценки качества прогноза анализатор сравнивает стандартное отклонение прогноза со стандартным отклонением входного временного ряда (SDinput).</p>
-<p>Стандартное отклонение прогноза (SDprediction) рассчитывается как максимальное стандартное отклонение нижней и верхней границ интервала прогноза, а также стандартное отклонение точечного прогноза.</p>
-<p>Чтобы учесть допустимые тенденции в прогнозах, анализатор использует масштабирующий коэффициент (SCF). Когда длина прогнозных данных (Nprediction) велика по сравнению с входным временным рядом (Ninput), мы допускаем большее стандартное отклонение прогноза, чем для небольшого прогноза.</p>
-<p>Дополнительный вход в масштабирующий коэффициент — это <strong>Фактор стандартного отклонения</strong> (SDfactor), со значением по умолчанию <code>100</code>. Масштабирующий коэффициент рассчитывается следующим образом:</p>
-<p><img alt="Масштабирующий коэффициент" src="https://dt-cdn.net/images/formula-4-341-b9b7afb192.png" /></p>
+<p>После генерации прогнозов мы оцениваем их качество, чтобы обнаружить потенциальные численные проблемы. Чтобы оценить качество прогноза, анализатор сравнивает стандартное отклонение прогноза с стандартным отклонением входного временного ряда (SDinput).</p>
+<p>Стандартное отклонение прогноза (SDprediction) рассчитывается как максимальное стандартное отклонение нижней и верхней границ прогноза, а также стандартное отклонение точечного прогноза.</p>
+<p>Чтобы учесть допустимые тенденции в прогнозах, анализатор использует масштабный коэффициент (SCF). Когда длина прогнозных данных (Nprediction) велика по сравнению с входным временным рядом (Ninput), мы допускаем большее стандартное отклонение прогноза, чем для небольшого прогноза.</p>
+<p>Дополнительным входным в масштабный коэффициент является <strong>Коэффициент стандартного отклонения</strong> (SDfactor) со значением по умолчанию <code>100</code>. Масштабный коэффициент рассчитывается следующим образом:</p>
+<p><img alt="Масштабный коэффициент" src="https://dt-cdn.net/images/formula-4-341-b9b7afb192.png" /></p>
 <p>Прогноз оценивается по следующему условию:</p>
 <p><img alt="Критерий оценки" src="https://dt-cdn.net/images/formula-5-298-ca5993874c.png" /></p>
-<p>Если условие удовлетворяется, прогноз оценивается как действительный. В противном случае прогноз считается недействительным.</p>
+<p>Если условие выполнено, прогноз оценивается как действительный. В противном случае прогноз считается недействительным.</p>
 <h2 id="dql">Запись DQL запросов для прогнозирования<a class="headerlink" href="#dql" title="Permanent link">&para;</a></h2>
-<p>При использовании прогностического анализа в одной из своих <a href="/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks" title="Анализ, визуализация и обмен идеями из ваших данных наблюдаемости — все в одном совместном, настраиваемом рабочем пространстве.">тетрадей</a> вы можете записать любой DQL запрос, который возвращает данные временного ряда в <a href="#формат-записи-временного-ряда">формате записи временного ряда</a>.</p>
+<p>Когда вы используете прогностический анализ в одной из своих <a href="/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks" title="Анализируйте, визуализируйте и делитесь идеями из ваших данных наблюдаемости - все в одном совместном, настраиваемом рабочем пространстве.">тетрадей</a>, вы можете записать любой DQL запрос, который возвращает данные временного ряда в <a href="#формат-записи-временного-ряда">формате записи временного ряда</a>.</p>
 <ul>
-<li>Если данные не соответствуют одному из вышеуказанных форматов, прогностический анализ завершается неудачно.</li>
-<li>Каждое числовое значение в массиве данных должно иметь хотя бы одну десятичную точку (например, <code>1,0</code>).</li>
+<li>Если данные не соответствуют одному из вышеуказанных форматов, прогностический анализ завершается неудачей.</li>
+<li>Каждое числовое значение в массиве данных должно иметь хотя бы одну десятичную точку (например, <code>1.0</code>).</li>
 </ul>
 <h3 id="_9">Примеры запросов<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
-<p>Примеры запросов DQL ниже возвращают действительные ответы.</p>
+<p>Примеры запросов DQL, приведенные ниже, возвращают действительные ответы.</p>
 <ul>
-<li>Команда <a href="/docs/platform/grail/dynatrace-query-language/commands/metric-commands#timeseries" title="DQL metric commands"><code>timeseries</code></a> DQL всегда возвращает ответ в формате записи временного ряда.</li>
-<li>Вы также можете писать запросы, используя команду <a href="/docs/platform/grail/dynatrace-query-language/commands/data-source-commands#fetch" title="DQL data source commands"><code>fetch</code></a> вместе с командой <a href="/docs/platform/grail/dynatrace-query-language/commands/aggregation-commands#summarize" title="DQL aggregation commands"><code>summarize</code></a>. Эти запросы будут возвращать данные в формате единичного значения. Все записи должны иметь одинаковое расстояние (интервал) между ними. Это гарантировано при использовании команды <code>summarize</code>, поскольку она будет агрегировать и группировать значения для определенных временных интервалов. Каждая запись должна иметь поле с именем <code>value</code> типа double (см. <a href="#single-value-format">Формат единичного значения</a> для более подробной информации).</li>
+<li>Команда <a href="/docs/platform/grail/dynatrace-query-language/commands/metric-commands#timeseries" title="DQL команды метрик"><code>timeseries</code></a> DQL всегда возвращает ответ в формате записи временного ряда.</li>
+<li>Вы также можете писать запросы, используя команду <a href="/docs/platform/grail/dynatrace-query-language/commands/data-source-commands#fetch" title="DQL команды источника данных"><code>fetch</code></a> вместе с командой <a href="/docs/platform/grail/dynatrace-query-language/commands/aggregation-commands#summarize" title="DQL команды агрегации"><code>summarize</code></a>. Эти запросы будут возвращать данные в формате единичного значения. Все записи должны иметь одинаковое расстояние (интервал) между ними. Это гарантировано при использовании команды <code>summarize</code>, поскольку она будет агрегировать и группировать значения для определенных временных интервалов. Каждая запись должна иметь поле с именем <code>value</code> типа double (см. <a href="#single-value-format">Формат единичного значения</a> для получения дополнительной информации).</li>
 </ul>
 <h4 id="dql-timeseries">DQL команда timeseries<a class="headerlink" href="#dql-timeseries" title="Permanent link">&para;</a></h4>
 <p>Команда DQL <code>timeseries</code> возвращает результат в формате записи временного ряда.</p>
@@ -25641,14 +25641,14 @@ scraped: 2026-02-27T21:10:37.882093</p>
 <a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>
 <a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>
 <a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>
-<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>| summarize count(), by:{bin(timestamp, 1h), alias: timestamp)
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>| summarize count(), by:{bin(timestamp, 1h), alias: timestamp}
 <a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>
 <a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>
 <a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>
 <a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>| fieldsRename value=`count()`
 </code></pre></div>
 <h4 id="dql-data">DQL команда data<a class="headerlink" href="#dql-data" title="Permanent link">&para;</a></h4>
-<p>Вы можете использовать команду DQL <a href="/docs/platform/grail/dynatrace-query-language/commands/data-source-commands#data" title="DQL data source commands"><code>data</code></a> для генерации прогноза для ваших собственных данных. Любые данные можно использовать, пока они соответствуют одному из двух форматов.</p>
+<p>Вы можете использовать команду DQL <a href="/docs/platform/grail/dynatrace-query-language/commands/data-source-commands#data" title="DQL команды источника данных"><code>data</code></a> для генерации прогноза для своих собственных данных. Любые данные можно использовать, пока они соответствуют одному из двух форматов.</p>
 <p>Следующая команда DQL <code>data</code> возвращает результат в формате записи временного ряда.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>data record(
 <a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
@@ -25830,7 +25830,7 @@ scraped: 2026-02-27T21:10:37.882093</p>
 <p>Одно или несколько полей типа <code>array</code>, содержащих только <a href="/docs/platform/grail/dynatrace-query-language/data-types#double" title="Список DQL типов данных.">double</a> или <a href="/docs/platform/grail/dynatrace-query-language/data-types#long" title="Список DQL типов данных.">long</a> значения и null</p>
 </li>
 <li>
-<p>Все числовые массивы должны иметь столько же значений, сколько есть шагов времени шириной duration между началом и концом timeframe <code>(end-start)/duration</code></p>
+<p>Все числовые массивы должны иметь столько же значений, сколько шагов времени шириной duration между началом и концом timeframe <code>(end-start)/duration</code></p>
 </li>
 <li>Поля в записи временного ряда, кроме timeframe, duration и числовых массивов данных, считаются измерениями</li>
 </ul>
@@ -25904,7 +25904,7 @@ scraped: 2026-02-27T21:10:37.882093</p>
 <a id="__codelineno-6-62" name="__codelineno-6-62" href="#__codelineno-6-62"></a>
 <a id="__codelineno-6-63" name="__codelineno-6-63" href="#__codelineno-6-63"></a>
 <a id="__codelineno-6-64" name="__codelineno-6-64" href="#__codelineno-6-64"></a>
-<a id="__codelineno-6-65" name="__codelineno-6-65" href="#__codelineno-6-65"></a>&quot;mappings&quot;: {
+<a id="__codelineno-6-65" name="__codelineno-6-65" href="#__codelineno-6-65"></a>&quot;mappings&quot;:).
 <a id="__codelineno-6-66" name="__codelineno-6-66" href="#__codelineno-6-66"></a>
 <a id="__codelineno-6-67" name="__codelineno-6-67" href="#__codelineno-6-67"></a>
 <a id="__codelineno-6-68" name="__codelineno-6-68" href="#__codelineno-6-68"></a>
@@ -25924,7 +25924,7 @@ scraped: 2026-02-27T21:10:37.882093</p>
 <a id="__codelineno-6-82" name="__codelineno-6-82" href="#__codelineno-6-82"></a>
 <a id="__codelineno-6-83" name="__codelineno-6-83" href="#__codelineno-6-83"></a>
 <a id="__codelineno-6-84" name="__codelineno-6-84" href="#__codelineno-6-84"></a>
-<a id="__codelineno-6-85" name="__codelineno-6-85" href="#__codelineno-6-85"></a>&quot;firstTimeSeries&quot;:).
+<a id="__codelineno-6-85" name="__codelineno-6-85" href="#__codelineno-6-85"></a>&quot;firstTimeSeries&quot;: 
 <a id="__codelineno-6-86" name="__codelineno-6-86" href="#__codelineno-6-86"></a>
 <a id="__codelineno-6-87" name="__codelineno-6-87" href="#__codelineno-6-87"></a>
 <a id="__codelineno-6-88" name="__codelineno-6-88" href="#__codelineno-6-88"></a>
@@ -25932,7 +25932,7 @@ scraped: 2026-02-27T21:10:37.882093</p>
 <a id="__codelineno-6-90" name="__codelineno-6-90" href="#__codelineno-6-90"></a>
 <a id="__codelineno-6-91" name="__codelineno-6-91" href="#__codelineno-6-91"></a>
 <a id="__codelineno-6-92" name="__codelineno-6-92" href="#__codelineno-6-92"></a>
-<a id="__codelineno-6-93" name="__codelineno-6-93" href="#__codelineno-6-93"></a>&quot;types&quot;: [
+<a id="__codelineno-6-93" name="__codelineno-6-93" href="#__codelineno-6-93"></a>&quot;types&quot;: 
 <a id="__codelineno-6-94" name="__codelineno-6-94" href="#__codelineno-6-94"></a>
 <a id="__codelineno-6-95" name="__codelineno-6-95" href="#__codelineno-6-95"></a>
 <a id="__codelineno-6-96" name="__codelineno-6-96" href="#__codelineno-6-96"></a>
@@ -25952,7 +25952,7 @@ scraped: 2026-02-27T21:10:37.882093</p>
 <a id="__codelineno-6-110" name="__codelineno-6-110" href="#__codelineno-6-110"></a>
 <a id="__codelineno-6-111" name="__codelineno-6-111" href="#__codelineno-6-111"></a>
 <a id="__codelineno-6-112" name="__codelineno-6-112" href="#__codelineno-6-112"></a>
-<a id="__codelineno-6-113" name="__codelineno-6-113" href="#__codelineno-6-113"></a>)
+<a id="__codelineno-6-113" name="__codelineno-6-113" href="#__codelineno-6-113"></a>}
 <a id="__codelineno-6-114" name="__codelineno-6-114" href="#__codelineno-6-114"></a>
 <a id="__codelineno-6-115" name="__codelineno-6-115" href="#__codelineno-6-115"></a>
 <a id="__codelineno-6-116" name="__codelineno-6-116" href="#__codelineno-6-116"></a>
@@ -25972,7 +25972,7 @@ scraped: 2026-02-27T21:10:37.882093</p>
 <a id="__codelineno-6-130" name="__codelineno-6-130" href="#__codelineno-6-130"></a>
 <a id="__codelineno-6-131" name="__codelineno-6-131" href="#__codelineno-6-131"></a>
 <a id="__codelineno-6-132" name="__codelineno-6-132" href="#__codelineno-6-132"></a>
-<a id="__codelineno-6-133" name="__codelineno-6-133" href="#__codelineno-6-133"></a>&quot;types&quot;: [
+<a id="__codelineno-6-133" name="__codelineno-6-133" href="#__codelineno-6-133"></a>&quot;types&quot;: 
 <a id="__codelineno-6-134" name="__codelineno-6-134" href="#__codelineno-6-134"></a>
 <a id="__codelineno-6-135" name="__codelineno-6-135" href="#__codelineno-6-135"></a>
 <a id="__codelineno-6-136" name="__codelineno-6-136" href="#__codelineno-6-136"></a>
@@ -25992,7 +25992,7 @@ scraped: 2026-02-27T21:10:37.882093</p>
 <a id="__codelineno-6-150" name="__codelineno-6-150" href="#__codelineno-6-150"></a>
 <a id="__codelineno-6-151" name="__codelineno-6-151" href="#__codelineno-6-151"></a>
 <a id="__codelineno-6-152" name="__codelineno-6-152" href="#__codelineno-6-152"></a>
-<a id="__codelineno-6-153" name="__codelineno-6-153" href="#__codelineno-6-153"></a>)
+<a id="__codelineno-6-153" name="__codelineno-6-153" href="#__codelineno-6-153"></a>}
 <a id="__codelineno-6-154" name="__codelineno-6-154" href="#__codelineno-6-154"></a>
 <a id="__codelineno-6-155" name="__codelineno-6-155" href="#__codelineno-6-155"></a>
 <a id="__codelineno-6-156" name="__codelineno-6-156" href="#__codelineno-6-156"></a>
@@ -26000,51 +26000,47 @@ scraped: 2026-02-27T21:10:37.882093</p>
 <a id="__codelineno-6-158" name="__codelineno-6-158" href="#__codelineno-6-158"></a>
 <a id="__codelineno-6-159" name="__codelineno-6-159" href="#__codelineno-6-159"></a>
 <a id="__codelineno-6-160" name="__codelineno-6-160" href="#__codelineno-6-160"></a>
-<a id="__codelineno-6-161" name="__codelineno-6-161" href="#__codelineno-6-161"></a>)
+<a id="__codelineno-6-161" name="__codelineno-6-161" href="#__codelineno-6-161"></a>]
 <a id="__codelineno-6-162" name="__codelineno-6-162" href="#__codelineno-6-162"></a>
 <a id="__codelineno-6-163" name="__codelineno-6-163" href="#__codelineno-6-163"></a>
 <a id="__codelineno-6-164" name="__codelineno-6-164" href="#__codelineno-6-164"></a>
-<a id="__codelineno-6-165" name="__codelineno-6-165" href="#__codelineno-6-165"></a>)
+<a id="__codelineno-6-165" name="__codelineno-6-165" href="#__codelineno-6-165"></a>]
 <a id="__codelineno-6-166" name="__codelineno-6-166" href="#__codelineno-6-166"></a>
 <a id="__codelineno-6-167" name="__codelineno-6-167" href="#__codelineno-6-167"></a>
 <a id="__codelineno-6-168" name="__codelineno-6-168" href="#__codelineno-6-168"></a>
-<a id="__codelineno-6-169" name="__codelineno-6-169" href="#__codelineno-6-169"></a>]
-<a id="__codelineno-6-170" name="__codelineno-6-170" href="#__codelineno-6-170"></a>
-<a id="__codelineno-6-171" name="__codelineno-6-171" href="#__codelineno-6-171"></a>
-<a id="__codelineno-6-172" name="__codelineno-6-172" href="#__codelineno-6-172"></a>
-<a id="__codelineno-6-173" name="__codelineno-6-173" href="#__codelineno-6-173"></a>}
+<a id="__codelineno-6-169" name="__codelineno-6-169" href="#__codelineno-6-169"></a>}
 </code></pre></div>
 <h3 id="_11">Формат единичного значения<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
-<p>В формате единичного значения каждая запись в наборе данных указывает одно значение в временном ряду. Допускается ровно одно числовое поле на запись.</p>
-<p>Запись в действительном формате единичного значения должна содержать:</p>
+<p>В формате единичного значения каждая запись в наборе данных указывает одно значение в временном ряду. Для каждой записи разрешено ровно одно числовое поле.</p>
+<p>Запись в допустимом формате единичного значения должна содержать:</p>
 <ul>
-<li>Точно одно поле с именем <code>value</code> типа <a href="/docs/platform/grail/dynatrace-query-language/data-types#double" title="Список DQL типов данных.">double</a>
+<li>Ровно одно поле с именем <code>value</code> типа <a href="/docs/platform/grail/dynatrace-query-language/data-types#double" title="Список DQL типов данных.">double</a>
   или <a href="/docs/platform/grail/dynatrace-query-language/data-types#long" title="Список DQL типов данных.">long</a></li>
 <li>
-<p>Информацию о времени как:</p>
+<p>Информацию о времени в виде:</p>
 </li>
 <li>
-<p>поле с именем <code>timestamp</code> типа <a href="/docs/platform/grail/dynatrace-query-language/data-types#timestamp" title="Список DQL типов данных.">timestamp</a></p>
+<p>поля с именем <code>timestamp</code> типа <a href="/docs/platform/grail/dynatrace-query-language/data-types#timestamp" title="Список DQL типов данных.">timestamp</a></p>
 </li>
-<li>поле с именем <code>timeframe</code> типа <code>timeframe</code>, содержащее начало и конец <a href="/docs/platform/grail/dynatrace-query-language/data-types#timestamp" title="Список DQL типов данных.">timestamp</a></li>
+<li>поля с именем <code>timeframe</code> типа <code>timeframe</code>, содержащего начало и конец <a href="/docs/platform/grail/dynatrace-query-language/data-types#timestamp" title="Список DQL типов данных.">timestamp</a></li>
 </ul>
 <h4 id="_12">Интервал<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h4>
-<p>Наименьший допустимый интервал (временная разница между двумя записями) составляет одну минуту.</p>
+<p>Наименьший разрешенный интервал (временная разница между двумя записями) составляет одну минуту.</p>
 <ul>
 <li>Интервал можно указать, добавив поле <code>interval</code> типа <a href="/docs/platform/grail/dynatrace-query-language/data-types#duration" title="Список DQL типов данных.">duration</a>.</li>
 <li>Это поле также можно назвать <code>frequency</code>, хотя <code>interval</code> имеет приоритет, если оба указаны.</li>
 <li>Если <code>interval</code>/<code>frequency</code> задан, он должен иметь одинаковое значение в каждой записи.</li>
 </ul>
 <h4 id="_13">Измерения<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h4>
-<p>Измерения можно добавлять как дополнительные свойства.</p>
+<p>Измерения можно добавлять в виде дополнительных свойств.</p>
 <ul>
 <li>Дополнительные свойства могут иметь только строковые значения.</li>
-<li>Серия определяется на основе уникальных значений для каждого измерения. Записи с одинаковыми измерениями (строковые свойства) считаются принадлежащими к одной и той же временной серии.</li>
+<li>Серия определяется на основе различных значений для каждого измерения. Записи с одинаковыми измерениями (строковые свойства) считаются принадлежащими к одной и той же временной серии.</li>
 </ul>
 <p>DQL ответ в формате единичного значения</p>
 <p>Следующий JSON описывает структуру формата единичного значения.</p>
 <ul>
-<li>Типы полей записи указаны в разделе <code>types</code>.</li>
+<li>Типы полей записей указаны в разделе <code>types</code>.</li>
 <li>Фактическое значение поля типа <a href="/docs/platform/grail/dynatrace-query-language/data-types#duration" title="Список DQL типов данных.">duration</a> указано в наносекундах.</li>
 </ul>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>{
@@ -26143,7 +26139,7 @@ scraped: 2026-02-27T21:10:37.882093</p>
 <a id="__codelineno-7-94" name="__codelineno-7-94" href="#__codelineno-7-94"></a>
 <a id="__codelineno-7-95" name="__codelineno-7-95" href="#__codelineno-7-95"></a>
 <a id="__codelineno-7-96" name="__codelineno-7-96" href="#__codelineno-7-96"></a>
-<a id="__codelineno-7-97" name="__codelineno-7-97" href="#__codelineno-7-97"></a>&quot;typeMappings&quot;: {
+<a id="__codelineno-7-97" name="__codelineno-7-97" href="#__codelineno-7-97"></a>&quot;typeMappings&quot;:).
 <a id="__codelineno-7-98" name="__codelineno-7-98" href="#__codelineno-7-98"></a>
 <a id="__codelineno-7-99" name="__codelineno-7-99" href="#__codelineno-7-99"></a>
 <a id="__codelineno-7-100" name="__codelineno-7-100" href="#__codelineno-7-100"></a>
@@ -26167,15 +26163,11 @@ scraped: 2026-02-27T21:10:37.882093</p>
 <a id="__codelineno-7-118" name="__codelineno-7-118" href="#__codelineno-7-118"></a>
 <a id="__codelineno-7-119" name="__codelineno-7-119" href="#__codelineno-7-119"></a>
 <a id="__codelineno-7-120" name="__codelineno-7-120" href="#__codelineno-7-120"></a>
-<a id="__codelineno-7-121" name="__codelineno-7-121" href="#__codelineno-7-121"></a>}
+<a id="__codelineno-7-121" name="__codelineno-7-121" href="#__codelineno-7-121"></a>]
 <a id="__codelineno-7-122" name="__codelineno-7-122" href="#__codelineno-7-122"></a>
 <a id="__codelineno-7-123" name="__codelineno-7-123" href="#__codelineno-7-123"></a>
 <a id="__codelineno-7-124" name="__codelineno-7-124" href="#__codelineno-7-124"></a>
-<a id="__codelineno-7-125" name="__codelineno-7-125" href="#__codelineno-7-125"></a>]
-<a id="__codelineno-7-126" name="__codelineno-7-126" href="#__codelineno-7-126"></a>
-<a id="__codelineno-7-127" name="__codelineno-7-127" href="#__codelineno-7-127"></a>
-<a id="__codelineno-7-128" name="__codelineno-7-128" href="#__codelineno-7-128"></a>
-<a id="__codelineno-7-129" name="__codelineno-7-129" href="#__codelineno-7-129"></a>}
+<a id="__codelineno-7-125" name="__codelineno-7-125" href="#__codelineno-7-125"></a>}
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>{
 <a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>
@@ -26189,7 +26181,7 @@ scraped: 2026-02-27T21:10:37.882093</p>
 <a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a>
 <a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a>
 <a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a>
-<a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a>&quot;timeframe&quot;: {
+<a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a>&quot;timeframe&quot;: 
 <a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a>
 <a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a>
 <a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a>
@@ -26229,7 +26221,7 @@ scraped: 2026-02-27T21:10:37.882093</p>
 <a id="__codelineno-8-50" name="__codelineno-8-50" href="#__codelineno-8-50"></a>
 <a id="__codelineno-8-51" name="__codelineno-8-51" href="#__codelineno-8-51"></a>
 <a id="__codelineno-8-52" name="__codelineno-8-52" href="#__codelineno-8-52"></a>
-<a id="__codelineno-8-53" name="__codelineno-8-53" href="#__codelineno-8-53"></a>&quot;timeframe&quot;: {
+<a id="__codelineno-8-53" name="__codelineno-8-53" href="#__codelineno-8-53"></a>&quot;timeframe&quot;: 
 <a id="__codelineno-8-54" name="__codelineno-8-54" href="#__codelineno-8-54"></a>
 <a id="__codelineno-8-55" name="__codelineno-8-55" href="#__codelineno-8-55"></a>
 <a id="__codelineno-8-56" name="__codelineno-8-56" href="#__codelineno-8-56"></a>
@@ -26281,7 +26273,7 @@ scraped: 2026-02-27T21:10:37.882093</p>
 <a id="__codelineno-8-102" name="__codelineno-8-102" href="#__codelineno-8-102"></a>
 <a id="__codelineno-8-103" name="__codelineno-8-103" href="#__codelineno-8-103"></a>
 <a id="__codelineno-8-104" name="__codelineno-8-104" href="#__codelineno-8-104"></a>
-<a id="__codelineno-8-105" name="__codelineno-8-105" href="#__codelineno-8-105"></a>&quot;typeMappings&quot;: {
+<a id="__codelineno-8-105" name="__codelineno-8-105" href="#__codelineno-8-105"></a>&quot;typeMappings&quot;: 
 <a id="__codelineno-8-106" name="__codelineno-8-106" href="#__codelineno-8-106"></a>
 <a id="__codelineno-8-107" name="__codelineno-8-107" href="#__codelineno-8-107"></a>
 <a id="__codelineno-8-108" name="__codelineno-8-108" href="#__codelineno-8-108"></a>
@@ -26305,31 +26297,27 @@ scraped: 2026-02-27T21:10:37.882093</p>
 <a id="__codelineno-8-126" name="__codelineno-8-126" href="#__codelineno-8-126"></a>
 <a id="__codelineno-8-127" name="__codelineno-8-127" href="#__codelineno-8-127"></a>
 <a id="__codelineno-8-128" name="__codelineno-8-128" href="#__codelineno-8-128"></a>
-<a id="__codelineno-8-129" name="__codelineno-8-129" href="#__codelineno-8-129"></a>)
+<a id="__codelineno-8-129" name="__codelineno-8-129" href="#__codelineno-8-129"></a>}
 <a id="__codelineno-8-130" name="__codelineno-8-130" href="#__codelineno-8-130"></a>
 <a id="__codelineno-8-131" name="__codelineno-8-131" href="#__codelineno-8-131"></a>
 <a id="__codelineno-8-132" name="__codelineno-8-132" href="#__codelineno-8-132"></a>
-<a id="__codelineno-8-133" name="__codelineno-8-133" href="#__codelineno-8-133"></a>)
+<a id="__codelineno-8-133" name="__codelineno-8-133" href="#__codelineno-8-133"></a>]
 <a id="__codelineno-8-134" name="__codelineno-8-134" href="#__codelineno-8-134"></a>
 <a id="__codelineno-8-135" name="__codelineno-8-135" href="#__codelineno-8-135"></a>
 <a id="__codelineno-8-136" name="__codelineno-8-136" href="#__codelineno-8-136"></a>
-<a id="__codelineno-8-137" name="__codelineno-8-137" href="#__codelineno-8-137"></a>]
-<a id="__codelineno-8-138" name="__codelineno-8-138" href="#__codelineno-8-138"></a>
-<a id="__codelineno-8-139" name="__codelineno-8-139" href="#__codelineno-8-139"></a>
-<a id="__codelineno-8-140" name="__codelineno-8-140" href="#__codelineno-8-140"></a>
-<a id="__codelineno-8-141" name="__codelineno-8-141" href="#__codelineno-8-141"></a>}
+<a id="__codelineno-8-137" name="__codelineno-8-137" href="#__codelineno-8-137"></a>}
 </code></pre></div>
 <h2 id="_14">Примеры прогнозов<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h2>
-<p>Качество прогноза зависит от качества данных, которые вы подаете анализатору, и ширины временного интервала, который вы хотите спрогнозировать. Лучшие результаты получаются для короткого временного интервала из данных без шума и с четкими сезонными закономерностями. Вот некоторые примеры прогнозов для различных типов данных.</p>
+<p>Качество прогноза зависит от качества данных, которые вы подаете анализатору, и ширины временного интервала, который вы хотите предсказать. Лучшие результаты получаются для короткого временного интервала из данных без шума и с четкими сезонными закономерностями. Вот некоторые примеры прогнозов для различных типов данных.</p>
 <p>Нет сезонности, нисходящая тенденция</p>
-<p>Этот пример показывает прогноз для доступного дискового метрика. В данных нет сезонной закономерности, и есть нисходящая тенденция. Здесь используется <a href="#linear-extrapolation">линейный экстраполятор</a>, производящий широкий интервал прогноза.</p>
+<p>Этот пример показывает прогноз для доступного дискового метрика. В данных нет сезонной закономерности, и есть нисходящая тенденция. Здесь используется прогнозатор <a href="#linear-extrapolation">линейной экстраполяции</a>, производящий широкий прогнозируемый интервал.</p>
 <p><img alt="Прогноз - Емкость диска" src="https://dt-cdn.net/images/disk-capacity-notebook-forecast-result-1541-792e2fa2cf.png" /></p>
-<p>Сезонные данные с шумом</p>
-<p>Этот пример показывает прогноз для временного интервала 1,5 часа. Обратите внимание, что интервал прогноза не гладкий, отражая шум в входных данных.</p>
-<p><img alt="Сезонный прогноз с шумом" src="https://dt-cdn.net/images/seasonal-forecast-with-noise-result-1731-9d50baa8e5.png" /></p>
-<p>Сезонные данные с шумом на расширенном временном интервале</p>
-<p>Этот пример показывает прогноз для временного интервала 6 часов. Кроме расширенного временного интервала прогноза, сами данные имеют некоторый шум и нисходящую тенденцию, которые влияют на качество прогноза - интервал прогноза расширяется все больше и больше, когда он продвигается в будущее.</p>
-<p><img alt="Сезонный прогноз с шумом за 6-часовой интервал" src="https://dt-cdn.net/images/seasonal-forecast-with-noise-result-6h-1730-75d0e7ceb1.png" /></p>
+<p>Сезонные данные со шумом</p>
+<p>Этот пример показывает прогноз для временного интервала 1,5 часа. Обратите внимание, что прогнозируемый интервал не гладкий, отражая шум в входных данных.</p>
+<p><img alt="Сезонный прогноз со шумом" src="https://dt-cdn.net/images/seasonal-forecast-with-noise-result-1731-9d50baa8e5.png" /></p>
+<p>Сезонные данные со шумом на расширенном временном интервале</p>
+<p>Этот пример показывает прогноз для временного интервала 6 часов. Помимо обширного временного интервала прогноза, сами данные имеют некоторый шум и нисходящую тенденцию, которые влияют на качество прогноза - прогнозируемый интервал расширяется все больше и больше, когда он продвигается в будущее.</p>
+<p><img alt="Сезонный прогноз со шумом за 6-часовой временной интервал" src="https://dt-cdn.net/images/seasonal-forecast-with-noise-result-6h-1730-75d0e7ceb1.png" /></p>
 <hr />
 <h2 id="dynatrace-intelligencereferenceai-modelsseasonal-baselinemd">dynatrace-intelligence/reference/ai-models/seasonal-baseline.md<a class="headerlink" href="#dynatrace-intelligencereferenceai-modelsseasonal-baselinemd" title="Permanent link">&para;</a></h2>
 <hr />
@@ -26390,7 +26378,7 @@ scraped: 2026-02-25T21:32:42.856962</p>
 <hr />
 <p>title: Модели ИИ
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/reference/ai-models
-scraped: 2026-02-27T21:12:10.133743</p>
+scraped: 2026-02-28T21:13:37.762989</p>
 <hr />
 <h1 id="_21">Модели ИИ<a class="headerlink" href="#_21" title="Permanent link">&para;</a></h1>
 <h1 id="_22">Модели ИИ<a class="headerlink" href="#_22" title="Permanent link">&para;</a></h1>
@@ -26400,19 +26388,19 @@ scraped: 2026-02-27T21:12:10.133743</p>
 <li>1-минутное чтение</li>
 <li>Обновлено 28 января 2026 г.</li>
 </ul>
-<p>Интеллект Dynatrace использует специализированные модели ИИ для анализа вашей среды и предоставления действенных рекомендаций. Эти модели обеспечивают различные возможности, от обнаружения аномалий и анализа коренных причин до прогностического анализа и оптимизации производительности. Каждая модель предназначена для конкретных случаев использования и предоставляет различные типы интеллекта, чтобы помочь вам понять и улучшить ваши системы.</p>
-<p>[#### Анализ причинно-следственной корреляции интеллекта Dynatrace</p>
-<p>Узнайте, как анализ причинно-следственной корреляции интеллекта Dynatrace находит связанные метрики в вашей среде.</p>
+<p>Dynatrace Intelligence использует специализированные модели ИИ для анализа вашей среды и предоставления действенных рекомендаций. Эти модели обеспечивают различные возможности, от обнаружения аномалий и анализа причин до прогностического анализа и оптимизации производительности. Каждая модель предназначена для конкретных случаев использования и предоставляет разные типы интеллекта, чтобы помочь вам понять и улучшить ваши системы.</p>
+<p>[#### Анализ причинно-следственной корреляции Dynatrace Intelligence</p>
+<p>Узнайте, как анализ причинно-следственной корреляции Dynatrace Intelligence находит связанные метрики во всей среде.</p>
 <ul>
 <li>Объяснение</li>
 </ul>
-<p>Прочитайте это объяснение](/docs/dynatrace-intelligence/reference/ai-models/causal-correlation-analysis)[#### Прогностический анализ ИИ интеллекта Dynatrace</p>
-<p>Узнайте, как прогностический анализ ИИ интеллекта Dynatrace генерирует прогнозы.</p>
+<p>Прочитайте это объяснение](/docs/dynatrace-intelligence/reference/ai-models/causal-correlation-analysis)[#### Прогностический анализ ИИ Dynatrace Intelligence</p>
+<p>Узнайте, как прогностический анализ ИИ Dynatrace Intelligence генерирует прогнозы.</p>
 <ul>
 <li>Объяснение</li>
 </ul>
 <p>Прочитайте это объяснение](/docs/dynatrace-intelligence/reference/ai-models/forecast-analysis)[#### Сезонный базовый уровень</p>
-<p>Как интеллект Dynatrace предлагает пороговые значения сезонного базового уровня для области сущностей.</p>
+<p>Как Dynatrace Intelligence предлагает пороги сезонного базового уровня для области сущностей.</p>
 <ul>
 <li>Объяснение</li>
 </ul>
@@ -26424,8 +26412,8 @@ scraped: 2026-02-27T21:12:10.133743</p>
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/reference/davis-ai-limits
 scraped: 2026-02-27T21:30:58.531133</p>
 <hr />
-<h1 id="dynatrace-intelligence">Dynatrace Intelligence ограничения<a class="headerlink" href="#dynatrace-intelligence" title="Permanent link">&para;</a></h1>
-<h1 id="dynatrace-intelligence_1">Dynatrace Intelligence ограничения<a class="headerlink" href="#dynatrace-intelligence_1" title="Permanent link">&para;</a></h1>
+<h1 id="dynatrace-intelligence_2">Dynatrace Intelligence ограничения<a class="headerlink" href="#dynatrace-intelligence_2" title="Permanent link">&para;</a></h1>
+<h1 id="dynatrace-intelligence_3">Dynatrace Intelligence ограничения<a class="headerlink" href="#dynatrace-intelligence_3" title="Permanent link">&para;</a></h1>
 <ul>
 <li>Последнее Dynatrace</li>
 <li>Справочник</li>
@@ -26470,7 +26458,7 @@ scraped: 2026-02-27T21:30:58.531133</p>
 <h4 id="_29">События селектора метрик<a class="headerlink" href="#_29" title="Permanent link">&para;</a></h4>
 <h4 id="_30">События ключей метрик<a class="headerlink" href="#_30" title="Permanent link">&para;</a></h4>
 <h3 id="_31">Ноутбук и симуляция панели управления<a class="headerlink" href="#_31" title="Permanent link">&para;</a></h3>
-<h2 id="dynatrace-intelligence_2">Dynatrace Intelligence генеративный ИИ<a class="headerlink" href="#dynatrace-intelligence_2" title="Permanent link">&para;</a></h2>
+<h2 id="dynatrace-intelligence_4">Dynatrace Intelligence генеративный ИИ<a class="headerlink" href="#dynatrace-intelligence_4" title="Permanent link">&para;</a></h2>
 <hr />
 
 
