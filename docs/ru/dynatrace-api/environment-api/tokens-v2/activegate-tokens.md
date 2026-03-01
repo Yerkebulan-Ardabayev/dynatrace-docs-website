@@ -1,7 +1,7 @@
 ---
 title: ActiveGate tokens API
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/tokens-v2/activegate-tokens
-scraped: 2026-02-28T21:31:40.816759
+scraped: 2026-03-01T21:24:10.022397
 ---
 
 # ActiveGate tokens API

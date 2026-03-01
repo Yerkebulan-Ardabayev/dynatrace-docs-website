@@ -1,7 +1,7 @@
 ---
 title: Business process monitoring
 source: https://www.dynatrace.com/docs/observe/business-observability/business-process-monitoring
-scraped: 2026-02-28T21:29:22.620323
+scraped: 2026-03-01T21:26:06.386442
 ---
 
 # Business process monitoring

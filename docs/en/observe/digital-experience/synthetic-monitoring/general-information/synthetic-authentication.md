@@ -1,7 +1,7 @@
 ---
 title: Supported authentication methods in Synthetic Monitoring
 source: https://www.dynatrace.com/docs/observe/digital-experience/synthetic-monitoring/general-information/synthetic-authentication
-scraped: 2026-02-28T21:25:04.317749
+scraped: 2026-03-01T21:19:53.187394
 ---
 
 # Supported authentication methods in Synthetic Monitoring

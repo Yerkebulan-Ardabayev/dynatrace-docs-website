@@ -1,7 +1,7 @@
 ---
 title: Dynatrace Intelligence интеграции
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/dynatrace-intelligence-integrations
-scraped: 2026-02-28T21:13:34.444496
+scraped: 2026-03-01T21:13:46.380261
 ---
 
 # Dynatrace Intelligence интеграции
@@ -29,7 +29,7 @@ scraped: 2026-02-28T21:13:34.444496
 
 [#### Dynatrace сервер MCP
 
-Узнайте о Dynatrace сервере MCP и о том, как вы можете подключиться к нему.
+Узнайте о Dynatrace сервере MCP и о том, как можно к нему подключиться.
 
 * Обзор
 
@@ -37,7 +37,7 @@ scraped: 2026-02-28T21:13:34.444496
 
 ## Потоки работы
 
-Посмотрите на случаи использования Dynatrace Intelligence на основе потоков работы.
+Прочитайте о случаях использования Dynatrace Intelligence на основе потоков работы.
 
 [#### Оптимизируйте стоимость DQL с помощью потоков работы
 
@@ -51,9 +51,9 @@ scraped: 2026-02-28T21:13:34.444496
 
 * Учебник
 
-Прочитайте этот учебник](/docs/dynatrace-intelligence/use-cases/copilot-in-workflows-examples)[#### ИИ в потоках работы - прогнозное обслуживание облачных дисков
+Прочитайте этот учебник](/docs/dynatrace-intelligence/use-cases/copilot-in-workflows-examples)[#### ИИ в потоках работы - прогностическое обслуживание облачных дисков
 
-Автоматизируйте прогнозное обслуживание облачных ресурсов с помощью Dynatrace Intelligence в AutomationEngine.
+Автоматизируйте прогностическое обслуживание облачных ресурсов с помощью Dynatrace Intelligence в AutomationEngine.
 
 * Учебник
 

@@ -1,7 +1,7 @@
 ---
 title: Set up the Dynatrace GCP metric and log integration on a new GKE Autopilot cluster
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/deploy-k8
-scraped: 2026-02-28T21:25:24.775600
+scraped: 2026-03-01T21:20:37.861683
 ---
 
 # Set up the Dynatrace GCP metric and log integration on a new GKE Autopilot cluster

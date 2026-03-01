@@ -1,7 +1,7 @@
 ---
 title: Ingest business events via API
 source: https://www.dynatrace.com/docs/observe/business-observability/bo-api-ingest
-scraped: 2026-02-28T21:11:58.555175
+scraped: 2026-03-01T21:13:02.404497
 ---
 
 # Ingest business events via API

@@ -1,7 +1,7 @@
 ---
 title: Prometheus
 source: https://www.dynatrace.com/docs/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/prometheus
-scraped: 2026-02-28T21:14:37.234465
+scraped: 2026-03-01T21:13:31.527768
 ---
 
 # Prometheus

@@ -1,7 +1,7 @@
 ---
 title: Create and configure an HTTP monitor
 source: https://www.dynatrace.com/docs/observe/digital-experience/synthetic-on-grail/synthetic-app/create-and-configure-an-http-monitor
-scraped: 2026-02-28T21:18:32.866476
+scraped: 2026-03-01T21:10:15.978003
 ---
 
 # Create and configure an HTTP monitor

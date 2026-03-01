@@ -1,7 +1,7 @@
 ---
 title: Use DQL queries
 source: https://www.dynatrace.com/docs/platform/grail/dynatrace-query-language/dql-guide
-scraped: 2026-02-28T21:20:19.186037
+scraped: 2026-03-01T21:14:14.745075
 ---
 
 # Use DQL queries

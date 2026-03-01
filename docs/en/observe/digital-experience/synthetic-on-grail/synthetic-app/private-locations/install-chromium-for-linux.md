@@ -1,7 +1,7 @@
 ---
 title: Install and update Chromium for Linux
 source: https://www.dynatrace.com/docs/observe/digital-experience/synthetic-on-grail/synthetic-app/private-locations/install-chromium-for-linux
-scraped: 2026-02-27T21:28:42.370055
+scraped: 2026-03-01T21:24:00.143472
 ---
 
 # Install and update Chromium for Linux

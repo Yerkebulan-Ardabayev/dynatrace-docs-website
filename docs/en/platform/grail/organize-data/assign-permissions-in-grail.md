@@ -1,7 +1,7 @@
 ---
 title: Permissions in Grail
 source: https://www.dynatrace.com/docs/platform/grail/organize-data/assign-permissions-in-grail
-scraped: 2026-02-28T21:13:16.672040
+scraped: 2026-03-01T21:11:57.135690
 ---
 
 # Permissions in Grail

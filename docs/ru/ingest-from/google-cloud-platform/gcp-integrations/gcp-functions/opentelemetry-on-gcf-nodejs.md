@@ -1,7 +1,7 @@
 ---
 title: Integrate on Google Cloud Functions Node.js
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-functions/opentelemetry-on-gcf-nodejs
-scraped: 2026-02-27T21:26:10.995914
+scraped: 2026-03-01T21:15:28.363819
 ---
 
 # Integrate on Google Cloud Functions Node.js

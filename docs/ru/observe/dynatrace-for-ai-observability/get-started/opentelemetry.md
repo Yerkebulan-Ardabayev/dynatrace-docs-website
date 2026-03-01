@@ -1,7 +1,7 @@
 ---
 title: Get started with OpenTelemetry and AI Observability
 source: https://www.dynatrace.com/docs/observe/dynatrace-for-ai-observability/get-started/opentelemetry
-scraped: 2026-02-28T21:33:14.049265
+scraped: 2026-03-01T21:28:39.410086
 ---
 
 # Get started with OpenTelemetry and AI Observability

@@ -1,7 +1,7 @@
 ---
 title: Actions for Text Processing Connector
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/text-processing/automation-workflows-text-processing-actions
-scraped: 2026-02-28T21:27:23.044443
+scraped: 2026-03-01T21:25:18.512667
 ---
 
 # Actions for Text Processing Connector

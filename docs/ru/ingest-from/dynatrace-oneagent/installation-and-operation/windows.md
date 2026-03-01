@@ -1,7 +1,7 @@
 ---
 title: OneAgent on Windows
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/windows
-scraped: 2026-02-28T21:06:21.332705
+scraped: 2026-03-01T21:08:53.596749
 ---
 
 # OneAgent on Windows

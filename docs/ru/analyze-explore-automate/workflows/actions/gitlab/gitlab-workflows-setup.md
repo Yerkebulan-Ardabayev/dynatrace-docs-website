@@ -1,7 +1,7 @@
 ---
 title: Set up GitLab Connector
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/gitlab/gitlab-workflows-setup
-scraped: 2026-02-27T21:28:43.631982
+scraped: 2026-03-01T21:20:41.394036
 ---
 
 # Set up GitLab Connector

@@ -1,7 +1,7 @@
 ---
 title: Amazon AppStream 2.0 monitoring
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-appstream-2
-scraped: 2026-02-27T21:28:54.163833
+scraped: 2026-03-01T21:15:58.914086
 ---
 
 # Amazon AppStream 2.0 monitoring

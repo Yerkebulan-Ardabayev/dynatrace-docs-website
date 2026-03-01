@@ -1,7 +1,7 @@
 ---
 title: Set up Jenkins Connector
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/jenkins/jenkins-workflows-setup
-scraped: 2026-02-27T21:28:13.675305
+scraped: 2026-03-01T21:18:37.618855
 ---
 
 # Set up Jenkins Connector

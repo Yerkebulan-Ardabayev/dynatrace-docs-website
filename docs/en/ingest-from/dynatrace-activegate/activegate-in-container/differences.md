@@ -1,7 +1,7 @@
 ---
 title: Differences between containerized and host-based ActiveGates
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-activegate/activegate-in-container/differences
-scraped: 2026-02-28T21:23:15.540320
+scraped: 2026-03-01T21:20:32.597256
 ---
 
 # Differences between containerized and host-based ActiveGates

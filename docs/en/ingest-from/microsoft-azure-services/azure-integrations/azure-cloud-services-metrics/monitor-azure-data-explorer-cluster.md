@@ -1,7 +1,7 @@
 ---
 title: Azure Data Explorer monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-data-explorer-cluster
-scraped: 2026-02-25T21:27:23.461930
+scraped: 2026-03-01T21:27:15.425731
 ---
 
 # Azure Data Explorer monitoring

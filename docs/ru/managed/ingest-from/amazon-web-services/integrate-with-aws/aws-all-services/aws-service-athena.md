@@ -1,7 +1,7 @@
 ---
 title: Amazon Athena monitoring
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-athena
-scraped: 2026-02-27T21:20:43.291896
+scraped: 2026-03-01T21:27:50.053368
 ---
 
 # Amazon Athena monitoring

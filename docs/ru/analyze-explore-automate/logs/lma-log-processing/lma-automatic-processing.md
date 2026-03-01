@@ -1,7 +1,7 @@
 ---
 title: Automatic log processing at ingestion
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-log-processing/lma-automatic-processing
-scraped: 2026-02-28T21:29:32.924953
+scraped: 2026-03-01T21:14:58.669764
 ---
 
 # Automatic log processing at ingestion

@@ -1,6 +1,6 @@
 # Документация Dynatrace: deliver/release-monitoring
 Язык: Русский (RU)
-Сгенерировано: 2026-02-28
+Сгенерировано: 2026-03-01
 Файлов в разделе: 4
 ---
 
@@ -203,7 +203,7 @@ In addition, a graph displays the latest 20 release validation results:
 ---
 title: Version detection strategies for deep-monitored processes
 source: https://www.dynatrace.com/docs/deliver/release-monitoring/version-detection-strategies
-scraped: 2026-02-27T21:21:02.497242
+scraped: 2026-03-01T21:19:00.213549
 ---
 
 # Version detection strategies for deep-monitored processes
@@ -405,7 +405,7 @@ As a result, releases defined via OpenTelemetry resource attributes won't appear
 ---
 title: Release monitoring Classic
 source: https://www.dynatrace.com/docs/deliver/release-monitoring
-scraped: 2026-02-25T21:30:55.759750
+scraped: 2026-03-01T21:22:50.672741
 ---
 
 # Release monitoring Classic

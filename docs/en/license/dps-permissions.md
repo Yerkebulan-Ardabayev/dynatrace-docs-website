@@ -1,7 +1,7 @@
 ---
 title: DPS permissions
 source: https://www.dynatrace.com/docs/license/dps-permissions
-scraped: 2026-02-28T21:30:26.399542
+scraped: 2026-03-01T21:14:34.543287
 ---
 
 # DPS permissions

@@ -1,7 +1,7 @@
 ---
 title: Vulnerabilities API - POST unmute remediation items
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/application-security/vulnerabilities/post-remediation-items-unmute
-scraped: 2026-02-28T21:27:33.691477
+scraped: 2026-03-01T21:17:43.325763
 ---
 
 # Vulnerabilities API - POST unmute remediation items

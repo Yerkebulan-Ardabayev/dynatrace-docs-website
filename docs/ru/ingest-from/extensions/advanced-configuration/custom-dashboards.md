@@ -1,7 +1,7 @@
 ---
 title: Distribute custom dashboards with your extensions
 source: https://www.dynatrace.com/docs/ingest-from/extensions/advanced-configuration/custom-dashboards
-scraped: 2026-02-27T21:23:37.094137
+scraped: 2026-03-01T21:24:57.788860
 ---
 
 # Distribute custom dashboards with your extensions

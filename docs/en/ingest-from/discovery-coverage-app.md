@@ -1,7 +1,7 @@
 ---
 title: Discovery & Coverage
 source: https://www.dynatrace.com/docs/ingest-from/discovery-coverage-app
-scraped: 2026-02-23T21:36:17.059304
+scraped: 2026-03-01T21:23:01.194339
 ---
 
 # Discovery & Coverage
@@ -22,10 +22,6 @@ Prerequisites
 ## Permissions
 
 The following table describes the required permissions.
-
-Permission
-
-Description
 
 app-settings:objects:read
 
@@ -67,16 +63,6 @@ storage:filter-segments:read
 
 Required for filter-segments functionality
 
-10
-
-rows per page
-
-Page
-
-1
-
-of 1
-
 Get started
 
 Use cases
@@ -113,7 +99,7 @@ The first step to ensuring complete coverage for your environment is to confirm 
 
      + To install OneAgent for a subset of unmonitored hosts, expand the row of the cloud provider and use the filters to narrow down the target hosts, for example, by cloud tag.
      + These filters can also be used if your hosts have multiple IP addresses; for example, you can filter for private IP addresses only. When filters are applied, the text of the **Recommended action** button changes to indicate how many OneAgents will be installed.
-     + You can also use the  [Segments](/docs/manage/segments "Segments logically structure monitoring data in Grail and function as convenient filters for data that users are allowed to access based on permissions.") selector in the upper-right corner of the page to apply global filters.
+     + You can also use the  [Segments](/docs/manage/segments "Use segments to logically structure and conveniently filter observability data across apps.") selector in the upper-right corner of the page to apply global filters.
 
      ![Animated gif of install OneAgents modal](https://dt-cdn.net/images/install-oneagents-5559188c74.gif)
 

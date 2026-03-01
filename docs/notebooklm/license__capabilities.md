@@ -1,6 +1,6 @@
 # Документация Dynatrace: license/capabilities
 Язык: Русский (RU)
-Сгенерировано: 2026-02-28
+Сгенерировано: 2026-03-01
 Файлов в разделе: 17
 ---
 
@@ -9,7 +9,7 @@
 ---
 title: Calculate your consumption of Foundation & Discovery (DPS)
 source: https://www.dynatrace.com/docs/license/capabilities/app-infra-observability/foundation-and-discovery
-scraped: 2026-02-28T21:13:11.438238
+scraped: 2026-03-01T21:13:14.695739
 ---
 
 # Calculate your consumption of Foundation & Discovery (DPS)
@@ -536,7 +536,7 @@ When using the metric "(DPS) Total metric data points billed for Full-Stack moni
 ---
 title: Calculate your consumption of Infrastructure Monitoring (DPS)
 source: https://www.dynatrace.com/docs/license/capabilities/app-infra-observability/infrastructure-monitoring
-scraped: 2026-02-28T21:13:08.096158
+scraped: 2026-03-01T21:13:10.980563
 ---
 
 # Calculate your consumption of Infrastructure Monitoring (DPS)
@@ -872,7 +872,7 @@ The following details apply to metric data points:
 ---
 title: Application & Infrastructure Observability overview (DPS)
 source: https://www.dynatrace.com/docs/license/capabilities/app-infra-observability
-scraped: 2026-02-28T21:22:22.907821
+scraped: 2026-03-01T21:21:49.788842
 ---
 
 # Application & Infrastructure Observability overview (DPS)
@@ -905,7 +905,7 @@ For each OneAgent installed in your infrastructure, you can choose the monitorin
 ---
 title: AppEngine Functions (Serverless Functions) overview (DPS)
 source: https://www.dynatrace.com/docs/license/capabilities/appengine-functions
-scraped: 2026-02-26T21:25:51.606971
+scraped: 2026-03-01T21:19:12.190772
 ---
 
 # AppEngine Functions (Serverless Functions) overview (DPS)
@@ -1006,7 +1006,7 @@ This includes [Kubernetes Security Posture Management (KSPM)](/docs/ingest-from/
 ---
 title: Automation Workflow capability overview (DPS)
 source: https://www.dynatrace.com/docs/license/capabilities/automation
-scraped: 2026-02-28T21:31:13.141423
+scraped: 2026-03-01T21:15:44.512746
 ---
 
 # Automation Workflow capability overview (DPS)
@@ -1235,7 +1235,7 @@ The following details apply to metric data points:
 ---
 title: Events powered by Grail overview (DPS)
 source: https://www.dynatrace.com/docs/license/capabilities/events
-scraped: 2026-02-28T21:19:43.453613
+scraped: 2026-03-01T21:11:21.464729
 ---
 
 # Events powered by Grail overview (DPS)
@@ -1323,7 +1323,7 @@ Here's what's included with the Query data-usage dimension:
 ---
 title: Calculate your consumption of Log Management & Analytics - Query (DPS)
 source: https://www.dynatrace.com/docs/license/capabilities/log-analytics/dps-log-query
-scraped: 2026-02-28T21:08:45.161952
+scraped: 2026-03-01T21:07:33.545090
 ---
 
 # Calculate your consumption of Log Management & Analytics - Query (DPS)
@@ -1457,7 +1457,7 @@ You can query metrics via the [Environment API - Metrics API v2](/docs/dynatrace
 ---
 title: Log Analytics (DPS)
 source: https://www.dynatrace.com/docs/license/capabilities/log-analytics
-scraped: 2026-02-28T21:12:31.770149
+scraped: 2026-03-01T21:09:55.068243
 ---
 
 # Log Analytics (DPS)
@@ -1577,7 +1577,7 @@ Alternatively, if the Retain with Included Query option does not meet your use c
 ---
 title: Metrics powered by Grail overview (DPS)
 source: https://www.dynatrace.com/docs/license/capabilities/metrics
-scraped: 2026-02-28T21:19:36.678775
+scraped: 2026-03-01T21:11:17.821548
 ---
 
 # Metrics powered by Grail overview (DPS)
@@ -1626,7 +1626,7 @@ Here's what's included with the Query data-usage dimension:
 ---
 title: Platform extensions overview (DPS)
 source: https://www.dynatrace.com/docs/license/capabilities/platform-extensions
-scraped: 2026-02-28T21:28:03.274385
+scraped: 2026-03-01T21:15:54.571541
 ---
 
 # Platform extensions overview (DPS)
@@ -1795,7 +1795,7 @@ When other data types are also read in a query, this can result in consumption o
 ---
 title: Understanding DPS capabilities
 source: https://www.dynatrace.com/docs/license/capabilities
-scraped: 2026-02-27T21:16:21.626528
+scraped: 2026-03-01T21:14:42.056262
 ---
 
 # Understanding DPS capabilities

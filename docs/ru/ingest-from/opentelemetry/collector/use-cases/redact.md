@@ -1,7 +1,7 @@
 ---
 title: Mask sensitive data with the OpenTelemetry Collector
 source: https://www.dynatrace.com/docs/ingest-from/opentelemetry/collector/use-cases/redact
-scraped: 2026-02-26T21:32:03.459827
+scraped: 2026-03-01T21:21:44.501661
 ---
 
 # Mask sensitive data with the OpenTelemetry Collector

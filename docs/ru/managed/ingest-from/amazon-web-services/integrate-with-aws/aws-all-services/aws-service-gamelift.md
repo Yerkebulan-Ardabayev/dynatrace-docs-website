@@ -1,7 +1,7 @@
 ---
 title: Amazon GameLift monitoring
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-gamelift
-scraped: 2026-02-27T21:22:24.649936
+scraped: 2026-03-01T21:19:24.018877
 ---
 
 # Amazon GameLift monitoring
@@ -839,7 +839,7 @@ To check the availability of preset dashboards for each AWS service, see the lis
 
 ## Available metrics
 
-`FleetId` является основной размерностью.
+`FleetId` is the main dimension.
 
 | Name | Description | Unit | Statistics | Dimensions | Recommended |
 | --- | --- | --- | --- | --- | --- |

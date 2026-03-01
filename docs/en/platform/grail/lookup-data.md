@@ -1,7 +1,7 @@
 ---
 title: Lookup data in Grail
 source: https://www.dynatrace.com/docs/platform/grail/lookup-data
-scraped: 2026-02-25T21:27:38.278848
+scraped: 2026-03-01T21:19:18.838863
 ---
 
 # Lookup data in Grail
@@ -58,7 +58,7 @@ Preview opt-in
 
 Customers with [Dynatrace Platform Subscription (DPS)](/docs/license "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.") can join the preview for lookup data in Grail. During the preview phase, the `storage:files` permissions are not included in the default Grail policies. You can opt into the preview program by manually adding permissions to access lookup files to your custom policies.
 
-You can configure permissions with [Account Management](/docs/manage/account-management "Manage your Dynatrace license, subscriptions, and platform adoption and environment health."). To grant full access to all lookup data in `/lookups/`, you can create a policy (**Identity & access management** > **Policy management** >  **Create policy**) with the following statements:
+You can configure permissions with [Account Management](/docs/manage/account-management "Manage your Dynatrace license, accounts, platform adoption, and environment health."). To grant full access to all lookup data in `/lookups/`, you can create a policy (**Identity & access management** > **Policy management** >  **Create policy**) with the following statements:
 
 ```
 ALLOW storage:files:read WHERE storage:file-path startsWith "/lookups/";

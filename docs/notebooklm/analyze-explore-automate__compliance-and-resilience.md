@@ -1,6 +1,6 @@
 # Документация Dynatrace: analyze-explore-automate/compliance-and-resilience
 Язык: Русский (RU)
-Сгенерировано: 2026-02-28
+Сгенерировано: 2026-03-01
 Файлов в разделе: 2
 ---
 
@@ -9,7 +9,7 @@
 ---
 title: Compliance Assistant
 source: https://www.dynatrace.com/docs/analyze-explore-automate/compliance-and-resilience/compliance-assistant
-scraped: 2026-02-26T21:26:55.691771
+scraped: 2026-03-01T21:27:08.592235
 ---
 
 # Compliance Assistant
@@ -97,7 +97,7 @@ Incidents ICT critical services widget gathers information from:
 
 * **Attacks** ![Attacks](https://dt-cdn.net/images/attacks-512-b922840b12.png "Attacks")âif there's a security incident, helps detect and classify an attack on your environment in real time.
 * **Problems** ![Problems app - new](https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp "Problems app - new")âif there's a resilience incident, analyzes abnormal system behavior and performance problems detected by Dynatrace Intelligence.
-* Use [segments](/docs/manage/segments "Segments logically structure monitoring data in Grail and function as convenient filters for data that users are allowed to access based on permissions.") to conveniently filter observability and security incidents impacting a critical service under DORA.
+* Use [segments](/docs/manage/segments "Use segments to logically structure and conveniently filter observability data across apps.") to conveniently filter observability and security incidents impacting a critical service under DORA.
 
 **ICT vulnerabilities** widget shows you most recent resilience and security incidents, but you can view all ICT Observability in **Problems** ![Problems app - new](https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp "Problems app - new") and view all ICT Security incidents in **Attacks** ![Attacks](https://dt-cdn.net/images/attacks-512-b922840b12.png "Attacks").
 
@@ -123,7 +123,7 @@ Compliance Assistant enables you to easily achieve and manage your DORA complian
 ---
 title: Compliance and resilience
 source: https://www.dynatrace.com/docs/analyze-explore-automate/compliance-and-resilience
-scraped: 2026-02-28T21:28:46.905414
+scraped: 2026-03-01T21:23:04.995232
 ---
 
 # Compliance and resilience

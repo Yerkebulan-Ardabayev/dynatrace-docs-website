@@ -1,7 +1,7 @@
 ---
 title: Extract a metric from user sessions
 source: https://www.dynatrace.com/docs/observe/digital-experience/new-rum-experience/use-cases/extract-custom-metrics-from-user-sessions
-scraped: 2026-02-28T21:12:58.786919
+scraped: 2026-03-01T21:11:44.966754
 ---
 
 # Extract a metric from user sessions
