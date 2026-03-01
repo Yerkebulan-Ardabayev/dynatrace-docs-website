@@ -1,7 +1,7 @@
 ---
 title: Migrate from Events API v1 to Events API v2
 source: https://www.dynatrace.com/docs/dynatrace-api/basics/deprecation-migration-guides/events-v1-to-v2
-scraped: 2026-02-27T21:24:56.190656
+scraped: 2026-03-01T21:22:36.733322
 ---
 
 # Migrate from Events API v1 to Events API v2

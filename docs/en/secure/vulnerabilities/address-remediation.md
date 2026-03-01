@@ -1,7 +1,7 @@
 ---
 title: Address remediation
 source: https://www.dynatrace.com/docs/secure/vulnerabilities/address-remediation
-scraped: 2026-02-27T21:27:19.243169
+scraped: 2026-03-01T21:26:03.915359
 ---
 
 # Address remediation

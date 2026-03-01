@@ -1,7 +1,7 @@
 ---
 title: Send StatsD metrics to Dynatrace
 source: https://www.dynatrace.com/docs/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/statsd
-scraped: 2026-02-28T21:14:32.236964
+scraped: 2026-03-01T21:13:38.872015
 ---
 
 # Send StatsD metrics to Dynatrace

@@ -1,7 +1,7 @@
 ---
 title: Create and configure a browser monitor
 source: https://www.dynatrace.com/docs/observe/digital-experience/synthetic-on-grail/synthetic-app/create-configure-browser-monitors
-scraped: 2026-02-28T21:18:16.822390
+scraped: 2026-03-01T21:10:11.964759
 ---
 
 # Create and configure a browser monitor

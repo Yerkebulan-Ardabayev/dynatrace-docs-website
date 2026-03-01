@@ -1,7 +1,7 @@
 ---
 title: Work with Dynatrace Monaco CLI commands for Latest Dynatrace
 source: https://www.dynatrace.com/docs/deliver/configuration-as-code/monaco/reference/commands-saas
-scraped: 2026-02-26T21:32:02.164148
+scraped: 2026-03-01T21:16:09.207176
 ---
 
 # Work with Dynatrace Monaco CLI commands for Latest Dynatrace

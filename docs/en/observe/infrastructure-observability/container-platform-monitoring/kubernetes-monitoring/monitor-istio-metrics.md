@@ -1,7 +1,7 @@
 ---
 title: Istio/Envoy proxy metrics
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-istio-metrics
-scraped: 2026-02-28T21:26:51.891543
+scraped: 2026-03-01T21:14:06.013949
 ---
 
 # Istio/Envoy proxy metrics

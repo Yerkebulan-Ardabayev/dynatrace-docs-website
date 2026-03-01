@@ -1,7 +1,7 @@
 ---
 title: Collaborate with apps and share findings
 source: https://www.dynatrace.com/docs/secure/xspm/share-findings
-scraped: 2026-02-27T21:24:05.231260
+scraped: 2026-03-01T21:20:10.137364
 ---
 
 # Collaborate with apps and share findings

@@ -1,7 +1,7 @@
 ---
 title: Log viewer (Logs Classic)
 source: https://www.dynatrace.com/docs/analyze-explore-automate/log-monitoring/analyze-log-data/log-viewer
-scraped: 2026-02-27T21:22:38.358814
+scraped: 2026-03-01T21:16:55.810299
 ---
 
 # Log viewer (Logs Classic)

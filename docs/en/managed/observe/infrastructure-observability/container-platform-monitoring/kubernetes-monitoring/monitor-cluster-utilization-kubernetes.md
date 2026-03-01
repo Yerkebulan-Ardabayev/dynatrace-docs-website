@@ -1,7 +1,7 @@
 ---
 title: Monitor Kubernetes/OpenShift cluster utilization
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-cluster-utilization-kubernetes
-scraped: 2026-02-25T21:24:16.617916
+scraped: 2026-03-01T21:13:54.773833
 ---
 
 # Monitor Kubernetes/OpenShift cluster utilization

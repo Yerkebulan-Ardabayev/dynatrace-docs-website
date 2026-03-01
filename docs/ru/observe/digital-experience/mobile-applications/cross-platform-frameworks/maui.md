@@ -1,7 +1,7 @@
 ---
 title: Instrument mobile apps with Dynatrace .NET MAUI NuGet package
 source: https://www.dynatrace.com/docs/observe/digital-experience/mobile-applications/cross-platform-frameworks/maui
-scraped: 2026-02-28T21:16:06.745637
+scraped: 2026-03-01T21:23:23.763380
 ---
 
 # Instrument mobile apps with Dynatrace .NET MAUI NuGet package

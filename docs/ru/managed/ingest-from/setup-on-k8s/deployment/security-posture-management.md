@@ -1,7 +1,7 @@
 ---
 title: Kubernetes Security Posture Management
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/deployment/security-posture-management
-scraped: 2026-02-27T21:20:50.264645
+scraped: 2026-03-01T21:23:02.448384
 ---
 
 # Kubernetes Security Posture Management

@@ -1,7 +1,7 @@
 ---
 title: Metric units API
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/metrics-units
-scraped: 2026-02-26T21:24:35.489421
+scraped: 2026-03-01T21:24:07.443885
 ---
 
 # Metric units API

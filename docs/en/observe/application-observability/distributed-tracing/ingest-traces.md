@@ -1,7 +1,7 @@
 ---
 title: Ingest traces
 source: https://www.dynatrace.com/docs/observe/application-observability/distributed-tracing/ingest-traces
-scraped: 2026-02-28T21:09:25.077674
+scraped: 2026-03-01T21:09:35.186233
 ---
 
 # Ingest traces

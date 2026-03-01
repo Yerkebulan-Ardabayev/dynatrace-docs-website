@@ -1,7 +1,7 @@
 ---
 title: Create a single-URL browser monitor
 source: https://www.dynatrace.com/docs/observe/digital-experience/synthetic-monitoring/browser-monitors/create-a-single-url-browser-monitor
-scraped: 2026-02-28T21:18:31.079382
+scraped: 2026-03-01T21:10:27.014354
 ---
 
 # Create a single-URL browser monitor

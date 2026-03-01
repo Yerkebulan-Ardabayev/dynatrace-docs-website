@@ -1,7 +1,7 @@
 ---
 title: Application and Infrastructure Monitoring (Host Units)
 source: https://www.dynatrace.com/docs/license/monitoring-consumption-classic/application-and-infrastructure-monitoring
-scraped: 2026-02-28T21:13:04.465603
+scraped: 2026-03-01T21:13:09.837906
 ---
 
 # Application and Infrastructure Monitoring (Host Units)

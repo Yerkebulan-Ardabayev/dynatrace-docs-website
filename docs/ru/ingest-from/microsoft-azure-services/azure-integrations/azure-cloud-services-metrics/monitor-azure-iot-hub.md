@@ -1,7 +1,7 @@
 ---
 title: Azure IoT Hub monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-iot-hub
-scraped: 2026-02-28T21:31:50.398242
+scraped: 2026-03-01T21:24:35.992889
 ---
 
 # Azure IoT Hub monitoring

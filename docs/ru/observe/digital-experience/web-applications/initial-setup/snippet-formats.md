@@ -1,7 +1,7 @@
 ---
 title: Select a snippet format
 source: https://www.dynatrace.com/docs/observe/digital-experience/web-applications/initial-setup/snippet-formats
-scraped: 2026-02-26T21:28:11.272069
+scraped: 2026-03-01T21:15:02.948699
 ---
 
 # Select a snippet format

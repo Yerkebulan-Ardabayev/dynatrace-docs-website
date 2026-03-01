@@ -1,7 +1,7 @@
 ---
 title: Service analysis
 source: https://www.dynatrace.com/docs/observe/application-observability/services-classic/service-analysis-new
-scraped: 2026-02-28T21:22:53.305737
+scraped: 2026-03-01T21:19:42.548871
 ---
 
 # Service analysis

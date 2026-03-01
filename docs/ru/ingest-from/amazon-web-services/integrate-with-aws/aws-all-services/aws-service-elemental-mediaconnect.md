@@ -1,7 +1,7 @@
 ---
 title: AWS Elemental MediaConnect monitoring
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-elemental-mediaconnect
-scraped: 2026-02-28T21:28:51.100531
+scraped: 2026-03-01T21:21:27.762003
 ---
 
 # AWS Elemental MediaConnect monitoring
@@ -840,7 +840,7 @@ To check the availability of preset dashboards for each AWS service, see the lis
 
 ## Available metrics
 
-`FlowARN` is the main dimension.
+`FlowARN` является основной размерностью.
 
 | Name | Description | Unit | Statistics | Dimensions | Recommended |
 | --- | --- | --- | --- | --- | --- |

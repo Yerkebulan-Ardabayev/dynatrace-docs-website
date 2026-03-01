@@ -1,6 +1,6 @@
 # Документация Dynatrace: analyze-explore-automate/workflows
 Язык: Русский (RU)
-Сгенерировано: 2026-02-28
+Сгенерировано: 2026-03-01
 Файлов в разделе: 31
 ---
 
@@ -233,7 +233,7 @@ The message size is limited to 256 KiB. Larger payloads will result in an action
 ---
 title: Actions for GitHub Connector
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/github/github-workflows-actions
-scraped: 2026-02-27T21:22:07.361970
+scraped: 2026-03-01T21:25:46.175084
 ---
 
 # Actions for GitHub Connector
@@ -518,7 +518,7 @@ The action returns the `workflowRun` property that contains the full response of
 ---
 title: Set up GitHub Connector
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/github/github-workflows-setup
-scraped: 2026-02-27T21:27:54.240180
+scraped: 2026-03-01T21:20:39.001357
 ---
 
 # Set up GitHub Connector
@@ -595,7 +595,7 @@ We strongly recommend that you limit the permissions of your personal access tok
 ---
 title: GitHub Connector
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/github
-scraped: 2026-02-28T21:31:16.759506
+scraped: 2026-03-01T21:23:06.113444
 ---
 
 # GitHub Connector
@@ -929,7 +929,7 @@ Returns fields as described in the [Jobs API - Run a jobï»¿](https://dt-url.n
 ---
 title: Set up GitLab Connector
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/gitlab/gitlab-workflows-setup
-scraped: 2026-02-27T21:28:43.631982
+scraped: 2026-03-01T21:20:41.394036
 ---
 
 # Set up GitLab Connector
@@ -1033,7 +1033,7 @@ Learn about available actions used by GitLab Connector integration for automatin
 ---
 title: Set up Jenkins Connector
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/jenkins/jenkins-workflows-setup
-scraped: 2026-02-27T21:28:13.675305
+scraped: 2026-03-01T21:18:37.618855
 ---
 
 # Set up Jenkins Connector
@@ -1144,7 +1144,7 @@ The following are solutions to problems some people had with Jira Connector acti
 ---
 title: Microsoft Entra ID Connector
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/microsoft-entra-id
-scraped: 2026-02-26T21:20:58.803507
+scraped: 2026-03-01T21:16:26.158617
 ---
 
 # Microsoft Entra ID Connector
@@ -1282,7 +1282,7 @@ The log of a successful run is shown below.
 ---
 title: PagerDuty
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/pagerduty
-scraped: 2026-02-28T21:26:04.735743
+scraped: 2026-03-01T21:19:41.416857
 ---
 
 # PagerDuty
@@ -1388,7 +1388,7 @@ The following are solutions to problems some people have.
 ---
 title: Red Hat Ansible Automation
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/red-hat/redhat-ansible
-scraped: 2026-02-28T21:26:06.389181
+scraped: 2026-03-01T21:23:31.362860
 ---
 
 # Red Hat Ansible Automation
@@ -2939,7 +2939,7 @@ The following are solutions to problems some people had with Slack integration.
 ---
 title: Actions for Text Processing Connector
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/text-processing/automation-workflows-text-processing-actions
-scraped: 2026-02-28T21:27:23.044443
+scraped: 2026-03-01T21:25:18.512667
 ---
 
 # Actions for Text Processing Connector
@@ -3290,7 +3290,7 @@ Supports multi-document YAML files.
 ---
 title: Text Processing
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/text-processing
-scraped: 2026-02-28T21:26:18.551149
+scraped: 2026-03-01T21:24:28.038573
 ---
 
 # Text Processing
@@ -3434,7 +3434,7 @@ Text Processing provides a set of `set` and `get` actions for manipulating conte
 ---
 title: DQL query action for Workflows
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/default-workflow-actions/dql-query-workflow-action
-scraped: 2026-02-27T21:27:28.592963
+scraped: 2026-03-01T21:25:50.410103
 ---
 
 # DQL query action for Workflows
@@ -3511,7 +3511,7 @@ The result of the HTTP request action is a JSON structure that includes
 ---
 title: Run JavaScript action for Workflows
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/default-workflow-actions/run-javascript-workflow-action
-scraped: 2026-02-28T21:31:09.878769
+scraped: 2026-03-01T21:17:07.670241
 ---
 
 # Run JavaScript action for Workflows
@@ -3899,7 +3899,7 @@ Use the **Run Workflow** action to modularize workflow usage.](/docs/analyze-exp
 ---
 title: Access workflow management functionality
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/manage-workflows/workflows-access-management
-scraped: 2026-02-27T21:22:37.067356
+scraped: 2026-03-01T21:15:05.339609
 ---
 
 # Access workflow management functionality
@@ -3982,7 +3982,7 @@ To access various **Live** or **Draft** workflow management commands
 ---
 title: Get notified about workflow changes
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/manage-workflows/workflows-notifications
-scraped: 2026-02-27T21:17:31.837531
+scraped: 2026-03-01T21:21:41.596064
 ---
 
 # Get notified about workflow changes
@@ -4055,7 +4055,7 @@ To turn off notifications for workflow, select  > **Turn off notifications**.
 ---
 title: User permissions for workflows
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/security
-scraped: 2026-02-27T21:21:19.013473
+scraped: 2026-03-01T21:16:07.755998
 ---
 
 # User permissions for workflows
@@ -4219,7 +4219,7 @@ For more information, see [Service users](/docs/manage/identity-access-managemen
 ---
 title: Event triggers for workflows
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/trigger/event-trigger
-scraped: 2026-02-26T21:27:25.522661
+scraped: 2026-03-01T21:21:08.644610
 ---
 
 # Event triggers for workflows
@@ -4790,7 +4790,7 @@ Design a workflow to manage high-volume AWS alerts by filtering out noise and su
 ---
 title: Workflows
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows
-scraped: 2026-02-28T21:12:18.619264
+scraped: 2026-03-01T21:13:17.127296
 ---
 
 # Workflows

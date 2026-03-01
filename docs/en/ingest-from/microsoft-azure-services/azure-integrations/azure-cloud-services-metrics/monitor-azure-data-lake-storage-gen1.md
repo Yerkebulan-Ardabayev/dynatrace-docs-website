@@ -1,7 +1,7 @@
 ---
 title: Azure Data Lake Storage Gen1 monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-data-lake-storage-gen1
-scraped: 2026-02-26T21:22:17.952541
+scraped: 2026-03-01T21:20:18.186083
 ---
 
 # Azure Data Lake Storage Gen1 monitoring

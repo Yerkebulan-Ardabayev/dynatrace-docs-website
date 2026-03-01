@@ -1,7 +1,7 @@
 ---
 title: Configure key user actions for mobile applications
 source: https://www.dynatrace.com/docs/observe/digital-experience/mobile-applications/additional-configuration/configure-key-user-actions-mobile
-scraped: 2026-02-27T21:26:52.887118
+scraped: 2026-03-01T21:22:24.244749
 ---
 
 # Configure key user actions for mobile applications

@@ -1,7 +1,7 @@
 ---
 title: Configure Session Replay for Android
 source: https://www.dynatrace.com/docs/observe/digital-experience/session-replay/session-replay-android
-scraped: 2026-02-27T21:17:33.189224
+scraped: 2026-03-01T21:24:51.211862
 ---
 
 # Configure Session Replay for Android

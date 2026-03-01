@@ -1,7 +1,7 @@
 ---
 title: Push logs with Cloudflare
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-push-logs-with-cloudflare
-scraped: 2026-02-28T21:22:35.096365
+scraped: 2026-03-01T21:19:34.829423
 ---
 
 # Push logs with Cloudflare

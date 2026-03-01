@@ -1,7 +1,7 @@
 ---
 title: Log metrics (Logs Classic)
 source: https://www.dynatrace.com/docs/analyze-explore-automate/log-monitoring/analyze-log-data/log-metrics
-scraped: 2026-02-28T21:32:38.172016
+scraped: 2026-03-01T21:17:35.376627
 ---
 
 # Log metrics (Logs Classic)

@@ -1,7 +1,7 @@
 ---
 title: Metric scripting integration
 source: https://www.dynatrace.com/docs/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/oneagent-pipe
-scraped: 2026-02-28T21:14:25.556127
+scraped: 2026-03-01T21:13:41.282082
 ---
 
 # Metric scripting integration

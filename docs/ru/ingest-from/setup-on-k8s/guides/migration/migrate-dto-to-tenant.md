@@ -1,7 +1,7 @@
 ---
 title: Migrate Dynatrace Operator to a new environment
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/guides/migration/migrate-dto-to-tenant
-scraped: 2026-02-25T21:33:26.588499
+scraped: 2026-03-01T21:27:56.933539
 ---
 
 # Migrate Dynatrace Operator to a new environment

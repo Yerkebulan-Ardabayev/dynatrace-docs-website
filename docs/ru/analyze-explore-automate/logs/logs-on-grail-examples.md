@@ -1,7 +1,7 @@
 ---
 title: Log on Grail examples
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/logs-on-grail-examples
-scraped: 2026-02-28T21:12:23.432519
+scraped: 2026-03-01T21:11:47.363126
 ---
 
 # Log on Grail examples

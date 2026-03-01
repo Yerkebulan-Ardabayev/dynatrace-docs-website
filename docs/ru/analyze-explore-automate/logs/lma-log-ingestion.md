@@ -1,7 +1,7 @@
 ---
 title: Log ingestion
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-log-ingestion
-scraped: 2026-02-28T21:12:20.280731
+scraped: 2026-03-01T21:11:52.165677
 ---
 
 # Log ingestion

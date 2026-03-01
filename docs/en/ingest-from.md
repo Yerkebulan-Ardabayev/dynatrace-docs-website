@@ -1,7 +1,7 @@
 ---
 title: Ingest data
 source: https://www.dynatrace.com/docs/ingest-from
-scraped: 2026-02-28T21:13:59.193338
+scraped: 2026-03-01T21:12:36.615096
 ---
 
 # Ingest data

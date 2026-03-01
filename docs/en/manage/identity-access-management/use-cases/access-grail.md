@@ -1,7 +1,7 @@
 ---
 title: Grant access to Grail
 source: https://www.dynatrace.com/docs/manage/identity-access-management/use-cases/access-grail
-scraped: 2026-02-28T21:18:38.037137
+scraped: 2026-03-01T21:10:34.207972
 ---
 
 # Grant access to Grail

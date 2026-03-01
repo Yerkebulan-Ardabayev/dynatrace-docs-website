@@ -1,7 +1,7 @@
 ---
 title: Calculate your consumption of Foundation & Discovery (DPS)
 source: https://www.dynatrace.com/docs/license/capabilities/app-infra-observability/foundation-and-discovery
-scraped: 2026-02-28T21:13:11.438238
+scraped: 2026-03-01T21:13:14.695739
 ---
 
 # Calculate your consumption of Foundation & Discovery (DPS)

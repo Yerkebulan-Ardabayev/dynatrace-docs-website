@@ -1,7 +1,7 @@
 ---
 title: Migration guides
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/guides/migration
-scraped: 2026-02-27T21:17:39.320416
+scraped: 2026-03-01T21:25:13.513281
 ---
 
 # Migration guides

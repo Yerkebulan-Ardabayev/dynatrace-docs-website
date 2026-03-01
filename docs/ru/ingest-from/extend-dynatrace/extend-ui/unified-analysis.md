@@ -1,7 +1,7 @@
 ---
 title: Unified analysis pages
 source: https://www.dynatrace.com/docs/ingest-from/extend-dynatrace/extend-ui/unified-analysis
-scraped: 2026-02-27T21:26:16.249414
+scraped: 2026-03-01T21:16:06.538287
 ---
 
 # Unified analysis pages

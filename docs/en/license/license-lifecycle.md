@@ -1,7 +1,7 @@
 ---
 title: Your license lifecycle
 source: https://www.dynatrace.com/docs/license/license-lifecycle
-scraped: 2026-02-28T21:30:19.349277
+scraped: 2026-03-01T21:14:38.336252
 ---
 
 # Your license lifecycle

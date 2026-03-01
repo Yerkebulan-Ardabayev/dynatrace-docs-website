@@ -1,7 +1,7 @@
 ---
 title: Instrument hybrid apps
 source: https://www.dynatrace.com/docs/observe/digital-experience/mobile-applications/instrument-hybrid-app
-scraped: 2026-02-28T21:27:30.161997
+scraped: 2026-03-01T21:16:22.297061
 ---
 
 # Instrument hybrid apps

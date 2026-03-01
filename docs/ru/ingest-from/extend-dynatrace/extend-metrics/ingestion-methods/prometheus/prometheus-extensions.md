@@ -1,7 +1,7 @@
 ---
 title: Manage Prometheus extensions
 source: https://www.dynatrace.com/docs/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/prometheus/prometheus-extensions
-scraped: 2026-02-27T21:24:40.747985
+scraped: 2026-03-01T21:27:47.195660
 ---
 
 # Manage Prometheus extensions

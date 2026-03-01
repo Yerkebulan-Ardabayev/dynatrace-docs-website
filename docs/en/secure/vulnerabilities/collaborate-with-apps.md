@@ -1,7 +1,7 @@
 ---
 title: Integrate vulnerability insights across Dynatrace and external apps
 source: https://www.dynatrace.com/docs/secure/vulnerabilities/collaborate-with-apps
-scraped: 2026-02-28T21:29:24.284556
+scraped: 2026-03-01T21:19:36.163432
 ---
 
 # Integrate vulnerability insights across Dynatrace and external apps
