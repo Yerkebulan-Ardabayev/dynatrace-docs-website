@@ -25502,26 +25502,6 @@ These rules are applied globally to all detected services.</p>
 <h3 id="default-splitting-rules">Default splitting rules<a class="headerlink" href="#default-splitting-rules" title="Permanent link">&para;</a></h3>
 <p>Dynatrace provides default service splitting rules as described in the table below.
 Additionally, custom rules can be created as described in <a href="/docs/observe/application-observability/services/service-detection/service-detection-v2/service-splitting-v2#create-new-rule" title="Find out how to split detected services based on resource attributes.">Create new rule</a>.</p>
-<p>Priority</p>
-<p>Rule name</p>
-<p>Condition</p>
-<p>Splitting attributes</p>
-<p>Status</p>
-<p>1</p>
-<p>Split Adobe Experience Manager (AEM) services by process group</p>
-<p><code>adobe.em.tier</code> + <code>adobe.em.env_type</code> + <code>adobe.em.program</code></p>
-<p><code>dt.entity.process_group</code></p>
-<p>Enabled</p>
-<p>2</p>
-<p>Split services by k8s cluster and namespace</p>
-<p>None (applies to all)</p>
-<p><code>k8s.namespace.name</code> + <code>k8s.cluster.uid</code></p>
-<p>Enabled<a href="#fn-1-1-def">1</a></p>
-<p>3</p>
-<p>Split services by k8s namespace Deprecated</p>
-<p>None (applies to all)</p>
-<p><code>k8s.namespace.name</code></p>
-<p>Disabled<a href="#fn-1-2-def">2</a></p>
 <p>1</p>
 <p>If you began using Dynatrace before Dynatrace version 1.317, this is disabled.</p>
 <p>2</p>
