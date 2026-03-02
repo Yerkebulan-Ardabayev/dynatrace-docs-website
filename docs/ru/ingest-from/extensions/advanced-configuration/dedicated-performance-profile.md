@@ -1,7 +1,7 @@
 ---
 title: Dedicated performance profile configuration
 source: https://www.dynatrace.com/docs/ingest-from/extensions/advanced-configuration/dedicated-performance-profile
-scraped: 2026-02-28T21:25:01.208202
+scraped: 2026-03-02T21:19:55.405269
 ---
 
 # Dedicated performance profile configuration

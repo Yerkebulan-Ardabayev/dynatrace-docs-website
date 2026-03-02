@@ -1,7 +1,7 @@
 ---
 title: AWS CodeBuild monitoring
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-codebuild
-scraped: 2026-03-01T21:26:29.195589
+scraped: 2026-03-02T21:22:20.312939
 ---
 
 # AWS CodeBuild monitoring

@@ -1,7 +1,7 @@
 ---
 title: Private synthetic locations
 source: https://www.dynatrace.com/docs/observe/digital-experience/synthetic-on-grail/synthetic-app/private-locations
-scraped: 2026-03-01T21:10:18.694990
+scraped: 2026-03-02T21:25:10.666846
 ---
 
 # Private synthetic locations

@@ -1,7 +1,7 @@
 ---
 title: AI data governance with Amazon Bedrock
 source: https://www.dynatrace.com/docs/observe/dynatrace-for-ai-observability/sample-use-cases/data-governance
-scraped: 2026-02-28T21:30:53.204408
+scraped: 2026-03-02T21:33:17.561447
 ---
 
 # AI data governance with Amazon Bedrock

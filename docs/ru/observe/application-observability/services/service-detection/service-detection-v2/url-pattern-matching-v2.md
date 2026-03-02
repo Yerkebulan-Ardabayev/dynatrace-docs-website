@@ -1,7 +1,7 @@
 ---
 title: Configure URL path pattern matching in Service Detection v2
 source: https://www.dynatrace.com/docs/observe/application-observability/services/service-detection/service-detection-v2/url-pattern-matching-v2
-scraped: 2026-02-27T21:19:10.484066
+scraped: 2026-03-02T21:23:27.625012
 ---
 
 # Configure URL path pattern matching in Service Detection v2

@@ -1,7 +1,7 @@
 ---
 title: Business Observability
 source: https://www.dynatrace.com/docs/observe/business-observability
-scraped: 2026-03-01T21:07:54.492707
+scraped: 2026-03-02T21:14:05.970872
 ---
 
 # Business Observability

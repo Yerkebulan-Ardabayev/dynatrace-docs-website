@@ -1,7 +1,7 @@
 ---
 title: End-of-support announcements
 source: https://www.dynatrace.com/docs/whats-new/technology/end-of-support-news
-scraped: 2026-03-01T21:08:15.543556
+scraped: 2026-03-02T21:13:15.777702
 ---
 
 # End-of-support announcements

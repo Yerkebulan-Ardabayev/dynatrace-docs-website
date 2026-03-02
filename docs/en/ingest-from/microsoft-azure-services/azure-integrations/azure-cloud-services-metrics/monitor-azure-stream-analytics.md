@@ -1,7 +1,7 @@
 ---
 title: Azure Stream Analytics monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-stream-analytics
-scraped: 2026-02-26T21:32:50.738226
+scraped: 2026-03-02T21:32:59.961251
 ---
 
 # Azure Stream Analytics monitoring

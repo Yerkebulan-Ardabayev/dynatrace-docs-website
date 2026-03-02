@@ -1,6 +1,6 @@
 # Документация Dynatrace: analyze-explore-automate/smartscape
 Язык: Русский (RU)
-Сгенерировано: 2026-03-01
+Сгенерировано: 2026-03-02
 Файлов в разделе: 12
 ---
 
@@ -9,7 +9,7 @@
 ---
 title: Smartscape concepts
 source: https://www.dynatrace.com/docs/analyze-explore-automate/smartscape/smartscape-concepts
-scraped: 2026-03-01T21:24:16.395688
+scraped: 2026-03-02T21:17:14.152620
 ---
 
 # Smartscape concepts
@@ -125,7 +125,7 @@ By optimizing the graph's size, you can ensure a stable and uninterrupted experi
 ---
 title: View topology
 source: https://www.dynatrace.com/docs/analyze-explore-automate/smartscape/smartscape-modals/smartscape-view-topology
-scraped: 2026-02-27T21:20:47.505270
+scraped: 2026-03-02T21:33:12.289922
 ---
 
 # View topology
@@ -363,7 +363,7 @@ Visualize the topology around any selected entity to gain immediate insights on 
 ---
 title: AWS EC2 ecosystem overview
 source: https://www.dynatrace.com/docs/analyze-explore-automate/smartscape/smartscape-views/aws-ec2-ecosystem-overview
-scraped: 2026-03-01T21:28:25.169673
+scraped: 2026-03-02T21:22:15.014386
 ---
 
 # AWS EC2 ecosystem overview
@@ -515,7 +515,7 @@ To use **Infrastructure overview** effectively, we recommend that you:
 ---
 title: Kubernetes overview
 source: https://www.dynatrace.com/docs/analyze-explore-automate/smartscape/smartscape-views/kubernetes-overview
-scraped: 2026-03-01T21:25:11.069284
+scraped: 2026-03-02T21:27:33.743275
 ---
 
 # Kubernetes overview
@@ -641,7 +641,7 @@ To use ![Smartscape](https://dt-cdn.net/images/smartscapes-256-eb41c7cddc.png "S
 ---
 title: Service dependency graph
 source: https://www.dynatrace.com/docs/analyze-explore-automate/smartscape/smartscape-views/service-dependency-graph
-scraped: 2026-03-01T21:24:52.318381
+scraped: 2026-03-02T21:20:00.088025
 ---
 
 # Service dependency graph
@@ -699,7 +699,7 @@ To use **Service dependency graph** effectively, we recommend that you:
 ---
 title: Smartscape on Grail view
 source: https://www.dynatrace.com/docs/analyze-explore-automate/smartscape/smartscape-views/smartscape-on-grail-view
-scraped: 2026-02-28T21:26:31.692476
+scraped: 2026-03-02T21:23:38.493803
 ---
 
 # Smartscape on Grail view

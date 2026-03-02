@@ -1,7 +1,7 @@
 ---
 title: Improve database performance
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/databases/database-services-classic/improve-database-performance
-scraped: 2026-03-01T21:14:59.888365
+scraped: 2026-03-02T21:32:35.009900
 ---
 
 # Improve database performance
@@ -133,4 +133,6 @@ Most often, over-stressed processes start dropping packets when resources are de
 
 ## Related topics
 
-* [Мониторинг хостов с Dynatrace](/docs/observe/infrastructure-observability/hosts/monitoring/host-monitoring "Мониторинг хостов с Dynatrace.")
+
+
+* [Host monitoring with Dynatrace](/docs/observe/infrastructure-observability/hosts/monitoring/host-monitoring "Monitor hosts with Dynatrace.")

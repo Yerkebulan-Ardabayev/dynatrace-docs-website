@@ -1,6 +1,6 @@
 # Документация Dynatrace: observe/dynatrace-for-ai-observability
 Язык: Русский (RU)
-Сгенерировано: 2026-03-01
+Сгенерировано: 2026-03-02
 Файлов в разделе: 15
 ---
 
@@ -9,7 +9,7 @@
 ---
 title: AI Observability
 source: https://www.dynatrace.com/docs/observe/dynatrace-for-ai-observability/ai-observability-app
-scraped: 2026-03-01T21:22:44.580990
+scraped: 2026-03-02T21:23:22.538566
 ---
 
 # AI Observability
@@ -1377,7 +1377,7 @@ The following attributes are available for GenAI Spans.
 ---
 title: NVIDIA NIM
 source: https://www.dynatrace.com/docs/observe/dynatrace-for-ai-observability/models-and-platforms/nvidia-nim
-scraped: 2026-03-01T21:12:29.451124
+scraped: 2026-03-02T21:32:36.363234
 ---
 
 # NVIDIA NIM
@@ -1702,7 +1702,7 @@ The following attributes are available for GenAI Spans.
 ---
 title: TensorFlow Keras observability
 source: https://www.dynatrace.com/docs/observe/dynatrace-for-ai-observability/models-and-platforms/tensorflow-keras-observability
-scraped: 2026-03-01T21:19:47.950021
+scraped: 2026-03-02T21:32:14.694595
 ---
 
 # TensorFlow Keras observability
@@ -2138,7 +2138,7 @@ The following attributes are available for GenAI Spans.
 ---
 title: AI data governance with Amazon Bedrock
 source: https://www.dynatrace.com/docs/observe/dynatrace-for-ai-observability/sample-use-cases/data-governance
-scraped: 2026-02-28T21:30:53.204408
+scraped: 2026-03-02T21:33:17.561447
 ---
 
 # AI data governance with Amazon Bedrock
@@ -2324,7 +2324,7 @@ Now you can:
 ---
 title: OpenAI Observability
 source: https://www.dynatrace.com/docs/observe/dynatrace-for-ai-observability/sample-use-cases/openai-observability
-scraped: 2026-03-01T21:25:01.542184
+scraped: 2026-03-02T21:27:07.798364
 ---
 
 # OpenAI Observability
@@ -2549,7 +2549,7 @@ Our simple example of a Node.js service entirely depends on the ChatGPT model re
 ---
 title: AI and LLM Observability
 source: https://www.dynatrace.com/docs/observe/dynatrace-for-ai-observability
-scraped: 2026-03-01T21:07:50.852927
+scraped: 2026-03-02T21:14:07.057834
 ---
 
 # AI and LLM Observability

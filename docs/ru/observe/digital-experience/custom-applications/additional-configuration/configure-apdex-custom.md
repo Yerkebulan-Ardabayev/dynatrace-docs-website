@@ -1,7 +1,7 @@
 ---
 title: Adjust Apdex settings for custom applications
 source: https://www.dynatrace.com/docs/observe/digital-experience/custom-applications/additional-configuration/configure-apdex-custom
-scraped: 2026-03-01T21:23:14.894791
+scraped: 2026-03-02T21:32:15.885051
 ---
 
 # Adjust Apdex settings for custom applications

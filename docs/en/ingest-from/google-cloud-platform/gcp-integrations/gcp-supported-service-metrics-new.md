@@ -1,7 +1,7 @@
 ---
 title: Google Cloud supported services
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new
-scraped: 2026-03-01T21:17:19.216565
+scraped: 2026-03-02T21:21:55.942499
 ---
 
 # Google Cloud supported services

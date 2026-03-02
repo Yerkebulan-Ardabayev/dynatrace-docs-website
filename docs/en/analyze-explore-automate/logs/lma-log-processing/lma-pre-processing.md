@@ -1,7 +1,7 @@
 ---
 title: Log pre-processing with OpenPipeline with ready-made bundles
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-log-processing/lma-pre-processing
-scraped: 2026-03-01T21:16:11.918392
+scraped: 2026-03-02T21:26:57.084566
 ---
 
 # Log pre-processing with OpenPipeline with ready-made bundles

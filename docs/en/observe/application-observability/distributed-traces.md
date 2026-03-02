@@ -1,7 +1,7 @@
 ---
 title: Distributed Traces Classic
 source: https://www.dynatrace.com/docs/observe/application-observability/distributed-traces
-scraped: 2026-03-01T21:13:48.747702
+scraped: 2026-03-02T21:21:40.671393
 ---
 
 # Distributed Traces Classic

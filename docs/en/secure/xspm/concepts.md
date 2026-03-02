@@ -1,7 +1,7 @@
 ---
 title: Security Posture Management concepts
 source: https://www.dynatrace.com/docs/secure/xspm/concepts
-scraped: 2026-03-01T21:21:13.921543
+scraped: 2026-03-02T21:31:09.540106
 ---
 
 # Security Posture Management concepts

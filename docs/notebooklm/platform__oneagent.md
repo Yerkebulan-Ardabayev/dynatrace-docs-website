@@ -1,6 +1,6 @@
 # Документация Dynatrace: platform/oneagent
 Язык: Русский (RU)
-Сгенерировано: 2026-03-01
+Сгенерировано: 2026-03-02
 Файлов в разделе: 6
 ---
 
@@ -266,7 +266,7 @@ For details on how Application Security works in Discovery mode, see [Applicatio
 ---
 title: OneAgent monitoring modes
 source: https://www.dynatrace.com/docs/platform/oneagent/monitoring-modes/monitoring-modes
-scraped: 2026-03-01T21:08:57.268538
+scraped: 2026-03-02T21:14:15.651389
 ---
 
 # OneAgent monitoring modes
@@ -573,7 +573,7 @@ For a complete list of the technologies that can be monitored by OneAgent, pleas
 ---
 title: OneAgent
 source: https://www.dynatrace.com/docs/platform/oneagent
-scraped: 2026-03-01T21:07:47.458622
+scraped: 2026-03-02T21:13:51.232907
 ---
 
 # OneAgent

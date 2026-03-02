@@ -1,7 +1,7 @@
 ---
 title: EdgeConnect release notes version 1.416.14
 source: https://www.dynatrace.com/docs/whats-new/edgeconnect/edgeconnect-release-notes-1-416-14
-scraped: 2026-02-26T21:20:19.452974
+scraped: 2026-03-02T21:16:35.357731
 ---
 
 # EdgeConnect release notes version 1.416.14

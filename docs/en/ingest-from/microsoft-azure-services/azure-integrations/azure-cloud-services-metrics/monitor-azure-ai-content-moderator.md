@@ -1,7 +1,7 @@
 ---
 title: Azure AI Content Moderator monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-ai-content-moderator
-scraped: 2026-03-01T21:20:24.757319
+scraped: 2026-03-02T21:27:46.403579
 ---
 
 # Azure AI Content Moderator monitoring

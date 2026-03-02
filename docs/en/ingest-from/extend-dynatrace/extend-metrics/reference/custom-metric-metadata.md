@@ -1,7 +1,7 @@
 ---
 title: Custom metric metadata
 source: https://www.dynatrace.com/docs/ingest-from/extend-dynatrace/extend-metrics/reference/custom-metric-metadata
-scraped: 2026-02-28T21:34:35.131030
+scraped: 2026-03-02T21:32:31.246970
 ---
 
 # Custom metric metadata

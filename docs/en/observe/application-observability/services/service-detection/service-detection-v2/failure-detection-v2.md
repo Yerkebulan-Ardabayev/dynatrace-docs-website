@@ -1,7 +1,7 @@
 ---
 title: Customize failure detection in Service Detection v2
 source: https://www.dynatrace.com/docs/observe/application-observability/services/service-detection/service-detection-v2/failure-detection-v2
-scraped: 2026-02-28T21:26:56.991726
+scraped: 2026-03-02T21:32:08.081107
 ---
 
 # Customize failure detection in Service Detection v2

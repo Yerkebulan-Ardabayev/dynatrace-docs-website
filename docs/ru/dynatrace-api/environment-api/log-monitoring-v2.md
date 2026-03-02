@@ -1,7 +1,7 @@
 ---
 title: Log Monitoring API v2
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/log-monitoring-v2
-scraped: 2026-02-26T21:27:16.658335
+scraped: 2026-03-02T21:32:17.194114
 ---
 
 # Log Monitoring API v2

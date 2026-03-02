@@ -1,7 +1,7 @@
 ---
 title: Set up metric events for alerting
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-monitoring-guide/set-up-metric-events-for-alerting
-scraped: 2026-03-01T21:20:13.978285
+scraped: 2026-03-02T21:21:10.879905
 ---
 
 # Set up metric events for alerting

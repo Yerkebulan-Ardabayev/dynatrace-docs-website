@@ -1,7 +1,7 @@
 ---
 title: Process availability
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/hosts/monitoring/process-availability
-scraped: 2026-02-28T21:10:59.165520
+scraped: 2026-03-02T21:29:26.276156
 ---
 
 # Process availability

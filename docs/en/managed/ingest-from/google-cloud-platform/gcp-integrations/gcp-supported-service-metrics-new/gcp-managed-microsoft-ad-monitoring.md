@@ -1,7 +1,7 @@
 ---
 title: Google Managed Microsoft AD monitoring
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new/gcp-managed-microsoft-ad-monitoring
-scraped: 2026-03-01T21:15:22.934068
+scraped: 2026-03-02T21:24:16.849701
 ---
 
 # Google Managed Microsoft AD monitoring

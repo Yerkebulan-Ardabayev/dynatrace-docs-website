@@ -1,7 +1,7 @@
 ---
 title: Metrics API - Metric selector
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/metric-v2/metric-selector
-scraped: 2026-03-01T21:16:44.288369
+scraped: 2026-03-02T21:24:09.191626
 ---
 
 # Metrics API - Metric selector

@@ -1,7 +1,7 @@
 ---
 title: Azure Container App monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-container-app
-scraped: 2026-02-28T21:22:58.737799
+scraped: 2026-03-02T21:32:23.816333
 ---
 
 # Azure Container App monitoring

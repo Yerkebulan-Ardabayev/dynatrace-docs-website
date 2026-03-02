@@ -1,6 +1,6 @@
 # Документация Dynatrace: deliver/service-level-objectives-classic
 Язык: Русский (RU)
-Сгенерировано: 2026-03-01
+Сгенерировано: 2026-03-02
 Файлов в разделе: 2
 ---
 
@@ -9,7 +9,7 @@
 ---
 title: SLO management with management-zone permissions
 source: https://www.dynatrace.com/docs/deliver/service-level-objectives-classic/slo-mz-permissions
-scraped: 2026-03-01T21:14:50.739890
+scraped: 2026-03-02T21:23:21.335754
 ---
 
 # SLO management with management-zone permissions
@@ -72,7 +72,7 @@ Starting with Dynatrace version 1.233+, you can also set a custom management zon
 ---
 title: Service-Level Objectives Classic
 source: https://www.dynatrace.com/docs/deliver/service-level-objectives-classic
-scraped: 2026-03-01T21:25:33.280672
+scraped: 2026-03-02T21:25:38.677752
 ---
 
 # Service-Level Objectives Classic

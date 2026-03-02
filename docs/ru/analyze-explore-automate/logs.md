@@ -1,7 +1,7 @@
 ---
 title: Log Analytics
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs
-scraped: 2026-03-01T21:07:44.904731
+scraped: 2026-03-02T21:13:52.316514
 ---
 
 # Log Analytics

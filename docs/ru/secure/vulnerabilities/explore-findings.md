@@ -1,7 +1,7 @@
 ---
 title: Explore findings
 source: https://www.dynatrace.com/docs/secure/vulnerabilities/explore-findings
-scraped: 2026-03-01T21:27:54.342241
+scraped: 2026-03-02T21:24:05.583640
 ---
 
 # Explore findings

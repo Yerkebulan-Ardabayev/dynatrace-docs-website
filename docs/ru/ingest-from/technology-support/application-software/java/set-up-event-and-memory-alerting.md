@@ -1,7 +1,7 @@
 ---
 title: Out-of-memory (OOM) and out-of-threads (OOT) events and alerting
 source: https://www.dynatrace.com/docs/ingest-from/technology-support/application-software/java/set-up-event-and-memory-alerting
-scraped: 2026-03-01T21:22:07.005701
+scraped: 2026-03-02T21:31:53.051185
 ---
 
 # Out-of-memory (OOM) and out-of-threads (OOT) events and alerting

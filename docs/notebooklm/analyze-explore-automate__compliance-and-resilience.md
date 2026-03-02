@@ -1,6 +1,6 @@
 # Документация Dynatrace: analyze-explore-automate/compliance-and-resilience
 Язык: Русский (RU)
-Сгенерировано: 2026-03-01
+Сгенерировано: 2026-03-02
 Файлов в разделе: 2
 ---
 
@@ -9,7 +9,7 @@
 ---
 title: Compliance Assistant
 source: https://www.dynatrace.com/docs/analyze-explore-automate/compliance-and-resilience/compliance-assistant
-scraped: 2026-03-01T21:27:08.592235
+scraped: 2026-03-02T21:20:56.824537
 ---
 
 # Compliance Assistant
@@ -123,7 +123,7 @@ Compliance Assistant enables you to easily achieve and manage your DORA complian
 ---
 title: Compliance and resilience
 source: https://www.dynatrace.com/docs/analyze-explore-automate/compliance-and-resilience
-scraped: 2026-03-01T21:23:04.995232
+scraped: 2026-03-02T21:30:01.405296
 ---
 
 # Compliance and resilience

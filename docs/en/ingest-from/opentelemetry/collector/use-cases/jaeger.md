@@ -1,7 +1,7 @@
 ---
 title: Ingest Jaeger data with the OpenTelemetry Collector
 source: https://www.dynatrace.com/docs/ingest-from/opentelemetry/collector/use-cases/jaeger
-scraped: 2026-03-01T21:18:17.465991
+scraped: 2026-03-02T21:19:44.786763
 ---
 
 # Ingest Jaeger data with the OpenTelemetry Collector
