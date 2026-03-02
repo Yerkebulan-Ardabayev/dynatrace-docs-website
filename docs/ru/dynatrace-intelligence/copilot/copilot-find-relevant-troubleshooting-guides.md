@@ -1,96 +1,94 @@
 ---
-title: Discover relevant troubleshooting guides with Dynatrace Intelligence generative AI
+title: Откройте для себя релевантные руководства по устранению неполадок с помощью Dynatrace Intelligence generative AI
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/copilot/copilot-find-relevant-troubleshooting-guides
-scraped: 2026-03-01T21:08:48.983464
+scraped: 2026-03-02T21:15:07.049288
 ---
 
-# Discover relevant troubleshooting guides with Dynatrace Intelligence generative AI
+# Откройте для себя релевантные руководства по устранению неполадок с помощью Dynatrace Intelligence generative AI
 
-# Discover relevant troubleshooting guides with Dynatrace Intelligence generative AI
+* Последнее Dynatrace
+* Учебник
+* Обновлено 28 января 2026 г.
 
-* Latest Dynatrace
-* Tutorial
-* Updated on Jan 28, 2026
+Dynatrace Intelligence generative AI помогает вам быстрее решать проблемы, автоматически выделяя релевантные руководства по устранению неполадок, такие как блокноты или панели управления, созданные вашей командой.
 
-Dynatrace Intelligence generative AI helps you resolve problems faster by automatically surfacing relevant troubleshooting guides, such as notebooks or dashboards created by your team.
+Чтобы уменьшить среднее время ремонта (MTTR), вы можете использовать предложения документов Dynatrace Intelligence generative AI в приложении **Проблемы**, чтобы проверить, создала ли ваша команда какие-либо руководства по устранению неполадок для проблем, аналогичных той, с которой вы столкнулись.
 
-To reduce the mean time to repair (MTTR), you can leverage Dynatrace Intelligence generative AI document suggestions in ![Problems app - new](https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp "Problems app - new") **Problems** to check if your team has created any troubleshooting guides for problems similar to the one you've encountered.
+## Для кого это
 
-## Who this is for
+Эта статья предназначена для всех пользователей, которые хотят быстро и эффективно устранять и исправлять активные проблемы в своей среде.
 
-This article is for any users who want to quickly and effectively troubleshoot and remediate active problems in their environment.
+## Что вы узнаете
 
-## What you will learn
+В этой статье вы узнаете, как Dynatrace Intelligence generative AI может предложить релевантные руководства по устранению неполадок, чтобы помочь в решении проблем.
 
-In this article, you'll learn how Dynatrace Intelligence generative AI can suggest relevant troubleshooting guides to assist with problem remediation.
+## Прежде чем начать
 
-## Before you begin
+Dynatrace Intelligence generative AI периодически индексирует блокноты и панели управления, которые были помечены как руководства по устранению неполадок и共享ены в среде.
 
-Dynatrace Intelligence generative AI periodically indexes notebooks and dashboards that have been labeled as troubleshooting guides and shared within the environment.
+* По умолчанию, семантическая индексация векторов руководств происходит каждые 6 часов.
+* Чтобы Dynatrace Intelligence generative AI мог индексировать и предлагать ваш документ, вы должны поделиться им со всеми пользователями в вашей среде. Dynatrace Intelligence generative AI не будет индексировать или предлагать какие-либо приватные документы или документы, поделиться которыми можно только с конкретными пользователями. Чтобы узнать больше о том, как делиться документами, см. [Поделиться документами](/docs/discover-dynatrace/get-started/dynatrace-ui/share "Поделиться документами Dynatrace (панелями управления, блокнотами и запусками) с другими пользователями Dynatrace в вашей компании.").
 
-* By default, semantic vector indexing of the guides occurs every 6 hours.
-* In order for Dynatrace Intelligence generative AI to index and suggest your document, you have to share it with all users in your environment. Dynatrace Intelligence generative AI won't index or suggest any private documents or documents shared only with specific users. To learn more about sharing documents, see [Share documents](/docs/discover-dynatrace/get-started/dynatrace-ui/share "Share Dynatrace documents (dashboards, notebooks, and launchpads) with other Dynatrace users in your company.").
+### Предварительные знания
 
-### Prior knowledge
+* [Обзор Dynatrace Intelligence generative AI](/docs/dynatrace-intelligence/copilot/copilot-overview "Узнайте о безопасности данных и других аспектах Dynatrace Intelligence generative AI.")
+* [Начало работы с Dynatrace Intelligence generative AI](/docs/dynatrace-intelligence/copilot/copilot-getting-started "Узнайте, как настроить Dynatrace Intelligence generative AI.")
+* [Приложение Проблемы](/docs/dynatrace-intelligence/davis-problems-app "Используйте приложение Проблемы, чтобы быстро добраться до коренной причины инцидентов в вашей среде.")
 
-* [Dynatrace Intelligence generative AI overview](/docs/dynatrace-intelligence/copilot/copilot-overview "Learn about data security and other aspects of Dynatrace Intelligence generative AI.")
-* [Getting started with Dynatrace Intelligence generative AI](/docs/dynatrace-intelligence/copilot/copilot-getting-started "Learn how to set up Dynatrace Intelligence generative AI.")
-* [Problems app](/docs/dynatrace-intelligence/davis-problems-app "Use the Problems app to quickly get to the root cause of incidents in your environment.")
+### Предварительные условия
 
-### Prerequisites
+* Среда Dynatrace SaaS.
+* Вы завершили настройку Dynatrace Intelligence generative AI, описанную в [Начало работы с Dynatrace Intelligence generative AI](/docs/dynatrace-intelligence/copilot/copilot-getting-started "Узнайте, как настроить Dynatrace Intelligence generative AI.").
+* У вас включены предложения документов в вашей среде. Включение индексации документов является частью руководства [Включить Dynatrace Intelligence generative AI в вашей среде](/docs/dynatrace-intelligence/copilot/copilot-getting-started#enable-davis-copilot "Узнайте, как настроить Dynatrace Intelligence generative AI.").
+* У вас есть разрешение `ALLOW davis-copilot:document-search:execute;`. Чтобы узнать, как настроить разрешения, см. [Разрешения в Grail](/docs/platform/grail/organize-data/assign-permissions-in-grail "Узнайте, как назначать разрешения для бакетов и таблиц в Grail.").
 
-* Dynatrace SaaS environment.
-* You have completed the Dynatrace Intelligence generative AI setup described in [Getting started with Dynatrace Intelligence generative AI](/docs/dynatrace-intelligence/copilot/copilot-getting-started "Learn how to set up Dynatrace Intelligence generative AI.").
-* You have document suggestions enabled in your environment. Document indexing enablement is a part of the [Enable Dynatrace Intelligence generative AI on your environment](/docs/dynatrace-intelligence/copilot/copilot-getting-started#enable-davis-copilot "Learn how to set up Dynatrace Intelligence generative AI.") guide.
-* You have the `ALLOW davis-copilot:document-search:execute;` permission. To learn how to set up the permissions, see [Permissions in Grail](/docs/platform/grail/organize-data/assign-permissions-in-grail "Find out how to assign permissions to buckets and tables in Grail.").
+## Получите предложения документов для решения проблем
 
-## Get document suggestions to remediate problems
+1. Перейдите в приложение **Проблемы** и откройте проблему, которую вы хотите решить.
+2. На странице подробной информации о проблеме выберите **Устранение неполадок**. Вы сможете увидеть любые руководства по устранению неполадок, которые вы создали для этой проблемы, а также любые релевантные документы, предложенные Dynatrace Intelligence generative AI.
 
-1. Go to ![Problems app - new](https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp "Problems app - new") **Problems** and open the problem you need to resolve.
-2. On the problem details page, select **Troubleshooting**. You will be able to see any troubleshooting guides you have created for the problem, as well as any relevant documents suggested by Dynatrace Intelligence generative AI.
+   Dynatrace Intelligence generative AI индексирует только документы, которые распознаются как руководства по устранению неполадок. Панели управления и блокноты, созданные直接 из приложения **Проблемы**, автоматически распознаются как руководства по устранению неполадок и не требуют префикса `[TSG]`.
 
-   Dynatrace Intelligence generative AI only indexes documents that are recognized as troubleshooting guides. Dashboards and notebooks created directly from ![Problems app - new](https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp "Problems app - new") **Problems** are automatically recognized as troubleshooting guides and do not require the `[TSG]` prefix.
+   Если вы создаете руководство по устранению неполадок напрямую из панели управления **Панели управления** или **Блокноты**, вам необходимо добавить префикс `[TSG]` к названию документа, чтобы указать, что это руководство по устранению неполадок.
 
-   If you create a troubleshooting guide directly from ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards** or ![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**, you have to prefix the document title with `[TSG]` to indicate it is a troubleshooting guide.
+   Независимо от того, как был создан документ, он должен быть поделен на уровне среды, чтобы быть проиндексированным Dynatrace Intelligence generative AI.
+3. Необязательно Введите ключевые слова или часть ключевого слова в поле поиска **Имя**, чтобы отфильтровать предложенные документы по имени.
+4. Необязательно Выберите **Тип** (`Блокноты`, `Панели управления`), чтобы отфильтровать предложенные документы по типу. По умолчанию оба типа выбраны для предложений документов.
+5. Выберите **Просмотр...** на документ, который вы хотите просмотреть. Это действие перенесет вас на руководство по устранению неполадок для дальнейшего исследования.
 
-   Regardless of how the document was created, it still has to be shared at the environment level to be indexed by Dynatrace Intelligence generative AI.
-3. Optional Provide the keywords or part of a keyword in the **Name**  search field to filter the suggested documents by name.
-4. Optional Select the **Type** (`Notebooks`, `Dashboards`) to filter the suggested documents by type. By default, both types are selected for document suggestions.
-5. Select **View â¦** on the document you want to view. This action will take you to the troubleshooting guide for further investigation.
+## Закрепите документы непосредственно к проблеме
 
-## Pin documents directly to a problem
+Когда вы создаете документ из страницы подробной информации о проблеме, он автоматически закрепляется к этой конкретной проблеме. Закрепленные документы не включаются в список предложенных документов. Вместо этого руководства по устранению неполадок связаны с проблемой, из которой они были созданы. Это гарантирует, что документы, созданные в проблеме, остаются прикрепленными и предотвращает сценарии, в которых ИИ может исключить их из предложенного списка из-за отсутствия сходства.
 
-When you create a document from a problem details page, it is automatically pinned to that specific problem. Pinned documents aren't included in the suggested document list. Instead, the TSGs are linked to the problem from which they were created. This ensures that documents created within a problem remain attached and prevents scenarios where the AI might exclude them from the suggested list due to a lack of similarity.
+Документы закрепляются к проблемам путем установки поля `id` в хранилище документов. Шаблон, используемый для закрепления проблемы, состоит из:
 
-The documents are pinned to problems by setting the `id` field within the document store. The pattern used for problem pinning consists of:
+* Строки `problem-TSG`.
+* Тире `-`.
+* Идентификатора проблемы (`event.id` в записи Проблемы Grail).
+* Тире `-`.
+* Случайного UUID, представленного строкой.
 
-* A string `problem-TSG`.
-* A dash `-`.
-* A problem ID (`event.id` in the Problem Grail record).
-* A dash `-`.
-* A random UUID represented by a string.
-
-You can see the general pattern in the example below:
+Вы можете увидеть общий шаблон в примере ниже:
 
 `problem-TSG-{problem_ID}-{random-UUID}`
 
-Since underscore `_` present in a problem ID isn't supported by the document identifier, it needs to be replaced by a dash `-`, as seen in the example below:
+Поскольку символ подчеркивания `_` в идентификаторе проблемы не поддерживается идентификатором документа, его необходимо заменить тире `-`, как показано в примере ниже:
 
 `problem-TSG-1589269324049748129-1747888020000V2-225b65bd-ab67-4efe-9d71-742de9b87387`
 
-The random UUID appended to the end of the pattern ensures the uniqueness of each document and allows multiple documents to be pinned to the same problem without conflicts.
+Случайный UUID, добавленный в конец шаблона, гарантирует уникальность каждого документа и позволяет нескольким документам быть закрепленными к одной и той же проблеме без конфликтов.
 
-Pinning documents to problems allows you to attach additional analysis results and domain-specific knowledge directly to the detected problems. You can pin a document to a problem via workflows or API for seamless external integrations.
+Закрепление документов к проблемам позволяет вам прикрепить дополнительные результаты анализа и доменные знания непосредственно к обнаруженным проблемам. Вы можете закрепить документ к проблеме через рабочие процессы или API для бесшовной внешней интеграции.
 
-### Create and attach a notebook to a detected problem via Workflows
+### Создайте и прикрепите блокнот к обнаруженной проблеме через Рабочие процессы
 
-By using a JavaScript workflow action, you can automatically create and attach a document (notebook or dashboard) with your domain-specific analysis results to a detected problem.
+Используя действие рабочего процесса JavaScript, вы можете автоматически создать и прикрепить документ (блокнот или панель управления) с вашими доменными результатами анализа к обнаруженной проблеме.
 
-1. Go to **Workflows** ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") and select  to create a new workflow.
-2. Select the preferred trigger type.
-3. Select  **Add task**.
-4. In the **Choose action** section, select **Run JavaScript**.
-5. In the **Input** section, enter the following script:
+1. Перейдите в **Рабочие процессы** и выберите создать новый рабочий процесс.
+2. Выберите предпочитаемый тип триггера.
+3. Выберите **Добавить задачу**.
+4. В разделе **Выберите действие** выберите **Выполнить JavaScript**.
+5. В разделе **Ввод** введите следующий скрипт:
 
    ```
    import { documentsClient } from "@dynatrace-sdk/client-document";
@@ -109,7 +107,7 @@ By using a JavaScript workflow action, you can automatically create and attach a
 
 
 
-   return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+   return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c)?
 
 
 
@@ -129,7 +127,7 @@ By using a JavaScript workflow action, you can automatically create and attach a
 
 
 
-   export default async function ({ execution_id }) {
+   export default async function ({ execution_id })?
 
 
 
@@ -145,39 +143,39 @@ By using a JavaScript workflow action, you can automatically create and attach a
 
 
 
-   problem_id = problem_id.replace('_', '-'); // Replace the unsupported character
+   problem_id = problem_id.replace('_', '-'); // Замените неподдерживаемый символ
 
 
 
-   // Create a new Notebook and pin it to the triggering problem
+   // Создайте новый блокнот и закрепите его к проблеме
 
 
 
-   try {
+   try?
 
 
 
-   const notebookContent = {
+   const notebookContent =?
 
 
 
-   defaultTimeframe: { from: "now()-2h", to: "now()" },
+   defaultTimeframe: { from: "now()-2h", to: "now()" },?
 
 
 
-   defaultSegments: [],
+   defaultSegments: [],?
 
 
 
-   sections: [
+   sections:?
 
 
 
-   {"id":"19ebed94-69a9-4a6e-b392-7bb7b0deb330","type":"markdown","markdown":"# Domain Analysis Results\n\nHere goes the external, domain-specific analysis results"}
+   {"id":"19ebed94-69a9-4a6e-b392-7bb7b0deb330","type":"markdown","markdown":"# Доменные результаты анализа\n\nВот внешние, доменные результаты анализа"?
 
 
 
-   ],
+   ],?
 
 
 
@@ -185,47 +183,43 @@ By using a JavaScript workflow action, you can automatically create and attach a
 
 
 
-   const generatedNotebook = await documentsClient.createDocument({
+   const generatedNotebook = await documentsClient.createDocument?
 
 
 
-   body: {
+   body:?
 
 
 
-   name: "[TSG] Domain Analysis Results",
+   name: "[TSG] Доменные результаты анализа",?
 
 
 
-   type: "notebook",
+   type: "notebook",?
 
 
 
-   description: "A notebook containing domain specific analysis results",
+   description: "Блокнот, содержащий доменные результаты анализа",?
 
 
 
-   id: "problem-TSG-" + problem_id + "-" + generateGUID(),
+   id: "problem-TSG-" + problem_id + "-" + generateGUID(),?
 
 
 
-   content: new Blob([JSON.stringify(notebookContent)], { type: "application/json" }),
+   content: new Blob([JSON.stringify(notebookContent)], { type: "application/json" }),?
 
 
 
-   },
+   };
 
 
 
-   });
+   // Сделайте документ публичным
 
 
 
-   // Make the document public
-
-
-
-   const updated = await documentsClient.updateDocument({
+   const updated = await documentsClient.updateDocument?
 
 
 
@@ -237,7 +231,7 @@ By using a JavaScript workflow action, you can automatically create and attach a
 
 
 
-   body: {
+   body:?
 
 
 
@@ -249,15 +243,11 @@ By using a JavaScript workflow action, you can automatically create and attach a
 
 
 
-   })
+   } catch (error)?
 
 
 
-   } catch (error) {
-
-
-
-   console.error("Error creating notebook:", error);
+   console.error("Ошибка создания блокнота:", error);
 
 
 
@@ -272,11 +262,11 @@ By using a JavaScript workflow action, you can automatically create and attach a
    }
    ```
 
-Once the newly created notebook is attached to the AI-detected problem, you'll be able to see it in the troubleshooting section. The document will also be suggested to you for similar problems in the future.
+Как только созданный блокнот будет прикреплен к проблеме, обнаруженной ИИ, вы сможете увидеть его в разделе устранения неполадок. Документ также будет предложен вам для аналогичных проблем в будущем.
 
-![An example of analysis results in the Problems app.](https://dt-cdn.net/images/problems-analysis-results-2147-303c6e5b9b.png)
+![Пример результатов анализа в приложении Проблемы.](https://dt-cdn.net/images/problems-analysis-results-2147-303c6e5b9b.png)
 
-## Related topics
+## Связанные темы
 
 * [Dynatrace Intelligence генеративный ИИ обзор](/docs/dynatrace-intelligence/copilot/copilot-overview "Узнайте о безопасности данных и других аспектах Dynatrace Intelligence генеративного ИИ.")
 * [Начало работы с Dynatrace Intelligence генеративным ИИ](/docs/dynatrace-intelligence/copilot/copilot-getting-started "Узнайте, как настроить Dynatrace Intelligence генеративный ИИ.")

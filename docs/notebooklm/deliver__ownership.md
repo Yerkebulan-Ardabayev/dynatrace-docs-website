@@ -1,6 +1,6 @@
 # Документация Dynatrace: deliver/ownership
 Язык: Русский (RU)
-Сгенерировано: 2026-03-01
+Сгенерировано: 2026-03-02
 Файлов в разделе: 4
 ---
 
@@ -528,7 +528,7 @@ Select ![Expand row](https://dt-cdn.net/images/expand-row-icon-9c4950fc2e.svg "E
 ---
 title: Best practices for entity ownership
 source: https://www.dynatrace.com/docs/deliver/ownership/best-practices
-scraped: 2026-03-01T21:23:49.879573
+scraped: 2026-03-02T21:22:27.739128
 ---
 
 # Best practices for entity ownership
@@ -894,7 +894,7 @@ The API snippets for reading, creating, updating, and deleting teams are availab
 ---
 title: Ownership Classic
 source: https://www.dynatrace.com/docs/deliver/ownership
-scraped: 2026-02-28T21:33:22.990824
+scraped: 2026-03-02T21:18:51.208595
 ---
 
 # Ownership Classic

@@ -1,7 +1,7 @@
 ---
 title: Raw visualization
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-raw
-scraped: 2026-02-28T21:20:46.236598
+scraped: 2026-03-02T21:16:13.578745
 ---
 
 # Raw visualization

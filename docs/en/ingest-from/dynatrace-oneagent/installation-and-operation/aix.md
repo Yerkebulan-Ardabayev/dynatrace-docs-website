@@ -1,7 +1,7 @@
 ---
 title: AIX
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/aix
-scraped: 2026-03-01T21:08:54.804579
+scraped: 2026-03-02T21:14:10.807698
 ---
 
 # AIX

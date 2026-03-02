@@ -1,7 +1,7 @@
 ---
 title: Smartscape on Grail
 source: https://www.dynatrace.com/docs/platform/grail/smartscape-on-grail
-scraped: 2026-03-01T21:11:23.963547
+scraped: 2026-03-02T21:16:29.085124
 ---
 
 # Smartscape on Grail

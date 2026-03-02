@@ -1,7 +1,7 @@
 ---
 title: Migrate from AWS classic (formerly 'built-in') services to cloud services
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics/aws-migration-guide
-scraped: 2026-02-28T21:27:42.834307
+scraped: 2026-03-02T21:24:10.510041
 ---
 
 # Migrate from AWS classic (formerly 'built-in') services to cloud services

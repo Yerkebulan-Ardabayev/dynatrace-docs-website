@@ -1,7 +1,7 @@
 ---
 title: Log ingestion warnings
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-troubleshooting/lma-ingest-warnings
-scraped: 2026-02-28T21:25:15.929121
+scraped: 2026-03-02T21:24:34.829864
 ---
 
 # Log ingestion warnings

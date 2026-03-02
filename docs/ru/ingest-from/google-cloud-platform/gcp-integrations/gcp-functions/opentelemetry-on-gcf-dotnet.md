@@ -1,7 +1,7 @@
 ---
 title: Integrate on Google Cloud Functions .NET
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-functions/opentelemetry-on-gcf-dotnet
-scraped: 2026-03-01T21:25:39.576304
+scraped: 2026-03-02T21:16:43.109850
 ---
 
 # Integrate on Google Cloud Functions .NET

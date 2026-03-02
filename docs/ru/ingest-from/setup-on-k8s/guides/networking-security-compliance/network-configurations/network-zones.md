@@ -1,7 +1,7 @@
 ---
 title: Using network zones in Kubernetes
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/guides/networking-security-compliance/network-configurations/network-zones
-scraped: 2026-03-01T21:17:36.804946
+scraped: 2026-03-02T21:19:11.913680
 ---
 
 # Using network zones in Kubernetes

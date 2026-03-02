@@ -1,7 +1,7 @@
 ---
 title: Create log alerts for a log event or summary of log data
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/use-cases/create-alert-in-logs
-scraped: 2026-03-01T21:17:06.364245
+scraped: 2026-03-02T21:23:43.314611
 ---
 
 # Create log alerts for a log event or summary of log data

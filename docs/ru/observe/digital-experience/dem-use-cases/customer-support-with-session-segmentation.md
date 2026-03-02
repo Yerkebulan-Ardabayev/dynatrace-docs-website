@@ -1,7 +1,7 @@
 ---
 title: Effective customer support with session segmentation
 source: https://www.dynatrace.com/docs/observe/digital-experience/dem-use-cases/customer-support-with-session-segmentation
-scraped: 2026-03-01T21:12:46.796699
+scraped: 2026-03-02T21:21:53.511113
 ---
 
 # Effective customer support with session segmentation

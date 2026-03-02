@@ -1,6 +1,6 @@
 # Документация Dynatrace: license/capabilities
 Язык: Русский (RU)
-Сгенерировано: 2026-03-01
+Сгенерировано: 2026-03-02
 Файлов в разделе: 17
 ---
 
@@ -872,7 +872,7 @@ The following details apply to metric data points:
 ---
 title: Application & Infrastructure Observability overview (DPS)
 source: https://www.dynatrace.com/docs/license/capabilities/app-infra-observability
-scraped: 2026-03-01T21:21:49.788842
+scraped: 2026-03-02T21:26:20.038871
 ---
 
 # Application & Infrastructure Observability overview (DPS)
@@ -905,7 +905,7 @@ For each OneAgent installed in your infrastructure, you can choose the monitorin
 ---
 title: AppEngine Functions (Serverless Functions) overview (DPS)
 source: https://www.dynatrace.com/docs/license/capabilities/appengine-functions
-scraped: 2026-03-01T21:19:12.190772
+scraped: 2026-03-02T21:26:21.186368
 ---
 
 # AppEngine Functions (Serverless Functions) overview (DPS)
@@ -949,7 +949,7 @@ AppEngine Functions work out-of-the-box: no external hosting is required, and th
 ---
 title: Application Security overview (DPS)
 source: https://www.dynatrace.com/docs/license/capabilities/application-security
-scraped: 2026-02-28T21:28:22.061229
+scraped: 2026-03-02T21:29:47.391970
 ---
 
 # Application Security overview (DPS)
@@ -1006,7 +1006,7 @@ This includes [Kubernetes Security Posture Management (KSPM)](/docs/ingest-from/
 ---
 title: Automation Workflow capability overview (DPS)
 source: https://www.dynatrace.com/docs/license/capabilities/automation
-scraped: 2026-03-01T21:15:44.512746
+scraped: 2026-03-02T21:21:06.955828
 ---
 
 # Automation Workflow capability overview (DPS)
@@ -1141,7 +1141,7 @@ You can query metrics via the [Environment API - Metrics API v2](/docs/dynatrace
 ---
 title: Digital Experience Monitoring (DEM) overview (DPS)
 source: https://www.dynatrace.com/docs/license/capabilities/digital-experience-monitoring
-scraped: 2026-02-28T21:32:43.681541
+scraped: 2026-03-02T21:18:30.604440
 ---
 
 # Digital Experience Monitoring (DEM) overview (DPS)
@@ -1323,7 +1323,7 @@ Here's what's included with the Query data-usage dimension:
 ---
 title: Calculate your consumption of Log Management & Analytics - Query (DPS)
 source: https://www.dynatrace.com/docs/license/capabilities/log-analytics/dps-log-query
-scraped: 2026-03-01T21:07:33.545090
+scraped: 2026-03-02T21:14:59.605596
 ---
 
 # Calculate your consumption of Log Management & Analytics - Query (DPS)
@@ -1626,7 +1626,7 @@ Here's what's included with the Query data-usage dimension:
 ---
 title: Platform extensions overview (DPS)
 source: https://www.dynatrace.com/docs/license/capabilities/platform-extensions
-scraped: 2026-03-01T21:15:54.571541
+scraped: 2026-03-02T21:29:23.823722
 ---
 
 # Platform extensions overview (DPS)

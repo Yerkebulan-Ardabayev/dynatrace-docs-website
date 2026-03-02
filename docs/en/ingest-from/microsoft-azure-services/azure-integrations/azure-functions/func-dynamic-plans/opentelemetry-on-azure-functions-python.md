@@ -1,7 +1,7 @@
 ---
 title: Trace Azure Functions written in Python
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-functions/func-dynamic-plans/opentelemetry-on-azure-functions-python
-scraped: 2026-02-25T21:25:03.469940
+scraped: 2026-03-02T21:16:46.165963
 ---
 
 # Trace Azure Functions written in Python

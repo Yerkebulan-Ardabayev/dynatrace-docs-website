@@ -1,7 +1,7 @@
 ---
 title: Enrich OTLP requests with Kubernetes data
 source: https://www.dynatrace.com/docs/ingest-from/opentelemetry/collector/use-cases/kubernetes/k8s-enrich
-scraped: 2026-02-26T21:26:44.232232
+scraped: 2026-03-02T21:32:46.735446
 ---
 
 # Enrich OTLP requests with Kubernetes data

@@ -1,7 +1,7 @@
 ---
 title: Azure Public IP Address monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-public-ip-addresses
-scraped: 2026-03-01T21:15:53.455023
+scraped: 2026-03-02T21:26:25.965308
 ---
 
 # Azure Public IP Address monitoring

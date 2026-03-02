@@ -1,7 +1,7 @@
 ---
 title: Dynatrace OTel Collector system requirements.
 source: https://www.dynatrace.com/docs/ingest-from/opentelemetry/collector/system-requirements
-scraped: 2026-03-01T21:18:02.120330
+scraped: 2026-03-02T21:25:53.405162
 ---
 
 # Dynatrace OTel Collector system requirements.

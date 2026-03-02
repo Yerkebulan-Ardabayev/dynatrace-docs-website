@@ -1,7 +1,7 @@
 ---
 title: DPL Architect
 source: https://www.dynatrace.com/docs/platform/grail/dynatrace-pattern-language/dpl-architect
-scraped: 2026-02-28T21:33:32.129449
+scraped: 2026-03-02T21:27:00.712167
 ---
 
 # DPL Architect

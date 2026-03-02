@@ -1,7 +1,7 @@
 ---
 title: Clouds app
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/cloud-platform-monitoring/clouds-app
-scraped: 2026-03-01T21:07:42.270615
+scraped: 2026-03-02T21:14:35.532416
 ---
 
 # Clouds app

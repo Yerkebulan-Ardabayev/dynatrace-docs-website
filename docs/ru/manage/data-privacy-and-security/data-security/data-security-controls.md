@@ -1,7 +1,7 @@
 ---
 title: Data security controls
 source: https://www.dynatrace.com/docs/manage/data-privacy-and-security/data-security/data-security-controls
-scraped: 2026-02-24T21:26:32.307416
+scraped: 2026-03-02T21:30:13.141990
 ---
 
 # Data security controls
@@ -74,7 +74,7 @@ Also see [Data retention periods](/docs/manage/data-privacy-and-security/data-pr
 
 Dynatrace SaaS uses a multi-tenant, high-availability architecture. Dynatrace allocates a tenant, a so-called Dynatrace environment, to each customer. Customers can also manage multiple environments within the Dynatrace account management system. Each environment gets its own individual domain.
 
-With the latest Dynatrace, all Dynatrace platform data at rest, including data from Grail, AppEngine, and AutomationEngine, is stored in a separate, dedicated storage space. One single Dynatrace SaaS environment hosted on AWS uses a dedicated AWS S3 bucket as storage space. Environments hosted on Azure use dedicated Azure storage accounts. Other data, such as [Dynatrace Credential vault data](/docs/manage/credential-vault "Store and manage credentials in the credential vault.") or [Dynatrace account data](/docs/manage/account-management "Manage your Dynatrace license, subscriptions, and platform adoption and environment health."), is stored in databases using logical data separation.
+With the latest Dynatrace, all Dynatrace platform data at rest, including data from Grail, AppEngine, and AutomationEngine, is stored in a separate, dedicated storage space. One single Dynatrace SaaS environment hosted on AWS uses a dedicated AWS S3 bucket as storage space. Environments hosted on Azure use dedicated Azure storage accounts. Other data, such as [Dynatrace Credential vault data](/docs/manage/credential-vault "Store and manage credentials in the credential vault.") or [Dynatrace account data](/docs/manage/account-management "Manage your Dynatrace license, accounts, platform adoption, and environment health."), is stored in databases using logical data separation.
 
 The application layer, in which the data is processed before it is stored at rest, is hosted on a highly scalable shared cloud infrastructure.
 

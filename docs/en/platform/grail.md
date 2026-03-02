@@ -1,7 +1,7 @@
 ---
 title: Grail
 source: https://www.dynatrace.com/docs/platform/grail
-scraped: 2026-03-01T21:07:46.137717
+scraped: 2026-03-02T21:13:54.579827
 ---
 
 # Grail

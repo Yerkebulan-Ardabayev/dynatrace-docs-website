@@ -1,6 +1,6 @@
 # Документация Dynatrace: deliver/release-monitoring
 Язык: Русский (RU)
-Сгенерировано: 2026-03-01
+Сгенерировано: 2026-03-02
 Файлов в разделе: 4
 ---
 
@@ -9,7 +9,7 @@
 ---
 title: Issue-tracking integration
 source: https://www.dynatrace.com/docs/deliver/release-monitoring/issue-tracking-integration
-scraped: 2026-02-28T21:31:35.662286
+scraped: 2026-03-02T21:27:45.229604
 ---
 
 # Issue-tracking integration
@@ -203,7 +203,7 @@ In addition, a graph displays the latest 20 release validation results:
 ---
 title: Version detection strategies for deep-monitored processes
 source: https://www.dynatrace.com/docs/deliver/release-monitoring/version-detection-strategies
-scraped: 2026-03-01T21:19:00.213549
+scraped: 2026-03-02T21:32:25.068392
 ---
 
 # Version detection strategies for deep-monitored processes

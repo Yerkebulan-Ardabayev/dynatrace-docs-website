@@ -1,7 +1,7 @@
 ---
 title: Organize data
 source: https://www.dynatrace.com/docs/platform/grail/organize-data
-scraped: 2026-03-01T21:11:58.352631
+scraped: 2026-03-02T21:22:41.532613
 ---
 
 # Organize data

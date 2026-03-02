@@ -1,7 +1,7 @@
 ---
 title: Use cases
 source: https://www.dynatrace.com/docs/secure/use-cases
-scraped: 2026-03-01T21:19:01.327169
+scraped: 2026-03-02T21:25:24.801677
 ---
 
 # Use cases

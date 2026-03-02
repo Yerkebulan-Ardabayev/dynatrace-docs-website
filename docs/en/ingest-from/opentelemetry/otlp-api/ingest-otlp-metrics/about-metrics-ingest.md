@@ -1,7 +1,7 @@
 ---
 title: About OTLP metrics ingest
 source: https://www.dynatrace.com/docs/ingest-from/opentelemetry/otlp-api/ingest-otlp-metrics/about-metrics-ingest
-scraped: 2026-02-27T21:28:28.588007
+scraped: 2026-03-02T21:25:04.159576
 ---
 
 # About OTLP metrics ingest

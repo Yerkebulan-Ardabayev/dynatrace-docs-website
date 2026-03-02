@@ -1,7 +1,7 @@
 ---
 title: Best practices for entity ownership
 source: https://www.dynatrace.com/docs/deliver/ownership/best-practices
-scraped: 2026-03-01T21:23:49.879573
+scraped: 2026-03-02T21:22:27.739128
 ---
 
 # Best practices for entity ownership

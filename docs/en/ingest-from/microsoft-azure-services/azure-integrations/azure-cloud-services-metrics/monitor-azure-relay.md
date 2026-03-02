@@ -1,7 +1,7 @@
 ---
 title: Azure Relay monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-relay
-scraped: 2026-03-01T21:17:34.135598
+scraped: 2026-03-02T21:30:41.169377
 ---
 
 # Azure Relay monitoring

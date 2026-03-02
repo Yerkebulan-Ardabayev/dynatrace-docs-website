@@ -1,7 +1,7 @@
 ---
 title: Query monitored entities in Grail
 source: https://www.dynatrace.com/docs/platform/grail/querying-monitored-entities
-scraped: 2026-02-27T21:25:34.470954
+scraped: 2026-03-02T21:25:13.509286
 ---
 
 # Query monitored entities in Grail

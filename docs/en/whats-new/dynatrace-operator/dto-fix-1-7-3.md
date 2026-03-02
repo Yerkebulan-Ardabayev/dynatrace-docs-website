@@ -1,7 +1,7 @@
 ---
 title: Dynatrace Operator release notes version 1.7.3
 source: https://www.dynatrace.com/docs/whats-new/dynatrace-operator/dto-fix-1-7-3
-scraped: 2026-03-01T21:26:44.878467
+scraped: 2026-03-02T21:19:08.499433
 ---
 
 # Dynatrace Operator release notes version 1.7.3

@@ -1,7 +1,7 @@
 ---
 title: Azure AI - Bing Autosuggest monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-ai-bing-autosuggest
-scraped: 2026-02-27T21:19:14.564167
+scraped: 2026-03-02T21:17:30.656532
 ---
 
 # Azure AI - Bing Autosuggest monitoring

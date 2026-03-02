@@ -1,7 +1,7 @@
 ---
 title: Syslog ingestion with ActiveGate (Logs Classic)
 source: https://www.dynatrace.com/docs/analyze-explore-automate/log-monitoring/acquire-log-data/syslog
-scraped: 2026-03-01T21:23:25.118900
+scraped: 2026-03-02T21:19:24.596332
 ---
 
 # Syslog ingestion with ActiveGate (Logs Classic)

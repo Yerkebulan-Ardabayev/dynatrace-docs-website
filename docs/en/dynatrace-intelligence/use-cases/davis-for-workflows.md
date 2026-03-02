@@ -1,7 +1,7 @@
 ---
 title: AI in Workflows - Predictive maintenance of cloud disks
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/use-cases/davis-for-workflows
-scraped: 2026-02-28T21:34:09.253678
+scraped: 2026-03-02T21:24:28.566048
 ---
 
 # AI in Workflows - Predictive maintenance of cloud disks

@@ -1,6 +1,6 @@
 # Документация Dynatrace: license/monitoring-consumption-classic
 Язык: Русский (RU)
-Сгенерировано: 2026-03-01
+Сгенерировано: 2026-03-02
 Файлов в разделе: 5
 ---
 
@@ -230,7 +230,7 @@ The following details apply to metric data points:
 ---
 title: DDUs for custom traces (Trace API)
 source: https://www.dynatrace.com/docs/license/monitoring-consumption-classic/davis-data-units/custom-traces
-scraped: 2026-03-01T21:21:30.431289
+scraped: 2026-03-02T21:26:59.362722
 ---
 
 # DDUs for custom traces (Trace API)
@@ -271,7 +271,7 @@ Davis data unit pools
 ---
 title: DDUs for custom Davis events
 source: https://www.dynatrace.com/docs/license/monitoring-consumption-classic/davis-data-units/ddu-events
-scraped: 2026-02-27T21:21:14.951735
+scraped: 2026-03-02T21:28:33.477574
 ---
 
 # DDUs for custom Davis events

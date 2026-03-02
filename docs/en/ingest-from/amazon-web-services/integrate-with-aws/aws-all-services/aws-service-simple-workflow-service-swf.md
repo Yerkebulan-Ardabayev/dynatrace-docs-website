@@ -1,7 +1,7 @@
 ---
 title: Amazon SWF (Simple Workflow Service) monitoring
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-simple-workflow-service-swf
-scraped: 2026-03-01T21:17:57.106182
+scraped: 2026-03-02T21:18:38.202264
 ---
 
 # Amazon SWF (Simple Workflow Service) monitoring

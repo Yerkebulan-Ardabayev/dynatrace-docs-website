@@ -1,7 +1,7 @@
 ---
 title: Platform Engineering
 source: https://www.dynatrace.com/docs/discover-dynatrace/get-started/platform-engineering
-scraped: 2026-03-01T21:17:05.136679
+scraped: 2026-03-02T21:20:03.872028
 ---
 
 # Platform Engineering

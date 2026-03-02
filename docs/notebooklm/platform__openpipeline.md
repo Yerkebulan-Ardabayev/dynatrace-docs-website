@@ -1,6 +1,6 @@
 # Документация Dynatrace: platform/openpipeline
 Язык: Русский (RU)
-Сгенерировано: 2026-03-01
+Сгенерировано: 2026-03-02
 Файлов в разделе: 19
 ---
 
@@ -9,7 +9,7 @@
 ---
 title: Owner-based access control in OpenPipeline
 source: https://www.dynatrace.com/docs/platform/openpipeline/concepts/access-control
-scraped: 2026-03-01T21:19:29.631166
+scraped: 2026-03-02T21:30:14.311426
 ---
 
 # Owner-based access control in OpenPipeline
@@ -631,7 +631,7 @@ To change how logs are processed, you can modify the matching condition to exclu
 ---
 title: Set access control in OpenPipeline
 source: https://www.dynatrace.com/docs/platform/openpipeline/getting-started/set-access-control
-scraped: 2026-03-01T21:28:41.753904
+scraped: 2026-03-02T21:23:17.628498
 ---
 
 # Set access control in OpenPipeline
@@ -5407,7 +5407,7 @@ Conclusion
 ---
 title: Reduce span-based and metric-based cardinality
 source: https://www.dynatrace.com/docs/platform/openpipeline/use-cases/reduce-span-metric-cardinality
-scraped: 2026-03-01T21:09:43.611084
+scraped: 2026-03-02T21:14:41.793753
 ---
 
 # Reduce span-based and metric-based cardinality
@@ -6904,7 +6904,7 @@ You successfully structured syslog logs according to pre-defined processing rule
 ---
 title: OpenPipeline
 source: https://www.dynatrace.com/docs/platform/openpipeline
-scraped: 2026-03-01T21:07:43.592976
+scraped: 2026-03-02T21:14:02.172521
 ---
 
 # OpenPipeline

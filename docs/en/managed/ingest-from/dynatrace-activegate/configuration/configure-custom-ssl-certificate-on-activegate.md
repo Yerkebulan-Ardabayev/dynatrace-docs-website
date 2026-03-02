@@ -1,7 +1,7 @@
 ---
 title: Custom SSL certificate for ActiveGate
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-activegate/configuration/configure-custom-ssl-certificate-on-activegate
-scraped: 2026-03-01T21:18:52.761086
+scraped: 2026-03-02T21:31:38.619764
 ---
 
 # Custom SSL certificate for ActiveGate

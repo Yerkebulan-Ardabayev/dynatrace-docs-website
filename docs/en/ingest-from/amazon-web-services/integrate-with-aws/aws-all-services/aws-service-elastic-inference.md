@@ -1,7 +1,7 @@
 ---
 title: Amazon Elastic Inference monitoring
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-elastic-inference
-scraped: 2026-03-01T21:12:28.202605
+scraped: 2026-03-02T21:27:38.830635
 ---
 
 # Amazon Elastic Inference monitoring
