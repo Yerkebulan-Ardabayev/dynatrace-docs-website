@@ -29,7 +29,7 @@
     
     
       
-        <title>Dynatrace Intelligence generative AI data privacy and security - Dynatrace Managed - Документация</title>
+        <title>Dynatrace Intelligence generative AI data privacy an... - Dynatrace Managed - Документация</title>
       
     
     
@@ -82,7 +82,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#dynatrace-intelligence-generative-ai-data-privacy-and-security" class="md-skip">
+        <a href="#dynatrace-intelligence" class="md-skip">
           Перейти к содержанию
         </a>
       
@@ -118,7 +118,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Dynatrace Intelligence generative AI data privacy and security
+              Dynatrace Intelligence generative AI data privacy an...
             
           </span>
         </div>
@@ -25549,44 +25549,49 @@
 
 
 
-<h1 id="dynatrace-intelligence-generative-ai-data-privacy-and-security">Dynatrace Intelligence generative AI data privacy and security<a class="headerlink" href="#dynatrace-intelligence-generative-ai-data-privacy-and-security" title="Permanent link">&para;</a></h1>
-<h1 id="dynatrace-intelligence-generative-ai-data-privacy-and-security_1">Dynatrace Intelligence generative AI data privacy and security<a class="headerlink" href="#dynatrace-intelligence-generative-ai-data-privacy-and-security_1" title="Permanent link">&para;</a></h1>
+<hr />
+<p>title: Dynatrace Intelligence генеративный ИИ: конфиденциальность и безопасность данных
+source: https://www.dynatrace.com/docs/dynatrace-intelligence/copilot/copilot-data-privacy
+scraped: 2026-03-02T21:23:57.832006</p>
+<hr />
+<h1 id="dynatrace-intelligence">Dynatrace Intelligence генеративный ИИ: конфиденциальность и безопасность данных<a class="headerlink" href="#dynatrace-intelligence" title="Permanent link">&para;</a></h1>
+<h1 id="dynatrace-intelligence_1">Dynatrace Intelligence генеративный ИИ: конфиденциальность и безопасность данных<a class="headerlink" href="#dynatrace-intelligence_1" title="Permanent link">&para;</a></h1>
 <ul>
-<li>Latest Dynatrace</li>
-<li>Explanation</li>
-<li>3-min read</li>
-<li>Updated on Jan 28, 2026</li>
+<li>Последнее Dynatrace</li>
+<li>Объяснение</li>
+<li>3-минутное чтение</li>
+<li>Обновлено 28 января 2026 г.</li>
 </ul>
-<p>At Dynatrace, we take our responsibility to safeguard your data seriously. Understand how Dynatrace Intelligence generative AI uses your data and understand your responsibility to keep your data secure.</p>
-<h2 id="prompt-data">Prompt data<a class="headerlink" href="#prompt-data" title="Permanent link">&para;</a></h2>
-<p>Although we mask Personally Identifiable Information (PII), we still recommend exercising caution when including personal or confidential information in your prompts.</p>
-<p>Your prompts are sent to LLMs hosted by enterprise vendors such as Microsoft Azure AI and AWS Bedrock, which power Dynatrace Intelligence generative AI. Enterprise vendors don't store the data you submit or the responses you receive. The prompts you submit and the responses you receive are used only to serve your experience. Enterprise vendors also don't use the prompts to fine-tune or improve any models or services, or to train models across customers or environments.</p>
-<p>Each data request is sent to the LLM individually, over an SSL-encrypted service, processed by respective enterprise vendors, and sent back to Dynatrace. If your environment is located in EMEA, your prompts are processed in an EU region. If your environment is located in NORAM, LATAM, or APAC, your prompts are processed in a US region.</p>
-<p>Dynatrace may store the prompts submitted to Dynatrace Intelligence generative AI and the responses provided by the LLMs to understand the use cases, contextualize the feedback on the responses, and identify additional user expectations.</p>
-<p>Learn more about the <a href="/docs/dynatrace-intelligence/copilot/copilot-overview#copilot-data-flow" title="Learn about data security and other aspects of Dynatrace Intelligence generative AI.">Dynatrace Intelligence generative AI architecture and data flow</a>.</p>
-<h2 id="pii-masking">PII masking<a class="headerlink" href="#pii-masking" title="Permanent link">&para;</a></h2>
-<p>Dynatrace version 1.305+</p>
-<p>PII masking is in place for user prompts interacting with all standard generative AI functionality. This ensures that sensitive information included in your prompts won't be forwarded to LLMs hosted by enterprise vendors.</p>
-<p>Currently masked fields include:</p>
+<p>В Dynatrace мы серьезно относимся к своей ответственности за защиту ваших данных. Поймите, как Dynatrace Intelligence генеративный ИИ использует ваши данные и ваши обязанности по обеспечению безопасности ваших данных.</p>
+<h2 id="_1">Данные запроса<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>Хотя мы маскируем личную идентифицирующую информацию (PII), мы все равно рекомендуем проявлять осторожность при включении личной или конфиденциальной информации в ваши запросы.</p>
+<p>Ваши запросы отправляются на LLM, размещенные у корпоративных поставщиков, таких как Microsoft Azure AI и AWS Bedrock, которые обеспечивают работу Dynatrace Intelligence генеративного ИИ. Корпоративные поставщики не хранят данные, которые вы отправляете, или ответы, которые вы получаете. Запросы, которые вы отправляете, и ответы, которые вы получаете, используются только для обеспечения вашего опыта. Корпоративные поставщики также не используют запросы для тонкой настройки или улучшения моделей или услуг, или для обучения моделей у разных клиентов или в разных средах.</p>
+<p>Каждый запрос данных отправляется на LLM индивидуально, через SSL-шифрованный сервис, обрабатывается соответствующими корпоративными поставщиками и отправляется обратно в Dynatrace. Если ваша среда находится в регионе EMEA, ваши запросы обрабатываются в регионе ЕС. Если ваша среда находится в регионе NORAM, LATAM или APAC, ваши запросы обрабатываются в регионе США.</p>
+<p>Dynatrace может хранить запросы, отправленные в Dynatrace Intelligence генеративный ИИ, и ответы, предоставленные LLM, чтобы понять варианты использования, контекстуализировать обратную связь по ответам и выявить дополнительные ожидания пользователей.</p>
+<p>Узнайте больше о <a href="/docs/dynatrace-intelligence/copilot/copilot-overview#copilot-data-flow" title="Узнайте о безопасности данных и других аспектах Dynatrace Intelligence генеративного ИИ.">Dynatrace Intelligence генеративном ИИ: архитектуре и потоке данных</a>.</p>
+<h2 id="pii">Маскирование PII<a class="headerlink" href="#pii" title="Permanent link">&para;</a></h2>
+<p>Dynatrace версия 1.305+</p>
+<p>Маскирование PII реализовано для запросов пользователей, взаимодействующих со стандартной функциональностью генеративного ИИ. Это гарантирует, что конфиденциальная информация, включенная в ваши запросы, не будет передана LLM, размещенным у корпоративных поставщиков.</p>
+<p>В настоящее время маскируемые поля включают:</p>
 <ul>
-<li>Email address</li>
-<li>Phone number</li>
-<li>IBAN information</li>
-<li>Credit card number</li>
-<li>IP address</li>
-<li>US bank number</li>
-<li>US social security number</li>
-<li>US ABA routing numbers</li>
-<li>URL query parameters (only parameters with more than two characters are considered)</li>
-<li>Canadian Social Insurance Number (SIN)</li>
+<li>Адрес электронной почты</li>
+<li>Номер телефона</li>
+<li>Информация IBAN</li>
+<li>Номер кредитной карты</li>
+<li>IP-адрес</li>
+<li>Номер банка США</li>
+<li>Номер социального страхования США</li>
+<li>Номер маршрутизации ABA США</li>
+<li>Параметры запроса URL (только параметры с более чем двумя символами учитываются)</li>
+<li>Номер страхового свидетельства Канады (SIN)</li>
 </ul>
-<p>In our logs and calls to LLM models, we replace values from the identified patterns above with fake patterns. This means that you'll be able see IBANs in logs, for example, but they'll be made up of random numbers, replacing the original values included in your prompts.</p>
-<p>Agentic  <strong>Dynatrace Assist</strong> doesn't provide any PII masking. In order to protect your data, when  <strong>Dynatrace Assist</strong> detects PII in the user prompt, the request is automatically blocked and the prompt isn't sent to the LLM for processing.</p>
-<h2 id="related-topics">Related topics<a class="headerlink" href="#related-topics" title="Permanent link">&para;</a></h2>
+<p>В наших журналах и вызовах моделей LLM мы заменяем значения из выявленных шаблонов выше на фальшивые шаблоны. Это означает, что вы сможете увидеть IBAN в журналах, например, но они будут состоять из случайных чисел, заменяющих исходные значения, включенные в ваши запросы.</p>
+<p>Agentic  <strong>Dynatrace Assist</strong> не предоставляет никакого маскирования PII. Чтобы защитить ваши данные, когда  <strong>Dynatrace Assist</strong> обнаруживает PII в запросе пользователя, запрос автоматически блокируется и запрос не отправляется на LLM для обработки.</p>
+<h2 id="_2">Связанные темы<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <ul>
-<li><a href="/docs/dynatrace-intelligence/copilot/copilot-overview" title="Learn about data security and other aspects of Dynatrace Intelligence generative AI.">Dynatrace Intelligence generative AI overview</a></li>
-<li><a href="/docs/dynatrace-intelligence/copilot/copilot-getting-started" title="Learn how to set up Dynatrace Intelligence generative AI.">Get started with Dynatrace Intelligence generative AI</a></li>
-<li><a href="/docs/dynatrace-intelligence/copilot/copilot-faq" title="Learn about frequently asked questions and find your answers.">Dynatrace Intelligence generative AI FAQ</a></li>
+<li><a href="/docs/dynatrace-intelligence/copilot/copilot-overview" title="Узнайте о безопасности данных и других аспектах Dynatrace Intelligence генеративного ИИ.">Dynatrace Intelligence генеративный ИИ: обзор</a></li>
+<li><a href="/docs/dynatrace-intelligence/copilot/copilot-getting-started" title="Узнайте, как настроить Dynatrace Intelligence генеративный ИИ.">Начало работы с Dynatrace Intelligence генеративным ИИ</a></li>
+<li><a href="/docs/dynatrace-intelligence/copilot/copilot-faq" title="Узнайте о часто задаваемых вопросах и найдите ответы.">Dynatrace Intelligence генеративный ИИ: часто задаваемые вопросы</a></li>
 </ul>
 
 
@@ -25594,9 +25599,6 @@
 
 
 
-
-  
-  
 
 
 
