@@ -1,7 +1,7 @@
 ---
 title: Instrument iOS apps
 source: https://www.dynatrace.com/docs/observe/digital-experience/mobile-applications/instrument-ios-app
-scraped: 2026-02-28T21:15:37.867537
+scraped: 2026-03-03T21:18:06.238684
 ---
 
 # Instrument iOS apps

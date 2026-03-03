@@ -1,7 +1,7 @@
 ---
 title: Business Insights
 source: https://www.dynatrace.com/docs/observe/digital-experience/business-insights
-scraped: 2026-03-02T21:23:45.622551
+scraped: 2026-03-03T21:25:20.398316
 ---
 
 # Business Insights

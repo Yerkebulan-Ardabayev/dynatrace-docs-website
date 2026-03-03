@@ -1,7 +1,7 @@
 ---
 title: Instrument mobile apps with Dynatrace Flutter plugin
 source: https://www.dynatrace.com/docs/observe/digital-experience/mobile-applications/cross-platform-frameworks/flutter
-scraped: 2026-02-28T21:15:36.185197
+scraped: 2026-03-03T21:19:11.801465
 ---
 
 # Instrument mobile apps with Dynatrace Flutter plugin

@@ -1,7 +1,7 @@
 ---
 title: Slack Connector
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/slack
-scraped: 2026-03-02T21:17:09.590187
+scraped: 2026-03-03T21:22:08.797257
 ---
 
 # Slack Connector

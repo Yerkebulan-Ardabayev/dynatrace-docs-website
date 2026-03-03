@@ -1,7 +1,7 @@
 ---
 title: Instrument SwiftUI controls
 source: https://www.dynatrace.com/docs/observe/digital-experience/mobile-applications/instrument-ios-app/instrumentation/instrument-swiftui-controls
-scraped: 2026-03-02T21:21:00.570975
+scraped: 2026-03-03T21:18:19.004765
 ---
 
 # Instrument SwiftUI controls

@@ -1,7 +1,7 @@
 ---
 title: Link cross-origin XHR user actions and their distributed traces
 source: https://www.dynatrace.com/docs/observe/digital-experience/web-applications/initial-setup/link-cross-origin-xhrs
-scraped: 2026-03-02T21:18:15.681481
+scraped: 2026-03-03T21:17:52.857546
 ---
 
 # Link cross-origin XHR user actions and their distributed traces

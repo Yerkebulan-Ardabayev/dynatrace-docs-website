@@ -1,7 +1,7 @@
 ---
 title: Ready-made dashboards
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/ready-made-documents/ready-made-dashboards
-scraped: 2026-03-02T21:12:47.647959
+scraped: 2026-03-03T21:11:51.186902
 ---
 
 # Ready-made dashboards

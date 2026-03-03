@@ -1,7 +1,7 @@
 ---
 title: Choropleth map visualization
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-map-choropleth
-scraped: 2026-03-02T21:16:21.549700
+scraped: 2026-03-03T21:20:31.355734
 ---
 
 # Choropleth map visualization

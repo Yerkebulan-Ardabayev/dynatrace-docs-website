@@ -1,7 +1,7 @@
 ---
 title: Amazon SES (Simple Email Service) monitoring
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-simple-email-service-ses
-scraped: 2026-03-02T21:32:01.881668
+scraped: 2026-03-03T21:32:09.237386
 ---
 
 # Amazon SES (Simple Email Service) monitoring

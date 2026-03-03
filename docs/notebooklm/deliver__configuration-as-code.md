@@ -1,6 +1,6 @@
 # Документация Dynatrace: deliver/configuration-as-code
 Язык: Русский (RU)
-Сгенерировано: 2026-03-02
+Сгенерировано: 2026-03-03
 Файлов в разделе: 14
 ---
 
@@ -3022,7 +3022,7 @@ While this sample shows users, service users, policies, and groups defined in a 
 ---
 title: Monaco configuration YAML file structure
 source: https://www.dynatrace.com/docs/deliver/configuration-as-code/monaco/configuration/yaml-configuration-saas
-scraped: 2026-02-28T21:27:39.397213
+scraped: 2026-03-03T21:28:42.637073
 ---
 
 # Monaco configuration YAML file structure
@@ -4313,7 +4313,7 @@ Note that most Configuration APIs are deprecated in favor of Settings 2.0, see [
 ---
 title: Monaco concepts
 source: https://www.dynatrace.com/docs/deliver/configuration-as-code/monaco/monaco-concepts
-scraped: 2026-03-02T21:32:38.994324
+scraped: 2026-03-03T21:22:16.208223
 ---
 
 # Monaco concepts
@@ -5601,7 +5601,7 @@ The reasons are added as comments at the beginning of each file.
 ---
 title: Configure automated notifications using Terraform and Configuration as Code
 source: https://www.dynatrace.com/docs/deliver/configuration-as-code/terraform/tutorials/terraform-tutorial-set-up-automated-notification
-scraped: 2026-03-02T21:32:37.714774
+scraped: 2026-03-03T21:31:56.014799
 ---
 
 # Configure automated notifications using Terraform and Configuration as Code

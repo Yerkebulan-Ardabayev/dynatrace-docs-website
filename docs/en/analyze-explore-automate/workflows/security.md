@@ -1,7 +1,7 @@
 ---
 title: User permissions for workflows
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/security
-scraped: 2026-03-02T21:18:46.138586
+scraped: 2026-03-03T21:27:38.518318
 ---
 
 # User permissions for workflows

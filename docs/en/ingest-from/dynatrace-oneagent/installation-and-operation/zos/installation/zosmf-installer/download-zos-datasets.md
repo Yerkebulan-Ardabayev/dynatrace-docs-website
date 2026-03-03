@@ -1,7 +1,7 @@
 ---
 title: Download z/OS product datasets
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/zosmf-installer/download-zos-datasets
-scraped: 2026-03-02T21:32:06.892393
+scraped: 2026-03-03T21:32:33.257943
 ---
 
 # Download z/OS product datasets

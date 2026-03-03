@@ -1,7 +1,7 @@
 ---
 title: OneAgent
 source: https://www.dynatrace.com/docs/platform/oneagent
-scraped: 2026-03-02T21:13:51.232907
+scraped: 2026-03-03T21:14:23.717028
 ---
 
 # OneAgent

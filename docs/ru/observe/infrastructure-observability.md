@@ -1,7 +1,7 @@
 ---
 title: Infrastructure Observability
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability
-scraped: 2026-03-02T21:14:03.383442
+scraped: 2026-03-03T21:14:14.217431
 ---
 
 # Infrastructure Observability
@@ -73,13 +73,13 @@ Monitor and troubleshoot containerized workloads across Kubernetes and standalon
 
 * Explanation
 
-Read this explanation](/docs/observe/infrastructure-observability/infrastructure-and-operations/containers)[#### Networks
+Read this explanation](/docs/observe/infrastructure-observability/infrastructure-and-operations/containers)[#### Network devices
 
 Monitor network devices and gain insights into networking components with Dynatrace Intelligence-powered analytics and flexible observability options.
 
 * Explanation
 
-Read this explanation](/docs/observe/infrastructure-observability/infrastructure-and-operations/networks)[#### Extensions
+Read this explanation](/docs/observe/infrastructure-observability/infrastructure-and-operations/network-devices)[#### Extensions
 
 Extensions ordered by category
 

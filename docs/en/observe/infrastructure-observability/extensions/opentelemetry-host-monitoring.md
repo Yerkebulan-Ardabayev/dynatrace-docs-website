@@ -1,7 +1,7 @@
 ---
 title: OpenTelemetry Host Monitoring extension
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/extensions/opentelemetry-host-monitoring
-scraped: 2026-02-27T21:30:22.189457
+scraped: 2026-03-03T21:32:54.635448
 ---
 
 # OpenTelemetry Host Monitoring extension

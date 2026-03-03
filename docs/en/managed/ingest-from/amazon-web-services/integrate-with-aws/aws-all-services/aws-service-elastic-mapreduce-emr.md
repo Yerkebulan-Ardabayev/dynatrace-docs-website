@@ -1,7 +1,7 @@
 ---
 title: Amazon EMR (Elastic MapReduce) monitoring
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-elastic-mapreduce-emr
-scraped: 2026-03-02T21:23:34.970980
+scraped: 2026-03-03T21:23:13.296196
 ---
 
 # Amazon EMR (Elastic MapReduce) monitoring

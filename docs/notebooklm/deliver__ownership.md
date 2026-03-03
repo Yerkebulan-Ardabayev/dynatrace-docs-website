@@ -1,6 +1,6 @@
 # Документация Dynatrace: deliver/ownership
 Язык: Русский (RU)
-Сгенерировано: 2026-03-02
+Сгенерировано: 2026-03-03
 Файлов в разделе: 4
 ---
 
@@ -726,7 +726,7 @@ While only the **Team name** and **Team identifier** fields are required for cre
 ---
 title: Create and manage teams for entity ownership
 source: https://www.dynatrace.com/docs/deliver/ownership/ownership-teams
-scraped: 2026-03-01T21:25:37.089714
+scraped: 2026-03-03T21:22:33.092135
 ---
 
 # Create and manage teams for entity ownership
@@ -894,7 +894,7 @@ The API snippets for reading, creating, updating, and deleting teams are availab
 ---
 title: Ownership Classic
 source: https://www.dynatrace.com/docs/deliver/ownership
-scraped: 2026-03-02T21:18:51.208595
+scraped: 2026-03-03T21:31:36.900004
 ---
 
 # Ownership Classic

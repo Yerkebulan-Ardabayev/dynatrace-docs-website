@@ -1,7 +1,7 @@
 ---
 title: Extension Execution Controller custom configuration
 source: https://www.dynatrace.com/docs/ingest-from/extensions/advanced-configuration/eec-custom-configuration
-scraped: 2026-03-02T21:25:54.628746
+scraped: 2026-03-03T21:29:19.476090
 ---
 
 # Extension Execution Controller custom configuration

@@ -1,7 +1,7 @@
 ---
 title: Disk Analytics extension
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/extensions/disk-analytics
-scraped: 2026-02-28T21:10:48.470698
+scraped: 2026-03-03T21:14:41.859318
 ---
 
 # Disk Analytics extension

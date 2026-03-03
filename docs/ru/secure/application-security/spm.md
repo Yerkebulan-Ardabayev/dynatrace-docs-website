@@ -1,7 +1,7 @@
 ---
 title: Security Posture Management
 source: https://www.dynatrace.com/docs/secure/application-security/spm
-scraped: 2026-03-02T21:27:17.526868
+scraped: 2026-03-03T21:31:39.589618
 ---
 
 # Security Posture Management

@@ -1,7 +1,7 @@
 ---
 title: Ingest Akamai security logs and events
 source: https://www.dynatrace.com/docs/secure/threat-observability/security-events-ingest/ingest-akamai
-scraped: 2026-03-02T21:26:24.803632
+scraped: 2026-03-03T21:16:35.175297
 ---
 
 # Ingest Akamai security logs and events

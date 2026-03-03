@@ -1,7 +1,7 @@
 ---
 title: Customize data with extensions
 source: https://www.dynatrace.com/docs/ingest-from/extensions/advanced-configuration/extension-customize
-scraped: 2026-03-01T21:25:04.282922
+scraped: 2026-03-03T21:30:21.952906
 ---
 
 # Customize data with extensions

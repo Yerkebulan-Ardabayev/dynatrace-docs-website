@@ -1,7 +1,7 @@
 ---
 title: Discover relevant troubleshooting guides with Dynatrace Intelligence generative AI
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/copilot/copilot-find-relevant-troubleshooting-guides
-scraped: 2026-03-02T21:15:07.049288
+scraped: 2026-03-03T21:13:54.151339
 ---
 
 # Discover relevant troubleshooting guides with Dynatrace Intelligence generative AI
@@ -129,11 +129,11 @@ By using a JavaScript workflow action, you can automatically create and attach a
 
 
 
-   export default async function ({ execution_id }) {
+   export default async function () {
 
 
 
-   const ex = await execution(execution_id);
+   const ex = await execution();
 
 
 

@@ -1,7 +1,7 @@
 ---
 title: Host-level settings
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/hosts/configuration
-scraped: 2026-03-02T21:14:08.284007
+scraped: 2026-03-03T21:12:05.147950
 ---
 
 # Host-level settings
@@ -120,7 +120,7 @@ NetTracer is an open-source tool for tracing TCP events and collecting network c
 2. Turn **Enable NetTracer traffic network monitoring** on or off to determine whether NetTracer monitors network traffic on the selected host.
 3. Select **Save changes**.
 
-For details, see [Extended network monitoring](/docs/observe/infrastructure-observability/networks/network-monitoring-with-nettracer "Extend network monitoring with network traffic metrics in containerized Linux hosts using NetTracer.").
+For details, see [Extended network monitoring](/docs/observe/infrastructure-observability/networks-classic/network-monitoring-with-nettracer "Extend network monitoring with network traffic metrics in containerized Linux hosts using NetTracer.").
 
 ## Exclude network traffic
 

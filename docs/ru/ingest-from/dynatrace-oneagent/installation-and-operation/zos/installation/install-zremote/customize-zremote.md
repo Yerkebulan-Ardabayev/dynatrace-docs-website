@@ -1,7 +1,7 @@
 ---
 title: Customize the zRemote module
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-zremote/customize-zremote
-scraped: 2026-03-02T21:19:40.000768
+scraped: 2026-03-03T21:31:29.376073
 ---
 
 # Customize the zRemote module

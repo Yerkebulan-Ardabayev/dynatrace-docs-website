@@ -1,7 +1,7 @@
 ---
 title: Business events end-to-end example
 source: https://www.dynatrace.com/docs/observe/business-observability/end-to-end-example
-scraped: 2026-03-02T21:26:30.752341
+scraped: 2026-03-03T21:27:11.539290
 ---
 
 # Business events end-to-end example

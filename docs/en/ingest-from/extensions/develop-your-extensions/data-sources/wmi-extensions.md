@@ -1,7 +1,7 @@
 ---
 title: WMI data source
 source: https://www.dynatrace.com/docs/ingest-from/extensions/develop-your-extensions/data-sources/wmi-extensions
-scraped: 2026-03-02T21:17:45.730965
+scraped: 2026-03-03T21:24:12.065610
 ---
 
 # WMI data source

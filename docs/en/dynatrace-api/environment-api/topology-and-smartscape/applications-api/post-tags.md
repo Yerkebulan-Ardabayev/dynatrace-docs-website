@@ -1,7 +1,7 @@
 ---
 title: Applications API - POST tags
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/topology-and-smartscape/applications-api/post-tags
-scraped: 2026-02-28T21:17:53.820736
+scraped: 2026-03-03T21:19:25.612002
 ---
 
 # Applications API - POST tags

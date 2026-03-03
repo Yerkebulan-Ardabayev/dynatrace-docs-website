@@ -1,6 +1,6 @@
 # Документация Dynatrace: license/monitoring-consumption-classic
 Язык: Русский (RU)
-Сгенерировано: 2026-03-02
+Сгенерировано: 2026-03-03
 Файлов в разделе: 5
 ---
 
@@ -230,7 +230,7 @@ The following details apply to metric data points:
 ---
 title: DDUs for custom traces (Trace API)
 source: https://www.dynatrace.com/docs/license/monitoring-consumption-classic/davis-data-units/custom-traces
-scraped: 2026-03-02T21:26:59.362722
+scraped: 2026-03-03T21:22:11.296242
 ---
 
 # DDUs for custom traces (Trace API)
@@ -271,7 +271,7 @@ Davis data unit pools
 ---
 title: DDUs for custom Davis events
 source: https://www.dynatrace.com/docs/license/monitoring-consumption-classic/davis-data-units/ddu-events
-scraped: 2026-03-02T21:28:33.477574
+scraped: 2026-03-03T21:30:05.455341
 ---
 
 # DDUs for custom Davis events
@@ -315,7 +315,7 @@ The consumption can be caused by events v2 API if no entity selector is provided
 ---
 title: DDUs for Log Management and Analytics
 source: https://www.dynatrace.com/docs/license/monitoring-consumption-classic/davis-data-units/log-management-and-analytics
-scraped: 2026-03-01T21:26:24.922352
+scraped: 2026-03-03T21:30:32.117251
 ---
 
 # DDUs for Log Management and Analytics
@@ -469,7 +469,7 @@ If you cancel a query execution, all data read before the cancellation will be f
 ---
 title: Dynatrace classic licensing
 source: https://www.dynatrace.com/docs/license/monitoring-consumption-classic
-scraped: 2026-03-01T21:11:20.243019
+scraped: 2026-03-03T21:16:25.219214
 ---
 
 # Dynatrace classic licensing

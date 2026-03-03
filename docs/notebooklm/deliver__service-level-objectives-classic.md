@@ -1,6 +1,6 @@
 # Документация Dynatrace: deliver/service-level-objectives-classic
 Язык: Русский (RU)
-Сгенерировано: 2026-03-02
+Сгенерировано: 2026-03-03
 Файлов в разделе: 2
 ---
 
@@ -72,7 +72,7 @@ Starting with Dynatrace version 1.233+, you can also set a custom management zon
 ---
 title: Service-Level Objectives Classic
 source: https://www.dynatrace.com/docs/deliver/service-level-objectives-classic
-scraped: 2026-03-02T21:25:38.677752
+scraped: 2026-03-03T21:26:10.005646
 ---
 
 # Service-Level Objectives Classic

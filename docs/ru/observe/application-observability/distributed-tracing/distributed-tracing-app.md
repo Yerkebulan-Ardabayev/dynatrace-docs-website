@@ -1,7 +1,7 @@
 ---
 title: Distributed Tracing app
 source: https://www.dynatrace.com/docs/observe/application-observability/distributed-tracing/distributed-tracing-app
-scraped: 2026-03-02T21:13:36.054077
+scraped: 2026-03-03T21:13:49.151441
 ---
 
 # Distributed Tracing app

@@ -1,7 +1,7 @@
 ---
 title: Workflows actions
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/default-workflow-actions
-scraped: 2026-03-02T21:20:29.635861
+scraped: 2026-03-03T21:30:25.832569
 ---
 
 # Workflows actions

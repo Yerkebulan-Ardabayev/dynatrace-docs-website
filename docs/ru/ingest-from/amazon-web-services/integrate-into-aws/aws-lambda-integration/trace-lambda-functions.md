@@ -1,7 +1,7 @@
 ---
 title: Trace Lambda functions
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/trace-lambda-functions
-scraped: 2026-02-28T21:16:11.873792
+scraped: 2026-03-03T21:18:40.781727
 ---
 
 # Trace Lambda functions
@@ -10,7 +10,7 @@ scraped: 2026-02-28T21:16:11.873792
 
 * How-to guide
 * 8-min read
-* Updated on Jan 23, 2026
+* Updated on Feb 27, 2026
 
 Dynatrace provides you with a dedicated AWS Lambda layer that contains the Dynatrace extension for AWS Lambda. You need to add the publicly available layer for your runtime and region to your function. Then, based on your configuration method, Dynatrace provides a template or configuration for your AWS Lambda function.
 
@@ -301,7 +301,7 @@ The following table contains uncompressed layer sizes.
 
 | Runtime | Code space (MB) | Code space with log collector included (MB) |
 | --- | --- | --- |
-| Node.js | ~32MB | ~40MB |
+| Node.js | ~23MB | ~32MB |
 | Java | ~25MB | ~32MB |
 | Python | ~16MB | ~24MB |
 

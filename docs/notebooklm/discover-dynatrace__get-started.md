@@ -1,6 +1,6 @@
 # Документация Dynatrace: discover-dynatrace/get-started
 Язык: Русский (RU)
-Сгенерировано: 2026-03-02
+Сгенерировано: 2026-03-03
 Файлов в разделе: 11
 ---
 
@@ -48,7 +48,7 @@ Any ACR posted below, or anywhere else on the Dynatrace website, or otherwise pu
 ---
 title: Data visualizations
 source: https://www.dynatrace.com/docs/discover-dynatrace/get-started/dynatrace-ui/interact-visualizations
-scraped: 2026-03-02T21:20:01.367274
+scraped: 2026-03-03T21:27:24.403226
 ---
 
 # Data visualizations
@@ -96,7 +96,7 @@ Common interactions and features of data visualizations in the latest Dynatrace.
 ---
 title: Launchpads
 source: https://www.dynatrace.com/docs/discover-dynatrace/get-started/dynatrace-ui/launchpads
-scraped: 2026-03-02T21:15:22.134397
+scraped: 2026-03-03T21:21:15.431938
 ---
 
 # Launchpads
@@ -248,7 +248,7 @@ To see the full API documentation for the documents service
 ---
 title: Troubleshooting sign-in issues
 source: https://www.dynatrace.com/docs/discover-dynatrace/get-started/dynatrace-ui/login-issues
-scraped: 2026-03-02T21:28:18.292071
+scraped: 2026-03-03T21:27:49.998461
 ---
 
 # Troubleshooting sign-in issues
@@ -271,7 +271,7 @@ Use this page to solve problems with signing in to your Dynatrace account.
 ---
 title: Share documents
 source: https://www.dynatrace.com/docs/discover-dynatrace/get-started/dynatrace-ui/share
-scraped: 2026-03-02T21:12:58.078497
+scraped: 2026-03-03T21:12:55.507622
 ---
 
 # Share documents
@@ -577,7 +577,7 @@ Sharing exceptions
 ---
 title: Filter field
 source: https://www.dynatrace.com/docs/discover-dynatrace/get-started/dynatrace-ui/ui-filter-field
-scraped: 2026-03-02T21:16:27.982864
+scraped: 2026-03-03T21:15:15.187813
 ---
 
 # Filter field
@@ -916,7 +916,7 @@ The contents of this user menu depend on your deployment type, configuration, an
 ---
 title: What is a monitoring environment?
 source: https://www.dynatrace.com/docs/discover-dynatrace/get-started/monitoring-environment
-scraped: 2026-03-02T21:14:21.483481
+scraped: 2026-03-03T21:12:32.741434
 ---
 
 # What is a monitoring environment?
@@ -1711,7 +1711,7 @@ Be sure to watch for the recommendations within the Dynatrace web UI to enable a
 ---
 title: Get started with Dynatrace
 source: https://www.dynatrace.com/docs/discover-dynatrace/get-started
-scraped: 2026-03-02T21:12:33.280994
+scraped: 2026-03-03T21:11:46.136957
 ---
 
 # Get started with Dynatrace
