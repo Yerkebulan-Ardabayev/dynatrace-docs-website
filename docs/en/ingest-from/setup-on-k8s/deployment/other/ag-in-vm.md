@@ -1,7 +1,7 @@
 ---
 title: Deploy ActiveGate in a VM
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/deployment/other/ag-in-vm
-scraped: 2026-03-02T21:31:40.096676
+scraped: 2026-03-03T21:26:47.652049
 ---
 
 # Deploy ActiveGate in a VM

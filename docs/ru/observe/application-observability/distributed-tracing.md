@@ -1,7 +1,7 @@
 ---
 title: Distributed Tracing
 source: https://www.dynatrace.com/docs/observe/application-observability/distributed-tracing
-scraped: 2026-03-02T21:12:41.554014
+scraped: 2026-03-03T21:12:00.150969
 ---
 
 # Distributed Tracing

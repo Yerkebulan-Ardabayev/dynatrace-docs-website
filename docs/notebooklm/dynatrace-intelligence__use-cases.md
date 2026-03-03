@@ -1,6 +1,6 @@
 # Документация Dynatrace: dynatrace-intelligence/use-cases
 Язык: Русский (RU)
-Сгенерировано: 2026-03-02
+Сгенерировано: 2026-03-03
 Файлов в разделе: 6
 ---
 
@@ -9,7 +9,7 @@
 ---
 title: Generative AI quick analysis examples
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/use-cases/copilot-examples
-scraped: 2026-03-02T21:18:43.851821
+scraped: 2026-03-03T21:29:11.693989
 ---
 
 # Generative AI quick analysis examples
@@ -276,7 +276,7 @@ To use Dynatrace Intelligence (Preview), ensure that you have:
 ---
 title: Summarize open problems with Workflows
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/use-cases/copilot-in-workflows-examples
-scraped: 2026-03-02T21:22:31.755773
+scraped: 2026-03-03T21:26:45.029733
 ---
 
 # Summarize open problems with Workflows
@@ -353,11 +353,11 @@ To use Dynatrace Intelligence (Preview), ensure that you have:
 
 
 
-   export default async function ({ executionId }) {
+   export default async function () {
 
 
 
-   const ex = await execution(executionId);
+   const ex = await execution();
 
 
 
@@ -482,7 +482,7 @@ Once a new problem appears, you should receive an email from `no-reply@dev.apps.
 ---
 title: Create log alerts for a log event or summary of log data
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/use-cases/create-alert-in-logs
-scraped: 2026-03-02T21:23:43.314611
+scraped: 2026-03-03T21:31:25.589135
 ---
 
 # Create log alerts for a log event or summary of log data
@@ -634,7 +634,7 @@ If you followed these steps, now you know how to create log alerts for specific 
 ---
 title: Dynatrace Intelligence DQL examples
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/use-cases/davis-dql-examples
-scraped: 2026-03-02T21:15:48.740044
+scraped: 2026-03-03T21:21:00.844160
 ---
 
 # Dynatrace Intelligence DQL examples
@@ -895,7 +895,7 @@ fetch dt.davis.events, from:now()-7d, to:now()
 ---
 title: AI in Workflows - Predictive maintenance of cloud disks
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/use-cases/davis-for-workflows
-scraped: 2026-03-02T21:24:28.566048
+scraped: 2026-03-03T21:23:38.569179
 ---
 
 # AI in Workflows - Predictive maintenance of cloud disks
@@ -916,7 +916,7 @@ To use Dynatrace Intelligence actions, you first need to install **Dynatrace Int
 1. In Dynatrace Hub ![Hub](https://dt-cdn.net/images/hub-512-82db3c583e.png "Hub"), search for **Dynatrace Intelligence (Preview)**.
 2. Select **Dynatrace Intelligence (Preview)** and select **Install**.
 
-After installation, Dynatrace Intelligence actions appear automatically in the **Chose action** section of [Workflows](/docs/analyze-explore-automate/workflows "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services.").
+After installation, Dynatrace Intelligence actions appear automatically in the **Choose action** section of [![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Workflows**](/docs/analyze-explore-automate/workflows "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services.").
 
 ## Example use case
 
@@ -1044,11 +1044,11 @@ The next workflow action tests each prediction to determine whether the disk wil
 
 
 
-   export default async function ({ executionId }) {
+   export default async function () {
 
 
 
-   const exe = await execution(executionId);
+   const exe = await execution();
 
 
 
@@ -1205,11 +1205,11 @@ To raise a Davis problem
 
 
 
-   export default async function ({ executionId }) {
+   export default async function () {
 
 
 
-   const exe = await execution(executionId);
+   const exe = await execution();
 
 
 

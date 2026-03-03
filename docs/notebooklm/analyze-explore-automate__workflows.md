@@ -1,7 +1,7 @@
 # Документация Dynatrace: analyze-explore-automate/workflows
 Язык: Русский (RU)
-Сгенерировано: 2026-03-02
-Файлов в разделе: 31
+Сгенерировано: 2026-03-03
+Файлов в разделе: 32
 ---
 
 ## analyze-explore-automate/workflows/actions/email.md
@@ -518,7 +518,7 @@ The action returns the `workflowRun` property that contains the full response of
 ---
 title: Set up GitHub Connector
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/github/github-workflows-setup
-scraped: 2026-03-01T21:20:39.001357
+scraped: 2026-03-03T21:22:40.544223
 ---
 
 # Set up GitHub Connector
@@ -631,7 +631,7 @@ Learn about available actions used by GitHub Connector integration for automatin
 ---
 title: Actions for GitLab Connector
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/gitlab/gitlab-workflows-actions
-scraped: 2026-03-02T21:26:07.238452
+scraped: 2026-03-03T21:26:38.780705
 ---
 
 # Actions for GitLab Connector
@@ -929,7 +929,7 @@ Returns fields as described in the [Jobs API - Run a jobï»¿](https://dt-url.n
 ---
 title: Set up GitLab Connector
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/gitlab/gitlab-workflows-setup
-scraped: 2026-03-02T21:27:19.895853
+scraped: 2026-03-03T21:31:12.919831
 ---
 
 # Set up GitLab Connector
@@ -1033,7 +1033,7 @@ Learn about available actions used by GitLab Connector integration for automatin
 ---
 title: Set up Jenkins Connector
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/jenkins/jenkins-workflows-setup
-scraped: 2026-03-02T21:26:01.989159
+scraped: 2026-03-03T21:28:00.568615
 ---
 
 # Set up Jenkins Connector
@@ -1144,7 +1144,7 @@ The following are solutions to problems some people had with Jira Connector acti
 ---
 title: Microsoft Entra ID Connector
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/microsoft-entra-id
-scraped: 2026-03-02T21:25:08.372498
+scraped: 2026-03-03T21:28:32.162035
 ---
 
 # Microsoft Entra ID Connector
@@ -1506,7 +1506,7 @@ The following are solutions to problems some people have.
 ---
 title: Red Hat Event-Driven Ansible
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/red-hat/redhat-even-driven-ansible
-scraped: 2026-03-02T21:21:29.527329
+scraped: 2026-03-03T21:30:53.933975
 ---
 
 # Red Hat Event-Driven Ansible
@@ -1783,7 +1783,7 @@ To create a workflow that sends an event to Event-Driven Ansible
 ---
 title: ServiceNow
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/service-now
-scraped: 2026-02-28T21:18:11.539147
+scraped: 2026-03-03T21:20:17.943358
 ---
 
 # ServiceNow
@@ -2047,7 +2047,7 @@ The following is a solution to a problem some people have.
 ---
 title: Slack Connector
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/slack
-scraped: 2026-03-02T21:17:09.590187
+scraped: 2026-03-03T21:22:08.797257
 ---
 
 # Slack Connector
@@ -3321,7 +3321,7 @@ For more information on how to start a workflow to use Text Processing, see [Wor
 ---
 title: Workflows Connectors
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions
-scraped: 2026-02-28T21:18:08.040237
+scraped: 2026-03-03T21:20:15.513439
 ---
 
 # Workflows Connectors
@@ -3461,7 +3461,7 @@ You can find the results in the **Result** tab of the **Execution** that you cou
 ---
 title: HTTP request action for Workflows
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/default-workflow-actions/http-request-workflow-action
-scraped: 2026-03-02T21:29:15.753373
+scraped: 2026-03-03T21:28:14.167832
 ---
 
 # HTTP request action for Workflows
@@ -3850,7 +3850,7 @@ console.log( ex.params.event);
 ---
 title: Workflows actions
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/default-workflow-actions
-scraped: 2026-03-02T21:20:29.635861
+scraped: 2026-03-03T21:30:25.832569
 ---
 
 # Workflows actions
@@ -3899,7 +3899,7 @@ Use the **Run Workflow** action to modularize workflow usage.](/docs/analyze-exp
 ---
 title: Access workflow management functionality
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/manage-workflows/workflows-access-management
-scraped: 2026-03-02T21:23:13.876349
+scraped: 2026-03-03T21:24:03.327732
 ---
 
 # Access workflow management functionality
@@ -3982,7 +3982,7 @@ To access various **Live** or **Draft** workflow management commands
 ---
 title: Get notified about workflow changes
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/manage-workflows/workflows-notifications
-scraped: 2026-03-01T21:21:41.596064
+scraped: 2026-03-03T21:33:10.923222
 ---
 
 # Get notified about workflow changes
@@ -4050,12 +4050,71 @@ To turn off notifications for workflow, select  > **Turn off notifications**.
 
 ---
 
+## analyze-explore-automate/workflows/manage-workflows/workflows-templates.md
+
+---
+title: Workflow templates
+source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/manage-workflows/workflows-templates
+scraped: 2026-03-03T21:26:27.265421
+---
+
+# Workflow templates
+
+# Workflow templates
+
+* Latest Dynatrace
+* How-to guide
+* Published Feb 05, 2026
+
+Workflow templates give you ready-made workflow definitions for common automation scenarios.
+Use them to start new workflows quickly and then customize them for your use case.
+
+## How-to
+
+Here's what you can do with templates:
+
+* Create a workflow from a template.
+* Create a template from any workflow. Just export the workflow as a YAML file.
+* Create a workflow guide that explains prerequisites and configuration steps.
+
+### Create a workflow from template
+
+You can create a workflow based on a template.
+For more information, see [Create workflow from pre-made template](/docs/analyze-explore-automate/workflows/building#pre-made-template "Create and edit workflows in Dynatrace Workflows.") or [Create workflow from YAML template](/docs/analyze-explore-automate/workflows/building#yaml-template "Create and edit workflows in Dynatrace Workflows.").
+
+### Create a template
+
+You can create your own workflow template.
+To do so, create or modify a workflow and then export it as a template.
+For more information, see [Download a template](/docs/analyze-explore-automate/workflows/manage-workflows/workflows-download#download-workflow-template "Download your workflow or your existing workflow as a template for an easy backup, to use locally or to share it to upload on a different tenant.").
+
+### Create a workflow guide
+
+When you create a new workflow or template, you can include a guide that explains prerequisites and configuration steps.
+The guide will then be visible for anybody who uses the workflow or template.
+For more information, see [Workflow guide](/docs/analyze-explore-automate/workflows/building#workflow-guide "Create and edit workflows in Dynatrace Workflows.").
+
+## Next steps
+
+Now that you know how to use workflow templates:
+
+* Explore the  [**Hub**](/docs/manage/hub "See the information about Dynatrace Hub.") to find apps that come with pre-made templates.
+* Use and modify workflow templates for your [use cases](/docs/analyze-explore-automate/workflows/use-cases "Explore common Workflows use cases in Dynatrace deployments.").
+
+## Related topics
+
+* [Workflows quick start guide](/docs/analyze-explore-automate/workflows/quickstart "Build and run your first workflow.")
+* [Create workflows in Dynatrace Workflows](/docs/analyze-explore-automate/workflows/building "Create and edit workflows in Dynatrace Workflows.")
+* [Manage workflows](/docs/analyze-explore-automate/workflows/manage-workflows "Manage your workflows")
+
+---
+
 ## analyze-explore-automate/workflows/security.md
 
 ---
 title: User permissions for workflows
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/security
-scraped: 2026-03-02T21:18:46.138586
+scraped: 2026-03-03T21:27:38.518318
 ---
 
 # User permissions for workflows
@@ -4721,7 +4780,7 @@ This workflow is a great starting point for automating incident response and imp
 ---
 title: Workflows use cases
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/use-cases
-scraped: 2026-03-02T21:21:08.268608
+scraped: 2026-03-03T21:30:04.226300
 ---
 
 # Workflows use cases
@@ -4790,7 +4849,7 @@ Design a workflow to manage high-volume AWS alerts by filtering out noise and su
 ---
 title: Workflows
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows
-scraped: 2026-03-02T21:15:19.709508
+scraped: 2026-03-03T21:20:48.821395
 ---
 
 # Workflows

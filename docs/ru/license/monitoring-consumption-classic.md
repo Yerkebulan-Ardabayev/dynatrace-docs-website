@@ -1,7 +1,7 @@
 ---
 title: Dynatrace classic licensing
 source: https://www.dynatrace.com/docs/license/monitoring-consumption-classic
-scraped: 2026-03-01T21:11:20.243019
+scraped: 2026-03-03T21:16:25.219214
 ---
 
 # Dynatrace classic licensing

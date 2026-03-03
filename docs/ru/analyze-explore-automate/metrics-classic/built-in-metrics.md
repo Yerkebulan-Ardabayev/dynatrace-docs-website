@@ -1,7 +1,7 @@
 ---
 title: Built-in classic metrics
 source: https://www.dynatrace.com/docs/analyze-explore-automate/metrics-classic/built-in-metrics
-scraped: 2026-03-02T21:31:23.130680
+scraped: 2026-03-03T21:23:02.373988
 ---
 
 # Built-in classic metrics
@@ -1100,22 +1100,22 @@ For the purposes of [calculating monitoring consumption](/docs/license/monitorin
 | builtin:synthetic.browser.serverContribution.xhr.geo | Server contribution - XHR action (by geolocation) [browser monitor]  The time spent on server-side processing for a page. Calculated for XHR actions; split by monitor, geolocation. | Millisecond | autoavgcountmaxminsum |
 | builtin:synthetic.browser.speedIndex.load | Speed index - load action [browser monitor]  The score measuring how quickly the visible parts of a page are rendered. Calculated for load actions; split by monitor. | Millisecond | autoavgcountmaxmedianminpercentilesum |
 | builtin:synthetic.browser.speedIndex.load.geo | Speed index - load action (by geolocation) [browser monitor]  The score measuring how quickly the visible parts of a page are rendered. Calculated for load actions; split by monitor, geolocation. | Millisecond | autoavgcountmaxminsum |
-| builtin:synthetic.browser.step.user\_events.duration | User events duration (step) [browser monitor]  Duration of individual browser monitor step, measured from the start of the first user event of the step to the end of the last user event of the step. The metric source is the new JS agent. | Millisecond | autoavgcountmaxminsum |
-| builtin:synthetic.browser.step.user\_events.total\_duration | User events total duration (step) [browser monitor]  Total duration of individual browser monitor step, measured as a sum of durations of all user events in the step. The metric source is the new JS agent. | Millisecond | autoavgcountmaxminsum |
-| builtin:synthetic.browser.step.duration | Duration (step) [browser monitor]  Duration of individual browser monitor step, measured as a sum of user action events of the step. If there are no user actions then measured as duration from the beginning of the step to the max end time of the load event handler phase. The metric source is the new JS agent. | Millisecond | autoavgcountmaxminsum |
+| builtin:synthetic.browser.step.user\_events.duration | User events duration (step) [browser monitor]  Duration of individual browser monitor step, measured from the start of the first user event of the step to the end of the last user event of the step. The metric source is the new RUM JavaScript. | Millisecond | autoavgcountmaxminsum |
+| builtin:synthetic.browser.step.user\_events.total\_duration | User events total duration (step) [browser monitor]  Total duration of individual browser monitor step, measured as a sum of durations of all user events in the step. The metric source is the new RUM JavaScript. | Millisecond | autoavgcountmaxminsum |
+| builtin:synthetic.browser.step.duration | Duration (step) [browser monitor]  Duration of individual browser monitor step, measured as a sum of durations of user action events in the step. | Millisecond | autoavgcountmaxminsum |
 | builtin:synthetic.browser.success | Successful executions count [browser monitor]  The number of successful monitor executions; split by monitor. | Count | autovalue |
 | builtin:synthetic.browser.success.geo | Successful executions count (by geolocation) [browser monitor]  The number of successful monitor executions; split by monitor, geolocation. | Count | autovalue |
 | builtin:synthetic.browser.total | Total executions count [browser monitor]  The total number of monitor executions executions; split by monitor. | Count | autovalue |
 | builtin:synthetic.browser.total.geo | Total executions count (by geolocation) [browser monitor]  The total number of monitor executions executions; split by monitor, geolocation. | Count | autovalue |
 | builtin:synthetic.browser.totalDuration | Total duration [browser monitor]  The duration of all actions in an event; split by monitor. | Millisecond | autoavgcountmaxmedianminpercentilesum |
 | builtin:synthetic.browser.totalDuration.geo | Total duration (by geolocation) [browser monitor]  The duration of all actions in an event; split by monitor, geolocation. | Millisecond | autoavgcountmaxminsum |
-| builtin:synthetic.browser.user\_events.duration | User events duration [browser monitor]  Duration of browser monitor, calculated as a sum of all steps-level user events durations. The metric source is the new JS agent. | Millisecond | autoavgcountmaxminsum |
-| builtin:synthetic.browser.user\_events.total\_duration | User events total duration [browser monitor]  Total duration of browser monitor, measured as a sum of all steps-level values of "User events total duration" metric. The metric source is the new JS agent. | Millisecond | autoavgcountmaxminsum |
+| builtin:synthetic.browser.user\_events.duration | User events duration [browser monitor]  Duration of browser monitor, calculated as a sum of all steps-level user events durations. The metric source is the new RUM JavaScript. | Millisecond | autoavgcountmaxminsum |
+| builtin:synthetic.browser.user\_events.total\_duration | User events total duration [browser monitor]  Total duration of browser monitor, measured as a sum of all steps-level values of "User events total duration" metric. The metric source is the new RUM JavaScript. | Millisecond | autoavgcountmaxminsum |
 | builtin:synthetic.browser.visuallyComplete.load | Visually complete - load action [browser monitor]  The time taken to fully render content in the viewport. Calculated for load actions; split by monitor. | Millisecond | autoavgcountmaxmedianminpercentilesum |
 | builtin:synthetic.browser.visuallyComplete.load.geo | Visually complete - load action (by geolocation) [browser monitor]  The time taken to fully render content in the viewport. Calculated for load actions; split by monitor, geolocation. | Millisecond | autoavgcountmaxminsum |
 | builtin:synthetic.browser.visuallyComplete.xhr | Visually complete - XHR action [browser monitor]  The time taken to fully render content in the viewport. Calculated for XHR actions; split by monitor. | Millisecond | autoavgcountmaxmedianminpercentilesum |
 | builtin:synthetic.browser.visuallyComplete.xhr.geo | Visually complete - XHR action (by geolocation) [browser monitor]  The time taken to fully render content in the viewport. Calculated for XHR actions; split by monitor, geolocation. | Millisecond | autoavgcountmaxminsum |
-| builtin:synthetic.browser.duration | Duration [browser monitor]  Duration of browser monitor, calculated as a sum of all steps durations. The metric source is the new JS agent. | Millisecond | autoavgcountmaxminsum |
+| builtin:synthetic.browser.duration | Duration [browser monitor]  Duration of browser monitor, calculated as a sum of all steps durations. | Millisecond | autoavgcountmaxminsum |
 
 ### HTTP
 

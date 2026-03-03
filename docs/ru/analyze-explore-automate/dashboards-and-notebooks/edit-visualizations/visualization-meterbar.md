@@ -1,7 +1,7 @@
 ---
 title: Meter bar chart
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-meterbar
-scraped: 2026-03-02T21:16:14.832768
+scraped: 2026-03-03T21:20:35.423424
 ---
 
 # Meter bar chart

@@ -1,7 +1,7 @@
 ---
 title: Clouds app
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/cloud-platform-monitoring/clouds-app
-scraped: 2026-03-02T21:14:35.532416
+scraped: 2026-03-03T21:12:17.317773
 ---
 
 # Clouds app
@@ -11,7 +11,7 @@ scraped: 2026-03-02T21:14:35.532416
 * Latest Dynatrace
 * App
 * 4-min read
-* Updated on Feb 20, 2026
+* Updated on Feb 27, 2026
 
 The new [cloud experienceï»¿](https://www.dynatrace.com/platform/cloud-monitoring/) is optimized for Cloud (Platform) Operation teams and Site Reliability Engineers (SREs) and focuses on health, troubleshooting, and performance optimization use cases of (multi-)cloud environments.
 
@@ -226,6 +226,8 @@ Classic connections
 The classic cloud connections are available for AWS, Azure, and GCP within the previous (**AWS Classic**, **Azure Classic**, **GCP Classic**) and latest Dynatrace.
 
 Classic connections are surfaced on the **Explorer (Classic connection)** tab in ![Clouds](https://dt-cdn.net/images/clouds-1025-170946931c.png "Clouds") **Clouds** and have no specific licensing requirements.
+
+If you're new to Dynatrace AWS Cloud Platform Monitoring, we recommend starting with the new AWS connections instead of the classic ones.
 
 The **Explorer** New and **Overview** New tabs only operate upon data originating from new AWS cloud connections.
 

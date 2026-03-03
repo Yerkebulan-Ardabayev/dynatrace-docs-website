@@ -1,7 +1,7 @@
 ---
 title: Kong Gateway monitoring
 source: https://www.dynatrace.com/docs/ingest-from/technology-support/application-software/nginx/kong-gateway
-scraped: 2026-02-28T21:15:58.408066
+scraped: 2026-03-03T21:18:23.797181
 ---
 
 # Kong Gateway monitoring

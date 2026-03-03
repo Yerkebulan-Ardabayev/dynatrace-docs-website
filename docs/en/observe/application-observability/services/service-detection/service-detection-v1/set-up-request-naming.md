@@ -1,7 +1,7 @@
 ---
 title: Set up request naming
 source: https://www.dynatrace.com/docs/observe/application-observability/services/service-detection/service-detection-v1/set-up-request-naming
-scraped: 2026-02-27T21:15:28.912227
+scraped: 2026-03-03T21:23:19.622829
 ---
 
 # Set up request naming

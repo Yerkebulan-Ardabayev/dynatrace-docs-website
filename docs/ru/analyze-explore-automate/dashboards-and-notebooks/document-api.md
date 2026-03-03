@@ -1,7 +1,7 @@
 ---
 title: API for Dashboards and Notebooks
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/document-api
-scraped: 2026-02-26T21:29:29.175365
+scraped: 2026-03-03T21:24:56.844016
 ---
 
 # API for Dashboards and Notebooks

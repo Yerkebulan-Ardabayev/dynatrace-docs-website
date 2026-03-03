@@ -1,7 +1,7 @@
 ---
 title: Install Dynatrace Operator add-on for AWS Elastic Kubernetes Service (AWS EKS)
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/deployment/marketplaces/eks-dto
-scraped: 2026-03-02T21:26:04.533987
+scraped: 2026-03-03T21:30:58.689094
 ---
 
 # Install Dynatrace Operator add-on for AWS Elastic Kubernetes Service (AWS EKS)

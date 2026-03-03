@@ -1,7 +1,7 @@
 ---
 title: ActiveGate purposes and functionality
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-activegate/capabilities
-scraped: 2026-03-01T21:10:04.248098
+scraped: 2026-03-03T21:17:35.173418
 ---
 
 # ActiveGate purposes and functionality
@@ -21,6 +21,10 @@ An ActiveGate can be used for three different use cases, which we refer to as **
 Each purpose comes with a different subset of functional [modules](/docs/ingest-from/dynatrace-activegate/configuration/configure-activegate#modules "Learn which ActiveGate properties you can configure based on your needs and requirements."). Modules should not be mixed between purposesâsuch re-configuration is not supported.
 
 ## Functionality available for the routing-monitoring ActiveGates
+
+1
+
+Log ingest API endpoint is supported on containerized ActiveGate in a number of [supported Kubernetes flavours](/docs/ingest-from/technology-support#kubernetes "Find technical details related to Dynatrace support for specific platforms and development frameworks.") when provisioned with Dynatrace Operator. Since ActiveGate uses file buffers, [persistent storage](/docs/ingest-from/setup-on-k8s/guides/deployment-and-configuration/activegate-pvc "Set up a persistent storage for containerized ActiveGate to be used as temporary storage for ingested data.") is recommended to prevent data loss during restarts or rescheduling
 
 ## Functionality available for ActiveGates running synthetic monitors from a private location
 

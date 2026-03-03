@@ -1,7 +1,7 @@
 ---
 title: NGINX
 source: https://www.dynatrace.com/docs/ingest-from/technology-support/application-software/nginx
-scraped: 2026-02-28T21:16:02.941171
+scraped: 2026-03-03T21:17:58.610104
 ---
 
 # NGINX

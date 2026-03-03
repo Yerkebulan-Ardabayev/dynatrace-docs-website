@@ -1,7 +1,7 @@
 ---
 title: Dynatrace Operator release notes version 0.9.2
 source: https://www.dynatrace.com/docs/whats-new/dynatrace-operator/dto-fix-0-9-2
-scraped: 2026-03-02T21:20:34.994376
+scraped: 2026-03-03T21:29:34.648600
 ---
 
 # Dynatrace Operator release notes version 0.9.2

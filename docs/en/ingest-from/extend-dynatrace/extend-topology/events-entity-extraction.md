@@ -1,7 +1,7 @@
 ---
 title: Event topology extraction and mapping
 source: https://www.dynatrace.com/docs/ingest-from/extend-dynatrace/extend-topology/events-entity-extraction
-scraped: 2026-03-01T21:27:05.975500
+scraped: 2026-03-03T21:30:15.728561
 ---
 
 # Event topology extraction and mapping

@@ -1,7 +1,7 @@
 ---
 title: Built-in Metrics on Grail
 source: https://www.dynatrace.com/docs/analyze-explore-automate/metrics/built-in-metrics-on-grail
-scraped: 2026-03-02T21:28:40.333567
+scraped: 2026-03-03T21:22:30.551812
 ---
 
 # Built-in Metrics on Grail

@@ -1,7 +1,7 @@
 ---
 title: Manage SAP Hana Database extensions
 source: https://www.dynatrace.com/docs/ingest-from/extensions/supported-extensions/data-sources/sql/sap-hana
-scraped: 2026-02-26T21:22:33.408851
+scraped: 2026-03-03T21:31:06.596542
 ---
 
 # Manage SAP Hana Database extensions

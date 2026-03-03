@@ -1,7 +1,7 @@
 ---
 title: Test pipeline observability
 source: https://www.dynatrace.com/docs/deliver/test-pipeline-observability
-scraped: 2026-03-02T21:24:50.890999
+scraped: 2026-03-03T21:28:01.973630
 ---
 
 # Test pipeline observability
@@ -273,7 +273,7 @@ The following steps use business events to implement the test pipeline observabi
 
 
 
-      export default async function ({ executionId }) {
+      export default async function () {
 
 
 
@@ -285,7 +285,7 @@ The following steps use business events to implement the test pipeline observabi
 
 
 
-      const ex = await execution(executionId);
+      const ex = await execution();
 
 
 
@@ -552,7 +552,7 @@ The following steps use business events to implement the test pipeline observabi
 
 
 
-      export default async function ({ executionId }) {
+      export default async function () {
 
 
 
@@ -564,7 +564,7 @@ The following steps use business events to implement the test pipeline observabi
 
 
 
-      const ex = await execution(executionId);
+      const ex = await execution();
 
 
 

@@ -1,7 +1,7 @@
 ---
 title: Monitor AWS Fargate
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-fargate
-scraped: 2026-03-01T21:20:08.919745
+scraped: 2026-03-03T21:26:07.525530
 ---
 
 # Monitor AWS Fargate

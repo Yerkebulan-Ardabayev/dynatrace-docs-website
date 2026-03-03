@@ -1,7 +1,7 @@
 ---
 title: Filter with facets
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-logs-app/facets
-scraped: 2026-03-02T21:15:04.607396
+scraped: 2026-03-03T21:13:08.747583
 ---
 
 # Filter with facets

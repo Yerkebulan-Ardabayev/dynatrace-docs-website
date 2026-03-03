@@ -1,7 +1,7 @@
 ---
 title: Configure data storage and retention for Distributed Tracing
 source: https://www.dynatrace.com/docs/observe/application-observability/distributed-tracing/storage
-scraped: 2026-03-02T21:13:40.142555
+scraped: 2026-03-03T21:13:31.252227
 ---
 
 # Configure data storage and retention for Distributed Tracing

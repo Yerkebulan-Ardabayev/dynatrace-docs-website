@@ -1,7 +1,7 @@
 ---
 title: Create a private Synthetic location
 source: https://www.dynatrace.com/docs/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/create-a-private-synthetic-location
-scraped: 2026-03-01T21:10:22.918982
+scraped: 2026-03-03T21:16:57.400349
 ---
 
 # Create a private Synthetic location

@@ -1,7 +1,7 @@
 ---
 title: Google Cloud SQL monitoring
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new/gcp-cloud-sql
-scraped: 2026-03-02T21:26:05.869361
+scraped: 2026-03-03T21:28:55.523921
 ---
 
 # Google Cloud SQL monitoring
@@ -97,4 +97,6 @@ The following feature sets are available for Google Cloud SQL.
 
 ## Related topics
 
-* [Интеграции Google Cloud](/docs/ingest-from/google-cloud-platform/gcp-integrations "Настройка и конфигурация Dynatrace в Google Cloud.")
+
+
+* [Google Cloud integrations](/docs/ingest-from/google-cloud-platform/gcp-integrations "Set up and configure Dynatrace on Google Cloud.")

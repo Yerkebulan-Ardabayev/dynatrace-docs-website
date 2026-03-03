@@ -1,6 +1,6 @@
 # Документация Dynatrace: observe/dynatrace-for-ai-observability
 Язык: Русский (RU)
-Сгенерировано: 2026-03-02
+Сгенерировано: 2026-03-03
 Файлов в разделе: 15
 ---
 
@@ -1377,7 +1377,7 @@ The following attributes are available for GenAI Spans.
 ---
 title: NVIDIA NIM
 source: https://www.dynatrace.com/docs/observe/dynatrace-for-ai-observability/models-and-platforms/nvidia-nim
-scraped: 2026-03-02T21:32:36.363234
+scraped: 2026-03-03T21:22:27.531036
 ---
 
 # NVIDIA NIM
@@ -2138,7 +2138,7 @@ The following attributes are available for GenAI Spans.
 ---
 title: AI data governance with Amazon Bedrock
 source: https://www.dynatrace.com/docs/observe/dynatrace-for-ai-observability/sample-use-cases/data-governance
-scraped: 2026-03-02T21:33:17.561447
+scraped: 2026-03-03T21:24:55.575721
 ---
 
 # AI data governance with Amazon Bedrock
@@ -2324,7 +2324,7 @@ Now you can:
 ---
 title: OpenAI Observability
 source: https://www.dynatrace.com/docs/observe/dynatrace-for-ai-observability/sample-use-cases/openai-observability
-scraped: 2026-03-02T21:27:07.798364
+scraped: 2026-03-03T21:22:10.088332
 ---
 
 # OpenAI Observability
@@ -2549,7 +2549,7 @@ Our simple example of a Node.js service entirely depends on the ChatGPT model re
 ---
 title: AI and LLM Observability
 source: https://www.dynatrace.com/docs/observe/dynatrace-for-ai-observability
-scraped: 2026-03-02T21:14:07.057834
+scraped: 2026-03-03T21:14:12.939538
 ---
 
 # AI and LLM Observability

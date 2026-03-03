@@ -1,7 +1,7 @@
 ---
 title: Data Explorer
 source: https://www.dynatrace.com/docs/analyze-explore-automate/explorer
-scraped: 2026-03-02T21:28:04.441626
+scraped: 2026-03-03T21:14:27.413915
 ---
 
 # Data Explorer

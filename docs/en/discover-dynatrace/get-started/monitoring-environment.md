@@ -1,7 +1,7 @@
 ---
 title: What is a monitoring environment?
 source: https://www.dynatrace.com/docs/discover-dynatrace/get-started/monitoring-environment
-scraped: 2026-03-02T21:14:21.483481
+scraped: 2026-03-03T21:12:32.741434
 ---
 
 # What is a monitoring environment?

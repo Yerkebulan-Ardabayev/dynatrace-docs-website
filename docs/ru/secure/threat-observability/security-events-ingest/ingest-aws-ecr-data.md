@@ -1,7 +1,7 @@
 ---
 title: Ingest Amazon ECR container vulnerability findings and scan events
 source: https://www.dynatrace.com/docs/secure/threat-observability/security-events-ingest/ingest-aws-ecr-data
-scraped: 2026-03-02T21:31:42.531255
+scraped: 2026-03-03T21:16:41.579424
 ---
 
 # Ingest Amazon ECR container vulnerability findings and scan events

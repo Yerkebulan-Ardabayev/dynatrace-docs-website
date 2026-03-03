@@ -1,7 +1,7 @@
 ---
 title: Predict and autoscale Kubernetes workloads
 source: https://www.dynatrace.com/docs/deliver/self-service-kubernetes-use-case
-scraped: 2026-03-02T21:21:32.818378
+scraped: 2026-03-03T21:24:43.824751
 ---
 
 # Predict and autoscale Kubernetes workloads
@@ -236,11 +236,11 @@ While we leverage Dynatrace Intelligence capabilities for prediction and updatin
 
 
 
-      export default async function ({execution\_id}) {
+      export default async function () {
 
 
 
-      const ex = await execution(execution\_id);
+      const ex = await execution();
 
 
 
@@ -1755,11 +1755,11 @@ To create the second workflow
 
 
 
-      export default async function ({execution_id}) {
+      export default async function () {
 
 
 
-      const ex = await execution(execution_id);
+      const ex = await execution();
 
 
 
@@ -1924,11 +1924,11 @@ To create the second workflow
 
 
 
-      export default async function ({execution_id}) {
+      export default async function () {
 
 
 
-      const ex = await execution(execution_id);
+      const ex = await execution();
 
 
 
@@ -2074,11 +2074,11 @@ To create the second workflow
 
 
 
-      export default async function ({execution_id}) {
+      export default async function () {
 
 
 
-      const ex = await execution(execution_id);
+      const ex = await execution();
 
 
 

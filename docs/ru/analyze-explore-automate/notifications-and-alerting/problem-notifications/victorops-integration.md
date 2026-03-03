@@ -1,7 +1,7 @@
 ---
 title: Send Dynatrace notifications to VictorOps
 source: https://www.dynatrace.com/docs/analyze-explore-automate/notifications-and-alerting/problem-notifications/victorops-integration
-scraped: 2026-03-02T21:14:45.301952
+scraped: 2026-03-03T21:12:43.553913
 ---
 
 # Send Dynatrace notifications to VictorOps

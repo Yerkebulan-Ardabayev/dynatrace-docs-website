@@ -1,7 +1,7 @@
 ---
 title: Infrastructure & Operations
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/infrastructure-and-operations
-scraped: 2026-03-02T21:14:12.088419
+scraped: 2026-03-03T21:12:11.216047
 ---
 
 # Infrastructure & Operations
@@ -15,7 +15,7 @@ scraped: 2026-03-02T21:14:12.088419
 
 The ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Infrastructure & Operations** app simplifies infrastructure health monitoring and facilitates root cause analysis for problems.
 
-* Health indicators powered by Dynatrace Intelligence help you detect early signs of performance degradation to quickly see which areas of your environment need attention.
+* Health indicators powered by [Dynatrace Intelligence](/docs/dynatrace-intelligence "Get familiar with the capabilities of Dynatrace Intelligence.") help you detect early signs of performance degradation to quickly see which areas of your environment need attention.
 * Check infrastructure host health metrics, logs, and events for all infrastructure entities.
 * Drill down from ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Infrastructure & Operations** to any infrastructure entity metrics, logs, or events.
 
@@ -263,11 +263,11 @@ Containers](/docs/observe/infrastructure-observability/infrastructure-and-operat
 
 Monitor processes running on hosts and containers with detailed insights into CPU and memory usage trends and key metrics.
 
-Processes](/docs/observe/infrastructure-observability/infrastructure-and-operations/processes)[#### Networks
+Processes](/docs/observe/infrastructure-observability/infrastructure-and-operations/processes)[#### Network devices
 
 Monitor network devices and gain insights into networking components with Dynatrace Intelligence-powered analytics and flexible observability options.
 
-Networks](/docs/observe/infrastructure-observability/infrastructure-and-operations/networks)
+Network devices](/docs/observe/infrastructure-observability/infrastructure-and-operations/network-devices)
 
 ### Relation between hosts, containers, and processes
 

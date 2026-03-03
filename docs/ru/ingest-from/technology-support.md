@@ -1,7 +1,7 @@
 ---
 title: Technology support
 source: https://www.dynatrace.com/docs/ingest-from/technology-support
-scraped: 2026-03-02T21:14:29.511002
+scraped: 2026-03-03T21:12:26.691280
 ---
 
 # Technology support
@@ -61,6 +61,7 @@ Supported CPU architectures
 | --- | --- | --- |
 | [AlmaLinux](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux "Learn how to install OneAgent on Linux, how to customize installation, and more.") | 8, 9, 10 | ARM64 (AArch64), PPCLE, s390, x86-64 |
 | [Alpine Linux (musl libc) for containers](/docs/ingest-from/technology-support/oneagent-platform-and-capability-support-matrix "Learn which capabilities are supported by OneAgent on different operating systems and platforms.") | 3.10 - 3.23[1](#fn-supported-os-1-def) | x86-64 |
+| [Amazon Linux](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux "Learn how to install OneAgent on Linux, how to customize installation, and more.") | 2023 | ARM64 (AArch64), x86-64 |
 | [Azure Linux](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux "Learn how to install OneAgent on Linux, how to customize installation, and more.") | 2, 3 | x86-64 |
 | [Bottlerocket](/docs/ingest-from/setup-on-k8s/deployment/application-observability "Deploy Dynatrace Operator in application monitoring mode to Kubernetes") | 1[2](#fn-supported-os-2-def) | ARM64 (AArch64), x86-64 |
 | [CentOS Stream](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux "Learn how to install OneAgent on Linux, how to customize installation, and more.") | 9 | ARM64 (AArch64), PPCLE, x86-64 |
@@ -940,8 +941,8 @@ The IAsyncResult pattern (APM) for .NET Framework 3.5 is supported in version 1.
 
 | Go toolchains | Versions | Platforms |
 | --- | --- | --- |
-| [Golang toolchain with FIPS (openssl-fips) modificationsï»¿](https://dt-url.net/golang-fips) | 1.22.7, 1.22.9, 1.23.6, 1.23.9, 1.24.4, 1.24.6, 1.25.3 | Alpine Linux 64-bit (x86-64), Linux (x86-64) |
-| [Official Golang toolchainï»¿](https://dt-url.net/go) | 1.22, 1.23, 1.24, 1.25 | Alpine Linux 64-bit (x86-64), Linux (x86-64, ARM64 (AArch64)), Windows (x86-64) |
+| [Golang toolchain with FIPS (openssl-fips) modificationsï»¿](https://dt-url.net/golang-fips) | 1.23.6, 1.23.9, 1.24.4, 1.24.6, 1.25.3 | Alpine Linux 64-bit (x86-64), Linux (x86-64) |
+| [Official Golang toolchainï»¿](https://dt-url.net/go) | 1.23, 1.24, 1.25 | Alpine Linux 64-bit (x86-64), Linux (x86-64, ARM64 (AArch64)), Windows (x86-64) |
 
 | Web framework | Versions |
 | --- | --- |
@@ -1537,7 +1538,7 @@ To enable this as a OneAgent feature, go to **Settings** > **Preferences** > **O
 | [Flutter](/docs/observe/digital-experience/mobile-applications/cross-platform-frameworks/flutter "Learn how to auto-instrument your Flutter applications with OneAgent.") | 1.12+ |
 | UIKit | Supported |
 | [SwiftUI](/docs/observe/digital-experience/mobile-applications/instrument-ios-app/instrumentation/instrument-swiftui-controls "Use the Dynatrace SwiftUI instrumentor to monitor your SwiftUI apps.") | 2+ |
-| [Jetpack Compose](/docs/observe/digital-experience/mobile-applications/instrument-android-app/instrumentation-via-plugin/monitoring-capabilities#compose-instrumentation "Configure the Dynatrace Android Gradle plugin to adjust the monitoring capabilities of OneAgent.") | 1.4 - 1.9 |
+| [Jetpack Compose](/docs/observe/digital-experience/mobile-applications/instrument-android-app/instrumentation-via-plugin/monitoring-capabilities#compose-instrumentation "Configure the Dynatrace Android Gradle plugin to adjust the monitoring capabilities of OneAgent.") | 1.4 - 1.10 |
 
 1
 

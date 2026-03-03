@@ -1,7 +1,7 @@
 ---
 title: Azure AI - Speech monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-ai-speech
-scraped: 2026-03-01T21:15:40.685634
+scraped: 2026-03-03T21:33:04.427277
 ---
 
 # Azure AI - Speech monitoring

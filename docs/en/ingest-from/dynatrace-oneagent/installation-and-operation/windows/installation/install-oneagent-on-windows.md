@@ -1,7 +1,7 @@
 ---
 title: Install OneAgent on Windows
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/windows/installation/install-oneagent-on-windows
-scraped: 2026-02-28T21:09:48.622958
+scraped: 2026-03-03T21:15:29.918237
 ---
 
 # Install OneAgent on Windows
@@ -26,7 +26,7 @@ To get started, log in to your Dynatrace SaaS environment via the [Dynatrace.com
 * OneAgent installation isn't supported on networked storage mount points that are managed by standards such as NFS or iSCSI.
 * All hosts that are to be monitored need to be able to send data to the Dynatrace cluster. Depending on your Dynatrace deployment and on your network layout and security settings, you may choose to either provide direct access to Dynatrace cluster or to [set up an ActiveGate](/docs/ingest-from/dynatrace-activegate "Understand the basic concepts related to ActiveGate.").
 * For OneAgent version 1.253 and earlier, we recommend that you [uninstall any existing `WinPcap` driver](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/windows/installation/install-oneagent-on-windows#uninstall-winpcap-driver-to-allow-npcap-installation "Learn how to download and install Dynatrace OneAgent on Windows.") to allow `Npcap` installationâdo this on all Windows versions, except for `Windows Server 2019 build 1809 without hotfix KB5066187`.
-  For OneAgent version 1.255+, `Npcap` is installed by default and may cause a network disruption on `Windows Server 2016`, `Windows Server 2019 build 1809`, and `Windows Server 2019 build 1809 without hotfix KB5066187`. To prevent it, upgrade your hosts with the hotfix [KB5066187ï»¿](https://www.catalog.update.microsoft.com/Search.aspx?q=KB5066187) or use [other documented options](/docs/observe/infrastructure-observability/networks/troubleshoot-network-monitoring#potential-network-disruption-during-oneagent-installation-on-windows "Learn more about troubleshooting network monitoring.").
+  For OneAgent version 1.255+, `Npcap` is installed by default and may cause a network disruption on `Windows Server 2016`, `Windows Server 2019 build 1809`, and `Windows Server 2019 build 1809 without hotfix KB5066187`. To prevent it, upgrade your hosts with the hotfix [KB5066187ï»¿](https://www.catalog.update.microsoft.com/Search.aspx?q=KB5066187) or use [other documented options](/docs/observe/infrastructure-observability/networks-classic/troubleshoot-network-monitoring#potential-network-disruption-during-oneagent-installation-on-windows "Learn more about troubleshooting network monitoring.").
 
 ### Allow connections through firewall
 
@@ -44,7 +44,7 @@ For more information, see:
 * [OneAgent security on Windows](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/windows/installation/oneagent-security-windows "Learn about Dynatrace OneAgent security and modifications to your Windows-based system")
 * [Customize OneAgent installation on Windows](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/windows/installation/customize-oneagent-installation-on-windows#packet_capture_driver "Learn how to use the OneAgent installer for Windows.")
 
-During the upgrade from `WinPcap` to `Npcap`, you might encounter network disruptions that can be mitigated by upgrading your Windows Server version and/or disabling `Microsoft Network Monitor Driver`. For more details, see [Potential network disruptions during OneAgent installation on Windows](/docs/observe/infrastructure-observability/networks/troubleshoot-network-monitoring#disruptionnetwork "Learn more about troubleshooting network monitoring.")
+During the upgrade from `WinPcap` to `Npcap`, you might encounter network disruptions that can be mitigated by upgrading your Windows Server version and/or disabling `Microsoft Network Monitor Driver`. For more details, see [Potential network disruptions during OneAgent installation on Windows](/docs/observe/infrastructure-observability/networks-classic/troubleshoot-network-monitoring#disruptionnetwork "Learn more about troubleshooting network monitoring.")
 
 ## Re-installation or repair of installation
 

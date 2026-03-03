@@ -1,7 +1,7 @@
 ---
 title: Azure SQL Database (vCore) monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-sql-database-vcore
-scraped: 2026-03-02T21:29:10.708141
+scraped: 2026-03-03T21:25:02.190915
 ---
 
 # Azure SQL Database (vCore) monitoring
