@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.4">
     
     
       
@@ -25495,14 +25495,14 @@
 
 <h1 id="dynatrace-dynatrace-intelligenceanomaly-detection">Документация Dynatrace: dynatrace-intelligence/anomaly-detection<a class="headerlink" href="#dynatrace-dynatrace-intelligenceanomaly-detection" title="Permanent link">&para;</a></h1>
 <p>Язык: Русский (RU)
-Сгенерировано: 2026-03-02
+Сгенерировано: 2026-03-03
 Файлов в разделе: 16</p>
 <hr />
 <h2 id="dynatrace-intelligenceanomaly-detectionadjust-sensitivity-anomaly-detectionadjust-sensitivity-infastructuremd">dynatrace-intelligence/anomaly-detection/adjust-sensitivity-anomaly-detection/adjust-sensitivity-infastructure.md<a class="headerlink" href="#dynatrace-intelligenceanomaly-detectionadjust-sensitivity-anomaly-detectionadjust-sensitivity-infastructuremd" title="Permanent link">&para;</a></h2>
 <hr />
 <p>title: Adjust the sensitivity of anomaly detection for infrastructure
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/anomaly-detection/adjust-sensitivity-anomaly-detection/adjust-sensitivity-infastructure
-scraped: 2026-02-28T21:11:07.944034</p>
+scraped: 2026-03-03T21:14:36.685355</p>
 <hr />
 <h1 id="adjust-the-sensitivity-of-anomaly-detection-for-infrastructure">Adjust the sensitivity of anomaly detection for infrastructure<a class="headerlink" href="#adjust-the-sensitivity-of-anomaly-detection-for-infrastructure" title="Permanent link">&para;</a></h1>
 <h1 id="adjust-the-sensitivity-of-anomaly-detection-for-infrastructure_1">Adjust the sensitivity of anomaly detection for infrastructure<a class="headerlink" href="#adjust-the-sensitivity-of-anomaly-detection-for-infrastructure_1" title="Permanent link">&para;</a></h1>
@@ -25588,69 +25588,69 @@ scraped: 2026-02-28T21:11:07.944034</p>
 <hr />
 <h2 id="dynatrace-intelligenceanomaly-detectionadjust-sensitivity-anomaly-detectionmd">dynatrace-intelligence/anomaly-detection/adjust-sensitivity-anomaly-detection.md<a class="headerlink" href="#dynatrace-intelligenceanomaly-detectionadjust-sensitivity-anomaly-detectionmd" title="Permanent link">&para;</a></h2>
 <hr />
-<p>title: Adjust the sensitivity of anomaly detection
+<p>title: Настройка чувствительности обнаружения аномалий
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/anomaly-detection/adjust-sensitivity-anomaly-detection
-scraped: 2026-03-02T21:15:34.343831</p>
+scraped: 2026-03-03T21:21:10.578842</p>
 <hr />
-<h1 id="adjust-the-sensitivity-of-anomaly-detection">Adjust the sensitivity of anomaly detection<a class="headerlink" href="#adjust-the-sensitivity-of-anomaly-detection" title="Permanent link">&para;</a></h1>
-<h1 id="adjust-the-sensitivity-of-anomaly-detection_1">Adjust the sensitivity of anomaly detection<a class="headerlink" href="#adjust-the-sensitivity-of-anomaly-detection_1" title="Permanent link">&para;</a></h1>
+<h1 id="_1">Настройка чувствительности обнаружения аномалий<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<h1 id="_2">Настройка чувствительности обнаружения аномалий<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h1>
 <ul>
-<li>Latest Dynatrace</li>
-<li>Explanation</li>
-<li>2-min read</li>
-<li>Published Sep 06, 2021</li>
+<li>Последнее Dynatrace</li>
+<li>Объяснение</li>
+<li>2-минутное чтение</li>
+<li>Опубликовано 06 сентября 2021 г.</li>
 </ul>
-<p>Some typical anomalies detected by Dynatrace include failure rate increases, response time degradations, and spikes or drops in application traffic. By observing your environment, Dynatrace learns reference values representing its normal behavior and adapts anomaly detection accordingly. This process is called <em>automatic baselining</em>. Apart from using the automatic baseline, you can provide <em>fixed thresholds</em> that define when to raise a problem and alert. You can set these configurations globally or for specific entities.</p>
-<p>The <em>sensitivity of problem detection</em> controls the level of statistical confidence required to raise an alert.</p>
+<p>Некоторые типичные аномалии, обнаруживаемые Dynatrace, включают увеличение количества сбоев, ухудшение времени ответа и скачки или падения в трафике приложения. Наблюдая за вашей средой, Dynatrace изучает эталонные значения, представляющие ее нормальное поведение, и адаптирует обнаружение аномалий соответственно. Этот процесс называется <em>автоматическим базелированием</em>. Помимо использования автоматического базелирования, вы можете предоставить <em>фиксированные пороги</em>, которые определяют, когда следует создать проблему и оповестить. Вы можете настроить эти конфигурации глобально или для конкретных сущностей.</p>
+<p><em>Чувствительность обнаружения проблем</em> контролирует уровень статистической достоверности, необходимый для создания оповещения.</p>
 <table>
 <thead>
 <tr>
-<th>Sensitivity</th>
-<th>Statistical confidence</th>
-<th>Notes</th>
+<th>Чувствительность</th>
+<th>Статистическая достоверность</th>
+<th>Примечания</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Low</td>
-<td>High</td>
-<td>Useful in development and pre-production stages, avoiding too many alerts.</td>
+<td>Низкая</td>
+<td>Высокая</td>
+<td>Полезна на стадиях разработки и предпроизводства, чтобы избежать слишком многих оповещений.</td>
 </tr>
 <tr>
-<td>High</td>
-<td>Low</td>
-<td>A problem is raised even if just a few data points have violated the threshold.  Useful for mission-critical production services.</td>
+<td>Высокая</td>
+<td>Низкая</td>
+<td>Проблема создается даже если только несколько точек данных нарушили порог. Полезна для критически важных сервисов в производстве.</td>
 </tr>
 </tbody>
 </table>
-<p>For some criteria, Dynatrace distinguishes between absolute and relative thresholds. In the example below (it shows a part of anomaly detection configuration for application) the thresholds for key performance metric degradation are set to <code>100 ms</code> (absolute) and <code>50%</code> (relative) above the auto-learned baseline. The threshold for the slowest 10% of the requests is set to <code>1,000 ms</code> (absolute) and <code>100%</code> (relative) above the auto-learned baseline.</p>
-<p><img alt="Absolute and relative thresholds" src="https://dt-cdn.net/images/anomaly-detection-app-775-346ef271c3.png" /></p>
-<p>Additionally the anomaly detection considers the number of actions per minute that have to happen in the monitored application (<code>10 actions per minute</code> in the example above). With that setting you can disable alerting for low traffic applications and servicesâbaselining and alerting on low traffic applications often leads to unnecessary alerts.</p>
-<p>To configure detection sensitivity on the global level</p>
+<p>Для некоторых критериев Dynatrace различает абсолютные и относительные пороги. В примере ниже (он показывает часть конфигурации обнаружения аномалий для приложения) пороги для ухудшения ключевых показателей производительности установлены на <code>100 мс</code> (абсолютно) и <code>50%</code> (относительно) выше автоматически изученного базелирования. Порог для самых медленных 10% запросов установлен на <code>1 000 мс</code> (абсолютно) и <code>100%</code> (относительно) выше автоматически изученного базелирования.</p>
+<p><img alt="Абсолютные и относительные пороги" src="https://dt-cdn.net/images/anomaly-detection-app-775-346ef271c3.png" /></p>
+<p>Кроме того, обнаружение аномалий учитывает количество действий в минуту, которые должны произойти в контролируемом приложении (<code>10 действий в минуту</code> в примере выше). С помощью этого параметра вы можете отключить оповещения для приложений и сервисов с низким трафиком — базелирование и оповещение на низком трафике часто приводит к ненужным оповещениям.</p>
+<p>Чтобы настроить чувствительность обнаружения на глобальном уровне</p>
 <ol>
-<li>Go to <strong>Settings</strong>.</li>
-<li>Expand <strong>Anomaly detection</strong>.</li>
+<li>Перейдите в <strong>Настройки</strong>.</li>
+<li>Разверните <strong>Обнаружение аномалий</strong>.</li>
 <li>
-<p>Select the required entity type. For specific instructions, see one of the topics below.</p>
+<p>Выберите необходимый тип сущности. Для конкретных инструкций см. одну из тем ниже.</p>
 </li>
 <li>
-<p><a href="/docs/dynatrace-intelligence/anomaly-detection/adjust-sensitivity-anomaly-detection/adjust-sensitivity-applications" title="Learn how to adapt the sensitivity of problem detection for applications.">Applications</a></p>
+<p><a href="/docs/dynatrace-intelligence/anomaly-detection/adjust-sensitivity-anomaly-detection/adjust-sensitivity-applications" title="Узнайте, как адаптировать чувствительность обнаружения проблем для приложений.">Приложения</a></p>
 </li>
-<li><a href="/docs/dynatrace-intelligence/anomaly-detection/adjust-sensitivity-anomaly-detection/adjust-sensitivity-services" title="Learn how to adapt the sensitivity of problem detection for services.">Services</a></li>
-<li><a href="/docs/dynatrace-intelligence/anomaly-detection/adjust-sensitivity-anomaly-detection/adjust-sensitivity-services-database" title="Learn how to adapt the sensitivity of problem detection for database services.">Database services</a></li>
-<li><a href="/docs/dynatrace-intelligence/anomaly-detection/adjust-sensitivity-anomaly-detection/adjust-sensitivity-infastructure" title="Adjust problem detection sensitivity for infrastructure.">Infrastructure</a></li>
-<li><a href="/docs/dynatrace-intelligence/anomaly-detection/adjust-sensitivity-anomaly-detection/adjust-sensitivity-extension" title="Learn how to adapt the sensitivity of problem detection for extension events.">Extension events</a></li>
+<li><a href="/docs/dynatrace-intelligence/anomaly-detection/adjust-sensitivity-anomaly-detection/adjust-sensitivity-services" title="Узнайте, как адаптировать чувствительность обнаружения проблем для сервисов.">Сервисы</a></li>
+<li><a href="/docs/dynatrace-intelligence/anomaly-detection/adjust-sensitivity-anomaly-detection/adjust-sensitivity-services-database" title="Узнайте, как адаптировать чувствительность обнаружения проблем для сервисов баз данных.">Сервисы баз данных</a></li>
+<li><a href="/docs/dynatrace-intelligence/anomaly-detection/adjust-sensitivity-anomaly-detection/adjust-sensitivity-infastructure" title="Настройте чувствительность обнаружения проблем для инфраструктуры.">Инфраструктура</a></li>
+<li><a href="/docs/dynatrace-intelligence/anomaly-detection/adjust-sensitivity-anomaly-detection/adjust-sensitivity-extension" title="Узнайте, как адаптировать чувствительность обнаружения проблем для событий расширения.">События расширения</a></li>
 </ol>
-<h2 id="related-topics_1">Related topics<a class="headerlink" href="#related-topics_1" title="Permanent link">&para;</a></h2>
+<h2 id="_3">Связанные темы<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <ul>
-<li><a href="/docs/dynatrace-api/configuration-api/anomaly-detection-api" title="Learn what the Dynatrace anomaly detection API offers.">Anomaly detection API</a></li>
+<li><a href="/docs/dynatrace-api/configuration-api/anomaly-detection-api" title="Узнайте, что предлагает Dynatrace обнаружение аномалий API.">Обнаружение аномалий API</a></li>
 </ul>
 <hr />
 <h2 id="dynatrace-intelligenceanomaly-detectionanomaly-detection-appanomaly-detection-status-typesmd">dynatrace-intelligence/anomaly-detection/anomaly-detection-app/anomaly-detection-status-types.md<a class="headerlink" href="#dynatrace-intelligenceanomaly-detectionanomaly-detection-appanomaly-detection-status-typesmd" title="Permanent link">&para;</a></h2>
 <hr />
 <p>title: Anomaly Detection status types
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-app/anomaly-detection-status-types
-scraped: 2026-03-02T21:15:30.608946</p>
+scraped: 2026-03-03T21:21:11.816423</p>
 <hr />
 <h1 id="anomaly-detection-status-types">Anomaly Detection status types<a class="headerlink" href="#anomaly-detection-status-types" title="Permanent link">&para;</a></h1>
 <h1 id="anomaly-detection-status-types_1">Anomaly Detection status types<a class="headerlink" href="#anomaly-detection-status-types_1" title="Permanent link">&para;</a></h1>
@@ -25682,7 +25682,7 @@ scraped: 2026-03-02T21:15:30.608946</p>
 </li>
 <li><code>Query does not result in a valid timeseries: No valid time series records found. A valid time series record contains a single duration field, a single timeframe and one or multiple numeric arrays. Consider using the 'timeseries' or 'makeTimeseries' DQL command</code>: <img alt="Anomaly Detection - new" src="https://dt-cdn.net/images/davis-anomalydetection-256-105da91594.png" title="Anomaly Detection - new" /> <strong>Anomaly Detection</strong> requires a timeseries to automatically check the alert condition. For more information and examples of a valid query, see <a href="/docs/dynatrace-intelligence/use-cases/anomaly-detection-examples" title="Use the power of Grail and DQL to convert any data into time series for anomaly detection analyzers.">Examples of <img alt="Anomaly Detection - new" src="https://dt-cdn.net/images/davis-anomalydetection-256-105da91594.png" title="Anomaly Detection - new" /> <strong>Anomaly Detection</strong> on Grail</a>.</li>
 </ul>
-<h2 id="related-topics_2">Related topics<a class="headerlink" href="#related-topics_2" title="Permanent link">&para;</a></h2>
+<h2 id="related-topics_1">Related topics<a class="headerlink" href="#related-topics_1" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-app" title="Explore anomaly detection configurations using the Anomaly Detection app.">Anomaly Detection app</a></li>
 <li><a href="/docs/dynatrace-intelligence/use-cases/anomaly-detection-examples" title="Use the power of Grail and DQL to convert any data into time series for anomaly detection analyzers.">Examples of anomaly detection on Grail</a></li>
@@ -25692,7 +25692,7 @@ scraped: 2026-03-02T21:15:30.608946</p>
 <hr />
 <p>title: Configure a simple custom alert
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-app/configure-a-simple-ad
-scraped: 2026-03-02T21:18:53.783707</p>
+scraped: 2026-03-03T21:25:42.592478</p>
 <hr />
 <h1 id="configure-a-simple-custom-alert">Configure a simple custom alert<a class="headerlink" href="#configure-a-simple-custom-alert" title="Permanent link">&para;</a></h1>
 <h1 id="configure-a-simple-custom-alert_1">Configure a simple custom alert<a class="headerlink" href="#configure-a-simple-custom-alert_1" title="Permanent link">&para;</a></h1>
@@ -25774,7 +25774,7 @@ scraped: 2026-03-02T21:18:53.783707</p>
 <li>The converted metric event is automatically disabled, and the newly created configuration is active instead.</li>
 </ol>
 <p>Check the <strong>Status</strong> of the new configuration shortly after creation to ensure there are no errors in the execution.</p>
-<h2 id="related-topics_3">Related topics<a class="headerlink" href="#related-topics_3" title="Permanent link">&para;</a></h2>
+<h2 id="related-topics_2">Related topics<a class="headerlink" href="#related-topics_2" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-app" title="Explore anomaly detection configurations using the Anomaly Detection app.">Anomaly Detection app</a></li>
 <li><a href="/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-app/configure-an-advanced-ad" title="Learn how to create and edit advanced custom alerts in the Anomaly Detection app">Configure an advanced custom alert</a></li>
@@ -25913,7 +25913,7 @@ scraped: 2026-03-02T21:31:58.132752</p>
 <a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>
 <a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>| limit 10 // remove this; to choose specific hosts, we recommend using filter instead
 </code></pre></div>
-<h2 id="related-topics_4">Related topics<a class="headerlink" href="#related-topics_4" title="Permanent link">&para;</a></h2>
+<h2 id="related-topics_3">Related topics<a class="headerlink" href="#related-topics_3" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-app" title="Explore anomaly detection configurations using the Anomaly Detection app.">Anomaly Detection app</a></li>
 <li><a href="/docs/platform/grail/dynatrace-query-language" title="How to use Dynatrace Query Language.">Dynatrace Query Language</a></li>
@@ -26046,7 +26046,7 @@ scraped: 2026-03-01T21:22:14.565446</p>
 <li>Include at least one entire token tilde or <code>matchesPhrase</code> filter.</li>
 <li>Either avoid less efficient filters or use them in addition to the filters mentioned above.</li>
 </ul>
-<h2 id="related-topics_5">Related topics<a class="headerlink" href="#related-topics_5" title="Permanent link">&para;</a></h2>
+<h2 id="related-topics_4">Related topics<a class="headerlink" href="#related-topics_4" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-app" title="Explore anomaly detection configurations using the Anomaly Detection app.">Anomaly Detection app</a></li>
 <li><a href="/docs/platform/grail/dynatrace-query-language" title="How to use Dynatrace Query Language.">Dynatrace Query Language</a></li>
@@ -26057,7 +26057,7 @@ scraped: 2026-03-01T21:22:14.565446</p>
 <hr />
 <p>title: Anomaly Detection app
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-app
-scraped: 2026-03-02T21:15:38.114683</p>
+scraped: 2026-03-03T21:16:23.996192</p>
 <hr />
 <h1 id="anomaly-detection-app">Anomaly Detection app<a class="headerlink" href="#anomaly-detection-app" title="Permanent link">&para;</a></h1>
 <h1 id="anomaly-detection-app_1">Anomaly Detection app<a class="headerlink" href="#anomaly-detection-app_1" title="Permanent link">&para;</a></h1>
@@ -26156,7 +26156,7 @@ scraped: 2026-03-02T21:15:38.114683</p>
 <h2 id="explore-in-dynatrace-hub">Explore in Dynatrace Hub<a class="headerlink" href="#explore-in-dynatrace-hub" title="Permanent link">&para;</a></h2>
 <p>Detect anomalies in timeseries using <img alt="Anomaly Detection - new" src="https://dt-cdn.net/images/davis-anomalydetection-256-105da91594.png" title="Anomaly Detection - new" /> <strong>Anomaly Detection</strong>.</p>
 <p><a href="https://www.dynatrace.com/hub/detail/davis-anomaly-detection/">Dynatrace Hubï»¿</a></p>
-<h2 id="related-topics_6">Related topics<a class="headerlink" href="#related-topics_6" title="Permanent link">&para;</a></h2>
+<h2 id="related-topics_5">Related topics<a class="headerlink" href="#related-topics_5" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-app/anomaly-detection-status-types" title="An explanation of Anomaly Detection status types">Anomaly Detection status types</a></li>
 <li><a href="/docs/dynatrace-intelligence/reference/davis-ai-limits" title="Reference limits of Dynatrace Intelligence components.">Dynatrace Intelligence limits</a></li>
@@ -26168,7 +26168,7 @@ scraped: 2026-03-02T21:15:38.114683</p>
 <hr />
 <p>title: Anomaly detection configuration
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-configuration
-scraped: 2026-03-02T21:15:40.552658</p>
+scraped: 2026-03-03T21:21:12.914428</p>
 <hr />
 <h1 id="anomaly-detection-configuration">Anomaly detection configuration<a class="headerlink" href="#anomaly-detection-configuration" title="Permanent link">&para;</a></h1>
 <h1 id="anomaly-detection-configuration_1">Anomaly detection configuration<a class="headerlink" href="#anomaly-detection-configuration_1" title="Permanent link">&para;</a></h1>
@@ -26282,7 +26282,7 @@ scraped: 2026-03-02T21:15:40.552658</p>
 </li>
 </ul>
 <p>You can provide additional parameters as key-value pairs. For a list of possible event properties, see <a href="/docs/semantic-dictionary/model/davis#davis-ai-events" title="Get to know the Semantic Dictionary models related to Davis AI.">Semantic Dictionary</a>.</p>
-<h2 id="related-topics_7">Related topics<a class="headerlink" href="#related-topics_7" title="Permanent link">&para;</a></h2>
+<h2 id="related-topics_6">Related topics<a class="headerlink" href="#related-topics_6" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="/docs/dynatrace-intelligence/anomaly-detection/metric-events" title="Learn about metric events in Dynatrace">Metric events</a></li>
 </ul>
@@ -26291,7 +26291,7 @@ scraped: 2026-03-02T21:15:40.552658</p>
 <hr />
 <p>title: Auto-adaptive thresholds for anomaly detection
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/anomaly-detection/auto-adaptive-threshold
-scraped: 2026-03-02T21:15:31.938911</p>
+scraped: 2026-03-03T21:21:08.271996</p>
 <hr />
 <h1 id="auto-adaptive-thresholds-for-anomaly-detection">Auto-adaptive thresholds for anomaly detection<a class="headerlink" href="#auto-adaptive-thresholds-for-anomaly-detection" title="Permanent link">&para;</a></h1>
 <h1 id="auto-adaptive-thresholds-for-anomaly-detection_1">Auto-adaptive thresholds for anomaly detection<a class="headerlink" href="#auto-adaptive-thresholds-for-anomaly-detection_1" title="Permanent link">&para;</a></h1>
@@ -26317,7 +26317,7 @@ scraped: 2026-03-02T21:15:31.938911</p>
 </ul>
 <p>Another important parameter for dynamic thresholds is the sliding window that is used to compare current measurements against the calculated threshold. It defines how often the calculated threshold must be violated within a sliding window of time to raise an event (violations don't have to be successive). This approach helps to avoid alerting too aggressively on single violations. You can set the sliding window to a maximum of 60 minutes.</p>
 <p>By default, any 3 minutes out of a sliding window of 5 minutes must violate your threshold to raise an event. That is, an event must have 3 violating minutes within any 5-minute sliding window.</p>
-<h2 id="related-topics_8">Related topics<a class="headerlink" href="#related-topics_8" title="Permanent link">&para;</a></h2>
+<h2 id="related-topics_7">Related topics<a class="headerlink" href="#related-topics_7" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="/docs/analyze-explore-automate/metrics-classic" title="Learn about metrics classic that Dynatrace offers.">Metrics Classic</a></li>
 </ul>
@@ -26326,7 +26326,7 @@ scraped: 2026-03-02T21:15:31.938911</p>
 <hr />
 <p>title: Automated multi-dimensional baselining
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/anomaly-detection/automated-multidimensional-baselining
-scraped: 2026-03-02T21:15:35.428277</p>
+scraped: 2026-03-03T21:21:14.163717</p>
 <hr />
 <h1 id="automated-multi-dimensional-baselining">Automated multi-dimensional baselining<a class="headerlink" href="#automated-multi-dimensional-baselining" title="Permanent link">&para;</a></h1>
 <h1 id="automated-multi-dimensional-baselining_1">Automated multi-dimensional baselining<a class="headerlink" href="#automated-multi-dimensional-baselining_1" title="Permanent link">&para;</a></h1>
@@ -26397,7 +26397,7 @@ Alerting on response time degradations begins once the baseline cube is ready an
 <hr />
 <p>title: Metric key events
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/anomaly-detection/metric-events/metric-key-events
-scraped: 2026-03-02T21:26:31.833779</p>
+scraped: 2026-03-03T21:31:54.613136</p>
 <hr />
 <h1 id="metric-key-events">Metric key events<a class="headerlink" href="#metric-key-events" title="Permanent link">&para;</a></h1>
 <h1 id="metric-key-events_1">Metric key events<a class="headerlink" href="#metric-key-events_1" title="Permanent link">&para;</a></h1>
@@ -26475,7 +26475,7 @@ If the merge is allowed, DavisÂ® AI will try to merge this event into existing
 14. Select <strong>Save changes</strong>.</p>
 </li>
 </ol>
-<h2 id="related-topics_9">Related topics<a class="headerlink" href="#related-topics_9" title="Permanent link">&para;</a></h2>
+<h2 id="related-topics_8">Related topics<a class="headerlink" href="#related-topics_8" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="/docs/analyze-explore-automate/metrics-classic" title="Learn about metrics classic that Dynatrace offers.">Metrics Classic</a></li>
 </ul>
@@ -26574,7 +26574,7 @@ If <strong>Allow merge</strong> is turned on, Davis AI will try to merge this ev
 13. Select <strong>Save changes</strong>.</p>
 </li>
 </ol>
-<h2 id="related-topics_10">Related topics<a class="headerlink" href="#related-topics_10" title="Permanent link">&para;</a></h2>
+<h2 id="related-topics_9">Related topics<a class="headerlink" href="#related-topics_9" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="/docs/dynatrace-api/environment-api/metric-v2/metric-selector" title="Configure the metric selector for the Metric v2 API.">Metrics API - Metric selector</a></li>
 <li><a href="/docs/dynatrace-api/environment-api/metric-v2/metric-expressions" title="Use metric expressions to apply arithmetic operations in a data points query via the Metrics API v2.">Metrics API - Metric expressions</a></li>
@@ -26585,7 +26585,7 @@ If <strong>Allow merge</strong> is turned on, Davis AI will try to merge this ev
 <hr />
 <p>title: Metric events
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/anomaly-detection/metric-events
-scraped: 2026-03-02T21:15:39.466469</p>
+scraped: 2026-03-03T21:20:14.314600</p>
 <hr />
 <h1 id="metric-events">Metric events<a class="headerlink" href="#metric-events" title="Permanent link">&para;</a></h1>
 <h1 id="metric-events_1">Metric events<a class="headerlink" href="#metric-events_1" title="Permanent link">&para;</a></h1>
@@ -26671,7 +26671,7 @@ scraped: 2026-03-02T21:15:39.466469</p>
 <a id="__codelineno-26-4" name="__codelineno-26-4" href="#__codelineno-26-4"></a>
 <a id="__codelineno-26-5" name="__codelineno-26-5" href="#__codelineno-26-5"></a>batchjob.executions,dt.entity.host=HOST-2222222,dt.entity.process_group_instance=PROCESS-GROUP-INSTANCE-2,hostname=hostB,ip=53.43.23.12 23
 </code></pre></div>
-<h2 id="related-topics_11">Related topics<a class="headerlink" href="#related-topics_11" title="Permanent link">&para;</a></h2>
+<h2 id="related-topics_10">Related topics<a class="headerlink" href="#related-topics_10" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="https://www.youtube.com/watch?v=NVuiTwOYHQA">[Video] Dynatrace Metric Events: Setup anomaly detection based on your businessï»¿</a></li>
 </ul>
@@ -26680,7 +26680,7 @@ scraped: 2026-03-02T21:15:39.466469</p>
 <hr />
 <p>title: Automate alerts with API
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/anomaly-detection/set-up-anomaly-detectors-via-api
-scraped: 2026-03-02T21:15:33.168524</p>
+scraped: 2026-03-03T21:21:07.174803</p>
 <hr />
 <h1 id="automate-alerts-with-api">Automate alerts with API<a class="headerlink" href="#automate-alerts-with-api" title="Permanent link">&para;</a></h1>
 <h1 id="automate-alerts-with-api_1">Automate alerts with API<a class="headerlink" href="#automate-alerts-with-api_1" title="Permanent link">&para;</a></h1>
@@ -27095,7 +27095,7 @@ scraped: 2026-03-02T21:15:33.168524</p>
 </ul>
 <h2 id="conclusion">Conclusion<a class="headerlink" href="#conclusion" title="Permanent link">&para;</a></h2>
 <p>You have learned how to set up and configure a custom alert via API. Now you can make direct calls to custom alerts and use DQL-based anomaly detection via API configuration.</p>
-<h2 id="related-topics_12">Related topics<a class="headerlink" href="#related-topics_12" title="Permanent link">&para;</a></h2>
+<h2 id="related-topics_11">Related topics<a class="headerlink" href="#related-topics_11" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="/docs/dynatrace-intelligence/anomaly-detection" title="How Dynatrace detects anomalies in your environment.">Anomaly detection</a></li>
 <li><a href="/docs/dynatrace-intelligence/reference/ai-models" title="Learn about AI models that Dynatrace Intelligence uses.">AI models</a></li>
@@ -27109,7 +27109,7 @@ scraped: 2026-03-02T21:15:33.168524</p>
 <hr />
 <p>title: Static thresholds for anomaly detection
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/anomaly-detection/static-thresholds
-scraped: 2026-03-02T21:15:36.717850</p>
+scraped: 2026-03-03T21:21:09.344433</p>
 <hr />
 <h1 id="static-thresholds-for-anomaly-detection">Static thresholds for anomaly detection<a class="headerlink" href="#static-thresholds-for-anomaly-detection" title="Permanent link">&para;</a></h1>
 <h1 id="static-thresholds-for-anomaly-detection_1">Static thresholds for anomaly detection<a class="headerlink" href="#static-thresholds-for-anomaly-detection_1" title="Permanent link">&para;</a></h1>
@@ -27127,7 +27127,7 @@ scraped: 2026-03-02T21:15:36.717850</p>
 <p><img alt="Adaptive threshold" src="https://dt-cdn.net/images/static-threshold-2-1041-538cab4669.png" /></p>
 <p>Apart from the threshold value, you can specify how often the threshold must be violated within a sliding time window to raise an event (violations don't have to be successive). It helps you to avoid alerting too aggressively on single threshold violations. You can set a sliding window of up to 60 minutes.</p>
 <p>By default, any 3 minutes out of a sliding window of 5 minutes must violate your threshold to raise an event. That is, an event would require 3 violating minutes within any 5-minute sliding window.</p>
-<h2 id="related-topics_13">Related topics<a class="headerlink" href="#related-topics_13" title="Permanent link">&para;</a></h2>
+<h2 id="related-topics_12">Related topics<a class="headerlink" href="#related-topics_12" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="/docs/analyze-explore-automate/metrics-classic" title="Learn about metrics classic that Dynatrace offers.">Metrics Classic</a></li>
 </ul>
@@ -27136,24 +27136,24 @@ scraped: 2026-03-02T21:15:36.717850</p>
 <hr />
 <p>title: Обнаружение аномалий
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/anomaly-detection
-scraped: 2026-03-02T21:13:01.769837</p>
+scraped: 2026-03-03T21:12:54.169575</p>
 <hr />
-<h1 id="_1">Обнаружение аномалий<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<h1 id="_2">Обнаружение аномалий<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h1>
+<h1 id="_4">Обнаружение аномалий<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h1>
+<h1 id="_5">Обнаружение аномалий<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h1>
 <ul>
 <li>Последнее Dynatrace</li>
 <li>Обзор</li>
 <li>2-минутное чтение</li>
 <li>Обновлено 28 января 2026 г.</li>
 </ul>
-<p>Dynatrace непрерывно отслеживает производительность каждого аспекта ваших приложений, сервисов и инфраструктуры, чтобы автоматически изучить все базовые метрики и общее состояние каждого компонента в вашей среде, включая время ответа ваших приложений и сервисов. Переменные, такие как геолокация, тип браузера, операционная система, пропускная способность подключения и действия пользователей, учитываются автоматически. Этот интеллектуальный <a href="/docs/dynatrace-intelligence/anomaly-detection/automated-multidimensional-baselining" title="Узнайте, как Dynatrace AI автоматически рассчитывает базовые значения на основе многомерной схемы базлининга.">автоматический базлининг</a> позволяет Dynatrace обнаруживать аномалии на высоком уровне детализации и уведомлять вас о обнаруженных проблемах в режиме реального времени. Вы можете настроить пороги, сгенерированные через автоматический базлининг, либо путем <a href="/docs/dynatrace-intelligence/anomaly-detection/adjust-sensitivity-anomaly-detection" title="Узнайте, как адаптировать чувствительность обнаружения проблем в Dynatrace.">адаптации чувствительности обнаружения проблем</a> , либо, если необходимо, путем определения своих собственных статических порогов.</p>
-<h2 id="_3">Сценарии использования<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>Dynatrace непрерывно отслеживает производительность каждого аспекта ваших приложений, сервисов и инфраструктуры, чтобы автоматически изучить все базовые метрики и общее состояние каждого компонента в вашей среде, включая время ответа ваших приложений и сервисов. Переменные, такие как геолокация, тип браузера, операционная система, полоса пропускания соединения и действия пользователей, учитываются автоматически. Этот интеллектуальный <a href="/docs/dynatrace-intelligence/anomaly-detection/automated-multidimensional-baselining" title="Узнайте, как Dynatrace AI автоматически рассчитывает базовые значения на основе многомерной схемы базелинга.">автоматический базелинг</a> позволяет Dynatrace обнаруживать аномалии на высоком уровне детализации и уведомлять вас о обнаруженных проблемах в режиме реального времени. Вы можете настроить пороги, сгенерированные через автоматический базелинг, либо путем <a href="/docs/dynatrace-intelligence/anomaly-detection/adjust-sensitivity-anomaly-detection" title="Узнайте, как адаптировать чувствительность обнаружения проблем в Dynatrace.">адаптации чувствительности обнаружения проблем</a> , либо, если необходимо, путем определения собственных статических порогов.</p>
+<h2 id="_6">Варианты использования<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Создайте пользовательское оповещение, чтобы получать уведомления о проблемах в вашей среде.</li>
 <li>Настройте вручную или используйте автоадаптивный порог, чтобы обнаружить аномальное поведение.</li>
 <li>Настройте оповещения для пользовательских событий.</li>
 </ul>
-<h2 id="_4">Концепции<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<h2 id="_7">Концепции<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
 <p>[#### Автоадаптивные пороги для обнаружения аномалий</p>
 <p>Как Dynatrace адаптирует пороги для нескольких сущностей в рамках конфигурации обнаружения аномалий.</p>
 <ul>
@@ -27165,12 +27165,12 @@ scraped: 2026-03-02T21:13:01.769837</p>
 <li>Объяснение</li>
 </ul>
 <p>Прочитайте это объяснение](/docs/dynatrace-intelligence/anomaly-detection/static-thresholds)[#### Конфигурация обнаружения аномалий</p>
-<p>Как настроить оповещение для отсутствующих измерений.</p>
+<p>Как настроить оповещение для пропущенных измерений.</p>
 <ul>
 <li>Объяснение</li>
 </ul>
-<p>Прочитайте это объяснение](/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-configuration)[#### Автоматический многомерный базлининг</p>
-<p>Узнайте, как Dynatrace AI автоматически рассчитывает базовые значения на основе многомерной схемы базлининга.</p>
+<p>Прочитайте это объяснение](/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-configuration)[#### Автоматический многомерный базелинг</p>
+<p>Узнайте, как Dynatrace AI автоматически рассчитывает базовые значения на основе многомерной схемы базелинга.</p>
 <ul>
 <li>Объяснение</li>
 </ul>
@@ -27180,15 +27180,15 @@ scraped: 2026-03-02T21:13:01.769837</p>
 <li>Объяснение</li>
 </ul>
 <p>Прочитайте это объяснение](/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-app/anomaly-detection-status-types)</p>
-<h2 id="_5">Начало работы<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<h2 id="_8">Начало работы<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
 <p>[#### Настройка чувствительности обнаружения аномалий</p>
 <p>Узнайте, как адаптировать чувствительность обнаружения проблем в Dynatrace.</p>
 <ul>
 <li>Объяснение</li>
 </ul>
 <p>Прочитайте это объяснение](/docs/dynatrace-intelligence/anomaly-detection/adjust-sensitivity-anomaly-detection)[<img alt="Обнаружение аномалий - новое" src="https://dt-cdn.net/images/davis-anomalydetection-256-105da91594.png" title="Обнаружение аномалий - новое" /></p>
-<h4 id="_6">Приложение обнаружения аномалий<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h4>
-<p>Изучите конфигурации обнаружения аномалий с помощью приложения обнаружения аномалий.</p>
+<h4 id="_9">Приложение для обнаружения аномалий<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h4>
+<p>Изучите конфигурации обнаружения аномалий с помощью приложения для обнаружения аномалий.</p>
 <ul>
 <li>Приложение</li>
 </ul>
@@ -27198,7 +27198,7 @@ scraped: 2026-03-02T21:13:01.769837</p>
 <li>Обзор</li>
 </ul>
 <p>Посмотрите обзор](/docs/dynatrace-intelligence/anomaly-detection/metric-events)[#### Автоматизация оповещений с помощью API</p>
-<p>Узнайте, как настроить пользовательское оповещение обнаружения аномалий через API.</p>
+<p>Узнайте, как настроить пользовательское оповещение для обнаружения аномалий через API.</p>
 <ul>
 <li>Учебник</li>
 </ul>

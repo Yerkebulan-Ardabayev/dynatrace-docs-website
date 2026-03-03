@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../../../../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.4">
     
     
       
@@ -25493,7 +25493,7 @@
 <li>OneAgent installation isn't supported on networked storage mount points that are managed by standards such as NFS or iSCSI.</li>
 <li>All hosts that are to be monitored need to be able to send data to the Dynatrace cluster. Depending on your Dynatrace deployment and on your network layout and security settings, you may choose to either provide direct access to Dynatrace cluster or to <a href="/docs/ingest-from/dynatrace-activegate" title="Understand the basic concepts related to ActiveGate.">set up an ActiveGate</a>.</li>
 <li>For OneAgent version 1.253 and earlier, we recommend that you <a href="/docs/ingest-from/dynatrace-oneagent/installation-and-operation/windows/installation/install-oneagent-on-windows#uninstall-winpcap-driver-to-allow-npcap-installation" title="Learn how to download and install Dynatrace OneAgent on Windows.">uninstall any existing <code>WinPcap</code> driver</a> to allow <code>Npcap</code> installationâdo this on all Windows versions, except for <code>Windows Server 2019 build 1809 without hotfix KB5066187</code>.
-  For OneAgent version 1.255+, <code>Npcap</code> is installed by default and may cause a network disruption on <code>Windows Server 2016</code>, <code>Windows Server 2019 build 1809</code>, and <code>Windows Server 2019 build 1809 without hotfix KB5066187</code>. To prevent it, upgrade your hosts with the hotfix <a href="https://www.catalog.update.microsoft.com/Search.aspx?q=KB5066187">KB5066187ï»¿</a> or use <a href="/docs/observe/infrastructure-observability/networks/troubleshoot-network-monitoring#potential-network-disruption-during-oneagent-installation-on-windows" title="Learn more about troubleshooting network monitoring.">other documented options</a>.</li>
+  For OneAgent version 1.255+, <code>Npcap</code> is installed by default and may cause a network disruption on <code>Windows Server 2016</code>, <code>Windows Server 2019 build 1809</code>, and <code>Windows Server 2019 build 1809 without hotfix KB5066187</code>. To prevent it, upgrade your hosts with the hotfix <a href="https://www.catalog.update.microsoft.com/Search.aspx?q=KB5066187">KB5066187ï»¿</a> or use <a href="/docs/observe/infrastructure-observability/networks-classic/troubleshoot-network-monitoring#potential-network-disruption-during-oneagent-installation-on-windows" title="Learn more about troubleshooting network monitoring.">other documented options</a>.</li>
 </ul>
 <h3 id="allow-connections-through-firewall">Allow connections through firewall<a class="headerlink" href="#allow-connections-through-firewall" title="Permanent link">&para;</a></h3>
 <p>Ensure that your firewall settings allow communication to Dynatrace.<br />
@@ -25506,7 +25506,7 @@ Depending on your firewall policy, you may need to explicitly allow certain outg
 <li><a href="/docs/ingest-from/dynatrace-oneagent/installation-and-operation/windows/installation/oneagent-security-windows" title="Learn about Dynatrace OneAgent security and modifications to your Windows-based system">OneAgent security on Windows</a></li>
 <li><a href="/docs/ingest-from/dynatrace-oneagent/installation-and-operation/windows/installation/customize-oneagent-installation-on-windows#packet_capture_driver" title="Learn how to use the OneAgent installer for Windows.">Customize OneAgent installation on Windows</a></li>
 </ul>
-<p>During the upgrade from <code>WinPcap</code> to <code>Npcap</code>, you might encounter network disruptions that can be mitigated by upgrading your Windows Server version and/or disabling <code>Microsoft Network Monitor Driver</code>. For more details, see <a href="/docs/observe/infrastructure-observability/networks/troubleshoot-network-monitoring#disruptionnetwork" title="Learn more about troubleshooting network monitoring.">Potential network disruptions during OneAgent installation on Windows</a></p>
+<p>During the upgrade from <code>WinPcap</code> to <code>Npcap</code>, you might encounter network disruptions that can be mitigated by upgrading your Windows Server version and/or disabling <code>Microsoft Network Monitor Driver</code>. For more details, see <a href="/docs/observe/infrastructure-observability/networks-classic/troubleshoot-network-monitoring#disruptionnetwork" title="Learn more about troubleshooting network monitoring.">Potential network disruptions during OneAgent installation on Windows</a></p>
 <h2 id="re-installation-or-repair-of-installation">Re-installation or repair of installation<a class="headerlink" href="#re-installation-or-repair-of-installation" title="Permanent link">&para;</a></h2>
 <p>OneAgent installer for Windows doesn't support the <code>modify</code> and <code>repair</code> operations. You can't reinstall OneAgent using the same installer version as was used to install the currently installed OneAgent. To reinstall OneAgent, uninstall it first or simply install a newer version.</p>
 <h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h2>

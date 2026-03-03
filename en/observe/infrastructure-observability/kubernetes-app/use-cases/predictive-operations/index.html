@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../../../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.4">
     
     
       
@@ -25543,11 +25543,11 @@
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
 <a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
 <a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>export default async function ({ executionId }) {
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>export default async function () {
 <a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
 <a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>
 <a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>
-<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>const ex = await execution(executionId);
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>const ex = await execution();
 <a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>
 <a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>
 <a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>
@@ -25804,87 +25804,79 @@
 <a id="__codelineno-3-166" name="__codelineno-3-166" href="#__codelineno-3-166"></a>
 <a id="__codelineno-3-167" name="__codelineno-3-167" href="#__codelineno-3-167"></a>
 <a id="__codelineno-3-168" name="__codelineno-3-168" href="#__codelineno-3-168"></a>
-<a id="__codelineno-3-169" name="__codelineno-3-169" href="#__codelineno-3-169"></a>export default async function({
+<a id="__codelineno-3-169" name="__codelineno-3-169" href="#__codelineno-3-169"></a>export default async function() {
 <a id="__codelineno-3-170" name="__codelineno-3-170" href="#__codelineno-3-170"></a>
 <a id="__codelineno-3-171" name="__codelineno-3-171" href="#__codelineno-3-171"></a>
 <a id="__codelineno-3-172" name="__codelineno-3-172" href="#__codelineno-3-172"></a>
-<a id="__codelineno-3-173" name="__codelineno-3-173" href="#__codelineno-3-173"></a>execution\ _id
+<a id="__codelineno-3-173" name="__codelineno-3-173" href="#__codelineno-3-173"></a>const ex = await execution();
 <a id="__codelineno-3-174" name="__codelineno-3-174" href="#__codelineno-3-174"></a>
 <a id="__codelineno-3-175" name="__codelineno-3-175" href="#__codelineno-3-175"></a>
 <a id="__codelineno-3-176" name="__codelineno-3-176" href="#__codelineno-3-176"></a>
-<a id="__codelineno-3-177" name="__codelineno-3-177" href="#__codelineno-3-177"></a>}) {
+<a id="__codelineno-3-177" name="__codelineno-3-177" href="#__codelineno-3-177"></a>// In this demo workflow we use a previous grail query to get a valid host ID.
 <a id="__codelineno-3-178" name="__codelineno-3-178" href="#__codelineno-3-178"></a>
 <a id="__codelineno-3-179" name="__codelineno-3-179" href="#__codelineno-3-179"></a>
 <a id="__codelineno-3-180" name="__codelineno-3-180" href="#__codelineno-3-180"></a>
-<a id="__codelineno-3-181" name="__codelineno-3-181" href="#__codelineno-3-181"></a>const ex = await execution(execution\ _id);
+<a id="__codelineno-3-181" name="__codelineno-3-181" href="#__codelineno-3-181"></a>// Usually this would come from a Davis Event
 <a id="__codelineno-3-182" name="__codelineno-3-182" href="#__codelineno-3-182"></a>
 <a id="__codelineno-3-183" name="__codelineno-3-183" href="#__codelineno-3-183"></a>
 <a id="__codelineno-3-184" name="__codelineno-3-184" href="#__codelineno-3-184"></a>
-<a id="__codelineno-3-185" name="__codelineno-3-185" href="#__codelineno-3-185"></a>// In this demo workflow we use a previous grail query to get a valid host ID.
+<a id="__codelineno-3-185" name="__codelineno-3-185" href="#__codelineno-3-185"></a>const queryResults = await ex.result(&quot;query\_grail\_kafka\_hosts&quot;);
 <a id="__codelineno-3-186" name="__codelineno-3-186" href="#__codelineno-3-186"></a>
 <a id="__codelineno-3-187" name="__codelineno-3-187" href="#__codelineno-3-187"></a>
 <a id="__codelineno-3-188" name="__codelineno-3-188" href="#__codelineno-3-188"></a>
-<a id="__codelineno-3-189" name="__codelineno-3-189" href="#__codelineno-3-189"></a>// Usually this would come from a Davis Event
+<a id="__codelineno-3-189" name="__codelineno-3-189" href="#__codelineno-3-189"></a>const records = queryResults.records;
 <a id="__codelineno-3-190" name="__codelineno-3-190" href="#__codelineno-3-190"></a>
 <a id="__codelineno-3-191" name="__codelineno-3-191" href="#__codelineno-3-191"></a>
 <a id="__codelineno-3-192" name="__codelineno-3-192" href="#__codelineno-3-192"></a>
-<a id="__codelineno-3-193" name="__codelineno-3-193" href="#__codelineno-3-193"></a>const queryResults = await ex.result(&quot;query\_grail\_kafka\_hosts&quot;);
+<a id="__codelineno-3-193" name="__codelineno-3-193" href="#__codelineno-3-193"></a>// Only have a look at the first element because an event likely only
 <a id="__codelineno-3-194" name="__codelineno-3-194" href="#__codelineno-3-194"></a>
 <a id="__codelineno-3-195" name="__codelineno-3-195" href="#__codelineno-3-195"></a>
 <a id="__codelineno-3-196" name="__codelineno-3-196" href="#__codelineno-3-196"></a>
-<a id="__codelineno-3-197" name="__codelineno-3-197" href="#__codelineno-3-197"></a>const records = queryResults.records;
+<a id="__codelineno-3-197" name="__codelineno-3-197" href="#__codelineno-3-197"></a>// contains one element:
 <a id="__codelineno-3-198" name="__codelineno-3-198" href="#__codelineno-3-198"></a>
 <a id="__codelineno-3-199" name="__codelineno-3-199" href="#__codelineno-3-199"></a>
 <a id="__codelineno-3-200" name="__codelineno-3-200" href="#__codelineno-3-200"></a>
-<a id="__codelineno-3-201" name="__codelineno-3-201" href="#__codelineno-3-201"></a>// Only have a look at the first element because an event likely only
+<a id="__codelineno-3-201" name="__codelineno-3-201" href="#__codelineno-3-201"></a>const {
 <a id="__codelineno-3-202" name="__codelineno-3-202" href="#__codelineno-3-202"></a>
 <a id="__codelineno-3-203" name="__codelineno-3-203" href="#__codelineno-3-203"></a>
 <a id="__codelineno-3-204" name="__codelineno-3-204" href="#__codelineno-3-204"></a>
-<a id="__codelineno-3-205" name="__codelineno-3-205" href="#__codelineno-3-205"></a>// contains one element:
+<a id="__codelineno-3-205" name="__codelineno-3-205" href="#__codelineno-3-205"></a>id
 <a id="__codelineno-3-206" name="__codelineno-3-206" href="#__codelineno-3-206"></a>
 <a id="__codelineno-3-207" name="__codelineno-3-207" href="#__codelineno-3-207"></a>
 <a id="__codelineno-3-208" name="__codelineno-3-208" href="#__codelineno-3-208"></a>
-<a id="__codelineno-3-209" name="__codelineno-3-209" href="#__codelineno-3-209"></a>const {
+<a id="__codelineno-3-209" name="__codelineno-3-209" href="#__codelineno-3-209"></a>} = records\[0];
 <a id="__codelineno-3-210" name="__codelineno-3-210" href="#__codelineno-3-210"></a>
 <a id="__codelineno-3-211" name="__codelineno-3-211" href="#__codelineno-3-211"></a>
 <a id="__codelineno-3-212" name="__codelineno-3-212" href="#__codelineno-3-212"></a>
-<a id="__codelineno-3-213" name="__codelineno-3-213" href="#__codelineno-3-213"></a>id
+<a id="__codelineno-3-213" name="__codelineno-3-213" href="#__codelineno-3-213"></a>// Use the following DQL to query host IDs for grail kafka entities
 <a id="__codelineno-3-214" name="__codelineno-3-214" href="#__codelineno-3-214"></a>
 <a id="__codelineno-3-215" name="__codelineno-3-215" href="#__codelineno-3-215"></a>
 <a id="__codelineno-3-216" name="__codelineno-3-216" href="#__codelineno-3-216"></a>
-<a id="__codelineno-3-217" name="__codelineno-3-217" href="#__codelineno-3-217"></a>} = records\[0];
+<a id="__codelineno-3-217" name="__codelineno-3-217" href="#__codelineno-3-217"></a>// &gt;&gt;&gt; fetch dt.entity.host | filter like(entity.name, &quot;%-grail kafka&quot;)
 <a id="__codelineno-3-218" name="__codelineno-3-218" href="#__codelineno-3-218"></a>
 <a id="__codelineno-3-219" name="__codelineno-3-219" href="#__codelineno-3-219"></a>
 <a id="__codelineno-3-220" name="__codelineno-3-220" href="#__codelineno-3-220"></a>
-<a id="__codelineno-3-221" name="__codelineno-3-221" href="#__codelineno-3-221"></a>// Use the following DQL to query host IDs for grail kafka entities
+<a id="__codelineno-3-221" name="__codelineno-3-221" href="#__codelineno-3-221"></a>const name = await getEntityName(id);
 <a id="__codelineno-3-222" name="__codelineno-3-222" href="#__codelineno-3-222"></a>
 <a id="__codelineno-3-223" name="__codelineno-3-223" href="#__codelineno-3-223"></a>
 <a id="__codelineno-3-224" name="__codelineno-3-224" href="#__codelineno-3-224"></a>
-<a id="__codelineno-3-225" name="__codelineno-3-225" href="#__codelineno-3-225"></a>// &gt;&gt;&gt; fetch dt.entity.host | filter like(entity.name, &quot;%-grail kafka&quot;)
+<a id="__codelineno-3-225" name="__codelineno-3-225" href="#__codelineno-3-225"></a>// name should be used here, but only if isKafkaEntity is true!
 <a id="__codelineno-3-226" name="__codelineno-3-226" href="#__codelineno-3-226"></a>
 <a id="__codelineno-3-227" name="__codelineno-3-227" href="#__codelineno-3-227"></a>
 <a id="__codelineno-3-228" name="__codelineno-3-228" href="#__codelineno-3-228"></a>
-<a id="__codelineno-3-229" name="__codelineno-3-229" href="#__codelineno-3-229"></a>const name = await getEntityName(id);
+<a id="__codelineno-3-229" name="__codelineno-3-229" href="#__codelineno-3-229"></a>return {
 <a id="__codelineno-3-230" name="__codelineno-3-230" href="#__codelineno-3-230"></a>
 <a id="__codelineno-3-231" name="__codelineno-3-231" href="#__codelineno-3-231"></a>
 <a id="__codelineno-3-232" name="__codelineno-3-232" href="#__codelineno-3-232"></a>
-<a id="__codelineno-3-233" name="__codelineno-3-233" href="#__codelineno-3-233"></a>// name should be used here, but only if isKafkaEntity is true!
+<a id="__codelineno-3-233" name="__codelineno-3-233" href="#__codelineno-3-233"></a>isKafkaHost: isKafkaEntity(name),
 <a id="__codelineno-3-234" name="__codelineno-3-234" href="#__codelineno-3-234"></a>
 <a id="__codelineno-3-235" name="__codelineno-3-235" href="#__codelineno-3-235"></a>
 <a id="__codelineno-3-236" name="__codelineno-3-236" href="#__codelineno-3-236"></a>
-<a id="__codelineno-3-237" name="__codelineno-3-237" href="#__codelineno-3-237"></a>return {
+<a id="__codelineno-3-237" name="__codelineno-3-237" href="#__codelineno-3-237"></a>url: await getKafkaConfigURL(ex, name)
 <a id="__codelineno-3-238" name="__codelineno-3-238" href="#__codelineno-3-238"></a>
 <a id="__codelineno-3-239" name="__codelineno-3-239" href="#__codelineno-3-239"></a>
 <a id="__codelineno-3-240" name="__codelineno-3-240" href="#__codelineno-3-240"></a>
-<a id="__codelineno-3-241" name="__codelineno-3-241" href="#__codelineno-3-241"></a>isKafkaHost: isKafkaEntity(name),
-<a id="__codelineno-3-242" name="__codelineno-3-242" href="#__codelineno-3-242"></a>
-<a id="__codelineno-3-243" name="__codelineno-3-243" href="#__codelineno-3-243"></a>
-<a id="__codelineno-3-244" name="__codelineno-3-244" href="#__codelineno-3-244"></a>
-<a id="__codelineno-3-245" name="__codelineno-3-245" href="#__codelineno-3-245"></a>url: await getKafkaConfigURL(ex, name)
-<a id="__codelineno-3-246" name="__codelineno-3-246" href="#__codelineno-3-246"></a>
-<a id="__codelineno-3-247" name="__codelineno-3-247" href="#__codelineno-3-247"></a>
-<a id="__codelineno-3-248" name="__codelineno-3-248" href="#__codelineno-3-248"></a>
-<a id="__codelineno-3-249" name="__codelineno-3-249" href="#__codelineno-3-249"></a>};
+<a id="__codelineno-3-241" name="__codelineno-3-241" href="#__codelineno-3-241"></a>};
 </code></pre></div>
 5. Commit and create pull request/merge file.</p>
 </li>

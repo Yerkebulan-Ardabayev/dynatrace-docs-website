@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.4">
     
     
       
@@ -30249,19 +30249,19 @@
 </tr>
 <tr>
 <td>builtin:synthetic.browser.step.user_events.duration</td>
-<td>User events duration (step) [browser monitor]  Duration of individual browser monitor step, measured from the start of the first user event of the step to the end of the last user event of the step. The metric source is the new JS agent.</td>
+<td>User events duration (step) [browser monitor]  Duration of individual browser monitor step, measured from the start of the first user event of the step to the end of the last user event of the step. The metric source is the new RUM JavaScript.</td>
 <td>Millisecond</td>
 <td>autoavgcountmaxminsum</td>
 </tr>
 <tr>
 <td>builtin:synthetic.browser.step.user_events.total_duration</td>
-<td>User events total duration (step) [browser monitor]  Total duration of individual browser monitor step, measured as a sum of durations of all user events in the step. The metric source is the new JS agent.</td>
+<td>User events total duration (step) [browser monitor]  Total duration of individual browser monitor step, measured as a sum of durations of all user events in the step. The metric source is the new RUM JavaScript.</td>
 <td>Millisecond</td>
 <td>autoavgcountmaxminsum</td>
 </tr>
 <tr>
 <td>builtin:synthetic.browser.step.duration</td>
-<td>Duration (step) [browser monitor]  Duration of individual browser monitor step, measured as a sum of user action events of the step. If there are no user actions then measured as duration from the beginning of the step to the max end time of the load event handler phase. The metric source is the new JS agent.</td>
+<td>Duration (step) [browser monitor]  Duration of individual browser monitor step, measured as a sum of durations of user action events in the step.</td>
 <td>Millisecond</td>
 <td>autoavgcountmaxminsum</td>
 </tr>
@@ -30303,13 +30303,13 @@
 </tr>
 <tr>
 <td>builtin:synthetic.browser.user_events.duration</td>
-<td>User events duration [browser monitor]  Duration of browser monitor, calculated as a sum of all steps-level user events durations. The metric source is the new JS agent.</td>
+<td>User events duration [browser monitor]  Duration of browser monitor, calculated as a sum of all steps-level user events durations. The metric source is the new RUM JavaScript.</td>
 <td>Millisecond</td>
 <td>autoavgcountmaxminsum</td>
 </tr>
 <tr>
 <td>builtin:synthetic.browser.user_events.total_duration</td>
-<td>User events total duration [browser monitor]  Total duration of browser monitor, measured as a sum of all steps-level values of "User events total duration" metric. The metric source is the new JS agent.</td>
+<td>User events total duration [browser monitor]  Total duration of browser monitor, measured as a sum of all steps-level values of "User events total duration" metric. The metric source is the new RUM JavaScript.</td>
 <td>Millisecond</td>
 <td>autoavgcountmaxminsum</td>
 </tr>
@@ -30339,7 +30339,7 @@
 </tr>
 <tr>
 <td>builtin:synthetic.browser.duration</td>
-<td>Duration [browser monitor]  Duration of browser monitor, calculated as a sum of all steps durations. The metric source is the new JS agent.</td>
+<td>Duration [browser monitor]  Duration of browser monitor, calculated as a sum of all steps durations.</td>
 <td>Millisecond</td>
 <td>autoavgcountmaxminsum</td>
 </tr>

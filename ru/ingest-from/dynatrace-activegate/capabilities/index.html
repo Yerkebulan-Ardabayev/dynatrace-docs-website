@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.4">
     
     
       
@@ -25489,6 +25489,8 @@
 </ul>
 <p>Each purpose comes with a different subset of functional <a href="/docs/ingest-from/dynatrace-activegate/configuration/configure-activegate#modules" title="Learn which ActiveGate properties you can configure based on your needs and requirements.">modules</a>. Modules should not be mixed between purposesâsuch re-configuration is not supported.</p>
 <h2 id="functionality-available-for-the-routing-monitoring-activegates">Functionality available for the routing-monitoring ActiveGates<a class="headerlink" href="#functionality-available-for-the-routing-monitoring-activegates" title="Permanent link">&para;</a></h2>
+<p>1</p>
+<p>Log ingest API endpoint is supported on containerized ActiveGate in a number of <a href="/docs/ingest-from/technology-support#kubernetes" title="Find technical details related to Dynatrace support for specific platforms and development frameworks.">supported Kubernetes flavours</a> when provisioned with Dynatrace Operator. Since ActiveGate uses file buffers, <a href="/docs/ingest-from/setup-on-k8s/guides/deployment-and-configuration/activegate-pvc" title="Set up a persistent storage for containerized ActiveGate to be used as temporary storage for ingested data.">persistent storage</a> is recommended to prevent data loss during restarts or rescheduling</p>
 <h2 id="functionality-available-for-activegates-running-synthetic-monitors-from-a-private-location">Functionality available for ActiveGates running synthetic monitors from a private location<a class="headerlink" href="#functionality-available-for-activegates-running-synthetic-monitors-from-a-private-location" title="Permanent link">&para;</a></h2>
 <p>1</p>
 <p>See <a href="/docs/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/containerized-locations" title="Deploy and manage containerized, auto-scalable private Synthetic locations on Kubernetes/RedHat OpenShift.">Containerized, auto-scalable private Synthetic locations on Kubernetes</a>.</p>

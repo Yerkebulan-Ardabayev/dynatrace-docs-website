@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../../../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.4">
     
     
       
@@ -25893,7 +25893,7 @@
 There are multiple ways of redacting and simplifying span names:</p>
 <h4 id="generate-a-new-span-name">Generate a new span name<a class="headerlink" href="#generate-a-new-span-name" title="Permanent link">&para;</a></h4>
 <p>Recommended</p>
-<p><code>set_semconv_span_name</code> is available from Collector Contrib version 0.142.0 and .</p>
+<p><code>set_semconv_span_name</code> is available from Collector Contrib version 0.142.0 and Dynatrace Collector version 0.42.0.</p>
 <p>Use the transform processor's <a href="https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.145.0/processor/transformprocessor#set_semconv_span_name"><code>set_semconv_span_name</code>ï»¿</a> to derive a low-cardinality name that is compliant with OpenTelemetry semantic conventions. This will use the (low-cardinality) <code>http.request.method</code> and <code>http.route</code> to generate a new span name. It keeps the name consistent with HTTP/RPC/messaging/database conventions and avoids leaking identifiers.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>transform:
 <a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>
