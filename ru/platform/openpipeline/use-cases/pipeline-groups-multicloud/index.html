@@ -27510,11 +27510,11 @@
 <p>The groups process logs of the respective cloud provider following the same structure. Each group references the following pipelines:</p>
 <ol>
 <li><strong>Global cost and bucket</strong> pipeline: Defines Cost allocation and Storage stages.</li>
-<li><strong>AWS processing</strong> and <strong>Azure processing</strong> pipelines: Define Processing, Metric Extraction, Davis, and Data Extraction stages.</li>
+<li><strong>AWS processing</strong> and <strong>Azure processing</strong> pipelines: Define Processing, Metric Extraction, Dynatrace Intelligence, and Data Extraction stages.</li>
 <li><strong>AWS cost and permission assignment</strong> and <strong>Azure cost and permission assignment</strong> pipelines: Define Product allocation and Security context stages.</li>
 <li>Member pipeline (placeholder): Defines Processing stage.</li>
 </ol>
-<p>The groups execute first the composition pipelines (1, 2, 3). They mandate the Cost allocation, Storage, Processing, Metric Extraction, Davis, Data Extraction, Product allocation, and Security context stages in this order. Then, the member pipelines add transformations in the Processing stage.</p>
+<p>The groups execute first the composition pipelines (1, 2, 3). They mandate the Cost allocation, Storage, Processing, Metric Extraction, Dynatrace Intelligence, Data Extraction, Product allocation, and Security context stages in this order. Then, the member pipelines add transformations in the Processing stage.</p>
 <p>JSON example</p>
 <p>AWS</p>
 <p>Azure</p>

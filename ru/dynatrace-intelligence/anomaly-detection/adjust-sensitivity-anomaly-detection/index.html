@@ -29,7 +29,7 @@
     
     
       
-        <title>Настройка чувствительности обнаружения аномалий - Dynatrace Managed - Документация</title>
+        <title>Adjust the sensitivity of anomaly detection - Dynatrace Managed - Документация</title>
       
     
     
@@ -82,7 +82,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#adjust-the-sensitivity-of-anomaly-detection" class="md-skip">
           Перейти к содержанию
         </a>
       
@@ -118,7 +118,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Настройка чувствительности обнаружения аномалий
+              Adjust the sensitivity of anomaly detection
             
           </span>
         </div>
@@ -25549,58 +25549,57 @@
 
 
 
-<h1 id="_1">Настройка чувствительности обнаружения аномалий<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<h1 id="_2">Настройка чувствительности обнаружения аномалий<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h1>
+<h1 id="adjust-the-sensitivity-of-anomaly-detection">Adjust the sensitivity of anomaly detection<a class="headerlink" href="#adjust-the-sensitivity-of-anomaly-detection" title="Permanent link">&para;</a></h1>
+<h1 id="adjust-the-sensitivity-of-anomaly-detection_1">Adjust the sensitivity of anomaly detection<a class="headerlink" href="#adjust-the-sensitivity-of-anomaly-detection_1" title="Permanent link">&para;</a></h1>
 <ul>
-<li>Последнее Dynatrace</li>
-<li>Объяснение</li>
-<li>2-минутное чтение</li>
-<li>Опубликовано 06 сентября 2021 г.</li>
+<li>Latest Dynatrace</li>
+<li>Explanation</li>
+<li>2-min read</li>
+<li>Published Sep 06, 2021</li>
 </ul>
-<p>Некоторые типичные аномалии, обнаруживаемые Dynatrace, включают увеличение количества сбоев, ухудшение времени ответа и скачки или падения в трафике приложения. Наблюдая за вашей средой, Dynatrace изучает эталонные значения, представляющие ее нормальное поведение, и адаптирует обнаружение аномалий соответственно. Этот процесс называется <em>автоматическим базелированием</em>. Помимо использования автоматического базелирования, вы можете предоставить <em>фиксированные пороги</em>, которые определяют, когда следует создать проблему и оповестить. Вы можете настроить эти конфигурации глобально или для конкретных сущностей.</p>
-<p><em>Чувствительность обнаружения проблем</em> контролирует уровень статистической достоверности, необходимый для создания оповещения.</p>
+<p>Some typical anomalies detected by Dynatrace include failure rate increases, response time degradations, and spikes or drops in application traffic. By observing your environment, Dynatrace learns reference values representing its normal behavior and adapts anomaly detection accordingly. This process is called <em>automatic baselining</em>. Apart from using the automatic baseline, you can provide <em>fixed thresholds</em> that define when to raise a problem and alert. You can set these configurations globally or for specific entities.</p>
+<p>The <em>sensitivity of problem detection</em> controls the level of statistical confidence required to raise an alert.</p>
 <table>
 <thead>
 <tr>
-<th>Чувствительность</th>
-<th>Статистическая достоверность</th>
-<th>Примечания</th>
+<th>Sensitivity</th>
+<th>Statistical confidence</th>
+<th>Notes</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Низкая</td>
-<td>Высокая</td>
-<td>Полезна на стадиях разработки и предпроизводства, чтобы избежать слишком многих оповещений.</td>
+<td>Low</td>
+<td>High</td>
+<td>Useful in development and pre-production stages, avoiding too many alerts.</td>
 </tr>
 <tr>
-<td>Высокая</td>
-<td>Низкая</td>
-<td>Проблема создается даже если только несколько точек данных нарушили порог. Полезна для критически важных сервисов в производстве.</td>
+<td>High</td>
+<td>Low</td>
+<td>A problem is raised even if just a few data points have violated the threshold.  Useful for mission-critical production services.</td>
 </tr>
 </tbody>
 </table>
-<p>Для некоторых критериев Dynatrace различает абсолютные и относительные пороги. В примере ниже (он показывает часть конфигурации обнаружения аномалий для приложения) пороги для ухудшения ключевых показателей производительности установлены на <code>100 мс</code> (абсолютно) и <code>50%</code> (относительно) выше автоматически изученного базелирования. Порог для самых медленных 10% запросов установлен на <code>1 000 мс</code> (абсолютно) и <code>100%</code> (относительно) выше автоматически изученного базелирования.</p>
-<p><img alt="Абсолютные и относительные пороги" src="https://dt-cdn.net/images/anomaly-detection-app-775-346ef271c3.png" /></p>
-<p>Кроме того, обнаружение аномалий учитывает количество действий в минуту, которые должны произойти в контролируемом приложении (<code>10 действий в минуту</code> в примере выше). С помощью этого параметра вы можете отключить оповещения для приложений и сервисов с низким трафиком — базелирование и оповещение на низком трафике часто приводит к ненужным оповещениям.</p>
-<p>Чтобы настроить чувствительность обнаружения на глобальном уровне</p>
+<p>For some criteria, Dynatrace distinguishes between absolute and relative thresholds. In the example below (it shows a part of anomaly detection configuration for application) the thresholds for key performance metric degradation are set to <code>100 ms</code> (absolute) and <code>50%</code> (relative) above the auto-learned baseline. The threshold for the slowest 10% of the requests is set to <code>1,000 ms</code> (absolute) and <code>100%</code> (relative) above the auto-learned baseline.</p>
+<p>Additionally the anomaly detection considers the number of actions per minute that have to happen in the monitored application (<code>10 actions per minute</code> in the example above). With that setting you can disable alerting for low traffic applications and servicesâbaselining and alerting on low traffic applications often leads to unnecessary alerts.</p>
+<p>To configure detection sensitivity on the global level</p>
 <ol>
-<li>Перейдите в <strong>Настройки</strong>.</li>
-<li>Разверните <strong>Обнаружение аномалий</strong>.</li>
+<li>Go to <strong>Settings</strong>.</li>
+<li>Expand <strong>Anomaly detection</strong>.</li>
 <li>
-<p>Выберите необходимый тип сущности. Для конкретных инструкций см. одну из тем ниже.</p>
+<p>Select the required entity type. For specific instructions, see one of the topics below.</p>
 </li>
 <li>
-<p><a href="/docs/dynatrace-intelligence/anomaly-detection/adjust-sensitivity-anomaly-detection/adjust-sensitivity-applications" title="Узнайте, как адаптировать чувствительность обнаружения проблем для приложений.">Приложения</a></p>
+<p><a href="/docs/dynatrace-intelligence/anomaly-detection/adjust-sensitivity-anomaly-detection/adjust-sensitivity-applications" title="Learn how to adapt the sensitivity of problem detection for applications.">Applications</a></p>
 </li>
-<li><a href="/docs/dynatrace-intelligence/anomaly-detection/adjust-sensitivity-anomaly-detection/adjust-sensitivity-services" title="Узнайте, как адаптировать чувствительность обнаружения проблем для сервисов.">Сервисы</a></li>
-<li><a href="/docs/dynatrace-intelligence/anomaly-detection/adjust-sensitivity-anomaly-detection/adjust-sensitivity-services-database" title="Узнайте, как адаптировать чувствительность обнаружения проблем для сервисов баз данных.">Сервисы баз данных</a></li>
-<li><a href="/docs/dynatrace-intelligence/anomaly-detection/adjust-sensitivity-anomaly-detection/adjust-sensitivity-infastructure" title="Настройте чувствительность обнаружения проблем для инфраструктуры.">Инфраструктура</a></li>
-<li><a href="/docs/dynatrace-intelligence/anomaly-detection/adjust-sensitivity-anomaly-detection/adjust-sensitivity-extension" title="Узнайте, как адаптировать чувствительность обнаружения проблем для событий расширения.">События расширения</a></li>
+<li><a href="/docs/dynatrace-intelligence/anomaly-detection/adjust-sensitivity-anomaly-detection/adjust-sensitivity-services" title="Learn how to adapt the sensitivity of problem detection for services.">Services</a></li>
+<li><a href="/docs/dynatrace-intelligence/anomaly-detection/adjust-sensitivity-anomaly-detection/adjust-sensitivity-services-database" title="Learn how to adapt the sensitivity of problem detection for database services.">Database services</a></li>
+<li><a href="/docs/dynatrace-intelligence/anomaly-detection/adjust-sensitivity-anomaly-detection/adjust-sensitivity-infastructure" title="Adjust problem detection sensitivity for infrastructure.">Infrastructure</a></li>
+<li><a href="/docs/dynatrace-intelligence/anomaly-detection/adjust-sensitivity-anomaly-detection/adjust-sensitivity-extension" title="Learn how to adapt the sensitivity of problem detection for extension events.">Extension events</a></li>
 </ol>
-<h2 id="_3">Связанные темы<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<h2 id="related-topics">Related topics<a class="headerlink" href="#related-topics" title="Permanent link">&para;</a></h2>
 <ul>
-<li><a href="/docs/dynatrace-api/configuration-api/anomaly-detection-api" title="Узнайте, что предлагает Dynatrace обнаружение аномалий API.">Обнаружение аномалий API</a></li>
+<li><a href="/docs/dynatrace-api/configuration-api/anomaly-detection-api" title="Learn what the Dynatrace anomaly detection API offers.">Anomaly detection API</a></li>
 </ul>
 
 

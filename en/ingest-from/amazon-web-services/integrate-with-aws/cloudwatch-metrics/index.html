@@ -25477,9 +25477,10 @@
 <h1 id="monitor-amazon-web-services-with-cloudwatch-metrics">Monitor Amazon Web Services with CloudWatch metrics<a class="headerlink" href="#monitor-amazon-web-services-with-cloudwatch-metrics" title="Permanent link">&para;</a></h1>
 <h1 id="monitor-amazon-web-services-with-cloudwatch-metrics_1">Monitor Amazon Web Services with CloudWatch metrics<a class="headerlink" href="#monitor-amazon-web-services-with-cloudwatch-metrics_1" title="Permanent link">&para;</a></h1>
 <ul>
+<li>Classic</li>
 <li>How-to guide</li>
 <li>23-min read</li>
-<li>Updated on Feb 05, 2026</li>
+<li>Updated on Mar 04, 2026</li>
 </ul>
 <p>Follow this guide to start ingesting data remotely from Amazon CloudWatch.</p>
 <p>Its main focus is on infrastructure monitoring of AWS services: Dynatrace monitoring AWS services via CloudWatch.</p>
@@ -25515,7 +25516,7 @@
 <p>To monitor Amazon Web Services, Dynatrace needs to be able to connect to the Amazon CloudWatch API and query it periodically. At least one ActiveGate needs to be able to connect to Amazon CloudWatch to perform the monitoring tasks. Your ActiveGate needs to be deployed on an EC2 instance and be able to connect to the endpoints listed below.</p>
 <p>From Dynatrace version 1.267+, only role-based access can be used. Key-based authorization is no longer available for new credentials. For existing key-based credentials, you can keep using keys indefinitely. We recommend switching to role-based authentication using the dedicated button on the configuration page. Dynatrace automatically checks the configuration to ensure the correct configuration of roles.</p>
 <p><a href="#key-based-authentication">Key-based authentication</a> is allowed only for AWS GovCloud and China partitions.</p>
-<p>An ActiveGate capable of monitoring your AWS account for classic (built-in) supported services is already provided and available within the Dynatrace AWS account.</p>
+<p>An ActiveGate capable of monitoring your AWS account for classic (built-in) supported services is already provided and available within the Dynatrace AWS account (only for SaaS environments hosted on AWS).</p>
 <p>However, to monitor specific non-default AWS cloud services or if your AWS account exceeds 2,000 AWS resources, you must install and configure an Environment ActiveGate. Follow the <a href="/docs/ingest-from/dynatrace-activegate/installation" title="Learn how to configure ActiveGate">ActiveGate installation guide</a> and resume this guide when done.</p>
 <p>You must install and configure an Environment ActiveGate if you want to monitor either or both of the following:</p>
 <ul>
@@ -25527,8 +25528,10 @@
 <ul>
 <li>AWS Security Token Service (AWS STS)</li>
 </ul>
+<p>Environment ActiveGate version 1.329+</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>https://sts.&lt;REGION&gt;.amazonaws.com/
 </code></pre></div>
+<p>Environment ActiveGate version 1.328 and earlier</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>https://sts.amazonaws.com/
 </code></pre></div>
 <p>Starting with Dynatrace version 1.329, the AWS STS global endpoint is not supported. Make sure that <code>sts.&lt;REGION&gt;.amazonaws.com</code> is accessible for the regions you want to monitor.</p>

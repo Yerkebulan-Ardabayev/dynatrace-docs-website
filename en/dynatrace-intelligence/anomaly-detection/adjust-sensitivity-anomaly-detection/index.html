@@ -25506,7 +25506,6 @@
 </tbody>
 </table>
 <p>For some criteria, Dynatrace distinguishes between absolute and relative thresholds. In the example below (it shows a part of anomaly detection configuration for application) the thresholds for key performance metric degradation are set to <code>100 ms</code> (absolute) and <code>50%</code> (relative) above the auto-learned baseline. The threshold for the slowest 10% of the requests is set to <code>1,000 ms</code> (absolute) and <code>100%</code> (relative) above the auto-learned baseline.</p>
-<p><img alt="Absolute and relative thresholds" src="https://dt-cdn.net/images/anomaly-detection-app-775-346ef271c3.png" /></p>
 <p>Additionally the anomaly detection considers the number of actions per minute that have to happen in the monitored application (<code>10 actions per minute</code> in the example above). With that setting you can disable alerting for low traffic applications and servicesâbaselining and alerting on low traffic applications often leads to unnecessary alerts.</p>
 <p>To configure detection sensitivity on the global level</p>
 <ol>

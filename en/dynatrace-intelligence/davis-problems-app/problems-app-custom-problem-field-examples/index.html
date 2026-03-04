@@ -25,7 +25,7 @@
     
     
       
-        <title>Dynatrace Intelligence causal AI use cases - Dynatrace Managed - Документация</title>
+        <title>Dynatrace Intelligence Problems use cases - Dynatrace Managed - Документация</title>
       
     
     
@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#dynatrace-intelligence-causal-ai-use-cases" class="md-skip">
+        <a href="#dynatrace-intelligence-problems-use-cases" class="md-skip">
           Перейти к содержанию
         </a>
       
@@ -114,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Dynatrace Intelligence causal AI use cases
+              Dynatrace Intelligence Problems use cases
             
           </span>
         </div>
@@ -25474,15 +25474,21 @@
 
 
 
-<h1 id="dynatrace-intelligence-causal-ai-use-cases">Dynatrace Intelligence causal AI use cases<a class="headerlink" href="#dynatrace-intelligence-causal-ai-use-cases" title="Permanent link">&para;</a></h1>
-<h1 id="dynatrace-intelligence-causal-ai-use-cases_1">Dynatrace Intelligence causal AI use cases<a class="headerlink" href="#dynatrace-intelligence-causal-ai-use-cases_1" title="Permanent link">&para;</a></h1>
+<h1 id="dynatrace-intelligence-problems-use-cases">Dynatrace Intelligence Problems use cases<a class="headerlink" href="#dynatrace-intelligence-problems-use-cases" title="Permanent link">&para;</a></h1>
+<h1 id="dynatrace-intelligence-problems-use-cases_1">Dynatrace Intelligence Problems use cases<a class="headerlink" href="#dynatrace-intelligence-problems-use-cases_1" title="Permanent link">&para;</a></h1>
 <ul>
 <li>Latest Dynatrace</li>
 <li>Tutorial</li>
 <li>5-min read</li>
 <li>Updated on Jan 28, 2026</li>
 </ul>
-<p>This article focuses on use cases where custom fields are necessary and provides examples of how to create custom problems fields to achieve the desired result.</p>
+<p>Custom problems fields are a type of fields that can be created and modified by the user and aren't automatically propagated from events to problems. These fields can be used for a variety of cases, such as viewing additional events sources and metadata or improving notification filtering and access management.</p>
+<p>This article provides examples of how to create custom problems fields to:</p>
+<ul>
+<li>Gain a deeper insight into the problem details</li>
+<li>Gain more control over managing access to problem records</li>
+<li>Improve email notification and segments filtering</li>
+</ul>
 <h2 id="surface-incident-ownership-in-the-problems-table">Surface incident ownership in the problems table<a class="headerlink" href="#surface-incident-ownership-in-the-problems-table" title="Permanent link">&para;</a></h2>
 <p>Event sources can attach important metadata, such as <code>dt.owner</code> or <code>app-id</code>, as event fields. This allows you to define custom event fields directly within the configurations of their respective event sources.</p>
 <p>Assume that you have a team-specific custom alert that needs to be configured on top of a DQL query to continuously monitor a metric and report a violation event if abnormal behavior is detected. The team's automation framework needs to automatically define a custom event field, <code>dt.owner</code>, containing the owning team's name.</p>

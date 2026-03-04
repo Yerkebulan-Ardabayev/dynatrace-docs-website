@@ -25495,7 +25495,7 @@
 
 <h1 id="dynatrace-dynatrace-intelligencedynatrace-intelligence-integrations">Документация Dynatrace: dynatrace-intelligence/dynatrace-intelligence-integrations<a class="headerlink" href="#dynatrace-dynatrace-intelligencedynatrace-intelligence-integrations" title="Permanent link">&para;</a></h1>
 <p>Язык: Русский (RU)
-Сгенерировано: 2026-03-03
+Сгенерировано: 2026-03-04
 Файлов в разделе: 3</p>
 <hr />
 <h2 id="dynatrace-intelligencedynatrace-intelligence-integrationscopilot-for-workflowsmd">dynatrace-intelligence/dynatrace-intelligence-integrations/copilot-for-workflows.md<a class="headerlink" href="#dynatrace-intelligencedynatrace-intelligence-integrationscopilot-for-workflowsmd" title="Permanent link">&para;</a></h2>
@@ -25574,34 +25574,34 @@ scraped: 2026-03-03T21:23:09.092533</p>
 <hr />
 <p>title: Dynatrace Intelligence для Notebooks
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/dynatrace-intelligence-integrations/davis-for-notebooks
-scraped: 2026-03-03T21:21:25.284010</p>
+scraped: 2026-03-04T21:18:42.736741</p>
 <hr />
 <h1 id="dynatrace-intelligence-notebooks">Dynatrace Intelligence для Notebooks<a class="headerlink" href="#dynatrace-intelligence-notebooks" title="Permanent link">&para;</a></h1>
 <h1 id="dynatrace-intelligence-notebooks_1">Dynatrace Intelligence для Notebooks<a class="headerlink" href="#dynatrace-intelligence-notebooks_1" title="Permanent link">&para;</a></h1>
 <ul>
 <li>Последнее Dynatrace</li>
-<li>Руководство по использованию</li>
+<li>Руководство по настройке</li>
 <li>2-минутное чтение</li>
 <li>Обновлено 28 января 2026 г.</li>
 </ul>
-<p>Dynatrace Intelligence для Notebooks запускает ряд анализаторов直接 в Notebooks, предоставляя результаты на месте и позволяя вам тонко настраивать ваши пользовательские конфигурации оповещений.</p>
+<p>Dynatrace Intelligence для Notebooks запускает ряд анализаторов непосредственно в Notebooks, предоставляя результаты на месте и позволяя вам тонко настраивать ваши пользовательские конфигурации оповещений.</p>
 <h2 id="_5">Обнаружение аномалий<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
-<p>С помощью <img alt="Обнаружение аномалий - новое" src="https://dt-cdn.net/images/davis-anomalydetection-256-105da91594.png" title="Обнаружение аномалий - новое" /> <strong>Обнаружение аномалий</strong>, kết hợp с возможностями <a href="/docs/platform/grail/dynatrace-query-language" title="Как использовать язык запросов Dynatrace.">DQL</a> , вы можете создавать мощные конфигурации для обнаружения аномалий в метриках, журналах, бизнес-данных или их комбинации. Чтобы предварительно просмотреть и тонко настроить вашу конфигурацию обнаружения аномалий перед ее развертыванием, используйте опцию анализа Dynatrace Intelligence для Notebooks:</p>
+<p>С помощью <img alt="Обнаружение аномалий - новое" src="https://dt-cdn.net/images/davis-anomalydetection-256-105da91594.png" title="Обнаружение аномалий - новое" /> <strong>Обнаружение аномалий</strong>, объединенного с возможностями <a href="/docs/platform/grail/dynatrace-query-language" title="Как использовать язык запросов Dynatrace.">DQL</a>, вы можете создавать мощные конфигурации для обнаружения аномалий в метриках, журналах, бизнес-данных или их комбинации. Чтобы предварительно просмотреть и тонко настроить вашу конфигурацию обнаружения аномалий перед ее развертыванием, используйте вариант анализа Dynatrace Intelligence для Notebooks:</p>
 <ul>
 <li><a href="/docs/dynatrace-intelligence/anomaly-detection/auto-adaptive-threshold" title="Как Dynatrace адаптирует пороги для нескольких сущностей в рамках конфигурации обнаружения аномалий.">Автоадаптивный порог</a> — Dynatrace рассчитывает порог автоматически и адаптирует его динамически к поведению ваших данных.</li>
-<li><a href="/docs/dynatrace-intelligence/reference/ai-models/seasonal-baseline" title="Как Dynatrace Intelligence предлагает сезонные базовые линии для области сущностей.">Сезонная базовая линия</a> — Dynatrace создает доверительную полосу для данных с сезонными закономерностями</li>
-<li><a href="/docs/dynatrace-intelligence/anomaly-detection/static-thresholds" title="Когда использовать статический порог для вашего обнаружения аномалий.">Статический порог</a> — порог, который не меняется со временем.</li>
+<li><a href="/docs/dynatrace-intelligence/reference/ai-models/seasonal-baseline" title="Как Dynatrace Intelligence предлагает сезонные базовые линии для области сущностей.">Сезонная базовая линия</a> — Dynatrace создает доверительную полосу для данных с сезонными закономерностями.</li>
+<li><a href="/docs/dynatrace-intelligence/anomaly-detection/static-thresholds" title="Когда использовать статический порог для обнаружения аномалий.">Статический порог</a> — порог, который не меняется со временем.</li>
 </ul>
-<p>Для каждой из этих опций вы можете настроить <a href="/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-configuration#missing-data" title="Как настроить оповещение о пропущенных измерениях.">оповещение о пропущенных данных</a>. Пропущенные данные и условия порога объединяются логикой <strong>ИЛИ</strong>.</p>
+<p>Для каждого из этих вариантов вы можете настроить <a href="/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-configuration#missing-data" title="Как настроить оповещение о пропущенных измерениях.">оповещение о пропущенных данных</a>. Пропущенные данные и условия порога объединяются логикой <strong>ИЛИ</strong>.</p>
 <p>Чтобы запустить анализ обнаружения аномалий в Notebooks</p>
 <ol>
 <li>Перейдите в <strong>Notebooks</strong> <img alt="Notebooks" src="https://dt-cdn.net/images/notebooks-768-046137830a.webp" title="Notebooks" />.</li>
-<li>Откройте ваш Notebook или создайте новый.</li>
+<li>Откройте свою тетрадь или создайте новую.</li>
 <li>Добавьте раздел <strong>Запрос Grail</strong> и <a href="/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks#query-grail" title="Анализируйте, визуализируйте и делитесь идеями из ваших данных наблюдаемости — все в одном совместном, настраиваемом рабочем пространстве.">запросите</a> данные, которые вас интересуют, или добавьте раздел <strong>Метрики</strong> и выберите необходимую метрику.</li>
 </ol>
 <p>Для запроса DQL используйте параметр <code>interval: 1m</code>, чтобы обеспечить правильное разрешение данных для анализа.
-4. Выберите <strong>Опции</strong>.
-5. В панели <strong>Опции</strong> выберите <strong>Анализ и оповещение</strong> и активируйте анализатор.
+4. Выберите <strong>Параметры</strong>.
+5. В панели <strong>Параметры</strong> выберите <strong>Анализ и оповещение</strong> и активируйте анализатор.
 6. Выберите необходимый анализатор обнаружения аномалий и настройте его параметры.
 7. Выберите <strong>Запустить анализ</strong>.</p>
 <p>Dynatrace Intelligence анализирует данные и показывает потенциальные оповещения. Обратите внимание, что это всего лишь симуляции — на основе этого анализа не срабатывают реальные оповещения.</p>
@@ -25610,10 +25610,10 @@ scraped: 2026-03-03T21:21:25.284010</p>
 <p>Прогнозный анализ Dynatrace Intelligence предсказывает будущие значения любого временного ряда числовых значений на основе накопленных данных. Чтобы запустить <a href="/docs/dynatrace-intelligence/reference/ai-models/forecast-analysis" title="Узнайте, как Dynatrace Intelligence генерирует прогнозы.">анализ прогноза</a></p>
 <ol>
 <li>Перейдите в <strong>Notebooks</strong> <img alt="Notebooks" src="https://dt-cdn.net/images/notebooks-768-046137830a.webp" title="Notebooks" />.</li>
-<li>Откройте ваш Notebook или создайте новый.</li>
+<li>Откройте свою тетрадь или создайте новую.</li>
 <li>Добавьте раздел <strong>Запрос Grail</strong> и <a href="/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks#query-grail" title="Анализируйте, визуализируйте и делитесь идеями из ваших данных наблюдаемости — все в одном совместном, настраиваемом рабочем пространстве.">запросите</a> данные, которые вас интересуют, или добавьте раздел <strong>Метрики</strong> и выберите необходимую метрику.</li>
-<li>Выберите <strong>Опции</strong>.</li>
-<li>В панели <strong>Опции</strong> выберите <strong>Анализ и оповещение</strong> и активируйте анализатор.</li>
+<li>Выберите <strong>Параметры</strong>.</li>
+<li>В панели <strong>Параметры</strong> выберите <strong>Анализ и оповещение</strong> и активируйте анализатор.</li>
 <li>Выберите анализатор <strong>Прогноз</strong> и настройте его параметры.</li>
 <li>Выберите <strong>Запустить анализ</strong>.</li>
 </ol>
@@ -25629,7 +25629,7 @@ scraped: 2026-03-03T21:21:25.284010</p>
 <hr />
 <p>title: Dynatrace Intelligence интеграции
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/dynatrace-intelligence-integrations
-scraped: 2026-03-01T21:13:46.380261</p>
+scraped: 2026-03-04T21:20:17.534132</p>
 <hr />
 <h1 id="dynatrace-intelligence_3">Dynatrace Intelligence интеграции<a class="headerlink" href="#dynatrace-intelligence_3" title="Permanent link">&para;</a></h1>
 <h1 id="dynatrace-intelligence_4">Dynatrace Intelligence интеграции<a class="headerlink" href="#dynatrace-intelligence_4" title="Permanent link">&para;</a></h1>
@@ -25644,30 +25644,31 @@ scraped: 2026-03-01T21:13:46.380261</p>
 <h4 id="dynatrace-intelligence_5">Dynatrace Intelligence для тетрадей<a class="headerlink" href="#dynatrace-intelligence_5" title="Permanent link">&para;</a></h4>
 <p>Запустите анализ ИИ в Dynatrace тетрадях.</p>
 <ul>
-<li>Руководство</li>
+<li>Руководство по началу работы</li>
 </ul>
 <p>Прочитайте это руководство](/docs/dynatrace-intelligence/dynatrace-intelligence-integrations/davis-for-notebooks)</p>
 <h2 id="dynatrace-mcp">Dynatrace сервер MCP<a class="headerlink" href="#dynatrace-mcp" title="Permanent link">&para;</a></h2>
-<p>[#### Dynatrace сервер MCP</p>
-<p>Узнайте о Dynatrace сервере MCP и о том, как можно к нему подключиться.</p>
+<p>[<img alt="Dynatrace удаленный сервер MCP" src="https://dt-cdn.net/images/picture5-103-8cd29dfe7e.png" title="Dynatrace удаленный сервер MCP" /></p>
+<h4 id="dynatrace-mcp_1">Dynatrace сервер MCP<a class="headerlink" href="#dynatrace-mcp_1" title="Permanent link">&para;</a></h4>
+<p>Узнайте о Dynatrace сервере MCP и о том, как подключиться к нему.</p>
 <ul>
 <li>Обзор</li>
 </ul>
 <p>Прочитайте обзор](/docs/dynatrace-intelligence/dynatrace-intelligence-integrations/dynatrace-mcp)</p>
-<h2 id="_9">Потоки работы<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
-<p>Прочитайте о случаях использования Dynatrace Intelligence на основе потоков работы.</p>
-<p>[#### Оптимизируйте стоимость DQL с помощью потоков работы</p>
+<h2 id="_9">Рабочие процессы<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
+<p>Посмотрите случаи использования рабочих процессов для Dynatrace Intelligence.</p>
+<p>[#### Оптимизируйте стоимость DQL с помощью рабочих процессов</p>
 <p>Используйте Dynatrace Intelligence (Предварительный просмотр), чтобы оптимизировать стоимость ваших запросов.</p>
 <ul>
 <li>Учебник</li>
 </ul>
-<p>Прочитайте этот учебник](/docs/dynatrace-intelligence/use-cases/copilot-in-workflows-dql)[#### Суммируйте открытые проблемы с помощью потоков работы</p>
+<p>Прочитайте этот учебник](/docs/dynatrace-intelligence/use-cases/copilot-in-workflows-dql)[#### Суммируйте открытые проблемы с помощью рабочих процессов</p>
 <p>Используйте Dynatrace Intelligence (Предварительный просмотр), чтобы суммировать открытые проблемы и предложить шаги по исправлению.</p>
 <ul>
 <li>Учебник</li>
 </ul>
-<p>Прочитайте этот учебник](/docs/dynatrace-intelligence/use-cases/copilot-in-workflows-examples)[#### ИИ в потоках работы - прогностическое обслуживание облачных дисков</p>
-<p>Автоматизируйте прогностическое обслуживание облачных ресурсов с помощью Dynatrace Intelligence в AutomationEngine.</p>
+<p>Прочитайте этот учебник](/docs/dynatrace-intelligence/use-cases/copilot-in-workflows-examples)[#### ИИ в рабочих процессах - прогнозное обслуживание облачных дисков</p>
+<p>Автоматизируйте прогнозное обслуживание облачных ресурсов с помощью Dynatrace Intelligence в AutomationEngine.</p>
 <ul>
 <li>Учебник</li>
 </ul>

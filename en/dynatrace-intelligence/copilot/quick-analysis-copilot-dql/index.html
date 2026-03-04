@@ -25484,7 +25484,7 @@
 </ul>
 <p>You can use Dynatrace Intelligence generative AI in Dashboards and Notebooks to explore your data through natural language. It allows you to translate your conversational prompts directly into DQL queries that reflect the context of your environment. You can choose to auto-execute generated queries or generate DQL only.</p>
 <h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
-<p>This page assumes that you have completed the setup described in <a href="/docs/dynatrace-intelligence/copilot/copilot-getting-started" title="Learn how to set up Dynatrace Intelligence generative AI.">Getting started with Dynatrace Intelligence generative AI</a>.</p>
+<p>We assume that you have completed the setup described in <a href="/docs/dynatrace-intelligence/copilot/copilot-getting-started" title="Learn how to set up Dynatrace Intelligence agentic and generative AI.">Getting started with Dynatrace Intelligence agentic and generative AI</a>.</p>
 <h2 id="use-generative-ai-in-notebooks">Use generative AI in Notebooks<a class="headerlink" href="#use-generative-ai-in-notebooks" title="Permanent link">&para;</a></h2>
 <ol>
 <li>Go to <img alt="Notebooks" src="https://dt-cdn.net/images/notebooks-768-046137830a.webp" title="Notebooks" /> <strong>Notebooks</strong> and open or create a notebook you can edit.</li>
@@ -25564,7 +25564,7 @@
 </ol>
 <p>Even though Dynatrace Intelligence generative AI is not charged for, all queries that are executed by generative AI are subject to licensing consumption according to your existing licensing agreement.</p>
 <h2 id="environment-aware-queries">Environment-aware queries<a class="headerlink" href="#environment-aware-queries" title="Permanent link">&para;</a></h2>
-<p>Environment-aware queries enrich Dynatrace Intelligence generative AI with your environment data. This lets you generate more accurate queries that identify and reference relevant entities, events, spans, logs, and metrics from your environment. You can also run more complex data analyses by asking Dynatrace Intelligence generative AI about the specifics of your data. To learn more about how to control and manage which data Dynatrace Intelligence generative AI has access to and how to enable environment-aware queries, see <a href="/docs/dynatrace-intelligence/copilot/copilot-getting-started#enable-environment-aware-queries" title="Learn how to set up Dynatrace Intelligence generative AI.">Enable environment-aware queries</a>.</p>
+<p>Environment-aware queries enrich Dynatrace Intelligence generative AI with your environment data. This lets you generate more accurate queries that identify and reference relevant entities, events, spans, logs, and metrics from your environment. You can also run more complex data analyses by asking Dynatrace Intelligence generative AI about the specifics of your data. To learn more about how to control and manage which data Dynatrace Intelligence generative AI has access to and how to enable environment-aware queries, see <a href="/docs/dynatrace-intelligence/copilot/copilot-getting-started#enable-environment-aware-queries" title="Learn how to set up Dynatrace Intelligence agentic and generative AI.">Enable environment-aware queries</a>.</p>
 <h3 id="dynatrace-intelligence-generative-ai-semantic-index">Dynatrace Intelligence generative AI semantic index<a class="headerlink" href="#dynatrace-intelligence-generative-ai-semantic-index" title="Permanent link">&para;</a></h3>
 <p>Once enabled, Dynatrace Intelligence generative AI periodically scans your Grail data to create its own semantic index. Certain data fragments are sent to Microsoft Azure OpenAI during the semantic indexing. Examples of such data fragments include metric keys, dimensions, and field names. When a user provides a prompt, Dynatrace Intelligence generative AI first identifies the most relevant fragments from the data it has indexed. OUr generative AI then sends the user prompt, the relevant data fragments, and some examples of field values observed in your environment to Microsoft Azure OpenAI for processing.</p>
 <p>Having environment-aware queries enabled allows Dynatrace Intelligence generative AI to identify unique data fields and custom metrics in your environment and helps you do your analysis by combining your prompt with the relevant, unique data fields and types.</p>
@@ -25610,7 +25610,7 @@
 <p>Dynatrace Intelligence generative AI NL2DQL response process can be summarized in 4 steps.</p>
 <ol>
 <li>Dynatrace Intelligence generative AI receives a request from a user.</li>
-<li>If the request is well-formulated and recognized (see <a href="/docs/dynatrace-intelligence/copilot/quick-analysis-copilot-dql/copilot-tips" title="Learn best practices for writing more accurate prompts.">Dynatrace Intelligence generative AI - Tips for writing better prompts</a> for more information), Dynatrace Intelligence generative AI matches the user request with the Dynatrace-owned content, such as documentation and curated query examples, and passes the prompt to LLM.</li>
+<li>If the request is well-formulated and recognized (see <a href="/docs/dynatrace-intelligence/copilot/quick-analysis-copilot-dql/copilot-tips" title="Learn best practices for writing more accurate prompts.">Dynatrace Intelligence agentic and generative AI - Tips for writing better prompts</a> for more information), Dynatrace Intelligence generative AI matches the user request with the Dynatrace-owned content, such as documentation and curated query examples, and passes the prompt to LLM.</li>
 </ol>
 <p>If you have enabled environment-aware queries, the relevant data fragments will be used enrich the prompt alongside Dynatrace-owned content.
 3. The LLM generates a response and checks if the DQL is valid.
@@ -25624,11 +25624,11 @@
 <p>Do not share personal or confidential information in your feedback.</p>
 <h2 id="related-topics">Related topics<a class="headerlink" href="#related-topics" title="Permanent link">&para;</a></h2>
 <ul>
-<li><a href="/docs/dynatrace-intelligence/copilot/copilot-overview" title="Learn about data security and other aspects of Dynatrace Intelligence generative AI.">Dynatrace Intelligence generative AI overview</a></li>
-<li><a href="/docs/dynatrace-intelligence/copilot/copilot-getting-started" title="Learn how to set up Dynatrace Intelligence generative AI.">Get started with Dynatrace Intelligence generative AI</a></li>
-<li><a href="/docs/dynatrace-intelligence/copilot/copilot-faq" title="Learn about frequently asked questions and find your answers.">Dynatrace Intelligence generative AI FAQ</a></li>
-<li><a href="/docs/dynatrace-intelligence/copilot/quick-analysis-copilot-dql/copilot-tips" title="Learn best practices for writing more accurate prompts.">Dynatrace Intelligence generative AI - Tips for writing better prompts</a></li>
-<li><a href="/docs/dynatrace-intelligence/use-cases/copilot-examples" title="Learn more about what kind of prompts work well in Dynatrace Intelligence generative AI.">Generative AI quick analysis examples</a></li>
+<li><a href="/docs/dynatrace-intelligence/copilot/copilot-overview" title="Learn about data security and other aspects of Dynatrace Intelligence agentic and generative AI.">Dynatrace Intelligence agentic and generative AI overview</a></li>
+<li><a href="/docs/dynatrace-intelligence/copilot/copilot-getting-started" title="Learn how to set up Dynatrace Intelligence agentic and generative AI.">Get started with Dynatrace Intelligence agentic and generative AI</a></li>
+<li><a href="/docs/dynatrace-intelligence/copilot/copilot-faq" title="Learn about frequently asked questions and find your answers.">Dynatrace Intelligence agentic and generative AI FAQ</a></li>
+<li><a href="/docs/dynatrace-intelligence/copilot/quick-analysis-copilot-dql/copilot-tips" title="Learn best practices for writing more accurate prompts.">Dynatrace Intelligence agentic and generative AI - Tips for writing better prompts</a></li>
+<li><a href="/docs/dynatrace-intelligence/use-cases/copilot-examples" title="Learn more about what kind of prompts work well in Dynatrace Intelligence agentic and generative AI.">Generative AI quick analysis examples</a></li>
 </ul>
 
 

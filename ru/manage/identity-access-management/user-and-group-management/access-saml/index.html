@@ -25835,11 +25835,12 @@
 <p>To create a mapping, you need to specify the SAML Group Attribute Value in the <a href="#configure-metadata">attribute mapping configuration</a> that contains the groups/roles of a user from your IdP, and then map groups from your IdP to groups in Dynatrace.</p>
 <p>In Dynatrace, all user group permissions are joined together. The user will be granted permissions from all group types: <code>LOCAL</code>, <code>SAML</code>, and <code>SCIM</code>. It is the Account Manager's responsibility to decide if and how user permissions are isolated.</p>
 <ol>
-<li>Go to <a href="https://myaccount.dynatrace.com/"><strong>Account Management</strong>ï»¿</a> &gt; your account &gt; <strong>Identity &amp; access management</strong> &gt; <strong>Group management</strong> and add a new group or find an existing group you want to map. You can filter the list by name and permissions.</li>
-</ol>
-<p><strong>Important</strong></p>
-<ul>
-<li>We <strong>strongly recommend</strong> that you first create a new group (select <strong>Create group</strong>) to test whether SAML authorization works for that group.</li>
+<li>
+<p>Go to <a href="https://myaccount.dynatrace.com/"><strong>Account Management</strong>ï»¿</a> &gt; your account &gt; <strong>Identity &amp; access management</strong> &gt; <strong>Group management</strong> and add a new group or find an existing group you want to map. You can filter the list by name and permissions.</p>
+</li>
+<li>
+<p>We <strong>strongly recommend</strong> that you first create a new group (select <strong>Create group</strong>) to test whether SAML authorization works for that group.</p>
+</li>
 <li>Switching a <code>LOCAL</code> group to <code>SAML</code> removes all user assignments to that group.</li>
 <li>Make sure you have a non-federated user with <strong>manage groups</strong> permission as discussed <a href="#create-fallback">earlier</a>.</li>
 <li>
@@ -25870,7 +25871,7 @@
 <li>Upon a federated user's successful login, Dynatrace checks incoming <strong>group claims</strong> against <strong>SAML Group Attribute Values</strong> defined throughout all SAML groups. When there is a match, the user is added to the corresponding Dynatrace group.</li>
 </ul>
 </li>
-</ul>
+</ol>
 <p><strong>Note</strong>:</p>
 <ul>
 <li>When using SAML authentication, you don't have to invite users to Dynatrace. During sign-in, a user that doesn't already exist in Dynatrace is created automatically.</li>
