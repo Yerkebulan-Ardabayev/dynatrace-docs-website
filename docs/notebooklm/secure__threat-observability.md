@@ -1,6 +1,6 @@
 # Документация Dynatrace: secure/threat-observability
 Язык: Русский (RU)
-Сгенерировано: 2026-03-03
+Сгенерировано: 2026-03-04
 Файлов в разделе: 24
 ---
 
@@ -9,7 +9,7 @@
 ---
 title: Threat Observability concepts
 source: https://www.dynatrace.com/docs/secure/threat-observability/concepts
-scraped: 2026-03-03T21:30:48.909901
+scraped: 2026-03-04T21:30:37.300097
 ---
 
 # Threat Observability concepts
@@ -227,7 +227,7 @@ For more information and the complete security model specification, see [Securit
 ---
 title: DQL examples for security data
 source: https://www.dynatrace.com/docs/secure/threat-observability/dql-examples
-scraped: 2026-03-03T21:20:52.986297
+scraped: 2026-03-04T21:18:13.269385
 ---
 
 # DQL examples for security data
@@ -2541,7 +2541,7 @@ AND object.name == "demo-kspm"
 ---
 title: Grail security table migration guide
 source: https://www.dynatrace.com/docs/secure/threat-observability/migration
-scraped: 2026-03-03T21:27:41.344721
+scraped: 2026-03-04T21:33:20.764028
 ---
 
 # Grail security table migration guide
@@ -3299,7 +3299,7 @@ Ingest Amazon GuardDuty detection findings.](https://www.dynatrace.com/hub/detai
 ---
 title: Ingest Amazon ECR container vulnerability findings and scan events
 source: https://www.dynatrace.com/docs/secure/threat-observability/security-events-ingest/ingest-aws-ecr-data
-scraped: 2026-03-03T21:16:41.579424
+scraped: 2026-03-04T21:35:17.785772
 ---
 
 # Ingest Amazon ECR container vulnerability findings and scan events
@@ -3799,7 +3799,7 @@ Ingest AWS Security Hub vulnerabilities, detections, and compliance findings.](h
 ---
 title: Ingest custom security events via API
 source: https://www.dynatrace.com/docs/secure/threat-observability/security-events-ingest/ingest-custom-data
-scraped: 2026-03-03T21:16:51.938008
+scraped: 2026-03-04T21:27:38.646371
 ---
 
 # Ingest custom security events via API
@@ -4625,7 +4625,7 @@ Ingest GitHub Advanced Security (GHAS) security events and audit logs.](https://
 ---
 title: Ingest Harbor vulnerability findings, scans, and audit logs
 source: https://www.dynatrace.com/docs/secure/threat-observability/security-events-ingest/ingest-harbor-data
-scraped: 2026-03-03T21:16:40.320928
+scraped: 2026-03-04T21:36:03.910418
 ---
 
 # Ingest Harbor vulnerability findings, scans, and audit logs
@@ -5830,7 +5830,7 @@ For billing information, see [Events powered by Grail](/docs/license/capabilitie
 ---
 title: Ingest Snyk vulnerability findings, scans, and audit logs
 source: https://www.dynatrace.com/docs/secure/threat-observability/security-events-ingest/ingest-snyk-data
-scraped: 2026-03-03T21:16:42.986952
+scraped: 2026-03-04T21:31:15.814655
 ---
 
 # Ingest Snyk vulnerability findings, scans, and audit logs
@@ -6496,7 +6496,7 @@ Ingest Sonatype vulnerability findings, scans, and audit logs.](https://www.dyna
 ---
 title: Ingest Tenable vulnerability findings, scan events, and audit logs
 source: https://www.dynatrace.com/docs/secure/threat-observability/security-events-ingest/ingest-tenable-data
-scraped: 2026-03-03T21:16:37.796497
+scraped: 2026-03-04T21:30:52.794221
 ---
 
 # Ingest Tenable vulnerability findings, scan events, and audit logs
@@ -6894,7 +6894,7 @@ Ingest Tenable vulnerability findings, scan events, and audit logs.](https://www
 ---
 title: Enrich threat observables with VirusTotal
 source: https://www.dynatrace.com/docs/secure/threat-observability/security-events-ingest/virustotal-enrich
-scraped: 2026-03-03T21:16:53.185780
+scraped: 2026-03-04T21:33:14.193400
 ---
 
 # Enrich threat observables with VirusTotal
@@ -7039,7 +7039,7 @@ Enrich observables with threat intelligence from VirusTotal.](https://www.dynatr
 ---
 title: Security integrations
 source: https://www.dynatrace.com/docs/secure/threat-observability/security-events-ingest
-scraped: 2026-03-03T21:12:19.833737
+scraped: 2026-03-04T21:14:53.753202
 ---
 
 # Security integrations
@@ -7095,7 +7095,7 @@ After configuring enrichment sources, you can apply them to:
 ---
 title: Threat Observability
 source: https://www.dynatrace.com/docs/secure/threat-observability
-scraped: 2026-03-03T21:14:21.398333
+scraped: 2026-03-04T21:12:50.224042
 ---
 
 # Threat Observability
@@ -7104,7 +7104,7 @@ scraped: 2026-03-03T21:14:21.398333
 
 * Latest Dynatrace
 * Overview
-* Updated on Feb 26, 2026
+* Updated on Mar 04, 2026
 
 In a world where security data is constantly increasing in scale, DevSecOps teams find themselves lost in siloed tooling, overwhelmed by the number of alerts. This leads to missed threats and increased security risks. A lot of manual effort is required to assemble all the puzzle pieces and act on the security findings.
 
@@ -7166,6 +7166,7 @@ Automatically process, triage, enrich, and classify incoming security alerts.
 
 * [CSPM Notification Automation](/docs/secure/use-cases/notification-automation "Improve cloud security posture by automatically processing, triaging, enriching, and classifying incoming security alerts.")
 
+* [Ingest, enrich, and deduplicate Qualys vulnerability findings with Dynatraceï»¿](https://www.dynatrace.com/news/blog/ingest-enrich-and-deduplicate-qualys-vulnerability-findings-with-dynatrace/)
 * [Smarter vulnerability remediation with Dynatrace and Atlassian Rovo Devï»¿](https://www.dynatrace.com/news/blog/smarter-vulnerability-remediation-with-dynatrace-and-atlassian-rovo-dev/)
 * [Smarter cloud security with Dynatrace and Kiro CLIï»¿](https://www.dynatrace.com/news/blog/smarter-cloud-security-with-dynatrace-and-kiro-cli/)
 * [Ingest and enrich SonarQube security and quality findings with Dynatraceï»¿](https://www.dynatrace.com/news/blog/ingest-and-enrich-sonarqube-security-and-quality-findings-with-dynatrace/)

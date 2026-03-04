@@ -1,6 +1,6 @@
 # Документация Dynatrace: analyze-explore-automate/notifications-and-alerting
 Язык: Русский (RU)
-Сгенерировано: 2026-03-03
+Сгенерировано: 2026-03-04
 Файлов в разделе: 13
 ---
 
@@ -106,13 +106,14 @@ In addition to the Dynatrace web UI, you can manage your problem alerting profil
 ---
 title: Send Dynatrace notifications via email
 source: https://www.dynatrace.com/docs/analyze-explore-automate/notifications-and-alerting/problem-notifications/email-integration
-scraped: 2026-03-03T21:12:36.270531
+scraped: 2026-03-04T21:14:35.773501
 ---
 
 # Send Dynatrace notifications via email
 
 # Send Dynatrace notifications via email
 
+* Classic
 * 2-min read
 * Updated on Apr 25, 2024
 
@@ -154,13 +155,14 @@ To set up email-based problem notifications
 ---
 title: Send Dynatrace notifications to Jira
 source: https://www.dynatrace.com/docs/analyze-explore-automate/notifications-and-alerting/problem-notifications/jira-integration
-scraped: 2026-03-03T21:12:38.746815
+scraped: 2026-03-04T21:14:24.957666
 ---
 
 # Send Dynatrace notifications to Jira
 
 # Send Dynatrace notifications to Jira
 
+* Classic
 * 3-min read
 * Updated on Apr 25, 2024
 
@@ -229,13 +231,14 @@ Dynatrace does not automatically close resolved issues. You need to close Jira i
 ---
 title: Send Dynatrace notifications to Microsoft Teams
 source: https://www.dynatrace.com/docs/analyze-explore-automate/notifications-and-alerting/problem-notifications/microsoft-teams-integration
-scraped: 2026-03-03T21:12:48.196808
+scraped: 2026-03-04T21:14:20.064122
 ---
 
 # Send Dynatrace notifications to Microsoft Teams
 
 # Send Dynatrace notifications to Microsoft Teams
 
+* Classic
 * 2-min read
 * Updated on Jan 22, 2026
 
@@ -299,13 +302,14 @@ Example
 ---
 title: Send Dynatrace notifications to Opsgenie
 source: https://www.dynatrace.com/docs/analyze-explore-automate/notifications-and-alerting/problem-notifications/opsgenie-integration
-scraped: 2026-03-03T21:12:39.964336
+scraped: 2026-03-04T21:14:29.301248
 ---
 
 # Send Dynatrace notifications to Opsgenie
 
 # Send Dynatrace notifications to Opsgenie
 
+* Classic
 * 2-min read
 * Updated on Oct 10, 2022
 
@@ -354,13 +358,14 @@ The following image shows a Dynatrace-detected problem pushed over to Opsgenie. 
 ---
 title: Send Dynatrace notifications to PagerDuty
 source: https://www.dynatrace.com/docs/analyze-explore-automate/notifications-and-alerting/problem-notifications/pagerduty-integration
-scraped: 2026-03-03T21:12:45.758645
+scraped: 2026-03-04T21:14:23.348327
 ---
 
 # Send Dynatrace notifications to PagerDuty
 
 # Send Dynatrace notifications to PagerDuty
 
+* Classic
 * 3-min read
 * Updated on Apr 25, 2024
 
@@ -422,13 +427,14 @@ If you want more custom notification fields, use this procedure to integrate Dyn
 ---
 title: Send Dynatrace notifications to ServiceNow
 source: https://www.dynatrace.com/docs/analyze-explore-automate/notifications-and-alerting/problem-notifications/servicenow-integration
-scraped: 2026-03-03T21:12:42.325909
+scraped: 2026-03-04T21:14:30.931019
 ---
 
 # Send Dynatrace notifications to ServiceNow
 
 # Send Dynatrace notifications to ServiceNow
 
+* Classic
 * 9-min read
 * Updated on Apr 15, 2025
 
@@ -666,13 +672,14 @@ Check out the following articles in the [Troubleshooting forum in the Dynatrace 
 ---
 title: Send Dynatrace notifications to Slack
 source: https://www.dynatrace.com/docs/analyze-explore-automate/notifications-and-alerting/problem-notifications/slack-integration
-scraped: 2026-03-03T21:12:37.496819
+scraped: 2026-03-04T21:14:28.218187
 ---
 
 # Send Dynatrace notifications to Slack
 
 # Send Dynatrace notifications to Slack
 
+* Classic
 * 2-min read
 * Updated on Apr 25, 2024
 
@@ -722,13 +729,14 @@ Example
 ---
 title: Send Dynatrace notifications to Trello
 source: https://www.dynatrace.com/docs/analyze-explore-automate/notifications-and-alerting/problem-notifications/trello-integration
-scraped: 2026-03-03T21:12:46.978424
+scraped: 2026-03-04T21:14:21.690532
 ---
 
 # Send Dynatrace notifications to Trello
 
 # Send Dynatrace notifications to Trello
 
+* Classic
 * 2-min read
 * Updated on Oct 10, 2022
 
@@ -770,13 +778,14 @@ To set up Trello problem-notification integration
 ---
 title: Send Dynatrace notifications to VictorOps
 source: https://www.dynatrace.com/docs/analyze-explore-automate/notifications-and-alerting/problem-notifications/victorops-integration
-scraped: 2026-03-03T21:12:43.553913
+scraped: 2026-03-04T21:14:34.163931
 ---
 
 # Send Dynatrace notifications to VictorOps
 
 # Send Dynatrace notifications to VictorOps
 
+* Classic
 * 2-min read
 * Updated on Oct 10, 2022
 
@@ -818,13 +827,14 @@ To set up VictorOps problem-notification integration
 ---
 title: Send Dynatrace notifications via webhooks
 source: https://www.dynatrace.com/docs/analyze-explore-automate/notifications-and-alerting/problem-notifications/webhook-integration
-scraped: 2026-03-03T21:12:44.674666
+scraped: 2026-03-04T21:14:32.568432
 ---
 
 # Send Dynatrace notifications via webhooks
 
 # Send Dynatrace notifications via webhooks
 
+* Classic
 * 3-min read
 * Updated on Sep 11, 2024
 
@@ -993,13 +1003,14 @@ After a problem has been detected, the placeholders are populated with the actua
 ---
 title: Send Dynatrace notifications to xMatters
 source: https://www.dynatrace.com/docs/analyze-explore-automate/notifications-and-alerting/problem-notifications/xmatters-integration
-scraped: 2026-03-03T21:12:41.199491
+scraped: 2026-03-04T21:14:26.610162
 ---
 
 # Send Dynatrace notifications to xMatters
 
 # Send Dynatrace notifications to xMatters
 
+* Classic
 * 2-min read
 * Updated on Jul 17, 2024
 
@@ -1037,13 +1048,14 @@ After youâve finished integration with Dynatrace, youâll see your newl
 ---
 title: Problem notifications
 source: https://www.dynatrace.com/docs/analyze-explore-automate/notifications-and-alerting/problem-notifications
-scraped: 2026-03-03T21:11:53.546537
+scraped: 2026-03-04T21:11:46.760752
 ---
 
 # Problem notifications
 
 # Problem notifications
 
+* Classic
 * 2-min read
 * Updated on Oct 10, 2022
 

@@ -1,6 +1,6 @@
 # Документация Dynatrace: ingest-from/extensions
 Язык: Русский (RU)
-Сгенерировано: 2026-03-03
+Сгенерировано: 2026-03-04
 Файлов в разделе: 38
 ---
 
@@ -207,7 +207,7 @@ alerts:
 ---
 title: Dedicated performance profile configuration
 source: https://www.dynatrace.com/docs/ingest-from/extensions/advanced-configuration/dedicated-performance-profile
-scraped: 2026-03-02T21:19:55.405269
+scraped: 2026-03-04T21:35:56.917022
 ---
 
 # Dedicated performance profile configuration
@@ -922,7 +922,7 @@ sampleLog: |
 ---
 title: About Extensions
 source: https://www.dynatrace.com/docs/ingest-from/extensions/concepts
-scraped: 2026-03-03T21:23:26.824651
+scraped: 2026-03-04T21:33:06.167215
 ---
 
 # About Extensions
@@ -1703,7 +1703,7 @@ For more information, see [JMX data source reference](/docs/ingest-from/extensio
 ---
 title: Prometheus data source
 source: https://www.dynatrace.com/docs/ingest-from/extensions/develop-your-extensions/data-sources/prometheus-extensions
-scraped: 2026-03-03T21:28:41.100401
+scraped: 2026-03-04T21:37:13.983043
 ---
 
 # Prometheus data source
@@ -1794,7 +1794,7 @@ For more information, see:
 ---
 title: Troubleshooting
 source: https://www.dynatrace.com/docs/ingest-from/extensions/develop-your-extensions/data-sources/snmp-extensions/troubleshooting
-scraped: 2026-03-03T21:31:59.735186
+scraped: 2026-03-04T21:29:29.027160
 ---
 
 # Troubleshooting
@@ -2304,7 +2304,7 @@ Replace `<ActiveGate-group-name>` with the actual name.
 ---
 title: JDBC monitoring configuration
 source: https://www.dynatrace.com/docs/ingest-from/extensions/develop-your-extensions/data-sources/sql/jdbc-monitoring
-scraped: 2026-03-02T21:28:31.253351
+scraped: 2026-03-04T21:34:28.732598
 ---
 
 # JDBC monitoring configuration
@@ -3068,7 +3068,7 @@ Replace `<ActiveGate-group-name>` with the actual name.
 ---
 title: Oracle Database monitoring configuration
 source: https://www.dynatrace.com/docs/ingest-from/extensions/develop-your-extensions/data-sources/sql/oracle-monitoring
-scraped: 2026-03-01T21:20:03.533876
+scraped: 2026-03-04T21:38:27.345024
 ---
 
 # Oracle Database monitoring configuration
@@ -3530,7 +3530,7 @@ Resource consumption depends on the number of Oracle endpoints. The first endpoi
 ---
 title: PostgreSQL monitoring configuration
 source: https://www.dynatrace.com/docs/ingest-from/extensions/develop-your-extensions/data-sources/sql/postgresql-monitoring
-scraped: 2026-03-03T21:25:54.166489
+scraped: 2026-03-04T21:28:13.759442
 ---
 
 # PostgreSQL monitoring configuration
@@ -3923,7 +3923,7 @@ Replace `<ActiveGate-group-name>` with the actual name.
 ---
 title: SAP Hana Database monitoring configuration
 source: https://www.dynatrace.com/docs/ingest-from/extensions/develop-your-extensions/data-sources/sql/sap-hana-monitoring
-scraped: 2026-03-03T21:23:34.781346
+scraped: 2026-03-04T21:30:23.988107
 ---
 
 # SAP Hana Database monitoring configuration
@@ -4252,7 +4252,7 @@ To define the SAP Hana Database server, put `ngdbc.jar` file in the following lo
 ---
 title: Snowflake Database monitoring configuration
 source: https://www.dynatrace.com/docs/ingest-from/extensions/develop-your-extensions/data-sources/sql/snowflake-monitoring
-scraped: 2026-03-03T21:25:27.061514
+scraped: 2026-03-04T21:30:05.043030
 ---
 
 # Snowflake Database monitoring configuration
@@ -5615,7 +5615,7 @@ The SQL data source supports remote database access using various authentication
 ---
 title: WMI data source tutorial
 source: https://www.dynatrace.com/docs/ingest-from/extensions/develop-your-extensions/data-sources/wmi-extensions/wmi-tutorial
-scraped: 2026-03-03T21:30:23.191042
+scraped: 2026-03-04T21:28:59.832907
 ---
 
 # WMI data source tutorial
@@ -6424,7 +6424,7 @@ Save the `root.pem` certificate file in the following location:
 ---
 title: Develop your own Extensions
 source: https://www.dynatrace.com/docs/ingest-from/extensions/develop-your-extensions
-scraped: 2026-03-03T21:17:49.268519
+scraped: 2026-03-04T21:31:14.156735
 ---
 
 # Develop your own Extensions
@@ -6501,7 +6501,7 @@ Find solutions to common issues with our expert-written troubleshooting articles
 ---
 title: Manage Extensions
 source: https://www.dynatrace.com/docs/ingest-from/extensions/manage-extensions
-scraped: 2026-03-03T21:17:48.180288
+scraped: 2026-03-04T21:35:32.930332
 ---
 
 # Manage Extensions
@@ -7008,7 +7008,7 @@ Explore ![Extensions](https://dt-cdn.net/images/dynatrace-extensions-256-9cb05e0
 ---
 title: Manage SNMP extensions
 source: https://www.dynatrace.com/docs/ingest-from/extensions/supported-extensions/data-sources/snmp
-scraped: 2026-03-02T21:18:26.951586
+scraped: 2026-03-04T21:20:46.204732
 ---
 
 # Manage SNMP extensions
@@ -7160,7 +7160,7 @@ Type to filter
 ---
 title: Manage IBM Database extensions
 source: https://www.dynatrace.com/docs/ingest-from/extensions/supported-extensions/data-sources/sql/ibm-db
-scraped: 2026-03-03T21:32:20.732181
+scraped: 2026-03-04T21:37:15.660573
 ---
 
 # Manage IBM Database extensions
@@ -7251,7 +7251,7 @@ The extension activation wizard contains a dynamically updated JSON payload with
 ---
 title: Manage Microsoft SQL Server extensions
 source: https://www.dynatrace.com/docs/ingest-from/extensions/supported-extensions/data-sources/sql/microsoft-sql
-scraped: 2026-03-01T21:13:36.332310
+scraped: 2026-03-04T21:20:28.739691
 ---
 
 # Manage Microsoft SQL Server extensions
@@ -7437,7 +7437,7 @@ The extension activation wizard contains a dynamically updated JSON payload with
 ---
 title: Manage Oracle Database extensions
 source: https://www.dynatrace.com/docs/ingest-from/extensions/supported-extensions/data-sources/sql/oraclesql
-scraped: 2026-03-03T21:32:34.497336
+scraped: 2026-03-04T21:20:47.801727
 ---
 
 # Manage Oracle Database extensions
@@ -7545,7 +7545,7 @@ The extension activation wizard contains a dynamically updated JSON payload with
 ---
 title: Manage PostgreSQL extensions
 source: https://www.dynatrace.com/docs/ingest-from/extensions/supported-extensions/data-sources/sql/postgresql
-scraped: 2026-03-02T21:22:58.069846
+scraped: 2026-03-04T21:32:21.031267
 ---
 
 # Manage PostgreSQL extensions
@@ -7639,7 +7639,7 @@ The extension activation wizard contains a dynamically updated JSON payload with
 ---
 title: Manage SAP Hana Database extensions
 source: https://www.dynatrace.com/docs/ingest-from/extensions/supported-extensions/data-sources/sql/sap-hana
-scraped: 2026-03-03T21:31:06.596542
+scraped: 2026-03-04T21:37:23.785220
 ---
 
 # Manage SAP Hana Database extensions
@@ -7848,7 +7848,7 @@ The extension activation wizard contains a dynamically updated JSON payload with
 ---
 title: Manage WMI extensions
 source: https://www.dynatrace.com/docs/ingest-from/extensions/supported-extensions/data-sources/wmi
-scraped: 2026-03-02T21:23:31.188245
+scraped: 2026-03-04T21:20:33.704503
 ---
 
 # Manage WMI extensions
@@ -8086,7 +8086,7 @@ With ![Extensions](https://dt-cdn.net/images/dynatrace-extensions-256-9cb05e0f55
 ---
 title: Extensions
 source: https://www.dynatrace.com/docs/ingest-from/extensions
-scraped: 2026-03-03T21:12:24.781345
+scraped: 2026-03-04T21:14:55.360245
 ---
 
 # Extensions

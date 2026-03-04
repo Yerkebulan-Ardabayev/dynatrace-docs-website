@@ -1,7 +1,7 @@
 ---
 title: Set up custom alerts based on metrics extracted from logs
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-use-cases/lma-alert-log-based-metrics
-scraped: 2026-03-01T21:18:00.926005
+scraped: 2026-03-04T21:29:15.907204
 ---
 
 # Set up custom alerts based on metrics extracted from logs
@@ -32,7 +32,7 @@ If you don't need to set thresholds, you should follow the instructions in [Set 
 
 ## Steps
 
-In this example we will open a new Davis Problem when certain records, which contain a specific phrase, are ingested and exceed a static threshold.
+In this example we will open a new Davis problem when certain records, which contain a specific phrase, are ingested and exceed a static threshold.
 
 1. Find logs you want to trigger alerts
 

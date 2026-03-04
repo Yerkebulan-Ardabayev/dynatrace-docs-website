@@ -1,7 +1,7 @@
 ---
 title: Stop/restart OneAgent on AIX
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/aix/operation/stop-restart-oneagent-on-aix
-scraped: 2026-03-03T21:14:59.993846
+scraped: 2026-03-04T21:15:50.672163
 ---
 
 # Stop/restart OneAgent on AIX

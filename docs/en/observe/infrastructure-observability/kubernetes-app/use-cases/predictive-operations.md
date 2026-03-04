@@ -1,7 +1,7 @@
 ---
 title: Predictive Kubernetes operations
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/kubernetes-app/use-cases/predictive-operations
-scraped: 2026-03-03T21:31:31.982758
+scraped: 2026-03-04T21:32:29.858245
 ---
 
 # Predictive Kubernetes operations
@@ -116,7 +116,7 @@ Use the configuration retrieval on the alert to trigger the workflow. The workfl
 
 
 
-   // Usually this would come from a Davis Event
+   // Usually this would come from a Davis event
 
 
 
@@ -379,7 +379,7 @@ Use the configuration retrieval on the alert to trigger the workflow. The workfl
 
 
 
-     // Usually this would come from a Davis Event
+     // Usually this would come from a Davis event
 
 
 

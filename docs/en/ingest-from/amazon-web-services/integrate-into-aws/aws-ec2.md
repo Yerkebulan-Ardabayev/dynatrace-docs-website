@@ -1,13 +1,14 @@
 ---
 title: Monitor Amazon Elastic Compute Cloud (EC2)
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-ec2
-scraped: 2026-02-28T21:22:05.565998
+scraped: 2026-03-04T21:23:07.833014
 ---
 
 # Monitor Amazon Elastic Compute Cloud (EC2)
 
 # Monitor Amazon Elastic Compute Cloud (EC2)
 
+* Classic
 * How-to guide
 * 1-min read
 * Published Jan 16, 2023

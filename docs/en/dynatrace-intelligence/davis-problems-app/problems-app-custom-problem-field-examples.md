@@ -1,19 +1,25 @@
 ---
-title: Dynatrace Intelligence causal AI use cases
+title: Dynatrace Intelligence Problems use cases
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/davis-problems-app/problems-app-custom-problem-field-examples
-scraped: 2026-03-03T21:13:59.511676
+scraped: 2026-03-04T21:14:39.163208
 ---
 
-# Dynatrace Intelligence causal AI use cases
+# Dynatrace Intelligence Problems use cases
 
-# Dynatrace Intelligence causal AI use cases
+# Dynatrace Intelligence Problems use cases
 
 * Latest Dynatrace
 * Tutorial
 * 5-min read
 * Updated on Jan 28, 2026
 
-This article focuses on use cases where custom fields are necessary and provides examples of how to create custom problems fields to achieve the desired result.
+Custom problems fields are a type of fields that can be created and modified by the user and aren't automatically propagated from events to problems. These fields can be used for a variety of cases, such as viewing additional events sources and metadata or improving notification filtering and access management.
+
+This article provides examples of how to create custom problems fields to:
+
+* Gain a deeper insight into the problem details
+* Gain more control over managing access to problem records
+* Improve email notification and segments filtering
 
 ## Surface incident ownership in the problems table
 

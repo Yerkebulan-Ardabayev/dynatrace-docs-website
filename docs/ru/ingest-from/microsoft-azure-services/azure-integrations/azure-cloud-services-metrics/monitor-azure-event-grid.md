@@ -1,7 +1,7 @@
 ---
 title: Azure Event Grid (Domain Topics, Topics, System Topics) monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-event-grid
-scraped: 2026-03-01T21:16:58.322975
+scraped: 2026-03-04T21:37:00.306222
 ---
 
 # Azure Event Grid (Domain Topics, Topics, System Topics) monitoring

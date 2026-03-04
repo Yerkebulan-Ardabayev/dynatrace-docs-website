@@ -1,7 +1,7 @@
 ---
 title: Additional configuration for mobile frontends
 source: https://www.dynatrace.com/docs/observe/digital-experience/new-rum-experience/mobile-frontends/additional-configuration
-scraped: 2026-03-01T21:26:01.430675
+scraped: 2026-03-04T21:35:10.969454
 ---
 
 # Additional configuration for mobile frontends

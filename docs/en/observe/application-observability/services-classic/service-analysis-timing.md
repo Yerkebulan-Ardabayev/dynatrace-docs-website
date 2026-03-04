@@ -1,13 +1,14 @@
 ---
 title: Service analysis timings
 source: https://www.dynatrace.com/docs/observe/application-observability/services-classic/service-analysis-timing
-scraped: 2026-03-03T21:13:32.345400
+scraped: 2026-03-04T21:13:03.444324
 ---
 
 # Service analysis timings
 
 # Service analysis timings
 
+* Classic
 * Reference
 * 5-min read
 * Updated on Jul 24, 2023

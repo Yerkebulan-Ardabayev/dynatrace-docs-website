@@ -1,6 +1,6 @@
 # Документация Dynatrace: dynatrace-intelligence/anomaly-detection
 Язык: Русский (RU)
-Сгенерировано: 2026-03-03
+Сгенерировано: 2026-03-04
 Файлов в разделе: 16
 ---
 
@@ -9,7 +9,7 @@
 ---
 title: Adjust the sensitivity of anomaly detection for infrastructure
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/anomaly-detection/adjust-sensitivity-anomaly-detection/adjust-sensitivity-infastructure
-scraped: 2026-03-03T21:14:36.685355
+scraped: 2026-03-04T21:16:35.447359
 ---
 
 # Adjust the sensitivity of anomaly detection for infrastructure
@@ -115,50 +115,48 @@ To change threshold settings for a specific host
 ## dynatrace-intelligence/anomaly-detection/adjust-sensitivity-anomaly-detection.md
 
 ---
-title: Настройка чувствительности обнаружения аномалий
+title: Adjust the sensitivity of anomaly detection
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/anomaly-detection/adjust-sensitivity-anomaly-detection
-scraped: 2026-03-03T21:21:10.578842
+scraped: 2026-03-04T21:18:34.534183
 ---
 
-# Настройка чувствительности обнаружения аномалий
+# Adjust the sensitivity of anomaly detection
 
-# Настройка чувствительности обнаружения аномалий
+# Adjust the sensitivity of anomaly detection
 
-* Последнее Dynatrace
-* Объяснение
-* 2-минутное чтение
-* Опубликовано 06 сентября 2021 г.
+* Latest Dynatrace
+* Explanation
+* 2-min read
+* Published Sep 06, 2021
 
-Некоторые типичные аномалии, обнаруживаемые Dynatrace, включают увеличение количества сбоев, ухудшение времени ответа и скачки или падения в трафике приложения. Наблюдая за вашей средой, Dynatrace изучает эталонные значения, представляющие ее нормальное поведение, и адаптирует обнаружение аномалий соответственно. Этот процесс называется *автоматическим базелированием*. Помимо использования автоматического базелирования, вы можете предоставить *фиксированные пороги*, которые определяют, когда следует создать проблему и оповестить. Вы можете настроить эти конфигурации глобально или для конкретных сущностей.
+Some typical anomalies detected by Dynatrace include failure rate increases, response time degradations, and spikes or drops in application traffic. By observing your environment, Dynatrace learns reference values representing its normal behavior and adapts anomaly detection accordingly. This process is called *automatic baselining*. Apart from using the automatic baseline, you can provide *fixed thresholds* that define when to raise a problem and alert. You can set these configurations globally or for specific entities.
 
-*Чувствительность обнаружения проблем* контролирует уровень статистической достоверности, необходимый для создания оповещения.
+The *sensitivity of problem detection* controls the level of statistical confidence required to raise an alert.
 
-| Чувствительность | Статистическая достоверность | Примечания |
+| Sensitivity | Statistical confidence | Notes |
 | --- | --- | --- |
-| Низкая | Высокая | Полезна на стадиях разработки и предпроизводства, чтобы избежать слишком многих оповещений. |
-| Высокая | Низкая | Проблема создается даже если только несколько точек данных нарушили порог. Полезна для критически важных сервисов в производстве. |
+| Low | High | Useful in development and pre-production stages, avoiding too many alerts. |
+| High | Low | A problem is raised even if just a few data points have violated the threshold.  Useful for mission-critical production services. |
 
-Для некоторых критериев Dynatrace различает абсолютные и относительные пороги. В примере ниже (он показывает часть конфигурации обнаружения аномалий для приложения) пороги для ухудшения ключевых показателей производительности установлены на `100 мс` (абсолютно) и `50%` (относительно) выше автоматически изученного базелирования. Порог для самых медленных 10% запросов установлен на `1 000 мс` (абсолютно) и `100%` (относительно) выше автоматически изученного базелирования.
+For some criteria, Dynatrace distinguishes between absolute and relative thresholds. In the example below (it shows a part of anomaly detection configuration for application) the thresholds for key performance metric degradation are set to `100 ms` (absolute) and `50%` (relative) above the auto-learned baseline. The threshold for the slowest 10% of the requests is set to `1,000 ms` (absolute) and `100%` (relative) above the auto-learned baseline.
 
-![Абсолютные и относительные пороги](https://dt-cdn.net/images/anomaly-detection-app-775-346ef271c3.png)
+Additionally the anomaly detection considers the number of actions per minute that have to happen in the monitored application (`10 actions per minute` in the example above). With that setting you can disable alerting for low traffic applications and servicesâbaselining and alerting on low traffic applications often leads to unnecessary alerts.
 
-Кроме того, обнаружение аномалий учитывает количество действий в минуту, которые должны произойти в контролируемом приложении (`10 действий в минуту` в примере выше). С помощью этого параметра вы можете отключить оповещения для приложений и сервисов с низким трафиком — базелирование и оповещение на низком трафике часто приводит к ненужным оповещениям.
+To configure detection sensitivity on the global level
 
-Чтобы настроить чувствительность обнаружения на глобальном уровне
+1. Go to **Settings**.
+2. Expand **Anomaly detection**.
+3. Select the required entity type. For specific instructions, see one of the topics below.
 
-1. Перейдите в **Настройки**.
-2. Разверните **Обнаружение аномалий**.
-3. Выберите необходимый тип сущности. Для конкретных инструкций см. одну из тем ниже.
+* [Applications](/docs/dynatrace-intelligence/anomaly-detection/adjust-sensitivity-anomaly-detection/adjust-sensitivity-applications "Learn how to adapt the sensitivity of problem detection for applications.")
+* [Services](/docs/dynatrace-intelligence/anomaly-detection/adjust-sensitivity-anomaly-detection/adjust-sensitivity-services "Learn how to adapt the sensitivity of problem detection for services.")
+* [Database services](/docs/dynatrace-intelligence/anomaly-detection/adjust-sensitivity-anomaly-detection/adjust-sensitivity-services-database "Learn how to adapt the sensitivity of problem detection for database services.")
+* [Infrastructure](/docs/dynatrace-intelligence/anomaly-detection/adjust-sensitivity-anomaly-detection/adjust-sensitivity-infastructure "Adjust problem detection sensitivity for infrastructure.")
+* [Extension events](/docs/dynatrace-intelligence/anomaly-detection/adjust-sensitivity-anomaly-detection/adjust-sensitivity-extension "Learn how to adapt the sensitivity of problem detection for extension events.")
 
-* [Приложения](/docs/dynatrace-intelligence/anomaly-detection/adjust-sensitivity-anomaly-detection/adjust-sensitivity-applications "Узнайте, как адаптировать чувствительность обнаружения проблем для приложений.")
-* [Сервисы](/docs/dynatrace-intelligence/anomaly-detection/adjust-sensitivity-anomaly-detection/adjust-sensitivity-services "Узнайте, как адаптировать чувствительность обнаружения проблем для сервисов.")
-* [Сервисы баз данных](/docs/dynatrace-intelligence/anomaly-detection/adjust-sensitivity-anomaly-detection/adjust-sensitivity-services-database "Узнайте, как адаптировать чувствительность обнаружения проблем для сервисов баз данных.")
-* [Инфраструктура](/docs/dynatrace-intelligence/anomaly-detection/adjust-sensitivity-anomaly-detection/adjust-sensitivity-infastructure "Настройте чувствительность обнаружения проблем для инфраструктуры.")
-* [События расширения](/docs/dynatrace-intelligence/anomaly-detection/adjust-sensitivity-anomaly-detection/adjust-sensitivity-extension "Узнайте, как адаптировать чувствительность обнаружения проблем для событий расширения.")
+## Related topics
 
-## Связанные темы
-
-* [Обнаружение аномалий API](/docs/dynatrace-api/configuration-api/anomaly-detection-api "Узнайте, что предлагает Dynatrace обнаружение аномалий API.")
+* [Anomaly detection API](/docs/dynatrace-api/configuration-api/anomaly-detection-api "Learn what the Dynatrace anomaly detection API offers.")
 
 ---
 
@@ -167,7 +165,7 @@ scraped: 2026-03-03T21:21:10.578842
 ---
 title: Anomaly Detection status types
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-app/anomaly-detection-status-types
-scraped: 2026-03-03T21:21:11.816423
+scraped: 2026-03-04T21:18:27.992903
 ---
 
 # Anomaly Detection status types
@@ -216,7 +214,7 @@ Some of the error messages might be more complicated than others. Here are some 
 ---
 title: Configure a simple custom alert
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-app/configure-a-simple-ad
-scraped: 2026-03-03T21:25:42.592478
+scraped: 2026-03-04T21:27:40.345160
 ---
 
 # Configure a simple custom alert
@@ -322,7 +320,7 @@ To convert a metric event to the custom alert configuration
 ---
 title: Anomaly Detection DQL writing guide
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-app/davis-ad-dql-best-practice
-scraped: 2026-03-02T21:31:58.132752
+scraped: 2026-03-04T21:27:21.119513
 ---
 
 # Anomaly Detection DQL writing guide
@@ -701,7 +699,7 @@ To optimize filtering and avoid including redundant fields, we recommend trying 
 ---
 title: Anomaly Detection app
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-app
-scraped: 2026-03-03T21:16:23.996192
+scraped: 2026-03-04T21:18:37.764007
 ---
 
 # Anomaly Detection app
@@ -853,7 +851,7 @@ Detect anomalies in timeseries using ![Anomaly Detection - new](https://dt-cdn.n
 ---
 title: Anomaly detection configuration
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-configuration
-scraped: 2026-03-03T21:21:12.914428
+scraped: 2026-03-04T21:18:41.073744
 ---
 
 # Anomaly detection configuration
@@ -878,7 +876,7 @@ Once configured and activated, the configuration observes the data and triggers 
 
 ## Data source
 
-Data source provides a time series that is evaluated by Davis:
+Data source provides a time series that is evaluated by Dynatrace Intelligence:
 
 * Previous Dynatrace A metric defines the time series. It can be a single metric defined by a metric key or a [metric expression](/docs/dynatrace-api/environment-api/metric-v2/metric-expressions "Use metric expressions to apply arithmetic operations in a data points query via the Metrics API v2.").
 
@@ -981,7 +979,7 @@ You can provide additional parameters as key-value pairs. For a list of possible
 ---
 title: Auto-adaptive thresholds for anomaly detection
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/anomaly-detection/auto-adaptive-threshold
-scraped: 2026-03-03T21:21:08.271996
+scraped: 2026-03-04T21:18:29.604841
 ---
 
 # Auto-adaptive thresholds for anomaly detection
@@ -1031,7 +1029,7 @@ By default, any 3 minutes out of a sliding window of 5 minutes must violate your
 ---
 title: Automated multi-dimensional baselining
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/anomaly-detection/automated-multidimensional-baselining
-scraped: 2026-03-03T21:21:14.163717
+scraped: 2026-03-04T21:18:39.364715
 ---
 
 # Automated multi-dimensional baselining
@@ -1336,13 +1334,14 @@ If there are sparse counts across many entities (for example, an error count acr
 ---
 title: Metric events
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/anomaly-detection/metric-events
-scraped: 2026-03-03T21:20:14.314600
+scraped: 2026-03-04T21:18:36.136153
 ---
 
 # Metric events
 
 # Metric events
 
+* Classic
 * Overview
 * 5-min read
 * Updated on Mar 04, 2024
@@ -1458,7 +1457,7 @@ batchjob.executions,dt.entity.host=HOST-2222222,dt.entity.process_group_instance
 ---
 title: Automate alerts with API
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/anomaly-detection/set-up-anomaly-detectors-via-api
-scraped: 2026-03-03T21:21:07.174803
+scraped: 2026-03-04T21:18:32.932252
 ---
 
 # Automate alerts with API
@@ -1908,7 +1907,7 @@ You have learned how to set up and configure a custom alert via API. Now you can
 ---
 title: Static thresholds for anomaly detection
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/anomaly-detection/static-thresholds
-scraped: 2026-03-03T21:21:09.344433
+scraped: 2026-03-04T21:18:31.253263
 ---
 
 # Static thresholds for anomaly detection
@@ -1947,7 +1946,7 @@ By default, any 3 minutes out of a sliding window of 5 minutes must violate your
 ---
 title: Обнаружение аномалий
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/anomaly-detection
-scraped: 2026-03-03T21:12:54.169575
+scraped: 2026-03-04T21:12:28.072513
 ---
 
 # Обнаружение аномалий
@@ -1959,12 +1958,12 @@ scraped: 2026-03-03T21:12:54.169575
 * 2-минутное чтение
 * Обновлено 28 января 2026 г.
 
-Dynatrace непрерывно отслеживает производительность каждого аспекта ваших приложений, сервисов и инфраструктуры, чтобы автоматически изучить все базовые метрики и общее состояние каждого компонента в вашей среде, включая время ответа ваших приложений и сервисов. Переменные, такие как геолокация, тип браузера, операционная система, полоса пропускания соединения и действия пользователей, учитываются автоматически. Этот интеллектуальный [автоматический базелинг](/docs/dynatrace-intelligence/anomaly-detection/automated-multidimensional-baselining "Узнайте, как Dynatrace AI автоматически рассчитывает базовые значения на основе многомерной схемы базелинга.") позволяет Dynatrace обнаруживать аномалии на высоком уровне детализации и уведомлять вас о обнаруженных проблемах в режиме реального времени. Вы можете настроить пороги, сгенерированные через автоматический базелинг, либо путем [адаптации чувствительности обнаружения проблем](/docs/dynatrace-intelligence/anomaly-detection/adjust-sensitivity-anomaly-detection "Узнайте, как адаптировать чувствительность обнаружения проблем в Dynatrace.") , либо, если необходимо, путем определения собственных статических порогов.
+Dynatrace непрерывно отслеживает производительность каждого аспекта ваших приложений, сервисов и инфраструктуры, чтобы автоматически изучить все базовые метрики и общее состояние каждого компонента в вашей среде, включая время ответа ваших приложений и сервисов. Переменные, такие как геолокация, тип браузера, операционная система, пропускная способность подключения и действия пользователей, учитываются автоматически. Этот интеллектуальный [автоматический базелинг](/docs/dynatrace-intelligence/anomaly-detection/automated-multidimensional-baselining "Узнайте, как Dynatrace AI автоматически рассчитывает базовые значения на основе многомерной схемы базелинга.") позволяет Dynatrace обнаруживать аномалии на высоком уровне детализации и уведомлять вас о обнаруженных проблемах в режиме реального времени. Вы можете настроить пороги, сгенерированные через автоматический базелинг, либо путем [адаптации чувствительности обнаружения проблем](/docs/dynatrace-intelligence/anomaly-detection/adjust-sensitivity-anomaly-detection "Узнайте, как адаптировать чувствительность обнаружения проблем в Dynatrace.") , либо, если необходимо, путем определения собственных статических порогов.
 
-## Варианты использования
+## Примеры использования
 
 * Создайте пользовательское оповещение, чтобы получать уведомления о проблемах в вашей среде.
-* Настройте вручную или используйте автоадаптивный порог, чтобы обнаружить аномальное поведение.
+* Настройте вручную или используйте автоадаптивный порог для обнаружения аномального поведения.
 * Настройте оповещения для пользовательских событий.
 
 ## Концепции
@@ -1977,7 +1976,7 @@ Dynatrace непрерывно отслеживает производитель
 
 Прочитайте это объяснение](/docs/dynatrace-intelligence/anomaly-detection/auto-adaptive-threshold)[#### Статические пороги для обнаружения аномалий
 
-Когда использовать статический порог для вашего обнаружения аномалий.
+Когда использовать статический порог для обнаружения аномалий.
 
 * Объяснение
 

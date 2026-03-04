@@ -1,7 +1,7 @@
 ---
 title: Clouds app
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/cloud-platform-monitoring/clouds-app
-scraped: 2026-03-03T21:12:17.317773
+scraped: 2026-03-04T21:14:57.084618
 ---
 
 # Clouds app
@@ -254,7 +254,7 @@ In the **Health** perspective, you can see each cloud service's health and custo
 
 * This mode highlights the most relevant metrics associated with the alert and narrows down the timeframe to the start and end times of the selected problem.
 * Additionally, it offers quick access to the underlying problem, allowing you to efficiently diagnose and resolve issues.
-* You can use [Davis Intelligence](/docs/dynatrace-intelligence/copilot "Learn about Dynatrace Intelligence generative AI.") to get additional insights about the problem and potential remediation steps.
+* You can use [Dynatrace Intelligence agentic and generative AI](/docs/dynatrace-intelligence/copilot "Learn about Dynatrace Intelligence agentic and generative AI.") to get additional insights about the problem and potential remediation steps.
 
 **Problem mode** is always active when you navigate from a specific problem in [![Problems app - new](https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp "Problems app - new") **Problems**](/docs/dynatrace-intelligence/davis-problems-app "Use the Problems app to quickly get to the root cause of incidents in your environment.") to ![Clouds](https://dt-cdn.net/images/clouds-1025-170946931c.png "Clouds") **Clouds**.
 

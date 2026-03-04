@@ -1,7 +1,7 @@
 ---
 title: Timestamp/splitting configuration
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-timestamp-configuration
-scraped: 2026-03-03T21:14:40.596593
+scraped: 2026-03-04T21:16:37.207780
 ---
 
 # Timestamp/splitting configuration

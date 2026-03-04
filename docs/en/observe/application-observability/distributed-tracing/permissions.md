@@ -1,7 +1,7 @@
 ---
 title: Set up Grail permissions for Distributed Tracing
 source: https://www.dynatrace.com/docs/observe/application-observability/distributed-tracing/permissions
-scraped: 2026-03-03T21:13:42.499080
+scraped: 2026-03-04T21:12:58.043546
 ---
 
 # Set up Grail permissions for Distributed Tracing

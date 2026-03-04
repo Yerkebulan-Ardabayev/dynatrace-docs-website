@@ -1,7 +1,7 @@
 ---
 title: Send email notifications for problems
 source: https://www.dynatrace.com/docs/analyze-explore-automate/alerting-and-notifications/workflows-tutorial-problems-email
-scraped: 2026-03-03T21:25:46.311986
+scraped: 2026-03-04T21:35:46.557548
 ---
 
 # Send email notifications for problems

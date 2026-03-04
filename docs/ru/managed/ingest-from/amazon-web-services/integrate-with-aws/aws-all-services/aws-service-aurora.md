@@ -1,13 +1,14 @@
 ---
 title: Amazon Aurora monitoring
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-aurora
-scraped: 2026-03-03T21:28:12.963901
+scraped: 2026-03-04T21:27:28.197908
 ---
 
 # Amazon Aurora monitoring
 
 # Amazon Aurora monitoring
 
+* Classic
 * How-to guide
 * 22-min read
 * Published Oct 15, 2020

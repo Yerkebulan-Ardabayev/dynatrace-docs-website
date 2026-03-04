@@ -1,7 +1,7 @@
 ---
 title: Histogram metrics
 source: https://www.dynatrace.com/docs/analyze-explore-automate/metrics/histograms
-scraped: 2026-03-03T21:29:18.201505
+scraped: 2026-03-04T21:35:16.085158
 ---
 
 # Histogram metrics

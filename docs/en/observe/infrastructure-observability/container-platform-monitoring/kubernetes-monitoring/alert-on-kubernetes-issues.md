@@ -1,13 +1,14 @@
 ---
 title: Alert on common Kubernetes/OpenShift issues
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/alert-on-kubernetes-issues
-scraped: 2026-03-03T21:30:46.400777
+scraped: 2026-03-04T21:24:27.075949
 ---
 
 # Alert on common Kubernetes/OpenShift issues
 
 # Alert on common Kubernetes/OpenShift issues
 
+* Classic
 * 18-min read
 * Updated on Feb 21, 2025
 

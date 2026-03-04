@@ -1,13 +1,14 @@
 ---
 title: Global default monitoring settings for Kubernetes/OpenShift
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/default-monitoring-settings
-scraped: 2026-03-01T21:14:11.201583
+scraped: 2026-03-04T21:24:23.690123
 ---
 
 # Global default monitoring settings for Kubernetes/OpenShift
 
 # Global default monitoring settings for Kubernetes/OpenShift
 
+* Classic
 * 2-min read
 * Updated on Jun 15, 2023
 

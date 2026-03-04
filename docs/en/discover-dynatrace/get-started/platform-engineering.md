@@ -1,7 +1,7 @@
 ---
 title: Platform Engineering
 source: https://www.dynatrace.com/docs/discover-dynatrace/get-started/platform-engineering
-scraped: 2026-03-02T21:20:03.872028
+scraped: 2026-03-04T21:32:04.333894
 ---
 
 # Platform Engineering
@@ -333,7 +333,7 @@ Using observability data further allows the proper sizing and configuration of g
 
 Try it yourself:
 
-* [AI and LLM Observability](/docs/observe/dynatrace-for-ai-observability "Learn about AI and LLM observability, what AI observability is, how Dynatrace observes Generative AI (LLM) models and AI SaaS services, and much more.")
+* [AI and LLM Observability](/docs/observe/dynatrace-for-ai-observability "Learn about AI and LLM observability, what AI observability is, how Dynatrace observes generative AI (LLM) models and AI SaaS services, and much more.")
 
 #### Infrastructure observability Observability for infrastructure
 

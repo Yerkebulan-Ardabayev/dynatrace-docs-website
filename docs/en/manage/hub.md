@@ -1,7 +1,7 @@
 ---
 title: Dynatrace Hub
 source: https://www.dynatrace.com/docs/manage/hub
-scraped: 2026-03-03T21:14:16.542975
+scraped: 2026-03-04T21:12:33.199725
 ---
 
 # Dynatrace Hub

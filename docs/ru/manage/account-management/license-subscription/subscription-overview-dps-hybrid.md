@@ -1,7 +1,7 @@
 ---
 title: Subscription overview (DPS for Hybrid)
 source: https://www.dynatrace.com/docs/manage/account-management/license-subscription/subscription-overview-dps-hybrid
-scraped: 2026-03-03T21:29:32.302459
+scraped: 2026-03-04T21:32:07.873486
 ---
 
 # Subscription overview (DPS for Hybrid)

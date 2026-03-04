@@ -1,7 +1,7 @@
 ---
 title: Enhance your account security with MFA TOTP
 source: https://www.dynatrace.com/docs/manage/identity-access-management/user-and-group-management/access-mfa/user-mfa
-scraped: 2026-03-03T21:28:52.971364
+scraped: 2026-03-04T21:34:57.277429
 ---
 
 # Enhance your account security with MFA TOTP

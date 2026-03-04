@@ -1,7 +1,7 @@
 ---
 title: Services API - GET a service
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/topology-and-smartscape/services-api/get-a-service
-scraped: 2026-03-03T21:19:43.617644
+scraped: 2026-03-04T21:25:10.917212
 ---
 
 # Services API - GET a service

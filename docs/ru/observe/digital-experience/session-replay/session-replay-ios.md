@@ -1,13 +1,14 @@
 ---
 title: Configure Session Replay for iOS
 source: https://www.dynatrace.com/docs/observe/digital-experience/session-replay/session-replay-ios
-scraped: 2026-03-03T21:32:39.555154
+scraped: 2026-03-04T21:33:53.661250
 ---
 
 # Configure Session Replay for iOS
 
 # Configure Session Replay for iOS
 
+* Classic
 * How-to guide
 * 8-min read
 * Updated on Sep 25, 2025

@@ -1,13 +1,14 @@
 ---
 title: Limit VMware infrastructure monitoring using permissions
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/vmware-vsphere-monitoring/limit-infrastructure-monitoring-using-permissions
-scraped: 2026-03-02T21:32:29.869378
+scraped: 2026-03-04T21:34:54.042762
 ---
 
 # Limit VMware infrastructure monitoring using permissions
 
 # Limit VMware infrastructure monitoring using permissions
 
+* Classic
 * How-to guide
 * Published Feb 10, 2021
 

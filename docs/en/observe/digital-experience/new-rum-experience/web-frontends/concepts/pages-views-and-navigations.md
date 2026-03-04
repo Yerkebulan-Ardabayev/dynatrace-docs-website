@@ -1,7 +1,7 @@
 ---
 title: Pages, views, and navigations in the New RUM Experience
 source: https://www.dynatrace.com/docs/observe/digital-experience/new-rum-experience/web-frontends/concepts/pages-views-and-navigations
-scraped: 2026-03-02T21:19:09.616788
+scraped: 2026-03-04T21:32:02.557606
 ---
 
 # Pages, views, and navigations in the New RUM Experience
@@ -203,3 +203,7 @@ fetch user.events
 
 | summarize count(), by: navigation.type
 ```
+
+## Related topics
+
+* [Data model of the New RUM Experience](/docs/observe/digital-experience/new-rum-experience/concepts/data-model "Get familiar with the data model at the heart of the New RUM Experience.")

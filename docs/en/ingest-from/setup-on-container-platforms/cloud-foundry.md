@@ -1,7 +1,7 @@
 ---
 title: Set up Dynatrace on Cloud Foundry
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-container-platforms/cloud-foundry
-scraped: 2026-03-03T21:18:09.906816
+scraped: 2026-03-04T21:21:02.532901
 ---
 
 # Set up Dynatrace on Cloud Foundry

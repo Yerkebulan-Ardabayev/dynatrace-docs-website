@@ -1,7 +1,7 @@
 ---
 title: Azure Managed Instance for Apache Cassandra Monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-managed-instance-for-apache-cassandra
-scraped: 2026-03-02T21:24:59.177424
+scraped: 2026-03-04T21:35:44.919283
 ---
 
 # Azure Managed Instance for Apache Cassandra Monitoring
@@ -13,7 +13,7 @@ scraped: 2026-03-02T21:24:59.177424
 * 11-min read
 * Published Apr 18, 2022
 
-From both a data and infrastructure perspective, this [Prometheus Extension 2.0](/docs/ingest-from/extensions/develop-your-extensions/data-sources/prometheus-extensions "Learn how to create a Prometheus extension using the Extensions framework.") allows you to monitors and analyze the activity of your Apache Cassandra clusters. It visualize your cluster's health and shows metrics like CPU, connectivity, request latency, suspension, and garbage collection time. Additionally, with [Davis](/docs/dynatrace-intelligence "Get familiar with the capabilities of Dynatrace Intelligence."), it automatically detects performance problems and provides precise root cause analysis.
+From both a data and infrastructure perspective, this [Prometheus Extension 2.0](/docs/ingest-from/extensions/develop-your-extensions/data-sources/prometheus-extensions "Learn how to create a Prometheus extension using the Extensions framework.") allows you to monitors and analyze the activity of your Apache Cassandra clusters. It visualize your cluster's health and shows metrics like CPU, connectivity, request latency, suspension, and garbage collection time. Additionally, with [Dynatrace Intelligence](/docs/dynatrace-intelligence "Get familiar with the capabilities of Dynatrace Intelligence."), it automatically detects performance problems and provides precise root cause analysis.
 
 ## Prerequisites
 

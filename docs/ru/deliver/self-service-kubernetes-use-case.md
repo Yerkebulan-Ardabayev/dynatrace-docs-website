@@ -1,7 +1,7 @@
 ---
 title: Predict and autoscale Kubernetes workloads
 source: https://www.dynatrace.com/docs/deliver/self-service-kubernetes-use-case
-scraped: 2026-03-03T21:24:43.824751
+scraped: 2026-03-04T21:33:33.405942
 ---
 
 # Predict and autoscale Kubernetes workloads
@@ -1722,7 +1722,7 @@ This workflow is triggered every time the first workflow detects a Kubernetes wo
 
 #### Prerequisite
 
-In this workflow a task uses JavaScript to call the GitHub API to create the pull request. While some of the GitHub Connector actions use the connection you set up when you followed the [Set up GitHub Connector](/docs/analyze-explore-automate/workflows/actions/github/github-workflows-setup "Learn how to set up GitHub Connector."), your custom steps need to use the same Personal Access Token (PAT) that you query from the credential vault. Another token you need is a Dynatrace Platform API token to interact with the Dynatrace Intelligence generative AI API.
+In this workflow a task uses JavaScript to call the GitHub API to create the pull request. While some of the GitHub Connector actions use the connection you set up when you followed the [Set up GitHub Connector](/docs/analyze-explore-automate/workflows/actions/github/github-workflows-setup "Learn how to set up GitHub Connector."), your custom steps need to use the same Personal Access Token (PAT) that you query from the credential vault. Another token you need is a Dynatrace Platform API token to interact with the Dynatrace Intelligence agentic and generative AI API.
 
 As a prerequisite, you need to create new credential vault entries in Dynatrace that store the GitHub PAT and the Dynatrace Platform API token. You'll need the credential vault IDs, and you should replace the placeholders in the code snippets with your credential vault ID.
 

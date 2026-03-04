@@ -1,7 +1,7 @@
 ---
 title: Terraform API support and access permission handling
 source: https://www.dynatrace.com/docs/deliver/configuration-as-code/terraform/terraform-api-support-access-permission-handling
-scraped: 2026-03-02T21:25:57.043059
+scraped: 2026-03-04T21:35:00.541268
 ---
 
 # Terraform API support and access permission handling

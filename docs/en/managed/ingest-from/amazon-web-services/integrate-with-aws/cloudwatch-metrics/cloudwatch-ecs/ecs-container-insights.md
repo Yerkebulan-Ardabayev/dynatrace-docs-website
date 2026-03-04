@@ -1,13 +1,14 @@
 ---
 title: Amazon ECS Container Insights CloudWatch metrics
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics/cloudwatch-ecs/ecs-container-insights
-scraped: 2026-03-01T21:23:19.221927
+scraped: 2026-03-04T21:37:05.573319
 ---
 
 # Amazon ECS Container Insights CloudWatch metrics
 
 # Amazon ECS Container Insights CloudWatch metrics
 
+* Classic
 * How-to guide
 * 8-min read
 * Updated on Jun 20, 2022

@@ -1,13 +1,14 @@
 ---
 title: Treat diagnostic messages
 source: https://www.dynatrace.com/docs/observe/application-observability/distributed-traces/analysis/diagnostic-messages
-scraped: 2026-03-03T21:30:07.853455
+scraped: 2026-03-04T21:38:08.883099
 ---
 
 # Treat diagnostic messages
 
 # Treat diagnostic messages
 
+* Classic
 * 4-min read
 * Updated on Jun 10, 2023
 

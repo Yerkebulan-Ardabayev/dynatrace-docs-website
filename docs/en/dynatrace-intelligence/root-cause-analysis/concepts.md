@@ -1,7 +1,7 @@
 ---
 title: Root cause analysis concepts
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/root-cause-analysis/concepts
-scraped: 2026-03-03T21:12:33.834858
+scraped: 2026-03-04T21:13:16.968636
 ---
 
 # Root cause analysis concepts
@@ -22,7 +22,7 @@ Root cause analysis aims to fill this gap by using all available context informa
 This page introduces the following core concepts:
 
 [Incidents and problems](#incidents-problems)  
-[Davis Events](#events)  
+[Davis events](#events)  
 [Root cause analysis](#root-cause-analysis)  
 [Fault tree analysis](#fault-tree-analysis)  
 [Impact analysis](#impact-analysis)  

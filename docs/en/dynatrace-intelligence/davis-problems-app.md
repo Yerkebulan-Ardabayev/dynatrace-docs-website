@@ -1,7 +1,7 @@
 ---
 title: Problems app
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/davis-problems-app
-scraped: 2026-03-03T21:12:01.373377
+scraped: 2026-03-04T21:11:48.505881
 ---
 
 # Problems app
@@ -255,7 +255,7 @@ In the example below, the **Kubernetes** app displays information about a proble
 
 ### Investigate all problem relevant logs
 
-A Davis-analyzed problem highlights the root cause of an incident and shows all the incident-relevant log lines across multiple entities in the problem details.
+A problem analyzed by Dynatrace Intelligence highlights the root cause of an incident and shows all the incident-relevant log lines across multiple entities in the problem details.
 
 To access the log lines that were collected during the incident, select the **Logs** tab. Additionally, you're able to see their log level across all entities affected by the problem, allowing you to save time on manual investigations and filtering logs of relevant entities separately.
 
@@ -354,7 +354,7 @@ To create a troubleshooting guide
    * Select  **Dashboards** to create a new document in ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**.
 4. Follow the instructions in the template to document the details for your troubleshooting guide.
 
-If you share a troubleshooting guide with all users in your environment, and you have enabled document suggestions based on vector similarity, Dynatrace Intelligence generative AI will index your document and proactively suggest it to your team to help them remediate similar problems faster. To learn more about Dynatrace Intelligence generative AI document suggestions, see [Find relevant documents with Dynatrace Intelligence generative AI](/docs/dynatrace-intelligence/copilot/copilot-find-relevant-troubleshooting-guides "Learn how Dynatrace Intelligence generative AI can suggest troubleshooting guides for problem remediation.").
+If you share a troubleshooting guide with all users in your environment, and you have enabled document suggestions based on vector similarity, Dynatrace Intelligence agentic and generative AI will index your document and proactively suggest it to your team to help them remediate similar problems faster. To learn more about Dynatrace Intelligence agentic and generative AI document suggestions, see [Find relevant documents with Dynatrace Intelligence agentic and generative AI](/docs/dynatrace-intelligence/copilot/copilot-find-relevant-troubleshooting-guides "Learn how Dynatrace Intelligence agentic and generative AI can suggest troubleshooting guides for problem remediation.").
 
 The ability to create and share troubleshooting guides allows DevOps teams to:
 

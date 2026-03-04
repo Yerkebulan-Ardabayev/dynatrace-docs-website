@@ -1,7 +1,7 @@
 ---
 title: Monaco configuration YAML file structure
 source: https://www.dynatrace.com/docs/deliver/configuration-as-code/monaco/configuration/yaml-configuration-saas
-scraped: 2026-03-03T21:28:42.637073
+scraped: 2026-03-04T21:38:19.101496
 ---
 
 # Monaco configuration YAML file structure

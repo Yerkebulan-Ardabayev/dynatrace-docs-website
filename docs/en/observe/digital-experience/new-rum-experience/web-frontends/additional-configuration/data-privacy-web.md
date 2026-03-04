@@ -1,7 +1,7 @@
 ---
 title: Configure data privacy settings for web frontends
 source: https://www.dynatrace.com/docs/observe/digital-experience/new-rum-experience/web-frontends/additional-configuration/data-privacy-web
-scraped: 2026-03-02T21:17:15.396159
+scraped: 2026-03-04T21:29:27.363043
 ---
 
 # Configure data privacy settings for web frontends

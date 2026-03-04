@@ -1,13 +1,14 @@
 ---
 title: Multidimensional analysis
 source: https://www.dynatrace.com/docs/observe/application-observability/multidimensional-analysis
-scraped: 2026-03-02T21:17:54.036415
+scraped: 2026-03-04T21:21:26.388753
 ---
 
 # Multidimensional analysis
 
 # Multidimensional analysis
 
+* Classic
 * How-to guide
 * 4-min read
 * Updated on Sep 13, 2022

@@ -1,7 +1,7 @@
 ---
 title: How to pass a proxy address during OneAgent installation on Linux
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/how-to-pass-a-proxy-address-during-oneagent-installation-on-linux
-scraped: 2026-03-03T21:15:50.437112
+scraped: 2026-03-04T21:16:57.039379
 ---
 
 # How to pass a proxy address during OneAgent installation on Linux

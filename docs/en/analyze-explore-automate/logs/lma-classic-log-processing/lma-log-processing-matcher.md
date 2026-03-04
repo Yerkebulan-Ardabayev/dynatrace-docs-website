@@ -1,7 +1,7 @@
 ---
 title: DQL matcher in logs
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-classic-log-processing/lma-log-processing-matcher
-scraped: 2026-03-02T21:33:08.429112
+scraped: 2026-03-04T21:33:57.200471
 ---
 
 # DQL matcher in logs

@@ -1,7 +1,7 @@
 ---
 title: Processes
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/infrastructure-and-operations/processes
-scraped: 2026-03-03T21:15:13.932911
+scraped: 2026-03-04T21:16:01.840620
 ---
 
 # Processes

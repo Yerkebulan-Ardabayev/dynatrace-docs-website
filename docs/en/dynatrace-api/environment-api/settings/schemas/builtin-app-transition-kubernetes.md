@@ -1,7 +1,7 @@
 ---
 title: Settings API - Kubernetes app schema table
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/settings/schemas/builtin-app-transition-kubernetes
-scraped: 2026-03-01T21:14:26.956119
+scraped: 2026-03-04T21:24:20.468967
 ---
 
 # Settings API - Kubernetes app schema table

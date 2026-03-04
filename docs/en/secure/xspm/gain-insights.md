@@ -1,7 +1,7 @@
 ---
 title: Gain insights
 source: https://www.dynatrace.com/docs/secure/xspm/gain-insights
-scraped: 2026-03-03T21:26:19.429079
+scraped: 2026-03-04T21:38:59.770835
 ---
 
 # Gain insights
@@ -84,8 +84,8 @@ For details about `manual` rules, see [Results](/docs/secure/xspm/concepts#conce
 
 To use this generative AI feature, make sure:
 
-* Dynatrace Intelligence generative AI is enabled for your environment. See [Enable Dynatrace Intelligence generative AI](/docs/dynatrace-intelligence/copilot/copilot-getting-started#enable-davis-copilot "Learn how to set up Dynatrace Intelligence generative AI.").
-* You have permission to use it. See [User permissions](/docs/dynatrace-intelligence/copilot/copilot-getting-started#davis-copilot-user-permissions "Learn how to set up Dynatrace Intelligence generative AI.").
+* Dynatrace Intelligence generative AI is enabled for your environment. See [Enable Dynatrace Intelligence generative AI](/docs/dynatrace-intelligence/copilot/copilot-getting-started#enable-davis-copilot "Learn how to set up Dynatrace Intelligence agentic and generative AI.").
+* You have permission to use it. See [User permissions](/docs/dynatrace-intelligence/copilot/copilot-getting-started#davis-copilot-user-permissions "Learn how to set up Dynatrace Intelligence agentic and generative AI.").
 
 Dynatrace Intelligence generative AI can provide contextual, plain-language explanations of rule assessments to accelerate understanding and remediation.
 

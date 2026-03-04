@@ -1,7 +1,7 @@
 ---
 title: Varnish Cache extension
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/databases/extensions/varnish-cache-1
-scraped: 2026-03-03T21:18:59.384061
+scraped: 2026-03-04T21:26:49.114079
 ---
 
 # Varnish Cache extension
@@ -337,6 +337,6 @@ sma
 
 
 
-### Изучите в Dynatrace Hub
+### Explore in Dynatrace Hub
 
-Отслеживайте статистику экземпляров Varnish Cache.](https://www.dynatrace.com/hub/detail/varnish-cache-1/)
+Monitor the statistics of your Varnish Cache instances.](https://www.dynatrace.com/hub/detail/varnish-cache-1/)

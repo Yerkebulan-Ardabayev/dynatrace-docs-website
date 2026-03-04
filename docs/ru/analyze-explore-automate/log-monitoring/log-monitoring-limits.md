@@ -1,13 +1,14 @@
 ---
 title: Log Monitoring default limits (Logs Classic)
 source: https://www.dynatrace.com/docs/analyze-explore-automate/log-monitoring/log-monitoring-limits
-scraped: 2026-03-03T21:23:11.653147
+scraped: 2026-03-04T21:35:22.745317
 ---
 
 # Log Monitoring default limits (Logs Classic)
 
 # Log Monitoring default limits (Logs Classic)
 
+* Classic
 * 1-min read
 * Updated on Feb 02, 2026
 

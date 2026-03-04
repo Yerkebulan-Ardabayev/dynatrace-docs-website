@@ -1,7 +1,7 @@
 ---
 title: Process groups API - GET a process group
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/topology-and-smartscape/process-groups-api/get-a-process-group
-scraped: 2026-03-03T21:19:24.262107
+scraped: 2026-03-04T21:25:04.915459
 ---
 
 # Process groups API - GET a process group

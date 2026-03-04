@@ -1,7 +1,7 @@
 ---
 title: Workflow templates
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/manage-workflows/workflows-templates
-scraped: 2026-03-03T21:26:27.265421
+scraped: 2026-03-04T21:32:55.212088
 ---
 
 # Workflow templates

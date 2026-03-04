@@ -1,7 +1,7 @@
 ---
 title: Deployment
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/deployment
-scraped: 2026-03-03T21:21:42.448215
+scraped: 2026-03-04T21:22:46.943577
 ---
 
 # Deployment
@@ -45,7 +45,7 @@ The Dynatrace platform offers a variety of apps, analytics and automation functi
 * Visualize data with [Dashboards](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.")
 * Collaborate and conduct custom analysis with [Notebooks](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.")
 * Automate with [Workflows](/docs/analyze-explore-automate/workflows "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services.")
-* Boost productivity with [Dynatrace Intelligence](/docs/dynatrace-intelligence "Get familiar with the capabilities of Dynatrace Intelligence.") and [enerative AI](/docs/dynatrace-intelligence/copilot "Learn about Dynatrace Intelligence generative AI.")
+* Boost productivity with [Dynatrace Intelligence](/docs/dynatrace-intelligence "Get familiar with the capabilities of Dynatrace Intelligence.") and [enerative AI](/docs/dynatrace-intelligence/copilot "Learn about Dynatrace Intelligence agentic and generative AI.")
 * Forecast trends and prevent issues with [Dynatrace Intelligence predictive AI analysis](/docs/dynatrace-intelligence/reference/ai-models/forecast-analysis "Learn how Dynatrace Intelligence predictive AI generates forecasts.")
 * And much moreâ¦
 

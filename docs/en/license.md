@@ -1,7 +1,7 @@
 ---
 title: License Dynatrace
 source: https://www.dynatrace.com/docs/license
-scraped: 2026-03-03T21:13:26.477043
+scraped: 2026-03-04T21:12:56.771273
 ---
 
 # License Dynatrace
@@ -25,7 +25,7 @@ The Dynatrace Platform Subscription (DPS) is more than a licensing modelâit
 DPS empowers organizations to consume any Dynatrace capability, at any volume, at any time, under a single, transparent commitment.
 Itâs designed to eliminate friction, simplify operations, and scale effortlessly with your business.
 
-DPS is the licensing foundation for Dynatraceâs latest platform innovations, including [AI observability](/docs/observe/dynatrace-for-ai-observability "Learn about AI and LLM observability, what AI observability is, how Dynatrace observes Generative AI (LLM) models and AI SaaS services, and much more."), [Grail](/docs/platform/grail "Insights on what and how you can query Dynatrace data."), [AppEngine](/docs/platform/appengine "Develop feature-rich Dynatrace apps for you and the world!"), and [AutomationEngine](/docs/platform/automationengine "Combine observability, security, and business data with causal AI to easily automate BizDevSecOps workflows at enterprise scale.").
+DPS is the licensing foundation for Dynatraceâs latest platform innovations, including [AI observability](/docs/observe/dynatrace-for-ai-observability "Learn about AI and LLM observability, what AI observability is, how Dynatrace observes generative AI (LLM) models and AI SaaS services, and much more."), [Grail](/docs/platform/grail "Insights on what and how you can query Dynatrace data."), [AppEngine](/docs/platform/appengine "Develop feature-rich Dynatrace apps for you and the world!"), and [AutomationEngine](/docs/platform/automationengine "Combine observability, security, and business data with causal AI to easily automate BizDevSecOps workflows at enterprise scale.").
 
 Dynatrace meters usage based on Coordinated Universal Time (UTC).
 All references to time and date are therefore to be understood as UTC+00:00.

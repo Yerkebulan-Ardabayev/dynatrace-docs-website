@@ -1,13 +1,14 @@
 ---
 title: Automatic log enrichment (Logs Classic)
 source: https://www.dynatrace.com/docs/analyze-explore-automate/log-monitoring/acquire-log-data/lm-log-data-transformation
-scraped: 2026-03-03T21:30:50.138503
+scraped: 2026-03-04T21:38:42.929963
 ---
 
 # Automatic log enrichment (Logs Classic)
 
 # Automatic log enrichment (Logs Classic)
 
+* Classic
 * Explanation
 * 3-min read
 * Updated on Apr 07, 2023

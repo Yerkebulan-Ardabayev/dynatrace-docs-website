@@ -1,7 +1,7 @@
 ---
 title: New Documentation articles
 source: https://www.dynatrace.com/docs/whats-new/documentation
-scraped: 2026-03-03T21:13:20.305017
+scraped: 2026-03-04T21:14:03.088281
 ---
 
 # New Documentation articles
@@ -307,7 +307,7 @@ This page lists all new or significantly changed Dynatrace Documentation topics,
 
 ## Jul 28, 2025
 
-* [Discover relevant troubleshooting guides with Dynatrace Intelligence generative AI](/docs/dynatrace-intelligence/copilot/copilot-find-relevant-troubleshooting-guides "Learn how Dynatrace Intelligence generative AI can suggest troubleshooting guides for problem remediation.")
+* [Discover relevant troubleshooting guides with Dynatrace Intelligence agentic and generative AI](/docs/dynatrace-intelligence/copilot/copilot-find-relevant-troubleshooting-guides "Learn how Dynatrace Intelligence agentic and generative AI can suggest troubleshooting guides for problem remediation.")
 
 ## Jul 21, 2025
 
@@ -511,14 +511,14 @@ This page lists all new or significantly changed Dynatrace Documentation topics,
 
 ## Nov 04, 2024
 
-* [Dynatrace Intelligence generative AI data privacy and security](/docs/dynatrace-intelligence/copilot/copilot-data-privacy "Learn about Dynatrace Intelligence generative AI data privacy and security policy.")
+* [Dynatrace Intelligence agentic and generative AI data privacy and security](/docs/dynatrace-intelligence/copilot/copilot-data-privacy "Learn about Dynatrace Intelligence agentic and generative AI data privacy and security policy.")
 * [Query with natural language](/docs/dynatrace-intelligence/copilot/quick-analysis-copilot-dql "Use Dynatrace Intelligence generative AI to translate your natural language questions into DQL queries")
-* [Dynatrace Intelligence generative AI prompt examples](/docs/dynatrace-intelligence/use-cases/copilot-examples "Learn more about what kind of prompts work well in Dynatrace Intelligence generative AI.")
-* [Dynatrace Intelligence generative AI FAQ](/docs/dynatrace-intelligence/copilot/copilot-faq "Learn about frequently asked questions and find your answers.")
-* [Getting started with Dynatrace Intelligence generative AI](/docs/dynatrace-intelligence/copilot/copilot-getting-started "Learn how to set up Dynatrace Intelligence generative AI.")
-* [Dynatrace Intelligence generative AI overview](/docs/dynatrace-intelligence/copilot/copilot-overview "Learn about data security and other aspects of Dynatrace Intelligence generative AI.")
+* [Dynatrace Intelligence agentic and generative AI prompt examples](/docs/dynatrace-intelligence/use-cases/copilot-examples "Learn more about what kind of prompts work well in Dynatrace Intelligence agentic and generative AI.")
+* [Dynatrace Intelligence agentic and generative AI FAQ](/docs/dynatrace-intelligence/copilot/copilot-faq "Learn about frequently asked questions and find your answers.")
+* [Getting started with Dynatrace Intelligence agentic and generative AI](/docs/dynatrace-intelligence/copilot/copilot-getting-started "Learn how to set up Dynatrace Intelligence agentic and generative AI.")
+* [Dynatrace Intelligence agentic and generative AI overview](/docs/dynatrace-intelligence/copilot/copilot-overview "Learn about data security and other aspects of Dynatrace Intelligence agentic and generative AI.")
 * [Tips for writing better prompts](/docs/dynatrace-intelligence/copilot/quick-analysis-copilot-dql/copilot-tips "Learn best practices for writing more accurate prompts.")
-* [Dynatrace Intelligence generative AI](/docs/dynatrace-intelligence/copilot "Learn about Dynatrace Intelligence generative AI.")
+* [Dynatrace Intelligence agentic and generative AI](/docs/dynatrace-intelligence/copilot "Learn about Dynatrace Intelligence agentic and generative AI.")
 * [Create log alerts for a log event or summary of log data](/docs/dynatrace-intelligence/use-cases/create-alert-in-logs "Create log alerts for a specific log event or summary of log data")
 * [Create a custom alert](/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-app/configure-a-simple-ad "Learn how to create and edit simple custom alerts in the Anomaly Detection app.")
 
@@ -880,7 +880,7 @@ This page lists all new or significantly changed Dynatrace Documentation topics,
 
 ## Jun 12, 2023
 
-* [Dynatrace for AI Observability](/docs/observe/dynatrace-for-ai-observability "Learn about AI and LLM observability, what AI observability is, how Dynatrace observes Generative AI (LLM) models and AI SaaS services, and much more.")
+* [Dynatrace for AI Observability](/docs/observe/dynatrace-for-ai-observability "Learn about AI and LLM observability, what AI observability is, how Dynatrace observes generative AI (LLM) models and AI SaaS services, and much more.")
 * [Dynatrace for OpenAI Observability](/docs/observe/dynatrace-for-ai-observability/sample-use-cases/openai-observability "Learn about Dynatrace for OpenAI Observability, how Dynatrace observes OpenAI SaaS services, and much more.")
 * [Dynatrace for TensorFlow and Keras Observability](/docs/observe/dynatrace-for-ai-observability/models-and-platforms/tensorflow-keras-observability "Learn about Dynatrace for TensorFlow and Keras Model Observability, how Dynatrace observes TensorFlow and Keras Models, and much more.")
 * [Dynatrace Intelligence DQL examples](/docs/dynatrace-intelligence/use-cases/davis-dql-examples "Build powerful health dashboards by slicing and dicing of Dynatrace Intelligence reported problems and events using DQL.")

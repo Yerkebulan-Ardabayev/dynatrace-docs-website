@@ -1,7 +1,7 @@
 ---
 title: Set up permissions for Live Debugging
 source: https://www.dynatrace.com/docs/observe/application-observability/live-debugger/setup
-scraped: 2026-03-03T21:28:49.248107
+scraped: 2026-03-04T21:33:29.156035
 ---
 
 # Set up permissions for Live Debugging

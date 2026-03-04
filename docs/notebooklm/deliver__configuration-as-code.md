@@ -1,6 +1,6 @@
 # Документация Dynatrace: deliver/configuration-as-code
 Язык: Русский (RU)
-Сгенерировано: 2026-03-03
+Сгенерировано: 2026-03-04
 Файлов в разделе: 14
 ---
 
@@ -1834,7 +1834,7 @@ When using the [download command](/docs/deliver/configuration-as-code/monaco/ref
 ---
 title: Monaco configuration YAML file - list of type fields
 source: https://www.dynatrace.com/docs/deliver/configuration-as-code/monaco/configuration/yaml-configuration-saas-type-fields
-scraped: 2026-03-02T21:29:20.279315
+scraped: 2026-03-04T21:29:05.076301
 ---
 
 # Monaco configuration YAML file - list of type fields
@@ -3022,7 +3022,7 @@ While this sample shows users, service users, policies, and groups defined in a 
 ---
 title: Monaco configuration YAML file structure
 source: https://www.dynatrace.com/docs/deliver/configuration-as-code/monaco/configuration/yaml-configuration-saas
-scraped: 2026-03-03T21:28:42.637073
+scraped: 2026-03-04T21:38:19.101496
 ---
 
 # Monaco configuration YAML file structure
@@ -5357,7 +5357,7 @@ They are useful for troubleshooting any errors that you might encounter.
 ---
 title: Terraform API support and access permission handling
 source: https://www.dynatrace.com/docs/deliver/configuration-as-code/terraform/terraform-api-support-access-permission-handling
-scraped: 2026-03-02T21:25:57.043059
+scraped: 2026-03-04T21:35:00.541268
 ---
 
 # Terraform API support and access permission handling
@@ -6829,7 +6829,7 @@ To modify the Terraform configuration
 ---
 title: Terraform tutorials overview
 source: https://www.dynatrace.com/docs/deliver/configuration-as-code/terraform/tutorials
-scraped: 2026-03-02T21:31:51.718302
+scraped: 2026-03-04T21:31:44.115883
 ---
 
 # Terraform tutorials overview

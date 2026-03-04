@@ -1,7 +1,7 @@
 ---
 title: Dynatrace API
 source: https://www.dynatrace.com/docs/dynatrace-api
-scraped: 2026-03-01T21:13:24.498849
+scraped: 2026-03-04T21:20:24.229919
 ---
 
 # Dynatrace API
@@ -328,7 +328,11 @@ Manage platform tokens of your account.](/docs/dynatrace-api/account-management-
 
 View monitoring environments of your Dynatrace account.](/docs/dynatrace-api/account-management-api/environment-management-api/environment-management-api "View monitoring environments of your Dynatrace account via Environment management API.")[### Dynatrace Platform Subscription
 
-View your Dynatrace Platform Subscription and how it is used.](/docs/dynatrace-api/account-management-api/dynatrace-platform-subscription-api "Query the data about your Dynatrace Platform Subscription via the Account Management API.")[### Reference data
+View your Dynatrace Platform Subscription and how it is used.](/docs/dynatrace-api/account-management-api/dynatrace-platform-subscription-api "Query the data about your Dynatrace Platform Subscription via the Account Management API.")[![Notifications](https://dt-cdn.net/images/account-management-icon-notifications-8f074dc2ad.svg "Notifications")
+
+### Notifications
+
+List notifications for your account.](/docs/dynatrace-api/account-management-api/post-notifications "List notifications for your account.")[### Reference data
 
 View the reference info about your account.](/docs/dynatrace-api/account-management-api/reference-data "Check the reference info of your account via the Reference data API.")
 

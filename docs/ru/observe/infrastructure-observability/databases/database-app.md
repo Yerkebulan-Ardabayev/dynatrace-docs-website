@@ -1,7 +1,7 @@
 ---
 title: Databases app
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/databases/database-app
-scraped: 2026-03-03T21:12:18.596129
+scraped: 2026-03-04T21:14:52.140421
 ---
 
 # Databases app
@@ -117,7 +117,7 @@ The **Overview** tab provides a high-level summary of your database landscape:
 
 Select the **Explorer** tab to view a list of all your monitored instances. The **Database instances** table displays these instances.
 
-* **Health**: Unified statuses and Davis-detected problems help you quickly identify critical issues.
+* **Health**: Unified statuses and problems detected by Dynatrace Intelligence help you quickly identify critical issues.
 * **Utilization**: Metrics such as CPU usage, memory consumption, user calls, and active sessions provide insights into resource efficiency.
 * **Host details**: Drill down into host metrics or access the **Infrastructure and Operations** view for a comprehensive analysis.
 
@@ -228,7 +228,7 @@ Queries are often the root cause of database inefficiencies. The app provides to
 
 * **Grail**: Processes large volumes of data for scalable analytics.
 * **Smartscape**: Maps real-time dependencies for context-aware analysis.
-* **Davis AI**: Detects anomalies and provides intelligent recommendations.
+* **Dynatrace Intelligence AI**: Detects anomalies and provides intelligent recommendations.
 
 [![Hub](https://dt-cdn.net/images/hub-512-82db3c583e.png "Hub")
 

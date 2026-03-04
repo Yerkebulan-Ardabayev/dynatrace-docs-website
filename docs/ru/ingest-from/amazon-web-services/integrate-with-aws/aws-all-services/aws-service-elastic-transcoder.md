@@ -1,13 +1,14 @@
 ---
 title: Amazon Elastic Transcoder monitoring
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-elastic-transcoder
-scraped: 2026-03-03T21:32:52.077430
+scraped: 2026-03-04T21:38:29.452203
 ---
 
 # Amazon Elastic Transcoder monitoring
 
 # Amazon Elastic Transcoder monitoring
 
+* Classic
 * How-to guide
 * 2-min read
 * Published Jul 21, 2020

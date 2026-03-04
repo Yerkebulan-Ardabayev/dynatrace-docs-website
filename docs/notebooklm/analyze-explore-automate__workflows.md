@@ -1,6 +1,6 @@
 # Документация Dynatrace: analyze-explore-automate/workflows
 Язык: Русский (RU)
-Сгенерировано: 2026-03-03
+Сгенерировано: 2026-03-04
 Файлов в разделе: 32
 ---
 
@@ -595,7 +595,7 @@ We strongly recommend that you limit the permissions of your personal access tok
 ---
 title: GitHub Connector
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/github
-scraped: 2026-03-01T21:23:06.113444
+scraped: 2026-03-04T21:32:31.513544
 ---
 
 # GitHub Connector
@@ -1144,7 +1144,7 @@ The following are solutions to problems some people had with Jira Connector acti
 ---
 title: Microsoft Entra ID Connector
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/microsoft-entra-id
-scraped: 2026-03-03T21:28:32.162035
+scraped: 2026-03-04T21:36:19.503271
 ---
 
 # Microsoft Entra ID Connector
@@ -1282,7 +1282,7 @@ The log of a successful run is shown below.
 ---
 title: PagerDuty
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/pagerduty
-scraped: 2026-03-02T21:30:38.830432
+scraped: 2026-03-04T21:30:30.565805
 ---
 
 # PagerDuty
@@ -2939,7 +2939,7 @@ The following are solutions to problems some people had with Slack integration.
 ---
 title: Actions for Text Processing Connector
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/text-processing/automation-workflows-text-processing-actions
-scraped: 2026-03-02T21:20:39.910609
+scraped: 2026-03-04T21:35:29.313264
 ---
 
 # Actions for Text Processing Connector
@@ -3511,7 +3511,7 @@ The result of the HTTP request action is a JSON structure that includes
 ---
 title: Run JavaScript action for Workflows
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/default-workflow-actions/run-javascript-workflow-action
-scraped: 2026-03-02T21:25:12.106299
+scraped: 2026-03-04T21:33:36.756619
 ---
 
 # Run JavaScript action for Workflows
@@ -3824,11 +3824,11 @@ import { execution } from '@dynatrace-sdk/automation-utils';
 
 
 
-export default async function ({ executionId }) {
+export default async function () {
 
 
 
-const ex = await execution(executionId);
+const ex = await execution();
 
 
 
@@ -3850,7 +3850,7 @@ console.log( ex.params.event);
 ---
 title: Workflows actions
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/default-workflow-actions
-scraped: 2026-03-03T21:30:25.832569
+scraped: 2026-03-04T21:34:08.707950
 ---
 
 # Workflows actions
@@ -3982,7 +3982,7 @@ To access various **Live** or **Draft** workflow management commands
 ---
 title: Get notified about workflow changes
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/manage-workflows/workflows-notifications
-scraped: 2026-03-03T21:33:10.923222
+scraped: 2026-03-04T21:29:03.202564
 ---
 
 # Get notified about workflow changes
@@ -4055,7 +4055,7 @@ To turn off notifications for workflow, select  > **Turn off notifications**.
 ---
 title: Workflow templates
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/manage-workflows/workflows-templates
-scraped: 2026-03-03T21:26:27.265421
+scraped: 2026-03-04T21:32:55.212088
 ---
 
 # Workflow templates
@@ -4114,7 +4114,7 @@ Now that you know how to use workflow templates:
 ---
 title: User permissions for workflows
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/security
-scraped: 2026-03-03T21:27:38.518318
+scraped: 2026-03-04T21:36:10.743238
 ---
 
 # User permissions for workflows
@@ -4278,7 +4278,7 @@ For more information, see [Service users](/docs/manage/identity-access-managemen
 ---
 title: Event triggers for workflows
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/trigger/event-trigger
-scraped: 2026-03-01T21:21:08.644610
+scraped: 2026-03-04T21:34:58.901920
 ---
 
 # Event triggers for workflows
@@ -4340,7 +4340,7 @@ The following configuration parameters are available to define the triggering be
 
 Davis events are created by [Dynatrace Intelligence](/docs/dynatrace-intelligence/root-cause-analysis "How Dynatrace analyzes problems to determine their root cause.") based on monitoring data. The **Davis event trigger** allows selectively triggering a workflow in response.
 
-The following configuration parameters are available to define the triggering behavior on Davis Problem events
+The following configuration parameters are available to define the triggering behavior on Davis problem events
 
 * **Problem state**
 
@@ -4849,7 +4849,7 @@ Design a workflow to manage high-volume AWS alerts by filtering out noise and su
 ---
 title: Workflows
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows
-scraped: 2026-03-03T21:20:48.821395
+scraped: 2026-03-04T21:17:21.605277
 ---
 
 # Workflows

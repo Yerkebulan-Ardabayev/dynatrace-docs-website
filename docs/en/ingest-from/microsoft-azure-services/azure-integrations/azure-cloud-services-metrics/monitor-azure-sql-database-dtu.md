@@ -1,7 +1,7 @@
 ---
 title: Azure SQL Database (DTU) monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-sql-database-dtu
-scraped: 2026-03-03T21:22:50.649889
+scraped: 2026-03-04T21:27:22.755829
 ---
 
 # Azure SQL Database (DTU) monitoring

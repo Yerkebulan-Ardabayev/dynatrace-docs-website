@@ -1,13 +1,14 @@
 ---
 title: Amazon MQ monitoring
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-mq
-scraped: 2026-03-02T21:19:49.125597
+scraped: 2026-03-04T21:39:03.326021
 ---
 
 # Amazon MQ monitoring
 
 # Amazon MQ monitoring
 
+* Classic
 * How-to guide
 * 7-min read
 * Published Sep 08, 2020

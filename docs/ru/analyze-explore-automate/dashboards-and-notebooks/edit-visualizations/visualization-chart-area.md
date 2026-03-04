@@ -1,7 +1,7 @@
 ---
 title: Area chart visualization
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-chart-area
-scraped: 2026-03-03T21:20:44.968914
+scraped: 2026-03-04T21:17:37.156304
 ---
 
 # Area chart visualization

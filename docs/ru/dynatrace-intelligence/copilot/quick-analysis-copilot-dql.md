@@ -1,102 +1,104 @@
 ---
-title: Запрос с использованием естественного языка
+title: Query with natural language
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/copilot/quick-analysis-copilot-dql
-scraped: 2026-03-03T21:30:02.968766
+scraped: 2026-03-04T21:30:33.891937
 ---
 
-# Запрос с использованием естественного языка
+# Query with natural language
 
-* Последнее Dynatrace
-* Обзор
-* 5-минутное чтение
-* Обновлено 28 января 2026 г.
+# Query with natural language
 
-Вы можете использовать Dynatrace Intelligence генеративный ИИ в панелях управления и тетрадях, чтобы исследовать свои данные с помощью естественного языка. Это позволяет вам переводить свои разговорные запросы напрямую в DQL запросы, отражающие контекст вашей среды. Вы можете выбрать автоматическое выполнение сгенерированных запросов или сгенерировать только DQL.
+* Latest Dynatrace
+* Overview
+* 5-min read
+* Updated on Jan 28, 2026
 
-## Предварительные условия
+You can use Dynatrace Intelligence generative AI in Dashboards and Notebooks to explore your data through natural language. It allows you to translate your conversational prompts directly into DQL queries that reflect the context of your environment. You can choose to auto-execute generated queries or generate DQL only.
 
-Эта страница предполагает, что вы завершили настройку, описанную в [Начало работы с Dynatrace Intelligence генеративным ИИ](/docs/dynatrace-intelligence/copilot/copilot-getting-started "Узнайте, как настроить Dynatrace Intelligence генеративный ИИ.").
+## Prerequisites
 
-## Использование генеративного ИИ в тетрадях
+We assume that you have completed the setup described in [Getting started with Dynatrace Intelligence agentic and generative AI](/docs/dynatrace-intelligence/copilot/copilot-getting-started "Learn how to set up Dynatrace Intelligence agentic and generative AI.").
 
-1. Перейдите в ![Тетради](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Тетради") **Тетради** и откройте или создайте тетрадь, которую можно редактировать.
-2. Откройте меню **Добавить** и выберите **Запрос**. Создается новый раздел генеративного ИИ в тетради с пустым полем запроса.
-3. В поле запроса введите запрос. Попробуйте `среднее использование процессора по хостам` или посмотрите примеры, отображаемые в веб-интерфейсе, для вдохновения.
-4. Необязательно Если ваш запрос не указывает временной интервал, вы можете указать его в заголовке раздела. По умолчанию используется **Последние 2 часа**.
-5. Выберите **Выполнить**. Генеративный ИИ создает и выполняет запрос для вас.
+## Use generative AI in Notebooks
 
-   Необязательно Если вы хотите увидеть сгенерированный запрос, прежде чем выполнить его, откройте меню рядом с кнопкой **Выполнить** и выберите **Сгенерировать только DQL**.
-6. Просмотрите результаты.
+1. Go to ![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks** and open or create a notebook you can edit.
+2. Open the  **Add** menu and select  **Prompt**. A new Generative AI notebook section is created with an empty prompt box.
+3. In the prompt box, type a prompt. Try `average cpu usage percentage by host` or see the examples displayed in the web UI for inspiration.
+4. Optional If your prompt doesn't specify the timeframe, you can still specify it in your section header. The default is **Last 2 hours**.
+5. Select **Run**. Generative AI creates and runs the query for you.
 
-   * Вы можете просмотреть запрос, развернув **DQL**  справа.
-   * Необязательно Вы не можете редактировать запрос напрямую в Dynatrace Intelligence генеративном ИИ, но у вас есть два варианта для повторного использования его:
+   Optional If you want to see the generated query before running it, open the  menu next to the **Run** button and select **Generate DQL only**.
+6. Review the results.
 
-     + Скопируйте запрос и вставьте его в другое место вручную.
-     + Откройте меню в заголовке раздела и выберите **Создать раздел DQL**, чтобы создать раздел DQL из этого запроса.
-   * Вы можете редактировать свой исходный запрос, сгенерировать запрос и выполнить его, чтобы обновить результаты.  
-     Если вы выберете **Перезапустить разделы**, приложение Тетради сначала проверит, были ли отредактированы какие-либо запросы.
+   * You can review the query by expanding **DQL**  on the right.
+   * Optional You can't edit the query directly in Dynatrace Intelligence generative AI, but you have two options for reusing it:
 
-     + Если запрос был отредактирован, DQL сначала будет сгенерирован и затем выполнен.
-     + Если запросы не были отредактированы, существующий сгенерированный DQL будет просто выполнен.
-7. Необязательно Выберите **Опции** в заголовке раздела, чтобы изменить визуализацию (см. [документацию по визуализациям](/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations "Создайте, отредактируйте и просмотрите визуализации на ваших панелях управления и тетрадях Dynatrace.") для получения дополнительной информации).
+     + Copy the query and paste it elsewhere manually.
+     + Open the  menu in the section header and select **Create DQL section** to create a DQL section from this query.
+   * You can edit your original prompt, regenerate the query, and run it to update the results.  
+     If you select **Rerun sections**, the Notebooks app will first check if any prompts have been edited.
 
-   Автоматически выберите визуализацию
+     + If a prompt has been edited, the DQL will first be regenerated and then run.
+     + If no prompts have been edited, the existing generated DQL will simply be run.
+7. Optional Select the  **Options** in the section header to change the visualization (refer to the [visualization-specific documentation](/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations "Create, edit, and view visualizations on your Dynatrace dashboards and notebooks.") for more information).
 
-   Чтобы Dynatrace автоматически выбрал визуализацию для вашего запроса, включите **Авто выбрать** в правом верхнем углу панели настроек визуализации.
+   Automatically select visualization
 
-   * Если вы вручную выберете другую визуализацию, переключатель **Авто выбрать** будет выключен.
-   * Чтобы Dynatrace снова автоматически выбрал визуализацию, включите **Авто выбрать** обратно.
+   To have Dynatrace automatically select a visualization for your query, turn on **Auto select** in the upper-right corner of your visualization settings pane.
 
-## Использование генеративного ИИ в панелях управления
+   * If you manually select a different visualization, the **Auto select** switch will turn off.
+   * To have Dynatrace once again automatically select a visualization, turn **Auto select** back on.
 
-1. Перейдите в [![Панели управления](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Панели управления") **Панели управления**](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new "Создайте интерактивные, настраиваемые представления, чтобы визуализировать, анализировать и делиться своими данными наблюдаемости в режиме реального времени.") и откройте или создайте панель управления, которую можно редактировать.
-2. Откройте меню **Добавить** и выберите **Запрос**.
+## Use generative AI in Dashboards
 
-   * Создается новый плитка Dynatrace Intelligence генеративного ИИ на панели управления
-   * Панель справа отображает:
+1. Go to [![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.") and open or create a dashboard you can edit.
+2. Open the  **Add** menu and select  **Prompt**.
 
-     + Пустое поле названия плитки, которое можно настроить
-     + Поле запроса, за которым следуют некоторые примеры, которые можно выбрать для попытки
-     + Кнопку **Выполнить**
-3. Необязательно В верхней части панели определения запроса введите название плитки.
-4. В поле запроса введите запрос. Попробуйте `среднее использование процессора по хостам` или посмотрите примеры, отображаемые в веб-интерфейсе, для вдохновения.
-5. Необязательно Если ваш запрос не указывает временной интервал, вы можете указать его для панели управления в заголовке панели управления (по умолчанию используется **Последние 2 часа**) или в настройках **Пользовательский временной интервал** (для временного интервала, специфичного для плитки).
-6. Выберите **Выполнить**. Генеративный ИИ создает и выполняет запрос для вас.
-7. Просмотрите результаты.
+   * A new Dynatrace Intelligence generative AI dashboard tile is created
+   * A panel on the right displays:
 
-   * Чтобы просмотреть запрос, разверните **DQL**  под полем запроса.
-   * Необязательно Вы не можете редактировать запрос напрямую в Dynatrace Intelligence генеративном ИИ, но у вас есть два варианта для повторного использования его:
+     + An empty tile title field you can customize
+     + A prompt box followed by some examples you can select to try
+     + A **Run** button
+3. Optional At the top of the prompt definition panel, enter a tile title.
+4. In the prompt box, type a prompt. Try `average cpu usage percentage by host` or see the examples displayed in the web UI for inspiration.
+5. Optional If your prompt doesn't specify a timeframe, you can still specify it for the dashboard in your dashboard header (default is **Last 2 hours**) or the **Custom timeframe** settings (for a tile-specific timeframe).
+6. Select **Run**. Generative AI creates and runs the query for you.
+7. Review the results.
 
-     + Скопируйте запрос и вставьте его в другое место вручную.
-     + Откройте меню в заголовке плитки и выберите **Создать плитку DQL**, чтобы создать плитку DQL из этого запроса.
-   * Вы можете редактировать свой исходный запрос и выполнить его, чтобы обновить запрос и результаты.  
-     Если вы обновите свою панель управления, приложение Панели управления сначала проверит, были ли отредактированы какие-либо запросы.
+   * To review the query, expand **DQL**  under the prompt box.
+   * Optional You can't edit the query directly in Dynatrace Intelligence generative AI, but you have two options for reusing it:
 
-     + Если запрос был отредактирован, DQL сначала будет сгенерирован и затем выполнен.
-     + Если запросы не были отредактированы, существующий сгенерированный DQL будет просто выполнен.
-8. Необязательно Выберите вкладку **Визуализация**, чтобы изменить визуализацию (см. [документацию по визуализациям](/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations "Создайте, отредактируйте и просмотрите визуализации на ваших панелях управления и тетрадях Dynatrace.") для получения дополнительной информации).
+     + Copy the query and paste it elsewhere manually.
+     + Open the  menu in the tile header and select **Create DQL tile** to create a DQL tile from this query.
+   * You can edit your original prompt and run it to update the query and results.  
+     If you refresh your dashboard, the Dashboards app will first check if any prompts have been edited.
 
-Хотя Dynatrace Intelligence генеративный ИИ не тарифицируется, все запросы, выполняемые генеративным ИИ, подлежат потреблению лицензий в соответствии с вашим существующим лицензионным соглашением.
+     + If a prompt has been edited, the DQL will first be regenerated and then run.
+     + If no prompts have been edited, the existing generated DQL will simply be run.
+8. Optional Select the **Visual** tab to change the visualization (refer to the [visualization-specific documentation](/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations "Create, edit, and view visualizations on your Dynatrace dashboards and notebooks.") for more information).
 
-## Запросы, осведомленные о Environment
+Even though Dynatrace Intelligence generative AI is not charged for, all queries that are executed by generative AI are subject to licensing consumption according to your existing licensing agreement.
 
-Запросы, осведомленные о Environment, обогащают Dynatrace Intelligence генеративный ИИ данными вашей среды. Это позволяет генерировать более точные запросы, которые идентифицируют и ссылаются на соответствующие сущности, события, диапазоны, журналы и метрики из вашей среды. Вы также можете выполнять более сложные анализ данных, спрашивая Dynatrace Intelligence генеративный ИИ о деталях ваших данных. Чтобы узнать больше о том, как контролировать и управлять доступом Dynatrace Intelligence генеративного ИИ к данным и как включить запросы, осведомленные о среде, см. [Включить запросы, осведомленные о среде](/docs/dynatrace-intelligence/copilot/copilot-getting-started#enable-environment-aware-queries "Узнайте, как настроить Dynatrace Intelligence генеративный ИИ.").
+## Environment-aware queries
 
-### Семантический индекс Dynatrace Intelligence генеративного ИИ
+Environment-aware queries enrich Dynatrace Intelligence generative AI with your environment data. This lets you generate more accurate queries that identify and reference relevant entities, events, spans, logs, and metrics from your environment. You can also run more complex data analyses by asking Dynatrace Intelligence generative AI about the specifics of your data. To learn more about how to control and manage which data Dynatrace Intelligence generative AI has access to and how to enable environment-aware queries, see [Enable environment-aware queries](/docs/dynatrace-intelligence/copilot/copilot-getting-started#enable-environment-aware-queries "Learn how to set up Dynatrace Intelligence agentic and generative AI.").
 
-Как только он включен, Dynatrace Intelligence генеративный ИИ периодически сканирует ваши данные Grail, чтобы создать свой собственный семантический индекс. Определенные фрагменты данных отправляются в Microsoft Azure OpenAI во время семантического индексирования. Примеры таких фрагментов данных включают ключи метрик, размерности и имена полей. Когда пользователь предоставляет запрос, Dynatrace Intelligence генеративный ИИ сначала определяет наиболее актуальные фрагменты из данных, которые он проиндексировал. Наш генеративный ИИ затем отправляет запрос пользователя, актуальные фрагменты данных и некоторые примеры значений полей, наблюдаемых в вашей среде, в Microsoft Azure OpenAI для обработки.
+### Dynatrace Intelligence generative AI semantic index
 
-Включение запросов, осведомленных о среде, позволяет Dynatrace Intelligence генеративному ИИ идентифицировать уникальные поля данных и пользовательские метрики в вашей среде и помогает вам выполнять анализ, сочетая ваш запрос с актуальными, уникальными полями данных и типами.
+Once enabled, Dynatrace Intelligence generative AI periodically scans your Grail data to create its own semantic index. Certain data fragments are sent to Microsoft Azure OpenAI during the semantic indexing. Examples of such data fragments include metric keys, dimensions, and field names. When a user provides a prompt, Dynatrace Intelligence generative AI first identifies the most relevant fragments from the data it has indexed. OUr generative AI then sends the user prompt, the relevant data fragments, and some examples of field values observed in your environment to Microsoft Azure OpenAI for processing.
 
-Допустим, вы отслеживаете бронирования путешествий для новых поездок. В этом случае вы хотели бы отслеживать:
+Having environment-aware queries enabled allows Dynatrace Intelligence generative AI to identify unique data fields and custom metrics in your environment and helps you do your analysis by combining your prompt with the relevant, unique data fields and types.
 
-* прибыль, полученную от каждого бронирования как событие бизнеса
-* применимые скидки как событие бизнеса
-* время, необходимое клиентам для завершения бронирования как пользовательскую метрику
+Let's assume you're tracking travel bookings for new trips. In this case, you'd want to track:
 
-С учетом этого вы могли бы дать Dynatrace Intelligence генеративному ИИ следующую команду: **"Покажите мне среднюю сумму, заработанную, и снижение цены для новых поездок за последний месяц"**.
+* profit made on each booking as a bizevent
+* applicable discounts as a bizevent
+* length of time it takes customers to complete a booking as a custom metric
 
-Если у вас включены запросы, осведомленные о среде, следующий DQL будет сгенерирован, предоставляя вам результаты, актуальные для вашей среды:
+With this in mind, you could give Dynatrace Intelligence generative AI the following command: **"Show me the average money made and the price reduction for new trips, over the last month"**.
+
+If you have environment-aware queries enabled, the following DQL will be generated, providing you with results relevant to your environment:
 
 ```
 fetch bizevents , from:now() â 30d
@@ -110,9 +112,9 @@ fetch bizevents , from:now() â 30d
 | makeTimeseries interval:1h, {profit= avg(profit), discount= avg(discount)}
 ```
 
-Dynatrace Intelligence генеративный ИИ способен сделать вывод, что "сумма, заработанная" относится к полю прибыли, а "снижение цены" относится к полю скидки, даже если ваш запрос не использовал правильные имена полей.
+Dynatrace Intelligence generative AI is capable of inferring that "money made" refers to the profit field, and that "price reduction" refers to the discount field, even if your prompt didn't use the correct field names.
 
-Если у вас не включены запросы, осведомленные о среде, Dynatrace Intelligence генеративный ИИ попытается сослаться на поля по именам, которые вы предоставили. Следующий, неправильный DQL будет сгенерирован, поскольку поля не существуют в вашей среде:
+If you don't have environment-aware queries enabled, Dynatrace Intelligence generative AI will try to refer to the fields by the names you provided. The following, incorrect DQL would be generated since the fields don't exist in your environment:
 
 ```
 fetch bizevents, from:now() â 30d
@@ -126,46 +128,48 @@ fetch bizevents, from:now() â 30d
 | makeTimeseries interval:1h, {avg_money_made = avg(money_made), avg_price_reduction = avg(price_reduction)}
 ```
 
-Альтернативно, вы могли бы спросить Dynatrace Intelligence генеративный ИИ следующий вопрос: **"В среднем, сколько времени требуется клиентам для бронирования новых поездок?"**
+Alternatively, you could ask Dynatrace Intelligence generative AI the following question: **"On average, how long does it take customers to book new trips?"**
 
-Если у вас включены запросы, осведомленные о среде, следующий DQL будет сгенерирован, предоставляя вам результаты, актуальные для вашей среды:
+If you have environment-aware queries enabled, the following DQL will be generated, providing you with results relevant to your environment:
 
 ```
 timeseries avg(new_trip_booking_duration)
 ```
 
-Если у вас не включены запросы, осведомленные о среде, вы, скорее всего, получите сообщение об ошибке, поскольку Dynatrace Intelligence генеративный ИИ не сможет правильно сопоставить ваш вопрос с вашим пользовательским ключом метрики. В этом случае наш генеративный ИИ не может предоставить действительный запрос DQL, поскольку он не может найти совпадающую встроенную метрику.
+If you don't have environment-aware queries enabled, you'll likely get an error message since Dynatrace Intelligence generative AI would be unable to correctly map your question to your custom metric key. In this case, our generative AI can't provide a valid DQL query because it can't find a matching generic, built-in metric.
 
-### Доступ к данным на основе пользователя
+### User-based data access
 
-Поскольку Dynatrace Intelligence генеративный ИИ уважает права пользователей, он может предоставлять разные ответы разным пользователям на основе их прав доступа.
+Since Dynatrace Intelligence generative AI respects user privileges, it may provide different responses to different users based on their access rights.
 
-## Как генерируются ответы NL2DQL?
+## How are NL2DQL responses generated?
 
-![Dynatrace Intelligence генеративный ИИ диаграмма, объясняющая, как генерируются ответы NL2QL](https://dt-cdn.net/images/davis-copilot-nl2dql-responses-1920-1a15aa1055.png)
 
-Процесс генерации ответов Dynatrace Intelligence генеративного ИИ NL2DQL можно суммировать в 4 шага.
 
-1. Dynatrace Intelligence генеративный ИИ получает запрос от пользователя.
-2. Если запрос хорошо сформулирован и распознан (см. [Dynatrace Intelligence генеративный ИИ - Советы по написанию лучших запросов](/docs/dynatrace-intelligence/copilot/quick-analysis-copilot-dql/copilot-tips "Узнайте лучшие практики для написания более точных запросов.") для получения дополнительной информации), Dynatrace Intelligence генеративный ИИ сопоставляет запрос пользователя с контентом, принадлежащим Dynatrace, таким как документация и отобранные примеры запросов, и передает запрос в LLM.
+![Dynatrace Intelligence generative AI diagram explaining how NL2QL responses are generated](https://dt-cdn.net/images/davis-copilot-nl2dql-responses-1920-1a15aa1055.png)
 
-   Если вы включили запросы, осведомленные об окружении, соответствующие фрагменты данных будут использованы для обогащения запроса вместе с контентом, принадлежащим Dynatrace.
-3. LLM генерирует ответ и проверяет, является ли DQL действительным.
-4. Ответ возвращается в соответствующее приложение, Notebook или Dashboard, и вывод отображается пользователю.
+Dynatrace Intelligence generative AI NL2DQL response process can be summarized in 4 steps.
 
-## Оставьте отзыв
+1. Dynatrace Intelligence generative AI receives a request from a user.
+2. If the request is well-formulated and recognized (see [Dynatrace Intelligence agentic and generative AI - Tips for writing better prompts](/docs/dynatrace-intelligence/copilot/quick-analysis-copilot-dql/copilot-tips "Learn best practices for writing more accurate prompts.") for more information), Dynatrace Intelligence generative AI matches the user request with the Dynatrace-owned content, such as documentation and curated query examples, and passes the prompt to LLM.
 
-Чтобы помочь нам улучшить Dynatrace Intelligence генеративный ИИ, вы можете предоставить отзыв直接 из вашего ноутбука или панели управления. Под полем запроса:
+   If you have enabled environment-aware queries, the relevant data fragments will be used enrich the prompt alongside Dynatrace-owned content.
+3. The LLM generates a response and checks if the DQL is valid.
+4. The response is returned to the relevant app, Notebooks or Dashboards, and the output is displayed to the user.
 
-* Выберите ![Большой палец вверх](https://dt-cdn.net/images/thumbsup-65185abaeb.svg "Большой палец вверх") если Dynatrace Intelligence генеративный ИИ правильно интерпретировал ваш запрос и сгенерировал и выполнил запрос DQL, соответствующий вашим ожиданиям.
-* Выберите ![Большой палец вниз](https://dt-cdn.net/images/thumbsdown-b83de466e8.svg "Большой палец вниз") если Dynatrace Intelligence генеративный ИИ сгенерировал и выполнил запрос DQL, который не оправдал ваших ожиданий или неправильно интерпретировал ваш запрос. Пожалуйста, предоставьте дополнительный контекст, чтобы мы могли понять, как улучшить эту функциональность, чтобы она соответствовала вашим потребностям и ожиданиям.
+## Give feedback
 
-Не делитесь личной или конфиденциальной информацией в вашем отзыве.
+To help us improve Dynatrace Intelligence generative AI, you can provide feedback directly from your notebook or dashboard. Under the prompt box:
 
-## Связанные темы
+* Select ![Thumb up](https://dt-cdn.net/images/thumbsup-65185abaeb.svg "Thumb up") if Dynatrace Intelligence generative AI has interpreted your prompt correctly and has generated and run a DQL query that meets your expectations.
+* Select ![Thumb down](https://dt-cdn.net/images/thumbsdown-b83de466e8.svg "Thumb down") if Dynatrace Intelligence generative AI has generated and run a DQL query that has failed to meet your expectations or has incorrectly interpreted your prompt. Please provide additional context for us to understand how we can improve this functionality to meet your needs and expectations.
 
-* [Обзор Dynatrace Intelligence генеративный ИИ](/docs/dynatrace-intelligence/copilot/copilot-overview "Узнайте о безопасности данных и других аспектах Dynatrace Intelligence генеративный ИИ.")
-* [Начало работы с Dynatrace Intelligence генеративный ИИ](/docs/dynatrace-intelligence/copilot/copilot-getting-started "Узнайте, как настроить Dynatrace Intelligence генеративный ИИ.")
-* [Часто задаваемые вопросы о Dynatrace Intelligence генеративный ИИ](/docs/dynatrace-intelligence/copilot/copilot-faq "Узнайте о часто задаваемых вопросах и найдите ответы.")
-* [Dynatrace Intelligence генеративный ИИ - Советы по написанию лучших запросов](/docs/dynatrace-intelligence/copilot/quick-analysis-copilot-dql/copilot-tips "Узнайте лучшие практики для написания более точных запросов.")
-* [Примеры быстрого анализа с помощью генеративного ИИ](/docs/dynatrace-intelligence/use-cases/copilot-examples "Узнайте больше о том, какие типы запросов работают хорошо в Dynatrace Intelligence генеративный ИИ.")
+Do not share personal or confidential information in your feedback.
+
+## Related topics
+
+* [Dynatrace Intelligence agentic and generative AI overview](/docs/dynatrace-intelligence/copilot/copilot-overview "Learn about data security and other aspects of Dynatrace Intelligence agentic and generative AI.")
+* [Get started with Dynatrace Intelligence agentic and generative AI](/docs/dynatrace-intelligence/copilot/copilot-getting-started "Learn how to set up Dynatrace Intelligence agentic and generative AI.")
+* [Dynatrace Intelligence agentic and generative AI FAQ](/docs/dynatrace-intelligence/copilot/copilot-faq "Learn about frequently asked questions and find your answers.")
+* [Dynatrace Intelligence agentic and generative AI - Tips for writing better prompts](/docs/dynatrace-intelligence/copilot/quick-analysis-copilot-dql/copilot-tips "Learn best practices for writing more accurate prompts.")
+* [Generative AI quick analysis examples](/docs/dynatrace-intelligence/use-cases/copilot-examples "Learn more about what kind of prompts work well in Dynatrace Intelligence agentic and generative AI.")

@@ -1,13 +1,14 @@
 ---
 title: OS services monitoring
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/hosts/monitoring/os-services
-scraped: 2026-03-03T21:14:32.739356
+scraped: 2026-03-04T21:16:19.691226
 ---
 
 # OS services monitoring
 
 # OS services monitoring
 
+* Classic
 * How-to guide
 * 14-min read
 * Updated on Jan 14, 2026

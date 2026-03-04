@@ -1,7 +1,7 @@
 ---
 title: Automatic log enrichment
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-log-data-transformation-oa
-scraped: 2026-02-27T21:14:53.016976
+scraped: 2026-03-04T21:22:30.111169
 ---
 
 # Automatic log enrichment

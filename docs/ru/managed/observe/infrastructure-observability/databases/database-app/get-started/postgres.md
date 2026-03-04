@@ -1,7 +1,7 @@
 ---
 title: Monitor PostgreSQL database
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/databases/database-app/get-started/postgres
-scraped: 2026-03-02T21:32:02.963808
+scraped: 2026-03-04T21:31:47.373622
 ---
 
 # Monitor PostgreSQL database

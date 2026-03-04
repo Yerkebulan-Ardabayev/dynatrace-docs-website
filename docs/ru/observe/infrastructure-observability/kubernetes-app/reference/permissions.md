@@ -1,7 +1,7 @@
 ---
 title: Permissions
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/kubernetes-app/reference/permissions
-scraped: 2026-03-03T21:13:24.146389
+scraped: 2026-03-04T21:13:45.284584
 ---
 
 # Permissions

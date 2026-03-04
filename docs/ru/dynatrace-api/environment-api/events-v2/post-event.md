@@ -1,7 +1,7 @@
 ---
 title: Events API v2 - POST an event
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/events-v2/post-event
-scraped: 2026-02-26T21:33:49.303407
+scraped: 2026-03-04T21:38:36.029429
 ---
 
 # Events API v2 - POST an event

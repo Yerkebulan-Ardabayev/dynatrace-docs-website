@@ -1,7 +1,7 @@
 ---
 title: SAML
 source: https://www.dynatrace.com/docs/manage/identity-access-management/user-and-group-management/access-saml
-scraped: 2026-02-28T21:29:43.379491
+scraped: 2026-03-04T21:32:57.029299
 ---
 
 # SAML
@@ -409,8 +409,6 @@ To create a mapping, you need to specify the SAML Group Attribute Value in the [
 In Dynatrace, all user group permissions are joined together. The user will be granted permissions from all group types: `LOCAL`, `SAML`, and `SCIM`. It is the Account Manager's responsibility to decide if and how user permissions are isolated.
 
 1. Go to [**Account Management**ï»¿](https://myaccount.dynatrace.com/) > your account > **Identity & access management** > **Group management** and add a new group or find an existing group you want to map. You can filter the list by name and permissions.
-
-   **Important**
 
    * We **strongly recommend** that you first create a new group (select **Create group**) to test whether SAML authorization works for that group.
    * Switching a `LOCAL` group to `SAML` removes all user assignments to that group.
