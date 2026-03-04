@@ -1,7 +1,7 @@
 ---
 title: Configure data privacy settings for mobile frontends
 source: https://www.dynatrace.com/docs/observe/digital-experience/new-rum-experience/mobile-frontends/data-privacy
-scraped: 2026-03-01T21:25:38.311083
+scraped: 2026-03-04T21:30:25.620961
 ---
 
 # Configure data privacy settings for mobile frontends

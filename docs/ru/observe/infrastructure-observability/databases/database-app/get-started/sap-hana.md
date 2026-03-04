@@ -1,7 +1,7 @@
 ---
 title: Monitor SAP HANA database
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/databases/database-app/get-started/sap-hana
-scraped: 2026-03-01T21:15:18.801928
+scraped: 2026-03-04T21:34:02.174461
 ---
 
 # Monitor SAP HANA database

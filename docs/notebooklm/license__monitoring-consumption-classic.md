@@ -1,6 +1,6 @@
 # Документация Dynatrace: license/monitoring-consumption-classic
 Язык: Русский (RU)
-Сгенерировано: 2026-03-03
+Сгенерировано: 2026-03-04
 Файлов в разделе: 5
 ---
 
@@ -9,13 +9,14 @@
 ---
 title: Application and Infrastructure Monitoring (Host Units)
 source: https://www.dynatrace.com/docs/license/monitoring-consumption-classic/application-and-infrastructure-monitoring
-scraped: 2026-03-01T21:13:09.837906
+scraped: 2026-03-04T21:19:15.008287
 ---
 
 # Application and Infrastructure Monitoring (Host Units)
 
 # Application and Infrastructure Monitoring (Host Units)
 
+* Classic
 * 12-min read
 * Updated on Aug 20, 2025
 
@@ -315,13 +316,14 @@ The consumption can be caused by events v2 API if no entity selector is provided
 ---
 title: DDUs for Log Management and Analytics
 source: https://www.dynatrace.com/docs/license/monitoring-consumption-classic/davis-data-units/log-management-and-analytics
-scraped: 2026-03-03T21:30:32.117251
+scraped: 2026-03-04T21:38:15.396621
 ---
 
 # DDUs for Log Management and Analytics
 
 # DDUs for Log Management and Analytics
 
+* Classic
 * 12-min read
 * Updated on Apr 07, 2025
 
@@ -469,13 +471,14 @@ If you cancel a query execution, all data read before the cancellation will be f
 ---
 title: Dynatrace classic licensing
 source: https://www.dynatrace.com/docs/license/monitoring-consumption-classic
-scraped: 2026-03-03T21:16:25.219214
+scraped: 2026-03-04T21:19:09.862747
 ---
 
 # Dynatrace classic licensing
 
 # Dynatrace classic licensing
 
+* Classic
 * 1-min read
 * Published Mar 30, 2021
 

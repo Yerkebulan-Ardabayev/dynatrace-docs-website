@@ -1,13 +1,14 @@
 ---
 title: Data Explorer
 source: https://www.dynatrace.com/docs/analyze-explore-automate/explorer
-scraped: 2026-03-03T21:14:27.413915
+scraped: 2026-03-04T21:16:31.891475
 ---
 
 # Data Explorer
 
 # Data Explorer
 
+* Classic
 * 7-min read
 * Updated on Oct 03, 2025
 

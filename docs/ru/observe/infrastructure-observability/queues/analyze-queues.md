@@ -1,13 +1,14 @@
 ---
 title: Analyze queues
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/queues/analyze-queues
-scraped: 2026-03-03T21:27:03.833672
+scraped: 2026-03-04T21:31:35.741942
 ---
 
 # Analyze queues
 
 # Analyze queues
 
+* Classic
 * How-to guide
 * 5-min read
 * Updated on Dec 28, 2022

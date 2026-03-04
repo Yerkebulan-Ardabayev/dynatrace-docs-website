@@ -1,13 +1,14 @@
 ---
 title: Improve database performance
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/databases/database-services-classic/improve-database-performance
-scraped: 2026-03-03T21:23:30.979530
+scraped: 2026-03-04T21:37:36.126300
 ---
 
 # Improve database performance
 
 # Improve database performance
 
+* Classic
 * How-to guide
 * 6-min read
 * Published Mar 20, 2019

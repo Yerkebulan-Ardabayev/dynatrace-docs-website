@@ -1,7 +1,7 @@
 ---
 title: Explore data
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/explore-data
-scraped: 2026-03-03T21:13:03.376545
+scraped: 2026-03-04T21:12:09.525802
 ---
 
 # Explore data
@@ -15,7 +15,7 @@ scraped: 2026-03-03T21:13:03.376545
 
 Dynatrace [![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.") and [![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.") offer the following options for exploring your data:
 
-* Use [Dynatrace Intelligence generative AI](#copilot) and natural language to access data stored in Grail.
+* Use [Dynatrace Intelligence agentic and generative AI](#copilot) and natural language to access data stored in Grail.
 * Get started with our Explore interface for data types such as [logs](#explore-logs), [metrics](#explore-metrics), and [business events](#explore-business-events).
 * Advance with [DQL](#create-a-dql-query) to leverage the full power of Grail.
 
@@ -94,11 +94,11 @@ For more information about the benefits of Smartscape nodes and how they work, s
 
 ## Prompt
 
-You can create a notebook section or dashboard tile using [Dynatrace Intelligence generative AI](/docs/dynatrace-intelligence/copilot/copilot-overview "Learn about data security and other aspects of Dynatrace Intelligence generative AI.") to translate your natural language questions into DQL queries.
+You can create a notebook section or dashboard tile using [Dynatrace Intelligence agentic and generative AI](/docs/dynatrace-intelligence/copilot/copilot-overview "Learn about data security and other aspects of Dynatrace Intelligence agentic and generative AI.") to translate your natural language questions into DQL queries.
 
 ### Generative AI in your dashboard
 
-To create a dashboard tile using Dynatrace Intelligence generative AI
+To create a dashboard tile using Dynatrace Intelligence agentic and generative AI
 
 1. Go to [![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.") and open or create a dashboard you can edit.
 2. Open the  **Add** menu and select  **Prompt**.
@@ -131,7 +131,7 @@ To create a dashboard tile using Dynatrace Intelligence generative AI
 
 
 
-To create a notebook section using Dynatrace Intelligence generative AI
+To create a notebook section using Dynatrace Intelligence agentic and generative AI
 
 1. Go to ![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks** and open or create a notebook you can edit.
 2. Open the  **Add** menu and select  **Prompt**. A new Generative AI notebook section is created with an empty prompt box.

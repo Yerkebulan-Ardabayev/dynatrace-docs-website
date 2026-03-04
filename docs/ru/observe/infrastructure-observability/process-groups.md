@@ -1,13 +1,14 @@
 ---
 title: Process groups
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/process-groups
-scraped: 2026-03-01T21:12:30.670621
+scraped: 2026-03-04T21:21:52.381234
 ---
 
 # Process groups
 
 # Process groups
 
+* Classic
 * Explanation
 * 3-min read
 * Published Jan 08, 2019

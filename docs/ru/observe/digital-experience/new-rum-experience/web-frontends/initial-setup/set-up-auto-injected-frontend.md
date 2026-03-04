@@ -1,7 +1,7 @@
 ---
 title: Set up an auto-injected frontend in the New RUM Experience
 source: https://www.dynatrace.com/docs/observe/digital-experience/new-rum-experience/web-frontends/initial-setup/set-up-auto-injected-frontend
-scraped: 2026-03-02T21:21:33.984416
+scraped: 2026-03-04T21:29:01.569167
 ---
 
 # Set up an auto-injected frontend in the New RUM Experience

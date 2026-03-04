@@ -1,7 +1,7 @@
 ---
 title: User actions in web frontends
 source: https://www.dynatrace.com/docs/observe/digital-experience/new-rum-experience/web-frontends/concepts/user-actions
-scraped: 2026-03-03T21:32:37.014181
+scraped: 2026-03-04T21:38:10.526051
 ---
 
 # User actions in web frontends
@@ -59,3 +59,7 @@ The diagram below illustrates the lifecycle of a user action, using a request us
 ## Comparison to user actions in RUM Classic
 
 RUM Classic also provides a user action concept, but it differs in several ways from user actions in the New RUM Experience. The table below highlights the key differences.
+
+## Related topics
+
+* [Data model of the New RUM Experience](/docs/observe/digital-experience/new-rum-experience/concepts/data-model "Get familiar with the data model at the heart of the New RUM Experience.")

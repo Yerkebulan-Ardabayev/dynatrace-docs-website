@@ -1,7 +1,7 @@
 ---
 title: DQL operators
 source: https://www.dynatrace.com/docs/platform/grail/dynatrace-query-language/operators
-scraped: 2026-03-03T21:20:58.274109
+scraped: 2026-03-04T21:17:18.050884
 ---
 
 # DQL operators

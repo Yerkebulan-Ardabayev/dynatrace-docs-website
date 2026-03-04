@@ -1,7 +1,7 @@
 ---
 title: Log ingestion API
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-api
-scraped: 2026-03-03T21:32:58.284547
+scraped: 2026-03-04T21:28:42.805027
 ---
 
 # Log ingestion API

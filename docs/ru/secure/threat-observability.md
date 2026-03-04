@@ -1,7 +1,7 @@
 ---
 title: Threat Observability
 source: https://www.dynatrace.com/docs/secure/threat-observability
-scraped: 2026-03-03T21:14:21.398333
+scraped: 2026-03-04T21:12:50.224042
 ---
 
 # Threat Observability
@@ -10,7 +10,7 @@ scraped: 2026-03-03T21:14:21.398333
 
 * Latest Dynatrace
 * Overview
-* Updated on Feb 26, 2026
+* Updated on Mar 04, 2026
 
 In a world where security data is constantly increasing in scale, DevSecOps teams find themselves lost in siloed tooling, overwhelmed by the number of alerts. This leads to missed threats and increased security risks. A lot of manual effort is required to assemble all the puzzle pieces and act on the security findings.
 
@@ -72,6 +72,7 @@ Automatically process, triage, enrich, and classify incoming security alerts.
 
 * [CSPM Notification Automation](/docs/secure/use-cases/notification-automation "Improve cloud security posture by automatically processing, triaging, enriching, and classifying incoming security alerts.")
 
+* [Ingest, enrich, and deduplicate Qualys vulnerability findings with Dynatraceï»¿](https://www.dynatrace.com/news/blog/ingest-enrich-and-deduplicate-qualys-vulnerability-findings-with-dynatrace/)
 * [Smarter vulnerability remediation with Dynatrace and Atlassian Rovo Devï»¿](https://www.dynatrace.com/news/blog/smarter-vulnerability-remediation-with-dynatrace-and-atlassian-rovo-dev/)
 * [Smarter cloud security with Dynatrace and Kiro CLIï»¿](https://www.dynatrace.com/news/blog/smarter-cloud-security-with-dynatrace-and-kiro-cli/)
 * [Ingest and enrich SonarQube security and quality findings with Dynatraceï»¿](https://www.dynatrace.com/news/blog/ingest-and-enrich-sonarqube-security-and-quality-findings-with-dynatrace/)

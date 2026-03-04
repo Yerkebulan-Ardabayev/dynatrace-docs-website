@@ -1,7 +1,7 @@
 ---
 title: Ingest Tenable vulnerability findings, scan events, and audit logs
 source: https://www.dynatrace.com/docs/secure/threat-observability/security-events-ingest/ingest-tenable-data
-scraped: 2026-03-03T21:16:37.796497
+scraped: 2026-03-04T21:30:52.794221
 ---
 
 # Ingest Tenable vulnerability findings, scan events, and audit logs

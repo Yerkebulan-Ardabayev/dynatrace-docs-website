@@ -1,13 +1,14 @@
 ---
 title: Amazon Textract monitoring
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-textract
-scraped: 2026-03-02T21:17:21.700205
+scraped: 2026-03-04T21:37:25.706615
 ---
 
 # Amazon Textract monitoring
 
 # Amazon Textract monitoring
 
+* Classic
 * How-to guide
 * 1-min read
 * Published Jul 21, 2020

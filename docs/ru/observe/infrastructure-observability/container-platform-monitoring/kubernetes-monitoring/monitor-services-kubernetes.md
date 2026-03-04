@@ -1,13 +1,14 @@
 ---
 title: Monitor Kubernetes/OpenShift services
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-services-kubernetes
-scraped: 2026-03-03T21:32:10.482222
+scraped: 2026-03-04T21:24:40.652160
 ---
 
 # Monitor Kubernetes/OpenShift services
 
 # Monitor Kubernetes/OpenShift services
 
+* Classic
 * 3-min read
 * Published Sep 28, 2022
 

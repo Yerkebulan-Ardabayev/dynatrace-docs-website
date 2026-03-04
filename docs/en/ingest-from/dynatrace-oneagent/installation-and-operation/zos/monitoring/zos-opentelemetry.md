@@ -1,7 +1,7 @@
 ---
 title: Extend traces using OpenTelemetry
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/monitoring/zos-opentelemetry
-scraped: 2026-03-03T21:15:59.048471
+scraped: 2026-03-04T21:15:12.115639
 ---
 
 # Extend traces using OpenTelemetry

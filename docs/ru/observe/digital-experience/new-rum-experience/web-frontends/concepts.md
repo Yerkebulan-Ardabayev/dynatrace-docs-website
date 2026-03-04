@@ -1,7 +1,7 @@
 ---
 title: Concepts for web frontends
 source: https://www.dynatrace.com/docs/observe/digital-experience/new-rum-experience/web-frontends/concepts
-scraped: 2026-03-03T21:29:35.866149
+scraped: 2026-03-04T21:32:00.912853
 ---
 
 # Concepts for web frontends
@@ -10,7 +10,7 @@ scraped: 2026-03-03T21:29:35.866149
 
 * Latest Dynatrace
 * Overview
-* Updated on Jan 08, 2026
+* Updated on Mar 03, 2026
 
 Explore concepts in the New RUM Experience that are specific to web frontends and learn how [general concepts](/docs/observe/digital-experience/new-rum-experience/concepts "Explore the key concepts behind the New RUM Experience.") translate to the web.
 
@@ -26,7 +26,13 @@ Understand how pages, views, and navigations are defined for web frontends the N
 
 * Explanation
 
-Read this explanation](/docs/observe/digital-experience/new-rum-experience/web-frontends/concepts/pages-views-and-navigations)
+Read this explanation](/docs/observe/digital-experience/new-rum-experience/web-frontends/concepts/pages-views-and-navigations)[#### User sessions in web frontends
+
+Understand user sessions and their lifecycle for web frontends the New RUM Experience.
+
+* Explanation
+
+Read this explanation](/docs/observe/digital-experience/new-rum-experience/web-frontends/concepts/user-sessions-web)
 
 ## Related topics
 

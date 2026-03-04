@@ -1,6 +1,6 @@
 # Документация Dynatrace: deliver/site-reliability-guardian
 Язык: Русский (RU)
-Сгенерировано: 2026-03-03
+Сгенерировано: 2026-03-04
 Файлов в разделе: 4
 ---
 
@@ -338,7 +338,7 @@ fetch bizevents
 ---
 title: List and work with your guardians
 source: https://www.dynatrace.com/docs/deliver/site-reliability-guardian/guardian-list
-scraped: 2026-03-02T21:21:30.611261
+scraped: 2026-03-04T21:37:50.953374
 ---
 
 # List and work with your guardians
@@ -388,7 +388,7 @@ You can view older results by opening a guardian and selecting a different timef
 ---
 title: Site Reliability Guardian
 source: https://www.dynatrace.com/docs/deliver/site-reliability-guardian
-scraped: 2026-03-03T21:32:24.501904
+scraped: 2026-03-04T21:20:01.263284
 ---
 
 # Site Reliability Guardian

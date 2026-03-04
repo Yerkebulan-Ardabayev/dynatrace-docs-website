@@ -1,7 +1,7 @@
 ---
 title: Transition from RUM Classic to the New RUM Experience
 source: https://www.dynatrace.com/docs/observe/digital-experience/new-rum-experience/transition-from-rum-classic
-scraped: 2026-03-02T21:28:10.485326
+scraped: 2026-03-04T21:33:35.020262
 ---
 
 # Transition from RUM Classic to the New RUM Experience

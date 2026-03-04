@@ -1,7 +1,7 @@
 ---
 title: Traces
 source: https://www.dynatrace.com/docs/semantic-dictionary/model/trace
-scraped: 2026-02-27T21:15:04.516078
+scraped: 2026-03-04T21:23:56.978272
 ---
 
 # Traces

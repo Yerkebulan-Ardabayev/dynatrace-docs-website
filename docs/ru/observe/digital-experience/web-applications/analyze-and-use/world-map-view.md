@@ -1,13 +1,14 @@
 ---
 title: World map view
 source: https://www.dynatrace.com/docs/observe/digital-experience/web-applications/analyze-and-use/world-map-view
-scraped: 2026-03-03T21:20:04.729714
+scraped: 2026-03-04T21:27:08.378090
 ---
 
 # World map view
 
 # World map view
 
+* Classic
 * How-to guide
 * 1-min read
 * Published Jul 17, 2019

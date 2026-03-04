@@ -1,13 +1,14 @@
 ---
 title: Service response time hotspots
 source: https://www.dynatrace.com/docs/observe/application-observability/services-classic/service-response-time-hotspots
-scraped: 2026-02-27T21:17:09.244456
+scraped: 2026-03-04T21:22:35.463376
 ---
 
 # Service response time hotspots
 
 # Service response time hotspots
 
+* Classic
 * How-to guide
 * 5-min read
 * Published Jul 19, 2017

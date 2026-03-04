@@ -1,7 +1,7 @@
 ---
 title: Snowflake Database monitoring configuration
 source: https://www.dynatrace.com/docs/ingest-from/extensions/develop-your-extensions/data-sources/sql/snowflake-monitoring
-scraped: 2026-03-03T21:25:27.061514
+scraped: 2026-03-04T21:30:05.043030
 ---
 
 # Snowflake Database monitoring configuration

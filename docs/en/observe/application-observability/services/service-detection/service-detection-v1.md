@@ -1,13 +1,14 @@
 ---
 title: Service Detection v1
 source: https://www.dynatrace.com/docs/observe/application-observability/services/service-detection/service-detection-v1
-scraped: 2026-03-03T21:13:37.670022
+scraped: 2026-03-04T21:13:23.592053
 ---
 
 # Service Detection v1
 
 # Service Detection v1
 
+* Classic
 * Overview
 * 1-min read
 * Updated on Aug 06, 2025

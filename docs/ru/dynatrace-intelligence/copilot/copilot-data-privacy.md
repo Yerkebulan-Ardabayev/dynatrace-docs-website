@@ -1,57 +1,57 @@
 ---
-title: Dynatrace Intelligence генеративный ИИ: конфиденциальность и безопасность данных
+title: Dynatrace Intelligence agentic and generative AI data privacy and security
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/copilot/copilot-data-privacy
-scraped: 2026-03-02T21:23:57.832006
+scraped: 2026-03-04T21:31:24.088421
 ---
 
-# Dynatrace Intelligence генеративный ИИ: конфиденциальность и безопасность данных
+# Dynatrace Intelligence agentic and generative AI data privacy and security
 
-# Dynatrace Intelligence генеративный ИИ: конфиденциальность и безопасность данных
+# Dynatrace Intelligence agentic and generative AI data privacy and security
 
-* Последнее Dynatrace
-* Объяснение
-* 3-минутное чтение
-* Обновлено 28 января 2026 г.
+* Latest Dynatrace
+* Explanation
+* 3-min read
+* Updated on Jan 28, 2026
 
-В Dynatrace мы серьезно относимся к своей ответственности за защиту ваших данных. Поймите, как Dynatrace Intelligence генеративный ИИ использует ваши данные и ваши обязанности по обеспечению безопасности ваших данных.
+At Dynatrace, we take our responsibility to safeguard your data seriously. Understand how Dynatrace Intelligence agentic and generative AI uses your data and understand your responsibility to keep your data secure.
 
-## Данные запроса
+## Prompt data
 
-Хотя мы маскируем личную идентифицирующую информацию (PII), мы все равно рекомендуем проявлять осторожность при включении личной или конфиденциальной информации в ваши запросы.
+Although we mask Personally Identifiable Information (PII), we still recommend exercising caution when including personal or confidential information in your prompts.
 
-Ваши запросы отправляются на LLM, размещенные у корпоративных поставщиков, таких как Microsoft Azure AI и AWS Bedrock, которые обеспечивают работу Dynatrace Intelligence генеративного ИИ. Корпоративные поставщики не хранят данные, которые вы отправляете, или ответы, которые вы получаете. Запросы, которые вы отправляете, и ответы, которые вы получаете, используются только для обеспечения вашего опыта. Корпоративные поставщики также не используют запросы для тонкой настройки или улучшения моделей или услуг, или для обучения моделей у разных клиентов или в разных средах.
+Your prompts are sent to LLMs hosted by enterprise vendors such as Microsoft Azure AI and AWS Bedrock, which power Dynatrace Intelligence agentic and generative AI. Enterprise vendors don't store the data you submit or the responses you receive. The prompts you submit and the responses you receive are used only to serve your experience. Enterprise vendors also don't use the prompts to fine-tune or improve any models or services, or to train models across customers or environments.
 
-Каждый запрос данных отправляется на LLM индивидуально, через SSL-шифрованный сервис, обрабатывается соответствующими корпоративными поставщиками и отправляется обратно в Dynatrace. Если ваша среда находится в регионе EMEA, ваши запросы обрабатываются в регионе ЕС. Если ваша среда находится в регионе NORAM, LATAM или APAC, ваши запросы обрабатываются в регионе США.
+Each data request is sent to the LLM individually, over an SSL-encrypted service, processed by respective enterprise vendors, and sent back to Dynatrace. If your environment is located in EMEA, your prompts are processed in an EU region. If your environment is located in NORAM, LATAM, or APAC, your prompts are processed in a US region.
 
-Dynatrace может хранить запросы, отправленные в Dynatrace Intelligence генеративный ИИ, и ответы, предоставленные LLM, чтобы понять варианты использования, контекстуализировать обратную связь по ответам и выявить дополнительные ожидания пользователей.
+Dynatrace may store the prompts submitted to Dynatrace Intelligence agentic and generative AI and the responses provided by the LLMs to understand the use cases, contextualize the feedback on the responses, and identify additional user expectations.
 
-Узнайте больше о [Dynatrace Intelligence генеративном ИИ: архитектуре и потоке данных](/docs/dynatrace-intelligence/copilot/copilot-overview#copilot-data-flow "Узнайте о безопасности данных и других аспектах Dynatrace Intelligence генеративного ИИ.").
+Learn more about the [Dynatrace Intelligence agentic and generative AI architecture and data flow](/docs/dynatrace-intelligence/copilot/copilot-overview#copilot-data-flow "Learn about data security and other aspects of Dynatrace Intelligence agentic and generative AI.").
 
-## Маскирование PII
+## PII masking
 
-Dynatrace версия 1.305+
+Dynatrace version 1.305+
 
-Маскирование PII реализовано для запросов пользователей, взаимодействующих со стандартной функциональностью генеративного ИИ. Это гарантирует, что конфиденциальная информация, включенная в ваши запросы, не будет передана LLM, размещенным у корпоративных поставщиков.
+PII masking is in place for user prompts interacting with all standard generative AI functionality. This ensures that sensitive information included in your prompts won't be forwarded to LLMs hosted by enterprise vendors.
 
-В настоящее время маскируемые поля включают:
+Currently masked fields include:
 
-* Адрес электронной почты
-* Номер телефона
-* Информация IBAN
-* Номер кредитной карты
-* IP-адрес
-* Номер банка США
-* Номер социального страхования США
-* Номер маршрутизации ABA США
-* Параметры запроса URL (только параметры с более чем двумя символами учитываются)
-* Номер страхового свидетельства Канады (SIN)
+* Email address
+* Phone number
+* IBAN information
+* Credit card number
+* IP address
+* US bank number
+* US social security number
+* US ABA routing numbers
+* URL query parameters (only parameters with more than two characters are considered)
+* Canadian Social Insurance Number (SIN)
 
-В наших журналах и вызовах моделей LLM мы заменяем значения из выявленных шаблонов выше на фальшивые шаблоны. Это означает, что вы сможете увидеть IBAN в журналах, например, но они будут состоять из случайных чисел, заменяющих исходные значения, включенные в ваши запросы.
+In our logs and calls to LLM models, we replace values from the identified patterns above with fake patterns. This means that you'll be able see IBANs in logs, for example, but they'll be made up of random numbers, replacing the original values included in your prompts.
 
-Agentic  **Dynatrace Assist** не предоставляет никакого маскирования PII. Чтобы защитить ваши данные, когда  **Dynatrace Assist** обнаруживает PII в запросе пользователя, запрос автоматически блокируется и запрос не отправляется на LLM для обработки.
+Agentic  **Dynatrace Assist** doesn't provide any PII masking. In order to protect your data, when  **Dynatrace Assist** detects PII in the user prompt, the request is automatically blocked and the prompt isn't sent to the LLM for processing.
 
-## Связанные темы
+## Related topics
 
-* [Dynatrace Intelligence генеративный ИИ: обзор](/docs/dynatrace-intelligence/copilot/copilot-overview "Узнайте о безопасности данных и других аспектах Dynatrace Intelligence генеративного ИИ.")
-* [Начало работы с Dynatrace Intelligence генеративным ИИ](/docs/dynatrace-intelligence/copilot/copilot-getting-started "Узнайте, как настроить Dynatrace Intelligence генеративный ИИ.")
-* [Dynatrace Intelligence генеративный ИИ: часто задаваемые вопросы](/docs/dynatrace-intelligence/copilot/copilot-faq "Узнайте о часто задаваемых вопросах и найдите ответы.")
+* [Dynatrace Intelligence agentic and generative AI overview](/docs/dynatrace-intelligence/copilot/copilot-overview "Learn about data security and other aspects of Dynatrace Intelligence agentic and generative AI.")
+* [Get started with Dynatrace Intelligence agentic and generative AI](/docs/dynatrace-intelligence/copilot/copilot-getting-started "Learn how to set up Dynatrace Intelligence agentic and generative AI.")
+* [Dynatrace Intelligence agentic and generative AI FAQ](/docs/dynatrace-intelligence/copilot/copilot-faq "Learn about frequently asked questions and find your answers.")

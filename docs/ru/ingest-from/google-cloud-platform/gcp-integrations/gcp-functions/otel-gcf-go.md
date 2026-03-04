@@ -1,7 +1,7 @@
 ---
 title: Trace Google Cloud Functions in Go with OpenTelemetry
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-functions/otel-gcf-go
-scraped: 2026-03-03T21:21:30.504805
+scraped: 2026-03-04T21:33:48.731961
 ---
 
 # Trace Google Cloud Functions in Go with OpenTelemetry

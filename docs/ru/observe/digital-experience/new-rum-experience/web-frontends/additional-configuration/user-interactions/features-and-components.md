@@ -1,7 +1,7 @@
 ---
 title: Associate user interactions with features and UI components
 source: https://www.dynatrace.com/docs/observe/digital-experience/new-rum-experience/web-frontends/additional-configuration/user-interactions/features-and-components
-scraped: 2026-03-03T21:31:52.095411
+scraped: 2026-03-04T21:27:52.484802
 ---
 
 # Associate user interactions with features and UI components
@@ -10,7 +10,7 @@ scraped: 2026-03-03T21:31:52.095411
 
 * Latest Dynatrace
 * How-to guide
-* Published Feb 26, 2026
+* Updated on Mar 03, 2026
 
 Early Access
 
@@ -60,7 +60,7 @@ Examples
 
 
 
-<nav data-dt-features="navigation,header">
+<nav data-dt-features="navigation,sidebar">
 
 
 

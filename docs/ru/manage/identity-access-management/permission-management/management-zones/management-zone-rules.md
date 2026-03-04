@@ -1,13 +1,14 @@
 ---
 title: Management-zone rules
 source: https://www.dynatrace.com/docs/manage/identity-access-management/permission-management/management-zones/management-zone-rules
-scraped: 2026-03-02T21:31:37.392127
+scraped: 2026-03-04T21:28:54.927243
 ---
 
 # Management-zone rules
 
 # Management-zone rules
 
+* Classic
 * How-to guide
 * 16-min read
 * Updated on Oct 03, 2025

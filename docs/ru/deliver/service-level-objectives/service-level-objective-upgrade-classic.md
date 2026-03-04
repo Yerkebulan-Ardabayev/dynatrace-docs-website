@@ -1,7 +1,7 @@
 ---
 title: Upgrade Classic SLOs
 source: https://www.dynatrace.com/docs/deliver/service-level-objectives/service-level-objective-upgrade-classic
-scraped: 2026-03-02T21:33:36.166572
+scraped: 2026-03-04T21:37:42.817794
 ---
 
 # Upgrade Classic SLOs

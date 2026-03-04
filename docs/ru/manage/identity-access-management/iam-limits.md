@@ -1,7 +1,7 @@
 ---
 title: Identity and Access Management limits
 source: https://www.dynatrace.com/docs/manage/identity-access-management/iam-limits
-scraped: 2026-03-03T21:26:43.679122
+scraped: 2026-03-04T21:29:22.508817
 ---
 
 # Identity and Access Management limits

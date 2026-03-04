@@ -1,7 +1,7 @@
 ---
 title: NGINX
 source: https://www.dynatrace.com/docs/ingest-from/technology-support/application-software/nginx
-scraped: 2026-03-03T21:17:58.610104
+scraped: 2026-03-04T21:25:42.913893
 ---
 
 # NGINX
@@ -48,13 +48,13 @@ Support for the latest NGINX release is typically included in the next subsequen
 
 | NGINX version | Vendor released | Vendor End of life | First supported Dynatrace OneAgent version | Last supported Dynatrace OneAgent version | Dynatrace support until | [Dynatrace support level](/docs/ingest-from/technology-support#support-levels) |
 | --- | --- | --- | --- | --- | --- | --- |
-| 1.29.5 | 2025-02-04 | - | 1.335 | - | - | Not supported |
+| 1.29.5 | 2026-02-04 | - | 1.335 | - | - | Not supported |
 | 1.29.4 | 2025-12-09 | - | 1.331 | - | - | Supported |
 | 1.29.3 | 2025-10-28 | - | 1.329 | - | - | Supported |
 | 1.29.2 | 2025-10-07 | - | 1.327 | - | - | Supported |
 | 1.29.1 | 2025-08-13 | - | 1.325 | - | - | Supported |
 | 1.29.0 | 2025-06-24 | - | 1.321 | - | - | Supported |
-| 1.28.2 | 2025-02-04 | - | 1.335 | - | - | Not supported |
+| 1.28.2 | 2026-02-04 | - | 1.335 | - | - | Not supported |
 | 1.28.1 | 2025-12-23 | - | 1.333 | - | - | Supported |
 | 1.28.0 | 2025-04-23 | - | 1.315 | - | - | Supported |
 | 1.27.5 | 2025-04-16 | - | 1.313 | - | - | Supported |

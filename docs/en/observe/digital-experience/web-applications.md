@@ -1,13 +1,14 @@
 ---
 title: Web applications
 source: https://www.dynatrace.com/docs/observe/digital-experience/web-applications
-scraped: 2026-03-01T21:12:43.780148
+scraped: 2026-03-04T21:20:14.147248
 ---
 
 # Web applications
 
 # Web applications
 
+* Classic
 * Overview
 * 1-min read
 * Updated on Apr 03, 2024

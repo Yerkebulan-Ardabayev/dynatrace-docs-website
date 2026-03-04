@@ -1,7 +1,7 @@
 ---
 title: Application Security
 source: https://www.dynatrace.com/docs/secure/application-security
-scraped: 2026-03-03T21:14:10.571985
+scraped: 2026-03-04T21:12:37.715565
 ---
 
 # Application Security
@@ -195,7 +195,6 @@ FAQ
 
   How to achieve cloud native hyperscale security with Dynatrace
 
-* [Introducing the Dynatrace Vulnerability feed: Accurate, transparent, and threat-awareï»¿](https://www.dynatrace.com/news/blog/introducing-the-dynatrace-vulnerability-feed-accurate-transparent-and-threat-aware/)
 * [Introduction to Application Security conceptsï»¿](https://university.dynatrace.com/learn/courses/313/introduction-to-appsec)
 * [Dynatrace Application Security overviewï»¿](https://university.dynatrace.com/learn/courses/85/introduction/lessons/484/dynatrace-application-security)
 * [Activate Application Securityï»¿](https://university.dynatrace.com/learn/courses/88/configuring-application-security/lessons/382/activating-application-security)
@@ -206,6 +205,7 @@ FAQ
 * [Manage code-level vulnerabilitiesï»¿](https://university.dynatrace.com/learn/courses/86/runtime-vulnerability-analytics/lessons/479/managing-code-level-vulnerabilities)
 * [Application Security case study: log4jï»¿](https://university.dynatrace.com/learn/courses/87/case-studies/lessons/478/application-security-case-study-log4j)
 
+* [Introducing the Dynatrace Vulnerability feed: Accurate, transparent, and threat-awareï»¿](https://www.dynatrace.com/news/blog/introducing-the-dynatrace-vulnerability-feed-accurate-transparent-and-threat-aware/)
 * [Remediating CVE-2025-3248: How Dynatrace Application Security protects Agentic AI applicationsï»¿](https://www.dynatrace.com/news/blog/remediating-cve-2025-3248-how-dynatrace-application-security-protects-agentic-ai-applications/)
 * [Supply chain security: How to detect malicious software packages with Dynatraceï»¿](https://www.dynatrace.com/news/blog/supply-chain-security-how-to-detect-malicious-software-packages-with-dynatrace/)
 * [Kubernetes security essentials: Container misconfigurations â From theory to exploitationï»¿](https://www.dynatrace.com/news/blog/kubernetes-security-essentials-container-misconfigurations-from-theory-to-exploitation/)

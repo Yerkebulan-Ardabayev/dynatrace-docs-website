@@ -1,7 +1,7 @@
 ---
 title: New Real User Monitoring Experience
 source: https://www.dynatrace.com/docs/observe/digital-experience/new-rum-experience
-scraped: 2026-03-01T21:12:49.142023
+scraped: 2026-03-04T21:20:06.080455
 ---
 
 # New Real User Monitoring Experience
@@ -16,7 +16,7 @@ scraped: 2026-03-01T21:12:49.142023
 The New Real User Monitoring (RUM) Experience brings RUM capabilities to the latest Dynatrace and allows you to:
 
 * Gain fine-grained visibility into user frontend activity through [user events](/docs/observe/digital-experience/new-rum-experience/concepts/data-model#user-events "Get familiar with the data model at the heart of the New RUM Experience.").
-* Investigate individual user journeys and understand user behavior patterns through [user sessions](/docs/observe/digital-experience/new-rum-experience/concepts/users-sessions-concept "Understand the concepts and terminology related to user sessions in the New RUM Experience.").
+* Investigate individual user journeys and understand user behavior patterns through [user sessions](/docs/observe/digital-experience/new-rum-experience/concepts/data-model#user-sessions "Get familiar with the data model at the heart of the New RUM Experience.").
 * Early Access Automatically capture [user interactions](/docs/observe/digital-experience/new-rum-experience/concepts/data-model#user-interactions "Get familiar with the data model at the heart of the New RUM Experience.") such as clicks, taps, scrolls, and inputs to gain insights into user behavior.
 * Leverage platform apps such as ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**, ![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**, ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Workflows**, and preinstalled [RUM-specific apps](#new-rum-experience-apps).
 * Use [OpenPipeline](/docs/platform/openpipeline "Scale Dynatrace platform data handling with Dynatrace OpenPipeline.") to customize ingested user events and sessions, and extract data and metrics.

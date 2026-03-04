@@ -1,13 +1,14 @@
 ---
 title: Crash analysis
 source: https://www.dynatrace.com/docs/observe/application-observability/profiling-and-optimization/crash-analysis
-scraped: 2026-03-03T21:14:44.655834
+scraped: 2026-03-04T21:16:40.557436
 ---
 
 # Crash analysis
 
 # Crash analysis
 
+* Classic
 * How-to guide
 * 7-min read
 * Published Jul 19, 2017

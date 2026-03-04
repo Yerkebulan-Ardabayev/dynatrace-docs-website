@@ -1,13 +1,14 @@
 ---
 title: Top web requests
 source: https://www.dynatrace.com/docs/observe/application-observability/multidimensional-analysis/top-web-requests
-scraped: 2026-03-02T21:22:11.364146
+scraped: 2026-03-04T21:32:24.615161
 ---
 
 # Top web requests
 
 # Top web requests
 
+* Classic
 * How-to guide
 * 4-min read
 * Updated on Sep 13, 2022

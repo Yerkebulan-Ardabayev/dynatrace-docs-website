@@ -1,7 +1,7 @@
 ---
 title: Synthetic app
 source: https://www.dynatrace.com/docs/observe/digital-experience/synthetic-on-grail/synthetic-app
-scraped: 2026-03-03T21:12:21.171776
+scraped: 2026-03-04T21:14:50.458586
 ---
 
 # Synthetic app

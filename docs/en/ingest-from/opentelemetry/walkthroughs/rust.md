@@ -1,7 +1,7 @@
 ---
 title: Instrument your Rust application with OpenTelemetry
 source: https://www.dynatrace.com/docs/ingest-from/opentelemetry/walkthroughs/rust
-scraped: 2026-03-03T21:18:33.050454
+scraped: 2026-03-04T21:26:24.009300
 ---
 
 # Instrument your Rust application with OpenTelemetry

@@ -1,7 +1,7 @@
 ---
 title: Dynatrace Intelligence интеграции
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/dynatrace-intelligence-integrations
-scraped: 2026-03-01T21:13:46.380261
+scraped: 2026-03-04T21:20:17.534132
 ---
 
 # Dynatrace Intelligence интеграции
@@ -21,39 +21,41 @@ scraped: 2026-03-01T21:13:46.380261
 
 Запустите анализ ИИ в Dynatrace тетрадях.
 
-* Руководство
+* Руководство по началу работы
 
 Прочитайте это руководство](/docs/dynatrace-intelligence/dynatrace-intelligence-integrations/davis-for-notebooks)
 
 ## Dynatrace сервер MCP
 
-[#### Dynatrace сервер MCP
+[![Dynatrace удаленный сервер MCP](https://dt-cdn.net/images/picture5-103-8cd29dfe7e.png "Dynatrace удаленный сервер MCP")
 
-Узнайте о Dynatrace сервере MCP и о том, как можно к нему подключиться.
+#### Dynatrace сервер MCP
+
+Узнайте о Dynatrace сервере MCP и о том, как подключиться к нему.
 
 * Обзор
 
 Прочитайте обзор](/docs/dynatrace-intelligence/dynatrace-intelligence-integrations/dynatrace-mcp)
 
-## Потоки работы
+## Рабочие процессы
 
-Прочитайте о случаях использования Dynatrace Intelligence на основе потоков работы.
+Посмотрите случаи использования рабочих процессов для Dynatrace Intelligence.
 
-[#### Оптимизируйте стоимость DQL с помощью потоков работы
+[#### Оптимизируйте стоимость DQL с помощью рабочих процессов
 
 Используйте Dynatrace Intelligence (Предварительный просмотр), чтобы оптимизировать стоимость ваших запросов.
 
 * Учебник
 
-Прочитайте этот учебник](/docs/dynatrace-intelligence/use-cases/copilot-in-workflows-dql)[#### Суммируйте открытые проблемы с помощью потоков работы
+Прочитайте этот учебник](/docs/dynatrace-intelligence/use-cases/copilot-in-workflows-dql)[#### Суммируйте открытые проблемы с помощью рабочих процессов
 
 Используйте Dynatrace Intelligence (Предварительный просмотр), чтобы суммировать открытые проблемы и предложить шаги по исправлению.
 
 * Учебник
 
-Прочитайте этот учебник](/docs/dynatrace-intelligence/use-cases/copilot-in-workflows-examples)[#### ИИ в потоках работы - прогностическое обслуживание облачных дисков
+Прочитайте этот учебник](/docs/dynatrace-intelligence/use-cases/copilot-in-workflows-examples)[#### ИИ в рабочих процессах - прогнозное обслуживание облачных дисков
 
-Автоматизируйте прогностическое обслуживание облачных ресурсов с помощью Dynatrace Intelligence в AutomationEngine.
+Автоматизируйте прогнозное обслуживание облачных ресурсов с помощью Dynatrace Intelligence в AutomationEngine.
 
 * Учебник
 

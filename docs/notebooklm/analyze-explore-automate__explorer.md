@@ -1,6 +1,6 @@
 # Документация Dynatrace: analyze-explore-automate/explorer
 Язык: Русский (RU)
-Сгенерировано: 2026-03-03
+Сгенерировано: 2026-03-04
 Файлов в разделе: 2
 ---
 
@@ -9,13 +9,14 @@
 ---
 title: Data Explorer FAQ
 source: https://www.dynatrace.com/docs/analyze-explore-automate/explorer/explorer-troubleshooting
-scraped: 2026-03-03T21:31:16.928275
+scraped: 2026-03-04T21:31:57.597692
 ---
 
 # Data Explorer FAQ
 
 # Data Explorer FAQ
 
+* Classic
 * 1-min read
 * Published Mar 10, 2022
 
@@ -74,13 +75,14 @@ For more about timeframes, see [Dynatrace dashboard timeframe and management zon
 ---
 title: Data Explorer
 source: https://www.dynatrace.com/docs/analyze-explore-automate/explorer
-scraped: 2026-03-03T21:14:27.413915
+scraped: 2026-03-04T21:16:31.891475
 ---
 
 # Data Explorer
 
 # Data Explorer
 
+* Classic
 * 7-min read
 * Updated on Oct 03, 2025
 

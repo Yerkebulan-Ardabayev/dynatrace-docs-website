@@ -1,7 +1,7 @@
 ---
 title: Log Monitoring API v2 - POST ingest logs
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/log-monitoring-v2/post-ingest-logs
-scraped: 2026-03-03T21:30:51.330829
+scraped: 2026-03-04T21:35:09.361330
 ---
 
 # Log Monitoring API v2 - POST ingest logs

@@ -1,7 +1,7 @@
 ---
 title: Automate alerts with API
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/anomaly-detection/set-up-anomaly-detectors-via-api
-scraped: 2026-03-03T21:21:07.174803
+scraped: 2026-03-04T21:18:32.932252
 ---
 
 # Automate alerts with API

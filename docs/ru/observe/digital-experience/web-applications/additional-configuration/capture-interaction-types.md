@@ -1,13 +1,14 @@
 ---
 title: Capture additional interaction types for web applications
 source: https://www.dynatrace.com/docs/observe/digital-experience/web-applications/additional-configuration/capture-interaction-types
-scraped: 2026-03-02T21:19:56.481772
+scraped: 2026-03-04T21:38:56.567913
 ---
 
 # Capture additional interaction types for web applications
 
 # Capture additional interaction types for web applications
 
+* Classic
 * How-to guide
 * 2-min read
 * Updated on Mar 20, 2023

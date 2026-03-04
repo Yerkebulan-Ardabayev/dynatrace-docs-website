@@ -1,7 +1,7 @@
 ---
 title: Observe your logs in real time
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-use-cases/lma-e2e-real-time-observability-logs-dql
-scraped: 2026-03-03T21:16:02.785965
+scraped: 2026-03-04T21:21:34.493613
 ---
 
 # Observe your logs in real time

@@ -1,6 +1,6 @@
 # Документация Dynatrace: discover-dynatrace/get-started
 Язык: Русский (RU)
-Сгенерировано: 2026-03-03
+Сгенерировано: 2026-03-04
 Файлов в разделе: 11
 ---
 
@@ -9,7 +9,7 @@
 ---
 title: Accessibility
 source: https://www.dynatrace.com/docs/discover-dynatrace/get-started/dynatrace-ui/accessibility
-scraped: 2026-03-01T21:18:10.886047
+scraped: 2026-03-04T21:30:00.075945
 ---
 
 # Accessibility
@@ -48,7 +48,7 @@ Any ACR posted below, or anywhere else on the Dynatrace website, or otherwise pu
 ---
 title: Data visualizations
 source: https://www.dynatrace.com/docs/discover-dynatrace/get-started/dynatrace-ui/interact-visualizations
-scraped: 2026-03-03T21:27:24.403226
+scraped: 2026-03-04T21:37:12.362325
 ---
 
 # Data visualizations
@@ -96,7 +96,7 @@ Common interactions and features of data visualizations in the latest Dynatrace.
 ---
 title: Launchpads
 source: https://www.dynatrace.com/docs/discover-dynatrace/get-started/dynatrace-ui/launchpads
-scraped: 2026-03-03T21:21:15.431938
+scraped: 2026-03-04T21:18:16.539464
 ---
 
 # Launchpads
@@ -271,7 +271,7 @@ Use this page to solve problems with signing in to your Dynatrace account.
 ---
 title: Share documents
 source: https://www.dynatrace.com/docs/discover-dynatrace/get-started/dynatrace-ui/share
-scraped: 2026-03-03T21:12:55.507622
+scraped: 2026-03-04T21:12:16.207052
 ---
 
 # Share documents
@@ -577,7 +577,7 @@ Sharing exceptions
 ---
 title: Filter field
 source: https://www.dynatrace.com/docs/discover-dynatrace/get-started/dynatrace-ui/ui-filter-field
-scraped: 2026-03-03T21:15:15.187813
+scraped: 2026-03-04T21:16:11.126900
 ---
 
 # Filter field
@@ -916,7 +916,7 @@ The contents of this user menu depend on your deployment type, configuration, an
 ---
 title: What is a monitoring environment?
 source: https://www.dynatrace.com/docs/discover-dynatrace/get-started/monitoring-environment
-scraped: 2026-03-03T21:12:32.741434
+scraped: 2026-03-04T21:14:00.851378
 ---
 
 # What is a monitoring environment?
@@ -1009,7 +1009,7 @@ In some scenarios, however, you might need to connect your environments. For exa
 ---
 title: Platform Engineering
 source: https://www.dynatrace.com/docs/discover-dynatrace/get-started/platform-engineering
-scraped: 2026-03-02T21:20:03.872028
+scraped: 2026-03-04T21:32:04.333894
 ---
 
 # Platform Engineering
@@ -1345,7 +1345,7 @@ Using observability data further allows the proper sizing and configuration of g
 
 Try it yourself:
 
-* [AI and LLM Observability](/docs/observe/dynatrace-for-ai-observability "Learn about AI and LLM observability, what AI observability is, how Dynatrace observes Generative AI (LLM) models and AI SaaS services, and much more.")
+* [AI and LLM Observability](/docs/observe/dynatrace-for-ai-observability "Learn about AI and LLM observability, what AI observability is, how Dynatrace observes generative AI (LLM) models and AI SaaS services, and much more.")
 
 #### Infrastructure observability Observability for infrastructure
 
@@ -1618,7 +1618,7 @@ Gartner, Top Strategic Technology Trends for 2024, Bart Willemsen, Gary Olliffe,
 ---
 title: Serverless monitoring
 source: https://www.dynatrace.com/docs/discover-dynatrace/get-started/serverless-monitoring
-scraped: 2026-03-01T21:12:35.426710
+scraped: 2026-03-04T21:21:53.976689
 ---
 
 # Serverless monitoring
@@ -1711,7 +1711,7 @@ Be sure to watch for the recommendations within the Dynatrace web UI to enable a
 ---
 title: Get started with Dynatrace
 source: https://www.dynatrace.com/docs/discover-dynatrace/get-started
-scraped: 2026-03-03T21:11:46.136957
+scraped: 2026-03-04T21:11:29.106636
 ---
 
 # Get started with Dynatrace

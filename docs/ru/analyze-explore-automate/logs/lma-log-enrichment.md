@@ -1,7 +1,7 @@
 ---
 title: Connect log data to traces
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-log-enrichment
-scraped: 2026-03-03T21:13:35.017111
+scraped: 2026-03-04T21:13:00.000715
 ---
 
 # Connect log data to traces

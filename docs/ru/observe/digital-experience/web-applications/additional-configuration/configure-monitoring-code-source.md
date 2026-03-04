@@ -1,13 +1,14 @@
 ---
 title: Configure the Real User Monitoring code source
 source: https://www.dynatrace.com/docs/observe/digital-experience/web-applications/additional-configuration/configure-monitoring-code-source
-scraped: 2026-03-03T21:18:16.542685
+scraped: 2026-03-04T21:26:21.070125
 ---
 
 # Configure the Real User Monitoring code source
 
 # Configure the Real User Monitoring code source
 
+* Classic
 * How-to guide
 * 4-min read
 * Updated on Nov 21, 2025

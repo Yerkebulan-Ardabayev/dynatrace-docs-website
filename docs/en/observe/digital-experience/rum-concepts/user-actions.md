@@ -1,13 +1,14 @@
 ---
 title: User actions
 source: https://www.dynatrace.com/docs/observe/digital-experience/rum-concepts/user-actions
-scraped: 2026-03-03T21:19:57.109094
+scraped: 2026-03-04T21:27:12.717735
 ---
 
 # User actions
 
 # User actions
 
+* Classic
 * Explanation
 * 12-min read
 * Updated on Jul 11, 2024

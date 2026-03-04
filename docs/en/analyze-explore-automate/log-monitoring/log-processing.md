@@ -1,13 +1,14 @@
 ---
 title: Log processing (Logs Classic)
 source: https://www.dynatrace.com/docs/analyze-explore-automate/log-monitoring/log-processing
-scraped: 2026-03-02T21:28:45.303030
+scraped: 2026-03-04T21:37:54.164145
 ---
 
 # Log processing (Logs Classic)
 
 # Log processing (Logs Classic)
 
+* Classic
 * Explanation
 * 3-min read
 * Updated on Jan 18, 2023

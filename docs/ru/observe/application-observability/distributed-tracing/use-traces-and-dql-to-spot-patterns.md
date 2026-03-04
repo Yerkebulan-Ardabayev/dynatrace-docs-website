@@ -1,7 +1,7 @@
 ---
 title: Use traces, DQL, and logs to spot patterns
 source: https://www.dynatrace.com/docs/observe/application-observability/distributed-tracing/use-traces-and-dql-to-spot-patterns
-scraped: 2026-03-03T21:13:50.366153
+scraped: 2026-03-04T21:13:01.807277
 ---
 
 # Use traces, DQL, and logs to spot patterns

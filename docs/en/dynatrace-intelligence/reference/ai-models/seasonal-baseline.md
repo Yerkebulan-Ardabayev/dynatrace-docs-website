@@ -1,7 +1,7 @@
 ---
 title: Seasonal baseline
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/reference/ai-models/seasonal-baseline
-scraped: 2026-03-02T21:26:32.907001
+scraped: 2026-03-04T21:34:33.666423
 ---
 
 # Seasonal baseline

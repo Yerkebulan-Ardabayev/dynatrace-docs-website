@@ -1,6 +1,6 @@
 # Документация Dynatrace: deliver/service-level-objectives
 Язык: Русский (RU)
-Сгенерировано: 2026-03-03
+Сгенерировано: 2026-03-04
 Файлов в разделе: 7
 ---
 
@@ -9,7 +9,7 @@
 ---
 title: Create service-level objectives
 source: https://www.dynatrace.com/docs/deliver/service-level-objectives/create-slo
-scraped: 2026-03-02T21:25:42.169776
+scraped: 2026-03-04T21:39:14.938577
 ---
 
 # Create service-level objectives
@@ -144,7 +144,7 @@ For the SLO details view
 ---
 title: Add a service-level objective (SLO) tile to a dashboard
 source: https://www.dynatrace.com/docs/deliver/service-level-objectives/service-level-objective-tile-add-to-dashboard
-scraped: 2026-03-02T21:22:04.265276
+scraped: 2026-03-04T21:36:42.162174
 ---
 
 # Add a service-level objective (SLO) tile to a dashboard
@@ -227,7 +227,7 @@ Due to the intersection, the result contains only the evaluations related to S-2
 ---
 title: Edit a service-level objective (SLO) tile in a dashboard
 source: https://www.dynatrace.com/docs/deliver/service-level-objectives/service-level-objective-tile-edit-in-dashboard
-scraped: 2026-03-03T21:25:47.607426
+scraped: 2026-03-04T21:33:19.055663
 ---
 
 # Edit a service-level objective (SLO) tile in a dashboard
@@ -370,7 +370,7 @@ You can view details of your SLO tile in your dashboard.
 ---
 title: Upgrade Classic SLOs
 source: https://www.dynatrace.com/docs/deliver/service-level-objectives/service-level-objective-upgrade-classic
-scraped: 2026-03-02T21:33:36.166572
+scraped: 2026-03-04T21:37:42.817794
 ---
 
 # Upgrade Classic SLOs

@@ -1,7 +1,7 @@
 ---
 title: Adaptive Traffic Management concepts
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/adaptive-traffic-management/adaptive-traffic-management-concepts
-scraped: 2026-03-02T21:25:58.221616
+scraped: 2026-03-04T21:38:34.203214
 ---
 
 # Adaptive Traffic Management concepts

@@ -1,7 +1,7 @@
 ---
 title: Dynatrace Platform Subscription for hybrid setups (DPS for Hybrid)
 source: https://www.dynatrace.com/docs/license/dps-for-hybrid
-scraped: 2026-03-01T21:14:32.023429
+scraped: 2026-03-04T21:21:58.905521
 ---
 
 # Dynatrace Platform Subscription for hybrid setups (DPS for Hybrid)
@@ -21,8 +21,6 @@ With DPS for Hybrid:
 * There is one single annual commitment that is shared across multiple accounts.
 * Your order form contains all relevant rate card capabilities for your Managed and/or SaaS deployments.
 * On-demand consumption (ODC) is always enabled for all accounts.
-
-License administrators can use [Account Management](/docs/manage/account-management/license-subscription/subscription-overview-dps-hybrid "View your DPS for Hybrid budget summary and cost analysis.") to manage their DPS for Hybrid license.
 
 For more information about DPS in general, see [License Dynatrace](/docs/license "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.").
 
@@ -50,9 +48,7 @@ Here are some use cases where DPS for Hybrid is not the right solution:
 
 ## Cost management with DPS for Hybrid
 
-Use the [Subscription overview (DPS for Hybrid)](/docs/manage/account-management/license-subscription/subscription-overview-dps-hybrid "View your DPS for Hybrid budget summary and cost analysis.") to view costs and usage related to your DPS for Hybrid license.
-
-Additionally, you can use forecasts, cost events, and budget alerts to manage your costs.
+You can use forecasts, cost events, and budget alerts to manage your costs.
 
 ### Forecasts and cost events
 

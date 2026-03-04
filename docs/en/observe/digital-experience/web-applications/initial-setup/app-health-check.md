@@ -1,13 +1,14 @@
 ---
 title: Check your application health
 source: https://www.dynatrace.com/docs/observe/digital-experience/web-applications/initial-setup/app-health-check
-scraped: 2026-03-03T21:23:44.809554
+scraped: 2026-03-04T21:34:15.302791
 ---
 
 # Check your application health
 
 # Check your application health
 
+* Classic
 * How-to guide
 * 4-min read
 * Updated on Mar 20, 2024

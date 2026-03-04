@@ -1,7 +1,7 @@
 ---
 title: Alerting and notifications
 source: https://www.dynatrace.com/docs/analyze-explore-automate/alerting-and-notifications
-scraped: 2026-03-03T21:28:09.693567
+scraped: 2026-03-04T21:29:43.863602
 ---
 
 # Alerting and notifications

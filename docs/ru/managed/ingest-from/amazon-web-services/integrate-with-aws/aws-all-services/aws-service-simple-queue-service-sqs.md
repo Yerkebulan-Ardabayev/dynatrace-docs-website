@@ -1,13 +1,14 @@
 ---
 title: Amazon SQS (Simple Queue Service) monitoring
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-simple-queue-service-sqs
-scraped: 2026-03-03T21:24:25.076624
+scraped: 2026-03-04T21:29:56.860290
 ---
 
 # Amazon SQS (Simple Queue Service) monitoring
 
 # Amazon SQS (Simple Queue Service) monitoring
 
+* Classic
 * How-to guide
 * 2-min read
 * Published Oct 16, 2020

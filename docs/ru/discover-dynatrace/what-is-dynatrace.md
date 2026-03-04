@@ -1,7 +1,7 @@
 ---
 title: What is Dynatrace
 source: https://www.dynatrace.com/docs/discover-dynatrace/what-is-dynatrace
-scraped: 2026-03-03T21:12:03.764552
+scraped: 2026-03-04T21:11:35.540318
 ---
 
 # What is Dynatrace
@@ -41,7 +41,7 @@ Dynatrace is an all-in-one platform that's purpose-built for a wide range of use
 
   Deliver flawless digital experiences and drive business results with AI-driven, automated, frontend-to-backend digital experience monitoring.
 
-* [**AI Observability**](/docs/observe/dynatrace-for-ai-observability "Learn about AI and LLM observability, what AI observability is, how Dynatrace observes Generative AI (LLM) models and AI SaaS services, and much more.")
+* [**AI Observability**](/docs/observe/dynatrace-for-ai-observability "Learn about AI and LLM observability, what AI observability is, how Dynatrace observes generative AI (LLM) models and AI SaaS services, and much more.")
 
   Monitor, optimize, and secure Generative AI applications, LLMs, and agentic workflows â improving performance, explainability, and compliance.
 

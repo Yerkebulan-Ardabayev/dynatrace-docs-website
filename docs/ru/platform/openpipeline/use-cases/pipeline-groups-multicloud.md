@@ -1,7 +1,7 @@
 ---
 title: Configure multi-cloud ingest governance with pipeline groups
 source: https://www.dynatrace.com/docs/platform/openpipeline/use-cases/pipeline-groups-multicloud
-scraped: 2026-03-03T21:17:17.303470
+scraped: 2026-03-04T21:19:57.822401
 ---
 
 # Configure multi-cloud ingest governance with pipeline groups
@@ -2079,11 +2079,11 @@ Azure
    The groups process logs of the respective cloud provider following the same structure. Each group references the following pipelines:
 
    1. **Global cost and bucket** pipeline: Defines Cost allocation and Storage stages.
-   2. **AWS processing** and **Azure processing** pipelines: Define Processing, Metric Extraction, Davis, and Data Extraction stages.
+   2. **AWS processing** and **Azure processing** pipelines: Define Processing, Metric Extraction, Dynatrace Intelligence, and Data Extraction stages.
    3. **AWS cost and permission assignment** and **Azure cost and permission assignment** pipelines: Define Product allocation and Security context stages.
    4. Member pipeline (placeholder): Defines Processing stage.
 
-   The groups execute first the composition pipelines (1, 2, 3). They mandate the Cost allocation, Storage, Processing, Metric Extraction, Davis, Data Extraction, Product allocation, and Security context stages in this order. Then, the member pipelines add transformations in the Processing stage.
+   The groups execute first the composition pipelines (1, 2, 3). They mandate the Cost allocation, Storage, Processing, Metric Extraction, Dynatrace Intelligence, Data Extraction, Product allocation, and Security context stages in this order. Then, the member pipelines add transformations in the Processing stage.
 
    JSON example
 

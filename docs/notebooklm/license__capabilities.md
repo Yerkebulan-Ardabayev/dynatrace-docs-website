@@ -1,6 +1,6 @@
 # Документация Dynatrace: license/capabilities
 Язык: Русский (RU)
-Сгенерировано: 2026-03-03
+Сгенерировано: 2026-03-04
 Файлов в разделе: 17
 ---
 
@@ -9,7 +9,7 @@
 ---
 title: Calculate your consumption of Foundation & Discovery (DPS)
 source: https://www.dynatrace.com/docs/license/capabilities/app-infra-observability/foundation-and-discovery
-scraped: 2026-03-01T21:13:14.695739
+scraped: 2026-03-04T21:19:20.079053
 ---
 
 # Calculate your consumption of Foundation & Discovery (DPS)
@@ -25,7 +25,7 @@ Dynatrace OneAgent can be configured for Foundation & Discovery mode, which prov
 Unlike other tools that provide basic monitoring, Foundation & Discovery leverages core OneAgent features: discovery and topology.
 
 Foundation & Discovery mode detects process-to-process communication and populates the [Smartscape topology](/docs/analyze-explore-automate/smartscape-classic "Learn how Smartscape Classic visualizes all the entities and dependencies in your environment.") accordingly.
-This provides important clues for AIOps which is included with OneAgent, see [DavisÂ® AI automatic root cause analysis](/docs/dynatrace-intelligence "Get familiar with the capabilities of Dynatrace Intelligence.") for details.
+This provides important clues for AIOps that is included with OneAgent. For details, see [Dynatrace Intelligence AI automatic root cause analysis](/docs/dynatrace-intelligence "Get familiar with the capabilities of Dynatrace Intelligence.").
 
 Broad deployment of Foundation & Discovery mode enables you to select the right monitoring mode for each of your hosts.
 A hostâs criticality can be determined based on which processes, technologies, externally accessible services, and topological connections.
@@ -115,7 +115,7 @@ These metrics are also available via the Environment API and your **Account Mana
 ---
 title: Calculate your consumption of Full-Stack Monitoring (DPS)
 source: https://www.dynatrace.com/docs/license/capabilities/app-infra-observability/full-stack-monitoring
-scraped: 2026-03-03T21:15:52.966336
+scraped: 2026-03-04T21:15:18.805549
 ---
 
 # Calculate your consumption of Full-Stack Monitoring (DPS)
@@ -536,7 +536,7 @@ When using the metric "(DPS) Total metric data points billed for Full-Stack moni
 ---
 title: Calculate your consumption of Infrastructure Monitoring (DPS)
 source: https://www.dynatrace.com/docs/license/capabilities/app-infra-observability/infrastructure-monitoring
-scraped: 2026-03-01T21:13:10.980563
+scraped: 2026-03-04T21:19:08.255947
 ---
 
 # Calculate your consumption of Infrastructure Monitoring (DPS)
@@ -731,7 +731,7 @@ The example below shows that one of the Infrastructure monitored hosts reported 
 ---
 title: Calculate your consumption of Mainframe Monitoring (DPS)
 source: https://www.dynatrace.com/docs/license/capabilities/app-infra-observability/mainframe
-scraped: 2026-03-03T21:16:01.555080
+scraped: 2026-03-04T21:15:17.019091
 ---
 
 # Calculate your consumption of Mainframe Monitoring (DPS)
@@ -905,7 +905,7 @@ For each OneAgent installed in your infrastructure, you can choose the monitorin
 ---
 title: AppEngine Functions (Serverless Functions) overview (DPS)
 source: https://www.dynatrace.com/docs/license/capabilities/appengine-functions
-scraped: 2026-03-03T21:23:56.463959
+scraped: 2026-03-04T21:37:03.569424
 ---
 
 # AppEngine Functions (Serverless Functions) overview (DPS)
@@ -949,7 +949,7 @@ AppEngine Functions work out-of-the-box: no external hosting is required, and th
 ---
 title: Application Security overview (DPS)
 source: https://www.dynatrace.com/docs/license/capabilities/application-security
-scraped: 2026-03-03T21:28:54.218683
+scraped: 2026-03-04T21:39:06.594397
 ---
 
 # Application Security overview (DPS)
@@ -1141,7 +1141,7 @@ You can query metrics via the [Environment API - Metrics API v2](/docs/dynatrace
 ---
 title: Digital Experience Monitoring (DEM) overview (DPS)
 source: https://www.dynatrace.com/docs/license/capabilities/digital-experience-monitoring
-scraped: 2026-03-02T21:18:30.604440
+scraped: 2026-03-04T21:27:41.938129
 ---
 
 # Digital Experience Monitoring (DEM) overview (DPS)
@@ -1323,7 +1323,7 @@ Here's what's included with the Query data-usage dimension:
 ---
 title: Calculate your consumption of Log Management & Analytics - Query (DPS)
 source: https://www.dynatrace.com/docs/license/capabilities/log-analytics/dps-log-query
-scraped: 2026-03-03T21:13:11.293001
+scraped: 2026-03-04T21:13:40.368589
 ---
 
 # Calculate your consumption of Log Management & Analytics - Query (DPS)
@@ -1457,7 +1457,7 @@ You can query metrics via the [Environment API - Metrics API v2](/docs/dynatrace
 ---
 title: Log Analytics (DPS)
 source: https://www.dynatrace.com/docs/license/capabilities/log-analytics
-scraped: 2026-03-03T21:16:06.502078
+scraped: 2026-03-04T21:21:36.092083
 ---
 
 # Log Analytics (DPS)
@@ -1626,7 +1626,7 @@ Here's what's included with the Query data-usage dimension:
 ---
 title: Platform extensions overview (DPS)
 source: https://www.dynatrace.com/docs/license/capabilities/platform-extensions
-scraped: 2026-03-02T21:29:23.823722
+scraped: 2026-03-04T21:38:00.704443
 ---
 
 # Platform extensions overview (DPS)
@@ -1704,7 +1704,7 @@ Dynatrace also allows you to ingest logs from your serverless cloud functions.
 ---
 title: Traces powered by Grail overview (DPS)
 source: https://www.dynatrace.com/docs/license/capabilities/traces
-scraped: 2026-02-28T21:20:17.450443
+scraped: 2026-03-04T21:22:37.108091
 ---
 
 # Traces powered by Grail overview (DPS)
@@ -1795,7 +1795,7 @@ When other data types are also read in a query, this can result in consumption o
 ---
 title: Understanding DPS capabilities
 source: https://www.dynatrace.com/docs/license/capabilities
-scraped: 2026-03-01T21:14:42.056262
+scraped: 2026-03-04T21:22:00.502683
 ---
 
 # Understanding DPS capabilities

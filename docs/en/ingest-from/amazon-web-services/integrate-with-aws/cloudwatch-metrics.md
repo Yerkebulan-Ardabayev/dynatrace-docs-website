@@ -1,16 +1,17 @@
 ---
 title: Monitor Amazon Web Services with CloudWatch metrics
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics
-scraped: 2026-03-02T21:19:37.533386
+scraped: 2026-03-04T21:28:18.968558
 ---
 
 # Monitor Amazon Web Services with CloudWatch metrics
 
 # Monitor Amazon Web Services with CloudWatch metrics
 
+* Classic
 * How-to guide
 * 23-min read
-* Updated on Feb 05, 2026
+* Updated on Mar 04, 2026
 
 Follow this guide to start ingesting data remotely from Amazon CloudWatch.
 
@@ -56,7 +57,7 @@ From Dynatrace version 1.267+, only role-based access can be used. Key-based aut
 
 [Key-based authentication](#key-based-authentication) is allowed only for AWS GovCloud and China partitions.
 
-An ActiveGate capable of monitoring your AWS account for classic (built-in) supported services is already provided and available within the Dynatrace AWS account.
+An ActiveGate capable of monitoring your AWS account for classic (built-in) supported services is already provided and available within the Dynatrace AWS account (only for SaaS environments hosted on AWS).
 
 However, to monitor specific non-default AWS cloud services or if your AWS account exceeds 2,000 AWS resources, you must install and configure an Environment ActiveGate. Follow the [ActiveGate installation guide](/docs/ingest-from/dynatrace-activegate/installation "Learn how to configure ActiveGate") and resume this guide when done.
 
@@ -71,9 +72,13 @@ The integration accesses the following AWS API endpoints, so they must be access
 
 * AWS Security Token Service (AWS STS)
 
+Environment ActiveGate version 1.329+
+
 ```
 https://sts.<REGION>.amazonaws.com/
 ```
+
+Environment ActiveGate version 1.328 and earlier
 
 ```
 https://sts.amazonaws.com/

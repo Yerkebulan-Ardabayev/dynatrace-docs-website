@@ -1,13 +1,14 @@
 ---
 title: Configure first-party, third-party, and CDN resource detection for web applications
 source: https://www.dynatrace.com/docs/observe/digital-experience/web-applications/additional-configuration/configure-third-party-and-cdn-content-detection-web
-scraped: 2026-03-03T21:19:59.674724
+scraped: 2026-03-04T21:27:06.733126
 ---
 
 # Configure first-party, third-party, and CDN resource detection for web applications
 
 # Configure first-party, third-party, and CDN resource detection for web applications
 
+* Classic
 * How-to guide
 * 1-min read
 * Updated on Jun 30, 2022

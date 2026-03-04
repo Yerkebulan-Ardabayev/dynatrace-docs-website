@@ -1,13 +1,14 @@
 ---
 title: User details
 source: https://www.dynatrace.com/docs/observe/digital-experience/session-segmentation/analyze-all-sessions-of-a-single-user
-scraped: 2026-03-01T21:21:23.191234
+scraped: 2026-03-04T21:28:27.706078
 ---
 
 # User details
 
 # User details
 
+* Classic
 * Explanation
 * 3-min read
 * Updated on Jul 20, 2023

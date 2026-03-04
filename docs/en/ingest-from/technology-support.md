@@ -1,7 +1,7 @@
 ---
 title: Technology support
 source: https://www.dynatrace.com/docs/ingest-from/technology-support
-scraped: 2026-03-03T21:12:26.691280
+scraped: 2026-03-04T21:13:55.858957
 ---
 
 # Technology support

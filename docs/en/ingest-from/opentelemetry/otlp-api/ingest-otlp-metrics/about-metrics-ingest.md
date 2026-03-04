@@ -1,7 +1,7 @@
 ---
 title: About OTLP metrics ingest
 source: https://www.dynatrace.com/docs/ingest-from/opentelemetry/otlp-api/ingest-otlp-metrics/about-metrics-ingest
-scraped: 2026-03-02T21:25:04.159576
+scraped: 2026-03-04T21:27:24.424621
 ---
 
 # About OTLP metrics ingest
@@ -11,9 +11,7 @@ scraped: 2026-03-02T21:25:04.159576
 * Latest Dynatrace
 * Explanation
 * 2-min read
-* Updated on Feb 18, 2026
-
-Dynatrace version 1.254+
+* Updated on Feb 27, 2026
 
 This page provides information about how Dynatrace ingests and enriches OpenTelemetry metrics.
 
@@ -39,7 +37,7 @@ Dynatrace maps the individual OpenTelemetry instruments to the following Dynatra
 
 1
 
-Explicit bucket histograms are supported starting with Dynatrace version 1.300.
+Explicit bucket histograms are supported with Dynatrace version 1.300+.
 
 2
 

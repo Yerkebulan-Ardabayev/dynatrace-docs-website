@@ -1,13 +1,14 @@
 ---
 title: All AWS cloud services
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services
-scraped: 2026-03-03T21:30:13.199393
+scraped: 2026-03-04T21:22:52.355559
 ---
 
 # All AWS cloud services
 
 # All AWS cloud services
 
+* Classic
 * Overview
 * 12-min read
 * Updated on Feb 12, 2024

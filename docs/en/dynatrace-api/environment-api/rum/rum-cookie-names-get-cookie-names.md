@@ -1,7 +1,7 @@
 ---
 title: RUM cookie names API - GET cookie names
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/rum/rum-cookie-names-get-cookie-names
-scraped: 2026-03-01T21:20:23.547128
+scraped: 2026-03-04T21:28:37.840869
 ---
 
 # RUM cookie names API - GET cookie names
@@ -52,6 +52,7 @@ The list of all cookie names.
 | latencyCookieName | string | The name of the latency cookie. |
 | pageContextCookieName | string | The name of the page context cookie. |
 | sessionCookieName | string | The name of the session cookie. |
+| sessionReplayViewIdCookieName | string | The name of the session replay view ID cookie. |
 | sessionTimeoutCookieName | string | The name of the session timeout cookie. |
 | sourceActionCookieName | string | The name of the source action cookie. |
 | visitorCookieName | string | The name of the visitor cookie. |
@@ -101,6 +102,10 @@ A list of constraint violations
 
 
 "sessionCookieName": "dtCookie",
+
+
+
+"sessionReplayViewIdCookieName": "dtsrVID",
 
 
 

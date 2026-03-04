@@ -1,13 +1,14 @@
 ---
 title: Set up CORS on Amazon S3
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/aws-platform/set-up-cors-in-amazon-s3
-scraped: 2026-03-03T21:18:52.026346
+scraped: 2026-03-04T21:25:38.740887
 ---
 
 # Set up CORS on Amazon S3
 
 # Set up CORS on Amazon S3
 
+* Classic
 * How-to guide
 * 3-min read
 * Published Jul 19, 2017

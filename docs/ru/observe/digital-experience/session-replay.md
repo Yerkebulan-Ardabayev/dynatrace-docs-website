@@ -1,13 +1,14 @@
 ---
 title: Session Replay
 source: https://www.dynatrace.com/docs/observe/digital-experience/session-replay
-scraped: 2026-03-01T21:12:45.670076
+scraped: 2026-03-04T21:20:02.863794
 ---
 
 # Session Replay
 
 # Session Replay
 
+* Classic
 * Overview
 * 3-min read
 * Updated on Jan 27, 2023

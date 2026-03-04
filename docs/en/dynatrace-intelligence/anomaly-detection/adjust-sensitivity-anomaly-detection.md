@@ -1,7 +1,7 @@
 ---
 title: Adjust the sensitivity of anomaly detection
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/anomaly-detection/adjust-sensitivity-anomaly-detection
-scraped: 2026-03-03T21:21:10.578842
+scraped: 2026-03-04T21:18:34.534183
 ---
 
 # Adjust the sensitivity of anomaly detection
@@ -23,8 +23,6 @@ The *sensitivity of problem detection* controls the level of statistical confide
 | High | Low | A problem is raised even if just a few data points have violated the threshold.  Useful for mission-critical production services. |
 
 For some criteria, Dynatrace distinguishes between absolute and relative thresholds. In the example below (it shows a part of anomaly detection configuration for application) the thresholds for key performance metric degradation are set to `100 ms` (absolute) and `50%` (relative) above the auto-learned baseline. The threshold for the slowest 10% of the requests is set to `1,000 ms` (absolute) and `100%` (relative) above the auto-learned baseline.
-
-![Absolute and relative thresholds](https://dt-cdn.net/images/anomaly-detection-app-775-346ef271c3.png)
 
 Additionally the anomaly detection considers the number of actions per minute that have to happen in the monitored application (`10 actions per minute` in the example above). With that setting you can disable alerting for low traffic applications and servicesâbaselining and alerting on low traffic applications often leads to unnecessary alerts.
 
