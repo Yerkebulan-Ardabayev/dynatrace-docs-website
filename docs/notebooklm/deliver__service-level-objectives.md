@@ -1,6 +1,6 @@
 # Документация Dynatrace: deliver/service-level-objectives
 Язык: Русский (RU)
-Сгенерировано: 2026-03-04
+Сгенерировано: 2026-03-05
 Файлов в разделе: 7
 ---
 
@@ -9,7 +9,7 @@
 ---
 title: Create service-level objectives
 source: https://www.dynatrace.com/docs/deliver/service-level-objectives/create-slo
-scraped: 2026-03-04T21:39:14.938577
+scraped: 2026-03-05T21:31:21.874741
 ---
 
 # Create service-level objectives
@@ -110,7 +110,7 @@ You can create, edit, list, delete, and evaluate your SLOs via API.
 ---
 title: Permissions for service-level objective (SLO) tiles in a dashboard
 source: https://www.dynatrace.com/docs/deliver/service-level-objectives/service-level-objective-permissions
-scraped: 2026-03-03T21:31:23.124890
+scraped: 2026-03-05T21:33:54.669624
 ---
 
 # Permissions for service-level objective (SLO) tiles in a dashboard
@@ -144,7 +144,7 @@ For the SLO details view
 ---
 title: Add a service-level objective (SLO) tile to a dashboard
 source: https://www.dynatrace.com/docs/deliver/service-level-objectives/service-level-objective-tile-add-to-dashboard
-scraped: 2026-03-04T21:36:42.162174
+scraped: 2026-03-05T21:34:17.198712
 ---
 
 # Add a service-level objective (SLO) tile to a dashboard
@@ -227,7 +227,7 @@ Due to the intersection, the result contains only the evaluations related to S-2
 ---
 title: Edit a service-level objective (SLO) tile in a dashboard
 source: https://www.dynatrace.com/docs/deliver/service-level-objectives/service-level-objective-tile-edit-in-dashboard
-scraped: 2026-03-04T21:33:19.055663
+scraped: 2026-03-05T21:35:46.560106
 ---
 
 # Edit a service-level objective (SLO) tile in a dashboard

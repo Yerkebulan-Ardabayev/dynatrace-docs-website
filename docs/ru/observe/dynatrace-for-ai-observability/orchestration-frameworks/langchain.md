@@ -1,7 +1,7 @@
 ---
 title: LangChain
 source: https://www.dynatrace.com/docs/observe/dynatrace-for-ai-observability/orchestration-frameworks/langchain
-scraped: 2026-03-04T21:19:31.504844
+scraped: 2026-03-05T21:22:31.432958
 ---
 
 # LangChain

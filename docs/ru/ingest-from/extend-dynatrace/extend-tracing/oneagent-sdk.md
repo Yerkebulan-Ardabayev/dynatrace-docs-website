@@ -1,7 +1,7 @@
 ---
 title: OneAgent SDK
 source: https://www.dynatrace.com/docs/ingest-from/extend-dynatrace/extend-tracing/oneagent-sdk
-scraped: 2026-03-04T21:20:32.056735
+scraped: 2026-03-05T21:16:59.247618
 ---
 
 # OneAgent SDK

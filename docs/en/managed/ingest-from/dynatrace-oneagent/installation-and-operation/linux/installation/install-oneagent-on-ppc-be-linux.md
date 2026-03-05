@@ -1,7 +1,7 @@
 ---
 title: Install OneAgent on PPC BE Linux
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/install-oneagent-on-ppc-be-linux
-scraped: 2026-03-04T21:17:03.662543
+scraped: 2026-03-05T21:28:48.741417
 ---
 
 # Install OneAgent on PPC BE Linux

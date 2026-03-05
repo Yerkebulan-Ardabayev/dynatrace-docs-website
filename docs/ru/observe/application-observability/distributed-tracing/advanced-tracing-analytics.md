@@ -1,7 +1,7 @@
 ---
 title: Advanced Tracing Analytics powered by Grail
 source: https://www.dynatrace.com/docs/observe/application-observability/distributed-tracing/advanced-tracing-analytics
-scraped: 2026-03-04T21:13:25.690175
+scraped: 2026-03-05T21:13:31.515446
 ---
 
 # Advanced Tracing Analytics powered by Grail

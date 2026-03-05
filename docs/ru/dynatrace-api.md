@@ -1,7 +1,7 @@
 ---
 title: Dynatrace API
 source: https://www.dynatrace.com/docs/dynatrace-api
-scraped: 2026-03-04T21:20:24.229919
+scraped: 2026-03-05T21:19:36.248011
 ---
 
 # Dynatrace API
@@ -19,11 +19,11 @@ scraped: 2026-03-04T21:20:24.229919
 
 [Коды ответов](/docs/dynatrace-api/basics/dynatrace-api-response-codes "Узнайте, какие коды ответов HTTP используются в Dynatrace API.")
 
-[Ограничение доступа](/docs/dynatrace-api/basics/access-limit "Узнайте о ограничениях payload и ограничении запросов, которые могут повлиять на использование Dynatrace API.")
+[Ограничение доступа](/docs/dynatrace-api/basics/access-limit "Узнайте о ограничениях полезной нагрузки и ограничении запросов, которые могут повлиять на использование Dynatrace API.")
 
 [Предварительные и ранние выпуски](/docs/dynatrace-api/basics/preview-early-access "Как работают предварительные и ранние выпуски конечных точек Dynatrace API")
 
-[Руководства по миграции](/docs/dynatrace-api/basics/deprecation-migration-guides "Мигрируйте свою автоматизацию в более новые конечные точки Dynatrace API.")
+[Руководства по миграции](/docs/dynatrace-api/basics/deprecation-migration-guides "Перенесите свою автоматизацию на более новые конечные точки Dynatrace API.")
 
 [Grail APIs](https://developer.dynatrace.com/plan/platform-services/grail-service/)
 
@@ -33,15 +33,15 @@ Environment
 
 Настройка
 
-Управление учетной записью
+Управление учетными записями
 
 ### ActiveGate
 
 [Информация](/docs/dynatrace-api/environment-api/activegates/activegate-info "Список всех ActiveGate, в настоящее время или недавно подключенных к среде через Dynatrace API.")
 
-[Настройка автоматического обновления](/docs/dynatrace-api/environment-api/activegates/auto-update-config "Управление настройкой автоматического обновления Environment ActiveGate через Dynatrace API.")
+[Настройка автоматического обновления](/docs/dynatrace-api/environment-api/activegates/auto-update-config "Управление настройкой автоматического обновления ваших Environment ActiveGate через Dynatrace API.")
 
-[Задания автоматического обновления](/docs/dynatrace-api/environment-api/activegates/auto-update-jobs "Управление заданиями автоматического обновления ActiveGate через Dynatrace API.")
+[Задания автоматического обновления](/docs/dynatrace-api/environment-api/activegates/auto-update-jobs "Управление заданиями автоматического обновления ваших ActiveGate через Dynatrace API.")
 
 ### Анонимизация
 
@@ -51,18 +51,18 @@ Environment
 
 [Уязвимости](/docs/dynatrace-api/environment-api/application-security/vulnerabilities "Узнайте, что предлагает API уязвимостей.")
 
-[Советник по безопасности Davis](/docs/dynatrace-api/environment-api/application-security/davis-security-advice "Просмотрите рекомендации советника по безопасности Davis через Dynatrace API.")
+[Советник по безопасности Davis](/docs/dynatrace-api/environment-api/application-security/davis-security-advice "Просмотрите рекомендации Совета по безопасности Davis через Dynatrace API.")
 [Атаки](/docs/dynatrace-api/environment-api/application-security/attacks "Узнайте, что предлагает Dynatrace Атаки API.")
 
 ### Журналы аудита
 
 [Журналы аудита](/docs/dynatrace-api/environment-api/audit-logs "Чтение журналов аудита Dynatrace через Dynatrace API.")
 
-![Business Observability](https://cdn.bfldr.com/B686QPH3/at/96c9p97q7f48grj67tqhchz/Business_Analytics.svg?auto=webp&width=72&height=72 "Business Observability")
+![Бизнес-наблюдаемость](https://cdn.bfldr.com/B686QPH3/at/96c9p97q7f48grj67tqhchz/Business_Analytics.svg?auto=webp&width=72&height=72 "Бизнес-наблюдаемость")
 
 ### Бизнес-события
 
-[Бизнес-события](/docs/dynatrace-api/environment-api/business-analytics-v2 "Узнайте, как можно ингестировать бизнес-событие с помощью Dynatrace Бизнес-событий API v2.")
+[Бизнес-события](/docs/dynatrace-api/environment-api/business-analytics-v2 "Узнайте, как можно включить бизнес-событие с помощью Dynatrace Бизнес-событий API v2.")
 
 ### Информация о кластере
 
@@ -82,9 +82,9 @@ Environment
 
 [ActiveGate](/docs/dynatrace-api/environment-api/deployment/activegate "Скачайте установщики ActiveGate через Dynatrace API.")
 
-[Архивы BOSH](/docs/dynatrace-api/environment-api/deployment/bosh "Скачайте установщики OneAgent в качестве архивов BOSH через Dynatrace API.")
+[Архивы BOSH](/docs/dynatrace-api/environment-api/deployment/bosh "Скачайте установщики OneAgent в виде архивов BOSH через Dynatrace API.")
 
-[Архивы оркестровки](/docs/dynatrace-api/environment-api/deployment/orchestration "Скачайте установщики OneAgent в качестве архивов оркестровки через Dynatrace API.")
+[Архивы оркестровки](/docs/dynatrace-api/environment-api/deployment/orchestration "Скачайте установщики OneAgent в виде архивов оркестровки через Dynatrace API.")
 
 ### События
 
@@ -94,7 +94,7 @@ Environment
 
 [Список свойств событий](/docs/dynatrace-api/environment-api/events-v2/get-event-properties "Список всех свойств событий через Dynatrace API.")
 
-[Ингестирование событий](/docs/dynatrace-api/environment-api/events-v2/post-event "Ингестирует событие через Dynatrace API.")
+[Включение событий](/docs/dynatrace-api/environment-api/events-v2/post-event "Включение события через Dynatrace API.")
 
 ### Extensions 2.0
 
@@ -106,25 +106,25 @@ Environment
 
 ### Мониторинг журналов
 
-[Мониторинг журналов](/docs/dynatrace-api/environment-api/log-monitoring-v2 "Узнайте, что можно сделать с помощью API Мониторинга журналов v2.")
+[Мониторинг журналов](/docs/dynatrace-api/environment-api/log-monitoring-v2 "Узнайте, что можно сделать с помощью Мониторинга журналов API v2.")
 
 ### Метрики
 
 #### Версия 1
 
-[Основы](/docs/dynatrace-api/environment-api/metric-v1 "Получение информации о метриках через API Timeseries v1.")
+[Основы](/docs/dynatrace-api/environment-api/metric-v1 "Получение информации о метриках через Timeseries v1 API.")
 
 #### Версия 2
 
-[Список метрик](/docs/dynatrace-api/environment-api/metric-v2/get-all-metrics "Список всех метрик, доступных в вашей среде мониторинга, через API Метрик v2.")
+[Список метрик](/docs/dynatrace-api/environment-api/metric-v2/get-all-metrics "Список всех метрик, доступных в вашей среде мониторинга, через Метрики v2 API.")
 
-[Получение точек данных](/docs/dynatrace-api/environment-api/metric-v2/get-data-points "Чтение точек данных одной или нескольких метрик через API Метрик v2.")
+[Получение данных](/docs/dynatrace-api/environment-api/metric-v2/get-data-points "Чтение данных одной или нескольких метрик через Метрики v2 API.")
 
-[Ингестирование точек данных](/docs/dynatrace-api/environment-api/metric-v2/post-ingest-metrics "Ингестирует пользовательские метрики в Dynatrace через API Метрик v2.")
+[Включение данных](/docs/dynatrace-api/environment-api/metric-v2/post-ingest-metrics "Включение пользовательских метрик в Dynatrace через Метрики v2 API.")
 
-[Селектор метрик](/docs/dynatrace-api/environment-api/metric-v2/metric-selector "Настройка селектора метрик для API Метрик v2.")
+[Селектор метрик](/docs/dynatrace-api/environment-api/metric-v2/metric-selector "Настройка селектора метрик для Метрик v2 API.")
 
-[Выражения метрик](/docs/dynatrace-api/environment-api/metric-v2/metric-expressions "Использование выражений метрик для применения арифметических операций в запросе точек данных через API Метрик v2.")
+[Выражения метрик](/docs/dynatrace-api/environment-api/metric-v2/metric-expressions "Использование выражений метрик для применения арифметических операций в запросе данных через Метрики API v2.")
 
 ### Единицы измерения метрик
 
@@ -150,9 +150,9 @@ Environment
 
 [Проблемы v2](/docs/dynatrace-api/environment-api/problems-v2 "Узнайте, что предлагает Dynatrace Проблемы v2 API.")
 
-### Релизы
+### Выпуски
 
-[Релизы](/docs/dynatrace-api/environment-api/releaseapi "Узнайте, что предлагает Dynatrace Релизы API.")
+[Выпуски](/docs/dynatrace-api/environment-api/releaseapi "Узнайте, что предлагает Dynatrace Выпуски API.")
 
 ### Удаленная конфигурация
 
@@ -166,7 +166,7 @@ Environment
 
 [Сессии пользователей](/docs/dynatrace-api/environment-api/rum/user-sessions "Узнайте, что предлагает Dynatrace Сессии пользователей Query язык API.")
 
-[Real User Monitoring JavaScript](/docs/dynatrace-api/environment-api/rum/real-user-monitoring-javascript-code "Узнайте, как можно использовать Dynatrace API, чтобы настроить и поддерживать ваши вручную инъектируемые приложения с помощью Real User Monitoring JavaScript API.")
+[Real User Monitoring JavaScript](/docs/dynatrace-api/environment-api/rum/real-user-monitoring-javascript-code "Узнайте, как можно использовать Dynatrace API, чтобы настроить и поддерживать ваши вручную внедренные приложения с помощью Real User Monitoring JavaScript API.")
 
 ### Настройки
 
@@ -174,7 +174,7 @@ Environment
 
 ### SLO
 
-[Цели сервисного уровня](/docs/dynatrace-api/environment-api/service-level-objectives "Откройте для себя функциональность API новых Целей сервисного уровня, работающих на Grail.")
+[Цели обслуживания](/docs/dynatrace-api/environment-api/service-level-objectives "Откройте для себя функциональность API новых Целей обслуживания, работающих на Grail.")
 
 ### Синтетика
 
@@ -182,15 +182,15 @@ Environment
 
 [Выполнение мониторов v2](/docs/dynatrace-api/environment-api/synthetic-v2/synthetic-monitor-execution "Просмотр результатов выполнения Синтетических мониторов через Синтетический v2 API.")
 
-[Местоположения v1](/docs/dynatrace-api/environment-api/synthetic/synthetic-locations "Управление синтетическими местоположениями через Синтетический v1 API.")
+[Места v1](/docs/dynatrace-api/environment-api/synthetic/synthetic-locations "Управление синтетическими местами через Синтетический v1 API.")
 
-[Местоположения v2](/docs/dynatrace-api/environment-api/synthetic-v2/synthetic-locations-v2 "Управление синтетическими местоположениями через Синтетический v2 API.")
+[Места v2](/docs/dynatrace-api/environment-api/synthetic-v2/synthetic-locations-v2 "Управление синтетическими местами через Синтетический v2 API.")
 
 [Узлы v1](/docs/dynatrace-api/environment-api/synthetic/synthetic-nodes "Получение информации о синтетических узлах через Синтетический v1 API.")
 
 [Узлы v2](/docs/dynatrace-api/environment-api/synthetic-v2/synthetic-nodes-v2 "Управление синтетическими узлами через Синтетический v2 API.")
 
-[Синтетика третьих сторон](/docs/dynatrace-api/environment-api/synthetic/third-party-synthetic "Передача данных синтетики третьих сторон в Dynatrace через API.")
+[Синтетика третьих сторон](/docs/dynatrace-api/environment-api/synthetic/third-party-synthetic "Передача синтетических данных третьих сторон в Dynatrace через API.")
 
 ### Токены
 
@@ -246,9 +246,9 @@ Environment
 
 [Защита данных](/docs/dynatrace-api/configuration-api/data-privacy-api "Узнайте, что предлагает Dynatrace конфигурация защиты данных API.")
 
-### Панели мониторинга
+### Панели управления
 
-[Панели мониторинга](/docs/dynatrace-api/configuration-api/dashboards-api "Узнайте, как управлять конфигурацией панели мониторинга через Dynatrace классическую конфигурацию API.")
+[Панели управления](/docs/dynatrace-api/configuration-api/dashboards-api "Узнайте, как управлять конфигурацией панели управления через Dynatrace классическую конфигурацию API.")
 
 ### Extensions
 
@@ -256,11 +256,11 @@ Environment
 
 [Плагины](/docs/dynatrace-api/configuration-api/plugins-api "Узнайте, как управлять плагинами через Dynatrace конфигурацию API.")
 
-### Мобильные приложения
+### Мобильные устройства
 
 [Конфигурация мобильных и пользовательских приложений](/docs/dynatrace-api/configuration-api/rum/mobile-custom-app-configuration "Узнайте, что предлагает Dynatrace конфигурация мобильных и пользовательских приложений API.")
 
-[Симболикация мобильных приложений](/docs/dynatrace-api/configuration-api/mobile-symbolication-api "Управляйте файлами символов мобильных приложений через Dynatrace API.")
+[Символика мобильных приложений](/docs/dynatrace-api/configuration-api/mobile-symbolication-api "Управляйте файлами символов мобильных приложений через Dynatrace API.")
 
 ### OneAgent
 
@@ -280,7 +280,7 @@ Environment
 
 ### RUM
 
-[Разрешенные источники для CORS](/docs/dynatrace-api/configuration-api/rum/allowed-beacon-cors "Узнайте, что предлагает Dynatrace конфигурация API для разрешенных источников для Cross Origin Resource Sharing.")
+[Разрешенные источники маяков для CORS](/docs/dynatrace-api/configuration-api/rum/allowed-beacon-cors "Узнайте, что предлагает Dynatrace конфигурация API для разрешенных источников маяков для Cross Origin Resource Sharing.")
 
 [Конфигурация обнаружения приложений](/docs/dynatrace-api/configuration-api/rum/application-detection-configuration "Узнайте, что предлагает Dynatrace конфигурация обнаружения приложений API.")
 
@@ -354,7 +354,7 @@ Environment
 
 ### Справочные данные
 
-Просмотр справочной информации о вашем аккаунте. (/docs/dynatrace-api/account-management-api/reference-data "Просмотр справочной информации о вашем аккаунте через API справочных данных API.")
+Просмотр справочной информации о вашем аккаунте. (/docs/dynatrace-api/account-management-api/reference-data "Проверка справочной информации вашего аккаунта через API справочных данных API.")
 
 ## Исследователь API
 
@@ -366,7 +366,7 @@ Environment
 
 Вы можете получить доступ ко всем конечным точкам Dynatrace API, используя API Explorer.
 
-* Последняя Dynatrace Перейдите в раздел **Токены доступа** и затем выберите ссылку **Dynatrace API Explorer**.
+* Последняя Dynatrace Перейдите в **Токены доступа**, а затем выберите ссылку **Dynatrace API Explorer**.
 * Предыдущая Dynatrace Из [меню пользователя](/docs/discover-dynatrace/get-started/dynatrace-ui#user-menu-previous-dynatrace "Перейти к последней Dynatrace"), прокрутите вниз до **Dynatrace API** и выберите раздел API, который вас интересует.
 
 Альтернативно, вы можете получить доступ к API Explorer через прямую ссылку `https://{your-environment-id}.live.dynatrace.com/rest-api-doc/`.
@@ -379,11 +379,11 @@ Environment
 
 ### Попробуйте вызов API
 
-После ввода вашего OAuth 2.0-токена вы можете直接 выполнять вызовы API внутри API Explorer. Просто выберите **Попробовать** чтобы открыть раздел параметров выбранной конечной точки API, где вы можете ввести дополнительные параметры и изменить payload запроса перед выполнением его, выбрав **Выполнить**.
+После ввода своего OAuth 2.0-токена вы можете直接 выполнить вызовы API внутри API Explorer. Просто выберите **Попробовать**, чтобы открыть раздел параметров выбранной конечной точки API, где вы можете ввести дополнительные параметры и изменить полезную нагрузку запроса перед выполнением его, выбрав **Выполнить**.
 
 Вы можете получить доступ ко всем конечным точкам Dynatrace API, используя API Explorer.
 
-* Последняя Dynatrace Перейдите в раздел **Токены доступа** и затем выберите ссылку **Dynatrace API Explorer**.
+* Последняя Dynatrace Перейдите в **Токены доступа**, а затем выберите ссылку **Dynatrace API Explorer**.
 * Предыдущая Dynatrace Из [меню пользователя](/docs/discover-dynatrace/get-started/dynatrace-ui#user-menu-previous-dynatrace "Перейти к последней Dynatrace"), прокрутите вниз до **Dynatrace API** и выберите раздел API, который вас интересует.
 
 Альтернативно, вы можете получить доступ к API Explorer через прямую ссылку `https://{your-environment-id}.live.dynatrace.com/rest-api-doc/`.
@@ -396,13 +396,13 @@ Environment
 
 ### Попробуйте вызов API
 
-После ввода вашего OAuth 2.0-токена вы можете直接 выполнять вызовы API внутри API Explorer. Просто выберите **Попробовать** чтобы открыть раздел параметров выбранной конечной точки API, где вы можете ввести дополнительные параметры и изменить payload запроса перед выполнением его, выбрав **Выполнить**.
+После ввода своего OAuth 2.0-токена вы можете直接 выполнить вызовы API внутри API Explorer. Просто выберите **Попробовать**, чтобы открыть раздел параметров выбранной конечной точки API, где вы можете ввести дополнительные параметры и изменить полезную нагрузку запроса перед выполнением его, выбрав **Выполнить**.
 
 Вы можете получить доступ ко всем конечным точкам Dynatrace API, используя API Explorer.
 
-1. Перейдите в [**Управление учетными записями**](https://myaccount.dynatrace.com/). Если у вас несколько учетных записей, выберите учетную запись, которую вы хотите управлять.
+1. Перейдите в [**Управление учетными записями**](https://myaccount.dynatrace.com/). Если у вас есть несколько учетных записей, выберите учетную запись, которую вы хотите управлять.
 2. В верхней навигационной панели перейдите в **Идентификация и управление доступом** > **Клиенты OAuth**.
-3. В правом верхнем углу страницы выберите **Управление учетной записью API**.
+3. В правом верхнем углу страницы выберите **Управление учетными записями API**.
 
 ### Аутентификация в API Explorer
 
@@ -412,4 +412,4 @@ Environment
 
 ### Попробуйте вызов API
 
-После ввода вашего OAuth 2.0-токена вы можете直接 выполнять вызовы API внутри API Explorer. Просто выберите **Попробовать** чтобы открыть раздел параметров выбранной конечной точки API, где вы можете ввести дополнительные параметры и изменить payload запроса перед выполнением его, выбрав **Выполнить**.
+После ввода своего OAuth 2.0-токена вы можете直接 выполнить вызовы API внутри API Explorer. Просто выберите **Попробовать**, чтобы открыть раздел параметров выбранной конечной точки API, где вы можете ввести дополнительные параметры и изменить полезную нагрузку запроса перед выполнением его, выбрав **Выполнить**.

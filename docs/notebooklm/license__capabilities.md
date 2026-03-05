@@ -1,6 +1,6 @@
 # Документация Dynatrace: license/capabilities
 Язык: Русский (RU)
-Сгенерировано: 2026-03-04
+Сгенерировано: 2026-03-05
 Файлов в разделе: 17
 ---
 
@@ -9,7 +9,7 @@
 ---
 title: Calculate your consumption of Foundation & Discovery (DPS)
 source: https://www.dynatrace.com/docs/license/capabilities/app-infra-observability/foundation-and-discovery
-scraped: 2026-03-04T21:19:20.079053
+scraped: 2026-03-05T21:21:22.589774
 ---
 
 # Calculate your consumption of Foundation & Discovery (DPS)
@@ -115,7 +115,7 @@ These metrics are also available via the Environment API and your **Account Mana
 ---
 title: Calculate your consumption of Full-Stack Monitoring (DPS)
 source: https://www.dynatrace.com/docs/license/capabilities/app-infra-observability/full-stack-monitoring
-scraped: 2026-03-04T21:15:18.805549
+scraped: 2026-03-05T21:28:19.911662
 ---
 
 # Calculate your consumption of Full-Stack Monitoring (DPS)
@@ -536,7 +536,7 @@ When using the metric "(DPS) Total metric data points billed for Full-Stack moni
 ---
 title: Calculate your consumption of Infrastructure Monitoring (DPS)
 source: https://www.dynatrace.com/docs/license/capabilities/app-infra-observability/infrastructure-monitoring
-scraped: 2026-03-04T21:19:08.255947
+scraped: 2026-03-05T21:21:20.854278
 ---
 
 # Calculate your consumption of Infrastructure Monitoring (DPS)
@@ -731,7 +731,7 @@ The example below shows that one of the Infrastructure monitored hosts reported 
 ---
 title: Calculate your consumption of Mainframe Monitoring (DPS)
 source: https://www.dynatrace.com/docs/license/capabilities/app-infra-observability/mainframe
-scraped: 2026-03-04T21:15:17.019091
+scraped: 2026-03-05T21:28:26.712032
 ---
 
 # Calculate your consumption of Mainframe Monitoring (DPS)
@@ -872,7 +872,7 @@ The following details apply to metric data points:
 ---
 title: Application & Infrastructure Observability overview (DPS)
 source: https://www.dynatrace.com/docs/license/capabilities/app-infra-observability
-scraped: 2026-03-03T21:24:33.771122
+scraped: 2026-03-05T21:32:41.795195
 ---
 
 # Application & Infrastructure Observability overview (DPS)
@@ -1235,7 +1235,7 @@ The following details apply to metric data points:
 ---
 title: Events powered by Grail overview (DPS)
 source: https://www.dynatrace.com/docs/license/capabilities/events
-scraped: 2026-03-03T21:16:21.627491
+scraped: 2026-03-05T21:23:46.466376
 ---
 
 # Events powered by Grail overview (DPS)
@@ -1323,7 +1323,7 @@ Here's what's included with the Query data-usage dimension:
 ---
 title: Calculate your consumption of Log Management & Analytics - Query (DPS)
 source: https://www.dynatrace.com/docs/license/capabilities/log-analytics/dps-log-query
-scraped: 2026-03-04T21:13:40.368589
+scraped: 2026-03-05T21:12:42.597192
 ---
 
 # Calculate your consumption of Log Management & Analytics - Query (DPS)
@@ -1457,7 +1457,7 @@ You can query metrics via the [Environment API - Metrics API v2](/docs/dynatrace
 ---
 title: Log Analytics (DPS)
 source: https://www.dynatrace.com/docs/license/capabilities/log-analytics
-scraped: 2026-03-04T21:21:36.092083
+scraped: 2026-03-05T21:15:52.342422
 ---
 
 # Log Analytics (DPS)
@@ -1577,7 +1577,7 @@ Alternatively, if the Retain with Included Query option does not meet your use c
 ---
 title: Metrics powered by Grail overview (DPS)
 source: https://www.dynatrace.com/docs/license/capabilities/metrics
-scraped: 2026-03-03T21:16:19.288685
+scraped: 2026-03-05T21:23:48.107170
 ---
 
 # Metrics powered by Grail overview (DPS)
@@ -1626,7 +1626,7 @@ Here's what's included with the Query data-usage dimension:
 ---
 title: Platform extensions overview (DPS)
 source: https://www.dynatrace.com/docs/license/capabilities/platform-extensions
-scraped: 2026-03-04T21:38:00.704443
+scraped: 2026-03-05T21:40:11.515647
 ---
 
 # Platform extensions overview (DPS)
@@ -1704,7 +1704,7 @@ Dynatrace also allows you to ingest logs from your serverless cloud functions.
 ---
 title: Traces powered by Grail overview (DPS)
 source: https://www.dynatrace.com/docs/license/capabilities/traces
-scraped: 2026-03-04T21:22:37.108091
+scraped: 2026-03-05T21:18:06.690209
 ---
 
 # Traces powered by Grail overview (DPS)
@@ -1795,7 +1795,7 @@ When other data types are also read in a query, this can result in consumption o
 ---
 title: Understanding DPS capabilities
 source: https://www.dynatrace.com/docs/license/capabilities
-scraped: 2026-03-04T21:22:00.502683
+scraped: 2026-03-05T21:19:24.843049
 ---
 
 # Understanding DPS capabilities

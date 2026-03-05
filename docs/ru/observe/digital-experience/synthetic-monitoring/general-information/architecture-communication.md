@@ -1,13 +1,14 @@
 ---
 title: Synthetic architecture and communication
 source: https://www.dynatrace.com/docs/observe/digital-experience/synthetic-monitoring/general-information/architecture-communication
-scraped: 2026-03-03T21:28:19.630469
+scraped: 2026-03-05T21:38:48.161973
 ---
 
 # Synthetic architecture and communication
 
 # Synthetic architecture and communication
 
+* Classic
 * Explanation
 * 3-min read
 * Published Feb 27, 2025

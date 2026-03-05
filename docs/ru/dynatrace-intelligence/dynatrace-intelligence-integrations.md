@@ -1,7 +1,7 @@
 ---
 title: Dynatrace Intelligence интеграции
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/dynatrace-intelligence-integrations
-scraped: 2026-03-04T21:20:17.534132
+scraped: 2026-03-05T21:22:25.003289
 ---
 
 # Dynatrace Intelligence интеграции
@@ -21,7 +21,7 @@ scraped: 2026-03-04T21:20:17.534132
 
 Запустите анализ ИИ в Dynatrace тетрадях.
 
-* Руководство по началу работы
+* Руководство
 
 Прочитайте это руководство](/docs/dynatrace-intelligence/dynatrace-intelligence-integrations/davis-for-notebooks)
 
@@ -31,7 +31,7 @@ scraped: 2026-03-04T21:20:17.534132
 
 #### Dynatrace сервер MCP
 
-Узнайте о Dynatrace сервере MCP и о том, как подключиться к нему.
+Узнайте о Dynatrace сервере MCP и о том, как можно к нему подключиться.
 
 * Обзор
 
@@ -39,24 +39,24 @@ scraped: 2026-03-04T21:20:17.534132
 
 ## Рабочие процессы
 
-Посмотрите случаи использования рабочих процессов для Dynatrace Intelligence.
+Прочитайте случаи использования рабочих процессов для Dynatrace Intelligence.
 
 [#### Оптимизируйте стоимость DQL с помощью рабочих процессов
 
 Используйте Dynatrace Intelligence (Предварительный просмотр), чтобы оптимизировать стоимость ваших запросов.
 
-* Учебник
+* Урок
 
-Прочитайте этот учебник](/docs/dynatrace-intelligence/use-cases/copilot-in-workflows-dql)[#### Суммируйте открытые проблемы с помощью рабочих процессов
+Прочитайте этот урок](/docs/dynatrace-intelligence/use-cases/copilot-in-workflows-dql)[#### Суммируйте открытые проблемы с помощью рабочих процессов
 
 Используйте Dynatrace Intelligence (Предварительный просмотр), чтобы суммировать открытые проблемы и предложить шаги по исправлению.
 
-* Учебник
+* Урок
 
-Прочитайте этот учебник](/docs/dynatrace-intelligence/use-cases/copilot-in-workflows-examples)[#### ИИ в рабочих процессах - прогнозное обслуживание облачных дисков
+Прочитайте этот урок](/docs/dynatrace-intelligence/use-cases/copilot-in-workflows-examples)[#### ИИ в рабочих процессах - прогнозное обслуживание облачных дисков
 
 Автоматизируйте прогнозное обслуживание облачных ресурсов с помощью Dynatrace Intelligence в AutomationEngine.
 
-* Учебник
+* Урок
 
-Прочитайте этот учебник](/docs/dynatrace-intelligence/use-cases/davis-for-workflows)
+Прочитайте этот урок](/docs/dynatrace-intelligence/use-cases/davis-for-workflows)

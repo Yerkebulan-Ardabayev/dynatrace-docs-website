@@ -1,7 +1,7 @@
 ---
 title: Network traffic
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/reference/network
-scraped: 2026-03-02T21:27:32.561931
+scraped: 2026-03-05T21:31:25.325472
 ---
 
 # Network traffic

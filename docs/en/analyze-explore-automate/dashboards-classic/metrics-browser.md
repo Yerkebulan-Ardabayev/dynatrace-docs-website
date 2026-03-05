@@ -1,13 +1,14 @@
 ---
 title: Metrics browser
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-classic/metrics-browser
-scraped: 2026-03-03T21:29:54.205428
+scraped: 2026-03-05T21:38:56.285651
 ---
 
 # Metrics browser
 
 # Metrics browser
 
+* Classic
 * How-to guide
 * 5-min read
 * Updated on Aug 01, 2022

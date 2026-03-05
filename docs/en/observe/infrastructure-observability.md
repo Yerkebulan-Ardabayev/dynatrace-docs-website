@@ -1,7 +1,7 @@
 ---
 title: Infrastructure Observability
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability
-scraped: 2026-03-04T21:12:55.147875
+scraped: 2026-03-05T21:13:47.717498
 ---
 
 # Infrastructure Observability

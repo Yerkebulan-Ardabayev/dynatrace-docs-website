@@ -1,7 +1,7 @@
 ---
 title: Configure multi-cloud ingest governance with pipeline groups
 source: https://www.dynatrace.com/docs/platform/openpipeline/use-cases/pipeline-groups-multicloud
-scraped: 2026-03-04T21:19:57.822401
+scraped: 2026-03-05T21:20:26.557388
 ---
 
 # Configure multi-cloud ingest governance with pipeline groups

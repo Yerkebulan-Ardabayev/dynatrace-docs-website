@@ -1,7 +1,7 @@
 ---
 title: Session segmentation
 source: https://www.dynatrace.com/docs/observe/digital-experience/session-segmentation
-scraped: 2026-03-04T21:20:04.462483
+scraped: 2026-03-05T21:20:03.715404
 ---
 
 # Session segmentation

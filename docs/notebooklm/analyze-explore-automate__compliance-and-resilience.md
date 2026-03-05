@@ -1,6 +1,6 @@
 # Документация Dynatrace: analyze-explore-automate/compliance-and-resilience
 Язык: Русский (RU)
-Сгенерировано: 2026-03-04
+Сгенерировано: 2026-03-05
 Файлов в разделе: 2
 ---
 
@@ -9,7 +9,7 @@
 ---
 title: Compliance Assistant
 source: https://www.dynatrace.com/docs/analyze-explore-automate/compliance-and-resilience/compliance-assistant
-scraped: 2026-03-04T21:37:49.325887
+scraped: 2026-03-05T21:30:24.955360
 ---
 
 # Compliance Assistant

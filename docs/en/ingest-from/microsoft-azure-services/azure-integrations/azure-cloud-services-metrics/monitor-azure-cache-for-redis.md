@@ -1,7 +1,7 @@
 ---
 title: Azure Cache for Redis monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-cache-for-redis
-scraped: 2026-03-03T21:25:25.747975
+scraped: 2026-03-05T21:32:12.371314
 ---
 
 # Azure Cache for Redis monitoring

@@ -1,7 +1,7 @@
 ---
 title: Mobile frontends
 source: https://www.dynatrace.com/docs/observe/digital-experience/new-rum-experience/mobile-frontends
-scraped: 2026-03-02T21:27:24.621794
+scraped: 2026-03-05T21:38:04.999735
 ---
 
 # Mobile frontends

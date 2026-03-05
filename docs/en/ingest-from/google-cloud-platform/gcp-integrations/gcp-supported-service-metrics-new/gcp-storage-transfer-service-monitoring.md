@@ -1,7 +1,7 @@
 ---
 title: Google Cloud Storage Transfer Service monitoring
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new/gcp-storage-transfer-service-monitoring
-scraped: 2026-03-04T21:37:30.941284
+scraped: 2026-03-05T21:32:48.798608
 ---
 
 # Google Cloud Storage Transfer Service monitoring

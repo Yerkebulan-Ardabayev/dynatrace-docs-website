@@ -1,7 +1,7 @@
 ---
 title: RUM cookie names API - GET cookie names
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/rum/rum-cookie-names-get-cookie-names
-scraped: 2026-03-04T21:28:37.840869
+scraped: 2026-03-05T21:31:39.065653
 ---
 
 # RUM cookie names API - GET cookie names

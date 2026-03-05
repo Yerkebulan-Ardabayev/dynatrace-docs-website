@@ -1,13 +1,14 @@
 ---
 title: AWS WAF monitoring
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-wafv2
-scraped: 2026-03-03T21:29:28.515845
+scraped: 2026-03-05T21:40:25.352889
 ---
 
 # AWS WAF monitoring
 
 # AWS WAF monitoring
 
+* Classic
 * How-to guide
 * 1-min read
 * Published Jul 06, 2020

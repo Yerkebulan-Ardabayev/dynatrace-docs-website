@@ -1,7 +1,7 @@
 ---
 title: Custom topology model
 source: https://www.dynatrace.com/docs/ingest-from/extend-dynatrace/extend-topology
-scraped: 2026-03-04T21:20:22.478027
+scraped: 2026-03-05T21:21:40.445580
 ---
 
 # Custom topology model

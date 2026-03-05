@@ -1,7 +1,7 @@
 ---
 title: Set up the Dynatrace Google Cloud log integration in a Kubernetes container (GKE)
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/set-up-gcp-integration-logs-only
-scraped: 2026-03-03T21:29:59.096237
+scraped: 2026-03-05T21:37:05.026071
 ---
 
 # Set up the Dynatrace Google Cloud log integration in a Kubernetes container (GKE)

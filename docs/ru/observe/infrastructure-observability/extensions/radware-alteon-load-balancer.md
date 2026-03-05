@@ -1,7 +1,7 @@
 ---
 title: Radware Alteon Load Balancer extension
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/extensions/radware-alteon-load-balancer
-scraped: 2026-03-04T21:38:22.372801
+scraped: 2026-03-05T21:33:32.329201
 ---
 
 # Radware Alteon Load Balancer extension
@@ -198,6 +198,6 @@ Per\_Device\_HTTP\_Statistics\_Virtual
 
 
 
-### Изучите в Dynatrace Hub
+### Explore in Dynatrace Hub
 
-Отслеживайте свои балансировщики нагрузки Radware Alteon Network Load Balancers через SNMP.](https://www.dynatrace.com/hub/detail/radware-alteon-load-balancer/)
+Monitor your Radware Alteon Network Load Balancers through SNMP.](https://www.dynatrace.com/hub/detail/radware-alteon-load-balancer/)

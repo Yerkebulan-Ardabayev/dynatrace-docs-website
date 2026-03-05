@@ -1,7 +1,7 @@
 ---
 title: Set up OpenShift monitoring via OperatorHub
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/deployment/other/ocp-operator-hub
-scraped: 2026-03-01T21:24:30.678436
+scraped: 2026-03-05T21:37:33.103608
 ---
 
 # Set up OpenShift monitoring via OperatorHub

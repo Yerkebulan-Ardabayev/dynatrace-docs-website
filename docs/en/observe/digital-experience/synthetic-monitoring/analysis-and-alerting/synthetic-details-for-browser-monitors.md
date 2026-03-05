@@ -1,13 +1,14 @@
 ---
 title: Synthetic details for browser monitors
 source: https://www.dynatrace.com/docs/observe/digital-experience/synthetic-monitoring/analysis-and-alerting/synthetic-details-for-browser-monitors
-scraped: 2026-03-03T21:17:12.881046
+scraped: 2026-03-05T21:24:37.027798
 ---
 
 # Synthetic details for browser monitors
 
 # Synthetic details for browser monitors
 
+* Classic
 * Explanation
 * 14-min read
 * Updated on Jan 24, 2024

@@ -1,7 +1,7 @@
 ---
 title: DQL commands
 source: https://www.dynatrace.com/docs/platform/grail/dynatrace-query-language/commands
-scraped: 2026-03-04T21:18:06.129080
+scraped: 2026-03-05T21:18:38.928290
 ---
 
 # DQL commands

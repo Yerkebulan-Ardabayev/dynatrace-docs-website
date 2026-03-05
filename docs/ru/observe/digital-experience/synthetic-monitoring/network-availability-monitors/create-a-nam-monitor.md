@@ -1,7 +1,7 @@
 ---
 title: Configure a NAM monitor
 source: https://www.dynatrace.com/docs/observe/digital-experience/synthetic-monitoring/network-availability-monitors/create-a-nam-monitor
-scraped: 2026-03-04T21:15:59.084516
+scraped: 2026-03-05T21:23:34.982719
 ---
 
 # Configure a NAM monitor

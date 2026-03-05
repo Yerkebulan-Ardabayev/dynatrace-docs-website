@@ -1,7 +1,7 @@
 ---
 title: OneAgent requirements
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/oa-requirements
-scraped: 2026-03-04T21:22:42.073354
+scraped: 2026-03-05T21:18:53.358275
 ---
 
 # OneAgent requirements

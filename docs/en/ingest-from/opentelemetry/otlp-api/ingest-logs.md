@@ -1,7 +1,7 @@
 ---
 title: Ingest OTLP logs
 source: https://www.dynatrace.com/docs/ingest-from/opentelemetry/otlp-api/ingest-logs
-scraped: 2026-03-02T21:27:25.845677
+scraped: 2026-03-05T21:33:49.637661
 ---
 
 # Ingest OTLP logs
@@ -53,7 +53,7 @@ Each log record from the ingested batch is mapped to a single Dynatrace log reco
 
 All attributes should preferably map to **semantic attributes** for Dynatrace to interpret them correctly.
 
-* Logs on Grail: All attributes can be used in queries, though Semantic Dictionary helps Davis AI in the interpretation of the logs. Refer to the [Semantic Dictionary](/docs/semantic-dictionary "The Semantic Dictionary defines standardized field names used across monitoring data types like logs, events, spans, metrics, and entities.") for more details.
+* Logs on Grail: All attributes can be used in queries, though Semantic Dictionary helps Dynatrace Intelligence AI in the interpretation of the logs. Refer to the [Semantic Dictionary](/docs/semantic-dictionary "The Semantic Dictionary defines standardized field names used across monitoring data types like logs, events, spans, metrics, and entities.") for more details.
 * Log Monitoring Classic: Refer to the [Semantic attributes (Logs Classic)](/docs/analyze-explore-automate/log-monitoring/acquire-log-data/logs-classic-ingestion-api/log-classic-semantic-attributes "Supported semantic attributes that are indexed in Log Monitoring Classic.") for more details.
 
 ## Data types

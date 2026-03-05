@@ -1,7 +1,7 @@
 ---
 title: Varnish Cache extension
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/databases/extensions/varnish-cache-1
-scraped: 2026-03-04T21:26:49.114079
+scraped: 2026-03-05T21:25:45.341800
 ---
 
 # Varnish Cache extension

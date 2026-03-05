@@ -1,7 +1,7 @@
 ---
 title: Assess coverage
 source: https://www.dynatrace.com/docs/secure/vulnerabilities/assess-coverage
-scraped: 2026-03-02T21:26:27.145589
+scraped: 2026-03-05T21:35:58.497497
 ---
 
 # Assess coverage

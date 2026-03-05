@@ -1,7 +1,7 @@
 ---
 title: Hardware and system requirements for routing/monitoring ActiveGates on Linux
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-activegate/installation/linux/linux-activegate-hardware-and-system-requirements
-scraped: 2026-03-03T21:17:43.930810
+scraped: 2026-03-05T21:24:04.229058
 ---
 
 # Hardware and system requirements for routing/monitoring ActiveGates on Linux

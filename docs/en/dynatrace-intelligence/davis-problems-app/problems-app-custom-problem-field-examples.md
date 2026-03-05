@@ -1,7 +1,7 @@
 ---
 title: Dynatrace Intelligence Problems use cases
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/davis-problems-app/problems-app-custom-problem-field-examples
-scraped: 2026-03-04T21:14:39.163208
+scraped: 2026-03-05T21:14:13.954041
 ---
 
 # Dynatrace Intelligence Problems use cases

@@ -1,7 +1,7 @@
 ---
 title: Geographic regions - IP mapping headers API
 source: https://www.dynatrace.com/docs/dynatrace-api/configuration-api/rum/geographic-regions-ip-header
-scraped: 2026-03-04T21:33:41.680171
+scraped: 2026-03-05T21:40:40.325738
 ---
 
 # Geographic regions - IP mapping headers API

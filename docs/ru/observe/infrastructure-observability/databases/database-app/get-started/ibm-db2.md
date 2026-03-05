@@ -1,7 +1,7 @@
 ---
 title: Monitor IBM DB2 database
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/databases/database-app/get-started/ibm-db2
-scraped: 2026-03-02T21:21:20.528850
+scraped: 2026-03-05T21:36:30.442213
 ---
 
 # Monitor IBM DB2 database

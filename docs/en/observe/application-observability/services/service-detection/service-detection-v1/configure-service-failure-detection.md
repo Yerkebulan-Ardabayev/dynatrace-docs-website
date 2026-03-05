@@ -1,7 +1,7 @@
 ---
 title: Configure service failure detection
 source: https://www.dynatrace.com/docs/observe/application-observability/services/service-detection/service-detection-v1/configure-service-failure-detection
-scraped: 2026-03-04T21:23:46.183725
+scraped: 2026-03-05T21:17:41.777476
 ---
 
 # Configure service failure detection

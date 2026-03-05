@@ -1,13 +1,14 @@
 ---
 title: AWS DataSync monitoring
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-datasync
-scraped: 2026-03-02T21:19:50.640185
+scraped: 2026-03-05T21:30:52.145159
 ---
 
 # AWS DataSync monitoring
 
 # AWS DataSync monitoring
 
+* Classic
 * How-to guide
 * 2-min read
 * Published Jul 06, 2020

@@ -1,7 +1,7 @@
 ---
 title: Azure IoT Central Applications monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-iot-central-applications
-scraped: 2026-03-04T21:38:49.993678
+scraped: 2026-03-05T21:34:22.288093
 ---
 
 # Azure IoT Central Applications monitoring

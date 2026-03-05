@@ -1,6 +1,6 @@
 # Документация Dynatrace: platform/grail
 Язык: Русский (RU)
-Сгенерировано: 2026-03-04
+Сгенерировано: 2026-03-05
 Файлов в разделе: 23
 ---
 
@@ -9,7 +9,7 @@
 ---
 title: What is Dynatrace Grail?
 source: https://www.dynatrace.com/docs/platform/grail/dynatrace-grail
-scraped: 2026-03-04T21:13:12.023038
+scraped: 2026-03-05T21:13:21.884369
 ---
 
 # What is Dynatrace Grail?
@@ -145,7 +145,7 @@ NoSQL databases like Cassandra, Redis, and Amazon DynamoDB are examples of stora
 ---
 title: DPL Architect
 source: https://www.dynatrace.com/docs/platform/grail/dynatrace-pattern-language/dpl-architect
-scraped: 2026-03-02T21:27:00.712167
+scraped: 2026-03-05T21:36:08.666981
 ---
 
 # DPL Architect
@@ -327,7 +327,7 @@ For additional insights into DPL Architect, see
 ---
 title: DPL Positional Matchers
 source: https://www.dynatrace.com/docs/platform/grail/dynatrace-pattern-language/log-processing-positional-matchers
-scraped: 2026-03-02T21:17:25.321841
+scraped: 2026-03-05T21:39:17.344467
 ---
 
 # DPL Positional Matchers
@@ -485,7 +485,7 @@ Parsing results: UUID is extracted from the string.
 ---
 title: Dynatrace Pattern Language
 source: https://www.dynatrace.com/docs/platform/grail/dynatrace-pattern-language
-scraped: 2026-03-04T21:19:05.030278
+scraped: 2026-03-05T21:21:28.496985
 ---
 
 # Dynatrace Pattern Language
@@ -687,7 +687,7 @@ If the engine encounters data for which it is unable to find a match, it resets 
 ---
 title: DQL commands
 source: https://www.dynatrace.com/docs/platform/grail/dynatrace-query-language/commands
-scraped: 2026-03-04T21:18:06.129080
+scraped: 2026-03-05T21:18:38.928290
 ---
 
 # DQL commands
@@ -736,7 +736,7 @@ This page provides a list of DQL commands grouped by categories. To get more in-
 ---
 title: DQL data types
 source: https://www.dynatrace.com/docs/platform/grail/dynatrace-query-language/data-types
-scraped: 2026-03-04T21:18:01.390786
+scraped: 2026-03-05T21:18:42.041851
 ---
 
 # DQL data types
@@ -1148,7 +1148,7 @@ A set of key-value pair data whose value can be any DQL data type.
 ---
 title: DQL best practices
 source: https://www.dynatrace.com/docs/platform/grail/dynatrace-query-language/dql-best-practices
-scraped: 2026-03-04T21:22:31.763074
+scraped: 2026-03-05T21:17:34.561874
 ---
 
 # DQL best practices
@@ -1403,7 +1403,7 @@ Similarly, if you need to sort by a field named 'not':
 ---
 title: DQL compared to SQL and more
 source: https://www.dynatrace.com/docs/platform/grail/dynatrace-query-language/dql-comparison
-scraped: 2026-03-04T21:18:07.813659
+scraped: 2026-03-05T21:18:25.600457
 ---
 
 # DQL compared to SQL and more
@@ -1808,7 +1808,7 @@ events
 ---
 title: Use DQL queries
 source: https://www.dynatrace.com/docs/platform/grail/dynatrace-query-language/dql-guide
-scraped: 2026-03-04T21:18:11.154229
+scraped: 2026-03-05T21:18:33.211391
 ---
 
 # Use DQL queries
@@ -2004,7 +2004,7 @@ You can learn DQL through hands-on experience with interactive tutorials in the 
 ---
 title: DQL language reference
 source: https://www.dynatrace.com/docs/platform/grail/dynatrace-query-language/dql-reference
-scraped: 2026-03-04T21:18:09.472283
+scraped: 2026-03-05T21:18:29.762947
 ---
 
 # DQL language reference
@@ -2469,7 +2469,7 @@ In this use case, you perform queries using [![Investigations](https://dt-cdn.ne
 ---
 title: String functions
 source: https://www.dynatrace.com/docs/platform/grail/dynatrace-query-language/functions/string-functions
-scraped: 2026-03-04T21:24:00.116193
+scraped: 2026-03-05T21:19:29.014899
 ---
 
 # String functions
@@ -3988,7 +3988,7 @@ Query result:
 ---
 title: DQL functions
 source: https://www.dynatrace.com/docs/platform/grail/dynatrace-query-language/functions
-scraped: 2026-03-04T21:17:59.696360
+scraped: 2026-03-05T21:18:26.849212
 ---
 
 # DQL functions
@@ -4075,7 +4075,7 @@ Functions with a general purpose.
 ---
 title: DQL operators
 source: https://www.dynatrace.com/docs/platform/grail/dynatrace-query-language/operators
-scraped: 2026-03-04T21:17:18.050884
+scraped: 2026-03-05T21:18:37.246251
 ---
 
 # DQL operators
@@ -4512,7 +4512,7 @@ The operator searches the pattern in the tokens of a string. Its behavior depend
 ---
 title: Dynatrace Query Language
 source: https://www.dynatrace.com/docs/platform/grail/dynatrace-query-language
-scraped: 2026-03-04T21:12:14.447937
+scraped: 2026-03-05T21:13:25.349980
 ---
 
 # Dynatrace Query Language
@@ -5006,7 +5006,7 @@ You can also use [policy boundaries](/docs/manage/identity-access-management/per
 ---
 title: Permissions in Grail
 source: https://www.dynatrace.com/docs/platform/grail/organize-data/assign-permissions-in-grail
-scraped: 2026-03-04T21:17:19.819362
+scraped: 2026-03-05T21:18:04.993950
 ---
 
 # Permissions in Grail
@@ -5559,7 +5559,7 @@ ALLOW storage:system:read;
 ---
 title: Organize data
 source: https://www.dynatrace.com/docs/platform/grail/organize-data
-scraped: 2026-03-04T21:19:06.654609
+scraped: 2026-03-05T21:21:30.213625
 ---
 
 # Organize data
@@ -6079,7 +6079,7 @@ Entity relationships in the previous Dynatrace (for example, the environment API
 ---
 title: Smartscape on Grail
 source: https://www.dynatrace.com/docs/platform/grail/smartscape-on-grail
-scraped: 2026-03-04T21:17:15.751268
+scraped: 2026-03-05T21:23:44.748236
 ---
 
 # Smartscape on Grail
@@ -6316,7 +6316,7 @@ Only Smartscape nodes can be filtered using segments, meaning that Smartscape ed
 ---
 title: Grail
 source: https://www.dynatrace.com/docs/platform/grail
-scraped: 2026-03-04T21:12:36.515367
+scraped: 2026-03-05T21:13:54.038976
 ---
 
 # Grail

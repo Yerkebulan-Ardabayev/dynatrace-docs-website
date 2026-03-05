@@ -1,6 +1,6 @@
 # Документация Dynatrace: discover-dynatrace/get-started
 Язык: Русский (RU)
-Сгенерировано: 2026-03-04
+Сгенерировано: 2026-03-05
 Файлов в разделе: 11
 ---
 
@@ -271,7 +271,7 @@ Use this page to solve problems with signing in to your Dynatrace account.
 ---
 title: Share documents
 source: https://www.dynatrace.com/docs/discover-dynatrace/get-started/dynatrace-ui/share
-scraped: 2026-03-04T21:12:16.207052
+scraped: 2026-03-05T21:15:33.909306
 ---
 
 # Share documents
@@ -577,7 +577,7 @@ Sharing exceptions
 ---
 title: Filter field
 source: https://www.dynatrace.com/docs/discover-dynatrace/get-started/dynatrace-ui/ui-filter-field
-scraped: 2026-03-04T21:16:11.126900
+scraped: 2026-03-05T21:15:54.046181
 ---
 
 # Filter field
@@ -726,7 +726,7 @@ Access nested fields in JSON data with dot or bracket notation. JSON filters may
 ---
 title: Navigate the Dynatrace platform
 source: https://www.dynatrace.com/docs/discover-dynatrace/get-started/dynatrace-ui
-scraped: 2026-02-27T21:31:14.608684
+scraped: 2026-03-05T21:39:57.477430
 ---
 
 # Navigate the Dynatrace platform
@@ -916,7 +916,7 @@ The contents of this user menu depend on your deployment type, configuration, an
 ---
 title: What is a monitoring environment?
 source: https://www.dynatrace.com/docs/discover-dynatrace/get-started/monitoring-environment
-scraped: 2026-03-04T21:14:00.851378
+scraped: 2026-03-05T21:14:49.380293
 ---
 
 # What is a monitoring environment?
@@ -1618,7 +1618,7 @@ Gartner, Top Strategic Technology Trends for 2024, Bart Willemsen, Gary Olliffe,
 ---
 title: Serverless monitoring
 source: https://www.dynatrace.com/docs/discover-dynatrace/get-started/serverless-monitoring
-scraped: 2026-03-04T21:21:53.976689
+scraped: 2026-03-05T21:20:38.485027
 ---
 
 # Serverless monitoring
@@ -1711,7 +1711,7 @@ Be sure to watch for the recommendations within the Dynatrace web UI to enable a
 ---
 title: Get started with Dynatrace
 source: https://www.dynatrace.com/docs/discover-dynatrace/get-started
-scraped: 2026-03-04T21:11:29.106636
+scraped: 2026-03-05T21:12:18.709914
 ---
 
 # Get started with Dynatrace

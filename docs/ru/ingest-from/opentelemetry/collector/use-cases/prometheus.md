@@ -1,7 +1,7 @@
 ---
 title: Scrape Promethus metrics with the OpenTelemetry Collector
 source: https://www.dynatrace.com/docs/ingest-from/opentelemetry/collector/use-cases/prometheus
-scraped: 2026-03-04T21:28:39.600915
+scraped: 2026-03-05T21:40:09.842786
 ---
 
 # Scrape Promethus metrics with the OpenTelemetry Collector

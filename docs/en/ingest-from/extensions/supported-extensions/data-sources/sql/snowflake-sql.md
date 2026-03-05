@@ -1,7 +1,7 @@
 ---
 title: Manage Snowflake Database extensions
 source: https://www.dynatrace.com/docs/ingest-from/extensions/supported-extensions/data-sources/sql/snowflake-sql
-scraped: 2026-03-03T21:22:20.066389
+scraped: 2026-03-05T21:31:26.943854
 ---
 
 # Manage Snowflake Database extensions

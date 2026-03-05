@@ -1,7 +1,7 @@
 ---
 title: Send Telegraf metrics to Dynatrace
 source: https://www.dynatrace.com/docs/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/telegraf
-scraped: 2026-03-04T21:20:38.605897
+scraped: 2026-03-05T21:21:37.090538
 ---
 
 # Send Telegraf metrics to Dynatrace

@@ -1,7 +1,7 @@
 ---
 title: Metrics powered by Grail overview (DPS)
 source: https://www.dynatrace.com/docs/license/capabilities/metrics
-scraped: 2026-03-03T21:16:19.288685
+scraped: 2026-03-05T21:23:48.107170
 ---
 
 # Metrics powered by Grail overview (DPS)
