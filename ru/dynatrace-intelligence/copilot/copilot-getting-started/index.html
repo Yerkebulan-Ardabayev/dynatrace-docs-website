@@ -29,7 +29,7 @@
     
     
       
-        <title>Начало работы с Dynatrace Intelligence генеративным ИИ - Dynatrace Managed - Документация</title>
+        <title>Начало работы с Dynatrace Intelligence агентным и генеративным ИИ - Dynatrace Managed - Документация</title>
       
     
     
@@ -118,7 +118,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Начало работы с Dynatrace Intelligence генеративным ИИ
+              Начало работы с Dynatrace Intelligence агентным и генеративным ИИ
             
           </span>
         </div>
@@ -25549,15 +25549,15 @@
 
 
 
-<h1 id="dynatrace-intelligence">Начало работы с Dynatrace Intelligence генеративным ИИ<a class="headerlink" href="#dynatrace-intelligence" title="Permanent link">&para;</a></h1>
-<h1 id="dynatrace-intelligence_1">Начало работы с Dynatrace Intelligence генеративным ИИ<a class="headerlink" href="#dynatrace-intelligence_1" title="Permanent link">&para;</a></h1>
+<h1 id="dynatrace-intelligence">Начало работы с Dynatrace Intelligence агентным и генеративным ИИ<a class="headerlink" href="#dynatrace-intelligence" title="Permanent link">&para;</a></h1>
+<h1 id="dynatrace-intelligence_1">Начало работы с Dynatrace Intelligence агентным и генеративным ИИ<a class="headerlink" href="#dynatrace-intelligence_1" title="Permanent link">&para;</a></h1>
 <ul>
 <li>Последнее Dynatrace</li>
-<li>Руководство по настройке</li>
+<li>Руководство по началу работы</li>
 <li>3-минутное чтение</li>
-<li>Обновлено 28 января 2026 г.</li>
+<li>Обновлено 03 марта 2026 г.</li>
 </ul>
-<p>Dynatrace Intelligence генеративный ИИ включен на уровне учетной записи по умолчанию, что означает, что все ваши среды автоматически имеют доступ к нему. Однако функциональность генеративного ИИ должна быть включена на уровне среды через страницу настроек, которая предлагает вам полный контроль над тем, как Dynatrace Intelligence генеративный ИИ включен и настроен в вашей среде.</p>
+<p>Dynatrace Intelligence агентный и генеративный ИИ включен на уровне учетной записи по умолчанию, что означает, что все ваши среды автоматически имеют доступ к нему. Однако функциональность ИИ должна быть включена на уровне среды через страницу настроек, которая предлагает вам полный контроль над тем, как Dynatrace Intelligence агентный и генеративный ИИ включен и настроен в вашей среде.</p>
 <h2 id="dynatrace-intelligence_2">Включение Dynatrace Intelligence генеративного ИИ в вашей среде<a class="headerlink" href="#dynatrace-intelligence_2" title="Permanent link">&para;</a></h2>
 <p>Чтобы включить Dynatrace Intelligence генеративный ИИ в вашей среде</p>
 <ol>
@@ -25565,55 +25565,81 @@
 <li>Включите <strong>Включить генеративный ИИ</strong>.</li>
 </ol>
 <p><img alt="Включение генеративного ИИ в настройках" src="https://dt-cdn.net/images/generative-ai-settings-1913-24ab3b085b.png" /></p>
-<p>Если вы не видите страницу настроек, убедитесь, что у вас есть политики <code>Setting Reader</code> и <code>Setting Writer</code>. Для получения дополнительной информации см. <a href="/docs/manage/identity-access-management/use-cases/access-settings#example-read-and-write-permissions" title="Предоставить доступ к настройкам">права чтения и записи</a>.</p>
-<h2 id="_1">Права доступа пользователей<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<p>После включения Dynatrace Intelligence генеративного ИИ на уровне среды вам все равно придется предоставить доступ к различным навыкам генеративного ИИ вашим пользователям. Для этого вам необходимо привязать группу, к которой они принадлежат, к политике со следующим утверждением, которое позволяет доступ к генеративному ИИ:</p>
+<p>Если вы не видите страницы настроек, убедитесь, что у вас есть политики <code>Setting Reader</code> и <code>Setting Writer</code>. Для получения дополнительной информации см. <a href="/docs/manage/identity-access-management/use-cases/access-settings#example-read-and-write-permissions" title="Предоставление доступа к настройкам">разрешения на чтение и запись</a>.</p>
+<h3 id="_1">Разрешения пользователей<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<p>После включения Dynatrace Intelligence генеративного ИИ на уровне среды вам все равно придется предоставить доступ к различным навыкам генеративного ИИ вашим пользователям. Для этого необходимо привязать группу, к которой они принадлежат, к политике с следующим утверждением, которое позволяет доступ к генеративному ИИ:</p>
 <ul>
 <li><strong>Перевод естественного языка в DQL</strong> (<code>ALLOW davis-copilot:nl2dql:execute;</code>)</li>
 <li><strong>Перевод DQL в естественный язык</strong> (<code>ALLOW davis-copilot:dql2nl:execute;</code>)</li>
-<li><strong>Рекомендательная система</strong> (<code>ALLOW davis-copilot:conversations:execute;</code>)</li>
+<li><strong>Рекомендатель по разговорам</strong> (<code>ALLOW davis-copilot:conversations:execute;</code>)</li>
 </ul>
-<p>Для получения дополнительной информации о управлении вашими политиками см. <a href="/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies/iam-policy-mgt" title="Создание, редактирование, копирование и удаление политик IAM для управления правами доступа пользователей Dynatrace">Управление политиками IAM</a>.</p>
-<h3 id="_2">Права доступа пользователей к данным<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
-<p>Поскольку Dynatrace Intelligence генеративный ИИ уважает права пользователей, он может предоставлять разные ответы разным пользователям на основе их прав доступа.</p>
-<h2 id="_3">Включение предложения документов<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<p>Предложение документов - это навык Dynatrace Intelligence генеративного ИИ, который позволяет ему рекомендовать вам руководства по устранению неполадок, созданные в <img alt="Тетради" src="https://dt-cdn.net/images/notebooks-768-046137830a.webp" title="Тетради" /> <strong>Тетради</strong> и <img alt="Панели приборов" src="https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png" title="Панели приборов" /> <strong>Панели приборов</strong> на основе векторной схожести. Вы можете использовать предложение документов Dynatrace Intelligence генеративного ИИ в <img alt="Проблемы - новое" src="https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp" title="Проблемы - новое" /> <strong>Проблемы</strong>, чтобы быстро получить доступ к руководствам по устранению неполадок, написанным вами или вашей командой для аналогичных проблем и уменьшить среднее время ремонта (MTTR).</p>
-<p>Если вы хотите, чтобы Dynatrace Intelligence генеративный ИИ предлагал руководства по устранению неполадок для аналогичных или повторяющихся проблем, вам необходимо разрешить ему искать и индексировать документы, созданные в <img alt="Тетради" src="https://dt-cdn.net/images/notebooks-768-046137830a.webp" title="Тетради" /> <strong>Тетради</strong> и <img alt="Панели приборов" src="https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png" title="Панели приборов" /> <strong>Панели приборов</strong> и общие для всех пользователей в вашей среде. Чтобы обеспечить полный контроль над безопасностью ваших данных, эта функциональность является опциональной и отключена по умолчанию.</p>
-<p>Чтобы Dynatrace Intelligence генеративный ИИ мог индексировать и предлагать ваш документ, он должен быть общим для всех пользователей в вашей среде. Dynatrace Intelligence генеративный ИИ не будет индексировать или предлагать какие-либо частные документы или документы, общие только с определенными пользователями. Чтобы узнать больше о обмене документами, см. <a href="/docs/discover-dynatrace/get-started/dynatrace-ui/share" title="Обмен документами Dynatrace (панелями приборов, тетрадями и запусками) с другими пользователями Dynatrace в вашей компании">Обмен документами</a>.</p>
+<p>Для получения дополнительной информации о управлении вашими политиками см. <a href="/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies/iam-policy-mgt" title="Создание, редактирование, копирование и удаление политик IAM для управления разрешениями пользователей Dynatrace">Управление политиками IAM</a>.</p>
+<h2 id="dynatrace-assist">Включение агентного ИИ для Dynatrace Assist<a class="headerlink" href="#dynatrace-assist" title="Permanent link">&para;</a></h2>
+<p><strong>Dynatrace Assist</strong> позволяет вам использовать Dynatrace агентный ИИ и <a href="/docs/dynatrace-intelligence/dynatrace-intelligence-integrations/dynatrace-mcp#server" title="Узнайте о сервере Dynatrace MCP и о том, как вы можете подключиться к нему.">инструменты и возможности MCP</a> для доступа и анализа данных вашей среды и использования их для выполнения задач (таких как перечисление проблем или генерация и выполнение запросов DQL) в дополнение к ответам на общие вопросы о Dynatrace.</p>
+<p>Агентный <strong>Dynatrace Assist</strong> делится некоторой дополнительной информацией, такой как результаты вызовов инструментов, с корпоративными поставщиками, которые размещают LLM, на основе которых построены Dynatrace агентный и генеративный ИИ. Для получения дополнительной информации о третьих сторонах см. <a href="/docs/dynatrace-intelligence/copilot/copilot-faq#copilot-training-on-data" title="Узнайте о часто задаваемых вопросах и найдите ответы на них">Используется ли моя информация для обучения Dynatrace Intelligence генеративному ИИ?</a>.</p>
+<p>Чтобы использовать агентный <strong>Dynatrace Assist</strong>, вам необходимо</p>
+<ul>
+<li>Иметь достаточные разрешения.</li>
+<li>
+<p>Иметь агентный ИИ, включенный для <strong>Dynatrace Assist</strong>. Чтобы включить агентный ИИ</p>
+</li>
+<li>
+<p>Перейдите к <img alt="Настройки" src="https://dt-cdn.net/images/settings-icon-256-38e1321b51.webp" title="Настройки" /> <strong>Настройки</strong> &gt;  <strong>Dynatrace Intelligence</strong> &gt; <strong>Генеративный и агентный ИИ</strong>.</p>
+</li>
+<li>Убедитесь, что <strong>Включить генеративный ИИ</strong> включен.</li>
+<li>Включите <strong>Включить агентный ИИ</strong>.</li>
+</ul>
+<p>Агентный <strong>Dynatrace Assist</strong> может быть недоступен для вас, если вы не соответствуете вышеуказанным предварительным требованиям или если вы доступ к <strong>Dynatrace Assist</strong> из <a href="/docs/dynatrace-intelligence/copilot/chat-with-davis-copilot/copilot-conv-starters" title="Узнайте, как запустить предопределенные подсказки в различных приложениях Dynatrace">встроенных стартовых разговоров</a>.</p>
+<h3 id="dynatrace-assist_1">Разрешения агентного Dynatrace Assist<a class="headerlink" href="#dynatrace-assist_1" title="Permanent link">&para;</a></h3>
+<p>Вам также понадобятся дополнительные разрешения для вызова инструментов агентного ИИ. Для списка инструментов и необходимых им разрешений см. <a href="/docs/dynatrace-intelligence/dynatrace-intelligence-integrations/dynatrace-mcp#server" title="Узнайте о сервере Dynatrace MCP и о том, как вы можете подключиться к нему.">инструменты MCP</a>.</p>
+<h3 id="ii">Маскирование ПII<a class="headerlink" href="#ii" title="Permanent link">&para;</a></h3>
+<p>Агентный <strong>Dynatrace Assist</strong> не предоставляет никакого маскирования ПII. Чтобы защитить ваши данные, когда <strong>Dynatrace Assist</strong> обнаруживает ПII в запросе пользователя, запрос автоматически блокируется и запрос не отправляется в LLM для обработки.</p>
+<h3 id="_2">Вызов нескольких инструментов<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<p>При взаимодействии с агентным <strong>Dynatrace Assist</strong> он может вызывать до 10 внутренних инструментов MCP за один ответ. Если ваш запрос требует от <strong>Dynatrace Assist</strong> вызвать более 10 инструментов одновременно, он не сможет завершить взаимодействие.</p>
+<h2 id="_3">Доступ к данным на основе пользователей<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>Dynatrace Intelligence агентный и генеративный ИИ уважает привилегии и разрешения пользователей. Это означает, что</p>
+<ul>
+<li>Он может предоставлять разные ответы разным пользователям на основе их прав доступа.</li>
+<li>Все вызовы агентного <strong>Dynatrace Assist</strong> выполняются в рамках прав доступа пользователя, и результаты не будут включать ничего вне его.</li>
+</ul>
+<h2 id="_4">Включение предложения документов<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p>Предложение документов — это навык Dynatrace Intelligence агентного и генеративного ИИ, который позволяет ему рекомендовать вам руководства по устранению неполадок, созданные в <img alt="Тетради" src="https://dt-cdn.net/images/notebooks-768-046137830a.webp" title="Тетради" /> <strong>Тетради</strong> и <img alt="Панели приборов" src="https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png" title="Панели приборов" /> <strong>Панели приборов</strong> на основе векторной подобия. Вы можете использовать предложение документов Dynatrace Intelligence агентного и генеративного ИИ в <img alt="Проблемы - новое" src="https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp" title="Проблемы - новое" /> <strong>Проблемы</strong>, чтобы быстро получить руководства по устранению неполадок, написанные вами или вашей командой для подобных проблем, и уменьшить среднее время ремонта (MTTR).</p>
+<p>Если вы хотите, чтобы Dynatrace Intelligence агентный и генеративный ИИ предлагал руководства по устранению неполадок для подобных или повторяющихся проблем, вам необходимо разрешить ему искать и индексировать документы, созданные в <img alt="Тетради" src="https://dt-cdn.net/images/notebooks-768-046137830a.webp" title="Тетради" /> <strong>Тетради</strong> и <img alt="Панели приборов" src="https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png" title="Панели приборов" /> <strong>Панели приборов</strong>, и общие со всеми пользователями в вашей среде. Чтобы обеспечить полный контроль над безопасностью ваших данных, эта функциональность является опциональной и выключена по умолчанию.</p>
+<p>Чтобы Dynatrace Intelligence агентный и генеративный ИИ мог индексировать и предлагать ваш документ, он должен быть общим со всеми пользователями в вашей среде. Dynatrace Intelligence агентный и генеративный ИИ не будет индексировать или предлагать никакие частные документы или документы, общие только с определенными пользователями. Чтобы узнать больше о обмене документами, см. <a href="/docs/discover-dynatrace/get-started/dynatrace-ui/share" title="Обмен документами Dynatrace (панелями приборов, тетрадями и запусками) с другими пользователями Dynatrace в вашей компании.">Обмен документами</a>.</p>
 <p>Чтобы включить предложение документов</p>
 <ol>
 <li>Перейдите к <img alt="Настройки" src="https://dt-cdn.net/images/settings-icon-256-38e1321b51.webp" title="Настройки" /> <strong>Настройки</strong> &gt;  <strong>Dynatrace Intelligence</strong> &gt; <strong>Генеративный и агентный ИИ</strong>.</li>
-<li>Включите <strong>Включить предложение документов</strong>, чтобы разрешить Dynatrace Intelligence генеративному ИИ ингестировать руководства по устранению неполадок и предлагать их вам.</li>
+<li>Включите <strong>Включить предложения документов</strong>, чтобы разрешить Dynatrace Intelligence агентному и генеративному ИИ ингестировать руководства по устранению неполадок и предлагать их вам.</li>
 </ol>
-<p>По умолчанию Dynatrace Intelligence генеративный ИИ индексирует руководства по устранению неполадок каждые 6 часов.</p>
-<h3 id="_4">Семантическое векторное индексирование<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
-<p>Dynatrace Intelligence генеративный ИИ использует семантическое векторное индексирование, чтобы предлагать актуальные руководства по устранению неполадок и панели приборов, общие в среде. Он непрерывно индексирует содержимое панелей приборов и тетрадей, признанных руководствами по устранению неполадок. Когда пользователь получает доступ к представлению устранения неполадок для конкретной проблемы, генеративный ИИ сравнивает описание проблемы с индексированными данными, используя семантическое сходство, чтобы предлагать наиболее актуальные руководства.</p>
-<p>Этот процесс основан на векторных представлениях как описания проблемы, так и индексированного содержимого панели приборов или тетради. Чем меньше семантическое расстояние между описанием проблемы и документом, тем выше его релевантность. Это означает, что документ с большей вероятностью будет предложен Dynatrace Intelligence генеративным ИИ в качестве актуального руководства по устранению неполадок.</p>
-<h2 id="_5">Включение запросов, осведомленных о среде<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
-<p>Запросы, осведомленные о среде, могут обогатить Dynatrace Intelligence генеративный ИИ данными вашей среды. Это позволяет вам генерировать более точные запросы, которые идентифицируют и ссылаются на актуальные сущности, события, диапазоны, журналы и метрики из вашей среды.</p>
-<p>Если вы хотите, чтобы Dynatrace Intelligence генеративный ИИ был осведомлен о деталях и структурах данных вашей среды, вам необходимо разрешить доступ к Grail. Чтобы обеспечить полный контроль над безопасностью ваших данных, эта функциональность является опциональной, и администраторы могут указать, какие таблицы и бакеты Dynatrace Intelligence генеративный ИИ не должен доступать.</p>
-<p>Чтобы включить запросы, осведомленные о среде</p>
+<p>По умолчанию Dynatrace Intelligence агентный и генеративный ИИ индексирует руководства по устранению неполадок каждые 6 часов.</p>
+<h3 id="_5">Семантическое векторное индексирование<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<p>Dynatrace Intelligence агентный и генеративный ИИ использует семантическое векторное индексирование, чтобы предлагать соответствующие панели приборов и тетради по устранению неполадок, общие в среде. Он непрерывно индексирует содержимое панелей приборов и тетрадей, признанных руководствами по устранению неполадок. Когда пользователь доступ к представлению устранения неполадок для конкретной проблемы, генеративный ИИ сравнивает описание проблемы с индексированными данными, используя семантическое подобие, чтобы предлагать наиболее релевантные руководства.</p>
+<p>Этот процесс основан на векторных представлениях как описания проблемы, так и индексированного содержимого документа или панели приборов. Чем меньше семантическое расстояние между описанием проблемы и документом, тем выше его релевантность. Это означает, что документ с большей вероятностью будет предложен Dynatrace Intelligence агентным и генеративным ИИ в качестве релевантного руководства по устранению неполадок.</p>
+<h2 id="_6">Включение запросов, осведомленных о среде<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<p>Environment-aware queries can enrich Dynatrace Intelligence agentic and generative AI with your environment's data. This lets you generate more accurate queries that identify and reference relevant entities, events, spans, logs, and metrics from your environment.</p>
+<p>If you want Dynatrace Intelligence agentic and generative AI to be aware of the details and structures of your environment's data, you'll need to allow access to Grail. To ensure you have full control over the security of your data, this functionality is opt-in, and admin users can specify which data tables and buckets Dynatrace Intelligence agentic and generative AI is not allowed to access.</p>
+<p>To enable environment-aware queries</p>
 <ol>
-<li>Перейдите к <img alt="Настройки" src="https://dt-cdn.net/images/settings-icon-256-38e1321b51.webp" title="Настройки" /> <strong>Настройки</strong> &gt;  <strong>Dynatrace Intelligence</strong> &gt; <strong>Генеративный и агентный ИИ</strong>.</li>
-<li>Включите <strong>Включить запросы, осведомленные о среде</strong>.</li>
+<li>Go to <img alt="Settings" src="https://dt-cdn.net/images/settings-icon-256-38e1321b51.webp" title="Settings" /> <strong>Settings</strong> &gt;  <strong>Dynatrace Intelligence</strong> &gt; <strong>Generative and agentic AI</strong>.</li>
+<li>Turn on <strong>Enable environment-aware queries</strong>.</li>
 </ol>
-<p>Может потребоваться до 24 часов, чтобы Dynatrace Intelligence генеративный ИИ построил или изменил семантический индекс после внесения изменений. Если запросы, осведомленные о среде, отключены и семантический индекс уже существует, Dynatrace Intelligence генеративный ИИ удаляет все средне-специфические данные в течение 24 часов и возвращается к использованию общедоступных источников для построения запросов DQL. Семантический индекс хранится только на вашем сервере Dynatrace.</p>
-<p>Чтобы узнать больше о семантическом индексировании и запросах, осведомленных о среде, см. <a href="/docs/dynatrace-intelligence/copilot/quick-analysis-copilot-dql#environment-aware-queries" title="Используйте Dynatrace Intelligence генеративный ИИ для перевода ваших вопросов на естественном языке в запросы DQL">Запросы, осведомленные о среде</a>.</p>
-<h3 id="_6">Настройка доступа к данным<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
-<p>После включения запросов, осведомленных о среде, вы сможете увидеть настройки для конфигурирования данных, к которым Dynatrace Intelligence генеративный ИИ не должен иметь доступ.</p>
-<p>Чтобы настроить доступ к данным</p>
+<p>It can take up to 24 hours for Dynatrace Intelligence agentic and generative AI to build or amend the semantic index after changes are made. If environment-aware queries are disabled and the semantic index already exists, Dynatrace Intelligence agentic and generative AI purges all environment-specific data within 24 hours, and returns to using publicly available sources for building DQL queries. The semantic index is stored only on your Dynatrace tenant.</p>
+<p>To learn more about semantic indexing and environment-aware queries, see <a href="/docs/dynatrace-intelligence/copilot/quick-analysis-copilot-dql#environment-aware-queries" title="Use Dynatrace Intelligence generative AI to translate your natural language questions into DQL queries">Environment-aware queries</a>.</p>
+<h3 id="configure-your-data-access">Configure your data access<a class="headerlink" href="#configure-your-data-access" title="Permanent link">&para;</a></h3>
+<p>After enabling environment-aware queries, you'll be able to see the settings for configuring data that Dynatrace Intelligence agentic and generative AI isn't allowed to access.</p>
+<p>To configure your data access</p>
 <ol>
-<li>Перейдите к <strong>Настройка доступа к данным</strong>.</li>
-<li>Выберите <strong>Добавить новое правило</strong>.</li>
-<li>Выберите тип данных, который вы хотите исключить из доступа Dynatrace Intelligence, в поле <strong>Тип</strong>.</li>
-<li>Введите имя бакета или таблицы в поле <strong>Имя</strong>.</li>
-<li>Выберите <strong>Сохранить изменения</strong>.</li>
+<li>Go to <strong>Configure data access</strong>.</li>
+<li>Select <strong>Add a new rule</strong>.</li>
+<li>Select the type of data you want to exclude from Dynatrace Intelligence access in the <strong>Type</strong> field.</li>
+<li>Type the name of the bucket or table in the <strong>Name</strong> field.</li>
+<li>Select <strong>Save changes</strong>.</li>
 </ol>
-<h2 id="_7">Связанные темы<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<h2 id="related-topics">Related topics<a class="headerlink" href="#related-topics" title="Permanent link">&para;</a></h2>
 <ul>
-<li><a href="/docs/dynatrace-intelligence/copilot/copilot-faq" title="Узнайте о часто задаваемых вопросах и найдите ответы.">Часто задаваемые вопросы о Dynatrace Intelligence генеративном ИИ</a></li>
-<li><a href="/docs/dynatrace-intelligence/copilot/quick-analysis-copilot-dql" title="Используйте Dynatrace Intelligence генеративный ИИ для перевода ваших вопросов на естественном языке в запросы DQL">Запрос с помощью естественного языка</a></li>
-<li><a href="/docs/dynatrace-intelligence/copilot/quick-analysis-copilot-dql/copilot-tips" title="Узнайте лучшие практики для написания более точных запросов.">Советы по написанию лучших запросов для Dynatrace Intelligence генеративного ИИ</a></li>
+<li><a href="/docs/dynatrace-intelligence/copilot/copilot-faq" title="Learn about frequently asked questions and find your answers.">Dynatrace Intelligence agentic and generative AI FAQ</a></li>
+<li><a href="/docs/dynatrace-intelligence/copilot/quick-analysis-copilot-dql" title="Use Dynatrace Intelligence generative AI to translate your natural language questions into DQL queries">Query with natural language</a></li>
+<li><a href="/docs/dynatrace-intelligence/copilot/quick-analysis-copilot-dql/copilot-tips" title="Learn best practices for writing more accurate prompts.">Dynatrace Intelligence agentic and generative AI - Tips for writing better prompts</a></li>
 </ul>
 
 

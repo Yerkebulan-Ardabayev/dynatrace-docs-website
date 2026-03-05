@@ -25479,7 +25479,7 @@
 <ul>
 <li>Latest Dynatrace</li>
 <li>How-to guide</li>
-<li>Updated on Jan 09, 2026</li>
+<li>Updated on Mar 03, 2026</li>
 </ul>
 <p>Onboard your AWS account in few steps that will generate a deployable CloudFormation template.</p>
 <p>The CloudFormation stack will deploy core mandatory resources inside your AWS account (Dynatrace IAM monitoring role, AWS secrets, Dynatrace API integration Lambda function).</p>
@@ -25500,20 +25500,128 @@
 </ul>
 <h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
 <p>Only a Dynatrace account administrator and an AWS administrator can successfully complete the initial prerequisites.</p>
-<h3 id="1-create-aws-iam-baseline">1. Create AWS IAM baseline<a class="headerlink" href="#1-create-aws-iam-baseline" title="Permanent link">&para;</a></h3>
-<p>Actions in this section can and (should) only be performed by an AWS administrator.</p>
-<p>All necessary <a href="#aws-permissions">AWS permissions</a> must be granted to successfully deploy the CloudFormation stacks and associated AWS resources.</p>
-<p>In environments where full duty separation is practiced, we recommend that the Dynatrace administrator shares the templates with the platform team/AWS administrators.</p>
-<h4 id="core-cfn-templates">Core CFN templates<a class="headerlink" href="#core-cfn-templates" title="Permanent link">&para;</a></h4>
+<h3 id="1-aws">1. AWS<a class="headerlink" href="#1-aws" title="Permanent link">&para;</a></h3>
+<p>Actions in this section can and (should) only be performed by an AWS administrator. All necessary <a href="#aws-permissions">AWS permissions</a> must be granted to successfully deploy the CloudFormation stacks and associated AWS resources.</p>
+<p>In environments where full duty separation is practiced, we recommend that the Dynatrace administrator share the templates with the platform team/AWS administrators.</p>
+<h4 id="core-cfn-stacks">Core CFN stacks<a class="headerlink" href="#core-cfn-stacks" title="Permanent link">&para;</a></h4>
+<p>Current latest production version: v1.0.0</p>
 <ul>
-<li><a href="https://dynatrace-data-acquisition.s3.us-east-1.amazonaws.com/aws/deployment/cfn/v1.0.0/da-aws-activation.yaml">Main Deployment Stackï»¿</a></li>
-<li><a href="https://dynatrace-data-acquisition.s3.amazonaws.com/aws/deployment/cfn/v1.0.0/da-aws-nested-integration.yaml">Integration Stackï»¿</a></li>
-<li><a href="https://dynatrace-data-acquisition.s3.amazonaws.com/aws/deployment/cfn/v1.0.0/da-aws-nested-monitoring-role.yaml">Monitoring IAM Role Stackï»¿</a></li>
+<li>
+<p><a href="https://dynatrace-data-acquisition.s3.us-east-1.amazonaws.com/aws/deployment/cfn/v1.0.0/da-aws-activation.yaml">Main deployment stackï»¿</a></p>
+</li>
+<li>
+<p><a href="https://dynatrace-data-acquisition.s3.amazonaws.com/aws/deployment/cfn/v1.0.0/da-aws-nested-dt-api-function.yaml">Nested API client stackï»¿</a></p>
+</li>
+<li><a href="https://dynatrace-data-acquisition.s3.amazonaws.com/aws/deployment/cfn/v1.0.0/da-aws-nested-integration.yaml">Nested integration stackï»¿</a></li>
+<li><a href="https://dynatrace-data-acquisition.s3.amazonaws.com/aws/deployment/cfn/v1.0.0/da-aws-nested-monitoring-role.yaml">Nested Monitoring IAM role stackï»¿</a></li>
 </ul>
-<h4 id="conditional-cfn-templates-deployed-based-on-user-opt-in-during-onboarding">Conditional CFN templates (deployed based on user opt-in during onboarding)<a class="headerlink" href="#conditional-cfn-templates-deployed-based-on-user-opt-in-during-onboarding" title="Permanent link">&para;</a></h4>
+<h4 id="conditional-nested-cfn-stacks">Conditional (nested) CFN stacks<a class="headerlink" href="#conditional-nested-cfn-stacks" title="Permanent link">&para;</a></h4>
+<p>Deployed based on user opt-in during onboarding</p>
 <ul>
-<li><a href="https://dynatrace-data-acquisition.s3.amazonaws.com/aws/deployment/cfn/v1.0.0/da-aws-stack-logs.yaml">Firehose Log Streams Stackï»¿</a></li>
-<li><a href="https://dynatrace-data-acquisition.s3.amazonaws.com/aws/deployment/cfn/v1.0.0/da-aws-stack-events.yaml">AWS EventBridge Integration Stackï»¿</a></li>
+<li><a href="https://dynatrace-data-acquisition.s3.amazonaws.com/aws/deployment/cfn/v1.0.0/da-aws-stack-logs.yaml">Nested StackSet rolesï»¿</a></li>
+<li><a href="https://dynatrace-data-acquisition.s3.amazonaws.com/aws/deployment/cfn/v1.0.0/da-aws-stack-logs.yaml">Nested Firehose Log streams stackï»¿</a></li>
+<li><a href="https://dynatrace-data-acquisition.s3.amazonaws.com/aws/deployment/cfn/v1.0.0/da-aws-stack-events.yaml">Nested AWS EventBridge integration stackï»¿</a></li>
+</ul>
+<p>AWS resources created by the CloudFormation templates</p>
+<h5 id="level-1-main-template-resources-da-aws-activationyaml">Level 1: Main template resources (<code>da-aws-activation.yaml</code>)<a class="headerlink" href="#level-1-main-template-resources-da-aws-activationyaml" title="Permanent link">&para;</a></h5>
+<p>Direct resources created in deployment region:</p>
+<ol>
+<li>
+<p><code>DynatraceApiClientStack</code> (<code>AWS::CloudFormation::Stack</code>)</p>
+</li>
+<li>
+<p>Nested stack that creates API client function (Dynatrace API interaction, create/delete connection)</p>
+</li>
+<li>Reference: <code>da-aws-nested-dt-api-function.yaml</code></li>
+<li>
+<p><code>ReportStartedStatusResource</code> (<code>Custom::DynatraceApiAccessFunction</code>)</p>
+</li>
+<li>
+<p>Custom resource to report deployment start status to Dynatrace</p>
+</li>
+<li>
+<p><code>DynatraceIntegrationStack</code> (<code>AWS::CloudFormation::Stack</code>)</p>
+</li>
+<li>
+<p>Nested stack for core integration</p>
+</li>
+<li>Reference: <code>da-aws-nested-integration.yaml</code></li>
+<li>
+<p><code>DynatraceStackSetRoleStack</code> (<code>AWS::CloudFormation::Stack</code>)</p>
+</li>
+<li>
+<p>Conditional: Only created if log or event ingest is enabled</p>
+</li>
+<li>Creates StackSet administration and execution roles</li>
+<li>Reference: <code>da-aws-nested-stackset-role.yaml</code></li>
+<li>
+<p><code>DynatraceLogIngestStackSet</code> (<code>AWS::CloudFormation::StackSet</code>)</p>
+</li>
+<li>
+<p>Conditional: Only if <code>pDtLogsIngestEnabled = 'TRUE'</code></p>
+</li>
+<li>Deploys log ingestion infrastructure to specified regions</li>
+<li>Reference: <code>da-aws-stack-logs.yaml</code></li>
+<li>
+<p><code>DynatraceEventIngestStackSet</code> (<code>AWS::CloudFormation::StackSet</code>)</p>
+</li>
+<li>
+<p>Conditional: Only if <code>pDtEventsIngestEnabled = 'TRUE'</code></p>
+</li>
+<li>Deploys event ingestion infrastructure to specified regions</li>
+<li>Reference: <code>da-aws-stack-events.yaml</code></li>
+<li>
+<p><code>ReportCompleteStatusResource</code> (<code>Custom::DynatraceApiAccessFunction</code>)</p>
+</li>
+<li>
+<p>Custom resource to report deployment completion status to Dynatrace</p>
+</li>
+</ol>
+<h5 id="level-2-nested-stack-resources">Level 2: Nested stack resources<a class="headerlink" href="#level-2-nested-stack-resources" title="Permanent link">&para;</a></h5>
+<p>From <code>DynatraceApiClientStack</code> (<code>da-aws-nested-dt-api-function.yaml</code>)âexpected resources:</p>
+<ul>
+<li><strong>Lambda Function</strong>: Dynatrace API client function</li>
+<li><strong>IAM Role</strong>: Lambda execution role</li>
+<li><strong>Secrets Manager Secret</strong>: Storage for Dynatrace API token</li>
+<li><strong>KMS Key</strong> (Conditional): Customer Managed Key if <code>pUseCMK = 'TRUE'</code></li>
+<li><strong>KMS Alias</strong> (Conditional): Alias for the CMK</li>
+<li><strong>Lambda Log Group</strong>: CloudWatch Logs for the Lambda function</li>
+</ul>
+<p>From <code>DynatraceIntegrationStack</code> (<code>da-aws-nested-integration.yaml</code>)âexpected resources:</p>
+<ul>
+<li><strong>IAM Role</strong>: Dynatrace monitoring role with trust relationship to Dynatrace account</li>
+<li><strong>IAM Policy</strong>: Monitoring permissions policy</li>
+<li><strong>Custom Resource</strong>: To establish connection with Dynatrace</li>
+</ul>
+<p>From <code>DynatraceStackSetRoleStack</code> (<code>da-aws-nested-stackset-role.yaml</code>)âexpected resources:</p>
+<ul>
+<li><strong>IAM Role</strong>: StackSet administration role</li>
+<li><strong>IAM Role</strong>: StackSet execution role</li>
+<li><strong>IAM Policies</strong>: Attached to both roles</li>
+</ul>
+<h5 id="level-3-deployed-core-resources-management-region">Level 3: Deployed core resources (management region)<a class="headerlink" href="#level-3-deployed-core-resources-management-region" title="Permanent link">&para;</a></h5>
+<p>Minimum resources (no log/event ingest enabled), deployed only on a single region (management region):</p>
+<ul>
+<li><strong>Two custom resources</strong>: Report deployment start and finish status</li>
+<li><strong>Lambda function</strong> + IAM roles + <strong>Secrets Manager</strong>: Created/delete connection, store dynatrace platform tokens in Secret Manager</li>
+<li><strong>Dynatrace monitoring IAM role</strong>: Dynatrace monitoring role with trust relationship to Dynatrace account</li>
+</ul>
+<h4 id="level-4-stackset-deployed-resources-conditional-per-region">Level 4: StackSet-deployed resources (conditional per region)<a class="headerlink" href="#level-4-stackset-deployed-resources-conditional-per-region" title="Permanent link">&para;</a></h4>
+<p>From <code>DynatraceLogIngestStackSet</code> (<code>da-aws-stack-logs.yaml</code>); deployed to each region in <code>pDtLogsIngestRegions</code> list. Expected resources per region:</p>
+<ul>
+<li><strong>Kinesis Data Firehose Delivery Stream</strong>: For log forwarding to Dynatrace</li>
+<li><strong>IAM Role</strong>: Firehose delivery role</li>
+<li><strong>S3 Bucket</strong>: Backup/buffer bucket for failed deliveries</li>
+<li><strong>Secrets Manager Secret</strong>: Dynatrace ingest token storage</li>
+<li><strong>KMS Key</strong> (conditional): If <code>pUseCMK = 'TRUE'</code></li>
+</ul>
+<p>From <code>DynatraceEventIngestStackSet</code> (<code>da-aws-stack-events.yaml</code>); deployed to each region in <code>pDtEventsIngestRegions</code> list. Expected resources per region:</p>
+<ul>
+<li><strong>EventBridge Rule</strong>: To capture AWS events</li>
+<li><strong>EventBridge API Destination</strong>: Dynatrace endpoint</li>
+<li><strong>EventBridge Connection</strong>: Authentication for API destination</li>
+<li><strong>IAM Role</strong>: EventBridge execution role</li>
+<li><strong>Secrets Manager Secret</strong>: Dynatrace ingest token storage</li>
 </ul>
 <h4 id="aws-iam-permission-policy-for-deploying-the-cloudformation-stacks">AWS IAM permission policy for deploying the CloudFormation stacks<a class="headerlink" href="#aws-iam-permission-policy-for-deploying-the-cloudformation-stacks" title="Permanent link">&para;</a></h4>
 <p>Make sure that an AWS user, or a role, used for the CloudFormation stacks deployment is granted with the following (minimum) permission policies.</p>
@@ -26418,7 +26526,7 @@
 </code></pre></div>
 <p>At this point all, the AWS IAM baseline prerequisites have been completed. Keep in mind that the IAM role/user permissions are needed for each onboarded AWS account.</p>
 <p>We recommend that an AWS administrator pre-create those IAM constructs programmatically.</p>
-<h3 id="2-create-the-dynatrace-iam-baseline">2. Create the Dynatrace IAM baseline<a class="headerlink" href="#2-create-the-dynatrace-iam-baseline" title="Permanent link">&para;</a></h3>
+<h3 id="2-dynatrace">2. Dynatrace<a class="headerlink" href="#2-dynatrace" title="Permanent link">&para;</a></h3>
 <p>Actions in this section can and (should) only be performed by the Dynatrace account administrator.</p>
 <p>The new AWS Platform Monitoring has been integrated with the core Dynatrace Identity and Access Management (IAM) design.</p>
 <p>Learn more about the basic concepts:</p>
@@ -26496,6 +26604,7 @@
 3. Select <strong>Next</strong>.</p>
 <p>After a successful onboarding, you'll be able to customize monitored AWS Regions and all other supported monitoring settings, per AWS member account.</p>
 <h3 id="3-get-platform-tokens-for-service-users">3. Get platform tokens for service users<a class="headerlink" href="#3-get-platform-tokens-for-service-users" title="Permanent link">&para;</a></h3>
+<p>Generating tokens in this step automatically creates a service user, platform tokens, and binds all the required policies.</p>
 <ol>
 <li>Generate the settings and ingest tokens. Alternatively, you may also paste pre-existing tokens.</li>
 <li>Select <strong>Download</strong> and <strong>Next</strong>.</li>

@@ -25,7 +25,7 @@
     
     
       
-        <title>Get started with Dynatrace Intelligence generative AI - Dynatrace Managed - Документация</title>
+        <title>Get started with Dynatrace Intelligence agentic and generative AI - Dynatrace Managed - Документация</title>
       
     
     
@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#get-started-with-dynatrace-intelligence-generative-ai" class="md-skip">
+        <a href="#get-started-with-dynatrace-intelligence-agentic-and-generative-ai" class="md-skip">
           Перейти к содержанию
         </a>
       
@@ -114,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Get started with Dynatrace Intelligence generative AI
+              Get started with Dynatrace Intelligence agentic and generative AI
             
           </span>
         </div>
@@ -25474,15 +25474,15 @@
 
 
 
-<h1 id="get-started-with-dynatrace-intelligence-generative-ai">Get started with Dynatrace Intelligence generative AI<a class="headerlink" href="#get-started-with-dynatrace-intelligence-generative-ai" title="Permanent link">&para;</a></h1>
-<h1 id="get-started-with-dynatrace-intelligence-generative-ai_1">Get started with Dynatrace Intelligence generative AI<a class="headerlink" href="#get-started-with-dynatrace-intelligence-generative-ai_1" title="Permanent link">&para;</a></h1>
+<h1 id="get-started-with-dynatrace-intelligence-agentic-and-generative-ai">Get started with Dynatrace Intelligence agentic and generative AI<a class="headerlink" href="#get-started-with-dynatrace-intelligence-agentic-and-generative-ai" title="Permanent link">&para;</a></h1>
+<h1 id="get-started-with-dynatrace-intelligence-agentic-and-generative-ai_1">Get started with Dynatrace Intelligence agentic and generative AI<a class="headerlink" href="#get-started-with-dynatrace-intelligence-agentic-and-generative-ai_1" title="Permanent link">&para;</a></h1>
 <ul>
 <li>Latest Dynatrace</li>
 <li>How-to guide</li>
 <li>3-min read</li>
-<li>Updated on Jan 28, 2026</li>
+<li>Updated on Mar 03, 2026</li>
 </ul>
-<p>Dynatrace Intelligence generative AI is enabled on the account level by default, meaning that all your environments automatically have access to it. However, generative AI functionality must still be enabled on the environment level via the settings page, which offers you full control over how Dynatrace Intelligence generative AI is enabled and configured in your environment.</p>
+<p>Dynatrace Intelligence agentic and generative AI is enabled on the account level by default, meaning that all your environments automatically have access to it. However, AI functionality must still be enabled on the environment level via the settings page, which offers you full control over how Dynatrace Intelligence agentic and generative AI is enabled and configured in your environment.</p>
 <h2 id="enable-dynatrace-intelligence-generative-ai-on-your-environment">Enable Dynatrace Intelligence generative AI on your environment<a class="headerlink" href="#enable-dynatrace-intelligence-generative-ai-on-your-environment" title="Permanent link">&para;</a></h2>
 <p>To enable Dynatrace Intelligence generative AI on your environment</p>
 <ol>
@@ -25491,7 +25491,7 @@
 </ol>
 <p><img alt="Enable generative AI in your settings" src="https://dt-cdn.net/images/generative-ai-settings-1913-24ab3b085b.png" /></p>
 <p>If you can't see the settings page, make sure you have <code>Setting Reader</code> and <code>Setting Writer</code> policies assigned. For more information, see <a href="/docs/manage/identity-access-management/use-cases/access-settings#example-read-and-write-permissions" title="Grant access to Settings">read and write permission</a>.</p>
-<h2 id="user-permissions">User permissions<a class="headerlink" href="#user-permissions" title="Permanent link">&para;</a></h2>
+<h3 id="user-permissions">User permissions<a class="headerlink" href="#user-permissions" title="Permanent link">&para;</a></h3>
 <p>After enabling Dynatrace Intelligence generative AI on the environment level, you'll still need to give access to the various generative AI skills to your users. To do so, you have to bind the group they belong to a policy with the following statement that allows access to generative AI:</p>
 <ul>
 <li><strong>Natural language to DQL translation</strong> (<code>ALLOW davis-copilot:nl2dql:execute;</code>)</li>
@@ -25499,33 +25499,59 @@
 <li><strong>Conversational recommender</strong> (<code>ALLOW davis-copilot:conversations:execute;</code>)</li>
 </ul>
 <p>For more information on managing your policies, see <a href="/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies/iam-policy-mgt" title="Create, edit, copy, and delete IAM policies for managing Dynatrace user permissions.">Manage IAM policies</a>.</p>
-<h3 id="user-based-data-access">User-based data access<a class="headerlink" href="#user-based-data-access" title="Permanent link">&para;</a></h3>
-<p>Since Dynatrace Intelligence generative AI respects user privileges, it may provide different responses to different users based on their access rights.</p>
+<h2 id="enable-agentic-ai-for-dynatrace-assist">Enable agentic AI for Dynatrace Assist<a class="headerlink" href="#enable-agentic-ai-for-dynatrace-assist" title="Permanent link">&para;</a></h2>
+<p><strong>Dynatrace Assist</strong> allows you to use Dynatrace agentic AI and <a href="/docs/dynatrace-intelligence/dynatrace-intelligence-integrations/dynatrace-mcp#server" title="Learn about the Dynatrace MCP server and how you can connect to it.">MCP tools and capabilities</a> to access and analyze your environment data and use it to perform tasks (such as listing problems or generating and executing DQL queries) in addition to answering general questions about Dynatrace.</p>
+<p>Agentic  <strong>Dynatrace Assist</strong> shares some additional information, such as tool call results, with enterprise vendors hosting the LLMs that Dynatrace agentic and generative AI are based on. For more information about third parties, see <a href="/docs/dynatrace-intelligence/copilot/copilot-faq#copilot-training-on-data" title="Learn about frequently asked questions and find your answers.">Is my data used to train Dynatrace Intelligence generative AI?</a>.</p>
+<p>To use the agentic  <strong>Dynatrace Assist</strong>, you need to</p>
+<ul>
+<li>Have sufficient permissions.</li>
+<li>
+<p>Have agentic AI enabled for  <strong>Dynatrace Assist</strong>. To enable agentic AI</p>
+</li>
+<li>
+<p>Go to <img alt="Settings" src="https://dt-cdn.net/images/settings-icon-256-38e1321b51.webp" title="Settings" /> <strong>Settings</strong> &gt;  <strong>Dynatrace Intelligence</strong> &gt; <strong>Generative and agentic AI</strong>.</p>
+</li>
+<li>Ensure that <strong>Enable generative AI</strong> is turned on.</li>
+<li>Turn on <strong>Enable agentic AI</strong>.</li>
+</ul>
+<p>Agentic  <strong>Dynatrace Assist</strong> might not be available for you if you don't meet the prerequisites mentioned above or if you access  <strong>Dynatrace Assist</strong> from the <a href="/docs/dynatrace-intelligence/copilot/chat-with-davis-copilot/copilot-conv-starters" title="Learn how to trigger predefined prompts in various Dynatrace applications.">Embedded conversation starters</a>.</p>
+<h3 id="dynatrace-assist-agentic-permissions"><strong>Dynatrace Assist</strong> agentic permissions<a class="headerlink" href="#dynatrace-assist-agentic-permissions" title="Permanent link">&para;</a></h3>
+<p>You will also need additional permissions for calling the agentic AI tools. For the list of tools and permissions they require, see <a href="/docs/dynatrace-intelligence/dynatrace-intelligence-integrations/dynatrace-mcp#server" title="Learn about the Dynatrace MCP server and how you can connect to it.">MCP tools</a>.</p>
+<h3 id="pii-masking">PII masking<a class="headerlink" href="#pii-masking" title="Permanent link">&para;</a></h3>
+<p>Agentic  <strong>Dynatrace Assist</strong> doesn't provide any PII masking. In order to protect your data, when  <strong>Dynatrace Assist</strong> detects PII in the user prompt, the request is automatically blocked and the prompt isn't sent to the LLM for processing.</p>
+<h3 id="calling-multiple-tools">Calling multiple tools<a class="headerlink" href="#calling-multiple-tools" title="Permanent link">&para;</a></h3>
+<p>While interacting with  <strong>Dynatrace Assist</strong> in agentic mode, <strong>Assist</strong> can call up to 10 internal MCP tools per response. If your request requires  <strong>Dynatrace Assist</strong> to call more than 10 tools simultaneously, it'll be unable to complete the interaction.</p>
+<h2 id="user-based-data-access">User-based data access<a class="headerlink" href="#user-based-data-access" title="Permanent link">&para;</a></h2>
+<p>Dynatrace Intelligence agentic and generative AI respects user privileges and permissions. This means that</p>
+<ul>
+<li>It may provide different responses to different users based on their access rights.</li>
+<li>All agentic  <strong>Dynatrace Assist</strong> calls are done within the scope of your user permissions and the results won't include anything outside of it.</li>
+</ul>
 <h2 id="enable-document-suggestion">Enable document suggestion<a class="headerlink" href="#enable-document-suggestion" title="Permanent link">&para;</a></h2>
-<p>Document suggestion is a Dynatrace Intelligence generative AI skill that allows it to recommend to you troubleshooting guides created in <img alt="Notebooks" src="https://dt-cdn.net/images/notebooks-768-046137830a.webp" title="Notebooks" /> <strong>Notebooks</strong> and <img alt="Dashboards" src="https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png" title="Dashboards" /> <strong>Dashboards</strong> based on vector similarity. You can leverage Dynatrace Intelligence generative AI's document suggestion in <img alt="Problems app - new" src="https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp" title="Problems app - new" /> <strong>Problems</strong> to quickly retrieve troubleshooting guides written by you or your team for similar problems and reduce mean time to repair (MTTR).</p>
-<p>If you want Dynatrace Intelligence generative AI to suggest troubleshooting guides for similar or repeatedly occurring problem, you'll need to allow it to search through and index documents created in <img alt="Notebooks" src="https://dt-cdn.net/images/notebooks-768-046137830a.webp" title="Notebooks" /> <strong>Notebooks</strong> and <img alt="Dashboards" src="https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png" title="Dashboards" /> <strong>Dashboards</strong> and shared with all users in your environment. To ensure you have full control over the security of your data, this functionality is opt-in and is turned off by default.</p>
-<p>In order for Dynatrace Intelligence generative AI to index and suggest your document, it has to be shared with all users in your environment. Dynatrace Intelligence generative AI won't index or suggest any private documents or documents shared only with specific users. To learn more about sharing documents, see <a href="/docs/discover-dynatrace/get-started/dynatrace-ui/share" title="Share Dynatrace documents (dashboards, notebooks, and launchpads) with other Dynatrace users in your company.">Share documents</a>.</p>
+<p>Document suggestion is a Dynatrace Intelligence agentic and generative AI skill that allows it to recommend to you troubleshooting guides created in <img alt="Notebooks" src="https://dt-cdn.net/images/notebooks-768-046137830a.webp" title="Notebooks" /> <strong>Notebooks</strong> and <img alt="Dashboards" src="https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png" title="Dashboards" /> <strong>Dashboards</strong> based on vector similarity. You can leverage Dynatrace Intelligence agentic and generative AI's document suggestion in <img alt="Problems app - new" src="https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp" title="Problems app - new" /> <strong>Problems</strong> to quickly retrieve troubleshooting guides written by you or your team for similar problems and reduce mean time to repair (MTTR).</p>
+<p>If you want Dynatrace Intelligence agentic and generative AI to suggest troubleshooting guides for similar or repeatedly occurring problem, you'll need to allow it to search through and index documents created in <img alt="Notebooks" src="https://dt-cdn.net/images/notebooks-768-046137830a.webp" title="Notebooks" /> <strong>Notebooks</strong> and <img alt="Dashboards" src="https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png" title="Dashboards" /> <strong>Dashboards</strong> and shared with all users in your environment. To ensure you have full control over the security of your data, this functionality is opt-in and is turned off by default.</p>
+<p>In order for Dynatrace Intelligence agentic and generative AI to index and suggest your document, it has to be shared with all users in your environment. Dynatrace Intelligence agentic and generative AI won't index or suggest any private documents or documents shared only with specific users. To learn more about sharing documents, see <a href="/docs/discover-dynatrace/get-started/dynatrace-ui/share" title="Share Dynatrace documents (dashboards, notebooks, and launchpads) with other Dynatrace users in your company.">Share documents</a>.</p>
 <p>To enable document suggestion</p>
 <ol>
 <li>Go to <img alt="Settings" src="https://dt-cdn.net/images/settings-icon-256-38e1321b51.webp" title="Settings" /> <strong>Settings</strong> &gt;  <strong>Dynatrace Intelligence</strong> &gt; <strong>Generative and agentic AI</strong>.</li>
-<li>Turn on <strong>Enable document suggestions</strong> to allow Dynatrace Intelligence generative AI to ingest troubleshooting guides and suggest them to you.</li>
+<li>Turn on <strong>Enable document suggestions</strong> to allow Dynatrace Intelligence agentic and generative AI to ingest troubleshooting guides and suggest them to you.</li>
 </ol>
-<p>By default, Dynatrace Intelligence generative AI indexes troubleshooting guides every 6 hours.</p>
+<p>By default, Dynatrace Intelligence agentic and generative AI indexes troubleshooting guides every 6 hours.</p>
 <h3 id="semantic-vector-indexing">Semantic vector indexing<a class="headerlink" href="#semantic-vector-indexing" title="Permanent link">&para;</a></h3>
-<p>Dynatrace Intelligence generative AI uses semantic vector indexing to suggest relevant troubleshooting dashboards and notebooks shared within the environment. It continuously indexes the content of dashboards and notebooks recognized as troubleshooting guides. When a user accesses the troubleshooting view for a specific problem, generative AI compares the problem description to the indexed data using semantic similarity to suggest the most relevant guides.</p>
-<p>This process relies on vector representations of both the problem description and the indexed dashboard or notebook content. The smaller the semantic distance between the problem description and a document, the higher its relevance score. This means it's more likely for a document to be suggested by Dynatrace Intelligence generative AI as a relevant troubleshooting guide.</p>
+<p>Dynatrace Intelligence agentic and generative AI uses semantic vector indexing to suggest relevant troubleshooting dashboards and notebooks shared within the environment. It continuously indexes the content of dashboards and notebooks recognized as troubleshooting guides. When a user accesses the troubleshooting view for a specific problem, generative AI compares the problem description to the indexed data using semantic similarity to suggest the most relevant guides.</p>
+<p>This process relies on vector representations of both the problem description and the indexed dashboard or notebook content. The smaller the semantic distance between the problem description and a document, the higher its relevance score. This means it's more likely for a document to be suggested by Dynatrace Intelligence agentic and generative AI as a relevant troubleshooting guide.</p>
 <h2 id="enable-environment-aware-queries">Enable environment-aware queries<a class="headerlink" href="#enable-environment-aware-queries" title="Permanent link">&para;</a></h2>
-<p>Environment-aware queries can enrich Dynatrace Intelligence generative AI with your environment's data. This lets you generate more accurate queries that identify and reference relevant entities, events, spans, logs, and metrics from your environment.</p>
-<p>If you want Dynatrace Intelligence generative AI to be aware of the details and structures of your environment's data, you'll need to allow access to Grail. To ensure you have full control over the security of your data, this functionality is opt-in, and admin users can specify which data tables and buckets Dynatrace Intelligence generative AI is not allowed to access.</p>
+<p>Environment-aware queries can enrich Dynatrace Intelligence agentic and generative AI with your environment's data. This lets you generate more accurate queries that identify and reference relevant entities, events, spans, logs, and metrics from your environment.</p>
+<p>If you want Dynatrace Intelligence agentic and generative AI to be aware of the details and structures of your environment's data, you'll need to allow access to Grail. To ensure you have full control over the security of your data, this functionality is opt-in, and admin users can specify which data tables and buckets Dynatrace Intelligence agentic and generative AI is not allowed to access.</p>
 <p>To enable environment-aware queries</p>
 <ol>
 <li>Go to <img alt="Settings" src="https://dt-cdn.net/images/settings-icon-256-38e1321b51.webp" title="Settings" /> <strong>Settings</strong> &gt;  <strong>Dynatrace Intelligence</strong> &gt; <strong>Generative and agentic AI</strong>.</li>
 <li>Turn on <strong>Enable environment-aware queries</strong>.</li>
 </ol>
-<p>It can take up to 24 hours for Dynatrace Intelligence generative AI to build or amend the semantic index after changes are made. If environment-aware queries are disabled and the semantic index already exists, Dynatrace Intelligence generative AI purges all environment-specific data within 24 hours, and returns to using publicly available sources for building DQL queries. The semantic index is stored only on your Dynatrace tenant.</p>
+<p>It can take up to 24 hours for Dynatrace Intelligence agentic and generative AI to build or amend the semantic index after changes are made. If environment-aware queries are disabled and the semantic index already exists, Dynatrace Intelligence agentic and generative AI purges all environment-specific data within 24 hours, and returns to using publicly available sources for building DQL queries. The semantic index is stored only on your Dynatrace tenant.</p>
 <p>To learn more about semantic indexing and environment-aware queries, see <a href="/docs/dynatrace-intelligence/copilot/quick-analysis-copilot-dql#environment-aware-queries" title="Use Dynatrace Intelligence generative AI to translate your natural language questions into DQL queries">Environment-aware queries</a>.</p>
 <h3 id="configure-your-data-access">Configure your data access<a class="headerlink" href="#configure-your-data-access" title="Permanent link">&para;</a></h3>
-<p>After enabling environment-aware queries, you'll be able to see the settings for configuring data that Dynatrace Intelligence generative AI isn't allowed to access.</p>
+<p>After enabling environment-aware queries, you'll be able to see the settings for configuring data that Dynatrace Intelligence agentic and generative AI isn't allowed to access.</p>
 <p>To configure your data access</p>
 <ol>
 <li>Go to <strong>Configure data access</strong>.</li>
@@ -25536,9 +25562,9 @@
 </ol>
 <h2 id="related-topics">Related topics<a class="headerlink" href="#related-topics" title="Permanent link">&para;</a></h2>
 <ul>
-<li><a href="/docs/dynatrace-intelligence/copilot/copilot-faq" title="Learn about frequently asked questions and find your answers.">Dynatrace Intelligence generative AI FAQ</a></li>
+<li><a href="/docs/dynatrace-intelligence/copilot/copilot-faq" title="Learn about frequently asked questions and find your answers.">Dynatrace Intelligence agentic and generative AI FAQ</a></li>
 <li><a href="/docs/dynatrace-intelligence/copilot/quick-analysis-copilot-dql" title="Use Dynatrace Intelligence generative AI to translate your natural language questions into DQL queries">Query with natural language</a></li>
-<li><a href="/docs/dynatrace-intelligence/copilot/quick-analysis-copilot-dql/copilot-tips" title="Learn best practices for writing more accurate prompts.">Dynatrace Intelligence generative AI - Tips for writing better prompts</a></li>
+<li><a href="/docs/dynatrace-intelligence/copilot/quick-analysis-copilot-dql/copilot-tips" title="Learn best practices for writing more accurate prompts.">Dynatrace Intelligence agentic and generative AI - Tips for writing better prompts</a></li>
 </ul>
 
 

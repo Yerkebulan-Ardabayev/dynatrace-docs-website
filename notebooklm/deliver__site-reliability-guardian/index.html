@@ -25495,14 +25495,14 @@
 
 <h1 id="dynatrace-deliversite-reliability-guardian">Документация Dynatrace: deliver/site-reliability-guardian<a class="headerlink" href="#dynatrace-deliversite-reliability-guardian" title="Permanent link">&para;</a></h1>
 <p>Язык: Русский (RU)
-Сгенерировано: 2026-03-04
-Файлов в разделе: 4</p>
+Сгенерировано: 2026-03-05
+Файлов в разделе: 5</p>
 <hr />
 <h2 id="deliversite-reliability-guardianevent-structuremd">deliver/site-reliability-guardian/event-structure.md<a class="headerlink" href="#deliversite-reliability-guardianevent-structuremd" title="Permanent link">&para;</a></h2>
 <hr />
 <p>title: Site Reliability guardian event structure
 source: https://www.dynatrace.com/docs/deliver/site-reliability-guardian/event-structure
-scraped: 2026-02-27T21:20:36.384446</p>
+scraped: 2026-03-05T21:35:41.303232</p>
 <hr />
 <h1 id="site-reliability-guardian-event-structure">Site Reliability guardian event structure<a class="headerlink" href="#site-reliability-guardian-event-structure" title="Permanent link">&para;</a></h1>
 <h1 id="site-reliability-guardian-event-structure_1">Site Reliability guardian event structure<a class="headerlink" href="#site-reliability-guardian-event-structure_1" title="Permanent link">&para;</a></h1>
@@ -25799,11 +25799,91 @@ You can compare or bulk delete your guardians in the  <strong>Table</strong>.</p
 <h3 id="view-older-results">View older results<a class="headerlink" href="#view-older-results" title="Permanent link">&para;</a></h3>
 <p>You can view older results by opening a guardian and selecting a different timeframe.</p>
 <hr />
+<h2 id="deliversite-reliability-guardianvalidation-insight-linkmd">deliver/site-reliability-guardian/validation-insight-link.md<a class="headerlink" href="#deliversite-reliability-guardianvalidation-insight-linkmd" title="Permanent link">&para;</a></h2>
+<hr />
+<p>title: Add and access validation insight links
+source: https://www.dynatrace.com/docs/deliver/site-reliability-guardian/validation-insight-link
+scraped: 2026-03-05T21:34:43.909572</p>
+<hr />
+<h1 id="add-and-access-validation-insight-links">Add and access validation insight links<a class="headerlink" href="#add-and-access-validation-insight-links" title="Permanent link">&para;</a></h1>
+<h1 id="add-and-access-validation-insight-links_1">Add and access validation insight links<a class="headerlink" href="#add-and-access-validation-insight-links_1" title="Permanent link">&para;</a></h1>
+<ul>
+<li>Latest Dynatrace</li>
+<li>How-to guide</li>
+<li>2-min read</li>
+<li>Published Feb 17, 2026</li>
+</ul>
+<p>Add validation insight links to provide contextual information and resources for an objective.
+Using validation insight links, you can go directly to dashboards, notebooks, or external tools such as SonarQube.</p>
+<h2 id="how-to-add-and-access-validation-insight-links">How to add and access validation insight links<a class="headerlink" href="#how-to-add-and-access-validation-insight-links" title="Permanent link">&para;</a></h2>
+<p>To add a validation insight link:</p>
+<ol>
+<li>Go to your guardian.</li>
+<li>Select your objective.</li>
+<li>On the right-hand side, select  <strong>Add link</strong>.</li>
+<li>Enter the dashboard, notebook, or SonarQube URL in the <strong>Enter or paste the link</strong> field.</li>
+</ol>
+<p>These validation insight links are visible as <strong>Validation insights</strong> for the objective.</p>
+<ul>
+<li>You can add up to five links per objective.</li>
+<li>Links must be valid HTTPS URLs.</li>
+<li>Display text for each link is optional.</li>
+</ul>
+<p>Access validation insight links from <img alt="Site Reliability Guardian" src="https://dt-cdn.net/images/site-reliability-guardian-ec19b393a6.svg" title="Site Reliability Guardian" /> <strong>Site Reliability Guardian</strong>:</p>
+<ol>
+<li>Go to your guardian.</li>
+<li>Select  <strong>Analyze</strong>.</li>
+<li>Go to the <strong>Validation result</strong> section.
+   The links are under <strong>Validation insights</strong> for the objective.</li>
+</ol>
+<p><img alt="Validation Insights on Analysis Page" src="https://dt-cdn.net/images/validation-insights-links-1340-a2f8e028f8.png" /></p>
+<p>Access validation insight links using DQL:</p>
+<ul>
+<li>For <a href="/docs/deliver/site-reliability-guardian#lifecycle-guardian" title="Automatically validate the performance, availability, and capacity objectives of your critical services to make the right release decision.">Lifecycle guardians</a>, you can find the validation insights for the event type <code>validation.objective</code> in the property <code>dt.srg.objective</code>.</li>
+</ul>
+<p>Here is an example query for Lifecycle guardian:</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>fetch events
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>| filter event.kind == &quot;SDLC_EVENT&quot;
+<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>
+<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>
+<a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a>
+<a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a>| filter event.type == &quot;validation.objective&quot;
+<a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a>
+<a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a>
+<a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a>
+<a id="__codelineno-11-13" name="__codelineno-11-13" href="#__codelineno-11-13"></a>| filter event.provider == &quot;dynatrace.site.reliability.guardian&quot;
+<a id="__codelineno-11-14" name="__codelineno-11-14" href="#__codelineno-11-14"></a>
+<a id="__codelineno-11-15" name="__codelineno-11-15" href="#__codelineno-11-15"></a>
+<a id="__codelineno-11-16" name="__codelineno-11-16" href="#__codelineno-11-16"></a>
+<a id="__codelineno-11-17" name="__codelineno-11-17" href="#__codelineno-11-17"></a>| fields dt.srg.objective
+</code></pre></div>
+* For <a href="/docs/deliver/site-reliability-guardian#business-guardian" title="Automatically validate the performance, availability, and capacity objectives of your critical services to make the right release decision.">Business guardians</a>, you can find the objective links for the event type <code>guardian.validation.objective</code> in the property <code>guardian.objective</code>.</p>
+<p>Here is an example query for Business guardian:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>fetch bizevents
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>| filter event.provider == &quot;dynatrace.site.reliability.guardian&quot;
+<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>
+<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a>
+<a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a>
+<a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a>| filter event.type == &quot;guardian.validation.objective&quot;
+<a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a>
+<a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a>
+<a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a>
+<a id="__codelineno-12-13" name="__codelineno-12-13" href="#__codelineno-12-13"></a>| fields guardian.objective
+</code></pre></div>
+<h2 id="next-steps">Next steps<a class="headerlink" href="#next-steps" title="Permanent link">&para;</a></h2>
+<p>Take a look at <a href="/docs/deliver/site-reliability-guardian/execution-context" title="Filter Site Reliability Guardian validation events triggered by an external tool using the context information provided by the tool.">Guardian execution context</a>. Use events from your Continuous Integration (CI) tool to send them to Dynatrace, which, in turn, can trigger validation of your guardian in a workflow.</p>
+<hr />
 <h2 id="deliversite-reliability-guardianmd">deliver/site-reliability-guardian.md<a class="headerlink" href="#deliversite-reliability-guardianmd" title="Permanent link">&para;</a></h2>
 <hr />
 <p>title: Site Reliability Guardian
 source: https://www.dynatrace.com/docs/deliver/site-reliability-guardian
-scraped: 2026-03-04T21:20:01.263284</p>
+scraped: 2026-03-05T21:22:02.505678</p>
 <hr />
 <h1 id="site-reliability-guardian">Site Reliability Guardian<a class="headerlink" href="#site-reliability-guardian" title="Permanent link">&para;</a></h1>
 <h1 id="site-reliability-guardian_1">Site Reliability Guardian<a class="headerlink" href="#site-reliability-guardian_1" title="Permanent link">&para;</a></h1>
@@ -25952,34 +26032,34 @@ For more details on the structural differences, see <a href="/docs/deliver/site-
 <p>To assign a tag to your guardian, either specify it in the <strong>Add tags to your guardian</strong> section during guardian creation or add the tag later in edit mode.</p>
 <p>To filter the list of all guardians by a tag, type the tag in the <strong>Search by name or tag</strong> fieldâthe page automatically updates to show only guardians with matching tags.</p>
 <p>This DQL shows you the first <code>guardian.validation.objective</code> business event with a specific guardian ID and parses the guardian tags field to extract a specific tag value from the event JSON.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>fetch bizevents |
-<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>
-<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>
-<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>
-<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>filter event.type == &quot;guardian.validation.objective&quot; AND guardian.id == &quot;vu9U3hXa3q0AAAABADFhcHA6ZHluYXRyYWNlLnNpdGUucmVsaWFiaWxpdHkuZ3VhcmRpYW46Z3VhcmRpYW5zAAZ0ZW5hbnQABnRlbmFudAAkMWNiZDVkYWYtZThhNi0zMDkxLWFkOGQtMmU5NDNmNWJmZWJmvu9U3hXa3q0&quot; |
-<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>
-<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>
-<a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a>
-<a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a>limit 1 |
-<a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a>
-<a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a>
-<a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a>
-<a id="__codelineno-11-13" name="__codelineno-11-13" href="#__codelineno-11-13"></a>parse guardian.tags, &quot;JSON:parsed_guardian_tags&quot;
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>fetch bizevents |
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>filter event.type == &quot;guardian.validation.objective&quot; AND guardian.id == &quot;vu9U3hXa3q0AAAABADFhcHA6ZHluYXRyYWNlLnNpdGUucmVsaWFiaWxpdHkuZ3VhcmRpYW46Z3VhcmRpYW5zAAZ0ZW5hbnQABnRlbmFudAAkMWNiZDVkYWYtZThhNi0zMDkxLWFkOGQtMmU5NDNmNWJmZWJmvu9U3hXa3q0&quot; |
+<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>
+<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a>
+<a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a>
+<a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a>limit 1 |
+<a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a>
+<a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a>
+<a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a>
+<a id="__codelineno-13-13" name="__codelineno-13-13" href="#__codelineno-13-13"></a>parse guardian.tags, &quot;JSON:parsed_guardian_tags&quot;
 </code></pre></div>
 <p>This DQL shows you all <code>guardian.validation.finished</code> business events from guardians tagged as <code>tagkey:my-tagged-guardian</code>.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>fetch bizevents
-<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>
-<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>
-<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>
-<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>| filter event.type == &quot;guardian.validation.finished&quot;
-<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>
-<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a>
-<a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a>
-<a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a>| expand guardian.tags
-<a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a>
-<a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a>
-<a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a>
-<a id="__codelineno-12-13" name="__codelineno-12-13" href="#__codelineno-12-13"></a>| filter contains(guardian.tags, &quot;my-tagged-guardian&quot;)
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>fetch bizevents
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>
+<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>| filter event.type == &quot;guardian.validation.finished&quot;
+<a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>
+<a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a>
+<a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a>
+<a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a>| expand guardian.tags
+<a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a>
+<a id="__codelineno-14-11" name="__codelineno-14-11" href="#__codelineno-14-11"></a>
+<a id="__codelineno-14-12" name="__codelineno-14-12" href="#__codelineno-14-12"></a>
+<a id="__codelineno-14-13" name="__codelineno-14-13" href="#__codelineno-14-13"></a>| filter contains(guardian.tags, &quot;my-tagged-guardian&quot;)
 </code></pre></div>
 <h3 id="8-guardian-workflow-action">8. Guardian workflow action<a class="headerlink" href="#8-guardian-workflow-action" title="Permanent link">&para;</a></h3>
 <p>You can automate the execution of a guardian via <a href="/docs/analyze-explore-automate/workflows" title="Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services.">Workflows</a>, tying guardian execution to <a href="/docs/analyze-explore-automate/workflows/trigger/event-trigger#event-trigger" title="Guide to creating workflow automation event triggers in Dynatrace Workflows.">an event</a> or <a href="/docs/analyze-explore-automate/workflows/trigger#on-demand-trigger" title="Introduction to workflow automation triggers for workflows.">an API call</a>.</p>

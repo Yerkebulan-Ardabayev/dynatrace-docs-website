@@ -25479,7 +25479,7 @@
 <ul>
 <li>Latest Dynatrace</li>
 <li>Explanation</li>
-<li>Updated on Feb 12, 2026</li>
+<li>Updated on Mar 03, 2026</li>
 </ul>
 <p>The New RUM Experience provides deep visibility into how end users interact with the frontends of your applications. It delivers insights into user behavior and experience, along with performance metrics and error details. This page outlines the underlying data model and how the captured data is organized in Grail.</p>
 <p><img alt="New RUM Experience data model" src="https://dt-cdn.net/images/data-model-2264-a2dd12ab3d.png" /></p>
@@ -25502,7 +25502,7 @@
 </ul>
 <p>Data collected for a page or viewâsuch as performance metrics and error countsâis aggregated in <a href="/docs/semantic-dictionary/model/rum/user-events/navigation-related#page-summary">page summary</a> or <a href="/docs/semantic-dictionary/model/rum/user-events/navigation-related#view-summary">view summary</a> events.</p>
 <p><a href="/docs/semantic-dictionary/model/rum/user-events/navigation-related#navigation">Navigations</a> describe the transitions from one view to another or from one page to another.</p>
-<p>To learn more about pages, views, and navigations in web frontends, see <a href="/docs/observe/digital-experience/new-rum-experience/web-frontends/concepts/pages-views-and-navigations" title="Understand how pages, views, and navigations are defined for web frontends the New RUM Experience.">Pages, views, and navigations in the New RUM Experience</a>.</p>
+<p>To learn more about pages, views, and navigations in web frontends, see <a href="/docs/observe/digital-experience/new-rum-experience/web-frontends/concepts/pages-views-and-navigations" title="Understand how pages, views, and navigations are defined for web frontends the New RUM Experience.">Pages, views, and navigations in the New RUM Experience</a>. To learn more about views and navigations in mobile frontends, refer to <a href="/docs/observe/digital-experience/new-rum-experience/mobile-frontends/mobile-rum-concepts" title="Learn about concepts for mobile frontends in the New RUM Experience.">Concepts for mobile frontends</a>.</p>
 <h3 id="user-interactions">User interactions<a class="headerlink" href="#user-interactions" title="Permanent link">&para;</a></h3>
 <p>Early Access</p>
 <p><strong>User interactions</strong> represent activities performed by an end user on the application's frontend. The specific types of interactions depend on the frontend technology:</p>
@@ -25528,23 +25528,24 @@
 <li>Failed requests</li>
 <li>Uncaught exceptions</li>
 <li>CSP violations in web frontends</li>
-<li>Crashes in mobile frontends</li>
-<li>Application Not Responding (ANR) errors in mobile frontends</li>
+<li><a href="/docs/observe/digital-experience/new-rum-experience/mobile-frontends/mobile-rum-concepts#crashes" title="Learn about concepts for mobile frontends in the New RUM Experience.">Crashes</a> in mobile frontends</li>
+<li><a href="/docs/observe/digital-experience/new-rum-experience/mobile-frontends/mobile-rum-concepts#anr" title="Learn about concepts for mobile frontends in the New RUM Experience.">Application Not Responding (ANR) errors</a> in mobile frontends</li>
 </ul>
 <p>For the full specification of errors, see <a href="/docs/semantic-dictionary/fields#error" title="Get to know the list of global fields that have a well defined semantic meaning in Dynatrace and can be used across different monitoring types.">Semantic DictionaryâGlobal field referenceâError</a>.</p>
 <h2 id="user-sessions">User sessions<a class="headerlink" href="#user-sessions" title="Permanent link">&para;</a></h2>
 <p><strong>User sessions</strong> summarize all user events from the same end user within a limited time frame. A session ends after a period of inactivity or when the maximum session duration is reached. User sessions are stored in the <code>user.sessions</code> table.</p>
 <p>Unlike RUM Classic, there is no limit on the number of user actions per session.</p>
 <p>You can add a <strong>user identifier</strong> to each session via the <a href="https://www.dynatrace.com/support/doc/javascriptapi/doc-latest/functions/Types.dynatrace.identifyUser.html">RUM JavaScript APIï»¿</a> or the <a href="/docs/observe/digital-experience/new-rum-experience/mobile-frontends/new-rum-apis" title="Explore the new Real User Monitoring (RUM) APIs for mobile frontends, including startup configuration, event reporting, error handling, view tracking, and advanced features for Dynatrace on Grail.">mobile RUM APIs</a> to facilitate analysis based on user context. If your code already calls the RUM Classic API to identify a user, this call is also effective for the New RUM Experience.</p>
-<p>For the full specification of user sessions, see <a href="/docs/semantic-dictionary/model/rum/user-sessions" title="User sessions provide a summary of the user events from the same customer or end-user of your application during a limited period of time.">User sessions</a> in the Semantic Dictionary.</p>
+<p>To learn more about the user session lifecyle in web frontends, see <a href="/docs/observe/digital-experience/new-rum-experience/web-frontends/concepts/user-sessions-web" title="Understand user sessions and their lifecycle for web frontends the New RUM Experience.">User sessions in web frontends</a>. For the full specification of user sessions, see <a href="/docs/semantic-dictionary/model/rum/user-sessions" title="User sessions provide a summary of the user events from the same customer or end-user of your application during a limited period of time.">User sessions</a> in the Semantic Dictionary.</p>
 <h2 id="event-and-session-properties">Event and session properties<a class="headerlink" href="#event-and-session-properties" title="Permanent link">&para;</a></h2>
 <p><strong>Event and session properties</strong> are custom key-value pairs you can define to enrich captured user events and sessions. These properties enable, for example, powerful queries, filtering, and the creation of custom metrics.</p>
 <p>To learn how to add event and session properties, see <a href="/docs/observe/digital-experience/new-rum-experience/web-frontends/additional-configuration/event-and-session-properties" title="Learn how to capture event and session properties for web frontends.">Capture event and session properties for web frontends</a> and <a href="/docs/observe/digital-experience/new-rum-experience/mobile-frontends/additional-configuration/event-and-session-properties" title="Learn how to capture event and session properties for mobile frontends.">Capture event and session properties for mobile frontends</a>.</p>
 <h2 id="related-topics">Related topics<a class="headerlink" href="#related-topics" title="Permanent link">&para;</a></h2>
 <ul>
+<li><a href="/docs/observe/digital-experience/new-rum-experience/web-frontends/concepts" title="Learn about concepts for web frontends in the New RUM Experience.">Concepts for web frontends</a></li>
+<li><a href="/docs/observe/digital-experience/new-rum-experience/mobile-frontends/mobile-rum-concepts" title="Learn about concepts for mobile frontends in the New RUM Experience.">Concepts for mobile frontends</a></li>
 <li><a href="/docs/semantic-dictionary/model/rum/user-events" title="User events provide deep visibility and insights into experience, behavior, performance, and errors of your customers and end-users in real-time.">User events</a></li>
 <li><a href="/docs/semantic-dictionary/model/rum/user-sessions" title="User sessions provide a summary of the user events from the same customer or end-user of your application during a limited period of time.">User sessions</a></li>
-<li><a href="/docs/observe/digital-experience/new-rum-experience/web-frontends/concepts" title="Learn about concepts for web frontends in the New RUM Experience.">Concepts for web frontends</a></li>
 </ul>
 
 
