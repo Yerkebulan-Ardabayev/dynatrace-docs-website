@@ -1,7 +1,7 @@
 ---
 title: All Azure cloud services
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics
-scraped: 2026-03-04T21:22:55.797441
+scraped: 2026-03-05T21:16:16.336596
 ---
 
 # All Azure cloud services

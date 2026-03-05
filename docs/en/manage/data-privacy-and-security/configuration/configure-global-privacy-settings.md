@@ -1,7 +1,7 @@
 ---
 title: Configure data privacy settings
 source: https://www.dynatrace.com/docs/manage/data-privacy-and-security/configuration/configure-global-privacy-settings
-scraped: 2026-03-04T21:22:21.910540
+scraped: 2026-03-05T21:18:18.433173
 ---
 
 # Configure data privacy settings

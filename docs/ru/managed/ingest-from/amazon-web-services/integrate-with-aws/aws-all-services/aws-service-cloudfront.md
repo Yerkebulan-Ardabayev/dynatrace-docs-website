@@ -1,7 +1,7 @@
 ---
 title: Amazon CloudFront monitoring
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-cloudfront
-scraped: 2026-03-04T21:30:50.953999
+scraped: 2026-03-05T21:31:16.509914
 ---
 
 # Amazon CloudFront monitoring

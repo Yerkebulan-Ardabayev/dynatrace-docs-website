@@ -1,7 +1,7 @@
 ---
 title: Amazon ElastiCache monitoring
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-elasticache
-scraped: 2026-03-04T21:28:05.125716
+scraped: 2026-03-05T21:34:28.181973
 ---
 
 # Amazon ElastiCache monitoring
@@ -824,7 +824,7 @@ To check the availability of preset dashboards for each AWS service, see the lis
 
 ## Available metrics
 
-`CacheClusterId` is the main dimension.
+`CacheClusterId` является основной размерностью.
 
 | Name | Description | Unit | Statistics | Dimensions | Recommended |
 | --- | --- | --- | --- | --- | --- |

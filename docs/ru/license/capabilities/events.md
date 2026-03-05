@@ -1,7 +1,7 @@
 ---
 title: Events powered by Grail overview (DPS)
 source: https://www.dynatrace.com/docs/license/capabilities/events
-scraped: 2026-03-03T21:16:21.627491
+scraped: 2026-03-05T21:23:46.466376
 ---
 
 # Events powered by Grail overview (DPS)

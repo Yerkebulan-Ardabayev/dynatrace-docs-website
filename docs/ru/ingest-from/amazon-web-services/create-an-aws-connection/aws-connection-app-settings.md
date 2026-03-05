@@ -1,7 +1,7 @@
 ---
 title: Create an AWS connection via Settings
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/create-an-aws-connection/aws-connection-app-settings
-scraped: 2026-03-03T21:16:14.355992
+scraped: 2026-03-05T21:23:50.299736
 ---
 
 # Create an AWS connection via Settings
@@ -10,7 +10,7 @@ scraped: 2026-03-03T21:16:14.355992
 
 * Latest Dynatrace
 * How-to guide
-* Updated on Jan 09, 2026
+* Updated on Mar 03, 2026
 
 Onboard your AWS account in few steps that will generate a deployable CloudFormation template.
 
@@ -41,24 +41,114 @@ We highly discourage onboarding AWS accounts that are actively monitored by our 
 
 Only a Dynatrace account administrator and an AWS administrator can successfully complete the initial prerequisites.
 
-### 1. Create AWS IAM baseline
+### 1. AWS
 
-Actions in this section can and (should) only be performed by an AWS administrator.
+Actions in this section can and (should) only be performed by an AWS administrator. All necessary [AWS permissions](#aws-permissions) must be granted to successfully deploy the CloudFormation stacks and associated AWS resources.
 
-All necessary [AWS permissions](#aws-permissions) must be granted to successfully deploy the CloudFormation stacks and associated AWS resources.
+In environments where full duty separation is practiced, we recommend that the Dynatrace administrator share the templates with the platform team/AWS administrators.
 
-In environments where full duty separation is practiced, we recommend that the Dynatrace administrator shares the templates with the platform team/AWS administrators.
+#### Core CFN stacks
 
-#### Core CFN templates
+Current latest production version: v1.0.0
 
-* [Main Deployment Stackï»¿](https://dynatrace-data-acquisition.s3.us-east-1.amazonaws.com/aws/deployment/cfn/v1.0.0/da-aws-activation.yaml)
-* [Integration Stackï»¿](https://dynatrace-data-acquisition.s3.amazonaws.com/aws/deployment/cfn/v1.0.0/da-aws-nested-integration.yaml)
-* [Monitoring IAM Role Stackï»¿](https://dynatrace-data-acquisition.s3.amazonaws.com/aws/deployment/cfn/v1.0.0/da-aws-nested-monitoring-role.yaml)
+* [Main deployment stackï»¿](https://dynatrace-data-acquisition.s3.us-east-1.amazonaws.com/aws/deployment/cfn/v1.0.0/da-aws-activation.yaml)
 
-#### Conditional CFN templates (deployed based on user opt-in during onboarding)
+  + [Nested API client stackï»¿](https://dynatrace-data-acquisition.s3.amazonaws.com/aws/deployment/cfn/v1.0.0/da-aws-nested-dt-api-function.yaml)
+  + [Nested integration stackï»¿](https://dynatrace-data-acquisition.s3.amazonaws.com/aws/deployment/cfn/v1.0.0/da-aws-nested-integration.yaml)
+  + [Nested Monitoring IAM role stackï»¿](https://dynatrace-data-acquisition.s3.amazonaws.com/aws/deployment/cfn/v1.0.0/da-aws-nested-monitoring-role.yaml)
 
-* [Firehose Log Streams Stackï»¿](https://dynatrace-data-acquisition.s3.amazonaws.com/aws/deployment/cfn/v1.0.0/da-aws-stack-logs.yaml)
-* [AWS EventBridge Integration Stackï»¿](https://dynatrace-data-acquisition.s3.amazonaws.com/aws/deployment/cfn/v1.0.0/da-aws-stack-events.yaml)
+#### Conditional (nested) CFN stacks
+
+Deployed based on user opt-in during onboarding
+
+* [Nested StackSet rolesï»¿](https://dynatrace-data-acquisition.s3.amazonaws.com/aws/deployment/cfn/v1.0.0/da-aws-stack-logs.yaml)
+* [Nested Firehose Log streams stackï»¿](https://dynatrace-data-acquisition.s3.amazonaws.com/aws/deployment/cfn/v1.0.0/da-aws-stack-logs.yaml)
+* [Nested AWS EventBridge integration stackï»¿](https://dynatrace-data-acquisition.s3.amazonaws.com/aws/deployment/cfn/v1.0.0/da-aws-stack-events.yaml)
+
+AWS resources created by the CloudFormation templates
+
+##### Level 1: Main template resources (`da-aws-activation.yaml`)
+
+Direct resources created in deployment region:
+
+1. `DynatraceApiClientStack` (`AWS::CloudFormation::Stack`)
+
+   * Nested stack that creates API client function (Dynatrace API interaction, create/delete connection)
+   * Reference: `da-aws-nested-dt-api-function.yaml`
+2. `ReportStartedStatusResource` (`Custom::DynatraceApiAccessFunction`)
+
+   * Custom resource to report deployment start status to Dynatrace
+3. `DynatraceIntegrationStack` (`AWS::CloudFormation::Stack`)
+
+   * Nested stack for core integration
+   * Reference: `da-aws-nested-integration.yaml`
+4. `DynatraceStackSetRoleStack` (`AWS::CloudFormation::Stack`)
+
+   * Conditional: Only created if log or event ingest is enabled
+   * Creates StackSet administration and execution roles
+   * Reference: `da-aws-nested-stackset-role.yaml`
+5. `DynatraceLogIngestStackSet` (`AWS::CloudFormation::StackSet`)
+
+   * Conditional: Only if `pDtLogsIngestEnabled = 'TRUE'`
+   * Deploys log ingestion infrastructure to specified regions
+   * Reference: `da-aws-stack-logs.yaml`
+6. `DynatraceEventIngestStackSet` (`AWS::CloudFormation::StackSet`)
+
+   * Conditional: Only if `pDtEventsIngestEnabled = 'TRUE'`
+   * Deploys event ingestion infrastructure to specified regions
+   * Reference: `da-aws-stack-events.yaml`
+7. `ReportCompleteStatusResource` (`Custom::DynatraceApiAccessFunction`)
+
+   * Custom resource to report deployment completion status to Dynatrace
+
+##### Level 2: Nested stack resources
+
+From `DynatraceApiClientStack` (`da-aws-nested-dt-api-function.yaml`)âexpected resources:
+
+* **Lambda Function**: Dynatrace API client function
+* **IAM Role**: Lambda execution role
+* **Secrets Manager Secret**: Storage for Dynatrace API token
+* **KMS Key** (Conditional): Customer Managed Key if `pUseCMK = 'TRUE'`
+* **KMS Alias** (Conditional): Alias for the CMK
+* **Lambda Log Group**: CloudWatch Logs for the Lambda function
+
+From `DynatraceIntegrationStack` (`da-aws-nested-integration.yaml`)âexpected resources:
+
+* **IAM Role**: Dynatrace monitoring role with trust relationship to Dynatrace account
+* **IAM Policy**: Monitoring permissions policy
+* **Custom Resource**: To establish connection with Dynatrace
+
+From `DynatraceStackSetRoleStack` (`da-aws-nested-stackset-role.yaml`)âexpected resources:
+
+* **IAM Role**: StackSet administration role
+* **IAM Role**: StackSet execution role
+* **IAM Policies**: Attached to both roles
+
+##### Level 3: Deployed core resources (management region)
+
+Minimum resources (no log/event ingest enabled), deployed only on a single region (management region):
+
+* **Two custom resources**: Report deployment start and finish status
+* **Lambda function** + IAM roles + **Secrets Manager**: Created/delete connection, store dynatrace platform tokens in Secret Manager
+* **Dynatrace monitoring IAM role**: Dynatrace monitoring role with trust relationship to Dynatrace account
+
+#### Level 4: StackSet-deployed resources (conditional per region)
+
+From `DynatraceLogIngestStackSet` (`da-aws-stack-logs.yaml`); deployed to each region in `pDtLogsIngestRegions` list. Expected resources per region:
+
+* **Kinesis Data Firehose Delivery Stream**: For log forwarding to Dynatrace
+* **IAM Role**: Firehose delivery role
+* **S3 Bucket**: Backup/buffer bucket for failed deliveries
+* **Secrets Manager Secret**: Dynatrace ingest token storage
+* **KMS Key** (conditional): If `pUseCMK = 'TRUE'`
+
+From `DynatraceEventIngestStackSet` (`da-aws-stack-events.yaml`); deployed to each region in `pDtEventsIngestRegions` list. Expected resources per region:
+
+* **EventBridge Rule**: To capture AWS events
+* **EventBridge API Destination**: Dynatrace endpoint
+* **EventBridge Connection**: Authentication for API destination
+* **IAM Role**: EventBridge execution role
+* **Secrets Manager Secret**: Dynatrace ingest token storage
 
 #### AWS IAM permission policy for deploying the CloudFormation stacks
 
@@ -970,9 +1060,9 @@ At this point all, the AWS IAM baseline prerequisites have been completed. Keep 
 
 We recommend that an AWS administrator pre-create those IAM constructs programmatically.
 
-### 2. Create the Dynatrace IAM baseline
 
 
+### 2. Dynatrace
 
 Actions in this section can and (should) only be performed by the Dynatrace account administrator.
 
@@ -1067,6 +1157,8 @@ If the button is grayed out, it means you do not have the proper permissions to 
 After a successful onboarding, you'll be able to customize monitored AWS Regions and all other supported monitoring settings, per AWS member account.
 
 ### 3. Get platform tokens for service users
+
+Generating tokens in this step automatically creates a service user, platform tokens, and binds all the required policies.
 
 1. Generate the settings and ingest tokens. Alternatively, you may also paste pre-existing tokens.
 2. Select **Download** and **Next**.

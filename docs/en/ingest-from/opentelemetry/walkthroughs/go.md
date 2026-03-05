@@ -1,7 +1,7 @@
 ---
 title: Instrument your Go application with OpenTelemetry
 source: https://www.dynatrace.com/docs/ingest-from/opentelemetry/walkthroughs/go
-scraped: 2026-03-04T21:36:29.896263
+scraped: 2026-03-05T21:37:16.926197
 ---
 
 # Instrument your Go application with OpenTelemetry

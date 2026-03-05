@@ -1,7 +1,7 @@
 ---
 title: Dynatrace API
 source: https://www.dynatrace.com/docs/dynatrace-api
-scraped: 2026-03-04T21:20:24.229919
+scraped: 2026-03-05T21:19:36.248011
 ---
 
 # Dynatrace API

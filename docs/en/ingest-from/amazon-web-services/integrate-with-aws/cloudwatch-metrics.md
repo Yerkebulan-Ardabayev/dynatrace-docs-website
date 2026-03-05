@@ -1,7 +1,7 @@
 ---
 title: Monitor Amazon Web Services with CloudWatch metrics
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics
-scraped: 2026-03-04T21:28:18.968558
+scraped: 2026-03-05T21:33:44.395174
 ---
 
 # Monitor Amazon Web Services with CloudWatch metrics

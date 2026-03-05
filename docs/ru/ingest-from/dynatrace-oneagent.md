@@ -1,7 +1,7 @@
 ---
 title: Dynatrace OneAgent
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent
-scraped: 2026-03-04T21:13:15.337741
+scraped: 2026-03-05T21:13:28.175925
 ---
 
 # Dynatrace OneAgent

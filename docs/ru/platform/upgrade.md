@@ -1,13 +1,14 @@
 ---
 title: Upgrade to the latest Dynatrace
 source: https://www.dynatrace.com/docs/platform/upgrade
-scraped: 2026-03-03T21:23:29.715584
+scraped: 2026-03-05T21:36:38.918382
 ---
 
 # Upgrade to the latest Dynatrace
 
 # Upgrade to the latest Dynatrace
 
+* Classic
 * 20-min read
 * Published Feb 01, 2024
 

@@ -1,7 +1,7 @@
 ---
 title: Get started with database monitoring
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/databases/database-app/get-started
-scraped: 2026-03-04T21:28:34.537549
+scraped: 2026-03-05T21:24:20.036990
 ---
 
 # Get started with database monitoring

@@ -1,13 +1,14 @@
 ---
 title: Ownership Classic
 source: https://www.dynatrace.com/docs/deliver/ownership
-scraped: 2026-03-03T21:31:36.900004
+scraped: 2026-03-05T21:34:55.980330
 ---
 
 # Ownership Classic
 
 # Ownership Classic
 
+* Classic
 * Overview
 * 2-min read
 * Updated on Nov 07, 2023

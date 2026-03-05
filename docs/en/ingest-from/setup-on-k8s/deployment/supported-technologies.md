@@ -1,7 +1,7 @@
 ---
 title: Supported distributions
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/deployment/supported-technologies
-scraped: 2026-03-04T21:25:53.545049
+scraped: 2026-03-05T21:26:22.993785
 ---
 
 # Supported distributions

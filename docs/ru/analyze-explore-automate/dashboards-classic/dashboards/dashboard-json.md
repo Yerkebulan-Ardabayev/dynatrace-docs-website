@@ -1,7 +1,7 @@
 ---
 title: Edit Dynatrace dashboard JSON
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-classic/dashboards/dashboard-json
-scraped: 2026-03-04T21:34:49.124769
+scraped: 2026-03-05T21:40:21.599440
 ---
 
 # Edit Dynatrace dashboard JSON

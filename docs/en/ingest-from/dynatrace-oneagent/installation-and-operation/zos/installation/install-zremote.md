@@ -1,7 +1,7 @@
 ---
 title: Install the zRemote module
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-zremote
-scraped: 2026-03-03T21:17:41.539616
+scraped: 2026-03-05T21:24:00.772266
 ---
 
 # Install the zRemote module

@@ -1,7 +1,7 @@
 ---
 title: Send Dynatrace notifications to Slack
 source: https://www.dynatrace.com/docs/analyze-explore-automate/notifications-and-alerting/problem-notifications/slack-integration
-scraped: 2026-03-04T21:14:28.218187
+scraped: 2026-03-05T21:15:24.988246
 ---
 
 # Send Dynatrace notifications to Slack

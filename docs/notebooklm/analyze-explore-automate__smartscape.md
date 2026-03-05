@@ -1,6 +1,6 @@
 # Документация Dynatrace: analyze-explore-automate/smartscape
 Язык: Русский (RU)
-Сгенерировано: 2026-03-04
+Сгенерировано: 2026-03-05
 Файлов в разделе: 12
 ---
 
@@ -332,7 +332,7 @@ To maximize your efficiency when using ![Smartscape](https://dt-cdn.net/images/s
 ---
 title: Smartscape modals
 source: https://www.dynatrace.com/docs/analyze-explore-automate/smartscape/smartscape-modals
-scraped: 2026-03-04T21:28:49.502247
+scraped: 2026-03-05T21:34:12.624189
 ---
 
 # Smartscape modals
@@ -437,7 +437,7 @@ To use the **AWS EC2 Instance Ecosystem** effectively, we recommend that you:
 ---
 title: Infrastructure overview
 source: https://www.dynatrace.com/docs/analyze-explore-automate/smartscape/smartscape-views/infrastructure-overview
-scraped: 2026-03-04T21:28:29.303184
+scraped: 2026-03-05T21:35:17.082641
 ---
 
 # Infrastructure overview
@@ -515,7 +515,7 @@ To use **Infrastructure overview** effectively, we recommend that you:
 ---
 title: Kubernetes overview
 source: https://www.dynatrace.com/docs/analyze-explore-automate/smartscape/smartscape-views/kubernetes-overview
-scraped: 2026-03-02T21:27:33.743275
+scraped: 2026-03-05T21:39:48.917062
 ---
 
 # Kubernetes overview
@@ -641,7 +641,7 @@ To use ![Smartscape](https://dt-cdn.net/images/smartscapes-256-eb41c7cddc.png "S
 ---
 title: Service dependency graph
 source: https://www.dynatrace.com/docs/analyze-explore-automate/smartscape/smartscape-views/service-dependency-graph
-scraped: 2026-03-02T21:20:00.088025
+scraped: 2026-03-05T21:34:14.342181
 ---
 
 # Service dependency graph

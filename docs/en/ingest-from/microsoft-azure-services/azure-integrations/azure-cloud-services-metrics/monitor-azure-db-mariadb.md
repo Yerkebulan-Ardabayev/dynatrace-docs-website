@@ -1,7 +1,7 @@
 ---
 title: Azure Database for MariaDB monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-db-mariadb
-scraped: 2026-03-03T21:32:55.882673
+scraped: 2026-03-05T21:31:05.733511
 ---
 
 # Azure Database for MariaDB monitoring

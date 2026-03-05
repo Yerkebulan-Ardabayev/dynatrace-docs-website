@@ -1,7 +1,7 @@
 ---
 title: Segment requests to improve response time degradation
 source: https://www.dynatrace.com/docs/observe/application-observability/distributed-traces/use-cases/segment-request
-scraped: 2026-03-04T21:13:27.291653
+scraped: 2026-03-05T21:13:15.301785
 ---
 
 # Segment requests to improve response time degradation

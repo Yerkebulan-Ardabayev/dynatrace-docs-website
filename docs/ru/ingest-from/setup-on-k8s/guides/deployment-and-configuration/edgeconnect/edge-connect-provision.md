@@ -1,7 +1,7 @@
 ---
 title: Provision EdgeConnect for Dynatrace environment
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/guides/deployment-and-configuration/edgeconnect/edge-connect-provision
-scraped: 2026-03-04T21:39:26.390527
+scraped: 2026-03-05T21:40:06.355493
 ---
 
 # Provision EdgeConnect for Dynatrace environment

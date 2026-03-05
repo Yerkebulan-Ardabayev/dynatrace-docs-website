@@ -1,13 +1,14 @@
 ---
 title: IBM MQ tracing
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/queues/configuration/ibm-mq-tracing
-scraped: 2026-03-03T21:28:08.414926
+scraped: 2026-03-05T21:31:18.515355
 ---
 
 # IBM MQ tracing
 
 # IBM MQ tracing
 
+* Classic
 * How-to guide
 * 6-min read
 * Updated on Jun 21, 2022

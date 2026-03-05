@@ -1,7 +1,7 @@
 ---
 title: Adjust the sensitivity of anomaly detection for infrastructure
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/anomaly-detection/adjust-sensitivity-anomaly-detection/adjust-sensitivity-infastructure
-scraped: 2026-03-04T21:16:35.447359
+scraped: 2026-03-05T21:28:15.099206
 ---
 
 # Adjust the sensitivity of anomaly detection for infrastructure

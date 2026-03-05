@@ -1,7 +1,7 @@
 ---
 title: Address remediation
 source: https://www.dynatrace.com/docs/secure/vulnerabilities/address-remediation
-scraped: 2026-03-03T21:26:14.047798
+scraped: 2026-03-05T21:30:14.497924
 ---
 
 # Address remediation
@@ -183,8 +183,8 @@ For visibility into overall monitoring coverage and exposure trends, see [Assess
 
 To use this generative AI functionality, ensure the following:
 
-* Dynatrace Intelligence generative AI has been enabled at the environment level. For details, see [Enable Dynatrace Intelligence generative AI on your environment](/docs/dynatrace-intelligence/copilot/copilot-getting-started#enable-davis-copilot "Learn how to set up Dynatrace Intelligence generative AI.").
-* You have permissions to access it. For details, see [User permissions](/docs/dynatrace-intelligence/copilot/copilot-getting-started#davis-copilot-user-permissions "Learn how to set up Dynatrace Intelligence generative AI.").
+* Dynatrace Intelligence generative AI has been enabled at the environment level. For details, see [Enable Dynatrace Intelligence generative AI on your environment](/docs/dynatrace-intelligence/copilot/copilot-getting-started#enable-davis-copilot "Learn how to set up Dynatrace Intelligence agentic and generative AI.").
+* You have permissions to access it. For details, see [User permissions](/docs/dynatrace-intelligence/copilot/copilot-getting-started#davis-copilot-user-permissions "Learn how to set up Dynatrace Intelligence agentic and generative AI.").
 
 Dynatrace Intelligence generative AI can provide contextual, plain-language explanations of vulnerabilities to accelerate understanding and remediation.
 

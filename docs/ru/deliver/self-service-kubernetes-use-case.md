@@ -1,7 +1,7 @@
 ---
 title: Predict and autoscale Kubernetes workloads
 source: https://www.dynatrace.com/docs/deliver/self-service-kubernetes-use-case
-scraped: 2026-03-04T21:33:33.405942
+scraped: 2026-03-05T21:38:18.301520
 ---
 
 # Predict and autoscale Kubernetes workloads
@@ -1716,7 +1716,7 @@ While we leverage Dynatrace Intelligence capabilities for prediction and updatin
 
 
 
-### Step 2 Commit Dynatrace Intelligence prediction workflow
+### Шаг 2: Зафиксируйте Dynatrace прогностический рабочий процесс интеллекта
 
 This workflow is triggered every time the first workflow detects a Kubernetes workload that should be scaled and emits a Davis event.
 

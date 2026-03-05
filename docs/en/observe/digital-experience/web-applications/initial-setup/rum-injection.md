@@ -1,7 +1,7 @@
 ---
 title: Configure automatic injection
 source: https://www.dynatrace.com/docs/observe/digital-experience/web-applications/initial-setup/rum-injection
-scraped: 2026-03-04T21:26:37.641562
+scraped: 2026-03-05T21:25:26.027742
 ---
 
 # Configure automatic injection

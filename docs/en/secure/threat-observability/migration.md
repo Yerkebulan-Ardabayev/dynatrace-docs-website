@@ -1,7 +1,7 @@
 ---
 title: Grail security table migration guide
 source: https://www.dynatrace.com/docs/secure/threat-observability/migration
-scraped: 2026-03-04T21:33:20.764028
+scraped: 2026-03-05T21:34:18.947110
 ---
 
 # Grail security table migration guide

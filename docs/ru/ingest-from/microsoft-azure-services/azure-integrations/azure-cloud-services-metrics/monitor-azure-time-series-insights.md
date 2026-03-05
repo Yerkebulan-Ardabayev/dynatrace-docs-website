@@ -1,7 +1,7 @@
 ---
 title: Azure Time Series Insights (Environment, Event Source) monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-time-series-insights
-scraped: 2026-03-03T21:31:57.264194
+scraped: 2026-03-05T21:37:49.717281
 ---
 
 # Azure Time Series Insights (Environment, Event Source) monitoring

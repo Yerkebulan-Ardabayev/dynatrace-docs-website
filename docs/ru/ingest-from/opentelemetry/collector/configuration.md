@@ -1,7 +1,7 @@
 ---
 title: Configure the OpenTelemetry Collector
 source: https://www.dynatrace.com/docs/ingest-from/opentelemetry/collector/configuration
-scraped: 2026-03-04T21:34:20.321454
+scraped: 2026-03-05T21:37:03.757037
 ---
 
 # Configure the OpenTelemetry Collector

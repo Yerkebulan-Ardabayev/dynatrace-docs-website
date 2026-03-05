@@ -1,13 +1,14 @@
 ---
 title: AWS Elemental MediaPackage (Live, Video on Demand) monitoring
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-elemental-mediapackage
-scraped: 2026-03-01T21:21:57.768867
+scraped: 2026-03-05T21:40:02.914135
 ---
 
 # AWS Elemental MediaPackage (Live, Video on Demand) monitoring
 
 # AWS Elemental MediaPackage (Live, Video on Demand) monitoring
 
+* Classic
 * How-to guide
 * 5-min read
 * Published Jul 06, 2020

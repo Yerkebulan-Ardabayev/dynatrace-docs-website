@@ -1,13 +1,14 @@
 ---
 title: Real User Monitoring for process groups
 source: https://www.dynatrace.com/docs/observe/digital-experience/web-applications/additional-configuration/rum-for-process-groups
-scraped: 2026-03-02T21:23:20.033815
+scraped: 2026-03-05T21:33:02.016377
 ---
 
 # Real User Monitoring for process groups
 
 # Real User Monitoring for process groups
 
+* Classic
 * How-to guide
 * 2-min read
 * Published Mar 21, 2022

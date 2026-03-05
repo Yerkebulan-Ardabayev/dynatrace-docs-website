@@ -1,7 +1,7 @@
 ---
 title: Set up agentless Real User Monitoring
 source: https://www.dynatrace.com/docs/observe/digital-experience/web-applications/initial-setup/set-up-agentless-real-user-monitoring
-scraped: 2026-03-04T21:36:05.589459
+scraped: 2026-03-05T21:30:26.766950
 ---
 
 # Set up agentless Real User Monitoring

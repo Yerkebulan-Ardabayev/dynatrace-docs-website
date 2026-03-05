@@ -1,7 +1,7 @@
 ---
 title: Create a new Azure connection
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/cloud-platform-monitoring/clouds-app/create-azure-connection
-scraped: 2026-03-03T21:16:20.372053
+scraped: 2026-03-05T21:23:43.035691
 ---
 
 # Create a new Azure connection

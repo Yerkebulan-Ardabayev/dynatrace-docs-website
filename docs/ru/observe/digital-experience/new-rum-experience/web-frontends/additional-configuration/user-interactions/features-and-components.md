@@ -1,7 +1,7 @@
 ---
 title: Associate user interactions with features and UI components
 source: https://www.dynatrace.com/docs/observe/digital-experience/new-rum-experience/web-frontends/additional-configuration/user-interactions/features-and-components
-scraped: 2026-03-04T21:27:52.484802
+scraped: 2026-03-05T21:30:50.126179
 ---
 
 # Associate user interactions with features and UI components

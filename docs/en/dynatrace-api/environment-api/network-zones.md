@@ -1,7 +1,7 @@
 ---
 title: Network zones API
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/network-zones
-scraped: 2026-03-04T21:33:50.326262
+scraped: 2026-03-05T21:32:47.149564
 ---
 
 # Network zones API

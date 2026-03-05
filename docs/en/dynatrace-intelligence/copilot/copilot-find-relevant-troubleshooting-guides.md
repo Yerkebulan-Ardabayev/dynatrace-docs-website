@@ -1,7 +1,7 @@
 ---
 title: Discover relevant troubleshooting guides with Dynatrace Intelligence agentic and generative AI
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/copilot/copilot-find-relevant-troubleshooting-guides
-scraped: 2026-03-04T21:14:37.488610
+scraped: 2026-03-05T21:14:19.401741
 ---
 
 # Discover relevant troubleshooting guides with Dynatrace Intelligence agentic and generative AI

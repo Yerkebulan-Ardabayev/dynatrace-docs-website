@@ -1,6 +1,6 @@
 # Документация Dynatrace: license/monitoring-consumption-classic
 Язык: Русский (RU)
-Сгенерировано: 2026-03-04
+Сгенерировано: 2026-03-05
 Файлов в разделе: 5
 ---
 
@@ -9,7 +9,7 @@
 ---
 title: Application and Infrastructure Monitoring (Host Units)
 source: https://www.dynatrace.com/docs/license/monitoring-consumption-classic/application-and-infrastructure-monitoring
-scraped: 2026-03-04T21:19:15.008287
+scraped: 2026-03-05T21:21:25.455344
 ---
 
 # Application and Infrastructure Monitoring (Host Units)
@@ -272,13 +272,14 @@ Davis data unit pools
 ---
 title: DDUs for custom Davis events
 source: https://www.dynatrace.com/docs/license/monitoring-consumption-classic/davis-data-units/ddu-events
-scraped: 2026-03-03T21:30:05.455341
+scraped: 2026-03-05T21:35:51.728735
 ---
 
 # DDUs for custom Davis events
 
 # DDUs for custom Davis events
 
+* Classic
 * 2-min read
 * Published Jul 09, 2021
 
@@ -471,7 +472,7 @@ If you cancel a query execution, all data read before the cancellation will be f
 ---
 title: Dynatrace classic licensing
 source: https://www.dynatrace.com/docs/license/monitoring-consumption-classic
-scraped: 2026-03-04T21:19:09.862747
+scraped: 2026-03-05T21:19:08.096202
 ---
 
 # Dynatrace classic licensing

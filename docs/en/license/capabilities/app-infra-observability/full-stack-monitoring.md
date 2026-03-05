@@ -1,7 +1,7 @@
 ---
 title: Calculate your consumption of Full-Stack Monitoring (DPS)
 source: https://www.dynatrace.com/docs/license/capabilities/app-infra-observability/full-stack-monitoring
-scraped: 2026-03-04T21:15:18.805549
+scraped: 2026-03-05T21:28:19.911662
 ---
 
 # Calculate your consumption of Full-Stack Monitoring (DPS)

@@ -1,13 +1,14 @@
 ---
 title: Amazon S3 (Simple Storage Service) monitoring
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-simple-storage-service-s3
-scraped: 2026-03-03T21:25:17.953454
+scraped: 2026-03-05T21:33:00.374126
 ---
 
 # Amazon S3 (Simple Storage Service) monitoring
 
 # Amazon S3 (Simple Storage Service) monitoring
 
+* Classic
 * How-to guide
 * 5-min read
 * Updated on Jun 20, 2022

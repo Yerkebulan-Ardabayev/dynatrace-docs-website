@@ -1,7 +1,7 @@
 ---
 title: Welcome to Dynatrace Documentation
 source: https://www.dynatrace.com/support/help/
-scraped: 2026-03-04T21:11:22.565517
+scraped: 2026-03-05T21:12:12.531666
 ---
 
 # Welcome to Dynatrace Documentation

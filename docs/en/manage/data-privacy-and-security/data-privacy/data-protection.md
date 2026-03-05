@@ -1,7 +1,7 @@
 ---
 title: Data protection at Dynatrace
 source: https://www.dynatrace.com/docs/manage/data-privacy-and-security/data-privacy/data-protection
-scraped: 2026-03-02T21:20:09.994818
+scraped: 2026-03-05T21:36:32.071097
 ---
 
 # Data protection at Dynatrace

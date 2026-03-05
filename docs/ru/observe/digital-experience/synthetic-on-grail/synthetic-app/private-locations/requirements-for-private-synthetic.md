@@ -1,7 +1,7 @@
 ---
 title: Requirements for private Synthetic locations
 source: https://www.dynatrace.com/docs/observe/digital-experience/synthetic-on-grail/synthetic-app/private-locations/requirements-for-private-synthetic
-scraped: 2026-03-04T21:38:17.177044
+scraped: 2026-03-05T21:32:05.107957
 ---
 
 # Requirements for private Synthetic locations

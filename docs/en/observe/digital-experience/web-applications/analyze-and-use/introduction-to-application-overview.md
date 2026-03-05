@@ -1,7 +1,7 @@
 ---
 title: Introduction to application overview page
 source: https://www.dynatrace.com/docs/observe/digital-experience/web-applications/analyze-and-use/introduction-to-application-overview
-scraped: 2026-03-04T21:27:09.983752
+scraped: 2026-03-05T21:27:35.018091
 ---
 
 # Introduction to application overview page

@@ -1,7 +1,7 @@
 ---
 title: Segment limits
 source: https://www.dynatrace.com/docs/manage/segments/reference/segments-reference-limits
-scraped: 2026-03-04T21:18:24.801440
+scraped: 2026-03-05T21:23:24.904219
 ---
 
 # Segment limits

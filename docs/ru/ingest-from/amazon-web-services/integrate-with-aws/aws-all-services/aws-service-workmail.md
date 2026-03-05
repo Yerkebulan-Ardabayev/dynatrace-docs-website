@@ -1,7 +1,7 @@
 ---
 title: Amazon WorkMail monitoring
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-workmail
-scraped: 2026-03-04T21:38:39.687671
+scraped: 2026-03-05T21:30:44.799315
 ---
 
 # Amazon WorkMail monitoring

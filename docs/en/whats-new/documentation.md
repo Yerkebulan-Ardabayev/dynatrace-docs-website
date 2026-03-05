@@ -1,7 +1,7 @@
 ---
 title: New Documentation articles
 source: https://www.dynatrace.com/docs/whats-new/documentation
-scraped: 2026-03-04T21:14:03.088281
+scraped: 2026-03-05T21:15:09.239778
 ---
 
 # New Documentation articles

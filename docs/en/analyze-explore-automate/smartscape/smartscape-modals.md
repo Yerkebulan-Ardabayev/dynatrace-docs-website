@@ -1,7 +1,7 @@
 ---
 title: Smartscape modals
 source: https://www.dynatrace.com/docs/analyze-explore-automate/smartscape/smartscape-modals
-scraped: 2026-03-04T21:28:49.502247
+scraped: 2026-03-05T21:34:12.624189
 ---
 
 # Smartscape modals

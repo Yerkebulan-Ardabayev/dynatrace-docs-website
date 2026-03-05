@@ -1,7 +1,7 @@
 ---
 title: ActiveGate release notes
 source: https://www.dynatrace.com/docs/whats-new/activegate
-scraped: 2026-03-04T21:11:30.740044
+scraped: 2026-03-05T21:12:15.333379
 ---
 
 # ActiveGate release notes

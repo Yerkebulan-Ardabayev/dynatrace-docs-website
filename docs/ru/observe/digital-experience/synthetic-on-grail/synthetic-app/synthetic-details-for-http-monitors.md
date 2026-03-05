@@ -1,7 +1,7 @@
 ---
 title: HTTP monitors reporting results
 source: https://www.dynatrace.com/docs/observe/digital-experience/synthetic-on-grail/synthetic-app/synthetic-details-for-http-monitors
-scraped: 2026-03-03T21:17:06.512635
+scraped: 2026-03-05T21:24:40.686466
 ---
 
 # HTTP monitors reporting results

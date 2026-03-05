@@ -1,7 +1,7 @@
 ---
 title: Data security controls
 source: https://www.dynatrace.com/docs/manage/data-privacy-and-security/data-security/data-security-controls
-scraped: 2026-03-04T21:34:50.747766
+scraped: 2026-03-05T21:37:27.232057
 ---
 
 # Data security controls

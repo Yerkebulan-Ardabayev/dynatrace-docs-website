@@ -1,13 +1,14 @@
 ---
 title: AWS AppSync monitoring
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-appsync
-scraped: 2026-03-01T21:20:19.668125
+scraped: 2026-03-05T21:38:41.070119
 ---
 
 # AWS AppSync monitoring
 
 # AWS AppSync monitoring
 
+* Classic
 * How-to guide
 * 3-min read
 * Published Jul 06, 2020
