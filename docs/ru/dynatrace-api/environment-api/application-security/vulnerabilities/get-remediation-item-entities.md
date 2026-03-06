@@ -1,7 +1,7 @@
 ---
 title: Vulnerabilities API - GET remediation item entities
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/application-security/vulnerabilities/get-remediation-item-entities
-scraped: 2026-03-04T21:34:45.858497
+scraped: 2026-03-06T21:37:32.135216
 ---
 
 # Vulnerabilities API - GET remediation item entities
@@ -462,8 +462,6 @@ https://mySampleEnv.live.dynatrace.com/api/v2/securityProblems/74125257674335543
 
 ## Related topics
 
-
-
-* [Application Security](/docs/secure/application-security "Access the Dynatrace Application Security functionalities.")
-* [Davis Security Advisor API](/docs/dynatrace-api/environment-api/application-security/davis-security-advice "View the Davis Security Advisor recommendations via Dynatrace API.")
-* [Remediation tracking](/docs/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/remediation-tracking "Track the remediation progress of vulnerabilities.")
+* [Безопасность приложений](/docs/secure/application-security "Доступ к функциям безопасности приложений Dynatrace.") 
+* [Советник безопасности Davis API](/docs/dynatrace-api/environment-api/application-security/davis-security-advice "Просмотр рекомендаций советника безопасности Davis через Dynatrace API.") 
+* [Отслеживание исправления](/docs/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/remediation-tracking "Отслеживание прогресса исправления уязвимостей.")

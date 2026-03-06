@@ -1,6 +1,6 @@
 # Документация Dynatrace: analyze-explore-automate/workflows
 Язык: Русский (RU)
-Сгенерировано: 2026-03-05
+Сгенерировано: 2026-03-06
 Файлов в разделе: 32
 ---
 
@@ -929,7 +929,7 @@ Returns fields as described in the [Jobs API - Run a jobï»¿](https://dt-url.n
 ---
 title: Set up GitLab Connector
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/gitlab/gitlab-workflows-setup
-scraped: 2026-03-05T21:33:18.101140
+scraped: 2026-03-06T21:36:42.472660
 ---
 
 # Set up GitLab Connector
@@ -1095,7 +1095,7 @@ To configure a connection
 ---
 title: Jira Connector
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/jira
-scraped: 2026-03-02T21:22:38.030635
+scraped: 2026-03-06T21:33:38.177057
 ---
 
 # Jira Connector
@@ -1282,7 +1282,7 @@ The log of a successful run is shown below.
 ---
 title: PagerDuty
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/pagerduty
-scraped: 2026-03-04T21:30:30.565805
+scraped: 2026-03-06T21:27:05.600890
 ---
 
 # PagerDuty
@@ -1388,7 +1388,7 @@ The following are solutions to problems some people have.
 ---
 title: Red Hat Ansible Automation
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/red-hat/redhat-ansible
-scraped: 2026-03-05T21:33:09.221156
+scraped: 2026-03-06T21:27:29.962658
 ---
 
 # Red Hat Ansible Automation
@@ -1783,7 +1783,7 @@ To create a workflow that sends an event to Event-Driven Ansible
 ---
 title: ServiceNow
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/service-now
-scraped: 2026-03-03T21:20:17.943358
+scraped: 2026-03-06T21:21:42.823422
 ---
 
 # ServiceNow
@@ -2939,7 +2939,7 @@ The following are solutions to problems some people had with Slack integration.
 ---
 title: Actions for Text Processing Connector
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/text-processing/automation-workflows-text-processing-actions
-scraped: 2026-03-04T21:35:29.313264
+scraped: 2026-03-06T21:29:14.231788
 ---
 
 # Actions for Text Processing Connector
@@ -3290,7 +3290,7 @@ Supports multi-document YAML files.
 ---
 title: Text Processing
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/text-processing
-scraped: 2026-03-05T21:33:24.957254
+scraped: 2026-03-06T21:36:02.786540
 ---
 
 # Text Processing
@@ -3321,7 +3321,7 @@ For more information on how to start a workflow to use Text Processing, see [Wor
 ---
 title: Workflows Connectors
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions
-scraped: 2026-03-03T21:20:15.513439
+scraped: 2026-03-06T21:21:39.365090
 ---
 
 # Workflows Connectors
@@ -3461,7 +3461,7 @@ You can find the results in the **Result** tab of the **Execution** that you cou
 ---
 title: HTTP request action for Workflows
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/default-workflow-actions/http-request-workflow-action
-scraped: 2026-03-05T21:40:51.017817
+scraped: 2026-03-06T21:34:27.419257
 ---
 
 # HTTP request action for Workflows
@@ -3850,7 +3850,7 @@ console.log( ex.params.event);
 ---
 title: Workflows actions
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/default-workflow-actions
-scraped: 2026-03-04T21:34:08.707950
+scraped: 2026-03-06T21:30:16.176752
 ---
 
 # Workflows actions
@@ -3899,7 +3899,7 @@ Use the **Run Workflow** action to modularize workflow usage.](/docs/analyze-exp
 ---
 title: Access workflow management functionality
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/manage-workflows/workflows-access-management
-scraped: 2026-03-05T21:35:20.581252
+scraped: 2026-03-06T21:30:23.206905
 ---
 
 # Access workflow management functionality
@@ -3944,7 +3944,7 @@ To access various workflow management commands:
 ---
 title: Manage live or draft workflows
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/manage-workflows/workflows-manage-live-mode
-scraped: 2026-02-28T21:24:25.164933
+scraped: 2026-03-06T21:31:08.025695
 ---
 
 # Manage live or draft workflows
@@ -3982,7 +3982,7 @@ To access various **Live** or **Draft** workflow management commands
 ---
 title: Get notified about workflow changes
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/manage-workflows/workflows-notifications
-scraped: 2026-03-05T21:34:54.262128
+scraped: 2026-03-06T21:32:34.815912
 ---
 
 # Get notified about workflow changes
@@ -4055,7 +4055,7 @@ To turn off notifications for workflow, select  > **Turn off notifications**.
 ---
 title: Workflow templates
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/manage-workflows/workflows-templates
-scraped: 2026-03-05T21:33:59.212072
+scraped: 2026-03-06T21:34:39.204491
 ---
 
 # Workflow templates
@@ -4114,7 +4114,7 @@ Now that you know how to use workflow templates:
 ---
 title: User permissions for workflows
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/security
-scraped: 2026-03-05T21:39:10.560630
+scraped: 2026-03-06T21:27:38.315462
 ---
 
 # User permissions for workflows
@@ -4780,7 +4780,7 @@ This workflow is a great starting point for automating incident response and imp
 ---
 title: Workflows use cases
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/use-cases
-scraped: 2026-03-03T21:30:04.226300
+scraped: 2026-03-06T21:33:55.552697
 ---
 
 # Workflows use cases
@@ -4849,7 +4849,7 @@ Design a workflow to manage high-volume AWS alerts by filtering out noise and su
 ---
 title: Workflows
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows
-scraped: 2026-03-05T21:19:30.763023
+scraped: 2026-03-06T21:15:26.954952
 ---
 
 # Workflows
@@ -4919,7 +4919,7 @@ For a complete list of permissions needed to use ![Workflows](https://dt-cdn.net
 
 For more information about ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Workflows** security, see [User permissions for workflows](/docs/analyze-explore-automate/workflows/security "Guide on security aspects of workflow automation in Dynatrace Workflows").
 
-## Installation
+### Installation
 
 Make sure the app is [installed in your environment](/docs/manage/hub#install "See the information about Dynatrace Hub.").
 

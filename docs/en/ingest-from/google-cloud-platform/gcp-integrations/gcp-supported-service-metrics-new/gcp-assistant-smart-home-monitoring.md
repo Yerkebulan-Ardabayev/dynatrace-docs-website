@@ -1,7 +1,7 @@
 ---
 title: Google Cloud Assistant Smart Home monitoring
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new/gcp-assistant-smart-home-monitoring
-scraped: 2026-03-03T21:32:14.150190
+scraped: 2026-03-06T21:27:53.858292
 ---
 
 # Google Cloud Assistant Smart Home monitoring

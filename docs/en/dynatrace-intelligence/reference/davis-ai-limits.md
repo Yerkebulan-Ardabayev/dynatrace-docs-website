@@ -1,7 +1,7 @@
 ---
 title: Dynatrace Intelligence limits
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/reference/davis-ai-limits
-scraped: 2026-03-03T21:28:29.662678
+scraped: 2026-03-06T21:27:19.411859
 ---
 
 # Dynatrace Intelligence limits
@@ -74,4 +74,4 @@ This measure ensures that Dynatrace Intelligence avoids collecting unrelated inf
 
 ### Notebook & Dashboard Simulation
 
-## Dynatrace Intelligence generative AI
+## Dynatrace Intelligence agentic and generative AI

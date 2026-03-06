@@ -1,7 +1,7 @@
 ---
 title: Agentic and generative AI
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/copilot
-scraped: 2026-03-05T21:22:23.299824
+scraped: 2026-03-06T21:14:58.711515
 ---
 
 # Agentic and generative AI

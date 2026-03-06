@@ -1,7 +1,7 @@
 ---
 title: Synthetic app
 source: https://www.dynatrace.com/docs/observe/digital-experience/synthetic-on-grail/synthetic-app
-scraped: 2026-03-05T21:14:35.753346
+scraped: 2026-03-06T21:12:42.033714
 ---
 
 # Synthetic app
@@ -61,7 +61,7 @@ document:documents:delete
 
 allows deleting filter sets
 
-## Installation
+### Installation
 
 Make sure the app is [installed in your environment](/docs/manage/hub#install "See the information about Dynatrace Hub.").
 

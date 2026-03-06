@@ -1,7 +1,7 @@
 ---
 title: Pages, views, and navigations in the New RUM Experience
 source: https://www.dynatrace.com/docs/observe/digital-experience/new-rum-experience/web-frontends/concepts/pages-views-and-navigations
-scraped: 2026-03-05T21:35:18.811178
+scraped: 2026-03-06T21:35:00.182245
 ---
 
 # Pages, views, and navigations in the New RUM Experience

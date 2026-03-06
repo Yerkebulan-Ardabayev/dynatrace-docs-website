@@ -1,7 +1,7 @@
 ---
 title: Deploy Dynatrace OTel Collector
 source: https://www.dynatrace.com/docs/ingest-from/opentelemetry/collector/deployment
-scraped: 2026-03-02T21:30:58.928714
+scraped: 2026-03-06T21:35:58.147239
 ---
 
 # Deploy Dynatrace OTel Collector
@@ -11,7 +11,7 @@ scraped: 2026-03-02T21:30:58.928714
 * Latest Dynatrace
 * How-to guide
 * 9-min read
-* Updated on Feb 12, 2024
+* Updated on Mar 04, 2026
 
 ## Deployment modes
 
@@ -82,7 +82,7 @@ After the installation, deploy the Dynatrace Collector either in [gateway or age
 
 Custom Resource Definition
 
-The Kubernetes CRD of the Operator can be found on [GitHubï»¿](https://github.com/open-telemetry/opentelemetry-operator/blob/v0.144.0/docs/api.md#opentelemetrycollector-1).
+The Kubernetes CRD of the Operator can be found on [GitHubï»¿](https://github.com/open-telemetry/opentelemetry-operator/blob/v0.144.0/docs/api/opentelemetrycollectors.md).
 
 Deploy as a gateway (Deployment)
 

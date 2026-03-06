@@ -1,7 +1,7 @@
 ---
 title: Connecting log data to traces (Logs Classic)
 source: https://www.dynatrace.com/docs/analyze-explore-automate/log-monitoring/log-monitoring-configuration/log-enrichment
-scraped: 2026-03-05T21:13:20.759471
+scraped: 2026-03-06T21:12:08.938400
 ---
 
 # Connecting log data to traces (Logs Classic)

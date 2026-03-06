@@ -1,7 +1,7 @@
 ---
 title: Configure automatic injection in the New RUM Experience
 source: https://www.dynatrace.com/docs/observe/digital-experience/new-rum-experience/web-frontends/initial-setup/configure-auto-injection
-scraped: 2026-03-04T21:38:07.293287
+scraped: 2026-03-06T21:30:14.503901
 ---
 
 # Configure automatic injection in the New RUM Experience

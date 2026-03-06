@@ -1,7 +1,7 @@
 ---
 title: SAP Hana Database monitoring configuration
 source: https://www.dynatrace.com/docs/ingest-from/extensions/develop-your-extensions/data-sources/sql/sap-hana-monitoring
-scraped: 2026-03-05T21:32:15.900936
+scraped: 2026-03-06T21:36:59.952480
 ---
 
 # SAP Hana Database monitoring configuration

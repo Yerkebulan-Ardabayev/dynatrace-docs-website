@@ -1,7 +1,7 @@
 ---
 title: Requirements for private Synthetic locations
 source: https://www.dynatrace.com/docs/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/system-and-hardware-requirements-for-private-synthetic
-scraped: 2026-03-05T21:24:06.114878
+scraped: 2026-03-06T21:25:05.803028
 ---
 
 # Requirements for private Synthetic locations
@@ -11,7 +11,7 @@ scraped: 2026-03-05T21:24:06.114878
 * Classic
 * Reference
 * 15-min read
-* Updated on Feb 11, 2026
+* Updated on Mar 03, 2026
 
 Ensure that the host you want to use for your private location complies with the following requirements.
 
@@ -39,15 +39,20 @@ Additional support notes
   + Since Red Hat Enterprise Linux 7 reached [End of Maintenanceï»¿](https://dt-url.net/af03uea) support on June 30, 2024, all of its packages have been archived. This means that it may not be possible to find the required dependencies for update. For more details, see the [Red Hat Enterprise Linux 7 statusï»¿](https://dt-url.net/e623zr1)
 * Check the latest [ActiveGate release notes](/docs/whats-new/activegate "Release notes for Dynatrace ActiveGate") for the oldest supported ActiveGate versions.
 
-## Operating system requirements
+## Antivirus and anti-malware software
 
-Antivirus and Anti-Malware software
+Antivirus and anti-malware software can negatively impact Dynatrace Synthetic monitoring capabilities.
+Such software might block the browser or Dynatrace processes that execute synthetic monitors, cause Synthetic-enabled ActiveGate installation or update failures, interfere with network communication, and impact the reliability of measurements.
 
-Antivirus and anti-malware software can adversely affect Dynatrace Synthetic monitoring capabilities. The antivirus or anti-malware software might block the browser or Dynatrace processes responsible for executing synthetic monitors, cause Synthetic-enabled ActiveGate installation failures, interfere with network communication, and impact the reliability of measurements.
+To maintain stability and performance, consider adding the directories and processes listed below to the allowlist or exclude them from the policy.
+Keep in mind that antivirus exclusions typically prevent file scanning but donât disable behavioral monitoring or kernel-level hooks. These remain active and can affect how the Synthetic Engine and browser interact with system libraries.
+As a result, even excluded processes can experience access violations or heap corruption.
 
-Please also note
+Before contacting Dynatrace Support to troubleshoot issues with your private synthetic locations, ensure that antivirus or anti-malware software has been ruled out as a potential cause.
 
-To ensure proper stability and performance, consider adding the following directories and processes to the allowed list or excluding them from the policy:
+This is the minimal list of processes and directories required for Dynatrace Synthetic to operate.
+It's not guaranteed that the service will function correctly with only these exclusions.
+Collaborate with your vendor to ensure that all expected Dynatrace behaviors are properly allowed.
 
 **Directories:**
 
@@ -59,9 +64,7 @@ To ensure proper stability and performance, consider adding the following direct
 * vucwrapper
 * java
 
-This is the minimal list of processes and directories required for Dynatrace Synthetic to operate. It's not guaranteed that the service will function correctly with only these exclusions. Collaborate with your vendor to appropriately allow expected behaviors from Dynatrace.
-
-Prior to contacting Dynatrace support to troubleshoot issues with your private synthetic locations make sure that antivirus or anti-malware software was excluded as a source of problems.
+## Operating system requirements
 
 A freshly installed ActiveGate can run your private synthetic monitors (both HTTP and browser monitors) on the following operating systems.
 

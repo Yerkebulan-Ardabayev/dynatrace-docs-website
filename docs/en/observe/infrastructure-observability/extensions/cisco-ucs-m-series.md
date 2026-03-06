@@ -1,7 +1,7 @@
 ---
 title: Cisco UCS M-Series extension
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/extensions/cisco-ucs-m-series
-scraped: 2026-03-05T21:31:42.628223
+scraped: 2026-03-06T21:26:37.150221
 ---
 
 # Cisco UCS M-Series extension

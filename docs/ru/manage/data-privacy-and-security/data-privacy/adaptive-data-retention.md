@@ -1,7 +1,7 @@
 ---
 title: Adaptive Data Retention
 source: https://www.dynatrace.com/docs/manage/data-privacy-and-security/data-privacy/adaptive-data-retention
-scraped: 2026-03-05T21:37:54.533713
+scraped: 2026-03-06T21:29:40.158562
 ---
 
 # Adaptive Data Retention

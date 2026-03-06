@@ -1,7 +1,7 @@
 ---
 title: Azure AI - Translator monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-ai-translator
-scraped: 2026-03-05T21:30:31.915174
+scraped: 2026-03-06T21:29:21.252492
 ---
 
 # Azure AI - Translator monitoring

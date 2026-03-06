@@ -1,7 +1,7 @@
 ---
 title: Salesforce Insights
 source: https://www.dynatrace.com/docs/observe/business-observability/extensions/salesforce-insights
-scraped: 2026-03-05T21:21:05.651039
+scraped: 2026-03-06T21:14:39.366787
 ---
 
 # Salesforce Insights

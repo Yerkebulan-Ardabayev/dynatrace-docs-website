@@ -1,7 +1,7 @@
 ---
 title: Add code to a dashboard
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new/components/dashboard-component-code
-scraped: 2026-03-05T21:15:43.784430
+scraped: 2026-03-06T21:11:07.243073
 ---
 
 # Add code to a dashboard

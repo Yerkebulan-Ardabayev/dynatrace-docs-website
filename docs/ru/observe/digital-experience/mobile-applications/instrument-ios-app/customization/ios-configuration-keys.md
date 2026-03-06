@@ -1,16 +1,17 @@
 ---
 title: OneAgent for iOS configuration keys
 source: https://www.dynatrace.com/docs/observe/digital-experience/mobile-applications/instrument-ios-app/customization/ios-configuration-keys
-scraped: 2026-03-03T21:32:12.892789
+scraped: 2026-03-06T21:37:59.187376
 ---
 
 # OneAgent for iOS configuration keys
 
 # OneAgent for iOS configuration keys
 
+* Classic
 * How-to guide
 * 11-min read
-* Updated on Jan 02, 2026
+* Updated on Feb 27, 2026
 
 Configuration keys are essentially properties you can set to your preferences for auto-instrumentation. Add the keys to your app's [`Info.plist` file](/docs/observe/digital-experience/mobile-applications/instrument-ios-app/instrumentation/info-plist-file "Info.plist file stores your app identification and configuration keys. Use it to fine-tune the instrumentation configuration."), as required to fine-tune auto-instrumentation.
 

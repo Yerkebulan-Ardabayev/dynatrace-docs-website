@@ -1,7 +1,7 @@
 ---
 title: AWS PrivateLink API
 source: https://www.dynatrace.com/docs/dynatrace-api/configuration-api/aws-privatelink
-scraped: 2026-03-05T21:30:18.151093
+scraped: 2026-03-06T21:33:22.321378
 ---
 
 # AWS PrivateLink API

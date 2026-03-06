@@ -1,7 +1,7 @@
 ---
 title: Environment API v2 - Entity selector
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/entity-v2/entity-selector
-scraped: 2026-03-05T21:34:15.522741
+scraped: 2026-03-06T21:38:16.007113
 ---
 
 # Environment API v2 - Entity selector

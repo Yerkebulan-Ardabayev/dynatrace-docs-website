@@ -1,7 +1,7 @@
 ---
 title: Explore data
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/explore-data
-scraped: 2026-03-05T21:15:32.012258
+scraped: 2026-03-06T21:10:58.587097
 ---
 
 # Explore data

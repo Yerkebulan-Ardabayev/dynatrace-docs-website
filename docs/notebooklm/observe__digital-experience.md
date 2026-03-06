@@ -1,6 +1,6 @@
 # Документация Dynatrace: observe/digital-experience
 Язык: Русский (RU)
-Сгенерировано: 2026-03-05
+Сгенерировано: 2026-03-06
 Файлов в разделе: 157
 ---
 
@@ -273,7 +273,7 @@ To change the Apdex thresholds for a key user action
 ---
 title: Define user action and user session properties for custom applications
 source: https://www.dynatrace.com/docs/observe/digital-experience/custom-applications/additional-configuration/define-custom-action-and-session-properties
-scraped: 2026-03-05T21:35:22.240538
+scraped: 2026-03-06T21:33:31.236151
 ---
 
 # Define user action and user session properties for custom applications
@@ -421,7 +421,7 @@ If you've encountered an issue related to custom application monitoring, check o
 ---
 title: Custom applications
 source: https://www.dynatrace.com/docs/observe/digital-experience/custom-applications
-scraped: 2026-03-05T21:20:07.052277
+scraped: 2026-03-06T21:14:00.392814
 ---
 
 # Custom applications
@@ -481,7 +481,7 @@ Custom applications relate to all digital touchpoints in your environment, from 
 ---
 title: Effective customer support with session segmentation
 source: https://www.dynatrace.com/docs/observe/digital-experience/dem-use-cases/customer-support-with-session-segmentation
-scraped: 2026-03-05T21:20:10.427122
+scraped: 2026-03-06T21:14:08.788123
 ---
 
 # Effective customer support with session segmentation
@@ -846,7 +846,7 @@ The **Credit card type** is an example of how we've "promoted" a server-side req
 ---
 title: Create custom user action names for mobile applications
 source: https://www.dynatrace.com/docs/observe/digital-experience/mobile-applications/additional-configuration/naming-rules-mobile
-scraped: 2026-03-05T21:33:19.762302
+scraped: 2026-03-06T21:30:50.604966
 ---
 
 # Create custom user action names for mobile applications
@@ -880,7 +880,7 @@ To create a user action naming rule
 ---
 title: Leverage user action and user session properties for mobile applications
 source: https://www.dynatrace.com/docs/observe/digital-experience/mobile-applications/analyze-and-use/action-and-session-properties-mobile
-scraped: 2026-03-04T21:38:12.152091
+scraped: 2026-03-06T21:25:38.421195
 ---
 
 # Leverage user action and user session properties for mobile applications
@@ -1123,7 +1123,7 @@ For example instrumentation of a compact app, see the **Example** tab of the [Dy
 ---
 title: Instrument mobile apps with Dynatrace .NET MAUI NuGet package
 source: https://www.dynatrace.com/docs/observe/digital-experience/mobile-applications/cross-platform-frameworks/maui
-scraped: 2026-03-05T21:26:05.999241
+scraped: 2026-03-06T21:34:06.541220
 ---
 
 # Instrument mobile apps with Dynatrace .NET MAUI NuGet package
@@ -3668,7 +3668,7 @@ If you can't resolve a problem, check [Mobile applications: Issues with Dynatrac
 ---
 title: Get started with Android monitoring
 source: https://www.dynatrace.com/docs/observe/digital-experience/mobile-applications/instrument-android-app/get-started-with-android-monitoring
-scraped: 2026-03-04T21:39:04.981037
+scraped: 2026-03-06T21:28:16.242622
 ---
 
 # Get started with Android monitoring
@@ -4321,16 +4321,17 @@ If you've already instrumented the web-based part of your hybrid app, then you d
 ---
 title: OneAgent for iOS configuration keys
 source: https://www.dynatrace.com/docs/observe/digital-experience/mobile-applications/instrument-ios-app/customization/ios-configuration-keys
-scraped: 2026-03-03T21:32:12.892789
+scraped: 2026-03-06T21:37:59.187376
 ---
 
 # OneAgent for iOS configuration keys
 
 # OneAgent for iOS configuration keys
 
+* Classic
 * How-to guide
 * 11-min read
-* Updated on Jan 02, 2026
+* Updated on Feb 27, 2026
 
 Configuration keys are essentially properties you can set to your preferences for auto-instrumentation. Add the keys to your app's [`Info.plist` file](/docs/observe/digital-experience/mobile-applications/instrument-ios-app/instrumentation/info-plist-file "Info.plist file stores your app identification and configuration keys. Use it to fine-tune the instrumentation configuration."), as required to fine-tune auto-instrumentation.
 
@@ -4381,13 +4382,14 @@ Available for OneAgent for iOS version 8.263+
 ---
 title: Info.plist file
 source: https://www.dynatrace.com/docs/observe/digital-experience/mobile-applications/instrument-ios-app/instrumentation/info-plist-file
-scraped: 2026-03-02T21:18:33.870308
+scraped: 2026-03-06T21:38:07.966569
 ---
 
 # Info.plist file
 
 # Info.plist file
 
+* Classic
 * Explanation
 * 2-min read
 * Updated on Apr 26, 2024
@@ -5004,13 +5006,14 @@ We're still working on improving the SwiftUI instrumentation process. If you fac
 ---
 title: OneAgent for iOS auto-instrumentation features
 source: https://www.dynatrace.com/docs/observe/digital-experience/mobile-applications/instrument-ios-app/instrumentation/ios-auto-instrumentation-features
-scraped: 2026-02-27T21:26:56.599256
+scraped: 2026-03-06T21:34:10.008934
 ---
 
 # OneAgent for iOS auto-instrumentation features
 
 # OneAgent for iOS auto-instrumentation features
 
+* Classic
 * Explanation
 * 4-min read
 * Updated on Feb 03, 2026
@@ -5163,7 +5166,7 @@ OneAgent for iOS version 8.249 is the last version that supports the 32-bit arch
 ---
 title: Troubleshooting RUM for mobile applications
 source: https://www.dynatrace.com/docs/observe/digital-experience/mobile-applications/troubleshooting
-scraped: 2026-03-04T21:29:40.509662
+scraped: 2026-03-06T21:35:25.181485
 ---
 
 # Troubleshooting RUM for mobile applications
@@ -5212,7 +5215,7 @@ For issues specific to your technology or operating system, check one of the fol
 ---
 title: Mobile applications
 source: https://www.dynatrace.com/docs/observe/digital-experience/mobile-applications
-scraped: 2026-03-05T21:19:59.295818
+scraped: 2026-03-06T21:14:02.066070
 ---
 
 # Mobile applications
@@ -5546,7 +5549,7 @@ Filter page load instances by:
 ---
 title: Capture event and session properties for mobile frontends
 source: https://www.dynatrace.com/docs/observe/digital-experience/new-rum-experience/mobile-frontends/additional-configuration/event-and-session-properties
-scraped: 2026-03-03T21:31:58.488181
+scraped: 2026-03-06T21:28:07.516797
 ---
 
 # Capture event and session properties for mobile frontends
@@ -5661,7 +5664,7 @@ To capture user interactions
 ---
 title: Additional configuration for mobile frontends
 source: https://www.dynatrace.com/docs/observe/digital-experience/new-rum-experience/mobile-frontends/additional-configuration
-scraped: 2026-03-05T21:37:37.689670
+scraped: 2026-03-06T21:31:58.402699
 ---
 
 # Additional configuration for mobile frontends
@@ -5781,7 +5784,7 @@ To learn what data OneAgent captures and complete the data privacy questionnaire
 ---
 title: New RUM APIs for mobile frontends
 source: https://www.dynatrace.com/docs/observe/digital-experience/new-rum-experience/mobile-frontends/new-rum-apis
-scraped: 2026-03-05T21:35:10.348621
+scraped: 2026-03-06T21:36:56.506191
 ---
 
 # New RUM APIs for mobile frontends
@@ -5791,11 +5794,11 @@ scraped: 2026-03-05T21:35:10.348621
 * Latest Dynatrace
 * Reference
 * 10-min read
-* Updated on Jan 22, 2026
+* Updated on Mar 05, 2026
 
 The New RUM Experience includes a powerful new API that enables you to customize and enhance mobile frontend monitoring for your applications. This API is backed by comprehensive documentation, including practical use cases to help you get started quickly.
 
-[Explore the API for Android](https://www.dynatrace.com/support/doc/javadoc/oneagent/android/agent/)
+[Explore the API for Android](https://docs.dynatrace.com/javadoc/oneagent/android/agent/)
 
 [Explore the API for Flutter](https://pub.dev/documentation/dynatrace_flutter_plugin/latest/dynatrace_flutter_plugin/)
 
@@ -5810,7 +5813,7 @@ The New RUM Experience includes a powerful new API that enables you to customize
 ---
 title: Mobile frontends
 source: https://www.dynatrace.com/docs/observe/digital-experience/new-rum-experience/mobile-frontends
-scraped: 2026-03-05T21:38:04.999735
+scraped: 2026-03-06T21:30:10.639111
 ---
 
 # Mobile frontends
@@ -5895,7 +5898,7 @@ At this point, the New RUM Experience relies only on the HTTP headers and cookie
 ---
 title: Transition from RUM Classic to the New RUM Experience
 source: https://www.dynatrace.com/docs/observe/digital-experience/new-rum-experience/transition-from-rum-classic
-scraped: 2026-03-04T21:33:35.020262
+scraped: 2026-03-06T21:25:59.818788
 ---
 
 # Transition from RUM Classic to the New RUM Experience
@@ -5958,7 +5961,7 @@ The New RUM Experience provides numerous builtâin metrics. Due to its diffe
 ---
 title: Extract a metric from user events
 source: https://www.dynatrace.com/docs/observe/digital-experience/new-rum-experience/use-cases/extract-custom-metrics-from-user-events
-scraped: 2026-03-05T21:20:22.356346
+scraped: 2026-03-06T21:15:59.487993
 ---
 
 # Extract a metric from user events
@@ -6116,7 +6119,7 @@ timeseries count = sum(easytravel.journey_view_count), by: {journey_id}, interva
 ---
 title: Extract a metric from user sessions
 source: https://www.dynatrace.com/docs/observe/digital-experience/new-rum-experience/use-cases/extract-custom-metrics-from-user-sessions
-scraped: 2026-03-05T21:20:15.315801
+scraped: 2026-03-06T21:15:52.450536
 ---
 
 # Extract a metric from user sessions
@@ -6125,7 +6128,7 @@ scraped: 2026-03-05T21:20:15.315801
 
 * Latest Dynatrace
 * Tutorial
-* Published Dec 19, 2025
+* Updated on Mar 05, 2026
 
 OpenPipeline lets you extract custom metrics from [user sessions](/docs/observe/digital-experience/new-rum-experience/concepts/data-model#user-sessions "Get familiar with the data model at the heart of the New RUM Experience."), enabling long-term analyses in ![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks** and ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards** that go far beyond standard performance monitoring. By combining these metrics with [user session properties](/docs/observe/digital-experience/new-rum-experience/concepts/data-model#event-and-session-properties "Get familiar with the data model at the heart of the New RUM Experience."), you gain the flexibility to uncover insights that are highly tailored to your business objectives.
 
@@ -6135,7 +6138,7 @@ To illustrate this process, this guide walks you through extracting a customer c
 
 In this tutorial, weâll use a web shop as our example. The shop is instrumented with the RUM JavaScript, and the captured data is mapped to a [frontend](/docs/observe/digital-experience/new-rum-experience/concepts/frontends "Learn about the frontend concept in the New RUM Experience.") named `webshop`.
 
-Instrumentation was customized to send a user session property `successful_checkout` whenever a customer successfully completes the checkout process. The property was configured as described in [Capture event and session properties for web frontends](/docs/observe/digital-experience/new-rum-experience/web-frontends/additional-configuration/event-and-session-properties "Learn how to capture event and session properties for web frontends.") and then sent via JavaScript API using [`sendSessionPropertyEvent`ï»¿](https://www.dynatrace.com/support/doc/javascriptapi/doc-latest/functions/Types.dynatrace.sendSessionPropertyEvent.html):
+Instrumentation was customized to send a user session property `successful_checkout` whenever a customer successfully completes the checkout process. The property was configured as described in [Capture event and session properties for web frontends](/docs/observe/digital-experience/new-rum-experience/web-frontends/additional-configuration/event-and-session-properties "Learn how to capture event and session properties for web frontends.") and then sent via JavaScript API using [`sendSessionPropertyEvent`ï»¿](https://docs.dynatrace.com/javascriptapi/doc-latest/functions/Types.dynatrace.sendSessionPropertyEvent.html):
 
 ```
 dynatrace.sendSessionPropertyEvent({
@@ -6234,7 +6237,7 @@ timeseries sum(easytravel.checkout_statistics), by: { successful_checkout }, int
 ---
 title: Use cases for the New RUM Experience
 source: https://www.dynatrace.com/docs/observe/digital-experience/new-rum-experience/use-cases
-scraped: 2026-03-03T21:30:01.694248
+scraped: 2026-03-06T21:28:05.793494
 ---
 
 # Use cases for the New RUM Experience
@@ -6400,7 +6403,7 @@ There are two primary ways to analyze user interactions:
 ---
 title: Configure the beacon origin allowlist
 source: https://www.dynatrace.com/docs/observe/digital-experience/new-rum-experience/web-frontends/additional-configuration/configure-beacon-origin-allowlist
-scraped: 2026-03-05T21:31:02.850327
+scraped: 2026-03-06T21:29:05.716000
 ---
 
 # Configure the beacon origin allowlist
@@ -6622,7 +6625,7 @@ Event and session properties can be sent via the JavaScript API:
 ---
 title: Control the RUM JavaScript version in the New RUM Experience
 source: https://www.dynatrace.com/docs/observe/digital-experience/new-rum-experience/web-frontends/additional-configuration/rum-javascript-version
-scraped: 2026-03-05T21:38:29.739193
+scraped: 2026-03-06T21:35:12.098693
 ---
 
 # Control the RUM JavaScript version in the New RUM Experience
@@ -7144,7 +7147,7 @@ For additional context, you can add attributes to your HTML that associate the c
 ---
 title: Additional configuration for web frontends
 source: https://www.dynatrace.com/docs/observe/digital-experience/new-rum-experience/web-frontends/additional-configuration
-scraped: 2026-03-02T21:25:39.772509
+scraped: 2026-03-06T21:28:25.051728
 ---
 
 # Additional configuration for web frontends
@@ -7171,7 +7174,7 @@ After completing the [initial setup](/docs/observe/digital-experience/new-rum-ex
 ---
 title: Pages, views, and navigations in the New RUM Experience
 source: https://www.dynatrace.com/docs/observe/digital-experience/new-rum-experience/web-frontends/concepts/pages-views-and-navigations
-scraped: 2026-03-05T21:35:18.811178
+scraped: 2026-03-06T21:35:00.182245
 ---
 
 # Pages, views, and navigations in the New RUM Experience
@@ -7387,7 +7390,7 @@ fetch user.events
 ---
 title: User actions in web frontends
 source: https://www.dynatrace.com/docs/observe/digital-experience/new-rum-experience/web-frontends/concepts/user-actions
-scraped: 2026-03-04T21:38:10.526051
+scraped: 2026-03-06T21:34:15.038712
 ---
 
 # User actions in web frontends
@@ -7396,7 +7399,7 @@ scraped: 2026-03-04T21:38:10.526051
 
 * Latest Dynatrace
 * Explanation
-* Updated on Jan 08, 2026
+* Updated on Mar 05, 2026
 
 A user action represents a significant operation within the frontend and its implications. This page explains the concept for web frontends in the New RUM Experience and how it differs from RUM Classic.
 
@@ -7406,7 +7409,7 @@ User actions in web frontends can be grouped into three types:
 
 * **Navigation user actions:** When a soft navigation occurs, which results in a view change, a new user action is created automatically. Navigations are usually triggered by a [user interaction](/docs/observe/digital-experience/new-rum-experience/concepts/data-model#user-interactions "Get familiar with the data model at the heart of the New RUM Experience."), but a user interaction is not required for a user action to be created.
 * **Request user actions:** If a click user interaction is followed by an XHR or fetch request, a user action is created.
-* **API user actions:** You can also create user actions using [`dynatrace.userAction.create()`ï»¿](https://www.dynatrace.com/support/doc/javascriptapi/doc-latest/interfaces/Types.UserActions.html) in the JavaScript API. There are no prerequisites for triggering a user action this way.
+* **API user actions:** You can also create user actions using [`dynatrace.userAction.create()`ï»¿](https://docs.dynatrace.com/javascriptapi/doc-latest/interfaces/Types.UserActions.html) in the JavaScript API. There are no prerequisites for triggering a user action this way.
 
 ## How user actions end
 
@@ -7427,9 +7430,9 @@ While a user action is active, the RUM JavaScript keeps track of XHR and fetch r
 
 ### Ending user actions via the API
 
-You can close user actions via the API using [`UserActionTracker.finish()`ï»¿](https://www.dynatrace.com/support/doc/javascriptapi/doc-latest/interfaces/Types.UserActionTracker.html).
+You can close user actions via the API using [`UserActionTracker.finish()`ï»¿](https://docs.dynatrace.com/javascriptapi/doc-latest/interfaces/Types.UserActionTracker.html).
 
-By default, API-created user actions follow the default end behavior. To disable auto-closing, use [`UserActionTracker.autoClose()`ï»¿](https://www.dynatrace.com/support/doc/javascriptapi/doc-latest/interfaces/Types.UserActionTracker.html#autocloseautoclose-1), or set the `autoClose` option to `false` when [creating the user actionï»¿](https://www.dynatrace.com/support/doc/javascriptapi/doc-latest/interfaces/Types.UserActions.html#create-1).
+By default, API-created user actions follow the default end behavior. To disable auto-closing, use [`UserActionTracker.autoClose()`ï»¿](https://docs.dynatrace.com/javascriptapi/doc-latest/interfaces/Types.UserActionTracker.html#autocloseautoclose-1), or set the `autoClose` option to `false` when [creating the user actionï»¿](https://docs.dynatrace.com/javascriptapi/doc-latest/interfaces/Types.UserActions.html#create-1).
 
 ## Example
 
@@ -7642,7 +7645,7 @@ Content-Security-Policy: script-src 'self' https://js-cdn.dynatracelabs.com 'uns
 ---
 title: Configure automatic injection in the New RUM Experience
 source: https://www.dynatrace.com/docs/observe/digital-experience/new-rum-experience/web-frontends/initial-setup/configure-auto-injection
-scraped: 2026-03-04T21:38:07.293287
+scraped: 2026-03-06T21:30:14.503901
 ---
 
 # Configure automatic injection in the New RUM Experience
@@ -7822,7 +7825,7 @@ Alternatively, you can also retrieve the snippet via the [API](/docs/dynatrace-a
 ---
 title: Configure the beacon endpoint for web frontends in the New RUM Experience
 source: https://www.dynatrace.com/docs/observe/digital-experience/new-rum-experience/web-frontends/initial-setup/configure-beacon-endpoint
-scraped: 2026-03-02T21:25:26.128829
+scraped: 2026-03-06T21:35:43.809096
 ---
 
 # Configure the beacon endpoint for web frontends in the New RUM Experience
@@ -8107,7 +8110,7 @@ Unless you use the **JavaScript tag** snippet format, you need to update the sni
 ---
 title: Finalize the initial setup for your agentless frontend
 source: https://www.dynatrace.com/docs/observe/digital-experience/new-rum-experience/web-frontends/initial-setup/finalize-initial-setup-agentless
-scraped: 2026-03-04T21:37:20.590267
+scraped: 2026-03-06T21:26:15.702725
 ---
 
 # Finalize the initial setup for your agentless frontend
@@ -8116,7 +8119,7 @@ scraped: 2026-03-04T21:37:20.590267
 
 * Latest Dynatrace
 * How-to guide
-* Published Jan 29, 2026
+* Updated on Mar 05, 2026
 
 After [setting up a new agentless frontend](/docs/observe/digital-experience/new-rum-experience/web-frontends/initial-setup/set-up-agentless-monitoring "Learn how to set up agentless RUM for your web frontends in the New RUM Experience."), the charts in [![Experience Vitals](https://dt-cdn.net/images/experience-vitals-256-9999590b55.png "Experience Vitals") **Experience Vitals**](/docs/observe/digital-experience/new-rum-experience/experience-vitals "The Experience Vitals app provides an entry point for monitoring web and mobile frontends.") should begin displaying data within ten minutes if your frontend is receiving traffic. If they don't, your setup may require further configuration steps. This guide walks you through a series of checks to help you identify the configuration needed.
 
@@ -8148,7 +8151,7 @@ To identify RUM beacons in your browser's developer tools, look for requests wit
 
 If the browser developer tools don't show any beacons, check the following aspects of your setup:
 
-* If you enabled [data-collection and opt-in mode](/docs/observe/digital-experience/new-rum-experience/web-frontends/additional-configuration/data-privacy-web#data-collection-and-opt-in-mode "Learn about the available settings that help you ensure your web frontends comply with data privacy regulations.") during setup, your code needs to call [`dtrum.enable()`ï»¿](https://www.dynatrace.com/support/doc/javascriptapi/doc/types/dtrum.html#enable) from the JavaScript API after the user accepts your data privacy policy. Only then will the RUM JavaScript begin sending data.
+* If you enabled [data-collection and opt-in mode](/docs/observe/digital-experience/new-rum-experience/web-frontends/additional-configuration/data-privacy-web#data-collection-and-opt-in-mode "Learn about the available settings that help you ensure your web frontends comply with data privacy regulations.") during setup, your code needs to call [`dtrum.enable()`ï»¿](https://docs.dynatrace.com/javascriptapi/doc/types/dtrum.html#enable) from the JavaScript API after the user accepts your data privacy policy. Only then will the RUM JavaScript begin sending data.
 * If you selected the snippet format [inline code](/docs/observe/digital-experience/new-rum-experience/web-frontends/initial-setup/snippet-formats#inline-code "Learn how to select the format for the RUM JavaScript snippet that best fits your specific use case in the New RUM Experience."), your browser's console may display a CSP rule violation indicating that an inline script was blocked. In this case, adjust your CSP rules as described in [Allow the execution of inline code](/docs/observe/digital-experience/new-rum-experience/web-frontends/initial-setup/adapt-csp-rules#allow-the-execution-of-inline-code "Learn how to adapt your CSP rules for the New RUM Experience.").
 
 ### Beacons blocked due to CSP rule violations
@@ -8434,7 +8437,7 @@ To enable RUM for your newly created frontend
 ---
 title: Set up agentless RUM in the New RUM Experience
 source: https://www.dynatrace.com/docs/observe/digital-experience/new-rum-experience/web-frontends/initial-setup/set-up-agentless-monitoring
-scraped: 2026-03-05T21:37:28.423945
+scraped: 2026-03-06T21:35:10.443740
 ---
 
 # Set up agentless RUM in the New RUM Experience
@@ -8799,7 +8802,7 @@ If no data appears yet, your environment may require further configuration steps
 ---
 title: Set up host name determination in the New RUM Experience
 source: https://www.dynatrace.com/docs/observe/digital-experience/new-rum-experience/web-frontends/initial-setup/set-up-host-name-determination
-scraped: 2026-03-03T21:22:51.898991
+scraped: 2026-03-06T21:29:12.501368
 ---
 
 # Set up host name determination in the New RUM Experience
@@ -8846,7 +8849,7 @@ If the original host name requested by the browser is `www.example.com` and your
 ---
 title: Select a snippet format in the New RUM Experience
 source: https://www.dynatrace.com/docs/observe/digital-experience/new-rum-experience/web-frontends/initial-setup/snippet-formats
-scraped: 2026-03-05T21:37:47.902343
+scraped: 2026-03-06T21:27:24.885857
 ---
 
 # Select a snippet format in the New RUM Experience
@@ -9143,7 +9146,7 @@ We don't recommend using the OneAgent JavaScript tag with SRI from the web UI un
 ---
 title: Initial setup for web frontends
 source: https://www.dynatrace.com/docs/observe/digital-experience/new-rum-experience/web-frontends/initial-setup
-scraped: 2026-03-05T21:35:08.678855
+scraped: 2026-03-06T21:28:09.180900
 ---
 
 # Initial setup for web frontends
@@ -9225,7 +9228,7 @@ After deploying OneAgent in full-stack monitoring mode on a host, web applicatio
 ---
 title: Customize web frontend monitoring using the JavaScript API
 source: https://www.dynatrace.com/docs/observe/digital-experience/new-rum-experience/web-frontends/new-javascript-api
-scraped: 2026-03-05T21:35:53.387204
+scraped: 2026-03-06T21:26:26.266335
 ---
 
 # Customize web frontend monitoring using the JavaScript API
@@ -9235,11 +9238,11 @@ scraped: 2026-03-05T21:35:53.387204
 * Latest Dynatrace
 * Reference
 * 1-min read
-* Updated on Jan 08, 2026
+* Updated on Mar 05, 2026
 
 The New RUM Experience includes a powerful new JavaScript API that enables you to customize and enhance web frontend monitoring for your applications. This API is backed by comprehensive documentation, including practical use cases to help you get started quickly.
 
-[Explore the JavaScript API](https://www.dynatrace.com/support/doc/javascriptapi/doc-latest/)
+[Explore the JavaScript API](https://docs.dynatrace.com/javascriptapi/doc-latest/)
 
 ---
 
@@ -9248,7 +9251,7 @@ The New RUM Experience includes a powerful new JavaScript API that enables you t
 ---
 title: Web frontends
 source: https://www.dynatrace.com/docs/observe/digital-experience/new-rum-experience/web-frontends
-scraped: 2026-03-04T21:30:40.487563
+scraped: 2026-03-06T21:36:58.159236
 ---
 
 # Web frontends
@@ -9286,7 +9289,7 @@ Customize your web frontend monitoring using the new JavaScript API.](/docs/obse
 ---
 title: New Real User Monitoring Experience
 source: https://www.dynatrace.com/docs/observe/digital-experience/new-rum-experience
-scraped: 2026-03-05T21:20:12.137474
+scraped: 2026-03-06T21:14:03.737862
 ---
 
 # New Real User Monitoring Experience
@@ -9753,7 +9756,7 @@ You can mark a user action as a key user action and configure Apdex rating for k
 ---
 title: User and error events
 source: https://www.dynatrace.com/docs/observe/digital-experience/rum-concepts/user-and-error-events
-scraped: 2026-03-05T21:37:56.303458
+scraped: 2026-03-06T21:26:34.294869
 ---
 
 # User and error events
@@ -9763,7 +9766,7 @@ scraped: 2026-03-05T21:37:56.303458
 * Classic
 * Explanation
 * 6-min read
-* Updated on Apr 16, 2024
+* Updated on Mar 05, 2026
 
 Besides detecting [user actions](/docs/observe/digital-experience/rum-concepts/user-actions "Learn what user actions are and how they help you understand what users do with your application."), Dynatrace also captures additional events known as user events and error events. These events occur within a [user session](/docs/observe/digital-experience/rum-concepts/user-session "Learn how a user session is defined, when a user session starts or ends, how user session duration is calculated, and more."), but they're not directly generated via user interaction with UI controls.
 
@@ -9835,7 +9838,7 @@ The following error types are captured depending on your application type.
 
 To report a custom error for a web application or a reported error for a mobile or a custom application, use a dedicated API method.
 
-[Web](https://www.dynatrace.com/support/doc/javascriptapi/doc/types/dtrum.html#reportcustomerror) [Android SDK](/docs/observe/digital-experience/mobile-applications/instrument-android-app/instrumentation-via-oneagent-sdk/oneagent-sdk-for-android#report-errors) [iOS SDK](/docs/observe/digital-experience/mobile-applications/instrument-ios-app/customization/oneagent-sdk-for-ios#report-error) [Cordova](https://www.npmjs.com/package/@dynatrace/cordova-plugin#report-error) [Xamarin](/docs/observe/digital-experience/mobile-applications/cross-platform-frameworks/xamarin-nuget#report-errors) [![.NET MAUI](https://dt-cdn.net/images/dotnetmaui-aea483621e.svg ".NET MAUI").NET MAUI](/docs/observe/digital-experience/mobile-applications/cross-platform-frameworks/maui#report-errors) [Flutter](https://pub.dev/packages/dynatrace_flutter_plugin#reportValues) [React Native](https://www.npmjs.com/package/@dynatrace/react-native-plugin#report-values) [OpenKit](/docs/ingest-from/extend-dynatrace/openkit/dynatrace-openkit-api-methods#report-errors) 
+[Web](https://docs.dynatrace.com/javascriptapi/doc/types/dtrum.html#reportcustomerror) [Android SDK](/docs/observe/digital-experience/mobile-applications/instrument-android-app/instrumentation-via-oneagent-sdk/oneagent-sdk-for-android#report-errors) [iOS SDK](/docs/observe/digital-experience/mobile-applications/instrument-ios-app/customization/oneagent-sdk-for-ios#report-error) [Cordova](https://www.npmjs.com/package/@dynatrace/cordova-plugin#report-error) [Xamarin](/docs/observe/digital-experience/mobile-applications/cross-platform-frameworks/xamarin-nuget#report-errors) [![.NET MAUI](https://dt-cdn.net/images/dotnetmaui-aea483621e.svg ".NET MAUI").NET MAUI](/docs/observe/digital-experience/mobile-applications/cross-platform-frameworks/maui#report-errors) [Flutter](https://pub.dev/packages/dynatrace_flutter_plugin#reportValues) [React Native](https://www.npmjs.com/package/@dynatrace/react-native-plugin#report-values) [OpenKit](/docs/ingest-from/extend-dynatrace/openkit/dynatrace-openkit-api-methods#report-errors) 
 
 Dynatrace offers numerous configuration options related to errors. For web applications, you can [fine-tune error detection for each error type](/docs/observe/digital-experience/web-applications/additional-configuration/configure-errors "Configure your application to capture or ignore request, custom, and JavaScript errors."), for example, configure request error rules, add custom error rules, or ignore JavaScript errors. For [mobile](/docs/observe/digital-experience/mobile-applications/additional-configuration/web-request-errors-mobile "Stop treating certain response HTTP codes as errors for your mobile applications.") and [custom applications](/docs/observe/digital-experience/custom-applications/additional-configuration/web-request-errors-custom "Stop treating certain HTTP response codes as errors for your custom applications."), you can opt to ignore web request errors.
 
@@ -9899,7 +9902,7 @@ Note that crashes drastically affect the [user experience score](/docs/observe/d
 ---
 title: Real User Monitoring concepts
 source: https://www.dynatrace.com/docs/observe/digital-experience/rum-concepts
-scraped: 2026-03-05T21:20:08.708037
+scraped: 2026-03-06T21:13:58.729143
 ---
 
 # Real User Monitoring concepts
@@ -10540,7 +10543,7 @@ To enable the Session Replay screenshot debugger:
 ---
 title: Session Replay
 source: https://www.dynatrace.com/docs/observe/digital-experience/session-replay
-scraped: 2026-03-05T21:20:05.412616
+scraped: 2026-03-06T21:14:07.083776
 ---
 
 # Session Replay
@@ -10628,7 +10631,7 @@ For web applications, Session Replay is compatible with page-based applications,
 ---
 title: User details
 source: https://www.dynatrace.com/docs/observe/digital-experience/session-segmentation/analyze-all-sessions-of-a-single-user
-scraped: 2026-03-04T21:28:27.706078
+scraped: 2026-03-06T21:31:51.312648
 ---
 
 # User details
@@ -10711,7 +10714,7 @@ When analyzing a user's behavior, it can be interesting to understand at what ti
 ---
 title: Context-based Apdex analysis
 source: https://www.dynatrace.com/docs/observe/digital-experience/session-segmentation/apdex-analysis
-scraped: 2026-03-04T21:36:58.672267
+scraped: 2026-03-06T21:32:25.972152
 ---
 
 # Context-based Apdex analysis
@@ -10788,7 +10791,7 @@ You can highlight Apdex as a core metric for your business peers by adding Apdex
 ---
 title: Custom queries, segmentation, and aggregation of session data
 source: https://www.dynatrace.com/docs/observe/digital-experience/session-segmentation/custom-queries-segmentation-and-aggregation-of-session-data
-scraped: 2026-03-05T21:17:24.763417
+scraped: 2026-03-06T21:23:09.934912
 ---
 
 # Custom queries, segmentation, and aggregation of session data
@@ -12810,7 +12813,7 @@ You can choose any of the findings and easily apply them by selecting **Apply se
 ---
 title: Session segmentation
 source: https://www.dynatrace.com/docs/observe/digital-experience/session-segmentation
-scraped: 2026-03-05T21:20:03.715404
+scraped: 2026-03-06T21:14:05.384648
 ---
 
 # Session segmentation
@@ -12839,7 +12842,7 @@ A [user session](/docs/observe/digital-experience/rum-concepts/user-session "Lea
 ---
 title: Synthetic details for browser monitors
 source: https://www.dynatrace.com/docs/observe/digital-experience/synthetic-monitoring/analysis-and-alerting/synthetic-details-for-browser-monitors
-scraped: 2026-03-05T21:24:37.027798
+scraped: 2026-03-06T21:24:40.754078
 ---
 
 # Synthetic details for browser monitors
@@ -13065,7 +13068,7 @@ If a RUM application is linked to the monitor, youâll see a toggle to augme
 ---
 title: HTTP monitors reporting results
 source: https://www.dynatrace.com/docs/observe/digital-experience/synthetic-monitoring/analysis-and-alerting/synthetic-details-for-http-monitors-classic
-scraped: 2026-03-05T21:24:31.723345
+scraped: 2026-03-06T21:24:30.297902
 ---
 
 # HTTP monitors reporting results
@@ -13482,7 +13485,7 @@ Check out the following articles in the [Troubleshooting forum in the Dynatrace 
 ---
 title: Create a single-URL browser monitor
 source: https://www.dynatrace.com/docs/observe/digital-experience/synthetic-monitoring/browser-monitors/create-a-single-url-browser-monitor
-scraped: 2026-03-05T21:24:30.514211
+scraped: 2026-03-06T21:24:38.972736
 ---
 
 # Create a single-URL browser monitor
@@ -13566,7 +13569,7 @@ You can also disable or delete a monitor from the [details page](/docs/observe/d
 ---
 title: Synthetic architecture and communication
 source: https://www.dynatrace.com/docs/observe/digital-experience/synthetic-monitoring/general-information/architecture-communication
-scraped: 2026-03-05T21:38:48.161973
+scraped: 2026-03-06T21:36:15.258243
 ---
 
 # Synthetic architecture and communication
@@ -13634,13 +13637,14 @@ Public location communication
 ---
 title: External vault integration
 source: https://www.dynatrace.com/docs/observe/digital-experience/synthetic-monitoring/general-information/external-vault-integration
-scraped: 2026-03-02T21:29:11.936297
+scraped: 2026-03-06T21:27:16.073735
 ---
 
 # External vault integration
 
 # External vault integration
 
+* Classic
 * How-to guide
 * 22-min read
 * Updated on Jan 17, 2024
@@ -14567,7 +14571,7 @@ API-based on-demand executions offer greater flexibility and scalability than th
 ---
 title: Public Synthetic locations
 source: https://www.dynatrace.com/docs/observe/digital-experience/synthetic-monitoring/general-information/public-synthetic-locations
-scraped: 2026-03-05T21:24:35.225593
+scraped: 2026-03-06T21:24:46.338930
 ---
 
 # Public Synthetic locations
@@ -15146,7 +15150,7 @@ Download
 ---
 title: Configure a NAM monitor
 source: https://www.dynatrace.com/docs/observe/digital-experience/synthetic-monitoring/network-availability-monitors/create-a-nam-monitor
-scraped: 2026-03-05T21:23:34.982719
+scraped: 2026-03-06T21:19:14.372926
 ---
 
 # Configure a NAM monitor
@@ -16271,7 +16275,7 @@ Network availability monitors do not support the use of [proxy servers](/docs/ob
 ---
 title: Containerized, auto-scalable private Synthetic locations on Kubernetes
 source: https://www.dynatrace.com/docs/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/containerized-locations
-scraped: 2026-03-05T21:40:26.794220
+scraped: 2026-03-06T21:35:19.564395
 ---
 
 # Containerized, auto-scalable private Synthetic locations on Kubernetes
@@ -17483,7 +17487,7 @@ You can automate the deployment of and manage containerized locations via the ex
 ---
 title: Create a private Synthetic location
 source: https://www.dynatrace.com/docs/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/create-a-private-synthetic-location
-scraped: 2026-03-05T21:24:44.544328
+scraped: 2026-03-06T21:24:42.801902
 ---
 
 # Create a private Synthetic location
@@ -18770,7 +18774,7 @@ If you do not specify the custom repository in `custom.properties`, the browser 
 ---
 title: Requirements for private Synthetic locations
 source: https://www.dynatrace.com/docs/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/system-and-hardware-requirements-for-private-synthetic
-scraped: 2026-03-05T21:24:06.114878
+scraped: 2026-03-06T21:25:05.803028
 ---
 
 # Requirements for private Synthetic locations
@@ -18780,7 +18784,7 @@ scraped: 2026-03-05T21:24:06.114878
 * Classic
 * Reference
 * 15-min read
-* Updated on Feb 11, 2026
+* Updated on Mar 03, 2026
 
 Ensure that the host you want to use for your private location complies with the following requirements.
 
@@ -18808,15 +18812,20 @@ Additional support notes
   + Since Red Hat Enterprise Linux 7 reached [End of Maintenanceï»¿](https://dt-url.net/af03uea) support on June 30, 2024, all of its packages have been archived. This means that it may not be possible to find the required dependencies for update. For more details, see the [Red Hat Enterprise Linux 7 statusï»¿](https://dt-url.net/e623zr1)
 * Check the latest [ActiveGate release notes](/docs/whats-new/activegate "Release notes for Dynatrace ActiveGate") for the oldest supported ActiveGate versions.
 
-## Operating system requirements
+## Antivirus and anti-malware software
 
-Antivirus and Anti-Malware software
+Antivirus and anti-malware software can negatively impact Dynatrace Synthetic monitoring capabilities.
+Such software might block the browser or Dynatrace processes that execute synthetic monitors, cause Synthetic-enabled ActiveGate installation or update failures, interfere with network communication, and impact the reliability of measurements.
 
-Antivirus and anti-malware software can adversely affect Dynatrace Synthetic monitoring capabilities. The antivirus or anti-malware software might block the browser or Dynatrace processes responsible for executing synthetic monitors, cause Synthetic-enabled ActiveGate installation failures, interfere with network communication, and impact the reliability of measurements.
+To maintain stability and performance, consider adding the directories and processes listed below to the allowlist or exclude them from the policy.
+Keep in mind that antivirus exclusions typically prevent file scanning but donât disable behavioral monitoring or kernel-level hooks. These remain active and can affect how the Synthetic Engine and browser interact with system libraries.
+As a result, even excluded processes can experience access violations or heap corruption.
 
-Please also note
+Before contacting Dynatrace Support to troubleshoot issues with your private synthetic locations, ensure that antivirus or anti-malware software has been ruled out as a potential cause.
 
-To ensure proper stability and performance, consider adding the following directories and processes to the allowed list or excluding them from the policy:
+This is the minimal list of processes and directories required for Dynatrace Synthetic to operate.
+It's not guaranteed that the service will function correctly with only these exclusions.
+Collaborate with your vendor to ensure that all expected Dynatrace behaviors are properly allowed.
 
 **Directories:**
 
@@ -18828,9 +18837,7 @@ To ensure proper stability and performance, consider adding the following direct
 * vucwrapper
 * java
 
-This is the minimal list of processes and directories required for Dynatrace Synthetic to operate. It's not guaranteed that the service will function correctly with only these exclusions. Collaborate with your vendor to appropriately allow expected behaviors from Dynatrace.
-
-Prior to contacting Dynatrace support to troubleshoot issues with your private synthetic locations make sure that antivirus or anti-malware software was excluded as a source of problems.
+## Operating system requirements
 
 A freshly installed ActiveGate can run your private synthetic monitors (both HTTP and browser monitors) on the following operating systems.
 
@@ -21416,7 +21423,7 @@ scraped: 2026-02-06T16:21:08.408897
 ---
 title: Synthetic Monitoring
 source: https://www.dynatrace.com/docs/observe/digital-experience/synthetic-monitoring
-scraped: 2026-03-05T21:20:02.059840
+scraped: 2026-03-06T21:14:11.591598
 ---
 
 # Synthetic Monitoring
@@ -21564,7 +21571,7 @@ You can monitor problems in:
 ---
 title: Browser monitors reporting results
 source: https://www.dynatrace.com/docs/observe/digital-experience/synthetic-on-grail/synthetic-app/browser-monitors-results-reporting
-scraped: 2026-03-05T21:24:25.391776
+scraped: 2026-03-06T21:24:32.142789
 ---
 
 # Browser monitors reporting results
@@ -21940,7 +21947,7 @@ The resource initiator doesn't represent a type of fetched content. For example,
 ---
 title: Create a NAM monitor
 source: https://www.dynatrace.com/docs/observe/digital-experience/synthetic-on-grail/synthetic-app/create-a-nam-monitor-synthetic-app
-scraped: 2026-03-05T21:24:33.430687
+scraped: 2026-03-06T21:24:37.294345
 ---
 
 # Create a NAM monitor
@@ -22141,7 +22148,7 @@ You may narrow down the time range only to that for which the problem was active
 ---
 title: Create and configure an HTTP monitor
 source: https://www.dynatrace.com/docs/observe/digital-experience/synthetic-on-grail/synthetic-app/create-and-configure-an-http-monitor
-scraped: 2026-03-05T21:24:23.587497
+scraped: 2026-03-06T21:24:44.580785
 ---
 
 # Create and configure an HTTP monitor
@@ -22416,7 +22423,7 @@ See [HTTP monitors reporting results](/docs/observe/digital-experience/synthetic
 ---
 title: Create and configure a browser monitor
 source: https://www.dynatrace.com/docs/observe/digital-experience/synthetic-on-grail/synthetic-app/create-configure-browser-monitors
-scraped: 2026-03-05T21:24:42.460858
+scraped: 2026-03-06T21:24:33.931700
 ---
 
 # Create and configure a browser monitor
@@ -22648,7 +22655,7 @@ See the summary of all the steps and the estimated monthly number of actions. If
 ---
 title: NAM monitors results reporting
 source: https://www.dynatrace.com/docs/observe/digital-experience/synthetic-on-grail/synthetic-app/nam-monitors-results-reporting-synthetic-app
-scraped: 2026-03-05T21:24:27.053167
+scraped: 2026-03-06T21:24:35.608154
 ---
 
 # NAM monitors results reporting
@@ -22690,7 +22697,7 @@ The default reporting pages consists of:
 ---
 title: On-demand monitor executions
 source: https://www.dynatrace.com/docs/observe/digital-experience/synthetic-on-grail/synthetic-app/on-demand-executions
-scraped: 2026-03-05T21:24:28.778214
+scraped: 2026-03-06T21:24:28.548720
 ---
 
 # On-demand monitor executions
@@ -22773,7 +22780,7 @@ You need the DPS license to see the list of executions.
 ---
 title: Install a Synthetic-enabled ActiveGate
 source: https://www.dynatrace.com/docs/observe/digital-experience/synthetic-on-grail/synthetic-app/private-locations/active-gate-for-private-locations-install
-scraped: 2026-03-05T21:36:15.724434
+scraped: 2026-03-06T21:27:09.113702
 ---
 
 # Install a Synthetic-enabled ActiveGate
@@ -22818,7 +22825,7 @@ You can install a Synthetic-enabled ActiveGate from the **Install ActiveGate** w
 ---
 title: Install and update Chromium for Linux
 source: https://www.dynatrace.com/docs/observe/digital-experience/synthetic-on-grail/synthetic-app/private-locations/install-chromium-for-linux
-scraped: 2026-03-05T21:36:19.684323
+scraped: 2026-03-06T21:31:26.009069
 ---
 
 # Install and update Chromium for Linux
@@ -24863,7 +24870,7 @@ Ensure that the host environment provides sufficient access rights and available
 ---
 title: Private synthetic locations
 source: https://www.dynatrace.com/docs/observe/digital-experience/synthetic-on-grail/synthetic-app/private-locations
-scraped: 2026-03-05T21:24:38.814889
+scraped: 2026-03-06T21:24:48.121649
 ---
 
 # Private synthetic locations
@@ -25180,7 +25187,7 @@ Visit the [Troubleshooting forum in the Dynatrace Communityï»¿](https://dt-ur
 ---
 title: HTTP monitors reporting results
 source: https://www.dynatrace.com/docs/observe/digital-experience/synthetic-on-grail/synthetic-app/synthetic-details-for-http-monitors
-scraped: 2026-03-05T21:24:40.686466
+scraped: 2026-03-06T21:24:26.847734
 ---
 
 # HTTP monitors reporting results
@@ -25551,7 +25558,7 @@ To see backed traces for a specific execution
 ---
 title: Synthetic app
 source: https://www.dynatrace.com/docs/observe/digital-experience/synthetic-on-grail/synthetic-app
-scraped: 2026-03-05T21:14:35.753346
+scraped: 2026-03-06T21:12:42.033714
 ---
 
 # Synthetic app
@@ -25611,7 +25618,7 @@ document:documents:delete
 
 allows deleting filter sets
 
-## Installation
+### Installation
 
 Make sure the app is [installed in your environment](/docs/manage/hub#install "See the information about Dynatrace Hub.").
 
@@ -25808,7 +25815,7 @@ View the status of all data centers and hosts and identify the root cause of inf
 ---
 title: Synthetic for Workflows
 source: https://www.dynatrace.com/docs/observe/digital-experience/synthetic-on-grail/synthetic-for-workflows
-scraped: 2026-03-02T21:20:17.261805
+scraped: 2026-03-06T21:31:47.956083
 ---
 
 # Synthetic for Workflows
@@ -26184,7 +26191,7 @@ For this configuration, Dynatrace applies the [beacon origin allowlist](/docs/ob
 ---
 title: Capture additional interaction types for web applications
 source: https://www.dynatrace.com/docs/observe/digital-experience/web-applications/additional-configuration/capture-interaction-types
-scraped: 2026-03-04T21:38:56.567913
+scraped: 2026-03-06T21:30:24.896704
 ---
 
 # Capture additional interaction types for web applications
@@ -26243,7 +26250,7 @@ To select which interaction types Dynatrace should capture automatically
 ---
 title: Adjust Apdex settings for web applications
 source: https://www.dynatrace.com/docs/observe/digital-experience/web-applications/additional-configuration/configure-apdex-web
-scraped: 2026-03-04T21:31:50.992558
+scraped: 2026-03-06T21:26:08.607908
 ---
 
 # Adjust Apdex settings for web applications
@@ -26481,7 +26488,7 @@ To create additional error alerts
 ---
 title: Configure key user actions for web applications
 source: https://www.dynatrace.com/docs/observe/digital-experience/web-applications/additional-configuration/configure-key-user-actions-web
-scraped: 2026-03-05T21:38:49.830719
+scraped: 2026-03-06T21:27:50.224051
 ---
 
 # Configure key user actions for web applications
@@ -26637,13 +26644,14 @@ To specify a custom monitoring code filename prefix
 ---
 title: Configure the RUM cookie domain for web applications
 source: https://www.dynatrace.com/docs/observe/digital-experience/web-applications/additional-configuration/configure-the-cookie-domain
-scraped: 2026-03-02T21:19:26.781906
+scraped: 2026-03-06T21:28:02.411095
 ---
 
 # Configure the RUM cookie domain for web applications
 
 # Configure the RUM cookie domain for web applications
 
+* Classic
 * How-to guide
 * 4-min read
 * Published Mar 21, 2022
@@ -27845,7 +27853,7 @@ You can integrate Adobe Analytics with Dynatrace to facilitate collaboration amo
 ---
 title: Delete a web application
 source: https://www.dynatrace.com/docs/observe/digital-experience/web-applications/additional-configuration/delete-application-web
-scraped: 2026-03-04T21:30:27.235402
+scraped: 2026-03-06T21:29:09.059821
 ---
 
 # Delete a web application
@@ -28000,7 +28008,7 @@ Unsupported Internet Explorer version detected. Only version 11 (without Compati
 ---
 title: Leverage user action and user session properties for web applications
 source: https://www.dynatrace.com/docs/observe/digital-experience/web-applications/analyze-and-use/action-and-session-properties
-scraped: 2026-03-04T21:28:03.079322
+scraped: 2026-03-06T21:28:12.602325
 ---
 
 # Leverage user action and user session properties for web applications
@@ -28504,7 +28512,7 @@ As as example, the following page shows that errors can be integrated into a wat
 ---
 title: Performance analysis
 source: https://www.dynatrace.com/docs/observe/digital-experience/web-applications/analyze-and-use/performance-analysis
-scraped: 2026-03-05T21:14:44.845893
+scraped: 2026-03-06T21:13:06.981371
 ---
 
 # Performance analysis
@@ -28984,7 +28992,7 @@ For a list of technologies and servers that support automatic RUM JavaScript inj
 ---
 title: Link cross-origin XHR user actions and their distributed traces
 source: https://www.dynatrace.com/docs/observe/digital-experience/web-applications/initial-setup/link-cross-origin-xhrs
-scraped: 2026-03-05T21:25:58.498762
+scraped: 2026-03-06T21:28:47.854342
 ---
 
 # Link cross-origin XHR user actions and their distributed traces
@@ -29742,7 +29750,7 @@ To configure script execution for automatic injection
 ---
 title: Web applications
 source: https://www.dynatrace.com/docs/observe/digital-experience/web-applications
-scraped: 2026-03-05T21:20:00.411381
+scraped: 2026-03-06T21:14:09.923490
 ---
 
 # Web applications
@@ -29836,7 +29844,7 @@ We ended support for Internet Explorer 11 starting with RUM JavaScript version 1
 ---
 title: Digital Experience
 source: https://www.dynatrace.com/docs/observe/digital-experience
-scraped: 2026-03-05T21:13:44.896664
+scraped: 2026-03-06T21:10:08.444180
 ---
 
 # Digital Experience

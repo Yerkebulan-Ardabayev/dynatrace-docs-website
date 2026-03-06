@@ -1,7 +1,7 @@
 ---
 title: Technology support
 source: https://www.dynatrace.com/docs/ingest-from/technology-support
-scraped: 2026-03-05T21:14:41.183099
+scraped: 2026-03-06T21:12:58.632068
 ---
 
 # Technology support
@@ -965,7 +965,7 @@ Supported in [AWS Lambda](/docs/ingest-from/amazon-web-services/integrate-into-a
 | Remoting frameworks | Versions |
 | --- | --- |
 | [Amazon AWS SDKï»¿](https://github.com/aws/aws-sdk-go-v2) | 1.13.0 - 1.39.0[1](#fn-remoting-frameworks-1-def), 1.39.1 - 1.41.1[1](#fn-remoting-frameworks-1-def) |
-| [gRPCï»¿](https://godoc.org/google.golang.org/grpc) | 1.17 - 1.28, 1.29, 1.30 - 1.39, 1.40 - 1.59, 1.60 - 1.68, 1.69 - 1.76, 1.78 |
+| [gRPCï»¿](https://godoc.org/google.golang.org/grpc) | 1.17 - 1.28, 1.29, 1.30 - 1.39, 1.40 - 1.59, 1.60 - 1.68, 1.69 - 1.76, 1.78 - 1.79 |
 
 1
 
@@ -973,7 +973,7 @@ Supported in [AWS Lambda](/docs/ingest-from/amazon-web-services/integrate-into-a
 
 | Monitoring frameworks | Versions |
 | --- | --- |
-| [OpenTelemetryï»¿](https://github.com/open-telemetry/opentelemetry-go/) | 1.0 - 1.7, 1.8 - 1.11.0, 1.11.1 - 1.27, 1.28 - 1.40 |
+| [OpenTelemetryï»¿](https://github.com/open-telemetry/opentelemetry-go/) | 1.0 - 1.7, 1.8 - 1.11.0, 1.11.1 - 1.27, 1.28 - 1.41 |
 
 | Logging frameworks | Versions |
 | --- | --- |

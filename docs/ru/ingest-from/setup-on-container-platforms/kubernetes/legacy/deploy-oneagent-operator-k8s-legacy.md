@@ -1,7 +1,7 @@
 ---
 title: Deploy OneAgent Operator on Kubernetes (deprecated)
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-container-platforms/kubernetes/legacy/deploy-oneagent-operator-k8s-legacy
-scraped: 2026-03-05T21:39:22.841470
+scraped: 2026-03-06T21:29:44.845264
 ---
 
 # Deploy OneAgent Operator on Kubernetes (deprecated)

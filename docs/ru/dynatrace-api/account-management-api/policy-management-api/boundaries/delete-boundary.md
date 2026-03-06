@@ -1,7 +1,7 @@
 ---
 title: Policy management API - DELETE a policy boundary
 source: https://www.dynatrace.com/docs/dynatrace-api/account-management-api/policy-management-api/boundaries/delete-boundary
-scraped: 2026-03-05T21:37:23.782394
+scraped: 2026-03-06T21:29:29.616618
 ---
 
 # Policy management API - DELETE a policy boundary

@@ -1,7 +1,7 @@
 ---
 title: Create a new AWS connection
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/cloud-platform-monitoring/clouds-app/create-aws-connection
-scraped: 2026-03-05T21:23:41.386119
+scraped: 2026-03-06T21:24:56.840993
 ---
 
 # Create a new AWS connection

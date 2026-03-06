@@ -1,7 +1,7 @@
 ---
 title: Monaco configuration YAML file - list of type fields
 source: https://www.dynatrace.com/docs/deliver/configuration-as-code/monaco/configuration/yaml-configuration-saas-type-fields
-scraped: 2026-03-04T21:29:05.076301
+scraped: 2026-03-06T21:30:43.612602
 ---
 
 # Monaco configuration YAML file - list of type fields

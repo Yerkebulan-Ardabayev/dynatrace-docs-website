@@ -1,7 +1,7 @@
 ---
 title: Install OneAgent on Windows
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/windows/installation/install-oneagent-on-windows
-scraped: 2026-03-05T21:29:22.060610
+scraped: 2026-03-06T21:19:24.255977
 ---
 
 # Install OneAgent on Windows
@@ -11,11 +11,14 @@ scraped: 2026-03-05T21:29:22.060610
 * Latest Dynatrace
 * How-to guide
 * 7-min read
-* Updated on Jan 22, 2026
+* Updated on Mar 05, 2026
 
 This page describes how to download and install Dynatrace OneAgent on Windows.
 
 To get started, log in to your Dynatrace SaaS environment via the [Dynatrace.comï»¿](https://www.dynatrace.com) website using the credentials provided during signup. Then continue with the installation steps below.
+
+Dynatrace provides an Ansible collection that you can use to orchestrate OneAgent deployment in your environment.
+For more information, see [Install OneAgent using Ansible](/docs/ingest-from/dynatrace-oneagent/deployment-orchestration/ansible "Learn how to deploy OneAgent using Dynatrace-provided Ansible playbook.").
 
 ## Requirements and prerequisites
 

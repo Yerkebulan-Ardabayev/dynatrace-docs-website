@@ -1,7 +1,7 @@
 ---
 title: Workflows use cases
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/use-cases
-scraped: 2026-03-03T21:30:04.226300
+scraped: 2026-03-06T21:33:55.552697
 ---
 
 # Workflows use cases

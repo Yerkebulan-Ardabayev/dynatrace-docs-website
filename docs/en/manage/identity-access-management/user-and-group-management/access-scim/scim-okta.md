@@ -1,7 +1,7 @@
 ---
 title: Okta SCIM configuration for Dynatrace
 source: https://www.dynatrace.com/docs/manage/identity-access-management/user-and-group-management/access-scim/scim-okta
-scraped: 2026-03-04T21:31:52.583768
+scraped: 2026-03-06T21:31:30.983595
 ---
 
 # Okta SCIM configuration for Dynatrace

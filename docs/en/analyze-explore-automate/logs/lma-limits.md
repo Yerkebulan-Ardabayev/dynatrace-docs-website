@@ -1,7 +1,7 @@
 ---
 title: Log Management and Analytics default limits
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-limits
-scraped: 2026-03-05T21:23:07.744588
+scraped: 2026-03-06T21:13:43.103611
 ---
 
 # Log Management and Analytics default limits
@@ -11,7 +11,7 @@ scraped: 2026-03-05T21:23:07.744588
 * Latest Dynatrace
 * Explanation
 * 3-min read
-* Updated on Feb 02, 2026
+* Updated on Mar 04, 2026
 
 This page lists default limits for the latest version of Dynatrace Log Management and Analytics. The current limitations apply to both log file ingestion and log ingestion via the Log ingestion API.
 
@@ -107,7 +107,16 @@ Be aware of the following limitations to sensitive data masking:
 
 * If the masking process takes too much time, the log file affected is blocked until the restart of OneAgent or any configuration change, and then you get the `File not monitored - incorrect sensitive data masking rule` message.
 
-## Active Gate throughput
+## ActiveGate throughput
 
-If you are using the SaaS endpoint, you don't have to worry about the Active Gate throughput. The throughput is the same as for Grail.
-If you use Environmental Active Gate, the throughput is 3.3GB/min with RTT <= 200 ms.
+If you are using the SaaS endpoint, you don't have to worry about the ActiveGate throughput. The throughput is the same as for Grail.
+
+If you use an Environment ActiveGate dedicated for log ingestion via the Log Ingestion API, performance tests indicate the following sustained ingestion throughput per Environment ActiveGate instance:
+
+* Up to 10.3 GB/min under typical WAN conditions (round-trip time of up to roughly 200 ms)
+* Up to 12.1 GB/min under low-latency conditions (RTT â¤ 10 ms)
+
+The following test profile was used:
+
+* Host instance: c6i.2xlarge
+* JSON payloads of approximately 300 kB per request, each containing 300 log lines, sent via the Log Ingestion API

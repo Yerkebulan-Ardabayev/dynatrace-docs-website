@@ -1,7 +1,7 @@
 ---
 title: Kubernetes Classic
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring
-scraped: 2026-03-05T21:14:08.897766
+scraped: 2026-03-06T21:11:55.255187
 ---
 
 # Kubernetes Classic

@@ -1,7 +1,7 @@
 ---
 title: Extension YAML file
 source: https://www.dynatrace.com/docs/ingest-from/extensions/develop-your-extensions/extension-yaml
-scraped: 2026-03-03T21:25:55.559920
+scraped: 2026-03-06T21:35:32.192927
 ---
 
 # Extension YAML file

@@ -1,7 +1,7 @@
 ---
 title: Dynatrace Intelligence (Preview) app
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/dynatrace-intelligence-integrations/copilot-for-workflows
-scraped: 2026-03-03T21:23:09.092533
+scraped: 2026-03-06T21:29:56.714019
 ---
 
 # Dynatrace Intelligence (Preview) app
@@ -27,7 +27,7 @@ To use the Dynatrace Intelligence generative AI workflow action, ensure that you
 
 * **Conversational recommender** `ALLOW davis-copilot:conversations:execute;`
 
-  For more information about assigning the **Conversational recommender** permission, see [User permissions](/docs/dynatrace-intelligence/copilot/copilot-getting-started#davis-copilot-user-permissions "Learn how to set up Dynatrace Intelligence generative AI.").
+  For more information about assigning the **Conversational recommender** permission, see [User permissions](/docs/dynatrace-intelligence/copilot/copilot-getting-started#davis-copilot-user-permissions "Learn how to set up Dynatrace Intelligence agentic and generative AI.").
 
 To use  **Dynatrace Intelligence (Preview)**, you need to
 
@@ -43,7 +43,7 @@ To install  **Dynatrace Intelligence (Preview)**
 
 ## Limits
 
-Standard usage limits for  **Generative AI** are also applied to  **Dynatrace Intelligence (Preview)**:
+Standard usage limits for  **Dynatrace Intelligence agentic and generative AI** are also applied to  **Dynatrace Intelligence (Preview)**:
 
 This means that, if you schedule the automatic workflow execution to run frequently, all other Dynatrace Intelligence generative AI functionality might get throttled due to reaching the request limit. If you do run into the usage limit, please reach out to your CSM or let us know in the [Agentic AI Preview User Groupï»¿](https://dt-url.net/copilot-community) in our Community.
 
@@ -75,7 +75,7 @@ To learn about specific use cases and how you can use the Dynatrace Intelligence
 ## Related topics
 
 * [Workflows](/docs/analyze-explore-automate/workflows "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services.")
-* [Dynatrace Intelligence generative AI overview](/docs/dynatrace-intelligence/copilot/copilot-overview "Learn about data security and other aspects of Dynatrace Intelligence generative AI.")
+* [Dynatrace Intelligence agentic and generative AI overview](/docs/dynatrace-intelligence/copilot/copilot-overview "Learn about data security and other aspects of Dynatrace Intelligence agentic and generative AI.")
 * [Dynatrace Assist](/docs/dynatrace-intelligence/copilot/chat-with-davis-copilot "Ask questions using natural language and get quick answers from Dynatrace Assist, your generative AI assistant.")
 * [Summarize open problems with Workflows](/docs/dynatrace-intelligence/use-cases/copilot-in-workflows-examples "Use Dynatrace Intelligence (Preview) to summarize open problems and suggest remediation steps.")
 * [Agentic workflows](/docs/dynatrace-intelligence/dynatrace-intelligence-integrations/agentic-workflows "Basic concepts of using agentic workflows to automate complex, data-driven tasks more flexibly by leveraging generative and agentic AI.")

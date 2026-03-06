@@ -1,7 +1,7 @@
 ---
 title: Enrich OTLP with OneAgent data (non-containerized)
 source: https://www.dynatrace.com/docs/ingest-from/opentelemetry/collector/use-cases/enrich
-scraped: 2026-03-04T21:33:27.464250
+scraped: 2026-03-06T21:26:31.410651
 ---
 
 # Enrich OTLP with OneAgent data (non-containerized)

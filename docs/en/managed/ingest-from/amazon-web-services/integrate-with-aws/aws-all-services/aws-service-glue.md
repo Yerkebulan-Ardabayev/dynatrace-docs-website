@@ -1,13 +1,14 @@
 ---
 title: AWS Glue monitoring
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-glue
-scraped: 2026-03-02T21:27:31.451290
+scraped: 2026-03-06T21:28:28.771602
 ---
 
 # AWS Glue monitoring
 
 # AWS Glue monitoring
 
+* Classic
 * How-to guide
 * 4-min read
 * Published Oct 15, 2020

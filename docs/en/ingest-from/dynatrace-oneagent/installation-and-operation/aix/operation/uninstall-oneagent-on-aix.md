@@ -1,7 +1,7 @@
 ---
 title: Uninstall OneAgent on AIX
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/aix/operation/uninstall-oneagent-on-aix
-scraped: 2026-03-05T21:28:33.498413
+scraped: 2026-03-06T21:18:32.537603
 ---
 
 # Uninstall OneAgent on AIX

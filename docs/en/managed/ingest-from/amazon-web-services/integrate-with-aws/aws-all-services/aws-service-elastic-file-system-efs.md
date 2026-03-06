@@ -1,13 +1,14 @@
 ---
 title: Amazon EFS (Elastic File System) monitoring
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-elastic-file-system-efs
-scraped: 2026-03-03T21:27:59.317055
+scraped: 2026-03-06T21:26:58.555496
 ---
 
 # Amazon EFS (Elastic File System) monitoring
 
 # Amazon EFS (Elastic File System) monitoring
 
+* Classic
 * How-to guide
 * 2-min read
 * Published Oct 15, 2020

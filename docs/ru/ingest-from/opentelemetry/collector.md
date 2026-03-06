@@ -1,7 +1,7 @@
 ---
 title: Dynatrace OTel Collector
 source: https://www.dynatrace.com/docs/ingest-from/opentelemetry/collector
-scraped: 2026-03-05T21:18:46.595441
+scraped: 2026-03-06T21:23:25.157293
 ---
 
 # Dynatrace OTel Collector
@@ -11,7 +11,7 @@ scraped: 2026-03-05T21:18:46.595441
 * Latest Dynatrace
 * Overview
 * 5-min read
-* Updated on Nov 17, 2025
+* Updated on Mar 02, 2026
 
 The Collector is a network service application that you can use to batch and transform telemetry data. It acts as a proxy and can receive OTLP requests as well as data from other sources, transform these requests according to defined rules, and forward them to the backend.
 

@@ -1,6 +1,6 @@
 # Документация Dynatrace: ingest-from/extensions
 Язык: Русский (RU)
-Сгенерировано: 2026-03-05
+Сгенерировано: 2026-03-06
 Файлов в разделе: 38
 ---
 
@@ -207,7 +207,7 @@ alerts:
 ---
 title: Dedicated performance profile configuration
 source: https://www.dynatrace.com/docs/ingest-from/extensions/advanced-configuration/dedicated-performance-profile
-scraped: 2026-03-05T21:40:19.875621
+scraped: 2026-03-06T21:29:41.296118
 ---
 
 # Dedicated performance profile configuration
@@ -383,7 +383,7 @@ To configure the ActiveGate for the dedicated performance profile
 ---
 title: Extension Execution Controller custom configuration
 source: https://www.dynatrace.com/docs/ingest-from/extensions/advanced-configuration/eec-custom-configuration
-scraped: 2026-03-03T21:29:19.476090
+scraped: 2026-03-06T21:29:48.202555
 ---
 
 # Extension Execution Controller custom configuration
@@ -517,7 +517,7 @@ Only Dynatrace extensions can be elevated, while custom ones cannot. In case an 
 ---
 title: Customize data with extensions
 source: https://www.dynatrace.com/docs/ingest-from/extensions/advanced-configuration/extension-customize
-scraped: 2026-03-05T21:37:30.191667
+scraped: 2026-03-06T21:33:40.035225
 ---
 
 # Customize data with extensions
@@ -1535,7 +1535,7 @@ type: gauge_statcounter
 ---
 title: JMX data source
 source: https://www.dynatrace.com/docs/ingest-from/extensions/develop-your-extensions/data-sources/jmx
-scraped: 2026-03-03T21:23:39.820369
+scraped: 2026-03-06T21:36:35.777912
 ---
 
 # JMX data source
@@ -1757,7 +1757,7 @@ See [Prometheus data source reference](/docs/ingest-from/extensions/develop-your
 ---
 title: Dynatrace Extensions Python SDK
 source: https://www.dynatrace.com/docs/ingest-from/extensions/develop-your-extensions/data-sources/python
-scraped: 2026-03-05T21:35:42.966916
+scraped: 2026-03-06T21:32:00.044917
 ---
 
 # Dynatrace Extensions Python SDK
@@ -1767,7 +1767,7 @@ scraped: 2026-03-05T21:35:42.966916
 * Latest Dynatrace
 * Reference
 * 1-min read
-* Published Jan 18, 2024
+* Updated on Mar 04, 2026
 
 The Dynatrace Extensions Python SDK provides you with a framework to ingest data into Dynatrace from any technology exposing an interface.
 
@@ -1781,6 +1781,9 @@ This SDK offers:
 Dynatrace Extensions Python SDK is publicly available with [OneAgent 1.285](/docs/whats-new/oneagent/sprint-285#custom-coded-python-extensions "Release notes for Dynatrace OneAgent version 1.285").
 
 Set the filesystem flag to `exec` and not `noexec` to ensure a Python extension runs correctly. This configuration is crucial because it allows the execution of binaries and scripts within the specified filesystem. The extension can't execute properly without this setting, leading to potential errors and failures.
+
+Python 3.10 reaches end of life in October 2026. For extensions built with the Dynatrace Extensions Python SDK, the build command must use `--python-version 3.14`.
+For more information, see the [build command guideï»¿](https://github.com/dynatrace-extensions/dt-extensions-python-sdk/blob/main/docs/guides/building.rst).
 
 For more information, see:
 
@@ -1965,7 +1968,7 @@ For example, the SNMP devices used in our tests were equipped with 20 communicat
 ---
 title: IBM Database monitoring configuration
 source: https://www.dynatrace.com/docs/ingest-from/extensions/develop-your-extensions/data-sources/sql/ibm-monitoring
-scraped: 2026-03-01T21:22:01.725094
+scraped: 2026-03-06T21:36:39.137980
 ---
 
 # IBM Database monitoring configuration
@@ -2304,7 +2307,7 @@ Replace `<ActiveGate-group-name>` with the actual name.
 ---
 title: JDBC monitoring configuration
 source: https://www.dynatrace.com/docs/ingest-from/extensions/develop-your-extensions/data-sources/sql/jdbc-monitoring
-scraped: 2026-03-04T21:34:28.732598
+scraped: 2026-03-06T21:35:03.651720
 ---
 
 # JDBC monitoring configuration
@@ -3530,7 +3533,7 @@ Resource consumption depends on the number of Oracle endpoints. The first endpoi
 ---
 title: PostgreSQL monitoring configuration
 source: https://www.dynatrace.com/docs/ingest-from/extensions/develop-your-extensions/data-sources/sql/postgresql-monitoring
-scraped: 2026-03-04T21:28:13.759442
+scraped: 2026-03-06T21:27:55.570675
 ---
 
 # PostgreSQL monitoring configuration
@@ -3923,7 +3926,7 @@ Replace `<ActiveGate-group-name>` with the actual name.
 ---
 title: SAP Hana Database monitoring configuration
 source: https://www.dynatrace.com/docs/ingest-from/extensions/develop-your-extensions/data-sources/sql/sap-hana-monitoring
-scraped: 2026-03-05T21:32:15.900936
+scraped: 2026-03-06T21:36:59.952480
 ---
 
 # SAP Hana Database monitoring configuration
@@ -5552,7 +5555,7 @@ The monitoring configuration format depends on the database provider. For more i
 ---
 title: SQL data source
 source: https://www.dynatrace.com/docs/ingest-from/extensions/develop-your-extensions/data-sources/sql
-scraped: 2026-03-03T21:27:51.080871
+scraped: 2026-03-06T21:31:46.228065
 ---
 
 # SQL data source
@@ -5814,7 +5817,7 @@ For more information, see [Setting Up a Fixed Port for WMIï»¿](https://docs.m
 ---
 title: Extension YAML file
 source: https://www.dynatrace.com/docs/ingest-from/extensions/develop-your-extensions/extension-yaml
-scraped: 2026-03-03T21:25:55.559920
+scraped: 2026-03-06T21:35:32.192927
 ---
 
 # Extension YAML file
@@ -6424,7 +6427,7 @@ Save the `root.pem` certificate file in the following location:
 ---
 title: Develop your own Extensions
 source: https://www.dynatrace.com/docs/ingest-from/extensions/develop-your-extensions
-scraped: 2026-03-05T21:23:53.677968
+scraped: 2026-03-06T21:24:25.042127
 ---
 
 # Develop your own Extensions
@@ -6501,7 +6504,7 @@ Find solutions to common issues with our expert-written troubleshooting articles
 ---
 title: Manage Extensions
 source: https://www.dynatrace.com/docs/ingest-from/extensions/manage-extensions
-scraped: 2026-03-05T21:23:55.499981
+scraped: 2026-03-06T21:24:23.338562
 ---
 
 # Manage Extensions
@@ -7008,7 +7011,7 @@ Explore ![Extensions](https://dt-cdn.net/images/dynatrace-extensions-256-9cb05e0
 ---
 title: Manage SNMP extensions
 source: https://www.dynatrace.com/docs/ingest-from/extensions/supported-extensions/data-sources/snmp
-scraped: 2026-03-05T21:21:48.687703
+scraped: 2026-03-06T21:16:12.258749
 ---
 
 # Manage SNMP extensions
@@ -7251,7 +7254,7 @@ The extension activation wizard contains a dynamically updated JSON payload with
 ---
 title: Manage Microsoft SQL Server extensions
 source: https://www.dynatrace.com/docs/ingest-from/extensions/supported-extensions/data-sources/sql/microsoft-sql
-scraped: 2026-03-05T21:21:50.401695
+scraped: 2026-03-06T21:16:10.453218
 ---
 
 # Manage Microsoft SQL Server extensions
@@ -7343,7 +7346,7 @@ The extension activation wizard contains a dynamically updated JSON payload with
 ---
 title: Manage MySQL extensions
 source: https://www.dynatrace.com/docs/ingest-from/extensions/supported-extensions/data-sources/sql/mysql
-scraped: 2026-03-03T21:30:10.333591
+scraped: 2026-03-06T21:36:51.298927
 ---
 
 # Manage MySQL extensions
@@ -7437,7 +7440,7 @@ The extension activation wizard contains a dynamically updated JSON payload with
 ---
 title: Manage Oracle Database extensions
 source: https://www.dynatrace.com/docs/ingest-from/extensions/supported-extensions/data-sources/sql/oraclesql
-scraped: 2026-03-05T21:21:53.798989
+scraped: 2026-03-06T21:16:43.613643
 ---
 
 # Manage Oracle Database extensions
@@ -7848,7 +7851,7 @@ The extension activation wizard contains a dynamically updated JSON payload with
 ---
 title: Manage WMI extensions
 source: https://www.dynatrace.com/docs/ingest-from/extensions/supported-extensions/data-sources/wmi
-scraped: 2026-03-05T21:21:58.879722
+scraped: 2026-03-06T21:16:41.961961
 ---
 
 # Manage WMI extensions
@@ -7966,7 +7969,7 @@ Type to filter
 ---
 title: Understand extensions data sources
 source: https://www.dynatrace.com/docs/ingest-from/extensions/supported-extensions/data-sources
-scraped: 2026-03-05T21:38:46.506347
+scraped: 2026-03-06T21:36:47.888698
 ---
 
 # Understand extensions data sources
@@ -8041,7 +8044,7 @@ This is especially useful when you need to interact with custom APIs, proprietar
 ---
 title: Explore supported Extensions
 source: https://www.dynatrace.com/docs/ingest-from/extensions/supported-extensions
-scraped: 2026-03-05T21:23:51.980729
+scraped: 2026-03-06T21:24:21.522966
 ---
 
 # Explore supported Extensions
@@ -8086,7 +8089,7 @@ With ![Extensions](https://dt-cdn.net/images/dynatrace-extensions-256-9cb05e0f55
 ---
 title: Extensions
 source: https://www.dynatrace.com/docs/ingest-from/extensions
-scraped: 2026-03-05T21:14:31.139528
+scraped: 2026-03-06T21:12:40.260899
 ---
 
 # Extensions

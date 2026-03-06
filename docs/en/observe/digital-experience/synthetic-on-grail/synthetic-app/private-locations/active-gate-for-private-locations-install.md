@@ -1,7 +1,7 @@
 ---
 title: Install a Synthetic-enabled ActiveGate
 source: https://www.dynatrace.com/docs/observe/digital-experience/synthetic-on-grail/synthetic-app/private-locations/active-gate-for-private-locations-install
-scraped: 2026-03-05T21:36:15.724434
+scraped: 2026-03-06T21:27:09.113702
 ---
 
 # Install a Synthetic-enabled ActiveGate

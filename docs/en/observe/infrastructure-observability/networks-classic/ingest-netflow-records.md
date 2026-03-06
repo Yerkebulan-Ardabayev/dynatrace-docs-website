@@ -1,13 +1,14 @@
 ---
 title: Ingest NetFlow records into Dynatrace
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/networks-classic/ingest-netflow-records
-scraped: 2026-03-03T21:29:33.431117
+scraped: 2026-03-06T21:25:43.577365
 ---
 
 # Ingest NetFlow records into Dynatrace
 
 # Ingest NetFlow records into Dynatrace
 
+* Classic
 * How-to guide
 * 2-min read
 * Updated on Jan 19, 2026

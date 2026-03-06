@@ -1,7 +1,7 @@
 ---
 title: AWS Service Catalog monitoring
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-service-catalog
-scraped: 2026-03-04T21:35:31.210023
+scraped: 2026-03-06T21:27:21.439236
 ---
 
 # AWS Service Catalog monitoring

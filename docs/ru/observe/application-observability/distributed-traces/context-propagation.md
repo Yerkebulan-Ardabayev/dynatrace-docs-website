@@ -1,13 +1,14 @@
 ---
 title: Span and trace context propagation in Distributed Traces Classic
 source: https://www.dynatrace.com/docs/observe/application-observability/distributed-traces/context-propagation
-scraped: 2026-03-02T21:31:25.377278
+scraped: 2026-03-06T21:33:01.027497
 ---
 
 # Span and trace context propagation in Distributed Traces Classic
 
 # Span and trace context propagation in Distributed Traces Classic
 
+* Classic
 * Explanation
 * 2-min read
 * Published Feb 02, 2026

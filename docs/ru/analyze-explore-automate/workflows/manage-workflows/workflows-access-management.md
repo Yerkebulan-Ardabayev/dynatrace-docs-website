@@ -1,7 +1,7 @@
 ---
 title: Access workflow management functionality
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/manage-workflows/workflows-access-management
-scraped: 2026-03-05T21:35:20.581252
+scraped: 2026-03-06T21:30:23.206905
 ---
 
 # Access workflow management functionality

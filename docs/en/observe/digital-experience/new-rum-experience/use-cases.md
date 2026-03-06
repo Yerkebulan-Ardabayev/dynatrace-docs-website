@@ -1,7 +1,7 @@
 ---
 title: Use cases for the New RUM Experience
 source: https://www.dynatrace.com/docs/observe/digital-experience/new-rum-experience/use-cases
-scraped: 2026-03-03T21:30:01.694248
+scraped: 2026-03-06T21:28:05.793494
 ---
 
 # Use cases for the New RUM Experience
