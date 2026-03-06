@@ -1,247 +1,249 @@
 ---
-title: Встроенные стартовые разговоры
+title: Embedded conversation starters
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/copilot/chat-with-davis-copilot/copilot-conv-starters
-scraped: 2026-03-03T21:32:11.784815
+scraped: 2026-03-06T21:35:59.966349
 ---
 
-# Встроенные стартовые разговоры
+# Embedded conversation starters
 
-# Встроенные стартовые разговоры
+# Embedded conversation starters
 
-* Последнее Dynatrace
-* Справка
-* 1-минутное чтение
-* Обновлено 30 января 2026 г.
+* Latest Dynatrace
+* Reference
+* 1-min read
+* Updated on Jan 30, 2026
 
-Приложения Dynatrace, такие как ![Kubernetes (новое)](https://dt-cdn.net/images/kubernetes-new-1024-45d3de15d1.webp "Kubernetes (новое)") **Kubernetes**, ![Уязвимости](https://dt-cdn.net/images/vulnerabilities-highresolution-1025-9279da9743.png "Уязвимости") **Уязвимости**, ![Угрозы и эксплуатация](https://dt-cdn.net/images/attacks-512-b922840b12.png "Угрозы и эксплуатация") **Угрозы и эксплуатация**, ![xSPM](https://dt-cdn.net/images/security-posture-management-highresolution-1024-83a748ecdd.png "xSPM") **Управление безопасностью**, ![Базы данных](https://dt-cdn.net/images/dynatrace-database-256-1afe08286e.webp "Базы данных") **Базы данных**, и ![Проблемы - новое](https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp "Проблемы - новое") **Проблемы** позволяют запустить предварительно определенный, контекстный запрос Dynatrace Assist для увеличения производительности и эффективности разговора.
+Dynatrace applications like ![Kubernetes (new)](https://dt-cdn.net/images/kubernetes-new-1024-45d3de15d1.webp "Kubernetes (new)") **Kubernetes**, ![Vulnerabilities](https://dt-cdn.net/images/vulnerabilities-highresolution-1025-9279da9743.png "Vulnerabilities") **Vulnerabilities**, ![Threats & Exploits](https://dt-cdn.net/images/attacks-512-b922840b12.png "Threats & Exploits") **Threats & Exploits**, ![xSPM](https://dt-cdn.net/images/security-posture-management-highresolution-1024-83a748ecdd.png "xSPM") **Security Posture Management**, ![Databases](https://dt-cdn.net/images/dynatrace-database-256-1afe08286e.webp "Databases") **Databases**, and ![Problems app - new](https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp "Problems app - new") **Problems** allow you to trigger a predefined, contextual Dynatrace Assist prompt to increase your productivity and conversation efficiency.
 
-## Предварительные условия
+## Prerequisites
 
-Чтобы получить доступ к интеграциям приложений, убедитесь в следующем:
+To access the application integrations, ensure the following:
 
-* Dynatrace Intelligence генеративный ИИ включен на уровне окружения. Для подробностей см. [Включение Dynatrace Intelligence генеративного ИИ в вашем окружении](/docs/dynatrace-intelligence/copilot/copilot-getting-started#enable-davis-copilot "Узнайте, как настроить Dynatrace Intelligence генеративный ИИ.").
-* У вас есть разрешения на доступ к навыку рекомендаций разговора. Для подробностей см. [Разрешения пользователей](/docs/dynatrace-intelligence/copilot/copilot-getting-started#davis-copilot-user-permissions "Узнайте, как настроить Dynatrace Intelligence генеративный ИИ.").
+* Dynatrace Intelligence generative AI has been enabled on the environment level. For details, see [Enable Dynatrace Intelligence generative AI on your environment](/docs/dynatrace-intelligence/copilot/copilot-getting-started#enable-davis-copilot "Learn how to set up Dynatrace Intelligence agentic and generative AI.").
+* You have permissions to access the conversational recommender skill. For details, see [User permissions](/docs/dynatrace-intelligence/copilot/copilot-getting-started#davis-copilot-user-permissions "Learn how to set up Dynatrace Intelligence agentic and generative AI.").
 
-## Dynatrace Assist в Kubernetes
+## Dynatrace Assist in Kubernetes
 
-Вы можете быстро получить объяснение любых сигналов предупреждения с помощью генеративного ИИ в Kubernetes, работающего на основе **Dynatrace Assist**. Это позволяет получить представление о подробностях события, типичных коренных причинах и общих шагах по исправлению без прямого доступа к документации или другим источникам, связанным с Dynatrace.
+You can quickly get an explanation of any warning signals with Generative AI in Kubernetes, powered by  **Dynatrace Assist**. This allows you to get insights into the event details, typical root causes, and common remediation steps without accessing the documentation or other Dynatrace-related sources directly.
 
-Чтобы получить доступ к этой функциональности:
+To access this functionality:
 
-1. Перейдите на любую страницу списка в приложении Kubernetes (например, кластеры, узлы, пространства имен или рабочие нагрузки).
-2. Выберите любой сигнал предупреждения, а затем выберите **Объяснить сигнал предупреждения**.
-3. **Dynatrace Assist** откроется и автоматически выполнит предварительно определенный запрос.
-4. Генеративный ИИ предоставит ответ, в котором будут подробно описаны:
+1. Navigate to any list page in the Kubernetes app (such as Clusters, Nodes, Namespaces, or Workloads).
+2. Select any warning signal, and then select **Explain warning signal**.
+3. **Dynatrace Assist** will open and auto-execute the predefined prompt.
+4. Generative AI will provide a response that details:
 
-   * Общее объяснение события.
-   * Типичные коренные причины события, начиная с наиболее распространенных.
-   * Общие шаги по исправлению для каждой из коренных причин.
+   * A general explanation about the event.
+   * Typical root causes for the event, starting with the most common ones.
+   * Common remediation steps for each of the root causes.
 
-## Dynatrace Assist в Уязвимостях
+## Dynatrace Assist in Vulnerabilities
 
-Dynatrace Intelligence генеративный ИИ предоставляет объяснения уязвимостей для поддержки понимания и исправления.
+Dynatrace Intelligence generative AI provides explanations of vulnerabilities to support understanding and remediation.
 
-Чтобы получить доступ к функциональности
+To access the functionality
 
-1. В [![Уязвимости](https://dt-cdn.net/images/vulnerabilities-highresolution-1025-9279da9743.png "Уязвимости") **Уязвимости**](/docs/secure/vulnerabilities "Приоритизируйте и эффективно управляйте уязвимостями в ваших контролируемых окружениях.") выберите уязвимость.
-2. В правом верхнем углу панели подробностей уязвимости выберите **Объяснить уязвимость**.
+1. In [![Vulnerabilities](https://dt-cdn.net/images/vulnerabilities-highresolution-1025-9279da9743.png "Vulnerabilities") **Vulnerabilities**](/docs/secure/vulnerabilities "Prioritize and efficiently manage vulnerabilities in your monitored environments."), select a vulnerability.
+2. In the upper-right corner of the vulnerability details pane, select  **Explain vulnerability**.
 
-Генеративный ИИ предоставит ответ, в котором будут подробно описаны:
+Generative AI will provide a response that details:
 
-* Описание уязвимости и ее основной причины
-* Потенциальное воздействие и условия, при которых она может быть эксплуатирована
-* Затронутые библиотеки, службы или местоположения кода
-* Релевантные точки входа или пути выполнения
-* Рекомендуемые действия по исправлению, такие как обновления библиотек или изменения конфигурации
+* A description of the vulnerability and its underlying cause
+* The potential impact and conditions under which it may be exploited
+* The affected libraries, services, or code locations
+* Relevant entry points or execution paths
+* Recommended remediation actions, such as library upgrades or configuration changes
 
-Структура и уровень детализации варьируются в зависимости от типа уязвимости и доступного контекста. Объяснения адаптированы к характеристикам каждой уязвимости для поддержки оценки и исправления.
+The structure and level of detail vary depending on the vulnerability type and the available context. Explanations are tailored to the characteristics of each vulnerability to support assessment and remediation.
 
-## Dynatrace Assist в Угрозах и эксплуатации
+## Dynatrace Assist in Threats & Exploits
 
-Dynatrace Intelligence генеративный ИИ может предоставить контекстные, понятные объяснения результатов обнаружения для ускорения понимания и реагирования.
+Dynatrace Intelligence generative AI can provide contextual, plain-language explanations of detection findings to accelerate understanding and response.
 
-Чтобы получить доступ к функциональности
+To access the functionality
 
-1. В [![Угрозы и эксплуатация](https://dt-cdn.net/images/attacks-512-b922840b12.png "Угрозы и эксплуатация") **Угрозы и эксплуатация**](/docs/secure/threats-and-exploits "Понимайте, классифицируйте и исследуйте результаты обнаружения и оповещения.") выберите результат.
-2. В правом верхнем углу панели подробностей результата выберите **Объяснить результат**.
+1. In [![Threats & Exploits](https://dt-cdn.net/images/attacks-512-b922840b12.png "Threats & Exploits") **Threats & Exploits**](/docs/secure/threats-and-exploits "Understand, triage, and investigate detection findings and alerts."), select a finding.
+2. In the upper-right corner of the finding details pane, select  **Explain finding**.
 
-Генеративный ИИ предоставит ответ, в котором будут подробно описаны:
+Generative AI will provide a response that details:
 
-* Описание угрозы или эксплуатации и ее основные условия
-* Потенциальное воздействие и вероятность эксплуатации
-* Затронутые сущности и релевантные пути атаки
-* Индикаторы, которые способствуют оценке угрозы
-* Рекомендуемые действия для снижения уязвимости или проверки результата
+* A description of the threat or exploit and its underlying conditions
+* The potential impact and likelihood of exploitation
+* The affected entities and relevant attack paths
+* Indicators that contribute to the threat assessment
+* Recommended actions to reduce exposure or validate the finding
 
-Структура и уровень детализации варьируются в зависимости от типа угрозы, доступного контекста и характера эксплуатации. Объяснения адаптированы к характеристикам каждого результата для поддержки оценки и реагирования.
+The structure and level of detail vary depending on the threat type, available context, and the nature of the exploit. Explanations are tailored to the characteristics of each insight to support evaluation and response.
 
-## Dynatrace Assist в Управлении безопасностью
+## Dynatrace Assist in Security Posture Management
 
-Dynatrace Intelligence генеративный ИИ предоставляет объяснения оценок конфигурации для поддержки понимания результатов соответствия и неправильной конфигурации.
+Dynatrace Intelligence generative AI provides explanations of configuration assessments to support understanding of compliance findings and misconfigurations.
 
-Чтобы получить доступ к функциональности
+To access the functionality
 
-1. В [![xSPM](https://dt-cdn.net/images/security-posture-management-highresolution-1024-83a748ecdd.png "xSPM") **Управление безопасностью**](/docs/secure/xspm "Обнаруживайте, управляйте и принимайте меры по результатам безопасности и соответствия.") на странице **Результаты оценки** выберите правило.
-2. На вкладке **Оцененные ресурсы** выберите **Объяснить оценку**.
+1. In [![xSPM](https://dt-cdn.net/images/security-posture-management-highresolution-1024-83a748ecdd.png "xSPM") **Security Posture Management**](/docs/secure/xspm "Detect, manage, and take action on security and compliance findings."), on the **Assessment results** page, select a rule.
+2. On the **Assessed resources** tab, select  **Explain assessment**.
 
-Генеративный ИИ предоставит ответ, в котором будут подробно описаны:
+Generative AI will provide a response that details:
 
-* Намерение и требования правила конфигурации
-* Конкретные значения конфигурации, которые привели к неудаче оценки
-* Потенциальные риски безопасности или операционные риски, связанные с неправильной конфигурацией
-* Затронутые ресурсы
-* Рекомендуемые шаги по исправлению или корректировке конфигурации
+* The intent and requirements of the configuration rule
+* The specific configuration values that caused the assessment to fail
+* The potential security or operational risks associated with the misconfiguration
+* The affected resources
+* Recommended remediation steps or configuration adjustments
 
-Структура и уровень детализации варьируются в зависимости от типа правила, доступных данных конфигурации и того, является ли оценка автоматической или ручной. Объяснения адаптированы к характеристикам каждого правила для поддержки оценки и исправления.
+The structure and level of detail vary depending on the rule type, the available configuration data, and whether the assessment is automated or manual. Explanations are tailored to the characteristics of each rule to support evaluation and remediation.
 
-## Dynatrace Assist в Базах данных
+## Dynatrace Assist in Databases
 
-В **Базах данных** ![Базы данных](https://dt-cdn.net/images/dynatrace-database-256-1afe08286e.webp "Базы данных") Dynatrace Intelligence генеративный ИИ может предоставить объяснения планов выполнения, разбивку релевантных подробностей и рекомендации по улучшению производительности оператора.
+In **Databases** ![Databases](https://dt-cdn.net/images/dynatrace-database-256-1afe08286e.webp "Databases"), Dynatrace Intelligence generative AI can provide natural language explanations of execution plans, breakdowns of relevant details, and recommendations on how to improve statement performance.
 
-Планы выполнения запросов предоставляют подробную информацию о том, как база данных будет выполнять запрос SQL. Хотя эти планы предоставляют сырые данные о том, как улучшить производительность запроса и снизить потребление ресурсов, они требуют экспертных знаний для чтения и интерпретации. С помощью интеграции генеративного ИИ непрофессиональные пользователи баз данных, такие как разработчики, получают знания, необходимые для оптимизации производительности приложения и использования базы данных.
+Query execution plans provide detailed information on how a database will execute an SQL query. While these provide the raw data on how to improve query performance and reduce resource consumption, they require expert knowledge to read and interpret. With the Generative AI integration, non-expert database users, such as developers, gain the knowledge they need to optimize their application performance and database utilization.
 
-Чтобы суммировать план выполнения с помощью генеративного ИИ:
+To summarize an execution plan with Generative AI:
 
-1. В **Базах данных** ![Базы данных](https://dt-cdn.net/images/dynatrace-database-256-1afe08286e.webp "Базы данных") перейдите в **Обозреватель**.
-2. В правом столбце выберите значок производительности оператора.
-3. Разверните оператор, который вы хотите улучшить. Если план выполнения еще не доступен, вы можете запросить его.
-4. Выберите вкладку **План выполнения** и выберите **Суммировать план выполнения**.
-5. **Dynatrace Assist** откроется и автоматически выполнит предварительно определенный запрос.
-6. Генеративный ИИ предоставит ответ с информацией о выбранном плане выполнения базы данных.
+1. In **Databases** ![Databases](https://dt-cdn.net/images/dynatrace-database-256-1afe08286e.webp "Databases"), go to **Explorer**.
+2. In the rightmost column, select the  statement performance icon.
+3. Expand the statement you would like to improve. If an execution plan is not already available, you can request one.
+4. Select the **Execution plan** tab, and select  **Summarize execution plan**.
+5. **Dynatrace Assist** will open and auto-execute the predefined prompt.
+6. Generative AI will provide a response with insight on the selected database execution plan.
 
-## Dynatrace Assist в Проблемах
+## Dynatrace Assist in Problems
 
-В **Проблемах** ![Проблемы - новое](https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp "Проблемы - новое") Dynatrace Intelligence генеративный ИИ может предоставить четкие суммирования проблем, их коренных причин и предложенных шагов по исправлению. Генеративный ИИ объясняет отдельные проблемы на ясном языке со страницы подробностей проблемы и может выполнить сравнительный анализ, когда несколько проблем выбраны из списка. Это помогает выявить общие коренные причины и предложить корректирующие шаги без привлечения команды экспертов или ожидания критических сведений.
+In **Problems** ![Problems app - new](https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp "Problems app - new"), Dynatrace Intelligence generative AI can provide clear summaries of problems, their root causes, and the suggested remediation steps. Generative AI explains individual issues in clear language from the problem details page and can perform a comparative analysis when multiple problems are selected from the list view. This helps you identify common root causes and propose corrective steps without relying on a team of experts or waiting for critical insights.
 
-Чтобы объяснить одну проблему с помощью генеративного ИИ
+To explain a single problem with Generative AI
 
-1. Перейдите на любую страницу подробностей проблемы.
-2. Выберите **Объяснить** в правом верхнем углу страницы.
-3. **Dynatrace Assist** откроется и автоматически выполнит предварительно определенный запрос.
-4. Генеративный ИИ предоставит ответ, в котором будут подробно описаны:
+1. Navigate to any problem detail page.
+2. Select  **Explain** in the upper-right corner of the page.
+3. **Dynatrace Assist** will open and auto-execute the predefined prompt.
+4. Generative AI will provide a response that details:
 
-   * Объяснение того, что произошло.
-   * Почему проблема возникла.
-   * Действенные шаги по исправлению проблемы.
+   * An explanation of what happened.
+   * Why the problem occurred.
+   * Actionable steps to remediate the problem.
 
-Чтобы объяснить несколько проблем с помощью генеративного ИИ
+To explain multiple problems with Generative AI
 
-1. Перейдите на страницу списка проблем.
-2. Выберите до 5 проблем.
-3. Выберите **Объяснить** выше таблицы.
-4. **Dynatrace Assist** откроется и автоматически выполнит предварительно определенный запрос.
-5. Генеративный ИИ предоставит ответ, в котором будут подробно описаны:
+1. Navigate to the problem list page.
+2. Select up to 5 problems.
+3. Select  **Explain** above the table.
+4. **Dynatrace Assist** will open and auto-execute the predefined prompt.
+5. Generative AI will provide a response that details:
 
-   * Объяснение каждой проблемы и почему она возникла
-   * Действенные шаги по исправлению проблемы
-   * Любые отношения между проблемами
+   * An explanation of each problem and why it occurred
+   * Actionable steps to remediate the problem
+   * Any relationship between the problems
 
-## Dynatrace Assist в Панелях управления
-
-Вы можете использовать возможности DQL, чтобы интегрировать **Dynatrace Assist** в ваши [![Панели приборов](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Панели приборов") **Панели приборов**](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new "Создайте интерактивные, настраиваемые представления для визуализации, анализа и обмена данными наблюдаемости в режиме реального времени.") плитки.
-
-Добавив команды `| fieldsAdd prompt` и `| fieldsAdd execute`, вы можете предварительно определить и автоматически выполнить подсказки в **Dynatrace Assist**, что позволит вам быстро получить объяснение результатов запроса или получить предложения по улучшению запроса или решению проблемы.
-
-Вы также можете предоставить дополнительную информацию **Dynatrace Assist** через дополнительный контекст, добавив следующее:
-
-```
-| parse "{\"result\":[{\"type\":\"supplementary\", \"value\":\"Символ `*` часто представляет собой чувствительные данные, которые были замаскированы\"}]}", "LD JSON_ARRAY:contexts"
+## Dynatrace Assist in Dashboards
 
 
 
-// или для динамического контекста
-```
+You can use the power of DQL to integrate  **Dynatrace Assist** into your [![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.") tiles.
 
-Хотя дополнительный контекст скрыт в интерфейсе чата, он может помочь генеративному ИИ предоставить лучшие ответы для вашего случая. Например, вы можете попросить **Dynatrace Assist** использовать информацию из определенного поля при ответе на вашу подсказку:
+By adding `| fieldsAdd prompt` and `| fieldsAdd execute` commands, you can predefine and auto-execute prompts in  **Dynatrace Assist**, allowing you to quickly get an explanation about the query results, or receive suggestions on how to improve the query or resolve a problem.
+
+You can also provide additional information to  **Dynatrace Assist** via the supplementary context by adding the following:
 
 ```
-| fieldsAdd supplementaryContext = concat("{\"result\":[{\"type\":\"supplementary\", \"value\":\"Используйте следующую информацию для ответа на вопрос: ", record.summary, "\"}]}")
+| parse "{\"result\":[{\"type\":\"supplementary\", \"value\":\"The character`*` often represents sensitive data that has been masked\"}]}", "LD JSON_ARRAY:contexts"
+
+
+
+// or for a dynamic context
+```
+
+While the supplementary context is hidden in the chat UI, it can help Generative AI provide better answers for your use case. For example, you can ask  **Dynatrace Assist** to use information from a certain field when answering your prompt:
+
+```
+| fieldsAdd supplementaryContext = concat("{\"result\":[{\"type\":\"supplementary\", \"value\":\"Use the following info to answer the question: ", record.summary, "\"}]}")
 
 
 
 | parse supplementaryContext , "LD JSON_ARRAY:contexts"
 ```
 
-Чтобы интегрировать **Dynatrace Assist** в ваши [![Панели приборов](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Панели приборов") **Панели приборов**](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new "Создайте интерактивные, настраиваемые представления для визуализации, анализа и обмена данными наблюдаемости в режиме реального времени.") плитки
+To integrate  **Dynatrace Assist** into your [![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.") tiles
 
-1. Перейдите в [![Панели приборов](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Панели приборов") **Панели приборов**](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new "Создайте интерактивные, настраиваемые представления для визуализации, анализа и обмена данными наблюдаемости в режиме реального времени.") и откройте панель, которую можно редактировать.
-2. Выберите плитку панели, содержащую запрос DQL.
-3. Выберите **Редактировать**, чтобы открыть меню редактирования справа.
-4. В разделе **DQL** меню редактирования добавьте следующее в ваш стандартный запрос:
+1. Go to [![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.") and open a dashboard you can edit.
+2. Select a dashboard tile that contains a DQL query.
+3. Select  **Edit** to open the edit menu on the right.
+4. In the  **DQL** section of the edit menu, add the following to your standard query:
 
    ```
-   | fieldsAdd prompt = concat("{ваш вопрос}",  your.field.name)
+   | fieldsAdd prompt = concat("{your question}",  your.field.name)
 
 
 
    | fieldsAdd execute = true
    ```
 
-   * Если вы хотите предварительно определить подсказку без автоматического выполнения, удалите `| fieldsAdd execute = true`.
-   * Эта интеграция не работает для запросов с командой `makeTimeseries`.
+   * If you want to predefine the prompt without automatically executing it, remove `| fieldsAdd execute = true`.
+   * This integration doesn't work for queries with the `makeTimeseries` command.
 
-Чтобы открыть интегрированный **Dynatrace Assist**
+To open the integrated  **Dynatrace Assist**
 
-1. Выберите  рядом с выбранным вами полем.
-2. Выберите **Открыть с помощью...** >  **Задать вопрос**.
+1. Select the  next to your chosen field entry.
+2. Select **Open withâ¦** >  **Ask a question**.
 
-Если вы добавили `| fieldsAdd execute = true` в ваш запрос, предварительно определенная подсказка будет выполнена сразу после открытия **Dynatrace Assist**. В противном случае вы сможете изменить или отредактировать подсказку в окне сообщения перед ручным выполнением.
+If you've added `| fieldsAdd execute = true` to your query, the predefined prompt will be executed once you open  **Dynatrace Assist**. Otherwise, you'll be able to change or edit the prompt in the message window before manually executing it.
 
-## Dynatrace Assist в тетрадях
+## Dynatrace Assist in Notebooks
 
-Вы можете использовать возможности DQL, чтобы интегрировать **Dynatrace Assist** в ваши [![Тетради](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Тетради") **Тетради**](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks "Анализируйте, визуализируйте и делитесь идеями из ваших данных наблюдаемости — все в одном совместном, настраиваемом рабочем пространстве.").
+You can use the power of DQL to integrate  **Dynatrace Assist** into your [![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.").
 
-Добавив команды `| fieldsAdd prompt` и `| fieldsAdd execute`, вы можете предварительно определить и автоматически выполнить подсказки в **Dynatrace Assist**, что позволит вам быстро получить объяснение результатов запроса или получить предложения по улучшению запроса или решению проблемы.
+By adding `| fieldsAdd prompt` and `| fieldsAdd execute` commands, you can predefine and auto-execute prompts in  **Dynatrace Assist**, allowing you to quickly get an explanation about the query results, or receive suggestions on how to improve the query or resolve a problem.
 
-Вы также можете предоставить дополнительную информацию **Dynatrace Assist** через дополнительный контекст, добавив следующее:
-
-```
-| parse "{\"result\":[{\"type\":\"supplementary\", \"value\":\"Символ `*` часто представляет собой чувствительные данные, которые были замаскированы\"}]}", "LD JSON_ARRAY:contexts"
-
-
-
-// или для динамического контекста
-```
-
-Хотя дополнительный контекст скрыт в интерфейсе чата, он может помочь генеративному ИИ предоставить лучшие ответы для вашего случая. Например, вы можете попросить **Dynatrace Assist** использовать информацию из определенного поля при ответе на вашу подсказку:
+You can also provide additional information to  **Dynatrace Assist** via the supplementary context by adding the following:
 
 ```
-| fieldsAdd supplementaryContext = concat "{\"result\":[{\"type\":\"supplementary\", \"value\":\"Используйте следующую информацию для ответа на вопрос: ", record.summary, "\"}]}")
+| parse "{\"result\":[{\"type\":\"supplementary\", \"value\":\"The character`*` often represents sensitive data that has been masked\"}]}", "LD JSON_ARRAY:contexts"
+
+
+
+// or for a dynamic context
+```
+
+While the supplementary context is hidden in the chat UI, it can help Generative AI provide better answers for your use case. For example, you can ask  **Dynatrace Assist** to use information from a certain field when answering your prompt:
+
+```
+| fieldsAdd supplementaryContext = concat("{\"result\":[{\"type\":\"supplementary\", \"value\":\"Use the following info to answer the question: ", record.summary, "\"}]}")
 
 
 
 | parse supplementaryContext , "LD JSON_ARRAY:contexts"
 ```
 
-Чтобы интегрировать **Dynatrace Assist** в ваши [![Тетради](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Тетради") **Тетради**](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks "Анализируйте, визуализируйте и делитесь идеями из ваших данных наблюдаемости — все в одном совместном, настраиваемом рабочем пространстве.").
+To integrate  **Dynatrace Assist** into your [![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.")
 
-1. Перейдите в [![Тетради](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Тетради") **Тетради**](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks "Анализируйте, визуализируйте и делитесь идеями из ваших данных наблюдаемости — все в одном совместном, настраиваемом рабочем пространстве.") и откройте тетрадь, которую можно редактировать.
-2. Выберите раздел тетради, содержащий запрос DQL.
-3. Выберите поле запроса и добавьте следующее в ваш стандартный запрос:
+1. Go to [![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.") and open a notebook you can edit.
+2. Select a notebook section that contains a DQL query.
+3. Select the query field and add the following to your standard query:
 
    ```
-   | fieldsAdd prompt = concat("{ваш вопрос}",  your.field.name)
+   | fieldsAdd prompt = concat("{your question}",  your.field.name)
 
 
 
    | fieldsAdd execute = true
    ```
 
-   * Если вы хотите предварительно определить подсказку без автоматического выполнения, удалите `| fieldsAdd execute = true`.
-   * Эта интеграция не работает для запросов с командой `makeTimeseries`.
+   * If you want to predefine the prompt without automatically executing it, remove `| fieldsAdd execute = true`.
+   * This integration doesn't work for queries with the `makeTimeseries` command.
 
-Чтобы открыть интегрированный **Dynatrace Assist**
+To open the integrated  **Dynatrace Assist**
 
-1. Выберите  рядом с выбранным вами полем.
-2. Выберите **Открыть с помощью...** >  **Задать вопрос**.
+1. Select the  next to your chosen field entry.
+2. Select **Open withâ¦** >  **Ask a question**.
 
-Если вы добавили `| fieldsAdd execute = true` в ваш запрос, предварительно определенная подсказка будет выполнена сразу после открытия **Dynatrace Assist**. В противном случае вы сможете изменить или отредактировать подсказку в окне сообщения перед ручным выполнением.
+If you've added `| fieldsAdd execute = true` to your query, the predefined prompt will be executed once you open  **Dynatrace Assist**. Otherwise, you'll be able to change or edit the prompt in the message window before manually executing it.
 
-## Обратная связь
+## Feedback
 
-Если у вас есть какие-либо замечания, вы можете предоставить их直接 в окне чата. Для получения дополнительной информации см. [Оставить обратную связь](/docs/dynatrace-intelligence/copilot/chat-with-davis-copilot#feedback "Задайте вопросы на естественном языке и получите быстрые ответы от Dynatrace Assist, вашего генеративного помощника ИИ.").
+If you have any feedback, you can provide it directly in the chat window. For more information, see [Give feedback](/docs/dynatrace-intelligence/copilot/chat-with-davis-copilot#feedback "Ask questions using natural language and get quick answers from Dynatrace Assist, your generative AI assistant.").
 
-## Связанные темы
+## Related topics
 
-* [Начало работы с Dynatrace Intelligence генеративным ИИ](/docs/dynatrace-intelligence/copilot/copilot-getting-started "Узнайте, как настроить Dynatrace Intelligence генеративный ИИ.")
-* [Часто задаваемые вопросы о Dynatrace Intelligence генеративном ИИ](/docs/dynatrace-intelligence/copilot/copilot-faq "Узнайте о часто задаваемых вопросах и найдите ответы.")
+* [Get started with Dynatrace Intelligence agentic and generative AI](/docs/dynatrace-intelligence/copilot/copilot-getting-started "Learn how to set up Dynatrace Intelligence agentic and generative AI.")
+* [Dynatrace Intelligence agentic and generative AI FAQ](/docs/dynatrace-intelligence/copilot/copilot-faq "Learn about frequently asked questions and find your answers.")

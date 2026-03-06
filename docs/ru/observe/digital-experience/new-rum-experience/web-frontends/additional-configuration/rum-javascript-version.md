@@ -1,7 +1,7 @@
 ---
 title: Control the RUM JavaScript version in the New RUM Experience
 source: https://www.dynatrace.com/docs/observe/digital-experience/new-rum-experience/web-frontends/additional-configuration/rum-javascript-version
-scraped: 2026-03-05T21:38:29.739193
+scraped: 2026-03-06T21:35:12.098693
 ---
 
 # Control the RUM JavaScript version in the New RUM Experience

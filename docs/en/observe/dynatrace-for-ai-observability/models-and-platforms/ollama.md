@@ -1,7 +1,7 @@
 ---
 title: Ollama
 source: https://www.dynatrace.com/docs/observe/dynatrace-for-ai-observability/models-and-platforms/ollama
-scraped: 2026-03-05T21:22:36.443123
+scraped: 2026-03-06T21:14:16.809856
 ---
 
 # Ollama

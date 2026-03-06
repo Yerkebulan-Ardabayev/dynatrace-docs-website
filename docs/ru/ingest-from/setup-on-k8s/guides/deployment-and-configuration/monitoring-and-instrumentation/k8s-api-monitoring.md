@@ -1,7 +1,7 @@
 ---
 title: Kubernetes API Monitoring
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/guides/deployment-and-configuration/monitoring-and-instrumentation/k8s-api-monitoring
-scraped: 2026-03-05T21:22:43.285186
+scraped: 2026-03-06T21:21:58.424568
 ---
 
 # Kubernetes API Monitoring

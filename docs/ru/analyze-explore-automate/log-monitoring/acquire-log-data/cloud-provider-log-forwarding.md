@@ -1,7 +1,7 @@
 ---
 title: Cloud provider log forwarding (Logs Classic)
 source: https://www.dynatrace.com/docs/analyze-explore-automate/log-monitoring/acquire-log-data/cloud-provider-log-forwarding
-scraped: 2026-03-04T21:29:37.296795
+scraped: 2026-03-06T21:30:55.800554
 ---
 
 # Cloud provider log forwarding (Logs Classic)

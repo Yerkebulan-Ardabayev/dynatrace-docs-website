@@ -1,7 +1,7 @@
 ---
 title: Google Cloud Load Balancing monitoring
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new/gcp-cloud-load-balancing-monitoring
-scraped: 2026-03-05T21:31:51.731475
+scraped: 2026-03-06T21:33:09.848966
 ---
 
 # Google Cloud Load Balancing monitoring

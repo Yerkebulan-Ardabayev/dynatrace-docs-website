@@ -1,7 +1,7 @@
 ---
 title: Cost & Carbon Optimization
 source: https://www.dynatrace.com/docs/observe/business-observability/cost-and-carbon-optimization
-scraped: 2026-03-05T21:21:00.342680
+scraped: 2026-03-06T21:14:41.254324
 ---
 
 # Cost & Carbon Optimization
@@ -90,7 +90,7 @@ Check if [Workflows](/docs/analyze-explore-automate/workflows "Automate IT proce
 
 For more information, see [Manage user permissions with IAM policies](/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies "Working with policies") and [Workflow authorization settings](/docs/analyze-explore-automate/workflows/running "Run and monitor workflows created in Dynatrace Workflows.").
 
-## Installation
+### Installation
 
 Make sure the app is [installed in your environment](/docs/manage/hub#install "See the information about Dynatrace Hub.").
 

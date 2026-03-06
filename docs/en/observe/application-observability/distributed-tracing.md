@@ -1,7 +1,7 @@
 ---
 title: Distributed Tracing
 source: https://www.dynatrace.com/docs/observe/application-observability/distributed-tracing
-scraped: 2026-03-05T21:12:23.332363
+scraped: 2026-03-06T21:09:46.417540
 ---
 
 # Distributed Tracing
@@ -61,7 +61,7 @@ storage:smartscape:read
 
 Read smartscape nodes and edges
 
-## Installation
+### Installation
 
 Make sure the app is [installed in your environment](/docs/manage/hub#install "See the information about Dynatrace Hub.").
 

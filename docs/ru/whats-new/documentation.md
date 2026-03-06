@@ -1,7 +1,7 @@
 ---
 title: New Documentation articles
 source: https://www.dynatrace.com/docs/whats-new/documentation
-scraped: 2026-03-05T21:15:09.239778
+scraped: 2026-03-06T21:12:52.465298
 ---
 
 # New Documentation articles
@@ -446,7 +446,7 @@ This page lists all new or significantly changed Dynatrace Documentation topics,
 
 
 
-* [Compliance and resilience](/docs/analyze-explore-automate/compliance-and-resilience "Build resilient IT systems and manage regulatory requirements with compliance and resilience capabilities from Dynatrace.")
+* [Compliance and resilience](/docs/observe/business-observability/compliance-and-resilience "Build resilient IT systems and manage regulatory requirements with compliance and resilience capabilities from Dynatrace.")
 * [Identity and Access Management concepts](/docs/manage/identity-access-management/iam-concepts "Understand the key Identity and Access Management concepts (IAM) areas in Dynatrace")
 * [Identity and Access Management Limits](/docs/manage/identity-access-management/iam-limits "IAM limits for Dynatrace SaaS")
 * [Ingest AWS Security Hub security findings](/docs/secure/threat-observability/security-events-ingest/ingest-aws-security-hub "Ingest AWS Security Hub security findings and analyze them in Dynatrace.")
@@ -485,7 +485,7 @@ This page lists all new or significantly changed Dynatrace Documentation topics,
 
 ## Dec 09, 2024
 
-* [Compliance Assistant](/docs/analyze-explore-automate/compliance-and-resilience/compliance-assistant "Consolidate insights from the Dynatrace observability and security platform in a unified dashboard.")
+* [Compliance Assistant](/docs/observe/business-observability/compliance-assistant "Track, manage, and automate compliance across your IT and business landscape with consolidated observability and security insights.")
 * [Stay compliant with Security Posture Management](/docs/secure/use-cases/stay-compliant "Stay on top of your security measures, policies, and practices.")
 * [Discovery & Coverage app](/docs/ingest-from/discovery-coverage-app "Discover and remediate monitoring coverage gaps at scale.")
 * [Kubernetes Security Posture Management](/docs/ingest-from/setup-on-k8s/deployment/security-posture-management "Configure and enable Security Posture Management in Kubernetes.")

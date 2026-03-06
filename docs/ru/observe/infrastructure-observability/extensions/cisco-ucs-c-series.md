@@ -1,7 +1,7 @@
 ---
 title: Cisco UCS C-Series extension
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/extensions/cisco-ucs-c-series
-scraped: 2026-03-03T21:26:29.755654
+scraped: 2026-03-06T21:36:04.473139
 ---
 
 # Cisco UCS C-Series extension

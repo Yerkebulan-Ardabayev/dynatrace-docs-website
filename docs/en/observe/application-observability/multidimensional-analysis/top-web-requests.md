@@ -1,7 +1,7 @@
 ---
 title: Top web requests
 source: https://www.dynatrace.com/docs/observe/application-observability/multidimensional-analysis/top-web-requests
-scraped: 2026-03-05T21:36:35.471013
+scraped: 2026-03-06T21:33:41.702134
 ---
 
 # Top web requests

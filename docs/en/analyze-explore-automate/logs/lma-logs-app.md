@@ -1,7 +1,7 @@
 ---
 title: Logs app
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-logs-app
-scraped: 2026-03-05T21:12:21.558798
+scraped: 2026-03-06T21:09:41.161992
 ---
 
 # Logs app
@@ -59,7 +59,7 @@ storage:files:read
 
 allow to do joins on the lookup tables
 
-## Installation
+### Installation
 
 Make sure the app is [installed in your environment](/docs/manage/hub#install "See the information about Dynatrace Hub.").
 

@@ -1,6 +1,6 @@
 # Документация Dynatrace: observe/infrastructure-observability
 Язык: Русский (RU)
-Сгенерировано: 2026-03-05
+Сгенерировано: 2026-03-06
 Файлов в разделе: 96
 ---
 
@@ -113,7 +113,7 @@ Tracking of services and dependencies is not limited to Azure. Thanks to Dynatra
 ---
 title: Create a new AWS connection
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/cloud-platform-monitoring/clouds-app/create-aws-connection
-scraped: 2026-03-05T21:23:41.386119
+scraped: 2026-03-06T21:24:56.840993
 ---
 
 # Create a new AWS connection
@@ -161,7 +161,7 @@ To set up a new AWS connection
 ---
 title: Create a new Azure connection
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/cloud-platform-monitoring/clouds-app/create-azure-connection
-scraped: 2026-03-05T21:23:43.035691
+scraped: 2026-03-06T21:24:55.181464
 ---
 
 # Create a new Azure connection
@@ -202,7 +202,7 @@ To set up a new Azure connection
 ---
 title: Clouds app
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/cloud-platform-monitoring/clouds-app
-scraped: 2026-03-05T21:14:29.473055
+scraped: 2026-03-06T21:12:43.905190
 ---
 
 # Clouds app
@@ -637,7 +637,7 @@ To learn how to analyze monitoring results in Dynatrace, see [Cloud Foundry metr
 ---
 title: Monitor container groups
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/container-platform-monitoring/container-groups
-scraped: 2026-03-05T21:20:47.075116
+scraped: 2026-03-06T21:16:48.623627
 ---
 
 # Monitor container groups
@@ -712,7 +712,7 @@ Select  in the upper-right corner of a chart to:
 ---
 title: Container monitoring rules
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/container-platform-monitoring/container-monitoring-rules
-scraped: 2026-03-05T21:20:41.920643
+scraped: 2026-03-06T21:16:57.097581
 ---
 
 # Container monitoring rules
@@ -1388,7 +1388,7 @@ Explorer — это общий интерфейс Dynatrace для монито�
 ---
 title: Alert on common Kubernetes/OpenShift issues
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/alert-on-kubernetes-issues
-scraped: 2026-03-05T21:22:56.176682
+scraped: 2026-03-06T21:22:05.276956
 ---
 
 # Alert on common Kubernetes/OpenShift issues
@@ -1727,7 +1727,7 @@ The following expression returns the number of pending and running pods in the r
 ---
 title: Global default monitoring settings for Kubernetes/OpenShift
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/default-monitoring-settings
-scraped: 2026-03-05T21:22:48.378472
+scraped: 2026-03-06T21:21:49.803705
 ---
 
 # Global default monitoring settings for Kubernetes/OpenShift
@@ -1799,7 +1799,7 @@ To use the default settings when connecting a cluster, the [Connection settings 
 ---
 title: Organize Kubernetes/OpenShift deployments by tags
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/leverage-tags-defined-in-kubernetes-deployments
-scraped: 2026-03-05T21:22:52.948653
+scraped: 2026-03-06T21:21:53.164758
 ---
 
 # Organize Kubernetes/OpenShift deployments by tags
@@ -2112,7 +2112,7 @@ By selecting a specific node, you can access the host details at the top of the 
 ---
 title: Monitor Kubernetes/OpenShift events
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-events-kubernetes
-scraped: 2026-03-05T21:22:50.129346
+scraped: 2026-03-06T21:21:56.612300
 ---
 
 # Monitor Kubernetes/OpenShift events
@@ -2314,7 +2314,7 @@ DDU consumption applies to Kubernetes event monitoring. For details, see [DDUs f
 ---
 title: Istio/Envoy proxy metrics
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-istio-metrics
-scraped: 2026-03-05T21:23:01.195609
+scraped: 2026-03-06T21:21:54.871292
 ---
 
 # Istio/Envoy proxy metrics
@@ -2369,7 +2369,7 @@ Istio monitoring by OneAgent is supported for the classic full-stack, cloud-nati
 ---
 title: Monitor Kubernetes/OpenShift metrics
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-metrics-kubernetes
-scraped: 2026-03-05T21:22:46.714627
+scraped: 2026-03-06T21:22:00.078051
 ---
 
 # Monitor Kubernetes/OpenShift metrics
@@ -2425,7 +2425,7 @@ For a list of all available metrics, see [Workload metrics](/docs/analyze-explor
 ---
 title: Monitor Prometheus metrics
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-prometheus-metrics
-scraped: 2026-03-05T21:22:54.274884
+scraped: 2026-03-06T21:21:44.712888
 ---
 
 # Monitor Prometheus metrics
@@ -3227,7 +3227,7 @@ To troubleshoot Prometheus integration issues, download the [Kubernetes Monitori
 ---
 title: Monitor persistent volume claims on Kubernetes/OpenShift
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-pvc-metrics
-scraped: 2026-03-05T21:22:45.029081
+scraped: 2026-03-06T21:21:48.124731
 ---
 
 # Monitor persistent volume claims on Kubernetes/OpenShift
@@ -3289,7 +3289,7 @@ This feature is available only if your Kubernetes cluster is [connected to a loc
 ---
 title: Monitor Kubernetes/OpenShift services
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-services-kubernetes
-scraped: 2026-03-05T21:22:39.742269
+scraped: 2026-03-06T21:21:46.421691
 ---
 
 # Monitor Kubernetes/OpenShift services
@@ -3368,7 +3368,7 @@ Existing management zones need to be manually updated to cover Kubernetes servic
 ---
 title: Monitor service-level objectives in Kubernetes/OpenShift
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-slos-kubernetes
-scraped: 2026-03-05T21:22:59.527947
+scraped: 2026-03-06T21:22:03.440195
 ---
 
 # Monitor service-level objectives in Kubernetes/OpenShift
@@ -3433,7 +3433,7 @@ If no SLOs are found, you can
 ---
 title: Monitor vulnerabilities in Kubernetes/OpenShift
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-vulnerabilities-kubernetes
-scraped: 2026-03-05T21:22:57.849468
+scraped: 2026-03-06T21:22:01.751523
 ---
 
 # Monitor vulnerabilities in Kubernetes/OpenShift
@@ -3488,7 +3488,7 @@ If you're missing the [security permissions](/docs/secure/application-security#p
 ---
 title: Monitor Kubernetes/OpenShift workloads
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-workloads-kubernetes
-scraped: 2026-03-05T21:22:41.459168
+scraped: 2026-03-06T21:21:51.483367
 ---
 
 # Monitor Kubernetes/OpenShift workloads
@@ -3596,7 +3596,7 @@ You can use management zones to control user access to the monitoring data of sp
 ---
 title: Kubernetes Classic
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring
-scraped: 2026-03-05T21:14:08.897766
+scraped: 2026-03-06T21:11:55.255187
 ---
 
 # Kubernetes Classic
@@ -3695,7 +3695,7 @@ Address Kubernetes issues using out-of-the-box alerting mechanisms.](/docs/obser
 ---
 title: Container platform monitoring
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/container-platform-monitoring
-scraped: 2026-03-05T21:20:45.401432
+scraped: 2026-03-06T21:17:04.380827
 ---
 
 # Container platform monitoring
@@ -3738,7 +3738,7 @@ Monitor Heroku with Dynatrace.](/docs/observe/infrastructure-observability/conta
 ---
 title: Data collected with Dynatrace database monitoring
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/databases/database-app/data-collected
-scraped: 2026-03-05T21:24:21.760131
+scraped: 2026-03-06T21:24:19.816559
 ---
 
 # Data collected with Dynatrace database monitoring
@@ -3848,7 +3848,7 @@ This architecture ensures that monitoring remains lightweight and scalable, even
 ---
 title: Monitor IBM DB2 database
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/databases/database-app/get-started/ibm-db2
-scraped: 2026-03-05T21:36:30.442213
+scraped: 2026-03-06T21:27:36.645522
 ---
 
 # Monitor IBM DB2 database
@@ -3893,7 +3893,7 @@ For complete details, go to the [FAQ](/docs/observe/infrastructure-observability
 ---
 title: Monitor MariaDB database
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/databases/database-app/get-started/mariadb
-scraped: 2026-03-05T21:30:42.803457
+scraped: 2026-03-06T21:31:29.356055
 ---
 
 # Monitor MariaDB database
@@ -4009,7 +4009,7 @@ Check these use case scenarios for more details.
 ---
 title: Monitor MySQL database
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/databases/database-app/get-started/mysql
-scraped: 2026-03-05T21:39:27.938177
+scraped: 2026-03-06T21:32:05.181395
 ---
 
 # Monitor MySQL database
@@ -4089,7 +4089,7 @@ Oracle Database monitoring helps you understand your application's database inte
 ---
 title: Monitor SAP HANA database
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/databases/database-app/get-started/sap-hana
-scraped: 2026-03-05T21:34:34.082981
+scraped: 2026-03-06T21:35:07.028567
 ---
 
 # Monitor SAP HANA database
@@ -4139,7 +4139,7 @@ For complete details, go to the [FAQ](/docs/observe/infrastructure-observability
 ---
 title: Monitor Snowflake database
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/databases/database-app/get-started/snowflake
-scraped: 2026-03-01T21:21:07.524069
+scraped: 2026-03-06T21:37:21.566752
 ---
 
 # Monitor Snowflake database
@@ -4185,7 +4185,7 @@ You can benefit from Snowflake monitoring in these [use cases](/docs/observe/inf
 ---
 title: Get started with database monitoring
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/databases/database-app/get-started
-scraped: 2026-03-05T21:24:20.036990
+scraped: 2026-03-06T21:24:14.737474
 ---
 
 # Get started with database monitoring
@@ -4243,7 +4243,7 @@ Monitor MariaDB instances with performance metrics and query insights.](/docs/ob
 ---
 title: Troubleshooting
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/databases/database-app/troubleshooting
-scraped: 2026-03-04T21:37:17.256646
+scraped: 2026-03-06T21:30:06.945538
 ---
 
 # Troubleshooting
@@ -4261,7 +4261,7 @@ scraped: 2026-03-04T21:37:17.256646
 ---
 title: Databases app
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/databases/database-app
-scraped: 2026-03-05T21:14:33.976269
+scraped: 2026-03-06T21:12:38.609532
 ---
 
 # Databases app
@@ -4809,13 +4809,14 @@ Most often, over-stressed processes start dropping packets when resources are de
 ---
 title: Support for SQL bind variables
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/databases/database-services-classic/support-for-sql-bind-variables
-scraped: 2026-03-02T21:18:39.293456
+scraped: 2026-03-06T21:31:11.357794
 ---
 
 # Support for SQL bind variables
 
 # Support for SQL bind variables
 
+* Classic
 * How-to guide
 * 4-min read
 * Updated on Apr 26, 2023
@@ -5242,7 +5243,7 @@ Monitor the statistics of your Varnish Cache instances.](https://www.dynatrace.c
 ---
 title: Cisco UCS C-Series extension
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/extensions/cisco-ucs-c-series
-scraped: 2026-03-03T21:26:29.755654
+scraped: 2026-03-06T21:36:04.473139
 ---
 
 # Cisco UCS C-Series extension
@@ -5418,7 +5419,7 @@ To estimate annual DDU consumption, multiply the result of the formula above by 
 ---
 title: Cisco UCS M-Series extension
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/extensions/cisco-ucs-m-series
-scraped: 2026-03-05T21:31:42.628223
+scraped: 2026-03-06T21:26:37.150221
 ---
 
 # Cisco UCS M-Series extension
@@ -5606,7 +5607,7 @@ To estimate annual DDU consumption, multiply the result of the formula above by 
 ---
 title: Disk Analytics extension
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/extensions/disk-analytics
-scraped: 2026-03-05T21:28:10.324572
+scraped: 2026-03-06T21:20:11.540618
 ---
 
 # Disk Analytics extension
@@ -5713,7 +5714,7 @@ Gain detailed visibility into Linux host local datastores where OneAgent is inst
 ---
 title: OpenTelemetry Host Monitoring extension
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/extensions/opentelemetry-host-monitoring
-scraped: 2026-03-05T21:34:02.014367
+scraped: 2026-03-06T21:36:13.602335
 ---
 
 # OpenTelemetry Host Monitoring extension
@@ -5722,7 +5723,7 @@ scraped: 2026-03-05T21:34:02.014367
 
 * Latest Dynatrace
 * Extension
-* Updated on Feb 25, 2026
+* Updated on Mar 02, 2026
 
 Generate topology and screens for your OpenTelemetry host data for quicker display and easier analysis of the data.
 
@@ -5732,17 +5733,6 @@ Generate topology and screens for your OpenTelemetry host data for quicker displ
 
 Monitor your hosts with OpenTelemetry using integrated metric visualizations, topology, and alerts. This extension automatically generates entities for hosts and their running processes, presenting telemetry data through intuitive interfaces designed for quick analysis. By correlating metrics, logs, and spans to host and process entities, you gain full context and a comprehensive view of your infrastructure.
 
-### Requirements
-
-This extension depends on the telemetry data that is pushed to Dynatrace from OpenTelemetry, using the [OpenTelemetry Collector](/docs/ingest-from/opentelemetry/collector "Learn about the Dynatrace OTel Collector.").
-
-## Activation and setup
-
-In order to use this extension, you need to:
-
-* [Deploy the OpenTelemetry Collector](/docs/ingest-from/opentelemetry/collector/deployment "How to deploy Dynatrace OTel Collector."), following the instructions for the relevant deployment option.
-* Activate this extension in Dynatrace environment to report on the metrics in context. This extension doesn't need an ActiveGate or a OneAgent.
-
 ### Use cases
 
 * Track performance, health, and availability of OpenTelemetry-monitored infrastructure.
@@ -5750,19 +5740,18 @@ In order to use this extension, you need to:
 * Raise alerts on resource saturation, network errors, and other infrastructure issues.
 * Get a dedicated, pre-configured view for infrastructure monitoring.
 
-This extension uses telemetry data collected by the OpenTelemetry Collector. To monitor the health of your Collectors, see [Collector self-monitoring](/docs/ingest-from/opentelemetry/collector/self-monitoring "How to monitor OpenTelemetry Collectors with Dynatrace dashboards.").
+### Requirements
+
+This extension depends on telemetry data that is pushed to Dynatrace from OpenTelemetry via an [OpenTelemetry Collector](/docs/ingest-from/opentelemetry/collector "Learn about the Dynatrace OTel Collector.").
 
 ## Activation and setup
 
-### Deploy the OpenTelemetry Collector
+1. Deploy the OpenTelemetry Collector.
 
-1. Follow the instructions on the [OpenTelemetry Collector](/docs/ingest-from/opentelemetry/collector/deployment "How to deploy Dynatrace OTel Collector.") to deploy the Collector.
-2. Use the [reference configurationï»¿](https://github.com/Dynatrace/dynatrace-otel-collector/blob/main/config_examples/host-metrics.yaml).
-3. Ensure the Collector is running and telemetry data is reported to Dynatrace correctly.
-
-### Activate the OpenTelemetry Host Monitoring extension
-
-Activate the OpenTelemetry Host Monitoring extension to enable [topology](#topology), [Unified Analysis screens](#screens), and [alert templates](#alert-templates).
+   1. Follow the instructions on the [OpenTelemetry Collector](/docs/ingest-from/opentelemetry/collector/deployment "How to deploy Dynatrace OTel Collector.") to deploy the Collector.
+   2. Use the [reference configurationï»¿](https://github.com/Dynatrace/dynatrace-otel-collector/blob/main/config_examples/host-metrics.yaml).
+   3. Ensure the Collector is running and telemetry data is reported to Dynatrace correctly.
+2. Activate the OpenTelemetry Host Monitoring extension.
 
 ## Details
 
@@ -5770,37 +5759,7 @@ The [OpenTelemetry Collector](/docs/ingest-from/opentelemetry/collector "Learn a
 
 The extension displays telemetry data captured by the OpenTelemetry Collector and provides quick analysis and clear understanding of the data, adding Dynatrace-specific context to all signals (metrics, logs, and spans).
 
-### Topology
-
-This extension automatically generates topology for infrastructure monitored via the OpenTelemetry Collector. Specifically, it creates the following entity types based on metadata extracted from metrics, logs, and traces:
-
-| Entity type | Entity ID |
-| --- | --- |
-| OpenTelemetry Host | dt.entity.otel:host |
-| OpenTelemetry Process | dt.entity.otel:process |
-
-These entities enable Dynatrace to correlate your metrics, logs, and spans and provide unified context across your monitored environment.
-
-#### Enrich application telemetry
-
-If you send your application telemetry to your local host OpenTelemetry Collector, it will automatically enrich the data with the required host attributes so that the signals are correctly attached to the OpenTelemetry Host entity.
-
-To enrich application telemetry with the corresponding process entity, all signals (metrics, logs, and spans) need to have the `process.executable.name` resource attribute. For logs and spans to have this attribute, you need to initialize your OTel SDK with the [process resource detectorï»¿](https://opentelemetry.io/docs/languages/go/resources/).
-If this is not implemented for your technology's OTel SDK, you can always set the `process.executable.name` attribute through the `OTEL_RESOURCE_ATTRIBUTES` [environment variableï»¿](https://opentelemetry.io/docs/specs/otel/configuration/sdk-environment-variables/#general-sdk-configuration).
-
-### Screens
-
-The extension provides screens and dashboards that display entity information, metrics, and more. The data is displayed in a smart and structured way for easier navigation and a clearer understanding of the insights.
-
-To find a list of your OTel hosts and processes, go to ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Infrastructure & Operations** > **Technologies**.
-
-### Alert templates
-
-This extension provides alert templates that you can use to create alerts based on the imported data. To use these templates and set up alerts:
-
-1. Go to ![Extensions](https://dt-cdn.net/images/dynatrace-extensions-256-9cb05e0f55.png "Extensions") **Extensions** > **OpenTelemetry Host Monitoring** > **Extension content**.
-2. Find any alert template you're interested in and select  **New Alert**.
-3. Configure the alert according to the available options.
+For information on how to use the extension within Dynatrace, see [Monitor hosts that send OpenTelemetry data to Dynatrace](/docs/ingest-from/opentelemetry/collector/use-cases/host-monitoring "How to monitor your hosts that use Collectors to send OpenTelemetry data to Dynatrace.").
 
 ### Licensing and cost
 
@@ -5837,7 +5796,7 @@ Generate topology and screens for your OpenTelemetry host data for quicker displ
 ---
 title: Radware Alteon Load Balancer extension
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/extensions/radware-alteon-load-balancer
-scraped: 2026-03-05T21:33:32.329201
+scraped: 2026-03-06T21:31:00.869391
 ---
 
 # Radware Alteon Load Balancer extension
@@ -5906,33 +5865,6 @@ DDUs: `(60 + (8 * Interfaces)) * 525.6 DDUs/year, per device`
 DPS (Metric data points): `(60 + (8 * Interfaces)) * 525,600 metric data points/year, per device`
 
 ## Feature sets
-
-Software\_Status\_SP
-
-| Metric name | Metric key | Description |
-| --- | --- | --- |
-| SP CPU utilization | com.dynatrace.extension.network\_device.sp.cpu\_usage | SP CPU utilization |
-
-Virtual\_Server\_Utilization\_Virtual
-
-| Metric name | Metric key | Description |
-| --- | --- | --- |
-| Virtual server current sessions | radware\_alteon.slbstat.enh.vserver.currsessions | The number of sessions that are currently handled by the virtual server. |
-| Virtual server total sessions | radware\_alteon.slbstat.enh.vserver.totalsessions | The total number of sessions that are handled by the virtual server. |
-| Virtual server highest sessions handled | radware\_alteon.slbstat.enh.vserver.highestsessions | The highest number of sessions that have been handled by the virtual server. |
-| Total octets received and transmitted by the virtual server | radware\_alteon.slbstat.enh.vserver.hc.octets | The total octets received and transmitted by the virtual server. |
-| Sessions handled by the virtual server | radware\_alteon.slbstat.enh.vserver.sessions | Number of Sessions handled by the virtual server per second. |
-| Real server runtime status per virtual server | radware\_alteon.slbstat.enh.vserver.real.status | The runtime Real Server Status per Virtual service. (0)Up, (1)Down, (2)Admin-Down, (3)Warning, (4)Shutdown, (5)Error |
-| Backend server concurrent connections for virtual service | radware\_alteon.commng.enh.perservstats.servconn | The number of concurrent backend server connections for virtual service. |
-| Virtual service client requests passed to AX | radware\_alteon.commng.enh.perservstats.clireq | Number of client requests passed to AX for virtual service. |
-| Virtual service security policy peak bandwidth (secPolPerServBwPeak) | radware\_alteon.secpol.perserv.bw.peak | Virtual service security policy stats - Bandwidth peak value. |
-| Virtual service security policy bandwidth ( secPolPerServBwCurVal) | radware\_alteon.secpol.perserv.bw.curval | Virtual service security policy stats - Bandwidth current value. |
-| Virtual service security policy PPS current (secPolPerServPPSCurVal) | radware\_alteon.secpol.perserv.pps.curval | Virtual service security policy stats - PPS current value. |
-| Virtual service security policy PPS peak (secPolPerServPPSPeak) | radware\_alteon.secpol.perserv.pps.peak | Virtual service security policy stats - PPS peak value. |
-| Virtual service security policy CPS current (secPolPerServCPSCurVal) | radware\_alteon.secpol.perserv.cps.curval | Virtual service security policy stats - CPS current value. |
-| Virtual service security policy CPS peak (secPolPerServCPSPeak) | radware\_alteon.secpol.perserv.cps.peak | Virtual service security policy stats - CPS peak value. |
-| Virtual service security policy latency current (secPolPerServLatencyCurVal) | radware\_alteon.secpol.perserv.latency.curval | Virtual service security policy stats - latency current value. |
-| Virtual service security policy latency peak (secPolPerServLatencyPeak) | radware\_alteon.secpol.perserv.latency.peak | Virtual service security policy stats - latency peak value. |
 
 Backend\_Server\_Utilization\_Virtual
 
@@ -6029,6 +5961,33 @@ Per\_Device\_HTTP\_Statistics\_Virtual
 | HTTP 1.1 request count | radware\_alteon.httpstatsumm.http11connection.request.count | HTTP 1.1 request count. |
 | HTTP 1.0 request count | radware\_alteon.httpstatsumm.http10connection.request.count | HTTP 1.0 request count. |
 | HTTP transactions per second | radware\_alteon.httptranssumm.trans.rate | HTTP transactions per second. |
+
+Software\_Status\_SP
+
+| Metric name | Metric key | Description |
+| --- | --- | --- |
+| SP CPU utilization | com.dynatrace.extension.network\_device.sp.cpu\_usage | SP CPU utilization |
+
+Virtual\_Server\_Utilization\_Virtual
+
+| Metric name | Metric key | Description |
+| --- | --- | --- |
+| Virtual server current sessions | radware\_alteon.slbstat.enh.vserver.currsessions | The number of sessions that are currently handled by the virtual server. |
+| Virtual server total sessions | radware\_alteon.slbstat.enh.vserver.totalsessions | The total number of sessions that are handled by the virtual server. |
+| Virtual server highest sessions handled | radware\_alteon.slbstat.enh.vserver.highestsessions | The highest number of sessions that have been handled by the virtual server. |
+| Total octets received and transmitted by the virtual server | radware\_alteon.slbstat.enh.vserver.hc.octets | The total octets received and transmitted by the virtual server. |
+| Sessions handled by the virtual server | radware\_alteon.slbstat.enh.vserver.sessions | Number of Sessions handled by the virtual server per second. |
+| Real server runtime status per virtual server | radware\_alteon.slbstat.enh.vserver.real.status | The runtime Real Server Status per Virtual service. (0)Up, (1)Down, (2)Admin-Down, (3)Warning, (4)Shutdown, (5)Error |
+| Backend server concurrent connections for virtual service | radware\_alteon.commng.enh.perservstats.servconn | The number of concurrent backend server connections for virtual service. |
+| Virtual service client requests passed to AX | radware\_alteon.commng.enh.perservstats.clireq | Number of client requests passed to AX for virtual service. |
+| Virtual service security policy peak bandwidth (secPolPerServBwPeak) | radware\_alteon.secpol.perserv.bw.peak | Virtual service security policy stats - Bandwidth peak value. |
+| Virtual service security policy bandwidth ( secPolPerServBwCurVal) | radware\_alteon.secpol.perserv.bw.curval | Virtual service security policy stats - Bandwidth current value. |
+| Virtual service security policy PPS current (secPolPerServPPSCurVal) | radware\_alteon.secpol.perserv.pps.curval | Virtual service security policy stats - PPS current value. |
+| Virtual service security policy PPS peak (secPolPerServPPSPeak) | radware\_alteon.secpol.perserv.pps.peak | Virtual service security policy stats - PPS peak value. |
+| Virtual service security policy CPS current (secPolPerServCPSCurVal) | radware\_alteon.secpol.perserv.cps.curval | Virtual service security policy stats - CPS current value. |
+| Virtual service security policy CPS peak (secPolPerServCPSPeak) | radware\_alteon.secpol.perserv.cps.peak | Virtual service security policy stats - CPS peak value. |
+| Virtual service security policy latency current (secPolPerServLatencyCurVal) | radware\_alteon.secpol.perserv.latency.curval | Virtual service security policy stats - latency current value. |
+| Virtual service security policy latency peak (secPolPerServLatencyPeak) | radware\_alteon.secpol.perserv.latency.peak | Virtual service security policy stats - latency peak value. |
 
 [![Hub](https://dt-cdn.net/images/hub-512-82db3c583e.png "Hub")
 
@@ -6346,7 +6305,7 @@ If some tiles do not show data, check if the user has access to read the metrics
 ---
 title: Extensions
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/extensions
-scraped: 2026-03-05T21:20:50.529976
+scraped: 2026-03-06T21:17:01.611559
 ---
 
 # Extensions
@@ -6389,7 +6348,7 @@ With ![Extensions](https://dt-cdn.net/images/dynatrace-extensions-256-9cb05e0f55
 ---
 title: Exclude disks and network traffic from host monitoring
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/hosts/configuration/exclude-disks-and-network-traffic
-scraped: 2026-03-05T21:34:59.286335
+scraped: 2026-03-06T21:27:41.661234
 ---
 
 # Exclude disks and network traffic from host monitoring
@@ -6492,7 +6451,7 @@ The following disks are not monitored by OneAgent. To exclude an additional file
 ---
 title: Organize your environment using host groups
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/hosts/configuration/organize-your-environment-using-host-groups
-scraped: 2026-03-05T21:23:21.554370
+scraped: 2026-03-06T21:13:27.489539
 ---
 
 # Organize your environment using host groups
@@ -6590,7 +6549,7 @@ Host groups can also be used in [tagging rules](/docs/manage/tags-and-metadata/s
 ---
 title: Host-level settings
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/hosts/configuration
-scraped: 2026-03-05T21:14:51.180809
+scraped: 2026-03-06T21:10:55.107115
 ---
 
 # Host-level settings
@@ -6935,13 +6894,14 @@ For details on Linux and Windows core crash dumps, see [Crash analysis](/docs/ob
 ---
 title: Host availability
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/hosts/monitoring/host-monitoring/host-availability
-scraped: 2026-03-03T21:23:41.055773
+scraped: 2026-03-06T21:28:41.098256
 ---
 
 # Host availability
 
 # Host availability
 
+* Classic
 * How-to guide
 * 5-min read
 * Updated on Nov 26, 2024
@@ -7038,7 +6998,7 @@ Maintenance windows are displayed as gray bars at the top of the **Host availabi
 ---
 title: OS services monitoring
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/hosts/monitoring/os-services
-scraped: 2026-03-05T21:28:05.049877
+scraped: 2026-03-06T21:19:55.370527
 ---
 
 # OS services monitoring
@@ -7446,7 +7406,7 @@ On Linux, systemd OS services with the following startup types are supported:
 ---
 title: Process availability
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/hosts/monitoring/process-availability
-scraped: 2026-03-05T21:28:18.737023
+scraped: 2026-03-06T21:20:00.972445
 ---
 
 # Process availability
@@ -8151,7 +8111,7 @@ Learn how to run OneAgent diagnostics.](/docs/ingest-from/dynatrace-oneagent/one
 ---
 title: Containers
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/infrastructure-and-operations/containers
-scraped: 2026-03-05T21:20:52.163129
+scraped: 2026-03-06T21:16:59.898065
 ---
 
 # Containers
@@ -8213,7 +8173,7 @@ Other perspectives provide additional columns, including **Containerization type
 ---
 title: Data centers
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/infrastructure-and-operations/data-centers
-scraped: 2026-03-05T21:20:55.118279
+scraped: 2026-03-06T21:16:58.775446
 ---
 
 # Data centers
@@ -8263,7 +8223,7 @@ Here's what each column in the  **Data centers** view stands for.
 ---
 title: Hosts
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/infrastructure-and-operations/hosts
-scraped: 2026-03-05T21:20:56.810409
+scraped: 2026-03-06T21:17:02.728334
 ---
 
 # Hosts
@@ -8328,7 +8288,7 @@ Read this guide](/docs/platform/oneagent/monitoring-modes/enable-monitoring-mode
 ---
 title: Network devices
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/infrastructure-and-operations/network-devices
-scraped: 2026-03-05T21:20:48.795609
+scraped: 2026-03-06T21:16:45.289692
 ---
 
 # Network devices
@@ -8422,7 +8382,7 @@ The **Health** perspective includes the following default columns:
 ---
 title: Processes
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/infrastructure-and-operations/processes
-scraped: 2026-03-05T21:20:36.746382
+scraped: 2026-03-06T21:16:52.044078
 ---
 
 # Processes
@@ -8482,7 +8442,7 @@ The **Health** perspective includes the following default columns:
 ---
 title: Infrastructure & Operations
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/infrastructure-and-operations
-scraped: 2026-03-05T21:14:27.709651
+scraped: 2026-03-06T21:10:46.597387
 ---
 
 # Infrastructure & Operations
@@ -8795,7 +8755,7 @@ View the status of all data centers and hosts and identify the root cause of inf
 ---
 title: Enable Kubernetes experience for existing clusters
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/kubernetes-app/enable-k8s-experience/existing-clusters
-scraped: 2026-03-05T21:14:07.253700
+scraped: 2026-03-06T21:12:00.286290
 ---
 
 # Enable Kubernetes experience for existing clusters
@@ -8835,7 +8795,7 @@ When you enable Kubernetes clusters for the new Kubernetes experience, Dynatrace
 ---
 title: Kubernetes Enhanced Object Visibility Preview
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/kubernetes-app/preview/enhanced-object-vis-preview
-scraped: 2026-03-05T21:32:19.458924
+scraped: 2026-03-06T21:26:38.879293
 ---
 
 # Kubernetes Enhanced Object Visibility Preview
@@ -9086,7 +9046,7 @@ A quick video tutorial on how to install Dynatrace Operator.](https://dt-cdn.net
 ---
 title: Permissions
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/kubernetes-app/reference/permissions
-scraped: 2026-03-05T21:14:10.593014
+scraped: 2026-03-06T21:11:58.626956
 ---
 
 # Permissions
@@ -9833,7 +9793,7 @@ Explore further how Dynatrace can transform your approach to Kubernetes manageme
 ---
 title: Kubernetes
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/kubernetes-app
-scraped: 2026-03-05T21:12:28.710023
+scraped: 2026-03-06T21:09:44.668198
 ---
 
 # Kubernetes
@@ -10446,13 +10406,14 @@ Some messages you get during network monitoring might require actions from your 
 ---
 title: Ingest NetFlow records into Dynatrace
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/networks-classic/ingest-netflow-records
-scraped: 2026-03-03T21:29:33.431117
+scraped: 2026-03-06T21:25:43.577365
 ---
 
 # Ingest NetFlow records into Dynatrace
 
 # Ingest NetFlow records into Dynatrace
 
+* Classic
 * How-to guide
 * 2-min read
 * Updated on Jan 19, 2026
@@ -10681,7 +10642,7 @@ fetch logs
 ---
 title: Extended network monitoring
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/networks-classic/network-monitoring-with-nettracer
-scraped: 2026-03-05T21:28:03.810577
+scraped: 2026-03-06T21:20:02.660098
 ---
 
 # Extended network monitoring
@@ -10816,7 +10777,7 @@ After it's collected, NetTracer data is available as metrics throughout Dynatrac
 ---
 title: Troubleshooting network monitoring
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/networks-classic/troubleshoot-network-monitoring
-scraped: 2026-03-05T21:32:43.453977
+scraped: 2026-03-06T21:28:39.385292
 ---
 
 # Troubleshooting network monitoring
@@ -10908,7 +10869,7 @@ Read this guide](/docs/observe/infrastructure-observability/networks/ingest-netf
 ---
 title: Which are the most important processes?
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/process-groups/basic-concepts/which-are-the-most-important-processes
-scraped: 2026-03-05T21:14:46.582642
+scraped: 2026-03-06T21:13:05.291736
 ---
 
 # Which are the most important processes?
@@ -10966,7 +10927,7 @@ If you run Apache HTTP Server, for example, you may be accustomed to seeing long
 ---
 title: Process group detection
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/process-groups/configuration/pg-detection
-scraped: 2026-03-05T21:17:45.549162
+scraped: 2026-03-06T21:13:32.671349
 ---
 
 # Process group detection
@@ -11462,7 +11423,7 @@ condition: "$eq(-d)"
 ---
 title: Process deep monitoring
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/process-groups/configuration/pg-monitoring
-scraped: 2026-03-05T21:28:06.761923
+scraped: 2026-03-06T21:20:08.014873
 ---
 
 # Process deep monitoring
@@ -11619,7 +11580,7 @@ If short-lived processes that start up frequently are being injected, disable th
 ---
 title: Process groups
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/process-groups
-scraped: 2026-03-05T21:20:40.184486
+scraped: 2026-03-06T21:16:55.383877
 ---
 
 # Process groups
@@ -11799,7 +11760,7 @@ To automatically detect load drops or load spikes
 ---
 title: IBM MQ tracing
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/queues/configuration/ibm-mq-tracing
-scraped: 2026-03-05T21:31:18.515355
+scraped: 2026-03-06T21:26:53.183725
 ---
 
 # IBM MQ tracing
@@ -12676,7 +12637,7 @@ The process group detection requires a restart of the IBM MQ process.
 ---
 title: Queue concepts
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/queues/queue-concepts
-scraped: 2026-03-05T21:38:24.692422
+scraped: 2026-03-06T21:38:09.609161
 ---
 
 # Queue concepts
@@ -12761,7 +12722,7 @@ The following is a distributed trace example with a producer service, queue enti
 ---
 title: Message queues
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/queues
-scraped: 2026-03-05T21:20:53.368622
+scraped: 2026-03-06T21:16:50.344003
 ---
 
 # Message queues
@@ -13051,7 +13012,7 @@ You can use the [Settings API](/docs/dynatrace-api/environment-api/settings "Fin
 ---
 title: Infrastructure Observability
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability
-scraped: 2026-03-05T21:13:47.717498
+scraped: 2026-03-06T21:10:29.766809
 ---
 
 # Infrastructure Observability

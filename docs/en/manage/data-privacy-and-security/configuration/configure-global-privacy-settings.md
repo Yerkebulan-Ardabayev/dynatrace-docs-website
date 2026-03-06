@@ -1,7 +1,7 @@
 ---
 title: Configure data privacy settings
 source: https://www.dynatrace.com/docs/manage/data-privacy-and-security/configuration/configure-global-privacy-settings
-scraped: 2026-03-05T21:18:18.433173
+scraped: 2026-03-06T21:23:36.668953
 ---
 
 # Configure data privacy settings
@@ -11,7 +11,7 @@ scraped: 2026-03-05T21:18:18.433173
 * Latest Dynatrace
 * How-to guide
 * 5-min read
-* Updated on Jan 15, 2026
+* Updated on Feb 26, 2026
 
 Dynatrace allows you to granularly control what data you would like to capture. Depending on your use cases, you can configure Dynatrace to provide you with the right amount of [data from your monitored environments](/docs/manage/data-privacy-and-security/data-privacy/personal-data-captured-by-dynatrace "Find out what types of end-user data may be captured during Dynatrace monitoring and the methods that are available for masking personal end-user data."). However, keep in mind that it's your responsibility to protect your customers' personal data while using Dynatrace.
 
@@ -47,20 +47,19 @@ To access this setting, go to **Settings** > **Preferences** > **Data privacy** 
 
 OneAgent can mask sensitive data points at first contact. The configuration is executed directly on OneAgent; the configured data points are not sent to the Dynatrace servers and are no longer available.
 
-Depending on your use cases and data needs, you can decide whether you want to mask the following data points.
+* Depending on your use cases and data needs, you can create custom masking rules to mask the data points that are described in the table below.
+* Dynatrace also provides built-in masking rules, as described in the table below. By default, these rules are deactivated in all paid (non-trial) Dynatrace environments.
 
-* Email addresses in URLs
+  | Type of sensitive data | Masking string for built-in rule OneAgent versions 1.330 and below | Masking string for built-in rule OneAgent version 1.331+ |
+  | --- | --- | --- |
+  | Email addresses in URLs [1](#fn-1-1-def) | `<masked>` | `<masked-email-oa>` |
+  | Query parameters/values | `<masked>` | `<masked-value-oa>` |
+  | IBANs and payment card numbers | `<masked>` | `<masked-financial-oa>` |
+  | IDs and consecutive numbers | `<masked>` | `<masked-digits-oa>` |
 
-  Starting with OneAgent version 1.309, you can mask email addresses that contain percent-encoded symbols. Data masking capabilities are extended to support both URL-encoded PII data removal and base64URL-encoded URLs.
+  1
 
-  For example:
-
-  `http://my.company.com/api/userdata/john.doe%40company.com` is masked as `http://my.company.com/api/userdata/<masked>`
-
-  `http://my.company.com/rest/queryinfo?detail=ALL&userid=john.doe%40company.com` is masked as `http://my.company.com/rest/queryinfo?detail=ALL&userid=<masked>`
-* Query parameters
-* IBANs and payment card numbers
-* IDs and consecutive numbers
+  OneAgent version 1.309+ can mask email addresses that contain percent-encoded symbols (such as `%40`). Both URL encoding and base64URL encoding are supported.
 
 You can apply these settings to specific monitored process groups or globally to your whole environment.
 
@@ -172,7 +171,7 @@ To access this setting, go to **Settings** > **Preferences** > **Data privacy** 
 
 To give your end users the ability to decide whether their activities should be tracked or not, enable opt-in mode.
 
-By default, RUM automatically creates [cookies](/docs/manage/data-privacy-and-security/data-privacy/cookies#dynatrace-rum-cookies "Learn about first-party cookie usage in Dynatrace."). When **Data-collection and opt-in mode** is turned on, neither OneAgent nor the RUM JavaScript sets cookies, and the RUM JavaScript doesn't capture any data. After an end user accepts your cookie policy, you can activate RUM for that user via the [`dtrum.enable()`ï»¿](https://www.dynatrace.com/support/doc/javascriptapi/doc/types/dtrum.html#enable) JavaScript API call. Using the [`dtrum.disable()`ï»¿](https://www.dynatrace.com/support/doc/javascriptapi/doc/types/dtrum.html#disable) API call, you can implement a dialog that allows end users to stop sending monitoring data to Dynatrace even after they've previously agreed to it and `dtrum.enable()` has already been called.
+By default, RUM automatically creates [cookies](/docs/manage/data-privacy-and-security/data-privacy/cookies#dynatrace-rum-cookies "Learn about first-party cookie usage in Dynatrace."). When **Data-collection and opt-in mode** is turned on, neither OneAgent nor the RUM JavaScript sets cookies, and the RUM JavaScript doesn't capture any data. After an end user accepts your cookie policy, you can activate RUM for that user via the [`dtrum.enable()`ï»¿](https://docs.dynatrace.com/javascriptapi/doc/types/dtrum.html#enable) JavaScript API call. Using the [`dtrum.disable()`ï»¿](https://docs.dynatrace.com/javascriptapi/doc/types/dtrum.html#disable) API call, you can implement a dialog that allows end users to stop sending monitoring data to Dynatrace even after they've previously agreed to it and `dtrum.enable()` has already been called.
 
 ## Do Not Track
 

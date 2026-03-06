@@ -1,7 +1,7 @@
 ---
 title: Extend built-in unified analysis pages
 source: https://www.dynatrace.com/docs/ingest-from/extend-dynatrace/extend-ui/extend-unified-analysis-pages
-scraped: 2026-03-05T21:37:25.550683
+scraped: 2026-03-06T21:34:16.785131
 ---
 
 # Extend built-in unified analysis pages

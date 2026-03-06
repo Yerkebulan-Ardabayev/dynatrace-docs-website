@@ -1,7 +1,7 @@
 ---
 title: Environment API
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api
-scraped: 2026-03-04T21:17:08.786437
+scraped: 2026-03-06T21:20:59.328501
 ---
 
 # Environment API

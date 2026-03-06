@@ -1,6 +1,6 @@
 # Документация Dynatrace: observe/dynatrace-for-ai-observability
 Язык: Русский (RU)
-Сгенерировано: 2026-03-05
+Сгенерировано: 2026-03-06
 Файлов в разделе: 15
 ---
 
@@ -491,7 +491,7 @@ Additionally, the following metrics are reported.
 ---
 title: Get started with OpenTelemetry and AI Observability
 source: https://www.dynatrace.com/docs/observe/dynatrace-for-ai-observability/get-started/opentelemetry
-scraped: 2026-03-01T21:28:39.410086
+scraped: 2026-03-06T21:28:35.685729
 ---
 
 # Get started with OpenTelemetry and AI Observability
@@ -536,7 +536,7 @@ In order for this to work, you need to have:
 * Dynatrace SaaS with a [Dynatrace Platform Subscription (DPS)](/docs/license "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.") license that has [Traces powered by Grail](/docs/license/capabilities/traces "Learn how Dynatrace Traces powered by Grail consumption is calculated using the Dynatrace Platform Subscription (DPS) model."), [Metrics powered by Grail](/docs/license/capabilities/metrics "Learn how Dynatrace Metrics powered by Grail consumption is calculated using the Dynatrace Platform Subscription model."), and [Log Analytics](/docs/license/capabilities/log-analytics "Learn how Dynatrace Log Analytics consumption is calculated using the Dynatrace Platform Subscription model.") enabled.
 * OTLP ingestion enabled, see [OpenTelemetry and Dynatrace](/docs/ingest-from/opentelemetry "Learn how to integrate and ingest OpenTelemetry data (traces, metrics, and logs) into Dynatrace.").
 * An OpenAPI platform API key.
-* A Dynatrace API token the following scopes, see [Platform tokens](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/platform-tokens "Create personalised platform tokens to access Dynatrace services via the API in your user context.").
+* A Dynatrace API token the following scopes, see [Dynatrace API - Tokens and authentication](/docs/dynatrace-api/basics/dynatrace-api-authentication "Find out how to get authenticated to use the Dynatrace API.").
 
   + Ingest metrics (`metrics.ingest`)
   + Ingest logs (`logs.ingest`)
@@ -1283,7 +1283,7 @@ In the example below, Dynatrace Intelligence automatically reported a slowdown o
 ---
 title: Get started
 source: https://www.dynatrace.com/docs/observe/dynatrace-for-ai-observability/get-started
-scraped: 2026-03-05T21:22:26.112524
+scraped: 2026-03-06T21:14:22.129372
 ---
 
 # Get started
@@ -1318,7 +1318,7 @@ Instrument your AI application with OpenTelemetry.](/docs/observe/dynatrace-for-
 ---
 title: Amazon Bedrock
 source: https://www.dynatrace.com/docs/observe/dynatrace-for-ai-observability/models-and-platforms/bedrock
-scraped: 2026-03-05T21:22:33.099390
+scraped: 2026-03-06T21:14:20.458987
 ---
 
 # Amazon Bedrock
@@ -1377,7 +1377,7 @@ The following attributes are available for GenAI Spans.
 ---
 title: NVIDIA NIM
 source: https://www.dynatrace.com/docs/observe/dynatrace-for-ai-observability/models-and-platforms/nvidia-nim
-scraped: 2026-03-05T21:22:34.792054
+scraped: 2026-03-06T21:14:25.595461
 ---
 
 # NVIDIA NIM
@@ -1587,7 +1587,7 @@ Additionally, the following metrics are reported.
 ---
 title: Ollama
 source: https://www.dynatrace.com/docs/observe/dynatrace-for-ai-observability/models-and-platforms/ollama
-scraped: 2026-03-05T21:22:36.443123
+scraped: 2026-03-06T21:14:16.809856
 ---
 
 # Ollama
@@ -1637,7 +1637,7 @@ The following attributes are available for GenAI Spans.
 ---
 title: OpenAI
 source: https://www.dynatrace.com/docs/observe/dynatrace-for-ai-observability/models-and-platforms/openai
-scraped: 2026-03-05T21:22:27.786624
+scraped: 2026-03-06T21:14:15.056939
 ---
 
 # OpenAI
@@ -1702,7 +1702,7 @@ The following attributes are available for GenAI Spans.
 ---
 title: TensorFlow Keras observability
 source: https://www.dynatrace.com/docs/observe/dynatrace-for-ai-observability/models-and-platforms/tensorflow-keras-observability
-scraped: 2026-03-05T21:33:05.511758
+scraped: 2026-03-06T21:33:34.751016
 ---
 
 # TensorFlow Keras observability
@@ -2083,7 +2083,7 @@ The screenshot below shows a Data Explorer visualization of the accuracy metric 
 ---
 title: LangChain
 source: https://www.dynatrace.com/docs/observe/dynatrace-for-ai-observability/orchestration-frameworks/langchain
-scraped: 2026-03-05T21:22:31.432958
+scraped: 2026-03-06T21:14:13.335634
 ---
 
 # LangChain
@@ -2138,7 +2138,7 @@ The following attributes are available for GenAI Spans.
 ---
 title: AI data governance with Amazon Bedrock
 source: https://www.dynatrace.com/docs/observe/dynatrace-for-ai-observability/sample-use-cases/data-governance
-scraped: 2026-03-04T21:28:12.073290
+scraped: 2026-03-06T21:27:33.344954
 ---
 
 # AI data governance with Amazon Bedrock
@@ -2549,7 +2549,7 @@ Our simple example of a Node.js service entirely depends on the ChatGPT model re
 ---
 title: AI and LLM Observability
 source: https://www.dynatrace.com/docs/observe/dynatrace-for-ai-observability
-scraped: 2026-03-05T21:14:05.554923
+scraped: 2026-03-06T21:10:10.074162
 ---
 
 # AI and LLM Observability

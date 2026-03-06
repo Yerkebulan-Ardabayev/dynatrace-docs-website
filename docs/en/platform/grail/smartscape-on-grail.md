@@ -1,7 +1,7 @@
 ---
 title: Smartscape on Grail
 source: https://www.dynatrace.com/docs/platform/grail/smartscape-on-grail
-scraped: 2026-03-05T21:23:44.748236
+scraped: 2026-03-06T21:20:23.549476
 ---
 
 # Smartscape on Grail
@@ -10,8 +10,7 @@ scraped: 2026-03-05T21:23:44.748236
 
 * Latest Dynatrace
 * Explanation
-* Updated on Jan 16, 2026
-* Preview
+* Updated on Mar 05, 2026
 
 Smartscape on Grail is a Grail-native storage that automatically records topological data, such as monitored entities and relationships.
 

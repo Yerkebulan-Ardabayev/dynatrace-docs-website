@@ -1,7 +1,7 @@
 ---
 title: Dynatrace Platform Subscription for hybrid setups (DPS for Hybrid)
 source: https://www.dynatrace.com/docs/license/dps-for-hybrid
-scraped: 2026-03-05T21:19:18.587135
+scraped: 2026-03-06T21:22:18.711771
 ---
 
 # Dynatrace Platform Subscription for hybrid setups (DPS for Hybrid)
@@ -13,7 +13,7 @@ scraped: 2026-03-05T21:19:18.587135
 * 2-min read
 * Published Jan 28, 2026
 
-With DPS for Hybrid, you can share one Dynatrace Platform Subscription (DPS) license with any combination of your Managed and SaaS accounts.
+With DPS for Hybrid, you can share one Dynatrace Platform Subscription (DPS) license with any combination of Managed and SaaS accounts.
 The only requirements is that the accounts are owned by the same customer.
 
 With DPS for Hybrid:
@@ -116,19 +116,20 @@ This offers insights and information similar to the Subscription Overview for st
 
 How can I set up the dashboard?
 
-Please check the best practices section of this document.
+Please see [Explore your DPS for Hybrid subscription with dashboards](/docs/license/dps-for-hybrid/api-export-business-events "How to get the most out of your DPS for Hybrid license and accounts.") for setup information.
+
 If you have any issues, contact your Dynatrace contact person.
 
-Which environment will the Dashboard be running in?
+Which environment will the dashboard be running in?
 
 The only requirements is that the dashboard needs to be in a SaaS environment.
-You can decide which enviornment specifically.
+You can decide which environment specifically.
 
 Can I also use other apps from the platform after setting up the dashboard?
 
 Yes.
 
-All data in the environment cna be used with all other Dynatrace platform apps (such as ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Workflows**).
+All data in the environment can be used with all other Dynatrace platform apps (such as ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Workflows**).
 Consumption is billed according to your rate card.
 
 So, every account has its budget, and then there is one commit above?
@@ -152,5 +153,5 @@ This contains all relevant Managed and/or SaaS capabilities.
 
 ## Related topics
 
+* [Subscription overview (DPS for Hybrid)](/docs/manage/account-management/license-subscription/subscription-overview-dps-hybrid "View your DPS for Hybrid budget summary and cost analysis.")
 * [License Dynatrace](/docs/license "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.")
-* [View your previous DPS periods via subscription history](/docs/license/subscription-history "View the subscription history of your Dynatrace environment, including usage and cumulative costs for each subscription.")

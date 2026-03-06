@@ -1,7 +1,7 @@
 ---
 title: Radware Alteon Load Balancer extension
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/extensions/radware-alteon-load-balancer
-scraped: 2026-03-05T21:33:32.329201
+scraped: 2026-03-06T21:31:00.869391
 ---
 
 # Radware Alteon Load Balancer extension
@@ -70,33 +70,6 @@ DDUs: `(60 + (8 * Interfaces)) * 525.6 DDUs/year, per device`
 DPS (Metric data points): `(60 + (8 * Interfaces)) * 525,600 metric data points/year, per device`
 
 ## Feature sets
-
-Software\_Status\_SP
-
-| Metric name | Metric key | Description |
-| --- | --- | --- |
-| SP CPU utilization | com.dynatrace.extension.network\_device.sp.cpu\_usage | SP CPU utilization |
-
-Virtual\_Server\_Utilization\_Virtual
-
-| Metric name | Metric key | Description |
-| --- | --- | --- |
-| Virtual server current sessions | radware\_alteon.slbstat.enh.vserver.currsessions | The number of sessions that are currently handled by the virtual server. |
-| Virtual server total sessions | radware\_alteon.slbstat.enh.vserver.totalsessions | The total number of sessions that are handled by the virtual server. |
-| Virtual server highest sessions handled | radware\_alteon.slbstat.enh.vserver.highestsessions | The highest number of sessions that have been handled by the virtual server. |
-| Total octets received and transmitted by the virtual server | radware\_alteon.slbstat.enh.vserver.hc.octets | The total octets received and transmitted by the virtual server. |
-| Sessions handled by the virtual server | radware\_alteon.slbstat.enh.vserver.sessions | Number of Sessions handled by the virtual server per second. |
-| Real server runtime status per virtual server | radware\_alteon.slbstat.enh.vserver.real.status | The runtime Real Server Status per Virtual service. (0)Up, (1)Down, (2)Admin-Down, (3)Warning, (4)Shutdown, (5)Error |
-| Backend server concurrent connections for virtual service | radware\_alteon.commng.enh.perservstats.servconn | The number of concurrent backend server connections for virtual service. |
-| Virtual service client requests passed to AX | radware\_alteon.commng.enh.perservstats.clireq | Number of client requests passed to AX for virtual service. |
-| Virtual service security policy peak bandwidth (secPolPerServBwPeak) | radware\_alteon.secpol.perserv.bw.peak | Virtual service security policy stats - Bandwidth peak value. |
-| Virtual service security policy bandwidth ( secPolPerServBwCurVal) | radware\_alteon.secpol.perserv.bw.curval | Virtual service security policy stats - Bandwidth current value. |
-| Virtual service security policy PPS current (secPolPerServPPSCurVal) | radware\_alteon.secpol.perserv.pps.curval | Virtual service security policy stats - PPS current value. |
-| Virtual service security policy PPS peak (secPolPerServPPSPeak) | radware\_alteon.secpol.perserv.pps.peak | Virtual service security policy stats - PPS peak value. |
-| Virtual service security policy CPS current (secPolPerServCPSCurVal) | radware\_alteon.secpol.perserv.cps.curval | Virtual service security policy stats - CPS current value. |
-| Virtual service security policy CPS peak (secPolPerServCPSPeak) | radware\_alteon.secpol.perserv.cps.peak | Virtual service security policy stats - CPS peak value. |
-| Virtual service security policy latency current (secPolPerServLatencyCurVal) | radware\_alteon.secpol.perserv.latency.curval | Virtual service security policy stats - latency current value. |
-| Virtual service security policy latency peak (secPolPerServLatencyPeak) | radware\_alteon.secpol.perserv.latency.peak | Virtual service security policy stats - latency peak value. |
 
 Backend\_Server\_Utilization\_Virtual
 
@@ -193,6 +166,33 @@ Per\_Device\_HTTP\_Statistics\_Virtual
 | HTTP 1.1 request count | radware\_alteon.httpstatsumm.http11connection.request.count | HTTP 1.1 request count. |
 | HTTP 1.0 request count | radware\_alteon.httpstatsumm.http10connection.request.count | HTTP 1.0 request count. |
 | HTTP transactions per second | radware\_alteon.httptranssumm.trans.rate | HTTP transactions per second. |
+
+Software\_Status\_SP
+
+| Metric name | Metric key | Description |
+| --- | --- | --- |
+| SP CPU utilization | com.dynatrace.extension.network\_device.sp.cpu\_usage | SP CPU utilization |
+
+Virtual\_Server\_Utilization\_Virtual
+
+| Metric name | Metric key | Description |
+| --- | --- | --- |
+| Virtual server current sessions | radware\_alteon.slbstat.enh.vserver.currsessions | The number of sessions that are currently handled by the virtual server. |
+| Virtual server total sessions | radware\_alteon.slbstat.enh.vserver.totalsessions | The total number of sessions that are handled by the virtual server. |
+| Virtual server highest sessions handled | radware\_alteon.slbstat.enh.vserver.highestsessions | The highest number of sessions that have been handled by the virtual server. |
+| Total octets received and transmitted by the virtual server | radware\_alteon.slbstat.enh.vserver.hc.octets | The total octets received and transmitted by the virtual server. |
+| Sessions handled by the virtual server | radware\_alteon.slbstat.enh.vserver.sessions | Number of Sessions handled by the virtual server per second. |
+| Real server runtime status per virtual server | radware\_alteon.slbstat.enh.vserver.real.status | The runtime Real Server Status per Virtual service. (0)Up, (1)Down, (2)Admin-Down, (3)Warning, (4)Shutdown, (5)Error |
+| Backend server concurrent connections for virtual service | radware\_alteon.commng.enh.perservstats.servconn | The number of concurrent backend server connections for virtual service. |
+| Virtual service client requests passed to AX | radware\_alteon.commng.enh.perservstats.clireq | Number of client requests passed to AX for virtual service. |
+| Virtual service security policy peak bandwidth (secPolPerServBwPeak) | radware\_alteon.secpol.perserv.bw.peak | Virtual service security policy stats - Bandwidth peak value. |
+| Virtual service security policy bandwidth ( secPolPerServBwCurVal) | radware\_alteon.secpol.perserv.bw.curval | Virtual service security policy stats - Bandwidth current value. |
+| Virtual service security policy PPS current (secPolPerServPPSCurVal) | radware\_alteon.secpol.perserv.pps.curval | Virtual service security policy stats - PPS current value. |
+| Virtual service security policy PPS peak (secPolPerServPPSPeak) | radware\_alteon.secpol.perserv.pps.peak | Virtual service security policy stats - PPS peak value. |
+| Virtual service security policy CPS current (secPolPerServCPSCurVal) | radware\_alteon.secpol.perserv.cps.curval | Virtual service security policy stats - CPS current value. |
+| Virtual service security policy CPS peak (secPolPerServCPSPeak) | radware\_alteon.secpol.perserv.cps.peak | Virtual service security policy stats - CPS peak value. |
+| Virtual service security policy latency current (secPolPerServLatencyCurVal) | radware\_alteon.secpol.perserv.latency.curval | Virtual service security policy stats - latency current value. |
+| Virtual service security policy latency peak (secPolPerServLatencyPeak) | radware\_alteon.secpol.perserv.latency.peak | Virtual service security policy stats - latency peak value. |
 
 [![Hub](https://dt-cdn.net/images/hub-512-82db3c583e.png "Hub")
 

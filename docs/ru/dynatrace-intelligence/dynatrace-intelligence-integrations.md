@@ -1,7 +1,7 @@
 ---
 title: Dynatrace Intelligence интеграции
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/dynatrace-intelligence-integrations
-scraped: 2026-03-05T21:22:25.003289
+scraped: 2026-03-06T21:14:51.943719
 ---
 
 # Dynatrace Intelligence интеграции
@@ -19,9 +19,9 @@ scraped: 2026-03-05T21:22:25.003289
 
 #### Dynatrace Intelligence для тетрадей
 
-Запустите анализ ИИ в Dynatrace тетрадях.
+Запускайте анализ ИИ в Dynatrace тетрадях.
 
-* Руководство
+* Руководство по началу работы
 
 Прочитайте это руководство](/docs/dynatrace-intelligence/dynatrace-intelligence-integrations/davis-for-notebooks)
 
@@ -37,25 +37,25 @@ scraped: 2026-03-05T21:22:25.003289
 
 Прочитайте обзор](/docs/dynatrace-intelligence/dynatrace-intelligence-integrations/dynatrace-mcp)
 
-## Рабочие процессы
+## Работы
 
-Прочитайте случаи использования рабочих процессов для Dynatrace Intelligence.
+Посмотрите случаи использования Dynatrace Intelligence на основе Работ.
 
-[#### Оптимизируйте стоимость DQL с помощью рабочих процессов
+[#### Оптимизируйте стоимость DQL с помощью Работ
 
 Используйте Dynatrace Intelligence (Предварительный просмотр), чтобы оптимизировать стоимость ваших запросов.
 
 * Урок
 
-Прочитайте этот урок](/docs/dynatrace-intelligence/use-cases/copilot-in-workflows-dql)[#### Суммируйте открытые проблемы с помощью рабочих процессов
+Прочитайте этот урок](/docs/dynatrace-intelligence/use-cases/copilot-in-workflows-dql)[#### Суммируйте открытые проблемы с помощью Работ
 
 Используйте Dynatrace Intelligence (Предварительный просмотр), чтобы суммировать открытые проблемы и предложить шаги по исправлению.
 
 * Урок
 
-Прочитайте этот урок](/docs/dynatrace-intelligence/use-cases/copilot-in-workflows-examples)[#### ИИ в рабочих процессах - прогнозное обслуживание облачных дисков
+Прочитайте этот урок](/docs/dynatrace-intelligence/use-cases/copilot-in-workflows-examples)[#### ИИ в Работах - прогностическое обслуживание облачных дисков
 
-Автоматизируйте прогнозное обслуживание облачных ресурсов с помощью Dynatrace Intelligence в AutomationEngine.
+Автоматизируйте прогностическое обслуживание облачных ресурсов с помощью Dynatrace Intelligence в AutomationEngine.
 
 * Урок
 

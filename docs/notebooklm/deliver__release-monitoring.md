@@ -1,6 +1,6 @@
 # Документация Dynatrace: deliver/release-monitoring
 Язык: Русский (RU)
-Сгенерировано: 2026-03-05
+Сгенерировано: 2026-03-06
 Файлов в разделе: 4
 ---
 
@@ -100,7 +100,7 @@ The following is a solution to a problem some people had with [Automated release
 ---
 title: Monitor releases with Dynatrace
 source: https://www.dynatrace.com/docs/deliver/release-monitoring/monitor-releases-with-dynatrace
-scraped: 2026-03-05T21:31:44.349425
+scraped: 2026-03-06T21:33:50.318161
 ---
 
 # Monitor releases with Dynatrace
@@ -205,7 +205,7 @@ In addition, a graph displays the latest 20 release validation results:
 ---
 title: Version detection strategies for deep-monitored processes
 source: https://www.dynatrace.com/docs/deliver/release-monitoring/version-detection-strategies
-scraped: 2026-03-04T21:29:10.813031
+scraped: 2026-03-06T21:32:40.181980
 ---
 
 # Version detection strategies for deep-monitored processes

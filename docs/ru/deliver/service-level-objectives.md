@@ -1,7 +1,7 @@
 ---
 title: Service-Level Objectives
 source: https://www.dynatrace.com/docs/deliver/service-level-objectives
-scraped: 2026-03-03T21:32:43.343037
+scraped: 2026-03-06T21:30:36.060105
 ---
 
 # Service-Level Objectives
@@ -64,7 +64,7 @@ To read and write SLOs, you need the following [IAM](/docs/manage/identity-acces
 * `ALLOW slo:slos:read, slo:objective-templates:read;`
 * `ALLOW slo:slos:write;`
 
-## Installation
+### Installation
 
 Make sure the app is [installed in your environment](/docs/manage/hub#install "See the information about Dynatrace Hub.").
 

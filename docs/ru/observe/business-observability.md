@@ -1,7 +1,7 @@
 ---
 title: Business Observability
 source: https://www.dynatrace.com/docs/observe/business-observability
-scraped: 2026-03-05T21:13:49.394577
+scraped: 2026-03-06T21:10:11.811730
 ---
 
 # Business Observability
@@ -11,25 +11,29 @@ scraped: 2026-03-05T21:13:49.394577
 * Latest Dynatrace
 * Overview
 * 2-min read
-* Published Oct 24, 2022
+* Updated on Mar 06, 2026
 
 Dynatrace Business Observability connects application performance and user experience to business metrics, enabling business and IT teams to collaborate through shared real-time perspectives. Business Observability leverages business events to achieve the precision many business use cases demand.
 
 ## Business Observability apps
 
-[![Explore Business Events](https://dt-cdn.net/images/biz-events-512-68c4be09db.png "Explore Business Events")
-
-### Explore Business Events
-
-Explore Business Events is a central repository of resources related to business events, including blog posts, documentation, product links, and other applications relevant to business analysis.](/docs/observe/business-observability/explore-business-events "Explore Business Events is a central repository of resources related to business events, including blog posts, documentation, direct product links, and other applications relevant to business analysis.")[![Business Flow](https://dt-cdn.net/images/business-flow-480-362159ca2c.png "Business Flow")
+[![Business Flow](https://dt-cdn.net/images/business-flow-480-362159ca2c.png "Business Flow")
 
 ### Business Flow
 
-Track business key performance indicators (KPI), detect process anomalies, and prioritize optimization opportunities to improve business outcomes.](/docs/observe/business-observability/business-flow "Monitor and analyze critical business process flows. Track business key performance indicators (KPI), detect process anomalies, and prioritize optimization opportunities to improve business outcomes.")[![Cost & Carbon Optimization](https://dt-cdn.net/images/cost-and-carbon-1024-4f5a603752.webp "Cost & Carbon Optimization")
+Track business key performance indicators (KPI), detect process anomalies, and prioritize optimization opportunities to improve business outcomes.](/docs/observe/business-observability/business-flow "Monitor and analyze critical business process flows. Track business key performance indicators (KPI), detect process anomalies, and prioritize optimization opportunities to improve business outcomes.")[![Compliance Assistant](https://dt-cdn.net/images/compliance-assistant-app-256-a136b783a7.png "Compliance Assistant")
+
+### Compliance Assistant
+
+Track, manage, and automate compliance across your IT and business landscape with consolidated observability and security insights.](/docs/observe/business-observability/compliance-assistant "Track, manage, and automate compliance across your IT and business landscape with consolidated observability and security insights.")[![Cost & Carbon Optimization](https://dt-cdn.net/images/cost-and-carbon-1024-4f5a603752.webp "Cost & Carbon Optimization")
 
 ### Cost & Carbon Optimization
 
-Track, report, and reduce the cloud cost and carbon emissions resulting from your instrumented infrastructure.](/docs/observe/business-observability/cost-and-carbon-optimization "Track, analyze, and reduce your IT carbon footprint.")
+Track, report, and reduce the cloud cost and carbon emissions resulting from your instrumented infrastructure.](/docs/observe/business-observability/cost-and-carbon-optimization "Track, analyze, and reduce your IT carbon footprint.")[![Explore Business Events](https://dt-cdn.net/images/biz-events-512-68c4be09db.png "Explore Business Events")
+
+### Explore Business Events
+
+Explore Business Events is a central repository of resources related to business events, including blog posts, documentation, product links, and other applications relevant to business analysis.](/docs/observe/business-observability/explore-business-events "Explore Business Events is a central repository of resources related to business events, including blog posts, documentation, direct product links, and other applications relevant to business analysis.")
 
 ## Business Observability extensions
 

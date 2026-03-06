@@ -1,7 +1,7 @@
 ---
 title: Finalize the initial setup for your agentless frontend
 source: https://www.dynatrace.com/docs/observe/digital-experience/new-rum-experience/web-frontends/initial-setup/finalize-initial-setup-agentless
-scraped: 2026-03-04T21:37:20.590267
+scraped: 2026-03-06T21:26:15.702725
 ---
 
 # Finalize the initial setup for your agentless frontend
@@ -10,7 +10,7 @@ scraped: 2026-03-04T21:37:20.590267
 
 * Latest Dynatrace
 * How-to guide
-* Published Jan 29, 2026
+* Updated on Mar 05, 2026
 
 After [setting up a new agentless frontend](/docs/observe/digital-experience/new-rum-experience/web-frontends/initial-setup/set-up-agentless-monitoring "Learn how to set up agentless RUM for your web frontends in the New RUM Experience."), the charts in [![Experience Vitals](https://dt-cdn.net/images/experience-vitals-256-9999590b55.png "Experience Vitals") **Experience Vitals**](/docs/observe/digital-experience/new-rum-experience/experience-vitals "The Experience Vitals app provides an entry point for monitoring web and mobile frontends.") should begin displaying data within ten minutes if your frontend is receiving traffic. If they don't, your setup may require further configuration steps. This guide walks you through a series of checks to help you identify the configuration needed.
 
@@ -42,7 +42,7 @@ To identify RUM beacons in your browser's developer tools, look for requests wit
 
 If the browser developer tools don't show any beacons, check the following aspects of your setup:
 
-* If you enabled [data-collection and opt-in mode](/docs/observe/digital-experience/new-rum-experience/web-frontends/additional-configuration/data-privacy-web#data-collection-and-opt-in-mode "Learn about the available settings that help you ensure your web frontends comply with data privacy regulations.") during setup, your code needs to call [`dtrum.enable()`ï»¿](https://www.dynatrace.com/support/doc/javascriptapi/doc/types/dtrum.html#enable) from the JavaScript API after the user accepts your data privacy policy. Only then will the RUM JavaScript begin sending data.
+* If you enabled [data-collection and opt-in mode](/docs/observe/digital-experience/new-rum-experience/web-frontends/additional-configuration/data-privacy-web#data-collection-and-opt-in-mode "Learn about the available settings that help you ensure your web frontends comply with data privacy regulations.") during setup, your code needs to call [`dtrum.enable()`ï»¿](https://docs.dynatrace.com/javascriptapi/doc/types/dtrum.html#enable) from the JavaScript API after the user accepts your data privacy policy. Only then will the RUM JavaScript begin sending data.
 * If you selected the snippet format [inline code](/docs/observe/digital-experience/new-rum-experience/web-frontends/initial-setup/snippet-formats#inline-code "Learn how to select the format for the RUM JavaScript snippet that best fits your specific use case in the New RUM Experience."), your browser's console may display a CSP rule violation indicating that an inline script was blocked. In this case, adjust your CSP rules as described in [Allow the execution of inline code](/docs/observe/digital-experience/new-rum-experience/web-frontends/initial-setup/adapt-csp-rules#allow-the-execution-of-inline-code "Learn how to adapt your CSP rules for the New RUM Experience.").
 
 ### Beacons blocked due to CSP rule violations

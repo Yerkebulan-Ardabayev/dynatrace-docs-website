@@ -1,7 +1,7 @@
 ---
 title: Monitor Google Kubernetes Engine (GKE)
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/google-gke
-scraped: 2026-03-05T21:16:17.975122
+scraped: 2026-03-06T21:18:08.510400
 ---
 
 # Monitor Google Kubernetes Engine (GKE)

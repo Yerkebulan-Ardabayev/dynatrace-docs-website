@@ -1,7 +1,7 @@
 ---
 title: Amazon Aurora monitoring
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-aurora
-scraped: 2026-03-05T21:34:32.320429
+scraped: 2026-03-06T21:37:03.991711
 ---
 
 # Amazon Aurora monitoring
@@ -828,7 +828,7 @@ To check the availability of preset dashboards for each AWS service, see the lis
 
 ## Available metrics
 
-`DBClusterIdentifier` is the main dimension.
+`DBClusterIdentifier` является основной размерностью.
 
 | Name | Description | Unit | Statistics | Dimensions | Recommended |
 | --- | --- | --- | --- | --- | --- |

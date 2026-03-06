@@ -1,7 +1,7 @@
 ---
 title: Ownership
 source: https://www.dynatrace.com/docs/deliver/ownership-app
-scraped: 2026-03-05T21:40:13.236578
+scraped: 2026-03-06T21:26:47.952622
 ---
 
 # Ownership
@@ -34,7 +34,7 @@ settings:objects:write
 
 Write settings 2.0 schemas
 
-## Installation
+### Installation
 
 Make sure the app is [installed in your environment](/docs/manage/hub#install "See the information about Dynatrace Hub.").
 

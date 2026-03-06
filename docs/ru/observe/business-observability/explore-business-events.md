@@ -1,7 +1,7 @@
 ---
 title: Explore Business Events
 source: https://www.dynatrace.com/docs/observe/business-observability/explore-business-events
-scraped: 2026-03-05T21:21:14.742956
+scraped: 2026-03-06T21:14:45.059247
 ---
 
 # Explore Business Events
@@ -66,7 +66,7 @@ state:app-states:write
 
 Is required to write app states
 
-## Installation
+### Installation
 
 Make sure the app is [installed in your environment](/docs/manage/hub#install "See the information about Dynatrace Hub.").
 

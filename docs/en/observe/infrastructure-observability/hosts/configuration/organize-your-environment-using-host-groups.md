@@ -1,7 +1,7 @@
 ---
 title: Organize your environment using host groups
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/hosts/configuration/organize-your-environment-using-host-groups
-scraped: 2026-03-05T21:23:21.554370
+scraped: 2026-03-06T21:13:27.489539
 ---
 
 # Organize your environment using host groups

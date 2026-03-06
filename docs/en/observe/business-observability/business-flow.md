@@ -1,7 +1,7 @@
 ---
 title: Business Flow
 source: https://www.dynatrace.com/docs/observe/business-observability/business-flow
-scraped: 2026-03-05T21:21:10.868097
+scraped: 2026-03-06T21:14:34.599595
 ---
 
 # Business Flow
@@ -87,7 +87,7 @@ settings:objects:write
 
 Write settings objects
 
-## Installation
+### Installation
 
 Make sure the app is [installed in your environment](/docs/manage/hub#install "See the information about Dynatrace Hub.").
 

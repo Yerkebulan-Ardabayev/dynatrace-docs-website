@@ -1,7 +1,7 @@
 ---
 title: Problems app
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/davis-problems-app
-scraped: 2026-03-05T21:12:30.590843
+scraped: 2026-03-06T21:09:32.258514
 ---
 
 # Problems app
@@ -63,7 +63,7 @@ settings:objects:read
 
 Read settings objects from Environment API
 
-## Installation
+### Installation
 
 Make sure the app is [installed in your environment](/docs/manage/hub#install "See the information about Dynatrace Hub.").
 

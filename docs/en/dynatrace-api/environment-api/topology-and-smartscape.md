@@ -1,7 +1,7 @@
 ---
 title: Topology and Smartscape API
 source: https://www.dynatrace.com/docs/dynatrace-api/environment-api/topology-and-smartscape
-scraped: 2026-03-05T21:14:43.066956
+scraped: 2026-03-06T21:12:56.066698
 ---
 
 # Topology and Smartscape API

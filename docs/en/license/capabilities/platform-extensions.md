@@ -1,7 +1,7 @@
 ---
 title: Platform extensions overview (DPS)
 source: https://www.dynatrace.com/docs/license/capabilities/platform-extensions
-scraped: 2026-03-05T21:40:11.515647
+scraped: 2026-03-06T21:36:49.590243
 ---
 
 # Platform extensions overview (DPS)

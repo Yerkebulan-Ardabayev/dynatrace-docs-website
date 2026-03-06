@@ -1,99 +1,99 @@
 ---
-title: Начало работы с Dynatrace Intelligence агентным и генеративным ИИ
+title: Get started with Dynatrace Intelligence agentic and generative AI
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/copilot/copilot-getting-started
-scraped: 2026-03-05T21:23:14.793631
+scraped: 2026-03-06T21:13:25.807648
 ---
 
-# Начало работы с Dynatrace Intelligence агентным и генеративным ИИ
+# Get started with Dynatrace Intelligence agentic and generative AI
 
-# Начало работы с Dynatrace Intelligence агентным и генеративным ИИ
+# Get started with Dynatrace Intelligence agentic and generative AI
 
-* Последнее Dynatrace
-* Руководство по началу работы
-* 3-минутное чтение
-* Обновлено 03 марта 2026 г.
+* Latest Dynatrace
+* How-to guide
+* 3-min read
+* Updated on Mar 03, 2026
 
-Dynatrace Intelligence агентный и генеративный ИИ включен на уровне учетной записи по умолчанию, что означает, что все ваши среды автоматически имеют доступ к нему. Однако функциональность ИИ должна быть включена на уровне среды через страницу настроек, которая предлагает вам полный контроль над тем, как Dynatrace Intelligence агентный и генеративный ИИ включен и настроен в вашей среде.
+Dynatrace Intelligence agentic and generative AI is enabled on the account level by default, meaning that all your environments automatically have access to it. However, AI functionality must still be enabled on the environment level via the settings page, which offers you full control over how Dynatrace Intelligence agentic and generative AI is enabled and configured in your environment.
 
-## Включение Dynatrace Intelligence генеративного ИИ в вашей среде
+## Enable Dynatrace Intelligence generative AI on your environment
 
-Чтобы включить Dynatrace Intelligence генеративный ИИ в вашей среде
+To enable Dynatrace Intelligence generative AI on your environment
 
-1. Перейдите к ![Настройки](https://dt-cdn.net/images/settings-icon-256-38e1321b51.webp "Настройки") **Настройки** >  **Dynatrace Intelligence** > **Генеративный и агентный ИИ**.
-2. Включите **Включить генеративный ИИ**.
+1. Go to ![Settings](https://dt-cdn.net/images/settings-icon-256-38e1321b51.webp "Settings") **Settings** >  **Dynatrace Intelligence** > **Generative and agentic AI**.
+2. Turn on **Enable generative AI**.
 
-![Включение генеративного ИИ в настройках](https://dt-cdn.net/images/generative-ai-settings-1913-24ab3b085b.png)
+![Enable generative AI in your settings](https://dt-cdn.net/images/generative-ai-settings-1913-24ab3b085b.png)
 
-Если вы не видите страницы настроек, убедитесь, что у вас есть политики `Setting Reader` и `Setting Writer`. Для получения дополнительной информации см. [разрешения на чтение и запись](/docs/manage/identity-access-management/use-cases/access-settings#example-read-and-write-permissions "Предоставление доступа к настройкам").
+If you can't see the settings page, make sure you have `Setting Reader` and `Setting Writer` policies assigned. For more information, see [read and write permission](/docs/manage/identity-access-management/use-cases/access-settings#example-read-and-write-permissions "Grant access to Settings").
 
-### Разрешения пользователей
+### User permissions
 
-После включения Dynatrace Intelligence генеративного ИИ на уровне среды вам все равно придется предоставить доступ к различным навыкам генеративного ИИ вашим пользователям. Для этого необходимо привязать группу, к которой они принадлежат, к политике с следующим утверждением, которое позволяет доступ к генеративному ИИ:
+After enabling Dynatrace Intelligence generative AI on the environment level, you'll still need to give access to the various generative AI skills to your users. To do so, you have to bind the group they belong to a policy with the following statement that allows access to generative AI:
 
-* **Перевод естественного языка в DQL** (`ALLOW davis-copilot:nl2dql:execute;`)
-* **Перевод DQL в естественный язык** (`ALLOW davis-copilot:dql2nl:execute;`)
-* **Рекомендатель по разговорам** (`ALLOW davis-copilot:conversations:execute;`)
+* **Natural language to DQL translation** (`ALLOW davis-copilot:nl2dql:execute;`)
+* **DQL translation to natural language** (`ALLOW davis-copilot:dql2nl:execute;`)
+* **Conversational recommender** (`ALLOW davis-copilot:conversations:execute;`)
 
-Для получения дополнительной информации о управлении вашими политиками см. [Управление политиками IAM](/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies/iam-policy-mgt "Создание, редактирование, копирование и удаление политик IAM для управления разрешениями пользователей Dynatrace").
+For more information on managing your policies, see [Manage IAM policies](/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies/iam-policy-mgt "Create, edit, copy, and delete IAM policies for managing Dynatrace user permissions.").
 
-## Включение агентного ИИ для Dynatrace Assist
+## Enable agentic AI for Dynatrace Assist
 
-**Dynatrace Assist** позволяет вам использовать Dynatrace агентный ИИ и [инструменты и возможности MCP](/docs/dynatrace-intelligence/dynatrace-intelligence-integrations/dynatrace-mcp#server "Узнайте о сервере Dynatrace MCP и о том, как вы можете подключиться к нему.") для доступа и анализа данных вашей среды и использования их для выполнения задач (таких как перечисление проблем или генерация и выполнение запросов DQL) в дополнение к ответам на общие вопросы о Dynatrace.
+**Dynatrace Assist** allows you to use Dynatrace agentic AI and [MCP tools and capabilities](/docs/dynatrace-intelligence/dynatrace-intelligence-integrations/dynatrace-mcp#server "Learn about the Dynatrace MCP server and how you can connect to it.") to access and analyze your environment data and use it to perform tasks (such as listing problems or generating and executing DQL queries) in addition to answering general questions about Dynatrace.
 
-Агентный **Dynatrace Assist** делится некоторой дополнительной информацией, такой как результаты вызовов инструментов, с корпоративными поставщиками, которые размещают LLM, на основе которых построены Dynatrace агентный и генеративный ИИ. Для получения дополнительной информации о третьих сторонах см. [Используется ли моя информация для обучения Dynatrace Intelligence генеративному ИИ?](/docs/dynatrace-intelligence/copilot/copilot-faq#copilot-training-on-data "Узнайте о часто задаваемых вопросах и найдите ответы на них").
+Agentic  **Dynatrace Assist** shares some additional information, such as tool call results, with enterprise vendors hosting the LLMs that Dynatrace agentic and generative AI are based on. For more information about third parties, see [Is my data used to train Dynatrace Intelligence generative AI?](/docs/dynatrace-intelligence/copilot/copilot-faq#copilot-training-on-data "Learn about frequently asked questions and find your answers.").
 
-Чтобы использовать агентный **Dynatrace Assist**, вам необходимо
+To use the agentic  **Dynatrace Assist**, you need to
 
-* Иметь достаточные разрешения.
-* Иметь агентный ИИ, включенный для **Dynatrace Assist**. Чтобы включить агентный ИИ
+* Have sufficient permissions.
+* Have agentic AI enabled for  **Dynatrace Assist**. To enable agentic AI
 
-  1. Перейдите к ![Настройки](https://dt-cdn.net/images/settings-icon-256-38e1321b51.webp "Настройки") **Настройки** >  **Dynatrace Intelligence** > **Генеративный и агентный ИИ**.
-  2. Убедитесь, что **Включить генеративный ИИ** включен.
-  3. Включите **Включить агентный ИИ**.
+  1. Go to ![Settings](https://dt-cdn.net/images/settings-icon-256-38e1321b51.webp "Settings") **Settings** >  **Dynatrace Intelligence** > **Generative and agentic AI**.
+  2. Ensure that **Enable generative AI** is turned on.
+  3. Turn on **Enable agentic AI**.
 
-Агентный **Dynatrace Assist** может быть недоступен для вас, если вы не соответствуете вышеуказанным предварительным требованиям или если вы доступ к **Dynatrace Assist** из [встроенных стартовых разговоров](/docs/dynatrace-intelligence/copilot/chat-with-davis-copilot/copilot-conv-starters "Узнайте, как запустить предопределенные подсказки в различных приложениях Dynatrace").
+Agentic  **Dynatrace Assist** might not be available for you if you don't meet the prerequisites mentioned above or if you access  **Dynatrace Assist** from the [Embedded conversation starters](/docs/dynatrace-intelligence/copilot/chat-with-davis-copilot/copilot-conv-starters "Learn how to trigger predefined prompts in various Dynatrace applications.").
 
-### Разрешения агентного Dynatrace Assist
+### **Dynatrace Assist** agentic permissions
 
-Вам также понадобятся дополнительные разрешения для вызова инструментов агентного ИИ. Для списка инструментов и необходимых им разрешений см. [инструменты MCP](/docs/dynatrace-intelligence/dynatrace-intelligence-integrations/dynatrace-mcp#server "Узнайте о сервере Dynatrace MCP и о том, как вы можете подключиться к нему.").
+You will also need additional permissions for calling the agentic AI tools. For the list of tools and permissions they require, see [MCP tools](/docs/dynatrace-intelligence/dynatrace-intelligence-integrations/dynatrace-mcp#server "Learn about the Dynatrace MCP server and how you can connect to it.").
 
-### Маскирование ПII
+### PII masking
 
-Агентный **Dynatrace Assist** не предоставляет никакого маскирования ПII. Чтобы защитить ваши данные, когда **Dynatrace Assist** обнаруживает ПII в запросе пользователя, запрос автоматически блокируется и запрос не отправляется в LLM для обработки.
+Agentic  **Dynatrace Assist** doesn't provide any PII masking. In order to protect your data, when  **Dynatrace Assist** detects PII in the user prompt, the request is automatically blocked and the prompt isn't sent to the LLM for processing.
 
-### Вызов нескольких инструментов
+### Calling multiple tools
 
-При взаимодействии с агентным **Dynatrace Assist** он может вызывать до 10 внутренних инструментов MCP за один ответ. Если ваш запрос требует от **Dynatrace Assist** вызвать более 10 инструментов одновременно, он не сможет завершить взаимодействие.
+While interacting with  **Dynatrace Assist** in agentic mode, **Assist** can call up to 10 internal MCP tools per response. If your request requires  **Dynatrace Assist** to call more than 10 tools simultaneously, it'll be unable to complete the interaction.
 
-## Доступ к данным на основе пользователей
+## User-based data access
 
-Dynatrace Intelligence агентный и генеративный ИИ уважает привилегии и разрешения пользователей. Это означает, что
+Dynatrace Intelligence agentic and generative AI respects user privileges and permissions. This means that
 
-* Он может предоставлять разные ответы разным пользователям на основе их прав доступа.
-* Все вызовы агентного **Dynatrace Assist** выполняются в рамках прав доступа пользователя, и результаты не будут включать ничего вне его.
+* It may provide different responses to different users based on their access rights.
+* All agentic  **Dynatrace Assist** calls are done within the scope of your user permissions and the results won't include anything outside of it.
 
-## Включение предложения документов
+## Enable document suggestion
 
-Предложение документов — это навык Dynatrace Intelligence агентного и генеративного ИИ, который позволяет ему рекомендовать вам руководства по устранению неполадок, созданные в ![Тетради](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Тетради") **Тетради** и ![Панели приборов](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Панели приборов") **Панели приборов** на основе векторной подобия. Вы можете использовать предложение документов Dynatrace Intelligence агентного и генеративного ИИ в ![Проблемы - новое](https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp "Проблемы - новое") **Проблемы**, чтобы быстро получить руководства по устранению неполадок, написанные вами или вашей командой для подобных проблем, и уменьшить среднее время ремонта (MTTR).
+Document suggestion is a Dynatrace Intelligence agentic and generative AI skill that allows it to recommend to you troubleshooting guides created in ![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks** and ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards** based on vector similarity. You can leverage Dynatrace Intelligence agentic and generative AI's document suggestion in ![Problems app - new](https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp "Problems app - new") **Problems** to quickly retrieve troubleshooting guides written by you or your team for similar problems and reduce mean time to repair (MTTR).
 
-Если вы хотите, чтобы Dynatrace Intelligence агентный и генеративный ИИ предлагал руководства по устранению неполадок для подобных или повторяющихся проблем, вам необходимо разрешить ему искать и индексировать документы, созданные в ![Тетради](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Тетради") **Тетради** и ![Панели приборов](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Панели приборов") **Панели приборов**, и общие со всеми пользователями в вашей среде. Чтобы обеспечить полный контроль над безопасностью ваших данных, эта функциональность является опциональной и выключена по умолчанию.
+If you want Dynatrace Intelligence agentic and generative AI to suggest troubleshooting guides for similar or repeatedly occurring problem, you'll need to allow it to search through and index documents created in ![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks** and ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards** and shared with all users in your environment. To ensure you have full control over the security of your data, this functionality is opt-in and is turned off by default.
 
-Чтобы Dynatrace Intelligence агентный и генеративный ИИ мог индексировать и предлагать ваш документ, он должен быть общим со всеми пользователями в вашей среде. Dynatrace Intelligence агентный и генеративный ИИ не будет индексировать или предлагать никакие частные документы или документы, общие только с определенными пользователями. Чтобы узнать больше о обмене документами, см. [Обмен документами](/docs/discover-dynatrace/get-started/dynatrace-ui/share "Обмен документами Dynatrace (панелями приборов, тетрадями и запусками) с другими пользователями Dynatrace в вашей компании.").
+In order for Dynatrace Intelligence agentic and generative AI to index and suggest your document, it has to be shared with all users in your environment. Dynatrace Intelligence agentic and generative AI won't index or suggest any private documents or documents shared only with specific users. To learn more about sharing documents, see [Share documents](/docs/discover-dynatrace/get-started/dynatrace-ui/share "Share Dynatrace documents (dashboards, notebooks, and launchpads) with other Dynatrace users in your company.").
 
-Чтобы включить предложение документов
+To enable document suggestion
 
-1. Перейдите к ![Настройки](https://dt-cdn.net/images/settings-icon-256-38e1321b51.webp "Настройки") **Настройки** >  **Dynatrace Intelligence** > **Генеративный и агентный ИИ**.
-2. Включите **Включить предложения документов**, чтобы разрешить Dynatrace Intelligence агентному и генеративному ИИ ингестировать руководства по устранению неполадок и предлагать их вам.
+1. Go to ![Settings](https://dt-cdn.net/images/settings-icon-256-38e1321b51.webp "Settings") **Settings** >  **Dynatrace Intelligence** > **Generative and agentic AI**.
+2. Turn on **Enable document suggestions** to allow Dynatrace Intelligence agentic and generative AI to ingest troubleshooting guides and suggest them to you.
 
-По умолчанию Dynatrace Intelligence агентный и генеративный ИИ индексирует руководства по устранению неполадок каждые 6 часов.
+By default, Dynatrace Intelligence agentic and generative AI indexes troubleshooting guides every 6 hours.
 
-### Семантическое векторное индексирование
+### Semantic vector indexing
 
-Dynatrace Intelligence агентный и генеративный ИИ использует семантическое векторное индексирование, чтобы предлагать соответствующие панели приборов и тетради по устранению неполадок, общие в среде. Он непрерывно индексирует содержимое панелей приборов и тетрадей, признанных руководствами по устранению неполадок. Когда пользователь доступ к представлению устранения неполадок для конкретной проблемы, генеративный ИИ сравнивает описание проблемы с индексированными данными, используя семантическое подобие, чтобы предлагать наиболее релевантные руководства.
+Dynatrace Intelligence agentic and generative AI uses semantic vector indexing to suggest relevant troubleshooting dashboards and notebooks shared within the environment. It continuously indexes the content of dashboards and notebooks recognized as troubleshooting guides. When a user accesses the troubleshooting view for a specific problem, generative AI compares the problem description to the indexed data using semantic similarity to suggest the most relevant guides.
 
-Этот процесс основан на векторных представлениях как описания проблемы, так и индексированного содержимого документа или панели приборов. Чем меньше семантическое расстояние между описанием проблемы и документом, тем выше его релевантность. Это означает, что документ с большей вероятностью будет предложен Dynatrace Intelligence агентным и генеративным ИИ в качестве релевантного руководства по устранению неполадок.
+This process relies on vector representations of both the problem description and the indexed dashboard or notebook content. The smaller the semantic distance between the problem description and a document, the higher its relevance score. This means it's more likely for a document to be suggested by Dynatrace Intelligence agentic and generative AI as a relevant troubleshooting guide.
 
-## Включение запросов, осведомленных о среде
+## Enable environment-aware queries
 
 
 

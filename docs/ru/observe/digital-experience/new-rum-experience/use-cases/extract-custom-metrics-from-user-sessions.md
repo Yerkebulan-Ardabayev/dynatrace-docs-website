@@ -1,7 +1,7 @@
 ---
 title: Extract a metric from user sessions
 source: https://www.dynatrace.com/docs/observe/digital-experience/new-rum-experience/use-cases/extract-custom-metrics-from-user-sessions
-scraped: 2026-03-05T21:20:15.315801
+scraped: 2026-03-06T21:15:52.450536
 ---
 
 # Extract a metric from user sessions
@@ -10,7 +10,7 @@ scraped: 2026-03-05T21:20:15.315801
 
 * Latest Dynatrace
 * Tutorial
-* Published Dec 19, 2025
+* Updated on Mar 05, 2026
 
 OpenPipeline lets you extract custom metrics from [user sessions](/docs/observe/digital-experience/new-rum-experience/concepts/data-model#user-sessions "Get familiar with the data model at the heart of the New RUM Experience."), enabling long-term analyses in ![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks** and ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards** that go far beyond standard performance monitoring. By combining these metrics with [user session properties](/docs/observe/digital-experience/new-rum-experience/concepts/data-model#event-and-session-properties "Get familiar with the data model at the heart of the New RUM Experience."), you gain the flexibility to uncover insights that are highly tailored to your business objectives.
 
@@ -20,7 +20,7 @@ To illustrate this process, this guide walks you through extracting a customer c
 
 In this tutorial, weâll use a web shop as our example. The shop is instrumented with the RUM JavaScript, and the captured data is mapped to a [frontend](/docs/observe/digital-experience/new-rum-experience/concepts/frontends "Learn about the frontend concept in the New RUM Experience.") named `webshop`.
 
-Instrumentation was customized to send a user session property `successful_checkout` whenever a customer successfully completes the checkout process. The property was configured as described in [Capture event and session properties for web frontends](/docs/observe/digital-experience/new-rum-experience/web-frontends/additional-configuration/event-and-session-properties "Learn how to capture event and session properties for web frontends.") and then sent via JavaScript API using [`sendSessionPropertyEvent`ï»¿](https://www.dynatrace.com/support/doc/javascriptapi/doc-latest/functions/Types.dynatrace.sendSessionPropertyEvent.html):
+Instrumentation was customized to send a user session property `successful_checkout` whenever a customer successfully completes the checkout process. The property was configured as described in [Capture event and session properties for web frontends](/docs/observe/digital-experience/new-rum-experience/web-frontends/additional-configuration/event-and-session-properties "Learn how to capture event and session properties for web frontends.") and then sent via JavaScript API using [`sendSessionPropertyEvent`ï»¿](https://docs.dynatrace.com/javascriptapi/doc-latest/functions/Types.dynatrace.sendSessionPropertyEvent.html):
 
 ```
 dynatrace.sendSessionPropertyEvent({

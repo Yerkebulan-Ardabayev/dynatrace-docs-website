@@ -1,6 +1,6 @@
 # Документация Dynatrace: deliver/service-level-objectives
 Язык: Русский (RU)
-Сгенерировано: 2026-03-05
+Сгенерировано: 2026-03-06
 Файлов в разделе: 7
 ---
 
@@ -110,7 +110,7 @@ You can create, edit, list, delete, and evaluate your SLOs via API.
 ---
 title: Permissions for service-level objective (SLO) tiles in a dashboard
 source: https://www.dynatrace.com/docs/deliver/service-level-objectives/service-level-objective-permissions
-scraped: 2026-03-05T21:33:54.669624
+scraped: 2026-03-06T21:32:41.871210
 ---
 
 # Permissions for service-level objective (SLO) tiles in a dashboard
@@ -227,7 +227,7 @@ Due to the intersection, the result contains only the evaluations related to S-2
 ---
 title: Edit a service-level objective (SLO) tile in a dashboard
 source: https://www.dynatrace.com/docs/deliver/service-level-objectives/service-level-objective-tile-edit-in-dashboard
-scraped: 2026-03-05T21:35:46.560106
+scraped: 2026-03-06T21:33:11.531334
 ---
 
 # Edit a service-level objective (SLO) tile in a dashboard
@@ -564,7 +564,7 @@ For further optimization and guidance, contact your Dynatrace support team to ma
 ---
 title: Service-Level Objectives
 source: https://www.dynatrace.com/docs/deliver/service-level-objectives
-scraped: 2026-03-03T21:32:43.343037
+scraped: 2026-03-06T21:30:36.060105
 ---
 
 # Service-Level Objectives
@@ -627,7 +627,7 @@ To read and write SLOs, you need the following [IAM](/docs/manage/identity-acces
 * `ALLOW slo:slos:read, slo:objective-templates:read;`
 * `ALLOW slo:slos:write;`
 
-## Installation
+### Installation
 
 Make sure the app is [installed in your environment](/docs/manage/hub#install "See the information about Dynatrace Hub.").
 

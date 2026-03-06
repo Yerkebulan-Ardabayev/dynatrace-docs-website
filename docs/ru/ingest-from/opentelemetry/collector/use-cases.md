@@ -1,7 +1,7 @@
 ---
 title: OpenTelemetry Collector use cases
 source: https://www.dynatrace.com/docs/ingest-from/opentelemetry/collector/use-cases
-scraped: 2026-03-03T21:30:19.418697
+scraped: 2026-03-06T21:32:50.601348
 ---
 
 # OpenTelemetry Collector use cases
@@ -11,7 +11,7 @@ scraped: 2026-03-03T21:30:19.418697
 * Latest Dynatrace
 * How-to guide
 * 2-min read
-* Updated on Dec 09, 2025
+* Updated on Mar 06, 2026
 
 ## Recommended configurations
 
@@ -35,7 +35,11 @@ Configure the OpenTelemetry Collector to ingest data from FluentD.](/docs/ingest
 
 Configure the OpenTelemetry Collector to transform a gRPC OTLP request to HTTP.](/docs/ingest-from/opentelemetry/collector/use-cases/grpc "Configure the OpenTelemetry Collector to transform a gRPC OTLP request to HTTP.")[### Histogram summaries
 
-Configure the OpenTelemetry Collector to compute bucket summaries for histogram metrics.](/docs/ingest-from/opentelemetry/collector/use-cases/histograms "Configure the OpenTelemetry Collector to compute histogram summaries.")[![Jaeger](https://dt-cdn.net/images/jaeger-300-3d21c8cbd4-300-2d7104a994.png "Jaeger")
+Configure the OpenTelemetry Collector to compute bucket summaries for histogram metrics.](/docs/ingest-from/opentelemetry/collector/use-cases/histograms "Configure the OpenTelemetry Collector to compute histogram summaries.")[![Infrastructure observability](https://cdn.bfldr.com/B686QPH3/at/5kh38tq37h2w4qtnmbp5m889/DT0434.svg?auto=webp&width=72&height=72 "Infrastructure observability")
+
+### Host Monitoring extension
+
+Monitor your hosts that send OpenTelemetry data to Dynatrace.](/docs/ingest-from/opentelemetry/collector/use-cases/host-monitoring "How to monitor your hosts that use Collectors to send OpenTelemetry data to Dynatrace.")[![Jaeger](https://dt-cdn.net/images/jaeger-300-3d21c8cbd4-300-2d7104a994.png "Jaeger")
 
 ### Jaeger
 

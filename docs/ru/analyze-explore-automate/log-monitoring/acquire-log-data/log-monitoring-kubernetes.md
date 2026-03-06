@@ -1,7 +1,7 @@
 ---
 title: Log Monitoring in Kubernetes (Logs Classic)
 source: https://www.dynatrace.com/docs/analyze-explore-automate/log-monitoring/acquire-log-data/log-monitoring-kubernetes
-scraped: 2026-03-05T21:39:07.125448
+scraped: 2026-03-06T21:37:52.324824
 ---
 
 # Log Monitoring in Kubernetes (Logs Classic)

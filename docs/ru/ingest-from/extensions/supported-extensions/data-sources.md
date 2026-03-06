@@ -1,7 +1,7 @@
 ---
 title: Understand extensions data sources
 source: https://www.dynatrace.com/docs/ingest-from/extensions/supported-extensions/data-sources
-scraped: 2026-03-05T21:38:46.506347
+scraped: 2026-03-06T21:36:47.888698
 ---
 
 # Understand extensions data sources

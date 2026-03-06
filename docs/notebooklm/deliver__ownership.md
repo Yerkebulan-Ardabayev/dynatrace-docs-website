@@ -1,6 +1,6 @@
 # Документация Dynatrace: deliver/ownership
 Язык: Русский (RU)
-Сгенерировано: 2026-03-05
+Сгенерировано: 2026-03-06
 Файлов в разделе: 4
 ---
 
@@ -529,13 +529,14 @@ Select ![Expand row](https://dt-cdn.net/images/expand-row-icon-9c4950fc2e.svg "E
 ---
 title: Best practices for entity ownership
 source: https://www.dynatrace.com/docs/deliver/ownership/best-practices
-scraped: 2026-03-02T21:22:27.739128
+scraped: 2026-03-06T21:37:01.750284
 ---
 
 # Best practices for entity ownership
 
 # Best practices for entity ownership
 
+* Classic
 * 5-min read
 * Updated on Apr 25, 2023
 
@@ -727,13 +728,14 @@ While only the **Team name** and **Team identifier** fields are required for cre
 ---
 title: Create and manage teams for entity ownership
 source: https://www.dynatrace.com/docs/deliver/ownership/ownership-teams
-scraped: 2026-03-03T21:22:33.092135
+scraped: 2026-03-06T21:37:33.831582
 ---
 
 # Create and manage teams for entity ownership
 
 # Create and manage teams for entity ownership
 
+* Classic
 * How-to guide
 * 8-min read
 * Updated on Nov 07, 2023
@@ -895,7 +897,7 @@ The API snippets for reading, creating, updating, and deleting teams are availab
 ---
 title: Ownership Classic
 source: https://www.dynatrace.com/docs/deliver/ownership
-scraped: 2026-03-05T21:34:55.980330
+scraped: 2026-03-06T21:28:42.755901
 ---
 
 # Ownership Classic

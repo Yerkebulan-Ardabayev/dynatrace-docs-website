@@ -1,7 +1,7 @@
 ---
 title: Get started with OpenTelemetry and AI Observability
 source: https://www.dynatrace.com/docs/observe/dynatrace-for-ai-observability/get-started/opentelemetry
-scraped: 2026-03-01T21:28:39.410086
+scraped: 2026-03-06T21:28:35.685729
 ---
 
 # Get started with OpenTelemetry and AI Observability
@@ -46,7 +46,7 @@ In order for this to work, you need to have:
 * Dynatrace SaaS with a [Dynatrace Platform Subscription (DPS)](/docs/license "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.") license that has [Traces powered by Grail](/docs/license/capabilities/traces "Learn how Dynatrace Traces powered by Grail consumption is calculated using the Dynatrace Platform Subscription (DPS) model."), [Metrics powered by Grail](/docs/license/capabilities/metrics "Learn how Dynatrace Metrics powered by Grail consumption is calculated using the Dynatrace Platform Subscription model."), and [Log Analytics](/docs/license/capabilities/log-analytics "Learn how Dynatrace Log Analytics consumption is calculated using the Dynatrace Platform Subscription model.") enabled.
 * OTLP ingestion enabled, see [OpenTelemetry and Dynatrace](/docs/ingest-from/opentelemetry "Learn how to integrate and ingest OpenTelemetry data (traces, metrics, and logs) into Dynatrace.").
 * An OpenAPI platform API key.
-* A Dynatrace API token the following scopes, see [Platform tokens](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/platform-tokens "Create personalised platform tokens to access Dynatrace services via the API in your user context.").
+* A Dynatrace API token the following scopes, see [Dynatrace API - Tokens and authentication](/docs/dynatrace-api/basics/dynatrace-api-authentication "Find out how to get authenticated to use the Dynatrace API.").
 
   + Ingest metrics (`metrics.ingest`)
   + Ingest logs (`logs.ingest`)

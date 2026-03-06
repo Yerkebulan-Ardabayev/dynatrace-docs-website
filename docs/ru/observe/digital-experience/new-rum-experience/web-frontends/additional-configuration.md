@@ -1,7 +1,7 @@
 ---
 title: Additional configuration for web frontends
 source: https://www.dynatrace.com/docs/observe/digital-experience/new-rum-experience/web-frontends/additional-configuration
-scraped: 2026-03-02T21:25:39.772509
+scraped: 2026-03-06T21:28:25.051728
 ---
 
 # Additional configuration for web frontends

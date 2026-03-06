@@ -1,7 +1,7 @@
 ---
 title: Trace Azure Functions written in .NET
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-functions/func-dynamic-plans/opentelemetry-on-azure-functions-dotnet
-scraped: 2026-03-05T21:29:46.055595
+scraped: 2026-03-06T21:38:21.488936
 ---
 
 # Trace Azure Functions written in .NET

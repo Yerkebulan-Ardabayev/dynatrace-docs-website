@@ -1,7 +1,7 @@
 ---
 title: Optimize performance and costs of dashboards running log queries
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-use-cases/lma-log-query-dashboard
-scraped: 2026-03-02T21:29:25.162415
+scraped: 2026-03-06T21:37:57.469012
 ---
 
 # Optimize performance and costs of dashboards running log queries

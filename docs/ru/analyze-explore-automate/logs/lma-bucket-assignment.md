@@ -1,7 +1,7 @@
 ---
 title: Configure data storage and retention for logs
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-bucket-assignment
-scraped: 2026-03-05T21:19:44.715266
+scraped: 2026-03-06T21:15:14.824079
 ---
 
 # Configure data storage and retention for logs

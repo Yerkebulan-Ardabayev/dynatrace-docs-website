@@ -1,7 +1,7 @@
 ---
 title: Settings app
 source: https://www.dynatrace.com/docs/manage/settings
-scraped: 2026-03-05T21:32:24.736692
+scraped: 2026-03-06T21:30:39.602496
 ---
 
 # Settings app

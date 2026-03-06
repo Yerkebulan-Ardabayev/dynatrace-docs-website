@@ -1,7 +1,7 @@
 ---
 title: Network devices
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/infrastructure-and-operations/network-devices
-scraped: 2026-03-05T21:20:48.795609
+scraped: 2026-03-06T21:16:45.289692
 ---
 
 # Network devices

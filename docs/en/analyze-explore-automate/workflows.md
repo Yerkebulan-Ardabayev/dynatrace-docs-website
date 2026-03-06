@@ -1,7 +1,7 @@
 ---
 title: Workflows
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows
-scraped: 2026-03-05T21:19:30.763023
+scraped: 2026-03-06T21:15:26.954952
 ---
 
 # Workflows
@@ -71,7 +71,7 @@ For a complete list of permissions needed to use ![Workflows](https://dt-cdn.net
 
 For more information about ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Workflows** security, see [User permissions for workflows](/docs/analyze-explore-automate/workflows/security "Guide on security aspects of workflow automation in Dynatrace Workflows").
 
-## Installation
+### Installation
 
 Make sure the app is [installed in your environment](/docs/manage/hub#install "See the information about Dynatrace Hub.").
 

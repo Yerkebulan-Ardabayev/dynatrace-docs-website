@@ -1,7 +1,7 @@
 ---
 title: Live Debugger
 source: https://www.dynatrace.com/docs/observe/application-observability/live-debugger
-scraped: 2026-03-05T21:19:54.891604
+scraped: 2026-03-06T21:17:25.680314
 ---
 
 # Live Debugger

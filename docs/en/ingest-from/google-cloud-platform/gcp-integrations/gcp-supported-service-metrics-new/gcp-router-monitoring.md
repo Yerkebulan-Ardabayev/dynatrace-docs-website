@@ -1,7 +1,7 @@
 ---
 title: Google Cloud Router monitoring
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new/gcp-router-monitoring
-scraped: 2026-03-05T21:39:31.293944
+scraped: 2026-03-06T21:29:27.949865
 ---
 
 # Google Cloud Router monitoring

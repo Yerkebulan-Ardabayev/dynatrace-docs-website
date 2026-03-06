@@ -1,7 +1,7 @@
 ---
 title: Site Reliability Guardian
 source: https://www.dynatrace.com/docs/deliver/site-reliability-guardian
-scraped: 2026-03-05T21:22:02.505678
+scraped: 2026-03-06T21:15:28.801417
 ---
 
 # Site Reliability Guardian
@@ -59,7 +59,7 @@ storage:entities:read
 
 Read entities during validations
 
-## Installation
+### Installation
 
 Make sure the app is [installed in your environment](/docs/manage/hub#install "See the information about Dynatrace Hub.").
 

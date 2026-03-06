@@ -1,7 +1,7 @@
 ---
 title: Categorical chart visualization
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-chart-bar-categorical
-scraped: 2026-03-04T21:17:12.351329
+scraped: 2026-03-06T21:20:29.143481
 ---
 
 # Categorical chart visualization
