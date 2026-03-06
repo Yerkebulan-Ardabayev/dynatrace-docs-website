@@ -27205,7 +27205,7 @@
 <p>If your workflow doesn't identify any workloads or predictions, double-check your annotations on your workloads. Give it smaller targets so that that prediction target is reached faster. Remember, this is a sample use case, and it's OK to change your settings to see how the workflow behaves.</p>
 </li>
 </ol>
-<h3 id="2-dynatrace">Шаг 2: Зафиксируйте Dynatrace прогностический рабочий процесс интеллекта<a class="headerlink" href="#2-dynatrace" title="Permanent link">&para;</a></h3>
+<h3 id="2-dynatrace-workflow">Шаг 2: Зафиксируйте Dynatrace Workflow прогнозирования интеллекта<a class="headerlink" href="#2-dynatrace-workflow" title="Permanent link">&para;</a></h3>
 <p>This workflow is triggered every time the first workflow detects a Kubernetes workload that should be scaled and emits a Davis event.</p>
 <h4 id="prerequisite">Prerequisite<a class="headerlink" href="#prerequisite" title="Permanent link">&para;</a></h4>
 <p>In this workflow a task uses JavaScript to call the GitHub API to create the pull request. While some of the GitHub Connector actions use the connection you set up when you followed the <a href="/docs/analyze-explore-automate/workflows/actions/github/github-workflows-setup" title="Learn how to set up GitHub Connector.">Set up GitHub Connector</a>, your custom steps need to use the same Personal Access Token (PAT) that you query from the credential vault. Another token you need is a Dynatrace Platform API token to interact with the Dynatrace Intelligence agentic and generative AI API.</p>

@@ -25531,115 +25531,6 @@
 <p>DDUs: <code>(60 + (8 * Interfaces)) * 525.6 DDUs/year, per device</code></p>
 <p>DPS (Metric data points): <code>(60 + (8 * Interfaces)) * 525,600 metric data points/year, per device</code></p>
 <h2 id="feature-sets">Feature sets<a class="headerlink" href="#feature-sets" title="Permanent link">&para;</a></h2>
-<p>Software_Status_SP</p>
-<table>
-<thead>
-<tr>
-<th>Metric name</th>
-<th>Metric key</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>SP CPU utilization</td>
-<td>com.dynatrace.extension.network_device.sp.cpu_usage</td>
-<td>SP CPU utilization</td>
-</tr>
-</tbody>
-</table>
-<p>Virtual_Server_Utilization_Virtual</p>
-<table>
-<thead>
-<tr>
-<th>Metric name</th>
-<th>Metric key</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Virtual server current sessions</td>
-<td>radware_alteon.slbstat.enh.vserver.currsessions</td>
-<td>The number of sessions that are currently handled by the virtual server.</td>
-</tr>
-<tr>
-<td>Virtual server total sessions</td>
-<td>radware_alteon.slbstat.enh.vserver.totalsessions</td>
-<td>The total number of sessions that are handled by the virtual server.</td>
-</tr>
-<tr>
-<td>Virtual server highest sessions handled</td>
-<td>radware_alteon.slbstat.enh.vserver.highestsessions</td>
-<td>The highest number of sessions that have been handled by the virtual server.</td>
-</tr>
-<tr>
-<td>Total octets received and transmitted by the virtual server</td>
-<td>radware_alteon.slbstat.enh.vserver.hc.octets</td>
-<td>The total octets received and transmitted by the virtual server.</td>
-</tr>
-<tr>
-<td>Sessions handled by the virtual server</td>
-<td>radware_alteon.slbstat.enh.vserver.sessions</td>
-<td>Number of Sessions handled by the virtual server per second.</td>
-</tr>
-<tr>
-<td>Real server runtime status per virtual server</td>
-<td>radware_alteon.slbstat.enh.vserver.real.status</td>
-<td>The runtime Real Server Status per Virtual service. (0)Up, (1)Down, (2)Admin-Down, (3)Warning, (4)Shutdown, (5)Error</td>
-</tr>
-<tr>
-<td>Backend server concurrent connections for virtual service</td>
-<td>radware_alteon.commng.enh.perservstats.servconn</td>
-<td>The number of concurrent backend server connections for virtual service.</td>
-</tr>
-<tr>
-<td>Virtual service client requests passed to AX</td>
-<td>radware_alteon.commng.enh.perservstats.clireq</td>
-<td>Number of client requests passed to AX for virtual service.</td>
-</tr>
-<tr>
-<td>Virtual service security policy peak bandwidth (secPolPerServBwPeak)</td>
-<td>radware_alteon.secpol.perserv.bw.peak</td>
-<td>Virtual service security policy stats - Bandwidth peak value.</td>
-</tr>
-<tr>
-<td>Virtual service security policy bandwidth ( secPolPerServBwCurVal)</td>
-<td>radware_alteon.secpol.perserv.bw.curval</td>
-<td>Virtual service security policy stats - Bandwidth current value.</td>
-</tr>
-<tr>
-<td>Virtual service security policy PPS current (secPolPerServPPSCurVal)</td>
-<td>radware_alteon.secpol.perserv.pps.curval</td>
-<td>Virtual service security policy stats - PPS current value.</td>
-</tr>
-<tr>
-<td>Virtual service security policy PPS peak (secPolPerServPPSPeak)</td>
-<td>radware_alteon.secpol.perserv.pps.peak</td>
-<td>Virtual service security policy stats - PPS peak value.</td>
-</tr>
-<tr>
-<td>Virtual service security policy CPS current (secPolPerServCPSCurVal)</td>
-<td>radware_alteon.secpol.perserv.cps.curval</td>
-<td>Virtual service security policy stats - CPS current value.</td>
-</tr>
-<tr>
-<td>Virtual service security policy CPS peak (secPolPerServCPSPeak)</td>
-<td>radware_alteon.secpol.perserv.cps.peak</td>
-<td>Virtual service security policy stats - CPS peak value.</td>
-</tr>
-<tr>
-<td>Virtual service security policy latency current (secPolPerServLatencyCurVal)</td>
-<td>radware_alteon.secpol.perserv.latency.curval</td>
-<td>Virtual service security policy stats - latency current value.</td>
-</tr>
-<tr>
-<td>Virtual service security policy latency peak (secPolPerServLatencyPeak)</td>
-<td>radware_alteon.secpol.perserv.latency.peak</td>
-<td>Virtual service security policy stats - latency peak value.</td>
-</tr>
-</tbody>
-</table>
 <p>Backend_Server_Utilization_Virtual</p>
 <table>
 <thead>
@@ -26000,6 +25891,115 @@
 <td>HTTP transactions per second</td>
 <td>radware_alteon.httptranssumm.trans.rate</td>
 <td>HTTP transactions per second.</td>
+</tr>
+</tbody>
+</table>
+<p>Software_Status_SP</p>
+<table>
+<thead>
+<tr>
+<th>Metric name</th>
+<th>Metric key</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SP CPU utilization</td>
+<td>com.dynatrace.extension.network_device.sp.cpu_usage</td>
+<td>SP CPU utilization</td>
+</tr>
+</tbody>
+</table>
+<p>Virtual_Server_Utilization_Virtual</p>
+<table>
+<thead>
+<tr>
+<th>Metric name</th>
+<th>Metric key</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Virtual server current sessions</td>
+<td>radware_alteon.slbstat.enh.vserver.currsessions</td>
+<td>The number of sessions that are currently handled by the virtual server.</td>
+</tr>
+<tr>
+<td>Virtual server total sessions</td>
+<td>radware_alteon.slbstat.enh.vserver.totalsessions</td>
+<td>The total number of sessions that are handled by the virtual server.</td>
+</tr>
+<tr>
+<td>Virtual server highest sessions handled</td>
+<td>radware_alteon.slbstat.enh.vserver.highestsessions</td>
+<td>The highest number of sessions that have been handled by the virtual server.</td>
+</tr>
+<tr>
+<td>Total octets received and transmitted by the virtual server</td>
+<td>radware_alteon.slbstat.enh.vserver.hc.octets</td>
+<td>The total octets received and transmitted by the virtual server.</td>
+</tr>
+<tr>
+<td>Sessions handled by the virtual server</td>
+<td>radware_alteon.slbstat.enh.vserver.sessions</td>
+<td>Number of Sessions handled by the virtual server per second.</td>
+</tr>
+<tr>
+<td>Real server runtime status per virtual server</td>
+<td>radware_alteon.slbstat.enh.vserver.real.status</td>
+<td>The runtime Real Server Status per Virtual service. (0)Up, (1)Down, (2)Admin-Down, (3)Warning, (4)Shutdown, (5)Error</td>
+</tr>
+<tr>
+<td>Backend server concurrent connections for virtual service</td>
+<td>radware_alteon.commng.enh.perservstats.servconn</td>
+<td>The number of concurrent backend server connections for virtual service.</td>
+</tr>
+<tr>
+<td>Virtual service client requests passed to AX</td>
+<td>radware_alteon.commng.enh.perservstats.clireq</td>
+<td>Number of client requests passed to AX for virtual service.</td>
+</tr>
+<tr>
+<td>Virtual service security policy peak bandwidth (secPolPerServBwPeak)</td>
+<td>radware_alteon.secpol.perserv.bw.peak</td>
+<td>Virtual service security policy stats - Bandwidth peak value.</td>
+</tr>
+<tr>
+<td>Virtual service security policy bandwidth ( secPolPerServBwCurVal)</td>
+<td>radware_alteon.secpol.perserv.bw.curval</td>
+<td>Virtual service security policy stats - Bandwidth current value.</td>
+</tr>
+<tr>
+<td>Virtual service security policy PPS current (secPolPerServPPSCurVal)</td>
+<td>radware_alteon.secpol.perserv.pps.curval</td>
+<td>Virtual service security policy stats - PPS current value.</td>
+</tr>
+<tr>
+<td>Virtual service security policy PPS peak (secPolPerServPPSPeak)</td>
+<td>radware_alteon.secpol.perserv.pps.peak</td>
+<td>Virtual service security policy stats - PPS peak value.</td>
+</tr>
+<tr>
+<td>Virtual service security policy CPS current (secPolPerServCPSCurVal)</td>
+<td>radware_alteon.secpol.perserv.cps.curval</td>
+<td>Virtual service security policy stats - CPS current value.</td>
+</tr>
+<tr>
+<td>Virtual service security policy CPS peak (secPolPerServCPSPeak)</td>
+<td>radware_alteon.secpol.perserv.cps.peak</td>
+<td>Virtual service security policy stats - CPS peak value.</td>
+</tr>
+<tr>
+<td>Virtual service security policy latency current (secPolPerServLatencyCurVal)</td>
+<td>radware_alteon.secpol.perserv.latency.curval</td>
+<td>Virtual service security policy stats - latency current value.</td>
+</tr>
+<tr>
+<td>Virtual service security policy latency peak (secPolPerServLatencyPeak)</td>
+<td>radware_alteon.secpol.perserv.latency.peak</td>
+<td>Virtual service security policy stats - latency peak value.</td>
 </tr>
 </tbody>
 </table>

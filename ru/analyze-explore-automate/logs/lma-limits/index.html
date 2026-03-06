@@ -25480,7 +25480,7 @@
 <li>Latest Dynatrace</li>
 <li>Explanation</li>
 <li>3-min read</li>
-<li>Updated on Feb 02, 2026</li>
+<li>Updated on Mar 04, 2026</li>
 </ul>
 <p>This page lists default limits for the latest version of Dynatrace Log Management and Analytics. The current limitations apply to both log file ingestion and log ingestion via the Log ingestion API.</p>
 <h2 id="log-ingestion-limits">Log ingestion limits<a class="headerlink" href="#log-ingestion-limits" title="Permanent link">&para;</a></h2>
@@ -25607,9 +25607,18 @@
 <ul>
 <li>If the masking process takes too much time, the log file affected is blocked until the restart of OneAgent or any configuration change, and then you get the <code>File not monitored - incorrect sensitive data masking rule</code> message.</li>
 </ul>
-<h2 id="active-gate-throughput">Active Gate throughput<a class="headerlink" href="#active-gate-throughput" title="Permanent link">&para;</a></h2>
-<p>If you are using the SaaS endpoint, you don't have to worry about the Active Gate throughput. The throughput is the same as for Grail.
-If you use Environmental Active Gate, the throughput is 3.3GB/min with RTT &lt;= 200 ms.</p>
+<h2 id="activegate-throughput">ActiveGate throughput<a class="headerlink" href="#activegate-throughput" title="Permanent link">&para;</a></h2>
+<p>If you are using the SaaS endpoint, you don't have to worry about the ActiveGate throughput. The throughput is the same as for Grail.</p>
+<p>If you use an Environment ActiveGate dedicated for log ingestion via the Log Ingestion API, performance tests indicate the following sustained ingestion throughput per Environment ActiveGate instance:</p>
+<ul>
+<li>Up to 10.3 GB/min under typical WAN conditions (round-trip time of up to roughly 200 ms)</li>
+<li>Up to 12.1 GB/min under low-latency conditions (RTT â¤ 10 ms)</li>
+</ul>
+<p>The following test profile was used:</p>
+<ul>
+<li>Host instance: c6i.2xlarge</li>
+<li>JSON payloads of approximately 300 kB per request, each containing 300 log lines, sent via the Log Ingestion API</li>
+</ul>
 
 
 

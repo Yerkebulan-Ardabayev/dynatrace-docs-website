@@ -25480,7 +25480,7 @@
 <li>Classic</li>
 <li>Reference</li>
 <li>15-min read</li>
-<li>Updated on Feb 11, 2026</li>
+<li>Updated on Mar 03, 2026</li>
 </ul>
 <p>Ensure that the host you want to use for your private location complies with the following requirements.</p>
 <p>End-of-support information</p>
@@ -25505,11 +25505,16 @@
 </li>
 <li>Check the latest <a href="/docs/whats-new/activegate" title="Release notes for Dynatrace ActiveGate">ActiveGate release notes</a> for the oldest supported ActiveGate versions.</li>
 </ul>
-<h2 id="operating-system-requirements">Operating system requirements<a class="headerlink" href="#operating-system-requirements" title="Permanent link">&para;</a></h2>
-<p>Antivirus and Anti-Malware software</p>
-<p>Antivirus and anti-malware software can adversely affect Dynatrace Synthetic monitoring capabilities. The antivirus or anti-malware software might block the browser or Dynatrace processes responsible for executing synthetic monitors, cause Synthetic-enabled ActiveGate installation failures, interfere with network communication, and impact the reliability of measurements.</p>
-<p>Please also note</p>
-<p>To ensure proper stability and performance, consider adding the following directories and processes to the allowed list or excluding them from the policy:</p>
+<h2 id="antivirus-and-anti-malware-software">Antivirus and anti-malware software<a class="headerlink" href="#antivirus-and-anti-malware-software" title="Permanent link">&para;</a></h2>
+<p>Antivirus and anti-malware software can negatively impact Dynatrace Synthetic monitoring capabilities.
+Such software might block the browser or Dynatrace processes that execute synthetic monitors, cause Synthetic-enabled ActiveGate installation or update failures, interfere with network communication, and impact the reliability of measurements.</p>
+<p>To maintain stability and performance, consider adding the directories and processes listed below to the allowlist or exclude them from the policy.
+Keep in mind that antivirus exclusions typically prevent file scanning but donât disable behavioral monitoring or kernel-level hooks. These remain active and can affect how the Synthetic Engine and browser interact with system libraries.
+As a result, even excluded processes can experience access violations or heap corruption.</p>
+<p>Before contacting Dynatrace Support to troubleshoot issues with your private synthetic locations, ensure that antivirus or anti-malware software has been ruled out as a potential cause.</p>
+<p>This is the minimal list of processes and directories required for Dynatrace Synthetic to operate.
+It's not guaranteed that the service will function correctly with only these exclusions.
+Collaborate with your vendor to ensure that all expected Dynatrace behaviors are properly allowed.</p>
 <p><strong>Directories:</strong></p>
 <ul>
 <li>All directories with <code>synthetic</code> in their path. For an overview of directories in use, see <a href="/docs/ingest-from/dynatrace-activegate/configuration/where-can-i-find-activegate-files#default-activegate-directories--windows" title="Find out where ActiveGate files are stored on Windows and Linux systems.">ActiveGate directories</a>.</li>
@@ -25520,8 +25525,7 @@
 <li>vucwrapper</li>
 <li>java</li>
 </ul>
-<p>This is the minimal list of processes and directories required for Dynatrace Synthetic to operate. It's not guaranteed that the service will function correctly with only these exclusions. Collaborate with your vendor to appropriately allow expected behaviors from Dynatrace.</p>
-<p>Prior to contacting Dynatrace support to troubleshoot issues with your private synthetic locations make sure that antivirus or anti-malware software was excluded as a source of problems.</p>
+<h2 id="operating-system-requirements">Operating system requirements<a class="headerlink" href="#operating-system-requirements" title="Permanent link">&para;</a></h2>
 <p>A freshly installed ActiveGate can run your private synthetic monitors (both HTTP and browser monitors) on the following operating systems.</p>
 <h3 id="windows">Windows<a class="headerlink" href="#windows" title="Permanent link">&para;</a></h3>
 <h4 id="supported-operating-systems">Supported operating systems<a class="headerlink" href="#supported-operating-systems" title="Permanent link">&para;</a></h4>

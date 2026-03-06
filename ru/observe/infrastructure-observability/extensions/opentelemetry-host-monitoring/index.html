@@ -25479,20 +25479,12 @@
 <ul>
 <li>Latest Dynatrace</li>
 <li>Extension</li>
-<li>Updated on Feb 25, 2026</li>
+<li>Updated on Mar 02, 2026</li>
 </ul>
 <p>Generate topology and screens for your OpenTelemetry host data for quicker display and easier analysis of the data.</p>
 <h2 id="get-started">Get started<a class="headerlink" href="#get-started" title="Permanent link">&para;</a></h2>
 <h3 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h3>
 <p>Monitor your hosts with OpenTelemetry using integrated metric visualizations, topology, and alerts. This extension automatically generates entities for hosts and their running processes, presenting telemetry data through intuitive interfaces designed for quick analysis. By correlating metrics, logs, and spans to host and process entities, you gain full context and a comprehensive view of your infrastructure.</p>
-<h3 id="requirements">Requirements<a class="headerlink" href="#requirements" title="Permanent link">&para;</a></h3>
-<p>This extension depends on the telemetry data that is pushed to Dynatrace from OpenTelemetry, using the <a href="/docs/ingest-from/opentelemetry/collector" title="Learn about the Dynatrace OTel Collector.">OpenTelemetry Collector</a>.</p>
-<h2 id="activation-and-setup">Activation and setup<a class="headerlink" href="#activation-and-setup" title="Permanent link">&para;</a></h2>
-<p>In order to use this extension, you need to:</p>
-<ul>
-<li><a href="/docs/ingest-from/opentelemetry/collector/deployment" title="How to deploy Dynatrace OTel Collector.">Deploy the OpenTelemetry Collector</a>, following the instructions for the relevant deployment option.</li>
-<li>Activate this extension in Dynatrace environment to report on the metrics in context. This extension doesn't need an ActiveGate or a OneAgent.</li>
-</ul>
 <h3 id="use-cases">Use cases<a class="headerlink" href="#use-cases" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Track performance, health, and availability of OpenTelemetry-monitored infrastructure.</li>
@@ -25500,54 +25492,24 @@
 <li>Raise alerts on resource saturation, network errors, and other infrastructure issues.</li>
 <li>Get a dedicated, pre-configured view for infrastructure monitoring.</li>
 </ul>
-<p>This extension uses telemetry data collected by the OpenTelemetry Collector. To monitor the health of your Collectors, see <a href="/docs/ingest-from/opentelemetry/collector/self-monitoring" title="How to monitor OpenTelemetry Collectors with Dynatrace dashboards.">Collector self-monitoring</a>.</p>
-<h2 id="activation-and-setup_1">Activation and setup<a class="headerlink" href="#activation-and-setup_1" title="Permanent link">&para;</a></h2>
-<h3 id="deploy-the-opentelemetry-collector">Deploy the OpenTelemetry Collector<a class="headerlink" href="#deploy-the-opentelemetry-collector" title="Permanent link">&para;</a></h3>
+<h3 id="requirements">Requirements<a class="headerlink" href="#requirements" title="Permanent link">&para;</a></h3>
+<p>This extension depends on telemetry data that is pushed to Dynatrace from OpenTelemetry via an <a href="/docs/ingest-from/opentelemetry/collector" title="Learn about the Dynatrace OTel Collector.">OpenTelemetry Collector</a>.</p>
+<h2 id="activation-and-setup">Activation and setup<a class="headerlink" href="#activation-and-setup" title="Permanent link">&para;</a></h2>
 <ol>
-<li>Follow the instructions on the <a href="/docs/ingest-from/opentelemetry/collector/deployment" title="How to deploy Dynatrace OTel Collector.">OpenTelemetry Collector</a> to deploy the Collector.</li>
+<li>
+<p>Deploy the OpenTelemetry Collector.</p>
+</li>
+<li>
+<p>Follow the instructions on the <a href="/docs/ingest-from/opentelemetry/collector/deployment" title="How to deploy Dynatrace OTel Collector.">OpenTelemetry Collector</a> to deploy the Collector.</p>
+</li>
 <li>Use the <a href="https://github.com/Dynatrace/dynatrace-otel-collector/blob/main/config_examples/host-metrics.yaml">reference configurationï»¿</a>.</li>
 <li>Ensure the Collector is running and telemetry data is reported to Dynatrace correctly.</li>
+<li>Activate the OpenTelemetry Host Monitoring extension.</li>
 </ol>
-<h3 id="activate-the-opentelemetry-host-monitoring-extension">Activate the OpenTelemetry Host Monitoring extension<a class="headerlink" href="#activate-the-opentelemetry-host-monitoring-extension" title="Permanent link">&para;</a></h3>
-<p>Activate the OpenTelemetry Host Monitoring extension to enable <a href="#topology">topology</a>, <a href="#screens">Unified Analysis screens</a>, and <a href="#alert-templates">alert templates</a>.</p>
 <h2 id="details">Details<a class="headerlink" href="#details" title="Permanent link">&para;</a></h2>
 <p>The <a href="/docs/ingest-from/opentelemetry/collector" title="Learn about the Dynatrace OTel Collector.">OpenTelemetry Collector</a> captures telemetry data from your infrastructure and pushes metrics to Dynatrace via the OTel API.</p>
 <p>The extension displays telemetry data captured by the OpenTelemetry Collector and provides quick analysis and clear understanding of the data, adding Dynatrace-specific context to all signals (metrics, logs, and spans).</p>
-<h3 id="topology">Topology<a class="headerlink" href="#topology" title="Permanent link">&para;</a></h3>
-<p>This extension automatically generates topology for infrastructure monitored via the OpenTelemetry Collector. Specifically, it creates the following entity types based on metadata extracted from metrics, logs, and traces:</p>
-<table>
-<thead>
-<tr>
-<th>Entity type</th>
-<th>Entity ID</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>OpenTelemetry Host</td>
-<td>dt.entity.otel:host</td>
-</tr>
-<tr>
-<td>OpenTelemetry Process</td>
-<td>dt.entity.otel:process</td>
-</tr>
-</tbody>
-</table>
-<p>These entities enable Dynatrace to correlate your metrics, logs, and spans and provide unified context across your monitored environment.</p>
-<h4 id="enrich-application-telemetry">Enrich application telemetry<a class="headerlink" href="#enrich-application-telemetry" title="Permanent link">&para;</a></h4>
-<p>If you send your application telemetry to your local host OpenTelemetry Collector, it will automatically enrich the data with the required host attributes so that the signals are correctly attached to the OpenTelemetry Host entity.</p>
-<p>To enrich application telemetry with the corresponding process entity, all signals (metrics, logs, and spans) need to have the <code>process.executable.name</code> resource attribute. For logs and spans to have this attribute, you need to initialize your OTel SDK with the <a href="https://opentelemetry.io/docs/languages/go/resources/">process resource detectorï»¿</a>.
-If this is not implemented for your technology's OTel SDK, you can always set the <code>process.executable.name</code> attribute through the <code>OTEL_RESOURCE_ATTRIBUTES</code> <a href="https://opentelemetry.io/docs/specs/otel/configuration/sdk-environment-variables/#general-sdk-configuration">environment variableï»¿</a>.</p>
-<h3 id="screens">Screens<a class="headerlink" href="#screens" title="Permanent link">&para;</a></h3>
-<p>The extension provides screens and dashboards that display entity information, metrics, and more. The data is displayed in a smart and structured way for easier navigation and a clearer understanding of the insights.</p>
-<p>To find a list of your OTel hosts and processes, go to <img alt="Infrastructure &amp; Operations" src="https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png" title="Infrastructure &amp; Operations" /> <strong>Infrastructure &amp; Operations</strong> &gt; <strong>Technologies</strong>.</p>
-<h3 id="alert-templates">Alert templates<a class="headerlink" href="#alert-templates" title="Permanent link">&para;</a></h3>
-<p>This extension provides alert templates that you can use to create alerts based on the imported data. To use these templates and set up alerts:</p>
-<ol>
-<li>Go to <img alt="Extensions" src="https://dt-cdn.net/images/dynatrace-extensions-256-9cb05e0f55.png" title="Extensions" /> <strong>Extensions</strong> &gt; <strong>OpenTelemetry Host Monitoring</strong> &gt; <strong>Extension content</strong>.</li>
-<li>Find any alert template you're interested in and select  <strong>New Alert</strong>.</li>
-<li>Configure the alert according to the available options.</li>
-</ol>
+<p>For information on how to use the extension within Dynatrace, see <a href="/docs/ingest-from/opentelemetry/collector/use-cases/host-monitoring" title="How to monitor your hosts that use Collectors to send OpenTelemetry data to Dynatrace.">Monitor hosts that send OpenTelemetry data to Dynatrace</a>.</p>
 <h3 id="licensing-and-cost">Licensing and cost<a class="headerlink" href="#licensing-and-cost" title="Permanent link">&para;</a></h3>
 <p>All ingested OpenTelemetry data (logs, metrics, and spans) is charged according to your rate card, see <a href="/docs/license/capabilities" title="How different DPS capabilities work and how consumption is calculated and billed.">Dynatrace Platform Subscription</a> or <a href="/docs/license/monitoring-consumption-classic" title="Understand how Dynatrace monitoring consumption is calculated for classic licensing.">Dynatrace classic licensing</a>.</p>
 <p>The use of this extension does not itself incur any additional costs.</p>

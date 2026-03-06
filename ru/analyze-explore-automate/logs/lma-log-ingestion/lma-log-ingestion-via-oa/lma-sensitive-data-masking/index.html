@@ -25480,11 +25480,20 @@
 <li>Latest Dynatrace</li>
 <li>Tutorial</li>
 <li>13-min read</li>
-<li>Updated on Jul 07, 2025</li>
+<li>Updated on Feb 26, 2026</li>
 </ul>
 <p>Your log data contains information that may be considered sensitive. Specific log messages may include user names, email addresses, URL parameters, and other information that you may not want to disclose. Log Monitoring features the ability to mask any information by modifying the configuration file on each OneAgent that handles information you consider to be sensitive.</p>
 <p>Masking is performed directly on OneAgent, ensuring that sensitive data are never ingested into the system.</p>
 <p>You can select the data that needs to be protected by applying a set of masking rules. Within each rule, you can decide what to hide and replace your hidden content with. If you need to address only specific attributes, such as predefined containers, log sources, or process groups, you can achieve it by adding matchers to your rules.</p>
+<h2 id="default-rules">Default rules<a class="headerlink" href="#default-rules" title="Permanent link">&para;</a></h2>
+<p>The OneAgent Log Module comes with built-in masking rules, which address sensitive data in logs, such as payment card numbers and e-mail addresses.</p>
+<ul>
+<li>OneAgent version 1.330 and below: Data is masked with a <code>&lt;masked&gt;</code> string.</li>
+<li>OneAgent version 1.331+: The masking string indicates the type of data.
+  For example, URL query values are masked with a <code>&lt;masked-value-log&gt;</code> string.</li>
+</ul>
+<p>By default, these rules are deactivated in all paid (non-trial) Dynatrace environments.
+You can activate and deactivate masking rules according to your requirements.</p>
 <h2 id="create-rule">Create rule<a class="headerlink" href="#create-rule" title="Permanent link">&para;</a></h2>
 <p>You can configure sensitive data masking on the host, host group or environment level.</p>
 <ol>

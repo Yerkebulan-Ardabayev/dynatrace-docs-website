@@ -25480,7 +25480,7 @@
 <li>Latest Dynatrace</li>
 <li>App</li>
 <li>2-min read</li>
-<li>Updated on Feb 11, 2026</li>
+<li>Updated on Mar 03, 2026</li>
 </ul>
 <p><strong>Dynatrace Assist</strong> allows you to chat with Dynatrace Intelligence and ask questions about the data in your environment, as well as general questions to help you with onboarding to Dynatrace and understanding our core concepts.</p>
 <h3 id="permissions">Permissions<a class="headerlink" href="#permissions" title="Permanent link">&para;</a></h3>
@@ -25505,7 +25505,7 @@
 <p>use copilot agentic feature</p>
 <p>davis:analyzers:read</p>
 <p>use copilot agentic feature</p>
-<p>To use  <strong>Dynatrace Assist</strong> with generative AI features, you only need the following permissions:</p>
+<p>To use  <strong>Dynatrace Assist</strong> in the generative AI mode, you only need the following permissions:</p>
 <ul>
 <li><code>document:documents:write</code></li>
 <li><code>document:documents:read</code></li>
@@ -25513,8 +25513,8 @@
 <li><code>davis-copilot:conversations:execute</code></li>
 <li><code>hub:catalog:read</code></li>
 </ul>
-<p>You require the remaining permissions in the table only if you want to use the full extent of agentic Dynatrace Assist capabilities. For more information, see <a href="#assist-agentic-permissions">Dynatrace Assist agentic permissions</a>.</p>
-<p>For more information, see <a href="/docs/dynatrace-intelligence/copilot/copilot-getting-started" title="Learn how to set up Dynatrace Intelligence generative AI.">Getting started with Dynatrace Intelligence generative AI</a>.</p>
+<p>You require the remaining permissions in the table only if you want to use the full extent of agentic Dynatrace Assist capabilities. For more information, see <a href="/docs/dynatrace-intelligence/copilot/copilot-getting-started#assist-agentic" title="Learn how to set up Dynatrace Intelligence agentic and generative AI.">Dynatrace Assist agentic permissions</a>.</p>
+<p>For more information, see <a href="/docs/dynatrace-intelligence/copilot/copilot-getting-started" title="Learn how to set up Dynatrace Intelligence agentic and generative AI.">Getting started with Dynatrace Intelligence agentic and generative AI</a>.</p>
 <h2 id="get-started">Get started<a class="headerlink" href="#get-started" title="Permanent link">&para;</a></h2>
 <p><img alt="Get started quickly and easily by asking Dynatrace Assist a question. Try out one of the examples to see what's possible." src="https://cdn.hub.central.dynatrace.com/hub/console/dynatrace.davis.copilot/media/efd72baf-d142-45ee-b52a-51aea2450093.png" /><img alt="Ask Dynatrace Assist to summarize all open problems to get a quick overview of your environment." src="https://cdn.hub.central.dynatrace.com/hub/console/dynatrace.davis.copilot/media/8d9a51ac-e9a7-4152-9158-235e6e1fef66.png" /><img alt="Ask Dynatrace Assist to explain your logs to quickly get the insights, potential impact, likely causes and recommended next steps." src="https://cdn.hub.central.dynatrace.com/hub/console/dynatrace.davis.copilot/media/e9aa5b44-ceb3-4113-894c-4cdc32f5d94e.png" /><img alt="Get help with identifying and fixing vulnerabilities, such as SQL injections." src="https://cdn.hub.central.dynatrace.com/hub/console/dynatrace.davis.copilot/media/9282285e-db29-48d0-b368-92ac20460a5f.png" /></p>
 <p>1 of 4Get started quickly and easily by asking Dynatrace Assist a question. Try out one of the examples to see what's possible.</p>
@@ -25539,30 +25539,9 @@
 <ul>
 <li>I'm sorry, but I can't respond to this request. Please try rephrasing it or adding additional context.</li>
 </ul>
-<h3 id="use-agentic-dynatrace-assist">Use agentic Dynatrace Assist<a class="headerlink" href="#use-agentic-dynatrace-assist" title="Permanent link">&para;</a></h3>
-<p><strong>Dynatrace Assist</strong> allows you to use Dynatrace agentic AI and <a href="/docs/dynatrace-intelligence/dynatrace-intelligence-integrations/dynatrace-mcp#server" title="Learn about the Dynatrace MCP server and how you can connect to it.">MCP tools and capabilities</a> to access and analyze your environment data and use it to perform tasks (such as listing problems or generating and executing DQL queries) in addition to answering general questions about Dynatrace.</p>
-<p>Agentic  <strong>Dynatrace Assist</strong> shares some additional information, such as tool call results, with enterprise vendors hosting the LLMs that Dynatrace agentic and generative AI are based on. For more information about third parties, see <a href="/docs/dynatrace-intelligence/copilot/copilot-faq#copilot-training-on-data" title="Learn about frequently asked questions and find your answers.">Is my data used to train Dynatrace Intelligence generative AI?</a>.</p>
+<h3 id="use-dynatrace-assist-agentic-capabilities">Use Dynatrace Assist agentic capabilities<a class="headerlink" href="#use-dynatrace-assist-agentic-capabilities" title="Permanent link">&para;</a></h3>
 <p>With agentic AI enabled, you can ask  <strong>Dynatrace Assist</strong> to analyze and provide insights on the data and security of your environment. For examples, see <a href="/docs/dynatrace-intelligence/copilot/chat-with-davis-copilot/dynatrace-assist-prompts#assist-ask-about-the-data" title="Learn what kind of prompts work well in Dynatrace Assist.">Ask about the data in your environment</a>.</p>
-<h4 id="dynatrace-assist-agentic-permissions"><strong>Dynatrace Assist</strong> agentic permissions<a class="headerlink" href="#dynatrace-assist-agentic-permissions" title="Permanent link">&para;</a></h4>
-<p><strong>Dynatrace Assist</strong> respects your user permissions. This means that all agentic  <strong>Dynatrace Assist</strong> calls are done within the scope of your user permissions and the results won't include anything outside of it.</p>
-<p>To use the agentic  <strong>Dynatrace Assist</strong>, you need to</p>
-<ul>
-<li>Have sufficient permissions.</li>
-<li>
-<p>Have agentic AI enabled for  <strong>Dynatrace Assist</strong>. To enable agentic AI</p>
-</li>
-<li>
-<p>Go to <img alt="Settings" src="https://dt-cdn.net/images/settings-icon-256-38e1321b51.webp" title="Settings" /> <strong>Settings</strong> &gt;  <strong>Dynatrace Intelligence</strong> &gt; <strong>Generative and agentic AI</strong>.</p>
-</li>
-<li>Ensure that <strong>Enable generative AI</strong> is turned on.</li>
-<li>Turn on <strong>Enable agentic AI</strong>.</li>
-</ul>
-<p>Agentic  <strong>Dynatrace Assist</strong> might not be available for you if you don't meet the prerequisites mentioned above or if you access  <strong>Dynatrace Assist</strong> from the <a href="/docs/dynatrace-intelligence/copilot/chat-with-davis-copilot/copilot-conv-starters" title="Learn how to trigger predefined prompts in various Dynatrace applications.">Embedded conversation starters</a>.</p>
-<p>You will also need additional permissions for calling the agentic AI tools. For the list of tools and permissions they require, see <a href="/docs/dynatrace-intelligence/dynatrace-intelligence-integrations/dynatrace-mcp#server" title="Learn about the Dynatrace MCP server and how you can connect to it.">MCP tools</a>.</p>
-<h4 id="pii-masking">PII masking<a class="headerlink" href="#pii-masking" title="Permanent link">&para;</a></h4>
-<p>Agentic  <strong>Dynatrace Assist</strong> doesn't provide any PII masking. In order to protect your data, when  <strong>Dynatrace Assist</strong> detects PII in the user prompt, the request is automatically blocked and the prompt isn't sent to the LLM for processing.</p>
-<h4 id="calling-multiple-tools">Calling multiple tools<a class="headerlink" href="#calling-multiple-tools" title="Permanent link">&para;</a></h4>
-<p>While interacting with  <strong>Dynatrace Assist</strong> in agentic mode, <strong>Assist</strong> can call up to 10 internal MCP tools per response. If your request requires  <strong>Dynatrace Assist</strong> to call more than 10 tools simultaneously, it'll be unable to complete the interaction.</p>
+<p>For more information about getting started with agentic  <strong>Dynatrace Assist</strong>, see <a href="/docs/dynatrace-intelligence/copilot/copilot-getting-started#assist-agentic" title="Learn how to set up Dynatrace Intelligence agentic and generative AI.">Enable agentic AI for Dynatrace Assist</a>.</p>
 <h3 id="give-feedback">Give feedback<a class="headerlink" href="#give-feedback" title="Permanent link">&para;</a></h3>
 <p>You can provide feedback using the built-in feedback mechanism.</p>
 <p>Select <img alt="Thumb up" src="https://dt-cdn.net/images/thumbsup-65185abaeb.svg" title="Thumb up" /> if Dynatrace Assist has generated a response that has met your expectations and interpreted your prompt correctly.</p>
@@ -25602,9 +25581,9 @@
 </ul>
 <h2 id="related-topics">Related topics<a class="headerlink" href="#related-topics" title="Permanent link">&para;</a></h2>
 <ul>
-<li><a href="/docs/dynatrace-intelligence/copilot/copilot-getting-started" title="Learn how to set up Dynatrace Intelligence generative AI.">Get started with Dynatrace Intelligence generative AI</a></li>
+<li><a href="/docs/dynatrace-intelligence/copilot/copilot-getting-started" title="Learn how to set up Dynatrace Intelligence agentic and generative AI.">Get started with Dynatrace Intelligence agentic and generative AI</a></li>
 <li><a href="/docs/dynatrace-intelligence/copilot/chat-with-davis-copilot/copilot-conv-starters" title="Learn how to trigger predefined prompts in various Dynatrace applications.">Embedded conversation starters</a></li>
-<li><a href="/docs/dynatrace-intelligence/copilot/copilot-faq" title="Learn about frequently asked questions and find your answers.">Dynatrace Intelligence generative AI FAQ</a></li>
+<li><a href="/docs/dynatrace-intelligence/copilot/copilot-faq" title="Learn about frequently asked questions and find your answers.">Dynatrace Intelligence agentic and generative AI FAQ</a></li>
 <li><a href="/docs/dynatrace-intelligence/dynatrace-intelligence-integrations/dynatrace-mcp" title="Learn about the Dynatrace MCP server and how you can connect to it.">Dynatrace MCP server</a></li>
 </ul>
 
