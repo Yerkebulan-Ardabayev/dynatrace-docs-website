@@ -1,7 +1,7 @@
 ---
 title: Metadata enrichment of all telemetry originating from Kubernetes
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/guides/metadata-automation/k8s-metadata-telemetry-enrichment
-scraped: 2026-02-18T21:18:48.984958
+scraped: 2026-03-06T21:23:30.344451
 ---
 
 # Metadata enrichment of all telemetry originating from Kubernetes
@@ -44,58 +44,6 @@ The following attributes are supported:
 To streamline tasks like bucket selection, segmentation, filtering, and problem routing, Dynatrace allows you to enrich your telemetry data using existing Kubernetes namespace labels or annotations. These tags are made available as domain-specific fields, such as `k8s.namespace.label.your_key` or `k8s.namespace.annotation.your_key`.
 
 ## Which data will be enriched
-
-Data
-
-Domain tags
-
-Security Context
-
-Cost Allocation
-
-OneAgent metrics
-
-JMX/PMI metrics collected via OneAgent
-
-Planned
-
-Service metrics
-
-Kubernetes platform metrics
-
-ActiveGate 1.331
-
-Prometheus metrics
-
-Planned
-
-Planned - ActiveGate 1.333
-
-Planned - ActiveGate 1.333
-
-OTLP metrics
-
-ActiveGate 1.331
-
-Metrics collected by OpenTelemetry Collector
-
-Logs collected by OpenTelemetry Collector
-
-Logs collected by OneAgent log module
-
-Logs collected by FluentBit
-
-Smartscape Kubernetes entities
-
-ActiveGate 1.331
-
-Service metrics
-
-OneAgent events
-
-Kubernetes events
-
-ActiveGate 1.331
 
 ## Enrichment options
 
@@ -192,7 +140,7 @@ For OTLP setups without OneAgent, additional steps for signal enrichment are req
 
 ### Enrich via code changes
 
-This option is suitable for standalone OTLP setups without OneAgent injection. For optimal results, enrich your OTLP telemetry by parsing Dynatrace metadata files and adding the metadata directly in your code, as outlined in [Enrich ingested data with Dynatrace-specific dimensions](/docs/ingest-from/extend-dynatrace/extend-data#operator-enrichment-directory "Learn how to automatically enrich your telemetry data with Dynatrace-specific dimensions."). You can find code samples in our OpenTelemetry section, like here for [Java](/docs/ingest-from/opentelemetry/walkthroughs/java/java-manual#add-telemetry-signals-manually "Learn how to instrument your Java application using OpenTelemetry and Dynatrace.").
+This option is suitable for standalone OTLP setups without OneAgent injection. For optimal results, enrich your OTLP telemetry by parsing Dynatrace metadata files and adding the metadata directly in your code, as outlined in [Enrich ingested data with Dynatrace-specific fields](/docs/ingest-from/extend-dynatrace/extend-data#operator-enrichment-directory "Learn how to automatically enrich your telemetry data with Dynatrace-specific fields."). You can find code samples in our OpenTelemetry section, like here for [Java](/docs/ingest-from/opentelemetry/walkthroughs/java/java-manual#add-telemetry-signals-manually "Learn how to instrument your Java application using OpenTelemetry and Dynatrace.").
 This approach provides enrichment comparable to the OneAgent case.
 
 ### Enrich via environment variable
@@ -724,6 +672,6 @@ k8s.namespace.label.domain: finance
 
 ## Related topics
 
-* [Enrich ingested data with Dynatrace-specific dimensions](/docs/ingest-from/extend-dynatrace/extend-data "Learn how to automatically enrich your telemetry data with Dynatrace-specific dimensions.")
+* [Enrich ingested data with Dynatrace-specific fields](/docs/ingest-from/extend-dynatrace/extend-data "Learn how to automatically enrich your telemetry data with Dynatrace-specific fields.")
 * [Enrich OTLP requests with Kubernetes data](/docs/ingest-from/opentelemetry/collector/use-cases/kubernetes/k8s-enrich "Configure the OpenTelemetry Collector to enrich OTLP requests with Kubernetes data.")
 * [Configure enrichment directory](/docs/ingest-from/setup-on-k8s/guides/metadata-automation/metadata-enrichment "Metadata enrichment in the Dynatrace Operator adds context to Kubernetes pods by attaching relevant metadata to entities like pods, hosts, and processes for better observability.")

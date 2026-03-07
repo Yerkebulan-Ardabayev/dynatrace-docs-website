@@ -1,7 +1,7 @@
 ---
 title: Customize OneAgent installation on Windows
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/windows/installation/customize-oneagent-installation-on-windows
-scraped: 2026-02-18T21:27:51.942156
+scraped: 2026-03-06T21:19:22.490308
 ---
 
 # Customize OneAgent installation on Windows
@@ -242,7 +242,7 @@ Watchdog is a binary used for starting and monitoring OneAgent monitoring proces
 * `oneagentplugin`âmonitoring using [OneAgent extensions](/docs/ingest-from/extensions/develop-your-extensions#oneagent-extensions "Develop your own Extensions in Dynatrace.")
 * `oneagentextensions`âmonitoring using local [Extensions](/docs/ingest-from/extensions "Learn how to create and manage Dynatrace Extensions.")
 * `oneagentloganalytics`â[Log Monitoring](/docs/analyze-explore-automate/log-monitoring "Learn how to enable Log Monitoring, the insights that Log Monitoring can provide, and more.")
-* `oneagentnetwork`â[network monitoring](/docs/observe/infrastructure-observability/networks "Learn how to monitor network communications.")
+* `oneagentnetwork`â[network monitoring](/docs/observe/infrastructure-observability/networks-classic "Learn how to monitor network communications.")
 
 Use the `--set-watchdog-portrange=<arg>` parameter to change the watchdog listening port range to `<arg>`. The `<arg>` must contain two port numbers separated by a colon (`:`). For example `50000:50100`. The maximum supported port range is from 1024 to 65535. The port range must cover at least 4 ports. The port number starting the range must be lower. For example:
 
@@ -512,34 +512,6 @@ Example:
 **Default value**: `npcap`
 
 **Possible values:**
-
-Value
-
-Description
-
-`npcap`
-
-`PCAP_DRIVER=npcap` installs the `Npcap` driver.
-
-This option uninstalls any installation of WinPcap or outdated Npcap previously installed by OneAgent. If you installed WinPcap or Npcap manually, however, you'll need to uninstall it yourself.
-
-`winpcap`
-
-`PCAP_DRIVER=winpcap` installs the `WinPcap` driver.
-
-This option does **NOT** uninstall or overlay any existing installation of `Npcap` or `WinPcap`.
-
-`auto`
-
-Deprecated with OneAgent version 1.255+
-
-`PCAP_DRIVER=auto` automatically determines which driver to install. This option does **NOT** uninstall or overlay any existing installation of `Npcap` or `WinPcap`. During installation, if no packet capture driver is found, `Npcap` is installed by default.
-
-`disabled`
-
-Available with OneAgent version 1.249+
-
-`PCAP_DRIVER=disabled` disables the installation of any packet capture driver and disables the OneAgent network monitoring module. If any packet capture driver is already installed on the host, you'll need to uninstall manually.
 
 * This parameter is not supported by the installer web UI.
 * The value of this parameter persists through updates.

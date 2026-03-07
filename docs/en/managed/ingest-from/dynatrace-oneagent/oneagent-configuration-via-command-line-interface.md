@@ -1,7 +1,7 @@
 ---
 title: OneAgent configuration via command-line interface
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface
-scraped: 2026-02-18T21:27:59.015158
+scraped: 2026-03-06T21:18:43.374852
 ---
 
 # OneAgent configuration via command-line interface
@@ -221,7 +221,7 @@ Watchdog is a binary used for starting and monitoring OneAgent monitoring proces
 * `oneagentplugin`âmonitoring using [OneAgent extensions](/docs/ingest-from/extensions/develop-your-extensions#oneagent-extensions "Develop your own Extensions in Dynatrace.")
 * `oneagentextensions`âmonitoring using local [Extensions](/docs/ingest-from/extensions "Learn how to create and manage Dynatrace Extensions.")
 * `oneagentloganalytics`â[Log Monitoring](/docs/analyze-explore-automate/log-monitoring "Learn how to enable Log Monitoring, the insights that Log Monitoring can provide, and more.")
-* `oneagentnetwork`â[network monitoring](/docs/observe/infrastructure-observability/networks "Learn how to monitor network communications.")
+* `oneagentnetwork`â[network monitoring](/docs/observe/infrastructure-observability/networks-classic "Learn how to monitor network communications.")
 
 Use the `--set-watchdog-portrange=arg` parameter to change the watchdog listening port range to `<arg>`. The `<arg>` must contain two port numbers separated by a colon (`:`). For example `50000:50100`. The maximum supported port range is from 1024 to 65535. The port range must cover at least 4 ports. The port number starting the range must be lower.
 
@@ -315,18 +315,6 @@ Archive saved as C:\data\support-archive\support_archive_agent_2021-09-07_121619
 ### Contents of diagnostic data
 
 All the collected diagnostic data is compressed into a `support_archive_agent_YYYY-MM-DD_hhmmss.zip` archive that includes the following subset of the full [OneAgent diagnostics](/docs/ingest-from/dynatrace-oneagent/oneagent-troubleshooting/oneagent-diagnostics "Learn how to run OneAgent diagnostics") data:
-
-Folder or file
-
-Description
-
-`support_archive` (ZIP)
-
-Contains the local configuration of the OneAgent installed on the host or process where youâve run the troubleshooting, as well as the OneAgent-related log files.
-
-`diagnostic_files` (ZIP)
-
-Contains information about process group detection, auto-injection problems, and extension configuration.
 
 ## Access to system logs for proactive support
 

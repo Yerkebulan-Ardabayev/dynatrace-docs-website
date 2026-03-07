@@ -1,13 +1,14 @@
 ---
 title: Issue-tracking integration
 source: https://www.dynatrace.com/docs/deliver/release-monitoring/issue-tracking-integration
-scraped: 2026-02-17T21:28:57.858952
+scraped: 2026-03-04T21:34:00.535138
 ---
 
 # Issue-tracking integration
 
 # Issue-tracking integration
 
+* Classic
 * How-to guide
 * 2-min read
 * Published Sep 14, 2020

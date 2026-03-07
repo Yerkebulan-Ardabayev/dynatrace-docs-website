@@ -1,13 +1,14 @@
 ---
 title: HTTP monitor metrics
 source: https://www.dynatrace.com/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/http-monitor-metrics-classic
-scraped: 2026-02-18T21:33:42.155532
+scraped: 2026-03-05T21:34:57.630725
 ---
 
 # HTTP monitor metrics
 
 # HTTP monitor metrics
 
+* Classic
 * Explanation
 * 1-min read
 * Published Dec 04, 2020

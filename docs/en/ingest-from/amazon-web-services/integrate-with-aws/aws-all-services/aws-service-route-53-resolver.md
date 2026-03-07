@@ -1,13 +1,14 @@
 ---
 title: Amazon Route 53 Resolver monitoring
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-route-53-resolver
-scraped: 2026-02-17T21:33:45.287503
+scraped: 2026-03-06T21:33:29.565905
 ---
 
 # Amazon Route 53 Resolver monitoring
 
 # Amazon Route 53 Resolver monitoring
 
+* Classic
 * How-to guide
 * 2-min read
 * Published Sep 08, 2020

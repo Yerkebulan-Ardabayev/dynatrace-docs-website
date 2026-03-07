@@ -1,13 +1,14 @@
 ---
 title: Session segmentation
 source: https://www.dynatrace.com/docs/observe/digital-experience/session-segmentation
-scraped: 2026-02-18T21:23:23.597429
+scraped: 2026-03-06T21:14:05.384648
 ---
 
 # Session segmentation
 
 # Session segmentation
 
+* Classic
 * Overview
 * 1-min read
 * Published Oct 19, 2021

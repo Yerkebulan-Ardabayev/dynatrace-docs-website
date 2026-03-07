@@ -1,7 +1,7 @@
 ---
 title: Service-Level Objectives
 source: https://www.dynatrace.com/docs/deliver/service-level-objectives
-scraped: 2026-02-18T05:51:54.227388
+scraped: 2026-03-06T21:30:36.060105
 ---
 
 # Service-Level Objectives
@@ -18,10 +18,6 @@ Prerequisites
 ### Permissions
 
 The following table describes the required permissions.
-
-Permission
-
-Description
 
 slo:slos:read
 
@@ -63,22 +59,12 @@ storage:user.events:read
 
 Read user events from Grail
 
-10
-
-rows per page
-
-Page
-
-1
-
-of 1
-
 To read and write SLOs, you need the following [IAM](/docs/manage/identity-access-management "Configure users, groups and permissions.") permissions:
 
 * `ALLOW slo:slos:read, slo:objective-templates:read;`
 * `ALLOW slo:slos:write;`
 
-## Installation
+### Installation
 
 Make sure the app is [installed in your environment](/docs/manage/hub#install "See the information about Dynatrace Hub.").
 

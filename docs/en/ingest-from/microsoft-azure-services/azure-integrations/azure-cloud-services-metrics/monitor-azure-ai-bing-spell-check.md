@@ -1,7 +1,7 @@
 ---
 title: Azure AI - Bing Spell Check monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-ai-bing-spell-check
-scraped: 2026-02-18T21:29:57.090972
+scraped: 2026-03-06T21:36:27.035158
 ---
 
 # Azure AI - Bing Spell Check monitoring

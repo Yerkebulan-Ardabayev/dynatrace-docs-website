@@ -1,13 +1,14 @@
 ---
 title: Container monitoring rules
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/container-platform-monitoring/container-monitoring-rules
-scraped: 2026-02-18T21:23:07.770675
+scraped: 2026-03-06T21:16:57.097581
 ---
 
 # Container monitoring rules
 
 # Container monitoring rules
 
+* Classic
 * How-to guide
 * 2-min read
 * Published Jun 25, 2021

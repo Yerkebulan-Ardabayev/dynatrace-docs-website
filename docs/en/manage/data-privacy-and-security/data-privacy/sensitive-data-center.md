@@ -1,7 +1,7 @@
 ---
 title: Sensitive Data Center
 source: https://www.dynatrace.com/docs/manage/data-privacy-and-security/data-privacy/sensitive-data-center
-scraped: 2026-02-18T05:52:54.159311
+scraped: 2026-03-05T21:34:45.103522
 ---
 
 # Sensitive Data Center
@@ -18,10 +18,6 @@ scraped: 2026-02-18T05:52:54.159311
 ### Permissions
 
 The following table describes the required permissions.
-
-Permission
-
-Description
 
 storage:logs:read
 
@@ -62,16 +58,6 @@ Enables the app to process requests using a service user
 email:emails:send
 
 Enables the app to send status updates for requests
-
-10
-
-rows per page
-
-Page
-
-1
-
-of 1
 
 ## Before you begin
 
@@ -170,7 +156,7 @@ ALLOW automation:workflows:read, automation:workflows:write;
 
 Replace the placeholder value for `iam:service-user-email` with the email of your `sensitive-data-center` service user. To find the email of your service user:
 
-1. In Dynatrace, go to [Account Management](/docs/manage/account-management "Manage your Dynatrace license, subscriptions, and platform adoption and environment health.").
+1. In Dynatrace, go to [Account Management](/docs/manage/account-management "Manage your Dynatrace license, accounts, platform adoption, and environment health.").
 2. Select **Identity & access management** > **Service users**. You will see an overview table with all of your service users.
 3. In the **Actions** column, select  >  **Edit**.
 4. The service user's email is displayed at the top.

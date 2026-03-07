@@ -1,6 +1,6 @@
 # Документация Dynatrace: deliver/service-level-objectives
 Язык: Русский (RU)
-Сгенерировано: 2026-02-18
+Сгенерировано: 2026-03-06
 Файлов в разделе: 7
 ---
 
@@ -9,7 +9,7 @@
 ---
 title: Create service-level objectives
 source: https://www.dynatrace.com/docs/deliver/service-level-objectives/create-slo
-scraped: 2026-02-18T21:34:36.251123
+scraped: 2026-03-05T21:31:21.874741
 ---
 
 # Create service-level objectives
@@ -110,7 +110,7 @@ You can create, edit, list, delete, and evaluate your SLOs via API.
 ---
 title: Permissions for service-level objective (SLO) tiles in a dashboard
 source: https://www.dynatrace.com/docs/deliver/service-level-objectives/service-level-objective-permissions
-scraped: 2026-02-17T05:11:56.110305
+scraped: 2026-03-06T21:32:41.871210
 ---
 
 # Permissions for service-level objective (SLO) tiles in a dashboard
@@ -144,7 +144,7 @@ For the SLO details view
 ---
 title: Add a service-level objective (SLO) tile to a dashboard
 source: https://www.dynatrace.com/docs/deliver/service-level-objectives/service-level-objective-tile-add-to-dashboard
-scraped: 2026-02-17T05:08:11.462417
+scraped: 2026-03-05T21:34:17.198712
 ---
 
 # Add a service-level objective (SLO) tile to a dashboard
@@ -227,7 +227,7 @@ Due to the intersection, the result contains only the evaluations related to S-2
 ---
 title: Edit a service-level objective (SLO) tile in a dashboard
 source: https://www.dynatrace.com/docs/deliver/service-level-objectives/service-level-objective-tile-edit-in-dashboard
-scraped: 2026-02-18T21:32:21.815356
+scraped: 2026-03-06T21:33:11.531334
 ---
 
 # Edit a service-level objective (SLO) tile in a dashboard
@@ -338,7 +338,7 @@ To copy and paste multiple tiles simultaneously
 ---
 title: View the details of a service-level objective (SLO) tile in a dashboard
 source: https://www.dynatrace.com/docs/deliver/service-level-objectives/service-level-objective-tile-view
-scraped: 2026-02-18T21:31:48.679622
+scraped: 2026-03-03T21:23:32.190940
 ---
 
 # View the details of a service-level objective (SLO) tile in a dashboard
@@ -370,7 +370,7 @@ You can view details of your SLO tile in your dashboard.
 ---
 title: Upgrade Classic SLOs
 source: https://www.dynatrace.com/docs/deliver/service-level-objectives/service-level-objective-upgrade-classic
-scraped: 2026-02-18T21:31:03.900611
+scraped: 2026-03-04T21:37:42.817794
 ---
 
 # Upgrade Classic SLOs
@@ -406,7 +406,7 @@ The table below highlights the new functionality and shows the many reasons you 
 | Capability | SLOs Classic **Service-Level Objectives Classic** | SLOs **Service-Level Objectives** | Business impact |
 | --- | --- | --- | --- |
 | Supported input for SLI definition | Limited to built-in or custom-calculated metrics | Supporting all data types in Grail, incl. biz-events, logs, spans, and time series | SLOs allow a finer granular configuration and tailored definition of the SLI. |
-| Segmenting, data filtering for SLO evaluation | ManagementZones | [Segments](/docs/manage/segments "Segments logically structure monitoring data in Grail and function as convenient filters for data that users are allowed to access based on permissions.") | [Segments](/docs/manage/segments "Segments logically structure monitoring data in Grail and function as convenient filters for data that users are allowed to access based on permissions.") allow detailed filtering of the dataset used for the SLO evaluation. |
+| Segmenting, data filtering for SLO evaluation | ManagementZones | [Segments](/docs/manage/segments "Use segments to logically structure and conveniently filter observability data across apps.") | [Segments](/docs/manage/segments "Use segments to logically structure and conveniently filter observability data across apps.") allow detailed filtering of the dataset used for the SLO evaluation. |
 | Adding SLO tags | â | SLO tags | Add SLO tags (key-value pairs) and then use them to filter SLOs when querying them via the API. |
 | Customized dashboard tiles | Classic dashboard tile | New [dashboard SLO tiles](/docs/deliver/service-level-objectives/service-level-objective-tile-view "View your service-level objective (SLO) tile details directly in your dashboard.") | New [dashboard SLO tiles](/docs/deliver/service-level-objectives/service-level-objective-tile-view "View your service-level objective (SLO) tile details directly in your dashboard.") allow more visual customization options, including what data should be shown and colorized. An additional SLO wizard overview allows for creating and editing SLOs in Dashboards **Dashboards**. |
 | Integration with other Dynatrace apps | Integrated with classic Dynatrace Apps | Integrated with latest Dynatrace Apps |  |
@@ -497,8 +497,6 @@ Check in **Preview** the SLO and SLI statuses.
 
 ## Upgrade Classic SLOs to SLOs
 
-
-
 To upgrade a Classic SLO to SLO
 
 1. Map your Classic SLO metric expression to Grail.
@@ -510,50 +508,6 @@ To upgrade a Classic SLO to SLO
 2. Convert the entity selectors to the corresponding [DQL statement](/docs/platform/grail/dynatrace-query-language "How to use Dynatrace Query Language."). For more information, see [DQL best practices](/docs/platform/grail/dynatrace-query-language/dql-best-practices "Best practices for using Dynatrace Query Language.").
 
    The following table shows the typical entity selectors for Classic SLOs and their equivalent in DQL.
-
-   Entity selector classic
-
-   DQL representation
-
-   `type("SERVICE")`
-
-   `by: {dt.entity.service}`
-
-   `tag("myTag")`
-
-   ```
-   | fieldsAdd tags=entityAttr(dt.entity.service, "tags")
-
-
-
-   | filter in(tags, "myTag")
-   ```
-
-   `entityId("SERVICE-XY")`
-
-   ```
-   | filter in(dt.entity.service, "SERVICE-XY")
-   ```
-
-   `entityName.contains/equals/in/startsWith("ENTITY-NAME")`
-
-   ```
-   | fieldsAdd name = entityName(dt.entity.service)
-
-
-
-   | filter in/contains/startsWith/endsWith(name, "ENTITY-NAME")
-   ```
-
-   `mzId` / `mzName`
-
-   Use [Segments](/docs/manage/segments "Segments logically structure monitoring data in Grail and function as convenient filters for data that users are allowed to access based on permissions.").
-
-   Segments aren't related to permissions or access control.
-
-   `toRelationship` / `fromRelationship`
-
-   See the relationship mapping table in Grail: [Query monitored entities in Grail](/docs/platform/grail/querying-monitored-entities#relationship-mapping-table "Find out how to query monitored entities in Grail.").
 
    If you use management zones for permissions and access control, see [Grant access to entities with security context](/docs/manage/identity-access-management/use-cases/access-security-context "Grant access to entities with security context").
 3. Enhance your SLI definition.
@@ -571,15 +525,9 @@ To upgrade a Classic SLO to SLO
 
 ## Upgrade API integration
 
+
+
 To automate SLO management and evaluation, use the dedicated API endpoints. Reference the table below to upgrade your API integration for Classic SLO to SLO leveraging the SLO Service Public API.
-
-![SLOs Classic](https://dt-cdn.net/images/service-level-objectives-256-3d3d62c9a8.png "SLOs Classic") **Service-Level Objectives Classic**
-
-![SLOs](https://dt-cdn.net/images/service-level-objectives-256-3d3d62c9a8.png "SLOs") **Service-Level Objectives**
-
-[Service-level Objectives API classic](/docs/dynatrace-api/environment-api/service-level-objectives-classic "Find out what the Dynatrace SLO API classic offers.")
-
-[SLO Service Public API](/docs/dynatrace-api/environment-api/service-level-objectives "Discover the API functionalities of the new Service-Level Objectives powered by Grail.")
 
 ## Upgrade via Configuration as Code
 
@@ -616,7 +564,7 @@ For further optimization and guidance, contact your Dynatrace support team to ma
 ---
 title: Service-Level Objectives
 source: https://www.dynatrace.com/docs/deliver/service-level-objectives
-scraped: 2026-02-17T05:02:30.285624
+scraped: 2026-03-06T21:30:36.060105
 ---
 
 # Service-Level Objectives
@@ -633,10 +581,6 @@ Prerequisites
 ### Permissions
 
 The following table describes the required permissions.
-
-Permission
-
-Description
 
 slo:slos:read
 
@@ -678,22 +622,12 @@ storage:user.events:read
 
 Read user events from Grail
 
-10
-
-rows per page
-
-Page
-
-1
-
-of 1
-
 To read and write SLOs, you need the following [IAM](/docs/manage/identity-access-management "Configure users, groups and permissions.") permissions:
 
 * `ALLOW slo:slos:read, slo:objective-templates:read;`
 * `ALLOW slo:slos:write;`
 
-## Installation
+### Installation
 
 Make sure the app is [installed in your environment](/docs/manage/hub#install "See the information about Dynatrace Hub.").
 

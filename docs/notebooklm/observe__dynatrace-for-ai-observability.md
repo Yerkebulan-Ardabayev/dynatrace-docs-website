@@ -1,7 +1,7 @@
 # Документация Dynatrace: observe/dynatrace-for-ai-observability
 Язык: Русский (RU)
-Сгенерировано: 2026-02-18
-Файлов в разделе: 13
+Сгенерировано: 2026-03-06
+Файлов в разделе: 15
 ---
 
 ## observe/dynatrace-for-ai-observability/ai-observability-app.md
@@ -9,7 +9,7 @@
 ---
 title: AI Observability
 source: https://www.dynatrace.com/docs/observe/dynatrace-for-ai-observability/ai-observability-app
-scraped: 2026-02-18T21:31:10.368318
+scraped: 2026-03-02T21:23:22.538566
 ---
 
 # AI Observability
@@ -46,10 +46,6 @@ Some out-of-the-box ![AI Observability](https://dt-cdn.net/images/ai-obs-1024-c7
 ### Permissions
 
 The following table describes the required permissions.
-
-Permission
-
-Description
 
 storage:events:read
 
@@ -91,16 +87,6 @@ hub:catalog:read
 
 Read Hub catalog
 
-10
-
-rows per page
-
-Page
-
-1
-
-of 1
-
 Get started
 
 Use cases
@@ -125,7 +111,7 @@ The **Overview** tab is your starting point to discover AI workloads, quickly va
 
 ### Service Health
 
-Get a unified view of the operational state of your AI services. \*\*Service Health \*\* is organized into focused tabs so you can move from a high-level pulse to root cause in a couple of clicks.
+Get a unified view of the operational state of your AI services. **Service Health** is organized into focused tabs so you can move from a high-level pulse to root cause in a couple of clicks.
 
 Filter your results:
 
@@ -140,8 +126,6 @@ Filter your results:
 ![AI Observability - Service Health - Error](https://dt-cdn.net/images/errors-latencies-1920-0a6fb8f618.png)
 
 ![AI Observability -  Service Health - Guardrails](https://dt-cdn.net/images/app-guardrails-1920-6da2e86ebc.png)
-
-â>
 
 ### Create and manage Alerts
 
@@ -245,7 +229,7 @@ Review all observable AI technologies in the Dynatrace Hub.](https://www.dynatra
 ---
 title: Kong AI Gateway
 source: https://www.dynatrace.com/docs/observe/dynatrace-for-ai-observability/ai-traffic-management-and-security/kong
-scraped: 2026-02-18T05:45:53.334027
+scraped: 2026-03-05T21:32:10.458716
 ---
 
 # Kong AI Gateway
@@ -499,6 +483,363 @@ Additionally, the following metrics are reported.
 | `gen_ai.client.operation.duration` | histogram | `s` | The GenAI operation duration. |
 | `gen_ai.client.token.usage` | histogram | `none` | The number of input and output tokens used. |
 | `llm.openai.embeddings.vector_size` | counter | `none` | The size of returned vector. |
+
+---
+
+## observe/dynatrace-for-ai-observability/get-started/opentelemetry.md
+
+---
+title: Get started with OpenTelemetry and AI Observability
+source: https://www.dynatrace.com/docs/observe/dynatrace-for-ai-observability/get-started/opentelemetry
+scraped: 2026-03-06T21:28:35.685729
+---
+
+# Get started with OpenTelemetry and AI Observability
+
+# Get started with OpenTelemetry and AI Observability
+
+* Latest Dynatrace
+* Getting started guide
+* 5-min read
+* Updated on Feb 25, 2026
+
+OpenTelemetry provides a vendor-neutral standard for collecting traces and metrics from AI applications. With the [GenAI semantic conventionsï»¿](https://opentelemetry.io/docs/specs/semconv/gen-ai/), OpenTelemetry defines a consistent way to capture AI-specific attributes such as model names, token counts, latency, and cost metrics across different LLM providers.
+
+Dynatrace fully supports OpenTelemetry, allowing you to send AI observability data directly to your Dynatrace environment using the [OTLP API endpoints](/docs/ingest-from/opentelemetry/otlp-api "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace."). This approach gives you flexibility to use any OpenTelemetry-compatible instrumentation library or build custom instrumentation.
+
+## Who is this for?
+
+This getting started guide is for:
+
+* AI engineering teams building agent and LLM powered applications and services.
+* Site Reliability Engineers responsible for monitoring AI workloads on hyperscalers.
+* Platform engineers integrating OTel data into Dynatrace.
+
+## What will you learn?
+
+By following this guide, you will learn:
+
+* How to set up OpenTelemetry and get trace- and log-level visibility into your AI apps.
+* How to configure and instrument your app with OTel.
+* How to configure OTLP exports to Dynatrace.
+* How to report attributes following GenAI semantic conventions.
+* What traces and metrics can be sent to Dynatrace.
+* How to achieve trace- and token-level visibility into Agent and LLM operations.
+
+## Before you begin
+
+### Prerequisites
+
+In order for this to work, you need to have:
+
+* A running AI app or AI demo app.
+* Dynatrace SaaS with a [Dynatrace Platform Subscription (DPS)](/docs/license "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.") license that has [Traces powered by Grail](/docs/license/capabilities/traces "Learn how Dynatrace Traces powered by Grail consumption is calculated using the Dynatrace Platform Subscription (DPS) model."), [Metrics powered by Grail](/docs/license/capabilities/metrics "Learn how Dynatrace Metrics powered by Grail consumption is calculated using the Dynatrace Platform Subscription model."), and [Log Analytics](/docs/license/capabilities/log-analytics "Learn how Dynatrace Log Analytics consumption is calculated using the Dynatrace Platform Subscription model.") enabled.
+* OTLP ingestion enabled, see [OpenTelemetry and Dynatrace](/docs/ingest-from/opentelemetry "Learn how to integrate and ingest OpenTelemetry data (traces, metrics, and logs) into Dynatrace.").
+* An OpenAPI platform API key.
+* A Dynatrace API token the following scopes, see [Dynatrace API - Tokens and authentication](/docs/dynatrace-api/basics/dynatrace-api-authentication "Find out how to get authenticated to use the Dynatrace API.").
+
+  + Ingest metrics (`metrics.ingest`)
+  + Ingest logs (`logs.ingest`)
+  + Ingest OpenTelemetry traces (`openTelemetryTrace.ingest`)
+
+### Prior knowledge
+
+It's helpful to have some basic knowledge of:
+
+* Python or Node.js.
+* OTel concepts like SDKs, spans, exporters, and collectors.
+* Dynatrace permissions and data ingestion.
+
+## Get started with AI and OpenTelemetry
+
+### 1. Instrument your application for OpenTelemetry
+
+You can use Python or Node.js to instrument your AI application directly with the OpenTelemetry SDK.
+
+Python
+
+Node.js
+
+1. Install the OpenTelemetry SDK and Collector Exporter.
+   Run the following command in your terminal.
+
+   ```
+   pip install opentelemetry-sdk opentelemetry-exporter-otlp-proto-http
+   ```
+2. Optional You can also run the OpenTelemetry auto-instrumentation.
+
+   ```
+   pip install opentelemetry-distro opentelemetry-exporter-otlp
+
+
+
+   opentelemetry-bootstrap -a install
+   ```
+3. Initialize the OpenTelemetry SDK.
+   Add the following code at the beginning of your main file.
+
+   ```
+   from opentelemetry import trace
+
+
+
+   from opentelemetry.sdk.resources import Resource
+
+
+
+   from opentelemetry.sdk.trace import TracerProvider
+
+
+
+   from opentelemetry.sdk.trace.export import BatchSpanProcessor
+
+
+
+   from opentelemetry.exporter.otlp.proto.http.trace_exporter import OTLPSpanExporter
+
+
+
+   resource = Resource.create({"service.name": "<your-service>"})
+
+
+
+   provider = TracerProvider(resource=resource)
+
+
+
+   trace.set_tracer_provider(provider)
+
+
+
+   exporter = OTLPSpanExporter(
+
+
+
+   endpoint="https://<YOUR_ENV>.live.dynatrace.com/api/v2/otlp/v1/traces",
+
+
+
+   headers={"Authorization": "Api-Token <YOUR_DT_API_TOKEN>"},
+
+
+
+   )
+
+
+
+   provider.add_span_processor(BatchSpanProcessor(exporter))
+
+
+
+   tracer = trace.get_tracer(__name__)
+   ```
+
+1. Install the OpenTelemetry SDK, API, and Collector Exporter.
+   Run the following command in your terminal.
+
+   ```
+   npm install @opentelemetry/sdk-node @opentelemetry/api @opentelemetry/exporter-trace-otlp-proto
+   ```
+2. Initialize the OpenTelemetry SDK.
+   Add the following code at the beginning of your main file.
+
+   ```
+   import { NodeSDK } from '@opentelemetry/sdk-node';
+
+
+
+   import { Resource } from '@opentelemetry/resources';
+
+
+
+   import { OTLPTraceExporter } from '@opentelemetry/exporter-trace-otlp-proto';
+
+
+
+   import { trace } from '@opentelemetry/api';
+
+
+
+   const sdk = new NodeSDK({
+
+
+
+   resource: new Resource({ 'service.name': '<your-service>' }),
+
+
+
+   traceExporter: new OTLPTraceExporter({
+
+
+
+   url: 'https://<YOUR_ENV>.live.dynatrace.com/api/v2/otlp/v1/traces',
+
+
+
+   headers: { Authorization: 'Api-Token <YOUR_DT_API_TOKEN>' },
+
+
+
+   }),
+
+
+
+   });
+
+
+
+   sdk.start();
+
+
+
+   const tracer = trace.getTracer('my-tracer');
+   ```
+
+### 2. Add GenAI attributes to your spans
+
+The OpenTelemetry GenAI semantic conventions standardize the attributes captured for generative AI operations.
+To make sure that your telemetry data follows these conventions, add the following code to your application.
+
+For more information about semantic conventions, see [GenAI semantic conventions](/docs/observe/dynatrace-for-ai-observability/terms-and-concepts#semantic-conventions "Learn how to combine Dynatrace and Traceloop OpenLLMetry to observe an AI/ML model through OpenTelemetry.").
+
+Python
+
+Node.js
+
+```
+from opentelemetry.trace import SpanKind
+
+
+
+with tracer.start_as_current_span("chat gpt-5", kind=SpanKind.CLIENT) as span:
+
+
+
+span.set_attribute("gen_ai.operation.name", "chat")
+
+
+
+span.set_attribute("gen_ai.provider.name", "openai")
+
+
+
+span.set_attribute("gen_ai.request.model", "gpt-5.2")
+
+
+
+span.set_attribute("gen_ai.request.temperature", 0.7)
+
+
+
+response = openai_client.chat.completions.create(
+
+
+
+model="gpt-4",
+
+
+
+messages=messages,
+
+
+
+temperature=0.7,
+
+
+
+)
+
+
+
+span.set_attribute("gen_ai.response.model", response.model)
+
+
+
+span.set_attribute("gen_ai.response.id", response.id)
+
+
+
+span.set_attribute("gen_ai.usage.input_tokens", response.usage.prompt_tokens)
+
+
+
+span.set_attribute("gen_ai.usage.output_tokens", response.usage.completion_tokens)
+```
+
+```
+import { SpanKind } from '@opentelemetry/api';
+
+
+
+tracer.startActiveSpan('chat gpt-4', { kind: SpanKind.CLIENT }, async (span) => {
+
+
+
+span.setAttribute('gen_ai.operation.name', 'chat');
+
+
+
+span.setAttribute('gen_ai.provider.name', 'openai');
+
+
+
+span.setAttribute('gen_ai.request.model', 'gpt-5.2');
+
+
+
+span.setAttribute('gen_ai.request.temperature', 0.7);
+
+
+
+const response = await openai.chat.completions.create({
+
+
+
+model: 'gpt-4',
+
+
+
+messages: messages,
+
+
+
+temperature: 0.7,
+
+
+
+});
+
+
+
+span.setAttribute('gen_ai.response.model', response.model);
+
+
+
+span.setAttribute('gen_ai.response.id', response.id);
+
+
+
+span.setAttribute('gen_ai.usage.input_tokens', response.usage.prompt_tokens);
+
+
+
+span.setAttribute('gen_ai.usage.output_tokens', response.usage.completion_tokens);
+
+
+
+span.end();
+
+
+
+});
+```
+
+## Congratulations!
+
+Now that you've set up your AI app to send observability data directly to Dynatrace, you can:
+
+* Explore the [AI Observability app](/docs/observe/dynatrace-for-ai-observability/ai-observability-app "Use the new AI Observability app to monitor all your AI workloads.") to visualize your AI workloads.
+* Check out the [sample applicationsï»¿](https://github.com/dynatrace-oss/dynatrace-ai-agent-instrumentation-examples) for more examples.
 
 ---
 
@@ -942,7 +1283,7 @@ In the example below, Dynatrace Intelligence automatically reported a slowdown o
 ---
 title: Get started
 source: https://www.dynatrace.com/docs/observe/dynatrace-for-ai-observability/get-started
-scraped: 2026-02-18T21:23:13.755382
+scraped: 2026-03-06T21:14:22.129372
 ---
 
 # Get started
@@ -952,264 +1293,23 @@ scraped: 2026-02-18T21:23:13.755382
 * Latest Dynatrace
 * How-to guide
 * 1-min read
-* Updated on Feb 04, 2026
+* Updated on Feb 25, 2026
 
-The Dynatrace Full-Stack observability platform combined with Traceloop's OpenLLMetry OpenTelemetry SDK can seamlessly provide comprehensive insights into large language models (LLMs) in production environments. By observing AI models, businesses can make informed decisions, optimize performance, and ensure compliance with emerging AI regulations.
+The Dynatrace Full-Stack observability platform can be combined with the:
 
-## Create a Dynatrace token
+* Traceloop OpenLLMetry OpenTelemetry SDK.
+* OpenTelemetry SDK.
 
-Create a Dynatrace token so you can report AI observability data to your Dynatrace tenant.
+Together, this provides comprehensive insights into large language models (LLMs) in production environments.
+By observing AI models, businesses can make informed decisions, optimize performance, and ensure compliance with emerging AI regulations.
 
-Create a Dynatrace Token
+These getting started guides show you how to instrument your AI application and send observability data to Dynatrace.
 
-To create a Dynatrace token
+[### OpenLLMetry
 
-1. In Dynatrace, go to **Access Tokens**.  
-   To find **Access Tokens**, press **Ctrl/Cmd+K** to search for and select **Access Tokens**.
-2. In **Access Tokens**, select **Generate new token**.
-3. Enter a **Token name** for your new token.
-4. Give your new token the following permissions:
-5. Search for and select all of the following scopes.
+Instrument your AI application with OpenLLMetry.](/docs/observe/dynatrace-for-ai-observability/get-started/openllmetry "Use OpenLLMetry to collect observability data from AI applications.")[### OpenTelemetry
 
-   * **Ingest metrics** (`metrics.ingest`)
-   * **Ingest logs** (`logs.ingest`)
-   * **Ingest OpenTelemetry traces** (`openTelemetryTrace.ingest`)
-6. Select **Generate token**.
-7. Copy the generated token to the clipboard. Store the token in a password manager for future use.
-
-   You can only access your token once upon creation. You can't reveal it afterward.
-
-## Instrument your application
-
-Choose your instrumentation framework and language to get started.
-
-The Dynatrace backend exclusively works with delta values and requires the respective aggregation temporality. Set the `OTEL_EXPORTER_OTLP_METRICS_TEMPORALITY_PREFERENCE` environment variable to `DELTA`.
-
-OpenLLMetry
-
-OpenTelemetry
-
-OpenLLMetry provides auto-instrumentation for popular AI frameworks and automatically collects GenAI semantic conventions.
-
-Python
-
-Node.js
-
-We can leverage OpenTelemetry to provide autoinstrumentation that collects traces and metrics of your AI workloads, particularly [OpenLLMetryï»¿](https://dt-url.net/0sa3uau) that can be installed with the following command:
-
-```
-pip install traceloop-sdk
-```
-
-Afterward, add the following code at the beginning of your main file.
-
-```
-from traceloop.sdk import Traceloop
-
-
-
-headers = { "Authorization": "Api-Token <YOUR_DT_API_TOKEN>" }
-
-
-
-Traceloop.init(
-
-
-
-app_name="<your-service>",
-
-
-
-api_endpoint="https://<YOUR_ENV>.live.dynatrace.com/api/v2/otlp", # or OpenTelemetry Collector URL
-
-
-
-headers=headers
-
-
-
-)
-```
-
-We can leverage OpenTelemetry to provide autoinstrumentation that collects traces and metrics of your AI workloads, particularly [OpenLLMetryï»¿](https://dt-url.net/0sa3uau) that can be installed with the following command:
-
-```
-npm i @opentelemetry/exporter-trace-otlp-proto @traceloop/node-server-sdk
-```
-
-Afterward, add the following code at the beginning of your main file.
-
-```
-import {OTLPTraceExporter} from "@opentelemetry/exporter-trace-otlp-proto";
-
-
-
-import * as traceloop from "@traceloop/node-server-sdk";
-
-
-
-const exporter = new OTLPTraceExporter({
-
-
-
-url: "https://<YOUR_ENV>.live.dynatrace.com/api/v2/otlp", // or OpenTelemetry Collector URL
-
-
-
-headers: { Authorization: "Api-Token <YOUR_DT_API_TOKEN>" },
-
-
-
-});
-
-
-
-traceloop.initialize({
-
-
-
-appName: "<your-service>",
-
-
-
-exporter: exporter
-
-
-
-});
-```
-
-Currently, OpenLLMetry for Node.js doesn't support Metrics.
-
-OpenTelemetry provides flexible instrumentation that you can customize for your specific needs. For more details on the GenAI semantic conventions, see [OpenTelemetry](/docs/ingest-from/opentelemetry "Learn how to integrate and ingest OpenTelemetry data (traces, metrics, and logs) into Dynatrace.").
-
-Python
-
-Node.js
-
-Install the required packages:
-
-```
-pip install opentelemetry-sdk opentelemetry-exporter-otlp-proto-http
-```
-
-Configure the OpenTelemetry SDK:
-
-```
-from opentelemetry import trace
-
-
-
-from opentelemetry.sdk.resources import Resource
-
-
-
-from opentelemetry.sdk.trace import TracerProvider
-
-
-
-from opentelemetry.sdk.trace.export import BatchSpanProcessor
-
-
-
-from opentelemetry.exporter.otlp.proto.http.trace_exporter import OTLPSpanExporter
-
-
-
-resource = Resource.create({"service.name": "<your-service>"})
-
-
-
-provider = TracerProvider(resource=resource)
-
-
-
-trace.set_tracer_provider(provider)
-
-
-
-exporter = OTLPSpanExporter(
-
-
-
-endpoint="https://<YOUR_ENV>.live.dynatrace.com/api/v2/otlp/v1/traces",
-
-
-
-headers={"Authorization": "Api-Token <YOUR_DT_API_TOKEN>"},
-
-
-
-)
-
-
-
-provider.add_span_processor(BatchSpanProcessor(exporter))
-
-
-
-tracer = trace.get_tracer(__name__)
-```
-
-Install the required packages:
-
-```
-npm install @opentelemetry/sdk-node @opentelemetry/api @opentelemetry/exporter-trace-otlp-proto
-```
-
-Configure the OpenTelemetry SDK:
-
-```
-import { NodeSDK } from '@opentelemetry/sdk-node';
-
-
-
-import { Resource } from '@opentelemetry/resources';
-
-
-
-import { OTLPTraceExporter } from '@opentelemetry/exporter-trace-otlp-proto';
-
-
-
-import { trace } from '@opentelemetry/api';
-
-
-
-const sdk = new NodeSDK({
-
-
-
-resource: new Resource({ 'service.name': '<your-service>' }),
-
-
-
-traceExporter: new OTLPTraceExporter({
-
-
-
-url: 'https://<YOUR_ENV>.live.dynatrace.com/api/v2/otlp/v1/traces',
-
-
-
-headers: { Authorization: 'Api-Token <YOUR_DT_API_TOKEN>' },
-
-
-
-}),
-
-
-
-});
-
-
-
-sdk.start();
-
-
-
-const tracer = trace.getTracer('my-tracer');
-```
+Instrument your AI application with OpenTelemetry.](/docs/observe/dynatrace-for-ai-observability/get-started/opentelemetry "Use OpenTelemetry and the GenAI semantic conventions to collect observability data from AI applications.")
 
 ---
 
@@ -1218,7 +1318,7 @@ const tracer = trace.getTracer('my-tracer');
 ---
 title: Amazon Bedrock
 source: https://www.dynatrace.com/docs/observe/dynatrace-for-ai-observability/models-and-platforms/bedrock
-scraped: 2026-02-18T21:23:11.066458
+scraped: 2026-03-06T21:14:20.458987
 ---
 
 # Amazon Bedrock
@@ -1277,7 +1377,7 @@ The following attributes are available for GenAI Spans.
 ---
 title: NVIDIA NIM
 source: https://www.dynatrace.com/docs/observe/dynatrace-for-ai-observability/models-and-platforms/nvidia-nim
-scraped: 2026-02-18T21:23:16.159076
+scraped: 2026-03-06T21:14:25.595461
 ---
 
 # NVIDIA NIM
@@ -1487,7 +1587,7 @@ Additionally, the following metrics are reported.
 ---
 title: Ollama
 source: https://www.dynatrace.com/docs/observe/dynatrace-for-ai-observability/models-and-platforms/ollama
-scraped: 2026-02-18T21:23:09.978519
+scraped: 2026-03-06T21:14:16.809856
 ---
 
 # Ollama
@@ -1537,7 +1637,7 @@ The following attributes are available for GenAI Spans.
 ---
 title: OpenAI
 source: https://www.dynatrace.com/docs/observe/dynatrace-for-ai-observability/models-and-platforms/openai
-scraped: 2026-02-18T21:23:08.889320
+scraped: 2026-03-06T21:14:15.056939
 ---
 
 # OpenAI
@@ -1602,7 +1702,7 @@ The following attributes are available for GenAI Spans.
 ---
 title: TensorFlow Keras observability
 source: https://www.dynatrace.com/docs/observe/dynatrace-for-ai-observability/models-and-platforms/tensorflow-keras-observability
-scraped: 2026-02-17T05:07:13.406346
+scraped: 2026-03-06T21:33:34.751016
 ---
 
 # TensorFlow Keras observability
@@ -1983,7 +2083,7 @@ The screenshot below shows a Data Explorer visualization of the accuracy metric 
 ---
 title: LangChain
 source: https://www.dynatrace.com/docs/observe/dynatrace-for-ai-observability/orchestration-frameworks/langchain
-scraped: 2026-02-18T21:23:15.011966
+scraped: 2026-03-06T21:14:13.335634
 ---
 
 # LangChain
@@ -2033,12 +2133,198 @@ The following attributes are available for GenAI Spans.
 
 ---
 
+## observe/dynatrace-for-ai-observability/sample-use-cases/data-governance.md
+
+---
+title: AI data governance with Amazon Bedrock
+source: https://www.dynatrace.com/docs/observe/dynatrace-for-ai-observability/sample-use-cases/data-governance
+scraped: 2026-03-06T21:27:33.344954
+---
+
+# AI data governance with Amazon Bedrock
+
+# AI data governance with Amazon Bedrock
+
+* Latest Dynatrace
+* Tutorial
+* 5-min read
+* Updated on Dec 10, 2025
+
+Emerging AI regulations such as the [European Union Artificial Intelligence Actï»¿](https://dt-url.net/xv038bv) provide the means to deploy a comprehensive strategy combining organizational and AI model oversight, covering everything from model training to AI/user interactions.
+
+When running your AI models through Amazon Bedrock, Dynatrace helps you to comply with regulatory record-keeping requirements.
+
+## What you will learn
+
+In this tutorial, we first configure your model training and deployment observability. Afterward, we configure your application to observe user inference requests.
+
+## Steps
+
+The general steps are as follows:
+
+1. Configure Dynatrace
+2. Configure your AWS account to send data to your Dynatrace tenant
+3. Configure your application
+
+See below for the details of each step.
+
+[![Step 1](https://dt-cdn.net/images/step-1-086e22066c.svg "Step 1")
+
+**Configure Dynatrace**](#preparation)[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
+
+**Configure your AWS account**](#aws)[![Step 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Step 3")
+
+**Configure your application**](#app)
+
+### Step 1 Configure Dynatrace
+
+In this step, we create a Dynatrace token and we configure [OpenPipeline](/docs/platform/openpipeline "Scale Dynatrace platform data handling with Dynatrace OpenPipeline.") to retain the data for 5+ years.
+
+#### Create Dynatrace token
+
+To create a Dynatrace token
+
+1. In Dynatrace, go to **Access Tokens**.  
+   To find **Access Tokens**, press **CTRL+K** to search for and select **Access Tokens**.
+2. In **Access Tokens**, select **Generate new token**.
+3. Enter a **Token name** for your new token.
+4. Give your new token the following permissions:
+5. Search for and select all of the following scopes.
+
+   * **Ingest bizevents** (`bizevents.ingest`)
+   * **Ingest metrics** (`metrics.ingest`)
+   * **Ingest logs** (`logs.ingest`)
+   * **Ingest events** (`events.ingest`)
+   * **Ingest OpenTelemetry traces** (`openTelemetryTrace.ingest`)
+6. Select **Generate token**.
+7. Copy the generated token to the clipboard. Store the token in a password manager for future use.
+
+   You can only access your token once upon creation. You can't reveal it afterward.
+
+#### Configure OpenPipeline
+
+The default retention period for BizEvents is 35 days. Depending on the regulations, this might not be enough.
+
+To change the retention period, you can create a custom Grail bucket.
+
+1. Go to **Settings** > **Storage management** > **Bucket storage management**.
+2. In **Bucket Storage Management**, select  **Bucket**.
+3. On **New bucket**:
+
+   * Set **Bucket name** (for example, `gen_ai_events`)
+   * Set **Retention period (in days)** (for example, `1,825`, which is about 5 years)
+   * Set **Bucket table type** to `bizevents`
+4. Select **Save**.
+
+![Grail Bucket Creation](https://dt-cdn.net/images/bucket-creation-1380-125022930c.png)
+
+When the bucket is available, we can configure OpenPipeline to redirect AI-relevant events to storage there.
+
+1. Go to ![Settings](https://dt-cdn.net/images/settings-icon-256-38e1321b51.webp "Settings") **Settings** > **Process and contextualize** > **OpenPipeline** > **Business events** > **Pipelines**.
+2. On the **Pipelines** tab, select  **Pipeline** and name your pipeline (for example, `AI Data Governance`).
+3. On the **Storage** tab, select  **Processor** > **Bucket assignment**.
+4. Configure the processor:
+
+   1. Enter a **Name** for the processor
+   2. Set **Matching condition** to `true`
+   3. Set **Storage** to the bucket you created in the previous procedure
+5. Select **Save**.
+
+![OpenPipeline Bucket Assignment](https://dt-cdn.net/images/pipeline-creation-1383-70370d9b88.png)
+
+Finally, we route the ingestion of AI events to the pipeline.
+
+1. Still in **OpenPipeline** > **Business events**, select the **Dynamic routing** tab.
+2. On the **Dynamic routing** tab, select  **Dynamic route** to **Add a new dynamic route**.
+
+   * Enter a **Name** for the new route (for example, `AI Event Routing`)
+   * Set **Matching condition** to `matchesValue(event.type,"gen_ai.auditing")`
+   * Set **Pipeline** to the pipeline you created in the previous procedure.
+3. Select **Add**.
+4. Select **Save**.
+
+Finally, to mark it as the first pipeline to trigger, drag it  up to be the first row in the table.
+
+![OpenPipeline Routing](https://dt-cdn.net/images/pipeline-routing-1381-ec77347761.png)
+
+### Step 2 Configure your AWS account
+
+Amazon Bedrock emits events for every configuration action executed, such as when you deploy a new model or when the fine-tuning of your model finishes.
+
+We can set up a rule to forward these events to Dynatrace. Please refer to our [integration with Amazon EventBridge using BizEventï»¿](https://github.com/dynatrace-oss/cloud-snippets/tree/main/aws/eventbridge-events-to-dynatrace#ingest-as-bizevents) to configure the rule.
+
+The only change is in the [`InputTemplate` fieldï»¿](https://github.com/dynatrace-oss/cloud-snippets/blob/8785beb90e9d5c53de4f8420bf5e68b6ac673a09/aws/eventbridge-events-to-dynatrace/biz-events.yaml#L115), where the property `"type"` should be set to `gen_ai.auditing`. This change is required to match the values that OpenPipeline uses to redirect the events to our Grail bucket.
+
+Expand to see how the AWS configuration should look
+
+![AWS <-> Dynatrace connection](https://dt-cdn.net/images/aws-dynatrace-connection-3352-4347fe5fc8.png)
+
+![AWS CloudTrail Transformer configuration](https://dt-cdn.net/images/aws-cloudtrail-transformer-1610-501eddb13f.png)
+
+![AWS CloudTrail Target configuration](https://dt-cdn.net/images/aws-cloudtrail-target-2744-0f4e467998.png)
+
+### Step 3 Configure your application
+
+We can leverage OpenTelemetry to provide auto-instrumentation that collects traces and metrics of your AI workloads, particularly our fork of [OpenLLMetryï»¿](https://dt-url.net/0sa3uau).
+
+Important Notice
+
+The libraries utilized in this sample use case are currently under development and are in an alpha state. They may contain bugs or undergo significant changes. Use at your own risk.
+We highly value your feedback to improve these libraries. Please report any issues, bugs, or suggestions on our GitHub issues page.
+
+To install, use the following command:
+
+```
+pip install -i https://test.pypi.org/simple/ dynatrace-openllmetry-sdk==0.0.1a4
+```
+
+Afterward, add the following code at the beginning of your main file:
+
+```
+from traceloop.sdk import Traceloop
+
+
+
+headers = { "Authorization": "Api-Token <YOUR_DT_API_TOKEN>" }
+
+
+
+Traceloop.init(
+
+
+
+app_name="<your-service>",
+
+
+
+api_endpoint="https://<YOUR_ENV>.live.dynatrace.com/api/v2/otlp",
+
+
+
+headers=headers
+
+
+
+)
+```
+
+And that's it! ![Progressive delivery](https://cdn.bfldr.com/B686QPH3/at/r898jztffhg3nzc7fxwh6pf/DT1015.svg?auto=webp&width=72&height=72 "Progressive delivery")
+
+Now you can:
+
+* Fetch all the user/AI interactions, training status, and more on demand.
+* Use [Notebooks](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.")![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") or [Dashboards](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.")![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") to create data-driven documents for custom analytics on it.
+
+![GenAI Compliance Auditing](https://dt-cdn.net/images/gen-ai-auditing-7680-1f44c8a6bf.png)
+
+---
+
 ## observe/dynatrace-for-ai-observability/sample-use-cases/openai-observability.md
 
 ---
 title: OpenAI Observability
 source: https://www.dynatrace.com/docs/observe/dynatrace-for-ai-observability/sample-use-cases/openai-observability
-scraped: 2026-02-18T21:33:32.285342
+scraped: 2026-03-05T21:31:04.024459
 ---
 
 # OpenAI Observability
@@ -2079,7 +2365,7 @@ In the sample, you:
 2. Point `api_endpoint` to your Dynatrace OTLP endpoint.
 3. Authenticate with a Dynatrace API token (the sample reads it from `/etc/secrets/dynatrace_otel`).
 
-For more configuration options, see the [Get started with AI Observability](/docs/observe/dynatrace-for-ai-observability/get-started "Learn how to set up OpenLLMetry to observe an AI/ML model.") guide.
+For more configuration options, see the [Get started with AI Observability](/docs/observe/dynatrace-for-ai-observability/get-started "Get started with OpenLLMetry and OpenTelemetry for AI Observability.") guide.
 
 ### Run the sample
 
@@ -2263,7 +2549,7 @@ Our simple example of a Node.js service entirely depends on the ChatGPT model re
 ---
 title: AI and LLM Observability
 source: https://www.dynatrace.com/docs/observe/dynatrace-for-ai-observability
-scraped: 2026-02-18T21:16:44.050681
+scraped: 2026-03-06T21:10:10.074162
 ---
 
 # AI and LLM Observability
@@ -2291,7 +2577,7 @@ Get a holistic view of the AI-generated parts of your system such as LLM, vector
 
 Dynatrace unifies metrics, logs, traces, problem analytics, and root cause information in dashboards and notebooks, providing a single operational view of your AI-powered cloud applications end-to-end.
 
-Use Dynatrace with [Traceloop OpenLLMetry](/docs/observe/dynatrace-for-ai-observability/get-started "Learn how to set up OpenLLMetry to observe an AI/ML model.") or [OpenTelemetry with GenAI semantic conventionsï»¿](https://opentelemetry.io/docs/specs/semconv/gen-ai/) to gain detailed insights into your generative AI stack.
+Use Dynatrace with [Traceloop OpenLLMetry](/docs/observe/dynatrace-for-ai-observability/get-started "Get started with OpenLLMetry and OpenTelemetry for AI Observability.") or [OpenTelemetry with GenAI semantic conventionsï»¿](https://opentelemetry.io/docs/specs/semconv/gen-ai/) to gain detailed insights into your generative AI stack.
 
 ![Full AI/ML observability with Dynatrace](https://dt-cdn.net/images/ai-obs-tech-stack-latest-1892-88a8b44f2c.png)
 

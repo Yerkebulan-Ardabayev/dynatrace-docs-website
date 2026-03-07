@@ -1,7 +1,7 @@
 ---
 title: Calculate your consumption of Foundation & Discovery (DPS)
 source: https://www.dynatrace.com/docs/license/capabilities/app-infra-observability/foundation-and-discovery
-scraped: 2026-02-18T21:23:57.021370
+scraped: 2026-03-06T21:17:13.819056
 ---
 
 # Calculate your consumption of Foundation & Discovery (DPS)
@@ -17,7 +17,7 @@ Dynatrace OneAgent can be configured for Foundation & Discovery mode, which prov
 Unlike other tools that provide basic monitoring, Foundation & Discovery leverages core OneAgent features: discovery and topology.
 
 Foundation & Discovery mode detects process-to-process communication and populates the [Smartscape topology](/docs/analyze-explore-automate/smartscape-classic "Learn how Smartscape Classic visualizes all the entities and dependencies in your environment.") accordingly.
-This provides important clues for AIOps which is included with OneAgent, see [DavisÂ® AI automatic root cause analysis](/docs/dynatrace-intelligence "Get familiar with the capabilities of Dynatrace Intelligence.") for details.
+This provides important clues for AIOps that is included with OneAgent. For details, see [Dynatrace Intelligence AI automatic root cause analysis](/docs/dynatrace-intelligence "Get familiar with the capabilities of Dynatrace Intelligence.").
 
 Broad deployment of Foundation & Discovery mode enables you to select the right monitoring mode for each of your hosts.
 A hostâs criticality can be determined based on which processes, technologies, externally accessible services, and topological connections.

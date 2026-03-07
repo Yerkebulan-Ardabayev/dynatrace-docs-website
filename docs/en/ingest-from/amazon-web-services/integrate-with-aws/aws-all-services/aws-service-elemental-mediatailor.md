@@ -1,13 +1,14 @@
 ---
 title: AWS Elemental MediaTailor monitoring
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-elemental-mediatailor
-scraped: 2026-02-18T21:34:44.208467
+scraped: 2026-03-06T21:36:11.953858
 ---
 
 # AWS Elemental MediaTailor monitoring
 
 # AWS Elemental MediaTailor monitoring
 
+* Classic
 * How-to guide
 * 3-min read
 * Published Jul 21, 2020

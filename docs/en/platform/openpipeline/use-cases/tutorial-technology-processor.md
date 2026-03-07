@@ -1,7 +1,7 @@
 ---
 title: Process logs with technology bundle parsers
 source: https://www.dynatrace.com/docs/platform/openpipeline/use-cases/tutorial-technology-processor
-scraped: 2026-02-18T21:21:07.509280
+scraped: 2026-03-06T21:13:36.221723
 ---
 
 # Process logs with technology bundle parsers
@@ -186,46 +186,6 @@ You can easily filter logs by status, application, or attributes specific to the
      ```
 
      Result:
-
-     timestamp
-
-     syslog message
-
-     status
-
-     syslog.appname
-
-     syslog.priority
-
-     `2024-10-01T11:56:27.743113056+02:00`
-
-     `TCP: eth0: Driver has suspect GRO implementation, TCP performance may be compromised.`
-
-     WARN
-
-     kernel
-
-     4
-
-     `2024-10-01T11:56:15.248382315+02:00`
-
-     `Network latency exceeded threshold: 250ms`
-
-     WARN
-
-     net-monitor
-
-     4
-
-     `2024-10-01T11:52:32.464416725+02:00`
-
-     `Disk space usage exceeded 80% on /dev/sda1`
-
-     WARN
-
-     disk-monitor
-
-     28
    * Group syslog logs by application
 
      ```

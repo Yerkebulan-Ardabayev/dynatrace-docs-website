@@ -1,7 +1,7 @@
 ---
 title: Explore Business Events
 source: https://www.dynatrace.com/docs/observe/business-observability/explore-business-events
-scraped: 2026-02-18T21:24:22.892485
+scraped: 2026-03-06T21:14:45.059247
 ---
 
 # Explore Business Events
@@ -26,17 +26,13 @@ Prerequisites
 
 The following table describes the required permissions.
 
-Permission
-
-Description
-
 storage:bizevents:read
 
-Is required to read bizevents from GRAIL
+Is required to read bizevents from Grail
 
 storage:buckets:read
 
-Is required to read system data from GRAIL
+Is required to read system data from Grail
 
 settings:objects:read
 
@@ -46,9 +42,13 @@ settings:objects:write
 
 Is required to write OneAgent rules
 
+settings:schemas:read
+
+Is required to read OneAgent rules schema
+
 app-settings:objects:read
 
-Is required to read configurations in app-settings
+Is required to read configurations in app settings
 
 storage:filter-segments:read
 
@@ -58,17 +58,15 @@ storage:events:write
 
 Required for workflow action
 
-10
+state:app-states:read
 
-rows per page
+Is required to read app states
 
-Page
+state:app-states:write
 
-1
+Is required to write app states
 
-of 1
-
-## Installation
+### Installation
 
 Make sure the app is [installed in your environment](/docs/manage/hub#install "See the information about Dynatrace Hub.").
 

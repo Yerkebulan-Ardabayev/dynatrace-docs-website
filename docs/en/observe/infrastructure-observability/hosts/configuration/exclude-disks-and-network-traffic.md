@@ -1,13 +1,14 @@
 ---
 title: Exclude disks and network traffic from host monitoring
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/hosts/configuration/exclude-disks-and-network-traffic
-scraped: 2026-02-17T21:32:26.385516
+scraped: 2026-03-06T21:27:41.661234
 ---
 
 # Exclude disks and network traffic from host monitoring
 
 # Exclude disks and network traffic from host monitoring
 
+* Classic
 * How-to guide
 * 4-min read
 * Updated on Jul 08, 2024
@@ -95,85 +96,3 @@ To exclude an IP address from connectivity calculations
 ## Disks not monitored by OneAgent
 
 The following disks are not monitored by OneAgent. To exclude an additional filesystem type or mount point name, see [Exclude disks](#disk-options).
-
-Operating system
-
-Type
-
-Excluded disks
-
-All supported OS
-
-File systems
-
-`hsfs`
-
-`devtmpfs`
-
-`sysfs`
-
-`rootfs`
-
-`ramfs`
-
-`proc`
-
-`procfs`
-
-`devpts`
-
-`securityfs`
-
-`cgroup`
-
-`cpuset`
-
-`pstore`
-
-`mqueue`
-
-`debugfs`
-
-`autofs`
-
-`hugetlbfs`
-
-`fusectl`
-
-`fuse.gvfsd-fuse`
-
-`binfmt_misc`
-
-`iso9660`
-
-`none`
-
-`rpc_pipefs`
-
-Linux
-
-File systems
-
-`tmpfs`
-
-`udf`
-
-`squashfs`
-
-Linux
-
-Mount point
-
-`/dev`
-
-AIX
-
-File systems
-
-`cdrfs`
-
-Solaris
-
-Network interface
-
-`mac`

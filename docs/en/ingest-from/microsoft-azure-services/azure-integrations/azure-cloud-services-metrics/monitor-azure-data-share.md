@@ -1,7 +1,7 @@
 ---
 title: Azure Data Share monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-data-share
-scraped: 2026-02-15T09:11:51.205877
+scraped: 2026-03-02T21:28:14.296102
 ---
 
 # Azure Data Share monitoring

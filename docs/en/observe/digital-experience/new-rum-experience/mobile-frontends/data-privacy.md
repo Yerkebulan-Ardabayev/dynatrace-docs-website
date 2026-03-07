@@ -1,7 +1,7 @@
 ---
 title: Configure data privacy settings for mobile frontends
 source: https://www.dynatrace.com/docs/observe/digital-experience/new-rum-experience/mobile-frontends/data-privacy
-scraped: 2026-02-18T05:52:07.196974
+scraped: 2026-03-04T21:30:25.620961
 ---
 
 # Configure data privacy settings for mobile frontends
@@ -63,44 +63,6 @@ Check the sections below for detailed instructions on how to set up the mobile u
 
 The table below describes the available data collection levels and shows whether [user tags](/docs/observe/digital-experience/rum-concepts/user-and-error-events#user-tagging "Learn about user and error events and the types of user and error events captured by Dynatrace.") and custom user actions, events, values, and errors are reported for a particular level.
 
-Level
-
-Description
-
-User tags, custom events, and custom values
-
-Custom user actions and errors
-
-**Off**
-
-Monitoring data is not sent
-
-No personal data is sent; all identifiers are randomized on every launch.[1](#fn-1-1-def)
-
-![Not applicable](https://dt-cdn.net/images/icon-red-cross-1f1142a5dc.svg "Not applicable")
-
-![Not applicable](https://dt-cdn.net/images/icon-red-cross-1f1142a5dc.svg "Not applicable")
-
-**Performance**
-
-Only performance, automatically captured data is sent
-
-No personal data is sent; all identifiers are randomized on every launch.
-
-![Not applicable](https://dt-cdn.net/images/icon-red-cross-1f1142a5dc.svg "Not applicable")
-
-![Applicable](https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg "Applicable")
-
-**User behavior**
-
-Performance data and user data is sent
-
-Personal data is sent; OneAgent recognizes and reports users who revisit in the future.[2](#fn-1-2-def)
-
-![Applicable](https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg "Applicable")
-
-![Applicable](https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg "Applicable")
-
 1
 
 A single `Loading <App>` event is sent to track the number of users that opted out.
@@ -111,7 +73,7 @@ If you haven't configured user tagging and custom event or value reporting, the 
 
 ## User tracking
 
-OneAgent for Mobile uses the `x-dynatrace` header for tagging HTTP requests. Dynatrace uses this header to link the mobile part of the web request to the service part captured by another OneAgent.
+For RUM Classic, OneAgent for Mobile tags HTTP requests with the `x-dynatrace` header. Dynatrace uses this header to link the mobile part of a web request with the service part captured by another OneAgent. For the New RUM Experience, OneAgent for Mobile tags HTTP requests using the `traceparent` and `tracestate` headers.
 
 For hybrid applications, the `dtAdk` cookie allows to join a session from OneAgent for Mobile and a session from the RUM JavaScript so that these sessions appear as a single session, while the `dtAdkSettings` cookie is used for syncing settings between OneAgent for Mobile and the RUM JavaScript.
 

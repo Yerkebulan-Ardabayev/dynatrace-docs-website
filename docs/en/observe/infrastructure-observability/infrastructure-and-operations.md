@@ -1,7 +1,7 @@
 ---
 title: Infrastructure & Operations
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/infrastructure-and-operations
-scraped: 2026-02-18T21:16:17.008111
+scraped: 2026-03-06T21:10:46.597387
 ---
 
 # Infrastructure & Operations
@@ -15,7 +15,7 @@ scraped: 2026-02-18T21:16:17.008111
 
 The ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Infrastructure & Operations** app simplifies infrastructure health monitoring and facilitates root cause analysis for problems.
 
-* Health indicators powered by Dynatrace Intelligence help you detect early signs of performance degradation to quickly see which areas of your environment need attention.
+* Health indicators powered by [Dynatrace Intelligence](/docs/dynatrace-intelligence "Get familiar with the capabilities of Dynatrace Intelligence.") help you detect early signs of performance degradation to quickly see which areas of your environment need attention.
 * Check infrastructure host health metrics, logs, and events for all infrastructure entities.
 * Drill down from ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Infrastructure & Operations** to any infrastructure entity metrics, logs, or events.
 
@@ -27,10 +27,6 @@ The ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-oper
 ### Permissions
 
 The following table describes the required permissions.
-
-Permission
-
-Description
 
 storage:logs:read
 
@@ -71,16 +67,6 @@ Read settings configurations from Settings 2.0
 settings:objects:write
 
 Write settings configurations to Settings 2.0
-
-10
-
-rows per page
-
-Page
-
-1
-
-of 1
 
 ## Get started
 
@@ -143,7 +129,7 @@ Some of the advantages of using segments are
    * Add entities and topology. Select from the available options in the menu.
 6. Select **Save**.
 
-For more details on managing segments, refer to [Segments](/docs/manage/segments "Segments logically structure monitoring data in Grail and function as convenient filters for data that users are allowed to access based on permissions.").
+For more details on managing segments, refer to [Segments](/docs/manage/segments "Use segments to logically structure and conveniently filter observability data across apps.").
 
 ### Analyze overview charts
 
@@ -275,11 +261,11 @@ Containers](/docs/observe/infrastructure-observability/infrastructure-and-operat
 
 Monitor processes running on hosts and containers with detailed insights into CPU and memory usage trends and key metrics.
 
-Processes](/docs/observe/infrastructure-observability/infrastructure-and-operations/processes)[#### Networks
+Processes](/docs/observe/infrastructure-observability/infrastructure-and-operations/processes)[#### Network devices
 
 Monitor network devices and gain insights into networking components with Dynatrace Intelligence-powered analytics and flexible observability options.
 
-Networks](/docs/observe/infrastructure-observability/infrastructure-and-operations/networks)
+Network devices](/docs/observe/infrastructure-observability/infrastructure-and-operations/network-devices)
 
 ### Relation between hosts, containers, and processes
 

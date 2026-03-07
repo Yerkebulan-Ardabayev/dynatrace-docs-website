@@ -1,13 +1,14 @@
 ---
 title: Message queues
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/queues
-scraped: 2026-02-18T21:23:01.780332
+scraped: 2026-03-06T21:16:50.344003
 ---
 
 # Message queues
 
 # Message queues
 
+* Classic
 * Explanation
 * 4-min read
 * Updated on Jul 15, 2022
@@ -37,8 +38,6 @@ To get an overview of all detected queues and topics, go to **Message Queues**.
 ![Message queues table](https://dt-cdn.net/images/queues-table-1857-49308cb749.png)
 
 ## Extensions
-
-Unable to render DataTable. Check configuration.
 
 ## FAQ
 

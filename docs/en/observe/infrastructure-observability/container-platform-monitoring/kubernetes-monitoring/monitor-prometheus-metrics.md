@@ -1,13 +1,14 @@
 ---
 title: Monitor Prometheus metrics
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-prometheus-metrics
-scraped: 2026-02-18T21:26:39.689533
+scraped: 2026-03-06T21:21:44.712888
 ---
 
 # Monitor Prometheus metrics
 
 # Monitor Prometheus metrics
 
+* Classic
 * 14-min read
 * Updated on Jan 29, 2026
 
@@ -56,22 +57,6 @@ Histograms[1](#fn-3-1-def) provide visual insights into the distribution and fre
 For a base metric name of `<basename>`, Dynatrace will ingest the data according to the
 following table.
 
-Prometheus Metric
-
-Dynatrace Ingest Type
-
-`<basename>_bucket{le="<upper inclusive bound>"}`
-
-[`COUNT`](/docs/ingest-from/extend-dynatrace/extend-metrics/reference/metric-ingestion-protocol#count-metric "Learn how the data ingestion protocol for Dynatrace Metrics API works.")
-
-`<basename>_bucket_sum`
-
-[`COUNT`](/docs/ingest-from/extend-dynatrace/extend-metrics/reference/metric-ingestion-protocol#count-metric "Learn how the data ingestion protocol for Dynatrace Metrics API works.")
-
-`<basename>_bucket_count`
-
-[`COUNT`](/docs/ingest-from/extend-dynatrace/extend-metrics/reference/metric-ingestion-protocol#count-metric "Learn how the data ingestion protocol for Dynatrace Metrics API works.")
-
 Additional flexibility and control is provided via the [`builtin:histogram-metrics`ï»¿](https://dt-url.net/ne02rlq) settings schema.
 This schema allows to configure the ingestion of `<basename>_bucket{le="<upper inclusive bound>"}` metrics.
 
@@ -84,22 +69,6 @@ This schema allows to configure the ingestion of `<basename>_bucket{le="<upper i
 Like a [Histogram](#histogram), the summary metric[1](#fn-4-1-def) samples observations. In contrast to the histogram metric, a summary's buckets are
 represented by Ï-quantiles where 0 â¤ Ï â¤ 1. For a base metric name of `<basename>`, Dynatrace will ingest the data according to the
 following table.
-
-Prometheus Metric
-
-Dynatrace Ingest Type
-
-`<basename>{quantile="<Ï>"}`
-
-[`GAUGE`](/docs/ingest-from/extend-dynatrace/extend-metrics/reference/metric-ingestion-protocol#gauge-metric "Learn how the data ingestion protocol for Dynatrace Metrics API works.")
-
-`<basename>_sum`
-
-[`COUNT`](/docs/ingest-from/extend-dynatrace/extend-metrics/reference/metric-ingestion-protocol#count-metric "Learn how the data ingestion protocol for Dynatrace Metrics API works.")
-
-`<basename>_count`
-
-[`COUNT`](/docs/ingest-from/extend-dynatrace/extend-metrics/reference/metric-ingestion-protocol#count-metric "Learn how the data ingestion protocol for Dynatrace Metrics API works.")
 
 1
 
@@ -814,7 +783,7 @@ If you have Dynatrace classic licensing, Prometheus metrics in Kubernetes enviro
 * Prometheus metrics from exporters running on hosts monitored by OneAgent are first deducted from your quota of [included metrics per host unit](/docs/license/monitoring-consumption-classic/davis-data-units/metric-cost-calculation#metrics-per-host-unit "Understand how to calculate Davis data unit consumption and costs related to monitored metrics."). After this quota is exceeded, any additional metrics consume [DDUs](/docs/license/monitoring-consumption-classic/davis-data-units/metric-cost-calculation "Understand how to calculate Davis data unit consumption and costs related to monitored metrics.").
 * Prometheus metrics from exporters running on hosts not monitored by OneAgent always consume [DDUs](/docs/license/monitoring-consumption-classic/davis-data-units/metric-cost-calculation "Understand how to calculate Davis data unit consumption and costs related to monitored metrics.").
 
-## Troubleshoot
+## Troubleshooting
 
 To troubleshoot Prometheus integration issues, download the [Kubernetes Monitoring Statistics extensionï»¿](https://dt-url.net/n903xmb). For more information, see the community article on [How to troubleshoot missing Prometheus metricsï»¿](https://dt-url.net/3m02ozr).
 

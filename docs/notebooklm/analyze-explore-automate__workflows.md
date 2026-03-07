@@ -1,7 +1,7 @@
 # Документация Dynatrace: analyze-explore-automate/workflows
 Язык: Русский (RU)
-Сгенерировано: 2026-02-18
-Файлов в разделе: 31
+Сгенерировано: 2026-03-06
+Файлов в разделе: 32
 ---
 
 ## analyze-explore-automate/workflows/actions/email.md
@@ -9,7 +9,7 @@
 ---
 title: Email
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/email
-scraped: 2026-02-18T05:48:51.907728
+scraped: 2026-03-05T21:40:37.061485
 ---
 
 # Email
@@ -203,18 +203,6 @@ If you are using [expressions](/docs/analyze-explore-automate/workflows/referenc
 
 The **Send email** action provides the following result.
 
-Property
-
-Description
-
-`requestId`
-
-A unique identifier to trace successfully accepted email send requests.
-
-`clientRequestId`
-
-A unique identifier to trace successfully accepted email send requests. For sending emails, this is identical to `requestId`.
-
 ## Expected behavior 'Failed to send email. Status code 403.'
 
 Failed to send email. Status code 403.
@@ -236,7 +224,7 @@ The message size is limited to 256 KiB. Larger payloads will result in an action
 
 ## Related topics
 
-* [Send email notifications for problems](/docs/analyze-explore-automate/workflows/use-cases/workflows-tutorial-problems-email "Learn how to send email notifications for problems using a simple workflow.")
+* [Send email notifications for problems](/docs/analyze-explore-automate/alerting-and-notifications/workflows-tutorial-problems-email "Learn how to send email notifications for problems using a simple workflow.")
 
 ---
 
@@ -245,7 +233,7 @@ The message size is limited to 256 KiB. Larger payloads will result in an action
 ---
 title: Actions for GitHub Connector
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/github/github-workflows-actions
-scraped: 2026-02-18T21:32:29.670429
+scraped: 2026-03-01T21:25:46.175084
 ---
 
 # Actions for GitHub Connector
@@ -260,52 +248,6 @@ scraped: 2026-02-18T21:32:29.670429
 This page contains Github workflow actions that are available for the GitHub Connector ![GitHub](https://dt-cdn.net/images/github-for-workflows-new-lxjn9po-256-94579b3812.png "GitHub") integration.
 
 ### Required token permissions to run all GitHub actions
-
-Token type
-
-Repository type
-
-Permissions
-
-**Fine-grained personal access token**
-
-public
-
-Select Repository permissions > Contents > Read and write.
-
-Select Repository permissions > Pull requests > Read and write.
-
-Select Repository permissions > Workflows > Read and write.
-
-Select Repository permissions > Issues > Read and write.
-
-Select Repository permissions > Actions > Read and write.
-
-**Fine-grained personal access token**
-
-private
-
-Select Repository permissions > Contents > Read and write.
-
-Select Repository permissions > Pull requests > Read and write.
-
-Select Repository permissions > Workflows > Read and write.
-
-Select Repository permissions > Issues > Read and write.
-
-Select Repository permissions > Actions > Read and write.
-
-**Token (classic)**
-
-public
-
-Select scopes > repo > public\_repo.
-
-**Token (classic)**
-
-private
-
-Select scopes > repo (Full control of private repositories).
 
 ## Get content
 
@@ -326,36 +268,6 @@ The **Get content** action returns the content of an existing file in the reposi
 The action returns the `content` property that contains the plain text content of an existing file in the repository.
 
 ### Required token permissions
-
-Token type
-
-Repository type
-
-Permissions
-
-**Fine-grained personal access token**
-
-public
-
-No additional permissions are required.
-
-**Fine-grained personal access token**
-
-private
-
-Select Repository permissions > Contents > Read only.
-
-**Token (classic)**
-
-public
-
-No additional permissions are required.
-
-**Token (classic)**
-
-private
-
-Select scopes > repo (Full control of private repositories).
 
 ## Create or replace file
 
@@ -382,38 +294,6 @@ The action returns the `fileMetadata` property that contains the full response o
 
 ### Required token permissions
 
-Token type
-
-Repository type
-
-Permissions
-
-**Fine-grained personal access token**
-
-public
-
-Select Repository permissions > Contents > Read and write.
-
-**Fine-grained personal access token**
-
-private
-
-Select Repository permissions > Contents > Read and write.
-
-Select Repository permissions > Workflows > Read and write. (required to modify GitHub workflow files)
-
-**Token (classic)**
-
-public
-
-Select scopes > repo > public\_repo.
-
-**Token (classic)**
-
-private
-
-Select scopes > repo (Full control of private repositories).
-
 ## Delete file
 
 The **Delete file** action deletes an existing file in the repository and commits the change to either a newly created branch using the specified source branch as a basis or uses the specified existing branch.
@@ -438,36 +318,6 @@ The action returns the `fileMetadata` property that contains the full response o
 
 ### Required token permissions
 
-Token type
-
-Repository type
-
-Permissions
-
-**Fine-grained personal access token**
-
-public
-
-Select Repository permissions > Contents > Read and write.
-
-**Fine-grained personal access token**
-
-private
-
-Select Repository permissions > Contents > Read and write.
-
-**Token (classic)**
-
-public
-
-Select scopes > repo > public\_repo.
-
-**Token (classic)**
-
-private
-
-Select scopes > repo (Full control of private repositories).
-
 ## Create pull request
 
 The **Create pull request** action creates a pull request for an existing branch and the specified target branch. For example: `main`.
@@ -490,36 +340,6 @@ The action returns the `pullRequest` property that contains the full response of
 
 ### Required permissions
 
-Token type
-
-Repository type
-
-Permissions
-
-**Fine-grained personal access token**
-
-public
-
-Select Repository permissions > Pull requests > Read and write.
-
-**Fine-grained personal access token**
-
-private
-
-Select Repository permissions > Pull requests > Read and write.
-
-**Token (classic)**
-
-public
-
-Select scopes > repo > public\_repo.
-
-**Token (classic)**
-
-private
-
-Select scopes > repo (Full control of private repositories).
-
 ## Get pull request
 
 The **Get pull request** action returns details about the specified pull request.
@@ -539,43 +359,11 @@ The action returns the `pullRequest` property that contains the full response of
 
 ### Required permissions
 
-Token type
-
-Repository type
-
-Permissions
-
-**Fine-grained personal access token**
-
-public
-
-No additional permissions are required.
-
-**Fine-grained personal access token**
-
-private
-
-Select Repository permissions > Pull requests > Read-only.
-
-**Token (classic)**
-
-public
-
-No additional permissions are required.
-
-**Token (classic)**
-
-private
-
-Select scopes > repo (Full control) of private repositories.
-
 ## List pull requests
 
 The **List pull requests** action returns a list of pull requests that match the specified criteria. The limit of 30 pull requests applies.
 
 ### Input
-
-
 
 | Field | Description | Required |
 | --- | --- | --- |
@@ -589,36 +377,6 @@ The **List pull requests** action returns a list of pull requests that match the
 The action returns the `pullRequest` property that contains the full response of the corresponding GitHub API endpoint.
 
 ### Required permissions
-
-Token type
-
-Repository type
-
-Permissions
-
-**Fine-grained personal access token**
-
-public
-
-No additional permissions are required.
-
-**Fine-grained personal access token**
-
-private
-
-Select Repository permissions > Pull requests > Read-only.
-
-**Token (classic)**
-
-public
-
-No additional permissions are required.
-
-**Token (classic)**
-
-private
-
-Select scopes > repo (Full control of private repositories).
 
 ## Merge pull request
 
@@ -639,36 +397,6 @@ The **Merge pull request** action merges the specified pull request.
 The action returns the `mergeStatus` property that contains the full response of the corresponding GitHub API endpoint.
 
 ### Required permissions
-
-Token type
-
-Repository type
-
-Permissions
-
-**Fine-grained personal access token**
-
-public
-
-Select Repository permissions > Contents > Read and write.
-
-**Fine-grained personal access token**
-
-private
-
-Select Repository permissions > Contents > Read and write.
-
-**Token (classic)**
-
-public
-
-Select scopes > repo > public\_repo.
-
-**Token (classic)**
-
-private
-
-Select scopes > repo (Full control of private repositories).
 
 ## Create issue
 
@@ -692,41 +420,13 @@ The action returns the `issue` property that contains the full response of the c
 
 ### Required token permissions
 
-Token type
-
-Repository type
-
-Permissions
-
-**Fine-grained personal access token**
-
-public
-
-Select Repository permissions > Issues > Read and write.
-
-**Fine-grained personal access token**
-
-private
-
-Select Repository permissions > Issues > Read and write.
-
-**Token (classic)**
-
-public
-
-No additional permissions are required.
-
-**Token (classic)**
-
-private
-
-Select scopes > repo (Full control of private repositories).
-
 ## Update issue
 
 The **Update issue** action updates an existing issue in a specified repository. Use the **Add Field** option to specify fields for updates.
 
 ### Input
+
+
 
 | Field | Description | Required |
 | --- | --- | --- |
@@ -745,40 +445,6 @@ The **Update issue** action updates an existing issue in a specified repository.
 The action returns the `issue` property that contains the full response of the corresponding GitHub API endpoint.
 
 ### Required token permissions
-
-Token type
-
-Repository type
-
-Permissions
-
-**Fine-grained personal access token**
-
-public
-
-Select Repository permissions > Issues > Read and write.
-
-Select Repository permissions > Pull requests > Read and write.
-
-**Fine-grained personal access token**
-
-private
-
-Select Repository permissions > Issues > Read and write.
-
-Select Repository permissions > Pull requests > Read and write.
-
-**Token (classic)**
-
-public
-
-No additional permissions are required.
-
-**Token (classic)**
-
-private
-
-Select scopes > repo (Full control of private repositories).
 
 ## Create comment
 
@@ -799,40 +465,6 @@ The **Create comment** action creates a new comment on an issue or pull request 
 The action returns the `comment` property that contains the full response of the corresponding GitHub API endpoint.
 
 ### Required token permissions
-
-Token type
-
-Repository type
-
-Permissions
-
-**Fine-grained personal access token**
-
-public
-
-Select Repository permissions > Issues > Read and write.
-
-Select Repository permissions > Pull requests > Read and write.
-
-**Fine-grained personal access token**
-
-private
-
-Select Repository permissions > Issues > Read and write.
-
-Select Repository permissions > Pull requests > Read and write.
-
-**Token (classic)**
-
-public
-
-No additional permissions are required.
-
-**Token (classic)**
-
-private
-
-Select scopes > repo (Full control of private repositories).
 
 ## Trigger workflow run
 
@@ -855,43 +487,11 @@ The action returns no result.
 
 ### Required token permissions
 
-Token type
-
-Repository type
-
-Permissions
-
-**Fine-grained personal access token**
-
-public
-
-Select Repository permissions > Actions > Read and write.
-
-**Fine-grained personal access token**
-
-private
-
-Select Repository permissions > Actions > Read and write.
-
-**Token (classic)**
-
-public
-
-No additional permissions are required.
-
-**Token (classic)**
-
-private
-
-Select scopes > repo (Full control of private repositories).
-
 ## Get latest workflow run
 
 The **Get latest workflow run** action retrieves data from the latest run workflow in a specified repository.
 
 ### Input
-
-
 
 | Field | Description | Required |
 | --- | --- | --- |
@@ -907,36 +507,6 @@ The action returns the `workflowRun` property that contains the full response of
 
 ### Required token permissions
 
-Token type
-
-Repository type
-
-Permissions
-
-**Fine-grained personal access token**
-
-public
-
-Select Repository permissions > Actions > Read.
-
-**Fine-grained personal access token**
-
-private
-
-Select Repository permissions > Actions > Read.
-
-**Token (classic)**
-
-public
-
-No additional permissions are required.
-
-**Token (classic)**
-
-private
-
-Select scopes > repo (Full control of private repositories).
-
 ## Related topics
 
 * [Set up GitHub Connector](/docs/analyze-explore-automate/workflows/actions/github/github-workflows-setup "Learn how to set up GitHub Connector.")
@@ -948,7 +518,7 @@ Select scopes > repo (Full control of private repositories).
 ---
 title: Set up GitHub Connector
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/github/github-workflows-setup
-scraped: 2026-02-17T21:25:49.293696
+scraped: 2026-03-05T21:36:46.023049
 ---
 
 # Set up GitHub Connector
@@ -1025,7 +595,7 @@ We strongly recommend that you limit the permissions of your personal access tok
 ---
 title: GitHub Connector
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/github
-scraped: 2026-02-18T05:52:33.957113
+scraped: 2026-03-04T21:32:31.513544
 ---
 
 # GitHub Connector
@@ -1061,7 +631,7 @@ Learn about available actions used by GitHub Connector integration for automatin
 ---
 title: Actions for GitLab Connector
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/gitlab/gitlab-workflows-actions
-scraped: 2026-02-18T05:44:25.549944
+scraped: 2026-03-05T21:32:08.754245
 ---
 
 # Actions for GitLab Connector
@@ -1359,7 +929,7 @@ Returns fields as described in the [Jobs API - Run a jobï»¿](https://dt-url.n
 ---
 title: Set up GitLab Connector
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/gitlab/gitlab-workflows-setup
-scraped: 2026-02-18T21:31:07.834657
+scraped: 2026-03-06T21:36:42.472660
 ---
 
 # Set up GitLab Connector
@@ -1432,7 +1002,7 @@ Refer to the GitLab documentation for details on which scope is needed for which
 ---
 title: GitLab Connector
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/gitlab
-scraped: 2026-02-18T05:52:10.581850
+scraped: 2026-03-02T21:21:04.457505
 ---
 
 # GitLab Connector
@@ -1463,7 +1033,7 @@ Learn about available actions used by GitLab Connector integration for automatin
 ---
 title: Set up Jenkins Connector
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/jenkins/jenkins-workflows-setup
-scraped: 2026-02-18T05:52:08.883469
+scraped: 2026-03-05T21:30:53.886389
 ---
 
 # Set up Jenkins Connector
@@ -1525,7 +1095,7 @@ To configure a connection
 ---
 title: Jira Connector
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/jira
-scraped: 2026-02-18T21:36:02.071821
+scraped: 2026-03-06T21:33:38.177057
 ---
 
 # Jira Connector
@@ -1574,7 +1144,7 @@ The following are solutions to problems some people had with Jira Connector acti
 ---
 title: Microsoft Entra ID Connector
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/microsoft-entra-id
-scraped: 2026-02-18T05:44:10.939539
+scraped: 2026-03-05T21:39:12.282254
 ---
 
 # Microsoft Entra ID Connector
@@ -1586,7 +1156,7 @@ scraped: 2026-02-18T05:44:10.939539
 * Updated on Jun 18, 2025
 
 Your Dynatrace environment can integrate with Microsoft Entra ID (formerly Azure Active Directory) in automation [workflows](/docs/analyze-explore-automate/workflows "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services.").
-Microsoft Entra ID Connector ![Azure Connector](https://dt-cdn.net/images/azure-for-workflows-lcgzeur-256-0e765fdb69.png "Azure Connector") enables you to use prebuilt actions in Workflows ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") to automate importing teams from Entra ID (based on various triggers) for defining entity ownership and other use cases in Dynatrace.
+Microsoft Entra ID Connector ![Microsoft Entra ID Connector](https://dt-cdn.net/hub/app_icon_entra_id_new.png "Microsoft Entra ID Connector") enables you to use prebuilt actions in Workflows ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") to automate importing teams from Entra ID (based on various triggers) for defining entity ownership and other use cases in Dynatrace.
 Microsoft Entra ID Connector connects to the Azure Cloud via the [Microsoft Graph APIï»¿](https://developer.microsoft.com/en-us/graph).
 
 ## Setup
@@ -1712,7 +1282,7 @@ The log of a successful run is shown below.
 ---
 title: PagerDuty
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/pagerduty
-scraped: 2026-02-18T21:31:19.935285
+scraped: 2026-03-06T21:27:05.600890
 ---
 
 # PagerDuty
@@ -1772,50 +1342,6 @@ To configure a connection
 
 The following workflow actions are available for the PagerDuty integration. Each action corresponds to an endpoint of the PagerDuty API.
 
-Action
-
-Description
-
-PagerDuty API endpoint
-
-Create an incident
-
-Creates an incident in your PagerDuty environment. An incident represents a problem or an issue that needs to be addressed and resolved.
-
-Use other actions to obtain the necessary input.
-
-[Create an incidentï»¿](https://dt-url.net/b723jjs)
-
-List all of the on-calls
-
-Lists all PagerDuty users who are on call duty.
-
-[List all of the on-callsï»¿](https://dt-url.net/4t43jm9)
-
-List escalation policies
-
-Lists PagerDuty escalation policies. An escalation policy defines who to notify (and how) in case of an incident.
-
-[List escalation policiesï»¿](https://dt-url.net/qo63j74)
-
-List priorities
-
-Lists PagerDuty priorities. A priority defines the importance of an incident. The list is ordered from the most to the least severe.
-
-[List prioritiesï»¿](https://dt-url.net/ow83jrh)
-
-List services
-
-Lists PagerDuty services. A service represents an application, component, or team to which you want to map the incident.
-
-[List servicesï»¿](https://dt-url.net/0b03jpm)
-
-List users
-
-List all users of your PagerDuty environment.
-
-[List usersï»¿](https://dt-url.net/ee23j45)
-
 ## Create a PagerDuty incident
 
 To create an incident, you need to provide the information listed below. You can hard-code them in the **Create an incident** action or extract them from PagerDuty via an appropriate action.
@@ -1862,7 +1388,7 @@ The following are solutions to problems some people have.
 ---
 title: Red Hat Ansible Automation
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/red-hat/redhat-ansible
-scraped: 2026-02-18T21:34:20.182249
+scraped: 2026-03-06T21:27:29.962658
 ---
 
 # Red Hat Ansible Automation
@@ -1944,33 +1470,6 @@ You have a new EdgeConnect connection.
 The following workflow actions are available for the Red Hat Ansible Automation integration.
 Each action corresponds to an endpoint of the Red Hat Ansible API. For details on endpoints, see the [Ansible Tower API Reference Guideï»¿](https://dt-url.net/0w4392o).
 
-Action
-
-Description
-
-Red Hat Ansible API endpoint
-
-Launch job template
-
-Launch a job template on Red Hat Ansible
-
-`POST /api/v2/job_templates/{id}/launch/`   
-Launch a Job Template
-
-List job status
-
-List job status on Red Hat Ansible
-
-`GET /api/v2/jobs/{id}/`   
-Retrieve a Job Host Summary
-
-Relaunch job
-
-Relaunch a job on Red Hat Ansible
-
-`POST /api/v2/jobs/{id}/relaunch/`   
-Relaunch a Job
-
 ## Launch a job template
 
 To launch a job template, you need to provide the information listed below.
@@ -2007,7 +1506,7 @@ The following are solutions to problems some people have.
 ---
 title: Red Hat Event-Driven Ansible
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/red-hat/redhat-even-driven-ansible
-scraped: 2026-02-18T05:57:36.260483
+scraped: 2026-03-03T21:30:53.933975
 ---
 
 # Red Hat Event-Driven Ansible
@@ -2067,34 +1566,6 @@ Before creating the event stream, you need to set up the credentials for token a
 2. Select **Create credential**.
 3. Enter the following credential details.
 
-   Field
-
-   Description
-
-   **Name**
-
-   Enter a name.
-
-   **Description**
-
-   Enter a short description.
-
-   **Organization**
-
-   From the list, select your organization or `Default`.
-
-   **Credential type**
-
-   From the list, select `Token Event Stream`.
-
-   **Token**
-
-   Enter a token. This token is used later for the connection of the workflow action.
-
-   **HTTP Header Key**
-
-   Enter `Authorization`.
-
 For more information on how to set up a credential, see [Setting up a credentialï»¿](https://dt-url.net/6c23znj) in the Red Hat documentation.
 
 ##### Event stream configuration
@@ -2104,26 +1575,6 @@ After the credential is configured, you can create an event stream.
 1. In the Ansible Automation Platform navigation panel, select **Automation Decisions** > **Event streams**.
 2. Select **Create event stream**.
 3. Enter the following event stream details.
-
-   Field
-
-   Description
-
-   **Name**
-
-   Enter a name.
-
-   **Organization**
-
-   From the list, select your organization or `Default`.
-
-   **Event stream type**
-
-   Select the event stream type `Token Event Stream`.
-
-   **Credential**
-
-   From the list, select the credential you created earlier.
 
 For more information on how to set up an event stream, see [Simplified event routingï»¿](https://dt-url.net/sv63zyi) in the Red Hat documentation.
 
@@ -2304,19 +1755,6 @@ To configure a connection for the **Red Hat Event-Driven Ansible Controller**
 
 The following workflow action is available for the Red Hat Event-Driven Ansible controller.
 
-Action
-
-Description
-
-Red Hat Ansible API endpoint
-
-Send event to Event-Driven Ansible
-
-Send an event to the Red Hat Event-Driven Ansible Controller via Event Source Plugin
-
-`POST /event`   
-Send an event
-
 ## Send event to Event-Driven Ansible
 
 To send an event to Event-Driven Ansible in your workflow, you need to provide the information listed below.
@@ -2345,224 +1783,157 @@ To create a workflow that sends an event to Event-Driven Ansible
 ---
 title: ServiceNow
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/service-now
-scraped: 2026-02-18T21:22:34.275335
+scraped: 2026-03-06T21:21:42.823422
 ---
 
 # ServiceNow
 
 # ServiceNow
 
-* Последнее Dynatrace
-* 7-минутное чтение
-* Обновлено 18 ноября 2025 г.
+* Latest Dynatrace
+* 7-min read
+* Updated on Nov 18, 2025
 
-Ваша среда Dynatrace может интегрироваться с средой ServiceNow с помощью коннектора ServiceNow ![ServiceNow для рабочих процессов](https://dt-cdn.net/images/servicenow-for-workflows-257-9349ea0329.png "ServiceNow для рабочих процессов"), что позволяет создавать инциденты на основе ваших данных мониторинга и событий автоматически. Кроме того, вы можете получать группы из ServiceNow и импортировать их как [команды владения](/docs/deliver/ownership/ownership-teams#import-teams "Определите команды с идентификаторами команд, описаниями, обязанностями и информацией о маршрутизации для владения сущностями.").
+Your Dynatrace environment can integrate with a ServiceNow environment using ServiceNow Connector ![ServiceNow for Workflows](https://dt-cdn.net/images/servicenow-for-workflows-257-9349ea0329.png "ServiceNow for Workflows"), enabling you to create incidents based on your monitoring data and events automatically.
+Furthermore, you can retrieve groups from ServiceNow and import them as [Ownership teams](/docs/deliver/ownership/ownership-teams#import-teams "Define teams with team identifiers, descriptions, responsibilities, and routing information for entity ownership.").
 
-## Настройка интеграции
+## Configure the integration
 
-[![Шаг 1](https://dt-cdn.net/images/step-1-086e22066c.svg "Шаг 1")
+[![Step 1](https://dt-cdn.net/images/step-1-086e22066c.svg "Step 1")
 
-**Предоставить разрешения для рабочих процессов**](/docs/analyze-explore-automate/workflows/actions/service-now#permissions "Автоматизировать создание инцидентов в ServiceNow на основе ваших данных мониторинга и событий.")[![Шаг 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Шаг 2")
+**Grant permissions to Workflows**](/docs/analyze-explore-automate/workflows/actions/service-now#permissions "Automate creation of incidents in ServiceNow based on your monitoring data and events.")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
 
-**Создать учетные данные аутентификации ServiceNow**](/docs/analyze-explore-automate/workflows/actions/service-now#authentication "Автоматизировать создание инцидентов в ServiceNow на основе ваших данных мониторинга и событий.")[![Шаг 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Шаг 3")
+**Create ServiceNow authentication credentials**](/docs/analyze-explore-automate/workflows/actions/service-now#authentication "Automate creation of incidents in ServiceNow based on your monitoring data and events.")[![Step 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Step 3")
 
-**Настроить подключение к ServiceNow**](/docs/analyze-explore-automate/workflows/actions/service-now#connection "Автоматизировать создание инцидентов в ServiceNow на основе ваших данных мониторинга и событий.")
+**Configure ServiceNow connection**](/docs/analyze-explore-automate/workflows/actions/service-now#connection "Automate creation of incidents in ServiceNow based on your monitoring data and events.")
 
-### Шаг 1: Предоставить разрешения для рабочих процессов
+### Step 1 Grant permissions to Workflows
 
-Некоторые разрешения необходимы рабочим процессам для выполнения действий от вашего имени. Другие разрешения необходимы действиями, которые поставляются с коннектором ServiceNow.
+Some permissions are required by Workflows to run actions on your behalf. Other permissions are required by actions that come bundled with ServiceNow Connector itself.
 
-Чтобы тонко настроить разрешения, предоставленные рабочим процессам
+To fine-tune permissions granted to Workflows
 
-1. Перейдите в **Рабочие процессы** и выберите **Настройки** > **Настройки авторизации**.
-2. Выберите следующие разрешения, кроме общих разрешений для рабочих процессов.
+1. Go to **Workflows** and select **Settings** > **Authorization settings**.
+2. Select the following permissions besides the general Workflows permission.
 
-   * Разрешения, необходимые для действий рабочего процесса ServiceNow:
+   * Permissions needed for ServiceNow workflow actions:
 
      + `app-settings:objects:read`
 
-Для получения более подробной информации о разрешениях пользователей для рабочих процессов см. [Разрешения пользователей для рабочих процессов](/docs/analyze-explore-automate/workflows/security#user-permission "Руководство по аспектам безопасности автоматизации рабочих процессов в Dynatrace Рабочих процессах").
+For more on general Workflows user permissions, see [User permissions for workflows](/docs/analyze-explore-automate/workflows/security#user-permission "Guide on security aspects of workflow automation in Dynatrace Workflows").
 
-### Шаг 2: Создать учетные данные аутентификации ServiceNow
+### Step 2 Create ServiceNow authentication credentials
 
-Войдите в свою среду ServiceNow и создайте базовые учетные данные аутентификации с следующими разрешениями. Вам понадобятся эти учетные данные на следующем шаге.
+Sign in to your ServiceNow instance and create basic authentication credentials with the following permissions. You will need these credentials in the next step.
 
-Разрешения пользователя ServiceNow:
+ServiceNow user permissions:
 
-* Поиск, создание и обновление инцидентов (таблица инцидент)
-* Чтение категорий (таблица sys\_choice, элемент category)
-* Чтение подкатегорий (таблица sys\_choice, элемент subcategory)
-* Чтение групп назначения (таблица sys\_user\_group)
-* Чтение кодов разрешения (таблица sys\_choice, элемент close\_code)
+* Search, create and update incidents (table incident)
+* Read categories (table sys\_choice, element category)
+* Read subcategories (table sys\_choice, element subcategory)
+* Read assignment groups (table sys\_user\_group)
+* Read resolution codes (table sys\_choice, element close\_code)
 
-### Шаг 3: Настроить подключение к ServiceNow
+### Step 3 Configure ServiceNow connection
 
-Вам необходимо настроить подключение для каждой из ваших сред ServiceNow.
+You need a configured connection for each of your ServiceNow environments.
 
-Чтобы настроить подключение
+To configure a connection
 
-1. Перейдите в **Настройки** и выберите **Подключения** > **Коннекторы** > **ServiceNow**.
-2. Выберите ![Добавить](https://dt-cdn.net/images/dashboards-app-menu-plus-7e9b7c3547.svg "Добавить") **Подключение**
-3. Опишите свое подключение к ServiceNow.
+1. Go to **Settings** and select **Connections** > **Connectors** > **ServiceNow**.
+2. Select ![Add](https://dt-cdn.net/images/dashboards-app-menu-plus-7e9b7c3547.svg "Add") **Connection**
+3. Describe your ServiceNow connection.
 
-   * **Имя подключения**: Введите осмысленное имя для вашего подключения.
-   * **URL экземпляра ServiceNow**: Добавьте URL вашей среды ServiceNow.
-   * **Тип** Либо используйте базовую аутентификацию, либо учетные данные клиента.
+   * **Connection name**: Provide a meaningful name for your connection.
+   * **ServiceNow Instance URL**: Add the URL of your ServiceNow environment.
+   * **Type** Either use basic authentication or client credentials.
 
-     + Для **Базовой аутентификации** введите имя пользователя и пароль.
-     + Для **Учетных данных клиента** введите идентификатор клиента и секрет клиента.
-4. Выберите **Создать**.
+     + For **Basic Authentication**, provide your username and password.
+     + For **Client Credentials**, provide your client id and client secret.
+4. Select **Create**.
 
-## Доступные действия
+## Available actions
 
-Следующие действия рабочего процесса доступны для интеграции с ServiceNow. Каждое действие соответствует конечной точке API ServiceNow API.
+The following workflow actions are available for the ServiceNow integration. Each action corresponds to an endpoint of the ServiceNow API.
 
-Действие
+## Create a ServiceNow incident
 
-Описание
+To raise a ServiceNow incident in your workflow ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows")
 
-Конечная точка API ServiceNow API
+1. In the **Choose action** pane, search for ServiceNow and select **Create Incident**.
+2. In the **Create Incident** action, select the [Connection](#connection) to your ServiceNow environment.
+3. Configure the input fields as needed.
 
-**Создать инцидент**
-
-Создает инцидент в вашей среде ServiceNow. Инцидент представляет собой проблему или вопрос, который необходимо решить и устранить.
-
-`POST /api/now/v2/table/incident`
-
-**Создать уязвимый элемент**
-
-Создает уязвимый элемент в вашей среде ServiceNow.
-
-`POST /api/now/v2/table/sn_vul_vulnerable_item`
-
-**Получить группы**
-
-Получает группы из вашей среды ServiceNow.
-
-`GET /api/now/v2/table/sys_user_group`
-
-**Комментарий**
-
-Создает комментарий к записи в вашей среде ServiceNow.
-
-`PUT /api/now/v2/table/${tableName}/${sysId}`
-
-**Комментарий к инциденту**
-
-Добавляет новый комментарий к записи инцидента ServiceNow.
-
-`PUT /api/now/v2/table/incident/${sys_id}`
-
-**Поиск**
-
-Общее действие поиска, которое позволяет искать вашу среду ServiceNow.
-
-`GET /api/now/v2/table/${tableName}`
-
-**Поиск инцидентов**
-
-Запрашивает ServiceNow, чтобы получить список инцидентов, соответствующих заданным критериям.
-
-`GET /api/now/v2/table/incident`
-
-**Разрешить инцидент**
-
-Обновляет инцидент ServiceNow, чтобы отметить его как разрешенный.
-
-`PUT /api/now/v2/table/incident/${sys_id}`
-
-**Создать запись**
-
-Создает новую запись в указанной таблице ServiceNow.
-
-`POST /api/now/v2/table/${tableName}`
-
-**Обновить запись**
-
-Обновляет существующую запись в указанной таблице ServiceNow.
-
-`PUT /api/now/v2/table/${tableName}/${sys_id}`
-
-## Создать инцидент ServiceNow
-
-Чтобы создать инцидент ServiceNow в вашем рабочем процессе ![Рабочие процессы](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Рабочие процессы")
-
-1. В панели **Выбрать действие** найдите ServiceNow и выберите **Создать инцидент**.
-2. В действии **Создать инцидент** выберите [Подключение](#connection) к вашей среде ServiceNow.
-3. Настройте поля ввода по мере необходимости.
-
-   | Поле | Описание | Обязательно |
+   | Field | Description | Required |
    | --- | --- | --- |
-   | **Идентификатор корреляции** | Уникальный идентификатор (в большинстве случаев это идентификатор события Dynatrace). | Необязательно |
-   | **Заявитель** | Пользователь, который сообщает об инциденте. | Необязательно |
-   | **Категория** | Категория инцидента. Варианты категорий получаются путем запроса таблицы `sys_choice` с `sysparm_query: 'name=incident^element=category^inactive=false'`. | Обязательно |
-   | **Подкатегория** | Подкатегория инцидента. Варианты подкатегорий получаются путем запроса таблицы `sys_choice` с `sysparm_query: 'name=incident^element=subcategory^inactive=false^dependent_value=${category}'`. | Обязательно |
-   | **Воздействие** | Воздействие инцидента. | Обязательно |
-   | **Срочность** | Срочность инцидента. | Обязательно |
-   | **Группа назначения** | Группа, которая будет работать над инцидентом. Варианты групп назначения получаются путем запроса таблицы `sys_user_group` с `sysparm_display_value: 'all'`. | Обязательно |
-   | **Элемент конфигурации** | Пострадавшая сущность. | Необязательно |
-   | **Краткое описание** | Краткое описание инцидента. | Необязательно |
-   | **Описание** | Подробное описание инцидента. | Необязательно |
+   | **Correlation ID** | Unique identifier (in most cases, this is the Dynatrace event ID). | Optional |
+   | **Caller** | The user who reports the incident. | Optional |
+   | **Category** | The category of the incident. Category options are derived by querying the `sys_choice` table with `sysparm_query: 'name=incident^element=category^inactive=false'`. | Required |
+   | **Subcategory** | The subcategory of the incident. Subcategory options are derived by querying the `sys_choice` table with `sysparm_query: 'name=incident^element=subcategory^inactive=false^dependent_value=${category}'`. | Required |
+   | **Impact** | The impact of the incident. | Required |
+   | **Urgency** | The urgency of the incident. | Required |
+   | **Assignment Group** | The group that will work on the incident. Assignment groups options are derived by querying the `sys_user_group` table with `sysparm_display_value: 'all'`. | Required |
+   | **Configuration item** | The affected entity. | Optional |
+   | **Short description** | A brief description of the incident. | Optional |
+   | **Description** | A detailed description of the incident. | Optional |
 
-   Для получения более подробной информации см. [официальную документацию ServiceNow](https://dt-url.net/vc039n0).
+   For more details, see the [official ServiceNow documentationï»¿](https://dt-url.net/vc039n0).
 
-## Создать уязвимый элемент в ServiceNow
+## Create a vulnerability item in ServiceNow
 
-Чтобы создать уязвимый элемент ServiceNow в вашем рабочем процессе ![Рабочие процессы](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Рабочие процессы")
+To create a ServiceNow vulnerability item in your workflow ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows")
 
-1. В панели **Выбрать действие** найдите ServiceNow и выберите **Создать уязвимый элемент**.
-2. В действии **Создать уязвимый элемент** выберите [Подключение](#connection) к вашей среде ServiceNow.
-3. Настройте поля ввода по мере необходимости.
+1. In the **Choose action** pane, search for ServiceNow and select **Create a vulnerability item**.
+2. In the **Create a vulnerability item** action, select the [Connection](#connection) to your ServiceNow environment.
+3. Configure the input fields as needed.
 
-   | Поле | Описание | Обязательно |
+   | Field | Description | Required |
    | --- | --- | --- |
-   | **Внешний идентификатор** | Идентификатор, связанный с уязвимым элементом | Необязательно |
-   | **Описание** | Подробное описание уязвимого элемента | Необязательно |
-   | **Краткое описание** | Краткое описание уязвимого элемента | Необязательно |
-   | **Балл риска** | Балл риска уязвимого элемента | Необязательно |
-   | **Рейтинг риска** | Рейтинг риска уязвимого элемента | Необязательно |
-   | **Источник** | Источник, который обнаружил уязвимый элемент | Необязательно |
-   | **Балл риска источника** | Балл риска в системе источника уязвимого элемента | Необязательно |
-   | **Элемент конфигурации** | Пострадавшая сущность | Необязательно |
-   | **Дата обнаружения** | Дата обнаружения | Необязательно |
-   | **Приоритет** | Приоритет уязвимого элемента | Необязательно |
+   | **External ID** | ID which is associated with the vulnerable item | Optional |
+   | **Description** | A detailed description of the vulnerability item | Optional |
+   | **Short description** | A brief description of the vulnerability item | Optional |
+   | **Risk score** | The risk score of the vulnerability item | Optional |
+   | **Risk rating** | The risk rating of the vulnerability item | Optional |
+   | **Source** | The source which detected the vulnerable item | Optional |
+   | **Source risk score** | The risk score in the source system of the vulnerability item | Optional |
+   | **Configuration item** | The affected entity | Optional |
+   | **First found** | The date of the detection | Optional |
+   | **Priority** | The priority of the vulnerability item | Optional |
 
-   Для получения более подробной информации см. [официальную документацию ServiceNow](https://dt-url.net/vc039n0).
+   For more details, see the [official ServiceNow documentationï»¿](https://dt-url.net/vc039n0).
 
-## Получить группы из ServiceNow
+## Get Groups from ServiceNow
 
-Чтобы получить группы из ServiceNow в вашем рабочем процессе ![Рабочие процессы](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Рабочие процессы")
+To fetch groups from ServiceNow in your workflow ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows")
 
-1. В панели **Выбрать действие** найдите ServiceNow и выберите **Получить группы**.
-2. В действии **Получить группы** выберите [Подключение](#connection) к вашей среде ServiceNow.
-3. Настройте поля ввода по мере необходимости.
+1. In the **Choose action** pane, search for ServiceNow and select **Get Groups**.
+2. In the **Get Group** action, select the [Connection](#connection) to your ServiceNow environment.
+3. Configure the input fields as needed.
 
-   | Поле | Описание | Обязательно |
+   | Field | Description | Required |
    | --- | --- | --- |
-   | **SysParm Query** | Закодированный запрос, используемый для фильтрации набора результатов | Необязательно |
-   | **Ограничение** | Максимальное количество результатов для возврата (по умолчанию: 100) | Необязательно |
+   | **SysParm Query** | An encoded query used to filter the result set | Optional |
+   | **Limit** | Maximum number of results to return (Default: 100) | Optional |
 
-   Для получения более подробной информации см. [официальную документацию ServiceNow](https://dt-url.net/vc039n0).
+   For more details, see the [official ServiceNow documentationï»¿](https://dt-url.net/vc039n0).
 
-## Создать комментарий в ServiceNow
+## Create comment in ServiceNow
 
-Чтобы создать комментарий к записи в таблице ServiceNow в вашем рабочем процессе ![Рабочие процессы](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Рабочие процессы")
+To create a comment on an entry in a ServiceNow table in your workflow ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows")
 
-1. В панели **Выбрать действие** найдите ServiceNow и выберите **Создать комментарий**.
-2. В действии **Создать комментарий** выберите [Подключение](#connection) к вашей среде ServiceNow.
-3. Настройте поля ввода по мере необходимости.
+1. In the **Choose action** pane, search for ServiceNow and select **Create Comment**.
+2. In the **Create Comment** action, select the [Connection](#connection) to your ServiceNow environment.
+3. Configure the input fields as needed.
 
-   | Поле | Описание | Обязательно |
+   | Field | Description | Required |
    | --- | --- | --- |
-   | **Таблица** | Имя таблицы записи, к которой будет добавлен комментарий | Обязательно |
-   | **Уникальный идентификатор записи (sys\_id)** | Идентификатор sys\_id записи, к которой будет добавлен комментарий | Обязательно |
-   | **Комментарий** | Комментарий, который будет создан | Обязательно |
+   | **Table** | The table name of the entry to comment on | Required |
+   | **Unique record identifier (sys\_id)** | The sys\_id of the entry to comment on | Required |
+   | **Comment** | The comment that will be created | Required |
 
-   Для получения более подробной информации см. [официальную документацию ServiceNow](https://dt-url.net/vc039n0).
+   For more details, see the [official ServiceNow documentationï»¿](https://dt-url.net/vc039n0).
 
-## Комментарий к инциденту в ServiceNow
-
-
+## Comment on an incident in ServiceNow
 
 To comment on an incident in your workflow ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows")
 
@@ -2578,6 +1949,8 @@ To comment on an incident in your workflow ![Workflows](https://dt-cdn.net/image
    For more details, see the [official ServiceNow documentationï»¿](https://dt-url.net/vc039n0).
 
 ## Search in ServiceNow
+
+
 
 To search ServiceNow in your workflow ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows")
 
@@ -2674,7 +2047,7 @@ The following is a solution to a problem some people have.
 ---
 title: Slack Connector
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/slack
-scraped: 2026-02-18T05:54:04.949649
+scraped: 2026-03-03T21:22:08.797257
 ---
 
 # Slack Connector
@@ -2840,145 +2213,15 @@ Your Dynatrace Slack Connector requires an OAuth token to authorize sending mess
 
 ### Input examples
 
-
-
 The workflow action can be used to send Markdown-formatted messages or [Block Kit-basedï»¿](https://app.slack.com/block-kit-builder/) interactive messages in Slack.
 
 * **Connection**: select any connection from the dropdown list, for example, `dynatrace-notifications-sandbox`.
 * **Message**: see the examples in the following table.
-
-  Input type
-
-  Sample input
-
-  Markdown
-
-  ```
-  *Hello World*
-
-
-
-  This is Markdown-formatted text!
-  ```
-
-  Block Kit Builder
-
-  ```
-  {
-
-
-
-  "blocks": [
-
-
-
-  {
-
-
-
-  "type": "section",
-
-
-
-  "text": {
-
-
-
-  "type": "mrkdwn",
-
-
-
-  "text": "*This is a section block with a button.*"
-
-
-
-  },
-
-
-
-  "accessory": {
-
-
-
-  "type": "button",
-
-
-
-  "text": {
-
-
-
-  "type": "plain_text",
-
-
-
-  "text": "Click Me"
-
-
-
-  },
-
-
-
-  "value": "click_me_123",
-
-
-
-  "action_id": "button-action"
-
-
-
-  }
-
-
-
-  }
-
-
-
-  ]
-
-
-
-  }
-  ```
-
-  Automation expression
-
-  ```
-  {{ result("workflow_action_script_result") }}
-  ```
 * **Interactions**
 
   Select **Run** to send your message to your Slack channel.
 
   + **Output**:
-
-    Sample result
-
-    threadTs
-
-    ```
-    123456789.01234
-    ```
-
-    channelID
-
-    ```
-    ABCDEF012345
-    ```
-
-    messageTs
-
-    ```
-    123456789.01234
-    ```
-
-    permalink
-
-    ```
-    https://your-environment.slack.com/archives/ABCDEFG/p12345679890
-    ```
 * **Log output examples**
 
   + **Successful**:
@@ -3659,6 +2902,8 @@ For more expression capabilities, see [Expression reference](/docs/analyze-explo
 
 ## Use Workflows with Slack
 
+
+
 1. Go to **Workflows** ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") and select ![Add](https://dt-cdn.net/images/dashboards-app-menu-plus-7e9b7c3547.svg "Add") to create a new workflow.
 2. In the **Choose trigger** panel, select the trigger best suited to your needs.
 3. On the trigger node, select ![Add](https://dt-cdn.net/images/dashboards-app-menu-plus-7e9b7c3547.svg "Add") to browse available actions.
@@ -3685,7 +2930,7 @@ The following are solutions to problems some people had with Slack integration.
 
 ## Related topics
 
-* [Send Slack notifications for problems](/docs/analyze-explore-automate/workflows/use-cases/workflows-tutorial-problems-slack "Learn how to send Slack notifications for problems using a simple workflow.")
+* [Send Slack notifications for problems](/docs/analyze-explore-automate/alerting-and-notifications/workflows-tutorial-problems-slack "Learn how to send Slack notifications for problems using a simple workflow.")
 
 ---
 
@@ -3694,7 +2939,7 @@ The following are solutions to problems some people had with Slack integration.
 ---
 title: Actions for Text Processing Connector
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/text-processing/automation-workflows-text-processing-actions
-scraped: 2026-02-18T05:58:02.841540
+scraped: 2026-03-06T21:29:14.231788
 ---
 
 # Actions for Text Processing Connector
@@ -3731,44 +2976,6 @@ In the official Jinja documentation, read more about [escape mechanismsï»¿](h
 Configures a JSON file.
 
 ### Inputs
-
-Field
-
-Description
-
-Required
-
-Example syntax
-
-**JSON content**
-
-The full content of the JSON.
-
-Required
-
-```
-{ "obj1": { "innerObj1": { "array": [ { "theObjectInsideTheArray": "value1" }, { "theObjectInsideTheArray": "value2" } ] } } }
-```
-
-**Path**
-
-The path to the property that is added or changed.
-
-Required
-
-* Nested object: `.obj1.innerObj1`
-* Array element: `.obj1.innerObj1.array[2].theObjectInsideTheArray`
-* Property with spaces: `.["some property"]`
-* Top-level array: `.[0].someObjectInTheToplevelArray`
-* Entire content: `.`
-
-**Value**
-
-The new value for the property path.
-
-Required
-
-`{"new-key": "new-value"}`
 
 ### Results
 
@@ -3883,88 +3090,6 @@ Manipulates a YAML.
 Supports multi-document YAML files.
 
 ### Inputs
-
-Field
-
-Description
-
-Required
-
-Example syntax
-
-**YAML content**
-
-The full content of the YAML.
-
-Required
-
-```
-obj1:
-
-
-
-innerObj1:
-
-
-
-array:
-
-
-
-- theObjectInsideTheArray: value1
-
-
-
-- theObjectInsideTheArray: value2
-```
-
-**Path**
-
-The path to the property that is added or changed.
-
-Required
-
-* Nested object: `.obj1.innerObj1`
-* Array element: `.obj1.innerObj1.array[0].theObjectInsideTheArray`
-* Property with spaces: `.["some property"]`
-* Top-level array: `.[0].someObjectInTheTopLevelArray`
-* Entire content: `.`
-
-**Value**
-
-The new value for the property path.
-
-Required
-
-`'new-value'`
-
-**Document index**
-
-Relevant only for YAML files containing multiple documents. Index starts at `0`.
-
-Optional
-
-```
-obj1:
-
-
-
-key: value1
-
-
-
----
-
-
-
-obj2:
-
-
-
-key: value2
-```
-
-To modify the second document, set `documentIndex` to `1`.
 
 ### Results
 
@@ -4165,7 +3290,7 @@ Supports multi-document YAML files.
 ---
 title: Text Processing
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/text-processing
-scraped: 2026-02-17T05:07:54.951063
+scraped: 2026-03-06T21:36:02.786540
 ---
 
 # Text Processing
@@ -4196,7 +3321,7 @@ For more information on how to start a workflow to use Text Processing, see [Wor
 ---
 title: Workflows Connectors
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions
-scraped: 2026-02-18T21:22:33.089517
+scraped: 2026-03-06T21:21:39.365090
 ---
 
 # Workflows Connectors
@@ -4206,7 +3331,7 @@ scraped: 2026-02-18T21:22:33.089517
 * Latest Dynatrace
 * Overview
 * 3-min read
-* Updated on Feb 05, 2026
+* Updated on Feb 17, 2026
 
 You can select Workflows Connectors from the Dynatrace Platform catalog. The Workflows Connectors have various actions you can use in your workflow task. For example, you can use actions to create Jira tasks, send Slack notifications, and direct them based on extracted entity ownership information.
 
@@ -4248,11 +3373,15 @@ PagerDuty workflow actions come bundled with **PagerDuty** Connector, which you 
 
 ### Red Hat Ansible Connector
 
-Red Hat Ansible workflow actions come bundled with **Red Hat Ansible** Connector, which you can install in your environment through Dynatrace Hub.](/docs/analyze-explore-automate/workflows/actions/red-hat/redhat-ansible "Automate running of Ansible jobs based on your monitoring data and events.")[![Azure Connector](https://dt-cdn.net/images/azure-for-workflows-lcgzeur-256-0e765fdb69.png "Azure Connector")
+Red Hat Ansible workflow actions come bundled with **Red Hat Ansible** Connector, which you can install in your environment through Dynatrace Hub.](/docs/analyze-explore-automate/workflows/actions/red-hat/redhat-ansible "Automate running of Ansible jobs based on your monitoring data and events.")[![Microsoft Entra ID Connector](https://dt-cdn.net/hub/app_icon_entra_id_new.png "Microsoft Entra ID Connector")
 
-### Azure Connector
+### Microsoft Entra ID Connector
 
-Workflow actions come bundled with **Azure Connector**, which you can install in your environment via Dynatrace Hub.](/docs/analyze-explore-automate/workflows/actions/microsoft-entra-id "Set up Microsoft Entra ID Connector to automate importing teams from Microsoft Entra ID via Workflows.")[![ServiceNow for Workflows](https://dt-cdn.net/images/servicenow-for-workflows-257-9349ea0329.png "ServiceNow for Workflows")
+Microsoft Entra ID workflow actions come bundled with **Microsoft Entra ID** Connector, which you can install in your environment via Dynatrace Hub.](/docs/analyze-explore-automate/workflows/actions/microsoft-entra-id "Set up Microsoft Entra ID Connector to automate importing teams from Microsoft Entra ID via Workflows.")[![Microsoft Azure Connector](https://dt-cdn.net/images/azure-for-workflows-lcgzeur-256-0e765fdb69.png "Microsoft Azure Connector")
+
+### Microsoft Azure Connector
+
+Microsoft Azure workflow actions come bundled with **Microsoft Azure** Connector, which you can install in your environment via Dynatrace Hub.](/docs/analyze-explore-automate/workflows/actions/azure "The Microsoft Azure Connector integration provides powerful actions for various Azure Services, for example, virtual machines and storage.")[![ServiceNow for Workflows](https://dt-cdn.net/images/servicenow-for-workflows-257-9349ea0329.png "ServiceNow for Workflows")
 
 ### ServiceNow Connector
 
@@ -4305,7 +3434,7 @@ Text Processing provides a set of `set` and `get` actions for manipulating conte
 ---
 title: DQL query action for Workflows
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/default-workflow-actions/dql-query-workflow-action
-scraped: 2026-02-18T21:30:57.487238
+scraped: 2026-03-02T21:31:44.785730
 ---
 
 # DQL query action for Workflows
@@ -4332,7 +3461,7 @@ You can find the results in the **Result** tab of the **Execution** that you cou
 ---
 title: HTTP request action for Workflows
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/default-workflow-actions/http-request-workflow-action
-scraped: 2026-02-18T21:35:32.122800
+scraped: 2026-03-06T21:34:27.419257
 ---
 
 # HTTP request action for Workflows
@@ -4382,7 +3511,7 @@ The result of the HTTP request action is a JSON structure that includes
 ---
 title: Run JavaScript action for Workflows
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/default-workflow-actions/run-javascript-workflow-action
-scraped: 2026-02-18T21:34:05.085207
+scraped: 2026-03-04T21:33:36.756619
 ---
 
 # Run JavaScript action for Workflows
@@ -4695,11 +3824,11 @@ import { execution } from '@dynatrace-sdk/automation-utils';
 
 
 
-export default async function ({ executionId }) {
+export default async function () {
 
 
 
-const ex = await execution(executionId);
+const ex = await execution();
 
 
 
@@ -4719,49 +3848,49 @@ console.log( ex.params.event);
 ## analyze-explore-automate/workflows/default-workflow-actions.md
 
 ---
-title: Действия в рабочих процессах
+title: Workflows actions
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/default-workflow-actions
-scraped: 2026-02-18T05:46:55.894083
+scraped: 2026-03-06T21:30:16.176752
 ---
 
-# Действия в рабочих процессах
+# Workflows actions
 
-# Действия в рабочих процессах
+# Workflows actions
 
-* Последнее Dynatrace
-* Обзор
-* 1-минутное чтение
-* Опубликовано 02 апр. 2024 г.
+* Latest Dynatrace
+* Overview
+* 1-min read
+* Published Apr 02, 2024
 
-Действие — это универсальная, многоразовая функция, настроенная и запущенная задачей [task](/docs/analyze-explore-automate/workflows#concept-task "Автоматизируйте ИТ-процессы с помощью Dynatrace рабочих процессов — реагируйте на события, планируйте задачи и подключайте сервисы."). Например, действие может быть **Выполнить JavaScript**, а задача будет выполнять действие с определенной конфигурацией для получения деталей проблемы проекта. Действия — это инструменты, которые необходимо собрать в вашем рабочем процессе, чтобы он соответствовал вашему индивидуальному процессу. Действия предоставляются из коробки Dynatrace и могут быть установлены через Dynatrace Hub.
+An action is a generic, reusable function configured and triggered by a [task](/docs/analyze-explore-automate/workflows#concept-task "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services."). For example, an action could be **Run JavaScript**, while a task would execute the action with a specific configuration to `get problem details` project. Actions are the tools to be assembled in your workflow to fit your custom process. Actions are provided out of the box by Dynatrace and can be installed via Dynatrace Hub.
 
-## Действия в рабочих процессах
+## Workflows actions
 
-[![Рабочие процессы](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Рабочие процессы")
+[![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows")
 
-### Выполнить JavaScript
+### Run JavaScript
 
-Используйте действие **Выполнить JavaScript**, чтобы запустить код JavaScript.](/docs/analyze-explore-automate/workflows/default-workflow-actions/run-javascript-workflow-action "Выполните действие JavaScript для ваших рабочих процессов.")[![Рабочие процессы](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Рабочие процессы")
+Use the **Run JavaScript** action to run JavaScript code.](/docs/analyze-explore-automate/workflows/default-workflow-actions/run-javascript-workflow-action "Execute JavaScript action for your workflows.")[![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows")
 
-### Выполнить запрос DQL
+### Execute DQL Query action
 
-Используйте действие **Выполнить запрос DQL**, чтобы выполнить запросы DQL.](/docs/analyze-explore-automate/workflows/default-workflow-actions/dql-query-workflow-action "Выполните действие запроса DQL для ваших рабочих процессов.")[![Рабочие процессы](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Рабочие процессы")
+Use the **Execute DQL Query** action for executing DQL queries.](/docs/analyze-explore-automate/workflows/default-workflow-actions/dql-query-workflow-action "Execute DQL query action for your workflows.")[![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows")
 
-### Действие HTTP-запроса
+### HTTP Request action
 
-Используйте действие **HTTP-запрос**, чтобы выполнить HTTP-запросы.](/docs/analyze-explore-automate/workflows/default-workflow-actions/http-request-workflow-action "Выполните действие HTTP-запроса для ваших рабочих процессов.")[![Рабочие процессы](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Рабочие процессы")
+Use the **HTTP Request** action for executing HTTP requests.](/docs/analyze-explore-automate/workflows/default-workflow-actions/http-request-workflow-action "Execute HTTP request action for your workflows.")[![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows")
 
-### Запрос на утверждение
+### Request approval
 
-Используйте действие **Запрос на утверждение**, чтобы добавить шаг утверждения для ручного подтверждения.](/docs/analyze-explore-automate/workflows/default-workflow-actions/approval-request-workflow-action "Добавьте шаг утверждения в ваши рабочие процессы.")[![Рабочие процессы](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Рабочие процессы")
+Use the **Request approval** action to add an approval step for manual confirmation.](/docs/analyze-explore-automate/workflows/default-workflow-actions/approval-request-workflow-action "Add an approval step to your workflows.")[![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows")
 
-### Выполнить рабочий процесс
+### Run Workflow action
 
-Используйте действие **Выполнить рабочий процесс**, чтобы модульно использовать рабочие процессы.](/docs/analyze-explore-automate/workflows/default-workflow-actions/run-workflow-action "Выполните рабочий процесс как задачу в другом рабочем процессе.")
+Use the **Run Workflow** action to modularize workflow usage.](/docs/analyze-explore-automate/workflows/default-workflow-actions/run-workflow-action "Run a workflow as a task in another workflow.")
 
-## Связанные темы
+## Related topics
 
-* [Язык запросов Dynatrace](/docs/platform/grail/dynatrace-query-language "Как использовать язык запросов Dynatrace.")
+* [Dynatrace Query Language](/docs/platform/grail/dynatrace-query-language "How to use Dynatrace Query Language.")
 
 ---
 
@@ -4770,7 +3899,7 @@ scraped: 2026-02-18T05:46:55.894083
 ---
 title: Access workflow management functionality
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/manage-workflows/workflows-access-management
-scraped: 2026-02-18T21:32:53.831428
+scraped: 2026-03-06T21:30:23.206905
 ---
 
 # Access workflow management functionality
@@ -4815,7 +3944,7 @@ To access various workflow management commands:
 ---
 title: Manage live or draft workflows
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/manage-workflows/workflows-manage-live-mode
-scraped: 2026-02-18T05:47:46.279031
+scraped: 2026-03-06T21:31:08.025695
 ---
 
 # Manage live or draft workflows
@@ -4853,7 +3982,7 @@ To access various **Live** or **Draft** workflow management commands
 ---
 title: Get notified about workflow changes
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/manage-workflows/workflows-notifications
-scraped: 2026-02-17T21:29:09.587321
+scraped: 2026-03-06T21:32:34.815912
 ---
 
 # Get notified about workflow changes
@@ -4921,12 +4050,71 @@ To turn off notifications for workflow, select  > **Turn off notifications**.
 
 ---
 
+## analyze-explore-automate/workflows/manage-workflows/workflows-templates.md
+
+---
+title: Workflow templates
+source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/manage-workflows/workflows-templates
+scraped: 2026-03-06T21:34:39.204491
+---
+
+# Workflow templates
+
+# Workflow templates
+
+* Latest Dynatrace
+* How-to guide
+* Published Feb 05, 2026
+
+Workflow templates give you ready-made workflow definitions for common automation scenarios.
+Use them to start new workflows quickly and then customize them for your use case.
+
+## How-to
+
+Here's what you can do with templates:
+
+* Create a workflow from a template.
+* Create a template from any workflow. Just export the workflow as a YAML file.
+* Create a workflow guide that explains prerequisites and configuration steps.
+
+### Create a workflow from template
+
+You can create a workflow based on a template.
+For more information, see [Create workflow from pre-made template](/docs/analyze-explore-automate/workflows/building#pre-made-template "Create and edit workflows in Dynatrace Workflows.") or [Create workflow from YAML template](/docs/analyze-explore-automate/workflows/building#yaml-template "Create and edit workflows in Dynatrace Workflows.").
+
+### Create a template
+
+You can create your own workflow template.
+To do so, create or modify a workflow and then export it as a template.
+For more information, see [Download a template](/docs/analyze-explore-automate/workflows/manage-workflows/workflows-download#download-workflow-template "Download your workflow or your existing workflow as a template for an easy backup, to use locally or to share it to upload on a different tenant.").
+
+### Create a workflow guide
+
+When you create a new workflow or template, you can include a guide that explains prerequisites and configuration steps.
+The guide will then be visible for anybody who uses the workflow or template.
+For more information, see [Workflow guide](/docs/analyze-explore-automate/workflows/building#workflow-guide "Create and edit workflows in Dynatrace Workflows.").
+
+## Next steps
+
+Now that you know how to use workflow templates:
+
+* Explore the  [**Hub**](/docs/manage/hub "See the information about Dynatrace Hub.") to find apps that come with pre-made templates.
+* Use and modify workflow templates for your [use cases](/docs/analyze-explore-automate/workflows/use-cases "Explore common Workflows use cases in Dynatrace deployments.").
+
+## Related topics
+
+* [Workflows quick start guide](/docs/analyze-explore-automate/workflows/quickstart "Build and run your first workflow.")
+* [Create workflows in Dynatrace Workflows](/docs/analyze-explore-automate/workflows/building "Create and edit workflows in Dynatrace Workflows.")
+* [Manage workflows](/docs/analyze-explore-automate/workflows/manage-workflows "Manage your workflows")
+
+---
+
 ## analyze-explore-automate/workflows/security.md
 
 ---
 title: User permissions for workflows
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/security
-scraped: 2026-02-18T05:50:49.121603
+scraped: 2026-03-06T21:27:38.315462
 ---
 
 # User permissions for workflows
@@ -4954,7 +4142,7 @@ If the required permission for a workflow task is missing, an attempt to execute
 
 Always make sure:
 
-* You have the required permissions granted in [Account Management](/docs/manage/account-management "Manage your Dynatrace license, subscriptions, and platform adoption and environment health.").
+* You have the required permissions granted in [Account Management](/docs/manage/account-management "Manage your Dynatrace license, accounts, platform adoption, and environment health.").
 * You granted all required permissions for the workflows to run in the authorization settings.
 
 To enable or edit the AutomationEngine authorization settings
@@ -4967,28 +4155,6 @@ To enable or edit the AutomationEngine authorization settings
 A Workflows user creates, edits, runs, and monitors workflows.
 
 To access the **Workflows** and view workflows, you need at least the following permissions.
-
-Permission
-
-Grants access to
-
-`app-engine:apps:run`
-
-List all apps and read the app bundles.
-
-`automation:workflows:read`
-
-View workflows.
-
-`storage:system:read`
-
-optional `storage:event.provider = "AUTOMATION_ENGINE"` [1](#fn-1-1-def)
-
-`storage:buckets:read`
-
-optional `storage:table-name = "dt.system.events"` [1](#fn-1-1-def)
-
-View the execution history of workflows.
 
 1
 
@@ -5112,7 +4278,7 @@ For more information, see [Service users](/docs/manage/identity-access-managemen
 ---
 title: Event triggers for workflows
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/trigger/event-trigger
-scraped: 2026-02-18T21:32:57.567952
+scraped: 2026-03-05T21:32:26.413235
 ---
 
 # Event triggers for workflows
@@ -5174,7 +4340,7 @@ The following configuration parameters are available to define the triggering be
 
 Davis events are created by [Dynatrace Intelligence](/docs/dynatrace-intelligence/root-cause-analysis "How Dynatrace analyzes problems to determine their root cause.") based on monitoring data. The **Davis event trigger** allows selectively triggering a workflow in response.
 
-The following configuration parameters are available to define the triggering behavior on Davis Problem events
+The following configuration parameters are available to define the triggering behavior on Davis problem events
 
 * **Problem state**
 
@@ -5614,7 +4780,7 @@ This workflow is a great starting point for automating incident response and imp
 ---
 title: Workflows use cases
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/use-cases
-scraped: 2026-02-18T05:47:34.132304
+scraped: 2026-03-06T21:33:55.552697
 ---
 
 # Workflows use cases
@@ -5634,7 +4800,7 @@ Workflows Email Problems
 
 In this use case, you set up a  workflow to alert your team in real time by emailing the details of a new problem to a specific ![Email for Workflows](https://dt-cdn.net/images/email-for-workflows-new-256-f6c0e2d343.png "Email for Workflows") email recipient.
 
-* [Send email notifications for problems](/docs/analyze-explore-automate/workflows/use-cases/workflows-tutorial-problems-email "Learn how to send email notifications for problems using a simple workflow.")
+* [Send email notifications for problems](/docs/analyze-explore-automate/alerting-and-notifications/workflows-tutorial-problems-email "Learn how to send email notifications for problems using a simple workflow.")
 
 ### Send Slack messages for problems using simple workflow
 
@@ -5642,7 +4808,7 @@ Workflows Slack Connector Problems
 
 In this use case, you set up a  workflow to alert your team in real time by messaging the details of a new problem to a specific ![Slack Connector](https://dt-cdn.net/images/slack-for-workflows1-257-4ad7b09fd3.png "Slack Connector") Slack channel.
 
-* [Send Slack notifications for problems](/docs/analyze-explore-automate/workflows/use-cases/workflows-tutorial-problems-slack "Learn how to send Slack notifications for problems using a simple workflow.")
+* [Send Slack notifications for problems](/docs/analyze-explore-automate/alerting-and-notifications/workflows-tutorial-problems-slack "Learn how to send Slack notifications for problems using a simple workflow.")
 
 ### Detect threats in cloud-native environments
 
@@ -5683,7 +4849,7 @@ Design a workflow to manage high-volume AWS alerts by filtering out noise and su
 ---
 title: Workflows
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows
-scraped: 2026-02-18T21:19:45.650853
+scraped: 2026-03-06T21:15:26.954952
 ---
 
 # Workflows
@@ -5706,10 +4872,6 @@ Prerequisites
 ### Permissions
 
 The following table describes the required permissions.
-
-Permission
-
-Description
 
 hub:catalog:read
 
@@ -5751,23 +4913,13 @@ automation:workflows:read
 
 Read access to workflows.
 
-10
-
-rows per page
-
-Page
-
-1
-
-of 1
-
 You might need additional permissions to run certain tasks in ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Workflows**.
 
 For a complete list of permissions needed to use ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Workflows**, go to **Hub**, find and select **Workflows**, and go to the **Technical information** tab.
 
 For more information about ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Workflows** security, see [User permissions for workflows](/docs/analyze-explore-automate/workflows/security "Guide on security aspects of workflow automation in Dynatrace Workflows").
 
-## Installation
+### Installation
 
 Make sure the app is [installed in your environment](/docs/manage/hub#install "See the information about Dynatrace Hub.").
 

@@ -1,7 +1,7 @@
 ---
 title: Azure Logic Apps monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-logic-apps
-scraped: 2026-02-18T05:55:12.065436
+scraped: 2026-03-05T21:30:39.153427
 ---
 
 # Azure Logic Apps monitoring

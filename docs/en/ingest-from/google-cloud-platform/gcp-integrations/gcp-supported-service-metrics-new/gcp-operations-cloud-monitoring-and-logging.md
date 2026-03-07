@@ -1,7 +1,7 @@
 ---
 title: Operations: Cloud Monitoring & Logging
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new/gcp-operations-cloud-monitoring-and-logging
-scraped: 2026-02-18T21:32:23.059184
+scraped: 2026-03-05T21:40:42.006124
 ---
 
 # Operations: Cloud Monitoring & Logging

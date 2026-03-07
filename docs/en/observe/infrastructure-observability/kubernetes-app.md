@@ -1,7 +1,7 @@
 ---
 title: Kubernetes
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/kubernetes-app
-scraped: 2026-02-18T21:15:30.143024
+scraped: 2026-03-06T21:09:44.668198
 ---
 
 # Kubernetes
@@ -78,7 +78,7 @@ The sections below describe how Explorer appears in ![Kubernetes (new)](https://
   Located above the object list, this bar provides an aggregated [health status](#health-status) of the displayed objects and their child objects.
 * **Filter bar (4)**
 
-### Davis AI health status
+### Dynatrace Intelligence health status
 
 ### Detail view
 

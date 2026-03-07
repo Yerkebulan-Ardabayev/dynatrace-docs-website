@@ -1,13 +1,14 @@
 ---
 title: Validate integration
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/aws-lambda-extension/troubleshoot-lambda
-scraped: 2026-02-17T21:32:46.326500
+scraped: 2026-03-04T21:30:20.410674
 ---
 
 # Validate integration
 
 # Validate integration
 
+* Classic
 * Troubleshooting
 * 1-min read
 * Published Aug 30, 2021

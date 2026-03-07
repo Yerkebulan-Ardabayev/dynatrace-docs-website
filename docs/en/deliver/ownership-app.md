@@ -1,7 +1,7 @@
 ---
 title: Ownership
 source: https://www.dynatrace.com/docs/deliver/ownership-app
-scraped: 2026-02-18T05:56:09.369023
+scraped: 2026-03-06T21:26:47.952622
 ---
 
 # Ownership
@@ -26,10 +26,6 @@ Additionally, you require the following primary permissions in Workflows (go to 
 
 Alternatively, you can set up users with the [AppEngine user policyï»¿](https://www.dynatrace.com/news/blog/tailored-access-management-part-2-onboard-users-to-grail-and-appengine/).
 
-Permission
-
-Description
-
 settings:objects:read
 
 Read settings 2.0
@@ -38,17 +34,7 @@ settings:objects:write
 
 Write settings 2.0 schemas
 
-10
-
-rows per page
-
-Page
-
-1
-
-of 1
-
-## Installation
+### Installation
 
 Make sure the app is [installed in your environment](/docs/manage/hub#install "See the information about Dynatrace Hub.").
 

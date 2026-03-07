@@ -1,6 +1,6 @@
 # Документация Dynatrace: discover-dynatrace/get-started
 Язык: Русский (RU)
-Сгенерировано: 2026-02-18
+Сгенерировано: 2026-03-06
 Файлов в разделе: 11
 ---
 
@@ -9,7 +9,7 @@
 ---
 title: Accessibility
 source: https://www.dynatrace.com/docs/discover-dynatrace/get-started/dynatrace-ui/accessibility
-scraped: 2026-02-18T05:44:54.347088
+scraped: 2026-03-04T21:30:00.075945
 ---
 
 # Accessibility
@@ -48,7 +48,7 @@ Any ACR posted below, or anywhere else on the Dynatrace website, or otherwise pu
 ---
 title: Data visualizations
 source: https://www.dynatrace.com/docs/discover-dynatrace/get-started/dynatrace-ui/interact-visualizations
-scraped: 2026-02-17T05:08:33.518703
+scraped: 2026-03-06T21:30:17.899790
 ---
 
 # Data visualizations
@@ -96,7 +96,7 @@ Common interactions and features of data visualizations in the latest Dynatrace.
 ---
 title: Launchpads
 source: https://www.dynatrace.com/docs/discover-dynatrace/get-started/dynatrace-ui/launchpads
-scraped: 2026-02-18T21:27:20.610984
+scraped: 2026-03-06T21:20:58.151502
 ---
 
 # Launchpads
@@ -248,7 +248,7 @@ To see the full API documentation for the documents service
 ---
 title: Troubleshooting sign-in issues
 source: https://www.dynatrace.com/docs/discover-dynatrace/get-started/dynatrace-ui/login-issues
-scraped: 2026-02-18T21:34:50.222360
+scraped: 2026-03-03T21:27:49.998461
 ---
 
 # Troubleshooting sign-in issues
@@ -271,7 +271,7 @@ Use this page to solve problems with signing in to your Dynatrace account.
 ---
 title: Share documents
 source: https://www.dynatrace.com/docs/discover-dynatrace/get-started/dynatrace-ui/share
-scraped: 2026-02-18T21:17:17.099700
+scraped: 2026-03-06T21:11:05.522860
 ---
 
 # Share documents
@@ -577,7 +577,7 @@ Sharing exceptions
 ---
 title: Filter field
 source: https://www.dynatrace.com/docs/discover-dynatrace/get-started/dynatrace-ui/ui-filter-field
-scraped: 2026-02-18T21:19:32.915770
+scraped: 2026-03-06T21:19:18.937696
 ---
 
 # Filter field
@@ -645,95 +645,9 @@ Some features may not be available due to performance or data source limitations
 
 Comparison operators define how a key compares to a value. Here are the available comparison operators:
 
-Filter syntax
-
-Description
-
-Example
-
-`=`
-
-equals
-
-`key = value`
-
-`!=`
-
-doesn't equal
-
-`key != value`
-
-`<`
-
-less than
-
-`key < value`
-
-`<=`
-
-less than or equal to
-
-`key <= value`
-
-`>`
-
-greater than
-
-`key > value`
-
-`>=`
-
-greater than or equal to
-
-`key >= value`
-
-`= *`
-
-is any value
-
-`key = *`
-
-`!= *`
-
-isn't any value
-
-`key != *`
-
-`in`
-
-matches one or more values in a list of values
-
-`key in (value1, value2)`
-
-`not in`
-
-doesnât match any value in a list of values
-
-`key not in (value1, value2)`
-
 ### Logical operators
 
 The filter field supports the logical operators `AND` and `OR`. If you donât specify an operator, filter statements are automatically connected by an implicit `AND`, which is the default logical operator between any two expressions.
-
-Filter syntax
-
-Description
-
-Example
-
-`AND`
-
-Both expressions must be true.
-
-`key = value key2 = value`  
-Alternative:  
-`key = value AND key2 = value`
-
-`OR`
-
-Only one expression must be true.
-
-`key = value OR key2 = value`
 
 ### Grouping filter statements
 
@@ -743,27 +657,6 @@ Use parentheses `()` to group filter statements logically. For example, `key = v
 
 Space, `*`, `,`, `(`, `)`, `!`, `<`, `>`, `=`, `"`, `$`, `:`, `[`, `]`, `\`, and `~` are special characters in the filter field. To use special characters as part of a key or a value, you need to escape them.
 
-Escape option
-
-Description
-
-Example
-
-Quotation marks `"`
-
-Wrap the corresponding key or value in quotation marks. In the following example, the spaces between `Product` and `Name`, and between `Widget` and `A`, are escaped by wrapping the values in quotation marks.
-
-`"Product Name" = "Widget A"`
-
-Backslash `\`
-
-Escape a single character with a backslash `\`. In the following example, the asterisk on the right end is escaped with a backslash. This means it isn't interpreted as a wildcard.
-
-`key = openshift-service-serving-signer@1677006647\*`
-
-If you want a backslash to appear in a value, it must itself be escaped.
-For example, to get `path = C:\my\path` you need to write `path = C:\\my\\path`.
-
 ### Case sensitivity
 
 String values are case-insensitive for all operators.
@@ -771,22 +664,6 @@ String values are case-insensitive for all operators.
 ### Wildcards
 
 A wildcard will match any character in a value. Wildcards are indicated by an asterisk `*`.
-
-Wildcard syntax
-
-Description
-
-`key = *value`
-
-ends with any `value`
-
-`key = value*`
-
-starts with any `value`
-
-`key = *value*`
-
-contains any `value`
 
 When a value contains **special characters** such as spaces, you must escape the value to ensure that it is correctly interpreted. In such cases, wildcards can be used **outside or inside** the escaped value. See examples below:
 
@@ -842,26 +719,6 @@ When using a variable like `$cluster`, the position of the `*` relative to the v
 
 Access nested fields in JSON data with dot or bracket notation. JSON filters may use a combination of dot and bracket notations.
 
-Notation
-
-Description
-
-Example
-
-Dot notation
-`key$.field`
-
-Use the compact dot notation for simple syntax.
-
-`content$.uri = "/status-service/deployments/health"`
-
-Bracket notation
-`key$["field"][index]`
-
-Use bracket notation for subkeys with special characters (spaces, dashes, etc.) and to access a child of an array.
-
-`content$["spans"][0]["duration-ms"] > 75`
-
 ---
 
 ## discover-dynatrace/get-started/dynatrace-ui.md
@@ -869,7 +726,7 @@ Use bracket notation for subkeys with special characters (spaces, dashes, etc.) 
 ---
 title: Navigate the Dynatrace platform
 source: https://www.dynatrace.com/docs/discover-dynatrace/get-started/dynatrace-ui
-scraped: 2026-02-18T21:31:23.574140
+scraped: 2026-03-05T21:39:57.477430
 ---
 
 # Navigate the Dynatrace platform
@@ -901,7 +758,7 @@ The upper part of the Dock includes:
 * [**Dynatrace**](#dynatrace) is your home.
 * [**Search**](#search) enables you to search the platform.
 * [**Apps**](#apps)
-* [Pinned and active apps](#pinned), depending on your configuration and activity. In this example, the ![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") [Notebooks](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace."), ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") [Dashboards](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new "Create interactive, customizable views to visualize, analyze, and share your observability data in real time."), and ![Segments](https://dt-cdn.net/images/segments-256-8e66310720.webp "Segments") [Segments](/docs/manage/segments "Segments logically structure monitoring data in Grail and function as convenient filters for data that users are allowed to access based on permissions.") apps are all listed.
+* [Pinned and active apps](#pinned), depending on your configuration and activity. In this example, the ![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") [Notebooks](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace."), ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") [Dashboards](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new "Create interactive, customizable views to visualize, analyze, and share your observability data in real time."), and ![Segments](https://dt-cdn.net/images/segments-256-8e66310720.webp "Segments") [Segments](/docs/manage/segments "Use segments to logically structure and conveniently filter observability data across apps.") apps are all listed.
 
 ![Dock: bottom](https://dt-cdn.net/images/dock-all-4-bottom-280-1767392d75.png)
 
@@ -992,7 +849,7 @@ To open the user menu, select your name in the lower-left corner, at the bottom 
 * **[your name]** ![Configurable](https://dt-cdn.net/images/configurable-490-8b015913d4.svg "Configurable") displays **User settings**, where you can change settings such as the display language, timezone, and light mode/dark mode.
 * **Environments** lists links to your available environments.
 * **Appearance** offers a quick switch to light, dark, or browser theme mode.
-* **Account Management** opens [Account Management](/docs/manage/account-management "Manage your Dynatrace license, subscriptions, and platform adoption and environment health.") in a new tab.
+* **Account Management** opens [Account Management](/docs/manage/account-management "Manage your Dynatrace license, accounts, platform adoption, and environment health.") in a new tab.
 * **Latest Dynatrace** toggles the latest Dynatrace on and off.
 * **Sign out** signs you out of Dynatrace.
 
@@ -1059,7 +916,7 @@ The contents of this user menu depend on your deployment type, configuration, an
 ---
 title: What is a monitoring environment?
 source: https://www.dynatrace.com/docs/discover-dynatrace/get-started/monitoring-environment
-scraped: 2026-02-18T21:17:08.293741
+scraped: 2026-03-06T21:13:03.640210
 ---
 
 # What is a monitoring environment?
@@ -1098,7 +955,7 @@ Each environment that you monitor with Dynatrace is identified with a unique cha
 
   For example, for the Dynatrace environment `https://abc123a.dynatrace.com`, the environment ID is `abc123a`.
 
-  You can also find your environment ID in [Account Management](/docs/manage/account-management "Manage your Dynatrace license, subscriptions, and platform adoption and environment health.").
+  You can also find your environment ID in [Account Management](/docs/manage/account-management "Manage your Dynatrace license, accounts, platform adoption, and environment health.").
 
   1. Go to [**Account Management**ï»¿](https://myaccount.dynatrace.com/). If you have more than one account, select the account you want to manage.
   2. Select **Settings** > **Environments**.
@@ -1152,7 +1009,7 @@ In some scenarios, however, you might need to connect your environments. For exa
 ---
 title: Platform Engineering
 source: https://www.dynatrace.com/docs/discover-dynatrace/get-started/platform-engineering
-scraped: 2026-02-18T05:49:11.313155
+scraped: 2026-03-06T21:28:32.226910
 ---
 
 # Platform Engineering
@@ -1488,7 +1345,7 @@ Using observability data further allows the proper sizing and configuration of g
 
 Try it yourself:
 
-* [AI and LLM Observability](/docs/observe/dynatrace-for-ai-observability "Learn about AI and LLM observability, what AI observability is, how Dynatrace observes Generative AI (LLM) models and AI SaaS services, and much more.")
+* [AI and LLM Observability](/docs/observe/dynatrace-for-ai-observability "Learn about AI and LLM observability, what AI observability is, how Dynatrace observes generative AI (LLM) models and AI SaaS services, and much more.")
 
 #### Infrastructure observability Observability for infrastructure
 
@@ -1761,7 +1618,7 @@ Gartner, Top Strategic Technology Trends for 2024, Bart Willemsen, Gary Olliffe,
 ---
 title: Serverless monitoring
 source: https://www.dynatrace.com/docs/discover-dynatrace/get-started/serverless-monitoring
-scraped: 2026-02-18T21:23:05.322183
+scraped: 2026-03-06T21:16:46.945923
 ---
 
 # Serverless monitoring
@@ -1854,7 +1711,7 @@ Be sure to watch for the recommendations within the Dynatrace web UI to enable a
 ---
 title: Get started with Dynatrace
 source: https://www.dynatrace.com/docs/discover-dynatrace/get-started
-scraped: 2026-02-18T21:15:17.164057
+scraped: 2026-03-06T21:09:27.563916
 ---
 
 # Get started with Dynatrace

@@ -1,7 +1,7 @@
 ---
 title: Dynatrace Intelligence
 source: https://www.dynatrace.com/docs/dynatrace-intelligence
-scraped: 2026-02-18T21:16:45.149842
+scraped: 2026-03-06T21:10:12.940403
 ---
 
 # Dynatrace Intelligence
@@ -15,7 +15,7 @@ scraped: 2026-02-18T21:16:45.149842
 
 Dynatrace Intelligence applies deterministic, causation-based analysis across applications, services, infrastructure, logs, and traces. Using the Grail data lakehouse and the Smartscape real-time dependency graph, it establishes baselines, detects anomalies, and identifies root cause with topology and dependency context. It correlates code changes, deployments, configuration, and policy updates to show what changed and why a problem occurred.
 
-Intelligence can propose and run approved actions through agentic workflows and built-in agents operating under policy guardrails ([Preview](/docs/whats-new/preview-releases#dynatrace-intelligence-agentic-workflows "Learn about our Preview releases and how you can participate in them.")). It supports in-context natural language for investigation and guided next steps, so teams can review findings, open tickets, notify owners, or execute vetted runbooks using the same unified data and context.
+Dynatrace Intelligence can propose and run approved actions through agentic workflows and built-in agents operating under policy guardrails ([Preview](/docs/whats-new/preview-releases#dynatrace-intelligence-agentic-workflows "Learn about our Preview releases and how you can participate in them.")). It supports in-context natural language for investigation and guided next steps, so teams can review findings, open tickets, notify owners, or execute vetted runbooks using the same unified data and context.
 
 ![Dynatrace Intelligence](https://dt-cdn.net/images/dti-light-mode-0c2a24e5ba-86a638dfc1.svg "Dynatrace Intelligence")
 
@@ -55,9 +55,9 @@ How Dynatrace analyzes problems to determine their root cause.
 
 * Explanation
 
-Read this explanation](/docs/dynatrace-intelligence/root-cause-analysis)[#### Dynatrace Intelligence agentic and generative AI
+Read this explanation](/docs/dynatrace-intelligence/root-cause-analysis)[#### Agentic and generative AI
 
-Learn about Dynatrace Intelligence generative AI.
+Learn about Dynatrace Intelligence agentic and generative AI.
 
 * App
 

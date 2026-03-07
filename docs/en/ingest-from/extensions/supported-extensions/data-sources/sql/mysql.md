@@ -1,7 +1,7 @@
 ---
 title: Manage MySQL extensions
 source: https://www.dynatrace.com/docs/ingest-from/extensions/supported-extensions/data-sources/sql/mysql
-scraped: 2026-02-18T05:49:43.048494
+scraped: 2026-03-06T21:36:51.298927
 ---
 
 # Manage MySQL extensions

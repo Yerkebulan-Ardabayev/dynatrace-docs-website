@@ -1,7 +1,7 @@
 ---
 title: Predictive Kubernetes operations
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/kubernetes-app/use-cases/predictive-operations
-scraped: 2026-02-18T21:29:29.628456
+scraped: 2026-03-04T21:32:29.858245
 ---
 
 # Predictive Kubernetes operations
@@ -104,11 +104,11 @@ Use the configuration retrieval on the alert to trigger the workflow. The workfl
 
 
 
-   export default async function ({ executionId }) {
+   export default async function () {
 
 
 
-   const ex = await execution(executionId);
+   const ex = await execution();
 
 
 
@@ -116,7 +116,7 @@ Use the configuration retrieval on the alert to trigger the workflow. The workfl
 
 
 
-   // Usually this would come from a Davis Event
+   // Usually this would come from a Davis event
 
 
 
@@ -367,19 +367,11 @@ Use the configuration retrieval on the alert to trigger the workflow. The workfl
 
 
 
-     export default async function({
+     export default async function() {
 
 
 
-     execution\ _id
-
-
-
-     }) {
-
-
-
-     const ex = await execution(execution\ _id);
+     const ex = await execution();
 
 
 
@@ -387,7 +379,7 @@ Use the configuration retrieval on the alert to trigger the workflow. The workfl
 
 
 
-     // Usually this would come from a Davis Event
+     // Usually this would come from a Davis event
 
 
 

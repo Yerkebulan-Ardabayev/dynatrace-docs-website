@@ -1,7 +1,7 @@
 ---
 title: Policy management API - DELETE a policy boundary
 source: https://www.dynatrace.com/docs/dynatrace-api/account-management-api/policy-management-api/boundaries/delete-boundary
-scraped: 2026-02-18T05:43:52.935853
+scraped: 2026-03-06T21:29:29.616618
 ---
 
 # Policy management API - DELETE a policy boundary
@@ -13,10 +13,6 @@ scraped: 2026-02-18T05:43:52.935853
 * Published Nov 20, 2025
 
 Deletes a policy boundary by uuid within a level. You can't delete a global-level boundary, as these are managed by Dynatrace.
-
-DELETE
-
-`https://api.dynatrace.com/iam/v1/repo/account/{accountId}/boundaries/{policyBoundaryUuid}`
 
 ## Authentication
 

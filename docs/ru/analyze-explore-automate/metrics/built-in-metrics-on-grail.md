@@ -1,7 +1,7 @@
 ---
 title: Built-in Metrics on Grail
 source: https://www.dynatrace.com/docs/analyze-explore-automate/metrics/built-in-metrics-on-grail
-scraped: 2026-02-17T21:26:34.831577
+scraped: 2026-03-03T21:22:30.551812
 ---
 
 # Built-in Metrics on Grail
@@ -1039,13 +1039,15 @@ The following Kubernetes-related metrics are only available on Grail.
 
 ## Runtimes
 
-OneAgent версия 1.283+
 
-Мы изменили доступность технологических метрик в Grail, что может повлиять на прямую связь между Metrics Classic и метрическими ключами Grail. Выберите, чтобы узнать больше об изменении.
+
+OneAgent version 1.283+
+
+We modified the availability of technology-specific metrics in Grail, which might affect the direct relation between Metrics Classic and Grail metric keys. Select  to learn more about the change.
 
 ### Apache
 
-| Метрический ключ (Grail) | Метрический ключ (Classic) |
+| Metric key (Grail) | Metric key (Classic) |
 | --- | --- |
 | dt.runtime.apache.connections.socket\_waiting\_time | builtin:tech.webserver.connections.socketWaitingTime |
 | dt.runtime.apache.requests | builtin:tech.webserver.requests |
@@ -1056,11 +1058,11 @@ OneAgent версия 1.283+
 
 ### Go
 
-| Метрический ключ (Grail) | Метрический ключ (Classic) |
+| Metric key (Grail) | Metric key (Classic) |
 | --- | --- |
-| dt.runtime.go.cf.auctioneer\_fetch\_states\_duration | builtin:cloud.cloudfoundry.auctioneer.fetchDuration (фильтруется по типу процесса Go) |
-| dt.runtime.go.cf.auctioneer\_lrp\_auctions | builtin:cloud.cloudfoundry.auctioneer.lprFailed (фильтруется по типу процесса Go)   builtin:cloud.cloudfoundry.auctioneer.lprStarted (фильтруется по типу процесса Go) |
-| dt.runtime.go.cf.auctioneer\_task\_auctions\_failed | builtin:cloud.cloudfoundry.auctioneer.taskFailed (фильтруется по типу процесса Go) |
+| dt.runtime.go.cf.auctioneer\_fetch\_states\_duration | builtin:cloud.cloudfoundry.auctioneer.fetchDuration (filtered by process type Go) |
+| dt.runtime.go.cf.auctioneer\_lrp\_auctions | builtin:cloud.cloudfoundry.auctioneer.lprFailed (filtered by process type Go)   builtin:cloud.cloudfoundry.auctioneer.lprStarted (filtered by process type Go) |
+| dt.runtime.go.cf.auctioneer\_task\_auctions\_failed | builtin:cloud.cloudfoundry.auctioneer.taskFailed (filtered by process type Go) |
 | dt.runtime.go.gc.collection\_count | builtin:tech.go.memory.gcCount |
 | dt.runtime.go.gc.collection\_time | builtin:tech.jvm.memory.gc.collectionTime |
 | dt.runtime.go.gc.suspension\_time | builtin:tech.jvm.memory.gc.suspensionTime |
@@ -1081,7 +1083,7 @@ OneAgent версия 1.283+
 
 ### IIS
 
-| Метрический ключ (Grail) | Метрический ключ (Classic) |
+| Metric key (Grail) | Metric key (Classic) |
 | --- | --- |
 | dt.runtime.iis.connections.socket\_waiting\_time | builtin:tech.webserver.connections.socketWaitingTime |
 | dt.runtime.iis.requests | builtin:tech.webserver.requests |
@@ -1092,7 +1094,7 @@ OneAgent версия 1.283+
 
 ### Java
 
-| Метрический ключ (Grail) | Метрический ключ (Classic) |
+| Metric key (Grail) | Metric key (Classic) |
 | --- | --- |
 | dt.runtime.jvm.classes.loaded | builtin:tech.jvm.classes.loaded |
 | dt.runtime.jvm.classes.total | builtin:tech.jvm.classes.total |
@@ -1120,7 +1122,7 @@ OneAgent версия 1.283+
 
 ### NGINX
 
-| Метрический ключ (Grail) | Метрический ключ (Classic) |
+| Metric key (Grail) | Metric key (Classic) |
 | --- | --- |
 | dt.runtime.nginx.connections.dropped | builtin:tech.webserver.connections.dropped |
 | dt.runtime.nginx.connections.handled | builtin:tech.webserver.connections.handled |
@@ -1144,7 +1146,7 @@ OneAgent версия 1.283+
 
 ### .NET
 
-| Метрический ключ (Grail) | Метрический ключ (Classic) |
+| Metric key (Grail) | Metric key (Classic) |
 | --- | --- |
 | dt.runtime.clr.gc.collection\_count | builtin:tech.dotnet.gc.gen0Collections   builtin:tech.dotnet.gc.gen1Collections   builtin:tech.dotnet.gc.gen2Collections |
 | dt.runtime.clr.gc.collection\_time | builtin:tech.jvm.memory.gc.collectionTime |
@@ -1158,7 +1160,7 @@ OneAgent версия 1.283+
 
 ### Node.js
 
-| Метрический ключ (Grail) | Метрический ключ (Classic) |
+| Metric key (Grail) | Metric key (Classic) |
 | --- | --- |
 | dt.process.nodejs.avg\_number\_of\_active\_threads | builtin:tech.nodejs.avgNumberOfActiveThreads |
 | dt.runtime.nodejs.eventloop.active\_handles | builtin:tech.nodejs.uvLoop.activeHandles |
@@ -1455,69 +1457,6 @@ The new metrics for queues support the following dimensions.
 
 ### Endpoints
 
-Metric key (Grail)
-
-Metric key (Classic)
-
-dt.service.request.count
-
-builtin:service.errors.client.successCount   
-builtin:service.errors.fivexx.count   
-builtin:service.errors.fivexx.rate   
-builtin:service.errors.fivexx.successCount   
-builtin:service.errors.fourxx.count   
-builtin:service.errors.fourxx.rate   
-builtin:service.errors.fourxx.successCount   
-builtin:service.errors.server.count   
-builtin:service.errors.server.rate   
-builtin:service.errors.server.successCount   
-builtin:service.errors.total.rate   
-builtin:service.errors.total.successCount   
-builtin:service.keyRequest.count.client   
-builtin:service.keyRequest.count.server   
-builtin:service.keyRequest.count.total   
-builtin:service.keyRequest.errors.client.successCount   
-builtin:service.keyRequest.errors.fivexx.count   
-builtin:service.keyRequest.errors.fivexx.rate   
-builtin:service.keyRequest.errors.fivexx.successCount   
-builtin:service.keyRequest.errors.fourxx.count   
-builtin:service.keyRequest.errors.fourxx.rate   
-builtin:service.keyRequest.errors.fourxx.successCount   
-builtin:service.keyRequest.errors.server.count   
-builtin:service.keyRequest.errors.server.rate   
-builtin:service.keyRequest.errors.server.successCount   
-builtin:service.keyRequest.successes.server.rate   
-builtin:service.request.count  
-builtin:service.request.count\_chart  
-builtin:service.request.count\_service\_aggregation  
-builtin:service.requestCount.client  
-builtin:service.requestCount.server  
-builtin:service.requestCount.total  
-builtin:service.successes.server.rate
-
-dt.service.request.failure\_count
-
-builtin:service.errors.client.count  
-builtin:service.errors.client.rate  
-builtin:service.errors.total.count  
-builtin:service.keyRequest.errors.client.count   
-builtin:service.keyRequest.errors.client.rate   
-builtin:service.request.failure\_count  
-builtin:service.request.failure\_count\_chart  
-builtin:service.request.failure\_count\_service\_aggregation
-
-dt.service.request.response\_time
-
-builtin:service.keyRequest.response.client  
-builtin:service.keyRequest.response.server  
-builtin:service.keyRequest.response.time  
-builtin:service.request.response\_time  
-builtin:service.request.response\_time\_chart  
-builtin:service.request.response\_time\_service\_aggregation  
-builtin:service.response.client  
-builtin:service.response.server  
-builtin:service.response.time
-
 ### Message processing
 
 | Metric key (Grail) | Metric key (Classic) | Description | Unit |
@@ -1528,8 +1467,6 @@ builtin:service.response.time
 | dt.service.messaging.process.failure\_count | None | The number of messages that failed processing. | count |
 
 ### Dimensions in Grail
-
-
 
 The new metrics for queues support the following dimensions.
 
@@ -1545,28 +1482,11 @@ The new metrics for queues support the following dimensions.
 
 ### Service mesh
 
-Metric key (Grail)
-
-Metric key (Classic)
-
-dt.service.request.service\_mesh.count
-
-builtin:service.request.service\_mesh.count  
-builtin:service.request.service\_mesh.count\_service\_aggregation
-
-dt.service.request.service\_mesh.failure\_count
-
-builtin:service.request.service\_mesh.failure\_count  
-builtin:service.request.service\_mesh.failure\_count\_service\_aggregation
-
-dt.service.request.service\_mesh.response\_time
-
-builtin:service.request.service\_mesh.response\_time  
-builtin:service.request.service\_mesh.response\_time\_service\_aggregation
-
 ## Synthetic Monitoring
 
 ### HTTP monitor metrics
+
+
 
 | Metric key (Grail) | Metric key (Classic) |
 | --- | --- |

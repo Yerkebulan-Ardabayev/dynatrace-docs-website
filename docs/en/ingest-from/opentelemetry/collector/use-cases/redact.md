@@ -1,7 +1,7 @@
 ---
 title: Mask sensitive data with the OpenTelemetry Collector
 source: https://www.dynatrace.com/docs/ingest-from/opentelemetry/collector/use-cases/redact
-scraped: 2026-02-16T09:33:56.399168
+scraped: 2026-03-06T21:32:24.265515
 ---
 
 # Mask sensitive data with the OpenTelemetry Collector
@@ -461,7 +461,7 @@ There are multiple ways of redacting and simplifying span names:
 
 Recommended
 
-`set_semconv_span_name` is available from Collector Contrib version 0.142.0 and .
+`set_semconv_span_name` is available from Collector Contrib version 0.142.0 and Dynatrace Collector version 0.42.0.
 
 Use the transform processor's [`set_semconv_span_name`ï»¿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.145.0/processor/transformprocessor#set_semconv_span_name) to derive a low-cardinality name that is compliant with OpenTelemetry semantic conventions. This will use the (low-cardinality) `http.request.method` and `http.route` to generate a new span name. It keeps the name consistent with HTTP/RPC/messaging/database conventions and avoids leaking identifiers.
 
@@ -546,4 +546,4 @@ Under `service`, we eventually assemble all the configured objects into pipeline
 
 ## Related topics
 
-* [Enrich ingested data with Dynatrace-specific dimensions](/docs/ingest-from/extend-dynatrace/extend-data "Learn how to automatically enrich your telemetry data with Dynatrace-specific dimensions.")
+* [Enrich ingested data with Dynatrace-specific fields](/docs/ingest-from/extend-dynatrace/extend-data "Learn how to automatically enrich your telemetry data with Dynatrace-specific fields.")

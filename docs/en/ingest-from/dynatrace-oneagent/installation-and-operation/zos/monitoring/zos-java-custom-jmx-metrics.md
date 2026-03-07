@@ -1,7 +1,7 @@
 ---
 title: Monitor JMX metrics on z/OS
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/monitoring/zos-java-custom-jmx-metrics
-scraped: 2026-02-18T21:28:50.129756
+scraped: 2026-03-05T21:29:53.332272
 ---
 
 # Monitor JMX metrics on z/OS

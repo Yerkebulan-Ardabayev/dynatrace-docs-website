@@ -1,13 +1,14 @@
 ---
 title: Amazon Connect monitoring
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-connect
-scraped: 2026-02-18T21:30:12.910496
+scraped: 2026-03-06T21:32:47.247112
 ---
 
 # Amazon Connect monitoring
 
 # Amazon Connect monitoring
 
+* Classic
 * How-to guide
 * 3-min read
 * Published Aug 12, 2020

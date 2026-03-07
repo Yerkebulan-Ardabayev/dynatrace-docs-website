@@ -1,13 +1,14 @@
 ---
 title: Upgrade to the latest Dynatrace
 source: https://www.dynatrace.com/docs/platform/upgrade
-scraped: 2026-02-18T21:29:27.120968
+scraped: 2026-03-05T21:36:38.918382
 ---
 
 # Upgrade to the latest Dynatrace
 
 # Upgrade to the latest Dynatrace
 
+* Classic
 * 20-min read
 * Published Feb 01, 2024
 
@@ -70,72 +71,6 @@ Security policies for data access in Grail
 While management zones are a very versatile tool for setting up complex permissions, this flexibility also turned out to be a bottleneck in large enterprise environments that store large amounts of data. To successfully use management zones, the ingested data needs to be related to a monitored entity. Data access management with Grail is based on data, data type, and data organization. Security policies can be defined to allow access only to specific data even without any entity relation.
 
 Out-of-the-box permission-relevant fields can be used in most cases for access control. Additionally, we've added the `dt.security_context` field, which is reserved for environment-specific details. All Dynatrace components will ensure that these table-relevant permission fields are available on each record (event, log, span) or metric. This allows for a consistent permission concept for the entire environment.
-
-Field name
-
-IAM condition
-
-Supported IAM tables
-
-`event.kind`
-
-`storage:event.kind`
-
-`events`, `bizevents`, `system`
-
-`event.type`
-
-`storage:event.type`
-
-`events`, `bizevents`, `system`
-
-`event.provider`
-
-`storage:event.provider`
-
-`events`, `bizevents`, `system`
-
-`k8s.namespace.name`
-
-`storage:k8s.namespace.name`
-
-`events`, `bizevents`, `logs`, `metrics`, `spans`
-
-`k8s.cluster.name`
-
-`storage:k8s.cluster.name`
-
-`events`, `bizevents`, `logs`, `metrics`, `spans`
-
-`host.name`
-
-`storage:host.name`
-
-`events`, `bizevents`, `logs`, `metrics`, `spans`
-
-`dt.host_group.id`
-
-`storage:dt.host_group.id`
-
-`events`, `bizevents`, `logs`, `metrics`, `spans`
-
-`metric.key`
-
-`storage:metric.key`
-
-`metrics`
-
-`log.source`
-
-`storage:log.source`
-
-`logs`
-
-`dt.security_context`
-
-`storage:dt.security_context`
-
-`events`, `bizevents`, `system`, `logs`, `metrics`, `spans`, `entities`
 
 For more information, see [Identity and access management (IAM)](/docs/manage/identity-access-management "Configure users, groups and permissions.").
 
@@ -448,7 +383,7 @@ After having organized monitoring data in Grail buckets and mastered the setup o
 
 Segments mirror management zones in some ways, in that they allow you to abstract complex filter conditions and perform lookups to the monitored entity model. Segments, however, are no longer precalculated attributes, but query-time filter conditions instead. This solves the performance bottleneck of management zones, making it possible to both ingest and analyze several orders of magnitude higher volumes of monitoring data in the latest Dynatrace.
 
-For more information, see [Segments](/docs/manage/segments "Segments logically structure monitoring data in Grail and function as convenient filters for data that users are allowed to access based on permissions.").
+For more information, see [Segments](/docs/manage/segments "Use segments to logically structure and conveniently filter observability data across apps.").
 
 ## FAQ
 
@@ -543,7 +478,7 @@ After your environment is set up and ready for your teams, start exploring the n
 
 ### Apps
 
-[![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards")Dashboards](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new) [![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks")Notebooks](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks) [![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows")Workflows](/docs/analyze-explore-automate/workflows) [![Kubernetes](https://dt-cdn.net/images/kubernetes-512-90e7075764.png "Kubernetes")Kubernetes](/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring) [![Site Reliability Guardian](https://dt-cdn.net/images/site-reliability-guardian-ec19b393a6.svg "Site Reliability Guardian")Site Reliability Guardian](/docs/deliver/site-reliability-guardian) [![DevSecOps](https://dt-cdn.net/images/dev-sec-ops-logo-c5208e654c.svg "DevSecOps")DevSecOps Lifecycle Coverage with Snyk](/docs/secure/devsecops-lifecycle-coverage) [![Investigations](https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png "Investigations")Investigations](/docs/secure/investigations) [![Business Flow](https://dt-cdn.net/images/business-flow-480-362159ca2c.png "Business Flow")Business Flows](/docs/observe/business-observability/business-flow) [![Cost & Carbon Optimization](https://dt-cdn.net/images/cost-and-carbon-1024-4f5a603752.webp "Cost & Carbon Optimization")Cost & Carbon Optimization](/docs/observe/business-observability/cost-and-carbon-optimization) [![Salesforce](https://dt-cdn.net/images/salesforce-b847b1c5d3.svg "Salesforce")Salesforce Insights](/docs/observe/business-observability/extensions/salesforce-insights) [![Clouds](https://dt-cdn.net/images/clouds-1025-170946931c.png "Clouds")Clouds](/docs/observe/infrastructure-observability/cloud-platform-monitoring/clouds-app) [![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations")Infrastructure & Operations](/docs/observe/infrastructure-observability/infrastructure-and-operations) [![Databases](https://dt-cdn.net/images/dynatrace-database-256-1afe08286e.webp "Databases")Databases](/docs/observe/infrastructure-observability/databases/database-app) 
+[![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards")Dashboards](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new) [![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks")Notebooks](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks) [![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows")Workflows](/docs/analyze-explore-automate/workflows) [![Kubernetes](https://dt-cdn.net/images/kubernetes-512-90e7075764.png "Kubernetes")Kubernetes](/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring) [![Site Reliability Guardian](https://dt-cdn.net/images/site-reliability-guardian-ec19b393a6.svg "Site Reliability Guardian")Site Reliability Guardian](/docs/deliver/site-reliability-guardian) [![DevSecOps](https://dt-cdn.net/images/dev-sec-ops-logo-c5208e654c.svg "DevSecOps")DevSecOps Lifecycle Coverage with Snyk](/docs/secure/vulnerabilities) [![Investigations](https://dt-cdn.net/images/security-investigator-256-93f6c187d9.png "Investigations")Investigations](/docs/secure/investigations) [![Business Flow](https://dt-cdn.net/images/business-flow-480-362159ca2c.png "Business Flow")Business Flows](/docs/observe/business-observability/business-flow) [![Cost & Carbon Optimization](https://dt-cdn.net/images/cost-and-carbon-1024-4f5a603752.webp "Cost & Carbon Optimization")Cost & Carbon Optimization](/docs/observe/business-observability/cost-and-carbon-optimization) [![Salesforce](https://dt-cdn.net/images/salesforce-b847b1c5d3.svg "Salesforce")Salesforce Insights](/docs/observe/business-observability/extensions/salesforce-insights) [![Clouds](https://dt-cdn.net/images/clouds-1025-170946931c.png "Clouds")Clouds](/docs/observe/infrastructure-observability/cloud-platform-monitoring/clouds-app) [![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations")Infrastructure & Operations](/docs/observe/infrastructure-observability/infrastructure-and-operations) [![Databases](https://dt-cdn.net/images/dynatrace-database-256-1afe08286e.webp "Databases")Databases](/docs/observe/infrastructure-observability/databases/database-app) 
 
 ### Upgrade
 

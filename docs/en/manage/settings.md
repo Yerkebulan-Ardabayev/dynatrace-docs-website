@@ -1,12 +1,12 @@
 ---
-title: Settings
+title: Settings app
 source: https://www.dynatrace.com/docs/manage/settings
-scraped: 2026-02-15T09:12:18.071315
+scraped: 2026-03-06T21:30:39.602496
 ---
 
-# Settings
+# Settings app
 
-# Settings
+# Settings app
 
 * Latest Dynatrace
 * App
@@ -31,10 +31,6 @@ It serves as a central entry point to system-wide configurations. You can use it
   A user must belong to a group bound to the [Pro user](/docs/manage/identity-access-management/permission-management/default-policies#DynatraceAccessProUser "Dynatrace default policies reference") default policy.
 
 See the minimum scope of permissions required to use ![Settings](https://dt-cdn.net/images/settings-icon-256-38e1321b51.webp "Settings") **Settings** in case you want to create your own policy.
-
-Permission
-
-Description
 
 settings:objects:read
 
@@ -71,16 +67,6 @@ Required to fetch the recent modified entities from Grail
 storage:buckets:read
 
 Required to fetch the recent modified entities from Grail
-
-10
-
-rows per page
-
-Page
-
-1
-
-of 1
 
 Note that the access to selected settings can be further limited using tailored IAM policies, where users have access only to those settings where they have permissions assigned. For more information, see [Permissions](#permissions).
 

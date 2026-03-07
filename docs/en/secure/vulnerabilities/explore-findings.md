@@ -1,7 +1,7 @@
 ---
 title: Explore findings
 source: https://www.dynatrace.com/docs/secure/vulnerabilities/explore-findings
-scraped: 2026-02-18T21:32:32.271322
+scraped: 2026-03-06T21:37:28.649050
 ---
 
 # Explore findings
@@ -46,7 +46,7 @@ You have several options to filter and sort findings:
 
   Selecting one or multiple segments results in fewer findings.
 
-  For more information on segments and how they work, see [Segments](/docs/manage/segments "Segments logically structure monitoring data in Grail and function as convenient filters for data that users are allowed to access based on permissions.").
+  For more information on segments and how they work, see [Segments](/docs/manage/segments "Use segments to logically structure and conveniently filter observability data across apps.").
 * **Filter by expressions**: In the filter field, you can use complex filter expressions to select which information is to be displayed, such as:
 
   + Add multiple filters on the same filter key

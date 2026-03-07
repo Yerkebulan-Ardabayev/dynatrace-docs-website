@@ -1,7 +1,7 @@
 ---
 title: Distributed Tracing app
 source: https://www.dynatrace.com/docs/observe/application-observability/distributed-tracing/distributed-tracing-app
-scraped: 2026-02-18T21:15:49.907068
+scraped: 2026-03-06T21:12:10.619868
 ---
 
 # Distributed Tracing app
@@ -47,7 +47,7 @@ By entering a query in the [filter field](/docs/discover-dynatrace/get-started/d
 You can narrow your results by timeframe or segments.
 
 * To refresh the result for the selected timeframe, select  **Refresh**.
-* To choose [segments](/docs/manage/segments "Segments logically structure monitoring data in Grail and function as convenient filters for data that users are allowed to access based on permissions."), select .
+* To choose [segments](/docs/manage/segments "Use segments to logically structure and conveniently filter observability data across apps."), select .
 
 The filter field is automatically modified when you apply other filtering selections, such as [facets](#facets). To update the results after you change the filter field query, select  **Update**.
 
@@ -65,34 +65,6 @@ When you hover over the chart and select an area, the filter field and results a
 Distributed Tracing charts
 
 The following table compares the **Timeseries** and **Histogram** charts.
-
-Timeseries
-
-Histogram
-
-X-axis
-
-Time intervals [1](#fn-1-1-def)
-
-Response time intervals
-
-Y-axis
-
-Frequency of data points (left-hand side) and response time (right-hand side)
-
-Frequency of data points
-
-Important statistical factors
-
-The legend lists dedicated views for percentiles, averages, and successful and failed requests. Choose an option to view the related trends.
-
-Percentiles and averages are marked with contrast-color vertical lines.
-
-Use cases
-
-Understand how trace data changes over time and identify trends and cyclic behaviors.
-
-Visualize your data's distribution, identify patterns, and spot outliers.
 
 1
 
@@ -114,18 +86,6 @@ For details how to manage your facets, see [Manage facets](/docs/observe/applica
 ## Table results
 
 The table lists the latest 1000 records for the selected timeframe that match the filtering options you applied. The table data is available as a list (  ) or grouped by attributes (  ). You can manage columns to display only the attributes you're interested in and exclude noise.
-
-UI element
-
-Scope
-
-`<column value>`
-
-Filter trace data by a column value.
-
-Copy the DQL statement or the DQL API call.
-
-Download the visible table data.
 
 ### Use cases
 

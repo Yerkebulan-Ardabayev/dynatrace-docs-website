@@ -1,7 +1,7 @@
 ---
 title: Set budget alerts
 source: https://www.dynatrace.com/docs/license/budget-alerts
-scraped: 2026-02-18T21:20:01.197406
+scraped: 2026-03-06T21:22:15.290236
 ---
 
 # Set budget alerts
@@ -118,5 +118,5 @@ To open **Notification center**, select  **Notifications** in the Account Manage
 
 ## Related topics
 
-* [Account Management](/docs/manage/account-management "Manage your Dynatrace license, subscriptions, and platform adoption and environment health.")
+* [Account Management](/docs/manage/account-management "Manage your Dynatrace license, accounts, platform adoption, and environment health.")
 * [Dynatrace pricingï»¿](https://www.dynatrace.com/pricing/)

@@ -1,7 +1,7 @@
 ---
 title: Detect performance issues
 source: https://www.dynatrace.com/docs/observe/application-observability/distributed-tracing/detect-performance-issues
-scraped: 2026-02-18T21:15:58.516239
+scraped: 2026-03-06T21:12:30.239053
 ---
 
 # Detect performance issues

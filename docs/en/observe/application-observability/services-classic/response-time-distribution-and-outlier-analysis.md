@@ -1,13 +1,14 @@
 ---
 title: Response time distribution and outlier analysis
 source: https://www.dynatrace.com/docs/observe/application-observability/services-classic/response-time-distribution-and-outlier-analysis
-scraped: 2026-02-18T21:20:04.760488
+scraped: 2026-03-06T21:22:59.023258
 ---
 
 # Response time distribution and outlier analysis
 
 # Response time distribution and outlier analysis
 
+* Classic
 * How-to guide
 * 5-min read
 * Published Jul 19, 2017

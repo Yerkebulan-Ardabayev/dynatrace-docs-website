@@ -1,7 +1,7 @@
 ---
 title: Policy management API - GET all policy boundaries
 source: https://www.dynatrace.com/docs/dynatrace-api/account-management-api/policy-management-api/boundaries/get-all-boundaries
-scraped: 2026-02-17T05:00:58.362884
+scraped: 2026-03-04T21:36:14.135297
 ---
 
 # Policy management API - GET all policy boundaries
@@ -15,10 +15,6 @@ scraped: 2026-02-17T05:00:58.362884
 Gets a list of policy boundaries within a level.
 
 The request produces an `application/json` payload.
-
-GET
-
-`https://api.dynatrace.com/iam/v1/repo/account/{accountId}/boundaries`
 
 ## Authentication
 

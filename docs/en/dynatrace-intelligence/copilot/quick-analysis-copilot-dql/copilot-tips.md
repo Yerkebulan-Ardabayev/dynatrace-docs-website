@@ -1,19 +1,19 @@
 ---
-title: Dynatrace Intelligence generative AI - Tips for writing better prompts
+title: Dynatrace Intelligence agentic and generative AI - Tips for writing better prompts
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/copilot/quick-analysis-copilot-dql/copilot-tips
-scraped: 2026-02-18T05:45:07.423389
+scraped: 2026-03-06T21:35:08.681078
 ---
 
-# Dynatrace Intelligence generative AI - Tips for writing better prompts
+# Dynatrace Intelligence agentic and generative AI - Tips for writing better prompts
 
-# Dynatrace Intelligence generative AI - Tips for writing better prompts
+# Dynatrace Intelligence agentic and generative AI - Tips for writing better prompts
 
 * Latest Dynatrace
 * Reference
 * 4-min read
 * Updated on Jan 28, 2026
 
-Dynatrace Intelligence generative AI is a helpful tool for getting insights from your data without needing to learn DQL. However, as generative AI, it sometimes needs a bit of structure to ensure you get the best results. The following are tips for writing better prompts for quickly analyzing data in Notebooks and Dashboards.
+Dynatrace Intelligence agentic and generative AI is a helpful tool for getting insights from your data without needing to learn DQL. However, as generative AI, it sometimes needs a bit of structure to ensure you get the best results. The following are tips for writing better prompts for quickly analyzing data in Notebooks and Dashboards.
 
 ## Tip 1: Make your prompt clear
 
@@ -21,7 +21,7 @@ Natural language is often nuanced and ambiguous, but making your prompt clear sh
 
 * Remove and rewrite any words or phrases that aren't clear or could be interpreted in different ways.
 * Avoid the use of subjective language like "interesting findings" that is open to interpretation.
-* Write in short, simple sentences. You can combine multiple short sentences in a prompt; Dynatrace Intelligence generative AI understands this better than a single long or complex sentence.
+* Write in short, simple sentences. You can combine multiple short sentences in a prompt; Dynatrace Intelligence agentic and generative AI understands this better than a single long or complex sentence.
 * Start your prompt with **"Show me"** instead of phrases such as **"I would like to see"** and **"Tell me about"**.
 * Ask yourself if a DQL expert could create a query from your prompt. If not, it probably needs to be clearer.
 
@@ -62,7 +62,7 @@ When you're writing a complex prompt, it's good practice to make the order of th
 
 ## Tip 4: Try to gradually refine your prompt
 
-If your prompt doesn't seem to work, try refining it to identify where Dynatrace Intelligence generative AI is getting stuck. Start with a simple statement, then gradually add more details.
+If your prompt doesn't seem to work, try refining it to identify where Dynatrace Intelligence agentic and generative AI is getting stuck. Start with a simple statement, then gradually add more details.
 
 For example, start with writing only the main part, such as **"Show all logs"**.
 
@@ -97,14 +97,14 @@ We recommend that you get familiar with the [DQL documentation](/docs/platform/g
 
 ## Known limitations
 
-We are actively working on improving and extending the Dynatrace Intelligence generative AI abilities. You might run into issues with some of the use cases that are still in progress, for example:
+We are actively working on improving and extending the Dynatrace Intelligence agentic and generative AI abilities. You might run into issues with some of the use cases that are still in progress, for example:
 
 * Requesting a specific visualization in your prompt. Prompts like **"Show me logs by status as pie chart"** aren't supported yet and will not work.
-* Running forecasts with Dynatrace Intelligence data analyzers. Prompts like **"Forecast whenâ¦"** aren't supported yet and will not work. However, you can provide Dynatrace Intelligence generative AI with a prompt starting with **"Show meâ¦"**, and then enable a Dynatrace Intelligence data analyzer on this section or tile.
+* Running forecasts with Dynatrace Intelligence data analyzers. Prompts like **"Forecast whenâ¦"** aren't supported yet and will not work. However, you can provide Dynatrace Intelligence agentic and generative AI with a prompt starting with **"Show meâ¦"**, and then enable a Dynatrace Intelligence data analyzer on this section or tile.
 * Specifying management zones via the prompt.
 
 ## Related topics
 
-* [Dynatrace Intelligence generative AI FAQ](/docs/dynatrace-intelligence/copilot/copilot-faq "Learn about frequently asked questions and find your answers.")
+* [Dynatrace Intelligence agentic and generative AI FAQ](/docs/dynatrace-intelligence/copilot/copilot-faq "Learn about frequently asked questions and find your answers.")
 * [Query with natural language](/docs/dynatrace-intelligence/copilot/quick-analysis-copilot-dql "Use Dynatrace Intelligence generative AI to translate your natural language questions into DQL queries")
-* [Generative AI quick analysis examples](/docs/dynatrace-intelligence/use-cases/copilot-examples "Learn more about what kind of prompts work well in Dynatrace Intelligence generative AI.")
+* [Generative AI quick analysis examples](/docs/dynatrace-intelligence/use-cases/copilot-examples "Learn more about what kind of prompts work well in Dynatrace Intelligence agentic and generative AI.")

@@ -1,7 +1,7 @@
 ---
 title: Explore data
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/explore-data
-scraped: 2026-02-18T21:17:13.314742
+scraped: 2026-03-06T21:10:58.587097
 ---
 
 # Explore data
@@ -15,7 +15,7 @@ scraped: 2026-02-18T21:17:13.314742
 
 Dynatrace [![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.") and [![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.") offer the following options for exploring your data:
 
-* Use [Dynatrace Intelligence generative AI](#copilot) and natural language to access data stored in Grail.
+* Use [Dynatrace Intelligence agentic and generative AI](#copilot) and natural language to access data stored in Grail.
 * Get started with our Explore interface for data types such as [logs](#explore-logs), [metrics](#explore-metrics), and [business events](#explore-business-events).
 * Advance with [DQL](#create-a-dql-query) to leverage the full power of Grail.
 
@@ -56,106 +56,6 @@ To explore data such as logs, metrics, or business events with our point-and-cli
      + Only operators relevant to the data type are suggested.
      + Read more on [how the filter field works](/docs/discover-dynatrace/get-started/dynatrace-ui/ui-filter-field "The filter field is a powerful tool that allows you to quickly find relevant information or narrow down results within apps.") in the dedicated documentation.
 
-     Operator
-
-     Description
-
-     `~`
-
-     Use a tilde to get one of two effects:
-
-     To match on a specific field
-
-     1. In the  filter bar
-
-        + Select the field name
-        + Select the tilde (`~`) as the operator
-        + Enter the term you want to match
-     2. Select **Run**.
-
-        For example, when exploring log data, `content` `~` `error` lists log entries that have "error" in the "content" field.
-
-        In DQL, this translates to [matchesPhrase](/docs/platform/grail/dynatrace-query-language/functions/string-functions#matchesPhrase "A list of DQL string functions."), such as:
-
-        ```
-        fetch logs
-
-
-
-        | filter matchesPhrase(content, "error")
-
-
-
-        | limit 20
-        ```
-
-     To search all data
-
-     3. In the  filter bar
-
-        + Enter an asterisk (`*`)
-        + Select the tilde (`~`) as the operator
-        + Enter the term you want to search for
-
-        Alternative: Click in the  filter bar, scroll down to the bottom of the list of suggestions, select `Search a phrase in all data`, and enter the search term between the quotation marks. (This bar is hidden when there is no splitting set, or when there is more than one building block with a metric selected.)
-     4. Select **Run**.
-
-        For example, when exploring log data, `*` `~` `error` lists log entries that have "error".
-
-        In DQL, this translates to [search](/docs/platform/grail/dynatrace-query-language/commands/filtering-commands#search "DQL filter and search commands"), such as:
-
-        ```
-        fetch logs
-
-
-
-        | search "error"
-
-
-
-        | limit 20
-        ```
-
-     `=`
-
-     equals
-
-     `!=`
-
-     doesn't equal
-
-     `<`
-
-     less than
-
-     `<=`
-
-     less than or equal to
-
-     `>`
-
-     greater than
-
-     `>=`
-
-     greater than or equal to
-
-     `= *`
-
-     is any value
-
-     `!= *`
-
-     isn't any value
-
-     `in`
-
-     matches one or more values in a list of values
-
-     `not in`
-
-     doesnât match any value in a list of values
-
      Note: Combining `=` with a wildcard in before `*`, after, or both, before your search term will resolve to a starts with, ends with, or contains filter respectively.
    * The  on the bottom of the definition opens a menu of additional commands you can add.
    * Select any ![remove filter](https://dt-cdn.net/images/remove-filter-9fadf8ea2a.svg "remove filter") in the definition to remove the element that comes before the ![remove filter](https://dt-cdn.net/images/remove-filter-9fadf8ea2a.svg "remove filter"). If you remove an element and then change your mind, you can use  to select it from the menu and add it back to your definition.
@@ -194,11 +94,11 @@ For more information about the benefits of Smartscape nodes and how they work, s
 
 ## Prompt
 
-You can create a notebook section or dashboard tile using [Dynatrace Intelligence generative AI](/docs/dynatrace-intelligence/copilot/copilot-overview "Learn about data security and other aspects of Dynatrace Intelligence generative AI.") to translate your natural language questions into DQL queries.
+You can create a notebook section or dashboard tile using [Dynatrace Intelligence agentic and generative AI](/docs/dynatrace-intelligence/copilot/copilot-overview "Learn about data security and other aspects of Dynatrace Intelligence agentic and generative AI.") to translate your natural language questions into DQL queries.
 
 ### Generative AI in your dashboard
 
-To create a dashboard tile using Dynatrace Intelligence generative AI
+To create a dashboard tile using Dynatrace Intelligence agentic and generative AI
 
 1. Go to [![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.") and open or create a dashboard you can edit.
 2. Open the  **Add** menu and select  **Prompt**.
@@ -229,7 +129,7 @@ To create a dashboard tile using Dynatrace Intelligence generative AI
 
 ### Generative AI in your notebook
 
-To create a notebook section using Dynatrace Intelligence generative AI
+To create a notebook section using Dynatrace Intelligence agentic and generative AI
 
 1. Go to ![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks** and open or create a notebook you can edit.
 2. Open the  **Add** menu and select  **Prompt**. A new Generative AI notebook section is created with an empty prompt box.

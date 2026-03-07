@@ -1,7 +1,7 @@
 ---
 title: Jira Connector
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/jira
-scraped: 2026-02-18T21:36:02.071821
+scraped: 2026-03-06T21:33:38.177057
 ---
 
 # Jira Connector

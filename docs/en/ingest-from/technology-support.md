@@ -1,7 +1,7 @@
 ---
 title: Technology support
 source: https://www.dynatrace.com/docs/ingest-from/technology-support
-scraped: 2026-02-18T21:17:07.202957
+scraped: 2026-03-06T21:12:58.632068
 ---
 
 # Technology support
@@ -60,12 +60,13 @@ Supported CPU architectures
 | Supported OS | Versions | CPU architectures |
 | --- | --- | --- |
 | [AlmaLinux](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux "Learn how to install OneAgent on Linux, how to customize installation, and more.") | 8, 9, 10 | ARM64 (AArch64), PPCLE, s390, x86-64 |
-| [Alpine Linux (musl libc) for containers](/docs/ingest-from/technology-support/oneagent-platform-and-capability-support-matrix "Learn which capabilities are supported by OneAgent on different operating systems and platforms.") | 3.10 - 3.21[1](#fn-supported-os-1-def) | x86-64 |
+| [Alpine Linux (musl libc) for containers](/docs/ingest-from/technology-support/oneagent-platform-and-capability-support-matrix "Learn which capabilities are supported by OneAgent on different operating systems and platforms.") | 3.10 - 3.23[1](#fn-supported-os-1-def) | x86-64 |
+| [Amazon Linux](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux "Learn how to install OneAgent on Linux, how to customize installation, and more.") | 2023 | ARM64 (AArch64), x86-64 |
 | [Azure Linux](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux "Learn how to install OneAgent on Linux, how to customize installation, and more.") | 2, 3 | x86-64 |
 | [Bottlerocket](/docs/ingest-from/setup-on-k8s/deployment/application-observability "Deploy Dynatrace Operator in application monitoring mode to Kubernetes") | 1[2](#fn-supported-os-2-def) | ARM64 (AArch64), x86-64 |
 | [CentOS Stream](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux "Learn how to install OneAgent on Linux, how to customize installation, and more.") | 9 | ARM64 (AArch64), PPCLE, x86-64 |
-| [Debian](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux "Learn how to install OneAgent on Linux, how to customize installation, and more.") | 11, 12 | ARM64 (AArch64), x86-64 |
-| [Fedora](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux "Learn how to install OneAgent on Linux, how to customize installation, and more.") | 41, 42 | x86-64 |
+| [Debian](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux "Learn how to install OneAgent on Linux, how to customize installation, and more.") | 11, 12, 13 | ARM64 (AArch64), x86-64 |
+| [Fedora](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux "Learn how to install OneAgent on Linux, how to customize installation, and more.") | 41, 42, 43 | x86-64 |
 | [Oracle Linux](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux "Learn how to install OneAgent on Linux, how to customize installation, and more.") | 7, 8, 9, 10 | x86-64 |
 | [Red Hat Enterprise Linux](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux "Learn how to install OneAgent on Linux, how to customize installation, and more.") | 7, 8, 9, 10 | ARM64 (AArch64), PPCLE, s390, x86-64 |
 | [Red Hat Enterprise Linux CoreOS](/docs/ingest-from/setup-on-k8s "Ways to deploy and configure Dynatrace on Kubernetes") | 4.14[3](#fn-supported-os-3-def), 4.15[3](#fn-supported-os-3-def), 4.16[3](#fn-supported-os-3-def) | x86-64 |
@@ -78,7 +79,7 @@ Supported CPU architectures
 
 1
 
-Only supported in containers that are monitored in OneAgent full-stack or application-only monitoring mode (musl libc 1.1.14 - 1.2.9). Binaries built against GNU C Library (glibc) running via gcompat library are not supported.
+Only supported in containers that are monitored in OneAgent full-stack or application-only monitoring mode (musl libc 1.1.14 - 1.2.5). Binaries built against GNU C Library (glibc) running via gcompat library are not supported.
 
 2
 
@@ -504,7 +505,7 @@ Bellsoft Liberica v21+ 32-bit are not supported
 | [Apache Tomcatï»¿](https://tomcat.apache.org/) | 6, 7, 8, 8.5, 9, 10[1](#fn-application-servers-1-def), 11[1](#fn-application-servers-1-def) |
 | [Fujitsu Interstageï»¿](https://www.fujitsu.com/global/products/software/middleware/application-infrastructure/interstage/) | 12.0[2](#fn-application-servers-2-def) |
 | [IBM WebSphere Application Serverï»¿](https://www.ibm.com/products/software) | 8.5.5, 9.0, 8.5[3](#fn-application-servers-3-def) |
-| [IBM WebSphere Libertyï»¿](https://developer.ibm.com/wasdev/websphere-liberty/) | 8.5 - 25[4](#fn-application-servers-4-def) |
+| [IBM WebSphere Libertyï»¿](https://developer.ibm.com/wasdev/websphere-liberty/) | 8.5 - 26[4](#fn-application-servers-4-def) |
 | [JBoss Enterprise Application Platformï»¿](https://developers.redhat.com/products/eap/overview) | 7, 8 |
 | [Oracle WebLogicï»¿](https://www.oracle.com/middleware/technologies/weblogic.html) | 11g[5](#fn-application-servers-5-def), 12c, 14c |
 | [Payaraï»¿](https://www.payara.fish/) | 5, 6, 7 |
@@ -572,9 +573,11 @@ Only TIBCO workflows that are triggered by an incoming web service request, HTTP
 | [Reactor Netty HTTP Serverï»¿](https://github.com/reactor/reactor-netty) | 0.6, 0.7, 0.8, 0.9, 1.0 |
 | [RxJavaï»¿](https://github.com/ReactiveX/RxJava) | 3+ |
 | Software AG WebMethods Integration Server | 9.0[8](#fn-web-framework-8-def), 9.5 - 9.12[8](#fn-web-framework-8-def), 10.0 - 10.15[8](#fn-web-framework-8-def), 10.7[8](#fn-web-framework-8-def), 10.11[8](#fn-web-framework-8-def), 10.15[8](#fn-web-framework-8-def) |
-| [Spring WebFluxï»¿](https://docs.spring.io/spring/docs/current/spring-framework-reference/web-reactive.html) | 5, 6 |
-| [Spring WebFlux WebClientï»¿](https://docs.spring.io/spring/docs/current/spring-framework-reference/web-reactive.html#webflux-client) | 5, 6 |
+| [Spring WebFluxï»¿](https://docs.spring.io/spring/docs/current/spring-framework-reference/web-reactive.html) | 5, 6, 7 |
+| [Spring WebFlux WebClientï»¿](https://docs.spring.io/spring/docs/current/spring-framework-reference/web-reactive.html#webflux-client) | 5, 6, 7 |
 | [Undertowï»¿](https://undertow.io/) | 1[9](#fn-web-framework-9-def), 2.0 - 2.2[9](#fn-web-framework-9-def), 2.3+ |
+| [Vert.x HttpClientï»¿](https://github.com/eclipse-vertx/vert.x) | 3.6+[10](#fn-web-framework-10-def), 4.x[10](#fn-web-framework-10-def), 5.x[10](#fn-web-framework-10-def) |
+| [Vert.x WebClientï»¿](https://github.com/vert-x3/vertx-web) | 3.6+[10](#fn-web-framework-10-def), 4.x[10](#fn-web-framework-10-def), 5.x[10](#fn-web-framework-10-def) |
 
 1
 
@@ -621,7 +624,7 @@ Java and Scala 2 bindings are supported.
 | CompletableFuture | All versions supported[1](#fn-threading-1-def) |
 | [Java ForkJoinï»¿](https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/ForkJoinPool.html) | All versions supported[1](#fn-threading-1-def) |
 | Kotlin Coroutines | 1.10.2 - 2.1 |
-| Spring Integration | 2[1](#fn-threading-1-def), 3[1](#fn-threading-1-def), 4[1](#fn-threading-1-def), 5[1](#fn-threading-1-def), 6[1](#fn-threading-1-def) |
+| Spring Integration | 2[1](#fn-threading-1-def), 3[1](#fn-threading-1-def), 4[1](#fn-threading-1-def), 5[1](#fn-threading-1-def), 6[1](#fn-threading-1-def), 7[1](#fn-threading-1-def) |
 | [reactor-coreï»¿](https://github.com/reactor/reactor-core) | 3[1](#fn-threading-1-def) |
 
 1
@@ -657,10 +660,11 @@ Wildfly 8,9,10
 | DataStax client for Apache Cassandra | 2.1[1](#fn-database-frameworks-1-def), 3[1](#fn-database-frameworks-1-def), 4[1](#fn-database-frameworks-1-def) |
 | JDBC | 4+[1](#fn-database-frameworks-1-def) |
 | [Jedis Redisï»¿](https://github.com/xetorthio/jedis) | 2, 3[1](#fn-database-frameworks-1-def), 4[1](#fn-database-frameworks-1-def), 5[1](#fn-database-frameworks-1-def), 6[1](#fn-database-frameworks-1-def), 7[1](#fn-database-frameworks-1-def) |
-| [Lettuceï»¿](https://lettuce.io/) | 5.1 - 5.3[1](#fn-database-frameworks-1-def), 6.0.3 - 6.1.6[1](#fn-database-frameworks-1-def), 6.1.8 - 6.8[1](#fn-database-frameworks-1-def), 7.0 - 7.2[1](#fn-database-frameworks-1-def) |
+| [Lettuceï»¿](https://lettuce.io/) | 5.1 - 5.3[1](#fn-database-frameworks-1-def), 6.0.3 - 6.1.6[1](#fn-database-frameworks-1-def), 6.1.8 - 6.8[1](#fn-database-frameworks-1-def), 7.0 - 7.4[1](#fn-database-frameworks-1-def) |
 | [MongoDB Reactive Streams driverï»¿](https://www.mongodb.com/docs/languages/java/reactive-streams-driver/current/) | 4.10+[1](#fn-database-frameworks-1-def), 5.0+[1](#fn-database-frameworks-1-def) |
 | [MongoDB asynchronous driverï»¿](https://mongodb.github.io/mongo-java-driver/3.0/driver-async/) | 3.0 - 3.6.4[1](#fn-database-frameworks-1-def) |
 | [MongoDB synchronous driver ï»¿](https://docs.mongodb.com/ecosystem/drivers/java/) | 2[1](#fn-database-frameworks-1-def), 3.0 - 3.6[1](#fn-database-frameworks-1-def), 3.7 - 3.11[1](#fn-database-frameworks-1-def), 3.12 - 4.11[1](#fn-database-frameworks-1-def), 5.0[1](#fn-database-frameworks-1-def) |
+| [Redissonï»¿](https://redisson.pro/) | 3+ |
 | Spring Boot Starter Data MongoDB | 2, 3, 4 |
 | Spring Boot Starter Data Redis | 2.1+ |
 
@@ -929,8 +933,8 @@ The IAsyncResult pattern (APM) for .NET Framework 3.5 is supported in version 1.
 
 | Go toolchains | Versions | Platforms |
 | --- | --- | --- |
-| [Golang toolchain with FIPS (openssl-fips) modificationsï»¿](https://dt-url.net/golang-fips) | 1.22.7, 1.22.9, 1.23.6, 1.23.9, 1.24.4, 1.24.6, 1.25.3 | Alpine Linux 64-bit (x86-64), Linux (x86-64) |
-| [Official Golang toolchainï»¿](https://dt-url.net/go) | 1.22, 1.23, 1.24, 1.25 | Alpine Linux 64-bit (x86-64), Linux (x86-64, ARM64 (AArch64)), Windows (x86-64) |
+| [Golang toolchain with FIPS (openssl-fips) modificationsï»¿](https://dt-url.net/golang-fips) | 1.23.6, 1.23.9, 1.24.4, 1.24.6, 1.25.3 | Alpine Linux 64-bit (x86-64), Linux (x86-64) |
+| [Official Golang toolchainï»¿](https://dt-url.net/go) | 1.23, 1.24, 1.25 | Alpine Linux 64-bit (x86-64), Linux (x86-64, ARM64 (AArch64)), Windows (x86-64) |
 
 | Web framework | Versions |
 | --- | --- |
@@ -952,7 +956,7 @@ The IAsyncResult pattern (APM) for .NET Framework 3.5 is supported in version 1.
 | [Amazon SNSï»¿](https://github.com/aws/aws-sdk-go-v2/service/sns) | 1.15-1.38[1](#fn-messaging-clients-1-def) |
 | [Kafka (IBM/sarama)ï»¿](https://github.com/IBM/sarama) | 1.40+ |
 | [Kafka (Shopify/sarama)ï»¿](https://github.com/Shopify/sarama) | 1.18 - 1.39 |
-| [Kafka (confluentinc/confluent-kafka-go)ï»¿](https://github.com/confluentinc/confluent-kafka-go) | 1.9 - 2.8, 2.10, 2.11, 2.12 |
+| [Kafka (confluentinc/confluent-kafka-go)ï»¿](https://github.com/confluentinc/confluent-kafka-go) | 1.9 - 2.8, 2.10, 2.11, 2.12, 2.13.0 |
 
 1
 
@@ -960,8 +964,8 @@ Supported in [AWS Lambda](/docs/ingest-from/amazon-web-services/integrate-into-a
 
 | Remoting frameworks | Versions |
 | --- | --- |
-| [Amazon AWS SDKï»¿](https://github.com/aws/aws-sdk-go-v2) | 1.13.0 - 1.39.0[1](#fn-remoting-frameworks-1-def) |
-| [gRPCï»¿](https://godoc.org/google.golang.org/grpc) | 1.17 - 1.28, 1.29, 1.30 - 1.39, 1.40 - 1.59, 1.60 - 1.68, 1.69 - 1.76, 1.78 |
+| [Amazon AWS SDKï»¿](https://github.com/aws/aws-sdk-go-v2) | 1.13.0 - 1.39.0[1](#fn-remoting-frameworks-1-def), 1.39.1 - 1.41.1[1](#fn-remoting-frameworks-1-def) |
+| [gRPCï»¿](https://godoc.org/google.golang.org/grpc) | 1.17 - 1.28, 1.29, 1.30 - 1.39, 1.40 - 1.59, 1.60 - 1.68, 1.69 - 1.76, 1.78 - 1.79 |
 
 1
 
@@ -969,7 +973,7 @@ Supported in [AWS Lambda](/docs/ingest-from/amazon-web-services/integrate-into-a
 
 | Monitoring frameworks | Versions |
 | --- | --- |
-| [OpenTelemetryï»¿](https://github.com/open-telemetry/opentelemetry-go/) | 1.0 - 1.7, 1.8 - 1.11.0, 1.11.1 - 1.27, 1.28 - 1.39 |
+| [OpenTelemetryï»¿](https://github.com/open-telemetry/opentelemetry-go/) | 1.0 - 1.7, 1.8 - 1.11.0, 1.11.1 - 1.27, 1.28 - 1.41 |
 
 | Logging frameworks | Versions |
 | --- | --- |
@@ -990,7 +994,7 @@ Node.js follows a Long Term Support (LTS) release schedule. The following table 
 
 | Node.js versions | Versions | Platforms |
 | --- | --- | --- |
-| [Node.js](/docs/ingest-from/technology-support/application-software/nodejs "Read about Dynatrace support for Node.js applications.") | 18, 20, 22, 24 | Alpine Linux 64-bit (x86-64), Linux (ARM64 (AArch64), PPCLE, s390, x86-64), Windows (x86-64) |
+| [Node.js](/docs/ingest-from/technology-support/application-software/nodejs "Read about Dynatrace support for Node.js applications.") | 18, 20, 22, 24, 25 | Alpine Linux 64-bit (x86-64), Linux (ARM64 (AArch64), PPCLE, s390, x86-64), Windows (x86-64) |
 
 | Web frameworks | Versions |
 | --- | --- |
@@ -1052,10 +1056,15 @@ Note that 5.0 versions are not supported
 | API Querying frameworks | Versions |
 | --- | --- |
 | [GraphQLï»¿](https://www.dynatrace.com/hub/detail/graphql/) | 15+[1](#fn-api-querying-frameworks-1-def) |
+| [GraphQL Yogaï»¿](https://www.npmjs.com/package/graphql-yoga) | 5.7+[2](#fn-api-querying-frameworks-2-def) |
 
 1
 
 Supported in [AWS Lambda](/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options"). Requires Dynatrace Cluster version 1.262+. Service failure detection is not supported.
+
+2
+
+Supported in [AWS Lambda](/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options"). Requires Dynatrace Cluster version 1.334+. Service failure detection is not supported.
 
 | Messaging clients | Versions |
 | --- | --- |
@@ -1376,7 +1385,7 @@ As of version 1.29, Envoy exports data using [OpenTelemetry](/docs/ingest-from/o
 | Servers | Versions | Platforms |
 | --- | --- | --- |
 | [Kong Gateway](/docs/ingest-from/technology-support/application-software/nginx/kong-gateway "Learn how to monitor the Kong Gateway with Dynatrace.") | 2.8 - 3.6[2](#fn-servers-2-def), 3.7 - 3.9[3](#fn-servers-3-def) | Alpine Linux 64-bit (ARM64 (AArch64), x86-64), Linux (ARM64 (AArch64), x86-64) |
-| [NGINX](/docs/ingest-from/technology-support/application-software/nginx#nginx-versions "Learn the details of Dynatrace support for NGINX.") | 1.11.5 - 1.13.8[1](#fn-servers-1-def), 1.13.9 - 1.14.0[1](#fn-servers-1-def), 1.14.1 - 1.15.8[1](#fn-servers-1-def), 1.15.9 - 1.15.10[1](#fn-servers-1-def), 1.15.11 - 1.16.0[1](#fn-servers-1-def), 1.16.1 - 1.17.3[1](#fn-servers-1-def), 1.17.4 - 1.17.6[1](#fn-servers-1-def), 1.17.7[1](#fn-servers-1-def), 1.17.8[1](#fn-servers-1-def), 1.17.9[1](#fn-servers-1-def), 1.17.10 - 1.18.0, 1.19.0, 1.19.1, 1.19.2, 1.19.3, 1.19.4, 1.19.5, 1.19.6, 1.19.7, 1.19.8, 1.19.9, 1.19.10, 1.20.0, 1.20.1, 1.20.2, 1.21.0, 1.21.1, 1.21.2, 1.21.3, 1.21.4, 1.21.5, 1.21.6, 1.22.0, 1.22.1, 1.23.0, 1.23.1, 1.23.2, 1.23.3, 1.23.4, 1.24.0, 1.25.0, 1.25.1, 1.25.2, 1.25.3, 1.25.4, 1.25.5, 1.26.0, 1.26.1, 1.26.2, 1.26.3, 1.27.0, 1.27.1, 1.27.2, 1.27.3, 1.27.4, 1.27.5, 1.28.0, 1.29.0, 1.29.1, 1.29.2, 1.29.3, 1.29.4 | Alpine Linux 64-bit (ARM64 (AArch64), x86-64), Linux (ARM64 (AArch64), x86-64, PPCLE) |
+| [NGINX](/docs/ingest-from/technology-support/application-software/nginx#nginx-versions "Learn the details of Dynatrace support for NGINX.") | 1.11.5 - 1.13.8[1](#fn-servers-1-def), 1.13.9 - 1.14.0[1](#fn-servers-1-def), 1.14.1 - 1.15.8[1](#fn-servers-1-def), 1.15.9 - 1.15.10[1](#fn-servers-1-def), 1.15.11 - 1.16.0[1](#fn-servers-1-def), 1.16.1 - 1.17.3[1](#fn-servers-1-def), 1.17.4 - 1.17.6[1](#fn-servers-1-def), 1.17.7[1](#fn-servers-1-def), 1.17.8[1](#fn-servers-1-def), 1.17.9[1](#fn-servers-1-def), 1.17.10 - 1.18.0, 1.19.0, 1.19.1, 1.19.2, 1.19.3, 1.19.4, 1.19.5, 1.19.6, 1.19.7, 1.19.8, 1.19.9, 1.19.10, 1.20.0, 1.20.1, 1.20.2, 1.21.0, 1.21.1, 1.21.2, 1.21.3, 1.21.4, 1.21.5, 1.21.6, 1.22.0, 1.22.1, 1.23.0, 1.23.1, 1.23.2, 1.23.3, 1.23.4, 1.24.0, 1.25.0, 1.25.1, 1.25.2, 1.25.3, 1.25.4, 1.25.5, 1.26.0, 1.26.1, 1.26.2, 1.26.3, 1.27.0, 1.27.1, 1.27.2, 1.27.3, 1.27.4, 1.27.5, 1.28.0, 1.28.1, 1.29.0, 1.29.1, 1.29.2, 1.29.3, 1.29.4 | Alpine Linux 64-bit (ARM64 (AArch64), x86-64), Linux (ARM64 (AArch64), x86-64, PPCLE) |
 | [NGINX Plus](/docs/ingest-from/technology-support/application-software/nginx#nginx-plus-versions "Learn the details of Dynatrace support for NGINX.") | R11 - R14[1](#fn-servers-1-def), R15[1](#fn-servers-1-def), R16 - R17[1](#fn-servers-1-def), R18[1](#fn-servers-1-def), R19[1](#fn-servers-1-def), R20[1](#fn-servers-1-def), R21[1](#fn-servers-1-def), R22, R23, R24, R25, R26, R27, R28, R29, R30, R31, R32, R33, R34, R35, R36 | Alpine Linux 64-bit (x86-64), Linux (x86-64, ARM64 (AArch64), PPCLE) |
 | [OpenResty](/docs/ingest-from/technology-support/application-software/nginx#openresty-versions "Learn the details of Dynatrace support for NGINX.") | 1.13.6, 1.15.8, 1.17.8, 1.19.3, 1.19.9, 1.21.4.1, 1.21.4.2, 1.21.4.3, 1.25.3.1, 1.25.3.2, 1.27.1.1, 1.27.1.2 | Alpine Linux 64-bit (ARM64 (AArch64), x86-64), Linux (ARM64 (AArch64), x86-64) |
 | [Tengine](/docs/ingest-from/technology-support/application-software/nginx#tengineversions "Learn the details of Dynatrace support for NGINX.") | 1.4.2 - 2.2.3, 2.3.0 - 2.3.3, 2.3.4, 2.4.0, 2.4.1 | Alpine Linux 64-bit (x86-64), Linux (x86-64) |
@@ -1513,7 +1522,7 @@ To enable this as a OneAgent feature, go to **Settings** > **Preferences** > **O
 | [Flutter](/docs/observe/digital-experience/mobile-applications/cross-platform-frameworks/flutter "Learn how to auto-instrument your Flutter applications with OneAgent.") | 1.12+ |
 | UIKit | Supported |
 | [SwiftUI](/docs/observe/digital-experience/mobile-applications/instrument-ios-app/instrumentation/instrument-swiftui-controls "Use the Dynatrace SwiftUI instrumentor to monitor your SwiftUI apps.") | 2+ |
-| [Jetpack Compose](/docs/observe/digital-experience/mobile-applications/instrument-android-app/instrumentation-via-plugin/monitoring-capabilities#compose-instrumentation "Configure the Dynatrace Android Gradle plugin to adjust the monitoring capabilities of OneAgent.") | 1.4 - 1.9 |
+| [Jetpack Compose](/docs/observe/digital-experience/mobile-applications/instrument-android-app/instrumentation-via-plugin/monitoring-capabilities#compose-instrumentation "Configure the Dynatrace Android Gradle plugin to adjust the monitoring capabilities of OneAgent.") | 1.4 - 1.10 |
 
 1
 

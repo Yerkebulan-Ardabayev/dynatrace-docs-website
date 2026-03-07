@@ -1,7 +1,7 @@
 ---
 title: Filter monitoring data via request attributes
 source: https://www.dynatrace.com/docs/observe/application-observability/services/request-attributes/filter-monitoring-data-via-request-attributes
-scraped: 2026-02-18T21:20:39.979902
+scraped: 2026-03-06T21:23:07.407482
 ---
 
 # Filter monitoring data via request attributes

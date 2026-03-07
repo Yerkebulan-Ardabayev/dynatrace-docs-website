@@ -1,7 +1,7 @@
 ---
 title: Migrate to Google Cloud integration version 1.0
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/migrate-gcp-function
-scraped: 2026-02-18T21:33:09.126101
+scraped: 2026-03-06T21:35:30.359364
 ---
 
 # Migrate to Google Cloud integration version 1.0

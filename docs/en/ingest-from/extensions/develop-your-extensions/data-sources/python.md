@@ -1,7 +1,7 @@
 ---
 title: Dynatrace Extensions Python SDK
 source: https://www.dynatrace.com/docs/ingest-from/extensions/develop-your-extensions/data-sources/python
-scraped: 2026-02-18T05:49:25.180689
+scraped: 2026-03-06T21:32:00.044917
 ---
 
 # Dynatrace Extensions Python SDK
@@ -11,7 +11,7 @@ scraped: 2026-02-18T05:49:25.180689
 * Latest Dynatrace
 * Reference
 * 1-min read
-* Published Jan 18, 2024
+* Updated on Mar 04, 2026
 
 The Dynatrace Extensions Python SDK provides you with a framework to ingest data into Dynatrace from any technology exposing an interface.
 
@@ -25,6 +25,9 @@ This SDK offers:
 Dynatrace Extensions Python SDK is publicly available with [OneAgent 1.285](/docs/whats-new/oneagent/sprint-285#custom-coded-python-extensions "Release notes for Dynatrace OneAgent version 1.285").
 
 Set the filesystem flag to `exec` and not `noexec` to ensure a Python extension runs correctly. This configuration is crucial because it allows the execution of binaries and scripts within the specified filesystem. The extension can't execute properly without this setting, leading to potential errors and failures.
+
+Python 3.10 reaches end of life in October 2026. For extensions built with the Dynatrace Extensions Python SDK, the build command must use `--python-version 3.14`.
+For more information, see the [build command guideï»¿](https://github.com/dynatrace-extensions/dt-extensions-python-sdk/blob/main/docs/guides/building.rst).
 
 For more information, see:
 

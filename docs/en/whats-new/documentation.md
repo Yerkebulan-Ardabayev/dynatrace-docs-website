@@ -1,7 +1,7 @@
 ---
 title: New Documentation articles
 source: https://www.dynatrace.com/docs/whats-new/documentation
-scraped: 2026-02-18T21:17:49.895584
+scraped: 2026-03-06T21:12:52.465298
 ---
 
 # New Documentation articles
@@ -13,6 +13,28 @@ scraped: 2026-02-18T21:17:49.895584
 * Updated on Jan 28, 2026
 
 This page lists all new or significantly changed Dynatrace Documentation topics, sorted by week of publication.
+
+## Mar 02, 2026
+
+* [Dynatrace Platform Subscription for hybrid setups (DPS for Hybrid)](/docs/license/dps-for-hybrid "DPS for Hybrid lets you share one subscription across multiple accounts.")
+* [Add and access validation insight links](/docs/deliver/site-reliability-guardian/validation-insight-link "Add and access validation insight links to provide contextual information and resources for an objective.")
+* [Workflow templates](/docs/analyze-explore-automate/workflows/manage-workflows/workflows-templates "How to create and use workflow templates.")
+* [Subscription overview (DPS for Hybrid)](/docs/manage/account-management/license-subscription/subscription-overview-dps-hybrid "View your DPS for Hybrid budget summary and cost analysis.")
+* [Get started with OpenTelemetry and AI Observability](/docs/observe/dynatrace-for-ai-observability/get-started/opentelemetry "Use OpenTelemetry and the GenAI semantic conventions to collect observability data from AI applications.")
+* [Cisco UCS C-Series extension](/docs/observe/infrastructure-observability/extensions/cisco-ucs-c-series "Get insights into your Cisco UCS C-Series devices.")
+* [Cisco UCS M-Series extension](/docs/observe/infrastructure-observability/extensions/cisco-ucs-m-series "Get insights into your Cisco UCS M-Series devices.")
+* [SNMP generic server extension](/docs/observe/infrastructure-observability/extensions/snmp-generic-server "Monitor server infrastructure health and performance using SNMP protocol in environments where you can't deploy OneAgent.")
+* [Warning events](/docs/dynatrace-intelligence/root-cause-analysis/event-analysis-and-correlation/event-categories/warning-events "Learn more about warning events and the logic behind raising them.")
+* [Associate user interactions with features and UI components](/docs/observe/digital-experience/new-rum-experience/web-frontends/additional-configuration/user-interactions/features-and-components "Learn how to associate user interactions for web frontends with features and UI components.")
+
+## Feb 23, 2026
+
+* [Alerting and notifications](/docs/analyze-explore-automate/alerting-and-notifications "Utilize anomaly detection, problem detection, and workflows for external notifications to ensure that critical problems never go unnoticed.")
+* [OpenTelemetry](/docs/observe/dynatrace-for-ai-observability/get-started/opentelemetry "Use OpenTelemetry and the GenAI semantic conventions to collect observability data from AI applications.")
+* [OpenAI Observability](/docs/observe/dynatrace-for-ai-observability/sample-use-cases/openai-observability "Learn about Dynatrace for OpenAI Observability, how Dynatrace observes OpenAI SaaS services, and much more.")
+* [OpenTelemetry Host Monitoring extension](/docs/observe/infrastructure-observability/extensions/opentelemetry-host-monitoring "Generate topology and screens for your OpenTelemetry host data for quicker display and easier analysis of the data.")
+* [Security Posture Management compliance standards](/docs/secure/application-security/spm/compliance-standards "Technical details about the supported compliance standards.")
+* [Configure user interaction capturing for mobile frontends](/docs/observe/digital-experience/new-rum-experience/mobile-frontends/additional-configuration/user-interactions-mobile "Learn how to configure user interaction capturing for mobile frontends.")
 
 ## Feb 16, 2026
 
@@ -65,12 +87,12 @@ This page lists all new or significantly changed Dynatrace Documentation topics,
 * [Pre-process logs with OpenPipeline with ready-made bundles](/docs/analyze-explore-automate/logs/lma-log-processing/lma-pre-processing "Streamline log analysis by enriching and normalizing data using ready-made technology bundles for popular technologies before it enters OpenPipeline.")
 * [OpenTelemetry to Dynatrace semantic mapping](/docs/ingest-from/opentelemetry/otlp-api/otel-semantic-mapping "Learn how Dynatrace automatically maps OpenTelemetry semantic conventions to the Dynatrace Semantic Dictionary.")
 * [Exception analysis](/docs/observe/application-observability/distributed-tracing/exception-analysis "Exception analysis helps you detect, investigate, and resolve exceptions more effectively in Dynatrace.")
-* [Leverage enhanced endpoints for SDv1](/docs/observe/application-observability/services/enhanced-endpoints-sdv1 "Utilize the Enhanced endpoints for SDv1 feature to gain deeper insights into your application's performance and improve your ability to monitor and troubleshoot service interactions.")
+* [Leverage enhanced endpoints for SDv1](/docs/observe/application-observability/services/service-detection/service-detection-v1/enhanced-endpoints-sdv1 "Utilize the Enhanced endpoints for SDv1 feature to gain deeper insights into your application's performance and improve your ability to monitor and troubleshoot service interactions.")
 * [Monitor service message processing](/docs/observe/application-observability/services/monitor-service-message-processing "Monitor service message processing")
 * [Response time analysis](/docs/observe/application-observability/services/response-time-analysis "Response time analysis helps you quickly the key contributors to slow service performance in Dynatrace.")
 * [Data privacy in the New RUM Experience](/docs/observe/digital-experience/new-rum-experience/data-privacy "Learn how to ensure that your RUM setup complies with the data privacy regulations of your region.")
-* [Radware Alteon Load Balancer extension](/docs/observe/infrastructure-observability/extensions/radware-alteon-load-balancer "Monitor your Radware Alteon Network Load Balancers through SNMP")
-* [Reduce span-based and metric-based cardinality](/docs/platform/openpipeline/use-cases/reduce-span-metric-cardinality "Reduce span- and metric-based cardinality")
+* [Radware Alteon Load Balancer extension](/docs/observe/infrastructure-observability/extensions/radware-alteon-load-balancer "Monitor your Radware Alteon Network Load Balancer devices and interfaces through SNMP.")
+* [Reduce span-based and metric-based cardinality](/docs/platform/openpipeline/use-cases/reduce-span-metric-cardinality "Leverage three different views in the Services app to normalize span and metric data, ensuring aggregations and analysis remain reliable and usable.")
 * [Ingest JSON and TXT logs](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-api/lma-ingest-json-txt-logs "Understand how JSON and TXT logs are processed, whether in flattened or raw mode.")
 * [Sizing guide for Dynatrace ActiveGate](/docs/ingest-from/setup-on-k8s/guides/deployment-and-configuration/resource-management/ag-resource-limits "Set resource limits for Dynatrace ActiveGates")
 * [Configure URL path pattern matching in Service Detection v2](/docs/observe/application-observability/services/service-detection/service-detection-v2/url-pattern-matching-v2 "Find out how to get better endpoint names for frameworks without route templates by setting up URL pattern matching rules.")
@@ -84,7 +106,7 @@ This page lists all new or significantly changed Dynatrace Documentation topics,
 
 ## Jan 12, 2026
 
-* [Radware Alteon Load Balancer extension](/docs/observe/infrastructure-observability/extensions/radware-alteon-load-balancer "Monitor your Radware Alteon Network Load Balancers through SNMP")
+* [Radware Alteon Load Balancer extension](/docs/observe/infrastructure-observability/extensions/radware-alteon-load-balancer "Monitor your Radware Alteon Network Load Balancer devices and interfaces through SNMP.")
 * [Owner-based access control in OpenPipeline](/docs/platform/openpipeline/concepts/access-control "Learn the roles and permissions available in OpenPipeline.")
 * [Set access control in OpenPipeline](/docs/platform/openpipeline/getting-started/set-access-control "Distribute OpenPipeline ingest source and pipeline management via owner-based access control.")
 * [Extract a metric from user events](/docs/observe/digital-experience/new-rum-experience/use-cases/extract-custom-metrics-from-user-events "Turn user events into actionable insights by extracting custom metrics for long-term analysis.")
@@ -107,7 +129,7 @@ This page lists all new or significantly changed Dynatrace Documentation topics,
 ## Dec 15, 2025
 
 * [Automate cloud misconfiguration triaging and remediation with Kiro CLI and Dynatrace](/docs/secure/use-cases/ai-remediation-kiro-cli "Prioritize and remediate cloud misconfigurations with Dynatrace and Kiro CLI.")
-* [Enable Experience Analytics](/docs/observe/digital-experience/new-rum-experience/user-interactions "Learn how to capture and analyze user interactions.")
+* [Enable Experience Analytics](/docs/observe/digital-experience/new-rum-experience/web-frontends/additional-configuration/user-interactions "Learn how to configure and customize user interaction capturing for web frontends.")
 * [Stonebranch Universal Automation Center extension](/docs/observe/infrastructure-observability/extensions/stonebranch-uac "Monitor Stonebranch Universal Automation Center (UAC) via OpenTelemetry.")
 * [Enhance your account security with MFA TOTP](/docs/manage/identity-access-management/user-and-group-management/access-mfa/user-mfa "Learn how to secure your user account with MFA TOTP.")
 * [Data model of the New RUM Experience](/docs/observe/digital-experience/new-rum-experience/concepts/data-model "Get familiar with the data model at the heart of the New RUM Experience.")
@@ -135,7 +157,7 @@ This page lists all new or significantly changed Dynatrace Documentation topics,
 ## Nov 24, 2025
 
 * [Use traces, DQL, and logs to spot patterns](/docs/observe/application-observability/distributed-tracing/use-traces-and-dql-to-spot-patterns "Utilize traces, logs, and DQL to visualize raw data and identify abnormal patterns.")
-* [Relationship between the New RUM Experience and RUM Classic](/docs/observe/digital-experience/new-rum-experience/relationship-to-rum-classic "Learn how the New RUM Experience works alongside RUM Classic.")
+* [Relationship between the New RUM Experience and RUM Classic](/docs/observe/digital-experience/new-rum-experience/transition-from-rum-classic "Learn how to transition from RUM Classic to the New RUM Experience.")
 * [Dynatrace Intelligence (Preview)](/docs/dynatrace-intelligence/dynatrace-intelligence-integrations/copilot-for-workflows "Learn how to automate Dynatrace Intelligence generative AI actions and responses with workflows.")
 * [Mobile frontends](/docs/observe/digital-experience/new-rum-experience/mobile-frontends "Learn how to configure and use the New RUM Experience for your mobile frontends.")
 * [Customize web frontend monitoring using the JavaScript API](/docs/observe/digital-experience/new-rum-experience/web-frontends/new-javascript-api "Learn how to customize web frontend monitoring in the New RUM Experience using the JavaScript API.")
@@ -198,7 +220,7 @@ This page lists all new or significantly changed Dynatrace Documentation topics,
 
 * [AI Observability (preview)](/docs/observe/dynatrace-for-ai-observability/ai-observability-app "Use the new AI Observability app to monitor all your AI workloads.")
 * [Monaco resource management](/docs/deliver/configuration-as-code/monaco/configuration/monaco-manage-resources "This a list of Monaco resources.")
-* [Ingest NetFlow records into Dynatrace](/docs/observe/infrastructure-observability/networks/ingest-netflow-records "Learn how to ingest NetFlow records into Dynatrace.")
+* [Ingest NetFlow records into Dynatrace](/docs/observe/infrastructure-observability/networks-classic/ingest-netflow-records "Learn how to ingest NetFlow records into Dynatrace.")
 * [Monaco configuration YAML file - list of special configuration types](/docs/deliver/configuration-as-code/monaco/configuration/special-configuration-types-saas "This is a list of Monaco special configuration types.")
 * [Monaco configuration YAML file - list of type fields](/docs/deliver/configuration-as-code/monaco/configuration/yaml-configuration-saas-type-fields "This is a list of type fields in the Monaco configuration YAML file.")
 * [Monaco configuration YAML file structure](/docs/deliver/configuration-as-code/monaco/configuration/yaml-configuration-saas "The Monaco configuration YAML file is structure.")
@@ -210,9 +232,9 @@ This page lists all new or significantly changed Dynatrace Documentation topics,
 
 ## Oct 13, 2025
 
-* [Settings](/docs/manage/settings "Introduction to Dynatrace settings")
-* [Send email notifications for problems](/docs/analyze-explore-automate/workflows/use-cases/workflows-tutorial-problems-email "Learn how to send email notifications for problems using a simple workflow.")
-* [Send Slack notifications for problems](/docs/analyze-explore-automate/workflows/use-cases/workflows-tutorial-problems-slack "Learn how to send Slack notifications for problems using a simple workflow.")
+* [Settings](/docs/manage/settings "Introduction to the Dynatrace Settings app.")
+* [Send email notifications for problems](/docs/analyze-explore-automate/alerting-and-notifications/workflows-tutorial-problems-email "Learn how to send email notifications for problems using a simple workflow.")
+* [Send Slack notifications for problems](/docs/analyze-explore-automate/alerting-and-notifications/workflows-tutorial-problems-slack "Learn how to send Slack notifications for problems using a simple workflow.")
 * [Scaling](/docs/ingest-from/opentelemetry/collector/scaling "How to scale the OpenTelemetry Collector.")
 * [Ingest Sonatype Lifecycle security events and audit logs](/docs/secure/threat-observability/security-events-ingest/ingest-sonatype "Ingest Sonatype Lifecycle security events and audit logs into Dynatrace as security events.")
 
@@ -285,7 +307,7 @@ This page lists all new or significantly changed Dynatrace Documentation topics,
 
 ## Jul 28, 2025
 
-* [Discover relevant troubleshooting guides with Dynatrace Intelligence generative AI](/docs/dynatrace-intelligence/copilot/copilot-find-relevant-troubleshooting-guides "Learn how Dynatrace Intelligence generative AI can suggest troubleshooting guides for problem remediation.")
+* [Discover relevant troubleshooting guides with Dynatrace Intelligence agentic and generative AI](/docs/dynatrace-intelligence/copilot/copilot-find-relevant-troubleshooting-guides "Learn how Dynatrace Intelligence agentic and generative AI can suggest troubleshooting guides for problem remediation.")
 
 ## Jul 21, 2025
 
@@ -358,7 +380,7 @@ This page lists all new or significantly changed Dynatrace Documentation topics,
 ## Apr 30, 2025
 
 * [Vulnerability evaluation](/docs/secure/application-security/vulnerability-analytics/vulnerability-evaluation "Explore the mechanism for generating third-party and code-level vulnerabilities in Dynatrace.")
-* [Use cases for monitoring rules](/docs/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/use-cases-monitoring-rules "Common scenarios for defining monitoring rules for vulnerabilities based on resource attributes and Kubernetes labels.")
+* [Use cases for monitoring rules](/docs/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/define-monitoring-rules-tpv "Create, modify, and delete custom monitoring rules for Dynatrace-monitored processes.")
 
 ## Apr 14, 2025
 
@@ -410,7 +432,7 @@ This page lists all new or significantly changed Dynatrace Documentation topics,
 
 ## Feb 19, 2025
 
-* [Compliance and resilience](/docs/analyze-explore-automate/compliance-and-resilience "Build resilient IT systems and manage regulatory requirements with compliance and resilience capabilities from Dynatrace.")
+* [Compliance and resilience](/docs/observe/business-observability/compliance-and-resilience "Build resilient IT systems and manage regulatory requirements with compliance and resilience capabilities from Dynatrace.")
 * [Identity and Access Management concepts](/docs/manage/identity-access-management/iam-concepts "Understand the key Identity and Access Management concepts (IAM) areas in Dynatrace")
 * [Identity and Access Management Limits](/docs/manage/identity-access-management/iam-limits "IAM limits for Dynatrace SaaS")
 * [Ingest AWS Security Hub security findings](/docs/secure/threat-observability/security-events-ingest/ingest-aws-security-hub "Ingest AWS Security Hub security findings and analyze them in Dynatrace.")
@@ -449,13 +471,13 @@ This page lists all new or significantly changed Dynatrace Documentation topics,
 
 ## Dec 09, 2024
 
-* [Compliance Assistant](/docs/analyze-explore-automate/compliance-and-resilience/compliance-assistant "Consolidate insights from the Dynatrace observability and security platform in a unified dashboard.")
+* [Compliance Assistant](/docs/observe/business-observability/compliance-assistant "Track, manage, and automate compliance across your IT and business landscape with consolidated observability and security insights.")
 * [Stay compliant with Security Posture Management](/docs/secure/use-cases/stay-compliant "Stay on top of your security measures, policies, and practices.")
 * [Discovery & Coverage app](/docs/ingest-from/discovery-coverage-app "Discover and remediate monitoring coverage gaps at scale.")
 * [Kubernetes Security Posture Management](/docs/ingest-from/setup-on-k8s/deployment/security-posture-management "Configure and enable Security Posture Management in Kubernetes.")
-* [Security Posture Management](/docs/secure/application-security/security-posture-management-hub "Assess, manage, and take action on misconfigurations and violations against security hardening guidelines and regulatory compliance standards.")
-* [Get started with Kubernetes Security Posture Management (KSPM)](/docs/secure/application-security/security-posture-management-hub "Assess, manage, and take action on misconfigurations and violations against security hardening guidelines and regulatory compliance standards.")
-* [Supported compliance standards and technologies](/docs/secure/application-security/security-posture-management-hub "Assess, manage, and take action on misconfigurations and violations against security hardening guidelines and regulatory compliance standards.")
+* [Security Posture Management](/docs/secure/application-security/spm "Assess, manage, and take action on misconfigurations and violations against security hardening guidelines and regulatory compliance standards.")
+* [Get started with Kubernetes Security Posture Management (KSPM)](/docs/secure/application-security/spm "Assess, manage, and take action on misconfigurations and violations against security hardening guidelines and regulatory compliance standards.")
+* [Supported compliance standards and technologies](/docs/secure/application-security/spm "Assess, manage, and take action on misconfigurations and violations against security hardening guidelines and regulatory compliance standards.")
 * [Assess coverage](/docs/secure/xspm/assess-coverage "Review the Security Posture Management coverage of your systems at a glance.")
 * [Concepts](/docs/secure/xspm/concepts "Concepts that are specific to the Dynatrace Security Posture Management app.")
 * [Gain insights](/docs/secure/xspm/gain-insights "Drill into results that can help you fix misconfigurations and noncompliance.")
@@ -489,14 +511,14 @@ This page lists all new or significantly changed Dynatrace Documentation topics,
 
 ## Nov 04, 2024
 
-* [Dynatrace Intelligence generative AI data privacy and security](/docs/dynatrace-intelligence/copilot/copilot-data-privacy "Learn about Dynatrace Intelligence generative AI data privacy and security policy.")
+* [Dynatrace Intelligence agentic and generative AI data privacy and security](/docs/dynatrace-intelligence/copilot/copilot-data-privacy "Learn about Dynatrace Intelligence agentic and generative AI data privacy and security policy.")
 * [Query with natural language](/docs/dynatrace-intelligence/copilot/quick-analysis-copilot-dql "Use Dynatrace Intelligence generative AI to translate your natural language questions into DQL queries")
-* [Dynatrace Intelligence generative AI prompt examples](/docs/dynatrace-intelligence/use-cases/copilot-examples "Learn more about what kind of prompts work well in Dynatrace Intelligence generative AI.")
-* [Dynatrace Intelligence generative AI FAQ](/docs/dynatrace-intelligence/copilot/copilot-faq "Learn about frequently asked questions and find your answers.")
-* [Getting started with Dynatrace Intelligence generative AI](/docs/dynatrace-intelligence/copilot/copilot-getting-started "Learn how to set up Dynatrace Intelligence generative AI.")
-* [Dynatrace Intelligence generative AI overview](/docs/dynatrace-intelligence/copilot/copilot-overview "Learn about data security and other aspects of Dynatrace Intelligence generative AI.")
+* [Dynatrace Intelligence agentic and generative AI prompt examples](/docs/dynatrace-intelligence/use-cases/copilot-examples "Learn more about what kind of prompts work well in Dynatrace Intelligence agentic and generative AI.")
+* [Dynatrace Intelligence agentic and generative AI FAQ](/docs/dynatrace-intelligence/copilot/copilot-faq "Learn about frequently asked questions and find your answers.")
+* [Getting started with Dynatrace Intelligence agentic and generative AI](/docs/dynatrace-intelligence/copilot/copilot-getting-started "Learn how to set up Dynatrace Intelligence agentic and generative AI.")
+* [Dynatrace Intelligence agentic and generative AI overview](/docs/dynatrace-intelligence/copilot/copilot-overview "Learn about data security and other aspects of Dynatrace Intelligence agentic and generative AI.")
 * [Tips for writing better prompts](/docs/dynatrace-intelligence/copilot/quick-analysis-copilot-dql/copilot-tips "Learn best practices for writing more accurate prompts.")
-* [Dynatrace Intelligence generative AI](/docs/dynatrace-intelligence/copilot "Learn about Dynatrace Intelligence generative AI.")
+* [Dynatrace Intelligence agentic and generative AI](/docs/dynatrace-intelligence/copilot "Learn about Dynatrace Intelligence agentic and generative AI.")
 * [Create log alerts for a log event or summary of log data](/docs/dynatrace-intelligence/use-cases/create-alert-in-logs "Create log alerts for a specific log event or summary of log data")
 * [Create a custom alert](/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-app/configure-a-simple-ad "Learn how to create and edit simple custom alerts in the Anomaly Detection app.")
 
@@ -674,7 +696,7 @@ This page lists all new or significantly changed Dynatrace Documentation topics,
 * [Infrastructure & Operations](/docs/observe/infrastructure-observability/infrastructure-and-operations "Monitor hosts, VMs, processes, and networks to detect issues and improve infrastructure performance.")
 * [Dynatrace Extensions Python SDK](/docs/ingest-from/extensions/develop-your-extensions/data-sources/python "Python library and a toolbox for building Python extensions for Dynatrace Extensions.")
 * [Account configuration for Monaco account management](/docs/deliver/configuration-as-code/monaco/configuration/account-configuration "Configure accounts for Monaco account management.")
-* [Instant Intrusion Response](/docs/secure/use-cases/instant-intrusion-response "Triage security incidents in minutes with instant schema-on-read queries.")
+* [Instant Intrusion Response](/docs/secure/use-cases "Use case scenarios for Application Security and Threat Observability.")
 * [Databases app](/docs/observe/infrastructure-observability/databases/database-app "The Databases app gives you an overview of all your Extensions Framework 2.0-monitored databases.")
 * [Email for Workflows](/docs/analyze-explore-automate/workflows/actions/email "Automate sending out-of-the-box emails based on the events and schedules defined for your workflows.")
 * [Event triggers for workflows](/docs/analyze-explore-automate/workflows/trigger/event-trigger "Guide to creating workflow automation event triggers in Dynatrace Workflows.")
@@ -819,7 +841,7 @@ This page lists all new or significantly changed Dynatrace Documentation topics,
 ## Jul 31, 2023
 
 * [Query monitored entities in Grail](/docs/platform/grail/querying-monitored-entities "Find out how to query monitored entities in Grail.")
-* [DevSecOps Lifecycle Coverage with Snyk](/docs/secure/devsecops-lifecycle-coverage "Set up and configure DevSecOps Lifecycle Coverage with Snyk.")
+* [DevSecOps Lifecycle Coverage with Snyk](/docs/secure/vulnerabilities "Prioritize and efficiently manage vulnerabilities in your monitored environments.")
 * [Performance](/docs/ingest-from/opentelemetry "Learn how to integrate and ingest OpenTelemetry data (traces, metrics, and logs) into Dynatrace.")
 * [Ingest OpenTelemetry traces](/docs/ingest-from/opentelemetry/otlp-api/ingest-traces "Learn how Dynatrace ingests OpenTelemetry traces and what limitations apply.")
 * [Ingest OpenTelemetry metrics](/docs/ingest-from/opentelemetry/otlp-api/ingest-otlp-metrics/about-metrics-ingest "Learn how Dynatrace ingests OpenTelemetry metrics and what limitations apply.")
@@ -858,7 +880,7 @@ This page lists all new or significantly changed Dynatrace Documentation topics,
 
 ## Jun 12, 2023
 
-* [Dynatrace for AI Observability](/docs/observe/dynatrace-for-ai-observability "Learn about AI and LLM observability, what AI observability is, how Dynatrace observes Generative AI (LLM) models and AI SaaS services, and much more.")
+* [Dynatrace for AI Observability](/docs/observe/dynatrace-for-ai-observability "Learn about AI and LLM observability, what AI observability is, how Dynatrace observes generative AI (LLM) models and AI SaaS services, and much more.")
 * [Dynatrace for OpenAI Observability](/docs/observe/dynatrace-for-ai-observability/sample-use-cases/openai-observability "Learn about Dynatrace for OpenAI Observability, how Dynatrace observes OpenAI SaaS services, and much more.")
 * [Dynatrace for TensorFlow and Keras Observability](/docs/observe/dynatrace-for-ai-observability/models-and-platforms/tensorflow-keras-observability "Learn about Dynatrace for TensorFlow and Keras Model Observability, how Dynatrace observes TensorFlow and Keras Models, and much more.")
 * [Dynatrace Intelligence DQL examples](/docs/dynatrace-intelligence/use-cases/davis-dql-examples "Build powerful health dashboards by slicing and dicing of Dynatrace Intelligence reported problems and events using DQL.")
@@ -1196,7 +1218,7 @@ This page lists all new or significantly changed Dynatrace Documentation topics,
 
 ## May 30, 2022
 
-* [Troubleshoot network monitoring](/docs/observe/infrastructure-observability/networks/troubleshoot-network-monitoring "Learn more about troubleshooting network monitoring.")
+* [Troubleshoot network monitoring](/docs/observe/infrastructure-observability/networks-classic/troubleshoot-network-monitoring "Learn more about troubleshooting network monitoring.")
 * [Log rotation patterns](/docs/analyze-explore-automate/log-monitoring/acquire-log-data/log-rotation-patterns "Learn about supported log rotation patterns")
 * [Supported timestamp formats](/docs/analyze-explore-automate/log-monitoring/log-monitoring-configuration/timestamp-data-format "Supported timestamps for the latest version of Dynatrace Log Monitoring.")
 * [Start/stop/restart a clusterï»¿](https://docs.dynatrace.com/managed/shortlink/managed-start-stop-restart-cluster)
@@ -1321,7 +1343,7 @@ This page lists all new or significantly changed Dynatrace Documentation topics,
 
 ## Feb 21, 2022
 
-* [Extended network monitoring](/docs/observe/infrastructure-observability/networks/network-monitoring-with-nettracer "Extend network monitoring with network traffic metrics in containerized Linux hosts using NetTracer.")
+* [Extended network monitoring](/docs/observe/infrastructure-observability/networks-classic/network-monitoring-with-nettracer "Extend network monitoring with network traffic metrics in containerized Linux hosts using NetTracer.")
 * [Metric units API](/docs/dynatrace-api/environment-api/metrics-units "Learn about units that Dynatrace metrics use via the Dynatrace API.")
 * [SLO management with management-zone permissions](/docs/deliver/service-level-objectives-classic/slo-mz-permissions "Permissions required at the environment and management-zone level to manage service-level objectives.")
 * [OpenTelemetry trace ingest API](/docs/ingest-from/opentelemetry/otlp-api "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.")
@@ -1594,7 +1616,7 @@ This page lists all new or significantly changed Dynatrace Documentation topics,
 * [Version detection strategies](/docs/deliver/release-monitoring/version-detection-strategies "Metadata for version detection in different technologies")
 * [Monitor releases with Dynatrace](/docs/deliver/release-monitoring/monitor-releases-with-dynatrace "Analyze data related to each release version of your software.")
 * [Issue-tracking integration](/docs/deliver/release-monitoring/issue-tracking-integration "Integrate your issue tracker into Dynatrace to pull statistics for monitored entities.")
-* [Enrich metrics with Dynatrace-specific dimensions](/docs/ingest-from/extend-dynatrace/extend-data "Learn how to automatically enrich your telemetry data with Dynatrace-specific dimensions.")
+* [Enrich metrics with Dynatrace-specific dimensions](/docs/ingest-from/extend-dynatrace/extend-data "Learn how to automatically enrich your telemetry data with Dynatrace-specific fields.")
 * [Davis Security Score calculations](/docs/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/davis-security-score "Calculate the Davis Security Score and predict potential vulnerability risks with Davis AI.")
 * [Release monitoring](/docs/deliver/release-monitoring "Detect versions of monitored applications and analyze the software product lifecycle of your releases.")
 

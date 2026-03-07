@@ -1,7 +1,7 @@
 ---
 title: Trace Azure Functions written in Node.js
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-functions/func-dynamic-plans/opentelemetry-on-azure-functions-nodejs
-scraped: 2026-02-18T21:29:10.418512
+scraped: 2026-03-06T21:37:47.614506
 ---
 
 # Trace Azure Functions written in Node.js

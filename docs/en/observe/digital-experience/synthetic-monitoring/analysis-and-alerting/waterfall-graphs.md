@@ -1,13 +1,14 @@
 ---
 title: Waterfall graphs
 source: https://www.dynatrace.com/docs/observe/digital-experience/synthetic-monitoring/analysis-and-alerting/waterfall-graphs
-scraped: 2026-02-16T09:29:02.985102
+scraped: 2026-03-04T21:33:00.345852
 ---
 
 # Waterfall graphs
 
 # Waterfall graphs
 
+* Classic
 * Explanation
 * 11-min read
 * Updated on Feb 26, 2024

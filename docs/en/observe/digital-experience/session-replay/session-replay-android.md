@@ -1,7 +1,7 @@
 ---
 title: Configure Session Replay for Android
 source: https://www.dynatrace.com/docs/observe/digital-experience/session-replay/session-replay-android
-scraped: 2026-02-18T05:53:25.717560
+scraped: 2026-03-02T21:21:17.753446
 ---
 
 # Configure Session Replay for Android
@@ -10,7 +10,7 @@ scraped: 2026-02-18T05:53:25.717560
 
 * How-to guide
 * 7-min read
-* Updated on Oct 07, 2025
+* Updated on Feb 18, 2026
 
 This page describes how to enable and customize Session Replay for your Android apps.
 
@@ -263,10 +263,10 @@ You can also mask a view by adding the `data-dtrum-mask` masking tag to the view
 
 #### Mask Jetpack Compose composables
 
-Jetpack Compose provides manual masking functionality that allows you to control which composables are masked in Session Replay. To mask a composable, use the `dynatraceSessionReplayMasked` modifier.
+Jetpack Compose provides manual masking functionality that allows you to control which composables are masked in Session Replay. To mask a composable, use the `dtMask` modifier.
 
 ```
-import com.dynatrace.android.api.dynatraceSessionReplayMasked
+import com.dynatrace.agent.compose.api.dtMask
 
 
 
@@ -290,7 +290,7 @@ text = "This text will be masked",
 
 
 
-modifier = Modifier.dynatraceSessionReplayMasked()
+modifier = Modifier.dtMask()
 
 
 

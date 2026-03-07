@@ -1,7 +1,7 @@
 ---
 title: Set up permissions for Live Debugging
 source: https://www.dynatrace.com/docs/observe/application-observability/live-debugger/setup
-scraped: 2026-02-18T21:36:20.507169
+scraped: 2026-03-04T21:33:29.156035
 ---
 
 # Set up permissions for Live Debugging
@@ -16,10 +16,6 @@ scraped: 2026-02-18T21:36:20.507169
 ## User permissions
 
 All supported values for each IAM permission and condition are listed below. Use them to define access policies based on a fine-grained set of permissions and conditions that can be enforced per service. For more information, see [Working with policies](/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies "Working with policies").
-
-Permission
-
-Description
 
 state:user-app-states:read
 
@@ -45,16 +41,6 @@ dev-obs:breakpoints:manage
 
 Manage Observability for Developers breakpoints.
 
-10
-
-rows per page
-
-Page
-
-1
-
-of 1
-
 ## Set breakpoints
 
 Grants permission to set user-level Live Debugging breakpoints.
@@ -64,10 +50,19 @@ Grants permission to set user-level Live Debugging breakpoints.
 * `dev-obs:k8s.namespace.name` - the name of the namespace that the pod is running in.
 
   operators: `IN`, `NOT IN`, `startsWith`, `NOT startsWith`, `=`, `!=`
+* `dev-obs:k8s.cluster.name` â the name of the cluster that the pod is running in.
+
+  operators: `IN`, `NOT IN`, `startsWith`, `NOT startsWith`, `=`, `!=`
 * `dev-obs:dt.entity.process_group` - the process group your application is a part of.
 
   operators: `IN`, `NOT IN`, `startsWith`, `NOT startsWith`, `=`, `!=`
 * `dev-obs:dt.process_group.detected_name` â the detected name of the process group your application is a part of.
+
+  operators: `IN`, `NOT IN`, `startsWith`, `NOT startsWith`, `=`, `!=`
+* `dev-obs:host.group` â the host group your application is a part of.
+
+  operators: `IN`, `NOT IN`, `startsWith`, `NOT startsWith`, `=`, `!=`
+* `dev-obs:host.name` â the host name your application is a part of.
 
   operators: `IN`, `NOT IN`, `startsWith`, `NOT startsWith`, `=`, `!=`
 

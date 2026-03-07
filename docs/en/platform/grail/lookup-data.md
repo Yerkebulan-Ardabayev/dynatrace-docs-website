@@ -1,7 +1,7 @@
 ---
 title: Lookup data in Grail
 source: https://www.dynatrace.com/docs/platform/grail/lookup-data
-scraped: 2026-02-17T21:29:48.967944
+scraped: 2026-03-03T21:22:43.067716
 ---
 
 # Lookup data in Grail
@@ -58,7 +58,7 @@ Preview opt-in
 
 Customers with [Dynatrace Platform Subscription (DPS)](/docs/license "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.") can join the preview for lookup data in Grail. During the preview phase, the `storage:files` permissions are not included in the default Grail policies. You can opt into the preview program by manually adding permissions to access lookup files to your custom policies.
 
-You can configure permissions with [Account Management](/docs/manage/account-management "Manage your Dynatrace license, subscriptions, and platform adoption and environment health."). To grant full access to all lookup data in `/lookups/`, you can create a policy (**Identity & access management** > **Policy management** >  **Create policy**) with the following statements:
+You can configure permissions with [Account Management](/docs/manage/account-management "Manage your Dynatrace license, accounts, platform adoption, and environment health."). To grant full access to all lookup data in `/lookups/`, you can create a policy (**Identity & access management** > **Policy management** >  **Create policy**) with the following statements:
 
 ```
 ALLOW storage:files:read WHERE storage:file-path startsWith "/lookups/";
@@ -112,22 +112,6 @@ To access the Swagger API documentation for the Resource Store API and to start 
 2. In the **Select a definition** field, select **Grail - Resource Store**.
 3. Optional Authenticate with your API token if you want to use Swagger to execute your requests. For details, see [Authentication](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/platform-tokens "Create personalised platform tokens to access Dynatrace services via the API in your user context."). Select the **Try it out** button to interact with the API directly from the documentation.
 4. Perform one of the following actions.
-
-To do this
-
-Go to **Lookup Data** and select this
-
-Test parsing your to-be-uploaded lookup data without storing the result in Grail.
-
-**POST/platform/storage/resource-store/v1/files/tabular/lookup:test-pattern**
-
-Upload your lookup data and store it as a new tabular file in Grail or replace an existing one.
-
-**POST/platform/storage/resource-store/v1/files/tabular/lookup:upload**
-
-Delete the file from the Resource Store.
-
-**POST/platform/storage/resource-store/v1/files:delete**
 
 ### Parse lookup data
 

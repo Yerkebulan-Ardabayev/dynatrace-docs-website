@@ -1,7 +1,7 @@
 ---
 title: Manage SNMP extensions
 source: https://www.dynatrace.com/docs/ingest-from/extensions/supported-extensions/data-sources/snmp
-scraped: 2026-02-18T21:23:36.969435
+scraped: 2026-03-06T21:16:12.258749
 ---
 
 # Manage SNMP extensions
@@ -141,8 +141,6 @@ Filter by
 Select an option
 
 Type to filter
-
-Unable to render DataTable. Check configuration.
 
 ## Related topics
 

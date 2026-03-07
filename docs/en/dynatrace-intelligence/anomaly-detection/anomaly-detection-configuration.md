@@ -1,7 +1,7 @@
 ---
 title: Anomaly detection configuration
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-configuration
-scraped: 2026-02-18T21:27:28.031262
+scraped: 2026-03-06T21:20:56.392646
 ---
 
 # Anomaly detection configuration
@@ -26,7 +26,7 @@ Once configured and activated, the configuration observes the data and triggers 
 
 ## Data source
 
-Data source provides a time series that is evaluated by Davis:
+Data source provides a time series that is evaluated by Dynatrace Intelligence:
 
 * Previous Dynatrace A metric defines the time series. It can be a single metric defined by a metric key or a [metric expression](/docs/dynatrace-api/environment-api/metric-v2/metric-expressions "Use metric expressions to apply arithmetic operations in a data points query via the Metrics API v2.").
 

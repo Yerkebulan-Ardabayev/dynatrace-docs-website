@@ -1,7 +1,7 @@
 ---
 title: OpenPipeline limits
 source: https://www.dynatrace.com/docs/platform/openpipeline/reference/limits
-scraped: 2026-02-18T21:18:46.483520
+scraped: 2026-03-06T21:16:07.099440
 ---
 
 # OpenPipeline limits
@@ -11,7 +11,7 @@ scraped: 2026-02-18T21:18:46.483520
 * Latest Dynatrace
 * Reference
 * 4-min read
-* Updated on Jan 28, 2026
+* Updated on Feb 26, 2026
 
 The following page lists the default limits of Dynatrace OpenPipeline.
 
@@ -108,18 +108,6 @@ If the timestamp is more than 10 minutes in the future, it's adjusted to the ing
 
 ### Record minimum timestamp
 
-Item
-
-Earliest timestamp
-
-Logs, Events, Business Events, System events
-
-The ingest time minus 24 hours
-
-Metrics, extracted metrics, and Davis events
-
-The ingest time minus 1 hour
-
 Records outside of these timeframes are dropped.
 
 ## Ingest API
@@ -146,7 +134,7 @@ If the record doesn't have a `timestamp` field, the field `timestamp` is set to 
 
 ### Processing memory exhaustion
 
-Each record can occupy maximum 16 MB of processing memory. Each change to the record (e.g. parsing a field) decreases the available processing memory. Once the available processing memory is exhausted, the record is dropped, and the metric `dt.sfm.openpipeline.not_stored.records` with dimension `reason` set to `buffer_overflow` reports it.
+Processing memory is limited. Each change to a recordâfor example, parsing a fieldâdecreases the available processing memory. Once the available processing memory is exhausted, the record is dropped. This is reported in metric `dt.sfm.openpipeline.not_stored.records` with dimension `reason` set to `buffer_overflow`.
 
 ### Size of record after processing
 
@@ -180,68 +168,6 @@ The Smartscape ID calculation supports `string` only. The ID components must be 
 
 ## Configuration
 
-Item
-
-Maximum limit
-
-Early Adopter program maximum limit
-
-Request payload size (per configuration scope)
-
-10 MB
-
-* Total pipeline schemas: 70 MB
-* Total route schemas: 10 MB
-* Total ingest source schemas: 30 MB
-
-Pipeline number (per configuration scope)
-
-100
-
-2,000
-
-Size of a stage
-
-512 KB
-
-512 KB
-
-Processor number (per pipeline)
-
-1,000
-
-1,000
-
-Endpoint number (per configuration scope)
-
-100
-
-100
-
-Routes number (per configuration scope)
-
-100
-
-3,000
-
-Ingest sources number (per configuration scope)
-
-100
-
-2,000
-
-Length of a matching condition
-
-1,000 UTF-8 encoded bytes
-
-1,000 UTF-8 encoded bytes
-
-Length of a DQL processor script
-
-8,192 UTF-8 encoded bytes
-
-8,192 UTF-8 encoded bytes
-
 ### Allowed characters in the endpoint path
 
 The endpoint path is a unique name starting with a literal that defines the endpoint. It's case-insensitive and supports alphanumeric characters and dot (`.`). For example: `Endpoint.1`.
@@ -252,3 +178,10 @@ Endpoint path doesn't support:
 * Whitespaces
 * Consecutive dots (`..`)
 * `Null` or empty input
+
+## Pipeline groups
+
+* The maximum number of composition pipelines per pipeline group is 10.
+* The maximum number of member pipelines per pipeline group is 100.
+* The pipeline role is permanent.
+  Converting rolesâfrom member to composition, or composition to memberâisn't supported.

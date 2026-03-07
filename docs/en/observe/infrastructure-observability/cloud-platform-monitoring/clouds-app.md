@@ -1,7 +1,7 @@
 ---
 title: Clouds app
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/cloud-platform-monitoring/clouds-app
-scraped: 2026-02-18T21:16:11.762227
+scraped: 2026-03-06T21:12:43.905190
 ---
 
 # Clouds app
@@ -11,7 +11,7 @@ scraped: 2026-02-18T21:16:11.762227
 * Latest Dynatrace
 * App
 * 4-min read
-* Updated on Jan 21, 2026
+* Updated on Feb 27, 2026
 
 The new [cloud experienceï»¿](https://www.dynatrace.com/platform/cloud-monitoring/) is optimized for Cloud (Platform) Operation teams and Site Reliability Engineers (SREs) and focuses on health, troubleshooting, and performance optimization use cases of (multi-)cloud environments.
 
@@ -55,10 +55,6 @@ See [concepts](#concepts) for the comparison between classic and new cloud conne
 
 The following table describes the required permissions.
 
-Permission
-
-Description
-
 settings:objects:read
 
 Read settings of ownership (settings:schemaIds = builtin:ownership.config) - required by Ownership tab in details panel.
@@ -99,16 +95,6 @@ document:documents:read
 
 Read documents. Required by filter presets feature. Required for ready-made dashboards (Overview).
 
-10
-
-rows per page
-
-Page
-
-1
-
-of 1
-
 ## Get started
 
 ![Clouds](https://dt-cdn.net/images/clouds-1025-170946931c.png "Clouds") **Clouds** has an integrated onboarding flow that guides you through all the required steps to get started. The exact steps you need to take depend on your cloud provider and the type of cloud connection (new or classic).
@@ -123,12 +109,15 @@ New cloud connections (AWS, Preview for Azure)
 
 Classic cloud connections (AWS, Azure, GCP)
 
-Use the following guide to set up and configure a new AWS cloud connection in Dynatrace.
+Use the following guide to set up and configure a new cloud connection in Dynatrace.
 
 [01Create a new AWS connection
 
 * How-to guide
-* Learn how to create a new AWS connection in the Clouds app.](/docs/observe/infrastructure-observability/cloud-platform-monitoring/clouds-app/create-aws-connection)
+* Learn how to create a new AWS connection in the Clouds app.](/docs/observe/infrastructure-observability/cloud-platform-monitoring/clouds-app/create-aws-connection)[02Create a new Azure connection
+
+* How-to guide
+* Learn how to create a new Azure connection in the Clouds app.](/docs/observe/infrastructure-observability/cloud-platform-monitoring/clouds-app/create-azure-connection)
 
 In ![Clouds](https://dt-cdn.net/images/clouds-1025-170946931c.png "Clouds") **Clouds**, use the app header bar and select  **Create connection** > **AWS (Classic connections)** or  **Create connection** > **Azure (Classic connections)** or  **Create connection** > **GCP (Classic connections)**.
 
@@ -238,6 +227,8 @@ The classic cloud connections are available for AWS, Azure, and GCP within the p
 
 Classic connections are surfaced on the **Explorer (Classic connection)** tab in ![Clouds](https://dt-cdn.net/images/clouds-1025-170946931c.png "Clouds") **Clouds** and have no specific licensing requirements.
 
+If you're new to Dynatrace AWS Cloud Platform Monitoring, we recommend starting with the new AWS connections instead of the classic ones.
+
 The **Explorer** New and **Overview** New tabs only operate upon data originating from new AWS cloud connections.
 
 Azure and GCP will follow in the future.
@@ -261,7 +252,7 @@ In the **Health** perspective, you can see each cloud service's health and custo
 
 * This mode highlights the most relevant metrics associated with the alert and narrows down the timeframe to the start and end times of the selected problem.
 * Additionally, it offers quick access to the underlying problem, allowing you to efficiently diagnose and resolve issues.
-* You can use [Davis Intelligence](/docs/dynatrace-intelligence/copilot "Learn about Dynatrace Intelligence generative AI.") to get additional insights about the problem and potential remediation steps.
+* You can use [Dynatrace Intelligence agentic and generative AI](/docs/dynatrace-intelligence/copilot "Learn about Dynatrace Intelligence agentic and generative AI.") to get additional insights about the problem and potential remediation steps.
 
 **Problem mode** is always active when you navigate from a specific problem in [![Problems app - new](https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp "Problems app - new") **Problems**](/docs/dynatrace-intelligence/davis-problems-app "Use the Problems app to quickly get to the root cause of incidents in your environment.") to ![Clouds](https://dt-cdn.net/images/clouds-1025-170946931c.png "Clouds") **Clouds**.
 
@@ -269,27 +260,7 @@ In the **Health** perspective, you can see each cloud service's health and custo
 
 ### Ready-made dashboards (New connections)
 
-You have access to the following ready-made dashboards for the new AWS Cloud Platform Monitoring:
-
-* AWS Overview
-* AWS API (API Gateway and REST APIs)
-* AWS Bedrock
-* AWS Dynamo DB
-* AWS EC2 (EC2, EBS, AutoScaling)
-* AWS ECS (including ECS Container Insights)
-* AWS Edge Networking (Route 53, CloudFront)
-* AWS EFS
-* AWS ElastiCache (Redis, Memcached)
-* AWS ELB (Application, Classic, Network Load Balancing)
-* AWS EventBridge
-* AWS Foundation Networking (NAT Gateway, PrivateLink)
-* AWS Health Events
-* AWS Lambda
-* AWS MSK (Kafka)
-* AWS RDS (including Aurora)
-* AWS S3
-* AWS SNS
-* AWS SQS
+You have access to the ready-made dashboards for the new AWS Cloud Platform Monitoring and Azure Cloud Platform Monitoring (Preview).
 
 The ready-made dashboards can be accessed through:
 
@@ -305,7 +276,7 @@ The ready-made dashboards can be accessed through:
 
 ### Segments (New connections)
 
-[Segments](/docs/manage/segments "Segments logically structure monitoring data in Grail and function as convenient filters for data that users are allowed to access based on permissions.") allow you to logically structure and conveniently filter observability data across apps on the Dynatrace platform. Segments are available within the new **Explorer New** tab and can be defined easily for new cloud connections, since all data (including [Smartscape nodes](/docs/platform/grail/smartscape-on-grail "Learn about Smartscape on Grail features and how Smartscape uses the power of DQL.")) is stored in Grail.
+[Segments](/docs/manage/segments "Use segments to logically structure and conveniently filter observability data across apps.") allow you to logically structure and conveniently filter observability data across apps on the Dynatrace platform. Segments are available within the new **Explorer New** tab and can be defined easily for new cloud connections, since all data (including [Smartscape nodes](/docs/platform/grail/smartscape-on-grail "Learn about Smartscape on Grail features and how Smartscape uses the power of DQL.")) is stored in Grail.
 
 For a step-by-step guide on how to define segments for Smartscape nodes, see [Filter Smartscape nodes with segments](/docs/manage/segments/getting-started/segments-getting-started-filter-smartscape-nodes "Learn how to filter Smartscape nodes by using segments in Dashboards."). You can use any primary Grail field (and, in the future, also tags) to conveniently define simple segments across **All data**:
 

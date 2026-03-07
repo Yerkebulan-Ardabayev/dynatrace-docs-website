@@ -1,7 +1,7 @@
 ---
 title: Erlang/Elixir
 source: https://www.dynatrace.com/docs/ingest-from/technology-support/application-software/erlang-elixir
-scraped: 2026-02-18T21:26:25.027474
+scraped: 2026-03-05T21:26:19.421268
 ---
 
 # Erlang/Elixir

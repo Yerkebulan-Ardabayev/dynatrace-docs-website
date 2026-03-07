@@ -1,14 +1,14 @@
 ---
 title: Metric selector events
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/anomaly-detection/metric-events/metric-selector-events
-scraped: 2026-02-18T05:56:04.468010
+scraped: 2026-03-06T21:25:45.312965
 ---
 
 # Metric selector events
 
 # Metric selector events
 
-* Latest Dynatrace
+* Classic
 * How-to guide
 * 4-min read
 * Updated on May 22, 2025

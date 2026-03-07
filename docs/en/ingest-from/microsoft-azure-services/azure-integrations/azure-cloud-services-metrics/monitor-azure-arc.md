@@ -1,7 +1,7 @@
 ---
 title: Azure Machine - Azure Arc
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-arc
-scraped: 2026-02-18T05:50:32.088379
+scraped: 2026-03-06T21:35:13.739557
 ---
 
 # Azure Machine - Azure Arc
