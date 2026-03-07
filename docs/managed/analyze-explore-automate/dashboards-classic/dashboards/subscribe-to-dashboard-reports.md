@@ -1,89 +1,83 @@
 ---
-title: "Subscribe to Dynatrace dashboard reports"
+title: "Подписаться на отчеты панели управления Dynatrace"
 source: https://docs.dynatrace.com/managed/analyze-explore-automate/dashboards-classic/dashboards/subscribe-to-dashboard-reports
 updated: 2026-02-09
 ---
 
-# Subscribe to Dynatrace dashboard reports
+# Подписаться на отчеты панели управления Dynatrace
 
-# Subscribe to Dynatrace dashboard reports
+[Классические панели управления](/managed/analyze-explore-automate/dashboards-classic "Узнайте, как создавать, управлять и использовать Dynatrace Классические панели управления.")
 
-* How-to guide
-* 3-min read
-* Published Oct 29, 2019
+Пользователи с доступом к классической панели управления могут подписаться на отчеты по электронной почте (еженедельно, ежемесячно или на оба варианта), которые специфичны для этой панели управления.
 
-[Dashboards Classic](/managed/analyze-explore-automate/dashboards-classic "Learn how to create, manage, and use Dynatrace Dashboards Classic.")
+## Доступ к отчетам
 
-Users with access to a classic dashboard can subscribe to email reports (weekly, monthly, or both) that are specific to that dashboard.
+Отчеты можно просматривать без ввода учетных данных Dynatrace. С помощью этого подхода электронные письма с отчетами можно пересылать внешним получателям, которые не имеют доступа к Dynatrace.
 
-## Report access
+Чтобы разрешить пользователям предоставлять анонимный доступ к панелям управления
 
-Reports can be viewed without entering Dynatrace credentials. With this approach, report emails can be forwarded to external recipients who don't have access to Dynatrace.
+1. Перейдите в **Настройки** и выберите **Панели управления** > **Общие настройки**.
+2. Включите **Разрешить анонимный доступ**.
 
-To allow users to grant such anonymous access to dashboards
+   Это глобальное (уровень учетной записи) настройка определяет, можно ли делиться панелями управления публично. Если вы ее отключите, попытка доступа к отчету панели управления анонимно вернет ошибку 403.
+3. Выберите **Сохранить изменения**.
 
-1. Go to **Settings** and select **Dashboards** > **General settings**.
-2. Turn on **Allow anonymous access**.
+## Содержимое электронной почты
 
-   This global (account-level) setting determines whether dashboards can be shared publicly. If you turn it off, an attempt to access a dashboard report anonymously returns a 403 error.
-3. Select **Save changes**.
+Электронное письмо не содержит содержимого отчета.
 
-## Email contents
+Каждое электронное письмо с отчетом содержит публичную ссылку (не требуется ввод учетных данных) на отчет. Ссылка включает временной интервал, соответствующий выбранной частоте отчета (еженедельно или ежемесячно).
 
-The email doesn't contain the report contents.
+Тема электронного письма основана на имени панели управления. Если имя вашей панели управления содержит специальные символы, они экранируются (например, `&` становится `&amp`). Это делается по соображениям безопасности и не может быть изменено.
 
-Each report email contains a public link (credentials are not required) to the report. The link includes a timeframe corresponding to the selected report frequency (weekly or monthly).
+## Генерация и доставка отчетов
 
-The subject line of the email is based on the dashboard name. If your dashboard name has special characters, they are escaped (for example, `&` becomes `&amp`). This is done for security reasons and can't be modified.
+Цель — отправить ссылку на отчет понедельника утром, либо еженедельно (каждое понедельное утро), либо ежемесячно (в первое понедельное утро каждого месяца).
 
-## Report generation and delivery
+* Отчет генерируется в какой-то момент после полуночи, предшествующей понедельному утру (00:00 или 12:00 ночи). Полночь рассчитывается с использованием часового пояса, установленного на арендаторе.
+* Электронное письмо со ссылкой на отчет отправляется в течение последующих шести часов. Если отправка не удалась, отправка повторяется после периода ожидания.
 
-The aim is to email a link to a Monday morning report, either weekly (every Monday morning) or monthly (on the first Monday morning of every month).
+## Включить отчеты панели управления
 
-* The report is generated at some point after the midnight preceding that Monday morning (00:00 or 12:00 AM). Midnight is computed using the timezone set on the tenant.
-* The email linking to that report is sent within the subsequent six hours. If sending fails, sending is re-attempted after a wait period.
+Отчеты панели управления по умолчанию отключены. Если вы включите их для панели управления, пользователи с доступом к этой панели управления могут подписаться на отчеты и просматривать их без входа в Dynatrace.
 
-## Enable dashboard reports
+1. Отобразите панель управления.
+2. Выберите **Редактировать**.
+3. Выберите вкладку **Настройки**.
+4. Включите **Включить отчеты**.
+5. Выберите **Готово**.
 
-Dashboard reports are disabled by default. If you enable them for a dashboard, users with access to that dashboard can subscribe to reports and can view them without signing in to Dynatrace.
+## Отключить отчеты панели управления
 
-1. Display the dashboard.
-2. Select **Edit**.
-3. Select the **Settings** tab.
-4. Turn on **Enable reports**.
-5. Select **Done**.
+Чтобы предотвратить получение отчетов от панели управления всеми подписчиками
 
-## Disable dashboard reports
+1. Отобразите панель управления.
+2. Выберите **Редактировать**.
+3. Выберите вкладку **Настройки**.
+4. Отключите **Включить отчеты**.
+5. Выберите **Готово**.
 
-To prevent all subscribed users from receiving reports from a dashboard
+## Подписаться на отчет панели управления
 
-1. Display the dashboard.
-2. Select **Edit**.
-3. Select the **Settings** tab.
-4. Turn off **Enable reports**.
-5. Select **Done**.
+Чтобы подписаться на отчет панели управления
 
-## Subscribe to a dashboard report
+1. Отобразите панель управления.
+2. Выберите **Еще** (**…**) > **Подписаться**.
 
-To subscribe yourself to a dashboard report
+   Если отчеты отключены для панели управления, вы не можете подписаться на нее.
 
-1. Display the dashboard.
-2. Select **More** (**â¦**) > **Subscribe**.
+   * Если у вас есть разрешение на редактирование, Dynatrace отображает кнопку **Включить отчеты**, когда вы попытаетесь подписаться. Выберите ее, чтобы включить отчеты для этой панели управления, и затем продолжите.
+   * Если у вас нет разрешения на редактирование, вы можете попросить кого-то с разрешением на редактирование включить отчеты или вы можете склонировать панель управления, а затем подписаться на клон.
+3. Выберите, как часто вы хотите получать отчет панели управления по электронной почте (`Еженедельно`, `Ежемесячно` или оба).
 
-   If reports are disabled for a dashboard, you can't subscribe to it.
+### Подписать других на отчет панели управления
 
-   * If you have edit permission, Dynatrace displays an **Enable reports** button when you try to subscribe. Select it to enable reports for this dashboard, and then continue.
-   * If you don't have edit permission, you can ask someone with edit permission to enable reports, or you can clone the dashboard and then subscribe to the clone.
-3. Select how often you want to receive a dashboard report in email (`Weekly`, `Monthly`, or both).
+Чтобы подписать других людей на отчет панели управления, даже если они не имеют доступа к Dynatrace, используйте [API отчетов API](/managed/dynatrace-api/configuration-api/reports-api "Управлять отчетами с помощью конфигурации Dynatrace API.") для указания любого допустимого адреса электронной почты в качестве получателя отчета панели управления.
 
-### Subscribe others to a dashboard
+## Отменить подписку на отчет панели управления
 
-To subscribe other people to a dashboard, even if they don't have access to Dynatrace, use the [Reports API](/managed/dynatrace-api/configuration-api/reports-api "Manage reports via the Dynatrace configuration API.") to specify any valid email address as a dashboard report recipient.
+Чтобы отменить подписку на отчет панели управления, выберите ссылку **Отменить подписку**, которая включена в каждое электронное письмо с отчетом.
 
-## Unsubscribe from a dashboard report
+## Связанные темы
 
-To unsubscribe from a dashboard report, select the **unsubscribe** link that's included in every report email.
-
-## Related topics
-
-* [Reports API](/managed/dynatrace-api/configuration-api/reports-api "Manage reports via the Dynatrace configuration API.")
+* [API отчетов API](/managed/dynatrace-api/configuration-api/reports-api "Управлять отчетами с помощью конфигурации Dynatrace API.")

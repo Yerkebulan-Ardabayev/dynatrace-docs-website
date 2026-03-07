@@ -1,175 +1,169 @@
 ---
-title: "Dynatrace dashboard timeframe and management zone settings"
+title: "Dynatrace панель временного интервала и настройки зоны управления"
 source: https://docs.dynatrace.com/managed/analyze-explore-automate/dashboards-classic/dashboards/dashboard-timeframe
 updated: 2026-02-09
 ---
 
-# Dynatrace dashboard timeframe and management zone settings
+# Dynatrace панель временного интервала и настройки зоны управления
 
-# Dynatrace dashboard timeframe and management zone settings
+[Панели Classic](/managed/analyze-explore-automate/dashboards-classic "Узнайте, как создавать, управлять и использовать Dynatrace Панели Classic.")
 
-* How-to guide
-* 2-min read
-* Published Jul 19, 2017
+Глобальные селекторы временного интервала и зоны управления доступны для использования на всех страницах и видах. Вы найдете их в правом верхнем углу.
 
-[Dashboards Classic](/managed/analyze-explore-automate/dashboards-classic "Learn how to create, manage, and use Dynatrace Dashboards Classic.")
+![Селектор временного интервала: меню-бар](https://dt-cdn.net/images/timeframe-selector-menu-bar-264-8193110c8c.png)
 
-The global selectors for timeframe and management zone are available for use across all pages and views. You'll find them in the upper-right corner.
+* Нажмите кнопку фильтра, чтобы выбрать новую зону управления
+* Нажмите временной интервал, чтобы выбрать новый временной интервал
+  Контроль селектора временного интервала
 
-![Timeframe selector: menu bar](https://dt-cdn.net/images/timeframe-selector-menu-bar-264-8193110c8c.png)
+  Глобальный селектор временного интервала служит фильтром времени, который в большинстве случаев позволяет выбрать конкретный временной интервал анализа, который сохраняется на всех страницах и видах продукта при навигации по вашему анализу.
 
-* Select the filter button to select a new management zone
-* Select the timeframe to select a new timeframe
-  Timeframe selector controls
+  ![Селектор временного интервала: пресеты](https://dt-cdn.net/images/timeframe-selector-basic-355-f0a835da1e.png)
 
-  The global timeframe selector serves as a time filter that, in most cases, enables you to select a specific analysis timeframe that persists across all product pages and views as you navigate through your analysis.
+  + Вкладка **Пресеты** перечисляет все стандартные временные интервалы, доступные для выбора. Выберите один, чтобы изменить ваш временной интервал на этот пресет.
+  + Вкладка **Пользовательский** отображает календарь. Нажмите на день начала, нажмите на день окончания, а затем нажмите **Применить**, чтобы выбрать этот диапазон дней в качестве вашего временного интервала.
 
-  ![Timeframe selector: presets](https://dt-cdn.net/images/timeframe-selector-basic-355-f0a835da1e.png)
+    - Выбранные интервалы календаря устанавливаются на начало следующего дня (с временем, установленным на `00:00`). Например, если вы выберете 3 сентября до 4 сентября на календаре, временной интервал начинается 3 сентября в `00:00` и заканчивается 5 сентября в `00:00`, чтобы вы никогда не пропустили последнюю минуту временного интервала. Вы можете редактировать эти отображаемые времена.
+  + Вкладка **Недавние** отображает недавно использованные временные интервалы. Выберите один, чтобы вернуться к этому временному интервалу.
+  + Контроли **<** и **>** смещают временной интервал вперед или назад во времени. Приращение равно длине исходного временного интервала. Например, если текущий временной интервал равен `Последние 2 часа` (двухчасовой интервал, заканчивающийся сейчас), нажмите **<**, чтобы сместить временной интервал на 2 часа назад, на `-4ч до -2ч` (двухчасовой интервал, заканчивающийся 2 часа назад).
+  + Наведите курсор на временной интервал, чтобы увидеть время начала, продолжительность и время окончания.
 
-  + The **Presets** tab lists all standard timeframes available. Select one to change your timeframe to that preset.
-  + The **Custom** tab displays a calendar. Click a start day, click an end day, and then click **Apply** to select that range of days as your timeframe.
+    ![Селектор временного интервала: наведение](https://dt-cdn.net/images/timeframe-selector-hover-168-cfb13dc777.png)
 
-    - Selected calendar intervals are set to end on start of the next day (with the time set to `00:00`). For example, if you select September 3 to September 4 on the calendar, the timeframe starts on September 3 at time `00:00` and ends on September **5** at time `00:00`, so you never miss the last minute of the time range. You can edit these displayed times.
-  + The **Recent** tab displays recently used timeframes. Select one to revert to that timeframe.
-  + The **<** and **>** controls shift the timerange forward or backward in time. The increment is the length of the original timerange. For example, if the current timerange is `Last 2 hours` (the two-hour range ending now), click **<** to shift the timerange two hours back, to `-4h to -2h` (the two-hour range ending two hours ago).
-  + Hover over the timeframe to see the start time, duration, and end time.
+  Выражения селектора временного интервала
 
-    ![Timeframe selector: hover](https://dt-cdn.net/images/timeframe-selector-hover-168-cfb13dc777.png)
+  Если вы выберете текущий временной интервал в меню-баре, будет отображено редактируемое выражение временного интервала.
 
-  Timeframe selector expressions
+  + Слева направо, выражение временного интервала имеет время начала, оператор `to` и время окончания.
+  + Если нет явного времени окончания, подразумеваются `to` и `now`. Например, `-2ч` эквивалентно `-2ч до now`.
+  + Поддерживаемые единицы: `с`, `м`, `ч`, `д`, `н`, `м`, `кв`, `г` (вы также можете использовать целые слова, такие как `минуты` и `квартал`)
 
-  If you select the current timeframe in the menu bar, an editable timeframe expression is displayed.
+  **Примеры выражений временного интервала**
 
-  + Reading from left to right, a timeframe expression has a start time, a `to` operator, and an end time.
-  + If there is no explicit end time, the `to` and `now` are implied. For example, `-2h` is the same `-2h to now`.
-  + Supported units: `s`, `m`, `h`, `d`, `w`, `M`, `q`, `y` (you can also use whole words such as `minutes` and `quarter`)
+  **Значение**
 
-  **Example timeframe expressions**
+  `сегодня`
 
-  **Meaning**
+  С начала сегодняшнего дня до начала завтрашнего дня.
 
-  `today`
+  `вчера`
 
-  From the beginning of today to the beginning of tomorrow.
+  С начала вчерашнего дня до начала сегодняшнего дня. Как `-1д/д до сегодня`.
 
-  `yesterday`
+  `вчера до now`
 
-  From the beginning of yesterday to the beginning of today. Like `-1d/d to today`.
+  С начала вчерашнего дня до текущего времени сегодня.
 
-  `yesterday to now`
+  `предыдущая неделя`
 
-  From the beginning of yesterday to the current time today.
+  Предыдущие семь целых дней. Если сегодня понедельник, вы получите предыдущий понедельник через предыдущую воскресенье (вчера).
 
-  `previous week`
+  `этот год`
 
-  The previous seven whole days. If today is Monday, you get the previous Monday through the previous Sunday (yesterday).
+  Текущий календарный год, с 1 января этого года в `00:00` до 1 января следующего года в `00:00`.
 
-  `this year`
+  `последние 6 недель`
 
-  The current calendar year, from January 1 of this year at `00:00` through January 1 of next year at `00:00`.
+  Последние 42 дня (6 недель \* 7 дней), заканчивающиеся сейчас. Эквивалентно `-6н до now`.
 
-  `last 6 weeks`
+  `-2ч`
 
-  The last 42 days (6 weeks \* 7 days) ending now. Equivalent to `-6w to now`.
+  С 2 часов (120 минут) назад до текущего времени (`now` подразумевается). Эквивалентно `Последние 2 часа` и `-2ч до now`.
 
-  `-2h`
+  `-4д до -1ч30м`
 
-  From 2 hours (120 minutes) ago to the current time (`now` is implied). Equivalent to `Last 2 hours` and `-2h to now`.
+  С 4 дней (96 часов) назад до 1,5 часов назад.
 
-  `-4d to -1h30m`
+  `-1н`
 
-  From 4 days (96 hours) ago to 1.5 hours ago.
+  Последние 7 дней (168 часов), с этого времени 7 дней назад до текущего времени (`now`). Эквивалентно `-7д` и `-168ч`.
 
-  `-1w`
+  `-1н/н`
 
-  The last 7 days (168 hours), from this time 7 days ago to the current time (`now`). Equivalent to `-7d` and `-168h`.
+  С начала предыдущей календарной недели до текущего времени (now).
 
-  `-1w/w`
+  + Если вы использовали `-1н/н` в пятницу послеобеденное время в 15:00, вы получите диапазон 11 дней 15 часов, начиная с начала предыдущей недели понедельника, потому что `/н` округляет до начала недели.
+  + Если вы использовали `-1н` без `/н` в пятницу послеобеденное время в 15:00, время начала будет точно 7 дней (168 часов) назад: предыдущая пятница в 15:00 послеобеденное время.
 
-  From the beginning of the previous calendar week to the current time (now).
+  В общем, `/` в сочетании с единицей (такой как `/д`, `/н`, `/м` и `/г`) означает округление даты или времени до начала указанной единицы времени. Например, `-3д` означает точно 72 часа назад, тогда как `-3д/д` означает три дня назад, округленные до ближайшего дня (начиная с времени `00:00`, начала дня). Используйте `now/д`, чтобы обозначить начало сегодняшнего дня.
 
-  + If you used `-1w/w` on a Friday afternoon at 3:00, you would get a range of 11 days 15 hours, starting with the beginning of the previous week's Monday, because `/w` rounds down to the beginning of the week.
-  + If you used `-1w` without `/w` on a Friday afternoon at 3:00, the start time would be exactly 7 days (168 hours) earlier: the previous Friday at 3:00 in the afternoon.
+  `-1н/н + 8ч`
 
-  In general, `/` used in combination with a unit (such as `/d`, `/w`, `/M`, and `/y`) means to round down the date or time to the beginning of the specified time unit. For example, `-3d` means exactly 72 hours ago, whereas `-3d/d` means three days ago rounded down to the nearest day (starting at time `00:00`, the beginning of the day). Use `now/d` to mean the start of today.
+  Начиная с начала предыдущей недели плюс 8 часов (8:00 понедельника).
 
-  `-1w/w + 8h`
+  + Обратите внимание, что вы можете использовать операторы `+` и `-` с единицами, метками времени и `now`.
 
-  Starting from the beginning of last week plus 8 hours (8:00 AM Monday).
+  `-1д/д+9ч00м до -1д/д+17ч00м`
 
-  + Note that you can use the `+` and `-` operators with units, timestamps, and `now`.
+  Часы работы вчера, с 09:00 до 17:00 (9:00 до 17:00).
 
-  `-1d/d+9h00m to -1d/d+17h00m`
+  `2020-08-16 21:28 до 2020-08-19 10:02`
 
-  Business hours yesterday, from 09:00 - 17:00 (9 AM to 5 PM).
+  Абсолютный диапазон, состоящий из абсолютных дат и времени начала и конца в формате `ГГГГ-ММ-ДД чч:мм`.
 
-  `2020-08-16 21:28 to 2020-08-19 10:02`
+  + Если вы указали дату, но не указали время (например, только `2020-08-16`), время считается началом дня (`00:00`)
+  + Если вы указали время, но не указали дату (например, только `21:28`), дата считается сегодняшней
 
-  An absolute range consisting of absolute start and end dates and times in `YYYY-MM-DD hh:mm` format.
+  `1598545932346 до 1598837052346`
 
-  + If you provide a date but omit the time (for example, just `2020-08-16`), the time is assumed to be the beginning of day (`00:00`)
-  + If you provide a time but omit the date (for example, just `21:28`), the date is assumed to be today
+  Метки времени Unix в миллисекундах.
 
-  `1598545932346 to 1598837052346`
+## Сохранение временного интервала и зоны управления
 
-  Unix epoch millisecond timestamps.
+Выборы временного интервала и зоны управления сохраняются — они передаются на все страницы, которые вы посещаете. Например, после изменения временного интервала и зоны управления на вашей панели, выборы сохраняются при переходе от плитки **Приложения** к отдельным страницам приложений.
 
-## Timeframe and management zone preservation
+Исключением является открытие новой панели или возврат к текущей панели, выбрав **Панель** в верхнем левом углу страницы. В этом случае временной интервал и зона управления сбрасываются до значений по умолчанию панели.
 
-Timeframe and management zone selections are stickyâthey're propagated to all pages you visit. For example, after changing the timeframe and management zone on your dashboard, the selections are preserved as you drill down from the **Applications** tile to individual application pages.
+Селектор временного интервала запоминает до 10 недавно использованных временных интервалов.
 
-The exception is opening a new dashboard or getting back to the current dashboard by selecting **Dashboard** in the upper-left corner of the page. In that case, the timeframe and management zone are reset to the dashboard's [defaults](#default).
+## Значения по умолчанию временного интервала и зоны управления
 
-The timeframe selector remembers up to 10 recently used timeframes.
+Вы можете задать значения по умолчанию временного интервала и зоны управления для каждой панели; они выбираются каждый раз, когда вы открываете панель. Они также используются, когда вы [делитесь](/managed/analyze-explore-automate/dashboards-classic/dashboards/share-dashboards "Узнайте, как делиться вашими Dynatrace панелями с другими.") панелью.
 
-## Default timeframe and management zone
+Вы также можете указать значения по умолчанию временного интервала и зоны управления для каждой плитки.
 
-You can set a default timeframe and management zone for each dashboard; these are selected every time you open the dashboard. They're also used when you [share](/managed/analyze-explore-automate/dashboards-classic/dashboards/share-dashboards "Learn how to share your Dynatrace dashboards with others.") the dashboard.
+### Временной интервал, специфичный для панели
 
-You can also specify a default timeframe and management zone for each tile.
+Чтобы задать временной интервал панели, который переопределяет глобальный временной интервал
 
-### Dashboard-specific timeframe
+1. Переключитесь на вкладку **Настройки**.
+2. Включите **Временной интервал по умолчанию**.
+3. Выберите временной интервал, который вы хотите сделать значением по умолчанию для этой панели.
 
-To set a dashboard timeframe that overrides the global timeframe
+### Зона управления, специфичная для панели
 
-1. Switch to the **Settings** tab.
-2. Turn on **Default timeframe**.
-3. Select the timeframe you want to be the default for this dashboard.
+Чтобы задать зону управления панели, которая переопределяет глобальную зону управления
 
-### Dashboard-specific management zone
+1. Переключитесь на вкладку **Настройки**.
+2. Включите **Зона управления по умолчанию**.
+3. Выберите зону управления, которую вы хотите сделать значением по умолчанию для этой панели.
 
-To set a dashboard management zone that overrides the global management zone
+### Временной интервал, специфичный для плитки
 
-1. Switch to the **Settings** tab.
-2. Turn on **Default management zone**.
-3. Select the management zone you want to be the default for this dashboard.
+Чтобы задать временной интервал плитки, который переопределяет временной интервал панели
 
-### Tile-specific timeframe
+1. Перейдите в **Панели**.
+2. Выберите имя панели, чтобы отобразить эту панель.
+3. Нажмите **Редактировать** в правом верхнем углу панели. Панель открывается в режиме редактирования.
 
-To set a tile timeframe that overrides the dashboard timeframe
+   * Если вы не видите опции **Редактировать**, у вас нет разрешения на редактирование этой панели.
+4. Выберите плитку, которую вы хотите настроить.
+5. Включите **Пользовательский временной интервал**.
+6. Выберите временной интервал, который вы хотите сделать значением по умолчанию для этой плитки.
+7. **Готово**.  
+   Когда вы задаете временной интервал плитки, в правом верхнем углу плитки отображается фильтр. Наведите курсор на фильтр, чтобы увидеть настройку.
 
-1. Go to **Dashboards**.
-2. Select the name of a dashboard to display that dashboard.
-3. Select **Edit** in the upper-right corner of the dashboard. The dashboard opens in edit mode.
+### Зона управления, специфичная для плитки
 
-   * If you don't see an **Edit** option, you don't have permission to edit that dashboard.
-4. Select the tile you want to configure.
-5. Turn on **Custom timeframe**.
-6. Select the timeframe you want to be the default for this tile.
-7. **Done**.  
-   When you set a tile-specific timeframe, a filter is displayed in the upper-right of the tile. Hover over the filter to see the setting.
+Чтобы задать зону управления плитки, которая переопределяет зону управления панели
 
-### Tile-specific management zone
+1. Перейдите в **Панели**.
+2. Выберите имя панели, чтобы отобразить эту панель.
+3. Нажмите **Редактировать** в правом верхнем углу панели. Панель открывается в режиме редактирования.
 
-To set a tile management zone that overrides the dashboard management zone
-
-1. Go to **Dashboards**.
-2. Select the name of a dashboard to display that dashboard.
-3. Select **Edit** in the upper-right corner of the dashboard. The dashboard opens in edit mode.
-
-   * If you don't see an **Edit** option, you don't have permission to edit that dashboard.
-4. Select the tile you want to configure.
-5. Turn on **Custom management zone**.
-6. Select the management zone you want to be the default for this tile.
-7. **Done**.  
-   When you set a tile-specific management zone, a filter is displayed in the upper-right of the tile. Hover over the filter to see the setting.
+   * Если вы не видите опции **Редактировать**, у вас нет разрешения на редактирование этой панели.
+4. Выберите плитку, которую вы хотите настроить.
+5. Включите **Пользовательская зона управления**.
+6. Выберите зону управления, которую вы хотите сделать значением по умолчанию для этой плитки.
+7. **Готово**.  
+   Когда вы задаете зону управления плитки, в правом верхнем углу плитки отображается фильтр. Наведите курсор на фильтр, чтобы увидеть настройку.

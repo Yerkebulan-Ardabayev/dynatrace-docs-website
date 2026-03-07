@@ -2,27 +2,27 @@
 
 #groq-chat-widget {
     position: fixed;
-    left: 10px;
-    bottom: 80px;
+    right: 20px;
+    bottom: 20px;
     z-index: 1000;
 }
 
-/* Кнопка AI - компактная сбоку */
+/* Кнопка AI - заметная, справа внизу */
 .chat-toggle {
-    width: 44px;
-    height: 44px;
+    width: 56px;
+    height: 56px;
     border-radius: 50%;
     background: linear-gradient(135deg, #00d4aa 0%, #7c3aed 100%);
     color: white;
     border: none;
     cursor: pointer;
-    box-shadow: 0 4px 12px rgba(0, 212, 170, 0.4);
+    box-shadow: 0 4px 16px rgba(0, 212, 170, 0.5);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     transition: all 0.3s ease;
-    font-size: 10px;
+    font-size: 11px;
     font-weight: bold;
 }
 
@@ -32,8 +32,8 @@
 }
 
 .chat-toggle svg {
-    width: 20px;
-    height: 20px;
+    width: 24px;
+    height: 24px;
 }
 
 .chat-toggle span {
@@ -41,13 +41,13 @@
     margin-top: 2px;
 }
 
-/* Чат контейнер - компактный */
+/* Чат контейнер */
 .chat-container {
     position: absolute;
-    bottom: 60px;
-    left: 0;
-    width: 340px;
-    height: 420px;
+    bottom: 65px;
+    right: 0;
+    width: 380px;
+    height: 480px;
     background: var(--md-default-bg-color);
     border-radius: 12px;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
@@ -185,18 +185,18 @@
 @media (max-width: 768px) {
     .chat-container {
         width: calc(100vw - 30px);
-        height: 350px;
-        left: 5px;
+        height: 400px;
+        right: 5px;
     }
-    
+
     #groq-chat-widget {
-        left: 5px;
-        bottom: 60px;
+        right: 10px;
+        bottom: 15px;
     }
-    
+
     .chat-toggle {
-        width: 40px;
-        height: 40px;
+        width: 48px;
+        height: 48px;
     }
 }
 

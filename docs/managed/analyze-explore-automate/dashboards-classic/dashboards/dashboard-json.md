@@ -1,88 +1,82 @@
 ---
-title: "Edit Dynatrace dashboard JSON"
+title: "Редактировать Dynatrace панель JSON"
 source: https://docs.dynatrace.com/managed/analyze-explore-automate/dashboards-classic/dashboards/dashboard-json
 updated: 2026-02-09
 ---
 
-# Edit Dynatrace dashboard JSON
+# Редактировать Dynatrace панель JSON
 
-# Edit Dynatrace dashboard JSON
+[Панели Classic](/managed/analyze-explore-automate/dashboards-classic "Узнайте, как создавать, управлять и использовать Dynatrace Панели Classic.")
 
-* How-to guide
-* 3-min read
-* Published Sep 24, 2020
+Вы можете редактировать определение JSON своей панели в автономном режиме или, для небольших изменений, редактировать JSON непосредственно в Dynatrace.
 
-[Dashboards Classic](/managed/analyze-explore-automate/dashboards-classic "Learn how to create, manage, and use Dynatrace Dashboards Classic.")
+API альтернатива
 
-You can edit the JSON definition of your dashboard offline or, for small changes, edit the JSON directly in Dynatrace.
+Чтобы управлять определением панели JSON в большом масштабе, вам необходим [API Панелей API](/managed/dynatrace-api/configuration-api/dashboards-api "Узнайте, как управлять конфигурацией панели через Dynatrace Classic конфигурацию API.").
 
-API alternative
+## Редактировать в автономном режиме
 
-To manage dashboard JSON at scale, you need the [Dashboards API](/managed/dynatrace-api/configuration-api/dashboards-api "Find out how to manage dashboard configuration via Dynatrace Classic configuration API.").
+Используйте эту процедуру, чтобы скачать определение панели JSON, редактировать его в автономном режиме, и затем загрузить его обратно в Dynatrace.
 
-## Edit offline
+Когда вы загружаете панель с помощью этой процедуры, вы перезаписываете панель, определение которой вы изначально скачали. Если вы хотите загрузить определение панели в новую панель, см. [Импортировать панель](#импортировать-панель) ниже.
 
-Use this procedure to download a dashboard's JSON definition, edit it offline, and upload it back to Dynatrace.
+1. Отобразите панель.
+2. Выберите **Редактировать**.
+3. Переключитесь на вкладку **Настройки** и затем выберите **Настроить больше**.
+4. Выберите **Определение панели JSON**.
+5. На странице **Определение панели JSON** выберите **Скачать**.  
+   Файл JSON с именем панели скачивается на ваш локальный компьютер.
+6. Редактируйте JSON в вашей предпочитаемой среде разработки.  
+   Для деталей синтаксиса JSON см. [Документацию API Панелей API](/managed/dynatrace-api/configuration-api/dashboards-api "Узнайте, как управлять конфигурацией панели через Dynatrace Classic конфигурацию API.").
+7. На странице **Определение панели JSON** выберите **Загрузить**, найдите отредактированный файл JSON и загрузите его в Dynatrace.  
+   Загруженное JSON отображается на странице **Определение панели JSON**.
+8. Выберите **Сохранить изменения**, чтобы заменить старое JSON на отредактированное JSON.
+9. Отобразите панель, чтобы проверить ваши изменения.
 
-When you upload a dashboard using this procedure, you overwrite the dashboard whose definition you originally downloaded. If you want to upload a dashboard definition to a new dashboard, see [Import dashboard](#import-dashboard) below.
+## Редактировать в Dynatrace
 
-1. Display the dashboard.
-2. Select **Edit**.
-3. Switch to the **Settings** tab and then select **Configure more**.
-4. Select **Dashboard JSON**.
-5. On the **Dashboard JSON** page, select **Download**.  
-   A JSON file with the dashboard's name is downloaded to your local machine.
-6. Edit the JSON in your preferred development environment.  
-   For JSON syntax details, see the [Dashboards API](/managed/dynatrace-api/configuration-api/dashboards-api "Find out how to manage dashboard configuration via Dynatrace Classic configuration API.") Documentation.
-7. On the **Dashboard JSON** page, select **Upload**, browse for the edited JSON file, and upload it to Dynatrace.  
-   The uploaded JSON is displayed on the **Dashboard JSON** page.
-8. Select **Save changes** to replace the old JSON with your edited JSON.
-9. Display the dashboard to verify your changes.
+1. Отобразите панель.
+2. Выберите **Редактировать**.
+3. Переключитесь на вкладку **Настройки** и затем выберите **Настроить больше**.
+4. Выберите **Определение панели JSON**.
+5. На странице **Определение панели JSON** определение панели JSON отображается в окне редактирования.
+6. Нажмите в отображаемом JSON и начните редактировать.
 
-## Edit in Dynatrace
+   * Вы можете работать напрямую в окне редактирования или копировать и вставлять обратно и вперед из другого редактора.
+   * Сообщение **У вас есть несохраненные изменения** в нижней левой части страницы напомнит вам, что у вас есть работа в процессе. Убедитесь, что вы сохранили изменения, прежде чем покинуть страницу.
+   * Синтаксис проверяется каждый раз, когда вы сохраняете. Вы можете работать инкрементально и использовать **Сохранить изменения**, чтобы проверить, что он все еще парсируется.
+   * Для деталей синтаксиса JSON см. [Документацию API Панелей API](/managed/dynatrace-api/configuration-api/dashboards-api "Узнайте, как управлять конфигурацией панели через Dynatrace Classic конфигурацию API.").
+7. Когда вы закончите, отобразите панель, чтобы проверить ваши изменения.
 
-1. Display the dashboard.
-2. Select **Edit**.
-3. Switch to the **Settings** tab and then select **Configure more**.
-4. Select **Dashboard JSON**.
-5. On the **Dashboard JSON** page, the dashboard JSON is displayed in an edit window.
-6. Click in the displayed JSON and start editing.
+## Импортировать панель
 
-   * You can work directly in the edit window or copy and paste back and forth from another editor.
-   * The **You have unsaved changes** message in the lower left of the page will remind you that you have work in progress. Be sure to save before you navigate away from the page.
-   * Syntax is checked each time you save. You can work incrementally and use **Save changes** to verify that it still parses.
-   * For JSON syntax details, see the [Dashboards API](/managed/dynatrace-api/configuration-api/dashboards-api "Find out how to manage dashboard configuration via Dynatrace Classic configuration API.") Documentation.
-7. When you are finished, display the dashboard to verify your changes.
+Используйте эту процедуру, чтобы импортировать определение панели в качестве новой панели.
 
-## Import dashboard
+[![Шаг 1](https://dt-cdn.net/images/step-1-086e22066c.svg "Шаг 1")
 
-Use this procedure to import a dashboard definition as a new dashboard.
+**Экспортировать панель**](/managed/analyze-explore-automate/dashboards-classic/dashboards/dashboard-json#step-1 "Узнайте, как экспортировать, редактировать и импортировать JSON для Dynatrace панели.")[![Шаг 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Шаг 2")
 
-[![Step 1](https://dt-cdn.net/images/step-1-086e22066c.svg "Step 1")
+**Редактировать файл определения панели JSON**](/managed/analyze-explore-automate/dashboards-classic/dashboards/dashboard-json#step-2 "Узнайте, как экспортировать, редактировать и импортировать JSON для Dynatrace панели.")[![Шаг 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Шаг 3")
 
-**Export the dashboard**](/managed/analyze-explore-automate/dashboards-classic/dashboards/dashboard-json#step-1 "Learn how to export, edit, and import the JSON for a Dynatrace dashboard.")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
+**Импортировать панель**](/managed/analyze-explore-automate/dashboards-classic/dashboards/dashboard-json#step-3 "Узнайте, как экспортировать, редактировать и импортировать JSON для Dynatrace панели.")
 
-**Edit the dashboard JSON file**](/managed/analyze-explore-automate/dashboards-classic/dashboards/dashboard-json#step-2 "Learn how to export, edit, and import the JSON for a Dynatrace dashboard.")[![Step 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Step 3")
+Когда вы импортируете панель с помощью этой процедуры, вы добавляете новую панель в Dynatrace. Если вы хотите перезаписать существующую панель, см. [Редактировать в автономном режиме](#редактировать-в-автономном-режиме) выше.
 
-**Import the dashboard**](/managed/analyze-explore-automate/dashboards-classic/dashboards/dashboard-json#step-3 "Learn how to export, edit, and import the JSON for a Dynatrace dashboard.")
+### Шаг 1 Экспортировать панель
 
-When you import a dashboard using this procedure, you add a new dashboard to Dynatrace. If you want to overwrite an existing dashboard, see [Edit offline](#edit-offline) above.
+Если вы хотите начать с существующего определения панели
 
-### Step 1 Export the dashboard
+1. Перейдите в **Панели**.
+2. В таблице панелей выберите **Больше** (**…**) > **Экспортировать** для панели, которую вы хотите экспортировать.  
+   Определение панели экспортируется в виде файла JSON на ваш компьютер.
 
-If you want to start from an existing dashboard definition
+### Шаг 2 Редактировать файл определения панели JSON
 
-1. Go to **Dashboards**.
-2. In the table of dashboards, select **More** (**â¦**) > **Export** for the dashboard you want to export.  
-   The dashboard definition is exported as a JSON file to your computer.
+Редактируйте определение панели JSON в вашей предпочитаемой среде разработки. Для деталей синтаксиса JSON см. [Документацию API Панелей API](/managed/dynatrace-api/configuration-api/dashboards-api "Узнайте, как управлять конфигурацией панели через Dynatrace Classic конфигурацию API.").
 
-### Step 2 Edit the dashboard JSON file
+### Шаг 3 Импортировать панель
 
-Edit the dashboard JSON in your preferred development environment. For JSON syntax details, see the [Dashboards API](/managed/dynatrace-api/configuration-api/dashboards-api "Find out how to manage dashboard configuration via Dynatrace Classic configuration API.") Documentation.
-
-### Step 3 Import the dashboard
-
-1. Go to **Dashboards**.
-2. Select **Import dashboard**.
-3. Select the JSON file for the dashboard you want to import.  
-   The imported dashboard opens in edit mode.
+1. Перейдите в **Панели**.
+2. Выберите **Импортировать панель**.
+3. Выберите файл JSON для панели, которую вы хотите импортировать.  
+   Импортированная панель открывается в режиме редактирования.

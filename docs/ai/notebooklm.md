@@ -1,151 +1,151 @@
-# 🔬 NotebookLM Deep Analysis
+# 🔬 NotebookLM — Глубокий анализ
 
-For comprehensive analysis of Dynatrace documentation, use Google's NotebookLM!
+Для комплексного анализа документации Dynatrace используйте Google NotebookLM!
 
-## What is NotebookLM?
+## Что такое NotebookLM?
 
-NotebookLM is Google's AI-powered research assistant that can:
+NotebookLM — это AI-исследовательский ассистент от Google, который может:
 
-- 📚 Read and analyze multiple documents
-- 🤔 Answer complex questions with citations
-- 📝 Generate summaries and insights
-- 🔗 Connect information across documents
+- 📚 Читать и анализировать множество документов
+- 🤔 Отвечать на сложные вопросы с цитатами из источников
+- 📝 Генерировать сводки и выводы
+- 🔗 Связывать информацию из разных документов
 
-## When to Use NotebookLM
+## Когда использовать NotebookLM
 
-Use NotebookLM instead of quick chat when you need:
+Используйте NotebookLM вместо быстрого чата, когда нужен:
 
-- **Deep analysis** across multiple documentation pages
-- **Comprehensive answers** with source citations
-- **Research** on complex topics
-- **Comparisons** between different approaches
-- **Strategic planning** based on best practices
+- **Глубокий анализ** нескольких страниц документации
+- **Подробные ответы** с ссылками на источники
+- **Исследование** сложных тем
+- **Сравнение** различных подходов
+- **Стратегическое планирование** на основе лучших практик
 
-## How to Use
+## Как использовать
 
-### Step 1: Access NotebookLM
+### Шаг 1: Откройте NotebookLM
 
-Visit: [notebooklm.google.com](https://notebooklm.google.com/)
+Перейдите по ссылке: [notebooklm.google.com](https://notebooklm.google.com/)
 
-### Step 2: Create or Open Notebook
+### Шаг 2: Создайте блокнот
 
-- Create a new notebook for Dynatrace docs
-- Or use our pre-configured notebook (link below)
+- Создайте новый блокнот для документации Dynatrace
+- Или используйте наш готовый блокнот (ссылка ниже)
 
-### Step 3: Add Documentation
+### Шаг 3: Добавьте документацию
 
-You can add documentation in several ways:
+Вы можете добавить документацию несколькими способами:
 
-=== "From This Website"
+=== "С этого сайта"
 
-    1. Navigate to any documentation page
-    2. Copy the URL
-    3. In NotebookLM, click "Add Source" → "Website URL"
-    4. Paste the URL
+    1. Перейдите на любую страницу документации
+    2. Скопируйте URL
+    3. В NotebookLM нажмите «Add Source» → «Website URL»
+    4. Вставьте URL
 
-=== "Bulk Upload"
+=== "Массовая загрузка"
 
-    Download our pre-selected top 50 pages:
-    
-    [Download Documentation Pack](#){ .md-button }
+    Скачайте нашу подборку из 50 лучших страниц:
 
-    Then upload to NotebookLM
+    [Скачать пакет документации](#){ .md-button }
 
-=== "Our Prepared Notebook"
+    Затем загрузите в NotebookLM
 
-    Use our pre-loaded NotebookLM notebook:
-    
-    [Open Dynatrace NotebookLM](#){ .md-button .md-button--primary }
+=== "Готовый блокнот"
 
-## Example Use Cases
+    Используйте наш предзагруженный блокнот NotebookLM:
 
-### 1. Managed Deployment Planning
+    [Открыть Dynatrace NotebookLM](#){ .md-button .md-button--primary }
 
-**Question:**
-> "What are all the considerations for deploying Dynatrace Managed in a corporate environment? Include infrastructure requirements, security, and best practices."
+## Примеры использования
 
-**NotebookLM will:**
-- Read multiple Managed documentation pages
-- Synthesize information from different sources
-- Provide comprehensive answer with citations
-- Highlight important considerations
+### 1. Планирование развёртывания Managed
 
-### 2. Technology Comparison
+**Вопрос:**
+> «Какие есть требования для развёртывания Dynatrace Managed в корпоративной среде? Включите требования к инфраструктуре, безопасности и лучшие практики.»
 
-**Question:**
-> "Compare the benefits and limitations of using OneAgent vs OpenTelemetry for monitoring microservices"
+**NotebookLM сделает:**
+- Прочитает несколько страниц документации Managed
+- Синтезирует информацию из разных источников
+- Даст полный ответ с цитатами
+- Выделит важные моменты
 
-**NotebookLM will:**
-- Analyze docs for both approaches
-- Create comparison table
-- Cite specific features from documentation
-- Provide recommendations
+### 2. Сравнение технологий
 
-### 3. Troubleshooting Complex Issues
+**Вопрос:**
+> «Сравни преимущества и ограничения OneAgent и OpenTelemetry для мониторинга микросервисов»
 
-**Question (Russian):**
-> "Почему метрики могут не отображаться в Dynatrace Managed после установки? Проанализируй все возможные причины из документации."
+**NotebookLM сделает:**
+- Проанализирует документацию по обоим подходам
+- Создаст сравнительную таблицу
+- Укажет конкретные возможности из документации
+- Даст рекомендации
 
-**NotebookLM will:**
-- Search across installation, configuration, and troubleshooting docs
-- List all potential causes
-- Provide solutions for each
-- Link to relevant documentation sections
+### 3. Устранение сложных проблем
 
-## Tips for Best Results
+**Вопрос:**
+> «Почему метрики могут не отображаться в Dynatrace Managed после установки? Проанализируй все возможные причины из документации.»
 
-!!! tip "Maximize NotebookLM Effectiveness"
-    **Upload Relevant Pages First**
-    
-    - Upload 10-20 most relevant pages to your topic
-    - NotebookLM works best with focused sources
-    
-    **Ask Comprehensive Questions**
-    
-    - Don't hesitate to ask complex questions
-    - Request comparisons, summaries, or deep dives
-    
-    **Request Citations**
-    
-    - Ask "Which documentation pages support this?"
-    - NotebookLM will link to exact sources
-    
-    **Use Follow-up Questions**
-    
-    - Build on previous answers
-    - Dive deeper into specific aspects
+**NotebookLM сделает:**
+- Просмотрит документацию по установке, настройке и устранению неполадок
+- Перечислит все возможные причины
+- Предложит решения для каждой
+- Даст ссылки на соответствующие разделы
 
-## Limitations
+## Советы для лучших результатов
 
-!!! warning "Be Aware"
-    - **50 sources limit** on free tier
-    - **No auto-update** - you need to manually add new docs
-    - **Manual upload** required for new documentation
+!!! tip "Максимальная эффективность NotebookLM"
+    **Загрузите релевантные страницы**
 
-## Quick Chat vs NotebookLM
+    - Загрузите 10-20 наиболее релевантных страниц по теме
+    - NotebookLM лучше работает с фокусированными источниками
 
-| Feature | Quick Chat (Gemini) | NotebookLM |
+    **Задавайте комплексные вопросы**
+
+    - Не стесняйтесь задавать сложные вопросы
+    - Запрашивайте сравнения, сводки или глубокие разборы
+
+    **Запрашивайте цитаты**
+
+    - Спросите: «Какие страницы документации это подтверждают?»
+    - NotebookLM укажет точные источники
+
+    **Задавайте уточняющие вопросы**
+
+    - Развивайте предыдущие ответы
+    - Углубляйтесь в конкретные аспекты
+
+## Ограничения
+
+!!! warning "Имейте в виду"
+    - **Лимит 50 источников** на бесплатном тарифе
+    - **Нет автообновления** — нужно вручную добавлять новые документы
+    - **Ручная загрузка** необходима для новой документации
+
+## Быстрый чат vs NotebookLM
+
+| Функция | Быстрый чат (Groq) | NotebookLM |
 |---------|-------------------|------------|
-| Speed | ⚡ **Instant** | 🐢 ~10 seconds |
-| Depth | 💬 Quick answers | 📚 **Comprehensive** |
-| Sources | Current page only | Multiple documents |
-| Citations | No | **Yes, with links** |
-| Best For | Quick questions | Research & analysis |
+| Скорость | ⚡ **Мгновенно** | 🐢 ~10 секунд |
+| Глубина | 💬 Быстрые ответы | 📚 **Комплексные** |
+| Источники | Только текущая страница | Множество документов |
+| Цитаты | Нет | **Да, со ссылками** |
+| Лучше для | Быстрых вопросов | Исследований и анализа |
 
-## Pre-Configured Notebooks
+## Готовые блокноты
 
-We've created NotebookLM notebooks for different topics:
+Мы создали блокноты NotebookLM для разных тем:
 
-- [📘 Dynatrace Managed (Complete)](# "All Managed documentation")
-- [📗 OneAgent & Monitoring](# "Installation and monitoring basics")
-- [📙 Advanced Features (DQL, Grail)](# "Platform and advanced features")
-- [📕 Kubernetes & Cloud](# "Cloud-native monitoring")
+- [📘 Dynatrace Managed (Полный)](# "Вся документация Managed")
+- [📗 OneAgent и мониторинг](# "Установка и основы мониторинга")
+- [📙 Продвинутые возможности (DQL, Grail)](# "Платформа и продвинутые функции")
+- [📕 Kubernetes и облако](# "Облачный мониторинг")
 
 ---
 
-## Ready to Start?
+## Готовы начать?
 
-[Open NotebookLM](https://notebooklm.google.com/){ .md-button .md-button--primary }
-[Watch Tutorial Video](#){ .md-button }
+[Открыть NotebookLM](https://notebooklm.google.com/){ .md-button .md-button--primary }
+[Смотреть видеоурок](#){ .md-button }
 
-For quick questions, use the [AI Quick Chat](gemini.md) instead!
+Для быстрых вопросов используйте [AI чат](groq.md)!

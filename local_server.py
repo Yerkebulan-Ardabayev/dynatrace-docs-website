@@ -21,7 +21,7 @@ import requests as http_requests
 from pathlib import Path
 from datetime import datetime
 from functools import wraps
-from flask import Flask, request, jsonify, send_from_directory, abort
+from flask import Flask, request, jsonify, send_from_directory, send_file, abort
 from dotenv import load_dotenv
 
 # Загрузка .env (API ключи)
@@ -33,6 +33,38 @@ if sys.platform == 'win32':
         sys.stdout.reconfigure(encoding='utf-8')
 
 app = Flask(__name__, static_folder='site', static_url_path='')
+
+# Gzip compression for large static files (search index etc.)
+try:
+    from flask_compress import Compress
+    Compress(app)
+except ImportError:
+    # Manual gzip for search_index.json via after_request
+    import gzip as _gzip
+    from io import BytesIO
+
+    @app.after_request
+    def compress_response(response):
+        try:
+            if (response.status_code == 200
+                    and not response.direct_passthrough
+                    and 'gzip' in request.headers.get('Accept-Encoding', '')
+                    and response.content_type
+                    and ('json' in response.content_type or 'javascript' in response.content_type)
+                    and response.content_length
+                    and response.content_length > 1024):
+                data = response.get_data()
+                buf = BytesIO()
+                with _gzip.GzipFile(fileobj=buf, mode='wb', compresslevel=6) as gz:
+                    gz.write(data)
+                compressed = buf.getvalue()
+                if len(compressed) < len(data):
+                    response.set_data(compressed)
+                    response.headers['Content-Encoding'] = 'gzip'
+                    response.headers['Content-Length'] = len(compressed)
+        except Exception:
+            pass
+        return response
 
 # ============================================================================
 # RATE LIMITING (in-memory, без внешних зависимостей)
@@ -284,6 +316,16 @@ def status():
 def serve_static(path):
     """Отдача статических файлов"""
     return send_from_directory(SITE_DIR, path)
+
+@app.errorhandler(404)
+def handle_404(e):
+    """Обработка 404: поддержка directory URLs (MkDocs)"""
+    path = request.path.strip('/')
+    if path:
+        index_file = SITE_DIR / path / 'index.html'
+        if index_file.exists():
+            return send_file(str(index_file.resolve()))
+    return send_from_directory(SITE_DIR, '404.html'), 404
 
 # ============================================================================
 # ЗАПУСК СЕРВЕРА
