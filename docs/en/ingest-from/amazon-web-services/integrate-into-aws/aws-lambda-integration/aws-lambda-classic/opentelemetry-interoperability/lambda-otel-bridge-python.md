@@ -1,16 +1,17 @@
 ---
 title: OpenTelemetry interoperability in Python
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/opentelemetry-interoperability/lambda-otel-bridge-python
-scraped: 2026-02-18T21:31:00.101332
+scraped: 2026-03-05T21:34:24.324026
 ---
 
 # OpenTelemetry interoperability in Python
 
 # OpenTelemetry interoperability in Python
 
+* Classic
 * How-to guide
 * 10-min read
-* Updated on Jan 16, 2026
+* Updated on Feb 19, 2026
 
 OpenTelemetry interoperability connects the [Dynatrace AWS Lambda extension](/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/aws-lambda-extension "Monitor Lambda functions written in Python, Node.js, and Java.") to the OpenTelemetry Python instrumentation to use the instrumentation packages and extensions. You can then monitor technologies like databases or messaging frameworks that aren't supported by Dynatrace AWS Lambda extension out of the box.
 
@@ -21,14 +22,15 @@ OpenTelemetry interoperability connects the [Dynatrace AWS Lambda extension](/do
 
   | OneAgent version | Maximum OpenTelemetry API version |
   | --- | --- |
+  | 1.331+ | 1.39.x |
   | 1.329+ | 1.38.x |
   | 1.323+ | 1.36.x |
-  | 1.321+ | 1.35.x |
 
 ### Older versions
 
 | OneAgent version | Maximum OpenTelemetry API version |
 | --- | --- |
+| 1.321+ | 1.35.x |
 | 1.319+ | 1.34.x |
 | 1.315+ | 1.32.x |
 | 1.313+ | 1.31.x |
@@ -830,28 +832,6 @@ You can trace SQS messages forwarded from
 * **An SNS topic**
 
   For SNS messages that are forwarded to SQS, the message format depends on the [raw message deliveryï»¿](https://docs.aws.amazon.com/sns/latest/dg/sns-large-payload-raw-message-delivery.html) configuration on the SNS subscription.
-
-  Raw message delivery
-
-  Message format
-
-  Example
-
-  Enabled
-
-  The SNS message attributes are converted to SQS message attributes and the parent can be directly extracted from the `MessageAttributes` of the SQS message.
-
-  + [Call the SQS receive APIs manually](#manual-receive)
-  + [Receive messages with AWS Lambda SQS trigger](#py-sqs-trigger).
-
-  Disabled
-
-  The SNS message and its `MessageAttributes` are delivered as a serialized JSON string in the body of the received SQS message. To correctly link the receive span, the parent needs to be extracted from the `MessageAttributes` of the serialized SNS message.
-
-  + [Call the SQS receive APIs manually](#manual-receive)
-  + [Receive messages with AWS Lambda SQS trigger](#py-sqs-trigger).
-
-  Additional configuration is required for both examples; when calling the `_extract_parent` method, set the value of the `from_sns_payload` parameter to `True`.
 
 AWS Lambda functions that are triggered by SNS are supported out of the box when monitored with the Dynatrace AWS Lambda extension.
 

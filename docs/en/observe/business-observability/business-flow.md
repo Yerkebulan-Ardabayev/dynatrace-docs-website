@@ -1,7 +1,7 @@
 ---
 title: Business Flow
 source: https://www.dynatrace.com/docs/observe/business-observability/business-flow
-scraped: 2026-02-18T21:24:17.757935
+scraped: 2026-03-06T21:14:34.599595
 ---
 
 # Business Flow
@@ -47,10 +47,6 @@ Recommended
 
 The following table describes the required permissions.
 
-Permission
-
-Description
-
 app-engine:functions:run
 
 Run Business Flow calculations
@@ -91,17 +87,7 @@ settings:objects:write
 
 Write settings objects
 
-10
-
-rows per page
-
-Page
-
-1
-
-of 1
-
-## Installation
+### Installation
 
 Make sure the app is [installed in your environment](/docs/manage/hub#install "See the information about Dynatrace Hub.").
 

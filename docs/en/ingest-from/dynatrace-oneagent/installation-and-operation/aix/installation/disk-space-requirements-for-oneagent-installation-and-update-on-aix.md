@@ -1,7 +1,7 @@
 ---
 title: OneAgent files and disk space requirements on AIX
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/aix/installation/disk-space-requirements-for-oneagent-installation-and-update-on-aix
-scraped: 2026-02-18T21:28:17.275376
+scraped: 2026-03-06T21:18:45.069779
 ---
 
 # OneAgent files and disk space requirements on AIX
@@ -23,7 +23,7 @@ This page provides information about the OneAgent directory structure and disk s
 | Logs | 1 GB | `/var/log/dynatrace/oneagent` [2](#fn-1-2-def) | Yes [3](#fn-1-3-def) |
 | Crash reports, memory dumps | 3 GB | `/var/lib/dynatrace/oneagent/datastorage` | Yes [4](#fn-1-4-def) |
 | Log analytics persistence | ~1 GB [5](#fn-1-5-def) | `/var/lib/dynatrace/oneagent/datastorage/loganalytics` | Yes [4](#fn-1-4-def) |
-| EEC logs retransmission persistence file | 600 MB + 1.5 GB buffer | `/var/lib/dynatrace/oneagent/agent/runtime/extensions/persistence` | Yes [5](#fn-1-5-def) [6](#fn-1-6-def) |
+| EEC logs retransmission persistence file | 600 MB + 1.5 GB buffer | `/var/lib/dynatrace/oneagent/agent/runtime/extensions/persistence` | Yes [6](#fn-1-6-def) [7](#fn-1-7-def) |
 | Additional space required for updates | ~1.4 GB | See [Space required for updates](#updates) |  |
 | **Total** | **~9.4 GB** |  |  |
 
@@ -107,18 +107,3 @@ The reliability mechanism ensures the persistence of Extension Execution Control
 Windows configuration file: `C:\ProgramData\dynatrace\remotepluginmodule\agent\conf\extensionsuser.conf`
 
 Linux configuration file: `/var/lib/dynatrace/remotepluginmodule/agent/conf/extensionsuser.conf`
-
-**Variable**
-
-**Description**
-
-`persistence.reliable_mode`
-
-`true` - reliable mode turned on; SFM logs genereted if space requirement not met
-`false` - reliable mode turned off; log ingest will be transmitted without the reliability mechanism
-
-`persistence.total_limit_kb`
-
-Maximum volume limit for Extensions Log Persistence in kilobytes.
-By default: 600 MB
-Can be modified manually if the requirement can't be met on the host.

@@ -1,7 +1,7 @@
 ---
 title: Mainframe technology support
 source: https://www.dynatrace.com/docs/ingest-from/technology-support/mainframe-technology-support
-scraped: 2026-02-18T21:26:03.145232
+scraped: 2026-03-06T21:19:51.815419
 ---
 
 # Mainframe technology support
@@ -10,7 +10,7 @@ scraped: 2026-02-18T21:26:03.145232
 
 * Latest Dynatrace
 * 3-min read
-* Published Mar 19, 2023
+* Updated on Mar 01, 2026
 
 Dynatrace supports monitoring of the technologies and versions listed below on IBM z/OS.
 
@@ -54,7 +54,7 @@ To get started with monitoring, see [Install the CICS module](/docs/ingest-from/
 
 | IBM CICS | Versions |
 | --- | --- |
-| CICS Transaction Server | 5.1, 5.2, 5.3, 5.4, 5.5, 5.6, 6.1, 6.2 |
+| CICS Transaction Server | 5.1, 5.2, 5.3, 5.4, 5.5, 5.6, 6.1, 6.2, 6.3 |
 | CICS MQ Bridge |  |
 | CICS MQ Trigger Monitor |  |
 | CICS HTTP/S |  |
@@ -138,7 +138,7 @@ In some cases, a manual Java runtime upgrade may be required to remain supported
 | IBM z/OS Connect [1](#fn-6-1-def)[2](#fn-6-2-def) | 3.0.30+ |
 | IBM CICS Transaction Gateway [3](#fn-6-3-def)[4](#fn-6-4-def) | 9.0, 9.1, 9.2, 9.3 |
 | IBM IMS SOAP Gateway [5](#fn-6-5-def) | 3.2 |
-| Apache HttpClient | 3.1, 4 |
+| Apache HttpClient | 3.1, 4, 5 |
 
 1
 

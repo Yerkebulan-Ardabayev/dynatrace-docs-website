@@ -1,13 +1,14 @@
 ---
 title: Send Dynatrace notifications to Opsgenie
 source: https://www.dynatrace.com/docs/analyze-explore-automate/notifications-and-alerting/problem-notifications/opsgenie-integration
-scraped: 2026-02-18T21:16:29.366589
+scraped: 2026-03-06T21:11:46.755460
 ---
 
 # Send Dynatrace notifications to Opsgenie
 
 # Send Dynatrace notifications to Opsgenie
 
+* Classic
 * 2-min read
 * Updated on Oct 10, 2022
 

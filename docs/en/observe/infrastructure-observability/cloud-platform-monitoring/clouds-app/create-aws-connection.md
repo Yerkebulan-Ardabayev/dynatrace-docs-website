@@ -1,7 +1,7 @@
 ---
 title: Create a new AWS connection
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/cloud-platform-monitoring/clouds-app/create-aws-connection
-scraped: 2026-02-18T21:21:32.555249
+scraped: 2026-03-06T21:24:56.840993
 ---
 
 # Create a new AWS connection
@@ -16,7 +16,7 @@ scraped: 2026-02-18T21:21:32.555249
 
 If this is the first time you are creating a connection, first see the [onboarding instructions](/docs/ingest-from/amazon-web-services/create-an-aws-connection "See the differences between creating your AWS connections via API or ::app-settings::.") and its prerequisites.
 
-If you have an existing classic connection and want to start the new cloud platform monitoring, delete the classic connection first and only then create a new cloud connection for the respective AWS Account or Azure subscription.
+If you have an existing classic connection and want to start the new cloud platform monitoring, delete the classic connection first and only then create a new cloud connection for the respective AWS Account.
 
 To set up a new AWS connection
 

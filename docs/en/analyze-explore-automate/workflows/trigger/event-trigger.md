@@ -1,7 +1,7 @@
 ---
 title: Event triggers for workflows
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/trigger/event-trigger
-scraped: 2026-02-18T21:32:57.567952
+scraped: 2026-03-05T21:32:26.413235
 ---
 
 # Event triggers for workflows
@@ -63,7 +63,7 @@ The following configuration parameters are available to define the triggering be
 
 Davis events are created by [Dynatrace Intelligence](/docs/dynatrace-intelligence/root-cause-analysis "How Dynatrace analyzes problems to determine their root cause.") based on monitoring data. The **Davis event trigger** allows selectively triggering a workflow in response.
 
-The following configuration parameters are available to define the triggering behavior on Davis Problem events
+The following configuration parameters are available to define the triggering behavior on Davis problem events
 
 * **Problem state**
 

@@ -1,7 +1,7 @@
 ---
 title: Instrument your Java application with OpenTelemetry
 source: https://www.dynatrace.com/docs/ingest-from/opentelemetry/walkthroughs/java
-scraped: 2026-02-18T05:47:20.309155
+scraped: 2026-03-05T21:40:35.333679
 ---
 
 # Instrument your Java application with OpenTelemetry
@@ -29,4 +29,4 @@ The following features are currently supported by OpenTelemetry Java.
 
 ## Related topics
 
-* [Enrich ingested data with Dynatrace-specific dimensions](/docs/ingest-from/extend-dynatrace/extend-data "Learn how to automatically enrich your telemetry data with Dynatrace-specific dimensions.")
+* [Enrich ingested data with Dynatrace-specific fields](/docs/ingest-from/extend-dynatrace/extend-data "Learn how to automatically enrich your telemetry data with Dynatrace-specific fields.")

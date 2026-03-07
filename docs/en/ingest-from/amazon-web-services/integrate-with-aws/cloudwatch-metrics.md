@@ -1,16 +1,17 @@
 ---
 title: Monitor Amazon Web Services with CloudWatch metrics
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics
-scraped: 2026-02-18T05:55:34.816706
+scraped: 2026-03-06T21:32:27.989679
 ---
 
 # Monitor Amazon Web Services with CloudWatch metrics
 
 # Monitor Amazon Web Services with CloudWatch metrics
 
+* Classic
 * How-to guide
 * 23-min read
-* Updated on Feb 05, 2026
+* Updated on Mar 04, 2026
 
 Follow this guide to start ingesting data remotely from Amazon CloudWatch.
 
@@ -56,7 +57,7 @@ From Dynatrace version 1.267+, only role-based access can be used. Key-based aut
 
 [Key-based authentication](#key-based-authentication) is allowed only for AWS GovCloud and China partitions.
 
-An ActiveGate capable of monitoring your AWS account for classic (built-in) supported services is already provided and available within the Dynatrace AWS account.
+An ActiveGate capable of monitoring your AWS account for classic (built-in) supported services is already provided and available within the Dynatrace AWS account (only for SaaS environments hosted on AWS).
 
 However, to monitor specific non-default AWS cloud services or if your AWS account exceeds 2,000 AWS resources, you must install and configure an Environment ActiveGate. Follow the [ActiveGate installation guide](/docs/ingest-from/dynatrace-activegate/installation "Learn how to configure ActiveGate") and resume this guide when done.
 
@@ -71,17 +72,23 @@ The integration accesses the following AWS API endpoints, so they must be access
 
 * AWS Security Token Service (AWS STS)
 
+Environment ActiveGate version 1.329+
+
 ```
 https://sts.<REGION>.amazonaws.com/
 ```
+
+Environment ActiveGate version 1.328 and earlier
 
 ```
 https://sts.amazonaws.com/
 ```
 
-AWS STS global endpoint is not supported. Make sure that `sts.<REGION>.amazonaws.com` is accessible for the regions you want to monitor.
+Starting with Dynatrace version 1.329, the AWS STS global endpoint is not supported. Make sure that `sts.<REGION>.amazonaws.com` is accessible for the regions you want to monitor.
 
-See [AWS STS Regionalized endpointsï»¿](https://docs.aws.amazon.com/sdkref/latest/guide/feature-sts-regionalized-endpoints.html) for more details.
+The `us-west-2` region is now the default region for ActiveGate. In case of connectivity issues, ensure that the `sts.us-west-2.amazonaws.com` endpoint is enabled.
+
+See [AWS STS Regionalized endpointsï»¿](https://docs.aws.amazon.com/sdkref/latest/guide/feature-sts-regionalized-endpoints.html) for details.
 
 * AWS Resource Groups Tagging
 

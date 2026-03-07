@@ -1,7 +1,7 @@
 ---
 title: Supported connectivity schemes for ActiveGates
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-activegate/supported-connectivity-schemes-for-activegates
-scraped: 2026-02-18T21:21:15.001246
+scraped: 2026-03-06T21:25:14.270507
 ---
 
 # Supported connectivity schemes for ActiveGates
@@ -52,48 +52,21 @@ The diagram below shows all possible proxy and load balancer (reverse proxy) pla
 
 You can configure the ActiveGate headers in your firewall.
 
-Header
+1
 
-Value
+Example values:   
+ **Environment and Multi-environment ActiveGate**: `ruxit/1.229.163.20211109-103203 0x37badd8e c04442b4-7ea6-4ec4-a5c4-7f94c7cf25fa`.   
+ **Cluster ActiveGate**: `ruxit/1.229.163.20211109-103203 0x37badd8e`.
 
-`User-Agent`
+2
 
-* Environment ActiveGate:
+Example value:   
+ `DynatraceSynthetic/1.258.0.20221207-142354`.
 
-  `ruxit/<dynatrace-version> <activegate-instance-id> <environment-id>`
+3
 
-  Example values
-
-  Environment and Multi-environment ActiveGate:  
-  `ruxit/1.229.163.20211109-103203 0x37badd8e c04442b4-7ea6-4ec4-a5c4-7f94c7cf25fa`
-
-  Cluster ActiveGate:  
-  `ruxit/1.229.163.20211109-103203 0x37badd8e`
-* HTTP monitors:
-
-  `DynatraceSynthetic/<dynatrace-version>`
-
-  Example value
-
-  `DynatraceSynthetic/1.258.0.20221207-142354`
-* Browser monitors:
-
-  `RuxitSynthetic/<dynatrace-version>`
-
-  Example value
-
-  `Mozilla/5.0 (Windows NT 6.3;WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36 RuxitSynthetic/1.258.0.20221207-142354`
-
-`dynatrace-gateway-type`
-
-* Environment ActiveGate: `PRIVATE`
-* Managed or SaaS ActiveGate: `PUBLIC`
-
-* Multi-environment ActiveGate: `MULTI_TENANT`
-
-`Authorization`
-
-`Basic <TOKEN>`
+Example value:   
+ `Mozilla/5.0 (Windows NT 6.3;WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36 RuxitSynthetic/1.258.0.20221207-142354`.
 
 ## Related topics
 

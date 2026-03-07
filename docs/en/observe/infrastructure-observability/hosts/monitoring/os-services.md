@@ -1,13 +1,14 @@
 ---
 title: OS services monitoring
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/hosts/monitoring/os-services
-scraped: 2026-02-18T21:27:45.542851
+scraped: 2026-03-06T21:19:55.370527
 ---
 
 # OS services monitoring
 
 # OS services monitoring
 
+* Classic
 * How-to guide
 * 14-min read
 * Updated on Jan 14, 2026
@@ -301,18 +302,6 @@ Available logic operations:
 * `$or($eq(enabled),$eq(disabled))` - Matches services that are either enabled or disabled.
 
 Use one of the following values as a parameter for this condition:
-
-`enabled`, `enabled-runtime`
-
-The service is marked as ready for startup.
-
-`static`
-
-The unit file is not enabled and has no provisions for enabling in the install unit file section. Static units are installed as dependencies and can only be masked, but are not always executed. They will be executed only if another unit depends on them or if they're manually started.
-
-`disabled`
-
-The unit file is not enabled, but it contains an install section with installation instructions.
 
 4. Add custom properties
 

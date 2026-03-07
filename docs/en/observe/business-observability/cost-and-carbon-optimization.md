@@ -1,7 +1,7 @@
 ---
 title: Cost & Carbon Optimization
 source: https://www.dynatrace.com/docs/observe/business-observability/cost-and-carbon-optimization
-scraped: 2026-02-18T21:24:30.884069
+scraped: 2026-03-06T21:14:41.254324
 ---
 
 # Cost & Carbon Optimization
@@ -26,10 +26,6 @@ Prerequisites
 ### Permissions
 
 The following table describes the required permissions.
-
-Permission
-
-Description
 
 app-engine:apps:run
 
@@ -71,16 +67,6 @@ storage:bizevents:read
 
 Read Cost & Carbon Optimization events from GRAIL
 
-10
-
-rows per page
-
-Page
-
-1
-
-of 1
-
 ### Grant permissions to Workflows
 
 Check if [Workflows](/docs/analyze-explore-automate/workflows "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services.") has the required permissions to run automations: open ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Workflows**, select **Settings** > **Authorization settings** in the upper-right corner, and ensure that the following settings are enabled.
@@ -104,7 +90,7 @@ Check if [Workflows](/docs/analyze-explore-automate/workflows "Automate IT proce
 
 For more information, see [Manage user permissions with IAM policies](/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies "Working with policies") and [Workflow authorization settings](/docs/analyze-explore-automate/workflows/running "Run and monitor workflows created in Dynatrace Workflows.").
 
-## Installation
+### Installation
 
 Make sure the app is [installed in your environment](/docs/manage/hub#install "See the information about Dynatrace Hub.").
 

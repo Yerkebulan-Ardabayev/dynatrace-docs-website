@@ -1,7 +1,7 @@
 ---
 title: Enrich OTLP requests with Kubernetes data
 source: https://www.dynatrace.com/docs/ingest-from/opentelemetry/collector/use-cases/kubernetes/k8s-enrich
-scraped: 2026-02-18T21:32:25.703504
+scraped: 2026-03-04T21:31:34.112149
 ---
 
 # Enrich OTLP requests with Kubernetes data
@@ -724,4 +724,4 @@ For more information see:
 
 ## Related topics
 
-* [Enrich ingested data with Dynatrace-specific dimensions](/docs/ingest-from/extend-dynatrace/extend-data "Learn how to automatically enrich your telemetry data with Dynatrace-specific dimensions.")
+* [Enrich ingested data with Dynatrace-specific fields](/docs/ingest-from/extend-dynatrace/extend-data "Learn how to automatically enrich your telemetry data with Dynatrace-specific fields.")

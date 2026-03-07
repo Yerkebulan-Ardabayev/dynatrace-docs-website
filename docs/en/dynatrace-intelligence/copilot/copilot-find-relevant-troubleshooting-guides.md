@@ -1,20 +1,20 @@
 ---
-title: Discover relevant troubleshooting guides with Dynatrace Intelligence generative AI
+title: Discover relevant troubleshooting guides with Dynatrace Intelligence agentic and generative AI
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/copilot/copilot-find-relevant-troubleshooting-guides
-scraped: 2026-02-18T21:16:33.177607
+scraped: 2026-03-06T21:09:55.153167
 ---
 
-# Discover relevant troubleshooting guides with Dynatrace Intelligence generative AI
+# Discover relevant troubleshooting guides with Dynatrace Intelligence agentic and generative AI
 
-# Discover relevant troubleshooting guides with Dynatrace Intelligence generative AI
+# Discover relevant troubleshooting guides with Dynatrace Intelligence agentic and generative AI
 
 * Latest Dynatrace
 * Tutorial
 * Updated on Jan 28, 2026
 
-Dynatrace Intelligence generative AI helps you resolve problems faster by automatically surfacing relevant troubleshooting guides, such as notebooks or dashboards created by your team.
+Dynatrace Intelligence agentic and generative AI helps you resolve problems faster by automatically surfacing relevant troubleshooting guides, such as notebooks or dashboards created by your team.
 
-To reduce the mean time to repair (MTTR), you can leverage Dynatrace Intelligence generative AI document suggestions in ![Problems app - new](https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp "Problems app - new") **Problems** to check if your team has created any troubleshooting guides for problems similar to the one you've encountered.
+To reduce the mean time to repair (MTTR), you can leverage Dynatrace Intelligence agentic and generative AI document suggestions in ![Problems app - new](https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp "Problems app - new") **Problems** to check if your team has created any troubleshooting guides for problems similar to the one you've encountered.
 
 ## Who this is for
 
@@ -22,38 +22,38 @@ This article is for any users who want to quickly and effectively troubleshoot a
 
 ## What you will learn
 
-In this article, you'll learn how Dynatrace Intelligence generative AI can suggest relevant troubleshooting guides to assist with problem remediation.
+In this article, you'll learn how Dynatrace Intelligence agentic and generative AI can suggest relevant troubleshooting guides to assist with problem remediation.
 
 ## Before you begin
 
-Dynatrace Intelligence generative AI periodically indexes notebooks and dashboards that have been labeled as troubleshooting guides and shared within the environment.
+Dynatrace Intelligence agentic and generative AI periodically indexes notebooks and dashboards that have been labeled as troubleshooting guides and shared within the environment.
 
 * By default, semantic vector indexing of the guides occurs every 6 hours.
-* In order for Dynatrace Intelligence generative AI to index and suggest your document, you have to share it with all users in your environment. Dynatrace Intelligence generative AI won't index or suggest any private documents or documents shared only with specific users. To learn more about sharing documents, see [Share documents](/docs/discover-dynatrace/get-started/dynatrace-ui/share "Share Dynatrace documents (dashboards, notebooks, and launchpads) with other Dynatrace users in your company.").
+* In order for Dynatrace Intelligence agentic and generative AI to index and suggest your document, you have to share it with all users in your environment. Dynatrace Intelligence agentic and generative AI won't index or suggest any private documents or documents shared only with specific users. To learn more about sharing documents, see [Share documents](/docs/discover-dynatrace/get-started/dynatrace-ui/share "Share Dynatrace documents (dashboards, notebooks, and launchpads) with other Dynatrace users in your company.").
 
 ### Prior knowledge
 
-* [Dynatrace Intelligence generative AI overview](/docs/dynatrace-intelligence/copilot/copilot-overview "Learn about data security and other aspects of Dynatrace Intelligence generative AI.")
-* [Getting started with Dynatrace Intelligence generative AI](/docs/dynatrace-intelligence/copilot/copilot-getting-started "Learn how to set up Dynatrace Intelligence generative AI.")
+* [Dynatrace Intelligence agentic and generative AI overview](/docs/dynatrace-intelligence/copilot/copilot-overview "Learn about data security and other aspects of Dynatrace Intelligence agentic and generative AI.")
+* [Getting started with Dynatrace Intelligence agentic and generative AI](/docs/dynatrace-intelligence/copilot/copilot-getting-started "Learn how to set up Dynatrace Intelligence agentic and generative AI.")
 * [Problems app](/docs/dynatrace-intelligence/davis-problems-app "Use the Problems app to quickly get to the root cause of incidents in your environment.")
 
 ### Prerequisites
 
 * Dynatrace SaaS environment.
-* You have completed the Dynatrace Intelligence generative AI setup described in [Getting started with Dynatrace Intelligence generative AI](/docs/dynatrace-intelligence/copilot/copilot-getting-started "Learn how to set up Dynatrace Intelligence generative AI.").
-* You have document suggestions enabled in your environment. Document indexing enablement is a part of the [Enable Dynatrace Intelligence generative AI on your environment](/docs/dynatrace-intelligence/copilot/copilot-getting-started#enable-davis-copilot "Learn how to set up Dynatrace Intelligence generative AI.") guide.
+* You have completed the Dynatrace Intelligence agentic and generative AI setup described in [Getting started with Dynatrace Intelligence agentic and generative AI](/docs/dynatrace-intelligence/copilot/copilot-getting-started "Learn how to set up Dynatrace Intelligence agentic and generative AI.").
+* You have document suggestions enabled in your environment. Document indexing enablement is a part of the [Enable Dynatrace Intelligence agentic and generative AI on your environment](/docs/dynatrace-intelligence/copilot/copilot-getting-started#enable-davis-copilot "Learn how to set up Dynatrace Intelligence agentic and generative AI.") guide.
 * You have the `ALLOW davis-copilot:document-search:execute;` permission. To learn how to set up the permissions, see [Permissions in Grail](/docs/platform/grail/organize-data/assign-permissions-in-grail "Find out how to assign permissions to buckets and tables in Grail.").
 
 ## Get document suggestions to remediate problems
 
 1. Go to ![Problems app - new](https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp "Problems app - new") **Problems** and open the problem you need to resolve.
-2. On the problem details page, select **Troubleshooting**. You will be able to see any troubleshooting guides you have created for the problem, as well as any relevant documents suggested by Dynatrace Intelligence generative AI.
+2. On the problem details page, select **Troubleshooting**. You will be able to see any troubleshooting guides you have created for the problem, as well as any relevant documents suggested by Dynatrace Intelligence agentic and generative AI.
 
-   Dynatrace Intelligence generative AI only indexes documents that are recognized as troubleshooting guides. Dashboards and notebooks created directly from ![Problems app - new](https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp "Problems app - new") **Problems** are automatically recognized as troubleshooting guides and do not require the `[TSG]` prefix.
+   Dynatrace Intelligence agentic and generative AI only indexes documents that are recognized as troubleshooting guides. Dashboards and notebooks created directly from ![Problems app - new](https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp "Problems app - new") **Problems** are automatically recognized as troubleshooting guides and do not require the `[TSG]` prefix.
 
    If you create a troubleshooting guide directly from ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards** or ![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**, you have to prefix the document title with `[TSG]` to indicate it is a troubleshooting guide.
 
-   Regardless of how the document was created, it still has to be shared at the environment level to be indexed by Dynatrace Intelligence generative AI.
+   Regardless of how the document was created, it still has to be shared at the environment level to be indexed by Dynatrace Intelligence agentic and generative AI.
 3. Optional Provide the keywords or part of a keyword in the **Name**  search field to filter the suggested documents by name.
 4. Optional Select the **Type** (`Notebooks`, `Dashboards`) to filter the suggested documents by type. By default, both types are selected for document suggestions.
 5. Select **View â¦** on the document you want to view. This action will take you to the troubleshooting guide for further investigation.
@@ -129,11 +129,11 @@ By using a JavaScript workflow action, you can automatically create and attach a
 
 
 
-   export default async function ({ execution_id }) {
+   export default async function () {
 
 
 
-   const ex = await execution(execution_id);
+   const ex = await execution();
 
 
 
@@ -278,6 +278,6 @@ Once the newly created notebook is attached to the AI-detected problem, you'll b
 
 ## Related topics
 
-* [Dynatrace Intelligence generative AI overview](/docs/dynatrace-intelligence/copilot/copilot-overview "Learn about data security and other aspects of Dynatrace Intelligence generative AI.")
-* [Get started with Dynatrace Intelligence generative AI](/docs/dynatrace-intelligence/copilot/copilot-getting-started "Learn how to set up Dynatrace Intelligence generative AI.")
+* [Dynatrace Intelligence agentic and generative AI overview](/docs/dynatrace-intelligence/copilot/copilot-overview "Learn about data security and other aspects of Dynatrace Intelligence agentic and generative AI.")
+* [Get started with Dynatrace Intelligence agentic and generative AI](/docs/dynatrace-intelligence/copilot/copilot-getting-started "Learn how to set up Dynatrace Intelligence agentic and generative AI.")
 * [Problems app](/docs/dynatrace-intelligence/davis-problems-app "Use the Problems app to quickly get to the root cause of incidents in your environment.")

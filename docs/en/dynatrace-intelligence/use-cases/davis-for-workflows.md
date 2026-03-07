@@ -1,7 +1,7 @@
 ---
 title: AI in Workflows - Predictive maintenance of cloud disks
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/use-cases/davis-for-workflows
-scraped: 2026-02-17T21:33:46.632666
+scraped: 2026-03-03T21:23:38.569179
 ---
 
 # AI in Workflows - Predictive maintenance of cloud disks
@@ -22,7 +22,7 @@ To use Dynatrace Intelligence actions, you first need to install **Dynatrace Int
 1. In Dynatrace Hub ![Hub](https://dt-cdn.net/images/hub-512-82db3c583e.png "Hub"), search for **Dynatrace Intelligence (Preview)**.
 2. Select **Dynatrace Intelligence (Preview)** and select **Install**.
 
-After installation, Dynatrace Intelligence actions appear automatically in the **Chose action** section of [Workflows](/docs/analyze-explore-automate/workflows "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services.").
+After installation, Dynatrace Intelligence actions appear automatically in the **Choose action** section of [![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Workflows**](/docs/analyze-explore-automate/workflows "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services.").
 
 ## Example use case
 
@@ -150,11 +150,11 @@ The next workflow action tests each prediction to determine whether the disk wil
 
 
 
-   export default async function ({ executionId }) {
+   export default async function () {
 
 
 
-   const exe = await execution(executionId);
+   const exe = await execution();
 
 
 
@@ -309,11 +309,11 @@ To raise a Davis problem
 
 
 
-   export default async function ({ executionId }) {
+   export default async function () {
 
 
 
-   const exe = await execution(executionId);
+   const exe = await execution();
 
 
 

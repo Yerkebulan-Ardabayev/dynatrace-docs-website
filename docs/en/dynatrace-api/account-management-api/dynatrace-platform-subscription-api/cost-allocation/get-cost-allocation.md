@@ -1,7 +1,7 @@
 ---
 title: Dynatrace Platform Subscription API - GET cost allocation
 source: https://www.dynatrace.com/docs/dynatrace-api/account-management-api/dynatrace-platform-subscription-api/cost-allocation/get-cost-allocation
-scraped: 2026-02-18T21:30:21.311074
+scraped: 2026-03-06T21:26:54.898889
 ---
 
 # Dynatrace Platform Subscription API - GET cost allocation
@@ -16,10 +16,6 @@ Lists Dynatrace Platform Subscription usage data by cost allocation field.
 
 The request produces an `application/json` payload.
 
-GET
-
-`https://api.dynatrace.com/v1/subscriptions/{subscription-uuid}/cost-allocation`
-
 ## Authentication
 
 To execute this request, you need the **Allow read access for usage and consumption resources** (`account-uac-read`) scope assigned to your token. To learn how to obtain and use it, see [OAuth clients](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/oauth-clients "Manage authentication and user permissions using OAuth clients.").
@@ -28,8 +24,8 @@ To execute this request, you need the **Allow read access for usage and consumpt
 
 | Parameter | Type | Description | In | Required |
 | --- | --- | --- | --- | --- |
-| subscription-uuid | string | The UUID of the requested subscription.  Fetch the list of subscriptions via the [GET all subscriptionsï»¿](https://dt-url.net/jq03jvq) request. (required) | path | Required |
-| field | string | Field by which costs and usage should be split. Allowed values: `COSTCENTER`, `PRODUCT` (required unless page-key is provided) | query | Required |
+| subscription-uuid | string | The UUID of the requested subscription.  Fetch the list of subscriptions via the [GET all subscriptionsï»¿](https://dt-url.net/jq03jvq) request. (required) | path | Optional |
+| field | string | Field by which costs and usage should be split. Allowed values: `COSTCENTER`, `PRODUCT` (required unless page-key is provided) | query | Optional |
 | environment-id | string | The identifier of an environment. (required unless page-key is provided) | query | Optional |
 | from | string | The start of the requested timeframe in `2021-05-01` format. | query | Optional |
 | to | string | The end of the requested timeframe in `2021-05-01` format. | query | Optional |

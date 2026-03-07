@@ -1,7 +1,7 @@
 ---
 title: Classic Full-Stack monitoring
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/how-it-works/other-deployment-modes/classic-fullstack
-scraped: 2026-02-18T21:26:04.383842
+scraped: 2026-03-05T21:26:07.681929
 ---
 
 # Classic Full-Stack monitoring

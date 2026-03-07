@@ -1,7 +1,7 @@
 ---
 title: AI Observability
 source: https://www.dynatrace.com/docs/observe/dynatrace-for-ai-observability/ai-observability-app
-scraped: 2026-02-18T21:31:10.368318
+scraped: 2026-03-02T21:23:22.538566
 ---
 
 # AI Observability
@@ -38,10 +38,6 @@ Some out-of-the-box ![AI Observability](https://dt-cdn.net/images/ai-obs-1024-c7
 ### Permissions
 
 The following table describes the required permissions.
-
-Permission
-
-Description
 
 storage:events:read
 
@@ -83,16 +79,6 @@ hub:catalog:read
 
 Read Hub catalog
 
-10
-
-rows per page
-
-Page
-
-1
-
-of 1
-
 Get started
 
 Use cases
@@ -117,7 +103,7 @@ The **Overview** tab is your starting point to discover AI workloads, quickly va
 
 ### Service Health
 
-Get a unified view of the operational state of your AI services. \*\*Service Health \*\* is organized into focused tabs so you can move from a high-level pulse to root cause in a couple of clicks.
+Get a unified view of the operational state of your AI services. **Service Health** is organized into focused tabs so you can move from a high-level pulse to root cause in a couple of clicks.
 
 Filter your results:
 
@@ -132,8 +118,6 @@ Filter your results:
 ![AI Observability - Service Health - Error](https://dt-cdn.net/images/errors-latencies-1920-0a6fb8f618.png)
 
 ![AI Observability -  Service Health - Guardrails](https://dt-cdn.net/images/app-guardrails-1920-6da2e86ebc.png)
-
-â>
 
 ### Create and manage Alerts
 

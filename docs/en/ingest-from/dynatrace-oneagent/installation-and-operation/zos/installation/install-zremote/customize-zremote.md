@@ -1,7 +1,7 @@
 ---
 title: Customize the zRemote module
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-zremote/customize-zremote
-scraped: 2026-02-18T05:53:03.046717
+scraped: 2026-03-06T21:36:53.068278
 ---
 
 # Customize the zRemote module
@@ -45,38 +45,6 @@ Windows
 `C:/ProgramData/dynatrace/zremote/agent/conf/watchdoguserconfig.conf`
 
 Available parameters for configuration:
-
-Parameter
-
-Unit
-
-Default value
-
-Description
-
--healthcheck.heartbeat.timeout
-
-Seconds
-
-900
-
-The connection timeout between the zRemote service and your Dynatrace environment
-
--healthcheck.memory.limit\_absolute
-
-MiB
-
-500
-
-Absolute input for the memory calculation limit of the child process
-
--healthcheck.memory.limit\_percentage
-
-%
-
-20
-
-Percentage input for the memory calculation limit of the child process
 
 Effective memory limit calculation
 

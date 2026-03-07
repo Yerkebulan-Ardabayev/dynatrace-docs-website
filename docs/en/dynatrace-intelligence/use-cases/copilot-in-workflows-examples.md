@@ -1,7 +1,7 @@
 ---
 title: Summarize open problems with Workflows
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/use-cases/copilot-in-workflows-examples
-scraped: 2026-02-17T21:31:51.891549
+scraped: 2026-03-03T21:26:45.029733
 ---
 
 # Summarize open problems with Workflows
@@ -78,11 +78,11 @@ To use Dynatrace Intelligence (Preview), ensure that you have:
 
 
 
-   export default async function ({ executionId }) {
+   export default async function () {
 
 
 
-   const ex = await execution(executionId);
+   const ex = await execution();
 
 
 

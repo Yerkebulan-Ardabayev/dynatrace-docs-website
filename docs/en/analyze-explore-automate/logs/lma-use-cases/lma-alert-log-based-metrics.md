@@ -1,7 +1,7 @@
 ---
 title: Set up custom alerts based on metrics extracted from logs
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-use-cases/lma-alert-log-based-metrics
-scraped: 2026-02-17T04:57:42.723210
+scraped: 2026-03-06T21:33:43.409363
 ---
 
 # Set up custom alerts based on metrics extracted from logs
@@ -32,7 +32,7 @@ If you don't need to set thresholds, you should follow the instructions in [Set 
 
 ## Steps
 
-In this example we will open a new Davis Problem when certain records, which contain a specific phrase, are ingested and exceed a static threshold.
+In this example we will open a new Davis problem when certain records, which contain a specific phrase, are ingested and exceed a static threshold.
 
 1. Find logs you want to trigger alerts
 
@@ -121,3 +121,4 @@ Detected anomalies can trigger automations using simple workflows as described i
 * [Set up alerts based on events extracted from logs](/docs/analyze-explore-automate/logs/lma-use-cases/lma-alert-log-based-events "How to create and configure Davis problems and alerts with events based on logs.")
 * [Log metrics (Logs Classic)](/docs/analyze-explore-automate/log-monitoring/analyze-log-data/log-metrics "Learn how to create and use Dynatrace log metrics to analyze log data.")
 * [Log events (Logs Classic)](/docs/analyze-explore-automate/log-monitoring/analyze-log-data/log-events "Learn how to create and use Dynatrace log events to analyze log data.")
+* [Alerting and notifications](/docs/analyze-explore-automate/alerting-and-notifications "Utilize anomaly detection, problem detection, and workflows for external notifications to ensure that critical problems never go unnoticed.")

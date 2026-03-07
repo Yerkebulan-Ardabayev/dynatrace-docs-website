@@ -1,6 +1,6 @@
 # Документация Dynatrace: analyze-explore-automate/dashboards-and-notebooks
 Язык: Русский (RU)
-Сгенерировано: 2026-02-18
+Сгенерировано: 2026-03-06
 Файлов в разделе: 38
 ---
 
@@ -9,7 +9,7 @@
 ---
 title: Add code to a dashboard
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new/components/dashboard-component-code
-scraped: 2026-02-18T21:17:24.888468
+scraped: 2026-03-06T21:11:07.243073
 ---
 
 # Add code to a dashboard
@@ -226,7 +226,7 @@ To see more examples, open the  menu at the top of your dashboard and browse the
 ---
 title: Add data to a dashboard
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new/components/dashboard-component-data
-scraped: 2026-02-18T21:17:18.389112
+scraped: 2026-03-06T21:11:21.483222
 ---
 
 # Add data to a dashboard
@@ -317,7 +317,7 @@ If you need more control over how a filter is applied, however, you might want t
 * Variables allow you to fully control the underlying query or within your Explore section or tile, determining where and how they are applied. For example, you can specify how they connect with other filters applied (**AND**, **OR**) and you can control which operator is used for your filter (such as `equals`, `contains`, `startsWith`, and `endsWith`).
 * Additionally, use variables when you need fine-grained control over how filters are interdependent.
 
-* For details on segments, see [Segments](/docs/manage/segments "Segments logically structure monitoring data in Grail and function as convenient filters for data that users are allowed to access based on permissions.")
+* For details on segments, see [Segments](/docs/manage/segments "Use segments to logically structure and conveniently filter observability data across apps.")
 * For a ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**-specific segments use case, see [Analyze monitoring data with segments](/docs/manage/segments/getting-started/segments-getting-started-analyze-monitoring-data "Learn how to analyze monitoring data more efficiently by using segments in Dashboards.")
 
 To select tile-level segments
@@ -424,7 +424,7 @@ Select **Run query**.
 ---
 title: Add Markdown to dashboard
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new/components/dashboard-component-markdown
-scraped: 2026-02-18T21:17:20.971616
+scraped: 2026-03-06T21:11:16.280330
 ---
 
 # Add Markdown to dashboard
@@ -566,110 +566,6 @@ A link in Markdown is a label and link of the form `[label](address)`, where:
 * The `label` is freeform text to display on the link in your Markdown tile or section
 * The `address` specifies what to open when someone selects the link, such as a website or a Dynatrace app
 
-Link to
-
-Syntax and examples
-
-Website
-
-```
-[My label](https://www.example.com/)
-```
-
-Notebooks app
-
-```
-[My label](/ui/apps/dynatrace.notebooks/notebooks)
-```
-
-Specific notebook
-
-**Syntax**:
-
-```
-[label](/ui/apps/dynatrace.notebooks/notebook/<notebookid>)
-```
-
-**Example**:
-
-```
-[My label](/ui/apps/dynatrace.notebooks/notebook/274edae4-dfe8-41fb-aced-5020fb1270bc)
-```
-
-To get the address
-
-1. Display the target notebook.
-2. Copy everything on the browser address line starting from `/ui/`.
-3. Paste it into your Markdown as the address of a link.
-
-Specific notebook section
-
-**Syntax**:
-
-```
-[label](/ui/apps/dynatrace.notebooks/notebook/<notebookid>#<sectionid>)
-```
-
-**Example**:
-
-```
-[My label](/ui/apps/dynatrace.notebooks/notebook/274edae4-dfe8-41fb-aced-5020fb1270bc#cb69caf1-52ed-4e73-8a3e-120e8cd7e8f8)
-```
-
-To get the address
-
-1. Display the target notebook.
-2. Select the target section of the notebook.
-3. Copy everything on the browser address line starting from `/ui/`.
-4. Paste it into your Markdown as the address of a link.
-
-Dashboards app
-
-```
-[My label](/ui/apps/dynatrace.dashboards/)
-```
-
-Specific dashboard
-
-**Syntax**:
-
-```
-[label](/ui/apps/dynatrace.dashboards/<dashboardid>)
-```
-
-**Example**:
-
-```
-[My label](/ui/apps/dynatrace.dashboards/dashboard/9f24c36e-ca5f-401c-8e00-5e4b05c46bd2)
-```
-
-To get the address
-
-1. Display the target dashboard.
-2. Copy everything on the browser address line starting from `/ui/`.
-3. Paste it into your Markdown as the address of a link.
-
-Specific dashboard tile
-
-**Syntax**:
-
-```
-[label](/ui/apps/dynatrace.dashboards/dashboard/<dashboardid>#tileIds=n)
-```
-
-**Example**:
-
-```
-[My label](/ui/apps/dynatrace.dashboards/dashboard/9f24c36e-ca5f-401c-8e00-5e4b05c46bd2#from=now%28%29-2h&to=now%28%29&tileIds=6)
-```
-
-To include a specific tile ID in the link
-
-1. Display the target dashboard.
-2. Select the target tile in the target dashboard.
-3. Copy everything on the browser address line starting from `/ui/`.
-4. Paste it into your Markdown as the address of a link.
-
 ### Images
 
 To link to a picture, use this format:
@@ -703,7 +599,7 @@ For details on variables, see [Add a variable to a dashboard](/docs/analyze-expl
 ---
 title: Add a snippet to a dashboard
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new/components/dashboard-component-snippet
-scraped: 2026-02-18T21:17:19.663609
+scraped: 2026-03-06T21:11:10.713197
 ---
 
 # Add a snippet to a dashboard
@@ -812,7 +708,7 @@ When you find something interesting:
 ---
 title: Add a variable to a dashboard
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new/components/dashboard-component-variable
-scraped: 2026-02-18T21:17:23.563508
+scraped: 2026-03-06T21:11:14.517870
 ---
 
 # Add a variable to a dashboard
@@ -1335,7 +1231,7 @@ In this example, we selected `Variable1` to display the variable definition and 
 ---
 title: Dashboards
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new
-scraped: 2026-02-18T21:15:31.679452
+scraped: 2026-03-06T21:09:39.484018
 ---
 
 # Dashboards
@@ -1352,10 +1248,6 @@ Prerequisites
 ### Permissions
 
 The following table describes the required permissions.
-
-Permission
-
-Description
 
 app-engine:functions:run
 
@@ -1396,16 +1288,6 @@ Allows the user to read configuration of Davis analyzers
 davis:analyzers:execute
 
 Allows the user to run Davis analyzers
-
-10
-
-rows per page
-
-Page
-
-1
-
-of 1
 
 Get started
 
@@ -1463,110 +1345,6 @@ A link in Markdown is a label and link of the form `[label](address)`, where:
 
 * The `label` is freeform text to display on the link in your Markdown tile or section
 * The `address` specifies what to open when someone selects the link, such as a website or a Dynatrace app
-
-Link to
-
-Syntax and examples
-
-Website
-
-```
-[My label](https://www.example.com/)
-```
-
-Notebooks app
-
-```
-[My label](/ui/apps/dynatrace.notebooks/notebooks)
-```
-
-Specific notebook
-
-**Syntax**:
-
-```
-[label](/ui/apps/dynatrace.notebooks/notebook/<notebookid>)
-```
-
-**Example**:
-
-```
-[My label](/ui/apps/dynatrace.notebooks/notebook/274edae4-dfe8-41fb-aced-5020fb1270bc)
-```
-
-To get the address
-
-1. Display the target notebook.
-2. Copy everything on the browser address line starting from `/ui/`.
-3. Paste it into your Markdown as the address of a link.
-
-Specific notebook section
-
-**Syntax**:
-
-```
-[label](/ui/apps/dynatrace.notebooks/notebook/<notebookid>#<sectionid>)
-```
-
-**Example**:
-
-```
-[My label](/ui/apps/dynatrace.notebooks/notebook/274edae4-dfe8-41fb-aced-5020fb1270bc#cb69caf1-52ed-4e73-8a3e-120e8cd7e8f8)
-```
-
-To get the address
-
-1. Display the target notebook.
-2. Select the target section of the notebook.
-3. Copy everything on the browser address line starting from `/ui/`.
-4. Paste it into your Markdown as the address of a link.
-
-Dashboards app
-
-```
-[My label](/ui/apps/dynatrace.dashboards/)
-```
-
-Specific dashboard
-
-**Syntax**:
-
-```
-[label](/ui/apps/dynatrace.dashboards/<dashboardid>)
-```
-
-**Example**:
-
-```
-[My label](/ui/apps/dynatrace.dashboards/dashboard/9f24c36e-ca5f-401c-8e00-5e4b05c46bd2)
-```
-
-To get the address
-
-1. Display the target dashboard.
-2. Copy everything on the browser address line starting from `/ui/`.
-3. Paste it into your Markdown as the address of a link.
-
-Specific dashboard tile
-
-**Syntax**:
-
-```
-[label](/ui/apps/dynatrace.dashboards/dashboard/<dashboardid>#tileIds=n)
-```
-
-**Example**:
-
-```
-[My label](/ui/apps/dynatrace.dashboards/dashboard/9f24c36e-ca5f-401c-8e00-5e4b05c46bd2#from=now%28%29-2h&to=now%28%29&tileIds=6)
-```
-
-To include a specific tile ID in the link
-
-1. Display the target dashboard.
-2. Select the target tile in the target dashboard.
-3. Copy everything on the browser address line starting from `/ui/`.
-4. Paste it into your Markdown as the address of a link.
 
 ## Use cases
 
@@ -1877,7 +1655,7 @@ If you need more control over how a filter is applied, however, you might want t
 * Variables allow you to fully control the underlying query or within your Explore section or tile, determining where and how they are applied. For example, you can specify how they connect with other filters applied (**AND**, **OR**) and you can control which operator is used for your filter (such as `equals`, `contains`, `startsWith`, and `endsWith`).
 * Additionally, use variables when you need fine-grained control over how filters are interdependent.
 
-* For details on segments, see [Segments](/docs/manage/segments "Segments logically structure monitoring data in Grail and function as convenient filters for data that users are allowed to access based on permissions.")
+* For details on segments, see [Segments](/docs/manage/segments "Use segments to logically structure and conveniently filter observability data across apps.")
 * For a ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**-specific segments use case, see [Analyze monitoring data with segments](/docs/manage/segments/getting-started/segments-getting-started-analyze-monitoring-data "Learn how to analyze monitoring data more efficiently by using segments in Dashboards.")
 
 #### Dashboard-level segments
@@ -2693,7 +2471,7 @@ To delete multiple tiles simultaneously
 ---
 title: API for Dashboards and Notebooks
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/document-api
-scraped: 2026-02-17T05:03:17.839612
+scraped: 2026-03-06T21:31:09.703615
 ---
 
 # API for Dashboards and Notebooks
@@ -2743,7 +2521,7 @@ To see the full API documentation for the documents service
 ---
 title: Manage document versions
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/document-version
-scraped: 2026-02-18T21:17:14.599927
+scraped: 2026-03-06T21:11:19.739905
 ---
 
 # Manage document versions
@@ -2862,7 +2640,7 @@ The **Actions** column displays all of the actions available from the **History*
 ---
 title: Drilldowns and navigation
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/drilldowns-and-navigation
-scraped: 2026-02-18T21:17:22.328471
+scraped: 2026-03-06T21:11:09.059757
 ---
 
 # Drilldowns and navigation
@@ -3270,7 +3048,7 @@ Try the full example on the [Dynatrace playgroundï»¿](https://wkf10640.apps.d
 ---
 title: Area chart visualization
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-chart-area
-scraped: 2026-02-18T21:27:00.755877
+scraped: 2026-03-06T21:21:31.855169
 ---
 
 # Area chart visualization
@@ -3315,62 +3093,6 @@ To access the chart tools:
   When you hover over the chart, the chart toolbar is displayed by default in the lower-right corner of the chart and is collapsed.
 
 ### Toolbar options
-
-**Icon**
-
-**Name**
-
-**Keyboard shortcut**
-
-**Action**
-
-**Move**
-
-none
-
-Move the chart toolbar. Select and drag the  icon.
-
-**Explore**
-
-`E`
-
-Explore a section of the chart. Select **Explore**, and then click and drag left or right to select a section of the chart. The chart zooms to display the selected area.
-
-**Pan**
-
-`P`
-
-Pan the chart to the left or right. Select **Pan**, and then click and drag left or right.
-
-**Zoom in**
-
-`Ctrl+Up`
-
-Zoom in to the chart.
-
-**Zoom out**
-
-`Ctrl+Down`
-
-Zoom out from the chart.
-
-**Reset**
-
-`R`
-
-Restore the chart zoom level and timeframe to their original states.
-
-**Collapse**
-
-none
-
-Shrink the chart toolbar to just  and .
-
-**Expand**
-
-none
-
-Show the entire chart toolbar.
 
 ### Zoom rules
 
@@ -3480,8 +3202,6 @@ After applying these changes, the data mapping will correctly allow suitable fie
 
 ### Visualization-specific data mapping settings
 
-
-
 An area chart graphs one or more values over time, so the mapping needs to include the following:
 
 * **Time**: the column of your result that is used for the X-axis ([timestamp](/docs/platform/grail/dynatrace-query-language/data-types#timestamp "A list of DQL data types.") or [timeframe](/docs/platform/grail/dynatrace-query-language/data-types#timeframe "A list of DQL data types.")).
@@ -3500,6 +3220,8 @@ You can select a color palette from the list under **Color palettes**.
 For a line chart, area chart, or bar chart, you can optionally [override the selected color palette](#series-overrides) for any series as needed.
 
 ### Legend position
+
+
 
 Select where to display the visualization legend:
 
@@ -3744,7 +3466,7 @@ To reset to defaults (discard override settings for the selected metric), select
 ---
 title: Band chart visualization
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-chart-band
-scraped: 2026-02-18T21:27:13.999363
+scraped: 2026-03-06T21:21:22.938820
 ---
 
 # Band chart visualization
@@ -4111,7 +3833,7 @@ To reset to defaults (discard override settings for the selected metric), select
 ---
 title: Categorical chart visualization
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-chart-bar-categorical
-scraped: 2026-02-18T21:26:55.292651
+scraped: 2026-03-06T21:20:29.143481
 ---
 
 # Categorical chart visualization
@@ -4436,7 +4158,7 @@ To reset to defaults (discard override settings for the selected metric), select
 ---
 title: Bar chart visualization
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-chart-bar
-scraped: 2026-02-18T21:27:18.002601
+scraped: 2026-03-06T21:21:17.390293
 ---
 
 # Bar chart visualization
@@ -4481,62 +4203,6 @@ To access the chart tools:
   When you hover over the chart, the chart toolbar is displayed by default in the lower-right corner of the chart and is collapsed.
 
 ### Toolbar options
-
-**Icon**
-
-**Name**
-
-**Keyboard shortcut**
-
-**Action**
-
-**Move**
-
-none
-
-Move the chart toolbar. Select and drag the  icon.
-
-**Explore**
-
-`E`
-
-Explore a section of the chart. Select **Explore**, and then click and drag left or right to select a section of the chart. The chart zooms to display the selected area.
-
-**Pan**
-
-`P`
-
-Pan the chart to the left or right. Select **Pan**, and then click and drag left or right.
-
-**Zoom in**
-
-`Ctrl+Up`
-
-Zoom in to the chart.
-
-**Zoom out**
-
-`Ctrl+Down`
-
-Zoom out from the chart.
-
-**Reset**
-
-`R`
-
-Restore the chart zoom level and timeframe to their original states.
-
-**Collapse**
-
-none
-
-Shrink the chart toolbar to just  and .
-
-**Expand**
-
-none
-
-Show the entire chart toolbar.
 
 ### Zoom rules
 
@@ -4646,8 +4312,6 @@ After applying these changes, the data mapping will correctly allow suitable fie
 
 ### Visualization-specific data mapping settings
 
-
-
 A bar chart graphs one or more values over time, so the mapping needs to include the following:
 
 * **Time**: the column of your result that is used for the X-axis ([timestamp](/docs/platform/grail/dynatrace-query-language/data-types#timestamp "A list of DQL data types.") or [timeframe](/docs/platform/grail/dynatrace-query-language/data-types#timeframe "A list of DQL data types.")).
@@ -4666,6 +4330,8 @@ You can select a color palette from the list under **Color palettes**.
 For a line chart, area chart, or bar chart, you can optionally [override the selected color palette](#series-overrides) for any series as needed.
 
 ### Legend position
+
+
 
 Select where to display the visualization legend:
 
@@ -4910,7 +4576,7 @@ To reset to defaults (discard override settings for the selected metric), select
 ---
 title: Donut visualization
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-chart-donut
-scraped: 2026-02-18T21:27:15.341324
+scraped: 2026-03-06T21:21:28.278196
 ---
 
 # Donut visualization
@@ -5196,7 +4862,7 @@ To reset to defaults (discard override settings for the selected metric), select
 ---
 title: Line chart visualization
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-chart-line
-scraped: 2026-02-18T21:27:12.672750
+scraped: 2026-03-06T21:21:21.119266
 ---
 
 # Line chart visualization
@@ -5443,62 +5109,6 @@ To access the chart tools:
   When you hover over the chart, the chart toolbar is displayed by default in the lower-right corner of the chart and is collapsed.
 
 ### Toolbar options
-
-**Icon**
-
-**Name**
-
-**Keyboard shortcut**
-
-**Action**
-
-**Move**
-
-none
-
-Move the chart toolbar. Select and drag the  icon.
-
-**Explore**
-
-`E`
-
-Explore a section of the chart. Select **Explore**, and then click and drag left or right to select a section of the chart. The chart zooms to display the selected area.
-
-**Pan**
-
-`P`
-
-Pan the chart to the left or right. Select **Pan**, and then click and drag left or right.
-
-**Zoom in**
-
-`Ctrl+Up`
-
-Zoom in to the chart.
-
-**Zoom out**
-
-`Ctrl+Down`
-
-Zoom out from the chart.
-
-**Reset**
-
-`R`
-
-Restore the chart zoom level and timeframe to their original states.
-
-**Collapse**
-
-none
-
-Shrink the chart toolbar to just  and .
-
-**Expand**
-
-none
-
-Show the entire chart toolbar.
 
 ### Zoom rules
 
@@ -5872,7 +5482,7 @@ To reset to defaults (discard override settings for the selected metric), select
 ---
 title: Pie visualization
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-chart-pie
-scraped: 2026-02-18T21:27:02.051231
+scraped: 2026-03-06T21:21:26.500073
 ---
 
 # Pie visualization
@@ -6229,7 +5839,7 @@ To reset to defaults (discard override settings for the selected metric), select
 ---
 title: Single value visualization
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-chart-single-value
-scraped: 2026-02-18T21:26:53.961929
+scraped: 2026-03-06T21:20:25.427593
 ---
 
 # Single value visualization
@@ -6817,7 +6427,7 @@ To reset to defaults (discard threshold settings), select the trash can  next to
 ---
 title: Gauge chart
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-gauge
-scraped: 2026-02-18T21:27:03.326807
+scraped: 2026-03-06T21:21:04.757177
 ---
 
 # Gauge chart
@@ -6855,35 +6465,6 @@ timeseries avg(dt.host.cpu.usage)
 
 The **Visual** tab settings are as follows:
 
-Section
-
-Settings
-
-Data mapping
-
-* **Gauge value** = `CPU`
-
-Gauge bar
-
-* **Show label** = turned off
-* **Min value** = set to `Auto`
-* **Max value** = set to `Auto`
-
-Color
-
-* **Bar color** = `62903c`
-* **Custom colors** =
-
-  + `60` and (for the custom color) `dc671e`
-  + `80` and (for the custom color) `cd3c44`
-
-Units and formats
-
-* Selected value = `CPU`
-* **Unit** = `Percent (%)`
-* **Displayed unit** = `Auto`
-* **Decimals** = `0.00`
-
 ### Example 2
 
 ![Gauge visualization: example 2](https://dt-cdn.net/images/gauge-example-02-476-681bd11f53.png)
@@ -6915,32 +6496,6 @@ fetch dt.davis.problems
 ```
 
 The **Visual** tab settings are as follows:
-
-Section
-
-Settings
-
-Data mapping
-
-* **Gauge value** = `pctActive`
-
-Gauge bar
-
-* **Show label** = turned on and set to `Percentage of Open Problems`
-* **Min value** = set to `Auto`
-* **Max value** = set to `Auto`
-
-Color
-
-* **Bar color** = `438FB1`
-* **Custom colors** = `90` and (for the custom color) `c21930`
-
-Units and formats
-
-* Selected value = `pctActive`
-* **Unit** = `Percent (%)`
-* **Displayed unit** = `Auto`
-* **Decimals** = `0`
 
 ## Title
 
@@ -7031,8 +6586,6 @@ Determines where the gauge ends on the right.
 
 ## Units and formats
 
-
-
 To override the default units and formats in a dashboard or notebook visualization
 
 1. Select  to edit the visualization tile.
@@ -7096,7 +6649,7 @@ To reset to defaults (discard override settings for the selected metric), select
 ---
 title: Heatmap visualization
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-heatmap
-scraped: 2026-02-18T21:27:08.697234
+scraped: 2026-03-06T21:21:33.800510
 ---
 
 # Heatmap visualization
@@ -7346,7 +6899,7 @@ To reset to defaults (discard override settings for the selected metric), select
 ---
 title: Histogram visualization
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-histogram
-scraped: 2026-02-18T21:26:59.395087
+scraped: 2026-03-06T21:21:19.232793
 ---
 
 # Histogram visualization
@@ -7774,7 +7327,7 @@ To reset to defaults (discard override settings for the selected metric), select
 ---
 title: Honeycomb visualization
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-honeycomb
-scraped: 2026-02-18T21:27:19.337271
+scraped: 2026-03-06T21:21:15.505928
 ---
 
 # Honeycomb visualization
@@ -8056,7 +7609,7 @@ To reset to defaults (discard override settings for the selected metric), select
 ---
 title: Bubble map visualization
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-map-bubble
-scraped: 2026-02-18T21:26:57.950309
+scraped: 2026-03-06T21:21:01.139093
 ---
 
 # Bubble map visualization
@@ -8399,7 +7952,7 @@ To reset to defaults (discard override settings for the selected metric), select
 ---
 title: Choropleth map visualization
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-map-choropleth
-scraped: 2026-02-18T21:26:56.769001
+scraped: 2026-03-06T21:21:02.999974
 ---
 
 # Choropleth map visualization
@@ -8777,7 +8330,7 @@ To reset to defaults (discard override settings for the selected metric), select
 ---
 title: Connection map visualization
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-map-connection
-scraped: 2026-02-18T21:27:04.662669
+scraped: 2026-03-06T21:21:08.492041
 ---
 
 # Connection map visualization
@@ -9117,7 +8670,7 @@ To reset to defaults (discard override settings for the selected metric), select
 ---
 title: Dot map visualization
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-map-dot
-scraped: 2026-02-18T21:27:09.943963
+scraped: 2026-03-06T21:21:06.636827
 ---
 
 # Dot map visualization
@@ -9246,20 +8799,6 @@ record(geo.location.latitude = 55.676098, geo.location.longitude = 12.568337, re
 
 Important visualization settings for this example include:
 
-Section
-
-Settings
-
-Data mapping
-
-* **Latitude** = `geo.location.latitude`
-* **Longtude** = `geo.location.longitude`
-* **Color value** = `revenue`
-
-Shape
-
-* **Style** = **Icon** (`Shop`)
-
 ### Example 3
 
 ![Dot map example: with a bearing field](https://dt-cdn.net/images/dot-03-973-cfe4ef9ef4.png)
@@ -9311,20 +8850,6 @@ record(geo.location.latitude = 55.676098, geo.location.longitude = 12.568337, be
 ```
 
 Important visualization settings for this example include:
-
-Section
-
-Settings
-
-Data mapping
-
-* **Latitude** = `geo.location.latitude`
-* **Longtude** = `geo.location.longitude`
-
-Shape
-
-* **Style** = **Icon** (`Airplane Filled`)
-* **Bearing** = **Data** (`bearing`)
 
 ### Example 4
 
@@ -9378,23 +8903,6 @@ record(geo.location.latitude = 55.676098, geo.location.longitude = 12.568337, La
 
 Important visualization settings for this example include:
 
-Section
-
-Settings
-
-Data mapping
-
-* **Latitude** = `geo.location.latitude`
-* **Longtude** = `geo.location.longitude`
-
-Shape
-
-* **Style** = **Icon** (`Office Filled`)
-
-Legend and tooltip
-
-* **Show custom fields** = `Lab` (to display the lab name in the tooltip)
-
 ## Chart interactions
 
 ### Selection interactions
@@ -9440,8 +8948,6 @@ If you aren't sure that you chose the right visualization, use the [visualizatio
 
 ## View
 
-
-
 * **Default zoom**
 
   Set a default zoom level for the map by selecting one of the following options:
@@ -9454,6 +8960,8 @@ If you aren't sure that you chose the right visualization, use the [visualizatio
   Turn this on to show region outlines within countries.
 
 ## Data mapping
+
+
 
 The data mapping section shows how a column of your result is mapped to the visualization.
 
@@ -9661,7 +9169,7 @@ To reset to defaults (discard override settings for the selected metric), select
 ---
 title: Meter bar chart
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-meterbar
-scraped: 2026-02-18T21:27:16.633450
+scraped: 2026-03-06T21:21:10.264221
 ---
 
 # Meter bar chart
@@ -9699,34 +9207,6 @@ timeseries avg(dt.host.cpu.usage)
 
 The **Visual** tab settings are as follows:
 
-Section
-
-Settings
-
-Data mapping
-
-* **Meter value** = `CPU`
-
-Meter bar
-
-* **Show label** = turned on and set to `CPU Usage`
-* **Show icon** = turned on and set to `HostsIcon`
-
-Color
-
-* **Bar color** = `62903c`
-* **Custom colors** =
-
-  + `60` and (for the custom color) `d56b1a`
-  + `80` and (for the custom color) `8a0012`
-
-Units and formats
-
-* Selected value = `CPU`
-* **Unit** = `Percent (%)`
-* **Displayed unit** = `Auto`
-* **Decimals** = `0.00`
-
 ### Example 2
 
 ![Meter Bar visualization: example 2](https://dt-cdn.net/images/meter-bar-example-02-474-3cf8cba784.png)
@@ -9758,31 +9238,6 @@ fetch dt.davis.problems
 ```
 
 The **Visual** tab settings are as follows:
-
-Section
-
-Settings
-
-Data mapping
-
-* **Meter value** = `pctActive`
-
-Meter bar
-
-* **Show label** = turned on and set to `Percentage of Open Problems`
-* **Show icon** = turned on and set to `DavisAiSignetIcon`
-
-Color
-
-* **Bar color** = `438FB1`
-* **Custom colors** = `90` and (for the custom color) `c21930`
-
-Units and formats
-
-* Selected value = `pctActive`
-* **Unit** = `Percent (%)`
-* **Displayed unit** = `Auto`
-* **Decimals** = `0`
 
 ## Chart interactions
 
@@ -9965,7 +9420,7 @@ To reset to defaults (discard override settings for the selected metric), select
 ---
 title: Raw visualization
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-raw
-scraped: 2026-02-18T21:27:07.356494
+scraped: 2026-03-06T21:21:24.661965
 ---
 
 # Raw visualization
@@ -10128,7 +9583,7 @@ To reset to defaults (discard override settings for the selected metric), select
 ---
 title: Record list
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-record-list
-scraped: 2026-02-18T21:27:11.220400
+scraped: 2026-03-06T21:21:30.034479
 ---
 
 # Record list
@@ -10325,7 +9780,7 @@ To reset to defaults (discard override settings for the selected metric), select
 ---
 title: Scatterplot visualization
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-scatterplot
-scraped: 2026-02-18T21:27:06.061286
+scraped: 2026-03-06T21:21:13.704467
 ---
 
 # Scatterplot visualization
@@ -10617,7 +10072,7 @@ To reset to defaults (discard override settings for the selected metric), select
 ---
 title: Table visualization
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-table
-scraped: 2026-02-18T21:26:52.461043
+scraped: 2026-03-06T21:20:27.327638
 ---
 
 # Table visualization
@@ -10947,7 +10402,7 @@ To reset to defaults (discard threshold settings), select the trash can  next to
 ---
 title: Edit visualizations for Notebooks and Dashboards
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations
-scraped: 2026-02-18T21:17:15.702284
+scraped: 2026-03-06T21:11:17.997326
 ---
 
 # Edit visualizations for Notebooks and Dashboards
@@ -11115,7 +10570,7 @@ For details, see [Scatterplot visualization](/docs/analyze-explore-automate/dash
 ---
 title: Explore data
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/explore-data
-scraped: 2026-02-18T21:17:13.314742
+scraped: 2026-03-06T21:10:58.587097
 ---
 
 # Explore data
@@ -11129,7 +10584,7 @@ scraped: 2026-02-18T21:17:13.314742
 
 Dynatrace [![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.") and [![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.") offer the following options for exploring your data:
 
-* Use [Dynatrace Intelligence generative AI](#copilot) and natural language to access data stored in Grail.
+* Use [Dynatrace Intelligence agentic and generative AI](#copilot) and natural language to access data stored in Grail.
 * Get started with our Explore interface for data types such as [logs](#explore-logs), [metrics](#explore-metrics), and [business events](#explore-business-events).
 * Advance with [DQL](#create-a-dql-query) to leverage the full power of Grail.
 
@@ -11170,106 +10625,6 @@ To explore data such as logs, metrics, or business events with our point-and-cli
      + Only operators relevant to the data type are suggested.
      + Read more on [how the filter field works](/docs/discover-dynatrace/get-started/dynatrace-ui/ui-filter-field "The filter field is a powerful tool that allows you to quickly find relevant information or narrow down results within apps.") in the dedicated documentation.
 
-     Operator
-
-     Description
-
-     `~`
-
-     Use a tilde to get one of two effects:
-
-     To match on a specific field
-
-     1. In the  filter bar
-
-        + Select the field name
-        + Select the tilde (`~`) as the operator
-        + Enter the term you want to match
-     2. Select **Run**.
-
-        For example, when exploring log data, `content` `~` `error` lists log entries that have "error" in the "content" field.
-
-        In DQL, this translates to [matchesPhrase](/docs/platform/grail/dynatrace-query-language/functions/string-functions#matchesPhrase "A list of DQL string functions."), such as:
-
-        ```
-        fetch logs
-
-
-
-        | filter matchesPhrase(content, "error")
-
-
-
-        | limit 20
-        ```
-
-     To search all data
-
-     3. In the  filter bar
-
-        + Enter an asterisk (`*`)
-        + Select the tilde (`~`) as the operator
-        + Enter the term you want to search for
-
-        Alternative: Click in the  filter bar, scroll down to the bottom of the list of suggestions, select `Search a phrase in all data`, and enter the search term between the quotation marks. (This bar is hidden when there is no splitting set, or when there is more than one building block with a metric selected.)
-     4. Select **Run**.
-
-        For example, when exploring log data, `*` `~` `error` lists log entries that have "error".
-
-        In DQL, this translates to [search](/docs/platform/grail/dynatrace-query-language/commands/filtering-commands#search "DQL filter and search commands"), such as:
-
-        ```
-        fetch logs
-
-
-
-        | search "error"
-
-
-
-        | limit 20
-        ```
-
-     `=`
-
-     equals
-
-     `!=`
-
-     doesn't equal
-
-     `<`
-
-     less than
-
-     `<=`
-
-     less than or equal to
-
-     `>`
-
-     greater than
-
-     `>=`
-
-     greater than or equal to
-
-     `= *`
-
-     is any value
-
-     `!= *`
-
-     isn't any value
-
-     `in`
-
-     matches one or more values in a list of values
-
-     `not in`
-
-     doesnât match any value in a list of values
-
      Note: Combining `=` with a wildcard in before `*`, after, or both, before your search term will resolve to a starts with, ends with, or contains filter respectively.
    * The  on the bottom of the definition opens a menu of additional commands you can add.
    * Select any ![remove filter](https://dt-cdn.net/images/remove-filter-9fadf8ea2a.svg "remove filter") in the definition to remove the element that comes before the ![remove filter](https://dt-cdn.net/images/remove-filter-9fadf8ea2a.svg "remove filter"). If you remove an element and then change your mind, you can use  to select it from the menu and add it back to your definition.
@@ -11308,13 +10663,11 @@ For more information about the benefits of Smartscape nodes and how they work, s
 
 ## Prompt
 
-You can create a notebook section or dashboard tile using [Dynatrace Intelligence generative AI](/docs/dynatrace-intelligence/copilot/copilot-overview "Learn about data security and other aspects of Dynatrace Intelligence generative AI.") to translate your natural language questions into DQL queries.
+You can create a notebook section or dashboard tile using [Dynatrace Intelligence agentic and generative AI](/docs/dynatrace-intelligence/copilot/copilot-overview "Learn about data security and other aspects of Dynatrace Intelligence agentic and generative AI.") to translate your natural language questions into DQL queries.
 
 ### Generative AI in your dashboard
 
-
-
-To create a dashboard tile using Dynatrace Intelligence generative AI
+To create a dashboard tile using Dynatrace Intelligence agentic and generative AI
 
 1. Go to [![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.") and open or create a dashboard you can edit.
 2. Open the  **Add** menu and select  **Prompt**.
@@ -11345,7 +10698,9 @@ To create a dashboard tile using Dynatrace Intelligence generative AI
 
 ### Generative AI in your notebook
 
-To create a notebook section using Dynatrace Intelligence generative AI
+
+
+To create a notebook section using Dynatrace Intelligence agentic and generative AI
 
 1. Go to ![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks** and open or create a notebook you can edit.
 2. Open the  **Add** menu and select  **Prompt**. A new Generative AI notebook section is created with an empty prompt box.
@@ -11451,8 +10806,6 @@ To summarize your results
 
 ### Convert to time series
 
-
-
 You can convert log-based events to a time series format appropriate to be visualized with graph visualizations. This is done by counting occurrences of fields specified for each timeslot.
 
 To convert log-based events to a time series format
@@ -11487,6 +10840,8 @@ If the **Limit** setting is not displayed,  **Limit** and then set the value.
 ## Metrics
 
 ### Add
+
+
 
 This exploration functionality is the same in ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards** and ![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**. We use ![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks** in these examples.
 
@@ -11626,8 +10981,6 @@ This reduces the time series data to a single scalar value over the selected tim
 
 ### Alias
 
-
-
 You might want to rename (add an alias to) a metric to make it more readable.
 
 * Adding an alias gives the metric a more convenient alternate name for you to use in the current dashboard tile or notebook section. Instead of the raw metric name, the alias is displayed in your query definition and in the resulting dashboard tile or notebook section.
@@ -11675,6 +11028,8 @@ Add expressions to apply arithmetic based on your selected metrics.
 ![Explore metrics example: expression](https://dt-cdn.net/images/explore-metrics-example-expression-662-b59f306f98.png)
 
 ### Sort
+
+
 
 To sort your results
 
@@ -11826,8 +11181,6 @@ To see the DQL that is created automatically during your exploration with the po
 
 ### Create a DQL query
 
-
-
 When you're satisfied with the results but want to advance with more complex DQL commands, you can easily create a standard notebook section or dashboard tile based on it.
 
 1. Open the  menu and select  **Create DQL section** or  **Create DQL tile**
@@ -11848,7 +11201,7 @@ That's what makes this a great tool for beginners and experts.
 ---
 title: Notebooks
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks
-scraped: 2026-02-18T21:16:35.987771
+scraped: 2026-03-06T21:10:03.486902
 ---
 
 # Notebooks
@@ -11865,10 +11218,6 @@ Prerequisites
 ### Permissions
 
 The following table describes the required permissions.
-
-Permission
-
-Description
 
 app-engine:apps:run
 
@@ -11909,16 +11258,6 @@ Allows the user to access shared notebooks
 document:direct-shares:read
 
 Allows the user to access shared notebooks
-
-10
-
-rows per page
-
-Page
-
-1
-
-of 1
 
 Get started
 
@@ -11986,110 +11325,6 @@ A link in Markdown is a label and link of the form `[label](address)`, where:
 * The `label` is freeform text to display on the link in your Markdown tile or section
 * The `address` specifies what to open when someone selects the link, such as a website or a Dynatrace app
 
-Link to
-
-Syntax and examples
-
-Website
-
-```
-[My label](https://www.example.com/)
-```
-
-Notebooks app
-
-```
-[My label](/ui/apps/dynatrace.notebooks/notebooks)
-```
-
-Specific notebook
-
-**Syntax**:
-
-```
-[label](/ui/apps/dynatrace.notebooks/notebook/<notebookid>)
-```
-
-**Example**:
-
-```
-[My label](/ui/apps/dynatrace.notebooks/notebook/274edae4-dfe8-41fb-aced-5020fb1270bc)
-```
-
-To get the address
-
-1. Display the target notebook.
-2. Copy everything on the browser address line starting from `/ui/`.
-3. Paste it into your Markdown as the address of a link.
-
-Specific notebook section
-
-**Syntax**:
-
-```
-[label](/ui/apps/dynatrace.notebooks/notebook/<notebookid>#<sectionid>)
-```
-
-**Example**:
-
-```
-[My label](/ui/apps/dynatrace.notebooks/notebook/274edae4-dfe8-41fb-aced-5020fb1270bc#cb69caf1-52ed-4e73-8a3e-120e8cd7e8f8)
-```
-
-To get the address
-
-1. Display the target notebook.
-2. Select the target section of the notebook.
-3. Copy everything on the browser address line starting from `/ui/`.
-4. Paste it into your Markdown as the address of a link.
-
-Dashboards app
-
-```
-[My label](/ui/apps/dynatrace.dashboards/)
-```
-
-Specific dashboard
-
-**Syntax**:
-
-```
-[label](/ui/apps/dynatrace.dashboards/<dashboardid>)
-```
-
-**Example**:
-
-```
-[My label](/ui/apps/dynatrace.dashboards/dashboard/9f24c36e-ca5f-401c-8e00-5e4b05c46bd2)
-```
-
-To get the address
-
-1. Display the target dashboard.
-2. Copy everything on the browser address line starting from `/ui/`.
-3. Paste it into your Markdown as the address of a link.
-
-Specific dashboard tile
-
-**Syntax**:
-
-```
-[label](/ui/apps/dynatrace.dashboards/dashboard/<dashboardid>#tileIds=n)
-```
-
-**Example**:
-
-```
-[My label](/ui/apps/dynatrace.dashboards/dashboard/9f24c36e-ca5f-401c-8e00-5e4b05c46bd2#from=now%28%29-2h&to=now%28%29&tileIds=6)
-```
-
-To include a specific tile ID in the link
-
-1. Display the target dashboard.
-2. Select the target tile in the target dashboard.
-3. Copy everything on the browser address line starting from `/ui/`.
-4. Paste it into your Markdown as the address of a link.
-
 ## Use cases
 
 Notebooks enables you to:
@@ -12148,8 +11383,6 @@ The number of undos could be limited depending on your notebook's size.
 
 ### Use shortcuts
 
-
-
 keyboard shortcuts help you work faster in ![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**.
 
 To list keyboard shortcuts, in ![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**, open the  menu and select  **Keyboard shortcuts** or use keyboard shortcut **Shift**+**?**
@@ -12181,6 +11414,8 @@ To list keyboard shortcuts, in ![Notebooks](https://dt-cdn.net/images/notebooks-
 | Toggle between view and edit mode | **Ctrl**/**Cmd**+**Enter** |
 
 ### List notebooks
+
+
 
 #### List all
 
@@ -12284,7 +11519,7 @@ Every notebook needs one or more sections.
 
 ### Create a Prompt section
 
-To create a notebook section using [Dynatrace Intelligence generative AI](/docs/dynatrace-intelligence/copilot/copilot-overview "Learn about data security and other aspects of Dynatrace Intelligence generative AI.") to translate your natural language questions into DQL queries
+To create a notebook section using [Dynatrace Intelligence agentic and generative AI](/docs/dynatrace-intelligence/copilot/copilot-overview "Learn about data security and other aspects of Dynatrace Intelligence agentic and generative AI.") to translate your natural language questions into DQL queries
 
 1. Go to ![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks** and open or create a notebook you can edit.
 2. Open the  **Add** menu and select  **Prompt**. A new Generative AI notebook section is created with an empty prompt box.
@@ -12323,8 +11558,6 @@ The Explore sections offer the easiest way to get started.
 
 ### Create a Grail query section
 
-
-
 The fastest and easiest way to explore your data is with an [Explore](#section-create-explore-data) section. In a few seconds, you can find and analyze your logs, metrics, or business events. No DQL required!
 
 Deprecated: `dt.entity.*` fields
@@ -12361,6 +11594,8 @@ To add data to a notebook
    * To have Dynatrace once again automatically select a visualization, turn **Auto select** back on.
 
 ### Create a code section
+
+
 
 To add code fetching data for your notebook using Dynatrace functions
 
@@ -12471,110 +11706,6 @@ To add a Markdown-formatted annotation to a notebook
 
   + The `label` is freeform text to display on the link in your Markdown tile or section
   + The `address` specifies what to open when someone selects the link, such as a website or a Dynatrace app
-
-  Link to
-
-  Syntax and examples
-
-  Website
-
-  ```
-  [My label](https://www.example.com/)
-  ```
-
-  Notebooks app
-
-  ```
-  [My label](/ui/apps/dynatrace.notebooks/notebooks)
-  ```
-
-  Specific notebook
-
-  **Syntax**:
-
-  ```
-  [label](/ui/apps/dynatrace.notebooks/notebook/<notebookid>)
-  ```
-
-  **Example**:
-
-  ```
-  [My label](/ui/apps/dynatrace.notebooks/notebook/274edae4-dfe8-41fb-aced-5020fb1270bc)
-  ```
-
-  To get the address
-
-  1. Display the target notebook.
-  2. Copy everything on the browser address line starting from `/ui/`.
-  3. Paste it into your Markdown as the address of a link.
-
-  Specific notebook section
-
-  **Syntax**:
-
-  ```
-  [label](/ui/apps/dynatrace.notebooks/notebook/<notebookid>#<sectionid>)
-  ```
-
-  **Example**:
-
-  ```
-  [My label](/ui/apps/dynatrace.notebooks/notebook/274edae4-dfe8-41fb-aced-5020fb1270bc#cb69caf1-52ed-4e73-8a3e-120e8cd7e8f8)
-  ```
-
-  To get the address
-
-  1. Display the target notebook.
-  2. Select the target section of the notebook.
-  3. Copy everything on the browser address line starting from `/ui/`.
-  4. Paste it into your Markdown as the address of a link.
-
-  Dashboards app
-
-  ```
-  [My label](/ui/apps/dynatrace.dashboards/)
-  ```
-
-  Specific dashboard
-
-  **Syntax**:
-
-  ```
-  [label](/ui/apps/dynatrace.dashboards/<dashboardid>)
-  ```
-
-  **Example**:
-
-  ```
-  [My label](/ui/apps/dynatrace.dashboards/dashboard/9f24c36e-ca5f-401c-8e00-5e4b05c46bd2)
-  ```
-
-  To get the address
-
-  1. Display the target dashboard.
-  2. Copy everything on the browser address line starting from `/ui/`.
-  3. Paste it into your Markdown as the address of a link.
-
-  Specific dashboard tile
-
-  **Syntax**:
-
-  ```
-  [label](/ui/apps/dynatrace.dashboards/dashboard/<dashboardid>#tileIds=n)
-  ```
-
-  **Example**:
-
-  ```
-  [My label](/ui/apps/dynatrace.dashboards/dashboard/9f24c36e-ca5f-401c-8e00-5e4b05c46bd2#from=now%28%29-2h&to=now%28%29&tileIds=6)
-  ```
-
-  To include a specific tile ID in the link
-
-  1. Display the target dashboard.
-  2. Select the target tile in the target dashboard.
-  3. Copy everything on the browser address line starting from `/ui/`.
-  4. Paste it into your Markdown as the address of a link.
 * **Images**: to link to a picture, use this format:
 
   `![alternate text](https://www.example.com/file-name.jpg)`
@@ -12628,8 +11759,6 @@ The number of undos could be limited depending on your notebook's size.
 
 ### Section edit controls
 
-
-
 To see the edit commands for a section, select the section. If you have edit permission, the edit commands are displayed.
 
 * is where you click to drag the selected section to a different position.
@@ -12677,7 +11806,9 @@ The available edit options will vary depending on the type of section you're edi
 
 ### Select section segments
 
-To filter data for a section, you can specify [segments](/docs/manage/segments "Segments logically structure monitoring data in Grail and function as convenient filters for data that users are allowed to access based on permissions.") for a section.
+
+
+To filter data for a section, you can specify [segments](/docs/manage/segments "Use segments to logically structure and conveniently filter observability data across apps.") for a section.
 
 1. In the action bar for that section, select  and, in **Filter by segments**, select a segment.
 2. If the segment requires an additional value selection, select it now.
@@ -12817,8 +11948,6 @@ Example:
 
 ### Manage multiple sections
 
-
-
 You can select multiple sections and then apply the same command to all of them at once.
 
 * **Shift**+**Click**âselects one or more consecutive sections
@@ -12914,6 +12043,8 @@ For details on sharing documents, see [Share documents](/docs/discover-dynatrace
 You can also export a notebook as a JSON file and send the JSON to others, and then they can import the JSON.
 
 ### Export a notebook
+
+
 
 To export a notebook
 
@@ -13571,7 +12702,7 @@ Try the full example on the [Dynatrace playgroundï»¿](https://wkf10640.apps.d
 ---
 title: Ready-made dashboards
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/ready-made-documents/ready-made-dashboards
-scraped: 2026-02-18T21:15:24.426500
+scraped: 2026-03-06T21:09:48.245169
 ---
 
 # Ready-made dashboards
@@ -14009,7 +13140,7 @@ Related Dynatrace app: ![Synthetic](https://dt-cdn.net/images/synthetic-new-256-
 ---
 title: Ready-made documents
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/ready-made-documents
-scraped: 2026-02-18T21:22:47.611245
+scraped: 2026-03-06T21:13:50.344696
 ---
 
 # Ready-made documents
@@ -14079,7 +13210,7 @@ When you open a document (dashboard or notebook) for which you don't have write 
 ---
 title: Remote environment data
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/remote-environment-data
-scraped: 2026-02-17T21:34:17.932086
+scraped: 2026-03-03T21:23:07.840378
 ---
 
 # Remote environment data
@@ -14901,7 +14032,7 @@ return null; // Return null or handle gracefully.
 ---
 title: Notebooks and Dashboards use cases
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/use-cases
-scraped: 2026-02-18T05:51:04.887746
+scraped: 2026-03-06T21:27:45.177285
 ---
 
 # Notebooks and Dashboards use cases

@@ -1,7 +1,7 @@
 ---
 title: Slack Connector
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/actions/slack
-scraped: 2026-02-18T05:54:04.949649
+scraped: 2026-03-03T21:22:08.797257
 ---
 
 # Slack Connector
@@ -171,139 +171,11 @@ The workflow action can be used to send Markdown-formatted messages or [Block Ki
 
 * **Connection**: select any connection from the dropdown list, for example, `dynatrace-notifications-sandbox`.
 * **Message**: see the examples in the following table.
-
-  Input type
-
-  Sample input
-
-  Markdown
-
-  ```
-  *Hello World*
-
-
-
-  This is Markdown-formatted text!
-  ```
-
-  Block Kit Builder
-
-  ```
-  {
-
-
-
-  "blocks": [
-
-
-
-  {
-
-
-
-  "type": "section",
-
-
-
-  "text": {
-
-
-
-  "type": "mrkdwn",
-
-
-
-  "text": "*This is a section block with a button.*"
-
-
-
-  },
-
-
-
-  "accessory": {
-
-
-
-  "type": "button",
-
-
-
-  "text": {
-
-
-
-  "type": "plain_text",
-
-
-
-  "text": "Click Me"
-
-
-
-  },
-
-
-
-  "value": "click_me_123",
-
-
-
-  "action_id": "button-action"
-
-
-
-  }
-
-
-
-  }
-
-
-
-  ]
-
-
-
-  }
-  ```
-
-  Automation expression
-
-  ```
-  {{ result("workflow_action_script_result") }}
-  ```
 * **Interactions**
 
   Select **Run** to send your message to your Slack channel.
 
   + **Output**:
-
-    Sample result
-
-    threadTs
-
-    ```
-    123456789.01234
-    ```
-
-    channelID
-
-    ```
-    ABCDEF012345
-    ```
-
-    messageTs
-
-    ```
-    123456789.01234
-    ```
-
-    permalink
-
-    ```
-    https://your-environment.slack.com/archives/ABCDEFG/p12345679890
-    ```
 * **Log output examples**
 
   + **Successful**:
@@ -1010,4 +882,4 @@ The following are solutions to problems some people had with Slack integration.
 
 ## Related topics
 
-* [Send Slack notifications for problems](/docs/analyze-explore-automate/workflows/use-cases/workflows-tutorial-problems-slack "Learn how to send Slack notifications for problems using a simple workflow.")
+* [Send Slack notifications for problems](/docs/analyze-explore-automate/alerting-and-notifications/workflows-tutorial-problems-slack "Learn how to send Slack notifications for problems using a simple workflow.")

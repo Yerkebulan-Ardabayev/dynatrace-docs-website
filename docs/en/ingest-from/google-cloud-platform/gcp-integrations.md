@@ -1,7 +1,7 @@
 ---
 title: Google Cloud integrations
 source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations
-scraped: 2026-02-18T21:26:18.481183
+scraped: 2026-03-05T21:25:47.009562
 ---
 
 # Google Cloud integrations

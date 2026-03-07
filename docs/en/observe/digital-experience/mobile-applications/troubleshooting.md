@@ -1,13 +1,14 @@
 ---
 title: Troubleshooting RUM for mobile applications
 source: https://www.dynatrace.com/docs/observe/digital-experience/mobile-applications/troubleshooting
-scraped: 2026-02-17T05:01:19.385593
+scraped: 2026-03-06T21:35:25.181485
 ---
 
 # Troubleshooting RUM for mobile applications
 
 # Troubleshooting RUM for mobile applications
 
+* Classic
 * Troubleshooting
 * 1-min read
 * Published Jul 18, 2019

@@ -1,7 +1,7 @@
 ---
 title: Azure Native Dynatrace Service
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-platform/azure-native-integration
-scraped: 2026-02-18T05:47:37.584208
+scraped: 2026-03-05T21:35:50.024995
 ---
 
 # Azure Native Dynatrace Service

@@ -1,13 +1,14 @@
 ---
 title: Amazon Polly monitoring
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-polly
-scraped: 2026-02-18T21:36:21.976618
+scraped: 2026-03-04T21:27:30.050710
 ---
 
 # Amazon Polly monitoring
 
 # Amazon Polly monitoring
 
+* Classic
 * How-to guide
 * 2-min read
 * Published Jul 21, 2020

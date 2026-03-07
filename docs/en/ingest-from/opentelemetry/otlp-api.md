@@ -1,7 +1,7 @@
 ---
 title: Dynatrace OTLP API endpoints
 source: https://www.dynatrace.com/docs/ingest-from/opentelemetry/otlp-api
-scraped: 2026-02-18T21:20:27.116278
+scraped: 2026-03-06T21:23:20.064492
 ---
 
 # Dynatrace OTLP API endpoints
@@ -17,8 +17,8 @@ The [OpenTelemetry Protocol (OTLP)ï»¿](https://opentelemetry.io/docs/specs/ot
 
 Dynatrace provides native OTLP endpoints with the following services:
 
-* The Dynatrace SaaS platform
-* ActiveGate instances
+* The Dynatrace SaaS platform.
+* ActiveGate instances.
 
 Alternatively, you can deploy the [Dynatrace Collector](/docs/ingest-from/opentelemetry/collector "Learn about the Dynatrace OTel Collector.") as an intermediary service application to batch requests and improve network performance, or to transform requests before forwarding them to Dynatrace (for example, [mask sensitive data](/docs/ingest-from/opentelemetry/collector/use-cases/redact "Configure the OpenTelemetry Collector to mask sensitive data before forwarding to Dynatrace.")).
 
@@ -72,45 +72,13 @@ The following example URLs illustrate combinations of base URLs and paths for si
 
 #### Dynatrace SaaS
 
-Signal type
-
-URL
-
-Traces
-
-`https://{your-environment-id}.live.dynatrace.com/api/v2/otlp/v1/traces`
-
-Metrics
-
-`https://{your-environment-id}.live.dynatrace.com/api/v2/otlp/v1/metrics`
-
-Logs
-
-`https://{your-environment-id}.live.dynatrace.com/api/v2/otlp/v1/logs`
-
 #### Environment ActiveGate
-
-Signal type
-
-URL
-
-Traces
-
-`https://{your-activegate-domain}:9999/e/{your-environment-id}/api/v2/otlp/v1/traces`
-
-Metrics
-
-`https://{your-activegate-domain}:9999/e/{your-environment-id}/api/v2/otlp/v1/metrics`
-
-Logs
-
-`https://{your-activegate-domain}:9999/e/{your-environment-id}/api/v2/otlp/v1/logs`
 
 Information enrichment
 
 Vanilla OTLP exports to ActiveGate require manual enrichment of Dynatrace host information to have the proper topology information.
 
-To do so, make sure your traces have the correct mapping resource attributes set. The list of applicable attributes can be found in (or imported from) the [enrichment files](/docs/ingest-from/extend-dynatrace/extend-data "Learn how to automatically enrich your telemetry data with Dynatrace-specific dimensions.").
+To do so, make sure your traces have the correct mapping resource attributes set. The list of applicable attributes can be found in (or imported from) the [enrichment files](/docs/ingest-from/extend-dynatrace/extend-data "Learn how to automatically enrich your telemetry data with Dynatrace-specific fields.").
 
 ### API limitations
 
@@ -118,6 +86,7 @@ Calls to Dynatrace API endpoints have the following limitations.
 
 * gRPC is not supported.
   API calls need to use HTTP.
+  You can use a Collector to transform a gRPC OTLP request to its HTTP counterpart, see [Transform OTLP gRPC to HTTP with the OpenTelemetry Collector](/docs/ingest-from/opentelemetry/collector/use-cases/grpc "Configure the OpenTelemetry Collector to transform a gRPC OTLP request to HTTP.").
 * JSON is not supported for Protocol Buffers.
   Binary format must be used.
 

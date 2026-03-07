@@ -1,13 +1,14 @@
 ---
 title: AWS Site-to-Site VPN monitoring
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-site-to-site-vpn
-scraped: 2026-02-18T21:36:37.118118
+scraped: 2026-03-06T21:28:14.580556
 ---
 
 # AWS Site-to-Site VPN monitoring
 
 # AWS Site-to-Site VPN monitoring
 
+* Classic
 * How-to guide
 * 1-min read
 * Published Jul 23, 2020

@@ -1,13 +1,14 @@
 ---
 title: Log Monitoring configuration (Logs Classic)
 source: https://www.dynatrace.com/docs/analyze-explore-automate/log-monitoring/log-monitoring-configuration
-scraped: 2026-02-18T05:43:22.166692
+scraped: 2026-03-05T21:32:34.979418
 ---
 
 # Log Monitoring configuration (Logs Classic)
 
 # Log Monitoring configuration (Logs Classic)
 
+* Classic
 * 5-min read
 * Updated on Jan 18, 2023
 
@@ -84,79 +85,6 @@ You can adjust:
 4. Adjust settings and **Save changes**.
 
 ## Default OneAgent settings
-
-Setting
-
-Description
-
-Default
-
-**Detect open log files**
-
-This option automatically detects logs written by important processes.
-
-enabled
-
-**Detect IIS logs**
-
-This option allows the detection of logs and event logs written by the Microsoft IIS server.
-
-enabled
-
-**Detect system logs**
-
-Linux: Detects syslogs, and message logs.
-Windows: Detects system, application, and security event logs.
-
-enabled
-
-**Detect logs on network file systems**
-
-This option detects logs stored on the Network File System server. This applies for Linux only
-
-disabled
-
-**Allow OneAgent to monitor OneAgent logs**
-
-This option allows OneAgent to monitor own logs.
-
-disabled
-
-**Detect logs of containerized applications**
-
-This option allows the detection of log messages written to the containerized application's stdout/stderr streams. It also detects Kubernetes pod logs.
-
-enabled
-
-**Set UTC as default timezone in containers**
-
-This sets the default timezone of the containers as UTC.
-
-enabled
-
-**Timestamp search limit**
-
-Set the timestamp search.
-
-`64` bytes
-
-**Severity search chars limit**
-
-Set the severity search characters limit.
-
-`100` bytes
-
-**Severity search lines limit**
-
-Set the severity search lines limit.
-
-`2`
-
-**Maximum of log group instances per entity limit - count**
-
-Set the upper limit for log group instances per entry.
-
-`200`
 
 ## Configuration file Optional
 

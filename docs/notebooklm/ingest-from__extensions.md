@@ -1,6 +1,6 @@
 # Документация Dynatrace: ingest-from/extensions
 Язык: Русский (RU)
-Сгенерировано: 2026-02-18
+Сгенерировано: 2026-03-06
 Файлов в разделе: 38
 ---
 
@@ -9,7 +9,7 @@
 ---
 title: Distribute custom dashboards with your extensions
 source: https://www.dynatrace.com/docs/ingest-from/extensions/advanced-configuration/custom-dashboards
-scraped: 2026-02-18T05:55:50.084621
+scraped: 2026-03-03T21:22:34.358051
 ---
 
 # Distribute custom dashboards with your extensions
@@ -207,7 +207,7 @@ alerts:
 ---
 title: Dedicated performance profile configuration
 source: https://www.dynatrace.com/docs/ingest-from/extensions/advanced-configuration/dedicated-performance-profile
-scraped: 2026-02-18T05:57:41.404935
+scraped: 2026-03-06T21:29:41.296118
 ---
 
 # Dedicated performance profile configuration
@@ -383,7 +383,7 @@ To configure the ActiveGate for the dedicated performance profile
 ---
 title: Extension Execution Controller custom configuration
 source: https://www.dynatrace.com/docs/ingest-from/extensions/advanced-configuration/eec-custom-configuration
-scraped: 2026-02-18T21:31:29.912900
+scraped: 2026-03-06T21:29:48.202555
 ---
 
 # Extension Execution Controller custom configuration
@@ -517,7 +517,7 @@ Only Dynatrace extensions can be elevated, while custom ones cannot. In case an 
 ---
 title: Customize data with extensions
 source: https://www.dynatrace.com/docs/ingest-from/extensions/advanced-configuration/extension-customize
-scraped: 2026-02-18T21:35:26.050571
+scraped: 2026-03-06T21:33:40.035225
 ---
 
 # Customize data with extensions
@@ -922,7 +922,7 @@ sampleLog: |
 ---
 title: About Extensions
 source: https://www.dynatrace.com/docs/ingest-from/extensions/concepts
-scraped: 2026-02-18T21:36:10.225488
+scraped: 2026-03-04T21:33:06.167215
 ---
 
 # About Extensions
@@ -1062,24 +1062,6 @@ Without a monitoring configuration, an extension is visible in the Dynatrace pla
 
 Extensions are provided as a ZIP package containing only:
 
-File
-
-Description
-
-`extension.zip`
-
-An archive containing the actual extension definition with all its assets.
-
-`extension.zip.sig`
-
-A signature file: a digital signature for a ZIP archive. It ensures the integrity and authenticity of the ZIP file contents by verifying that it hasn't been altered and was signed by a trusted source.
-
-For details, see [Sign extensions](/docs/ingest-from/extensions/develop-your-extensions/sign-extensions "Learn how to sign an extension for secure distribution in your environment using the Dynatrace Extensions framework.").
-
-`extension.zip.sig.tsr`
-
-A signature timestamp file used to ensure the signature's validity over time (processed only for official extensions).
-
 Extension packages with different contents are not accepted for upload. The maximum size of an extension package is 25 MB.
 
 ```
@@ -1159,7 +1141,7 @@ Extend your observability into data from any technology that exposes data via an
 ---
 title: JMX data source reference
 source: https://www.dynatrace.com/docs/ingest-from/extensions/develop-your-extensions/data-sources/jmx/jmx-schema-reference
-scraped: 2026-02-18T21:30:23.944831
+scraped: 2026-03-03T21:22:23.769765
 ---
 
 # JMX data source reference
@@ -1553,7 +1535,7 @@ type: gauge_statcounter
 ---
 title: JMX data source
 source: https://www.dynatrace.com/docs/ingest-from/extensions/develop-your-extensions/data-sources/jmx
-scraped: 2026-02-18T05:59:17.530641
+scraped: 2026-03-06T21:36:35.777912
 ---
 
 # JMX data source
@@ -1721,7 +1703,7 @@ For more information, see [JMX data source reference](/docs/ingest-from/extensio
 ---
 title: Prometheus data source
 source: https://www.dynatrace.com/docs/ingest-from/extensions/develop-your-extensions/data-sources/prometheus-extensions
-scraped: 2026-02-18T21:29:45.304615
+scraped: 2026-03-04T21:37:13.983043
 ---
 
 # Prometheus data source
@@ -1775,7 +1757,7 @@ See [Prometheus data source reference](/docs/ingest-from/extensions/develop-your
 ---
 title: Dynatrace Extensions Python SDK
 source: https://www.dynatrace.com/docs/ingest-from/extensions/develop-your-extensions/data-sources/python
-scraped: 2026-02-18T05:49:25.180689
+scraped: 2026-03-06T21:32:00.044917
 ---
 
 # Dynatrace Extensions Python SDK
@@ -1785,7 +1767,7 @@ scraped: 2026-02-18T05:49:25.180689
 * Latest Dynatrace
 * Reference
 * 1-min read
-* Published Jan 18, 2024
+* Updated on Mar 04, 2026
 
 The Dynatrace Extensions Python SDK provides you with a framework to ingest data into Dynatrace from any technology exposing an interface.
 
@@ -1800,6 +1782,9 @@ Dynatrace Extensions Python SDK is publicly available with [OneAgent 1.285](/doc
 
 Set the filesystem flag to `exec` and not `noexec` to ensure a Python extension runs correctly. This configuration is crucial because it allows the execution of binaries and scripts within the specified filesystem. The extension can't execute properly without this setting, leading to potential errors and failures.
 
+Python 3.10 reaches end of life in October 2026. For extensions built with the Dynatrace Extensions Python SDK, the build command must use `--python-version 3.14`.
+For more information, see the [build command guideï»¿](https://github.com/dynatrace-extensions/dt-extensions-python-sdk/blob/main/docs/guides/building.rst).
+
 For more information, see:
 
 * [Dynatrace Extensions Python SDK documentationï»¿](https://dt-url.net/7g638yh)
@@ -1812,7 +1797,7 @@ For more information, see:
 ---
 title: Troubleshooting
 source: https://www.dynatrace.com/docs/ingest-from/extensions/develop-your-extensions/data-sources/snmp-extensions/troubleshooting
-scraped: 2026-02-18T21:31:52.451887
+scraped: 2026-03-05T21:30:19.842360
 ---
 
 # Troubleshooting
@@ -1884,7 +1869,7 @@ Monitoring configurations are provided with a set of advanced settings that affe
 ---
 title: SNMP data source
 source: https://www.dynatrace.com/docs/ingest-from/extensions/develop-your-extensions/data-sources/snmp-extensions
-scraped: 2026-02-17T21:27:59.250069
+scraped: 2026-03-02T21:28:59.047980
 ---
 
 # SNMP data source
@@ -1983,7 +1968,7 @@ For example, the SNMP devices used in our tests were equipped with 20 communicat
 ---
 title: IBM Database monitoring configuration
 source: https://www.dynatrace.com/docs/ingest-from/extensions/develop-your-extensions/data-sources/sql/ibm-monitoring
-scraped: 2026-02-18T05:49:09.447289
+scraped: 2026-03-06T21:36:39.137980
 ---
 
 # IBM Database monitoring configuration
@@ -2322,7 +2307,7 @@ Replace `<ActiveGate-group-name>` with the actual name.
 ---
 title: JDBC monitoring configuration
 source: https://www.dynatrace.com/docs/ingest-from/extensions/develop-your-extensions/data-sources/sql/jdbc-monitoring
-scraped: 2026-02-18T21:35:51.153201
+scraped: 2026-03-06T21:35:03.651720
 ---
 
 # JDBC monitoring configuration
@@ -2693,7 +2678,7 @@ Replace `<ActiveGate-group-name>` with the actual name.
 ---
 title: MySQL monitoring configuration
 source: https://www.dynatrace.com/docs/ingest-from/extensions/develop-your-extensions/data-sources/sql/mysql-monitoring
-scraped: 2026-02-18T21:32:37.544638
+scraped: 2026-03-03T21:31:20.683420
 ---
 
 # MySQL monitoring configuration
@@ -2935,6 +2920,60 @@ To define the MySQL Database server, add the following details in the `endpoints
 
 Authentication details passed to the Dynatrace API when activating monitoring configuration are obfuscated and it's impossible to retrieve them.
 
+#### Basic
+
+Basic authentication requires only a username and password.
+
+```
+"authentication": {
+
+
+
+"scheme": "basic",
+
+
+
+"username": "username",
+
+
+
+"password": "password"
+
+
+
+}
+```
+
+#### AWS IAM
+
+ActiveGate version 1.325+
+
+Allows connection to Amazon RDS or Amazon Aurora databases using AWS IAM database authentication. Requires AWS Identity and Access Management (IAM) set up and an AWS IAM identity available to the ActiveGate host (for example, an attached IAM role).
+
+The ActiveGate uses the IAM role assigned to it to authenticate, so there's no need to store a database password. You provide a username and a region (AWS region code, for example, `eu-central-1`). If `auto-detect` is used (ActiveGate version 1.331+) as the region value, the ActiveGate's region will be used. Otherwise, the region must match the region where the database is hosted.
+
+**Note**: AWS IAM authentication requires SSL/TLS to be enabled. Set `ssl` to `true` in your endpoint configuration. For more information, see [SSL](#ssl).
+
+```
+"authentication": {
+
+
+
+"scheme": "identity_aws",
+
+
+
+"username": "username",
+
+
+
+"region": "eu-central-1"
+
+
+
+}
+```
+
 #### Credential vault
 
 The credential vault authentication type provides a more secure approach to using extensions by securely storing and managing user credentials. To use this, you must be the owner of the credentials and have a credential vault that meets the following criteria:
@@ -3032,7 +3071,7 @@ Replace `<ActiveGate-group-name>` with the actual name.
 ---
 title: Oracle Database monitoring configuration
 source: https://www.dynatrace.com/docs/ingest-from/extensions/develop-your-extensions/data-sources/sql/oracle-monitoring
-scraped: 2026-02-18T21:32:31.017453
+scraped: 2026-03-05T21:37:43.036318
 ---
 
 # Oracle Database monitoring configuration
@@ -3485,39 +3524,7 @@ Enable this option when connecting to databases using custom certificates.
 
 ## Resource consumption
 
-
-
 Resource consumption depends on the number of Oracle endpoints. The first endpoint consumes 110 MB of RAM and 0.1%â0.5% of CPU. Every following endpoint consumes 0.5â1.0 MB of RAM and ~0.01% of CPU.
-
-Endpoints
-
-Average CPU
-
-Max CPU
-
-RAM (MB)
-
-Host (EC2 instance type)
-
-100
-
-0.6%
-
-0.6% (spike at beginning)
-
-160
-
-XS (`c5.large`)
-
-1
-
-0.1%
-
-0.5% (spike at beginning)
-
-110
-
-XS (`c5.large`)
 
 ---
 
@@ -3526,7 +3533,7 @@ XS (`c5.large`)
 ---
 title: PostgreSQL monitoring configuration
 source: https://www.dynatrace.com/docs/ingest-from/extensions/develop-your-extensions/data-sources/sql/postgresql-monitoring
-scraped: 2026-02-18T21:35:04.935092
+scraped: 2026-03-06T21:27:55.570675
 ---
 
 # PostgreSQL monitoring configuration
@@ -3768,6 +3775,60 @@ To define the PostgreSQL Database server, add the following details in the `endp
 
 Authentication details passed to the Dynatrace API when activating monitoring configuration are obfuscated and it's impossible to retrieve them.
 
+#### Basic
+
+Basic authentication requires only a username and password.
+
+```
+"authentication": {
+
+
+
+"scheme": "basic",
+
+
+
+"username": "username",
+
+
+
+"password": "password"
+
+
+
+}
+```
+
+#### AWS IAM
+
+ActiveGate version 1.325+
+
+Allows connection to Amazon RDS or Amazon Aurora databases using AWS IAM database authentication. Requires AWS Identity and Access Management (IAM) set up and an AWS IAM identity available to the ActiveGate host (for example, an attached IAM role).
+
+The ActiveGate uses the IAM role assigned to it to authenticate, so there's no need to store a database password. You provide a username and a region (AWS region code, for example, `eu-central-1`). If `auto-detect` is used (ActiveGate version 1.331+) as the region value, the ActiveGate's region will be used. Otherwise, the region must match the region where the database is hosted.
+
+**Note**: AWS IAM authentication requires SSL/TLS to be enabled. Set `ssl` to `true` in your endpoint configuration. For more information, see [SSL](#ssl).
+
+```
+"authentication": {
+
+
+
+"scheme": "identity_aws",
+
+
+
+"username": "username",
+
+
+
+"region": "eu-central-1"
+
+
+
+}
+```
+
 #### Credential vault
 
 The credential vault authentication type provides a more secure approach to using extensions by securely storing and managing user credentials. To use this, you must be the owner of the credentials and have a credential vault that meets the following criteria:
@@ -3865,7 +3926,7 @@ Replace `<ActiveGate-group-name>` with the actual name.
 ---
 title: SAP Hana Database monitoring configuration
 source: https://www.dynatrace.com/docs/ingest-from/extensions/develop-your-extensions/data-sources/sql/sap-hana-monitoring
-scraped: 2026-02-18T05:50:59.736192
+scraped: 2026-03-06T21:36:59.952480
 ---
 
 # SAP Hana Database monitoring configuration
@@ -4194,7 +4255,7 @@ To define the SAP Hana Database server, put `ngdbc.jar` file in the following lo
 ---
 title: Snowflake Database monitoring configuration
 source: https://www.dynatrace.com/docs/ingest-from/extensions/develop-your-extensions/data-sources/sql/snowflake-monitoring
-scraped: 2026-02-18T21:29:24.435596
+scraped: 2026-03-05T21:35:29.081764
 ---
 
 # Snowflake Database monitoring configuration
@@ -4499,7 +4560,7 @@ Replace `<ActiveGate-group-name>` with the actual name.
 ---
 title: SQL data source reference
 source: https://www.dynatrace.com/docs/ingest-from/extensions/develop-your-extensions/data-sources/sql/sql-reference
-scraped: 2026-02-18T21:36:41.446621
+scraped: 2026-03-01T21:14:57.566228
 ---
 
 # SQL data source reference
@@ -5494,7 +5555,7 @@ The monitoring configuration format depends on the database provider. For more i
 ---
 title: SQL data source
 source: https://www.dynatrace.com/docs/ingest-from/extensions/develop-your-extensions/data-sources/sql
-scraped: 2026-02-18T05:45:58.436260
+scraped: 2026-03-06T21:31:46.228065
 ---
 
 # SQL data source
@@ -5557,7 +5618,7 @@ The SQL data source supports remote database access using various authentication
 ---
 title: WMI data source tutorial
 source: https://www.dynatrace.com/docs/ingest-from/extensions/develop-your-extensions/data-sources/wmi-extensions/wmi-tutorial
-scraped: 2026-02-17T21:32:21.557001
+scraped: 2026-03-04T21:28:59.832907
 ---
 
 # WMI data source tutorial
@@ -5645,7 +5706,7 @@ Your Dynatrace environment is ready to start creating your WMI extension.
 ---
 title: WMI data source
 source: https://www.dynatrace.com/docs/ingest-from/extensions/develop-your-extensions/data-sources/wmi-extensions
-scraped: 2026-02-18T21:32:46.488649
+scraped: 2026-03-03T21:24:12.065610
 ---
 
 # WMI data source
@@ -5756,7 +5817,7 @@ For more information, see [Setting Up a Fixed Port for WMIï»¿](https://docs.m
 ---
 title: Extension YAML file
 source: https://www.dynatrace.com/docs/ingest-from/extensions/develop-your-extensions/extension-yaml
-scraped: 2026-02-18T21:36:03.500840
+scraped: 2026-03-06T21:35:32.192927
 ---
 
 # Extension YAML file
@@ -6294,7 +6355,7 @@ The filtering logic is different for WMI extensions, where you pass the conditio
 ---
 title: Sign extensions
 source: https://www.dynatrace.com/docs/ingest-from/extensions/develop-your-extensions/sign-extensions
-scraped: 2026-02-18T05:56:16.381104
+scraped: 2026-03-05T21:36:26.987234
 ---
 
 # Sign extensions
@@ -6366,7 +6427,7 @@ Save the `root.pem` certificate file in the following location:
 ---
 title: Develop your own Extensions
 source: https://www.dynatrace.com/docs/ingest-from/extensions/develop-your-extensions
-scraped: 2026-02-18T21:20:43.665969
+scraped: 2026-03-06T21:24:25.042127
 ---
 
 # Develop your own Extensions
@@ -6443,7 +6504,7 @@ Find solutions to common issues with our expert-written troubleshooting articles
 ---
 title: Manage Extensions
 source: https://www.dynatrace.com/docs/ingest-from/extensions/manage-extensions
-scraped: 2026-02-18T21:20:44.869293
+scraped: 2026-03-06T21:24:23.338562
 ---
 
 # Manage Extensions
@@ -6460,10 +6521,6 @@ Manage Dynatrace extensions for hundreds of technologies.
 ## Prerequisites
 
 ### Permissions
-
-Permission
-
-Description
 
 hub:catalog:read
 
@@ -6493,6 +6550,10 @@ settings:objects:read
 
 Read settings objects
 
+settings:objects:write
+
+Write settings objects
+
 state:user-app-states:read
 
 For reading any data
@@ -6500,20 +6561,6 @@ For reading any data
 state:user-app-states:write
 
 Write user preferences
-
-state:user-app-states:read
-
-Read user preferences
-
-10
-
-rows per page
-
-Page
-
-1
-
-of 1
 
 ### Things to consider
 
@@ -6964,7 +7011,7 @@ Explore ![Extensions](https://dt-cdn.net/images/dynatrace-extensions-256-9cb05e0
 ---
 title: Manage SNMP extensions
 source: https://www.dynatrace.com/docs/ingest-from/extensions/supported-extensions/data-sources/snmp
-scraped: 2026-02-18T21:23:36.969435
+scraped: 2026-03-06T21:16:12.258749
 ---
 
 # Manage SNMP extensions
@@ -7105,8 +7152,6 @@ Select an option
 
 Type to filter
 
-Unable to render DataTable. Check configuration.
-
 ## Related topics
 
 * [Troubleshooting extensionsï»¿](https://dt-url.net/6303zdg "Learn how to troubleshoot Dynatrace Extensions")
@@ -7118,7 +7163,7 @@ Unable to render DataTable. Check configuration.
 ---
 title: Manage IBM Database extensions
 source: https://www.dynatrace.com/docs/ingest-from/extensions/supported-extensions/data-sources/sql/ibm-db
-scraped: 2026-02-18T05:48:27.823354
+scraped: 2026-03-04T21:37:15.660573
 ---
 
 # Manage IBM Database extensions
@@ -7209,7 +7254,7 @@ The extension activation wizard contains a dynamically updated JSON payload with
 ---
 title: Manage Microsoft SQL Server extensions
 source: https://www.dynatrace.com/docs/ingest-from/extensions/supported-extensions/data-sources/sql/microsoft-sql
-scraped: 2026-02-18T21:23:53.280451
+scraped: 2026-03-06T21:16:10.453218
 ---
 
 # Manage Microsoft SQL Server extensions
@@ -7301,7 +7346,7 @@ The extension activation wizard contains a dynamically updated JSON payload with
 ---
 title: Manage MySQL extensions
 source: https://www.dynatrace.com/docs/ingest-from/extensions/supported-extensions/data-sources/sql/mysql
-scraped: 2026-02-18T05:49:43.048494
+scraped: 2026-03-06T21:36:51.298927
 ---
 
 # Manage MySQL extensions
@@ -7395,7 +7440,7 @@ The extension activation wizard contains a dynamically updated JSON payload with
 ---
 title: Manage Oracle Database extensions
 source: https://www.dynatrace.com/docs/ingest-from/extensions/supported-extensions/data-sources/sql/oraclesql
-scraped: 2026-02-18T21:23:48.166892
+scraped: 2026-03-06T21:16:43.613643
 ---
 
 # Manage Oracle Database extensions
@@ -7503,7 +7548,7 @@ The extension activation wizard contains a dynamically updated JSON payload with
 ---
 title: Manage PostgreSQL extensions
 source: https://www.dynatrace.com/docs/ingest-from/extensions/supported-extensions/data-sources/sql/postgresql
-scraped: 2026-02-17T21:30:00.926934
+scraped: 2026-03-04T21:32:21.031267
 ---
 
 # Manage PostgreSQL extensions
@@ -7597,7 +7642,7 @@ The extension activation wizard contains a dynamically updated JSON payload with
 ---
 title: Manage SAP Hana Database extensions
 source: https://www.dynatrace.com/docs/ingest-from/extensions/supported-extensions/data-sources/sql/sap-hana
-scraped: 2026-02-18T05:58:26.735230
+scraped: 2026-03-05T21:33:51.339235
 ---
 
 # Manage SAP Hana Database extensions
@@ -7708,7 +7753,7 @@ The extension activation wizard contains a dynamically updated JSON payload with
 ---
 title: Manage Snowflake Database extensions
 source: https://www.dynatrace.com/docs/ingest-from/extensions/supported-extensions/data-sources/sql/snowflake-sql
-scraped: 2026-02-18T05:43:29.253920
+scraped: 2026-03-05T21:31:26.943854
 ---
 
 # Manage Snowflake Database extensions
@@ -7806,7 +7851,7 @@ The extension activation wizard contains a dynamically updated JSON payload with
 ---
 title: Manage WMI extensions
 source: https://www.dynatrace.com/docs/ingest-from/extensions/supported-extensions/data-sources/wmi
-scraped: 2026-02-18T21:23:42.003977
+scraped: 2026-03-06T21:16:41.961961
 ---
 
 # Manage WMI extensions
@@ -7913,8 +7958,6 @@ Select an option
 
 Type to filter
 
-Unable to render DataTable. Check configuration.
-
 ## Related topics
 
 * [Troubleshooting extensionsï»¿](https://dt-url.net/6303zdg "Learn how to troubleshoot Dynatrace Extensions")
@@ -7926,7 +7969,7 @@ Unable to render DataTable. Check configuration.
 ---
 title: Understand extensions data sources
 source: https://www.dynatrace.com/docs/ingest-from/extensions/supported-extensions/data-sources
-scraped: 2026-02-18T21:31:11.593255
+scraped: 2026-03-06T21:36:47.888698
 ---
 
 # Understand extensions data sources
@@ -8001,7 +8044,7 @@ This is especially useful when you need to interact with custom APIs, proprietar
 ---
 title: Explore supported Extensions
 source: https://www.dynatrace.com/docs/ingest-from/extensions/supported-extensions
-scraped: 2026-02-18T21:20:46.142987
+scraped: 2026-03-06T21:24:21.522966
 ---
 
 # Explore supported Extensions
@@ -8022,8 +8065,6 @@ Filter by
 Select an option
 
 Type to filter
-
-Unable to render DataTable. Check configuration.
 
 ## Where can you find an Extension?
 
@@ -8048,7 +8089,7 @@ With ![Extensions](https://dt-cdn.net/images/dynatrace-extensions-256-9cb05e0f55
 ---
 title: Extensions
 source: https://www.dynatrace.com/docs/ingest-from/extensions
-scraped: 2026-02-18T21:16:07.175574
+scraped: 2026-03-06T21:12:40.260899
 ---
 
 # Extensions

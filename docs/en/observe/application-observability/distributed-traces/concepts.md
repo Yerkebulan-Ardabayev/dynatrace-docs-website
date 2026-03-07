@@ -1,13 +1,14 @@
 ---
 title: Distributed traces concepts
 source: https://www.dynatrace.com/docs/observe/application-observability/distributed-traces/concepts
-scraped: 2026-02-18T21:19:37.863873
+scraped: 2026-03-06T21:22:53.406867
 ---
 
 # Distributed traces concepts
 
 # Distributed traces concepts
 
+* Classic
 * Explanation
 * 1-min read
 * Published Mar 30, 2021
@@ -84,31 +85,6 @@ You can integrate OpenTelemetry and OneAgent to collect trace dataâlike req
 #### Best practices
 
 Before getting started with distributed tracing, understand how setup and trace data collection differs between OpenTelemetry and OneAgent. The following is an overview of the key differences.
-
-OpenTelemetry
-
-OneAgent
-
-Set up
-
-Automatic or manual
-
-Automatic
-
-Capturing
-
-Automatic collection of allowed span attributes.
-
-Automatic collection of several request attributes, including HTTP method, URL, response codes, topology data, and details about the underlying technologies.
-
-Context
-
-Automatically or manually contextualized log entries, depending on the instrumentation library.
-
-Automatically contextualized
-
-* Log entries produced by prominent log frameworks.
-* Traces in Smartscape and Dynatrace Intelligence.
 
 To get started see
 

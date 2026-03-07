@@ -1,7 +1,7 @@
 ---
 title: Log Management and Analytics default limits
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-limits
-scraped: 2026-02-18T21:22:54.731538
+scraped: 2026-03-06T21:13:43.103611
 ---
 
 # Log Management and Analytics default limits
@@ -11,7 +11,7 @@ scraped: 2026-02-18T21:22:54.731538
 * Latest Dynatrace
 * Explanation
 * 3-min read
-* Updated on Feb 02, 2026
+* Updated on Mar 04, 2026
 
 This page lists default limits for the latest version of Dynatrace Log Management and Analytics. The current limitations apply to both log file ingestion and log ingestion via the Log ingestion API.
 
@@ -65,31 +65,6 @@ Occasionally, a higher latency might occur by data loss prevention mechanisms li
 
 The following rules apply to all log event sources, such as OneAgent and the generic log ingestion API.
 
-Log record timestamp
-
-Description
-
-The current time minus 24 hours for log records.
-
-The event is dropped if the log event contains a timestamp before the current time minus 24 hours.
-If the record is ingested via the generic Log Ingestion API, it can return the following:
-
-`400` - if all log events in the payload have timestamps earlier than the current time minus 24 hours.
-Message in response: `All logs are out of correct time range.`
-
-`200` - in case some of the events in the payload have timestamps earlier than the current time minus 24 hours.
-Example message in response: `2 events were not ingested because of timestamp out of correct time range`.
-
-`204` - (No Content) in case of success.
-
-The current time minus two hours for log metrics and events.
-
-The data point is dropped if the log metric data point timestamp is before the current time minus two hours.
-
-Current time plus ten minutes
-
-The time stamp is reset to current time.
-
 ## Log metrics
 
 Number of metrics is limited to:
@@ -102,28 +77,7 @@ Number of metrics is limited to:
 
 In addition to generic Dynatrace API limitations ([Dynatrace API - Access limit](/docs/dynatrace-api/basics/access-limit "Find out about payload limits and request throttling that may affect your use of the Dynatrace API.")) the following log ingestion API specific limits apply:
 
-* `LogMessageJson` JSON object.  
-  The object might contain the following types of keys (the possible key values are listed below):
-
-  Type
-
-  Description
-
-  Timestamp
-
-  The following formats are supported: UTC milliseconds, RFC3339, and RFC3164. If not set, the current timestamp is used.
-
-  Severity
-
-  If not set or not recognized, NONE is used.
-
-  Content
-
-  If the content key is not set, the whole JSON is parsed as the content.
-
-  Attributes
-
-  Only values of the string type are supported; numbers and boolean values will be converted to string. Semantic attributes are also displayed in attribute filters, suggested in query edit or when creating metrics or alerts.
+* `LogMessageJson` JSON object. See [Ingest JSON and TXT logs](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-api/lma-ingest-json-txt-logs "Understand how JSON and TXT logs are processed, whether in flattened or raw mode.") for the complete list of keys and their descriptions.
 * `LogMessageOTLP` OpenTelemetry Protocol object. See [Ingest OTLP logs](/docs/ingest-from/opentelemetry/otlp-api/ingest-logs "Learn how Dynatrace ingests OpenTelemetry log records and what limitations apply.").
 
 ## Limits for your log autodiscovery when using OneAgent
@@ -147,29 +101,22 @@ In special cases, such as very poor hardware performance, the OneAgent log modul
 
 Scenarios that are not supported in the rotated log monitoring process include:
 
-Type
-
-Description
-
-Rotated log generation with a directory change
-
-The potential consequence is the creation of duplicates and/or incomplete logs.
-
-Rotated log generation with immediate compression
-
-If a rotation criterion is met (for example, the required file size is reached), the file is moved to another location and immediately compressed. Example: `/var/log/application.log -> /var/log/application.log.1.gz -> /var/log/application.log.2.gz -> /var/log/application.log.3.gz`. This process might again lead to incomplete log ingest. There should be at least one uncompressed rotated file.
-
-Rotated log generation with queue logic
-
-The oldest log records are removed whenever new content is added to a file, resulting in a relatively constant log file size. This scenario can be easily replaced with a supported rotation scheme by, for example, starting a new file when the current file reaches a predefined size.
-
 ## Sensitive data masking limits
 
 Be aware of the following limitations to sensitive data masking:
 
 * If the masking process takes too much time, the log file affected is blocked until the restart of OneAgent or any configuration change, and then you get the `File not monitored - incorrect sensitive data masking rule` message.
 
-## Active Gate throughput
+## ActiveGate throughput
 
-If you are using the SaaS endpoint, you don't have to worry about the Active Gate throughput. The throughput is the same as for Grail.
-If you use Environmental Active Gate, the throughput is 3.3GB/min with RTT <= 200 ms.
+If you are using the SaaS endpoint, you don't have to worry about the ActiveGate throughput. The throughput is the same as for Grail.
+
+If you use an Environment ActiveGate dedicated for log ingestion via the Log Ingestion API, performance tests indicate the following sustained ingestion throughput per Environment ActiveGate instance:
+
+* Up to 10.3 GB/min under typical WAN conditions (round-trip time of up to roughly 200 ms)
+* Up to 12.1 GB/min under low-latency conditions (RTT â¤ 10 ms)
+
+The following test profile was used:
+
+* Host instance: c6i.2xlarge
+* JSON payloads of approximately 300 kB per request, each containing 300 log lines, sent via the Log Ingestion API

@@ -1,7 +1,7 @@
 ---
 title: DynaKube parameters for Dynatrace Operator
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/reference/dynakube-parameters
-scraped: 2026-02-17T21:29:20.303529
+scraped: 2026-03-06T21:31:41.255882
 ---
 
 # DynaKube parameters for Dynatrace Operator
@@ -10,7 +10,7 @@ scraped: 2026-02-17T21:29:20.303529
 
 * Latest Dynatrace
 * 57-min read
-* Updated on Jan 02, 2026
+* Updated on Feb 24, 2026
 
 This page will help you to understand and configure the DynaKube [Kubernetes Custom Resourceï»¿](https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources/), enabling you to optimize your Dynatrace Operator setup according to your specific requirements.
 
@@ -29,7 +29,7 @@ The table below specifies the required Dynatrace Operator versions corresponding
 
 The corresponding DynaKube API versions will be removed from the Dynatrace Operator in the subsequent minor or major release.
 
-See the DynaKube YAML samples on [GitHubï»¿](https://github.com/Dynatrace/dynatrace-operator/tree/v1.5.0/assets/samples/dynakube).
+See the DynaKube YAML samples on [GitHubï»¿](https://github.com/Dynatrace/dynatrace-operator/tree/v1.8.1/assets/samples/dynakube).
 
 v1beta6
 
@@ -78,7 +78,8 @@ Recommended
 | --- | --- | --- | --- |
 | `annotations` | Add custom OneAgent annotations. | Not applicable | map[string]string |
 | `args` | Set additional arguments to the OneAgent installer. For available options, see [Linux custom installation](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/customize-oneagent-installation-on-linux "Learn how to use the Linux installer with command line parameters."). For the list of limitations, see [Limitations](/docs/ingest-from/setup-on-container-platforms/docker/set-up-dynatrace-oneagent-as-docker-container#limitations "Install and update Dynatrace OneAgent as a Docker container."). | Not applicable | []string |
-| `codeModulesImage` | The OneAgent image that is used to inject into pods | Not applicable | string |
+| `codeModulesImage` | Specifies the OneAgent CodeModules image used for injection into application pods. Updates are applied only when the image reference changes. If a floating tag (for example, `latest`) is used, new images pushed under the same tag are not automatically picked up on existing nodes. It is recommended to use a unique tag for each OneAgent CodeModule image version. |  |  |
+| Not applicable | string |  |  |
 | `dnsPolicy` | Set the DNS policy for OneAgent pods. For details, see [Pods DNS Policyï»¿](https://dt-url.net/2t2375a). | `ClusterFirstWithHostNet` | string |
 | `env` | Set additional environment variables for the OneAgent pods. | Not applicable | []EnvVar |
 | `image` | Use a custom OneAgent Docker image. | The image from the Dynatrace cluster. | string |
@@ -119,7 +120,7 @@ Recommended
 
 | **Parameter** | **Description** | **Default value** | **Data type** |
 | --- | --- | --- | --- |
-| `codeModulesImage` | The OneAgent image that is used to inject into pods | Not applicable | string |
+| `codeModulesImage` | Specifies the OneAgent CodeModules image used for injection into application pods. Updates are applied only when the image reference changes. If a floating tag (for example, `latest`) is used, new images pushed under the same tag are not automatically picked up on existing nodes. It is recommended to use a unique tag for each OneAgent CodeModule image version. | Not applicable | string |
 | `initResources` | Define resources requests and limits for the initContainer. For details, see [Managing resources for containersï»¿](https://dt-url.net/atc371q). | Not applicable | ResourceRequirements |
 | `namespaceSelector` | The namespaces where you want Dynatrace Operator to inject. For more information, see [Configure monitoring for namespaces and Pods](/docs/ingest-from/setup-on-k8s/guides/deployment-and-configuration/monitoring-and-instrumentation/annotate "Configure monitoring for namespaces and pods"). | - | LabelSelector |
 | `version` | The OneAgent version to be used. | The latest version is used by default. | string |
@@ -456,10 +457,8 @@ Adding this section enables [Kubernetes Security Posture Management (KSPM)](/doc
 
 Available with Dynatrace version 1.306 and OneAgent 1.305
 
-To use Log Monitoring:
+Log Monitoring requires the `kubernetes-monitoring` [ActiveGate capability](#active-gate) to be enabled, but it doesn't have to be configured in the same DynaKube. If `kubernetes-monitoring` is missing or the feature flag `feature.dynatrace.com/automatic-kubernetes-api-monitoring` is set to `false`, the Operator produces a warning but Log Monitoring still deploys.
 
-* `kubernetes-monitoring` is mandatory and has to be added to the [list of ActiveGate capabilities](#active-gate) in `.spec.activeGate.capabilities`
-* The feature flag `feature.dynatrace.com/automatic-kubernetes-api-monitoring` must not be set to `false`.
 * All parameters in `.spec.logMonitoring` are Optional.
 
 | **Parameter** | **Description** | **Default value** | **Data type** |
@@ -593,7 +592,7 @@ Available with Dynatrace version 1.306 and OneAgent 1.305
 | `secCompProfile` | Configures a SecComp profile to enable secure computing mode for the LogMonitoring pods. | Not applicable | string |
 | `resources` | Define resource requests and limits for LogMonitoring's main and init-container. | Not applicable | ResourceRequirements |
 | `tolerations` | Set tolerations for the LogMonitoring pods. For details, see [Taints and Tolerationsï»¿](https://dt-url.net/od03765). | Not applicable | []Toleration |
-| `args` | Set additional arguments for the LogMonitoring main container. | Not applicable | []string |
+| `args` | Set additional arguments for the LogMonitoring init container. | Not applicable | []string |
 
 ## `.spec.templates.logMonitoring.imageRef`
 
@@ -714,7 +713,7 @@ Recommended
 | `annotations` | Add custom OneAgent annotations. | Not applicable | map[string]string |
 | `args` | Set additional arguments to the OneAgent installer. For available options, see [Linux custom installation](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/customize-oneagent-installation-on-linux "Learn how to use the Linux installer with command line parameters."). For the list of limitations, see [Limitations](/docs/ingest-from/setup-on-container-platforms/docker/set-up-dynatrace-oneagent-as-docker-container#limitations "Install and update Dynatrace OneAgent as a Docker container."). | Not applicable | []string |
 | `autoUpdate` (**deprecated**) | Deprecated field to be removed in a future release. [Pin the OneAgent version on your tenant to configure auto-update](/docs/ingest-from/setup-on-k8s/guides/deployment-and-configuration/updates-and-maintenance/auto-update-components#configure-oneagent-auto-update "Configure auto-updates for components managed by Dynatrace Operator (OneAgent, ActiveGate, and EdgeConnect)."). Auto-update is disabled when the `version` or `image` fields are set. | `true` | boolean |
-| `codeModulesImage` | The OneAgent image that is used to inject into pods | Not applicable | string |
+| `codeModulesImage` | Specifies the OneAgent CodeModules image used for injection into application pods. Updates are applied only when the image reference changes. If a floating tag (for example, `latest`) is used, new images pushed under the same tag are not automatically picked up on existing nodes. It is recommended to use a unique tag for each OneAgent CodeModule image version. | Not applicable | string |
 | `dnsPolicy` | Set the DNS policy for OneAgent pods. For details, see [Pods DNS Policyï»¿](https://dt-url.net/2t2375a). | `ClusterFirstWithHostNet` | string |
 | `env` | Set additional environment variables for the OneAgent pods. | Not applicable | []EnvVar |
 | `image` | Use a custom OneAgent Docker image. | The image from the Dynatrace cluster. | string |
@@ -756,7 +755,7 @@ Recommended
 
 | **Parameter** | **Description** | **Default value** | **Data type** |
 | --- | --- | --- | --- |
-| `codeModulesImage` | The OneAgent image that is used to inject into pods | Not applicable | string |
+| `codeModulesImage` | Specifies the OneAgent CodeModules image used for injection into application pods. Updates are applied only when the image reference changes. If a floating tag (for example, `latest`) is used, new images pushed under the same tag are not automatically picked up on existing nodes. It is recommended to use a unique tag for each OneAgent CodeModule image version. | Not applicable | string |
 | `initResources` | Define resources requests and limits for the initContainer. For details, see [Managing resources for containersï»¿](https://dt-url.net/atc371q). | Not applicable | ResourceRequirements |
 | `namespaceSelector` | The namespaces where you want Dynatrace Operator to inject. For more information, see [Configure monitoring for namespaces and Pods](/docs/ingest-from/setup-on-k8s/guides/deployment-and-configuration/monitoring-and-instrumentation/annotate "Configure monitoring for namespaces and pods"). | - | LabelSelector |
 | `version` | The OneAgent version to be used. | The latest version is used by default. | string |
@@ -847,10 +846,8 @@ Adding this section enables [Kubernetes Security Posture Management (KSPM)](/doc
 
 Available with Dynatrace version 1.306 and OneAgent 1.305
 
-To use Log Monitoring
+Log Monitoring requires the `kubernetes-monitoring` [ActiveGate capability](#active-gate) to be enabled, but it doesn't have to be configured in the same DynaKube. If `kubernetes-monitoring` is missing or the feature flag `feature.dynatrace.com/automatic-kubernetes-api-monitoring` is set to `false`, the Operator produces a warning but Log Monitoring still deploys.
 
-* `kubernetes-monitoring` is mandatory and has to be added to the [list of ActiveGate capabilities](#active-gate) in `.spec.activeGate.capabilities`
-* The feature flag `feature.dynatrace.com/automatic-kubernetes-api-monitoring` must not be set to `false`.
 * All parameters in `.spec.logMonitoring` are Optional.
 
 | **Parameter** | **Description** | **Default value** | **Data type** |
@@ -962,7 +959,7 @@ Available with Dynatrace version 1.306 and OneAgent 1.305
 | `secCompProfile` | Configures a SecComp profile to enable secure computing mode for the LogMonitoring pods. | Not applicable | string |
 | `resources` | Define resource requests and limits for LogMonitoring's main and init-container. | Not applicable | ResourceRequirements |
 | `tolerations` | Set tolerations for the LogMonitoring pods. For details, see [Taints and Tolerationsï»¿](https://dt-url.net/od03765). | Not applicable | []Toleration |
-| `args` | Set additional arguments for the LogMonitoring main container. | Not applicable | []string |
+| `args` | Set additional arguments for the LogMonitoring init container. | Not applicable | []string |
 
 ## `.spec.templates.logMonitoring.imageRef`
 
@@ -1065,7 +1062,7 @@ Recommended
 | `annotations` | Add custom OneAgent annotations. | Not applicable | map[string]string |
 | `args` | Set additional arguments to the OneAgent installer. For available options, see [Linux custom installation](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/customize-oneagent-installation-on-linux "Learn how to use the Linux installer with command line parameters."). For the list of limitations, see [Limitations](/docs/ingest-from/setup-on-container-platforms/docker/set-up-dynatrace-oneagent-as-docker-container#limitations "Install and update Dynatrace OneAgent as a Docker container."). | Not applicable | []string |
 | `autoUpdate` (**deprecated**) | Deprecated field to be removed in a future release. [Pin the OneAgent version on your tenant to configure auto-update](/docs/ingest-from/setup-on-k8s/guides/deployment-and-configuration/updates-and-maintenance/auto-update-components#configure-oneagent-auto-update "Configure auto-updates for components managed by Dynatrace Operator (OneAgent, ActiveGate, and EdgeConnect)."). Auto-update is disabled when the `version` or `image` fields are set. | `true` | boolean |
-| `codeModulesImage` | The OneAgent image that is used to inject into Pods | Not applicable | string |
+| `codeModulesImage` | Specifies the OneAgent CodeModules image used for injection into application pods. Updates are applied only when the image reference changes. If a floating tag (for example, `latest`) is used, new images pushed under the same tag are not automatically picked up on existing nodes. It is recommended to use a unique tag for each OneAgent CodeModule image version. | Not applicable | string |
 | `dnsPolicy` | Set the DNS Policy for OneAgent Pods. For details, see [Pods DNS Policyï»¿](https://dt-url.net/2t2375a). | `ClusterFirstWithHostNet` | string |
 | `env` | Set additional environment variables for the OneAgent Pods. | Not applicable | []EnvVar |
 | `image` | Use a custom OneAgent Docker image. | The image from the Dynatrace cluster. | string |
@@ -1073,7 +1070,7 @@ Recommended
 | `labels` | Your defined labels for OneAgent Pods in order to structure workloads as desired. | Not applicable | map[string]string |
 | `namespaceSelector` | The namespaces where you want Dynatrace Operator to inject. For more information, see [Configure monitoring for namespaces and Pods](/docs/ingest-from/setup-on-k8s/guides/deployment-and-configuration/monitoring-and-instrumentation/annotate "Configure monitoring for namespaces and pods"). | Not applicable | LabelSelector |
 | `nodeSelector` | Specify the node selector that controls on which nodes OneAgent will be deployed. | Not applicable | map[string]string |
-| `oneAgentResources` | Resource settings for OneAgent container. Consumption of the OneAgent heavily depends on the workload to monitor. You can use the default settings in the [CRï»¿](https://github.com/Dynatrace/dynatrace-operator/tree/v1.5.0/assets/samples/dynakube). `resource.requests` shows the values needed to run; `resource.limits` shows the maximum limits for the Pod. | Not applicable | ResourceRequirements |
+| `oneAgentResources` | Resource settings for OneAgent container. Consumption of the OneAgent heavily depends on the workload to monitor. You can use the default settings in the [CRï»¿](https://github.com/Dynatrace/dynatrace-operator/tree/v1.8.1/assets/samples/dynakube). `resource.requests` shows the values needed to run; `resource.limits` shows the maximum limits for the Pod. | Not applicable | ResourceRequirements |
 | `priorityClassName` | Assign a priority class to the OneAgent Pods. By default, no class is set. For details, see [Pod Priority and Preemptionï»¿](https://dt-url.net/n8437bl). | Not applicable | string |
 | `secCompProfile` | The SecComp Profile that will be configured in order to run in secure computing mode. | - | string |
 | `storageHostPath` | Writeable directory on the host filesystem where OneAgent configurations will be stored. | - | string |
@@ -1107,7 +1104,7 @@ Recommended
 
 | **Parameter** | **Description** | **Default value** | **Data type** |
 | --- | --- | --- | --- |
-| `codeModulesImage` | The OneAgent image that is used to inject into Pods | Not applicable | string |
+| `codeModulesImage` | Specifies the OneAgent CodeModules image used for injection into application pods. Updates are applied only when the image reference changes. If a floating tag (for example, `latest`) is used, new images pushed under the same tag are not automatically picked up on existing nodes. It is recommended to use a unique tag for each OneAgent CodeModule image version. | Not applicable | string |
 | `initResources` | Define resources requests and limits for the initContainer. For details, see [Managing resources for containersï»¿](https://dt-url.net/atc371q). | Not applicable | ResourceRequirements |
 | `namespaceSelector` | The namespaces where you want Dynatrace Operator to inject. For more information, see [Configure monitoring for namespaces and Pods](/docs/ingest-from/setup-on-k8s/guides/deployment-and-configuration/monitoring-and-instrumentation/annotate "Configure monitoring for namespaces and pods"). | - | LabelSelector |
 | `version` | The OneAgent version to be used. | The latest version is used by default. | string |
@@ -1193,10 +1190,8 @@ Adding this section enables [Kubernetes Security Posture Management (KSPM)](/doc
 
 Available with Dynatrace version 1.306 and OneAgent 1.305
 
-To use Log Monitoring
+Log Monitoring requires the `kubernetes-monitoring` [ActiveGate capability](#active-gate) to be enabled, but it doesn't have to be configured in the same DynaKube. If `kubernetes-monitoring` is missing or the feature flag `feature.dynatrace.com/automatic-kubernetes-api-monitoring` is set to `false`, the Operator produces a warning but Log Monitoring still deploys.
 
-* `kubernetes-monitoring` is mandatory and has to be added to the [list of ActiveGate capabilities](#active-gate) in `.spec.activeGate.capabilities`
-* The feature flag `feature.dynatrace.com/automatic-kubernetes-api-monitoring` must not be set to `false`.
 * All parameters in `.spec.logMonitoring` are Optional.
 
 | **Parameter** | **Description** | **Default value** | **Data type** |
@@ -1308,7 +1303,7 @@ Available with Dynatrace version 1.306 and OneAgent 1.305
 | `secCompProfile` | Configures a SecComp profile to enable secure computing mode for the LogMonitoring Pods. | Not applicable | string |
 | `resources` | Define resource requests and limits for LogMonitoring's main and init-container. | Not applicable | ResourceRequirements |
 | `tolerations` | Set tolerations for the LogMonitoring Pods. For details, see [Taints and Tolerationsï»¿](https://dt-url.net/od03765). | Not applicable | []Toleration |
-| `args` | Set additional arguments for the LogMonitoring main container. | Not applicable | []string |
+| `args` | Set additional arguments for the LogMonitoring init container. | Not applicable | []string |
 
 ## `.spec.templates.logMonitoring.imageRef`
 
@@ -1533,10 +1528,8 @@ Adding this section enables [Kubernetes Security Posture Management (KSPM)](/doc
 
 Available with Dynatrace version 1.306 and OneAgent 1.305
 
-To use Log Monitoring
+Log Monitoring requires the `kubernetes-monitoring` [ActiveGate capability](#active-gate) to be enabled, but it doesn't have to be configured in the same DynaKube. If `kubernetes-monitoring` is missing or the feature flag `feature.dynatrace.com/automatic-kubernetes-api-monitoring` is set to `false`, the Operator produces a warning but Log Monitoring still deploys.
 
-* `kubernetes-monitoring` is mandatory and has to be added to the [list of ActiveGate capabilities](#active-gate) in `.spec.activeGate.capabilities`
-* The feature flag `feature.dynatrace.com/automatic-kubernetes-api-monitoring` must not be set to `false`.
 * All parameters in `.spec.logMonitoring` are Optional.
 
 | **Parameter** | **Description** | **Default value** | **Data type** |
@@ -1637,7 +1630,7 @@ Available with Dynatrace version 1.306 and OneAgent 1.305
 | `resources` | Define resource requests and limits for LogMonitoring's main and init-container. | Not applicable | ResourceRequirements |
 | `nodeAffinity` | Define the nodeAffinity for the DaemonSet of the NodeConfigurationCollector | Not applicable | corev1.NodeAffinity |
 | `tolerations` | Set tolerations for the LogMonitoring Pods. For details, see [Taints and Tolerationsï»¿](https://dt-url.net/od03765). | Not applicable | []Toleration |
-| `args` | Set additional arguments for the LogMonitoring main container. | Not applicable | []string |
+| `args` | Set additional arguments for the LogMonitoring init container. | Not applicable | []string |
 | `updateStrategy` | Define the NodeConfigurationCollector daemonSet updateStrategy. | Not applicable | appsv1.DaemonSetUpdateStrategy |
 
 ## `.spec.templates.logMonitoring.imageRef`

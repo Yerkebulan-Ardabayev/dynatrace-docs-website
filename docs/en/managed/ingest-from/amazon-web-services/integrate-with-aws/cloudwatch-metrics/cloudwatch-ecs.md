@@ -1,13 +1,14 @@
 ---
 title: Monitor Amazon Elastic Container Service (ECS) with CloudWatch metrics
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics/cloudwatch-ecs
-scraped: 2026-02-18T05:57:59.267729
+scraped: 2026-03-06T21:37:07.665788
 ---
 
 # Monitor Amazon Elastic Container Service (ECS) with CloudWatch metrics
 
 # Monitor Amazon Elastic Container Service (ECS) with CloudWatch metrics
 
+* Classic
 * How-to guide
 * 1-min read
 * Published Oct 15, 2020

@@ -1,13 +1,14 @@
 ---
 title: Network zones
 source: https://www.dynatrace.com/docs/manage/network-zones
-scraped: 2026-02-17T21:29:17.965142
+scraped: 2026-03-06T21:30:21.458865
 ---
 
 # Network zones
 
 # Network zones
 
+* Classic
 * Overview
 * 1-min read
 * Updated on Dec 10, 2025

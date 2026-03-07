@@ -1,7 +1,7 @@
 ---
 title: Supported distributions
 source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/deployment/supported-technologies
-scraped: 2026-02-18T21:25:33.803912
+scraped: 2026-03-05T21:26:22.993785
 ---
 
 # Supported distributions
@@ -183,7 +183,10 @@ For GKE Autopilot, you can [install Dynatrace for App Observability](/docs/inges
 * `docker.io/dynatrace/dynatrace-operator`
 * `public.ecr.aws/dynatrace/dynatrace-operator`
 
-Standalone LogMonitoring on GKE Autopilot is fully supported since Dynatrace Operator version 1.4.2.
+Standalone LogMonitoring on GKE Autopilot is fully supported since Dynatrace Operator version 1.4.2 with the following repository source support:
+
+* `docker.io/dynatrace/dynatrace-logmodule`
+* `public.ecr.aws/dynatrace/dynatrace-logmodule`
 
 #### Allowlisting Dynatrace workloads
 

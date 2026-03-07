@@ -1,7 +1,7 @@
 ---
 title: Service-related concepts
 source: https://www.dynatrace.com/docs/observe/application-observability/services/services-concepts
-scraped: 2026-02-18T21:17:43.084863
+scraped: 2026-03-06T21:10:34.460722
 ---
 
 # Service-related concepts
@@ -55,7 +55,7 @@ Key requests are requests requiring special attention (critical business measure
 
 Switch to Enhanced endpoints for SDv1
 
-Instead of [defining key requests](/docs/observe/application-observability/services-classic/monitor-key-requests "Discover how to closely monitor requests that are critical to your business.") for SDv1 services, we strongly recommend enabling the [**Enhanced endpoints for SDv1** feature](/docs/observe/application-observability/services/enhanced-endpoints-sdv1 "Utilize the Enhanced endpoints for SDv1 feature to gain deeper insights into your application's performance and improve your ability to monitor and troubleshoot service interactions.") that allows showing all endpoints in ![Services](https://dt-cdn.net/hub/logos/services.png "Services") **Services**, not just key requests.
+Instead of [defining key requests](/docs/observe/application-observability/services-classic/monitor-key-requests "Discover how to closely monitor requests that are critical to your business.") for SDv1 services, we strongly recommend enabling the [**Enhanced endpoints for SDv1** feature](/docs/observe/application-observability/services/service-detection/service-detection-v1/enhanced-endpoints-sdv1 "Utilize the Enhanced endpoints for SDv1 feature to gain deeper insights into your application's performance and improve your ability to monitor and troubleshoot service interactions.") that allows showing all endpoints in ![Services](https://dt-cdn.net/hub/logos/services.png "Services") **Services**, not just key requests.
 
 ## Errors, exceptions, and failures
 

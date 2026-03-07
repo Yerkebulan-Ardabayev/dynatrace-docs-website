@@ -1,6 +1,6 @@
 # Документация Dynatrace: analyze-explore-automate/logs
 Язык: Русский (RU)
-Сгенерировано: 2026-02-18
+Сгенерировано: 2026-03-06
 Файлов в разделе: 51
 ---
 
@@ -9,7 +9,7 @@
 ---
 title: Log alerts
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/alerting-on-logs
-scraped: 2026-02-18T21:20:48.688091
+scraped: 2026-03-06T21:15:23.570408
 ---
 
 # Log alerts
@@ -92,7 +92,7 @@ For detailed instructions, see [Create log alerts for a log event or summary of 
 ---
 title: Log content analysis
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-analysis
-scraped: 2026-02-18T21:19:31.774658
+scraped: 2026-03-06T21:23:14.965677
 ---
 
 # Log content analysis
@@ -147,7 +147,7 @@ With enriched log data, you can check for the specific user inside your applicat
 ---
 title: Log Management and Analytics best practices
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-best-practices
-scraped: 2026-02-17T21:19:21.395849
+scraped: 2026-03-06T21:21:37.693611
 ---
 
 # Log Management and Analytics best practices
@@ -546,7 +546,7 @@ This step grants users access to only specific buckets.
 ---
 title: Configure data storage and retention for logs
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-bucket-assignment
-scraped: 2026-02-18T21:20:51.043838
+scraped: 2026-03-06T21:15:14.824079
 ---
 
 # Configure data storage and retention for logs
@@ -669,7 +669,7 @@ For more information, see [Log Management and Analytics best practices](/docs/an
 ---
 title: DQL matcher in logs
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-classic-log-processing/lma-log-processing-matcher
-scraped: 2026-02-17T05:00:56.656564
+scraped: 2026-03-05T21:30:59.143327
 ---
 
 # DQL matcher in logs
@@ -709,46 +709,6 @@ Filters records containing a specified phrase. Returns only matching records. Th
 * **Syntax**  
   `matchesPhrase(expression, phrase [, caseSensitive])`
 * **Parameters**
-
-  Name
-
-  Type
-
-  Mandatory
-
-  Default
-
-  Constraints
-
-  Description
-
-  expression
-
-  string, array
-
-  yes
-
-  The expression (string or array of strings) that should be checked.
-
-  phrase
-
-  string
-
-  yes
-
-  The phrase to search for.
-
-  caseSensitive
-
-  boolean
-
-  no
-
-  false
-
-  This optional parameter (`caseSensitive`) is not supported by the matcher. The `matchesPhrase` function in the matcher performs only case insensitive search.
-
-  Whether the match should be done case-sensitive.
 * **Example**  
   In this example, you add a filter that matches log records that contain `error` phrase in their content.
 
@@ -758,199 +718,13 @@ Filters records containing a specified phrase. Returns only matching records. Th
 
   ### Examples of event processing using DQL matchesPhrase function
 
-  Part of the input event
-
-  Processing query
-
-  Match result
-
-  Description
-
-  `attribute="User 'kÃ¤Ã¤rmanÃ¼' failed to login from 192.168.0.1"`
-
-  `matchesPhrase(attribute, "192.168.0.1")`
-
-  ![Applicable](https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg "Applicable")
-
-  Exact match by single term.
-
-  `attribute="User 'kÃ¤Ã¤rmanÃ¼' failed to login from 192.168.0.123"`
-
-  `matchesPhrase(attribute, "192.168.0.1")`
-
-  ![Not applicable](https://dt-cdn.net/images/icon-red-cross-1f1142a5dc.svg "Not applicable")
-
-  Non-word character is expected after character `1`.
-
-  `attribute="User 'kÃ¤Ã¤rmanÃ¼' failed to login from 192.168.0.123"`
-
-  `matchesPhrase(attribute, "192.168.0.1*")`
-
-  ![Applicable](https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg "Applicable")
-
-  The query would match all IPs with the last octet between `100` and `199`.
-
-  `attribute="User 'kÃ¤Ã¤rmanÃ¼' failed to login from 192.168.0.1"`
-
-  `matchesPhrase(attribute, "failed to login")`
-
-  ![Applicable](https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg "Applicable")
-
-  Exact phrase match.
-
-  `attribute="User 'kÃ¤Ã¤rmanÃ¼' failed to login from 192.168.0.1"`
-
-  `matchesPhrase(attribute, "failed to log")`
-
-  ![Not applicable](https://dt-cdn.net/images/icon-red-cross-1f1142a5dc.svg "Not applicable")
-
-  `log` is not a full word, non-word character is expected after `log`.
-
-  `attribute="User 'kÃ¤Ã¤rmanÃ¼' failed to login from 192.168.0.1"`
-
-  `matchesPhrase(attribute, "failed to log*")`
-
-  ![Applicable](https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg "Applicable")
-
-  If the query ends with a wildcard character, the validation of the succeeding character is skipped.
-
-  `attribute="User 'kÃ¤Ã¤rmanÃ¼' failed to login from 192.168.0.1"`
-
-  `matchesPhrase(attribute, "ed to login")`
-
-  ![Not applicable](https://dt-cdn.net/images/icon-red-cross-1f1142a5dc.svg "Not applicable")
-
-  `ed` is not a full word, the preceding character `l` is a part of the word.
-
-  `attribute="User 'kÃ¤Ã¤rmanÃ¼' failed to login from 192.168.0.1"`
-
-  `matchesPhrase(attribute, "*ed to login")`
-
-  ![Applicable](https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg "Applicable")
-
-  If the query starts with a wildcard character, the validation of the preceding character is skipped.
-
-  `attribute="User 'kÃ¤Ã¤rmanÃ¼' failed to login from 192.168.0.1"`
-
-  `matchesPhrase(attribute, "*ed to log*")`
-
-  ![Applicable](https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg "Applicable")
-
-  If the query starts and ends with a wildcard character, the validation of the preceding and succeeding characters is skipped.
-
-  `attribute="User 'kÃ¤Ã¤rmanÃ¼' failed to login from 192.168.0.1"`
-
-  `matchesPhrase(attribute, "kÃ¤Ã¤rmanÃ¼ failed")`
-
-  ![Not applicable](https://dt-cdn.net/images/icon-red-cross-1f1142a5dc.svg "Not applicable")
-
-  There should be an apostrophe (`'`) character between `kÃ¤Ã¤rmanÃ¼` and `failed`.
-
-  `attribute="User 'kÃ¤Ã¤rmanÃ¼' failed to login from 192.168.0.1"`
-
-  `matchesPhrase(attribute, "rmanÃ¼' failed")`
-
-  ![Applicable](https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg "Applicable")
-
-  Non-ASCII character `Ã¤` is treated as non-word character.
-
-  `attribute="User 'kÃ¤Ã¤rmanÃ¼' failed to login from 192.168.0.1"`
-
-  `matchesPhrase(attribute, " 'kÃ¤Ã¤rmanÃ¼' failed")`
-
-  ![Applicable](https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg "Applicable")
-
-  If the query starts with non-word character, the validation of the preceding character is skipped.
-
-  `attribute="Failed to assign monitoring configuration for com.dynatrace.extension"`
-
-  `matchesPhrase(attribute, "configuration for")`
-
-  ![Not applicable](https://dt-cdn.net/images/icon-red-cross-1f1142a5dc.svg "Not applicable")
-
-  There is a space in the query and a tabulator in the attribute value.
-
-  `attribute="Failed to assign monitoring configuration for com.dynatrace.extension"`
-
-  `matchesPhrase(attribute, "failed to")`
-
-  ![Not applicable](https://dt-cdn.net/images/icon-red-cross-1f1142a5dc.svg "Not applicable")
-
-  There is a single space in the query and a double space in the attribute value
-
-  `attribute="Failed to assign monitoring configuration for com.dynatrace.extension"`
-
-  `matchesPhrase(attribute, "failed to")`
-
-  ![Applicable](https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg "Applicable")
-
-  It is possible to search with multiple spaces.
-
-  `attribute=["Gdansk, Poland", "Linz, Austria", "Klagenfurt, Austria"]`
-
-  `matchesPhrase(attribute, "Austria")`
-
-  ![Applicable](https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg "Applicable")
-
-  The function handles multi-value attributes in "any-match" manner, in this case `Austria` is matched in second and third value.
-
-  `attribute=["Gdansk, Poland", "Linz, Austria", "Klagenfurt, Austria"]`
-
-  `matchesPhrase(attribute, "Pol*")`
-
-  ![Applicable](https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg "Applicable")
-
-  Wildcard can be used also when dealing with multi-value attributes.
-
 ### matchesValue
-
-
 
 Searches the records for a specific value in a given attribute. Returns only matching records. This function is case insensitive for ASCII characters, it works with multi-value attributes (matching any of the values), and it doesn't support mid-value wildcards.
 
 * **Syntax**  
   `matchesValue(expression, value [, caseSensitive])`
 * **Parameters**
-
-  Name
-
-  Type
-
-  Mandatory
-
-  Default
-
-  Constraints
-
-  Description
-
-  expression
-
-  string, array
-
-  yes
-
-  The expression (value or array of values) that should be checked.
-
-  value
-
-  string
-
-  yes
-
-  The value to search for.
-
-  caseSensitive
-
-  boolean
-
-  no
-
-  false
-
-  This optional parameter (`caseSensitive`) is not supported by the matcher. The `matchesValue` function in the matcher performs only case insensitive search.
-
-  Whether the match should be done case-sensitive.
 * **Example**  
   In this example, you add a filter record where `process.technology` attribute contains `nginx` value.
 
@@ -959,94 +733,6 @@ Searches the records for a specific value in a given attribute. Returns only mat
   ```
 
   ### Examples of event processing using DQL matchesValue function
-
-  Part of the input event
-
-  Processing query
-
-  Match result
-
-  Description
-
-  `attribute="Dynatrace"`
-
-  `matchesValue(attribute, "dynaTrace")`
-
-  ![Applicable](https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg "Applicable")
-
-  Case insensitive equality.
-
-  `attribute="User 'kÃ¤Ã¤rmanÃ¼' failed to login from 192.168.0.1"`
-
-  `matchesValue(attribute, "192.168.0.1")`
-
-  ![Not applicable](https://dt-cdn.net/images/icon-red-cross-1f1142a5dc.svg "Not applicable")
-
-  The whole attribute value is considered.
-
-  `attribute="User 'kÃ¤Ã¤rmanÃ¼' failed to login from 192.168.0.1"`
-
-  `matchesValue(attribute, "*192.168.0.1")`
-
-  ![Applicable](https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg "Applicable")
-
-  The value ends with `192.168.0.1`.
-
-  `attribute="User 'kÃ¤Ã¤rmanÃ¼' failed to login from 192.168.0.1"`
-
-  `matchesValue(attribute, "user*")`
-
-  ![Applicable](https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg "Applicable")
-
-  The value starts with `user` (case-insensitively).
-
-  `attribute="User 'kÃ¤Ã¤rmanÃ¼' failed to login from 192.168.0.1"`
-
-  `matchesValue(attribute, "*failed to log*")`
-
-  ![Applicable](https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg "Applicable")
-
-  The value contains the string `failed to log`.
-
-  `attribute="Ãsterreich"`
-
-  `matchesValue(attribute, "Ã¶sterreich")`
-
-  ![Not applicable](https://dt-cdn.net/images/icon-red-cross-1f1142a5dc.svg "Not applicable")
-
-  Case insensitive only for ASCII characters.
-
-  `attribute="Ãsterreich"`
-
-  `matchesValue(attribute, "Ãsterreich")`
-
-  ![Applicable](https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg "Applicable")
-
-  Exact match.
-
-  `attribute=["Java", "DOCKER", "k8s"]`
-
-  `matchesValue(attribute, "docker")`
-
-  ![Applicable](https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg "Applicable")
-
-  The function handles multi-value attributes in "any-match" manner, in this case, `docker` is matched in the second value.
-
-  `attribute=["Java11", "java17"]`
-
-  `matchesValue(attribute, "java")`
-
-  ![Not applicable](https://dt-cdn.net/images/icon-red-cross-1f1142a5dc.svg "Not applicable")
-
-  None of the values is equal to string java.
-
-  `attribute=["Java11", "java17"]`
-
-  `matchesValue(attribute, "java*")`
-
-  ![Applicable](https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg "Applicable")
-
-  Both values start with a string `java`.
 
 ### isNotNull
 
@@ -1061,85 +747,7 @@ Tests if a value is not NULL.
   isNotNull(`host.name`)
   ```
 
-  timestamp
-
-  content
-
-  event.type
-
-  host.name
-
-  `2022-08-03 11:27:19`
-
-  `2022-08-03 09:27:19.836 [QueueProcessor] RemoteReporter...`
-
-  `LOG`
-
-  `HOST-AF-710319`
-
   **Examples of event processing using DQL isNotNull function.**
-
-  Part of the input event
-
-  Processing query
-
-  Match result
-
-  Description
-
-  ```
-  {
-
-
-
-  attribute="Dynatrace"
-
-
-
-  }
-  ```
-
-  `isNotNull(other)`
-
-  ![Not applicable](https://dt-cdn.net/images/icon-red-cross-1f1142a5dc.svg "Not applicable")
-
-  The `other` attribute does not exists
-
-  ```
-  {
-
-
-
-  attribute="Dynatrace"
-
-
-
-  }
-  ```
-
-  `isNotNull(attribute)`
-
-  ![Applicable](https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg "Applicable")
-
-  The `attribute` has non-null value.
-
-  ```
-  {
-
-
-
-  attribute=null
-
-
-
-  }
-  ```
-
-  `isNotNull(attribute)`
-
-  ![Not applicable](https://dt-cdn.net/images/icon-red-cross-1f1142a5dc.svg "Not applicable")
-
-  The `attribute` has null value.
 
 ### isNull
 
@@ -1154,83 +762,7 @@ Tests if a value is NULL.
   filter isNull(`host.name`)
   ```
 
-  timestamp
-
-  content
-
-  event.type
-
-  host.name
-
-  `2022-08-03 12:53:26`
-
-  `2022-08-03T10:52:31Z localhost haproxy[12529]: 192.168.19.100:38440`
-
-  `LOG`
-
   ### Examples of event processing using DQL isNull function.
-
-  Part of the input event
-
-  Processing query
-
-  Match result
-
-  Description
-
-  ```
-  {
-
-
-
-  attribute="Dynatrace"
-
-
-
-  }
-  ```
-
-  `isNull(other)`
-
-  ![Applicable](https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg "Applicable")
-
-  The `other` attribute does not exists.
-
-  ```
-  {
-
-
-
-  attribute="Dynatrace"
-
-
-
-  }
-  ```
-
-  `isNull(attribute)`
-
-  ![Not applicable](https://dt-cdn.net/images/icon-red-cross-1f1142a5dc.svg "Not applicable")
-
-  The `attribute` has non-null value.
-
-  ```
-  {
-
-
-
-  attribute=null
-
-
-
-  }
-  ```
-
-  `isNull(attribute)`
-
-  ![Applicable](https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg "Applicable")
-
-  The `attribute` has null value.
 
 ## Operators
 
@@ -1290,104 +822,6 @@ Contrary to `matchesValue` function, `strict equality` operator performs case-se
 
   Examples of using the strict equality operator.
 
-  Part of the input event
-
-  Processing query
-
-  Match result
-
-  Description
-
-  ```
-  {
-
-
-
-  attribute="Dynatrace"
-
-
-
-  }
-  ```
-
-  `attribute == "Dynatrace"`
-
-  ![Applicable](https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg "Applicable")
-
-  The attribute is of the string type and has the same value.
-
-  ```
-  {
-
-
-
-  attribute="Dynatrace"
-
-
-
-  }
-  ```
-
-  `attribute == "dynatrace"`
-
-  ![Not applicable](https://dt-cdn.net/images/icon-red-cross-1f1142a5dc.svg "Not applicable")
-
-  The strict equality is case-sensitive.
-
-  ```
-  {
-
-
-
-  attribute="1"
-
-
-
-  }
-  ```
-
-  `attribute == 1`
-
-  ![Not applicable](https://dt-cdn.net/images/icon-red-cross-1f1142a5dc.svg "Not applicable")
-
-  The attributes have different data types
-
-  ```
-  {
-
-
-
-  attribute="1.0"
-
-
-
-  }
-  ```
-
-  `attribute == 1`
-
-  ![Applicable](https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg "Applicable")
-
-  Floating numbers can be compared to integer values if their decimals equal 0
-
-  ```
-  {
-
-
-
-  attribute=["Java", "DOCKER", "k8s"]
-
-
-
-  }
-  ```
-
-  `attribute == "Java"`
-
-  ![Not applicable](https://dt-cdn.net/images/icon-red-cross-1f1142a5dc.svg "Not applicable")
-
-  The attributes have different data types.
-
 ## Grouping
 
 You can create conditional grouping with brackets `( )`.
@@ -1411,7 +845,7 @@ All the matcher expressions used in either log events, metrics, processing or bu
 ---
 title: Log processing with classic pipeline
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-classic-log-processing
-scraped: 2026-02-18T21:22:55.997361
+scraped: 2026-03-06T21:13:44.771782
 ---
 
 # Log processing with classic pipeline
@@ -1511,7 +945,7 @@ To create a log processing rule
 ---
 title: Log Management and Analytics default limits
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-limits
-scraped: 2026-02-18T21:22:54.731538
+scraped: 2026-03-06T21:13:43.103611
 ---
 
 # Log Management and Analytics default limits
@@ -1521,7 +955,7 @@ scraped: 2026-02-18T21:22:54.731538
 * Latest Dynatrace
 * Explanation
 * 3-min read
-* Updated on Feb 02, 2026
+* Updated on Mar 04, 2026
 
 This page lists default limits for the latest version of Dynatrace Log Management and Analytics. The current limitations apply to both log file ingestion and log ingestion via the Log ingestion API.
 
@@ -1575,31 +1009,6 @@ Occasionally, a higher latency might occur by data loss prevention mechanisms li
 
 The following rules apply to all log event sources, such as OneAgent and the generic log ingestion API.
 
-Log record timestamp
-
-Description
-
-The current time minus 24 hours for log records.
-
-The event is dropped if the log event contains a timestamp before the current time minus 24 hours.
-If the record is ingested via the generic Log Ingestion API, it can return the following:
-
-`400` - if all log events in the payload have timestamps earlier than the current time minus 24 hours.
-Message in response: `All logs are out of correct time range.`
-
-`200` - in case some of the events in the payload have timestamps earlier than the current time minus 24 hours.
-Example message in response: `2 events were not ingested because of timestamp out of correct time range`.
-
-`204` - (No Content) in case of success.
-
-The current time minus two hours for log metrics and events.
-
-The data point is dropped if the log metric data point timestamp is before the current time minus two hours.
-
-Current time plus ten minutes
-
-The time stamp is reset to current time.
-
 ## Log metrics
 
 Number of metrics is limited to:
@@ -1612,28 +1021,7 @@ Number of metrics is limited to:
 
 In addition to generic Dynatrace API limitations ([Dynatrace API - Access limit](/docs/dynatrace-api/basics/access-limit "Find out about payload limits and request throttling that may affect your use of the Dynatrace API.")) the following log ingestion API specific limits apply:
 
-* `LogMessageJson` JSON object.  
-  The object might contain the following types of keys (the possible key values are listed below):
-
-  Type
-
-  Description
-
-  Timestamp
-
-  The following formats are supported: UTC milliseconds, RFC3339, and RFC3164. If not set, the current timestamp is used.
-
-  Severity
-
-  If not set or not recognized, NONE is used.
-
-  Content
-
-  If the content key is not set, the whole JSON is parsed as the content.
-
-  Attributes
-
-  Only values of the string type are supported; numbers and boolean values will be converted to string. Semantic attributes are also displayed in attribute filters, suggested in query edit or when creating metrics or alerts.
+* `LogMessageJson` JSON object. See [Ingest JSON and TXT logs](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-api/lma-ingest-json-txt-logs "Understand how JSON and TXT logs are processed, whether in flattened or raw mode.") for the complete list of keys and their descriptions.
 * `LogMessageOTLP` OpenTelemetry Protocol object. See [Ingest OTLP logs](/docs/ingest-from/opentelemetry/otlp-api/ingest-logs "Learn how Dynatrace ingests OpenTelemetry log records and what limitations apply.").
 
 ## Limits for your log autodiscovery when using OneAgent
@@ -1657,32 +1045,25 @@ In special cases, such as very poor hardware performance, the OneAgent log modul
 
 Scenarios that are not supported in the rotated log monitoring process include:
 
-Type
-
-Description
-
-Rotated log generation with a directory change
-
-The potential consequence is the creation of duplicates and/or incomplete logs.
-
-Rotated log generation with immediate compression
-
-If a rotation criterion is met (for example, the required file size is reached), the file is moved to another location and immediately compressed. Example: `/var/log/application.log -> /var/log/application.log.1.gz -> /var/log/application.log.2.gz -> /var/log/application.log.3.gz`. This process might again lead to incomplete log ingest. There should be at least one uncompressed rotated file.
-
-Rotated log generation with queue logic
-
-The oldest log records are removed whenever new content is added to a file, resulting in a relatively constant log file size. This scenario can be easily replaced with a supported rotation scheme by, for example, starting a new file when the current file reaches a predefined size.
-
 ## Sensitive data masking limits
 
 Be aware of the following limitations to sensitive data masking:
 
 * If the masking process takes too much time, the log file affected is blocked until the restart of OneAgent or any configuration change, and then you get the `File not monitored - incorrect sensitive data masking rule` message.
 
-## Active Gate throughput
+## ActiveGate throughput
 
-If you are using the SaaS endpoint, you don't have to worry about the Active Gate throughput. The throughput is the same as for Grail.
-If you use Environmental Active Gate, the throughput is 3.3GB/min with RTT <= 200 ms.
+If you are using the SaaS endpoint, you don't have to worry about the ActiveGate throughput. The throughput is the same as for Grail.
+
+If you use an Environment ActiveGate dedicated for log ingestion via the Log Ingestion API, performance tests indicate the following sustained ingestion throughput per Environment ActiveGate instance:
+
+* Up to 10.3 GB/min under typical WAN conditions (round-trip time of up to roughly 200 ms)
+* Up to 12.1 GB/min under low-latency conditions (RTT â¤ 10 ms)
+
+The following test profile was used:
+
+* Host instance: c6i.2xlarge
+* JSON payloads of approximately 300 kB per request, each containing 300 log lines, sent via the Log Ingestion API
 
 ---
 
@@ -1691,7 +1072,7 @@ If you use Environmental Active Gate, the throughput is 3.3GB/min with RTT <= 20
 ---
 title: Connect log data to traces
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-log-enrichment
-scraped: 2026-02-18T21:16:05.905325
+scraped: 2026-03-06T21:12:18.348722
 ---
 
 # Connect log data to traces
@@ -2887,7 +2268,7 @@ format: winston.format.simple()
 ---
 title: Syslog ingestion with ActiveGate
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-syslog
-scraped: 2026-02-18T21:30:02.692494
+scraped: 2026-03-06T21:34:22.153555
 ---
 
 # Syslog ingestion with ActiveGate
@@ -3800,7 +3181,7 @@ Visit Dynatrace Community for troubleshooting guides, as well as see [Troublesho
 ---
 title: Ingest JSON and TXT logs
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-api/lma-ingest-json-txt-logs
-scraped: 2026-02-18T05:44:22.058718
+scraped: 2026-03-06T21:25:57.009301
 ---
 
 # Ingest JSON and TXT logs
@@ -3852,7 +3233,7 @@ The Log ingestion API collects and attempts to automatically transform log data.
 ### Attributes
 
 * Log attributes contain all other keys from the input JSON object except those used for `timestamp`, `loglevel`, and `content`.
-* First-level attributes should preferably map to semantic attributes for Dynatrace to map them to context. All attributes can be used in queries, though Semantic Dictionary helps Davis AI in the interpretation of the logs. See [Semantic Dictionary](/docs/semantic-dictionary "The Semantic Dictionary defines standardized field names used across monitoring data types like logs, events, spans, metrics, and entities.") for more details.
+* First-level attributes should preferably map to semantic attributes for Dynatrace to map them to context. All attributes can be used in queries, though Semantic Dictionary helps Dynatrace Intelligence AI in the interpretation of the logs. See [Semantic Dictionary](/docs/semantic-dictionary "The Semantic Dictionary defines standardized field names used across monitoring data types like logs, events, spans, metrics, and entities.") for more details.
 * Automatic attribute. The `dt.auth.origin` attribute is automatically added to every log record ingested via API. This attribute is the public part of the API key that the log source authorizes to connect to the generic log ingest API.
 
 Attribute processing differs depending on tenant and environment type:
@@ -3873,8 +3254,6 @@ Escaping in output examples is for visualization purposes only. `\"` is billed a
 
 ### Raw data model
 
-
-
 The raw data model preserves the original log structure and context, maintaining data integrity. This results in easy interaction and querying, because log record representation in Dynatrace remains the same as in the source.
 
 We recommend using this approach for highly nested JSON logs, as it maintains the semantic meaning and relationships between data points.
@@ -3894,403 +3273,21 @@ Array types are preserved as arrays but the contained types are unified to a sin
 * If all values in the source array are numeric, the target array type is numeric.
 * Null values are considered compatible with any type.
 
-Input
-
-Log ingestion API endpoint output
-
-```
-{
-
-
-
-"content": "Transaction successfully processed.",
-
-
-
-"transaction": {
-
-
-
-"id": "TXN12345",
-
-
-
-"amount": 250.75
-
-
-
-},
-
-
-
-"auditTrail": [
-
-
-
-"Created",
-
-
-
-"Approved",
-
-
-
-3
-
-
-
-]
-
-
-
-}
-```
-
-```
-{
-
-
-
-"content": "Transaction successfully processed.",
-
-
-
-"transaction" : "{\"id\": \"TXN12345\", \"amount\": 250.75}",
-
-
-
-"auditTrail": ["Created", "Approved", "3"]
-
-
-
-}
-```
-
 #### Content handling
 
 The selected input content field is always selected regardless of its type, and is converted to string type if necessary.
 
-Input
-
-Log ingestion API endpoint output
-
-```
-{
-
-
-
-"content": {
-
-
-
-"id": "TXN12345",
-
-
-
-"amount": 250.75
-
-
-
-},
-
-
-
-"auditTrail": [
-
-
-
-"Created",
-
-
-
-"Approved",
-
-
-
-3
-
-
-
-]
-
-
-
-}
-```
-
-```
-{
-
-
-
-"content" : "{\"id\": \"TXN12345\", \"amount\": 250.75}",
-
-
-
-"auditTrail": ["Created", "Approved", "3"]
-
-
-
-}
-```
-
 An example of a supported content attribute with an array value is given below.
-
-Input
-
-Log ingestion API endpoint output
-
-```
-{
-
-
-
-"transaction": {
-
-
-
-"id": "TXN12345",
-
-
-
-"amount": 250.75
-
-
-
-},
-
-
-
-"content": [
-
-
-
-"Created",
-
-
-
-"Approved",
-
-
-
-3
-
-
-
-]
-
-
-
-}
-```
-
-```
-{
-
-
-
-"content": "[\"Created\", \"Approved\", 3]",
-
-
-
-"transaction" : "{\"id\": \"TXN12345\", \"amount\": 250.75}"
-
-
-
-}
-```
 
 If no attribute from the supported content attributes is present in the input, the target `content` attribute is set to an empty string.
 
-Input
-
-Log ingestion API endpoint output
-
-```
-{
-
-
-
-"transaction": {
-
-
-
-"id": "TXN12345"
-
-
-
-},
-
-
-
-"auditTrail": [
-
-
-
-"Created",
-
-
-
-"Approved",
-
-
-
-3
-
-
-
-]
-
-
-
-}
-```
-
-```
-{
-
-
-
-"content": "",
-
-
-
-"transaction" : "{\"id\": \"TXN12345\", \"amount\": 250.75}",
-
-
-
-"auditTrail": ["Created", "Approved", "3"]
-
-
-
-}
-```
-
 The first attribute from the supported content attributes list is selected for the output `content` field.
-
-Input
-
-Log ingestion API endpoint output
-
-```
-{
-
-
-
-"message": {
-
-
-
-"id": "TXN12345",
-
-
-
-"amount": 250.75
-
-
-
-},
-
-
-
-"payload": "Transaction",
-
-
-
-"_raw": "Operation"
-
-
-
-}
-```
-
-```
-{
-
-
-
-"content": "{\"id\": \"TXN12345\", \"amount\": 250.75}",
-
-
-
-"payload" : "Transaction",
-
-
-
-"_raw": "Operation"
-
-
-
-}
-```
 
 The `_raw` attribute is used as `content` only if no higher-priority supported content attribute is present.
 
-Input
-
-Log ingestion API endpoint output
-
-```
-{
-
-
-
-"_raw":  {
-
-
-
-"id": "TXN12345",
-
-
-
-"amount": 250.75
-
-
-
-},
-
-
-
-"auditTrail": [
-
-
-
-"Created",
-
-
-
-"Approved",
-
-
-
-3
-
-
-
-]
-
-
-
-}
-```
-
-```
-{
-
-
-
-"content": "{\"id\": \"TXN12345\", \"amount\": 250.75}",
-
-
-
-"auditTrail": ["Created", "Approved", "3"]
-
-
-
-}
-```
-
 ### Flattened data model
+
+
 
 The flattened data model provides direct access to attribute values through simple key paths.
 
@@ -4309,163 +3306,11 @@ Array types are preserved as arrays but the contained types are unified to a sin
 * If all values in the source array are numeric, the target array type is numeric.
 * Null values are considered compatible with any type.
 
-Input
-
-Log ingestion API endpoint output
-
-```
-{
-
-
-
-"content": "Transaction successfully processed.",
-
-
-
-"transaction": {
-
-
-
-"id": "TXN12345",
-
-
-
-"amount": 250.75
-
-
-
-},
-
-
-
-"auditTrail": [
-
-
-
-"Created",
-
-
-
-"Approved",
-
-
-
-3
-
-
-
-]
-
-
-
-}
-```
-
-```
-{
-
-
-
-"content": "Transaction successfully processed.",
-
-
-
-"transaction.id": "TXN12345",
-
-
-
-"transaction.amount": 250.75,
-
-
-
-"auditTrail": ["Created", "Approved", "3"]
-
-
-
-}
-```
-
 ##### Name conflicts
 
 When attributes are saved in a flattened fashion on the Dynatrace side, there may be name collisions if attributes on different levels share the same name. Dynatrace resolves this by prefixing duplicate attributes with `overwritten[COUNTER].`. The counter value indicates how many times the attribute name has been already encountered as a duplicate. For example:
 
-Input
-
-Log ingestion API endpoint output
-
-```
-{
-
-
-
-"host.name": "abc",
-
-
-
-"host": {"name": "xyz"}
-
-
-
-}
-```
-
-```
-{
-
-
-
-"host.name": "abc",
-
-
-
-"overwritten1.host.name": "xyz"
-
-
-
-}
-```
-
 * If a second conflict arises, an index is added starting with 1:
-
-Input
-
-Log ingestion API endpoint output
-
-```
-{
-
-
-
-"service.instance.id": "abc",
-
-
-
-"service": {"instance.id": "xyz", "instance": {"id": "123"}}
-
-
-
-}
-```
-
-```
-{
-
-
-
-"service.instance.id": "abc",
-
-
-
-"overwritten1.service.instance.id": "xyz",
-
-
-
-"overwritten2.service.instance.id": "123"
-
-
-
-}
-```
 
 #### Content related behavior
 
@@ -4477,117 +3322,9 @@ In case no supported content attribute is found, the whole JSON representation o
 
 The `_raw` field is not among the supported content fields for this data model.
 
-Input
-
-Log ingestion API endpoint output
-
-```
-{
-
-
-
-"transaction": {
-
-
-
-"id": "TXN12345",
-
-
-
-"amount": 250.75
-
-
-
-}
-
-
-
-}
-```
-
-```
-{
-
-
-
-"content": "{\"transaction\":{\"id\":\"TXN12345\",\"amount\":250.75}}",
-
-
-
-"transaction": {
-
-
-
-"id": "TXN12345",
-
-
-
-"amount": 250.75
-
-
-
-}
-
-
-
-}
-```
-
 ##### Complex values in supported content attributes
 
 Any attribute that is an object, including `content`, is treated as a standard attribute.
-
-Input
-
-Log ingestion API endpoint output
-
-```
-{
-
-
-
-"payload": "This will be used for content.",
-
-
-
-"message": {
-
-
-
-"id": "TXN12345",
-
-
-
-"amount": 250.75
-
-
-
-}
-
-
-
-}
-```
-
-```
-{
-
-
-
-"content": "This will be used for content.",
-
-
-
-"message.id": "TXN12345",
-
-
-
-"message.amount": 250.75
-
-
-
-}
-```
 
 ## Log ingestion API attribute handling
 
@@ -4607,44 +3344,6 @@ These attributes are merged with those provided in the log record body according
 
 #### Example
 
-Request URL
-
-Resulting attributes
-
-`POST /api/v2/logs/ingest?env=prod&env=blue&team=payments`
-
-```
-{
-
-
-
-"content": "Transaction successfully processed."
-
-
-
-}
-```
-
-```
-{
-
-
-
-"content": "Transaction successfully processed.",
-
-
-
-"env": ["prod", "blue"],
-
-
-
-"team": "payments"
-
-
-
-}
-```
-
 ### Header-based attributes (X-Dynatrace-Attr)
 
 The API supports a special header for passing additional attributes:
@@ -4658,8 +3357,6 @@ Rules:
 * Same reserved parameter names restrictions apply.
 
 ### Attributes precedence rules
-
-
 
 When attributes appear in multiple places, the Log ingestion API applies attribute precedence while still preserving body values for auditability. The attributes are applied in the following order:
 
@@ -4677,50 +3374,6 @@ When attributes from query parameters or the header override body attributes:
 * Only values originating from the log body are preserved under the `overwrittenN.*` keys. Attributes overridden by higher-precedence sources do not generate overwritten copies.
 
 #### Example
-
-Request
-
-Resulting attributes
-
-Query: `POST /api/v2/logs/ingest?team=frontend`
-
-Body:
-
-```
-{
-
-
-
-"content": "Transaction successfully processed.",
-
-
-
-"team": "backend"
-
-
-
-}
-```
-
-```
-{
-
-
-
-"content": "Transaction successfully processed.",
-
-
-
-"team": "frontend",
-
-
-
-"overwritten1.team": "backend"
-
-
-
-}
-```
 
 ### Billing behavior
 
@@ -4740,7 +3393,7 @@ For multi-value attributes, the attribute key contributes to billing only once, 
 ---
 title: Automatic log enrichment
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-api/lma-log-data-transformation
-scraped: 2026-02-18T05:55:38.268204
+scraped: 2026-03-06T21:29:26.252310
 ---
 
 # Automatic log enrichment
@@ -4760,89 +3413,9 @@ The Log ingestion API automatically transforms `status`, `severity`, `level`, an
 
 The input values for the `status`, `severity`, `level`, and `syslog.severity` severity keys are transformed (transformation is not case sensitive) into output values for the `loglevel` attribute based on the following mapping:
 
-Input value
-
-Output value
-
-Example value
-
-Begins with `emerg` or `f`
-
-`EMERGENCY`
-
-`Emergency`, `fail`, `Failure`
-
-Begins with `e` excluding `emerg`
-
-`ERROR`
-
-`Error`, `error`
-
-Begins with `a`
-
-`ALERT`
-
-`alarm`, `Alert`
-
-Begins with `c`
-
-`CRITICAL`
-
-`Critical`, `crucial`
-
-Begins with `s`
-
-`SEVERE`
-
-`Severe`, `serious`
-
-Begins with `w`
-
-`WARN`
-
-`warn`, `Warning`
-
-Begins with `n`
-
-`NOTICE`
-
-`note`, `Notice`
-
-Begins with `i`
-
-`INFO`
-
-`Info`, `information`
-
-Begins with `d` or `trace` or `verbose`
-
-`DEBUG`
-
-`debug`, `TRACE`, `Verbose`
-
 ## Transform all types of logs
 
 Additionally, for each log event, a `status` attribute is created with a value that is a sum of `loglevel` values based on the following grouping:
-
-Included `loglevel` values
-
-Combined `status` attribute value
-
-`SEVERE`, `ERROR`, `CRITICAL`, `ALERT`, `FATAL`, `EMERGENCY`
-
-`ERROR`
-
-`WARN`
-
-`WARN`
-
-`INFO`, `TRACE`, `DEBUG`, `NOTICE`
-
-`INFO`
-
-`NONE`
-
-`NONE`
 
 For example:
 The `level` severity key in the Log ingestion API request parameter contains the value `serious`.
@@ -4866,7 +3439,7 @@ The `level` severity key in the Log ingestion API request parameter contains the
 ---
 title: Log ingestion API
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-api
-scraped: 2026-02-18T05:57:20.487473
+scraped: 2026-03-06T21:28:26.746272
 ---
 
 # Log ingestion API
@@ -5035,7 +3608,7 @@ Visit Dynatrace Community for troubleshooting guides, as well as see [Troublesho
 ---
 title: Custom log source
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-custom-log-source
-scraped: 2026-02-18T21:27:37.899953
+scraped: 2026-03-06T21:20:04.360187
 ---
 
 # Custom log source
@@ -5255,7 +3828,7 @@ Three hierarchy scopes are supported: host, host group, and environment. The nar
 ---
 title: Stream Kubernetes logs with Fluent Bit
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-fluent-bit-logs-k8s
-scraped: 2026-02-18T05:43:56.559325
+scraped: 2026-03-03T21:26:02.452904
 ---
 
 # Stream Kubernetes logs with Fluent Bit
@@ -6057,7 +4630,7 @@ kubectl logs fluent-bit-5jzlr -n dynatrace-fluent-bit
 ---
 title: Automatic log enrichment
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-log-data-transformation-oa
-scraped: 2026-02-18T21:20:42.520174
+scraped: 2026-03-06T21:23:02.358716
 ---
 
 # Automatic log enrichment
@@ -6090,111 +4663,11 @@ To adjust these limits
 
 There are 19 keywords that correspond with 9 severity levels as per the table below:
 
-Keyword
-
-Severity level
-
-trace
-
-DEBUG
-
-debug
-
-DEBUG
-
-fine
-
-DEBUG
-
-finer
-
-DEBUG
-
-finest
-
-DEBUG
-
-notice
-
-NOTICE
-
-info
-
-INFO
-
-information
-
-INFO
-
-warn
-
-WARN
-
-warning
-
-WARN
-
-severe\_warning
-
-WARN
-
-severe
-
-SEVERE
-
-err
-
-ERROR
-
-error
-
-ERROR
-
-crit
-
-CRITICAL
-
-critical
-
-CRITICAL
-
-alert
-
-ALERT
-
-fatal
-
-EMERGENCY
-
-emerg
-
-EMERGENCY
-
 A match occurs and severity is determined when the keyword found is a single word/phrase from the above list, and it is preceded and followed any non-alphanumeric symbol other than `/` or `_`.
 
 ## Transform all types of logs
 
 Additionally, for each log event, a `status` attribute is created with a value that is a sum of `loglevel` values based on the following grouping:
-
-Included `loglevel` values
-
-Combined `status` attribute value
-
-`SEVERE`, `ERROR`, `CRITICAL`, `ALERT`, `FATAL`, `EMERGENCY`
-
-`ERROR`
-
-`WARN`
-
-`WARN`
-
-`INFO`, `TRACE`, `DEBUG`, `NOTICE`
-
-`INFO`
-
-`NONE`
-
-`NONE`
 
 For example:
 The `level` severity key in the generic log ingestion API request parameter contains the value `serious`.
@@ -6287,7 +4760,7 @@ will result in additional `dt.trace_id` and `dt.span_id` attributes for log reco
 ---
 title: Log ingest rules
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-log-storage-configuration
-scraped: 2026-02-18T21:27:46.944394
+scraped: 2026-03-06T21:19:59.231616
 ---
 
 # Log ingest rules
@@ -6310,8 +4783,6 @@ To ingest Kubernetes logs, follow the configuration described in the [Stream Kub
 
 ## Log ingest rule
 
-
-
 When configuring log ingest rules in Dynatrace, note that there are built-in rules that are enabled by default on the trial environment. For starters, you can use the **Ingest all logs** rule to begin collecting log data accross your environment.
 
 Follow the steps below to configure log ingest rules:
@@ -6324,157 +4795,6 @@ Follow the steps below to configure log ingest rules:
 
    Other than the **Log source** attribute in Windows (due to file paths being case insensitive), matchers are case-sensitive.
 4. Select the matching attribute:
-
-Attribute
-
-Description
-
-Search dropdown logic
-
-**Process group**
-
-Matching is based on the process group ID. The process group is determined by the detection rules described in [Process group detection](/docs/observe/infrastructure-observability/process-groups/configuration/pg-detection "Ways to customize process-group detection"). If a process changes its process group, log ingestion for that process may start or stop based on the changes made.
-
-Attributes visible in the last 3 days are listed.
-
-**Log source**
-
-Matching is based on a log path or on a Windows event log full name; wildcards are supported in form of an asterisk. Autocompletion for **Log source** is only partial. You can either choose one of the predefined values or enter your log source.
-
-Can be entered manually. No time limit.
-
-**Log source origin**[1](#fn-1-1-def)
-
-Matching is based on the detector used by the log agent to discover the log file. Available options include:
-
-* **Custom log source configuration**: Log source was provided by the user through custom configuration.
-* **Open log file detector**: Logs discovered automatically by the log module's autodetection mechanism.
-* **System log detector**: Includes Windows Application Log or `/var/log/syslog` for Linux.
-* **Container output**: Autodetected Kubernetes or Docker logs.
-* **IIS log detector**: Logs detected by the IIS detector.
-
-Can be entered manually. No time limit.
-
-**Log content**
-
-Matching is based on the content of the log; wildcards are supported in form of an asterisk.
-
-Can be entered manually. No time limit.
-
-**Log record level**[2](#fn-1-2-def)[3](#fn-1-3-def)
-
-Matching is based on the level of the log record. It supports the following values: `alert`, `critical`, `debug`, `emergency`, `error`, `info`, `none`, `notice`, `severe`, `warn`.
-
-Can be entered manually. No time limit.
-
-**Journald Unit**[4](#fn-1-4-def)
-
-Matching is based on any of the selected journald units. Unless you enrich other log sources with a `journald.unit` attribute, you should also add `log.source` or `log.source.origin` matcher to the ingest rule to boost the Log Module performance.
-
-Can be entered manually. No time limit.
-
-**Host tag**[5](#fn-1-5-def)[6](#fn-1-6-def)
-
-Matching is based on the host tag. The attribute only supports the tags set with the [OneAgent command line tool](/docs/observe/infrastructure-observability/hosts/configuration/define-tags-and-metadata-for-hosts "Learn how to tag and set additional properties for a monitored host.") or with the [Remote configuration](/docs/ingest-from/bulk-configuration "Perform OneAgent and ActiveGate configuration on hosts from the Deployment status page or at scale using the Dynatrace API.") in a `key=value` pair format. They can be distinguished by the `[Environment]` prefix on the UI, but you should use the value without the prefix.
-Multiple tags can be specified in a single matcher, but each tag needs to have the same key, such as `logscope=frontend`, `logscope=backend`.
-
-Can be entered manually. No time limit.
-
-**Kubernetes container name**
-
-Matching is based on the name of the Kubernetes container.
-
-Attributes visible in the last 90 days are listed.
-
-**Kubernetes namespace name**
-
-Matching is based on the name of the Kubernetes namespace.
-
-Attributes visible in the last 90 days are listed.
-
-**Kubernetes deployment name**
-
-Matching is based on any of the selected deployments. It is deprecated for the OneAgent Log Module managed by Dynatrace Operator or when the **Collect all container logs** feature flag is enabled.
-
-Can be entered manually.
-
-**Kubernetes pod annotation**[4](#fn-1-4-def)[7](#fn-1-7-def)
-
-Matching is based on any of the selected pod annotations. The correct format is `key=value`. It requires either the OneAgent Log Module managed by Dynatrace Operator or the **Collect all container** logs feature flag to be enabled.
-
-Can be entered manually.
-
-**Kubernetes pod label**[4](#fn-1-4-def)[7](#fn-1-7-def)
-
-Matching is based on any of the selected pod labels. The correct format is `key=value`. It requires either the OneAgent Log Module managed by Dynatrace Operator or the **Collect all container logs** feature flag to be enabled.
-
-Can be entered manually.
-
-**Kubernetes workload name**[4](#fn-1-4-def)[7](#fn-1-7-def)
-
-Matching is based on any of the selected workload names. It requires either the OneAgent Log Module managed by Dynatrace Operator or the **Collect all container logs** feature flag to be enabled.
-
-Attributes visible in the last 90 days are listed.
-
-**Kubernetes workload kind**[4](#fn-1-4-def)[7](#fn-1-7-def)
-
-Matching is based on any of the selected workload kinds. It requires either the OneAgent Log Module managed by Dynatrace Operator or the **Collect all container logs** feature flag to be enabled.
-
-Can be entered manually.
-
-**Docker container name**
-
-Matching is based on the name of the container.
-
-Attributes visible in the last 90 days are listed.
-
-**DT entity container group ID**
-
-Matching is based on any of the selected container groups.
-
-Can be entered manually. No time limit.
-
-**Process technology**
-
-Matching is based on the technology name.
-
-Can be entered manually. No time limit.
-
-**Windows log record event ID**[3](#fn-1-3-def)
-
-Matching is based on any of the selected event ID attribute.
-
-Can be entered manually. No time limit.
-
-**Windows log record source**[3](#fn-1-3-def)
-
-Matching is based on any of the selected source attributes.
-
-Can be entered manually. No time limit.
-
-**Windows log record task category**[3](#fn-1-3-def)
-
-Matching is based on any of the selected task category attributes.
-
-Can be entered manually. No time limit.
-
-**Windows log record operational code**[3](#fn-1-3-def)
-
-Matching is based on any of the selected operational code attribute.
-
-Can be entered manually. No time limit.
-
-**Windows log record user name**[8](#fn-1-8-def)
-
-Matching is based on any of the selected user name attribute.
-
-Can be entered manually. No time limit.
-
-**Windows log record keywords**[8](#fn-1-8-def)
-
-Matching is based on any of the selected keywords attribute.
-
-Can be entered manually. No time limit.
 
 1
 
@@ -6539,8 +4859,6 @@ Four hierarchy scopes are supported: host, Kubernetes cluster, host group, and e
 
 ### Host scope
 
-
-
 The host scope can be accessed through the **Host settings** for a specific host.
 
 1. Go to ![Hosts](https://dt-cdn.net/images/hosts-512-59f5d2dd7f.png "Hosts") **Hosts Classic**.
@@ -6593,6 +4911,8 @@ To list all entities (hosts and host groups) to which more specific log storage 
 3. Select an entity name to go to that entity's **Log ingest rules** page.
 
 ### Configuration limits
+
+
 
 You can add a maximum of 1000 ingest rules per scope, with a maximum of 2000 matchers.
 
@@ -6980,8 +5300,6 @@ This task requires setting one rule with two matchers.
 ```
 
 ### Example 3: Send logs written by Apache or containing 'ERROR'
-
-
 
 This task requires setting two rules with one matcher each.
 
@@ -7545,6 +5863,8 @@ The rules have to be executed in the order indicated below.
 
 ## FAQ
 
+
+
 Is the log ingest rules configuration the same as/part of the autodiscovery process?
 
 No. Autodiscovery is a mechanism of OneAgent that detects logs, but it doesn't mean that log files are automatically ingested. It only refers to the automatic identification of log data. To learn more about autodiscovery, see [Log content autodiscovery (Logs Classic)](/docs/analyze-explore-automate/log-monitoring/acquire-log-data/log-content-auto-discovery-v2 "Learn about autodiscovery of log content and requirements for autodiscovery to occur.")
@@ -7591,7 +5911,7 @@ Starting with OneAgent version `1.249`, you can activate/inactivate your rules b
 ---
 title: Stream Kubernetes logs with Dynatrace Log Module
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-logs-from-kubernetes
-scraped: 2026-02-18T05:46:18.356272
+scraped: 2026-03-06T21:25:49.968543
 ---
 
 # Stream Kubernetes logs with Dynatrace Log Module
@@ -7630,90 +5950,6 @@ Standard log processing features from OneAgent, including [sensitive data maskin
 
 Use the following recommended matching attributes when configuring log ingestion from Kubernetes.
 
-Attribute
-
-Description
-
-Search dropdown logic
-
-**Kubernetes namespace name**
-
-Matching is based on the name of the Kubernetes namespace.
-
-Attributes visible in the last 90 days are listed.
-
-**Kubernetes container name**
-
-Matching is based on the name of the Kubernetes container.
-
-Attributes visible in the last 90 days are listed.
-
-**Kubernetes deployment name**
-
-Matching is based on the name of the Kubernetes workload.[1](#fn-1-1-def)
-
-Attributes visible in the last 90 days are listed.
-
-**Kubernetes pod annotation**
-
-Matching is based on any of the selected pod annotations. The correct format is `key=value`.
-
-Can be entered manually.
-
-**Kubernetes pod label**
-
-Matching is based on any of the selected pod labels. The correct format is `key=value`.
-
-Can be entered manually.
-
-**Kubernetes workload name**
-
-Matching is based on any of the selected workload names.
-
-Can be entered manually.
-
-**Kubernetes workload kind**
-
-Matching is based on any of the selected workload kinds.
-
-Can be entered manually.
-
-**Log content**
-
-Matching is based on the content of the log; wildcards are supported in the form of an asterisk.
-
-Can be entered manually. No time limit.
-
-**Log record level**[2](#fn-1-2-def)
-
-Matching is based on the level of the log record. It supports the following values: `alert`, `critical`, `debug`, `emergency`, `error`, `info`, `none`, `notice`, `severe`, `warn`.
-
-Can be entered manually. No time limit.
-
-**Log source origin**
-
-Matching is based on the detector was used by OneAgent to discover the log file.
-
-Can be entered manually. No time limit.
-
-**Process group**
-
-Matching is based on the process group ID. It also requires running a OneAgent on the node.
-
-Entities visible in the last 3 days are listed.
-
-**Process technology**
-
-Matching is based on the technology name. It also requires running a OneAgent on the node.
-
-Can be entered manually. No time limit.
-
-**DT entity container group ID**
-
-Matching is based on any of the selected container groups. It also requires running a OneAgent on the node.
-
-Can be entered manually. No time limit.
-
 1
 
 Subject to change in the future versions of OneAgent. Separate matchers for each workload kind would be available. We recommend using the Kubernetes workload name and Kubernetes workload kind instead.
@@ -7739,8 +5975,6 @@ Consult the [Configuration scopes](/docs/analyze-explore-automate/logs/lma-log-i
 
 ## Use cases
 
-
-
 Explore the following use cases for log ingestion from Kubernetes environments using Dynatrace. By configuring log ingestion with different matchers, you can control which logs are captured in the system. The use cases below offer guidance on configuring Dynatrace to capture logs based on your specific monitoring needs, whether it's from a particular namespace, container, or other criteria.
 
 For detailed instructions on how to configure log ingestion, see [Log ingest rules](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-log-storage-configuration "Include and exclude specific log sources already known to OneAgent for storage and analysis.").
@@ -7758,6 +5992,8 @@ For detailed instructions on how to configure log ingestion, see [Log ingest rul
 You can now analyze the logs in the log viewer or notebooks after fitering the proper namespace. You can also find the logs in context in the Kubernetes application by selecting the **Logs** tab.
 
 ### Ingest logs from a specific namespace and container
+
+
 
 1. Go to **Settings** and select **Log Monitoring** > **Log ingest rules**.
 2. Select **Add rule** and provide the name for your configuration in the **Rule name** field.  
@@ -8325,7 +6561,7 @@ Visit Dynatrace Community for troubleshooting guides, as well as see [Troublesho
 ---
 title: Sensitive data masking in OneAgent
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-sensitive-data-masking
-scraped: 2026-02-18T21:27:41.820535
+scraped: 2026-03-06T21:20:06.328362
 ---
 
 # Sensitive data masking in OneAgent
@@ -8335,13 +6571,24 @@ scraped: 2026-02-18T21:27:41.820535
 * Latest Dynatrace
 * Tutorial
 * 13-min read
-* Updated on Jul 07, 2025
+* Updated on Feb 26, 2026
 
 Your log data contains information that may be considered sensitive. Specific log messages may include user names, email addresses, URL parameters, and other information that you may not want to disclose. Log Monitoring features the ability to mask any information by modifying the configuration file on each OneAgent that handles information you consider to be sensitive.
 
 Masking is performed directly on OneAgent, ensuring that sensitive data are never ingested into the system.
 
 You can select the data that needs to be protected by applying a set of masking rules. Within each rule, you can decide what to hide and replace your hidden content with. If you need to address only specific attributes, such as predefined containers, log sources, or process groups, you can achieve it by adding matchers to your rules.
+
+## Default rules
+
+The OneAgent Log Module comes with built-in masking rules, which address sensitive data in logs, such as payment card numbers and e-mail addresses.
+
+* OneAgent version 1.330 and below: Data is masked with a `<masked>` string.
+* OneAgent version 1.331+: The masking string indicates the type of data.
+  For example, URL query values are masked with a `<masked-value-log>` string.
+
+By default, these rules are deactivated in all paid (non-trial) Dynatrace environments.
+You can activate and deactivate masking rules according to your requirements.
 
 ## Create rule
 
@@ -8357,97 +6604,6 @@ You can configure sensitive data masking on the host, host group or environment 
    * If you select **replace with string**, set **Replacement** to the string that is meant to replace your sensitive data.
 6. Select **Add condition** to create a specific match for this rule and narrow down the scope for that rule. You can include multiple matchers in one rule. For example, the masking rule can be applied to logs from a specific container, namespace, or log source.
 7. Select the matching attribute.
-
-   Attribute
-
-   Description
-
-   Search dropdown logic
-
-   **Process group**
-
-   Matching is based on the process group ID.
-
-   Attributes visible in the last 3 days are listed.
-
-   **Log source**
-
-   Matching is based on a log path; wildcards are supported in form of an asterisk. Autocompletion for **Log source** is only partial. You can either choose one of the predefined values or enter your log source.
-
-   Can be entered manually. No time limit.
-
-   **Log source origin**[1](#fn-1-1-def)
-
-   Matching is based on the detector was used by the log agent to discover the log file.
-
-   Can be entered manually. No time limit.
-
-   **Host tag**[2](#fn-1-2-def)[3](#fn-1-3-def)
-
-   Matching is based on the host tag. The attribute only supports the tags set with the [OneAgent command line tool](/docs/observe/infrastructure-observability/hosts/configuration/define-tags-and-metadata-for-hosts "Learn how to tag and set additional properties for a monitored host.") or with the [Remote configuration](/docs/ingest-from/bulk-configuration "Perform OneAgent and ActiveGate configuration on hosts from the Deployment status page or at scale using the Dynatrace API.") in a `key=value` pair format. They can be distinguished by the `[Environment]` prefix on the UI, but you should use the value without the prefix.
-   Multiple tags can be specified in a single matcher, but each tag needs to have the same key, such as `logscope=frontend`, `logscope=backend`.
-
-   Can be entered manually. No time limit.
-
-   **Kubernetes container name**
-
-   Matching is based on the name of the Kubernetes container.
-
-   Attributes visible in the last 90 days are listed.
-
-   **Kubernetes namespace name**
-
-   Matching is based on the name of the Kubernetes namespace.
-
-   Attributes visible in the last 90 days are listed.
-
-   **Kubernetes deployment name**
-
-   Matching is based on the name of the Kubernetes deployment.
-
-   Attributes visible in the last 90 days are listed.
-
-   **Kubernetes pod annotation**[4](#fn-1-4-def)[5](#fn-1-5-def)
-
-   Matching is based on any of the selected pod annotations. The correct format is `key=value`. It requires either the OneAgent Log Module managed by Dynatrace Operator or the **Collect all container** logs feature flag to be enabled.
-
-   Can be entered manually.
-
-   **Kubernetes pod label**[4](#fn-1-4-def)[5](#fn-1-5-def)
-
-   Matching is based on any of the selected pod labels. The correct format is `key=value`. It requires either the OneAgent Log Module managed by Dynatrace Operator or the **Collect all container logs** feature flag to be enabled.
-
-   Can be entered manually.
-
-   **Kubernetes workload name**[4](#fn-1-4-def)[5](#fn-1-5-def)
-
-   Matching is based on any of the selected workload names. It requires either the OneAgent Log Module managed by Dynatrace Operator or the **Collect all container logs** feature flag to be enabled.
-
-   Can be entered manually.
-
-   **Kubernetes workload kind**[4](#fn-1-4-def)[5](#fn-1-5-def)
-
-   Matching is based on any of the selected workload kinds. It requires either the OneAgent Log Module managed by Dynatrace Operator or the **Collect all container logs** feature flag to be enabled.
-
-   Can be entered manually.
-
-   **Docker container name**
-
-   Matching is based on the name of the container.
-
-   Attributes visible in the last 90 days are listed.
-
-   **DT entity container group ID**
-
-   Matching is based on any of the selected container groups.
-
-   Can be entered manually. No time limit.
-
-   **Process technology**
-
-   Matching is based on the technology name.
-
-   Can be entered manually. No time limit.
 
    1
 
@@ -8520,8 +6676,6 @@ The environment scope is available in the settings menu.
 2. Configure data masking by adding rules with a set of matchers that identify your sensitive data.
 
 ## REST API
-
-
 
 You can use the Settings API to manage your sensitive data masking configuration:
 
@@ -8668,6 +6822,8 @@ Username: John Doe, CreditCardNumber: 7e938e089861f3975b38cff3a93cc3aa659f7779
 ```
 
 ### Mask phone number
+
+
 
 In this example, you will configure a sensitive data masking rule that targets all phone numbers in the following log record for all log files.
 
@@ -9371,26 +7527,6 @@ The scenario with one rule with a matcher that has two values:
 
 The common regex formats for sensitive data include:
 
-Sensitive data type
-
-ReGEx
-
-IPv4
-
-`\b\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}\b`
-
-Email address
-
-`\b[\w\-\._]+?@[\w\-\._]+?\.\w{2,10}?\b`
-
-Credit card number
-
-`\b[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{4}\b`
-
-Phone number
-
-`\+?[0-9]{3}-?[0-9]{6,12}\b`
-
 ### Unsupported regular expressions
 
 Data masking occurs within the entire expression or a capturing group. An expression has to match the regular expression engine syntax, and it cannot:
@@ -9410,8 +7546,6 @@ How many capturing groups are supported?
 
 One. If none is provided, then the entire scope of the regular expression you provide is treated as one capturing group.
 
-
-
 ## Sensitive data masking limits
 
 Be aware of the following limitations to sensitive data masking:
@@ -9430,7 +7564,7 @@ Be aware of the following limitations to sensitive data masking:
 ---
 title: Timestamp/splitting configuration
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-timestamp-configuration
-scraped: 2026-02-18T21:27:33.900822
+scraped: 2026-03-06T21:20:09.868600
 ---
 
 # Timestamp/splitting configuration
@@ -9600,162 +7734,6 @@ To add a rule (on the host, host group, or environment level) that interprets th
 3. **Pattern**  
    Enter the pattern to be read as a date from the logs. For details on timestamp formats, see [Supported timestamp formats](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-supported-timestamp-format "Supported timestamps for the latest version of Log Management and Analytics.") and the following list of format specifiers.
 
-   Pattern
-
-   Description
-
-   `%*`
-
-   Wildcard matcher.
-
-   `%!`
-
-   Matches the word boundary. It is any character that is not [0-9A-Za-z\_] next to the characters from this group.
-
-   `%%`
-
-   Matches `%` character.
-
-   `%^`
-
-   Matches the beginning of the line.
-
-   `%A`
-
-   Equivalent to `%a`.
-
-   `%a`
-
-   The locale's full or abbreviated case-insensitive weekday name.
-
-   `%B`
-
-   Equivalent to `%b`.
-
-   `%b`
-
-   The locale's full or abbreviated case-insensitive month name.
-
-   `%C`
-
-   The century as a decimal number. The modified command `%NC`, where `N` is a positive decimal integer, specifies the maximum number of characters to read. If not specified, the default is 2. Leading zeroes are permitted but not required.
-
-   `%D`
-
-   Equivalent to `%m/%d/%y`.
-
-   `%d`
-
-   The day of the month as a decimal number. The modified command `%Nd`, where `N` is a positive decimal integer, specifies the maximum number of characters to read. If not specified, the default is 2. Leading zeroes are permitted but not required.
-
-   `%e`
-
-   Equivalent to `%d` and can be modified like `%d`.
-
-   `%F`
-
-   Equivalent to `%Y-%m-%d`. If modified with width, the width is applied only to `%Y`.
-
-   `%G`
-
-   The ISO week-based year as a decimal number. The modified command `%NG`, where `N` is a positive decimal integer, specifies the maximum number of characters to read. If not specified, the default is 4. Leading zeroes are permitted but not required.
-
-   `%g`
-
-   The last two decimal digits of the ISO week-based year. The modified command `%Ng`, where `N` is a positive decimal integer, specifies the maximum number of characters to read. If not specified, the default is 2. Leading zeroes are permitted but not required.
-
-   `%h`
-
-   Equivalent to `%b`.
-
-   `%H`
-
-   The hour (24-hour clock) as a decimal number. The modified command `%NH`, where `N` is a positive decimal integer, specifies the maximum number of characters to read. If not specified, the default is 2. Leading zeroes are permitted but not required.
-
-   `%I`
-
-   The hour (12-hour clock) as a decimal number. The modified command `%NI`, where `N` is a positive decimal integer, specifies the maximum number of characters to read. If not specified, the default is 2. Leading zeroes are permitted but not required.
-
-   `%j`
-
-   The day of the year as a decimal number. January 1st is 1. The modified command `%Nj`, where `N` is a positive decimal integer, specifies the maximum number of characters to read. If not specified, the default is 3. Leading zeroes are permitted but not required.
-
-   `%M`
-
-   The minutes as a decimal number. The modified command `%NM`, where `N` is a positive decimal integer, specifies the maximum number of characters to read. If not specified, the default is 2. Leading zeroes are permitted but not required.
-
-   `%m`
-
-   The month as a decimal number. Jan is 1. The modified command `%Nm`, where `N` is a positive decimal integer, specifies the maximum number of characters to read. If not specified, the default is 2. Leading zeroes are permitted but not required.
-
-   `%n`
-
-   Matches one ' ' or '\t' white space character.
-
-   `%o`
-
-   The 13-digit Unix timestamp in milliseconds.
-
-   `%p`
-
-   The locale's equivalent of the AM/PM designations associated with a 12-hour clock. The command `%I` must precede `%p` in the format string.
-
-   `%R`
-
-   Equivalent to `%H:%M`.
-
-   `%S`
-
-   The seconds as a decimal number. The modified command `%NS`, where `N` is a positive decimal integer, specifies the maximum number of characters to read. If not specified, the default is 2 if the input time has a precision convertible to seconds. Otherwise, the default width is determined by the decimal precision of the input, and the field is interpreted as a long double in a fixed format. The decimal point character should be one of the following: `,` , `.`, or `:`. Leading zeroes are permitted but not required.
-
-   `%s`
-
-   The 10-digit Unix timestamp in seconds.
-
-   `%T`
-
-   Equivalent to `%H:%M:%S`.
-
-   `%t`
-
-   Matches zero or more white space characters.
-
-   `%u`
-
-   The ISO weekday as a decimal number (1-7), where Monday is 1. The modified command `%Nu`, where `N` is a positive decimal integer, specifies the maximum number of characters to read. If not specified, the default is 1. Leading zeroes are permitted but not required.
-
-   `%U`
-
-   The week number of the year as a decimal number. The first Sunday of the year is the first day of week 01. Days of the same year prior to that are in week 00. The modified command `%NU`, where `N` is a positive decimal integer, specifies the maximum number of characters to read. If not specified, the default is 2. Leading zeroes are permitted but not required.
-
-   `%V`
-
-   The ISO week-based week number as a decimal number. The modified command `%NV`, where `N` is a positive decimal integer, specifies the maximum number of characters to read. If not specified, the default is 2. Leading zeroes are permitted but not required.
-
-   `%W`
-
-   The week number of the year as a decimal number. The first Monday of the year is the first day of week 01. Days of the same year prior to that are in week 00. The modified command `%NW`, where `N` is a positive decimal integer, specifies the maximum number of characters to read. If not specified, the default is 2. Leading zeroes are permitted but not required.
-
-   `%w`
-
-   The weekday as a decimal number (0-6), where Sunday is 0. The modified command `%Nw`, where `N` is a positive decimal integer, specifies the maximum number of characters to read. If not specified, the default is 1. Leading zeroes are permitted but not required.
-
-   `%y`
-
-   The last two decimal digits of the year. If the century is not otherwise specified (for example, with `%C`), values in the range [69 - 99] are presumed to refer to the years [1969 - 1999], and values in the range [00 - 68] are presumed to refer to the years [2000 - 2068]. The modified command `%Ny`, where `N` is a positive decimal integer, specifies the maximum number of characters to read. If not specified, the default is 2. Leading zeroes are permitted but not required.
-
-   `%Y`
-
-   The year as a decimal number. The modified command `%NY`, where `N` is a positive decimal integer, specifies the maximum number of characters to read. If not specified, the default is 4. Leading zeroes are permitted but not required.
-
-   `%z`
-
-   The offset from UTC in the format [+|-]h[h][mm|:mm]. For example, -0430 refers to 4 hours and 30 minutes behind UTC, +4:30 refers to 4 hours and 30 minutes ahead of UTC, and 04 refers to 4 hours ahead of UTC.
-
-   `%Z`
-
-   The time zone abbreviation or name. A single word is parsed. This word can only contain characters that are alphanumeric or one of `_`, `/`, `-`, `+`.
-
    You need to specify at least the month, day, hours, minutes, and seconds, although you can use alternative formats for them. You can include the time zone indicator (`%z`) or specify the time zone separately in the rule definition.
 
    Rules without a pattern can override the timezone only for default supported timestamps.
@@ -9773,97 +7751,6 @@ To add a rule (on the host, host group, or environment level) that interprets th
 7. Select **Add condition** to create a specific match for this rule and narrow down the scope for that rule.
 
    You can include multiple matchers in one rule. For example, the timestamp configuration rule can be applied to logs from a specific container, namespace, or log source. Multiple matchers with the same attribute use AND logic between matchers, while matchers with multiple values assigned to them use OR logic.
-
-   Attribute
-
-   Description
-
-   Search dropdown logic
-
-   **Process group**
-
-   Matching is based on the process group ID.
-
-   Attributes visible in the last 3 days are listed.
-
-   **Log source**
-
-   Matching is based on a log path; wildcards are supported in form of an asterisk. Autocompletion for **Log source** is only partial. You can either choose one of the predefined values or enter your log source.
-
-   Can be entered manually. No time limit.
-
-   **Log source origin**[1](#fn-1-1-def)
-
-   Matching is based on the detector was used by the log agent to discover the log file.
-
-   Can be entered manually. No time limit.
-
-   **Host tag**[2](#fn-1-2-def)[3](#fn-1-3-def)
-
-   Matching is based on the host tag. The attribute only supports the tags set with the [OneAgent command line tool](/docs/observe/infrastructure-observability/hosts/configuration/define-tags-and-metadata-for-hosts "Learn how to tag and set additional properties for a monitored host.") or with the [Remote configuration](/docs/ingest-from/bulk-configuration "Perform OneAgent and ActiveGate configuration on hosts from the Deployment status page or at scale using the Dynatrace API.") in a `key=value` pair format. They can be distinguished by the `[Environment]` prefix on the UI, but you should use the value without the prefix.
-   Multiple tags can be specified in a single matcher, but each tag needs to have the same key, such as `logscope=frontend`, `logscope=backend`.
-
-   Can be entered manually. No time limit.
-
-   **Kubernetes container name**
-
-   Matching is based on the name of the Kubernetes container.
-
-   Attributes visible in the last 90 days are listed.
-
-   **Kubernetes namespace name**
-
-   Matching is based on the name of the Kubernetes namespace.
-
-   Attributes visible in the last 90 days are listed.
-
-   **Kubernetes deployment name**
-
-   Matching is based on the name of the Kubernetes deployment.
-
-   Attributes visible in the last 90 days are listed.
-
-   **Kubernetes pod annotation**[4](#fn-1-4-def)[5](#fn-1-5-def)
-
-   Matching is based on any of the selected pod annotations. The correct format is `key=value`. It requires either the OneAgent Log Module managed by Dynatrace Operator or the **Collect all container** logs feature flag to be enabled.
-
-   Can be entered manually.
-
-   **Kubernetes pod label**[4](#fn-1-4-def)[5](#fn-1-5-def)
-
-   Matching is based on any of the selected pod labels. The correct format is `key=value`. It requires either the OneAgent Log Module managed by Dynatrace Operator or the **Collect all container logs** feature flag to be enabled.
-
-   Can be entered manually.
-
-   **Kubernetes workload name**[4](#fn-1-4-def)[5](#fn-1-5-def)
-
-   Matching is based on any of the selected workload names. It requires either the OneAgent Log Module managed by Dynatrace Operator or the **Collect all container logs** feature flag to be enabled.
-
-   Can be entered manually.
-
-   **Kubernetes workload kind**[4](#fn-1-4-def)[5](#fn-1-5-def)
-
-   Matching is based on any of the selected workload kinds. It requires either the OneAgent Log Module managed by Dynatrace Operator or the **Collect all container logs** feature flag to be enabled.
-
-   Can be entered manually.
-
-   **Docker container name**
-
-   Matching is based on the name of the container.
-
-   Attributes visible in the last 90 days are listed.
-
-   **DT entity container group ID**
-
-   Matching is based on any of the selected container groups.
-
-   Can be entered manually. No time limit.
-
-   **Process technology**
-
-   Matching is based on the technology name.
-
-   Can be entered manually. No time limit.
 
    1
 
@@ -9901,8 +7788,6 @@ The **Active** toggle
 Starting with OneAgent version 1.249, you can activate/inactivate your rules by turning on/off the **Active** toggle. To manage your rules effectively, we recommend that you upgrade your OneAgent to version 1.249. If you have any rules set on the host with OneAgent version earlier than 249, you will not be able to inactivate them, in which case you need to remove such rules by selecting **Delete** on the rule level or via the REST API.
 
 Rules are executed in the order in which they appear on the **Timestamp/Splitting patterns** page.
-
-
 
 ### Configuration limits
 
@@ -10062,7 +7947,7 @@ To create a timestamp configuration using the API
 ---
 title: Windows event logs
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-windows-event-logs
-scraped: 2026-02-18T21:34:06.368018
+scraped: 2026-03-04T21:36:40.493360
 ---
 
 # Windows event logs
@@ -10142,68 +8027,6 @@ To ingest custom Windows event logs, you can define a custom log source. Follow 
 ## Attributes selected in Windows event logs
 
 For Windows event logs, Log Monitoring detects the following fields and sends them as custom attributes:
-
-Semantic attribute name
-
-Configuration matcher name
-
-Event property
-
-Description
-
-`winlog.keywords`
-
-Windows log record keywords
-
-`Event.RenderingInfo.Keywords`
-
-A bitmask of the keywords defined in the event. Keywords are used to classify types of events (for example, events associated with reading data).
-
-`winlog.username`
-
-Windows log record user name
-
-`Event.System.Security.UserID`
-
-The user name of the event provider that logged the event.
-
-`winlog.level`
-
-`Event.RenderingInfo.Level`
-
-The severity level defined in the event. This attribute is not available in the configuration matchers, but you can use the **Log record level** instead.
-
-`winlog.eventid`
-
-Windows log record event ID
-
-`Event.System.EventID`
-
-The identifier that the provider used to identify the event.
-
-`winlog.provider`
-
-Windows log record source
-
-`Event.System.Provider.Name`
-
-Identifies the provider that logged the event.
-
-`winlog.task`
-
-Windows log record task category
-
-`Event.System.Task`
-
-The task defined in the event. Task and opcode are typically used to identify the location in the application from where the event was logged.
-
-`winlog.opcode`
-
-Windows log record operational code
-
-`Event.RenderingInfo.Opcode`
-
-The opcode defined in the event. Task and opcode are typcially used to identify the location in the application from where the event was logged.
 
 ## Support for structured data
 
@@ -10364,7 +8187,7 @@ AttributeKey: winlog.data.Data5, AttributeValue: Test
 ---
 title: Log ingestion via OneAgent
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa
-scraped: 2026-02-18T05:47:22.158517
+scraped: 2026-03-06T21:32:33.082076
 ---
 
 # Log ingestion via OneAgent
@@ -10698,66 +8521,6 @@ For more information, see [Log Monitoring configuration](/docs/ingest-from/dynat
 
 ### Default OneAgent settings
 
-Setting
-
-Default
-
-**Detect open log files**
-
-enabled
-
-**Detect system logs**
-
-enabled
-
-**Detect logs of containerized applications**
-
-enabled
-
-**Detect IIS logs**
-
-enabled
-
-**Detect logs on network file systems**
-
-disabled
-
-**Allow OneAgent to monitor Dynatrace logs**
-
-disabled
-
-**Detect container time zones**
-
-enabled
-
-**Default timezone for agents**
-
-Local time zone
-
-**Timestamp search limit**
-
-`64` bytes
-
-**Severity search chars limit**
-
-`100` bytes
-
-**Severity search lines limit**
-
-`2`
-
-**Maximum of log group instances per entity limit - count**
-
-`200`
-
-**Windows Event Log query timeout**
-
-`5` seconds
-
-**Minimal log file size to perform binary detection**
-
-`512` bytes
-
 ## Confirm that log monitoring is enabled
 
 **Dynatrace Log Monitoring** is enabled by default but only controls the OneAgent log module capability. To actually ingest and view logs, you must also configure log ingest rules. If you experience issues with log collection, verify that this setting hasn't been disabled.
@@ -10822,7 +8585,7 @@ Visit Dynatrace Community for troubleshooting guides, as well as see [Troublesho
 ---
 title: Push logs with Cloudflare
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-push-logs-with-cloudflare
-scraped: 2026-02-18T05:48:32.438942
+scraped: 2026-03-06T21:29:58.548826
 ---
 
 # Push logs with Cloudflare
@@ -11173,7 +8936,7 @@ An example JSON response is shown in the code block below.
 ---
 title: Stream syslog to Dynatrace with Fluentd
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-send-syslogs-via-fluentd
-scraped: 2026-02-18T05:46:40.112752
+scraped: 2026-03-03T21:27:46.123119
 ---
 
 # Stream syslog to Dynatrace with Fluentd
@@ -11355,7 +9118,7 @@ Refer to the [Fluentd record\_transformer filter plugin documentationï»¿](htt
 ---
 title: Stream logs to Dynatrace with Fluentd on Kubernetes
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-stream-logs-fluentd-k8s
-scraped: 2026-02-18T21:23:38.176132
+scraped: 2026-03-06T21:16:24.238689
 ---
 
 # Stream logs to Dynatrace with Fluentd on Kubernetes
@@ -11400,7 +9163,7 @@ For instructions on how to deploy Fluentd integration, see the [documentation on
 ---
 title: Stream Logs with Cribl
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-stream-logs-with-cribl
-scraped: 2026-02-18T21:33:27.587898
+scraped: 2026-03-06T21:27:17.743091
 ---
 
 # Stream Logs with Cribl
@@ -11477,7 +9240,7 @@ Please consult the [Cribl product documentationï»¿](https://docs.cribl.io/str
 ---
 title: Stream logs to Dynatrace with Fluent Bit
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-stream-logs-with-fluent-bit
-scraped: 2026-02-18T21:33:55.837965
+scraped: 2026-03-06T21:36:44.146131
 ---
 
 # Stream logs to Dynatrace with Fluent Bit
@@ -11651,7 +9414,7 @@ Visit Dynatrace Community for troubleshooting guides, as well as see [Troublesho
 ---
 title: Log ingestion
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-log-ingestion
-scraped: 2026-02-18T21:20:49.789030
+scraped: 2026-03-06T21:15:18.200005
 ---
 
 # Log ingestion
@@ -11782,7 +9545,7 @@ You can use the local `http://localhost:<port>/v2/logs/ingest` API endpoint to p
 ---
 title: Automatic log processing at ingestion
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-log-processing/lma-automatic-processing
-scraped: 2026-02-18T05:50:28.698504
+scraped: 2026-03-05T21:33:12.923279
 ---
 
 # Automatic log processing at ingestion
@@ -11852,7 +9615,7 @@ Log Monitoring API automatically process ingested logs by:
 ---
 title: Log processing with OpenPipeline
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-log-processing/lma-openpipeline
-scraped: 2026-02-18T21:16:40.555208
+scraped: 2026-03-06T21:10:01.169544
 ---
 
 # Log processing with OpenPipeline
@@ -11888,140 +9651,6 @@ The stages of log processing with OpenPipeline are described below.
 
 Specific fields are excluded from matching and processing or restricted. To learn more, see [Limits specific to fields](/docs/platform/openpipeline/reference/limits#fields "Reference limits of Dynatrace OpenPipeline.").
 
-Stage
-
-Description
-
-Processors in the stage
-
-Executed processors
-
-Supported data types
-
-Processing
-
-Prepare data for analysis and storage by parsing values into fields, transforming the schema, and filtering the data records. Fields are edited, and sensitive data is masked.
-
-* DQL
-* Add fields
-* Remove fields
-* Rename fields
-* Drop record
-
-All matches
-
-Logs, EventsâGeneric, EventsâDavis events, EventsâDavis, EventsâSDLC events, EventsâSecurity events (legacy), Security events (new) [1](#fn-1-1-def), Business events, Spans[1](#fn-1-1-def) , Metrics, User events, User sessions
-
-Metric extraction
-
-Extract metrics from the records that match the query.
-
-* Counter metric
-* Preview Histogram metric[2](#fn-1-2-def)
-* Value metric
-
-All matches
-
-Logs, EventsâGeneric, EventsâSDLC events, EventsâSecurity events (legacy), Security events (new)[1](#fn-1-1-def), Business events, System events, User events, User sessions
-
-Smartscape Node Extraction
-
-Extract Smartscape nodes for the records that match the query.
-
-* Smartscape node
-
-All matches
-
-Logs, EventsâGeneric, EventsâSDLC events, EventsâSecurity events (legacy), Security events (new)[1](#fn-1-1-def), Business events, System events, Spans[1](#fn-1-1-def), User events, User sessions
-
-Smartscape Edge Extraction
-
-Extract Smartscape edges for the records that match the query.
-
-* Smartscape edge
-
-All matches
-
-Logs, EventsâGeneric, EventsâSDLC events, EventsâSecurity events (legacy), Security events (new)[1](#fn-1-1-def), Business events, System events, Spans[1](#fn-1-1-def), User events, User sessions
-
-Metric extraction
-
-Extract metrics from the records that match the query.
-
-* Sampling aware counter metric
-* Preview Sampling aware histogram metric[2](#fn-1-2-def)
-* Sampling aware value metric
-
-All matches
-
-Spans
-
-Data extraction
-
-Extract a new record from a pipeline and re-ingest it as a different data type into another pipeline.
-
-* Business event
-* Software developement lifecycle event
-
-All matches
-
-Logs, EventsâGeneric, EventsâSDLC events, EventsâSecurity events (legacy), Security events (new)[1](#fn-1-1-def), Business events, System events, Spans[1](#fn-1-1-def), User events, User sessions
-
-Davis
-
-Extract a new record from a pipeline and re-ingest it as a Davis events into another pipeline.
-
-* Davis event
-
-All matches
-
-Logs, EventsâGeneric, EventsâSDLC events, EventsâSecurity events (legacy), Security events (new)[1](#fn-1-1-def), Business events, System events, Spans[1](#fn-1-1-def)
-
-Cost allocation
-
-Advanced option to assign cost center usage to specific records that match a query.
-
-Make sure to review [Cost Allocation documentation](/docs/license/cost-allocation "Learn how to allocate costs to cost centers and products.") when choosing the best approach for your environment.
-
-* DPS Cost Allocation - Cost Center
-
-First match only
-
-Logs, Spans[1](#fn-1-1-def)
-
-Product allocation
-
-Advanced option to assign product or application usage to specific records that match a query.
-
-Make sure to review [Cost Allocation documentation](/docs/license/cost-allocation "Learn how to allocate costs to cost centers and products.") when choosing the best approach for your environment.
-
-* DPS Cost Allocation - Product
-
-First match only
-
-Logs, Spans[1](#fn-1-1-def)
-
-Permissions
-
-Apply security context to the records that match the query.
-
-* Set dt.security\_context
-
-First match only
-
-Logs, EventsâGeneric, EventsâDavis events, EventsâDavis, EventsâSDLC events, EventsâSecurity events (legacy), Security events (new)[1](#fn-1-1-def), Business events, Spans[1](#fn-1-1-def), Metrics, User events, User sessions
-
-Storage
-
-Assign records to the best-fit bucket.
-
-* Bucket assignment
-* No storage assignment
-
-First match only
-
-Logs, EventsâGeneric, EventsâDavis events, EventsâDavis, EventsâSDLC events, EventsâSecurity events (legacy), Security events (new)[1](#fn-1-1-def), Business events, Spans[1](#fn-1-1-def)
-
 1
 
 The data remains in its original, structured form. This is important for detailed analysis and troubleshooting, as it ensures that no information is lost or altered.
@@ -12053,8 +9682,6 @@ To enable technology bundles in OpenPipeline
 To process logs, you need to enable dynamic routing. For details, see [Route data](/docs/platform/openpipeline/getting-started/how-to-routing "Learn how to route data to an OpenPipeline processing pipeline.").
 
 ## Add a custom pipeline
-
-
 
 To create a custom pipeline in OpenPipeline
 
@@ -12089,7 +9716,7 @@ Check the following use cases to learn how to leverage log processing with OpenP
 ---
 title: JSON log processing with unescaped nested JSON strings
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-log-processing/lma-pre-processing/lma-pre-processing-json
-scraped: 2026-02-17T21:30:14.310523
+scraped: 2026-03-06T21:28:23.371162
 ---
 
 # JSON log processing with unescaped nested JSON strings
@@ -12255,7 +9882,7 @@ Unescapingâfor example, removing a forward slashâis skipped when the J
 ---
 title: Log pre-processing with OpenPipeline with ready-made bundles
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-log-processing/lma-pre-processing
-scraped: 2026-02-18T21:35:09.032799
+scraped: 2026-03-06T21:36:23.662335
 ---
 
 # Log pre-processing with OpenPipeline with ready-made bundles
@@ -12299,78 +9926,6 @@ Technology bundles are automatically applied and can't be customized.
 
 To find the list of out-of-the-box coverage for popular technologies as **Ingest sources**, go to ![Settings](https://dt-cdn.net/images/settings-icon-256-38e1321b51.webp "Settings") **Settings** > **Process and contextualize** > **OpenPipeline** > **Logs** .
 
-**Ingest sources**
-
-**Processor**
-
-Amazon Data Firehose
-
-* AWS App Runner
-* AWS Cloud Trail
-* Amazon Relational Database Service (RDS)
-* Amazon Simple Notification Service (SNS)
-* AWS Common
-* Amazon Aurora
-* Amazon API Gateway
-* AWS Lambda
-* Amazon Virtual Private Cloud Flow Default
-* AWS Transit Gateway
-* AWS WAF
-* Amazon Cloudfront
-
-Data Acquisition - AWS Data Firehose
-
-* AWS Lambda
-* AWS App Runner
-* Amazon Relational Database Service (RDS)
-* Amazon Aurora
-* Amazon Simple Notification Service (SNS)
-* Amazon API Gateway
-
-Log ingestion API
-
-* Amazon API Gateway
-* Amazon Aurora
-* Amazon CloudFront
-* Amazon Virtual Private Cloud Flow Default
-* AWS App Runner
-* AWS Cloud Trail
-* AWS Common
-* AWS Lambda
-* Amazon Relational Database Service (RDS)
-* Amazon Simple Notification Service (SNS)
-* AWS Transit Gateway
-* AWS WAF
-* Azure Services
-* Azure Entra ID Audit Logs
-
-OneAgent
-
-* Elasticsearch
-* Cassandra
-* PostgreSQL
-* Redis
-* NodeJS
-* PHP
-* Java
-* Python
-* .NET
-* Ruby
-* Go
-* RabbitMQ
-* Apache Kafka
-* Nginx
-* HAProxy
-* Apache Tomcat
-* Apache HTTP
-* JBoss
-* Microsoft IIS
-* Syslog
-
-OpenTelemetry
-
-None
-
 ## Related topics
 
 * [Log processing with OpenPipeline](/docs/analyze-explore-automate/logs/lma-log-processing/lma-openpipeline "Process logs using Dynatrace OpenPipeline.")
@@ -12382,7 +9937,7 @@ None
 ---
 title: Log processing
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-log-processing
-scraped: 2026-02-18T21:20:54.670400
+scraped: 2026-03-06T21:15:13.168025
 ---
 
 # Log processing
@@ -12437,7 +9992,7 @@ We recommend utilizing log processing with OpenPipeline as a scalable, powerful 
 ---
 title: Filter with facets
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-logs-app/facets
-scraped: 2026-02-18T21:17:52.429976
+scraped: 2026-03-06T21:11:24.814119
 ---
 
 # Filter with facets
@@ -12514,7 +10069,7 @@ If you have previously modified the facets, to revert to the default settings fo
 ---
 title: Limits in Logs
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-logs-app/limits
-scraped: 2026-02-18T21:17:58.779504
+scraped: 2026-03-06T21:11:33.237702
 ---
 
 # Limits in Logs
@@ -12561,7 +10116,7 @@ To adjust the limits for your queries in ![Logs](https://dt-cdn.net/images/logs-
 ---
 title: Spot trends with the log distribution chart
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-logs-app/log-distribution-chart
-scraped: 2026-02-18T21:17:53.679680
+scraped: 2026-03-06T21:11:31.603365
 ---
 
 # Spot trends with the log distribution chart
@@ -12624,7 +10179,7 @@ The log distribution chart may be based on sampled data, which means the display
 ---
 title: Adjust the log message
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-logs-app/message
-scraped: 2026-02-18T21:17:55.025262
+scraped: 2026-03-06T21:11:28.183710
 ---
 
 # Adjust the log message
@@ -12647,148 +10202,6 @@ In many cases, logs from cloud-native applications or platforms contain a specif
 The **Log message** column is a dynamically generated field that shows the readable part of a log entry, if possible.
 
 ### Examples
-
-Log record
-
-Log message
-
-```
-{
-
-
-
-"timestamp": "2025-10-13T10:50:03.205",
-
-
-
-"level": "WARN",
-
-
-
-"logger": "org.apache.activemq.artemis.core.server",
-
-
-
-"message": "AMQ222165: No Dead Letter Address configured for queue answer_queue in AddressSettings",
-
-
-
-"context": "default"
-
-
-
-}
-```
-
-AMQ222165: No Dead Letter Address configured for queue answer\_queue in AddressSettings
-
-```
-{
-
-
-
-"timestamp": "2025-10-13T08:54:02.009817Z",
-
-
-
-"severity": "INFO",
-
-
-
-"insertId": "238n5ebl11v8lc1x",
-
-
-
-"jsonPayload": {
-
-
-
-"message": "\"Starting watch\" path=\"/api/v1/namespaces/external-accounts \" resourceVersion=\"17603423543179000\" timeout=\"7m10s\""
-
-
-
-},
-
-
-
-"logName": "projects/prod-gke-apigw/logs/container.googleapis.com%2Fapiserver",
-
-
-
-"resource": {
-
-
-
-"labels": {
-
-
-
-"location": "europe-west3",
-
-
-
-"project_id": "prod-gke-apigw "
-
-
-
-},
-
-
-
-"type": "k8s_control_plane_component"
-
-
-
-},
-
-
-
-"sourceLocation": {
-
-
-
-"file": "get.go",
-
-
-
-"line": "278"
-
-
-
-}
-
-
-
-}
-```
-
-"Starting watch" path="/api/v1/namespaces/external-accounts " resourceVersion="17603423543179000" timeout="7m10s"
-
-```
-{
-
-
-
-"time":"2025-11-01T13:03:00Z",
-
-
-
-level":"INFO",
-
-
-
-"content":"time=\"2025-10-13T08:44:57Z\" level=info msg=\"No status changes. Skipping patch\" application=argocd/unguard-dev-root",
-
-
-
-"userId":123
-
-
-
-}
-```
-
-No status changes. Skipping patch
 
 ## Display or hide **Log message** column
 
@@ -12867,7 +10280,7 @@ The log message is detected in a key/value pair for the following keys:
 ---
 title: Query and filter logs
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-logs-app/query-and-filter
-scraped: 2026-02-18T21:17:56.258123
+scraped: 2026-03-06T21:11:29.840932
 ---
 
 # Query and filter logs
@@ -12981,7 +10394,7 @@ Note that suggestions are presented based on actual values queried in the backgr
 ---
 title: View surrounding logs
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-logs-app/surrounding-logs
-scraped: 2026-02-18T21:17:57.519915
+scraped: 2026-03-06T21:11:23.170852
 ---
 
 # View surrounding logs
@@ -13018,7 +10431,7 @@ The surrounding logs are shown for the context provided by the log record.
 ---
 title: Logs app
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-logs-app
-scraped: 2026-02-18T21:15:36.289875
+scraped: 2026-03-06T21:09:41.161992
 ---
 
 # Logs app
@@ -13035,10 +10448,6 @@ Prerequisites
 ### Permissions
 
 The following table describes the required permissions.
-
-Permission
-
-Description
 
 storage:spans:read
 
@@ -13080,17 +10489,7 @@ storage:files:read
 
 allow to do joins on the lookup tables
 
-10
-
-rows per page
-
-Page
-
-1
-
-of 1
-
-## Installation
+### Installation
 
 Make sure the app is [installed in your environment](/docs/manage/hub#install "See the information about Dynatrace Hub.").
 
@@ -13182,7 +10581,7 @@ Find relevant log records without writing DQL queries.](https://www.dynatrace.co
 ---
 title: Log ingestion warnings
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-troubleshooting/lma-ingest-warnings
-scraped: 2026-02-16T09:35:26.081800
+scraped: 2026-03-06T21:31:38.206815
 ---
 
 # Log ingestion warnings
@@ -13197,78 +10596,6 @@ If your ingested logs donât look as expected, you can check if a particular
 
 Examples of possible warnings:
 
-Warning
-
-Description
-
-content\_trimmed
-
-The content was trimmed after being received bythe API because it exceeded the event content maximum byte size limit.
-
-content\_trimmed\_pipe
-
-The content was trimmed after processing rules were applied because it exceeded the event content maximum byte size limit.
-
-attr\_count\_trimmed
-
-The number of attributes was trimmed after being received by the API because it exceeded the maximum number of attributes in a single event.
-
-attr\_count\_trimmed\_pipe
-
-The number of attributes was trimmed after processing rules were applied because it exceeded the maximum number of attributes in a single event.
-
-attr\_key\_trimmed
-
-At least one attribute key was trimmed because it exceeded the key maximum byte size limit.
-
-attr\_val\_count\_trimmed
-
-At least one multi-value attribute had the number of values trimmed, after being received by the API, because it exceeded the maximum number of attributes in a single event.
-
-attr\_val\_count\_trimmed\_pipe
-
-After applying processing rules, at least one multi-value attribute had its value number trimmed because it exceeded the maximum number of attributes.
-
-attr\_val\_size\_trimmed
-
-At least one attribute value size was trimmed after being received by the API because it exceeded the value maximum byte size limit.
-
-attr\_val\_size\_trimmed\_pipe
-
-At least one attribute value size was trimmed after processing rules were applied because it exceeded the value maximum byte size limit.
-
-timestamp\_corrected
-
-The timestamp was too far in the future and was corrected to the current time.
-
-common\_attr\_corrected
-
-At least one of the following attributes was corrected: `status`, `loglevel`, or `event.type`.
-
-processing\_batch\_timeout
-
-Batch timeout occurred while executing log processing rules.
-
-processing\_transformer\_timeout
-
-Execution timeout occurred in one of the processing transformers while executing log processing rules.
-
-processing\_transformer\_error
-
-Execution error occurred in one of the processing transformers while executing log processing rules.
-
-processing\_transformer\_throttled
-
-Execution throttled in one of the processing transformers while executing log processing rules.
-
-processing\_output\_record\_conversion\_error
-
-Output conversion error occurred for some records while executing log processing rules.
-
-processing\_prepare\_input\_error
-
-âPrepare input errorâ occurred in one of the enabled log processing rules.
-
 ---
 
 ## analyze-explore-automate/logs/lma-troubleshooting.md
@@ -13276,7 +10603,7 @@ processing\_prepare\_input\_error
 ---
 title: Troubleshooting Log Management and Analytics
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-troubleshooting
-scraped: 2026-02-18T21:34:38.688131
+scraped: 2026-03-05T21:36:06.993002
 ---
 
 # Troubleshooting Log Management and Analytics
@@ -13328,7 +10655,7 @@ If OneAgent is not ingesting log records from a log file despite a log file is c
 ---
 title: Set up alerts based on events extracted from logs
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-use-cases/lma-alert-log-based-events
-scraped: 2026-02-18T21:31:33.710755
+scraped: 2026-03-02T21:29:49.893436
 ---
 
 # Set up alerts based on events extracted from logs
@@ -13448,6 +10775,7 @@ More information about event properties is available at:
 * [Set up custom alerts based on metrics extracted from logs](/docs/analyze-explore-automate/logs/lma-use-cases/lma-alert-log-based-metrics "How to create and configure Davis problems and custom alerts with metrics based on logs.")
 * [Log metrics (Logs Classic)](/docs/analyze-explore-automate/log-monitoring/analyze-log-data/log-metrics "Learn how to create and use Dynatrace log metrics to analyze log data.")
 * [Log events (Logs Classic)](/docs/analyze-explore-automate/log-monitoring/analyze-log-data/log-events "Learn how to create and use Dynatrace log events to analyze log data.")
+* [Alerting and notifications](/docs/analyze-explore-automate/alerting-and-notifications "Utilize anomaly detection, problem detection, and workflows for external notifications to ensure that critical problems never go unnoticed.")
 
 ---
 
@@ -13456,7 +10784,7 @@ More information about event properties is available at:
 ---
 title: Set up custom alerts based on metrics extracted from logs
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-use-cases/lma-alert-log-based-metrics
-scraped: 2026-02-17T04:57:42.723210
+scraped: 2026-03-06T21:33:43.409363
 ---
 
 # Set up custom alerts based on metrics extracted from logs
@@ -13487,7 +10815,7 @@ If you don't need to set thresholds, you should follow the instructions in [Set 
 
 ## Steps
 
-In this example we will open a new Davis Problem when certain records, which contain a specific phrase, are ingested and exceed a static threshold.
+In this example we will open a new Davis problem when certain records, which contain a specific phrase, are ingested and exceed a static threshold.
 
 1. Find logs you want to trigger alerts
 
@@ -13576,6 +10904,7 @@ Detected anomalies can trigger automations using simple workflows as described i
 * [Set up alerts based on events extracted from logs](/docs/analyze-explore-automate/logs/lma-use-cases/lma-alert-log-based-events "How to create and configure Davis problems and alerts with events based on logs.")
 * [Log metrics (Logs Classic)](/docs/analyze-explore-automate/log-monitoring/analyze-log-data/log-metrics "Learn how to create and use Dynatrace log metrics to analyze log data.")
 * [Log events (Logs Classic)](/docs/analyze-explore-automate/log-monitoring/analyze-log-data/log-events "Learn how to create and use Dynatrace log events to analyze log data.")
+* [Alerting and notifications](/docs/analyze-explore-automate/alerting-and-notifications "Utilize anomaly detection, problem detection, and workflows for external notifications to ensure that critical problems never go unnoticed.")
 
 ---
 
@@ -13584,7 +10913,7 @@ Detected anomalies can trigger automations using simple workflows as described i
 ---
 title: Detect problems with Logs
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-use-cases/lma-detect-problems-with-logs
-scraped: 2026-02-17T05:02:01.273233
+scraped: 2026-03-04T21:35:39.748570
 ---
 
 # Detect problems with Logs
@@ -13665,34 +10994,6 @@ To create a new pipeline
      ```
    * Set **Event description** to `{supportInfo} - Log line: {content}`
 7. Set the following **Event properties**:
-
-   Event property
-
-   Value
-
-   **event.type**
-
-   `ERROR_EVENT`
-
-   **dt.owner**
-
-   `{dt.owner}`
-
-   **dt.cost.costcenter**
-
-   `{dt.cost.costcenter}`
-
-   **dt.cost.product**
-
-   `{dt.cost.product}`
-
-   **deployment.release\_product**
-
-   `{deployment.release_product}`
-
-   **deployment.release\_stage**
-
-   `{deployment.release_stage}`
 8. Select **Save** to save your pipeline.
 
 An example of creating a new Log Error pipeline
@@ -13817,7 +11118,7 @@ Otherwise, your next step should be to contact the team responsible for maintain
 ---
 title: Create log metric
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-use-cases/lma-e2e-create-log-metric
-scraped: 2026-02-18T21:19:36.591495
+scraped: 2026-03-06T21:23:16.645715
 ---
 
 # Create log metric
@@ -13945,7 +11246,7 @@ To view the result in Data Explorer
 ---
 title: Observe your logs in real time
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-use-cases/lma-e2e-real-time-observability-logs-dql
-scraped: 2026-02-18T21:20:47.420695
+scraped: 2026-03-06T21:15:25.252177
 ---
 
 # Observe your logs in real time
@@ -14028,7 +11329,7 @@ For more information, check the **Related topics** section and see [Log Manageme
 ---
 title: Optimize performance and costs of dashboards running log queries
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-use-cases/lma-log-query-dashboard
-scraped: 2026-02-18T05:52:14.043160
+scraped: 2026-03-06T21:37:57.469012
 ---
 
 # Optimize performance and costs of dashboards running log queries
@@ -14254,7 +11555,7 @@ Best practices:
 ---
 title: Log Management and Analytics use cases
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-use-cases
-scraped: 2026-02-18T21:20:55.889248
+scraped: 2026-03-06T21:15:16.527467
 ---
 
 # Log Management and Analytics use cases
@@ -14353,7 +11654,7 @@ Using a combination of metrics based on logs and [custom alerts](/docs/dynatrace
 ---
 title: Log on Grail examples
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/logs-on-grail-examples
-scraped: 2026-02-18T21:19:17.168322
+scraped: 2026-03-06T21:15:20.149749
 ---
 
 # Log on Grail examples
@@ -14403,46 +11704,6 @@ The proxy server logs HTTP response status codes. You need to see the response c
    ```
 
    **Results table**
-
-   timestamp
-
-   content
-
-   log.source
-
-   dt.entity.host
-
-   â¦
-
-   2022-08-10 14:05:42
-
-   2022-08-10T11:05:42Z localhost haproxy[12529]: 123.45.67.891:23456 http-in~ individual\_servers/abcde1 123/0/0/1/456 HTTP\_STATUS 200 284 - - âNN 5749/5745/0/1/0â¦
-
-   /var/abcde/abc/defrghytji/HOST-1â¦
-
-   HOST-AB-12-34567
-
-   â¦
-
-   2022-08-10 14:05:46
-
-   2022-08-10T11:05:46Z localhost haproxy[12528]: 12.345.67.123:12345 http-in~ local/local1 5432/0/0/103/1234 HTTP\_STATUS 200 138 - - â 7416/7413/407/408/0 0/â¦
-
-   /var/abcde/abc/defrghytji/HOST-A2â¦
-
-   HOST-CD-76-54321
-
-   â¦
-
-   2022-08-10 14:05:50
-
-   2022-08-10T11:05:50Z localhost haproxy[12529]: 11.222.33.123:45678 http-in~ local/local1 19/0/1/110/123 HTTP\_STATUS 204 64 - - â 5753/5749/358/359/0 0/0â¦
-
-   /var/abcde/abc/defrghytji/HOST-A23â¦
-
-   HOST-AR-78-12345
-
-   â¦
 2. Extract your metric from the content field.  
    The log content field includes the HTTP\_STATUS codes you need. Now let's use the `parse` command to create a [Dynatrace Pattern Language](/docs/platform/grail/dynatrace-pattern-language "Use Dynatrace Pattern Language to describe patterns using matchers.") pattern with the following elements:
 
@@ -14463,30 +11724,6 @@ The proxy server logs HTTP response status codes. You need to see the response c
    ```
 
    **Results table**
-
-   timestamp
-
-   content
-
-   httpstatus
-
-   2022-08-10 14:05:42
-
-   2022-08-10T11:05:42Z localhost haproxy[12529]: 123.45.67.891:23456 http-in~ individual\_servers/abcde1 123/0/0/1/456 HTTP\_STATUS 200 284 - - âNN 5749/5745/0/1/ 0â¦
-
-   200
-
-   2022-08-10 14:05:46
-
-   2022-08-10T11:05:46Z localhost haproxy[12528]: 12.345.67.123:12345 http-in~ local/local1 5432/0/0/103/1234 HTTP\_STATUS 200 138 - - â 7416/7413/407/408/0 0/â¦
-
-   200
-
-   2022-08-10 14:05:50
-
-   2022-08-10T11:05:50Z localhost haproxy[12529]: 11.222.33.123:45678 http-in~ local/local1 19/0/1/110/123 HTTP\_STATUS 204 64 - - â 5753/5749/358/359/0 0/0â¦
-
-   204
 3. Filter a range of values.  
    You can select a range of values for further analysis using DQL. We select only the HTTP status codes that begin with 400 and higher, as those include client side and server side errors.
 
@@ -14530,26 +11767,6 @@ The proxy server logs HTTP response status codes. You need to see the response c
 
    **Results table**
 
-   count()
-
-   httpstatus
-
-   4
-
-   403
-
-   779
-
-   404
-
-   1
-
-   500
-
-   9
-
-   503
-
 ### Example 2: Average cart size
 
 
@@ -14570,56 +11787,6 @@ Your application logs context data that is relevant to your business. You need t
    ```
 
    **Results table**
-
-   timestamp
-
-   content
-
-   log.source
-
-   dt.process.name
-
-   â¦
-
-   2022-08-05 11:29:57
-
-   {"@t":"2022-08-05T08:29:57.6864969Z","@m":"Slow GetCartAsync request detected for userId=a433448b-c38d-4144-9591-f510829d4gh2","@i":"abc0f94a"}
-
-   /var/log/pods/prod\_cartservice-74c8d7d674-7dqf
-
-   cartservice cartservice-\*
-
-   â¦
-
-   2022-08-05 11:29:57
-
-   {"@t":"2022-08-05T08:29:57.8068740Z","@m":"No carts for user ab51dc18-7724-44fb-cdf8-8bda633f0022","@i":"c9315217"}
-
-   /var/log/pods/prod\_cartservice-74c8d7d674-7dqf
-
-   cartservice cartservice-\*
-
-   â¦
-
-   2022-08-05 11:29:58
-
-   {"@t":"2022-08-05T08:29:57.6864541Z","@m":"GetCartAsync called with userId=z433448a-c38d-4123-9591-f510829d4ab2","@i":"1feab40c"}
-
-   /var/log/pods/prod\_cartservice-74c8d7d674-7dqf
-
-   cartservice cartservice-\*
-
-   â¦
-
-   2022-08-05 11:30:01
-
-   {"@t":"2022-08-05T08:30:01.1058085Z","@m":"Checking CartService Health","@i":"a01f1123"}
-
-   /var/log/pods/prod\_cartservice-74c8d7d674-7dqf
-
-   cartservice cartservice-\*
-
-   â¦
 2. Check the types and counts of products added to carts.  
    You need to get an overview of the type and quantity of products users added to their carts. Since logs contain various events, you need to specify the events where items were added to carts, using the `contains()` function. To clean up the results table, it is a good idea to leave only timestamp and log content.
 
@@ -14640,26 +11807,6 @@ Your application logs context data that is relevant to your business. You need t
    ```
 
    **Results table**
-
-   timestamp
-
-   content
-
-   2022-08-05 11:55:04
-
-   {"@t":"2022-08-05T08:55:04.9934166Z","@m":"AddItemAsync called with userId=a332eabc-f52f-40d5-a09f-51bb96f5d119, productId=1ZYFJ3GM2N, quantity=1","@i":"18b35248"}
-
-   2022-08-05 11:55:07
-
-   {"@t":"2022-08-05T08:55:07.1405993Z","@m":"AddItemAsync called with userId=5ddcdd66-f0fd-4608-839e-0cd7841a3bbc, productId=L2ECAV7KIM, quantity=5","@i":"04fe325f"}
-
-   2022-08-05 11:55:32
-
-   {"@t":"2022-08-05T08:55:32.5027148Z","@m":"AddItemAsync called with userId=66734557-683c-4864-b3c7-8f08b52f0b17, productId=LS3PSXUNUM, quantity=5","@i":"987426bd"}
-
-   2022-08-05 11:30:01
-
-   {"@t":"2022-08-05T08:55:58.6888309Z","@m":"AddItemAsync called with userId=c673ca76-3966-4174-b950-4c3f3aa22dfe, productId=4SIQT8TOJO, quantity=2","@i":"99a07cd5"}
 3. Extract the products and corresponding quantities.  
    You need to extract the product identifiers and quantities from logs with the `parse` command.  
    Using the [Dynatrace Pattern Language](/docs/platform/grail/dynatrace-pattern-language "Use Dynatrace Pattern Language to describe patterns using matchers."), create a pattern and match the following parts of the `content` field:
@@ -14695,56 +11842,6 @@ Your application logs context data that is relevant to your business. You need t
    ```
 
    **Results table**
-
-   timestamp
-
-   content
-
-   userId
-
-   productId
-
-   productQuantity
-
-   2022-08-05 11:55:04
-
-   {"@t":"2022-08-05T08:55:04.9934166Z","@m":"AddItemAsync called with userId=a332efea-f52f-40d5-a09f-51bb96f5d119, productId=1ZYFJ3GM2N, quantity=1","@i":"18b35248"}
-
-   a332efea-f52f-40d5-a09f-51bb96f5d119
-
-   1ZYFJ3GM2N
-
-   1
-
-   2022-08-05 11:55:07
-
-   {"@t":"2022-08-05T08:55:07.1405993Z","@m":"AddItemAsync called with userId=5bdcdd66-f0fd-4608-839e-0cd7841a3bbc, productId=L2ECAV7KIM, quantity=5","@i":"04fe325f"}
-
-   5bdcdd66-f0fd-4608-839e-0cd7841a3bbc
-
-   L2ECAV7KIM
-
-   5
-
-   2022-08-05 11:55:32
-
-   {"@t":"2022-08-05T08:55:32.5027148Z","@m":"AddItemAsync called with userId=66734557-683c-4864-c3c7-8f08b52f0b17, productId=LS3PSXUNUM, quantity=5","@i":"987426bd"}
-
-   66734557-683c-4864-c3c7-8f08b52f0b17
-
-   LS3PSXUNUM
-
-   5
-
-   2022-08-05 11:30:01
-
-   {"@t":"2022-08-05T08:55:58.6888309Z","@m":"AddItemAsync called with userId=d673ca76-3966-4174-b950-4c3f3aa22dfe, productId=4SIQT8TOJO, quantity=2","@i":"99a07cd5"}
-
-   d673ca76-3966-4174-b950-4c3f3aa22dfe
-
-   4SIQT8TOJO
-
-   2
 4. Clean the data.  
    As the user ID and the original log record are no longer relevant, let's clean up the result table using the `fields` command.
 
@@ -14773,26 +11870,6 @@ Your application logs context data that is relevant to your business. You need t
    ```
 
    **Results table**
-
-   productId
-
-   productQuantity
-
-   1ZYFJ3GM2N
-
-   1
-
-   L2ECAV7KIM
-
-   5
-
-   LS3PSXUNUM
-
-   5
-
-   4SIQT8TOJO
-
-   2
 5. Summarize events per product.  
    To see the total amount of each product added to a cart, use the `sum()` function.
 
@@ -14825,26 +11902,6 @@ Your application logs context data that is relevant to your business. You need t
    ```
 
    **Results table**
-
-   productId
-
-   sum(productQuantity)
-
-   APUK6V6EV0
-
-   61
-
-   B9ECA1YMWWN1N4OV7KIM
-
-   47
-
-   66CDHSJNUP
-
-   38
-
-   9DIQT8TOJO
-
-   32
 6. Find the most popular products.  
    To understand the behavior of an average user, we want to determine the average size of the cart for each product. To do that, we use the `avg()` function and name the new field `averageProductQuantity`. Then we sort the average values from highest to lowest, and we limit the results so that we see the five most popular products.
 
@@ -14886,33 +11943,7 @@ Your application logs context data that is relevant to your business. You need t
 
    **Results table**
 
-   averageProductQuantity
-
-   productId
-
-   4.746268656716418
-
-   1ZYFJ3GM2N
-
-   4.4375
-
-   26VCHSJNUP
-
-   4.415584415584416
-
-   LS3PSXUNUM
-
-   4.3604651162790695
-
-   L4ECAV7KIM
-
-   4.2682926829268295
-
-   1YMWWN1N4O
-
 ### Example 3: Track user changes
-
-
 
 In this example, you track user changes with audit logs. You want to track the type and quantity of actions performed by users.
 
@@ -14930,46 +11961,6 @@ In this example, you track user changes with audit logs. You want to track the t
    ```
 
    **Results table**
-
-   content
-
-   timestamp
-
-   dt.entity.host
-
-   dt.entity.process\_group
-
-   2022-07-15 09:08:00 UTC {"eventType":"UPDATE","tenantId":"abc","useâ¦
-
-   15.7.2022 12:08
-
-   HOST-1
-
-   PROCESS\_GROUP-12ED48520DB559D1
-
-   2022-07-15 09:08:07 UTC {"eventType":"CREATE","tenantId":"efg","useâ¦
-
-   15.7.2022 12:08:07
-
-   HOST-2
-
-   PROCESS\_GROUP-34ED48520DB559D2
-
-   2022-07-15 09:11:19 UTC {"eventType":"UPDATE","tenantId":"hij","useâ¦
-
-   15.7.2022 12:11:19
-
-   HOST-3
-
-   PROCESS\_GROUP-56ED48520DB559D3
-
-   2022-07-15 09:11:19 UTC {"eventType":"DELETE","tenantId":"klm","useâ¦
-
-   15.7.2022 12:11:19
-
-   HOST-4
-
-   PROCESS\_GROUP-78ED48520DB559D4
 2. Extract relevant fields for a single user.
 
    * The retrieved table includes record updates, deletions, and creations.
@@ -15011,22 +12002,6 @@ In this example, you track user changes with audit logs. You want to track the t
    ```
 
    **Results table**
-
-   ts
-
-   type
-
-   tenant
-
-   user
-
-   2022-07-14 09:19:34
-
-   UPDATE
-
-   abc
-
-   1aae042c-ab34-4f01-8d46-128971703d5a
 3. Get the users who performed updates and deletions.  
    To get users who made updates or deletions only:
 
@@ -15062,46 +12037,6 @@ In this example, you track user changes with audit logs. You want to track the t
    ```
 
    **Results table**
-
-   ts
-
-   type
-
-   tenant
-
-   user
-
-   2022-07-14 09:19:34
-
-   UPDATE
-
-   abc
-
-   2aae042c-ab34-4f01-8d46-128971703d5b
-
-   2022-07-14 05:11:04
-
-   UPDATE
-
-   abc
-
-   386b63fc-1516-4b46-9714-ee53dd76c99c
-
-   2022-07-14 05:00:49
-
-   DELETE
-
-   abc
-
-   486b63fc-1516-4b46-9714-ee53dd76c99d
-
-   2022-07-14 04:21:43
-
-   DELETE
-
-   abc
-
-   586b63fc-1516-4b46-9714-ee53dd76c99e
 4. Find out the change types and the number of changes performed by each user.  
    You can count the records using the `summarize` command.
 
@@ -15138,36 +12073,6 @@ In this example, you track user changes with audit logs. You want to track the t
    ```
 
    **Results table**
-
-   user
-
-   type
-
-   count()
-
-   686b63fc-1516-4b46-9714-ee53dd76c99f
-
-   DELETE
-
-   78
-
-   786b63fc-1516-4b46-9714-ee53dd76c99g
-
-   UPDATE
-
-   34
-
-   8aae042c-ab34-4f01-8d46-128971703d5h
-
-   UPDATE
-
-   20
-
-   9d4a7ac8-e451-6469-cced-6f4358ef343i
-
-   UPDATE
-
-   17
 5. Count the events per user, split by action type (create, update, delete).  
    You can perform the calculation by combining the `summarize` commmand with the `countIf` function.
 
@@ -15205,46 +12110,6 @@ In this example, you track user changes with audit logs. You want to track the t
 
    **Results table**
 
-   tenant
-
-   user
-
-   countIf(type=="CREATE")
-
-   countIf(type=="UPDATE")
-
-   countIf(type=="DELETE")
-
-   def
-
-   186b63fc-1516-4b46-9714-ee53dd76c99a
-
-   0
-
-   34
-
-   78
-
-   ghi
-
-   2aae042c-ab34-4f01-8d46-128971703d5b
-
-   19
-
-   20
-
-   8
-
-   jkl
-
-   3d4a7ac8-e451-6469-cced-6f4358ef343c
-
-   2
-
-   17
-
-   11
-
 ### Example 4: Create a log metric
 
 In this example, you need to count how many refused connections are recorded in your log data. For that, filter the correct logs and turn the number of occurrences into a log metric.
@@ -15274,13 +12139,14 @@ In this use case, you need to automate anomaly detection. See how you can extrac
 ---
 title: Upgrade Log Monitoring Classic to Log Management and Analytics
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/logs-upgrade/logs-upgrade-to-lma
-scraped: 2026-02-18T21:33:33.558555
+scraped: 2026-03-05T21:34:52.597060
 ---
 
 # Upgrade Log Monitoring Classic to Log Management and Analytics
 
 # Upgrade Log Monitoring Classic to Log Management and Analytics
 
+* Classic
 * 5-min read
 * Updated on Nov 20, 2025
 
@@ -15494,7 +12360,7 @@ The user access granting process depends on whether you are a new or existing us
 ---
 title: Log Analytics
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs
-scraped: 2026-02-18T21:16:08.267613
+scraped: 2026-03-06T21:10:16.285435
 ---
 
 # Log Analytics

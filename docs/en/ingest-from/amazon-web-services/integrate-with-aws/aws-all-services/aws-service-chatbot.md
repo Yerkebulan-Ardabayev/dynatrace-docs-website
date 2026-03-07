@@ -1,13 +1,14 @@
 ---
 title: AWS Chatbot monitoring
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-chatbot
-scraped: 2026-02-18T05:56:14.730679
+scraped: 2026-03-06T21:35:35.815594
 ---
 
 # AWS Chatbot monitoring
 
 # AWS Chatbot monitoring
 
+* Classic
 * How-to guide
 * 1-min read
 * Published Sep 08, 2020

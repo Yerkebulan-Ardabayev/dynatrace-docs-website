@@ -1,7 +1,7 @@
 ---
 title: Automate vulnerability remediation with GitHub Copilot and Dynatrace
 source: https://www.dynatrace.com/docs/secure/use-cases/ai-remediation-github-copilot
-scraped: 2026-02-18T05:52:50.635555
+scraped: 2026-03-06T21:30:19.746089
 ---
 
 # Automate vulnerability remediation with GitHub Copilot and Dynatrace

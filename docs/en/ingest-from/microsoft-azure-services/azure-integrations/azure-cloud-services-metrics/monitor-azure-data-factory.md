@@ -1,7 +1,7 @@
 ---
 title: Azure Data Factory (V1, V2) monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-data-factory
-scraped: 2026-02-18T05:50:27.051532
+scraped: 2026-03-06T21:34:04.551751
 ---
 
 # Azure Data Factory (V1, V2) monitoring

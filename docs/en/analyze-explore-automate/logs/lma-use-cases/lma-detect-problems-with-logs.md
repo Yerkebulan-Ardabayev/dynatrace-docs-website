@@ -1,7 +1,7 @@
 ---
 title: Detect problems with Logs
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-use-cases/lma-detect-problems-with-logs
-scraped: 2026-02-17T05:02:01.273233
+scraped: 2026-03-04T21:35:39.748570
 ---
 
 # Detect problems with Logs
@@ -82,34 +82,6 @@ To create a new pipeline
      ```
    * Set **Event description** to `{supportInfo} - Log line: {content}`
 7. Set the following **Event properties**:
-
-   Event property
-
-   Value
-
-   **event.type**
-
-   `ERROR_EVENT`
-
-   **dt.owner**
-
-   `{dt.owner}`
-
-   **dt.cost.costcenter**
-
-   `{dt.cost.costcenter}`
-
-   **dt.cost.product**
-
-   `{dt.cost.product}`
-
-   **deployment.release\_product**
-
-   `{deployment.release_product}`
-
-   **deployment.release\_stage**
-
-   `{deployment.release_stage}`
 8. Select **Save** to save your pipeline.
 
 An example of creating a new Log Error pipeline

@@ -1,7 +1,7 @@
 ---
 title: Azure SQL elastic pool (vCore) monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-sql-elastic-pool-vcore
-scraped: 2026-02-18T21:35:23.663304
+scraped: 2026-03-02T21:30:20.627289
 ---
 
 # Azure SQL elastic pool (vCore) monitoring

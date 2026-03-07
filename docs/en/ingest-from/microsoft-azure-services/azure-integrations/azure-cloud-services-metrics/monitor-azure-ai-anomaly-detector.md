@@ -1,7 +1,7 @@
 ---
 title: Azure AI - Anomaly Detector monitoring
 source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-ai-anomaly-detector
-scraped: 2026-02-18T21:36:30.782405
+scraped: 2026-03-02T21:33:01.155227
 ---
 
 # Azure AI - Anomaly Detector monitoring

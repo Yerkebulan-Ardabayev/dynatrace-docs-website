@@ -1,19 +1,19 @@
 ---
-title: Dynatrace Intelligence agentic and generative AI
+title: Agentic and generative AI
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/copilot
-scraped: 2026-02-18T21:21:27.509889
+scraped: 2026-03-06T21:14:58.711515
 ---
 
-# Dynatrace Intelligence agentic and generative AI
+# Agentic and generative AI
 
-# Dynatrace Intelligence agentic and generative AI
+# Agentic and generative AI
 
 * Latest Dynatrace
 * App
 * 2-min read
-* Updated on Jan 28, 2026
+* Updated on Mar 03, 2026
 
-Dynatrace Intelligence generative AI developed by Dynatrace allows you to explore data through natural language, helping with onboarding and boosting productivity. Dynatrace Intelligence generative AI takes your prompt and translates it to DQL, and is capable of auto-executing generated DQL queries.
+Dynatrace Intelligence agentic and generative AI developed by Dynatrace allows you to explore data through natural language, helping with onboarding and boosting productivity. Dynatrace Intelligence agentic and generative AI takes your prompt and translates it to DQL, and is capable of auto-executing generated DQL queries.
 
 ## Use cases
 
@@ -28,15 +28,17 @@ Dynatrace Intelligence generative AI developed by Dynatrace allows you to explor
   + Get natural language explanations of execution plans in the Databases app.
 * Discover relevant troubleshooting guides to speed up problem remediation.
 
-[#### Dynatrace Intelligence generative AI overview
+Dynatrace Intelligence agentic and generative AI
 
-Learn about data security and other aspects of Dynatrace Intelligence generative AI.
+[#### Dynatrace Intelligence agentic and generative AI overview
+
+Learn about data security and other aspects of Dynatrace Intelligence agentic and generative AI.
 
 * Explanation
 
-Read this explanation](/docs/dynatrace-intelligence/copilot/copilot-overview)[#### Get started with Dynatrace Intelligence generative AI
+Read this explanation](/docs/dynatrace-intelligence/copilot/copilot-overview)[#### Get started with Dynatrace Intelligence agentic and generative AI
 
-Learn how to set up Dynatrace Intelligence generative AI.
+Learn how to set up Dynatrace Intelligence agentic and generative AI.
 
 * How-to guide
 
@@ -50,7 +52,7 @@ Use Dynatrace Intelligence generative AI to translate your natural language ques
 
 * Overview
 
-See the overview](/docs/dynatrace-intelligence/copilot/quick-analysis-copilot-dql)[#### Dynatrace Intelligence generative AI - Tips for writing better prompts
+See the overview](/docs/dynatrace-intelligence/copilot/quick-analysis-copilot-dql)[#### Dynatrace Intelligence agentic and generative AI - Tips for writing better prompts
 
 Learn best practices for writing more accurate prompts.
 
@@ -58,13 +60,13 @@ Learn best practices for writing more accurate prompts.
 
 Read this reference](/docs/dynatrace-intelligence/copilot/quick-analysis-copilot-dql/copilot-tips)[#### Generative AI quick analysis examples
 
-Learn more about what kind of prompts work well in Dynatrace Intelligence generative AI.
+Learn more about what kind of prompts work well in Dynatrace Intelligence agentic and generative AI.
 
 * Reference
 
 Read this reference](/docs/dynatrace-intelligence/use-cases/copilot-examples)[#### Summarize and explain queries
 
-Learn how to summarize and explain queries using Dynatrace Intelligence generative AI DQL2NL skill.
+Learn how to summarize and explain queries using Dynatrace Intelligence agentic and generative AI DQL2NL skill.
 
 * Tutorial
 
@@ -86,13 +88,13 @@ Learn how to trigger predefined prompts in various Dynatrace applications.
 
 Read this reference](/docs/dynatrace-intelligence/copilot/chat-with-davis-copilot/copilot-conv-starters)
 
-For more information about what kind of prompts work well in  **Dynatrace Assist**, see [prompt examples](/docs/dynatrace-intelligence/copilot/chat-with-davis-copilot#prompt-examples "Ask questions using natural language and get quick answers from Dynatrace Assist, your generative AI assistant.")
+For more information about what kind of prompts work well in  **Dynatrace Assist**, see [prompt examples](/docs/dynatrace-intelligence/copilot/chat-with-davis-copilot/dynatrace-assist-prompts "Learn what kind of prompts work well in Dynatrace Assist.").
 
 ## Vector-based document matching
 
-[#### Discover relevant troubleshooting guides with Dynatrace Intelligence generative AI
+[#### Discover relevant troubleshooting guides with Dynatrace Intelligence agentic and generative AI
 
-Learn how Dynatrace Intelligence generative AI can suggest troubleshooting guides for problem remediation.
+Learn how Dynatrace Intelligence agentic and generative AI can suggest troubleshooting guides for problem remediation.
 
 * Tutorial
 
@@ -100,13 +102,13 @@ Read this tutorial](/docs/dynatrace-intelligence/copilot/copilot-find-relevant-t
 
 ## Learn more
 
-[#### Dynatrace Intelligence generative AI data privacy and security
+[#### Dynatrace Intelligence agentic and generative AI data privacy and security
 
-Learn about Dynatrace Intelligence generative AI data privacy and security policy.
+Learn about Dynatrace Intelligence agentic and generative AI data privacy and security policy.
 
 * Explanation
 
-Read this explanation](/docs/dynatrace-intelligence/copilot/copilot-data-privacy)[#### Dynatrace Intelligence generative AI FAQ
+Read this explanation](/docs/dynatrace-intelligence/copilot/copilot-data-privacy)[#### Dynatrace Intelligence agentic and generative AI FAQ
 
 Learn about frequently asked questions and find your answers.
 

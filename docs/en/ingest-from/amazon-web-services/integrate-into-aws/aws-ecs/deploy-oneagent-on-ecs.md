@@ -1,13 +1,14 @@
 ---
 title: Monitor Elastic Container Service (ECS) with EC2 launch type
 source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-ecs/deploy-oneagent-on-ecs
-scraped: 2026-02-18T05:47:23.880001
+scraped: 2026-03-04T21:35:27.635545
 ---
 
 # Monitor Elastic Container Service (ECS) with EC2 launch type
 
 # Monitor Elastic Container Service (ECS) with EC2 launch type
 
+* Classic
 * How-to guide
 * 3-min read
 * Published May 18, 2020

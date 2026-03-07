@@ -1,13 +1,14 @@
 ---
 title: Troubleshooting RUM for custom applications
 source: https://www.dynatrace.com/docs/observe/digital-experience/custom-applications/troubleshooting
-scraped: 2026-02-18T05:49:02.201258
+scraped: 2026-03-05T21:36:37.105292
 ---
 
 # Troubleshooting RUM for custom applications
 
 # Troubleshooting RUM for custom applications
 
+* Classic
 * Troubleshooting
 * 1-min read
 * Published Jul 18, 2019

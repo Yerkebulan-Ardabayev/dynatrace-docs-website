@@ -1,13 +1,14 @@
 ---
 title: Introduction to application overview page
 source: https://www.dynatrace.com/docs/observe/digital-experience/web-applications/analyze-and-use/introduction-to-application-overview
-scraped: 2026-02-18T21:25:14.739680
+scraped: 2026-03-05T21:27:35.018091
 ---
 
 # Introduction to application overview page
 
 # Introduction to application overview page
 
+* Classic
 * Explanation
 * 2-min read
 * Published Jul 11, 2019
@@ -25,7 +26,7 @@ You can perform your analysis based on a specific dimension selected from the fi
 
 ## Tags and JavaScript frameworks
 
-Right beneath the name of your application, you can view the assigned [tags](/docs/manage/tags-and-metadata "Learn how to define tags and metadata. Understand how to use tags and metadata to organize your environment.") and [JavaScript frameworks](/docs/observe/digital-experience/web-applications/initial-setup/configure-dynatrace-real-user-monitoring-to-capture-xhr-actions "Understand why you need to activate specific JavaScript frameworks for XHR-action support and learn how to configure Real User Monitoring for XHR actions."), which are displayed within the expandable **Tags and JavaScript frameworks** area. It's easy to add new tags hereâjust select **Add tag**. There's also a **Framework settings** button that takes you to the settings related to [JavaScript frameworks](/docs/observe/digital-experience/web-applications/initial-setup/configure-dynatrace-real-user-monitoring-to-capture-xhr-actions "Understand why you need to activate specific JavaScript frameworks for XHR-action support and learn how to configure Real User Monitoring for XHR actions.").
+Right beneath the name of your application, you can view the assigned [tags](/docs/manage/tags-and-metadata "Use tags and metadata to organize data in your Dynatrace environment.") and [JavaScript frameworks](/docs/observe/digital-experience/web-applications/initial-setup/configure-dynatrace-real-user-monitoring-to-capture-xhr-actions "Understand why you need to activate specific JavaScript frameworks for XHR-action support and learn how to configure Real User Monitoring for XHR actions."), which are displayed within the expandable **Tags and JavaScript frameworks** area. It's easy to add new tags hereâjust select **Add tag**. There's also a **Framework settings** button that takes you to the settings related to [JavaScript frameworks](/docs/observe/digital-experience/web-applications/initial-setup/configure-dynatrace-real-user-monitoring-to-capture-xhr-actions "Understand why you need to activate specific JavaScript frameworks for XHR-action support and learn how to configure Real User Monitoring for XHR actions.").
 
 ## Performance analysis
 

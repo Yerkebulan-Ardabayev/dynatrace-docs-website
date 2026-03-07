@@ -1,6 +1,6 @@
 # Документация Dynatrace: deliver/pipeline-observability-sdlc-events
 Язык: Русский (RU)
-Сгенерировано: 2026-02-18
+Сгенерировано: 2026-03-06
 Файлов в разделе: 2
 ---
 
@@ -9,7 +9,7 @@
 ---
 title: Observe Argo CD deployment and application health with Dashboards and SDLC events
 source: https://www.dynatrace.com/docs/deliver/pipeline-observability-sdlc-events/tutorials/deployment-observability-use-case-argocd
-scraped: 2026-02-17T04:58:38.274560
+scraped: 2026-03-03T21:24:45.170541
 ---
 
 # Observe Argo CD deployment and application health with Dashboards and SDLC events
@@ -489,7 +489,7 @@ We highly value your insights on Argo CD observability. Your feedback is crucial
 ---
 title: Optimize engineering flow metrics using Jira data
 source: https://www.dynatrace.com/docs/deliver/pipeline-observability-sdlc-events/tutorials/pipeline-observability-tutorial-jira
-scraped: 2026-02-18T21:30:47.477966
+scraped: 2026-03-02T21:30:16.892113
 ---
 
 # Optimize engineering flow metrics using Jira data

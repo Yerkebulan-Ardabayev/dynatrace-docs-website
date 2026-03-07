@@ -1,13 +1,14 @@
 ---
 title: Log Monitoring Classic
 source: https://www.dynatrace.com/docs/analyze-explore-automate/log-monitoring
-scraped: 2026-02-16T21:30:46.193948
+scraped: 2026-03-06T21:35:33.825630
 ---
 
 # Log Monitoring Classic
 
 # Log Monitoring Classic
 
+* Classic
 * 2-min read
 * Updated on Nov 20, 2025
 

@@ -1,7 +1,7 @@
 ---
 title: Dynatrace settings framework
 source: https://www.dynatrace.com/docs/manage/settings/settings-20
-scraped: 2026-02-18T21:29:20.555717
+scraped: 2026-03-06T21:26:14.018111
 ---
 
 # Dynatrace settings framework

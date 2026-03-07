@@ -1,7 +1,7 @@
 ---
 title: Anomaly Detection app
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-app
-scraped: 2026-02-18T21:21:28.640444
+scraped: 2026-03-06T21:14:57.037010
 ---
 
 # Anomaly Detection app
@@ -20,10 +20,6 @@ Prerequisites
 ### Permissions
 
 The following table describes the required permissions.
-
-Permission
-
-Description
 
 settings:schemas:read
 
@@ -65,19 +61,9 @@ davis:analyzers:execute
 
 Execute Threshold Suggestion Analyzer
 
-10
-
-rows per page
-
-Page
-
-1
-
-of 1
-
 User permissions can only be changed by your Dynatrace administrator in **Account Management** > **Identity and Access Management**. To learn more about user groups and assigning permissions, see [Working with policies](/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies "Working with policies").
 
-## Installation
+### Installation
 
 Make sure the app is [installed in your environment](/docs/manage/hub#install "See the information about Dynatrace Hub.").
 

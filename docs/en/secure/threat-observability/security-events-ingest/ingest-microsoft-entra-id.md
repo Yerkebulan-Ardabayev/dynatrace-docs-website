@@ -1,7 +1,7 @@
 ---
 title: Ingest Microsoft Entra ID sign-in logs
 source: https://www.dynatrace.com/docs/secure/threat-observability/security-events-ingest/ingest-microsoft-entra-id
-scraped: 2026-02-18T21:22:12.236996
+scraped: 2026-03-06T21:23:43.477598
 ---
 
 # Ingest Microsoft Entra ID sign-in logs

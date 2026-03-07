@@ -1,7 +1,7 @@
 ---
 title: Workflows
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows
-scraped: 2026-02-18T21:19:45.650853
+scraped: 2026-03-06T21:15:26.954952
 ---
 
 # Workflows
@@ -24,10 +24,6 @@ Prerequisites
 ### Permissions
 
 The following table describes the required permissions.
-
-Permission
-
-Description
 
 hub:catalog:read
 
@@ -69,23 +65,13 @@ automation:workflows:read
 
 Read access to workflows.
 
-10
-
-rows per page
-
-Page
-
-1
-
-of 1
-
 You might need additional permissions to run certain tasks in ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Workflows**.
 
 For a complete list of permissions needed to use ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Workflows**, go to **Hub**, find and select **Workflows**, and go to the **Technical information** tab.
 
 For more information about ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Workflows** security, see [User permissions for workflows](/docs/analyze-explore-automate/workflows/security "Guide on security aspects of workflow automation in Dynatrace Workflows").
 
-## Installation
+### Installation
 
 Make sure the app is [installed in your environment](/docs/manage/hub#install "See the information about Dynatrace Hub.").
 

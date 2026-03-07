@@ -1,7 +1,7 @@
 ---
 title: Policy management API - POST a policy boundary
 source: https://www.dynatrace.com/docs/dynatrace-api/account-management-api/policy-management-api/boundaries/post-boundary
-scraped: 2026-02-18T05:54:52.617330
+scraped: 2026-03-05T21:38:37.817709
 ---
 
 # Policy management API - POST a policy boundary
@@ -15,10 +15,6 @@ scraped: 2026-02-18T05:54:52.617330
 Creates a new policy boundary within a level. You can't create a global-level boundary, as these are managed by Dynatrace.
 
 The request consumes and produces an `application/json` payload.
-
-POST
-
-`https://api.dynatrace.com/iam/v1/repo/account/{accountId}/boundaries`
 
 ## Authentication
 
@@ -204,10 +200,6 @@ This is a model of the request body, showing the possible elements. It has to be
 We recommend that you validate the payload before submitting it with an actual request. A response code of **200** indicates a valid payload.
 
 The request consumes an `application/json` payload.
-
-POST
-
-`https://api.dynatrace.com/iam/v1/repo/account/{accountId}/boundaries/validation`
 
 ### Authentication
 

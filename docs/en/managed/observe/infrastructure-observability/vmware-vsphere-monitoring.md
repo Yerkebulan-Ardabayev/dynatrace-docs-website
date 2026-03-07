@@ -1,13 +1,14 @@
 ---
 title: VMware vSphere monitoring
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/vmware-vsphere-monitoring
-scraped: 2026-02-18T21:23:02.886922
+scraped: 2026-03-06T21:17:06.043244
 ---
 
 # VMware vSphere monitoring
 
 # VMware vSphere monitoring
 
+* Classic
 * How-to guide
 * Published Aug 12, 2021
 

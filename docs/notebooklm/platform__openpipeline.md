@@ -1,7 +1,7 @@
 # Документация Dynatrace: platform/openpipeline
 Язык: Русский (RU)
-Сгенерировано: 2026-02-18
-Файлов в разделе: 18
+Сгенерировано: 2026-03-06
+Файлов в разделе: 19
 ---
 
 ## platform/openpipeline/concepts/access-control.md
@@ -9,7 +9,7 @@
 ---
 title: Owner-based access control in OpenPipeline
 source: https://www.dynatrace.com/docs/platform/openpipeline/concepts/access-control
-scraped: 2026-02-18T21:33:44.656346
+scraped: 2026-03-05T21:38:28.083609
 ---
 
 # Owner-based access control in OpenPipeline
@@ -107,7 +107,7 @@ Administrators can:
 ---
 title: Data flow in OpenPipeline
 source: https://www.dynatrace.com/docs/platform/openpipeline/concepts/data-flow
-scraped: 2026-02-18T21:21:11.281978
+scraped: 2026-03-06T21:15:54.139751
 ---
 
 # Data flow in OpenPipeline
@@ -256,7 +256,7 @@ Storage and retention for system events is not configurable.
 ---
 title: Processing in OpenPipeline
 source: https://www.dynatrace.com/docs/platform/openpipeline/concepts/processing
-scraped: 2026-02-18T21:18:53.805900
+scraped: 2026-03-06T21:13:41.461060
 ---
 
 # Processing in OpenPipeline
@@ -352,140 +352,6 @@ The following table is a comprehensive list of stages, ordered in the pipeline s
 
 Specific fields are excluded from matching and processing or restricted. To learn more, see [Limits specific to fields](/docs/platform/openpipeline/reference/limits#fields "Reference limits of Dynatrace OpenPipeline.").
 
-Stage
-
-Description
-
-Processors in the stage
-
-Executed processors
-
-Supported data types
-
-Processing
-
-Prepare data for analysis and storage by parsing values into fields, transforming the schema, and filtering the data records. Fields are edited, and sensitive data is masked.
-
-* DQL
-* Add fields
-* Remove fields
-* Rename fields
-* Drop record
-
-All matches
-
-Logs, EventsâGeneric, EventsâDavis events, EventsâDavis, EventsâSDLC events, EventsâSecurity events (legacy), Security events (new) [1](#fn-2-1-def), Business events, Spans[1](#fn-2-1-def) , Metrics, User events, User sessions
-
-Metric extraction
-
-Extract metrics from the records that match the query.
-
-* Counter metric
-* Preview Histogram metric[2](#fn-2-2-def)
-* Value metric
-
-All matches
-
-Logs, EventsâGeneric, EventsâSDLC events, EventsâSecurity events (legacy), Security events (new)[1](#fn-2-1-def), Business events, System events, User events, User sessions
-
-Smartscape Node Extraction
-
-Extract Smartscape nodes for the records that match the query.
-
-* Smartscape node
-
-All matches
-
-Logs, EventsâGeneric, EventsâSDLC events, EventsâSecurity events (legacy), Security events (new)[1](#fn-2-1-def), Business events, System events, Spans[1](#fn-2-1-def), User events, User sessions
-
-Smartscape Edge Extraction
-
-Extract Smartscape edges for the records that match the query.
-
-* Smartscape edge
-
-All matches
-
-Logs, EventsâGeneric, EventsâSDLC events, EventsâSecurity events (legacy), Security events (new)[1](#fn-2-1-def), Business events, System events, Spans[1](#fn-2-1-def), User events, User sessions
-
-Metric extraction
-
-Extract metrics from the records that match the query.
-
-* Sampling aware counter metric
-* Preview Sampling aware histogram metric[2](#fn-2-2-def)
-* Sampling aware value metric
-
-All matches
-
-Spans
-
-Data extraction
-
-Extract a new record from a pipeline and re-ingest it as a different data type into another pipeline.
-
-* Business event
-* Software developement lifecycle event
-
-All matches
-
-Logs, EventsâGeneric, EventsâSDLC events, EventsâSecurity events (legacy), Security events (new)[1](#fn-2-1-def), Business events, System events, Spans[1](#fn-2-1-def), User events, User sessions
-
-Davis
-
-Extract a new record from a pipeline and re-ingest it as a Davis events into another pipeline.
-
-* Davis event
-
-All matches
-
-Logs, EventsâGeneric, EventsâSDLC events, EventsâSecurity events (legacy), Security events (new)[1](#fn-2-1-def), Business events, System events, Spans[1](#fn-2-1-def)
-
-Cost allocation
-
-Advanced option to assign cost center usage to specific records that match a query.
-
-Make sure to review [Cost Allocation documentation](/docs/license/cost-allocation "Learn how to allocate costs to cost centers and products.") when choosing the best approach for your environment.
-
-* DPS Cost Allocation - Cost Center
-
-First match only
-
-Logs, Spans[1](#fn-2-1-def)
-
-Product allocation
-
-Advanced option to assign product or application usage to specific records that match a query.
-
-Make sure to review [Cost Allocation documentation](/docs/license/cost-allocation "Learn how to allocate costs to cost centers and products.") when choosing the best approach for your environment.
-
-* DPS Cost Allocation - Product
-
-First match only
-
-Logs, Spans[1](#fn-2-1-def)
-
-Permissions
-
-Apply security context to the records that match the query.
-
-* Set dt.security\_context
-
-First match only
-
-Logs, EventsâGeneric, EventsâDavis events, EventsâDavis, EventsâSDLC events, EventsâSecurity events (legacy), Security events (new)[1](#fn-2-1-def), Business events, Spans[1](#fn-2-1-def), Metrics, User events, User sessions
-
-Storage
-
-Assign records to the best-fit bucket.
-
-* Bucket assignment
-* No storage assignment
-
-First match only
-
-Logs, EventsâGeneric, EventsâDavis events, EventsâDavis, EventsâSDLC events, EventsâSecurity events (legacy), Security events (new)[1](#fn-2-1-def), Business events, Spans[1](#fn-2-1-def)
-
 1
 
 The data remains in its original, structured form. This is important for detailed analysis and troubleshooting, as it ensures that no information is lost or altered.
@@ -496,8 +362,6 @@ Extracted metrics are sent to Grail only, except for the security events (new) a
 
 ## Processor
 
-
-
 A processor is a pre-formatted processing instruction that focuses either on modifying (for example, by renaming or adding a new field) or extracting data (for example, by creating an event from a log line or extracting metrics).
 
 While the processor format is predefined, it contains a configurable matcher and processing definition.
@@ -506,108 +370,6 @@ While the processor format is predefined, it contains a configurable matcher and
 * The processing definition instructs Dynatrace on how to transform or modify the data filtered by the matcher.
 
 The following table lists alphabetically all available processors in a pipeline.
-
-Processor
-
-Description
-
-Add fields
-
-Adds fields with name and value.
-
-Bucket assignment
-
-Assigns a Grail bucket.
-
-Business event
-
-Extracts fields into a new record and sends it to the business event table.
-
-Counter metric
-
-Returns the number of occurrences of a metric, from the records that match the query.
-
-Davis event
-
-Extracts fields into a new record and sends it to an event table.
-
-DQL
-
-Processes a subset of DQL. The output is formatted to string, number, bool, duration, timestamp, and respective arrays of those.
-
-DPS Cost Allocation - Cost Center
-
-Assigns cost center usage to a record via [`dt.cost.costcenter`](/docs/semantic-dictionary/fields#dynatrace "Get to know the list of global fields that have a well defined semantic meaning in Dynatrace and can be used across different monitoring types.") by either copying the value from a field or setting it as a static string.
-
-DPS Cost Allocation - Product
-
-Assigns product or application usage to a record via [`dt.cost.product`](/docs/semantic-dictionary/fields#dynatrace "Get to know the list of global fields that have a well defined semantic meaning in Dynatrace and can be used across different monitoring types.") by either copying the value from a field or setting it as a static string.
-
-Drop record
-
-Drops a record. The record is not retained.
-
-Preview Histogram metric
-
-Produces histogram metrics that capture a distribution. Histogram metrics can be used to calculate percentiles using the [`timeseries percentile` aggregation](/docs/platform/grail/dynatrace-query-language/commands/metric-commands#timeseries "DQL metric commands"), which are useful to analyze latencies and payload sizes.
-
-The Histogram metric processor is currently in [Preview](/docs/whats-new/preview-releases "Learn about our Preview releases and how you can participate in them.") and only accessible to selected customers. To get started, contact a Dynatrace product expert.
-
-To start a conversation with a Dynatrace product expert, use live chat within your Dynatrace environment.
-
-No storage assignment
-
-Skips storage assignment. The record is not retained.
-
-Sampling aware counter metric
-
-Sampling might be applied to trace data before it's processed, according to [Adaptive Traffic Management for distributed tracing](/docs/ingest-from/dynatrace-oneagent/adaptive-traffic-management "Dynatrace Adaptive Traffic Management provides dynamic sampling to ensure that the amount of capture traces stays within the Full-Stack Monitoring included trace volume."). This span-specific processor supports sampling awareness when returning the number of metric occurrences, from the span records that match the query. Span aggregation and sampling awareness are configurable for all fields available in field extraction, except durationâaggregation of duration is automatically detected and handled.
-
-Preview Sampling aware histogram metric
-
-Sampling might be applied to trace data before it's processed, according to [Adaptive Traffic Management for distributed tracing](/docs/ingest-from/dynatrace-oneagent/adaptive-traffic-management "Dynatrace Adaptive Traffic Management provides dynamic sampling to ensure that the amount of capture traces stays within the Full-Stack Monitoring included trace volume."). This span-specific processor supports sampling awareness when producing histogram metrics that capture a distribution. Span aggregation and sampling awareness are configurable for all fields available in field extraction, except durationâaggregation of duration is automatically detected and handled. Histogram metrics can be used to calculate percentiles using the [`timeseries percentile` aggregation](/docs/platform/grail/dynatrace-query-language/commands/metric-commands#timeseries "DQL metric commands"), which are useful to analyze latencies and payload sizes.
-
-The Sampling aware histogram metric processor is currently in [Preview](/docs/whats-new/preview-releases "Learn about our Preview releases and how you can participate in them.") and only accessible to selected customers. To get started, contact a Dynatrace product expert.
-
-To start a conversation with a Dynatrace product expert, use live chat within your Dynatrace environment.
-
-Sampling aware value metric
-
-Sampling might be applied to trace data before it's processed, according to [Adaptive Traffic Management for distributed tracing](/docs/ingest-from/dynatrace-oneagent/adaptive-traffic-management "Dynatrace Adaptive Traffic Management provides dynamic sampling to ensure that the amount of capture traces stays within the Full-Stack Monitoring included trace volume."). This span-specific processor supports sampling awareness when returning the aggregated values of a metric, from the span records that match the query. Span aggregation and sampling awareness are configurable for all fields available in field extraction, except durationâaggregation of duration is automatically detected and handled.
-
-Set dt.security\_context
-
-Sets the proper record-level access via [`dt.security_context`](/docs/semantic-dictionary/fields#dynatrace "Get to know the list of global fields that have a well defined semantic meaning in Dynatrace and can be used across different monitoring types.") by either copying it from a field, setting it as a static string, or a static array that allows multiple values.
-
-Smartscape node
-
-* Calculates and enriches a Smartscape ID. The Smartscape ID is calculated based on specified ordered ID components. The ID components support the `String` type; their values are taken from reference fields and the specified node type. The Smartscape ID is then enriched on the signal. The default enriched field is `dt.smartscape.<type>` and can be renamed.
-* If configured and if the signal contains details to store on the node, it creates a Smartscape event to update the Smartscape storage. This includes any fields and stable static edges extracted from the signal.
-  To learn more about Smartscape nodes, see [Smartscape on Grail](/docs/platform/grail/smartscape-on-grail "Learn about Smartscape on Grail features and how Smartscape uses the power of DQL.").
-
-Smartscape edge
-
-Extracts Smartscape edges and assigns specified key-value pairs for the fields: source type, source ID, edge type (pre-defined or custom), target type, and target ID. To learn more about Smartscape edges, see [Smartscape on Grail](/docs/platform/grail/smartscape-on-grail "Learn about Smartscape on Grail features and how Smartscape uses the power of DQL.").
-
-Software developement lifecycle event
-
-Extracts fields into a new record and sends it to the SDLC event table.
-
-Technology bundle
-
-Matches records for the selected technology and processes them according to predefined context-sensitive processing statements.
-
-Remove fields
-
-Removes fields from the record.
-
-Rename fields
-
-Changes the name of fields.
-
-Value metric
-
-Returns the aggregated values of a metric from the records that match the query.
 
 ## Related topics
 
@@ -621,7 +383,7 @@ Returns the aggregated values of a metric from the records that match the query.
 ---
 title: How to ingest data (events)
 source: https://www.dynatrace.com/docs/platform/openpipeline/getting-started/how-to-ingestion
-scraped: 2026-02-18T21:21:03.607357
+scraped: 2026-03-06T21:15:55.878660
 ---
 
 # How to ingest data (events)
@@ -767,7 +529,7 @@ For an overview of the available endpoints, refer to [Ingest sources in OpenPipe
 ---
 title: Route data
 source: https://www.dynatrace.com/docs/platform/openpipeline/getting-started/how-to-routing
-scraped: 2026-02-18T21:22:53.608412
+scraped: 2026-03-06T21:13:37.885258
 ---
 
 # Route data
@@ -846,36 +608,6 @@ Create a route for each pipeline.
 
    The following table contains example conditions based on the Kubernetes namespace and deployment to route each service's logs to the corresponding pipeline.
 
-   Name
-
-   Matching condition
-
-   Target pipeline
-
-   Checkout service
-
-   `k8s.deployment.name == "checkoutservice-*"`
-
-   Checkout service pipeline
-
-   Currency service
-
-   `k8s.deployment.name == "currencyservice-*"`
-
-   Currency service pipeline
-
-   Email service
-
-   `k8s.deployment.name == "emailservice-*"`
-
-   Email service pipeline
-
-   Payment service
-
-   `k8s.deployment.name == "paymentservice-*"`
-
-   Payment service pipeline
-
 Logs that match the routing condition are routed to the target pipeline. The routing table now includes the new routes.
 
 ## Conclusion
@@ -899,7 +631,7 @@ To change how logs are processed, you can modify the matching condition to exclu
 ---
 title: Set access control in OpenPipeline
 source: https://www.dynatrace.com/docs/platform/openpipeline/getting-started/set-access-control
-scraped: 2026-02-18T21:35:53.942044
+scraped: 2026-03-06T21:37:26.951279
 ---
 
 # Set access control in OpenPipeline
@@ -1048,7 +780,7 @@ Once administrators set permissions and owners set access, users can manage and 
 ---
 title: Configure a processing pipeline
 source: https://www.dynatrace.com/docs/platform/openpipeline/getting-started/tutorial-configure-processing
-scraped: 2026-02-18T21:21:06.178549
+scraped: 2026-03-06T21:15:50.770565
 ---
 
 # Configure a processing pipeline
@@ -1170,7 +902,7 @@ You have configured ingest sources, routing, and processing for records of a con
 ---
 title: Ingest sources in OpenPipeline
 source: https://www.dynatrace.com/docs/platform/openpipeline/reference/api-ingestion-reference
-scraped: 2026-02-18T21:20:59.980958
+scraped: 2026-03-06T21:16:01.329825
 ---
 
 # Ingest sources in OpenPipeline
@@ -1612,7 +1344,7 @@ User events & sessions
 ---
 title: DQL matcher in OpenPipeline
 source: https://www.dynatrace.com/docs/platform/openpipeline/reference/dql-matcher-in-openpipeline
-scraped: 2026-02-18T21:22:57.243284
+scraped: 2026-03-06T21:13:46.603842
 ---
 
 # DQL matcher in OpenPipeline
@@ -1658,30 +1390,6 @@ For found results, additional validation takes place:
 
 ##### Parameters
 
-Parameter
-
-Type
-
-Description
-
-Required
-
-expression
-
-string
-
-The field name that should be checked.
-
-Required
-
-phrase
-
-string
-
-The phrase to search for. Accepts wildcard `*` at the beginning or at the end of the phrase.
-
-Required
-
 ##### Example
 
 In this example, you add a filter that matches log records that contain `error` phrase in their content.
@@ -1692,153 +1400,7 @@ matchesPhrase(content, "error")
 
 ##### Examples of event processing using DQL matchesPhrase function
 
-Part of the input event
-
-Processing query
-
-Match result
-
-Description
-
-`attribute="User 'kÃ¤Ã¤rmanÃ¼' failed to login from 192.168.0.1"`
-
-`matchesPhrase(attribute, "192.168.0.1")`
-
-![Applicable](https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg "Applicable")
-
-Exact match by single term.
-
-`attribute="User 'kÃ¤Ã¤rmanÃ¼' failed to login from 192.168.0.123"`
-
-`matchesPhrase(attribute, "192.168.0.1")`
-
-![Not applicable](https://dt-cdn.net/images/icon-red-cross-1f1142a5dc.svg "Not applicable")
-
-Non-word character is expected after character `1`.
-
-`attribute="User 'kÃ¤Ã¤rmanÃ¼' failed to login from 192.168.0.123"`
-
-`matchesPhrase(attribute, "192.168.0.1*")`
-
-![Applicable](https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg "Applicable")
-
-The query would match all IPs with the last octet between `100` and `199`.
-
-`attribute="User 'kÃ¤Ã¤rmanÃ¼' failed to login from 192.168.0.1"`
-
-`matchesPhrase(attribute, "failed to login")`
-
-![Applicable](https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg "Applicable")
-
-Exact phrase match.
-
-`attribute="User 'kÃ¤Ã¤rmanÃ¼' failed to login from 192.168.0.1"`
-
-`matchesPhrase(attribute, "failed to log")`
-
-![Not applicable](https://dt-cdn.net/images/icon-red-cross-1f1142a5dc.svg "Not applicable")
-
-`log` is not a full word, non-word character is expected after `log`.
-
-`attribute="User 'kÃ¤Ã¤rmanÃ¼' failed to login from 192.168.0.1"`
-
-`matchesPhrase(attribute, "failed to log*")`
-
-![Applicable](https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg "Applicable")
-
-If the query ends with a wildcard character, the validation of the succeeding character is skipped.
-
-`attribute="User 'kÃ¤Ã¤rmanÃ¼' failed to login from 192.168.0.1"`
-
-`matchesPhrase(attribute, "ed to login")`
-
-![Not applicable](https://dt-cdn.net/images/icon-red-cross-1f1142a5dc.svg "Not applicable")
-
-`ed` is not a full word, the preceding character `l` is a part of the word.
-
-`attribute="User 'kÃ¤Ã¤rmanÃ¼' failed to login from 192.168.0.1"`
-
-`matchesPhrase(attribute, "*ed to login")`
-
-![Applicable](https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg "Applicable")
-
-If the query starts with a wildcard character, the validation of the preceding character is skipped.
-
-`attribute="User 'kÃ¤Ã¤rmanÃ¼' failed to login from 192.168.0.1"`
-
-`matchesPhrase(attribute, "*ed to log*")`
-
-![Applicable](https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg "Applicable")
-
-If the query starts and ends with a wildcard character, the validation of the preceding and succeeding characters is skipped.
-
-`attribute="User 'kÃ¤Ã¤rmanÃ¼' failed to login from 192.168.0.1"`
-
-`matchesPhrase(attribute, "kÃ¤Ã¤rmanÃ¼ failed")`
-
-![Not applicable](https://dt-cdn.net/images/icon-red-cross-1f1142a5dc.svg "Not applicable")
-
-There should be an apostrophe (`'`) character between `kÃ¤Ã¤rmanÃ¼` and `failed`.
-
-`attribute="User 'kÃ¤Ã¤rmanÃ¼' failed to login from 192.168.0.1"`
-
-`matchesPhrase(attribute, "rmanÃ¼' failed")`
-
-![Applicable](https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg "Applicable")
-
-Non-ASCII character `Ã¤` is treated as non-word character.
-
-`attribute="User 'kÃ¤Ã¤rmanÃ¼' failed to login from 192.168.0.1"`
-
-`matchesPhrase(attribute, " 'kÃ¤Ã¤rmanÃ¼' failed")`
-
-![Applicable](https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg "Applicable")
-
-If the query starts with non-word character, the validation of the preceding character is skipped.
-
-`attribute="Failed to assign monitoring configuration for com.dynatrace.extension"`
-
-`matchesPhrase(attribute, "configuration for")`
-
-![Not applicable](https://dt-cdn.net/images/icon-red-cross-1f1142a5dc.svg "Not applicable")
-
-There is a space in the query and a tabulator in the attribute value.
-
-`attribute="Failed to assign monitoring configuration for com.dynatrace.extension"`
-
-`matchesPhrase(attribute, "failed to")`
-
-![Not applicable](https://dt-cdn.net/images/icon-red-cross-1f1142a5dc.svg "Not applicable")
-
-There is a single space in the query and a double space in the attribute value
-
-`attribute="Failed to assign monitoring configuration for com.dynatrace.extension"`
-
-`matchesPhrase(attribute, "failed to")`
-
-![Applicable](https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg "Applicable")
-
-It is possible to search with multiple spaces.
-
-`attribute=["Gdansk, Poland", "Linz, Austria", "Klagenfurt, Austria"]`
-
-`matchesPhrase(attribute, "Austria")`
-
-![Applicable](https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg "Applicable")
-
-The function handles multi-value attributes in "any-match" manner, in this case `Austria` is matched in second and third value.
-
-`attribute=["Gdansk, Poland", "Linz, Austria", "Klagenfurt, Austria"]`
-
-`matchesPhrase(attribute, "Pol*")`
-
-![Applicable](https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg "Applicable")
-
-Wildcard can be used also when dealing with multi-value attributes.
-
 ### matchesValue
-
-
 
 Searches the records for a specific value in a given attribute. Returns only matching records. This function is case insensitive for ASCII characters, it works with multi-value attributes (matching any of the values), and it doesn't support mid-value wildcards.
 
@@ -1847,30 +1409,6 @@ Searches the records for a specific value in a given attribute. Returns only mat
 `matchesValue(expression, value)`
 
 ##### Parameters
-
-Parameter
-
-Type
-
-Description
-
-Required
-
-expression
-
-string, array
-
-The field name that should be checked.
-
-Required
-
-value
-
-string, array
-
-The value (string or array of strings literal) to search for. Accepts wildcard `*` at the beginning or at the end of the value.
-
-Required
 
 ##### Example
 
@@ -1881,110 +1419,6 @@ matchesValue(process.technology, "nginx")
 ```
 
 ##### Examples of event processing using DQL matchesValue function
-
-Part of the input event
-
-Processing query
-
-Match result
-
-Description
-
-`attribute="Dynatrace"`
-
-`matchesValue(attribute, "dynaTrace")`
-
-![Applicable](https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg "Applicable")
-
-Case insensitive equality.
-
-`attribute="User 'kÃ¤Ã¤rmanÃ¼' failed to login from 192.168.0.1"`
-
-`matchesValue(attribute, "192.168.0.1")`
-
-![Not applicable](https://dt-cdn.net/images/icon-red-cross-1f1142a5dc.svg "Not applicable")
-
-The whole attribute value is considered.
-
-`attribute="User 'kÃ¤Ã¤rmanÃ¼' failed to login from 192.168.0.1"`
-
-`matchesValue(attribute, "*192.168.0.1")`
-
-![Applicable](https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg "Applicable")
-
-The value ends with `192.168.0.1`.
-
-`attribute="User 'kÃ¤Ã¤rmanÃ¼' failed to login from 192.168.0.1"`
-
-`matchesValue(attribute, "user*")`
-
-![Applicable](https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg "Applicable")
-
-The value starts with `user` (case-insensitively).
-
-`attribute="User 'kÃ¤Ã¤rmanÃ¼' failed to login from 192.168.0.1"`
-
-`matchesValue(attribute, "*failed to log*")`
-
-![Applicable](https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg "Applicable")
-
-The value contains the string `failed to log`.
-
-`attribute="Ãsterreich"`
-
-`matchesValue(attribute, "Ã¶sterreich")`
-
-![Not applicable](https://dt-cdn.net/images/icon-red-cross-1f1142a5dc.svg "Not applicable")
-
-Case insensitive only for ASCII characters.
-
-`attribute="Ãsterreich"`
-
-`matchesValue(attribute, "Ãsterreich")`
-
-![Applicable](https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg "Applicable")
-
-Exact match.
-
-`attribute=["Java", "DOCKER", "k8s"]`
-
-`matchesValue(attribute, "docker")`
-
-![Applicable](https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg "Applicable")
-
-The function handles multi-value attributes in "any-match" manner, in this case, `docker` is matched in the second value.
-
-`attribute=["Java11", "java17"]`
-
-`matchesValue(attribute, "java")`
-
-![Not applicable](https://dt-cdn.net/images/icon-red-cross-1f1142a5dc.svg "Not applicable")
-
-None of the values is equal to string java.
-
-`attribute=["Java11", "java17"]`
-
-`matchesValue(attribute, "java*")`
-
-![Applicable](https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg "Applicable")
-
-Both values start with a string `java`.
-
-`attribute="April"`
-
-`matchesValue(attribute, {"March", "April", "May"})`
-
-![Applicable](https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg "Applicable")
-
-One of the values in the array matches attribute value `April`.
-
-`attribute="192.168.0.1"`
-
-`matchesValue(attribute, {"127.0.0.1", "192.168.*", "172.16.*", "10.*"})`
-
-![Applicable](https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg "Applicable")
-
-One of the patterns in the array matches attribute value `192.168.0.1`.
 
 ### isNotNull
 
@@ -2002,85 +1436,7 @@ In this example, we filter (select) data where the `host.name` field contains a 
 isNotNull(`host.name`)
 ```
 
-timestamp
-
-content
-
-event.type
-
-host.name
-
-`2022-08-03 11:27:19`
-
-`2022-08-03 09:27:19.836 [QueueProcessor] RemoteReporter...`
-
-`LOG`
-
-`HOST-AF-710319`
-
 **Examples of event processing using DQL isNotNull function**
-
-Part of the input event
-
-Processing query
-
-Match result
-
-Description
-
-```
-{
-
-
-
-attribute="Dynatrace"
-
-
-
-}
-```
-
-`isNotNull(other)`
-
-![Not applicable](https://dt-cdn.net/images/icon-red-cross-1f1142a5dc.svg "Not applicable")
-
-The `other` attribute does not exists
-
-```
-{
-
-
-
-attribute="Dynatrace"
-
-
-
-}
-```
-
-`isNotNull(attribute)`
-
-![Applicable](https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg "Applicable")
-
-The `attribute` has non-null value.
-
-```
-{
-
-
-
-attribute=null
-
-
-
-}
-```
-
-`isNotNull(attribute)`
-
-![Not applicable](https://dt-cdn.net/images/icon-red-cross-1f1142a5dc.svg "Not applicable")
-
-The `attribute` has null value.
 
 ### isNull
 
@@ -2098,83 +1454,7 @@ In this example, we filter (select) data where the `host.name` field doesn't con
 filter isNull(`host.name`)
 ```
 
-timestamp
-
-content
-
-event.type
-
-host.name
-
-`2022-08-03 12:53:26`
-
-`2022-08-03T10:52:31Z localhost haproxy[12529]: 192.168.19.100:38440`
-
-`LOG`
-
 **Examples of event processing using DQL isNull function**
-
-Part of the input event
-
-Processing query
-
-Match result
-
-Description
-
-```
-{
-
-
-
-attribute="Dynatrace"
-
-
-
-}
-```
-
-`isNull(other)`
-
-![Applicable](https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg "Applicable")
-
-The `other` attribute does not exists.
-
-```
-{
-
-
-
-attribute="Dynatrace"
-
-
-
-}
-```
-
-`isNull(attribute)`
-
-![Not applicable](https://dt-cdn.net/images/icon-red-cross-1f1142a5dc.svg "Not applicable")
-
-The `attribute` has non-null value.
-
-```
-{
-
-
-
-attribute=null
-
-
-
-}
-```
-
-`isNull(attribute)`
-
-![Applicable](https://dt-cdn.net/images/icon-green-check-700-c9ea81e533.svg "Applicable")
-
-The `attribute` has null value.
 
 ## Operators
 
@@ -2285,7 +1565,7 @@ Contrary to `matchesValue` function, `strict equality` operator performs case-se
 ---
 title: OpenPipeline limits
 source: https://www.dynatrace.com/docs/platform/openpipeline/reference/limits
-scraped: 2026-02-18T21:18:46.483520
+scraped: 2026-03-06T21:16:07.099440
 ---
 
 # OpenPipeline limits
@@ -2295,7 +1575,7 @@ scraped: 2026-02-18T21:18:46.483520
 * Latest Dynatrace
 * Reference
 * 4-min read
-* Updated on Jan 28, 2026
+* Updated on Feb 26, 2026
 
 The following page lists the default limits of Dynatrace OpenPipeline.
 
@@ -2392,18 +1672,6 @@ If the timestamp is more than 10 minutes in the future, it's adjusted to the ing
 
 ### Record minimum timestamp
 
-Item
-
-Earliest timestamp
-
-Logs, Events, Business Events, System events
-
-The ingest time minus 24 hours
-
-Metrics, extracted metrics, and Davis events
-
-The ingest time minus 1 hour
-
 Records outside of these timeframes are dropped.
 
 ## Ingest API
@@ -2430,7 +1698,7 @@ If the record doesn't have a `timestamp` field, the field `timestamp` is set to 
 
 ### Processing memory exhaustion
 
-Each record can occupy maximum 16 MB of processing memory. Each change to the record (e.g. parsing a field) decreases the available processing memory. Once the available processing memory is exhausted, the record is dropped, and the metric `dt.sfm.openpipeline.not_stored.records` with dimension `reason` set to `buffer_overflow` reports it.
+Processing memory is limited. Each change to a recordâfor example, parsing a fieldâdecreases the available processing memory. Once the available processing memory is exhausted, the record is dropped. This is reported in metric `dt.sfm.openpipeline.not_stored.records` with dimension `reason` set to `buffer_overflow`.
 
 ### Size of record after processing
 
@@ -2464,68 +1732,6 @@ The Smartscape ID calculation supports `string` only. The ID components must be 
 
 ## Configuration
 
-Item
-
-Maximum limit
-
-Early Adopter program maximum limit
-
-Request payload size (per configuration scope)
-
-10 MB
-
-* Total pipeline schemas: 70 MB
-* Total route schemas: 10 MB
-* Total ingest source schemas: 30 MB
-
-Pipeline number (per configuration scope)
-
-100
-
-2,000
-
-Size of a stage
-
-512 KB
-
-512 KB
-
-Processor number (per pipeline)
-
-1,000
-
-1,000
-
-Endpoint number (per configuration scope)
-
-100
-
-100
-
-Routes number (per configuration scope)
-
-100
-
-3,000
-
-Ingest sources number (per configuration scope)
-
-100
-
-2,000
-
-Length of a matching condition
-
-1,000 UTF-8 encoded bytes
-
-1,000 UTF-8 encoded bytes
-
-Length of a DQL processor script
-
-8,192 UTF-8 encoded bytes
-
-8,192 UTF-8 encoded bytes
-
 ### Allowed characters in the endpoint path
 
 The endpoint path is a unique name starting with a literal that defines the endpoint. It's case-insensitive and supports alphanumeric characters and dot (`.`). For example: `Endpoint.1`.
@@ -2537,6 +1743,13 @@ Endpoint path doesn't support:
 * Consecutive dots (`..`)
 * `Null` or empty input
 
+## Pipeline groups
+
+* The maximum number of composition pipelines per pipeline group is 10.
+* The maximum number of member pipelines per pipeline group is 100.
+* The pipeline role is permanent.
+  Converting rolesâfrom member to composition, or composition to memberâisn't supported.
+
 ---
 
 ## platform/openpipeline/reference/openpipeline-api.md
@@ -2544,7 +1757,7 @@ Endpoint path doesn't support:
 ---
 title: OpenPipeline API
 source: https://www.dynatrace.com/docs/platform/openpipeline/reference/openpipeline-api
-scraped: 2026-02-18T21:21:04.875004
+scraped: 2026-03-06T21:16:08.786250
 ---
 
 # OpenPipeline API
@@ -2586,12 +1799,2578 @@ Replaced by Settings API
 
 ---
 
+## platform/openpipeline/use-cases/pipeline-groups-multicloud.md
+
+---
+title: Configure multi-cloud ingest governance with pipeline groups
+source: https://www.dynatrace.com/docs/platform/openpipeline/use-cases/pipeline-groups-multicloud
+scraped: 2026-03-06T21:16:05.385634
+---
+
+# Configure multi-cloud ingest governance with pipeline groups
+
+# Configure multi-cloud ingest governance with pipeline groups
+
+* Latest Dynatrace
+* Tutorial
+* 18-min read
+* Published Feb 26, 2026
+
+This tutorial explains how to create and manage pipeline groups using the Settings API, enabling consistent ingest governance in multiâcloud environments. It demonstrates how to enforce global and cloudâspecific processing logic, restrict sensitive stagesâsuch as permissionsâand ensure that each team operates within clearly defined responsibilities.
+
+By structuring pipelines through mandatory and restrited stages, pipeline groups provide a scalable, centralized approach to managing large sets of pipelines across multiâcloud environments.
+
+![Example pipeline groups for Aws and Azure log processing](https://dt-cdn.net/images/pipeline-group-tutorial-aws-azure-75a041547a.svg)
+
+## Who is this for?
+
+Administrators, SREs, and engineers automating ingest governance at scale.
+
+## What will you learn?
+
+In this tutorial, you'll learn how to:
+
+* Create pipeline groups via the Settings API to manage over 30 pipelines for AWS and Azure log processing.
+* Add member pipelines for cloudâ and team-specific workloads.
+* Configure composition pipelines that enforce the responsibilities of admin, midâlevel, and dev teams.
+* Restrict sensitive stagesâsuch as cost allocation, permissions, and storageâwhich are centrally governed by the admin and midâlevel teams.
+* Apply pipeline groups to multiâcloud deployments where consistent ingest governance is required across AWS and Azure, while enabling teams to manage their respective processing and extraction stages.
+
+## Before you begin
+
+### Prerequisites
+
+Required permissions: `settings:objects:read` and `settings:objects:write` with `builtin:openpipeline.<configuration-scope>.pipeline-groups` scope.
+
+Show Settings API schemas
+
+* [Settings API - Pipeline Groups configuration (events) schema table](/docs/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-events-pipeline-groups "View builtin:openpipeline.events.pipeline-groups settings schema table of your monitoring environment via the Dynatrace API.")
+* [Settings API - Pipeline Groups configuration (bizevents) schema table](/docs/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-bizevents-pipeline-groups "View builtin:openpipeline.bizevents.pipeline-groups settings schema table of your monitoring environment via the Dynatrace API.")
+* [Settings API - Pipeline Groups configuration (spans) schema table](/docs/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-spans-pipeline-groups "View builtin:openpipeline.spans.pipeline-groups settings schema table of your monitoring environment via the Dynatrace API.")
+* [Settings API - Pipeline Groups configuration (logs) schema table](/docs/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-logs-pipeline-groups "View builtin:openpipeline.logs.pipeline-groups settings schema table of your monitoring environment via the Dynatrace API.")
+* [Settings API - Pipeline Groups configuration (davis.problems) schema table](/docs/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-davis-problems-pipeline-groups "View builtin:openpipeline.davis.problems.pipeline-groups settings schema table of your monitoring environment via the Dynatrace API.")
+* [Settings API - Pipeline Groups configuration (metrics) schema table](/docs/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-metrics-pipeline-groups "View builtin:openpipeline.metrics.pipeline-groups settings schema table of your monitoring environment via the Dynatrace API.")
+* [Settings API - Pipeline Groups configuration (security.events) schema table](/docs/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-security-events-pipeline-groups "View builtin:openpipeline.security.events.pipeline-groups settings schema table of your monitoring environment via the Dynatrace API.")
+* [Settings API - Pipeline Groups configuration (events.security) schema table](/docs/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-events-security-pipeline-groups "View builtin:openpipeline.events.security.pipeline-groups settings schema table of your monitoring environment via the Dynatrace API.")
+* [Settings API - Pipeline Groups configuration (davis.events) schema table](/docs/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-davis-events-pipeline-groups "View builtin:openpipeline.davis.events.pipeline-groups settings schema table of your monitoring environment via the Dynatrace API.")
+* [Settings API - Pipeline Groups configuration (events.sdlc) schema table](/docs/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-events-sdlc-pipeline-groups "View builtin:openpipeline.events.sdlc.pipeline-groups settings schema table of your monitoring environment via the Dynatrace API.")
+* [Settings API - Pipeline Groups configuration (system.events) schema table](/docs/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-system-events-pipeline-groups "View builtin:openpipeline.system.events.pipeline-groups settings schema table of your monitoring environment via the Dynatrace API.")
+* [Settings API - Pipeline Groups configuration (usersessions) schema table](/docs/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-usersessions-pipeline-groups "View builtin:openpipeline.usersessions.pipeline-groups settings schema table of your monitoring environment via the Dynatrace API.")
+* [Settings API - Pipeline Groups configuration (user.events) schema table](/docs/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-user-events-pipeline-groups "View builtin:openpipeline.user.events.pipeline-groups settings schema table of your monitoring environment via the Dynatrace API.")
+
+### Prior knowledge
+
+* You know how to create pipelines via the [Settings API](/docs/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-logs-pipelines "View builtin:openpipeline.logs.pipelines settings schema table of your monitoring environment via the Dynatrace API.").
+* You know how to [set access control in OpenPipeline](/docs/platform/openpipeline/getting-started/set-access-control "Distribute OpenPipeline ingest source and pipeline management via owner-based access control.").
+* You are familiar with [pipeline groups](/docs/platform/openpipeline/concepts/pipeline-groups "Understand how restricting and mandating configurations for pipeline groups via Settings API works.") and [pipeline group limits](/docs/platform/openpipeline/reference/limits#pipeline-groups "Reference limits of Dynatrace OpenPipeline.").
+
+## Configure pipeline groups
+
+In this tutorial, we'll create two pipeline groups, one per cloud provider, each executing a series of composition pipelines and member pipelines. The following table illustrates the scenario that the tutorial aims to achieve.
+
+### 1. Create composition pipelines
+
+1. Define a custom pipeline with the composition role (`"groupRole": "compositionPipeline"` and `"routing": "notRoutable"`) via JSON.
+
+   The composition pipelines in this tutorial are five custom pipelines, defined as follows.
+
+   * A global pipeline called **Global cost center and bucket assignment** that will be used by both groups (AWS pipelines and Azure pipelines) to assign buckets and `dt.cost.cost_center`. It's owned and accessed by the admin team only.
+
+     JSON example
+
+     ```
+     {
+
+
+
+     "schemaId": "builtin:openpipeline.logs.pipelines",
+
+
+
+     "value": {
+
+
+
+     "customId": "global-cost-and-bucket",
+
+
+
+     "displayName": "Global cost center and bucket assignment",
+
+
+
+     "groupRole": "compositionPipeline",
+
+
+
+     "routing": "notRoutable",
+
+
+
+     "costAllocation": {
+
+
+
+     "processors": [
+
+
+
+     {
+
+
+
+     "type": "costAllocation",
+
+
+
+     "id": "cost-allocation-global",
+
+
+
+     "description": "Assign global dt.cost.cost_center",
+
+
+
+     "enabled": true,
+
+
+
+     "matcher": "true",
+
+
+
+     "costAllocation": {
+
+
+
+     "value": {
+
+
+
+     "type": "constant",
+
+
+
+     "constant": "CC-GLOBAL-0001"
+
+
+
+     }
+
+
+
+     }
+
+
+
+     }
+
+
+
+     ]
+
+
+
+     },
+
+
+
+     "storage": {
+
+
+
+     "processors": [
+
+
+
+     {
+
+
+
+     "type": "bucketAssignment",
+
+
+
+     "id": "bucket-assignment-logs-aws-global",
+
+
+
+     "description": "Assign AWS logs to global AWS bucket",
+
+
+
+     "enabled": true,
+
+
+
+     "matcher": "matchesValue(cloud.provider, \"aws\")",
+
+
+
+     "sampleData": "{\"cloud.provider\":\"aws\"}",
+
+
+
+     "bucketAssignment": {
+
+
+
+     "bucketName": "logs-global-aws-90d"
+
+
+
+     }
+
+
+
+     },
+
+
+
+     {
+
+
+
+     "type": "bucketAssignment",
+
+
+
+     "id": "bucket-assignment-logs-azure-global",
+
+
+
+     "description": "Assign Azure logs to global Azure bucket",
+
+
+
+     "enabled": true,
+
+
+
+     "matcher": "matchesValue(cloud.provider, \"azure\")",
+
+
+
+     "sampleData": "{\"cloud.provider\":\"azure\"}",
+
+
+
+     "bucketAssignment": {
+
+
+
+     "bucketName": "logs-global-azure-90d"
+
+
+
+     }
+
+
+
+     }
+
+
+
+     ]
+
+
+
+     }
+
+
+
+     }
+
+
+
+     }
+     ```
+   * Two cloud-specific processing pipelines called **AWS processing** and **Azure processing** to normalize incoming logs from the respective cloud provide and extract metrics, Davis events, and business events. They're managed by several people within the business unit; specificically, they're owned by the mid-level team and accessed by some senior dev team leads.
+
+     JSON example
+
+     AWS
+
+     Azure
+
+     ```
+     {
+
+
+
+     "schemaId": "builtin:openpipeline.logs.pipelines",
+
+
+
+     "value": {
+
+
+
+     "customId": "aws-processing",
+
+
+
+     "displayName": "AWS processing",
+
+
+
+     "groupRole": "compositionPipeline",
+
+
+
+     "routing": "notRoutable",
+
+
+
+     "processing": {
+
+
+
+     "processors": [
+
+
+
+     {
+
+
+
+     "type": "fieldsAdd",
+
+
+
+     "id": "aws-add-provider",
+
+
+
+     "description": "Normalize cloud provider",
+
+
+
+     "enabled": true,
+
+
+
+     "matcher": "true",
+
+
+
+     "fieldsAdd": {
+
+
+
+     "fields": [
+
+
+
+     { "name": "cloud.provider", "value": "aws" }
+
+
+
+     ]
+
+
+
+     }
+
+
+
+     },
+
+
+
+     {
+
+
+
+     "type": "dql",
+
+
+
+     "id": "aws-parse-common",
+
+
+
+     "description": "Parse level and requestId from content when present",
+
+
+
+     "enabled": true,
+
+
+
+     "matcher": "true",
+
+
+
+     "sampleData": "{\"content\":\"2025-10-01T10:00:00Z [ERROR] req=abcd-1234 Something failed\",\"service.name\":\"ordersvc\"}",
+
+
+
+     "dql": {
+
+
+
+     "script": "parse content, \"'[' UPPER:loglevel ']' ' req=' LD:aws.request_id\""
+
+
+
+     }
+
+
+
+     },
+
+
+
+     {
+
+
+
+     "type": "drop",
+
+
+
+     "id": "aws-drop-elb-health",
+
+
+
+     "description": "Drop ELB healthcheck noise",
+
+
+
+     "enabled": true,
+
+
+
+     "matcher": "matchesValue(content, \"ELB-HealthChecker*\")",
+
+
+
+     "sampleData": "{\"content\":\"ELB-HealthChecker 200\"}"
+
+
+
+     }
+
+
+
+     ]
+
+
+
+     },
+
+
+
+     "metricExtraction": {
+
+
+
+     "processors": [
+
+
+
+     {
+
+
+
+     "type": "counterMetric",
+
+
+
+     "id": "aws-error-counter",
+
+
+
+     "description": "Count ERROR logs by service and account",
+
+
+
+     "enabled": true,
+
+
+
+     "matcher": "matchesValue(loglevel, \"ERROR\")",
+
+
+
+     "sampleData": "{\"loglevel\":\"ERROR\",\"service.name\":\"ordersvc\",\"aws.account.id\":\"123456789012\"}",
+
+
+
+     "counterMetric": {
+
+
+
+     "metricKey": "custom.aws.log.error.count",
+
+
+
+     "dimensions": [
+
+
+
+     {
+
+
+
+     "extractionType": "field",
+
+
+
+     "sourceFieldName": "service.name",
+
+
+
+     "destinationFieldName": "service"
+
+
+
+     },
+
+
+
+     {
+
+
+
+     "extractionType": "field",
+
+
+
+     "sourceFieldName": "aws.account.id",
+
+
+
+     "destinationFieldName": "account"
+
+
+
+     },
+
+
+
+     {
+
+
+
+     "extractionType": "field",
+
+
+
+     "sourceFieldName": "loglevel"
+
+
+
+     }
+
+
+
+     ]
+
+
+
+     }
+
+
+
+     }
+
+
+
+     ]
+
+
+
+     },
+
+
+
+     "davis": {
+
+
+
+     "processors": [
+
+
+
+     {
+
+
+
+     "type": "davis",
+
+
+
+     "id": "aws-davis-event",
+
+
+
+     "description": "Create Davis problem for ERROR/FATAL AWS logs",
+
+
+
+     "enabled": true,
+
+
+
+     "matcher": "alert.trigger == true",
+
+
+
+     "sampleData": "{\"cloud.provider\":\"aws\",\"service.name\":\"ordersvc\",\"aws.account.id\":\"123456789012\",\"aws.request_id\":\"abcd-1234\",\"dt.source_entity\":\"HOST-1234567890\",\"content\":\"[ERROR] req=abcd-1234 Something failed\"}",
+
+
+
+     "davis": {
+
+
+
+     "properties": [
+
+
+
+     { "key": "event.type", "value": "CUSTOM_ALERT" },
+
+
+
+     { "key": "event.name", "value": "AWS log error in {service.name}" },
+
+
+
+     { "key": "event.description", "value": "{cloud.provider} error in {service.name} (account:{aws.account.id}, request:{aws.request_id}).{content}" },
+
+
+
+     { "key": "dt.source_entity", "value": "{dt.source_entity}" }
+
+
+
+     ]
+
+
+
+     }
+
+
+
+     }
+
+
+
+     ]
+
+
+
+     },
+
+
+
+     "dataExtraction": {
+
+
+
+     "processors": [
+
+
+
+     {
+
+
+
+     "type": "bizevent",
+
+
+
+     "id": "aws-bizevent-error",
+
+
+
+     "description": "Extract a business event for ERROR/FATAL AWS logs",
+
+
+
+     "enabled": true,
+
+
+
+     "matcher": "matchesValue(loglevel, \"ERROR\") OR matchesValue(loglevel, \"FATAL\")",
+
+
+
+     "sampleData": "{\"cloud.provider\":\"aws\",\"service.name\":\"ordersvc\",\"aws.account.id\":\"123456789012\",\"aws.request_id\":\"abcd-1234\",\"loglevel\":\"ERROR\",\"content\":\"[ERROR] req=abcd-1234 Checkout failed\"}",
+
+
+
+     "bizevent": {
+
+
+
+     "eventProvider": {
+
+
+
+     "type": "constant",
+
+
+
+     "constant": "logs"
+
+
+
+     },
+
+
+
+     "eventType": {
+
+
+
+     "type": "constant",
+
+
+
+     "constant": "BUSINESS_ERROR"
+
+
+
+     },
+
+
+
+     "fieldExtraction": {
+
+
+
+     "type": "include",
+
+
+
+     "include": [
+
+
+
+     {
+
+
+
+     "extractionType": "field",
+
+
+
+     "sourceFieldName": "cloud.provider"
+
+
+
+     },
+
+
+
+     {
+
+
+
+     "extractionType": "field",
+
+
+
+     "sourceFieldName": "service.name"
+
+
+
+     },
+
+
+
+     {
+
+
+
+     "extractionType": "field",
+
+
+
+     "sourceFieldName": "aws.account.id"
+
+
+
+     },
+
+
+
+     {
+
+
+
+     "extractionType": "field",
+
+
+
+     "sourceFieldName": "aws.request_id"
+
+
+
+     },
+
+
+
+     {
+
+
+
+     "extractionType": "field",
+
+
+
+     "sourceFieldName": "loglevel"
+
+
+
+     },
+
+
+
+     {
+
+
+
+     "extractionType": "field",
+
+
+
+     "sourceFieldName": "content"
+
+
+
+     }
+
+
+
+     ]
+
+
+
+     }
+
+
+
+     }
+
+
+
+     }
+
+
+
+     ]
+
+
+
+     }
+
+
+
+     }
+
+
+
+     }
+     ```
+
+     ```
+     {
+
+
+
+     "schemaId": "builtin:openpipeline.logs.pipelines",
+
+
+
+     "value": {
+
+
+
+     "customId": "azure-processing",
+
+
+
+     "displayName": "Azure processing",
+
+
+
+     "groupRole": "compositionPipeline",
+
+
+
+     "routing": "notRoutable",
+
+
+
+     "processing": {
+
+
+
+     "processors": [
+
+
+
+     {
+
+
+
+     "type": "fieldsAdd",
+
+
+
+     "id": "azure-add-provider",
+
+
+
+     "description": "Normalize cloud provider",
+
+
+
+     "enabled": true,
+
+
+
+     "matcher": "true",
+
+
+
+     "fieldsAdd": {
+
+
+
+     "fields": [
+
+
+
+     { "name": "cloud.provider", "value": "azure" }
+
+
+
+     ]
+
+
+
+     }
+
+
+
+     },
+
+
+
+     {
+
+
+
+     "type": "dql",
+
+
+
+     "id": "azure-parse-common",
+
+
+
+     "description": "Parse level and operationId from content when present",
+
+
+
+     "enabled": true,
+
+
+
+     "matcher": "true",
+
+
+
+     "sampleData": "{\"content\":\"2025-10-01 10:00:00 Error opId=efgh-5678 Failure\",\"service.name\":\"inventorysvc\"}",
+
+
+
+     "dql": {
+
+
+
+     "script": "parse content, \"UPPER:loglevel ' opId=' LD:azure.operation_id\""
+
+
+
+     }
+
+
+
+     },
+
+
+
+     {
+
+
+
+     "type": "drop",
+
+
+
+     "id": "azure-drop-noise",
+
+
+
+     "description": "Drop noisy platform heartbeat logs",
+
+
+
+     "enabled": true,
+
+
+
+     "matcher": "matchesValue(content, \"Heartbeat*\")",
+
+
+
+     "sampleData": "{\"content\":\"Heartbeat OK\"}"
+
+
+
+     }
+
+
+
+     ]
+
+
+
+     },
+
+
+
+     "metricExtraction": {
+
+
+
+     "processors": [
+
+
+
+     {
+
+
+
+     "type": "counterMetric",
+
+
+
+     "id": "azure-error-counter",
+
+
+
+     "description": "Count Error logs by service and resource group",
+
+
+
+     "enabled": true,
+
+
+
+     "matcher": "matchesValue(loglevel, \"ERROR\") OR matchesValue(loglevel, \"Error\")",
+
+
+
+     "sampleData": "{\"loglevel\":\"Error\",\"service.name\":\"inventorysvc\",\"azure.resource.group\":\"rg-observability\"}",
+
+
+
+     "counterMetric": {
+
+
+
+     "metricKey": "custom.azure.log.error.count",
+
+
+
+     "dimensions": [
+
+
+
+     {
+
+
+
+     "extractionType": "field",
+
+
+
+     "sourceFieldName": "service.name",
+
+
+
+     "destinationFieldName": "service"
+
+
+
+     },
+
+
+
+     {
+
+
+
+     "extractionType": "field",
+
+
+
+     "sourceFieldName": "azure.resource.group",
+
+
+
+     "destinationFieldName": "resource_group"
+
+
+
+     },
+
+
+
+     {
+
+
+
+     "extractionType": "field",
+
+
+
+     "sourceFieldName": "loglevel"
+
+
+
+     }
+
+
+
+     ]
+
+
+
+     }
+
+
+
+     }
+
+
+
+     ]
+
+
+
+     },
+
+
+
+     "davis": {
+
+
+
+     "processors": [
+
+
+
+     {
+
+
+
+     "type": "davis",
+
+
+
+     "id": "azure-davis-event",
+
+
+
+     "description": "Create Davis problem for Error/ERROR/FATAL Azure logs",
+
+
+
+     "enabled": true,
+
+
+
+     "matcher": "alert.trigger == true",
+
+
+
+     "sampleData": "{\"cloud.provider\":\"azure\",\"service.name\":\"inventorysvc\",\"azure.resource.group\":\"rg-observability\",\"azure.operation_id\":\"efgh-5678\",\"dt.source_entity\":\"HOST-0987654321\",\"content\":\"Error opId=efgh-5678 Failure\"}",
+
+
+
+     "davis": {
+
+
+
+     "properties": [
+
+
+
+     { "key": "event.type", "value": "CUSTOM_ALERT" },
+
+
+
+     { "key": "event.name", "value": "Azure log error in {service.name}" },
+
+
+
+     { "key": "event.description", "value": "{cloud.provider} error in {service.name} (resource_group:{azure.resource.group}, operation:{azure.operation_id}).{content}" },
+
+
+
+     { "key": "dt.source_entity", "value": "{dt.source_entity}" }
+
+
+
+     ]
+
+
+
+     }
+
+
+
+     }
+
+
+
+     ]
+
+
+
+     },
+
+
+
+     "dataExtraction": {
+
+
+
+     "processors": [
+
+
+
+     {
+
+
+
+     "type": "bizevent",
+
+
+
+     "id": "azure-bizevent-error",
+
+
+
+     "description": "Extract a business event for Error/ERROR/FATAL Azure logs",
+
+
+
+     "enabled": true,
+
+
+
+     "matcher": "matchesValue(loglevel, \"ERROR\") OR matchesValue(loglevel, \"Error\") OR matchesValue(loglevel, \"FATAL\")",
+
+
+
+     "sampleData": "{\"cloud.provider\":\"azure\",\"service.name\":\"inventorysvc\",\"azure.resource.group\":\"rg-observability\",\"azure.operation_id\":\"efgh-5678\",\"loglevel\":\"Error\",\"content\":\"Error opId=efgh-5678 Failure during stock update\"}",
+
+
+
+     "bizevent": {
+
+
+
+     "eventProvider": {
+
+
+
+     "type": "constant",
+
+
+
+     "constant": "logs"
+
+
+
+     },
+
+
+
+     "eventType": {
+
+
+
+     "type": "constant",
+
+
+
+     "constant": "BUSINESS_ERROR"
+
+
+
+     },
+
+
+
+     "fieldExtraction": {
+
+
+
+     "type": "include",
+
+
+
+     "include": [
+
+
+
+     {
+
+
+
+     "extractionType": "field",
+
+
+
+     "sourceFieldName": "cloud.provider"
+
+
+
+     },
+
+
+
+     {
+
+
+
+     "extractionType": "field",
+
+
+
+     "sourceFieldName": "service.name"
+
+
+
+     },
+
+
+
+     {
+
+
+
+     "extractionType": "field",
+
+
+
+     "sourceFieldName": "azure.resource.group"
+
+
+
+     },
+
+
+
+     {
+
+
+
+     "extractionType": "field",
+
+
+
+     "sourceFieldName": "azure.operation_id"
+
+
+
+     },
+
+
+
+     {
+
+
+
+     "extractionType": "field",
+
+
+
+     "sourceFieldName": "loglevel"
+
+
+
+     },
+
+
+
+     {
+
+
+
+     "extractionType": "field",
+
+
+
+     "sourceFieldName": "content"
+
+
+
+     }
+
+
+
+     ]
+
+
+
+     }
+
+
+
+     }
+
+
+
+     }
+
+
+
+     ]
+
+
+
+     }
+
+
+
+     }
+
+
+
+     }
+     ```
+
+* Two cloud-specific cost and permission assignment pipelines called **AWS cost and permission assignment** and **Azure cost and permission assignment** to set `dt.cost.product` and security context for the respective cloud provider. They're owned and accessed by the mid-level team only.
+
+  JSON example
+
+  AWS
+
+  Azure
+
+  ```
+  {
+
+
+
+  "schemaId": "builtin:openpipeline.logs.pipelines",
+
+
+
+  "value": {
+
+
+
+  "customId": "aws-cost-and-permissions",
+
+
+
+  "displayName": "AWS cost and permission assignment",
+
+
+
+  "groupRole": "compositionPipeline",
+
+
+
+  "routing": "notRoutable",
+
+
+
+  "productAllocation": {
+
+
+
+  "processors": [
+
+
+
+  {
+
+
+
+  "type": "productAllocation",
+
+
+
+  "id": "aws-product-allocation",
+
+
+
+  "description": "Set dt.cost.product for AWS",
+
+
+
+  "enabled": true,
+
+
+
+  "matcher": "matchesValue(cloud.provider, \"aws\")",
+
+
+
+  "sampleData": "{\"cloud.provider\":\"aws\"}",
+
+
+
+  "productAllocation": {
+
+
+
+  "value": {
+
+
+
+  "type": "constant",
+
+
+
+  "constant": "prod-aws-observability"
+
+
+
+  }
+
+
+
+  }
+
+
+
+  }
+
+
+
+  ]
+
+
+
+  },
+
+
+
+  "securityContext": {
+
+
+
+  "processors": [
+
+
+
+  {
+
+
+
+  "type": "securityContext",
+
+
+
+  "id": "aws-security-context",
+
+
+
+  "description": "Restrict access to mid-level team only (AWS logs)",
+
+
+
+  "enabled": true,
+
+
+
+  "matcher": "true",
+
+
+
+  "securityContext": {
+
+
+
+  "value": {
+
+
+
+  "type": "constant",
+
+
+
+  "constant": "security:mid-level:aws-logs"
+
+
+
+  }
+
+
+
+  }
+
+
+
+  }
+
+
+
+  ]
+
+
+
+  }
+
+
+
+  }
+
+
+
+  }
+  ```
+
+  ```
+  {
+
+
+
+  "schemaId": "builtin:openpipeline.logs.pipelines",
+
+
+
+  "value": {
+
+
+
+  "customId": "azure-cost-and-permissions",
+
+
+
+  "displayName": "Azure cost and permission assignment",
+
+
+
+  "groupRole": "compositionPipeline",
+
+
+
+  "routing": "notRoutable",
+
+
+
+  "productAllocation": {
+
+
+
+  "processors": [
+
+
+
+  {
+
+
+
+  "type": "productAllocation",
+
+
+
+  "id": "azure-product-allocation",
+
+
+
+  "description": "Set dt.cost.product for Azure",
+
+
+
+  "enabled": true,
+
+
+
+  "matcher": "matchesValue(cloud.provider, \"azure\")",
+
+
+
+  "sampleData": "{\"cloud.provider\":\"azure\"}",
+
+
+
+  "productAllocation": {
+
+
+
+  "value": {
+
+
+
+  "type": "constant",
+
+
+
+  "constant": "prod-azure-observability"
+
+
+
+  }
+
+
+
+  }
+
+
+
+  }
+
+
+
+  ]
+
+
+
+  },
+
+
+
+  "securityContext": {
+
+
+
+  "processors": [
+
+
+
+  {
+
+
+
+  "type": "securityContext",
+
+
+
+  "id": "azure-security-context",
+
+
+
+  "description": "Restrict access to mid-level team only (Azure logs)",
+
+
+
+  "enabled": true,
+
+
+
+  "matcher": "true",
+
+
+
+  "securityContext": {
+
+
+
+  "value": {
+
+
+
+  "type": "constant",
+
+
+
+  "constant": "security:mid-level:azure-logs"
+
+
+
+  }
+
+
+
+  }
+
+
+
+  }
+
+
+
+  ]
+
+
+
+  }
+
+
+
+  }
+
+
+
+  }
+  ```
+* Use the [`POST /api/v2/settings/objects`](/docs/dynatrace-api/environment-api/settings/objects/post-object "Create or validate a settings object via the Dynatrace API.") request with the pipeline schema of the configuration scope (`builtin:openpipeline.<configuration.scope>.pipelines`).
+
+
+
+### 2. Create member pipelines
+
+1. To create a member pipeline, create a custom pipeline with the member role (`"groupRole": "memberPipeline"` and `"routing": "routable"`). Use the OpenPipeline settings Web UI or the [`POST /api/v2/settings/objects`](/docs/dynatrace-api/environment-api/settings/objects/post-object "Create or validate a settings object via the Dynatrace API.") request with the pipeline schema of the configuration scope (`builtin:openpipeline.<configuration.scope>.pipelines`).
+
+   JSON example
+
+   The following JSON contains an example of the member pipeline structure.
+
+   ```
+   {
+
+
+
+   "schemaId": "builtin:openpipeline.logs.pipelines",
+
+
+
+   "value": {
+
+
+
+   "displayName": "AWS Web Frontend",
+
+
+
+   "customId": "aws-web-frontend",
+
+
+
+   "groupRole": "memberPipeline",
+
+
+
+   "routing": "routable",
+
+
+
+   "processing": {
+
+
+
+   "processors": [
+
+
+
+   {
+
+
+
+   "type": "fieldsAdd",
+
+
+
+   "id": "web-tags",
+
+
+
+   "matcher": "true",
+
+
+
+   "description": "Add team and product tags for the web frontend",
+
+
+
+   "enabled": true,
+
+
+
+   "fieldsAdd": {
+
+
+
+   "fields": [
+
+
+
+   { "name": "dt.owner", "value": "team-web" },
+
+
+
+   { "name": "deployment.release_product", "value": "easytrade" },
+
+
+
+   { "name": "deployment.release_stage", "value": "prod" }
+
+
+
+   ]
+
+
+
+   }
+
+
+
+   },
+
+
+
+   {
+
+
+
+   "type": "dql",
+
+
+
+   "id": "web-parse-http",
+
+
+
+   "matcher": "true",
+
+
+
+   "description": "Parse HTTP logs for the web frontend",
+
+
+
+   "enabled": true,
+
+
+
+   "dql": {
+
+
+
+   "script": "parse content, \"TIMESTAMP:timestamp ' ' UPPER:http.method ' ' LD:url.path ' status=' INT:http.status_code ' duration_ms=' INT:duration.ms ' ua=' LD:user_agent\""
+
+
+
+   }
+
+
+
+   },
+
+
+
+   {
+
+
+
+   "type": "drop",
+
+
+
+   "id": "drop-health",
+
+
+
+   "description": "Drop health and readiness checks for the web frontend",
+
+
+
+   "enabled": true,
+
+
+
+   "matcher": "matchesPhrase(url.path, \"/health\") or matchesPhrase(url.path, \"/ready\")"
+
+
+
+   }
+
+
+
+   ]
+
+
+
+   }
+
+
+
+   }
+
+
+
+   }
+   ```
+2. Create the associated route. Use the OpenPipeline settings Web UI or the [`POST /api/v2/settings/objects`](/docs/dynatrace-api/environment-api/settings/objects/post-object "Create or validate a settings object via the Dynatrace API.") request with the route schema of the configuration scope (`builtin:openpipeline.<configuration.scope>.routing`).
+
+   JSON example
+
+   The following JSON contains an example of a route structure.
+
+   ```
+   {
+
+
+
+   "schemaId": "builtin:openpipeline.logs.routing",
+
+
+
+   "value": {
+
+
+
+   "routingEntries": [
+
+
+
+   {
+
+
+
+   "enabled": true,
+
+
+
+   "pipelineType": "custom",
+
+
+
+   "pipelineId": "<aws-web-frontend-object-id>",
+
+
+
+   "matcher": "cloud.service.name == \"astroshop-web-frontend\"",
+
+
+
+   "description": "Route AstroShop Web Frontend logs to the Web Frontend member pipeline"
+
+
+
+   }
+
+
+
+   ]
+
+
+
+   }
+
+
+
+   }
+   ```
+
+In this tutorial, the following member pipelines exist.
+
+AWS
+
+Azure
+
+### 3. Create pipeline groups
+
+1. Define two pipeline groups, one for AWS (`AWS pipelines`) and one for Azure (`Azure pipelines`).
+
+   The groups process logs of the respective cloud provider following the same structure. Each group references the following pipelines:
+
+   1. **Global cost and bucket** pipeline: Defines Cost allocation and Storage stages.
+   2. **AWS processing** and **Azure processing** pipelines: Define Processing, Metric Extraction, Dynatrace Intelligence, and Data Extraction stages.
+   3. **AWS cost and permission assignment** and **Azure cost and permission assignment** pipelines: Define Product allocation and Security context stages.
+   4. Member pipeline (placeholder): Defines Processing stage.
+
+   The groups execute first the composition pipelines (1, 2, 3). They mandate the Cost allocation, Storage, Processing, Metric Extraction, Dynatrace Intelligence, Data Extraction, Product allocation, and Security context stages in this order. Then, the member pipelines add transformations in the Processing stage.
+
+   JSON example
+
+   AWS
+
+   Azure
+
+   ```
+   {
+
+
+
+   "schemaId": "builtin:openpipeline.logs.pipeline-groups",
+
+
+
+   "value": {
+
+
+
+   "displayName": "AWS Pipeline Group",
+
+
+
+   "memberPipelines": [
+
+
+
+   "<xx000x-web-frontend-object-id>",
+
+
+
+   "<xx000x-trade-service-object-id>",
+
+
+
+   "<xx000x-portfolio-service-object-id>",
+
+
+
+   "<xx000x-account-service-object-id>",
+
+
+
+   "<xx000x-quote-service-object-id>",
+
+
+
+   "<xx000x-order-service-object-id>",
+
+
+
+   "<xx000x-notification-service-object-id>",
+
+
+
+   "<xx000x-risk-analytics-service-object-id>",
+
+
+
+   "<xx000x-audit-logging-service-object-id>",
+
+
+
+   "<xx000x-api-gateway-object-id>",
+
+
+
+   "<xx000x-s3-buckets-object-id>",
+
+
+
+   "<xx000x-rds-aurora-databases-object-id>",
+
+
+
+   "<xx000x-dynamodb-tables-object-id>",
+
+
+
+   "<xx000x-lambda-functions-object-id>",
+
+
+
+   "<xx000x-ecs-eks-services-object-id>",
+
+
+
+   "<xx000x-monitoring-logging-agents-object-id>"
+
+
+
+   ],
+
+
+
+   "memberStages": {
+
+
+
+   "type": "include",
+
+
+
+   "include": ["processing"]
+
+
+
+   },
+
+
+
+   "composition": [
+
+
+
+   {
+
+
+
+   "isPipelinePlaceholder": false,
+
+
+
+   "pipelineId": "<xx000x-global-cost-bucket-object-id>",
+
+
+
+   "stages": {
+
+
+
+   "type": "include",
+
+
+
+   "include": ["costAllocation", "storage"]
+
+
+
+   }
+
+
+
+   },
+
+
+
+   {
+
+
+
+   "isPipelinePlaceholder": false,
+
+
+
+   "pipelineId": "<xx000x-aws-processing-object-id>",
+
+
+
+   "stages": {
+
+
+
+   "type": "include",
+
+
+
+   "include": ["processing", "metricExtraction", "davis", "dataExtraction"]
+
+
+
+   }
+
+
+
+   },
+
+
+
+   {
+
+
+
+   "isPipelinePlaceholder": false,
+
+
+
+   "pipelineId": "<xx000x-aws-cost-permissions-object-id>",
+
+
+
+   "stages": {
+
+
+
+   "type": "include",
+
+
+
+   "include": ["productAllocation", "securityContext"]
+
+
+
+   }
+
+
+
+   },
+
+
+
+   {
+
+
+
+   "isPipelinePlaceholder": true
+
+
+
+   }
+
+
+
+   ]
+
+
+
+   }
+
+
+
+   }
+   ```
+
+   ```
+   {
+
+
+
+   "schemaId": "builtin:openpipeline.logs.pipeline-groups",
+
+
+
+   "value": {
+
+
+
+   "displayName": "Azure Pipeline Group",
+
+
+
+   "memberPipelines": [
+
+
+
+   "<yy111y-web-frontend-object-id>",
+
+
+
+   "<yy111y-product-catalog-service-object-id>",
+
+
+
+   "<yy111y-order-service-object-id>",
+
+
+
+   "<yy111y-inventory-service-object-id>",
+
+
+
+   "<yy111y-user-account-service-object-id>",
+
+
+
+   "<yy111y-cart-service-object-id>",
+
+
+
+   "<yy111y-payment-gateway-integration-object-id>",
+
+
+
+   "<yy111y-review-&amp;-rating-service-object-id>",
+
+
+
+   "<yy111y-recommendation-engine-object-id>",
+
+
+
+   "<yy111y-notification-service-object-id>",
+
+
+
+   "<yy111y-shipping-service-object-id>",
+
+
+
+   "<yy111y-image-processing-service-object-id>",
+
+
+
+   "<yy111y-api-gateway-object-id>",
+
+
+
+   "<yy111y-azure-sql-storage-accounts-object-id>",
+
+
+
+   "<yy111y-azure-functions-logic-apps-object-id>",
+
+
+
+   "<yy111y-monitoring-logging-agents-object-id>"
+
+
+
+   ],
+
+
+
+   "memberStages": {
+
+
+
+   "type": "include",
+
+
+
+   "include": ["processing"]
+
+
+
+   },
+
+
+
+   "composition": [
+
+
+
+   {
+
+
+
+   "isPipelinePlaceholder": false,
+
+
+
+   "pipelineId": "<yy111y-global-cost-bucket-object-id>",
+
+
+
+   "stages": {
+
+
+
+   "type": "include",
+
+
+
+   "include": ["productAllocation", "storage"]
+
+
+
+   }
+
+
+
+   },
+
+
+
+   {
+
+
+
+   "isPipelinePlaceholder": false,
+
+
+
+   "pipelineId": "<yy111y-azure-processing-object-id>",
+
+
+
+   "stages": {
+
+
+
+   "type": "include",
+
+
+
+   "include": ["processing", "metricExtraction", "davis", "dataExtraction"]
+
+
+
+   }
+
+
+
+   },
+
+
+
+   {
+
+
+
+   "isPipelinePlaceholder": false,
+
+
+
+   "pipelineId": "<yy111y-azure-cost-permissions-object-id>",
+
+
+
+   "stages": {
+
+
+
+   "type": "include",
+
+
+
+   "include": ["productAllocation", "securityContext"]
+
+
+
+   }
+
+
+
+   },
+
+
+
+   {
+
+
+
+   "isPipelinePlaceholder": true
+
+
+
+   }
+
+
+
+   ]
+
+
+
+   }
+
+
+
+   }
+   ```
+2. Use the [`POST /api/v2/settings/objects`](/docs/dynatrace-api/environment-api/settings/objects/post-object "Create or validate a settings object via the Dynatrace API.") request with the pipeline group schema of the configuration scope (`builtin:openpipeline.<configuration.scope>.pipeline-groups`).
+
+## Congratulations!
+
+You now have a complete API-based workflow to manage pipeline groups, enforce global governance, and scale pipeline operations across AWS and Azure environments.
+
+You can create new member pipelines and then add them to the group any time. Use the [`PUT /api/v2/settings/objects/{objectId}`](/docs/dynatrace-api/environment-api/settings/objects/put-object "Edit a settings object via the Dynatrace API.") request with the pipeline group schema of the configuration scope (`builtin:openpipeline.<configuration-scope>.pipeline-groups`).
+
+Once the request is successfull, the `memberPipelines` field of the pipeline group lists the member pipeline IDs.
+
+## Related topics
+
+* [OpenPipeline pipeline groups](/docs/platform/openpipeline/concepts/pipeline-groups "Understand how restricting and mandating configurations for pipeline groups via Settings API works.")
+
+---
+
 ## platform/openpipeline/use-cases/processing-examples.md
 
 ---
 title: OpenPipeline processing examples
 source: https://www.dynatrace.com/docs/platform/openpipeline/use-cases/processing-examples
-scraped: 2026-02-18T21:20:57.277243
+scraped: 2026-03-06T21:13:48.584554
 ---
 
 # OpenPipeline processing examples
@@ -2649,66 +4428,6 @@ A stored event from an application (`myLogSource`) in the log viewer is missing 
       ```
 2. Go to ![Settings](https://dt-cdn.net/images/settings-icon-256-38e1321b51.webp "Settings") **Settings** > **Process and contextualize** > **OpenPipeline**: > **Logs** > **Pipelines** and select (or create) the pipeline for the log ingest source.
 3. Configure a **DQL processor** in the **Processing** stage as follows.
-
-   **Matching condition**
-
-   The `matchesValue()` function that you copied.
-
-   **Sample data**
-
-   ```
-   {
-
-
-
-   "content":"April 24, 2022 09:59:52 [myPool-thread-1] INFO Lorem ipsum dolor sit amet",
-
-
-
-   "status":"NONE",
-
-
-
-   "timestamp":"1650889391528",
-
-
-
-   "log.source":"myLogSource",
-
-
-
-   "loglevel":"NONE"
-
-
-
-   }
-   ```
-
-   **DQL processor definition**
-
-   ```
-   parse content, "TIMESTAMP('MMMMM d, yyyy HH:mm:ss'):timestamp ' [' LD:'thread.name' '] ' UPPER:loglevel
-
-
-
-   // Parses out the timestamp, thread name, and log level.
-
-
-
-   // `TIMESTAMP` looks for the specific datetime format. The matched value is set as the existing timestamp log attribute.
-
-
-
-   // `LD` matches any chars between literals `' ['` and `'] '`.
-
-
-
-   // `UPPER` matches uppercase letters.
-
-
-
-   // The remaining part of the content is not matched.
-   ```
 4. Save the pipeline.
 
 Conclusion
@@ -3113,8 +4832,6 @@ Applications log the user ID with different schemes (`user ID=`, `userId=`, `use
 
 ### Steps
 
-
-
 To extract the user identifier as a standalone log attribute, configure a **DQL** processor in the **Processing** with the following **DQL processor definition**.
 
 ```
@@ -3186,6 +4903,8 @@ With a single definition, you've extracted the user identifier from different lo
 ```
 
 ### Use specialized DPL matchers
+
+
 
 A JSON file contains information that you want to parse out and create new dedicate fields for it, based on the format. You can use [Dynatrace Pattern Language (DPL) matchers](/docs/platform/grail/dynatrace-pattern-language "Use Dynatrace Pattern Language to describe patterns using matchers.") for easier pattern building.
 
@@ -3676,8 +5395,6 @@ Conclusion
 }
 ```
 
-
-
 ## Related topics
 
 * [Configure a processing pipeline](/docs/platform/openpipeline/getting-started/tutorial-configure-processing "Configure ingest sources, routes, and processing for your data in OpenPipeline.")
@@ -3690,7 +5407,7 @@ Conclusion
 ---
 title: Reduce span-based and metric-based cardinality
 source: https://www.dynatrace.com/docs/platform/openpipeline/use-cases/reduce-span-metric-cardinality
-scraped: 2026-02-18T21:17:41.819174
+scraped: 2026-03-06T21:10:39.754758
 ---
 
 # Reduce span-based and metric-based cardinality
@@ -3699,14 +5416,15 @@ scraped: 2026-02-18T21:17:41.819174
 
 * Latest Dynatrace
 * Tutorial
-* 6-min read
-* Updated on Feb 04, 2026
+* 10-min read
+* Updated on Feb 18, 2026
 
-OpenPipeline processing allows you to normalize span and metric data to prevent high cardinality issues that can make aggregations and analysis unusable.
+OpenPipeline processing allows you to normalize span and metric data to prevent high-cardinality issues that can make aggregations and analysis unusable.
 
-The following use cases show how to reduce cardinality in different views in ![Services](https://dt-cdn.net/hub/logos/services.png "Services") **Services**:
+The following use cases show how to reduce cardinality in three different views in [![Services](https://dt-cdn.net/hub/logos/services.png "Services") **Services**](/docs/observe/application-observability/services/services-app "Maintain centralized control over service health, performance, and resources with the Services app."):
 
 * [Outbound calls](#outbound-calls)
+* [Database queries](#database-queries): This tab shows aggregated metrics for database calls made by your service.
 * [Message processing](/docs/observe/application-observability/services/monitor-service-message-processing "Monitor service message processing")
 
 ## Outbound calls
@@ -3768,6 +5486,296 @@ Now that we have defined and saved a processor, we can enable the processor by c
      ```
    * **Pipeline**: Select previously created pipeline from the list.
 4. Select **Save**.
+
+## Database queries
+
+Redis statements often include unique identifiers or values, for example, `GET user:12345`, `GET user:12346`, and `GET user:12347` or `SET order:123`, `SET order:124`, and `SET order:125`. This high cardinality results in thousands of distinct entries shown in the [**Database queries** view](/docs/observe/application-observability/services/services-app#database-queries "Maintain centralized control over service health, performance, and resources with the Services app.") in ![Services](https://dt-cdn.net/hub/logos/services.png "Services") **Services**.
+
+Unlike parameterized SQL databases, where OneAgent or OpenTelemetry automatically handles normalization, Redis commands require manual cardinality handling via an OpenPipeline pipeline. In this section, we'll utilize a processing rule to transform these commands into normalized patterns such as `GET` or `SET`, making your Redis query data more actionable.
+
+### 1. Create a pipeline
+
+First, let's create a pipeline that contains a processing rule for reducing the cardinality of your Redis statements. As ![Services](https://dt-cdn.net/hub/logos/services.png "Services") **Services** utilizes the `db.query.text` attribute, you'll tweak this particular attribute to normalize the Redis statements displayed in the **Database queries** view.
+
+To create a pipeline
+
+1. Go to ![Settings](https://dt-cdn.net/images/settings-icon-256-38e1321b51.webp "Settings") **Settings** > **Process and contextualize** > **OpenPipeline** > **Spans**.
+2. Go to the **Pipelines** tab, and select  **Pipeline**.
+3. Enter **DB statement normalization** as a pipeline name.
+4. On the **Processing** tab, select >  **Processor** > **DQL**, and configure a new DQL processor:
+
+   * **Name**: **Redis**
+   * **Matching condition**:
+
+     ```
+     db.system == "redis" and (isNotNull(db.statement) or isNotNull(db.query.text))
+     ```
+
+     Explain this matching condition
+
+     + `db.system == "redis"`: Match all `redis` database systems.
+     + `(isNotNull(db.statement) or isNotNull(db.query.text))`: Require that either the old `db.statement` or the new `db.query.text` attribute is used in your Redis database spans.
+
+       `db.statement` is still common for some OpenTelemetry instrumentations.
+   * **DQL processor definition**:
+
+     ```
+     fieldsAdd db.query.text = coalesce(db.query.text, db.statement)
+
+
+
+     | fieldsAdd db.query.text.orig = db.query.text
+
+
+
+     | fieldsAdd blankPos = indexOf(db.query.text.orig, " ")
+
+
+
+     | fieldsAdd db.query.text = if (blankPos > 0, substring(db.query.text, from: 0, to: blankPos), else: "*")
+     ```
+
+     Explain this processor definition
+
+     + `fieldsAdd db.query.text = coalesce(db.query.text, db.statement)`: Make sure that the matching condition works for both the old `db.statement` and the new `db.query.text` attribute.
+
+       Many OpenTelemetry instrumentations still use `db.statement` instead of `db.query.text`. This line ensures that both fields are respected, as `coalesce()` returns the first non-null argument.
+     + `fieldsAdd db.query.text.orig = db.query.text`: Store the original value of the `db.query.text` attribute.
+
+       While the low cardinality of `db.query.text` is important in ![Services](https://dt-cdn.net/hub/logos/services.png "Services") **Services**, preserving the original value of the `db.query.text` attribute is quite beneficial and can be leveraged for further drill-downs.
+     + `fieldsAdd blankPos = indexOf(db.query.text.orig, " ")` and `fieldsAdd db.query.text = if (blankPos > 0, substring(db.query.text, from: 0, to: blankPos), else: "*")`: Simplify the `db.query.text` attribute by extracting the new value from the start of the text up to the first blank space.
+
+       A Redis database query is the value until the first blank space of the statement, so this blank space is found, and then only the part until that blank space is kept as `db.query.text`.
+5. Select **Save** in the upper-right corner of the page.
+
+You should see the **DB statement normalization** pipeline in the list of pipelines.
+
+If you have other databases with high-cardinality database statements, add additional DQL processors to your **DB statement normalization** pipeline. Configure the processors according to your situation. For additional examples, see [Explore other DQL processors](#db-queries-dql-processor-examples).
+
+### 2. Create a dynamic route
+
+Now that you have created a new pipeline and defined a cardinality-reducing DQL processor, activate this processor by connecting it to OpenPipeline via a dynamic route. This way, your pipeline can receive the span data.
+
+To create a dynamic route
+
+1. On the **Spans** page, go to the **Dynamic routing** tab.
+2. Select  **Dynamic route**.
+3. Define your dynamic route:
+
+   * **Name**: **DB statement normalization**
+   * **Matching condition**:
+
+     ```
+     isNotNull(db.statement) and (isNotNull(db.statement) or isNotNull(db.query.text))
+     ```
+   * **Pipeline**: Select the previously created **DB statement normalization** pipeline from the list of custom pipelines.
+4. Select **Add**, and then select **Save**.
+
+You should see the **DB statement normalization** dynamic route in the list of dynamic routes.
+
+### 3. Explore other DQL processorsOptional
+
+
+
+As mentioned before, you can add additional DQL processors when you encounter high-cardinality database queries.
+
+Check the sections below for three additional examples of the DQL processor. When you add a new processor, set **Matching condition** to `db.system == "redis" and (isNotNull(db.statement) or isNotNull(db.query.text))`, and set **DQL processor definition** to the value provided in one of the examples below.
+
+Before introducing a new DQL processor, you can use ![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks** to check how a DQL processor transforms your data.
+
+1. Go to ![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks**.
+2. Select  **Notebook** in the app header to create a new notebook.
+3. Open the  (**Add**) menu, and select  **DQL**.
+4. In the query section, enter the required DQL query.
+5. Select  **Run** to execute the DQL query.
+
+Original: Full cardinality
+
+Use the following DQL query to count the original number of Redis statements (before cardinality reduction).
+
+**DQL query in ![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks****:
+
+```
+fetch spans
+
+
+
+| filter db.system == "redis" and (isNotNull(db.statement) or isNotNull(db.query.text))
+
+
+
+| fieldsAdd db.query.text = coalesce(db.query.text, db.operation.name)
+
+
+
+| summarize count(), by: { db.query.text }
+
+
+
+| sort `count()` desc
+```
+
+Run in Playground
+
+Option 1: Abbreviated
+
+This DQL processor replaces `db.query.text` with the first 15 characters + `*`. This option is good for quick cardinality reduction regardless of the content format.
+
+**DQL processor definition**:
+
+```
+| fieldsAdd db.query.text = coalesce(db.query.text, db.operation.name)
+
+
+
+| fieldsAdd db.query.text.orig = db.query.text
+
+
+
+| fieldsAdd db.query.text = concat(substring(db.query.text, from: 0, to: 15), "*")
+```
+
+**DQL query in ![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks****:
+
+```
+fetch spans
+
+
+
+| filter db.system == "redis" and (isNotNull(db.statement) or isNotNull(db.query.text))
+
+
+
+| fieldsAdd db.query.text = coalesce(db.query.text, db.operation.name)
+
+
+
+| fieldsAdd db.query.text.orig = db.query.text
+
+
+
+| fieldsAdd db.query.text = concat(substring(db.query.text, from: 0, to: 15), "*")
+
+
+
+| summarize count(), by: { db.query.text }
+
+
+
+| sort `count()` desc
+```
+
+Run in Playground
+
+Option 2: Redis command only
+
+This DQL processor extracts the first word in `db.query.text` by cutting at the first space. This option is great to get only the Redis commands, for example, `GET` or `SET`.
+
+**DQL processor definition**:
+
+```
+| fieldsAdd db.query.text = coalesce(db.query.text, db.operation.name)
+
+
+
+| fieldsAdd db.query.text.orig = db.query.text
+
+
+
+| fieldsAdd blankPos = indexOf(db.query.text.orig, " ")
+
+
+
+| fieldsAdd db.query.text = if(blankPos > 0, substring(db.query.text, from: 0, to: blankPos), else: "*")
+```
+
+**DQL query in ![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks****:
+
+```
+fetch spans
+
+
+
+| filter db.system == "redis" and (isNotNull(db.statement) or isNotNull(db.query.text))
+
+
+
+| fieldsAdd db.query.text = coalesce(db.query.text, db.operation.name)
+
+
+
+| fieldsAdd db.query.text.orig = db.query.text
+
+
+
+| fieldsAdd blankPos = indexOf(db.query.text.orig, " ")
+
+
+
+| fieldsAdd db.query.text = if(blankPos > 0, substring(db.query.text, from: 0, to: blankPos), else: "*")
+
+
+
+| summarize count(), by: { db.query.text }
+
+
+
+| sort `count()` desc
+```
+
+Run in Playground
+
+Option 3: DB operation name
+
+This DQL processor sets `db.query.text` to the value of `db.operation.name`. Use this option when you want to see a Redis operation instead of a database query text.
+
+**DQL processor definition**:
+
+```
+| fieldsAdd db.query.text = coalesce(db.query.text, db.operation.name)
+
+
+
+| fieldsAdd db.query.text.orig = db.query.text
+
+
+
+| fieldsAdd db.query.text = if(isNotNull(db.operation.name), db.operation.name, else: "*")
+```
+
+**DQL query in ![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks****:
+
+```
+fetch spans
+
+
+
+| filter db.system == "redis" and (isNotNull(db.statement) or isNotNull(db.query.text))
+
+
+
+| fieldsAdd db.query.text = coalesce(db.query.text, db.operation.name)
+
+
+
+| fieldsAdd db.query.text.orig = db.query.text
+
+
+
+| fieldsAdd db.query.text = if(isNotNull(db.operation.name), db.operation.name, else: "*")
+
+
+
+| summarize count(), by: { db.query.text }
+
+
+
+| sort `count()` desc
+```
+
+Run in Playground
+
+After you've created the **DB statement normalization** pipeline and activated it by creating a dynamic route, you should see that the cardinality of your Redis statements has significantly reduced when you check the **Database queries** view in ![Services](https://dt-cdn.net/hub/logos/services.png "Services") **Services**. For example, statements like `GET as:1:swuq:abc-677d3b`, `SET as:1:rl:wf:d1d42f`, or `DECRBY as:1:paec:wis70158` now appear as `GET`, `SET`, and `DECRBY`. Such normalized Redis queries allow for easier and more effective analysis.
 
 ## Message processing
 
@@ -3859,6 +5867,8 @@ To create a rule
 
 ### Enable the processor
 
+
+
 Now that we have defined and saved a processor, we can enable the processor by connecting it to OpenPipeline via a new dynamic route, so that your pipeline receives span data.
 
 1. Still on the **Spans** page, go to the **Dynamic routing** tab.
@@ -3883,7 +5893,7 @@ After applying these rules, queues with high cardinality will either have `messa
 ---
 title: Extract metrics from spans and distributed traces
 source: https://www.dynatrace.com/docs/platform/openpipeline/use-cases/tutorial-extract-metrics-from-spans
-scraped: 2026-02-18T21:21:10.164534
+scraped: 2026-03-06T21:15:57.758999
 ---
 
 # Extract metrics from spans and distributed traces
@@ -4211,7 +6221,7 @@ You successfully created a new processor to extract a metric containing the resp
 ---
 title: Parse log lines and extract a metric
 source: https://www.dynatrace.com/docs/platform/openpipeline/use-cases/tutorial-log-processing-pipeline
-scraped: 2026-02-18T21:20:58.589224
+scraped: 2026-03-06T21:13:39.739379
 ---
 
 # Parse log lines and extract a metric
@@ -4518,7 +6528,7 @@ You have successfully created a pipeline to parse log data and extract a metric.
 ---
 title: Extract a metric to track system events
 source: https://www.dynatrace.com/docs/platform/openpipeline/use-cases/tutorial-system-events
-scraped: 2026-02-18T21:21:01.096721
+scraped: 2026-03-06T21:16:03.051024
 ---
 
 # Extract a metric to track system events
@@ -4639,7 +6649,7 @@ You successfully extracted a metric to track app update frequency. All new app l
 ---
 title: Process logs with technology bundle parsers
 source: https://www.dynatrace.com/docs/platform/openpipeline/use-cases/tutorial-technology-processor
-scraped: 2026-02-18T21:21:07.509280
+scraped: 2026-03-06T21:13:36.221723
 ---
 
 # Process logs with technology bundle parsers
@@ -4824,46 +6834,6 @@ You can easily filter logs by status, application, or attributes specific to the
      ```
 
      Result:
-
-     timestamp
-
-     syslog message
-
-     status
-
-     syslog.appname
-
-     syslog.priority
-
-     `2024-10-01T11:56:27.743113056+02:00`
-
-     `TCP: eth0: Driver has suspect GRO implementation, TCP performance may be compromised.`
-
-     WARN
-
-     kernel
-
-     4
-
-     `2024-10-01T11:56:15.248382315+02:00`
-
-     `Network latency exceeded threshold: 250ms`
-
-     WARN
-
-     net-monitor
-
-     4
-
-     `2024-10-01T11:52:32.464416725+02:00`
-
-     `Disk space usage exceeded 80% on /dev/sda1`
-
-     WARN
-
-     disk-monitor
-
-     28
    * Group syslog logs by application
 
      ```
@@ -4934,7 +6904,7 @@ You successfully structured syslog logs according to pre-defined processing rule
 ---
 title: OpenPipeline
 source: https://www.dynatrace.com/docs/platform/openpipeline
-scraped: 2026-02-18T21:16:09.469508
+scraped: 2026-03-06T21:10:24.659240
 ---
 
 # OpenPipeline
@@ -4976,12 +6946,13 @@ Configure ingest sources, routes, and processing for your data via OpenPipeline.
 
 ### Processing examples
 
-* [Reduce span-based and metric-based cardinality](/docs/platform/openpipeline/use-cases/reduce-span-metric-cardinality "Reduce span- and metric-based cardinality")
+* [Reduce span-based and metric-based cardinality](/docs/platform/openpipeline/use-cases/reduce-span-metric-cardinality "Leverage three different views in the Services app to normalize span and metric data, ensuring aggregations and analysis remain reliable and usable.")
 * [OpenPipeline processing examples](/docs/platform/openpipeline/use-cases/processing-examples "Explore scenarios of how to use OpenPipeline processing in Dynatrace powered by Grail.")
 * [Parse log lines and extract a metric](/docs/platform/openpipeline/use-cases/tutorial-log-processing-pipeline "Configure OpenPipeline processing for log lines.")
 * [Extract metrics from spans and distributed traces](/docs/platform/openpipeline/use-cases/tutorial-extract-metrics-from-spans "Extract metrics directly from your spans and distributed traces via OpenPipeline.")
 * [Process logs with technology bundle parsers](/docs/platform/openpipeline/use-cases/tutorial-technology-processor "Set up a processing pipeline to structure technology-specific logs according to Dynatrace Semantic Dictionary.")
 * [Extract a metric to track system events](/docs/platform/openpipeline/use-cases/tutorial-system-events "Learn how to extract a metric to track system events with OpenPipeline.")
+* [Configure multi-cloud ingest governance with pipeline groups](/docs/platform/openpipeline/use-cases/pipeline-groups-multicloud "Configure pipeline groups via the Settings API to ensure consistent governance across multiâcloud deployments, restrict sensitive stages, and structure team responsibilities through mandatory and restricted pipelines.")
 * [Extract a metric from user events](/docs/observe/digital-experience/new-rum-experience/use-cases/extract-custom-metrics-from-user-events "Turn user events into actionable insights by extracting custom metrics for long-term analysis.")
 * [Extract a metric from user sessions](/docs/observe/digital-experience/new-rum-experience/use-cases/extract-custom-metrics-from-user-sessions "Discover how to build custom metrics from user sessions, illustrated by a customer conversion metric.")
 

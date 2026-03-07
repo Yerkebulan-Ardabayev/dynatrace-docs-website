@@ -1,13 +1,14 @@
 ---
 title: Automatic log enrichment (Logs Classic)
 source: https://www.dynatrace.com/docs/analyze-explore-automate/log-monitoring/acquire-log-data/lm-log-data-transformation
-scraped: 2026-02-18T05:51:45.957891
+scraped: 2026-03-06T21:33:08.142213
 ---
 
 # Automatic log enrichment (Logs Classic)
 
 # Automatic log enrichment (Logs Classic)
 
+* Classic
 * Explanation
 * 3-min read
 * Updated on Apr 07, 2023
@@ -24,91 +25,11 @@ Log ingestion API automatically transforms `status`, `severity`, `level`, and `s
 
 The input values for the `status`, `severity`, `level`, and `syslog.severity` severity keys are transformed (transformation is not case sensitive) into output values for the `loglevel` attribute based on the mapping below:
 
-Input value
-
-Output value
-
-Example value
-
-Begins with `emerg` or `f`
-
-`EMERGENCY`
-
-`Emergency`, `fail`, `Failure`
-
-Begins with `e` excluding `emerg`
-
-`ERROR`
-
-`Error`, `error`
-
-Begins with `a`
-
-`ALERT`
-
-`alarm`, `Alert`
-
-Begins with `c`
-
-`CRITICAL`
-
-`Critical`, `crucial`
-
-Begins with `s`
-
-`SEVERE`
-
-`Severe`, `serious`
-
-Begins with `w`
-
-`WARN`
-
-`warn`, `Warning`
-
-Begins with `n`
-
-`NOTICE`
-
-`note`, `Notice`
-
-Begins with `i`
-
-`INFO`
-
-`Info`, `information`
-
-Begins with `d` or `trace` or `verbose`
-
-`DEBUG`
-
-`debug`, `TRACE`, `Verbose`
-
 ## Transform all types of logs
 
 This transformation applies both to OneAgent-ingested logs and API-ingested logs.
 
 Additionally, for each log event, a `status` attribute is created with a value that is a sum of `loglevel` values based on the following grouping:
-
-Included `loglevel` values
-
-Combined `status` attribute value
-
-`SEVERE`, `ERROR`, `CRITICAL`, `ALERT`, `FATAL`, `EMERGENCY`
-
-`ERROR`
-
-`WARN`
-
-`WARN`
-
-`INFO`, `TRACE`, `DEBUG`, `NOTICE`
-
-`INFO`
-
-`NONE`
-
-`NONE`
 
 For example:
 The `level` severity key in the Log ingestion API request parameter contains the value `serious`.

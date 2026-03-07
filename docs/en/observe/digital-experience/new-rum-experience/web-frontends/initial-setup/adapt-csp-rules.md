@@ -1,7 +1,7 @@
 ---
 title: Adapt CSP rules for the New RUM Experience
 source: https://www.dynatrace.com/docs/observe/digital-experience/new-rum-experience/web-frontends/initial-setup/adapt-csp-rules
-scraped: 2026-02-18T21:32:40.002567
+scraped: 2026-03-05T21:31:37.283802
 ---
 
 # Adapt CSP rules for the New RUM Experience

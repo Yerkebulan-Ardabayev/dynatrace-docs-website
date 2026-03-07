@@ -1,7 +1,7 @@
 ---
 title: Dot map visualization
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations/visualization-map-dot
-scraped: 2026-02-18T21:27:09.943963
+scraped: 2026-03-06T21:21:06.636827
 ---
 
 # Dot map visualization
@@ -130,20 +130,6 @@ record(geo.location.latitude = 55.676098, geo.location.longitude = 12.568337, re
 
 Important visualization settings for this example include:
 
-Section
-
-Settings
-
-Data mapping
-
-* **Latitude** = `geo.location.latitude`
-* **Longtude** = `geo.location.longitude`
-* **Color value** = `revenue`
-
-Shape
-
-* **Style** = **Icon** (`Shop`)
-
 ### Example 3
 
 ![Dot map example: with a bearing field](https://dt-cdn.net/images/dot-03-973-cfe4ef9ef4.png)
@@ -196,20 +182,6 @@ record(geo.location.latitude = 55.676098, geo.location.longitude = 12.568337, be
 
 Important visualization settings for this example include:
 
-Section
-
-Settings
-
-Data mapping
-
-* **Latitude** = `geo.location.latitude`
-* **Longtude** = `geo.location.longitude`
-
-Shape
-
-* **Style** = **Icon** (`Airplane Filled`)
-* **Bearing** = **Data** (`bearing`)
-
 ### Example 4
 
 ![Dot map example: with a string value](https://dt-cdn.net/images/dot-04-974-9042627d71.png)
@@ -261,23 +233,6 @@ record(geo.location.latitude = 55.676098, geo.location.longitude = 12.568337, La
 ```
 
 Important visualization settings for this example include:
-
-Section
-
-Settings
-
-Data mapping
-
-* **Latitude** = `geo.location.latitude`
-* **Longtude** = `geo.location.longitude`
-
-Shape
-
-* **Style** = **Icon** (`Office Filled`)
-
-Legend and tooltip
-
-* **Show custom fields** = `Lab` (to display the lab name in the tooltip)
 
 ## Chart interactions
 

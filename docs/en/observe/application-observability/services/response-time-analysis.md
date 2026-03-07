@@ -1,7 +1,7 @@
 ---
 title: Response time analysis
 source: https://www.dynatrace.com/docs/observe/application-observability/services/response-time-analysis
-scraped: 2026-02-18T21:17:39.388721
+scraped: 2026-03-06T21:10:37.879847
 ---
 
 # Response time analysis
@@ -18,38 +18,6 @@ Response time analysis in Dynatrace helps users quickly identify the key contrib
 This analysis is designed to be used both reactively, to investigate specific performance issues, and proactively, to explore potential bottlenecks. Users can also compare different timeframes to understand how the response time for services and their endpoints has changed over time.
 
 ## Key capabilities
-
-**Capability**
-
-**Description**
-
-Root cause identification
-
-Understand the main contributors to slow service requests, such as CPU heavy service execution, waiting for outbound calls, or heavy database queries.
-
-Advanced filtering
-
-Use filters to narrow down failures by attributes such as service, endpoint, and more. Timeframe filters allow users to isolate failures within specific periods or compare across time ranges.
-
-Response time trend chart
-
-Understand how the response time evolves over time or as a histogram distribution chart.
-
-Timeframe comparison
-
-Compare the response time between two timeframes to identify trends, assess the impact of changes, or validate fixes.
-
-Outbound calls
-
-Investigate the impact of downstream dependencies such as downstream services, or third-party APIs to the response time.
-
-Infrastructure perspective
-
-Gain insights into key metrics for related infrastructure components, helping to identify potential bottlenecks.
-
-Exploratory and contextual access
-
-Access response time analysis with or without predefined context. When accessed via the problems-specific drill-down options or from a specific service, filters are pre-applied. Users can also explore failures manually by adjusting filters.
 
 ## Access and navigation
 
@@ -75,7 +43,7 @@ To explore services and see which are slowest, go to the **Response Time** tab i
 To find out what's slow
 
 1. Go to [![Services](https://dt-cdn.net/hub/logos/services.png "Services") **Services**](/docs/observe/application-observability/services/services-app "Maintain centralized control over service health, performance, and resources with the Services app.") and select the **Response Time** tab.
-2. Apply [segments](/docs/manage/segments "Segments logically structure monitoring data in Grail and function as convenient filters for data that users are allowed to access based on permissions.") and filters to focus on relevant services/endpoints.
+2. Apply [segments](/docs/manage/segments "Use segments to logically structure and conveniently filter observability data across apps.") and filters to focus on relevant services/endpoints.
 
    For single service analysis, you also get a contribution breakdown that classifies the calls to:
 

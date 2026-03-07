@@ -1,15 +1,18 @@
 ---
 title: Data Explorer FAQ
 source: https://www.dynatrace.com/docs/analyze-explore-automate/explorer/explorer-troubleshooting
-scraped: 2026-02-17T21:25:36.520613
+scraped: 2026-03-06T21:27:03.952660
 ---
 
 # Data Explorer FAQ
 
 # Data Explorer FAQ
 
+* Classic
 * 1-min read
 * Published Mar 10, 2022
+
+This page refers to Data Explorer, a Dynatrace Classic feature closely integrated with classic dashboards created using [![Dashboards Classic](https://dt-cdn.net/images/dashboards-classic-512-15764940e8.png "Dashboards Classic") **Dashboards Classic**](/docs/analyze-explore-automate/dashboards-classic "Learn how to create, manage, and use Dynatrace Dashboards Classic."). [Upgrade to the latest Dynatrace](/docs/platform/upgrade "Use the power of Grail, AppEngine, and AutomationEngine to take advantage of improvements in storing and analyzing observability and security data.") to take advantage of our latest data exploration capabilities.
 
 Why am I not seeing all series of my metric?
 

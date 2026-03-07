@@ -1,7 +1,7 @@
 ---
 title: OpenPipeline
 source: https://www.dynatrace.com/docs/platform/openpipeline
-scraped: 2026-02-18T21:16:09.469508
+scraped: 2026-03-06T21:10:24.659240
 ---
 
 # OpenPipeline
@@ -43,12 +43,13 @@ Configure ingest sources, routes, and processing for your data via OpenPipeline.
 
 ### Processing examples
 
-* [Reduce span-based and metric-based cardinality](/docs/platform/openpipeline/use-cases/reduce-span-metric-cardinality "Reduce span- and metric-based cardinality")
+* [Reduce span-based and metric-based cardinality](/docs/platform/openpipeline/use-cases/reduce-span-metric-cardinality "Leverage three different views in the Services app to normalize span and metric data, ensuring aggregations and analysis remain reliable and usable.")
 * [OpenPipeline processing examples](/docs/platform/openpipeline/use-cases/processing-examples "Explore scenarios of how to use OpenPipeline processing in Dynatrace powered by Grail.")
 * [Parse log lines and extract a metric](/docs/platform/openpipeline/use-cases/tutorial-log-processing-pipeline "Configure OpenPipeline processing for log lines.")
 * [Extract metrics from spans and distributed traces](/docs/platform/openpipeline/use-cases/tutorial-extract-metrics-from-spans "Extract metrics directly from your spans and distributed traces via OpenPipeline.")
 * [Process logs with technology bundle parsers](/docs/platform/openpipeline/use-cases/tutorial-technology-processor "Set up a processing pipeline to structure technology-specific logs according to Dynatrace Semantic Dictionary.")
 * [Extract a metric to track system events](/docs/platform/openpipeline/use-cases/tutorial-system-events "Learn how to extract a metric to track system events with OpenPipeline.")
+* [Configure multi-cloud ingest governance with pipeline groups](/docs/platform/openpipeline/use-cases/pipeline-groups-multicloud "Configure pipeline groups via the Settings API to ensure consistent governance across multiâcloud deployments, restrict sensitive stages, and structure team responsibilities through mandatory and restricted pipelines.")
 * [Extract a metric from user events](/docs/observe/digital-experience/new-rum-experience/use-cases/extract-custom-metrics-from-user-events "Turn user events into actionable insights by extracting custom metrics for long-term analysis.")
 * [Extract a metric from user sessions](/docs/observe/digital-experience/new-rum-experience/use-cases/extract-custom-metrics-from-user-sessions "Discover how to build custom metrics from user sessions, illustrated by a customer conversion metric.")
 

@@ -1,7 +1,7 @@
 ---
 title: Proof of Concept for existing DPS subscriptions
 source: https://www.dynatrace.com/docs/license/proof-of-concept
-scraped: 2026-02-18T21:32:48.973572
+scraped: 2026-03-06T21:32:15.430515
 ---
 
 # Proof of Concept for existing DPS subscriptions
@@ -42,5 +42,5 @@ All consumption and costs related to POCs are available on the [**Subscription h
 ## Related topics
 
 * [License Dynatrace](/docs/license "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.")
-* [Account Management](/docs/manage/account-management "Manage your Dynatrace license, subscriptions, and platform adoption and environment health.")
+* [Account Management](/docs/manage/account-management "Manage your Dynatrace license, accounts, platform adoption, and environment health.")
 * [View your previous DPS periods via subscription history](/docs/license/subscription-history "View the subscription history of your Dynatrace environment, including usage and cumulative costs for each subscription.")

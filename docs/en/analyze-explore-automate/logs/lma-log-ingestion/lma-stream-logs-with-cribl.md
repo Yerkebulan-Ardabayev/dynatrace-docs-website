@@ -1,7 +1,7 @@
 ---
 title: Stream Logs with Cribl
 source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-stream-logs-with-cribl
-scraped: 2026-02-18T21:33:27.587898
+scraped: 2026-03-06T21:27:17.743091
 ---
 
 # Stream Logs with Cribl

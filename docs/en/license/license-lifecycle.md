@@ -1,7 +1,7 @@
 ---
 title: Your license lifecycle
 source: https://www.dynatrace.com/docs/license/license-lifecycle
-scraped: 2026-02-18T21:20:02.280795
+scraped: 2026-03-06T21:22:11.974601
 ---
 
 # Your license lifecycle
@@ -42,7 +42,7 @@ Your license becomes active at its start date.
 
 With an active Dynatrace license, you can consume Dynatrace services according to the [monitoring consumption rules](/docs/license "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.") and the terms and conditions of your contract.
 
-You can view your consumption and the remaining quotas of your license in [Account Management](/docs/manage/account-management "Manage your Dynatrace license, subscriptions, and platform adoption and environment health.") or via the [Dynatrace Platform Subscription API](/docs/dynatrace-api/account-management-api/dynatrace-platform-subscription-api "Query the data about your Dynatrace Platform Subscription via the Account Management API.").
+You can view your consumption and the remaining quotas of your license in [Account Management](/docs/manage/account-management "Manage your Dynatrace license, accounts, platform adoption, and environment health.") or via the [Dynatrace Platform Subscription API](/docs/dynatrace-api/account-management-api/dynatrace-platform-subscription-api "Query the data about your Dynatrace Platform Subscription via the Account Management API.").
 
 ## Expired licenses
 

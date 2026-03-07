@@ -1,7 +1,7 @@
 ---
 title: Dynatrace Intelligence integrations
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/dynatrace-intelligence-integrations
-scraped: 2026-02-18T21:23:17.463571
+scraped: 2026-03-06T21:14:51.943719
 ---
 
 # Dynatrace Intelligence integrations
@@ -27,7 +27,9 @@ Read this guide](/docs/dynatrace-intelligence/dynatrace-intelligence-integration
 
 ## Dynatrace MCP server
 
-[#### Dynatrace MCP server
+[![Dynatrace Remote MCP Server](https://dt-cdn.net/images/picture5-103-8cd29dfe7e.png "Dynatrace Remote MCP Server")
+
+#### Dynatrace MCP server
 
 Learn about the Dynatrace MCP server and how you can connect to it.
 

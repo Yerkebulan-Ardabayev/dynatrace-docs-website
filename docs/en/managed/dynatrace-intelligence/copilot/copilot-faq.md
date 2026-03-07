@@ -1,57 +1,59 @@
 ---
-title: Dynatrace Intelligence generative AI FAQ
+title: Dynatrace Intelligence agentic and generative AI FAQ
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/copilot/copilot-faq
-scraped: 2026-02-18T21:35:10.280103
+scraped: 2026-03-06T21:34:50.006629
 ---
 
-# Dynatrace Intelligence generative AI FAQ
+# Dynatrace Intelligence agentic and generative AI FAQ
 
-# Dynatrace Intelligence generative AI FAQ
+# Dynatrace Intelligence agentic and generative AI FAQ
 
 * Latest Dynatrace
 * Troubleshooting
 * 4-min read
 * Updated on Jan 28, 2026
 
-If you have any questions related to Dynatrace Intelligence generative AI, start by seeing if they have already been answered in the FAQ.
+If you have any questions related to Dynatrace Intelligence agentic and generative AI, start by seeing if they have already been answered in the FAQ.
 
-## Generative AI availability
+## Agentic and generative AI availability
 
-What are the prerequisites for using Dynatrace Intelligence generative AI?
+What are the prerequisites for using Dynatrace Intelligence agentic and generative AI?
 
 * Your environment must be SaaS and running the latest Dynatrace.
-* You must enable Dynatrace Intelligence generative AI on your environment.
+* You must enable Dynatrace Intelligence agentic and generative AI on your environment.
 * You must assign permission to the relevant users or user groups.
 
-For details, see [Getting started with generative AI](/docs/dynatrace-intelligence/copilot/copilot-getting-started "Learn how to set up Dynatrace Intelligence generative AI.").
+For details, see [Getting started with generative AI](/docs/dynatrace-intelligence/copilot/copilot-getting-started "Learn how to set up Dynatrace Intelligence agentic and generative AI.").
 
-Is Dynatrace Intelligence generative AI available on SaaS and Managed?
+Is Dynatrace Intelligence agentic and generative AI available on SaaS and Managed?
 
-Dynatrace Intelligence generative AI will be available for all Dynatrace SaaS customers using the latest Dynatrace. Both AWS and Azure accounts are supported.
+Dynatrace Intelligence agentic and generative AI will be available for all Dynatrace SaaS customers using the latest Dynatrace. Both AWS and Azure accounts are supported.
 
-Dynatrace Intelligence generative AI is not available for Dynatrace Managed customers.
+Dynatrace Intelligence agentic and generative AI is not available for Dynatrace Managed customers.
 
-Does my account need to be on DPS to use Dynatrace Intelligence generative AI?
+Does my account need to be on DPS to use Dynatrace Intelligence agentic and generative AI?
 
-No. Dynatrace Intelligence generative AI is available on any SaaS environment running the latest Dynatrace, irrespective of your licensing model.
+No. Dynatrace Intelligence agentic and generative AI is available on any SaaS environment running the latest Dynatrace, irrespective of your licensing model.
 
-Will Dynatrace Intelligence generative AI be licensed?
+Will Dynatrace Intelligence agentic and generative AI be licensed?
 
-No. There is no licensing associated with our current generative AI functionality. However, even though Dynatrace Intelligence generative AI is not charged for, all queries that are executed by generative AI are subject to licensing consumption according to your existing licensing agreement. If you are concerned about the cost of auto-executing generated queries, you can choose to generate DQL only, without executing it. For more information, see [Query with natural language](/docs/dynatrace-intelligence/copilot/quick-analysis-copilot-dql "Use Dynatrace Intelligence generative AI to translate your natural language questions into DQL queries").
+No. There is no licensing associated with our current generative AI functionality. However, even though Dynatrace Intelligence agentic and generative AI is not charged for, all queries that are executed by generative AI are subject to licensing consumption according to your existing licensing agreement. If you are concerned about the cost of auto-executing generated queries, you can choose to generate DQL only, without executing it. For more information, see [Query with natural language](/docs/dynatrace-intelligence/copilot/quick-analysis-copilot-dql "Use Dynatrace Intelligence generative AI to translate your natural language questions into DQL queries").
 
-How will Dynatrace Intelligence generative AI impact my license consumption?
+How will Dynatrace Intelligence agentic and generative AI impact my license consumption?
 
-Dynatrace Intelligence generative AI itself has no impact on your license consumption. However, all queries that are executed by the generative AI are subject to license consumption according to your existing license agreement. For more information, see [Will Dynatrace Intelligence generative AI be licensed?](/docs/dynatrace-intelligence/copilot/copilot-faq#davis-copilot-license "Learn about frequently asked questions and find your answers.").
+Dynatrace Intelligence agentic and generative AI itself has no impact on your license consumption. However, all queries that are executed by the generative AI are subject to license consumption according to your existing license agreement. For more information, see [Will Dynatrace Intelligence agentic and generative AI be licensed?](/docs/dynatrace-intelligence/copilot/copilot-faq#davis-copilot-license "Learn about frequently asked questions and find your answers.").
 
-## Dynatrace Intelligence generative AI and customer data
+## Dynatrace Intelligence agentic and generative AI and customer data
 
 Is my data used to train Dynatrace Intelligence generative AI?
 
-No. Customer data and customer prompts are not used for training. Dynatrace Intelligence generative AI is based on a [retrieval augmented generation](/docs/dynatrace-intelligence/copilot/copilot-overview#copilot-what-to-expect "Learn about data security and other aspects of Dynatrace Intelligence generative AI.") (RAG) approach, which means that data and additional context is used only to enrich prompts. The model does not learn from this. Customer data isn't used to automatically fine-tune, train, or improve any models or services, either by Dynatrace or by enterprise vendors hosting the LLM.
+No. Customer data and customer prompts are not used for training. Dynatrace Intelligence generative AI is based on a [retrieval augmented generation](/docs/dynatrace-intelligence/copilot/copilot-overview#copilot-what-to-expect "Learn about data security and other aspects of Dynatrace Intelligence agentic and generative AI.") (RAG) approach, which means that data and additional context is used only to enrich prompts. The model does not learn from this. Customer data isn't used to automatically fine-tune, train, or improve any models or services, either by Dynatrace or by enterprise vendors hosting the LLM.
 
-Is my data used to train the Dynatrace Intelligence generative AI model for other customers?
+Agentic  **Dynatrace Assist** shares some additional information, such as tool call results, with enterprise vendors hosting the LLMs that Dynatrace agentic and generative AI are based on. For more information about third parties, see [Is my data used to train Dynatrace Intelligence generative AI?](/docs/dynatrace-intelligence/copilot/copilot-faq#copilot-training-on-data "Learn about frequently asked questions and find your answers.").
 
-No, customer data is not used to train Dynatrace Intelligence generative AI at all. There is no risk of customer data being shared between environments.
+Is my data used to train the Dynatrace Intelligence agentic and generative AI model for other customers?
+
+No, customer data is not used to train Dynatrace Intelligence agentic and generative AI at all. There is no risk of customer data being shared between environments.
 
 Does Dynatrace Intelligence generative AI collect my data?
 
@@ -62,11 +64,11 @@ However, if you enable environment-aware queries, Dynatrace Intelligence generat
 * You have full control over which data in Grail is semantically indexed by Dynatrace Intelligence generative AI on the level of Grail data objects and buckets.
 * Even when environment-aware queries are enabled, your data is still stored only within your environment, and the data fragments that are used to enrich your prompts are not used to train or fine-tune the model.
 
-Does Dynatrace Intelligence generative AI respect user permissions?
+Does Dynatrace Intelligence agentic and generative AI respect user permissions?
 
-Yes. Dynatrace Intelligence generative AI respects user privileges, and it may provide different responses to different users based on their access rights.
+Yes. Dynatrace Intelligence agentic and generative AI respects user privileges, and it may provide different responses to different users based on their access rights.
 
-## Using Generative AI
+## Using agentic and generative AI
 
 Where can I use Dynatrace Intelligence generative AI?
 
@@ -76,11 +78,11 @@ How can I provide feedback?
 
 You can provide feedback directly in the Notebooks or Dashboards apps. To learn how to give feedback through Dashboards and Notebooks, see [Query with natural language](/docs/dynatrace-intelligence/copilot/quick-analysis-copilot-dql "Use Dynatrace Intelligence generative AI to translate your natural language questions into DQL queries").
 
-Can Dynatrace Intelligence generative AI handle questions in foreign languages?
+Can Dynatrace Intelligence agentic and generative AI handle questions in foreign languages?
 
-Yes. Dynatrace Intelligence generative AI does respond to commands and questions in languages other than English.
+Yes. Dynatrace Intelligence agentic and generative AI does respond to commands and questions in languages other than English.
 
-How can I track and monitor Dynatrace Intelligence generative AI adoption across my environment?
+How can I track and monitor Dynatrace Intelligence agentic and generative AI adoption across my environment?
 
 We have a ready-made self-adoption dashboard available, which provides a comprehensive overview of:
 
@@ -99,9 +101,9 @@ All interactions with Dynatrace Intelligence generative AI are logged in Grail a
 
 ## Related topics
 
-* [Dynatrace Intelligence generative AI overview](/docs/dynatrace-intelligence/copilot/copilot-overview "Learn about data security and other aspects of Dynatrace Intelligence generative AI.")
-* [Get started with Dynatrace Intelligence generative AI](/docs/dynatrace-intelligence/copilot/copilot-getting-started "Learn how to set up Dynatrace Intelligence generative AI.")
+* [Dynatrace Intelligence agentic and generative AI overview](/docs/dynatrace-intelligence/copilot/copilot-overview "Learn about data security and other aspects of Dynatrace Intelligence agentic and generative AI.")
+* [Get started with Dynatrace Intelligence agentic and generative AI](/docs/dynatrace-intelligence/copilot/copilot-getting-started "Learn how to set up Dynatrace Intelligence agentic and generative AI.")
 * [Query with natural language](/docs/dynatrace-intelligence/copilot/quick-analysis-copilot-dql "Use Dynatrace Intelligence generative AI to translate your natural language questions into DQL queries")
-* [Dynatrace Intelligence generative AI - Tips for writing better prompts](/docs/dynatrace-intelligence/copilot/quick-analysis-copilot-dql/copilot-tips "Learn best practices for writing more accurate prompts.")
-* [Generative AI quick analysis examples](/docs/dynatrace-intelligence/use-cases/copilot-examples "Learn more about what kind of prompts work well in Dynatrace Intelligence generative AI.")
-* [Dynatrace Intelligence generative AI data privacy and security](/docs/dynatrace-intelligence/copilot/copilot-data-privacy "Learn about Dynatrace Intelligence generative AI data privacy and security policy.")
+* [Dynatrace Intelligence agentic and generative AI - Tips for writing better prompts](/docs/dynatrace-intelligence/copilot/quick-analysis-copilot-dql/copilot-tips "Learn best practices for writing more accurate prompts.")
+* [Generative AI quick analysis examples](/docs/dynatrace-intelligence/use-cases/copilot-examples "Learn more about what kind of prompts work well in Dynatrace Intelligence agentic and generative AI.")
+* [Dynatrace Intelligence agentic and generative AI data privacy and security](/docs/dynatrace-intelligence/copilot/copilot-data-privacy "Learn about Dynatrace Intelligence agentic and generative AI data privacy and security policy.")

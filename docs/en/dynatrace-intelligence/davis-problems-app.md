@@ -1,7 +1,7 @@
 ---
 title: Problems app
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/davis-problems-app
-scraped: 2026-02-18T21:15:26.737345
+scraped: 2026-03-06T21:09:32.258514
 ---
 
 # Problems app
@@ -11,7 +11,7 @@ scraped: 2026-02-18T21:15:26.737345
 * Latest Dynatrace
 * App
 * 15-min read
-* Updated on Jan 28, 2026
+* Updated on Feb 17, 2026
 
 Quickly triaging, investigating, and remediating incoming incidents is the core challenge for operations teams. ![Problems app - new](https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp "Problems app - new") **Problems** supports them by automatically analyzing complex incidents, collecting all the context, and presenting the root cause and impact within a consistent view.
 
@@ -22,10 +22,6 @@ Prerequisites
 ### Permissions
 
 The following table describes the required permissions.
-
-Permission
-
-Description
 
 business-analytics:business-flows:read
 
@@ -67,17 +63,7 @@ settings:objects:read
 
 Read settings objects from Environment API
 
-10
-
-rows per page
-
-Page
-
-1
-
-of 1
-
-## Installation
+### Installation
 
 Make sure the app is [installed in your environment](/docs/manage/hub#install "See the information about Dynatrace Hub.").
 
@@ -115,11 +101,13 @@ By default, ![Problems app - new](https://dt-cdn.net/images/dynatrace-davis-new-
 * A feed of all problems in the last 2 hours. To help operation teams spot open problems regardless of which filter is set, open problems remain on top of the feed no matter how long they are open.
 * A problem chart at the top visualizes any abnormality with a high number of problems in the past. Select a peak on the chart to drill into it and investigate further.
 
-![Problems app - problem feed view](https://dt-cdn.net/images/problem-table-1920-1ff1983035.webp)
+![An example of the Problems app problem feed view](https://dt-cdn.net/images/problems-app-problem-feed-view-1920-f7f665e813.png)
 
 #### Filtering
 
-To focus on your domain and triage problems that affect it, set filters. The two most common filtersâ**Status** and **Category**âhave selectable settings to the left of the table for quick access. To set other filters, use the filter bar above the table.
+To focus on your domain and triage problems that affect it, set filters. The three most common filtersâ**Status**, **Category**, and **Impact**âhave selectable settings to the left of the table for quick access. Your selections there automatically add the corresponding filters to the  filter bar above the table.
+
+To set other filters, enter them directly in the filter bar.
 
 * **Status**âCan be `Active` or `Closed`.
 
@@ -128,6 +116,9 @@ To focus on your domain and triage problems that affect it, set filters. The two
 * **Category**âIndicates the nature of the incident, such as slowdowns, errors, resource-related issues, or availability incidents.
 
   + If you select one or more categories in the controls on the left, the corresponding filters are also displayed in the filter bar.
+* **Impact**âIndicates the type of the impacted area, such as frontends, services, infrastructure, or environments.
+
+  + If you select one or more impact areas in the controls on the left, the corresponding filters are also displayed in the filter bar.
 
 Filtering with the filter bar allows you to focus your feed on problems based on multiple criteria, such as status, number of affected entities, root cause entity, and more. Place your cursor in the input field to see all the available options. By default, filtering criteria are combined by the **AND** logic. For each criterion, Dynatrace Intelligence provides a list of suggested values, based on your problem feed.
 
@@ -137,6 +128,24 @@ For example, to see problems that are raised due to an increase of JavaScript er
 * `Duration>1h`
 * `Category=Error`
 * `Name=JavaScript error rate increase`
+
+By using the filter bar, you can also narrow your feed to focus on specific impact areas (such as `Frontend`, `Service`, or `Infrastructure`) with the `Impact` parameter, or use text search to find problems that contain a specific string. To use search, you can:
+
+* Input any text in the filter bar and select **Search in all data**.
+* Enter `* ~ <your_text>` in the filter bar and select **Update**.
+
+Fields considered for text search
+
+The following fields in the problem record are considered for the text search:
+
+* `event.id`
+* `event.name`
+* `event.description`
+* `event.status`
+* `display_id`
+* `labels.alerting_profile`
+* `entity_tags`
+* `root_cause_entity_name`
 
 The problem filter bar supports Boolean logic filters. This allows you to combine **AND** and **OR** criteria and create complex filters using parentheses to group Boolean terms. You can see a Boolean logic filter statement within ![Problems app - new](https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp "Problems app - new") **Problems** app in the example below.
 
@@ -169,7 +178,7 @@ Screenshot example of defining a segment for Problems filtering
 
 Segment filters are directly applied to the problem Grail records. Consequently, no entity filters are applied to the problem unless the entity ID is chosen as a primary field of the filtered problem.
 
-For more information on segments and how they work, see [Segments](/docs/manage/segments "Segments logically structure monitoring data in Grail and function as convenient filters for data that users are allowed to access based on permissions.") ![Segments](https://dt-cdn.net/images/segments-256-8e66310720.webp "Segments").
+For more information on segments and how they work, see [Segments](/docs/manage/segments "Use segments to logically structure and conveniently filter observability data across apps.") ![Segments](https://dt-cdn.net/images/segments-256-8e66310720.webp "Segments").
 
 ### Activate auto refresh
 
@@ -246,7 +255,7 @@ In the example below, the **Kubernetes** app displays information about a proble
 
 ### Investigate all problem relevant logs
 
-A Davis-analyzed problem highlights the root cause of an incident and shows all the incident-relevant log lines across multiple entities in the problem details.
+A problem analyzed by Dynatrace Intelligence highlights the root cause of an incident and shows all the incident-relevant log lines across multiple entities in the problem details.
 
 To access the log lines that were collected during the incident, select the **Logs** tab. Additionally, you're able to see their log level across all entities affected by the problem, allowing you to save time on manual investigations and filtering logs of relevant entities separately.
 
@@ -345,7 +354,7 @@ To create a troubleshooting guide
    * Select  **Dashboards** to create a new document in ![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") **Dashboards**.
 4. Follow the instructions in the template to document the details for your troubleshooting guide.
 
-If you share a troubleshooting guide with all users in your environment, and you have enabled document suggestions based on vector similarity, Dynatrace Intelligence generative AI will index your document and proactively suggest it to your team to help them remediate similar problems faster. To learn more about Dynatrace Intelligence generative AI document suggestions, see [Find relevant documents with Dynatrace Intelligence generative AI](/docs/dynatrace-intelligence/copilot/copilot-find-relevant-troubleshooting-guides "Learn how Dynatrace Intelligence generative AI can suggest troubleshooting guides for problem remediation.").
+If you share a troubleshooting guide with all users in your environment, and you have enabled document suggestions based on vector similarity, Dynatrace Intelligence agentic and generative AI will index your document and proactively suggest it to your team to help them remediate similar problems faster. To learn more about Dynatrace Intelligence agentic and generative AI document suggestions, see [Find relevant documents with Dynatrace Intelligence agentic and generative AI](/docs/dynatrace-intelligence/copilot/copilot-find-relevant-troubleshooting-guides "Learn how Dynatrace Intelligence agentic and generative AI can suggest troubleshooting guides for problem remediation.").
 
 The ability to create and share troubleshooting guides allows DevOps teams to:
 
@@ -402,26 +411,6 @@ To view a problem overview
    ![Example problem details Overview tab](https://dt-cdn.net/images/problems-screenshot-with-overview-1920-6c68de3f34.png)
 
 The **Overview** has four sections:
-
-Section
-
-Description
-
-[Impact](#overview-impact)
-
-Displays all impacted Smartscape entities (for example, services, processes, and hosts) along with brief issue details for each entity.
-
-[Root cause](#overview-root-cause)
-
-Focuses on the root cause of the issue, including detailed information about the affected deployment stack.
-
-[Visual resolution path](#overview-visual-resolution-path)
-
-Graphically illustrates the relationships between frontends, services, and backends involved in the issue.
-
-[Automation and remediation](#overview-automation-and-remediation)
-
-Lists all automation workflows triggered by the problem, such as notifications, remediations, and external integrations.
 
 Customize the layout
 

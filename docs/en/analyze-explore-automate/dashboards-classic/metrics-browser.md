@@ -1,13 +1,14 @@
 ---
 title: Metrics browser
 source: https://www.dynatrace.com/docs/analyze-explore-automate/dashboards-classic/metrics-browser
-scraped: 2026-02-15T09:08:57.807077
+scraped: 2026-03-06T21:34:08.300543
 ---
 
 # Metrics browser
 
 # Metrics browser
 
+* Classic
 * How-to guide
 * 5-min read
 * Updated on Aug 01, 2022
@@ -43,70 +44,6 @@ Expand **Details** for any metric (row) in the table to see metric details and a
 
 Metric details available in the 'Metrics browser'
 
-Field
-
-Description
-
-Metric name
-
-The name of the metric in the user interface.
-
-Metric key
-
-The fully qualified key of the metric. If a transformation has been used, it is reflected in the metric key.
-
-Entity type
-
-Entity type for this metric.
-
-Description
-
-A short description of the metric.
-
-Tags
-
-Tags allow further grouping of metrics.
-
-Created
-
-The timestamp when the metric was created.
-
-Last written
-
-The timestamp when the metric was last written.
-
-DDU billing
-
-Whether the metric is subject to [Davis data unit (DDU) consumption](/docs/license/monitoring-consumption-classic/davis-data-units "Understand how Dynatrace monitoring consumption is calculated based on Davis data units (DDU).").
-
-Unit
-
-The unit of the metric.
-
-Minimum value
-
-The known lower boundary value for the metric.
-
-Maximum value
-
-The known upper boundary value for the metric.
-
-Default aggregation
-
-The default aggregation for this metric.
-
-Aggregations
-
-The list of allowed aggregations for this metric.
-
-Dimensions
-
-The fine metric division (for example, process group and process ID for a process-related metric).
-
-Transformations
-
-Possible transform operators.
-
 ## Order-of-magnitude notation
 
 In this example, you can see values displayed in millions. This is order-of-magnitude notation (`7.5M` means "about 7.5 million" and not "exactly 7.5 million").
@@ -116,36 +53,6 @@ The order of magnitude here is selected automatically based on the size of the v
 ![Example order-of-magnitude values in the metrics browser.](https://dt-cdn.net/images/magnitude-metrics-browser-1284-02225955bf.png)
 
 Examples of order-of-magnitude notation in Dynatrace:
-
-Notation
-
-Factor
-
-Meaning
-
-k
-
-10^3
-
-kilo, thousand
-
-M
-
-10^6
-
-mega, million
-
-G
-
-10^9
-
-giga, billion
-
-T
-
-10^12
-
-tera, trillion
 
 For details, see [Order-of-magnitude notation](/docs/discover-dynatrace/get-started/dynatrace-ui/order-of-magnitude-notation "Dynatrace order-of-magnitude notation for displaying metric values").
 

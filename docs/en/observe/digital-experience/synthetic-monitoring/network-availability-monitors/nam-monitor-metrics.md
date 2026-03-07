@@ -1,13 +1,14 @@
 ---
 title: NAM monitor metrics
 source: https://www.dynatrace.com/docs/observe/digital-experience/synthetic-monitoring/network-availability-monitors/nam-monitor-metrics
-scraped: 2026-02-18T21:30:00.082834
+scraped: 2026-03-04T21:29:54.840473
 ---
 
 # NAM monitor metrics
 
 # NAM monitor metrics
 
+* Classic
 * Explanation
 * 12-min read
 * Published Jun 19, 2024

@@ -1,13 +1,14 @@
 ---
 title: Customize service splitting in Service Detection v2
 source: https://www.dynatrace.com/docs/observe/application-observability/services/service-detection/service-detection-v2/service-splitting-v2
-scraped: 2026-02-18T05:59:03.439391
+scraped: 2026-03-04T21:38:13.805559
 ---
 
 # Customize service splitting in Service Detection v2
 
 # Customize service splitting in Service Detection v2
 
+* Classic
 * How-to guide
 * 2-min read
 * Updated on Nov 24, 2025
@@ -37,46 +38,6 @@ Service splitting is particularly useful when:
 
 Dynatrace provides default service splitting rules as described in the table below.
 Additionally, custom rules can be created as described in [Create new rule](/docs/observe/application-observability/services/service-detection/service-detection-v2/service-splitting-v2#create-new-rule "Find out how to split detected services based on resource attributes.").
-
-Priority
-
-Rule name
-
-Condition
-
-Splitting attributes
-
-Status
-
-1
-
-Split Adobe Experience Manager (AEM) services by process group
-
-`adobe.em.tier` + `adobe.em.env_type` + `adobe.em.program`
-
-`dt.entity.process_group`
-
-Enabled
-
-2
-
-Split services by k8s cluster and namespace
-
-None (applies to all)
-
-`k8s.namespace.name` + `k8s.cluster.uid`
-
-Enabled[1](#fn-1-1-def)
-
-3
-
-Split services by k8s namespace Deprecated
-
-None (applies to all)
-
-`k8s.namespace.name`
-
-Disabled[2](#fn-1-2-def)
 
 1
 

@@ -1,7 +1,7 @@
 ---
 title: Databases app
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/databases/database-app
-scraped: 2026-02-18T21:16:13.006616
+scraped: 2026-03-06T21:12:38.609532
 ---
 
 # Databases app
@@ -11,7 +11,7 @@ scraped: 2026-02-18T21:16:13.006616
 * Latest Dynatrace
 * App
 * 4-min read
-* Updated on Jan 28, 2026
+* Updated on Feb 26, 2026
 
 The Dynatrace ![Databases](https://dt-cdn.net/images/dynatrace-database-256-1afe08286e.webp "Databases") **Databases** enables you to monitor, analyze, and optimize database environments with clarity and control. It offers detailed insights into performance, health, and configuration, helping you identify issues early and maintain reliable operations.
 
@@ -35,10 +35,6 @@ Before you begin, ensure the following:
 ### Permissions
 
 The following table describes the required permissions.
-
-Permission
-
-Description
 
 davis:analyzers:execute
 
@@ -80,15 +76,19 @@ storage:metrics:read
 
 Read metrics from Grail
 
-10
+#### Limit data access
 
-rows per page
+In general, the Database app users need a basic `storage:**` permissions to access data from the Grail.
 
-Page
+However, for the strict access, you can create a custom policy limiting the access to the `default_database_monitoring` Grail bucket.
 
-1
+The `default_database_monitoring` bucket is where all the database extension-retrived data is stored, including logs. You can use the following statement to create a policy:
 
-of 1
+```
+ALLOW storage:buckets:read WHERE storage:bucket-name = 'default_database_monitoring'
+```
+
+For more information see, [Working with policies](/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies "Working with policies") and [Grant access to Grail](/docs/manage/identity-access-management/use-cases/access-grail "Grant access to Grail").
 
 ### Installation steps
 
@@ -117,7 +117,7 @@ The **Overview** tab provides a high-level summary of your database landscape:
 
 Select the **Explorer** tab to view a list of all your monitored instances. The **Database instances** table displays these instances.
 
-* **Health**: Unified statuses and Davis-detected problems help you quickly identify critical issues.
+* **Health**: Unified statuses and problems detected by Dynatrace Intelligence help you quickly identify critical issues.
 * **Utilization**: Metrics such as CPU usage, memory consumption, user calls, and active sessions provide insights into resource efficiency.
 * **Host details**: Drill down into host metrics or access the **Infrastructure and Operations** view for a comprehensive analysis.
 
@@ -226,7 +226,7 @@ Queries are often the root cause of database inefficiencies. The app provides to
 
 * **Grail**: Processes large volumes of data for scalable analytics.
 * **Smartscape**: Maps real-time dependencies for context-aware analysis.
-* **Davis AI**: Detects anomalies and provides intelligent recommendations.
+* **Dynatrace Intelligence AI**: Detects anomalies and provides intelligent recommendations.
 
 [![Hub](https://dt-cdn.net/images/hub-512-82db3c583e.png "Hub")
 

@@ -1,7 +1,7 @@
 ---
 title: Containerized ActiveGate volumes
 source: https://www.dynatrace.com/docs/ingest-from/dynatrace-activegate/activegate-in-container/ag-container-persistence
-scraped: 2026-02-18T21:32:42.522050
+scraped: 2026-03-02T21:29:57.548368
 ---
 
 # Containerized ActiveGate volumes
@@ -15,38 +15,6 @@ scraped: 2026-02-18T21:32:42.522050
 While running, the ActiveGate container writes data to certain directories within the root filesystem.
 
 ## Writeable directories
-
-Purpose of directory
-
-Default path
-
-ActiveGate configuration
-
-`/var/lib/dynatrace/gateway/config`
-
-ActiveGate SSL directory
-
-`/var/lib/dynatrace/gateway/ssl`
-
-ActiveGate temporary files
-
-`/var/tmp/dynatrace/gateway`
-
-ActiveGate logs
-
-`/var/log/dynatrace/gateway`
-
-Environment data
-
-`/var/lib/dynatrace/gateway/data`
-
-Dump files uploaded to ActiveGate by OneAgent
-
-`/var/lib/dynatrace/gateway/dump`
-
-ActiveGate temporary files
-
-`/var/lib/dynatrace/gateway/temp`
 
 ### Size requirements
 

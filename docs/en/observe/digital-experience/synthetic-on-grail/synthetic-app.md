@@ -1,7 +1,7 @@
 ---
 title: Synthetic app
 source: https://www.dynatrace.com/docs/observe/digital-experience/synthetic-on-grail/synthetic-app
-scraped: 2026-02-18T21:16:14.309151
+scraped: 2026-03-06T21:12:42.033714
 ---
 
 # Synthetic app
@@ -20,10 +20,6 @@ Prerequisites
 ### Permissions
 
 The following table describes the required permissions.
-
-Permission
-
-Description
 
 geolocation:locations:lookup
 
@@ -65,17 +61,7 @@ document:documents:delete
 
 allows deleting filter sets
 
-10
-
-rows per page
-
-Page
-
-1
-
-of 1
-
-## Installation
+### Installation
 
 Make sure the app is [installed in your environment](/docs/manage/hub#install "See the information about Dynatrace Hub.").
 
