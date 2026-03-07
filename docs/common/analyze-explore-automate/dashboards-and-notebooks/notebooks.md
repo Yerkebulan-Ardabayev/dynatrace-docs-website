@@ -63,13 +63,11 @@ document:direct-shares:read
 
 Allows the user to access shared notebooks
 
-.css-b62m3t-container{position:relative;box-sizing:border-box;}
 
-.css-7pg0cj-a11yText{z-index:9999;border:0;clip:rect(1px, 1px, 1px, 1px);height:1px;width:1px;position:absolute;overflow:hidden;padding:0;white-space:nowrap;}
+11yText{z-index:9999;border:0;clip:rect(1px, 1px, 1px, 1px);height:1px;width:1px;position:absolute;overflow:hidden;padding:0;white-space:nowrap;}
 
-.css-1hac4vs-dummyInput{background:0;border:0;caret-color:transparent;font-size:inherit;grid-area:1/1/2/3;outline:0;padding:0;width:1px;color:transparent;left:-100px;opacity:0;position:relative;-webkit-transform:scale(.01);-moz-transform:scale(.01);-ms-transform:scale(.01);transform:scale(.01);}.css-14oxtc6{-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;display:grid;-webkit-flex:1;-ms-flex:1;flex:1;-webkit-box-flex-wrap:wrap;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-overflow-scrolling:touch;position:relative;overflow:hidden;box-sizing:border-box;}
+.css-14oxtc6{-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;display:grid;-webkit-flex:1;-ms-flex:1;flex:1;-webkit-box-flex-wrap:wrap;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-overflow-scrolling:touch;position:relative;overflow:hidden;box-sizing:border-box;}
 
-.css-w54w9q-singleValue{grid-area:1/1/2/3;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;box-sizing:border-box;}
 
 10
 
@@ -77,13 +75,11 @@ rows per page
 
 Page
 
-.css-b62m3t-container{position:relative;box-sizing:border-box;}
 
-.css-7pg0cj-a11yText{z-index:9999;border:0;clip:rect(1px, 1px, 1px, 1px);height:1px;width:1px;position:absolute;overflow:hidden;padding:0;white-space:nowrap;}
+11yText{z-index:9999;border:0;clip:rect(1px, 1px, 1px, 1px);height:1px;width:1px;position:absolute;overflow:hidden;padding:0;white-space:nowrap;}
 
-.css-1hac4vs-dummyInput{background:0;border:0;caret-color:transparent;font-size:inherit;grid-area:1/1/2/3;outline:0;padding:0;width:1px;color:transparent;left:-100px;opacity:0;position:relative;-webkit-transform:scale(.01);-moz-transform:scale(.01);-ms-transform:scale(.01);transform:scale(.01);}.css-14oxtc6{-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;display:grid;-webkit-flex:1;-ms-flex:1;flex:1;-webkit-box-flex-wrap:wrap;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-overflow-scrolling:touch;position:relative;overflow:hidden;box-sizing:border-box;}
+.css-14oxtc6{-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;display:grid;-webkit-flex:1;-ms-flex:1;flex:1;-webkit-box-flex-wrap:wrap;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-overflow-scrolling:touch;position:relative;overflow:hidden;box-sizing:border-box;}
 
-.css-w54w9q-singleValue{grid-area:1/1/2/3;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;box-sizing:border-box;}
 
 1
 
@@ -583,7 +579,6 @@ To add a Markdown-formatted annotation to a notebook
   * Line 1
 
 
-
   * Line 2
   ```
 
@@ -591,7 +586,6 @@ To add a Markdown-formatted annotation to a notebook
 
   ```
   - Line 1
-
 
 
   - Line 2
@@ -603,9 +597,7 @@ To add a Markdown-formatted annotation to a notebook
   1. The first line of my procedure.
 
 
-
   2. The second line of my procedure.
-
 
 
   3. The third line of my procedure.
@@ -618,9 +610,7 @@ To add a Markdown-formatted annotation to a notebook
   | Header 1 | Header2
 
 
-
   --- | ---
-
 
 
   content2 | content2
@@ -746,7 +736,6 @@ To add a Markdown-formatted annotation to a notebook
 
   ```
   Here are some of the people who started [Dynatrace](https://www.dynatrace.com).
-
 
 
   ![Dynatrace founders](https://dt-cdn.net/images/original-dynatrace-team-1500-7334dbe9a8.jpg)

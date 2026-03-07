@@ -1,10 +1,8 @@
 ---
-title: Welcome to Dynatrace Documentation
+title: Добро пожаловать в документацию Dynatrace
 source: https://www.dynatrace.com/support/help/
 scraped: 2026-02-06T15:59:29.260812
 ---
-
-# Добро пожаловать в документацию Dynatrace
 
 # Добро пожаловать в документацию Dynatrace
 
@@ -43,10 +41,17 @@ scraped: 2026-02-06T15:59:29.260812
 
 ## Продолжайте свое обучение
 
-[### Присоединяйтесь к Университету Dynatrace
+### Присоединяйтесь к Университету Dynatrace
 
-Революционное образование и ресурсы, онлайн и лично](https://university.dynatrace.com)[### Dynatrace Developer
+Революционное образование и ресурсы, онлайн и лично.
+[Перейти на university.dynatrace.com](https://university.dynatrace.com)
 
-Научитесь создавать потрясающие приложения с минимальными усилиями](https://developer.dynatrace.com)[### Присоединяйтесь к сообществу Dynatrace
+### Dynatrace Developer
 
-Найдите ответы, которые ищете, и познакомьтесь с другими пользователями и экспертами Dynatrace.](https://community.dynatrace.com)
+Научитесь создавать потрясающие приложения с минимальными усилиями.
+[Перейти на developer.dynatrace.com](https://developer.dynatrace.com)
+
+### Присоединяйтесь к сообществу Dynatrace
+
+Найдите ответы, которые ищете, и познакомьтесь с другими пользователями и экспертами Dynatrace.
+[Перейти на community.dynatrace.com](https://community.dynatrace.com)

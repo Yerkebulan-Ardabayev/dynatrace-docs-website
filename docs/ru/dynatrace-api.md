@@ -6,8 +6,6 @@ scraped: 2026-03-06T21:16:34.990823
 
 # Dynatrace API
 
-# Dynatrace API
-
 * Ссылка
 * Обновлено 26 февраля 2026 г.
 
@@ -39,9 +37,9 @@ Environment
 
 [Информация](/docs/dynatrace-api/environment-api/activegates/activegate-info "Список всех ActiveGate, в настоящее время или недавно подключенных к среде через Dynatrace API.")
 
-[Конфигурация автобобновления](/docs/dynatrace-api/environment-api/activegates/auto-update-config "Управление конфигурацией автобобновления ваших Environment ActiveGate через Dynatrace API.")
+[Конфигурация автообновления](/docs/dynatrace-api/environment-api/activegates/auto-update-config "Управление конфигурацией автообновления ваших Environment ActiveGate через Dynatrace API.")
 
-[Задания автобобновления](/docs/dynatrace-api/environment-api/activegates/auto-update-jobs "Управление заданиями автобобновления ваших ActiveGate через Dynatrace API.")
+[Задания автообновления](/docs/dynatrace-api/environment-api/activegates/auto-update-jobs "Управление заданиями автообновления ваших ActiveGate через Dynatrace API.")
 
 ### Анонимизация
 
@@ -312,49 +310,49 @@ Environment
 
 ### Управление пользователями
 
-Просмотр и управление пользователями Dynatrace в вашем аккаунте.](/docs/dynatrace-api/account-management-api/user-management-api "Просмотр и управление пользователями в вашем аккаунте Dynatrace через API управления пользователями API.")
+[Просмотр и управление пользователями Dynatrace в вашем аккаунте.](/docs/dynatrace-api/account-management-api/user-management-api "Просмотр и управление пользователями в вашем аккаунте Dynatrace через API управления пользователями API.")
 
 ### Управление группами
 
-Просмотр и управление группами пользователей в вашем аккаунте.](/docs/dynatrace-api/account-management-api/group-management-api "Создание и управление группами пользователей в вашем аккаунте Dynatrace через API управления группами API.")
+[Просмотр и управление группами пользователей в вашем аккаунте.](/docs/dynatrace-api/account-management-api/group-management-api "Создание и управление группами пользователей в вашем аккаунте Dynatrace через API управления группами API.")
 
 ### Управление разрешениями
 
-Управление разрешениями пользователей в вашем аккаунте.](/docs/dynatrace-api/account-management-api/permission-management-api "Управление разрешениями групп пользователей в вашем аккаунте Dynatrace через API управления разрешениями API.")
+[Управление разрешениями пользователей в вашем аккаунте.](/docs/dynatrace-api/account-management-api/permission-management-api "Управление разрешениями групп пользователей в вашем аккаунте Dynatrace через API управления разрешениями API.")
 
 ### Управление политиками
 
-Управление политиками доступа в вашем аккаунте.](/docs/dynatrace-api/account-management-api/policy-management-api/policies "Управление политиками доступа в вашем аккаунте Dynatrace через API управления политиками API.")
+[Управление политиками доступа в вашем аккаунте.](/docs/dynatrace-api/account-management-api/policy-management-api/policies "Управление политиками доступа в вашем аккаунте Dynatrace через API управления политиками API.")
 
 ### Ограничения аккаунта
 
-Просмотр ограничений аккаунта вашего аккаунта.](/docs/dynatrace-api/account-management-api/account-limits-api "Просмотр назначенных ограничений аккаунта в вашем аккаунте Dynatrace через Dynatrace API.")
+[Просмотр ограничений аккаунта вашего аккаунта.](/docs/dynatrace-api/account-management-api/account-limits-api "Просмотр назначенных ограничений аккаунта в вашем аккаунте Dynatrace через Dynatrace API.")
 
 ### Управление сервисными пользователями
 
-Управление сервисными пользователями в вашем аккаунте.](/docs/dynatrace-api/account-management-api/service-user-management-api "Создание и управление сервисными пользователями в вашем аккаунте Dynatrace через Dynatrace API.")
+[Управление сервисными пользователями в вашем аккаунте.](/docs/dynatrace-api/account-management-api/service-user-management-api "Создание и управление сервисными пользователями в вашем аккаунте Dynatrace через Dynatrace API.")
 
 ### Токены платформы
 
-Управление токенами платформы вашего аккаунта.](/docs/dynatrace-api/account-management-api/platform-tokens-api "Создание и управление токенами платформы в вашем аккаунте Dynatrace через Dynatrace API.")
+[Управление токенами платформы вашего аккаунта.](/docs/dynatrace-api/account-management-api/platform-tokens-api "Создание и управление токенами платформы в вашем аккаунте Dynatrace через Dynatrace API.")
 
 ### Управление средами
 
-Просмотр сред мониторинга вашего аккаунта Dynatrace.](/docs/dynatrace-api/account-management-api/environment-management-api/environment-management-api "Просмотр сред мониторинга вашего аккаунта Dynatrace через управление средами API.")
+[Просмотр сред мониторинга вашего аккаунта Dynatrace.](/docs/dynatrace-api/account-management-api/environment-management-api/environment-management-api "Просмотр сред мониторинга вашего аккаунта Dynatrace через управление средами API.")
 
 ### Подписка на платформу Dynatrace
 
-Просмотр вашей подписки на платформу Dynatrace и ее использования.](/docs/dynatrace-api/account-management-api/dynatrace-platform-subscription-api "Запрос данных о вашей подписке на платформу Dynatrace через API управления аккаунтом API.")
+[Просмотр вашей подписки на платформу Dynatrace и ее использования.](/docs/dynatrace-api/account-management-api/dynatrace-platform-subscription-api "Запрос данных о вашей подписке на платформу Dynatrace через API управления аккаунтом API.")
 
 ![Уведомления](https://dt-cdn.net/images/account-management-icon-notifications-8f074dc2ad.svg "Уведомления")
 
 ### Уведомления
 
-Список уведомлений для вашего аккаунта.](/docs/dynatrace-api/account-management-api/post-notifications "Список уведомлений для вашего аккаунта.")
+[Список уведомлений для вашего аккаунта.](/docs/dynatrace-api/account-management-api/post-notifications "Список уведомлений для вашего аккаунта.")
 
 ### Справочные данные
 
-Просмотр справочной информации о вашем аккаунте.](/docs/dynatrace-api/account-management-api/reference-data "Проверка справочной информации вашего аккаунта через справочные данные API.")
+[Просмотр справочной информации о вашем аккаунте.](/docs/dynatrace-api/account-management-api/reference-data "Проверка справочной информации вашего аккаунта через справочные данные API.")
 
 ## Исследователь API
 
@@ -379,12 +377,22 @@ Environment
 
 ### Попробуйте вызов API
 
-После ввода OAuth 2.0-токена вы можете直接 выполнять вызовы API внутри API Explorer. Просто выберите **Try it out**, чтобы открыть раздел параметров выбранной конечной точки API, где вы можете ввести дополнительные параметры и изменить payload запроса перед выполнением его, выбрав **Execute**.
+После ввода OAuth 2.0-токена вы можете непосредственно выполнять вызовы API внутри API Explorer. Просто выберите **Try it out**, чтобы открыть раздел параметров выбранной конечной точки API, где вы можете ввести дополнительные параметры и изменить payload запроса перед выполнением его, выбрав **Execute**.
+
+### Доступ к API Explorer
 
 Вы можете получить доступ ко всем конечным точкам Dynatrace API, используя API Explorer.
 
-* Последняя Dynatrace Перейдите в **Access Tokens**, затем выберите ссылку **Dynatrace API Explorer**.
-* Предыдущая Dynatrace Из [меню пользователя](/docs/discover-dynatrace/get-started/dynatrace-ui#user-menu-previous-dynatrace "Перейти к последней Dynatrace"), прокрутите вниз до **Dynatrace API** и выберите раздел API, который вас интересует.
+**Через интерфейс Dynatrace:**
+
+* **Последняя версия Dynatrace:** Перейдите в **Access Tokens**, затем выберите ссылку **Dynatrace API Explorer**.
+* **Предыдущая версия Dynatrace:** Из [меню пользователя](/docs/discover-dynatrace/get-started/dynatrace-ui#user-menu-previous-dynatrace "Перейти к последней Dynatrace"), прокрутите вниз до **Dynatrace API** и выберите раздел API, который вас интересует.
+
+**Через управление учетными записями:**
+
+1. Перейдите в [**Управление учетными записями**](https://myaccount.dynatrace.com/). Если у вас несколько учетных записей, выберите учетную запись, которую вы хотите управлять.
+2. В верхней навигационной панели перейдите в **Управление идентификаторами и доступом** > **Клиенты OAuth**.
+3. В правом верхнем углу страницы выберите **Управление учетными записями API**.
 
 Альтернативно, вы можете получить доступ к API Explorer через прямую ссылку `https://{your-environment-id}.live.dynatrace.com/rest-api-doc/`.
 
@@ -396,20 +404,4 @@ Environment
 
 ### Попробуйте вызов API
 
-После ввода OAuth 2.0-токена вы можете直接 выполнять вызовы API внутри API Explorer. Просто выберите **Try it out**, чтобы открыть раздел параметров выбранной конечной точки API, где вы можете ввести дополнительные параметры и изменить payload запроса перед выполнением его, выбрав **Execute**.
-
-Вы можете получить доступ ко всем конечным точкам Dynatrace API, используя API Explorer.
-
-1. Перейдите в [**Управление учетными записями**](https://myaccount.dynatrace.com/). Если у вас несколько учетных записей, выберите учетную запись, которую вы хотите управлять.
-2. В верхней навигационной панели перейдите в **Управление идентификаторами и доступом** > **Клиенты OAuth**.
-3. В правом верхнем углу страницы выберите **Управление учетными записями API**.
-
-### Аутентификация в API Explorer
-
-Выберите значок замка ![Lock](https://dt-cdn.net/images/blue-lock-icon-77090b9928.svg "Lock") рядом с любой конечной точкой, чтобы отобразить информацию об OAuth 2.0-токенах, которые защищают эту конечную точку. Каждая конечная точка требует определенного типа токена.
-
-Вы также можете разблокировать все конечные точки, выбрав **Authorize**. В отображаемом диалоговом окне вы можете увидеть, какие разрешения токена необходимы для каждой конечной точки API. Вводя свой OAuth 2.0-токен в глобальный диалог **Available authorizations**, вы можете разблокировать все связанные конечные точки API.
-
-### Попробуйте вызов API
-
-После ввода OAuth 2.0-токена вы можете直接 выполнять вызовы API внутри API Explorer. Просто выберите **Try it out**, чтобы открыть раздел параметров выбранной конечной точки API, где вы можете ввести дополнительные параметры и изменить payload запроса перед выполнением его, выбрав **Execute**.
+После ввода OAuth 2.0-токена вы можете непосредственно выполнять вызовы API внутри API Explorer. Просто выберите **Try it out**, чтобы открыть раздел параметров выбранной конечной точки API, где вы можете ввести дополнительные параметры и изменить payload запроса перед выполнением его, выбрав **Execute**.
