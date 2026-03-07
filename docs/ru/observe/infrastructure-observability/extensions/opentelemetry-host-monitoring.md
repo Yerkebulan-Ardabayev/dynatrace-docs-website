@@ -74,4 +74,4 @@ This extension does not include any feature sets. Users are in control of what d
 
 ### Explore in Dynatrace Hub
 
-Generate topology and screens for your OpenTelemetry host data for quicker display and easier analysis of the data.](https://www.dynatrace.com/hub/detail/opentelemetry-host-monitoring-extension/)
+[Generate topology and screens for your OpenTelemetry host data for quicker display and easier analysis of the data.](https://www.dynatrace.com/hub/detail/opentelemetry-host-monitoring-extension/)

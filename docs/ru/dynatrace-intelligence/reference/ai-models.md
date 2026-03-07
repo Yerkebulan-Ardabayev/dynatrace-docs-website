@@ -1,0 +1,36 @@
+---
+title: AI models
+source: https://www.dynatrace.com/docs/dynatrace-intelligence/reference/ai-models
+scraped: 2026-03-06T21:14:53.620919
+---
+
+# Модели ИИ
+
+# Модели ИИ
+
+* Последняя версия Dynatrace
+* Обзор
+* Время чтения: 1 мин
+* Обновлено 28 янв. 2026
+
+Dynatrace Intelligence использует специализированные модели ИИ для анализа вашей среды и предоставления практических рекомендаций. Эти модели обеспечивают различные возможности -- от обнаружения аномалий и анализа первопричин до предиктивной аналитики и оптимизации производительности. Каждая модель предназначена для конкретных сценариев использования и предоставляет различные виды аналитических данных, помогающих понять и улучшить работу ваших систем.
+
+[#### Причинно-корреляционный анализ Dynatrace Intelligence
+
+Узнайте, как причинно-корреляционный анализ Dynatrace Intelligence находит связанные метрики в вашей среде.
+
+* Пояснение
+
+[Читать пояснение](/docs/dynatrace-intelligence/reference/ai-models/causal-correlation-analysis)[#### Предиктивный ИИ-анализ Dynatrace Intelligence
+
+Узнайте, как предиктивный ИИ Dynatrace Intelligence формирует прогнозы.
+
+* Пояснение
+
+[Читать пояснение](/docs/dynatrace-intelligence/reference/ai-models/forecast-analysis)[#### Сезонная базовая линия
+
+Как Dynatrace Intelligence предлагает пороговые значения сезонной базовой линии для группы сущностей.
+
+* Пояснение
+
+[Читать пояснение](/docs/dynatrace-intelligence/reference/ai-models/seasonal-baseline)

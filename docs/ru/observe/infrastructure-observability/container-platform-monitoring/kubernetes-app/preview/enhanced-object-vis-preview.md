@@ -235,10 +235,10 @@ ConfigMaps и Secrets могут содержать конфиденциальн
 
 [### Канал обратной связи для предварительного просмотра улучшенной видимости объектов Kubernetes
 
-Вы можете найти блокнот с различными примерами в нашем сообществе.](https://community.dynatrace.com/t5/Feedback-channel/Feedback-channel-for-Kubernetes-Enhanced-Object-Visibility/td-p/285132)
+[Вы можете найти блокнот с различными примерами в нашем сообществе.](https://community.dynatrace.com/t5/Feedback-channel/Feedback-channel-for-Kubernetes-Enhanced-Object-Visibility/td-p/285132)
 
 [### Детская площадка
 
-Протестируйте приложение в изолированной среде.](https://wkf10640.apps.dynatrace.com/ui/apps/dynatrace.kubernetes)[### От 0 до полной наблюдаемости в Kubernetes менее чем за 3 минуты
+[Протестируйте приложение в изолированной среде.](https://wkf10640.apps.dynatrace.com/ui/apps/dynatrace.kubernetes)[### От 0 до полной наблюдаемости в Kubernetes менее чем за 3 минуты
 
-Краткое видеоруководство по установке Dynatrace Оператор.](https://dt-cdn.net/resources/product/videos/k8s-0-to-full-observability.mp4)[### Сообщение в блоге: Раскройте возможности DevSecOps с помощью новой версии Kubernetes Experience для проектирования платформ](https://www.dynatrace.com/news/blog/kubernetes-platform-engineering/)
+[Краткое видеоруководство по установке Dynatrace Оператор.](https://dt-cdn.net/resources/product/videos/k8s-0-to-full-observability.mp4)[### Сообщение в блоге: Раскройте возможности DevSecOps с помощью новой версии Kubernetes Experience для проектирования платформ](https://www.dynatrace.com/news/blog/kubernetes-platform-engineering/)

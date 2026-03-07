@@ -259,4 +259,4 @@ scraped: 2026-02-06T16:21:08.408897
 
 ### Исследуйте в Dynatrace Hub
 
-Просмотрите состояние всех центров обработки данных и хостов и определите основную причину проблем с инфраструктурой.](https://www.dynatrace.com/hub/detail/synthetic-preview/?internal_source=doc&internal_medium=link&internal_campaign=cross)
+[Просмотрите состояние всех центров обработки данных и хостов и определите основную причину проблем с инфраструктурой.](https://www.dynatrace.com/hub/detail/synthetic-preview/?internal_source=doc&internal_medium=link&internal_campaign=cross)

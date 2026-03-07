@@ -70,8 +70,8 @@ nav:
   - Начало работы:
     - Документация Dynatrace: ru/index.md
     - Начало работы: ru/getting-started.md
-    - Что такое Dynatrace: en/discover-dynatrace/what-is-dynatrace.md
-    - Приложения Dynatrace: en/discover-dynatrace/dynatrace-apps.md
+    - Что такое Dynatrace: ru/discover-dynatrace/what-is-dynatrace.md
+    - Приложения Dynatrace: ru/discover-dynatrace/dynatrace-apps.md
     - Семантический словарь: ru/semantic-dictionary.md
 
   # --- DYNATRACE MANAGED ---
@@ -89,132 +89,132 @@ nav:
   # --- ПЛАТФОРМА ---
   - Платформа:
     - Grail:
-      - Что такое Grail: en/platform/grail/dynatrace-grail.md
-      - Язык запросов DQL: en/platform/grail/dynatrace-query-language.md
-    - OneAgent: en/platform/oneagent.md
-    - AppEngine: en/platform/appengine.md
-    - OpenPipeline: en/platform/openpipeline.md
+      - Что такое Grail: ru/platform/grail/dynatrace-grail.md
+      - Язык запросов DQL: ru/platform/grail/dynatrace-query-language.md
+    - OneAgent: ru/platform/oneagent.md
+    - AppEngine: ru/platform/appengine.md
+    - OpenPipeline: ru/platform/openpipeline.md
 
   # --- НАБЛЮДАЕМОСТЬ ---
   - Наблюдаемость:
     - Инфраструктура:
-      - Обзор: en/observe/infrastructure-observability.md
-      - Хосты и операции: en/observe/infrastructure-observability/infrastructure-and-operations.md
-      - Облачный мониторинг: en/observe/infrastructure-observability/cloud-platform-monitoring/clouds-app.md
+      - Обзор: ru/observe/infrastructure-observability.md
+      - Хосты и операции: ru/observe/infrastructure-observability/infrastructure-and-operations.md
+      - Облачный мониторинг: ru/observe/infrastructure-observability/cloud-platform-monitoring/clouds-app.md
       - Kubernetes: ru/observe/infrastructure-observability/container-platform-monitoring/kubernetes-app.md
-      - Kubernetes Classic: en/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring.md
-      - Базы данных: en/observe/infrastructure-observability/databases/database-app.md
+      - Kubernetes Classic: ru/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring.md
+      - Базы данных: ru/observe/infrastructure-observability/databases/database-app.md
     - Приложения:
-      - Распределённая трассировка: en/observe/application-observability/distributed-tracing.md
-      - Сервисы: en/observe/application-observability/services/services-app.md
+      - Распределённая трассировка: ru/observe/application-observability/distributed-tracing.md
+      - Сервисы: ru/observe/application-observability/services/services-app.md
     - Цифровой опыт:
-      - Обзор: en/observe/digital-experience.md
+      - Обзор: ru/observe/digital-experience.md
       - Синтетическое приложение: ru/observe/digital-experience/synthetic-monitoring/synthetic-on-grail/synthetic-app.md
-    - AI и LLM мониторинг: en/observe/dynatrace-for-ai-observability.md
+    - AI и LLM мониторинг: ru/observe/dynatrace-for-ai-observability.md
 
   # --- DYNATRACE INTELLIGENCE ---
   - Dynatrace Intelligence:
     - Обнаружение аномалий:
-      - Обзор: en/dynatrace-intelligence/anomaly-detection.md
-      - Настройка чувствительности: en/dynatrace-intelligence/anomaly-detection/adjust-sensitivity-anomaly-detection.md
-      - Приложение Anomaly Detection: en/dynatrace-intelligence/anomaly-detection/anomaly-detection-app.md
-      - Конфигурация: en/dynatrace-intelligence/anomaly-detection/anomaly-detection-configuration.md
-      - Адаптивные пороги: en/dynatrace-intelligence/anomaly-detection/auto-adaptive-threshold.md
-      - Многомерный бейзлайн: en/dynatrace-intelligence/anomaly-detection/automated-multidimensional-baselining.md
-      - События метрик: en/dynatrace-intelligence/anomaly-detection/metric-events.md
-      - Статические пороги: en/dynatrace-intelligence/anomaly-detection/static-thresholds.md
+      - Обзор: ru/dynatrace-intelligence/anomaly-detection.md
+      - Настройка чувствительности: ru/dynatrace-intelligence/anomaly-detection/adjust-sensitivity-anomaly-detection.md
+      - Приложение Anomaly Detection: ru/dynatrace-intelligence/anomaly-detection/anomaly-detection-app.md
+      - Конфигурация: ru/dynatrace-intelligence/anomaly-detection/anomaly-detection-configuration.md
+      - Адаптивные пороги: ru/dynatrace-intelligence/anomaly-detection/auto-adaptive-threshold.md
+      - Многомерный бейзлайн: ru/dynatrace-intelligence/anomaly-detection/automated-multidimensional-baselining.md
+      - События метрик: ru/dynatrace-intelligence/anomaly-detection/metric-events.md
+      - Статические пороги: ru/dynatrace-intelligence/anomaly-detection/static-thresholds.md
       - Оптимизация DQL: ru/dynatrace-intelligence/anomaly-detection/anomaly-detection-app/davis-ad-dql-optimization.md
     - Davis Copilot:
-      - Обзор: en/dynatrace-intelligence/copilot.md
-      - Dynatrace Assist: en/dynatrace-intelligence/copilot/chat-with-davis-copilot.md
-      - Начало работы: en/dynatrace-intelligence/copilot/copilot-getting-started.md
-      - Конфиденциальность: en/dynatrace-intelligence/copilot/copilot-data-privacy.md
-      - Запросы на естественном языке: en/dynatrace-intelligence/copilot/quick-analysis-copilot-dql.md
-    - Проблемы Davis: en/dynatrace-intelligence/davis-problems-app.md
+      - Обзор: ru/dynatrace-intelligence/copilot.md
+      - Dynatrace Assist: ru/dynatrace-intelligence/copilot/chat-with-davis-copilot.md
+      - Начало работы: ru/dynatrace-intelligence/copilot/copilot-getting-started.md
+      - Конфиденциальность: ru/dynatrace-intelligence/copilot/copilot-data-privacy.md
+      - Запросы на естественном языке: ru/dynatrace-intelligence/copilot/quick-analysis-copilot-dql.md
+    - Проблемы Davis: ru/dynatrace-intelligence/davis-problems-app.md
     - Анализ первопричин:
-      - Обзор: en/dynatrace-intelligence/root-cause-analysis.md
-      - Концепции: en/dynatrace-intelligence/root-cause-analysis/concepts.md
-      - Анализ событий: en/dynatrace-intelligence/root-cause-analysis/event-analysis-and-correlation.md
-    - Интеграции: en/dynatrace-intelligence/dynatrace-intelligence-integrations.md
+      - Обзор: ru/dynatrace-intelligence/root-cause-analysis.md
+      - Концепции: ru/dynatrace-intelligence/root-cause-analysis/concepts.md
+      - Анализ событий: ru/dynatrace-intelligence/root-cause-analysis/event-analysis-and-correlation.md
+    - Интеграции: ru/dynatrace-intelligence/dynatrace-intelligence-integrations.md
     - Справочник:
-      - AI модели: en/dynatrace-intelligence/reference/ai-models.md
-      - Лимиты: en/dynatrace-intelligence/reference/davis-ai-limits.md
+      - AI модели: ru/dynatrace-intelligence/reference/ai-models.md
+      - Лимиты: ru/dynatrace-intelligence/reference/davis-ai-limits.md
 
   # --- АНАЛИЗ И АВТОМАТИЗАЦИЯ ---
   - Анализ и автоматизация:
     - Дашборды и ноутбуки:
-      - Дашборды: en/analyze-explore-automate/dashboards-and-notebooks/dashboards-new.md
-      - API: en/analyze-explore-automate/dashboards-and-notebooks/document-api.md
-      - Версии документов: en/analyze-explore-automate/dashboards-and-notebooks/document-version.md
-      - Визуализации: en/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations.md
-      - Обзор данных: en/analyze-explore-automate/dashboards-and-notebooks/explore-data.md
+      - Дашборды: ru/analyze-explore-automate/dashboards-and-notebooks/dashboards-new.md
+      - API: ru/analyze-explore-automate/dashboards-and-notebooks/document-api.md
+      - Версии документов: ru/analyze-explore-automate/dashboards-and-notebooks/document-version.md
+      - Визуализации: ru/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations.md
+      - Обзор данных: ru/analyze-explore-automate/dashboards-and-notebooks/explore-data.md
     - Логи:
-      - Log Analytics: en/analyze-explore-automate/logs.md
-      - Приложение журналов: en/analyze-explore-automate/logs/lma-logs-app.md
-      - Фильтры: en/analyze-explore-automate/logs/lma-logs-app/facets.md
-      - Запросы: en/analyze-explore-automate/logs/lma-logs-app/query-and-filter.md
-    - Обозреватель данных: en/analyze-explore-automate/explorer.md
-    - Smartscape: en/analyze-explore-automate/smartscape.md
-    - Workflows: en/analyze-explore-automate/workflows.md
-    - Уведомления: en/analyze-explore-automate/notifications-and-alerting/problem-notifications.md
+      - Log Analytics: ru/analyze-explore-automate/logs.md
+      - Приложение журналов: ru/analyze-explore-automate/logs/lma-logs-app.md
+      - Фильтры: ru/analyze-explore-automate/logs/lma-logs-app/facets.md
+      - Запросы: ru/analyze-explore-automate/logs/lma-logs-app/query-and-filter.md
+    - Обозреватель данных: ru/analyze-explore-automate/explorer.md
+    - Smartscape: ru/analyze-explore-automate/smartscape.md
+    - Workflows: ru/analyze-explore-automate/workflows.md
+    - Уведомления: ru/analyze-explore-automate/notifications-and-alerting/problem-notifications.md
     - Соответствие требованиям: ru/analyze-explore-automate/compliance-and-resilience.md
 
   # --- ИСТОЧНИКИ ДАННЫХ ---
   - Источники данных:
-    - Обзор: en/ingest-from.md
-    - Расширения: en/ingest-from/extensions.md
-    - OneAgent — установка: en/ingest-from/dynatrace-oneagent/installation-and-operation.md
+    - Обзор: ru/ingest-from.md
+    - Расширения: ru/ingest-from/extensions.md
+    - OneAgent — установка: ru/ingest-from/dynatrace-oneagent/installation-and-operation.md
 
   # --- DELIVER (CI/CD) ---
   - Deliver:
     - Configuration as Code:
-      - Обзор: en/deliver/configuration-as-code.md
+      - Обзор: ru/deliver/configuration-as-code.md
       - Monaco:
         - API и разрешения: ru/deliver/configuration-as-code/monaco/monaco-api-support-and-access-handling.md
-        - Концепции: en/deliver/configuration-as-code/monaco/monaco-concepts.md
-        - Начало работы: en/deliver/configuration-as-code/monaco/monaco-getting-started.md
+        - Концепции: ru/deliver/configuration-as-code/monaco/monaco-concepts.md
+        - Начало работы: ru/deliver/configuration-as-code/monaco/monaco-getting-started.md
       - Terraform:
-        - API и разрешения: en/deliver/configuration-as-code/terraform/terraform-api-support-access-permission-handling.md
-        - CLI команды: en/deliver/configuration-as-code/terraform/terraform-cli-commands.md
+        - API и разрешения: ru/deliver/configuration-as-code/terraform/terraform-api-support-access-permission-handling.md
+        - CLI команды: ru/deliver/configuration-as-code/terraform/terraform-cli-commands.md
     - SLO:
-      - Обзор: en/deliver/service-level-objectives.md
-      - Создание SLO: en/deliver/service-level-objectives/create-slo.md
+      - Обзор: ru/deliver/service-level-objectives.md
+      - Создание SLO: ru/deliver/service-level-objectives/create-slo.md
     - Site Reliability Guardian:
-      - Обзор: en/deliver/site-reliability-guardian.md
-      - Структура событий: en/deliver/site-reliability-guardian/event-structure.md
-    - Ownership: en/deliver/ownership-app.md
+      - Обзор: ru/deliver/site-reliability-guardian.md
+      - Структура событий: ru/deliver/site-reliability-guardian/event-structure.md
+    - Ownership: ru/deliver/ownership-app.md
     - Мониторинг релизов:
-      - Обзор: en/deliver/release-monitoring.md
-      - Мониторинг релизов: en/deliver/release-monitoring/monitor-releases-with-dynatrace.md
-    - Валидация релизов: en/deliver/quality-gates.md
+      - Обзор: ru/deliver/release-monitoring.md
+      - Мониторинг релизов: ru/deliver/release-monitoring/monitor-releases-with-dynatrace.md
+    - Валидация релизов: ru/deliver/quality-gates.md
 
   # --- БЕЗОПАСНОСТЬ ---
   - Безопасность:
-    - Наблюдаемость угроз: en/secure/threat-observability.md
-    - Интеграция: en/secure/threat-observability/security-events-ingest.md
+    - Наблюдаемость угроз: ru/secure/threat-observability.md
+    - Интеграция: ru/secure/threat-observability/security-events-ingest.md
 
   # --- УПРАВЛЕНИЕ ---
   - Управление:
-    - Hub: en/manage/hub.md
+    - Hub: ru/manage/hub.md
     - Лицензирование:
       - Лицензия: ru/license.md
-      - Возможности DPS: en/license/capabilities.md
-      - Биллинг: en/license/billing-reports.md
-      - Бюджетные оповещения: en/license/budget-alerts.md
-      - Жизненный цикл: en/license/license-lifecycle.md
-      - Разрешения DPS: en/license/dps-permissions.md
+      - Возможности DPS: ru/license/capabilities.md
+      - Биллинг: ru/license/billing-reports.md
+      - Бюджетные оповещения: ru/license/budget-alerts.md
+      - Жизненный цикл: ru/license/license-lifecycle.md
+      - Разрешения DPS: ru/license/dps-permissions.md
 
   # --- API ---
   - API:
     - Обзор API: ru/dynatrace-api.md
-    - Dynatrace Intelligence: en/dynatrace-intelligence.md
+    - Dynatrace Intelligence: ru/dynatrace-intelligence.md
 
   # --- ЧТО НОВОГО ---
   - Что нового:
-    - Обзор: en/whats-new.md
-    - SaaS: en/whats-new/saas.md
-    - OneAgent: en/whats-new/oneagent.md
-    - ActiveGate: en/whats-new/activegate.md
+    - Обзор: ru/whats-new.md
+    - SaaS: ru/whats-new/saas.md
+    - OneAgent: ru/whats-new/oneagent.md
+    - ActiveGate: ru/whats-new/activegate.md
 
   # --- AI ПОМОЩНИК ---
   - AI Помощник: ai/groq.md

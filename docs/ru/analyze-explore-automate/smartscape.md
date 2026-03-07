@@ -1,0 +1,92 @@
+---
+title: Smartscape
+source: https://www.dynatrace.com/docs/analyze-explore-automate/smartscape
+scraped: 2026-03-01T21:20:36.536218
+---
+
+# Smartscape
+
+# Smartscape
+
+* Последняя версия Dynatrace
+* Обзор
+* Чтение: 5 мин
+* Опубликовано 28 января 2026
+
+## Предварительные требования
+
+### Разрешения
+
+В следующей таблице описаны необходимые разрешения.
+
+storage:buckets:read
+
+Необходимо для чтения проблем из 'dt.davis.problems'
+
+storage:smartscape:read
+
+Чтение данных из таблицы Grail "smartscape"
+
+storage:events:read
+
+Разрешение на события необходимо для запроса проблем
+
+storage:filter-segments:read
+
+Разрешение на чтение сегментов фильтров
+
+storage:metrics:read
+
+Необходимо для отображения метрик сущностей
+
+storage:spans:read
+
+Необходимо для чтения переменных сегментов
+
+storage:logs:read
+
+Необходимо для чтения переменных сегментов
+
+storage:security.events:read
+
+Необходимо для чтения переменных сегментов
+
+storage:bizevents:read
+
+Необходимо для чтения переменных сегментов
+
+storage:entities:read
+
+Необходимо для чтения переменных сегментов
+
+## Начало работы
+
+![Smartscape](https://dt-cdn.net/images/smartscapes-256-eb41c7cddc.png "Smartscape") **Smartscape** -- это интерактивная карта вашей цифровой экосистемы, работающая на основе [**Smartscape on Grail**](/docs/platform/grail/smartscape-on-grail "Learn about Smartscape on Grail features and how Smartscape uses the power of DQL."). Используйте её для визуального анализа топологии и взаимосвязей между всеми вашими сущностями в реальном времени с помощью настраиваемых представлений и модальных окон ![Smartscape](https://dt-cdn.net/images/smartscapes-256-eb41c7cddc.png "Smartscape") **Smartscape**.
+
+![Получите полную картину с представлением всех ваших цифровых систем в реальном времени.](https://cdn.hub.central.dynatrace.com/hub/console/drafts/197/media/ScreenShot_Hub_-_Image_1.png)![Мгновенная аналитика по предметным областям без необходимости настройки.](https://cdn.hub.central.dynatrace.com/hub/console/drafts/114/media/Smartscape_Hub_-_Image_2.png)![Обнаруживайте скрытые закономерности с помощью многомерной визуальной аналитики.](https://cdn.hub.central.dynatrace.com/hub/console/drafts/114/media/Smartscape_Hub_-_Image_3.png)![Оценивайте и визуализируйте влияние и зону поражения проблем.](https://cdn.hub.central.dynatrace.com/hub/console/drafts/114/media/Smartscape_Hub_-_Image_4.png)
+
+1 из 4 -- Получите полную картину с представлением всех ваших цифровых систем в реальном времени.
+
+## Концепции
+
+Ознакомьтесь со следующими темами, чтобы лучше понять [концепции Smartscape](/docs/analyze-explore-automate/smartscape/smartscape-concepts "Learn about Smartscape-specific concepts and UI capabilities.") и возможности ![Smartscape](https://dt-cdn.net/images/smartscapes-256-eb41c7cddc.png "Smartscape") **Smartscape**.
+
+[01Концепции Smartscape
+
+* Объяснение
+* Узнайте о концепциях и возможностях пользовательского интерфейса Smartscape.](/docs/analyze-explore-automate/smartscape/smartscape-concepts)[02Модальные окна Smartscape
+
+* Обзор
+* Используйте модальные окна Smartscape для визуализации вашей среды в любом приложении Dynatrace и получения информации о решении проблем и зависимостях сервисов](/docs/analyze-explore-automate/smartscape/smartscape-modals)[03Представления Smartscape
+
+* Обзор
+* Визуализируйте вашу среду с помощью настраиваемых представлений Smartscape, чтобы получить информацию о взаимосвязях и зависимостях между вашими сервисами.](/docs/analyze-explore-automate/smartscape/smartscape-views)
+
+## Сценарии использования
+
+* **Smartscape on Grail:** Исследуйте всю вашу цифровую экосистему комплексно с помощью унифицированной модели, которая связывает всё -- от сервисов до инфраструктуры -- для полного архитектурного контекста.
+* **Обзор облаков:** Получите унифицированную топологию экземпляров AWS EC2 и окружающих компонентов в реальном времени для анализа состояния безопасности, оптимизации затрат и проверки архитектуры.
+* **Kubernetes:** Получите полную видимость стека, отображая кластеры, пространства имён и компоненты. Обнаруживайте ошибки конфигурации и устраняйте проблемы в рабочих нагрузках.
+* **Граф проблем:** Мгновенно определяйте первопричину и зону поражения, сопоставляя аномалии с затронутыми сущностями и цепочками зависимостей.
+* **Граф зависимостей сервисов:** Отслеживайте потоки вызовов, изолируйте узкие места производительности и выявляйте неожиданные пути коммуникации для повышения надёжности сервисов.
+* **Инфраструктура:** Навигируйте по карте хостов, виртуальных машин и сетевых взаимосвязей в реальном времени для проверки архитектуры, диагностики инфраструктурных проблем и выявления узких мест или отклонений.
