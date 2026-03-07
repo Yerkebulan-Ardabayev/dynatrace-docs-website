@@ -90,12 +90,12 @@ function createChatWidget() {
         <div id="chat-container" class="chat-container" style="display: none;">
             <div class="chat-header">
                 <h3>🚀 AI-Ассистент Groq</h3>
-                <span style="font-size: 0.8em; opacity: 0.8;">Llama 3.1 70B • Мгновенные ответы</span>
+                <span style="font-size: 0.8em; opacity: 0.8;">Llama 3.3 70B • Мгновенные ответы</span>
                 <button id="chat-close">&times;</button>
             </div>
             <div id="chat-messages" class="chat-messages">
                 <div class="message bot-message">
-                    <p>👋 Привет! Я ваш супер-быстрый AI-помощник на базе <strong>Groq Llama 3.1 70B</strong>!</p>
+                    <p>👋 Привет! Я ваш супер-быстрый AI-помощник на базе <strong>Groq Llama 3.3 70B</strong>!</p>
                     <p><em>Спрашивайте что угодно о Dynatrace - отвечу мгновенно! ⚡</em></p>
                     <p style="font-size: 0.9em; opacity: 0.7;">Отвечаю на русском или английском.</p>
                 </div>
