@@ -8,7 +8,7 @@ on:
       - 'docs/**'
       - 'mkdocs.yml'
       - '.github/workflows/deploy.yml'
-  workflow_dispatch:  # Allow manual trigger
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -16,48 +16,88 @@ permissions:
   id-token: write
 
 jobs:
-  deploy:
+  validate:
     runs-on: ubuntu-latest
-    
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 0  # Fetch all history for git info
-      
+
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
           cache: 'pip'
-      
+
       - name: Install dependencies
         run: |
           pip install --upgrade pip
-          pip install mkdocs-material>=9.5.0
-          pip install pymdown-extensions>=10.7
-      
-      - name: Build site
+          pip install mkdocs-material>=9.5.0 pymdown-extensions>=10.7 pyyaml>=6.0
+
+      - name: Run documentation tests
+        run: python scripts/quality/test_docs.py
+
+      - name: Run pipeline validation
         run: |
-          echo "🏗️ Building MkDocs site..."
-          mkdocs build
-          echo "✅ Build completed!"
-      
+          python -c "
+          import sys
+          sys.path.insert(0, 'scripts')
+          from pipeline.validator import DocumentValidator, NavValidator
+          from pipeline.config import DOCS_DIR, MKDOCS_CONFIG
+
+          dv = DocumentValidator(DOCS_DIR)
+          issues = dv.validate_all()
+          nv = NavValidator(MKDOCS_CONFIG, DOCS_DIR)
+          nav_issues = nv.validate()
+
+          errors = [i for i in issues + nav_issues if i.severity == 'error']
+          print(f'Validation: {len(errors)} errors, {len(issues) + len(nav_issues) - len(errors)} warnings')
+
+          for e in errors[:10]:
+              print(f'  ERROR: {e}')
+
+          if errors:
+              print('WARNING: Errors found but continuing deploy')
+          "
+
+  deploy:
+    needs: validate
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: |
+          pip install --upgrade pip
+          pip install mkdocs-material>=9.5.0 pymdown-extensions>=10.7
+
+      - name: Build site
+        run: mkdocs build
+
       - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
+        uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./site
           publish_branch: gh-pages
           user_name: 'github-actions[bot]'
           user_email: 'github-actions[bot]@users.noreply.github.com'
-          commit_message: '🚀 Deploy documentation'
-      
+          commit_message: 'deploy: update documentation'
+
       - name: Create summary
         if: always()
         run: |
-          echo "# 🚀 Deployment Summary" >> $GITHUB_STEP_SUMMARY
+          echo "# Deployment Summary" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
-          echo "✅ **Status:** Site deployed" >> $GITHUB_STEP_SUMMARY
-          echo "🌐 **URL:** https://$(echo ${{ github.repository }} | cut -d'/' -f1).github.io/$(echo ${{ github.repository }} | cut -d'/' -f2)/" >> $GITHUB_STEP_SUMMARY
-          echo "⏰ **Deployed at:** $(date)" >> $GITHUB_STEP_SUMMARY
+          echo "**Status:** Site deployed" >> $GITHUB_STEP_SUMMARY
+          echo "**URL:** https://$(echo ${{ github.repository }} | cut -d'/' -f1).github.io/$(echo ${{ github.repository }} | cut -d'/' -f2)/" >> $GITHUB_STEP_SUMMARY
+          echo "**Time:** $(date -u)" >> $GITHUB_STEP_SUMMARY

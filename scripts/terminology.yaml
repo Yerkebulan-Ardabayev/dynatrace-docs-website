@@ -1,0 +1,198 @@
+# Dynatrace Terminology Dictionary
+# Used by translation pipeline for consistent terminology
+# Format: english_term: russian_translation
+# Terms marked with "KEEP" should NOT be translated
+
+# === Product Names (DO NOT TRANSLATE) ===
+keep_as_is:
+  - Dynatrace
+  - OneAgent
+  - ActiveGate
+  - Grail
+  - Davis
+  - Davis AI
+  - DQL
+  - Monaco
+  - Smartscape
+  - OpenPipeline
+  - AppEngine
+  - SaaS
+  - Managed
+  - Hub
+  - SLO
+  - SLI
+  - SRG
+  - DPS
+  - USQL
+  - RUM
+  - Synthetic
+  - OneAgent
+  - ActiveGate
+  - Environment
+  - API Explorer
+  - Dynatrace Intelligence
+  - Davis Copilot
+  - Davis CoPilot
+  - Site Reliability Guardian
+  - OpenTelemetry
+  - OpenTracing
+  - Kubernetes
+  - Docker
+  - AWS
+  - Azure
+  - GCP
+  - Google Cloud
+  - Terraform
+  - GitHub
+  - GitLab
+  - Jenkins
+  - Ansible
+  - Cloudflare
+  - NGINX
+  - Apache
+  - REST API
+  - OAuth
+  - OAuth 2.0
+  - HTTPS
+  - HTTP
+  - JSON
+  - YAML
+  - XML
+  - CSV
+  - SQL
+  - NoSQL
+  - gRPC
+  - GraphQL
+  - Webhook
+  - SDK
+  - CLI
+  - IDE
+  - CI/CD
+  - DevOps
+  - SRE
+  - ITSM
+  - CMDB
+
+# === Standard Translations ===
+translations:
+  observability: наблюдаемость
+  monitoring: мониторинг
+  dashboard: дашборд
+  dashboards: дашборды
+  notebook: ноутбук
+  notebooks: ноутбуки
+  workflow: воркфлоу
+  workflows: воркфлоу
+  deployment: развёртывание
+  host: хост
+  hosts: хосты
+  entity: сущность
+  entities: сущности
+  metric: метрика
+  metrics: метрики
+  log: лог
+  logs: логи
+  trace: трейс
+  traces: трейсы
+  span: спан
+  spans: спаны
+  event: событие
+  events: события
+  problem: проблема
+  problems: проблемы
+  alert: оповещение
+  alerts: оповещения
+  notification: уведомление
+  notifications: уведомления
+  threshold: порог
+  thresholds: пороги
+  baseline: базовая линия
+  baselines: базовые линии
+  anomaly detection: обнаружение аномалий
+  root cause analysis: анализ первопричин
+  ingestion: ввод данных
+  ingest: ввод
+  extension: расширение
+  extensions: расширения
+  configuration: конфигурация
+  settings: настройки
+  permission: разрешение
+  permissions: разрешения
+  scope: область видимости
+  environment: окружение
+  tenant: тенант
+  cluster: кластер
+  release: релиз
+  releases: релизы
+  version: версия
+  versions: версии
+  token: токен
+  tokens: токены
+  credential: учётные данные
+  credentials: учётные данные
+  credential vault: хранилище учётных данных
+  process group: группа процессов
+  process groups: группы процессов
+  service: сервис
+  services: сервисы
+  application: приложение
+  applications: приложения
+  integration: интеграция
+  integrations: интеграции
+  plugin: плагин
+  plugins: плагины
+  tag: тег
+  tags: теги
+  management zone: зона управления
+  management zones: зоны управления
+  network zone: сетевая зона
+  network zones: сетевые зоны
+  data explorer: обозреватель данных
+  audit log: журнал аудита
+  audit logs: журналы аудита
+  billing: биллинг
+  license: лицензия
+  subscription: подписка
+  digital experience: цифровой опыт
+  infrastructure: инфраструктура
+  security: безопасность
+  vulnerability: уязвимость
+  vulnerabilities: уязвимости
+  attack: атака
+  attacks: атаки
+  threat: угроза
+  threats: угрозы
+  compliance: соответствие требованиям
+  backup: резервное копирование
+  cluster node: узел кластера
+  cluster nodes: узлы кластера
+  auto-update: автообновление
+  request attribute: атрибут запроса
+  request attributes: атрибуты запросов
+  calculated metric: расчётная метрика
+  calculated metrics: расчётные метрики
+  custom service: пользовательский сервис
+  custom services: пользовательские сервисы
+  failure detection: обнаружение сбоев
+  data privacy: защита данных
+  remote environment: удалённая среда
+  remote environments: удалённые среды
+  deployment: развёртывание
+  release monitoring: мониторинг релизов
+  ownership: владение
+  service-level objective: цель уровня обслуживания
+  configuration as code: конфигурация как код
+  distributed tracing: распределённая трассировка
+  synthetic monitoring: синтетический мониторинг
+  real user monitoring: мониторинг реальных пользователей
+  cloud platform monitoring: мониторинг облачных платформ
+  container platform monitoring: мониторинг контейнерных платформ
+  database monitoring: мониторинг баз данных
+  log analytics: аналитика логов
+  log management: управление логами
+
+# === Phrases to normalize ===
+normalize:
+  "автобобновление": "автообновление"
+  "автобобновления": "автообновления"
+  "Дайнатрейс": "Dynatrace"

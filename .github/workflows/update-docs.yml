@@ -1,21 +1,87 @@
-name: Update Documentation
+name: Update & Translate Documentation
 
 on:
   schedule:
-    # Runs every day at 02:00 (UTC+5 = Kazakhstan time)
-    - cron: '0 21 * * *'  # 21:00 UTC = 02:00 UTC+5
-  workflow_dispatch:  # Allow manual trigger
-  push:
-    branches:
-      - main
-    paths:
-      - 'scripts/scrape_docs.py'
-      - '.github/workflows/update-docs.yml'
+    # Daily at 02:00 Kazakhstan time (UTC+5) = 21:00 UTC
+    - cron: '0 21 * * *'
+  workflow_dispatch:
+    inputs:
+      force_retranslate:
+        description: 'Force re-translate all pages'
+        type: boolean
+        default: false
+      max_pages:
+        description: 'Max pages to scrape'
+        type: number
+        default: 1000
+      skip_scrape:
+        description: 'Skip scraping, only translate'
+        type: boolean
+        default: false
+
+concurrency:
+  group: update-docs
+  cancel-in-progress: false
 
 jobs:
-  update-docs:
+  # ===== STAGE 1: Scrape =====
+  scrape:
+    if: ${{ !inputs.skip_scrape }}
     runs-on: ubuntu-latest
-    timeout-minutes: 60
+    timeout-minutes: 30
+    permissions:
+      contents: write
+
+    outputs:
+      has_changes: ${{ steps.check.outputs.has_changes }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: |
+          pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Scrape documentation
+        id: scrape
+        run: |
+          echo "=== Scraping Dynatrace documentation ==="
+          cd scripts
+          python scrape_docs.py --max-pages ${{ inputs.max_pages || 1000 }} 2>&1 | tail -20
+          echo "scrape_done=true" >> $GITHUB_OUTPUT
+
+      - name: Organize files
+        if: steps.scrape.outputs.scrape_done == 'true'
+        run: |
+          if [ -f scripts/organize_docs.py ]; then
+            python scripts/organize_docs.py
+          fi
+
+      - name: Check for changes
+        id: check
+        run: |
+          if git diff --quiet docs/en/ 2>/dev/null; then
+            echo "has_changes=false" >> $GITHUB_OUTPUT
+            echo "No new content found"
+          else
+            echo "has_changes=true" >> $GITHUB_OUTPUT
+            echo "New content detected"
+          fi
+
+  # ===== STAGE 2: Translate =====
+  translate:
+    needs: scrape
+    if: always() && (needs.scrape.outputs.has_changes == 'true' || inputs.skip_scrape || inputs.force_retranslate)
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
     permissions:
       contents: write
 
@@ -34,118 +100,60 @@ jobs:
           pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Scrape documentation
-        continue-on-error: true
-        id: scrape
+      - name: Translate to Russian
+        id: translate
         run: |
-          echo "Starting documentation scrape..."
-          cd scripts
-          python scrape_docs.py --max-pages 1000 --output ../temp_docs
-          echo "Scraping completed!"
+          echo "=== Translating documentation ==="
+          python -c "
+          import sys
+          sys.path.insert(0, 'scripts')
+          from pipeline.translator import TranslationPipeline
+          from pipeline.config import DOCS_EN, DOCS_RU, CACHE_DIR, TERMINOLOGY_FILE
 
-      - name: Organize documentation
-        if: steps.scrape.outcome == 'success'
-        run: |
-          echo "Organizing documentation..."
-          cd scripts
-          python organize_docs.py --source ../temp_docs --target ../docs/en
-          echo "Organization completed!"
+          pipeline = TranslationPipeline(CACHE_DIR, TERMINOLOGY_FILE)
+          if not pipeline.providers:
+              print('WARNING: No translation providers. Set API keys.')
+              sys.exit(0)
 
-      - name: Translate to Russian (Groq Llama 3.1 70B)
-        if: steps.scrape.outcome == 'success'
-        continue-on-error: true
-        timeout-minutes: 30
+          stats = pipeline.translate_directory(DOCS_EN, DOCS_RU, 'ru')
+          print(f'Translated: {stats[\"translated\"]}, Failed: {stats[\"failed\"]}, Skipped: {stats[\"skipped\"]}')
+          " 2>&1 || echo "Translation completed with warnings"
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
-        run: |
-          echo "Translating to Russian (Gemini Flash primary, Groq fallback)..."
-          cd scripts
-          timeout 1740 python translate_docs_groq.py || echo "Translation timed out (partial translation saved)"
-          echo "Translation step completed!"
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+        timeout-minutes: 40
 
       - name: Validate translations
-        if: steps.scrape.outcome == 'success'
-        continue-on-error: true
         run: |
-          echo "Validating translation quality..."
-          cd scripts
-          python validate_translations.py --ru-dir ../docs/ru --en-dir ../docs/en || echo "Validation found issues (non-blocking)"
-          echo "Validation completed!"
+          python -c "
+          import sys, json
+          sys.path.insert(0, 'scripts')
+          from pipeline.validator import DocumentValidator
+          from pipeline.config import DOCS_DIR
 
-      - name: Generate NotebookLM sources
-        if: steps.scrape.outcome == 'success'
-        run: |
-          echo "Generating combined docs for Google NotebookLM RAG..."
-          python scripts/generate_notebooklm.py
-          echo "NotebookLM sources generated!"
+          v = DocumentValidator(DOCS_DIR)
+          issues = v.validate_all()
+          errors = [i for i in issues if i.severity == 'error']
+          print(f'Validation: {len(errors)} errors, {len(issues) - len(errors)} warnings')
+          for e in errors[:10]:
+              print(f'  {e}')
+          "
 
-      - name: Sanitize secrets from scraped content
-        if: steps.scrape.outcome == 'success'
+      - name: Sanitize secrets
         run: |
-          echo "Sanitizing documentation examples that trigger GitHub Push Protection..."
-          python scripts/sanitize_secrets.py --docs-dir docs
-          echo "Sanitization completed!"
-
-      - name: Clean up temporary files
-        if: always()
-        run: |
-          rm -rf temp_docs
-          echo "Cleanup completed!"
-
-      - name: Check for changes
-        id: changes
-        run: |
-          git config --global user.name 'Documentation Bot'
-          git config --global user.email 'bot@github-actions'
-          git add docs/
-          if git diff --staged --quiet; then
-            echo "changed=false" >> $GITHUB_OUTPUT
-            echo "No changes detected"
-          else
-            echo "changed=true" >> $GITHUB_OUTPUT
-            CHANGED_FILES=$(git diff --staged --name-only | wc -l)
-            echo "changed_count=$CHANGED_FILES" >> $GITHUB_OUTPUT
-            echo "Detected $CHANGED_FILES changed files"
+          if [ -f scripts/sanitize_secrets.py ]; then
+            python scripts/sanitize_secrets.py
           fi
 
-      - name: Commit changes
-        if: steps.changes.outputs.changed == 'true'
-        run: |
-          DATE=$(date +'%Y-%m-%d %H:%M')
-          FILES_COUNT=${{ steps.changes.outputs.changed_count }}
-          git commit -m "Auto-update: $DATE ($FILES_COUNT files)"
+      - name: Run documentation tests
+        run: python scripts/quality/test_docs.py || true
 
-      - name: Push changes
-        if: steps.changes.outputs.changed == 'true'
-        uses: ad-m/github-push-action@v0.8.0
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: main
-          force: false
-          rebase: true
-
-      - name: Create summary
-        if: always()
-        run: |
-          echo "# Documentation Update Summary" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-          if [ "${{ steps.scrape.outcome }}" == "failure" ]; then
-            echo "**Scrape:** Failed (site may be blocking requests)" >> $GITHUB_STEP_SUMMARY
-          elif [ "${{ steps.changes.outputs.changed }}" == "true" ]; then
-            echo "**Status:** Documentation updated" >> $GITHUB_STEP_SUMMARY
-            echo "**Files changed:** ${{ steps.changes.outputs.changed_count }}" >> $GITHUB_STEP_SUMMARY
-          else
-            echo "**Status:** No changes detected" >> $GITHUB_STEP_SUMMARY
-            echo "**Files changed:** 0" >> $GITHUB_STEP_SUMMARY
-          fi
-          echo "" >> $GITHUB_STEP_SUMMARY
-          echo "**Last run:** $(date)" >> $GITHUB_STEP_SUMMARY
-
+  # ===== STAGE 3: Commit & Deploy =====
   deploy:
-    needs: update-docs
+    needs: translate
+    if: always() && needs.translate.result == 'success'
     runs-on: ubuntu-latest
-    timeout-minutes: 10
     permissions:
       contents: write
       pages: write
@@ -155,7 +163,6 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          ref: main
           fetch-depth: 0
 
       - name: Set up Python
@@ -164,20 +171,39 @@ jobs:
           python-version: '3.11'
           cache: 'pip'
 
-      - name: Install MkDocs
+      - name: Install dependencies
         run: |
           pip install --upgrade pip
           pip install mkdocs-material>=9.5.0 pymdown-extensions>=10.7
 
-      - name: Build site
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add docs/ scripts/.translation_cache/ mkdocs.yml
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "docs: auto-update $(date +%Y-%m-%d)"
+            git push
+          fi
+
+      - name: Build MkDocs
         run: mkdocs build
 
       - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
+        uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./site
           publish_branch: gh-pages
           user_name: 'github-actions[bot]'
           user_email: 'github-actions[bot]@users.noreply.github.com'
-          commit_message: 'Deploy documentation'
+          commit_message: 'deploy: auto-update documentation'
+
+      - name: Summary
+        if: always()
+        run: |
+          echo "# Documentation Update Summary" >> $GITHUB_STEP_SUMMARY
+          echo "**Date:** $(date -u)" >> $GITHUB_STEP_SUMMARY
+          echo "**Trigger:** ${{ github.event_name }}" >> $GITHUB_STEP_SUMMARY
