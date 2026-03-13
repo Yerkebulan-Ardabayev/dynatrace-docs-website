@@ -1,0 +1,64 @@
+---
+title: Configure the beacon origin allowlist
+source: https://www.dynatrace.com/docs/observe/digital-experience/new-rum-experience/web-frontends/additional-configuration/configure-beacon-origin-allowlist
+scraped: 2026-03-06T21:29:05.716000
+---
+
+# Настройка списка разрешённых источников для beacon-запросов
+
+# Настройка списка разрешённых источников для beacon-запросов
+
+* Latest Dynatrace
+* How-to guide
+* Published Feb 04, 2026
+
+Чтобы предотвратить отправку данных RUM из ненадёжных источников, Dynatrace предоставляет список разрешённых источников для beacon-запросов. Настроив его, вы ограничиваете кросс-доменные RUM-beacon-запросы только теми источниками, которые вы явно одобрили.
+
+## Описание same-origin и cross-origin RUM-beacon-запросов
+
+RUM JavaScript передаёт собранные данные в Dynatrace, отправляя beacon-запросы на [конечную точку beacon-запросов](/docs/observe/digital-experience/new-rum-experience/web-frontends/initial-setup/configure-beacon-endpoint "Узнайте, как настроить конечную точку beacon-запросов для веб-фронтендов в соответствии с вашими требованиями."). Эти beacon-запросы могут быть same-origin или cross-origin в зависимости от метода инструментирования и дополнительной конфигурации.
+
+Термин [origin](https://developer.mozilla.org/en-US/docs/Glossary/Origin) обозначает протокол, хост и порт URL-адреса. Запрос считается same-origin, когда протокол, хост и порт страницы, отправляющей запрос, полностью совпадают с параметрами запрашиваемого ресурса.
+
+### Безагентные фронтенды
+
+При использовании [безагентного мониторинга](/docs/observe/digital-experience/new-rum-experience/web-frontends/initial-setup/set-up-agentless-monitoring "Узнайте, как настроить безагентный RUM для ваших веб-фронтендов в New RUM Experience.") RUM-beacon-запросы отправляются на Cluster ActiveGate, который является частью SaaS-инфраструктуры Dynatrace. Эти beacon-запросы являются cross-origin.
+
+### Автоматически инжектируемые фронтенды
+
+Когда RUM JavaScript [инжектируется автоматически](/docs/observe/digital-experience/new-rum-experience/web-frontends/initial-setup/set-up-auto-injected-frontend "Узнайте, как настроить автоматически инжектируемый веб-фронтенд в New RUM Experience."), RUM-beacon-запросы по умолчанию отправляются обратно на веб-сервер или сервер приложений, на котором размещён фронтенд, где OneAgent предоставляет конечную точку для beacon-запросов. Это same-origin beacon-запросы.
+
+Вы можете настроить альтернативные конфигурации конечных точек для beacon-запросов, при которых beacon-запросы [отправляются на Cluster ActiveGate](/docs/observe/digital-experience/new-rum-experience/web-frontends/initial-setup/configure-beacon-endpoint#auto-injected-to-saas-infrastructure "Узнайте, как настроить конечную точку beacon-запросов для веб-фронтендов в соответствии с вашими требованиями.") или [на другой инструментированный веб-сервер в другом домене](/docs/observe/digital-experience/new-rum-experience/web-frontends/initial-setup/configure-beacon-endpoint#auto-injected-to-different-server "Узнайте, как настроить конечную точку beacon-запросов для веб-фронтендов в соответствии с вашими требованиями."). Поскольку эти конечные точки используют другой домен, beacon-запросы являются cross-origin.
+
+## Обработка CORS для beacon-запросов по умолчанию
+
+Браузеры применяют политику одного источника (same-origin policy), которая по умолчанию разрешает скриптам отправлять запросы только на тот же источник. Для отправки cross-origin запросов необходимо использовать [Cross-Origin Resource Sharing (CORS)](https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/CORS). Этот механизм позволяет серверам указывать, какие источники имеют право доступа к ним. Поэтому cross-origin beacon-запросы должны отправляться с использованием CORS.
+
+При обработке CORS по умолчанию конечная точка beacon-запросов принимает все источники, добавляя заголовок `Access-Control-Allow-Origin` в ответ. Заголовок повторяет источник, указанный в заголовке запроса `Origin`. Затем конечная точка пересылает полезную нагрузку beacon-запроса в Dynatrace.
+
+Если вы отправляете cross-origin beacon-запросы на OneAgent, необходимо включить параметр **Send beacon data via CORS**, чтобы заголовок `Access-Control-Allow-Origin` добавлялся; см. [Отправка beacon-запросов на другой веб-сервер](/docs/observe/digital-experience/new-rum-experience/web-frontends/initial-setup/configure-beacon-endpoint#auto-injected-to-different-server "Узнайте, как настроить конечную точку beacon-запросов для веб-фронтендов в соответствии с вашими требованиями.").
+
+Если разрешающее поведение по умолчанию не соответствует вашим требованиям, используйте список разрешённых источников для beacon-запросов, чтобы указать, какие источники принимаются.
+
+## Добавление правил в список разрешённых источников для beacon-запросов
+
+Чтобы указать, из каких источников OneAgent и Cluster ActiveGate должны принимать RUM-beacon-запросы, добавьте правила в список разрешённых источников для beacon-запросов.
+
+Как только вы добавите первое правило, любой фронтенд, не соответствующий ему, прекратит сбор данных RUM, если его beacon-запросы не отправляются на тот же источник и не обрабатываются OneAgent.
+
+Чтобы добавить правило для источника beacon-запросов
+
+1. Перейдите в ![Settings](https://dt-cdn.net/images/settings-icon-256-38e1321b51.webp "Settings") **Settings** > **Collect and capture** > **Real User Monitoring** > **Frontend** > **Beacon origins for CORS**.
+2. Выберите **Add item**.
+3. В поле **Matcher** выберите **contains**, **starts with**, **ends with** или **equals**.
+4. В поле **Pattern** укажите шаблон, определяющий источник или источники, которые должно принимать правило. Источник состоит из протокола, хоста и порта; порты по умолчанию опускаются.
+
+Вы можете добавить до 20 правил для источников beacon-запросов на одно окружение.
+
+## Как применяется список разрешённых источников для beacon-запросов
+
+Если источник beacon-запроса, указанный в заголовке запроса `Origin`, соответствует одному из правил в списке разрешённых, beacon-запрос принимается. Источник копируется в заголовок ответа `Access-Control-Allow-Origin`, и возвращается код состояния `200 OK`. Полезная нагрузка beacon-запроса пересылается в Dynatrace.
+
+Если же источник не соответствует ни одному правилу в списке разрешённых, beacon-запрос отклоняется с кодом состояния `403 Forbidden`, а его полезная нагрузка отбрасывается.
+
+Список разрешённых источников для beacon-запросов не применяется к same-origin beacon-запросам. Если список разрешённых пуст, применяется поведение по умолчанию, описанное в разделе [Обработка CORS для beacon-запросов по умолчанию](#default-cors-handling).

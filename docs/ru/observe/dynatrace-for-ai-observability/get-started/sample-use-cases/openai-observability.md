@@ -1,0 +1,242 @@
+---
+title: OpenAI Observability
+source: https://www.dynatrace.com/docs/observe/dynatrace-for-ai-observability/get-started/sample-use-cases/openai-observability
+scraped: 2026-02-18T05:43:54.663089
+---
+
+# Наблюдаемость OpenAI
+
+# Наблюдаемость OpenAI
+
+* Последняя версия Dynatrace
+* Руководство
+* Чтение: 6 мин
+* Обновлено 28 января 2026
+
+Dynatrace позволяет предприятиям автоматически собирать, визуализировать и настраивать оповещения о потреблении запросов к API OpenAI, задержках и информации о стабильности в сочетании со всеми другими сервисами, используемыми для создания AI-приложений. Это включает [OpenAI](https://openai.com/), а также [сервисы Azure OpenAI](https://azure.microsoft.com/en-us/products/cognitive-services/openai-service), такие как GPT-3, Codex, DALL-E или ChatGPT.
+
+Пример дашборда ниже визуализирует потребление токенов OpenAI, показывая критические SLO для задержки и доступности, а также наиболее важные метрики генеративного AI-сервиса OpenAI, такие как время отклика, количество ошибок и общее количество запросов.
+
+![Дашборд OpenAI](https://dt-cdn.net/images/dashboard-new-1267-2e968ca9ae.png)
+
+Dynatrace OneAgent автоматически обнаруживает, наблюдает и защищает доступ к OpenAI без какой-либо ручной настройки. Он раскрывает полный контекст используемых технологий, показывает топологию взаимодействия сервисов, анализирует уязвимости безопасности и наблюдает за метриками, трассировками, логами и бизнес-событиями в реальном времени.
+
+В разделах ниже показано, как трассировать запросы к моделям OpenAI/GPT, как отображать ключевые сигналы OpenAI на дашборде и как Dynatrace Intelligence автоматически обнаруживает аномальное поведение сервиса, например, замедление в запросах к OpenAI/GPT, как корневую причину масштабных инцидентов.
+
+## Трассировка запросов к моделям OpenAI
+
+Этот простой пример на Node.js используется для демонстрации того, как Dynatrace OneAgent автоматически трассирует запросы к моделям OpenAI. OpenAI предлагает привязку для языка Node.js, которая позволяет напрямую интегрировать запрос к модели, добавив следующие строки кода в ваше AI-приложение на Node.js:
+
+```
+const { Configuration, OpenAIApi } = require("openai");
+
+
+
+const configuration = new Configuration({
+
+
+
+apiKey: process.env.OPENAI_API_KEY
+
+
+
+});
+
+
+
+const openai = new OpenAIApi(configuration);
+
+
+
+const response = await openai.createCompletion({
+
+
+
+model: "text-davinci-003",
+
+
+
+prompt: "Say hello!",
+
+
+
+temperature: 0,
+
+
+
+max_tokens: 10,
+
+
+
+});
+```
+
+После запуска AI-приложения на сервере с установленным OneAgent, OneAgent автоматически обнаруживает его и собирает трассировки и метрики для всех исходящих запросов.
+
+Автоматическое внедрение кода мониторинга и трассировки работает не только для привязки языка Node.js, но также при использовании прямых HTTPS-запросов в Node.js.
+
+Хотя OpenAI предлагает официальные языковые привязки только для Python и Node.js, существует большой список [языковых привязок от сообщества](https://platform.openai.com/docs/libraries/community-libraries).
+
+OneAgent автоматически мониторит все привязки C#, .NET, Java, Go и Node.js, но мы рекомендуем использовать инструментацию OpenTelemetry для мониторинга привязки OpenAI для Python с помощью Dynatrace.
+
+Пример ниже показывает все трассировки, которые собирает OneAgent, вместе со всеми измерениями задержки и надёжности для каждого исходящего запроса к модели GPT.
+
+![Трассировка Dynatrace с вызовами генеративного сервиса OpenAI](https://dt-cdn.net/images/serviceflow-larger-1920-f08becaeed.png)
+
+Для корректного разделения всех вызовов сервиса OpenAI вам необходимо настроить пользовательское устройство с доменом OpenAI в вашей среде Dynatrace.
+
+1. Перейдите в ![Technologies](https://dt-cdn.net/images/technologies-512-977161d83c.png "Technologies") **Technologies & Processes Classic**.
+2. Выберите **Custom devices**.
+3. Выберите **New Custom Device** из меню в правом верхнем углу страницы.
+
+Пример ниже показывает необходимую конфигурацию для корректной обработки OpenAI.
+
+![Создание пользовательского устройства OpenAI для корректного обнаружения всех запросов к домену OpenAI.](https://dt-cdn.net/images/custom-device-config-1262-6624bc280f.png)
+
+После настройки пользовательского устройства OpenAI, Dynatrace ServiceFlow показывает поток ваших запросов, начиная с вашего сервиса Node.js и вызывая модель OpenAI.
+
+![Dynatrace ServiceFlow, показывающий все трассировки запросов к генеративным AI-сервисам OpenAI.](https://dt-cdn.net/images/serviceflow-new-1558-70f4b2b0fa.png)
+
+Как видно из примера, Dynatrace OneAgent автоматически собирает всю информацию, связанную с задержкой и надёжностью, вместе со всеми трассировками, показывающими, как ваши запросы к OpenAI проходят через граф сервисов.
+
+Бесшовная трассировка запросов к моделям OpenAI позволяет операторам выявлять паттерны поведения в ландшафте ваших AI-сервисов и понимать типичную нагрузку на инфраструктуру.
+
+Эти знания необходимы для дальнейшей оптимизации производительности и стоимости ваших сервисов.
+Добавив несколько строк ручной инструментации в ваш сервис Node.js, OneAgent также фиксирует измерения, связанные со стоимостью, собирая количество используемых разговорных токенов OpenAI.
+Dynatrace предлагает несколько способов захвата содержимого полезной нагрузки запроса, такого как количество токенов OpenAI.
+
+Захват содержимого полезной нагрузки запроса с помощью Dynatrace может быть выполнен путём:
+
+* [Логирования информации и захвата метрик и маппинга трассировок непосредственно из записей логов.](/docs/observe/dynatrace-for-ai-observability/get-started/sample-use-cases/openai-observability#lplogs "Узнайте о Dynatrace для наблюдаемости OpenAI, как Dynatrace наблюдает за SaaS-сервисами OpenAI и многое другое.")
+* [Отправки пользовательских метрик через канал приёма метрик OneAgent.](/docs/observe/dynatrace-for-ai-observability/get-started/sample-use-cases/openai-observability#lpcustom-metrics "Узнайте о Dynatrace для наблюдаемости OpenAI, как Dynatrace наблюдает за SaaS-сервисами OpenAI и многое другое.")
+* [Захвата частей полезной нагрузки запроса с помощью бизнес-событий.](/docs/observe/business-observability/bo-event-processing/bo-processing-classic-pipeline "Обработка данных бизнес-событий в Dynatrace через классический конвейер.")
+
+## Наблюдение за стоимостью запросов OpenAI с помощью логов
+
+Использование логов для сбора и наблюдения за стоимостью запросов OpenAI является простым и мощным инструментом. Оно позволяет владельцу сервиса записать строку лога с помощью стандартного фреймворка логирования Node.js, такого как [Winston](https://www.npmjs.com/package/winston), и собирать и анализировать эти логи в Dynatrace.
+
+Следующий фрагмент кода записывает строку лога Winston, содержащую количество токенов запроса OpenAI.
+
+```
+logger.log('info', `OpenAI response promt_tokens:${response.data.usage.prompt_tokens} completion_tokens:${response.data.usage.completion_tokens} total_tokens:${response.data.usage.total_tokens}`);
+```
+
+Строки логов запросов OpenAI можно просмотреть в средстве просмотра логов Dynatrace.
+
+Мы рекомендуем также включить обогащение контекста трассировки для логов Node.js (перейдите в **Settings** > **Preferences** > **OneAgent features** и включите **Node.js Trace/span context enrichment for logs**) для автоматического сопоставления всех строк логов с их захваченными трассировками запросов.
+
+![Настройка обогащения контекста трассировки](https://dt-cdn.net/images/trace-context-enrichment-1727-8133fcc4b5.png)
+
+При включённой функции **Node.js Trace/span context enrichment for logs** вы получаете удобное сопоставление всех трассировок OpenAI с их строками логов.
+
+![Захват логов OpenAI](https://dt-cdn.net/images/trace-logs-1925-03fb9d7d0f.png)
+
+Используйте правило обработки логов для автоматического извлечения трёх счётчиков токенов в отдельные поля записи лога.
+
+![Обработка логов OpenAI](https://dt-cdn.net/images/log-processing-rule-1925-cb21914d08.png)
+
+После определения правила обработки логов дополнительные правила извлечения метрик помогут преобразовать эти три счётчика токенов в метрики, доступные для построения графиков.
+
+![Извлечение метрик логов OpenAI](https://dt-cdn.net/images/log-metric-extraction-1927-5e25da86ed.png)
+
+## Наблюдение за стоимостью запросов OpenAI путём отправки пользовательских метрик
+
+Каждый запрос к модели OpenAI, такой как text-davinci-003, gpt-3.5-turbo или GPT-4, возвращает информацию о том, сколько токенов было использовано для промпта запроса (длина вашего текстового вопроса) и сколько токенов модель сгенерировала в качестве ответа.
+
+Клиенты OpenAI оплачивают общее количество токенов, потреблённых всеми выполненными запросами.
+
+Извлекая эти измерения токенов из возвращаемой полезной нагрузки и передавая их через Dynatrace OneAgent, пользователи могут наблюдать за потреблением токенов по всем своим сервисам, использующим OpenAI, в своей среде мониторинга.
+
+Для извлечения количества токенов из ответа OpenAI и передачи этих трёх измерений локальному OneAgent вам потребуется следующая инструментация.
+
+```
+function report_metric(openai_response) {
+
+
+
+var post_data = "openai.promt_token_count,model=" + openai_response.model + " " + openai_response.usage.prompt_tokens + "\n";
+
+
+
+post_data += "openai.completion_token_count,model=" + openai_response.model + " " + openai_response.usage.completion_tokens + "\n";
+
+
+
+post_data += "openai.total_token_count,model=" + openai_response.model + " " + openai_response.usage.total_tokens + "\n";
+
+
+
+console.log(post_data);
+
+
+
+var post_options = {
+
+
+
+host: 'localhost',
+
+
+
+port: '14499',
+
+
+
+path: '/metrics/ingest',
+
+
+
+method: 'POST',
+
+
+
+headers: {
+
+
+
+'Content-Type': 'text/plain',
+
+
+
+'Content-Length': Buffer.byteLength(post_data)
+
+
+
+}
+
+
+
+};
+
+
+
+var metric_req = http.request(post_options, (resp) => {}).on("error", (err) => { console.log(err); });
+
+
+
+metric_req.write(post_data);
+
+
+
+metric_req.end();
+
+
+
+}
+```
+
+После добавления этих строк в ваш сервис Node.js в Dynatrace появятся три новые метрики потребления токенов OpenAI.
+
+![Метрики потребления токенов OpenAI, собранные в Dynatrace](https://dt-cdn.net/images/token-metrics-1412-f9c654f368.png)
+
+## Dynatrace Intelligence автоматически определяет GPT как корневую причину
+
+Одной из выдающихся возможностей Dynatrace является то, как Dynatrace Intelligence автоматически изучает типичное поведение мониторируемых сервисов.
+
+При обнаружении аномального замедления или увеличения количества ошибок Dynatrace Intelligence запускает анализ корневых причин для выявления причины комплексных ситуаций.
+
+Наш простой пример сервиса Node.js полностью зависит от ответа модели ChatGPT. Когда задержка ответа модели ухудшается или запрос к модели возвращается с ошибкой, Dynatrace Intelligence автоматически это обнаруживает.
+
+На странице деталей проблемы Davis отображаются все затронутые сервисы, генеративный сервис OpenAI как корневая причина замедления и волновой эффект этого замедления. На странице деталей проблемы также перечислены все целевые показатели уровня обслуживания (SLO), на которые негативно повлияло это замедление.
+
+В примере ниже Dynatrace Intelligence автоматически сообщил о замедлении сервиса промптов Node.js и корректно определил генеративный сервис OpenAI как корневую причину этого замедления.

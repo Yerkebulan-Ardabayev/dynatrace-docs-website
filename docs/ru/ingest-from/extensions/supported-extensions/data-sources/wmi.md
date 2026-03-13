@@ -1,0 +1,113 @@
+---
+title: Manage WMI extensions
+source: https://www.dynatrace.com/docs/ingest-from/extensions/supported-extensions/data-sources/wmi
+scraped: 2026-03-06T21:16:41.961961
+---
+
+# Управление расширениями WMI
+
+# Управление расширениями WMI
+
+* Latest Dynatrace
+* Практическое руководство
+* Чтение: 3 мин
+* Опубликовано 1 фев. 2022
+
+Dynatrace предоставляет вам фреймворк, который можно использовать для расширения наблюдаемости на данные, получаемые непосредственно от служб и компонентов Windows, мониторинг которых осуществляется через WMI. Для этого Dynatrace предлагает возможность вводить данные WMI в Dynatrace в масштабе и в контексте всех других данных. Это лучше всего работает при наличии OneAgent на отслеживаемой машине Windows, но также работает и в безагентном режиме.
+
+Сначала проверьте [Dynatrace Hub](https://www.dynatrace.com/hub/?query=wmi), чтобы узнать, покрывается ли ваша технология существующим расширением. Если нет, вы можете создать собственное [расширение WMI для Dynatrace](/docs/ingest-from/extensions/develop-your-extensions/data-sources/wmi-extensions "Learn how to create a WMI extension using the Extensions framework."), чтобы охватить вашу технологию Windows.
+
+## Перед началом работы
+
+1. Определите, какие из ваших хостов на базе Windows будут предоставлять данные для расширения.
+2. Расширения WMI могут выполняться локально на OneAgent (рекомендуется) или удалённо на ActiveGate.
+
+   * При локальном запуске на хосте Windows расширение автоматически подключается к интерфейсу WMI. Убедитесь, что Extension Execution Controller включён на уровне среды или выбранного хоста. Для получения дополнительной информации см. [Extension Execution Controller](/docs/ingest-from/extensions/concepts#eec "Learn more about the concept of Dynatrace Extensions.")
+   * При удалённом мониторинге убедитесь, что на ваших ActiveGate на базе Windows, принадлежащих группам ActiveGate, назначенным для удалённого мониторинга, включены удалённые разрешения. Подробнее см. в разделе [Источник данных WMI](/docs/ingest-from/extensions/develop-your-extensions/data-sources/wmi-extensions "Learn how to create a WMI extension using the Extensions framework.").
+
+## Управление расширениями WMI
+
+![Extensions](https://dt-cdn.net/images/dynatrace-extensions-256-9cb05e0f55.png "Extensions")
+
+### Extension Manager
+
+Latest Dynatrace
+
+Теперь вы можете использовать специализированное приложение Extensions для управления расширениями. Оно предоставляет рабочий процесс активации и настройки, аналогичный Dynatrace Hub в предыдущей версии Dynatrace. Кроме того, оно обеспечивает прямой доступ к мониторингу работоспособности расширений.
+
+* Для использования приложения:
+
+  + В Dynatrace Hub ![Hub](https://dt-cdn.net/images/hub-512-82db3c583e.png "Hub") выберите и установите приложение.
+  + На странице Hub представлена информация о разрешениях, необходимых для использования приложения (вкладка **Technical information**).
+
+Dynatrace Hub предоставляет унифицированный рабочий процесс для включения и управления расширениями, которые будут загружать данные WMI в вашу среду Dynatrace.
+
+Требуемое разрешение: **Change monitoring settings**
+
+1. В Dynatrace Hub найдите расширение WMI. Для фильтрации результатов можно использовать ключевое слово "WMI".
+2. Выберите и установите интересующее вас расширение. Это активирует расширение в вашей среде мониторинга.
+3. Добавьте конфигурацию мониторинга, чтобы расширение могло начать сбор данных.
+
+Далее выполните следующие шаги.
+
+[![Step 1](https://dt-cdn.net/images/step-1-086e22066c.svg "Step 1")
+
+**Определите источник мониторинга**](/docs/ingest-from/extensions/supported-extensions/data-sources/wmi#step-1 "Learn how to extend observability in Dynatrace with declarative WMI metrics ingestion.")[![Step 2 optional](https://dt-cdn.net/images/dotted-step-2-8ae6982454.svg "Step 2 optional")
+
+**Расширенные свойства**](/docs/ingest-from/extensions/supported-extensions/data-sources/wmi#step-2 "Learn how to extend observability in Dynatrace with declarative WMI metrics ingestion.")[![Step 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Step 3")
+
+**Активируйте расширение**](/docs/ingest-from/extensions/supported-extensions/data-sources/wmi#step-3 "Learn how to extend observability in Dynatrace with declarative WMI metrics ingestion.")
+
+### Шаг 1. Определите источник мониторинга
+
+#### Локальный мониторинг
+
+1. Выберите хост, группу хостов или зону управления, для которых вы будете запускать расширение, или выберите мониторинг всей среды. На хосте должен быть запущен OneAgent, [настроенный для выполнения расширений](/docs/ingest-from/extensions/concepts#eec "Learn more about the concept of Dynatrace Extensions.").
+2. Выберите **Next step**.
+
+#### Удалённый мониторинг
+
+1. Выберите **Monitor remotely** и укажите группу ActiveGate, чтобы определить, какой ActiveGate или какие ActiveGate будут выполнять расширение. На хосте ActiveGate на базе Windows должны быть включены удалённые разрешения. Подробнее см. в разделе [Источник данных WMI](/docs/ingest-from/extensions/develop-your-extensions/data-sources/wmi-extensions "Learn how to create a WMI extension using the Extensions framework.").
+2. Выберите **Next step**.
+3. Выберите **Add host** и укажите параметры подключения.
+
+   * Имя хоста или IP-адрес
+   * Имя пользователя с разрешениями для удалённого доступа к данным WMI
+   * Пароль
+
+Вы можете добавить до 100 хостов.
+
+Данные аутентификации, передаваемые в Dynatrace при активации конфигурации мониторинга, обфусцируются, и их невозможно извлечь. По завершении выберите **Next step**.
+
+### Шаг 2 (необязательный). Расширенные свойства
+
+Некоторые расширения WMI могут требовать дополнительной настройки. По завершении выберите **Next step**.
+
+### Шаг 3. Активация расширения
+
+Укажите окончательные параметры конфигурации.
+
+* **Description**
+  Текст, поясняющий детали данной конфигурации мониторинга. При устранении неполадок он может предоставить вашим командам подробности о конкретной конфигурации мониторинга.
+* **Feature sets**
+  В сильно сегментированных сетях наборы функций могут отражать сегменты вашей среды. Вы можете использовать их для ограничения мониторинга определёнными сегментами. Наборы функций предопределены для каждого расширения.
+* **Variables**
+  Некоторые расширения предлагают переменные, с помощью которых вы можете передавать пользовательские строки в расширение и сообщать о них в среде, например, в качестве измерения. Некоторые расширения содержат переменную `ext.activationtag`, которая передаётся как измерение в вашу конфигурацию мониторинга. Вы можете использовать её для ассоциации отчётных метрик с конкретной версией вашей конфигурации мониторинга.
+
+По завершении выберите **Activate**.
+
+## Конфигурация мониторинга в формате JSON
+
+Мастер активации расширения содержит динамически обновляемую полезную нагрузку JSON с вашей конфигурацией мониторинга. См. [Управление расширениями](/docs/ingest-from/extensions/manage-extensions "Learn how to manage extensions."), чтобы узнать, как использовать её для активации расширения через API Dynatrace.
+
+## Обзор расширений WMI
+
+Фильтр
+
+Выберите вариант
+
+Введите для фильтрации
+
+## Связанные темы
+
+* [Устранение неполадок расширений](https://dt-url.net/6303zdg "Learn how to troubleshoot Dynatrace Extensions")

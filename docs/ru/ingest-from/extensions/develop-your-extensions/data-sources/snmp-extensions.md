@@ -1,0 +1,94 @@
+---
+title: SNMP data source
+source: https://www.dynatrace.com/docs/ingest-from/extensions/develop-your-extensions/data-sources/snmp-extensions
+scraped: 2026-03-02T21:28:59.047980
+---
+
+# Источник данных SNMP
+
+# Источник данных SNMP
+
+* Последняя версия Dynatrace
+* Справочник
+* 2 мин. чтения
+* Обновлено 22 марта 2023 г.
+
+Dynatrace предоставляет вам фреймворк, с помощью которого вы можете расширить наблюдаемость за данными, получаемыми непосредственно с устройств, контролируемых по SNMP.
+
+Мы также предоставляем источник данных SNMP traps, который сообщает единственную метрику: количество ловушек (traps), отправленных определённым источником за заданный интервал. Подробнее см. в разделе [Источник данных SNMP traps](/docs/ingest-from/extensions/develop-your-extensions/data-sources/snmp-extensions/snmptraps-extensions "Создайте расширение SNMP traps с помощью фреймворка Dynatrace Extensions.").
+
+Предполагается следующее:
+
+* Вы обладаете достаточными знаниями в области SNMP для создания расширения SNMP.
+* Вы знакомы с [основными концепциями Extensions](/docs/ingest-from/extensions/concepts "Узнайте больше о концепции Dynatrace Extensions.") и общей структурой [файла YAML расширения](/docs/ingest-from/extensions/develop-your-extensions/extension-yaml "Узнайте, как создать файл YAML расширения с помощью фреймворка Extensions.").
+
+Ознакомьтесь с предварительными требованиями и охватом поддерживаемых технологий. Ограничения, применимые к вашему расширению, см. в разделе [Extensions](/docs/ingest-from/extensions/concepts "Узнайте больше о концепции Dynatrace Extensions.").
+
+## Поддерживаемые версии Dynatrace
+
+* Dynatrace версии 1.215+
+* Environment ActiveGate версии 1.215+
+
+## Поддерживаемые версии SNMP
+
+* SNMP v2c
+* SNMP v3
+
+## Поддерживаемая аутентификация
+
+### SNMP v2c
+
+Строки сообщества (community strings).
+
+### SNMP v3
+
+Для SNMP v3 источник данных SNMP поддерживает уровни безопасности `NoAuthNoPriv`, `authNoPriv` и `authPriv`, а также следующие протоколы аутентификации:
+
+#### `authNoPriv`
+
+| Протокол |  | RFC |
+| --- | --- | --- |
+| MD5 | HMAC-96-MD5 | [rfc3414](https://tools.ietf.org/html/rfc3414) |
+| SHA | HMAC-96-SHA | [rfc3414](https://tools.ietf.org/html/rfc3414) |
+| SHA224 | HMAC-128-SHA-224 | [rfc7860](https://tools.ietf.org/html/rfc7860) |
+| SHA256 | HMAC-192-SHA-256 | [rfc7860](https://tools.ietf.org/html/rfc7860) |
+| SHA384 | HMAC-256-SHA-384 | [rfc7860](https://tools.ietf.org/html/rfc7860) |
+| SHA512 | HMAC-384-SHA-512 | [rfc7860](https://tools.ietf.org/html/rfc7860) |
+
+#### `authPriv`
+
+| Протокол |  | RFC | Примечания |
+| --- | --- | --- | --- |
+| DES | CBC-DES | [rfc3414](https://tools.ietf.org/html/rfc3414) |  |
+| AES | CFB128-AES-128 | [rfc3826](https://tools.ietf.org/html/rfc3826) |  |
+| AES192[1](#fn-1-1-def) |  | n/a | Расширение ключа Blumenthal |
+| AES256[1](#fn-1-1-def) |  | n/a | Расширение ключа Blumenthal |
+| AES192C[1](#fn-1-1-def) |  | n/a | Расширение ключа Reeder |
+| AES256C[1](#fn-1-1-def) |  | n/a | Расширение ключа Reeder |
+
+1
+
+Эти алгоритмы шифрования официально не специфицированы, однако они часто поддерживаются сетевыми устройствами. См. [SNMPv3 with AES-256](https://www.snmp.com/snmpv3/snmpv3_aes256.shtml).
+
+Чтобы узнать, как определить аутентификацию в конфигурации мониторинга, см. [Аутентификация SNMP](/docs/ingest-from/extensions/develop-your-extensions/data-sources/snmp-extensions/snmp-schema-reference#authentication "Узнайте об SNMP-расширениях во фреймворке Extensions.").
+
+## Требования к оборудованию
+
+Мониторинг SNMP с помощью фреймворка Extensions выполняется ActiveGate. Требования к хостам зависят от следующих факторов:
+
+* Количество опрашиваемых устройств.
+* Количество строк протокола приёма метрик, обрабатываемых за интервал опроса (1 минута). Уникальная комбинация метрики и измерения (кортеж) соответствует одной строке.
+* Настроен ли профиль производительности [EEC](/docs/ingest-from/extensions/concepts#eec "Узнайте больше о концепции Dynatrace Extensions.") на высокие пределы.
+
+В зависимости от количества устройств и обрабатываемых строк, ActiveGate, выполняющие мониторинг SNMP, должны соответствовать следующим требованиям к оборудованию:
+
+| Хост (тип инстанса EC2) | Процессоры | ОЗУ (ГБ) | Устройства SNMP | Обработанные строки |
+| --- | --- | --- | --- | --- |
+| XS (`c5.large`) | 2 | 4 | 900 | 142 000 |
+| S (`c5.xlarge`) | 4 | 8 | 1 800 | 284 000 |
+| M (`c5.2xlarge`) | 8 | 16 | 4 000 | 632 000 |
+| L (`c5.4xlarge`) | 16 | 32 | 6 000 | 940 000 |
+
+Предполагаемые пределы для количества устройств SNMP и обрабатываемых строк были определены в ходе внутренних тестов. Фактические значения могут отличаться в зависимости от сложности вашего мониторинга.
+
+Например, устройства SNMP, использованные в наших тестах, были оснащены 20 коммуникационными интерфейсами. Фактическое количество интерфейсов непосредственно влияет на использование процессора и потребление памяти.

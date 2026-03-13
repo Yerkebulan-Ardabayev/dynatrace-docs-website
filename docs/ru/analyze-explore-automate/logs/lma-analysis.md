@@ -1,0 +1,50 @@
+---
+title: Log content analysis
+source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-analysis
+scraped: 2026-03-06T21:23:14.965677
+---
+
+# Анализ содержимого логов
+
+# Анализ содержимого логов
+
+* Latest Dynatrace
+* Overview
+* 2-min read
+* Updated on Oct 15, 2025
+
+Log Management and Analytics предоставляет прямой доступ к содержимому логов всех критически важных процессов вашей системы. Данные логов обычно содержат большой объём информации. Один из способов работы с большим объёмом данных — сузить диапазон записей логов и выполнить их разбор.
+
+## Просмотрщик логов и событий
+
+Просмотрщик логов и событий позволяет представить данные логов в виде фильтруемой таблицы, удобной для работы, а также просматривать данные логов за определённый период с использованием обнаруженных аспектов содержимого логов. Вы можете использовать **Available attributes** для сужения представления логов и фокусировки на конкретном аспекте их содержимого.
+
+* См. [Logs and events viewer](/docs/analyze-explore-automate/logs/lma-analysis/logs-and-events "Browse log data within a specified timeframe using DQL and elements that are automatically detected within the log content.")
+
+Права пользователей для мониторинга логов
+
+Логи часто содержат конфиденциальную информацию, которая может быть недоступна для всех пользователей. По этой причине администратор Dynatrace должен добавить утверждённых пользователей Log Management and Analytics в группу **Log viewer**, которая имеет разрешение безопасности аккаунта **View logs**. Пользователи без прав администратора по умолчанию НЕ входят в эту группу. Для доступа к содержимому логов они должны быть явно добавлены.
+
+## События логов
+
+После создания событий логов на основе содержимого логов искусственный интеллект Dynatrace автоматически сопоставляет соответствующие события логов с любыми проблемами, обнаруженными в вашей среде. Релевантные события логов, связанные с проблемами, затем учитываются при анализе первопричин проблем.
+
+* См. [Log events](/docs/analyze-explore-automate/logs/lma-log-processing/lma-log-events "Create log events based on log data and use them in problem detection.")
+
+## Метрики логов
+
+Мониторинг логов Dynatrace позволяет не только просматривать и анализировать логи, но и создавать метрики на основе данных логов и использовать их в Dynatrace так же, как и любые другие метрики. Вы можете добавлять их на дашборд, включать в анализ и даже создавать пользовательские оповещения.
+
+* См. [Log metrics](/docs/analyze-explore-automate/logs/lma-log-processing/lma-log-metrics "Create metrics based on log data and use them throughout Dynatrace like any other metric.")
+
+## Пользовательские атрибуты логов
+
+В мониторинге логов Dynatrace вы можете задавать собственные пользовательские атрибуты данных логов, соответствующие вашему конкретному формату данных логов. Аналогично автоматически обнаруживаемым атрибутам логов, ваши пользовательские атрибуты логов извлекаются из данных логов в процессе приёма и становятся доступными в Dynatrace.
+
+* См. [Log custom attributes](/docs/analyze-explore-automate/logs/lma-analysis/logs-and-events/lma-log-custom-attributes "Create and use custom attributes during log data ingestion.")
+
+## Анализ обогащённых данных логов
+
+С обогащёнными данными логов вы можете проверить конкретного пользователя внутри своего приложения. Используйте просмотрщик логов и ссылку на распределённые трассировки PurePath® из конкретной записи лога. Вы можете просматривать все логи для отдельной пользовательской сессии, чтобы видеть, как пользователь взаимодействовал с приложением, а с помощью вкладки **Logs** в распределённых трассировках — перемещаться по трассировке и на основе логов, связанных с этой трассировкой, быстро видеть, что произошло.
+
+* См. [Leverage log enrichment for traces to resolve problems](/docs/observe/application-observability/distributed-traces/use-cases/problems-logs-traces "Use the log enrichment to view related log entries in the distributed traces view and enhance your analysis capabilities.")

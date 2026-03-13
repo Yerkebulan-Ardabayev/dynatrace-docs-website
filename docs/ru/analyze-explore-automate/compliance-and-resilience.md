@@ -1,100 +1,100 @@
 ---
-title: Compliance and resilience
+title: Соответствие требованиям и устойчивость
 source: https://www.dynatrace.com/docs/analyze-explore-automate/compliance-and-resilience
 scraped: 2026-03-04T21:31:00.913416
 ---
 
-# Compliance and resilience
+# Соответствие требованиям и устойчивость
 
-# Compliance and resilience
+# Соответствие требованиям и устойчивость
 
-* Latest Dynatrace
-* Explanation
-* 4-min read
-* Updated on Jan 28, 2026
+* Последняя Dynatrace
+* Объяснение
+* 4 мин. чтения
+* Обновлено 28 января 2026 г.
 
-By leveraging Dynatrace unified observability and security, you can automate up to 80% of the technical tasks necessary for managing compliance and resilience at scale. This approach addresses the dynamic global regulatory requirements for operational resilience, emphasizing the growing reliance on secure, resilient, and dependable IT environments
+Используя единую наблюдаемость и безопасность Dynatrace, вы можете автоматизировать до 80% технических задач, необходимых для управления соответствием требованиям и устойчивостью в масштабе. Этот подход учитывает динамичные глобальные нормативные требования к операционной устойчивости, подчёркивая растущую зависимость от безопасных, устойчивых и надёжных ИТ-сред.
 
-## The importance of resilience in a complex regulatory landscape
+## Важность устойчивости в сложной нормативной среде
 
-In today's digital age, operational resilience is paramount for businesses striving to maintain seamless operations and safeguard their reputation. The ability to quickly react to incidents is no longer sufficient; organizations must proactively prevent issues and manage risks to ensure continuous service delivery. This need is amplified by an increasingly complex regulatory and compliance landscape, where global standards demand stringent measures to protect data, ensure service continuity, and mitigate risks.
+В современную цифровую эпоху операционная устойчивость имеет первостепенное значение для бизнеса, стремящегося поддерживать бесперебойную работу и защищать свою репутацию. Способности быстро реагировать на инциденты уже недостаточно; организации должны проактивно предотвращать проблемы и управлять рисками для обеспечения непрерывного предоставления услуг. Эта потребность усиливается всё более сложной нормативной средой, где глобальные стандарты требуют строгих мер по защите данных, обеспечению непрерывности обслуживания и снижению рисков.
 
-Navigating these regulations while maintaining high performance and security standards is challenging. Non-compliance can lead to operational disruptions, severe penalties, and reputational damage. Therefore, achieving operational resilience is not just about compliance; it's about ensuring long-term sustainability and protecting the business against potential threats.
+Навигация в этих нормативных актах при сохранении высоких стандартов производительности и безопасности является сложной задачей. Несоблюдение может привести к операционным сбоям, серьёзным штрафам и репутационному ущербу. Поэтому достижение операционной устойчивости — это не только вопрос соответствия; это обеспечение долгосрочной устойчивости и защита бизнеса от потенциальных угроз.
 
-## Dynatrace: your partner in compliance and resilience
+## Dynatrace: ваш партнёр в области соответствия и устойчивости
 
-Compliance and resilience capabilities leverage the industry-leading Dynatrace platform for unified observability and security, including the [Compliance Assistantï»¿](https://www.dynatrace.com/hub/detail/compliance-assistant/) ![Compliance Assistant](https://dt-cdn.net/images/compliance-assistant-app-256-a136b783a7.png "Compliance Assistant") app for DORA compliance. They offer a comprehensive end-to-end solution to these challenges, providing functionalities designed to enhance compliance and resilience in IT environments. Here's how Dynatrace can help automate up to 80% of the technical tasks required to manage compliance and resilience:
+Возможности соответствия и устойчивости используют ведущую в отрасли платформу Dynatrace для единой наблюдаемости и безопасности, включая приложение [Compliance Assistant](https://www.dynatrace.com/hub/detail/compliance-assistant/) ![Compliance Assistant](https://dt-cdn.net/images/compliance-assistant-app-256-a136b783a7.png "Compliance Assistant") для соответствия требованиям DORA. Они предлагают комплексное сквозное решение этих задач, предоставляя функциональные возможности, созданные для повышения соответствия и устойчивости ИТ-сред. Вот как Dynatrace может помочь автоматизировать до 80% технических задач, необходимых для управления соответствием и устойчивостью:
 
-* Understand the complexity of IT systems in real time
-* Proactively prevent, prioritize, and efficiently manage performance and security incidents
-* Automate manual and routine tasks to increase your productivity
+* Понимание сложности ИТ-систем в реальном времени
+* Проактивное предотвращение, приоритизация и эффективное управление инцидентами производительности и безопасности
+* Автоматизация ручных и рутинных задач для повышения вашей производительности
 
-## Step 1 Understand the complexity of IT systems in real time
+## Шаг 1: Понимание сложности ИТ-систем в реальном времени
 
-Dynatrace helps you comprehensively map the entire IT environment in real time. It gives you visibility into which components are monitored and which are not, and helps automate time-consuming compliance configuration checks.
+Dynatrace помогает вам всесторонне картировать всю ИТ-среду в реальном времени. Он даёт вам видимость того, какие компоненты мониторятся, а какие нет, и помогает автоматизировать трудоёмкие проверки конфигурации соответствия.
 
 ### Discovery & Coverage
 
-[Discovery & Coverage](/docs/ingest-from/discovery-coverage-app "Discover and remediate monitoring coverage gaps at scale.") ![Discovery & Coverage](https://dt-cdn.net/images/discovery-coverage-256-a20d5afa78.png "Discovery & Coverage") helps prevent unexpected outages by detecting and remediating monitoring coverage gaps across your entire enterprise.
+[Discovery & Coverage](/docs/ingest-from/discovery-coverage-app "Обнаружение и устранение пробелов в мониторинговом покрытии в масштабе.") ![Discovery & Coverage](https://dt-cdn.net/images/discovery-coverage-256-a20d5afa78.png "Discovery & Coverage") помогает предотвратить неожиданные сбои, обнаруживая и устраняя пробелы в мониторинговом покрытии по всему предприятию.
 
-![Discovery & COverage](https://dt-cdn.net/images/image001-1432-0bb965c934.png)
+![Discovery & Coverage](https://dt-cdn.net/images/image001-1432-0bb965c934.png)
 
 ### Smartscape
 
-[Smartscape](/docs/analyze-explore-automate/smartscape-classic "Learn how Smartscape Classic visualizes all the entities and dependencies in your environment.") topology visualizes the relationships between applications, services, processes, hosts, and data centers, highlighting problems and vulnerabilities.
+Топология [Smartscape](/docs/analyze-explore-automate/smartscape-classic "Узнайте, как Smartscape Classic визуализирует все сущности и зависимости в вашей среде.") визуализирует связи между приложениями, сервисами, процессами, хостами и центрами обработки данных, выделяя проблемы и уязвимости.
 
 ![Smartscape](https://dt-cdn.net/images/image002-1432-082bf6d3ac.png)
 
-### Security Posture Management
+### Управление состоянием безопасности
 
-[Security Posture Management](/docs/secure/application-security/spm "Assess, manage, and take action on misconfigurations and violations against security hardening guidelines and regulatory compliance standards.") helps detect, visualize, analyze, and remediate security posture and compliance findings, including misconfigurations and regulatory compliance assessments.
+[Управление состоянием безопасности](/docs/secure/application-security/spm "Оценивайте, управляйте и принимайте меры по ошибкам конфигурации и нарушениям рекомендаций по укреплению безопасности и стандартов нормативного соответствия.") помогает обнаруживать, визуализировать, анализировать и устранять результаты оценки состояния безопасности и соответствия, включая ошибки конфигурации и оценки нормативного соответствия.
 
 ![Security Posture Management](https://dt-cdn.net/images/image003-1432-112de6ebf6.png)
 
 ### Compliance Assistant
 
-[Compliance Assistant](/docs/analyze-explore-automate/compliance-and-resilience/compliance-assistant "Consolidate insights from the Dynatrace observability and security platform in a unified dashboard.") ![Compliance Assistant](https://dt-cdn.net/images/compliance-assistant-app-256-a136b783a7.png "Compliance Assistant") provides a dedicated view tailored for the European Union's Digital Operational Resilience Act (DORA).
+[Compliance Assistant](/docs/analyze-explore-automate/compliance-and-resilience/compliance-assistant "Консолидируйте аналитику платформы наблюдаемости и безопасности Dynatrace в единой панели управления.") ![Compliance Assistant](https://dt-cdn.net/images/compliance-assistant-app-256-a136b783a7.png "Compliance Assistant") предоставляет специализированное представление, адаптированное для Закона о цифровой операционной устойчивости Европейского союза (DORA).
 
 ![Compliance Assistant](https://dt-cdn.net/images/image004-1429-db68e2e050.png)
 
-## Step 2 Proactively prevent and prioritize performance and security incidents
+## Шаг 2: Проактивное предотвращение и приоритизация инцидентов производительности и безопасности
 
-Dynatrace helps you focus on preventing incidents before they occur, managing risks proactively, and prioritizing incidents for remediation when they occur.
+Dynatrace помогает вам сосредоточиться на предотвращении инцидентов до их возникновения, проактивном управлении рисками и приоритизации инцидентов для устранения, когда они возникают.
 
-### Problems
+### Проблемы
 
-[Problems](/docs/dynatrace-intelligence/davis-problems-app "Use the Problems app to quickly get to the root cause of incidents in your environment.") ![Problems](https://dt-cdn.net/images/problems-512-34e46d913e.png "Problems") uses Dynatrace Intelligence to automatically analyze your system and detect abnormal behavior, such as performance or stability issues. It also investigates an incident's impact and root cause and reduces the mean time to repair (MTTR).
+[Проблемы](/docs/dynatrace-intelligence/davis-problems-app "Используйте приложение Problems для быстрого определения коренной причины инцидентов в вашей среде.") ![Problems](https://dt-cdn.net/images/problems-512-34e46d913e.png "Problems") использует Dynatrace Intelligence для автоматического анализа вашей системы и обнаружения аномального поведения, такого как проблемы производительности или стабильности. Он также исследует влияние инцидента и коренную причину и сокращает среднее время восстановления (MTTR).
 
 ![Problems](https://dt-cdn.net/images/image005-1432-d25b248ded.png)
 
-### Vulnerabilities
+### Уязвимости
 
-[![Vulnerabilities](https://dt-cdn.net/images/vulnerabilities-highresolution-1025-9279da9743.png "Vulnerabilities") **Vulnerabilities**](/docs/secure/vulnerabilities "Prioritize and efficiently manage vulnerabilities in your monitored environments.") is our Dynatrace Runtime Vulnerability Analytics platform experience for detecting, visualizing, analyzing, monitoring, and remediating vulnerabilities across your application stack.
+[![Vulnerabilities](https://dt-cdn.net/images/vulnerabilities-highresolution-1025-9279da9743.png "Vulnerabilities") **Уязвимости**](/docs/secure/vulnerabilities "Приоритизируйте и эффективно управляйте уязвимостями в ваших мониторируемых средах.") — это наша платформа Dynatrace Runtime Vulnerability Analytics для обнаружения, визуализации, анализа, мониторинга и устранения уязвимостей по всему стеку приложений.
 
 ![Vulnerabilities](https://dt-cdn.net/images/image006-1432-e6c3ac31aa.png)
 
-### Runtime Application Protection
+### Защита приложений во время выполнения
 
-[Runtime Application Protection](/docs/secure/application-security/application-protection "Set up and configure Dynatrace Runtime Application Protection to monitor attacks and attack-generated code-level vulnerabilities.") helps you get a real-time overview of all the attacks in your environment. Leveraging code-level insights and transaction analysis, Dynatrace Runtime Application Protection automatically detects attacks on applications in your environment.
+[Защита приложений во время выполнения](/docs/secure/application-security/application-protection "Настройте Dynatrace Runtime Application Protection для мониторинга атак и уязвимостей на уровне кода, генерируемых атаками.") помогает получить обзор всех атак в вашей среде в реальном времени. Используя анализ на уровне кода и анализ транзакций, Dynatrace Runtime Application Protection автоматически обнаруживает атаки на приложения в вашей среде.
 
 ![Attacks](https://dt-cdn.net/images/image007-1432-e9d4630b53.png)
 
 ### Site Reliability Guardian
 
-[Site Reliability Guardian](/docs/deliver/site-reliability-guardian "Automatically validate the performance, availability, and capacity objectives of your critical services to make the right release decision.") ![Site Reliability Guardian](https://dt-cdn.net/images/site-reliability-guardian-ec19b393a6.svg "Site Reliability Guardian") provides an automated change impact analysis to validate service availability, performance, and capacity objectives across various systems. This enables DevOps platform engineers to make the right release decisions for new versions and empowers SREs to apply Service-Level Objectives (SLOs) for their critical services.
+[Site Reliability Guardian](/docs/deliver/site-reliability-guardian "Автоматически проверяйте цели производительности, доступности и ёмкости ваших критических сервисов для принятия правильных решений о релизах.") ![Site Reliability Guardian](https://dt-cdn.net/images/site-reliability-guardian-ec19b393a6.svg "Site Reliability Guardian") обеспечивает автоматизированный анализ влияния изменений для проверки целей доступности, производительности и ёмкости сервисов в различных системах. Это позволяет инженерам платформы DevOps принимать правильные решения о релизах для новых версий и даёт SRE возможность применять Цели уровня обслуживания (SLO) для их критических сервисов.
 
 ![Site Reliability Guardian](https://dt-cdn.net/images/image008-1428-ba22e79c5e.png)
 
-## Step 3 Automate manual tasks to increase productivity
+## Шаг 3: Автоматизация ручных задач для повышения производительности
 
-Automation in Dynatrace allows you to automate tasks in your IT landscape, remediate problems, and visualize processes to increase productivity and focus on strategic initiatives.
+Автоматизация в Dynatrace позволяет вам автоматизировать задачи в вашем ИТ-ландшафте, устранять проблемы и визуализировать процессы для повышения производительности и сосредоточения на стратегических инициативах.
 
-### Workflows
+### Рабочие процессы
 
-[Workflows](/docs/analyze-explore-automate/workflows "Automate IT processes with Dynatrace Workflowsâreact to events, schedule tasks, and connect services.") ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") assembles a series of actions to build processes in graphical representations. Workflows can be triggered manually, on a schedule, or by events in Dynatrace, such as anomalies detected by Dynatrace Intelligence.
+[Рабочие процессы](/docs/analyze-explore-automate/workflows "Автоматизируйте ИТ-процессы с помощью Dynatrace Workflows — реагируйте на события, планируйте задачи и подключайте сервисы.") ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") собирают серию действий для построения процессов в графическом представлении. Рабочие процессы могут запускаться вручную, по расписанию или по событиям в Dynatrace, таким как аномалии, обнаруженные Dynatrace Intelligence.
 
 ![Workflows](https://dt-cdn.net/images/image009-1428-01287f82a0.png)
 
-## Related topics
+## Связанные темы
 
-* [Dynatrace for executives - Security and complianceï»¿](https://www.dynatrace.com/news/blog/dynatrace-for-executives-security-compliance/)
+* [Dynatrace для руководителей — Безопасность и соответствие](https://www.dynatrace.com/news/blog/dynatrace-for-executives-security-compliance/)

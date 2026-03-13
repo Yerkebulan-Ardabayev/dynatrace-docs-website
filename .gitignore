@@ -1,15 +1,28 @@
-# Cache and temporary files
-.cache/
-*.pyc
+# Python
 __pycache__/
-.translation_cache.json
-temp_docs/
+*.pyc
+*.pyo
+*.egg-info/
+.venv/
+venv/
+dist/
+build/
 
-# MkDocs build output
+# MkDocs
 site/
 generated_nav.yaml
 
-# IDEs
+# Cache
+.cache/
+temp_docs/
+.translation_cache*.json
+scripts/.translation_cache*.json
+.rag_index_cache.json
+
+# Logs
+*.log
+
+# IDE
 .vscode/
 .idea/
 *.swp
@@ -20,36 +33,21 @@ generated_nav.yaml
 .DS_Store
 Thumbs.db
 
-# Python
-.venv/
-venv/
-*.egg-info/
-dist/
-build/
-
-# Logs
-*.log
-scrape_log.txt
-auto_update.log
-
-# Скачанная документация (временная)
-scripts/dynatrace-docs/
-
-# Кеш переводов
-.translation_cache*.json
-
-# API ключи и секреты (ВАЖНО!)
+# API keys and secrets
 .env
 .env.local
 *.key
 *_key.txt
 
-# Задачи и планы (локальные)
+# Scraped docs (temporary)
+scripts/dynatrace-docs/
+
+# Local plans/notes
 ACTION_PLAN.md
 SECURITY_FIXES.md
 COMPLETE_SETUP.md
 
-# Тестовые файлы
+# Test files
 docs/test-*.html
 api/
 
@@ -57,12 +55,9 @@ api/
 .vercel
 vercel.json
 
-# Playwright/Chrome profiles
+# Chrome profiles
 scripts/.chrome_notebooklm/
 .chrome_notebooklm/
 
-# NotebookLM generated files (large, regenerated)
+# Auto-generated content
 docs/notebooklm/
-
-# RAG index cache
-.rag_index_cache.json

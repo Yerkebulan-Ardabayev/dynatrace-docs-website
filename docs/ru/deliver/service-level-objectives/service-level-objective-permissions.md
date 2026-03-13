@@ -1,0 +1,29 @@
+---
+title: Permissions for service-level objective (SLO) tiles in a dashboard
+source: https://www.dynatrace.com/docs/deliver/service-level-objectives/service-level-objective-permissions
+scraped: 2026-03-06T21:32:41.871210
+---
+
+# Разрешения для плиток целевых показателей уровня обслуживания (SLO) на дашборде
+
+# Разрешения для плиток целевых показателей уровня обслуживания (SLO) на дашборде
+
+* Последняя версия Dynatrace
+* 1 минута чтения
+* Опубликовано 24 ноября 2024 г.
+
+Для работы с плитками целевых показателей уровня обслуживания (SLO) на дашборде необходимы следующие разрешения.
+
+Для **редактирования**
+
+* `slo:slos:read` — требуется для чтения всех SLO и отображения их в раскрывающемся списке
+* `slo:slos:write` — требуется для отображения кнопки **Service-level objective**
+* `slo:slos:write`, `slo:slos:read` и разрешения Grail, необходимые для конкретного запроса. Дополнительные сведения см. в разделе [Разрешения в Grail](/docs/platform/grail/organize-data/assign-permissions-in-grail "Узнайте, как назначить разрешения для бакетов и таблиц в Grail.").
+
+Для оценки плитки SLO
+
+* `slo:slos:read` и разрешения Grail, необходимые для конкретного запроса. Дополнительные сведения см. в разделе [Разрешения в Grail](/docs/platform/grail/organize-data/assign-permissions-in-grail "Узнайте, как назначить разрешения для бакетов и таблиц в Grail.").
+
+Для детального просмотра SLO
+
+* `slo:slos:read`, `slo:objective-templates:read` и разрешения Grail, необходимые для конкретного запроса. Дополнительные сведения см. в разделе [Разрешения в Grail](/docs/platform/grail/organize-data/assign-permissions-in-grail "Узнайте, как назначить разрешения для бакетов и таблиц в Grail.").

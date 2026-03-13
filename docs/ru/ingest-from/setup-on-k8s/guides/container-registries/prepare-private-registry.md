@@ -1,0 +1,217 @@
+---
+title: Store Dynatrace images in private registries
+source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/guides/container-registries/prepare-private-registry
+scraped: 2026-03-06T21:31:22.301535
+---
+
+# Хранение образов Dynatrace в приватных реестрах
+
+# Хранение образов Dynatrace в приватных реестрах
+
+* Последняя версия Dynatrace
+* Чтение: 7 мин
+* Опубликовано 29 февраля 2024
+
+Для пользователей, которым требуется больший контроль над средой размещения образов, Dynatrace предоставляет возможность репликации образов и подписей в приватные реестры.
+
+Мы рекомендуем использовать приватный реестр для оптимальной производительности и устранения рисков ограничения скорости запросов в высоконагруженных и динамичных средах. Кроме того, для соответствия стандартам безопасности и обеспечения целостности программного обеспечения при снижении рисков атак на цепочку поставок, можно и рекомендуется применять сканирование образов и проверку подписей образов Dynatrace.
+
+Реплицируя образы Dynatrace в ваш приватный реестр, вы можете сочетать превосходную производительность доставки с гарантией безопасных, подписанных и неизменяемых образов. Мы предоставляем мультиархитектурные образы для обеспечения совместимости с различными платформами, поддерживающими архитектуры процессоров ARM64 (AArch64) и x86-64 на Linux.
+
+На этой странице представлены рекомендации по безопасному хранению неизменяемых образов Dynatrace в приватном реестре. Она содержит инструкции по загрузке образов, проверке подписей образов и отправке их в ваш предпочтительный приватный реестр.
+
+## Предварительные требования
+
+Перед началом работы убедитесь, что выполнены следующие предварительные требования:
+
+* Обязательно Приватный реестр
+* Обязательно Доступ на запись в репозитории образов для образов Dynatrace
+* Необязательно [Skopeo](https://github.com/containers/skopeo/blob/main/install.md) для удобного копирования мультиархитектурных образов
+* Необязательно [Cosign](https://docs.sigstore.dev/system_config/installation/) для проверки подписей образов
+
+## Контейнерные образы Dynatrace
+
+Неизменяемые и подписанные контейнерные образы Dynatrace доступны в различных реестрах контейнеров. Для получения дополнительной информации о репозиториях и тегах см. [поддерживаемые публичные реестры](/docs/ingest-from/setup-on-k8s/guides/container-registries/use-public-registry#supported-public-registries "Использование публичного реестра").
+
+Мы настоятельно рекомендуем выбирать один из наших поддерживаемых публичных реестров для копирования контейнерных образов.
+
+Пожалуйста, не используйте встроенный реестр Dynatrace для копирования образов в приватные реестры.
+
+Исключение действует для образа OneAgent для Classic Full-Stack, где соответствующий образ **должен** быть скопирован из встроенного реестра для корректной работы.
+
+### Варианты наблюдаемости
+
+В зависимости от выбранных [вариантов наблюдаемости](/docs/ingest-from/setup-on-k8s/deployment#observability-options-for-kubernetes "Развёртывание Dynatrace Operator в Kubernetes"), вам может потребоваться скопировать только необходимые образы. Следующая таблица описывает связи между образами Dynatrace и вариантами наблюдаемости.
+
+1
+
+Должен быть реплицирован из встроенного реестра Dynatrace. Подробнее см. раздел [Поддержка мониторинга Classic Full-Stack](#classic-full-stack).
+
+### Теги образов
+
+Чтобы показать, как версионирование напрямую связано с тегированием образов, в следующей таблице приведены реальные примеры тегов образов для контейнерных образов Dynatrace.
+
+Обратите внимание, что Dynatrace ActiveGate, Code Modules и OneAgent используют схожий подход к версионированию, тогда как Dynatrace Operator, который следует отдельному циклу выпусков, использует другой подход к версионированию.
+
+Во всех случаях для контейнерных образов применяется тегирование на основе версий. Изменяемые теги образов, такие как 'latest', не используются.
+
+### Проверка подписей образов
+
+Все наши неизменяемые и подписанные контейнерные образы соответствуют лучшим практикам, повышая безопасность и защищая от атак на цепочку поставок. Чтобы узнать, как проверять подписи и гарантировать целостность программного обеспечения, см. [Проверка подписей образов Dynatrace](/docs/ingest-from/setup-on-k8s/guides/container-registries/verify-image-signature "Проверка подписей образов Dynatrace").
+
+## Копирование контейнерных образов Dynatrace
+
+В следующем руководстве описано, как скопировать контейнерные образы Dynatrace из публичного Amazon ECR в ваш приватный реестр со следующими примерными атрибутами.
+
+Инструкции ниже по копированию контейнерных образов в ваш приватный реестр:
+
+Skopeo (рекомендуется)
+
+Docker CLI
+
+Рекомендуется
+
+Благодаря поддержке удобного копирования мультиархитектурных образов и подписей[1](#fn-2-1-def), мы настоятельно рекомендуем использовать CLI Skopeo для копирования контейнерных образов. Подробнее о CLI Skopeo см. [репозиторий Skopeo на GitHub](https://github.com/containers/skopeo).
+
+В следующих инструкциях обязательно заменяйте `<tag>` на доступную версию (см. раздел [Поддерживаемые публичные реестры](/docs/ingest-from/setup-on-k8s/guides/container-registries/use-public-registry#supported-public-registries "Использование публичного реестра")).
+
+#### Копирование образа Dynatrace Operator
+
+Следующая команда показывает, как скопировать образ Dynatrace Operator в ваш приватный реестр:
+
+```
+skopeo copy --all docker://public.ecr.aws/dynatrace/dynatrace-operator:<tag> \
+
+
+
+docker://registry.my-company.com/dynatrace-operator:<tag>
+```
+
+#### Копирование образа Dynatrace ActiveGate
+
+Следующая команда показывает, как скопировать образ Dynatrace ActiveGate в ваш приватный реестр:
+
+```
+skopeo copy --all docker://public.ecr.aws/dynatrace/dynatrace-activegate:<tag> \
+
+
+
+docker://registry.my-company.com/dynatrace-activegate:<tag>
+```
+
+#### Копирование образа Dynatrace Code Modules
+
+Следующая команда показывает, как скопировать образ Dynatrace Code Modules в ваш приватный реестр:
+
+```
+skopeo copy --all docker://public.ecr.aws/dynatrace/dynatrace-codemodules:<tag> \
+
+
+
+docker://registry.my-company.com/dynatrace-codemodules:<tag>
+```
+
+#### Копирование образа Dynatrace OneAgent
+
+Следующая команда показывает, как скопировать образ Dynatrace OneAgent в ваш приватный реестр:
+
+```
+skopeo copy --all docker://public.ecr.aws/dynatrace/dynatrace-oneagent:<tag> \
+
+
+
+docker://registry.my-company.com/dynatrace-oneagent:<tag>
+```
+
+#### Копирование образа Dynatrace K8s Node Config Collector
+
+Следующая команда показывает, как скопировать образ Dynatrace K8s Node Config Collector в ваш приватный реестр:
+
+```
+skopeo copy --all docker://public.ecr.aws/dynatrace/dynatrace-k8s-node-config-collector:<tag> \
+
+
+
+docker://registry.my-company.com/dynatrace-k8s-node-config-collector:<tag>
+```
+
+1
+
+Требуется, чтобы параметр `use-sigstore-attachments` был установлен в `true` в конфигурации [реестров контейнеров](https://github.com/containers/image/blob/main/docs/containers-registries.d.5.md#individual-configuration-sections) *Skopeo*.
+
+Мы настоятельно рекомендуем использовать CLI Skopeo вместо Docker CLI для копирования контейнерных образов Dynatrace из публичных в приватные реестры, так как Docker CLI не предоставляет удобного способа копирования мультиархитектурных образов и подписей.
+
+Если вы всё же хотите использовать Docker CLI, обратитесь к [официальной документации Docker CLI](https://docs.docker.com/engine/reference/commandline/cli/).
+
+### Поддержка мониторинга Classic Full-Stack
+
+[Мониторинг Classic Full-Stack](/docs/ingest-from/setup-on-k8s/how-it-works#classic "Подробное описание работы развёртывания в Kubernetes") требует предварительно настроенный образ Dynatrace OneAgent, который доступен **только** через встроенный реестр Dynatrace.
+
+Следовательно, образ OneAgent должен быть реплицирован через встроенный реестр Dynatrace, как описано ниже.
+
+Предварительные требования
+
+#### Перед началом работы
+
+Убедитесь, что выполнены следующие предварительные требования:
+
+* Обязательно Необязательные предварительные требования из начала страницы
+* Обязательно Учётные данные для встроенного реестра Dynatrace
+
+#### Получение учётных данных встроенного реестра Dynatrace
+
+Поскольку встроенный реестр Dynatrace требует аутентификации, вам необходимо знать идентификатор вашей среды мониторинга и предоставить PaaS-токен для входа:
+
+* Чтобы определить `<your-environment-id>`, см. [идентификатор среды](/docs/discover-dynatrace/get-started/monitoring-environment "Описание работы со средами мониторинга.").
+* Чтобы определить `<your-paas-token>`, см. [PaaS-токен](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens#paas-token "Описание концепции токена доступа и его областей действия.").
+
+Пример входа с использованием CLI *Skopeo*:
+
+```
+skopeo login -u <your-environment-id> -p <your-paas-token> <your-environment-url>
+```
+
+Обратите внимание, что данный раздел описывает только конфигурации мониторинга Classic Full-Stack.
+
+#### Копирование образа Dynatrace OneAgent для мониторинга Classic Full-Stack
+
+Встроенный реестр Dynatrace поддерживает только архитектуры x86-64 под управлением Linux. Поэтому мы рекомендуем явно задавать/переопределять архитектуру и операционную систему.
+
+Как определить тег образа OneAgent
+
+Встроенный реестр Dynatrace предоставляет следующие форматы тегов образа OneAgent:
+
+* `latest`
+* `latest-raw`
+* `<major>.<minor>.<revision>`
+* `<major>.<minor>.<revision>-raw`
+
+Для репликации образов мы рекомендуем копировать необработанные (raw) образы (образы с суффиксом тега `-raw`).
+
+Чтобы узнать, какие версии OneAgent доступны для репликации, вы можете использовать следующие API развёртывания:
+
+* [Список доступных версий OneAgent](/docs/dynatrace-api/environment-api/deployment/oneagent/get-available-versions "Список доступных версий OneAgent через API Dynatrace.") для получения обзора доступных версий OneAgent.
+* [Просмотр последней версии OneAgent](/docs/dynatrace-api/environment-api/deployment/oneagent/get-version-latest "Просмотр последней версии OneAgent через API Dynatrace."), если вы хотите узнать версию OneAgent, стоящую за тегом `latest`, или автоматизировать репликацию образа OneAgent.
+
+В следующих примерах показано, как версии OneAgent соответствуют тегам образов, доступным во встроенном реестре Dynatrace:
+
+Перед выполнением следующей команды обязательно замените `<tag-with-raw-suffix>` и `<environment-id>`:
+
+```
+skopeo copy --override-arch amd64 --override-os linux
+
+
+
+docker://<your_environment_domain_name>/linux/oneagent:<tag-with-raw-suffix> \
+
+
+
+docker://registry.my-company.com/dynatrace-oneagent-classic:<tag-with-raw-suffix>
+```
+
+Для получения дополнительной информации о настройке пользовательского ресурса DynaKube см. наши примеры [использования приватных реестров](/docs/ingest-from/setup-on-k8s/guides/container-registries/use-private-registry "Использование приватного реестра").
+
+## Связанные темы
+
+* [Использование приватного реестра](/docs/ingest-from/setup-on-k8s/guides/container-registries/use-private-registry "Использование приватного реестра")
+* [Проверка подписей образов Dynatrace](/docs/ingest-from/setup-on-k8s/guides/container-registries/verify-image-signature "Проверка подписей образов Dynatrace")

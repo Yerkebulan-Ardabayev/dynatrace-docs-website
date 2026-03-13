@@ -1,77 +1,77 @@
 ---
-title: OpenTelemetry Host Monitoring extension
+title: Расширение OpenTelemetry Host Monitoring
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/extensions/opentelemetry-host-monitoring
 scraped: 2026-03-06T21:36:13.602335
 ---
 
-# OpenTelemetry Host Monitoring extension
+# Расширение OpenTelemetry Host Monitoring
 
-# OpenTelemetry Host Monitoring extension
+# Расширение OpenTelemetry Host Monitoring
 
-* Latest Dynatrace
-* Extension
-* Updated on Mar 02, 2026
+* Последняя Dynatrace
+* Расширение
+* Обновлено 2 марта 2026 г.
 
-Generate topology and screens for your OpenTelemetry host data for quicker display and easier analysis of the data.
+Генерация топологии и экранов для данных OpenTelemetry-хостов для более быстрого отображения и удобного анализа данных.
 
-## Get started
+## Начало работы
 
-### Overview
+### Обзор
 
-Monitor your hosts with OpenTelemetry using integrated metric visualizations, topology, and alerts. This extension automatically generates entities for hosts and their running processes, presenting telemetry data through intuitive interfaces designed for quick analysis. By correlating metrics, logs, and spans to host and process entities, you gain full context and a comprehensive view of your infrastructure.
+Мониторинг хостов с помощью OpenTelemetry, включающий интегрированные визуализации метрик, топологию и оповещения. Это расширение автоматически генерирует сущности для хостов и их запущенных процессов, представляя данные телеметрии через интуитивно понятные интерфейсы, разработанные для быстрого анализа. Корреляция метрик, логов и спанов с сущностями хостов и процессов обеспечивает полный контекст и комплексное представление вашей инфраструктуры.
 
-### Use cases
+### Сценарии использования
 
-* Track performance, health, and availability of OpenTelemetry-monitored infrastructure.
-* Analyze trends and baselines for capacity planning.
-* Raise alerts on resource saturation, network errors, and other infrastructure issues.
-* Get a dedicated, pre-configured view for infrastructure monitoring.
+* Отслеживание производительности, состояния и доступности инфраструктуры, мониторируемой через OpenTelemetry.
+* Анализ трендов и базовых линий для планирования ёмкости.
+* Оповещения при насыщении ресурсов, сетевых ошибках и других проблемах инфраструктуры.
+* Готовое предварительно настроенное представление для мониторинга инфраструктуры.
 
-### Requirements
+### Требования
 
-This extension depends on telemetry data that is pushed to Dynatrace from OpenTelemetry via an [OpenTelemetry Collector](/docs/ingest-from/opentelemetry/collector "Learn about the Dynatrace OTel Collector.").
+Это расширение зависит от данных телеметрии, отправляемых в Dynatrace из OpenTelemetry через [OpenTelemetry Collector](/docs/ingest-from/opentelemetry/collector "Узнайте о Dynatrace OTel Collector.").
 
-## Activation and setup
+## Активация и настройка
 
-1. Deploy the OpenTelemetry Collector.
+1. Разверните OpenTelemetry Collector.
 
-   1. Follow the instructions on the [OpenTelemetry Collector](/docs/ingest-from/opentelemetry/collector/deployment "How to deploy Dynatrace OTel Collector.") to deploy the Collector.
-   2. Use the [reference configurationï»¿](https://github.com/Dynatrace/dynatrace-otel-collector/blob/main/config_examples/host-metrics.yaml).
-   3. Ensure the Collector is running and telemetry data is reported to Dynatrace correctly.
-2. Activate the OpenTelemetry Host Monitoring extension.
+   1. Следуйте инструкциям на странице [OpenTelemetry Collector](/docs/ingest-from/opentelemetry/collector/deployment "Как развернуть Dynatrace OTel Collector.") для развёртывания Collector.
+   2. Используйте [эталонную конфигурацию](https://github.com/Dynatrace/dynatrace-otel-collector/blob/main/config_examples/host-metrics.yaml).
+   3. Убедитесь, что Collector работает и данные телеметрии корректно отправляются в Dynatrace.
+2. Активируйте расширение OpenTelemetry Host Monitoring.
 
-## Details
+## Подробности
 
-The [OpenTelemetry Collector](/docs/ingest-from/opentelemetry/collector "Learn about the Dynatrace OTel Collector.") captures telemetry data from your infrastructure and pushes metrics to Dynatrace via the OTel API.
+[OpenTelemetry Collector](/docs/ingest-from/opentelemetry/collector "Узнайте о Dynatrace OTel Collector.") захватывает данные телеметрии из вашей инфраструктуры и отправляет метрики в Dynatrace через OTel API.
 
-The extension displays telemetry data captured by the OpenTelemetry Collector and provides quick analysis and clear understanding of the data, adding Dynatrace-specific context to all signals (metrics, logs, and spans).
+Расширение отображает данные телеметрии, захваченные OpenTelemetry Collector, и обеспечивает быстрый анализ и понятное представление данных, добавляя специфичный для Dynatrace контекст ко всем сигналам (метрики, логи и спаны).
 
-For information on how to use the extension within Dynatrace, see [Monitor hosts that send OpenTelemetry data to Dynatrace](/docs/ingest-from/opentelemetry/collector/use-cases/host-monitoring "How to monitor your hosts that use Collectors to send OpenTelemetry data to Dynatrace.").
+Информацию о том, как использовать расширение в Dynatrace, см. в разделе [Мониторинг хостов, отправляющих данные OpenTelemetry в Dynatrace](/docs/ingest-from/opentelemetry/collector/use-cases/host-monitoring "Как мониторить хосты, использующие Collectors для отправки данных OpenTelemetry в Dynatrace.").
 
-### Licensing and cost
+### Лицензирование и стоимость
 
-All ingested OpenTelemetry data (logs, metrics, and spans) is charged according to your rate card, see [Dynatrace Platform Subscription](/docs/license/capabilities "How different DPS capabilities work and how consumption is calculated and billed.") or [Dynatrace classic licensing](/docs/license/monitoring-consumption-classic "Understand how Dynatrace monitoring consumption is calculated for classic licensing.").
+Все принимаемые данные OpenTelemetry (логи, метрики и спаны) тарифицируются согласно вашей тарифной карте, см. [Dynatrace Platform Subscription](/docs/license/capabilities "Как работают различные возможности DPS и как рассчитывается и выставляется счёт за потребление.") или [классическое лицензирование Dynatrace](/docs/license/monitoring-consumption-classic "Понимание расчёта потребления мониторинга Dynatrace для классического лицензирования.").
 
-The use of this extension does not itself incur any additional costs.
+Использование этого расширения само по себе не влечёт дополнительных затрат.
 
-Based on our measurements using [the reference configurationï»¿](https://github.com/Dynatrace/dynatrace-otel-collector/blob/main/config_examples/host-metrics.yaml), we estimate the following metrics ingest volume:
+На основе наших измерений с использованием [эталонной конфигурации](https://github.com/Dynatrace/dynatrace-otel-collector/blob/main/config_examples/host-metrics.yaml) мы оцениваем следующий объём приёма метрик:
 
-* Approximately 4400 metric data points per host per hour.
-* Approximately 400 datapoints per process per hour.
+* Примерно 4400 точек данных метрик на хост в час.
+* Примерно 400 точек данных на процесс в час.
 
-Both these numbers will vary depending on the available metrics. For more details, see [Limitations](#limitations).
+Оба эти значения будут варьироваться в зависимости от доступных метрик. Подробнее см. в разделе [Ограничения](#limitations).
 
-### Limitations
+### Ограничения
 
-* The metric `system.processes.created` is currently available only on Linux and BSD operating systems.
-* The metric `process.disk.io` requires running the Collector with privileged access. Not doing so will prevent the metric from being captured.
+* Метрика `system.processes.created` в настоящее время доступна только для операционных систем Linux и BSD.
+* Метрика `process.disk.io` требует запуска Collector с привилегированным доступом. Без него метрика не будет захватываться.
 
-## Feature sets
+## Наборы функций
 
-This extension does not include any feature sets. Users are in control of what data will be sent to Dynatrace based on the Collector configuration.
+Это расширение не включает наборов функций. Пользователи сами контролируют, какие данные будут отправляться в Dynatrace, на основе конфигурации Collector.
 
 [![Hub](https://dt-cdn.net/images/hub-512-82db3c583e.png "Hub")
 
-### Explore in Dynatrace Hub
+### Исследуйте в Dynatrace Hub
 
-[Generate topology and screens for your OpenTelemetry host data for quicker display and easier analysis of the data.](https://www.dynatrace.com/hub/detail/opentelemetry-host-monitoring-extension/)
+[Генерация топологии и экранов для данных OpenTelemetry-хостов для более быстрого отображения и удобного анализа данных.](https://www.dynatrace.com/hub/detail/opentelemetry-host-monitoring-extension/)

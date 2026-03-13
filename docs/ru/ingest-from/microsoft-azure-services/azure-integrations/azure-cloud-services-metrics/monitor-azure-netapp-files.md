@@ -1,0 +1,88 @@
+---
+title: Azure NetApp Files monitoring
+source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-netapp-files
+scraped: 2026-03-05T21:36:10.353685
+---
+
+# Мониторинг Azure NetApp Files
+
+# Мониторинг Azure NetApp Files
+
+* Latest Dynatrace
+* How-to guide
+* 2-min read
+* Published Aug 19, 2020
+
+Dynatrace принимает метрики для нескольких предварительно выбранных пространств имён, включая Azure NetApp Files. Вы можете просматривать метрики для каждого экземпляра сервиса, разбивать метрики по нескольким измерениям и создавать пользовательские графики, которые можно закрепить на панелях мониторинга.
+
+## Предварительные требования
+
+* Dynatrace версии 1.200+
+* Environment ActiveGate версии 1.195+
+
+## Включение мониторинга
+
+Сведения о включении мониторинга сервиса см. в разделе [Enable service monitoring](/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-monitoring-guide/azure-enable-service-monitoring "Enable Azure monitoring in Dynatrace.").
+
+## Просмотр метрик сервиса
+
+Метрики сервиса в вашей среде Dynatrace можно просматривать на **странице обзора пользовательского устройства** или на странице **Dashboards**.
+
+### Просмотр метрик на странице обзора пользовательского устройства
+
+Для перехода на страницу обзора пользовательского устройства:
+
+1. Перейдите в ![Technologies](https://dt-cdn.net/images/technologies-512-977161d83c.png "Technologies") **Technologies & Processes Classic**.
+2. Отфильтруйте по имени сервиса и выберите соответствующую группу пользовательских устройств.
+3. После выбора группы пользовательских устройств откроется **страница обзора группы пользовательских устройств**.
+4. На **странице обзора группы пользовательских устройств** перечислены все экземпляры (пользовательские устройства), принадлежащие группе. Выберите экземпляр для просмотра **страницы обзора пользовательского устройства**.
+
+### Просмотр метрик на панели мониторинга
+
+Если для сервиса предусмотрена предустановленная панель мониторинга, на странице **Dashboards** появится предустановленная панель для соответствующего сервиса, содержащая все рекомендуемые метрики. Найти конкретные панели мониторинга можно, отфильтровав по **Preset**, а затем по **Name**.
+
+Для существующих отслеживаемых сервисов может потребоваться повторно сохранить учётные данные, чтобы предустановленная панель мониторинга появилась на странице **Dashboards**. Для повторного сохранения учётных данных перейдите в **Settings** > **Cloud and virtualization** > **Azure**, выберите нужный экземпляр Azure, затем нажмите **Save**.
+
+Вносить изменения в предустановленную панель мониторинга напрямую нельзя, но её можно клонировать и изменить. Для клонирования панели откройте меню обзора (**...**) и выберите **Clone**.
+Чтобы удалить панель мониторинга из списка, её можно скрыть. Для скрытия панели откройте меню обзора (**...**) и выберите **Hide**.
+
+Скрытие панели мониторинга не влияет на других пользователей.
+
+![Clone hide azure](https://dt-cdn.net/images/2020-12-10-14-35-42-1473-23fe220b09.png)
+
+![Netapp](https://dt-cdn.net/images/image-9-2557-4d14b532da.png)
+
+## Доступные метрики
+
+## Azure NetApp Files
+
+| Название | Описание | Единица измерения | Рекомендуется |
+| --- | --- | --- | --- |
+| VolumePoolAllocatedSize | Подготовленный размер пула | Byte | Применимо |
+| VolumePoolAllocatedUsed | Использованный выделенный размер пула | Byte | Применимо |
+| VolumePoolTotalLogicalSize | Сумма логического размера всех томов, принадлежащих пулу | Byte | Применимо |
+| VolumePoolTotalSnapshotSize | Сумма размера снимков всех томов в данном пуле | Byte | Применимо |
+
+## Azure NetApp Files — тома
+
+| Название | Описание | Единица измерения |  |
+| --- | --- | --- | --- |
+| AverageReadLatency | Среднее время операций чтения из тома в миллисекундах | MilliSecond | Применимо |
+| AverageWriteLatency | Среднее время операций записи в том в миллисекундах | MilliSecond | Применимо |
+| CbsVolumeBackupActive | Состояние активности резервного копирования тома | Count |  |
+| CbsVolumeLogicalBackupBytes | Количество логических байт в резервной копии | Byte |  |
+| CbsVolumeOperationComplete | Состояние операции | Count |  |
+| CbsVolumeOperationTransferredBytes | Байт, переданных в ходе операции | Byte |  |
+| CbsVolumeProtected | Состояние защиты тома | Count |  |
+| ReadIops | IOPS чтения | PerSecond | Применимо |
+| VolumeAllocatedSize | Выделенный размер тома | Byte | Применимо |
+| VolumeLogicalSize | Использованный размер тома | Byte | Применимо |
+| VolumeSnapshotSize | Размер снимка тома | Byte |  |
+| WriteIops | IOPS записи | PerSecond | Применимо |
+| XregionReplicationHealthy | Проверяет, является ли статус репликации тома работоспособным | Count |  |
+| XregionReplicationLagTime | Задержка репликации тома | Second |  |
+| XregionReplicationLastTransferDuration | Продолжительность последней передачи при репликации тома | Second |  |
+| XregionReplicationLastTransferSize | Размер последней передачи при репликации тома | Byte |  |
+| XregionReplicationRelationshipProgress | Ход выполнения репликации тома | Byte |  |
+| XregionReplicationRelationshipTransferring | Проверяет, выполняется ли в данный момент передача при репликации тома | Count |  |
+| XregionReplicationTotalTransferBytes | Общее количество байт при репликации тома | Byte |  |

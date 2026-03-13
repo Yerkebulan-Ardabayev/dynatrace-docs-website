@@ -1,0 +1,63 @@
+---
+title: Azure Device Provisioning Service monitoring
+source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-device-provisioning-service
+scraped: 2026-03-06T21:31:02.598112
+---
+
+# Мониторинг Azure Device Provisioning Service
+
+# Мониторинг Azure Device Provisioning Service
+
+* Latest Dynatrace
+* How-to guide
+* 1-min read
+* Published Sep 22, 2020
+
+Dynatrace получает метрики из Azure Metrics API для Azure Device Provisioning Service. Вы можете просматривать метрики для каждого экземпляра сервиса, разбивать метрики по нескольким измерениям и создавать пользовательские графики, которые можно закрепить на дашбордах.
+
+## Предварительные требования
+
+* Dynatrace версии 1.203+
+* Environment ActiveGate версии 1.195+
+
+## Включение мониторинга
+
+Чтобы узнать, как включить мониторинг сервиса, см. [Enable service monitoring](/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-monitoring-guide/azure-enable-service-monitoring "Enable Azure monitoring in Dynatrace.").
+
+Экземпляр Device Provisioning Service необходимо привязать к IoT Hub для возможности создания групповых и индивидуальных регистраций.
+
+## Просмотр метрик сервиса
+
+Вы можете просматривать метрики сервиса в вашей среде Dynatrace на **странице обзора пользовательского устройства** или на странице **Dashboards**.
+
+### Просмотр метрик на странице обзора пользовательского устройства
+
+Чтобы перейти на страницу обзора пользовательского устройства:
+
+1. Перейдите в ![Technologies](https://dt-cdn.net/images/technologies-512-977161d83c.png "Technologies") **Technologies & Processes Classic**.
+2. Отфильтруйте по имени сервиса и выберите соответствующую группу пользовательских устройств.
+3. После выбора группы пользовательских устройств вы окажетесь на **странице обзора группы пользовательских устройств**.
+4. На **странице обзора группы пользовательских устройств** перечислены все экземпляры (пользовательские устройства), принадлежащие группе. Выберите экземпляр для просмотра **страницы обзора пользовательского устройства**.
+
+### Просмотр метрик на дашборде
+
+Если для сервиса предусмотрен преднастроенный дашборд, на странице **Dashboards** появится преднастроенный дашборд для соответствующего сервиса со всеми рекомендованными метриками. Вы можете искать конкретные дашборды, фильтруя по **Preset**, а затем по **Name**.
+
+Для существующих отслеживаемых сервисов может потребоваться повторно сохранить учётные данные, чтобы преднастроенный дашборд появился на странице **Dashboards**. Для повторного сохранения учётных данных перейдите в **Settings** > **Cloud and virtualization** > **Azure**, выберите нужный экземпляр Azure и нажмите **Save**.
+
+Вносить изменения непосредственно в преднастроенный дашборд нельзя, однако его можно клонировать и редактировать. Чтобы клонировать дашборд, откройте меню (**â¦**) и выберите **Clone**.
+Чтобы убрать дашборд из списка, его можно скрыть. Для скрытия откройте меню (**â¦**) и выберите **Hide**.
+
+Скрытие дашборда не влияет на других пользователей.
+
+![Clone hide azure](https://dt-cdn.net/images/2020-12-10-14-35-42-1473-23fe220b09.png)
+
+![Device provisioning](https://dt-cdn.net/images/dashboard-82-1920-1723ded01c.png)
+
+## Доступные метрики
+
+| Название | Описание | Измерения | Единица | Рекомендовано |
+| --- | --- | --- | --- | --- |
+| AttestationAttempts | Количество попыток аттестации устройств | ProvisioningServiceName, Status, Protocol | Count | Applicable |
+| DeviceAssignments | Количество устройств, назначенных IoT Hub | ProvisioningServiceName, IotHubName | Count | Applicable |
+| RegistrationAttempts | Количество попыток регистрации устройств | ProvisioningServiceName, IotHubName, Status | Count | Applicable |

@@ -1,0 +1,23 @@
+---
+title: Dynatrace Operator release notes version 0.10.2
+source: https://www.dynatrace.com/docs/whats-new/dynatrace-operator/dto-fix-0-10-2
+scraped: 2026-03-02T21:21:50.796803
+---
+
+# Заметки о выпуске Dynatrace Operator версии 0.10.2
+
+# Заметки о выпуске Dynatrace Operator версии 0.10.2
+
+* Последняя версия Dynatrace
+* Заметки о выпуске
+* Опубликовано 12 января 2023 г.
+
+Дата выпуска: 12 января 2023 г.
+
+## Исправленные проблемы
+
+* Добавлена поддержка образов модулей кода из публичного реестра.
+
+* Компонент node-driver-registrar обновлён до версии 2.7.0.
+* Компонент `livenessProbe` обновлён до версии 2.9.0.
+* Go обновлён до версии 1.19.4.

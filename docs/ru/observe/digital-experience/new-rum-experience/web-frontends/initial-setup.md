@@ -1,0 +1,77 @@
+---
+title: Initial setup for web frontends
+source: https://www.dynatrace.com/docs/observe/digital-experience/new-rum-experience/web-frontends/initial-setup
+scraped: 2026-03-06T21:28:09.180900
+---
+
+# Начальная настройка для веб-фронтендов
+
+# Начальная настройка для веб-фронтендов
+
+* Последняя версия Dynatrace
+* Практическое руководство
+* Чтение: 1 мин
+* Обновлено 03 февраля 2026 г.
+
+Начните работу с New RUM Experience, используя базовые руководства в этом разделе, которые помогут вам выполнить рабочую настройку.
+
+## Уже используете RUM Classic для своих веб-фронтендов?
+
+Переход на New RUM Experience прост и открывает расширенные возможности мониторинга.
+
+[Узнать больше](/docs/observe/digital-experience/new-rum-experience/web-frontends/initial-setup/enable-new-rum-for-web-apps)
+
+## Инструментирование новых фронтендов
+
+Чтобы начать мониторинг ваших веб-фронтендов с помощью New RUM Experience, следуйте приведённым ниже инструкциям.
+
+1. Выберите подходящий подход к инструментированию
+
+New RUM Experience предлагает два подхода к инструментированию ваших веб-фронтендов: автоматическое внедрение и безагентный RUM.
+
+#### Автоматическое внедрение
+
+Автоматическое внедрение — наиболее удобный способ инструментирования ваших веб-фронтендов. Для его использования должны быть выполнены следующие предварительные условия:
+
+* У вас есть доступ к веб-серверу, и вы можете установить [OneAgent](/docs/platform/oneagent "Узнайте о возможностях мониторинга OneAgent.").
+* Хотя бы один из уровней приложения, участвующих в формировании HTML, должен быть инструментирован модулем кода OneAgent, который поддерживает автоматическое внедрение RUM. Список поддерживаемых технологий см. в разделе [Поддержка технологий — Real User Monitoring — Веб-серверы и приложения](/docs/ingest-from/technology-support#rum-auto-injection "Найдите техническую информацию о поддержке Dynatrace для конкретных платформ и фреймворков разработки.").
+
+Если эти условия выполнены, мы рекомендуем использовать автоматическое внедрение.
+
+Если условия выполнены, но вы предпочитаете вставлять RUM JavaScript вручную, создайте автоматически инструментированный фронтенд, а затем следуйте инструкциям в разделе [Использование ручной вставки для страниц автоматически инструментированного фронтенда](/docs/observe/digital-experience/new-rum-experience/web-frontends/initial-setup/configure-auto-injection#manual-insertion-using-oneagent "Настройте автоматическое внедрение RUM JavaScript на страницы ваших фронтендов в New RUM Experience.").
+
+#### Безагентный RUM
+
+Если автоматическое внедрение невозможно, используйте безагентный RUM. Этот подход требует только доступа к коду приложения, а не к веб-серверу. Для настройки безагентного RUM необходимо вручную вставить RUM JavaScript на каждую страницу вашего приложения.
+
+2. Настройте ваш фронтенд
+
+После выбора подхода к инструментированию следуйте соответствующему руководству ниже для настройки вашего фронтенда.
+
+[**Настройка автоматически инструментированного фронтенда**](/docs/observe/digital-experience/new-rum-experience/web-frontends/initial-setup/set-up-auto-injected-frontend "Узнайте, как настроить автоматически инструментированный веб-фронтенд в New RUM Experience.")[**Настройка безагентного RUM**](/docs/observe/digital-experience/new-rum-experience/web-frontends/initial-setup/set-up-agentless-monitoring "Узнайте, как настроить безагентный RUM для ваших веб-фронтендов в New RUM Experience.")
+
+3. Завершение начальной настройки
+
+Откройте [![Experience Vitals](https://dt-cdn.net/images/experience-vitals-256-9999590b55.png "Experience Vitals") **Experience Vitals**](/docs/observe/digital-experience/new-rum-experience/experience-vitals "Приложение Experience Vitals предоставляет точку входа для мониторинга веб- и мобильных фронтендов.") и перейдите к созданному вами фронтенду. Если ваш фронтенд получает трафик, графики должны начать отображать данные в течение десяти минут. Если этого не происходит, ваша среда может потребовать дополнительных шагов настройки. Приведённые ниже руководства помогут вам проверить и завершить настройку.
+
+[**Завершение начальной настройки для автоматически инструментированного фронтенда**](/docs/observe/digital-experience/new-rum-experience/web-frontends/initial-setup/finalize-initial-setup-auto-injection "Проверьте и завершите начальную настройку для автоматически инструментированного фронтенда.")[**Завершение начальной настройки для безагентного фронтенда**](/docs/observe/digital-experience/new-rum-experience/web-frontends/initial-setup/finalize-initial-setup-agentless "Проверьте и завершите начальную настройку для безагентного фронтенда.")
+
+## Выборочное развёртывание RUM
+
+После развёртывания OneAgent в режиме полного мониторинга на хосте веб-приложения, работающие на этом хосте, по умолчанию автоматически мониторятся с помощью RUM. Если вы предпочитаете развёртывать RUM более поэтапно после установки OneAgent, следуйте инструкциям в разделе [Выборочное развёртывание RUM для ваших фронтендов в New RUM Experience](/docs/observe/digital-experience/new-rum-experience/web-frontends/initial-setup/selective-rum-rollout "Узнайте, как выборочно развернуть RUM для ваших фронтендов после установки OneAgent на хостах.").
+
+## Все руководства по начальной настройке
+
+* [Включение New RUM Experience для веб-приложений RUM Classic](/docs/observe/digital-experience/new-rum-experience/web-frontends/initial-setup/enable-new-rum-for-web-apps "Узнайте, как включить New RUM Experience для ваших веб-приложений RUM Classic")
+* [Настройка автоматически инструментированного фронтенда в New RUM Experience](/docs/observe/digital-experience/new-rum-experience/web-frontends/initial-setup/set-up-auto-injected-frontend "Узнайте, как настроить автоматически инструментированный веб-фронтенд в New RUM Experience.")
+* [Настройка безагентного RUM в New RUM Experience](/docs/observe/digital-experience/new-rum-experience/web-frontends/initial-setup/set-up-agentless-monitoring "Узнайте, как настроить безагентный RUM для ваших веб-фронтендов в New RUM Experience.")
+* [Завершение начальной настройки для автоматически инструментированного фронтенда](/docs/observe/digital-experience/new-rum-experience/web-frontends/initial-setup/finalize-initial-setup-auto-injection "Проверьте и завершите начальную настройку для автоматически инструментированного фронтенда.")
+* [Завершение начальной настройки для безагентного фронтенда](/docs/observe/digital-experience/new-rum-experience/web-frontends/initial-setup/finalize-initial-setup-agentless "Проверьте и завершите начальную настройку для безагентного фронтенда.")
+* [Настройка определения имени хоста в New RUM Experience](/docs/observe/digital-experience/new-rum-experience/web-frontends/initial-setup/set-up-host-name-determination "Узнайте, как настроить определение имени хоста в New RUM Experience.")
+* [Выбор формата сниппета в New RUM Experience](/docs/observe/digital-experience/new-rum-experience/web-frontends/initial-setup/snippet-formats "Узнайте, как выбрать формат сниппета RUM JavaScript, наиболее подходящий для вашего конкретного случая использования в New RUM Experience.")
+* [Использование целостности подресурсов (SRI) в New RUM Experience](/docs/observe/digital-experience/new-rum-experience/web-frontends/initial-setup/subresource-integrity "Используйте функцию браузера Subresource Integrity (SRI) в New RUM Experience для обеспечения целостности кода Real User Monitoring.")
+* [Настройка автоматического внедрения в New RUM Experience](/docs/observe/digital-experience/new-rum-experience/web-frontends/initial-setup/configure-auto-injection "Настройте автоматическое внедрение RUM JavaScript на страницы ваших фронтендов в New RUM Experience.")
+* [Адаптация правил CSP для New RUM Experience](/docs/observe/digital-experience/new-rum-experience/web-frontends/initial-setup/adapt-csp-rules "Узнайте, как адаптировать ваши правила CSP для New RUM Experience.")
+* [Настройка источника кода Real User Monitoring в New RUM Experience](/docs/observe/digital-experience/new-rum-experience/web-frontends/initial-setup/configure-monitoring-code-source "Настройте источник кода Real User Monitoring в New RUM Experience в соответствии с вашими конкретными требованиями.")
+* [Настройка конечной точки beacon для веб-фронтендов в New RUM Experience](/docs/observe/digital-experience/new-rum-experience/web-frontends/initial-setup/configure-beacon-endpoint "Узнайте, как настроить конечную точку beacon для веб-фронтендов в соответствии с вашими конкретными требованиями.")
+* [Выборочное развёртывание RUM для ваших фронтендов в New RUM Experience](/docs/observe/digital-experience/new-rum-experience/web-frontends/initial-setup/selective-rum-rollout "Узнайте, как выборочно развернуть RUM для ваших фронтендов после установки OneAgent на хостах.")

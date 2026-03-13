@@ -1,42 +1,42 @@
 ---
-title: Network devices
+title: Сетевые устройства
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/infrastructure-and-operations/network-devices
 scraped: 2026-03-06T21:16:45.289692
 ---
 
-# Network devices
+# Сетевые устройства
 
-# Network devices
+# Сетевые устройства
 
-* Latest Dynatrace
-* Explanation
-* 2-min read
-* Published Nov 25, 2025
+* Последняя Dynatrace
+* Описание
+* 2 мин. чтения
+* Опубликовано 25 ноября 2025 г.
 
-The  **Network devices** view in ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Infrastructure & Operations** provides insights into networking components and their availability, with analytics powered by [Dynatrace Intelligence](/docs/dynatrace-intelligence "Get familiar with the capabilities of Dynatrace Intelligence."). Dynatrace offers flexible network device observability, allowing you to choose the level of monitoring and onboarding process that fits your needs.
+Представление **Сетевые устройства** в ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Infrastructure & Operations** предоставляет информацию о сетевых компонентах и их доступности с аналитикой на базе [Dynatrace Intelligence](/docs/dynatrace-intelligence "Ознакомьтесь с возможностями Dynatrace Intelligence."). Dynatrace предлагает гибкий мониторинг сетевых устройств, позволяя выбрать уровень мониторинга и процесс подключения, подходящий для ваших потребностей.
 
-## Overview
+## Обзор
 
-The  **Network devices** view provides different perspectives for viewing your network devices (**Health**, **Utilization**, and **Metadata**).
+Представление **Сетевые устройства** предоставляет различные перспективы для просмотра ваших сетевых устройств (**Состояние**, **Использование** и **Метаданные**).
 
-The **Health** perspective includes the following default columns:
+Перспектива **Состояние** включает следующие столбцы по умолчанию:
 
-* **Network device**: The name or identifier of the network device. Select the name for a comprehensive, full-page view with detailed metadata and metrics.
-* **Network area**: The logical grouping of network devices. Network areas are configured in the [SNMP Autodiscovery extension](/docs/observe/infrastructure-observability/extensions/snmp-autodiscovery "Scan through your subnets and build an inventory of SNMP-enabled network devices.").
-* **Problems**: Lists any problems detected by Dynatrace Intelligence. Select a problem to access affected entities and investigate specific issues.
-* **Reachability**: Indicates whether the device is reachable and responsive over the network.
-* **Uptime**: The duration the device has been operational since the last restart.
-* **Interface status**: The availability status of network interfaces.
-* **Saturated interfaces**: Interfaces experiencing high utilization or congestion.
+* **Сетевое устройство**: Имя или идентификатор сетевого устройства. Выберите имя для просмотра полной страницы с подробными метаданными и метриками.
+* **Сетевая область**: Логическая группировка сетевых устройств. Сетевые области настраиваются в [расширении SNMP Autodiscovery](/docs/observe/infrastructure-observability/extensions/snmp-autodiscovery "Сканирование подсетей и создание инвентаря SNMP-устройств.").
+* **Проблемы**: Перечисляет проблемы, обнаруженные Dynatrace Intelligence. Выберите проблему для доступа к затронутым сущностям и расследования конкретных вопросов.
+* **Доступность**: Указывает, доступно ли устройство и отвечает ли оно в сети.
+* **Время работы**: Продолжительность непрерывной работы устройства с момента последней перезагрузки.
+* **Состояние интерфейсов**: Статус доступности сетевых интерфейсов.
+* **Перегруженные интерфейсы**: Интерфейсы с высокой загрузкой или перегрузкой.
 
-## Use cases
+## Сценарии использования
 
-* Monitor device health
+* Мониторинг состояния устройств
 
-  Monitor health status, interface availability, network utilization, and hardware metrics such as CPU and memory usage.
-* Identify and resolve issues
+  Мониторинг состояния работоспособности, доступности интерфейсов, сетевой загрузки и аппаратных метрик, таких как использование CPU и памяти.
+* Выявление и устранение проблем
 
-  View all problems detected by Dynatrace Intelligence and access affected entities to investigate and resolve specific issues.
-* Filter and analyze devices
+  Просмотр всех проблем, обнаруженных Dynatrace Intelligence, и доступ к затронутым сущностям для расследования и устранения конкретных вопросов.
+* Фильтрация и анализ устройств
 
-  Sort and filter network devices by name, type, problems, IP address, uptime, interface status, saturated interfaces, traffic volume, and reachability.
+  Сортировка и фильтрация сетевых устройств по имени, типу, проблемам, IP-адресу, времени работы, состоянию интерфейсов, перегруженным интерфейсам, объёму трафика и доступности.

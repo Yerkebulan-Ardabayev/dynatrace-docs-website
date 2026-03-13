@@ -1,106 +1,106 @@
 ---
-title: Subscription overview (DPS for Hybrid)
+title: Обзор подписки (DPS для Hybrid)
 source: https://www.dynatrace.com/docs/manage/account-management/license-subscription/subscription-overview-dps-hybrid
 scraped: 2026-03-04T21:32:07.873486
 ---
 
-# Subscription overview (DPS for Hybrid)
+# Обзор подписки (DPS для Hybrid)
 
-# Subscription overview (DPS for Hybrid)
+# Обзор подписки (DPS для Hybrid)
 
-* Latest Dynatrace
-* Explanation
-* 3-min read
-* Published Nov 24, 2025
+* Последняя Dynatrace
+* Описание
+* 3 мин. чтения
+* Опубликовано 24 ноября 2025 г.
 
-This page is specifically for customers with a DPS for Hybrid setup, see [DPS for Hybrid](/docs/license/dps-for-hybrid "DPS for Hybrid lets you share one subscription across multiple accounts.").
+Эта страница предназначена специально для клиентов с конфигурацией DPS для Hybrid, см. [DPS для Hybrid](/docs/license/dps-for-hybrid "DPS для Hybrid позволяет использовать одну подписку на несколько аккаунтов.").
 
-If you do not share your DPS license with other accounts, see [Subscription (DPS)](/docs/manage/account-management/license-subscription/subscription-overview-dps "View your Dynatrace Platform Subscription budget summary and cost analysis.") for a description of your **Overview** view.
+Если вы не сообщаете свою лицензию DPS с другими аккаунтами, см. [Подписка (DPS)](/docs/manage/account-management/license-subscription/subscription-overview-dps "Просмотр сводки бюджета и анализа расходов вашей подписки Dynatrace Platform.") для описания вашего представления **Обзор**.
 
-The Account Management subscription overview view provides key analyses of your DPS for Hybrid subscription.
-You can see overall information about your license, and drill-downs at the account level.
+Представление обзора подписки в управлении аккаунтами предоставляет ключевые анализы вашей подписки DPS для Hybrid.
+Вы можете увидеть общую информацию о вашей лицензии и детализацию на уровне аккаунтов.
 
-To see this information, go to **Account Management** > **Subscription** > **Subscription Overview**.
+Чтобы просмотреть эту информацию, перейдите в **Управление аккаунтами** > **Подписка** > **Обзор подписки**.
 
-## License level
+## Уровень лицензии
 
-When you first open the **Subscription** > **Subscription Overview** page, you'll see information about your DPS license:
+При первом открытии страницы **Подписка** > **Обзор подписки** вы увидите информацию о вашей лицензии DPS:
 
-* **Dynatrace Platform Subscription**: Overall information about your DPS license.
-* **Cost distribution - Accounts**: Total cost to date for all accounts within your DPS for Hybrid setup, separated at the account level.
-* **Cost Trend**: How each account's costs have developed over time.
+* **Dynatrace Platform Subscription**: Общая информация о вашей лицензии DPS.
+* **Распределение расходов — Аккаунты**: Общие расходы на текущий момент для всех аккаунтов в рамках вашей конфигурации DPS для Hybrid, разделённые на уровне аккаунтов.
+* **Тренд расходов**: Как развивались расходы каждого аккаунта с течением времени.
 
-![Account Management subscription view (DPS for Hybrid)](https://dt-cdn.net/images/dps-hybrid-account-view-1473-9af0de7f12.png)
+![Представление подписки управления аккаунтами (DPS для Hybrid)](https://dt-cdn.net/images/dps-hybrid-account-view-1473-9af0de7f12.png)
 
-To see consumption of all accounts attached to the license, make sure that **All accounts** is selected in the drop-down menu at the top-right.
-To drill-down and view account-level costs, select the drop-down menu and then select the appropriate account name.
-
-### Dynatrace Platform Subscription
-
-The **Dynatrace Platform Subscription** pane gives you an overview of the DPS license that all accounts are attached to.
-This includes the annual commitment amount, annucal commitment period, and days remaining in the license.
-
-Additional information about your licenses is available by selecting:
-
-* **History**, to see all licenses associated with the accounts, including active and expired licenses.
-* **Pricing**, to view details about capability unit prices.
-
-### Cost distribution - Accounts
-
-The **Cost distribution - Accounts** pane gives you a breakdown of how each individual account contributes to your total license consumption.
-
-* The pie chart on the left side shows how much each account has contributed to the total costs to date.
-* The bar charts on the right side show each account's costs, as a proportion of the total license commitment.
-
-### Cost Trend
-
-The **Cost Trend** pane shows how each account's costs have developed over time.
-The accounts are stacked, so the total consumption for all accounts is also visible.
-
-## Account level
-
-To view license consumption at the account level, select the drop-down menu in the top-right corner.
-(By default, it says **All accounts**.)
-When you select the menu, the drop-down expands and you'll see a list of all accounts that are associated with your DPS license.
-Select the account that you want to view.
-
-The account-level view provides the following information:
-
-* **Dynatrace Platform Subscription**: As with the license-level view, this provides overall information about your DPS license.
-* **Cost distribution**: Total cost to date for the account.
-* **Cost Forecast**: How the account's costs have developed over time, including a forecast of future costs.
-* **Events**: All applicable forecast events related to the account.
-
-![Account Management account view (DPS for Hybrid)](https://dt-cdn.net/images/dps-hybrid-subscription-view-1470-41d553d8d9.png)
+Чтобы увидеть потребление всех аккаунтов, привязанных к лицензии, убедитесь, что в выпадающем меню в правом верхнем углу выбрано **Все аккаунты**.
+Для детализации и просмотра расходов на уровне аккаунта выберите выпадающее меню и затем соответствующее имя аккаунта.
 
 ### Dynatrace Platform Subscription
 
-The **Dynatrace Platform Subscription** pane gives you an overview of the DPS license that this account is attached to.
+Панель **Dynatrace Platform Subscription** предоставляет обзор лицензии DPS, к которой привязаны все аккаунты.
+Это включает сумму годового обязательства, период годового обязательства и количество оставшихся дней лицензии.
 
-Additional information about your licenses is available by selecting:
+Дополнительная информация о ваших лицензиях доступна по ссылкам:
 
-* **History**, to see all licenses associated with the account, including active and expired licenses.
-* **Pricing**, to view details about capability unit prices.
+* **История** — для просмотра всех лицензий, связанных с аккаунтами, включая активные и истёкшие.
+* **Тарификация** — для просмотра подробностей о ценах на единицы возможностей.
 
-### Cost distribution
+### Распределение расходов — Аккаунты
 
-The **Cost distribution** pane gives you insights into the account's consumption of different Dynatrace rate-card capabilities.
+Панель **Распределение расходов — Аккаунты** показывает, какой вклад каждый отдельный аккаунт вносит в общее потребление лицензии.
 
-Select **View details** to see the **Cost and usage details** page, see [Cost and usage](/docs/manage/account-management/license-subscription/subscription-overview-dps#dps-cost-and-usage "View your Dynatrace Platform Subscription budget summary and cost analysis.").
+* Круговая диаграмма слева показывает, сколько каждый аккаунт внёс в общие расходы на текущий момент.
+* Столбчатые диаграммы справа показывают расходы каждого аккаунта как долю от общего лицензионного обязательства.
 
-### Cost Forecast
+### Тренд расходов
 
-The **Cost Forecast** pane shows your cumulative accrued costs.
-Data is shown from the start of the subscription period, and includes a forecast of costs through the end of the period.
-Hover over the chart to display the actual and forecast costs.
+Панель **Тренд расходов** показывает, как развивались расходы каждого аккаунта с течением времени.
+Аккаунты наложены друг на друга, поэтому также виден общий объём потребления для всех аккаунтов.
 
-Account Management uses advanced forecasting models to predict future costs.
-These forecasts are available only for accounts with 15 days or more of cost data.
+## Уровень аккаунта
 
-Forecast data is an estimate only.
-It does not guarantee future costs.
+Для просмотра потребления лицензии на уровне аккаунта выберите выпадающее меню в правом верхнем углу.
+(По умолчанию отображается **Все аккаунты**.)
+При выборе меню раскрывается выпадающий список всех аккаунтов, связанных с вашей лицензией DPS.
+Выберите аккаунт, который хотите просмотреть.
 
-### Events
+Представление на уровне аккаунта предоставляет следующую информацию:
 
-The **Events** pane shows projected on-demand usage increase (percentage and cost) that you're forecast to incur at the end of the annual commitment period.
-When usage is forecasted to exceeds the annual commitment, the panel shows the specific date at which the forecasted usage exceeds the annual commitment.
+* **Dynatrace Platform Subscription**: Как и в представлении на уровне лицензии, содержит общую информацию о вашей лицензии DPS.
+* **Распределение расходов**: Общие расходы на текущий момент для данного аккаунта.
+* **Прогноз расходов**: Как развивались расходы аккаунта с течением времени, включая прогноз будущих расходов.
+* **События**: Все применимые события прогноза, связанные с аккаунтом.
+
+![Представление аккаунта управления аккаунтами (DPS для Hybrid)](https://dt-cdn.net/images/dps-hybrid-subscription-view-1470-41d553d8d9.png)
+
+### Dynatrace Platform Subscription
+
+Панель **Dynatrace Platform Subscription** предоставляет обзор лицензии DPS, к которой привязан данный аккаунт.
+
+Дополнительная информация о ваших лицензиях доступна по ссылкам:
+
+* **История** — для просмотра всех лицензий, связанных с аккаунтом, включая активные и истёкшие.
+* **Тарификация** — для просмотра подробностей о ценах на единицы возможностей.
+
+### Распределение расходов
+
+Панель **Распределение расходов** предоставляет информацию о потреблении аккаунтом различных возможностей тарифной карты Dynatrace.
+
+Выберите **Просмотреть подробности** для перехода на страницу **Расходы и использование**, см. [Расходы и использование](/docs/manage/account-management/license-subscription/subscription-overview-dps#dps-cost-and-usage "Просмотр сводки бюджета и анализа расходов вашей подписки Dynatrace Platform.").
+
+### Прогноз расходов
+
+Панель **Прогноз расходов** показывает ваши накопленные расходы.
+Данные отображаются с начала периода подписки и включают прогноз расходов до конца периода.
+Наведите курсор на диаграмму для отображения фактических и прогнозных расходов.
+
+Управление аккаунтами использует продвинутые модели прогнозирования для предсказания будущих расходов.
+Эти прогнозы доступны только для аккаунтов с 15 или более днями данных о расходах.
+
+Данные прогноза являются лишь оценкой.
+Они не гарантируют будущие расходы.
+
+### События
+
+Панель **События** показывает прогнозируемое увеличение использования по требованию (в процентах и по стоимости), которое ожидается в конце периода годового обязательства.
+Когда прогнозируется, что использование превысит годовое обязательство, панель показывает конкретную дату, на которую прогнозируемое использование превышает годовое обязательство.

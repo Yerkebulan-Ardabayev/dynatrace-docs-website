@@ -1,21 +1,21 @@
 ---
-title: Troubleshooting network monitoring
+title: Устранение неполадок сетевого мониторинга
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/networks-classic/troubleshoot-network-monitoring
 scraped: 2026-03-06T21:28:39.385292
 ---
 
-# Troubleshooting network monitoring
+# Устранение неполадок сетевого мониторинга
 
-# Troubleshooting network monitoring
+# Устранение неполадок сетевого мониторинга
 
-* Classic
-* Troubleshooting
-* 1-min read
-* Published May 06, 2022
+* Классическая версия
+* Устранение неполадок
+* 1 мин. чтения
+* Опубликовано 6 мая 2022 г.
 
-Some messages you get during network monitoring might require actions from your side while some are just informational and do not need any reaction.
+Некоторые сообщения, получаемые при сетевом мониторинге, могут требовать действий с вашей стороны, в то время как другие носят информационный характер и не требуют реакции.
 
-* [Network monitoring: Potential network disruption during OneAgent installation on Windowsï»¿](https://dt-url.net/hw038ii)
-* [Network monitoring: OneAgent page allocation failure message on Linuxï»¿](https://dt-url.net/84238ov)
-* [Network monitoring: Network Agent initialization failure on Windowsï»¿](https://dt-url.net/7c438ee)
-* [Network monitoring: Why OneAgent's retransmissions metric can diverge when comparing to other toolsï»¿](https://dt-url.net/0203wlh)
+* [Сетевой мониторинг: возможные сбои сети при установке OneAgent на Windows](https://dt-url.net/hw038ii)
+* [Сетевой мониторинг: сообщение об ошибке выделения памяти OneAgent на Linux](https://dt-url.net/84238ov)
+* [Сетевой мониторинг: ошибка инициализации сетевого агента на Windows](https://dt-url.net/7c438ee)
+* [Сетевой мониторинг: почему метрика повторных передач OneAgent может расходиться при сравнении с другими инструментами](https://dt-url.net/0203wlh)

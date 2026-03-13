@@ -1,0 +1,120 @@
+---
+title: Explore Business Events
+source: https://www.dynatrace.com/docs/observe/business-observability/explore-business-events
+scraped: 2026-03-06T21:14:45.059247
+---
+
+# Explore Business Events
+
+# Explore Business Events
+
+* Последняя версия Dynatrace
+* Приложение
+* Чтение: 2 мин
+* Опубликовано 25 апреля 2023 г.
+
+О приложении
+
+![Explore Business Events](https://dt-cdn.net/images/biz-events-512-68c4be09db.png "Explore Business Events") **Explore Business Events** — центральный репозиторий ресурсов, связанных с бизнес-событиями: публикации блога, документация, прямые ссылки на продукты и другие приложения, актуальные для бизнес-анализа, например [Notebooks](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks "Анализируйте, визуализируйте и делитесь аналитическими данными о наблюдаемости — всё в одном совместном настраиваемом рабочем пространстве.") и [Dashboards](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new "Создавайте интерактивные настраиваемые представления для визуализации, анализа и публикации данных наблюдаемости в реальном времени."). Приложение разработано для того, чтобы:
+
+* Провести вас через сквозной процесс бизнес-анализа Dynatrace: от захвата бизнес-событий через обработку и анализ до отображения итоговых результатов на дашбордах.
+* Помочь разобраться в сценариях использования бизнес-аналитики и решить конкретные задачи.
+
+Предварительные требования
+
+### Разрешения
+
+В следующей таблице описаны необходимые разрешения.
+
+storage:bizevents:read
+
+Необходимо для чтения bizevents из Grail
+
+storage:buckets:read
+
+Необходимо для чтения системных данных из Grail
+
+settings:objects:read
+
+Необходимо для чтения правил OneAgent
+
+settings:objects:write
+
+Необходимо для записи правил OneAgent
+
+settings:schemas:read
+
+Необходимо для чтения схемы правил OneAgent
+
+app-settings:objects:read
+
+Необходимо для чтения конфигураций в настройках приложения
+
+storage:filter-segments:read
+
+Чтение сегментов фильтрации
+
+storage:events:write
+
+Требуется для действий рабочего процесса
+
+state:app-states:read
+
+Необходимо для чтения состояний приложения
+
+state:app-states:write
+
+Необходимо для записи состояний приложения
+
+### Установка
+
+Убедитесь, что приложение [установлено в вашей среде](/docs/manage/hub#install "Информация о Dynatrace Hub.").
+
+Начало работы
+
+Концепции
+
+Сценарии использования
+
+![Explore business events](https://dt-cdn.net/hub/Explore_business_events_2.png)
+
+1 из 1 Explore business events
+
+## Процесс обработки
+
+Процесс работы с бизнес-событиями в Dynatrace состоит из трёх основных шагов: захват и обработка, анализ и создание дашбордов. Для ознакомления со сценарием использования, охватывающим все шаги, перейдите в раздел [Сценарий использования бизнес-событий](/docs/observe/business-observability/end-to-end-example "Как захватывать и обрабатывать бизнес-события.").
+
+### Захват и обработка
+
+Отображает все ссылки, связанные с захватом и обработкой бизнес-событий. Для ознакомления с реальным примером захвата и обработки данных бизнес-событий перейдите в [раздел захвата сквозного сценария использования](/docs/observe/business-observability/end-to-end-example#create-a-capture-rule "Как захватывать и обрабатывать бизнес-события.").
+
+### Анализ
+
+Предоставляет ссылки на два места для выполнения DQL-запросов: Notebooks и **Logs and event viewer** (Просмотрщик журналов и событий).
+
+* Для ознакомления с примерами простых и расширенных DQL-запросов для бизнес-анализа перейдите в раздел [Анализ и примеры](/docs/observe/business-observability/bo-analysis "Анализ и представление данных бизнес-событий.").
+* Для ознакомления с анализом, выполненным в рамках сценария использования, перейдите в [часть анализа сценария использования](/docs/observe/business-observability/end-to-end-example#analyze-your-data-with-dql "Как захватывать и обрабатывать бизнес-события.").
+
+### Визуализация
+
+Предоставляет ссылки на места, где можно создавать дашборды. Для ознакомления с примером дашборда, созданного в рамках сценария использования, перейдите в [сквозной сценарий использования](/docs/observe/business-observability/end-to-end-example#display-your-results "Как захватывать и обрабатывать бизнес-события.").
+
+## Ресурсы Dynatrace для бизнес-событий
+
+* Публикации блога дополняют документацию реальными примерами, сценариями использования и практическими руководствами.
+* Живой чат Dynatrace и сообщество Dynatrace — это интерактивные платформы, дающие ответы на вопросы в реальном времени и предоставляющие возможности для совместной работы.
+* Прямые ссылки на продукты экономят время и позволяют попасть именно туда, где выполняется определённый шаг процесса, например на страницу продукта **Capture business events with OneAgent**.
+* [Dynatrace Query Language (DQL)](/docs/platform/grail/dynatrace-query-language "Как использовать Dynatrace Query Language.") используется для запросов и анализа бизнес-событий в [Notebooks](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks "Анализируйте, визуализируйте и делитесь аналитическими данными о наблюдаемости — всё в одном совместном настраиваемом рабочем пространстве.") и **Logs and event viewer**.
+* Пользовательские дашборды преобразуют сложные данные из запросов в понятные визуализации.
+
+[![Hub](https://dt-cdn.net/images/hub-512-82db3c583e.png "Hub")
+
+### Изучить в Dynatrace Hub
+
+Разберитесь в сквозном процессе бизнес-анализа Dynatrace.](https://www.dynatrace.com/hub/detail/explore-business-events/?internal_source=doc&internal_medium=link&internal_campaign=cross)
+
+## Связанные темы
+
+* [Просмотреть публикацию блога о бизнес-аналитике.](https://www.dynatrace.com/news/blog/dynatrace-enhances-business-observability/)
+* [Посетить сайт Dynatrace, посвящённый бизнес-аналитике.](https://www.dynatrace.com/platform/business-observability/)
+* [Перейти к Dynatrace Query Language Hub](/docs/platform/grail/dynatrace-query-language "Как использовать Dynatrace Query Language.")

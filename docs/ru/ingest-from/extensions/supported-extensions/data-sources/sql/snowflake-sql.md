@@ -1,0 +1,93 @@
+---
+title: Manage Snowflake Database extensions
+source: https://www.dynatrace.com/docs/ingest-from/extensions/supported-extensions/data-sources/sql/snowflake-sql
+scraped: 2026-03-05T21:31:26.943854
+---
+
+# Manage Snowflake Database extensions
+
+# Manage Snowflake Database extensions
+
+* Latest Dynatrace
+* How-to guide
+* 2-min read
+* Published Apr 19, 2023
+
+Dynatrace предоставляет фреймворк, который можно использовать для расширения наблюдаемости приложений за счёт данных, получаемых непосредственно с уровня базы данных Snowflake, что позволяет отслеживать влияние задач сервера базы данных на приложение.
+
+Начните с проверки [Dynatrace Hub](https://www.dynatrace.com/hub/?query=snowflake), чтобы убедиться, что предоставляемое Dynatrace расширение Snowflake соответствует вашим требованиям.
+
+## Перед началом работы
+
+Назначьте группу или группы ActiveGate, которые будут удалённо подключаться к вашему серверу базы данных Snowflake для получения данных. Все ActiveGate в каждой назначенной группе должны иметь возможность подключаться к серверу базы данных Snowflake.
+
+Расширения базы данных Snowflake не поддерживают подключение к базам данных через прокси-серверы.
+
+## Управление расширениями базы данных Snowflake
+
+![Extensions](https://dt-cdn.net/images/dynatrace-extensions-256-9cb05e0f55.png "Extensions")
+
+### Extension Manager
+
+Latest Dynatrace
+
+Теперь для управления расширениями можно использовать специальное приложение Extensions. Оно обеспечивает аналогичный рабочий процесс активации и настройки, что и Dynatrace Hub в предыдущей версии Dynatrace. Кроме того, оно предоставляет прямой доступ к мониторингу работоспособности расширений.
+
+* Для использования приложения:
+
+  + В Dynatrace Hub ![Hub](https://dt-cdn.net/images/hub-512-82db3c583e.png "Hub") выберите и установите приложение.
+  + В описании Hub содержится информация о разрешениях, необходимых для использования приложения (вкладка **Technical information**).
+
+Dynatrace Hub обеспечивает единый рабочий процесс для включения расширений и управления ими, позволяя принимать данные Snowflake в среду Dynatrace.
+
+Необходимое разрешение: **Change monitoring settings**
+
+1. В Dynatrace Hub выберите и установите **Snowflake**. Это включает расширение в вашей среде мониторинга.
+2. Добавьте конфигурацию мониторинга, чтобы расширение могло начать сбор данных.
+
+[![Step 1](https://dt-cdn.net/images/step-1-086e22066c.svg "Step 1")
+
+**Определение конечных точек**](/docs/ingest-from/extensions/supported-extensions/data-sources/sql/snowflake-sql#define-endpoints "Расширьте наблюдаемость в Dynatrace с помощью декларативных метрик из базы данных Snowflake.")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
+
+**Выбор ActiveGates**](/docs/ingest-from/extensions/supported-extensions/data-sources/sql/snowflake-sql#activegate-group "Расширьте наблюдаемость в Dynatrace с помощью декларативных метрик из базы данных Snowflake.")[![Step 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Step 3")
+
+**Активация расширения**](/docs/ingest-from/extensions/supported-extensions/data-sources/sql/snowflake-sql#activate-extension "Расширьте наблюдаемость в Dynatrace с помощью декларативных метрик из базы данных Snowflake.")
+
+### Шаг 1. Определение конечных точек
+
+1. Нажмите **Add Snowflake Database endpoint**, чтобы задать серверы, с которых нужно получать данные. Можно задать до 100 конечных точек. Укажите следующие сведения для подключения:
+
+* Хост
+* Порт
+* Имя базы данных
+* Warehouse
+* Схема
+* Учётные данные для аутентификации
+
+  + Поддерживается только базовая аутентификация.
+  + Данные аутентификации, передаваемые в Dynatrace при активации конфигурации мониторинга, обфусцируются и не могут быть получены впоследствии.
+  + Для более безопасного хранения учётных данных пользователей и управления ими можно [использовать хранилище учётных данных](/docs/ingest-from/extensions/develop-your-extensions/data-sources/sql/snowflake-monitoring#authentication "Расширения базы данных Snowflake в фреймворке Extensions.").
+* Нажмите **Next step**.
+
+### Шаг 2. Выбор ActiveGates
+
+1. Выберите группу ActiveGate, чтобы определить, какие ActiveGates будут запускать расширение.
+2. Нажмите **Next step**.
+
+### Шаг 3. Активация расширения
+
+1. Укажите финальные сведения конфигурации:
+
+* **Description**
+  Текст с описанием данной конфигурации мониторинга. При устранении неполадок мониторинга это даст командам важную информацию.
+* **Feature sets**
+  В сильно сегментированных сетях наборы функций могут отражать сегменты вашей среды. С их помощью можно ограничить мониторинг определёнными сегментами. Наборы функций заранее определены для каждого расширения.
+* Нажмите **Activate**.
+
+## Конфигурация мониторинга в формате JSON
+
+Мастер активации расширения содержит динамически обновляемую JSON-нагрузку с вашей конфигурацией мониторинга. Чтобы узнать, как использовать её для активации расширения через Dynatrace API, см. [Manage Extensions](/docs/ingest-from/extensions/manage-extensions "Узнайте, как управлять расширениями.").
+
+## Связанные темы
+
+* [Troubleshooting extensions](https://dt-url.net/6303zdg "Узнайте, как устранять неполадки расширений Dynatrace")

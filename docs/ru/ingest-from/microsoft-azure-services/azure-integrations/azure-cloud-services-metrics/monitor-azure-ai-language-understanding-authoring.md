@@ -1,0 +1,67 @@
+---
+title: Azure AI - Language Understanding (LUIS) Authoring monitoring
+source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-ai-language-understanding-authoring
+scraped: 2026-03-06T21:35:28.620671
+---
+
+# Мониторинг Azure AI — Language Understanding (LUIS) Authoring
+
+# Мониторинг Azure AI — Language Understanding (LUIS) Authoring
+
+* Последняя версия Dynatrace
+* Практическое руководство
+* 1 минута на чтение
+* Опубликовано 22 сентября 2020 г.
+
+Dynatrace получает метрики через Azure Metrics API для Language Understanding (LUIS) Authoring. Вы можете просматривать метрики для каждого экземпляра сервиса, разбивать метрики по нескольким измерениям и создавать пользовательские диаграммы, которые можно прикреплять к дашбордам.
+
+## Предварительные требования
+
+* Dynatrace версии 1.203+
+* Environment ActiveGate версии 1.195+
+
+## Включение мониторинга
+
+Чтобы узнать, как включить мониторинг сервиса, см. раздел [Включение мониторинга сервиса](/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-monitoring-guide/azure-enable-service-monitoring "Включение мониторинга Azure в Dynatrace.").
+
+## Просмотр метрик сервиса
+
+Метрики сервиса можно просматривать в среде Dynatrace на **странице обзора пользовательского устройства** или на странице **Dashboards**.
+
+### Просмотр метрик на странице обзора пользовательского устройства
+
+Чтобы перейти на страницу обзора пользовательского устройства:
+
+1. Перейдите в ![Technologies](https://dt-cdn.net/images/technologies-512-977161d83c.png "Technologies") **Technologies & Processes Classic**.
+2. Отфильтруйте по имени сервиса и выберите соответствующую группу пользовательских устройств.
+3. После выбора группы пользовательских устройств вы окажетесь на **странице обзора группы пользовательских устройств**.
+4. На **странице обзора группы пользовательских устройств** перечислены все экземпляры (пользовательские устройства), входящие в группу. Выберите экземпляр для перехода на **страницу обзора пользовательского устройства**.
+
+### Просмотр метрик на дашборде
+
+Если для сервиса предусмотрен предустановленный дашборд, на странице **Dashboards** появится предустановленный дашборд для соответствующего сервиса, содержащий все рекомендуемые метрики. Найти конкретные дашборды можно, применив фильтр по **Preset**, а затем по **Name**.
+
+Для существующих отслеживаемых сервисов может потребоваться повторное сохранение учётных данных, чтобы предустановленный дашборд появился на странице **Dashboards**. Для повторного сохранения учётных данных перейдите в **Settings** > **Cloud and virtualization** > **Azure**, выберите нужный экземпляр Azure, затем нажмите **Save**.
+
+Вносить изменения в предустановленный дашборд напрямую нельзя, но его можно клонировать и редактировать. Чтобы клонировать дашборд, откройте меню обзора (**...**) и выберите **Clone**.
+Чтобы убрать дашборд из списка, его можно скрыть. Для этого откройте меню обзора (**...**) и выберите **Hide**.
+
+Скрытие дашборда не влияет на других пользователей.
+
+![Clone hide azure](https://dt-cdn.net/images/2020-12-10-14-35-42-1473-23fe220b09.png)
+
+![Cognitive services](https://dt-cdn.net/images/dashboard-79-1423-6e181ef360.png)
+
+## Доступные метрики
+
+| Имя | Описание | Измерения | Единица | Рекомендуется |
+| --- | --- | --- | --- | --- |
+| BlockedCalls | Количество вызовов, превысивших лимит скорости или квоты | ApiName, OperationName, Region | Count | Применимо |
+| ClientErrors | Количество вызовов с ошибкой на стороне клиента (код HTTP-ответа `4xx`) | ApiName, OperationName, Region | Count | Применимо |
+| DataIn | Размер входящих данных в байтах | ApiName, OperationName, Region | Byte | Применимо |
+| DataOut | Размер исходящих данных в байтах | ApiName, OperationName, Region | Byte | Применимо |
+| Latency | Задержка в миллисекундах | ApiName, OperationName, Region | MilliSecond | Применимо |
+| ServerErrors | Количество вызовов с внутренней ошибкой сервиса (код HTTP-ответа `5xx`) | ApiName, OperationName, Region | Count | Применимо |
+| SuccessfulCalls | Количество успешных вызовов | ApiName, OperationName, Region | Count | Применимо |
+| TotalCalls | Общее количество вызовов | ApiName, OperationName, Region | Count |  |
+| TotalErrors | Общее количество вызовов с ответом об ошибке (код HTTP-ответа `4xx` или `5xx`) | ApiName, OperationName, Region | Count | Применимо |

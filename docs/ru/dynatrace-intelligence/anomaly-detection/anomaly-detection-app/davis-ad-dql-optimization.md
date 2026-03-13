@@ -1,61 +1,61 @@
 ---
-title: Anomaly Detection DQL optimization guide
+title: Руководство по оптимизации DQL для обнаружения аномалий
 source: https://www.dynatrace.com/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-app/davis-ad-dql-optimization
 scraped: 2026-03-05T21:38:33.126042
 ---
 
-# Anomaly Detection DQL optimization guide
+# Руководство по оптимизации DQL для обнаружения аномалий
 
-# Anomaly Detection DQL optimization guide
+# Руководство по оптимизации DQL для обнаружения аномалий
 
-* Latest Dynatrace
-* How-to guide
-* 15-min read
-* Updated on Dec 05, 2025
+* Последняя Dynatrace
+* Практическое руководство
+* 15 мин. чтения
+* Обновлено 5 декабря 2025 г.
 
-This page describes best practices for optimizing your DQL queries for ![Anomaly Detection - new](https://dt-cdn.net/images/davis-anomalydetection-256-105da91594.png "Anomaly Detection - new") **Anomaly Detection** custom alerts to ensure a stable performance and minimized resource and time consumption.
+На этой странице описаны лучшие практики оптимизации ваших DQL-запросов для пользовательских оповещений ![Anomaly Detection - new](https://dt-cdn.net/images/davis-anomalydetection-256-105da91594.png "Anomaly Detection - new") **Anomaly Detection** для обеспечения стабильной производительности и минимизации потребления ресурсов и времени.
 
-[![Anomaly Detection - new](https://dt-cdn.net/images/davis-anomalydetection-256-105da91594.png "Anomaly Detection - new") **Anomaly Detection**](/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-app "Explore anomaly detection configurations using the Anomaly Detection app.") uses the power of Grail to support a wide range of use cases through flexible DQL capabilities. This versatility allows for multiple solution approaches depending on the specific scenario. To ensure efficient and effective usage, this guide provides best practice examples that demonstrate how to get the most out of ![Anomaly Detection - new](https://dt-cdn.net/images/davis-anomalydetection-256-105da91594.png "Anomaly Detection - new") **Anomaly Detection**.
+[![Anomaly Detection - new](https://dt-cdn.net/images/davis-anomalydetection-256-105da91594.png "Anomaly Detection - new") **Anomaly Detection**](/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-app "Изучите конфигурации обнаружения аномалий с помощью приложения Anomaly Detection.") использует мощь Grail для поддержки широкого спектра сценариев через гибкие возможности DQL. Эта универсальность позволяет применять несколько подходов к решению в зависимости от конкретного сценария. Для обеспечения эффективного использования это руководство предоставляет примеры лучших практик, демонстрирующие, как извлечь максимум из ![Anomaly Detection - new](https://dt-cdn.net/images/davis-anomalydetection-256-105da91594.png "Anomaly Detection - new") **Anomaly Detection**.
 
-## Minimize the volume of scanned data
+## Минимизация объёма сканируемых данных
 
-Regardless of whether your queries are included in a rate card or not, we strongly recommend optimizing all DQL queries to minimize the amount of data being scanned. This will help you improve dashboard performance by significantly reducing rendering times and allow you to configure a greater number of read-based alerts within your environment.
+Независимо от того, включены ваши запросы в тарифную карту или нет, мы настоятельно рекомендуем оптимизировать все DQL-запросы для минимизации объёма сканируемых данных. Это поможет улучшить производительность панелей, значительно сократив время рендеринга, и позволит настроить большее количество оповещений на основе чтения в вашей среде.
 
-## Manage your storage properly
+## Правильное управление хранилищем
 
-A well-planned storage management strategy forms the foundation for optimal performance in your environment. We recommend organizing your [Dynatrace storage buckets](/docs/platform/grail/organize-data#built-in-grail-buckets "Insights on the Grail data model consisting of buckets, tables, and views.") based on the usage and access patterns of your teams to prevent excessive scanning across multiple teams or organizational units. We also suggest planning your storage structure upfront to simplify access permission policy management and ensure a more efficient and secure setup.
+Хорошо спланированная стратегия управления хранилищем является основой для оптимальной производительности вашей среды. Мы рекомендуем организовывать ваши [бакеты хранилища Dynatrace](/docs/platform/grail/organize-data#built-in-grail-buckets "Информация о модели данных Grail, состоящей из бакетов, таблиц и представлений.") на основе паттернов использования и доступа ваших команд, чтобы предотвратить избыточное сканирование по нескольким командам или организационным подразделениям. Мы также рекомендуем планировать структуру хранилища заранее для упрощения управления политиками разрешений доступа и обеспечения более эффективной и безопасной настройки.
 
-## Improve query optimization via DQL filters
+## Улучшение оптимизации запросов через фильтры DQL
 
-### Rule 1: Always use a `bucket` filter
+### Правило 1: Всегда используйте фильтр `bucket`
 
-Buckets serve as the primary storage locations for raw data in Grail. By applying a bucket filter, you can direct Grail to analyze only the specific storage locations where the relevant data is expected, instead of scanning the entire storage. This approach helps you to:
+Бакеты служат основными местами хранения необработанных данных в Grail. Применяя фильтр по бакету, вы можете направить Grail на анализ только тех конкретных мест хранения, где ожидаются релевантные данные, вместо сканирования всего хранилища. Этот подход помогает:
 
-* Reduce the processing cost.
-* Minimize raw data movement across the network.
-* Significantly improve the performance of dashboards and alerts.
+* Снизить стоимость обработки.
+* Минимизировать перемещение необработанных данных по сети.
+* Значительно улучшить производительность панелей и оповещений.
 
-You can see the examples of different bucket filtering options below:
+Ниже приведены примеры различных вариантов фильтрации по бакетам:
 
-Bucket filter in logs DQL query
+Фильтр бакета в DQL-запросе логов
 
 ```
 fetch logs,bucket:{"bucketname"}
 ```
 
-Bucket filter in spans DQL query
+Фильтр бакета в DQL-запросе спанов
 
 ```
 fetch spans, bucket:{"bucketname"}
 ```
 
-Bucket filter in events DQL query
+Фильтр бакета в DQL-запросе событий
 
 ```
 fetch events, bucket:{"bucketname"}
 ```
 
-Incorporate the following DQL query to include the `dt.system.bucket` field, which identifies the source buckets for Grail records returned by an executed DQL query:
+Используйте следующий DQL-запрос для включения поля `dt.system.bucket`, которое определяет бакеты-источники для записей Grail, возвращённых выполненным DQL-запросом:
 
 ```
 fetch logs
@@ -65,143 +65,141 @@ fetch logs
 | fieldsAdd dt.system.bucket
 ```
 
-This information helps you to pinpoint optimization opportunities in Grail by indicating where you can apply bucket filters. If dimensions originate from a single bucket while the query spans a broader scope, it can help you to identify potential targets for DQL optimization.
+Эта информация помогает определить возможности оптимизации в Grail, указывая, где можно применить фильтры по бакетам. Если размерности происходят из одного бакета, тогда как запрос охватывает более широкую область, это помогает определить потенциальные цели для оптимизации DQL.
 
-### Rule 2: Apply efficient filters as early as possible
+### Правило 2: Применяйте эффективные фильтры как можно раньше
 
-The Dynatrace Grail storage engine is designed using highly distributed query nodes that independently scan and process raw data, including logs, traces, spans, and metrics. To maximize efficiency, we recommend excluding irrelevant portions of raw data as early as possible in the query request. This will help you reduce the scope of data collection and processing.
+Система хранения Dynatrace Grail построена с использованием высоко распределённых узлов запросов, которые независимо сканируют и обрабатывают необработанные данные, включая логи, трассировки, спаны и метрики. Для максимальной эффективности мы рекомендуем исключать нерелевантные части необработанных данных как можно раньше в запросе. Это поможет сократить объём сбора и обработки данных.
 
-Do as much filtering as possible right after the `fetch` command.
+Выполняйте максимальную фильтрацию сразу после команды `fetch`.
 
-The more raw data and buckets your DQL query excludes at the beginning, the more efficiently and quickly the result will be returned.
+Чем больше необработанных данных и бакетов ваш DQL-запрос исключает в начале, тем эффективнее и быстрее будет возвращён результат.
 
-### Rule 3: Apply efficient string matching
+### Правило 3: Применяйте эффективное сопоставление строк
 
-Efficient string matching helps you to narrow your alerting scope and minimize the amount of time and resources necessary for running your custom alert. To apply efficient string matching in your custom alert we recommend that you:
+Эффективное сопоставление строк помогает сузить область оповещений и минимизировать время и ресурсы, необходимые для запуска пользовательского оповещения. Для применения эффективного сопоставления строк в пользовательском оповещении мы рекомендуем:
 
-* [Apply string comparison for known values](#apply-string-comparison).
-* [Leverage token-based pattern matching](#leverage-token-based-matching).
-* [Define fields and use filters when searching records](#tips-for-searching-records).
-* [Be careful with when using partial matching](#tips-for-using-partial-matching).
+* [Применять сравнение строк для известных значений](#apply-string-comparison).
+* [Использовать сопоставление паттернов на основе токенов](#leverage-token-based-matching).
+* [Определять поля и использовать фильтры при поиске записей](#tips-for-searching-records).
+* [Быть осторожным при использовании частичного сопоставления](#tips-for-using-partial-matching).
 
-#### Apply string comparison for known values
+#### Применение сравнения строк для известных значений
 
-Use the `==` operator to filter known values. This is the most efficient way to narrow your alerting scope.
+Используйте оператор `==` для фильтрации известных значений. Это наиболее эффективный способ сузить область оповещений.
 
-Filter fields matching the name `value`
+Фильтрация полей, соответствующих имени `value`
 
 ```
 | filter field == "value"
 ```
 
-#### Leverage token-based pattern matching
+#### Использование сопоставления паттернов на основе токенов
 
-In token-based pattern matching, Grail automatically splits incoming text into tokens. For example, a log message such as `ERROR checkout-id 3 http 504` is divided into multiple tokens by the matchers. This allows you to search for any part of the messageâfor instance, `ERROR`âand still find the full entry. Below are some examples of tokenization:
+При сопоставлении паттернов на основе токенов Grail автоматически разделяет входящий текст на токены. Например, сообщение лога `ERROR checkout-id 3 http 504` разделяется на несколько токенов. Это позволяет искать любую часть сообщения — например, `ERROR` — и всё равно находить полную запись. Ниже приведены примеры токенизации:
 
-* Tokenized message, each token representing a term or a word:
+* Токенизированное сообщение, каждый токен представляет термин или слово:
 
   ```
   ERROR, checkout, id, 3, http, 504
   ```
 
-Every non-alphanumeric character splits the incoming text into a separate token.
+Каждый не-буквенно-цифровой символ разделяет входящий текст на отдельный токен.
 
-Let's take a look at a DQL query searching for a job failure to see how this works.
+Рассмотрим DQL-запрос для поиска сбоя задания, чтобы увидеть, как это работает.
 
-DQL, like many other data analysis tools, has a rich set of capabilities to match text. The `matchesPhrase()` function is built to match tokens. This means that the `| filter matchesPhrase(message, "error")` query will quickly and successfully match the necessary message, since Grail finds matching token `error`. Compared to `| filter contains(message, "error")`, it is less efficient because token matching is not applied.
+DQL, как и многие другие инструменты анализа данных, имеет богатый набор возможностей для сопоставления текста. Функция `matchesPhrase()` создана для сопоставления токенов. Это означает, что запрос `| filter matchesPhrase(message, "error")` быстро и успешно найдёт нужное сообщение, так как Grail находит соответствующий токен `error`. По сравнению с `| filter contains(message, "error")`, последний менее эффективен, так как сопоставление токенов не применяется.
 
-Next, let's take a look at another example where we need to find a textual log message parsed by Grail. In this scenario, let's assume that a log message was a parsed, well-formed event in OpenPipeline and resulted in the following output:
-
-```
-status:âERRORâ<str> message:âERROR checkout-id 3 http 504â<str> errorcode:3<num> http.response:504<num>
-```
-
-In this case, the `~`operator is ideal for working with nested records or arrays. Similar to `matchesPhrase()`, it uses token-based pattern matching, but with the added advantage that it can match across multiple data types:
+Далее рассмотрим другой пример, где нам нужно найти текстовое сообщение лога, разобранное Grail. В этом сценарии предположим, что сообщение лога было разобрано как правильно сформированное событие в OpenPipeline и привело к следующему результату:
 
 ```
-| filter message~âerrâ and http.response~504
+status:"ERROR"<str> message:"ERROR checkout-id 3 http 504"<str> errorcode:3<num> http.response:504<num>
 ```
 
-It can further identify matches that occur inside nested records:
+В этом случае оператор `~` идеален для работы с вложенными записями или массивами. Подобно `matchesPhrase()`, он использует сопоставление паттернов на основе токенов, но с дополнительным преимуществом — может сопоставлять данные различных типов:
+
+```
+| filter message~"err" and http.response~504
+```
+
+Он также может находить совпадения внутри вложенных записей:
 
 ```
 fetch spans| filter span.events~"err"
 ```
 
-With the flexibility and finetuning abilities of DQL, you can search for matching names and keywords inside a list of `span.events` connected to a span, each consisting the multiple fields.
+Благодаря гибкости и возможностям точной настройки DQL вы можете искать совпадающие имена и ключевые слова внутри списка `span.events`, связанных со спаном, каждый из которых состоит из нескольких полей.
 
-#### Tips for searching in records
+#### Советы по поиску в записях
 
-To get the best results from tokenization, be specific about what you're looking for: define the field and use filters. Since the custom alert checks every field once per minute, failing to specify the field or utilizing tokenization without the filters might result in runtime-intense and resource-greedy queries.
+Для получения лучших результатов от токенизации будьте конкретны в том, что ищете: определите поле и используйте фильтры. Поскольку пользовательское оповещение проверяет каждое поле раз в минуту, отсутствие указания поля или использование токенизации без фильтров может привести к ресурсоёмким запросам.
 
-For example, the query below, without a specified field or filters, will search through every field and consume additional resources:
+Например, следующий запрос, без указания поля или фильтров, будет искать по каждому полю и потреблять дополнительные ресурсы:
 
 ```
 | search "504" and "checkout"
 ```
 
-Specifying the field, on the other hand, reduces the load and saves the time needed to find the match. For example:
+Указание поля, с другой стороны, уменьшает нагрузку и экономит время поиска совпадений. Например:
 
-* Filter fields with the key-value pairs `http.response==504` and `status=="ERROR"`: first choice
+* Фильтрация полей с парами ключ-значение `http.response==504` и `status=="ERROR"`: первый выбор
 
   ```
   | filter http.response==504 and status=="ERROR"
   ```
 
-  Based on the most optimal OpenPipeline parsing, this type of filtering is always the first recommended choice.
-* Use `search message` to look only through the `message` fields:
+  На основе оптимального разбора OpenPipeline этот тип фильтрации всегда является первым рекомендуемым выбором.
+* Используйте `search message` для поиска только по полям `message`:
 
   ```
   | search message~"504" and message~"checkout"
   ```
-* Filter `message` fields that have `504` and `checkout` elements:
+* Фильтрация полей `message`, содержащих элементы `504` и `checkout`:
 
   ```
   | filter message~"504" and message~"checkout"
   ```
-* Filter `message` fields that match phrases `504` and `checkout` elements:
+* Фильтрация полей `message`, соответствующих фразам `504` и `checkout`:
 
   ```
   | filter matchesPhrase(message,"504") and matchesPhrase(message,"checkout")
   ```
 
-  This command might not be effective if the field is an array.
-* Filter fields with the key-value pairs `http.response==504` and `status=="ERROR"`:
+  Эта команда может быть неэффективной, если поле является массивом.
+* Фильтрация полей с парами ключ-значение `http.response==504` и `status=="ERROR"`:
 
   ```
   | filter http.response==504 and status=="ERROR"
   ```
 
-#### Tips for using partial matching on strings
+#### Советы по использованию частичного сопоставления строк
 
-Unlike the token filters above, these filters match only a part of the token. For example:
+В отличие от приведённых выше фильтров токенов, эти фильтры сопоставляют только часть токена. Например:
 
-* Filtering fields that start with `value` will match fields like `value`, `values`, and `valueRange`. This might lead to including unnecessary fields.
+* Фильтрация полей, начинающихся с `value`, будет соответствовать полям вроде `value`, `values` и `valueRange`. Это может привести к включению ненужных полей.
 
-  Filter fields that start with `value`
+  Фильтрация полей, начинающихся с `value`
 
   ```
   | filter startWith(field, "value ")
   ```
-* Filtering fields that contain the word `value` in the name is even broader than the `filter startWith()` command, and matches more potentially redundant fields.
+* Фильтрация полей, содержащих слово `value` в имени, ещё шире, чем команда `filter startWith()`, и соответствует большему числу потенциально избыточных полей.
 
-  Filter fields that contain `value`
+  Фильтрация полей, содержащих `value`
 
   ```
   | filter contains(field, "value")
   ```
 
-To optimize filtering and avoid including redundant fields, we recommend trying the following:
+Для оптимизации фильтрации и избежания включения избыточных полей мы рекомендуем попробовать следующее:
 
-* Always include a bucket filter.
-* Include resource filters, like `dt.entity.<field> == "name"`.
-* Include at least one entire token tilde or `matchesPhrase` filter.
-* Either avoid less efficient filters or use them in addition to the filters mentioned above.
+* Всегда включайте фильтр по бакету.
+* Включайте фильтры по ресурсам, например `dt.entity.<field> == "name"`.
+* Включайте хотя бы один полный токенный тильда- или `matchesPhrase`-фильтр.
+* Либо избегайте менее эффективных фильтров, либо используйте их в дополнение к перечисленным выше фильтрам.
 
-## Related topics
+## Связанные темы
 
-
-
-* [Anomaly Detection app](/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-app "Explore anomaly detection configurations using the Anomaly Detection app.")
-* [Dynatrace Query Language](/docs/platform/grail/dynatrace-query-language "How to use Dynatrace Query Language.")
-* [Anomaly Detection DQL writing guide](/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-app/davis-ad-dql-best-practice "Best practices for creating Anomaly Detection custom alert DQL queries.")
+* [Приложение Anomaly Detection](/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-app "Изучите конфигурации обнаружения аномалий с помощью приложения Anomaly Detection.")
+* [Dynatrace Query Language](/docs/platform/grail/dynatrace-query-language "Как использовать Dynatrace Query Language.")
+* [Руководство по написанию DQL для обнаружения аномалий](/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-app/davis-ad-dql-best-practice "Лучшие практики создания DQL-запросов для пользовательских оповещений Anomaly Detection.")

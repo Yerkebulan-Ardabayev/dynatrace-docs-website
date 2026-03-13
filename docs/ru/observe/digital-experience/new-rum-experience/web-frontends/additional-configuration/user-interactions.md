@@ -1,49 +1,49 @@
 ---
-title: Configure user interaction capturing for web frontends
+title: Настройка захвата пользовательских взаимодействий для веб-фронтендов
 source: https://www.dynatrace.com/docs/observe/digital-experience/new-rum-experience/web-frontends/additional-configuration/user-interactions
 scraped: 2026-03-05T21:33:14.629107
 ---
 
-# Configure user interaction capturing for web frontends
+# Настройка захвата пользовательских взаимодействий для веб-фронтендов
 
-# Configure user interaction capturing for web frontends
+# Настройка захвата пользовательских взаимодействий для веб-фронтендов
 
-* Latest Dynatrace
-* How-to guide
-* Updated on Feb 26, 2026
+* Последняя Dynatrace
+* Практическое руководство
+* Обновлено 26 февраля 2026 г.
 
-Early Access
+Ранний доступ
 
-The New RUM Experience allows you to capture [user interactions](/docs/observe/digital-experience/new-rum-experience/concepts/data-model#user-interactions "Get familiar with the data model at the heart of the New RUM Experience.") such as clicks and scrolls and turn them into actionable insights:
+Новый функционал RUM Experience позволяет захватывать [пользовательские взаимодействия](/docs/observe/digital-experience/new-rum-experience/concepts/data-model#user-interactions "Ознакомьтесь с моделью данных в основе нового функционала RUM Experience."), такие как клики и прокрутки, и превращать их в полезные инсайты:
 
-* You can view all user interactions that occurred during a user session using the [![Users & Sessions](https://dt-cdn.net/images/users-sessions-149-f84e0b9b20.png "Users & Sessions") **Users & Sessions**](/docs/observe/digital-experience/new-rum-experience/users-and-sessions#events "The Users & Sessions app delivers insight into individual user journeys and behavior patterns.") app. This is especially useful for customer support teams and developers when diagnosing customer issues or bugs.
-* User interaction analysis via DQL allows you to understand behavioral patterns across a wide range of use cases; see [DQL examples](/docs/observe/digital-experience/new-rum-experience/use-cases/dql-examples#behavioral-insights "Analyze and explore RUM data in depth by leveraging DQL.").
+* Вы можете просматривать все пользовательские взаимодействия, произошедшие в рамках сессии пользователя, с помощью приложения [![Users & Sessions](https://dt-cdn.net/images/users-sessions-149-f84e0b9b20.png "Users & Sessions") **Users & Sessions**](/docs/observe/digital-experience/new-rum-experience/users-and-sessions#events "Приложение Users & Sessions предоставляет информацию о путях и паттернах поведения отдельных пользователей."). Это особенно полезно для команд поддержки клиентов и разработчиков при диагностике проблем клиентов или ошибок.
+* Анализ пользовательских взаимодействий через DQL позволяет понять паттерны поведения для широкого спектра сценариев использования; см. [примеры DQL](/docs/observe/digital-experience/new-rum-experience/use-cases/dql-examples#behavioral-insights "Анализ и изучение данных RUM с помощью DQL.").
 
-During the User Interaction Early Access, there are no additional charges for ingesting user interactions. Querying user interactions is also included at no extra cost, because raw DEM data queries are currently in Early Access; see [Calculate your consumption of Digital Experience Monitoring (DEM) - Query](/docs/license/capabilities/digital-experience-monitoring-query-retain/queries-dem "Learn how your consumption of the DEM-related DQL queries is consumed and billed before and after Early Access.").
+В период раннего доступа к пользовательским взаимодействиям дополнительная плата за приём пользовательских взаимодействий не взимается. Запросы пользовательских взаимодействий также включены без дополнительных затрат, поскольку запросы необработанных данных DEM в настоящее время находятся в раннем доступе; см. [Расчёт потребления мониторинга цифрового опыта (DEM) — Запросы](/docs/license/capabilities/digital-experience-monitoring-query-retain/queries-dem "Узнайте, как потребляются и тарифицируются DQL-запросы, связанные с DEM.").
 
-## Activate capturing of user interactions
+## Активация захвата пользовательских взаимодействий
 
-To capture user interactions
+Чтобы захватывать пользовательские взаимодействия
 
-1. Go to ![Experience Vitals](https://dt-cdn.net/images/experience-vitals-256-9999590b55.png "Experience Vitals") **Experience Vitals** > **Overview**.
-2. Select  **Web** to view all web frontends.
-3. Select the frontend you want to configure.
-4. Switch to the **Settings** tab.
-5. Under **Enablement and cost control**, turn on **User Interactions** .
+1. Перейдите в ![Experience Vitals](https://dt-cdn.net/images/experience-vitals-256-9999590b55.png "Experience Vitals") **Experience Vitals** > **Обзор**.
+2. Выберите **Web** для просмотра всех веб-фронтендов.
+3. Выберите фронтенд, который хотите настроить.
+4. Перейдите на вкладку **Настройки**.
+5. В разделе **Включение и контроль затрат** включите **Пользовательские взаимодействия**.
 
-## Types of user interactions
+## Типы пользовательских взаимодействий
 
-The following table provides an overview of the available types of user interactions. For a detailed specification, see [User interaction](/docs/semantic-dictionary/model/rum/user-events/user-interactions) in the Semantic Dictionary.
+В следующей таблице приведён обзор доступных типов пользовательских взаимодействий. Подробную спецификацию см. в [Пользовательские взаимодействия](/docs/semantic-dictionary/model/rum/user-events/user-interactions) в Semantic Dictionary.
 
-## Opt-in user interaction types
+## Типы пользовательских взаимодействий с явным подключением
 
-Most user interaction types are captured automatically once you have [activated user interaction capturing](#activate-capturing). Some interaction types, however, require an explicit opt-in by adding dedicated attributes to the corresponding HTML elements. These attributes enable event capture but don't affect the element's behavior.
+Большинство типов пользовательских взаимодействий захватываются автоматически после [активации захвата пользовательских взаимодействий](#activate-capturing). Однако для некоторых типов взаимодействий требуется явное подключение путём добавления специальных атрибутов к соответствующим HTML-элементам. Эти атрибуты включают захват событий, но не влияют на поведение элемента.
 
 ### Focus/Blur
 
-To capture focus and blur user interactions, add the attributes `data-dt-focus` and `data-dt-blur` to the corresponding HTML elements. The attribute can be empty or assigned a value; both `data-dt-focus` and `data-dt-focus="true"` are valid.
+Для захвата пользовательских взаимодействий focus и blur добавьте атрибуты `data-dt-focus` и `data-dt-blur` к соответствующим HTML-элементам. Атрибут может быть пустым или иметь значение; и `data-dt-focus`, и `data-dt-focus="true"` являются допустимыми.
 
-Examples
+Примеры
 
 ```
 <!-- Track when users focus on search -->
@@ -103,12 +103,12 @@ Examples
 
 ### Mouseover
 
-To capture mouseover user interactions, add the attribute `data-dt-mouse-over="<milliseconds>"` to the corresponding HTML element. The attribute's value specifies how many milliseconds the user must hover over the element before the interaction is captured. When choosing an appropriate delay, consider the following factors:
+Для захвата пользовательских взаимодействий mouseover добавьте атрибут `data-dt-mouse-over="<миллисекунды>"` к соответствующему HTML-элементу. Значение атрибута указывает, сколько миллисекунд пользователь должен наводить курсор на элемент, прежде чем взаимодействие будет захвачено. При выборе подходящей задержки учитывайте следующие факторы:
 
-* If you want to measure engagement with CTAs (call-to-action elements) or product cards, how many milliseconds should the user hover before the mouseover is considered intentional?
-* If your goal is to track tooltip interactions, what delay does your application use before tooltips appear?
+* Если вы хотите измерить вовлечённость для CTA (элементов призыва к действию) или карточек товаров, сколько миллисекунд должен наводить пользователь, чтобы считать наведение намеренным?
+* Если ваша цель — отслеживание взаимодействий с всплывающими подсказками, какую задержку использует ваше приложение перед отображением подсказок?
 
-Examples
+Примеры
 
 ```
 <!-- Track hover after 300ms (shows intent) -->
@@ -194,6 +194,6 @@ Learn More
 </nav>
 ```
 
-## Customization
+## Кастомизация
 
-For additional context, you can add attributes to your HTML that associate the captured user interactions with features and UI components; see [Associate user interactions with features and UI components](/docs/observe/digital-experience/new-rum-experience/web-frontends/additional-configuration/user-interactions/features-and-components "Learn how to associate user interactions for web frontends with features and UI components."). This customization facilitates powerful queries and deeper analysis of how users engage with your application's UI and functionality.
+Для дополнительного контекста вы можете добавить атрибуты в ваш HTML, которые связывают захваченные пользовательские взаимодействия с функциями и UI-компонентами; см. [Связь пользовательских взаимодействий с функциями и UI-компонентами](/docs/observe/digital-experience/new-rum-experience/web-frontends/additional-configuration/user-interactions/features-and-components "Узнайте, как связывать пользовательские взаимодействия для веб-фронтендов с функциями и UI-компонентами."). Эта кастомизация обеспечивает мощные запросы и углублённый анализ того, как пользователи взаимодействуют с UI и функциональностью вашего приложения.

@@ -1,0 +1,44 @@
+---
+title: Stop/restart OneAgent on Windows
+source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/installation-and-operation/windows/operation/stop-restart-oneagent-on-windows
+scraped: 2026-03-06T21:19:32.708456
+---
+
+# Остановка/перезапуск OneAgent на Windows
+
+# Остановка/перезапуск OneAgent на Windows
+
+* Latest Dynatrace
+* 1-min read
+* Published Sep 19, 2018
+
+Если вы не хотите использовать OneAgent внутри конкретного Java (или другого) процесса, вы можете легко отключить мониторинг Dynatrace для отдельных хостов, групп процессов или приложений:
+
+1. Перейдите в **Settings > Monitoring overview**.
+2. Нажмите на вкладку **Hosts**, **Process groups** или **Applications** для доступа к переключателям мониторинга отдельных объектов.
+3. Переведите переключатель **Monitoring** в положение **Off**.
+4. Перезапустите все процессы, для которых был отключён мониторинг.
+
+## Перезапуск с использованием интерфейса командной строки OneAgent
+
+При использовании параметров `set` необходимо перезапустить службу OneAgent для применения изменений. Вы можете использовать параметр `--restart-service` с командой, которая автоматически запускает перезапуск. В некоторых случаях также потребуется перезапустить отслеживаемые приложения. Параметр перезапуска также можно использовать самостоятельно, без других параметров. Пример команды приведён ниже.
+
+```
+.\oneagentctl.exe --set-proxy=my-proxy.com --restart-service
+```
+
+Дополнительные сведения см. в разделе [Настройка OneAgent с помощью интерфейса командной строки](/docs/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface "Узнайте, как выполнять некоторые задачи настройки OneAgent без необходимости его переустановки.").
+
+## Остановка OneAgent с помощью командной строки
+
+Если вы используете инструменты управления конфигурацией, такие как Puppet или Ansible, вы можете остановить службу OneAgent с помощью команды `net stop "Dynatrace OneAgent"`, где `Dynatrace OneAgent` — имя службы для OneAgent.
+
+Вы не можете остановить службу OneAgent с помощью командной строки, если эта служба является частью другого процесса, например инструментирования байт-кода Java. Если вы остановите службу OneAgent, мониторинг будет отключён до тех пор, пока служба не будет перезапущена.
+
+## Запуск OneAgent с помощью командной строки
+
+Чтобы снова запустить OneAgent, используйте следующую команду:
+
+`net start "Dynatrace OneAgent"`, где `Dynatrace OneAgent` — имя службы для OneAgent.
+
+Узнайте больше о том, [как Dynatrace взаимодействует с вашей ОС](/docs/ingest-from/dynatrace-oneagent/installation-and-operation/windows/installation/oneagent-security-windows "Узнайте о безопасности Dynatrace OneAgent и изменениях в вашей системе на базе Windows.").

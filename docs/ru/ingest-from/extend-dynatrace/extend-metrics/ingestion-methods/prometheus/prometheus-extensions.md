@@ -1,0 +1,119 @@
+---
+title: Manage Prometheus extensions
+source: https://www.dynatrace.com/docs/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/prometheus/prometheus-extensions
+scraped: 2026-03-06T21:31:49.624600
+---
+
+# Управление расширениями Prometheus
+
+# Управление расширениями Prometheus
+
+* Latest Dynatrace
+* Чтение: 4 мин
+* Опубликовано 1 февраля 2022 г.
+
+Dynatrace предоставляет фреймворк, который вы можете использовать для расширения наблюдаемости на данные, получаемые непосредственно из конечной точки Prometheus. С его помощью вы можете перенести данные Prometheus в Dynatrace в масштабе и в контексте со всеми остальными данными.
+
+* Чтобы воспользоваться всеми преимуществами расширения Dynatrace Prometheus, необходим OneAgent на отслеживаемой машине, но расширение также может работать в безагентном режиме.
+* Проверьте [Dynatrace Hub](https://www.dynatrace.com/hub/?query=prometheus), чтобы узнать, покрывается ли ваша технология существующим расширением. Если это не так, вы можете легко создать собственное [расширение Dynatrace Prometheus](/docs/ingest-from/extensions/develop-your-extensions/data-sources/prometheus-extensions "Узнайте, как создать расширение Prometheus с использованием фреймворка расширений.").
+
+![Extensions](https://dt-cdn.net/images/dynatrace-extensions-256-9cb05e0f55.png "Extensions")
+
+### Extension Manager
+
+Latest Dynatrace
+
+Теперь вы можете использовать выделенное приложение Extensions для управления расширениями. Оно предоставляет аналогичный рабочий процесс активации и настройки, как Dynatrace Hub в предыдущей версии Dynatrace. Кроме того, оно дает прямой доступ к мониторингу состояния расширений.
+
+* Чтобы использовать приложение:
+
+  + В Dynatrace Hub ![Hub](https://dt-cdn.net/images/hub-512-82db3c583e.png "Hub") выберите и установите приложение.
+  + Список в Hub содержит информацию о разрешениях, необходимых для использования приложения (вкладка **Technical information**).
+
+[![Шаг 1](https://dt-cdn.net/images/step-1-086e22066c.svg "Шаг 1")
+
+**Перед началом**](/docs/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/prometheus/prometheus-extensions#before-you-begin "Узнайте, как расширить наблюдаемость в Dynatrace с помощью декларативного приема метрик Prometheus.")[![Шаг 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Шаг 2")
+
+**Добавление расширения в среду**](/docs/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/prometheus/prometheus-extensions#add-extension "Узнайте, как расширить наблюдаемость в Dynatrace с помощью декларативного приема метрик Prometheus.")[![Шаг 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Шаг 3")
+
+**Определение источника мониторинга**](/docs/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/prometheus/prometheus-extensions#define-monitoring-source "Узнайте, как расширить наблюдаемость в Dynatrace с помощью декларативного приема метрик Prometheus.")[![Шаг 4](https://dt-cdn.net/images/step-4-3f89d67d41.svg "Шаг 4")
+
+**Дополнительные свойства**](/docs/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/prometheus/prometheus-extensions#advanced-properties "Узнайте, как расширить наблюдаемость в Dynatrace с помощью декларативного приема метрик Prometheus.")[![Шаг 5](https://dt-cdn.net/images/step-5-2de312b50f.svg "Шаг 5")
+
+**Автообнаружение**](/docs/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/prometheus/prometheus-extensions#autodiscovery "Узнайте, как расширить наблюдаемость в Dynatrace с помощью декларативного приема метрик Prometheus.")[![Шаг 6](https://dt-cdn.net/images/step-6-f906c6c957.svg "Шаг 6")
+
+**Активация расширения**](/docs/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/prometheus/prometheus-extensions#activate-extension "Узнайте, как расширить наблюдаемость в Dynatrace с помощью декларативного приема метрик Prometheus.")
+
+## Шаг 1 Перед началом
+
+Определите, какие из ваших хостов будут предоставлять данные Prometheus для расширения.
+
+Расширения Prometheus могут запускаться локально на OneAgent (рекомендуется) или удаленно на ActiveGate.
+
+* При локальном запуске расширение подключается к интерфейсу Prometheus автоматически. Убедитесь, что Extension Execution Controller (EEC) включен на уровне среды или выбранного хоста. Дополнительную информацию см. в разделе [Extension Execution Controller](/docs/ingest-from/extensions/concepts#eec "Узнайте больше о концепции расширений Dynatrace.").
+* При удаленном мониторинге ActiveGate, принадлежащие группе ActiveGate, которую вы назначите для удаленного мониторинга, должны иметь возможность подключаться к хосту, на котором генерируются метрики Prometheus.
+
+Необходимое разрешение: **Change monitoring settings**
+
+## Шаг 2 Добавление расширения в среду
+
+Dynatrace Hub предоставляет единый рабочий процесс для включения и управления расширениями, которые принимают данные Prometheus в вашу среду Dynatrace.
+
+1. В Dynatrace Hub найдите расширение Prometheus. Вы можете использовать ключевое слово "Prometheus" для фильтрации результатов.
+2. Выберите и установите интересующее вас расширение. Это включит расширение в вашей среде мониторинга.
+3. Добавьте конфигурацию мониторинга, чтобы расширение могло начать сбор данных.
+
+## Шаг 3 Определение источника мониторинга
+
+Определите, как вы хотите отслеживать свой хост: локально или удаленно.
+
+### Локальный мониторинг
+
+1. Выберите хост, группу хостов или зону управления, для которых вы будете запускать расширение, или выберите мониторинг всей среды. На хосте должен быть запущен OneAgent, [включенный для запуска расширений](/docs/ingest-from/extensions/concepts#eec "Узнайте больше о концепции расширений Dynatrace.").
+2. Выберите **Next step**.
+3. Выберите **Add endpoint**.
+4. Определите конечную точку Prometheus, предоставляющую метрики, и данные аутентификации. Дополнительную информацию о поддерживаемых схемах аутентификации см. в разделе [Аутентификация](/docs/ingest-from/extensions/develop-your-extensions/data-sources/prometheus-extensions/prometheus-schema-reference#authentication "Узнайте о расширениях Prometheus в фреймворке расширений."). Данные аутентификации, переданные в Dynatrace при активации конфигурации мониторинга, обфусцируются и не могут быть извлечены.
+
+### Удаленный мониторинг
+
+1. Выберите **Monitor remotely**.
+2. Определите конечную точку Prometheus, предоставляющую метрики, и данные аутентификации. Дополнительную информацию о поддерживаемых схемах аутентификации см. в разделе [Аутентификация](/docs/ingest-from/extensions/develop-your-extensions/data-sources/prometheus-extensions/prometheus-schema-reference#authentication "Узнайте о расширениях Prometheus в фреймворке расширений.")
+3. Выберите **Next step**.
+4. Выберите группу ActiveGate, чтобы определить, какие ActiveGate будут запускать расширение. По завершении выберите **Next step**.
+
+## Шаг 4 Дополнительные свойства
+
+Выберите **Define** для настройки необязательных дополнительных свойств:
+
+* **Timeout in seconds**: Максимальное время ожидания (в секундах) для возврата данных. По умолчанию = 10 секунд.
+* **Retries**: Максимальное количество повторных попыток для запроса в случае сбоя (общее время для запроса составляет `timeoutSecs` x `retries`). По умолчанию = 0 повторных попыток.
+
+## Шаг 5 Автообнаружение
+
+Автообнаружение -- это функция, которая автоматически разрешает DNS-конечные точки. Если автообнаружение определено, URL становится DNS-именем.
+
+Выберите **Define** для настройки DNS-конечных точек:
+
+* **Auto discovery type**: Доступен только тип `DNS`.
+* **DNS type**: Тип DNS-запроса для выполнения. Доступен только тип `A`, который соответствует адресам IPv4.
+* **DNS port**: Указывает порт, назначенный всем IP-адресам, разрешенным DNS.
+* **DNS refresh interval (s)**: Устанавливает интервал времени в секундах для часто меняющихся IP-адресов.
+
+## Шаг 6 Активация расширения
+
+Предоставьте окончательные данные конфигурации.
+
+* Описание
+  Текст с подробностями данной конфигурации мониторинга. При устранении неполадок мониторинга это может дать вашим командам подробную информацию о данной конфигурации мониторинга.
+* Наборы функций
+  В сильно сегментированных сетях наборы функций могут отражать сегменты вашей среды. Вы можете использовать их для ограничения мониторинга определенными сегментами. Наборы функций предопределены для каждого расширения. Дополнительную информацию см. в разделе [Справочник по источнику данных Prometheus](/docs/ingest-from/extensions/develop-your-extensions/data-sources/prometheus-extensions/prometheus-schema-reference#featureset "Узнайте о расширениях Prometheus в фреймворке расширений.").
+
+По завершении выберите **Activate**.
+
+## Конфигурация мониторинга в формате JSON
+
+Мастер активации расширения содержит динамически обновляемую JSON-полезную нагрузку с вашей конфигурацией мониторинга. См. раздел [Управление расширениями](/docs/ingest-from/extensions/manage-extensions "Узнайте, как управлять расширениями."), чтобы узнать, как использовать ее для активации расширения через Dynatrace API.
+
+## Связанные темы
+
+* [Устранение неполадок расширений](https://dt-url.net/6303zdg "Узнайте, как устранять неполадки расширений Dynatrace")

@@ -1,147 +1,147 @@
 ---
-title: AI data governance with Amazon Bedrock
+title: Управление данными ИИ с Amazon Bedrock
 source: https://www.dynatrace.com/docs/observe/dynatrace-for-ai-observability/sample-use-cases/data-governance
 scraped: 2026-03-06T21:27:33.344954
 ---
 
-# AI data governance with Amazon Bedrock
+# Управление данными ИИ с Amazon Bedrock
 
-# AI data governance with Amazon Bedrock
+# Управление данными ИИ с Amazon Bedrock
 
-* Latest Dynatrace
-* Tutorial
-* 5-min read
-* Updated on Dec 10, 2025
+* Последняя Dynatrace
+* Руководство
+* 5 мин. чтения
+* Обновлено 10 декабря 2025 г.
 
-Emerging AI regulations such as the [European Union Artificial Intelligence Actï»¿](https://dt-url.net/xv038bv) provide the means to deploy a comprehensive strategy combining organizational and AI model oversight, covering everything from model training to AI/user interactions.
+Новые нормативные акты в области ИИ, такие как [Закон Европейского союза об искусственном интеллекте](https://dt-url.net/xv038bv), предоставляют средства для развёртывания комплексной стратегии, сочетающей организационный надзор и надзор за моделями ИИ, охватывая всё от обучения модели до взаимодействий ИИ/пользователя.
 
-When running your AI models through Amazon Bedrock, Dynatrace helps you to comply with regulatory record-keeping requirements.
+При запуске ваших моделей ИИ через Amazon Bedrock Dynatrace помогает вам соблюдать нормативные требования к ведению записей.
 
-## What you will learn
+## Что вы узнаете
 
-In this tutorial, we first configure your model training and deployment observability. Afterward, we configure your application to observe user inference requests.
+В этом руководстве мы сначала настроим наблюдаемость обучения и развёртывания вашей модели. Затем мы настроим ваше приложение для наблюдения за запросами пользователей на вывод.
 
-## Steps
+## Шаги
 
-The general steps are as follows:
+Общие шаги следующие:
 
-1. Configure Dynatrace
-2. Configure your AWS account to send data to your Dynatrace tenant
-3. Configure your application
+1. Настройка Dynatrace
+2. Настройка вашего аккаунта AWS для отправки данных в ваш тенант Dynatrace
+3. Настройка вашего приложения
 
-See below for the details of each step.
+Подробности каждого шага приведены ниже.
 
-[![Step 1](https://dt-cdn.net/images/step-1-086e22066c.svg "Step 1")
+[![Шаг 1](https://dt-cdn.net/images/step-1-086e22066c.svg "Шаг 1")
 
-**Configure Dynatrace**](#preparation)[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
+**Настройка Dynatrace**](#preparation)[![Шаг 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Шаг 2")
 
-**Configure your AWS account**](#aws)[![Step 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Step 3")
+**Настройка аккаунта AWS**](#aws)[![Шаг 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Шаг 3")
 
-**Configure your application**](#app)
+**Настройка приложения**](#app)
 
-### Step 1 Configure Dynatrace
+### Шаг 1 Настройка Dynatrace
 
-In this step, we create a Dynatrace token and we configure [OpenPipeline](/docs/platform/openpipeline "Scale Dynatrace platform data handling with Dynatrace OpenPipeline.") to retain the data for 5+ years.
+На этом шаге мы создаём токен Dynatrace и настраиваем [OpenPipeline](/docs/platform/openpipeline "Масштабирование обработки данных платформы Dynatrace с помощью OpenPipeline.") для хранения данных на 5+ лет.
 
-#### Create Dynatrace token
+#### Создание токена Dynatrace
 
-To create a Dynatrace token
+Чтобы создать токен Dynatrace
 
-1. In Dynatrace, go to **Access Tokens**.  
-   To find **Access Tokens**, press **CTRL+K** to search for and select **Access Tokens**.
-2. In **Access Tokens**, select **Generate new token**.
-3. Enter a **Token name** for your new token.
-4. Give your new token the following permissions:
-5. Search for and select all of the following scopes.
+1. В Dynatrace перейдите в **Access Tokens**.  
+   Чтобы найти **Access Tokens**, нажмите **CTRL+K** для поиска и выберите **Access Tokens**.
+2. В **Access Tokens** выберите **Создать новый токен**.
+3. Введите **Имя токена** для вашего нового токена.
+4. Предоставьте вашему новому токену следующие разрешения:
+5. Найдите и выберите все следующие области:
 
    * **Ingest bizevents** (`bizevents.ingest`)
    * **Ingest metrics** (`metrics.ingest`)
    * **Ingest logs** (`logs.ingest`)
    * **Ingest events** (`events.ingest`)
    * **Ingest OpenTelemetry traces** (`openTelemetryTrace.ingest`)
-6. Select **Generate token**.
-7. Copy the generated token to the clipboard. Store the token in a password manager for future use.
+6. Выберите **Создать токен**.
+7. Скопируйте сгенерированный токен в буфер обмена. Сохраните токен в менеджере паролей для дальнейшего использования.
 
-   You can only access your token once upon creation. You can't reveal it afterward.
+   Доступ к токену возможен только один раз при создании. Позже вы не сможете его просмотреть.
 
-#### Configure OpenPipeline
+#### Настройка OpenPipeline
 
-The default retention period for BizEvents is 35 days. Depending on the regulations, this might not be enough.
+Период хранения по умолчанию для BizEvents составляет 35 дней. В зависимости от нормативных требований этого может быть недостаточно.
 
-To change the retention period, you can create a custom Grail bucket.
+Для изменения периода хранения можно создать пользовательский бакет Grail.
 
-1. Go to **Settings** > **Storage management** > **Bucket storage management**.
-2. In **Bucket Storage Management**, select  **Bucket**.
-3. On **New bucket**:
+1. Перейдите в **Настройки** > **Управление хранилищем** > **Управление хранилищем бакетов**.
+2. В **Управление хранилищем бакетов** выберите **Бакет**.
+3. В **Новый бакет**:
 
-   * Set **Bucket name** (for example, `gen_ai_events`)
-   * Set **Retention period (in days)** (for example, `1,825`, which is about 5 years)
-   * Set **Bucket table type** to `bizevents`
-4. Select **Save**.
+   * Задайте **Имя бакета** (например, `gen_ai_events`)
+   * Задайте **Период хранения (в днях)** (например, `1825`, что составляет около 5 лет)
+   * Задайте **Тип таблицы бакета** как `bizevents`
+4. Выберите **Сохранить**.
 
-![Grail Bucket Creation](https://dt-cdn.net/images/bucket-creation-1380-125022930c.png)
+![Создание бакета Grail](https://dt-cdn.net/images/bucket-creation-1380-125022930c.png)
 
-When the bucket is available, we can configure OpenPipeline to redirect AI-relevant events to storage there.
+Когда бакет доступен, мы можем настроить OpenPipeline для перенаправления событий, связанных с ИИ, на хранение в нём.
 
-1. Go to ![Settings](https://dt-cdn.net/images/settings-icon-256-38e1321b51.webp "Settings") **Settings** > **Process and contextualize** > **OpenPipeline** > **Business events** > **Pipelines**.
-2. On the **Pipelines** tab, select  **Pipeline** and name your pipeline (for example, `AI Data Governance`).
-3. On the **Storage** tab, select  **Processor** > **Bucket assignment**.
-4. Configure the processor:
+1. Перейдите в ![Settings](https://dt-cdn.net/images/settings-icon-256-38e1321b51.webp "Settings") **Settings** > **Обработка и контекстуализация** > **OpenPipeline** > **Бизнес-события** > **Конвейеры**.
+2. На вкладке **Конвейеры** выберите **Конвейер** и назовите его (например, `AI Data Governance`).
+3. На вкладке **Хранилище** выберите **Процессор** > **Назначение бакета**.
+4. Настройте процессор:
 
-   1. Enter a **Name** for the processor
-   2. Set **Matching condition** to `true`
-   3. Set **Storage** to the bucket you created in the previous procedure
-5. Select **Save**.
+   1. Введите **Имя** процессора
+   2. Задайте **Условие соответствия** как `true`
+   3. Задайте **Хранилище** — бакет, созданный в предыдущей процедуре
+5. Выберите **Сохранить**.
 
-![OpenPipeline Bucket Assignment](https://dt-cdn.net/images/pipeline-creation-1383-70370d9b88.png)
+![Назначение бакета OpenPipeline](https://dt-cdn.net/images/pipeline-creation-1383-70370d9b88.png)
 
-Finally, we route the ingestion of AI events to the pipeline.
+Наконец, мы направляем приём событий ИИ в конвейер.
 
-1. Still in **OpenPipeline** > **Business events**, select the **Dynamic routing** tab.
-2. On the **Dynamic routing** tab, select  **Dynamic route** to **Add a new dynamic route**.
+1. Всё ещё в **OpenPipeline** > **Бизнес-события**, выберите вкладку **Динамическая маршрутизация**.
+2. На вкладке **Динамическая маршрутизация** выберите **Динамический маршрут** для **Добавления нового динамического маршрута**.
 
-   * Enter a **Name** for the new route (for example, `AI Event Routing`)
-   * Set **Matching condition** to `matchesValue(event.type,"gen_ai.auditing")`
-   * Set **Pipeline** to the pipeline you created in the previous procedure.
-3. Select **Add**.
-4. Select **Save**.
+   * Введите **Имя** для нового маршрута (например, `AI Event Routing`)
+   * Задайте **Условие соответствия** как `matchesValue(event.type,"gen_ai.auditing")`
+   * Задайте **Конвейер** — конвейер, созданный в предыдущей процедуре.
+3. Выберите **Добавить**.
+4. Выберите **Сохранить**.
 
-Finally, to mark it as the first pipeline to trigger, drag it  up to be the first row in the table.
+Наконец, чтобы обозначить его как первый конвейер для срабатывания, перетащите его вверх на первую строку таблицы.
 
-![OpenPipeline Routing](https://dt-cdn.net/images/pipeline-routing-1381-ec77347761.png)
+![Маршрутизация OpenPipeline](https://dt-cdn.net/images/pipeline-routing-1381-ec77347761.png)
 
-### Step 2 Configure your AWS account
+### Шаг 2 Настройка аккаунта AWS
 
-Amazon Bedrock emits events for every configuration action executed, such as when you deploy a new model or when the fine-tuning of your model finishes.
+Amazon Bedrock генерирует события для каждого выполненного действия конфигурации, например при развёртывании новой модели или при завершении тонкой настройки модели.
 
-We can set up a rule to forward these events to Dynatrace. Please refer to our [integration with Amazon EventBridge using BizEventï»¿](https://github.com/dynatrace-oss/cloud-snippets/tree/main/aws/eventbridge-events-to-dynatrace#ingest-as-bizevents) to configure the rule.
+Мы можем настроить правило для пересылки этих событий в Dynatrace. Пожалуйста, обратитесь к нашей [интеграции с Amazon EventBridge через BizEvent](https://github.com/dynatrace-oss/cloud-snippets/tree/main/aws/eventbridge-events-to-dynatrace#ingest-as-bizevents) для настройки правила.
 
-The only change is in the [`InputTemplate` fieldï»¿](https://github.com/dynatrace-oss/cloud-snippets/blob/8785beb90e9d5c53de4f8420bf5e68b6ac673a09/aws/eventbridge-events-to-dynatrace/biz-events.yaml#L115), where the property `"type"` should be set to `gen_ai.auditing`. This change is required to match the values that OpenPipeline uses to redirect the events to our Grail bucket.
+Единственное изменение — в [поле `InputTemplate`](https://github.com/dynatrace-oss/cloud-snippets/blob/8785beb90e9d5c53de4f8420bf5e68b6ac673a09/aws/eventbridge-events-to-dynatrace/biz-events.yaml#L115), где свойство `"type"` должно быть установлено как `gen_ai.auditing`. Это изменение необходимо для соответствия значениям, которые OpenPipeline использует для перенаправления событий в наш бакет Grail.
 
-Expand to see how the AWS configuration should look
+Раскройте, чтобы увидеть конфигурацию AWS
 
-![AWS <-> Dynatrace connection](https://dt-cdn.net/images/aws-dynatrace-connection-3352-4347fe5fc8.png)
+![Соединение AWS <-> Dynatrace](https://dt-cdn.net/images/aws-dynatrace-connection-3352-4347fe5fc8.png)
 
-![AWS CloudTrail Transformer configuration](https://dt-cdn.net/images/aws-cloudtrail-transformer-1610-501eddb13f.png)
+![Конфигурация трансформера AWS CloudTrail](https://dt-cdn.net/images/aws-cloudtrail-transformer-1610-501eddb13f.png)
 
-![AWS CloudTrail Target configuration](https://dt-cdn.net/images/aws-cloudtrail-target-2744-0f4e467998.png)
+![Конфигурация цели AWS CloudTrail](https://dt-cdn.net/images/aws-cloudtrail-target-2744-0f4e467998.png)
 
-### Step 3 Configure your application
+### Шаг 3 Настройка приложения
 
-We can leverage OpenTelemetry to provide auto-instrumentation that collects traces and metrics of your AI workloads, particularly our fork of [OpenLLMetryï»¿](https://dt-url.net/0sa3uau).
+Мы можем использовать OpenTelemetry для обеспечения автоинструментирования, собирающего трассировки и метрики ваших ИИ-задач, в частности наш форк [OpenLLMetry](https://dt-url.net/0sa3uau).
 
-Important Notice
+Важное замечание
 
-The libraries utilized in this sample use case are currently under development and are in an alpha state. They may contain bugs or undergo significant changes. Use at your own risk.
-We highly value your feedback to improve these libraries. Please report any issues, bugs, or suggestions on our GitHub issues page.
+Библиотеки, используемые в этом примере, находятся в стадии разработки и в альфа-состоянии. Они могут содержать ошибки или подвергаться значительным изменениям. Используйте на свой риск.
+Мы высоко ценим вашу обратную связь для улучшения этих библиотек. Пожалуйста, сообщайте о проблемах, ошибках или предложениях на нашей странице GitHub issues.
 
-To install, use the following command:
+Для установки используйте следующую команду:
 
 ```
 pip install -i https://test.pypi.org/simple/ dynatrace-openllmetry-sdk==0.0.1a4
 ```
 
-Afterward, add the following code at the beginning of your main file:
+Затем добавьте следующий код в начало вашего основного файла:
 
 ```
 from traceloop.sdk import Traceloop
@@ -171,11 +171,11 @@ headers=headers
 )
 ```
 
-And that's it! ![Progressive delivery](https://cdn.bfldr.com/B686QPH3/at/r898jztffhg3nzc7fxwh6pf/DT1015.svg?auto=webp&width=72&height=72 "Progressive delivery")
+И это всё! ![Progressive delivery](https://cdn.bfldr.com/B686QPH3/at/r898jztffhg3nzc7fxwh6pf/DT1015.svg?auto=webp&width=72&height=72 "Progressive delivery")
 
-Now you can:
+Теперь вы можете:
 
-* Fetch all the user/AI interactions, training status, and more on demand.
-* Use [Notebooks](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks "Analyze, visualize, and share insights from your observability dataâall in one collaborative, customizable workspace.")![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") or [Dashboards](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new "Create interactive, customizable views to visualize, analyze, and share your observability data in real time.")![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") to create data-driven documents for custom analytics on it.
+* Получать все взаимодействия пользователя/ИИ, статус обучения и другую информацию по запросу.
+* Использовать [Notebooks](/docs/analyze-explore-automate/dashboards-and-notebooks/notebooks "Анализируйте, визуализируйте и делитесь инсайтами из ваших данных наблюдаемости в едином совместном настраиваемом рабочем пространстве.")![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") или [Dashboards](/docs/analyze-explore-automate/dashboards-and-notebooks/dashboards-new "Создавайте интерактивные настраиваемые представления для визуализации, анализа и обмена данными наблюдаемости в реальном времени.")![Dashboards](https://dt-cdn.net/images/dashboards-512-b1f1e9690b.png "Dashboards") для создания документов, основанных на данных, для пользовательской аналитики.
 
-![GenAI Compliance Auditing](https://dt-cdn.net/images/gen-ai-auditing-7680-1f44c8a6bf.png)
+![Аудит соответствия GenAI](https://dt-cdn.net/images/gen-ai-auditing-7680-1f44c8a6bf.png)

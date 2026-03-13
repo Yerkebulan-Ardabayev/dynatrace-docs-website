@@ -1,118 +1,118 @@
 ---
-title: Alerting and notifications
+title: Оповещения и уведомления
 source: https://www.dynatrace.com/docs/analyze-explore-automate/alerting-and-notifications
 scraped: 2026-03-04T21:29:43.863602
 ---
 
-# Alerting and notifications
+# Оповещения и уведомления
 
-# Alerting and notifications
+# Оповещения и уведомления
 
-* Latest Dynatrace
-* Explanation
-* 3-min read
-* Published Feb 16, 2026
+* Последняя Dynatrace
+* Объяснение
+* 3 мин. чтения
+* Опубликовано 16 февраля 2026 г.
 
-Dynatrace provides powerful alerting and notification tools to detect issues, identify root causes, and resolve problems.
+Dynatrace предоставляет мощные инструменты оповещения и уведомлений для обнаружения проблем, определения коренных причин и решения инцидентов.
 
-This page explains key features such as anomaly detection, problem detection, and workflows that help streamline alerting.
+На этой странице описаны ключевые функции, такие как обнаружение аномалий, обнаружение проблем и рабочие процессы, которые помогают оптимизировать оповещения.
 
-## Alerting
+## Оповещения
 
-[Dynatrace Intelligence](/docs/dynatrace-intelligence "Get familiar with the capabilities of Dynatrace Intelligence.") automatically detects anomalies in your environment, generates Davis events for individual issues, and groups them into problems. These problems provide a clear, contextual overview that allows faster root cause analysis and resolution.
+[Dynatrace Intelligence](/docs/dynatrace-intelligence "Ознакомьтесь с возможностями Dynatrace Intelligence.") автоматически обнаруживает аномалии в вашей среде, генерирует события Davis для отдельных инцидентов и группирует их в проблемы. Эти проблемы предоставляют чёткий, контекстный обзор, позволяющий ускорить анализ коренных причин и их устранение.
 
-### Automatic detection
+### Автоматическое обнаружение
 
-Dynatrace uses AI-powered anomaly detection to continuously monitor your environment for deviations from normal behavior. This functionality helps identify issues such as:
+Dynatrace использует обнаружение аномалий на основе искусственного интеллекта для непрерывного мониторинга вашей среды на предмет отклонений от нормального поведения. Эта функция помогает выявлять такие проблемы, как:
 
-* Performance bottlenecks
-* Service downtime
-* Unusual metric patterns or behaviors
+* Узкие места производительности
+* Простой сервисов
+* Необычные паттерны метрик или поведение
 
-You can adjust the sensitivity of anomaly detection to match your environment and reduce false positives or missed anomalies. For details, see [Adjust the sensitivity of anomaly detection](/docs/dynatrace-intelligence/anomaly-detection/adjust-sensitivity-anomaly-detection "Learn how to adapt the sensitivity of problem detection in Dynatrace.").
+Вы можете настроить чувствительность обнаружения аномалий в соответствии с вашей средой и уменьшить количество ложных срабатываний или пропущенных аномалий. Подробнее см. [Настройка чувствительности обнаружения аномалий](/docs/dynatrace-intelligence/anomaly-detection/adjust-sensitivity-anomaly-detection "Узнайте, как адаптировать чувствительность обнаружения проблем в Dynatrace.").
 
-### Custom alerts
+### Пользовательские оповещения
 
-Custom alerts allow you to define conditions for monitoring specific metrics or thresholds. This flexibility lets you tailor notifications to your business needs.
+Пользовательские оповещения позволяют определять условия для мониторинга конкретных метрик или пороговых значений. Эта гибкость позволяет настраивать уведомления в соответствии с потребностями вашего бизнеса.
 
-Typical use cases include:
+Типичные варианты использования включают:
 
-* Monitoring application-specific metrics that are critical to business operations
-* Detecting log patterns or conditions that indicate potential risks
-* Defining thresholds for metrics or events
+* Мониторинг метрик приложений, критически важных для бизнес-операций
+* Обнаружение паттернов в журналах или условий, указывающих на потенциальные риски
+* Определение пороговых значений для метрик или событий
 
-You can configure custom alerts in the [![Anomaly Detection - new](https://dt-cdn.net/images/davis-anomalydetection-256-105da91594.png "Anomaly Detection - new") **Anomaly Detection**](/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-app "Explore anomaly detection configurations using the Anomaly Detection app.") app, which gives you control over when and how alerts are triggered.
+Вы можете настроить пользовательские оповещения в приложении [![Anomaly Detection - new](https://dt-cdn.net/images/davis-anomalydetection-256-105da91594.png "Anomaly Detection - new") **Обнаружение аномалий**](/docs/dynatrace-intelligence/anomaly-detection/anomaly-detection-app "Изучите конфигурации обнаружения аномалий с помощью приложения Anomaly Detection."), которое позволяет контролировать, когда и как срабатывают оповещения.
 
-### Problem detection
+### Обнаружение проблем
 
-Dynatrace correlates Davis events with contextual data to identify the root cause of issues. Detected problems are enriched with detailed information, including impacted services, dependency mappings, and root cause analysis.
+Dynatrace коррелирует события Davis с контекстными данными для определения коренной причины инцидентов. Обнаруженные проблемы обогащаются подробной информацией, включая затронутые сервисы, карты зависимостей и анализ коренных причин.
 
-This approach helps you:
+Этот подход помогает вам:
 
-* Quickly understand the scope and impact of an issue
-* Prioritize problems based on severity and business impact
-* Accelerate resolution by focusing on the critical root cause
+* Быстро понять масштаб и влияние инцидента
+* Приоритизировать проблемы по степени серьёзности и бизнес-влиянию
+* Ускорить решение, сосредоточившись на критической коренной причине
 
-The [![Problems app - new](https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp "Problems app - new") **Problems**](/docs/dynatrace-intelligence/davis-problems-app "Use the Problems app to quickly get to the root cause of incidents in your environment.") app provides a centralized view of all detected problems and supports efficient triage and investigation.
+Приложение [![Problems app - new](https://dt-cdn.net/images/dynatrace-davis-new-256-340162f8c6.webp "Problems app - new") **Проблемы**](/docs/dynatrace-intelligence/davis-problems-app "Используйте приложение Problems для быстрого определения коренной причины инцидентов в вашей среде.") предоставляет централизованный обзор всех обнаруженных проблем и поддерживает эффективную сортировку и расследование.
 
-## Workflows for external notifications
+## Рабочие процессы для внешних уведомлений
 
-Dynatrace uses workflows to send notifications to external tools. Workflows allow flexible configurations that ensure alerts are delivered to the right channels or trigger automated actions.
+Dynatrace использует рабочие процессы для отправки уведомлений во внешние инструменты. Рабочие процессы позволяют гибко настраивать конфигурации, обеспечивающие доставку оповещений в нужные каналы или запуск автоматических действий.
 
-### Workflow trigger
+### Триггер рабочего процесса
 
-The trigger defines when a workflow runs and sends a notification, for example, when a problem is detected.
+Триггер определяет, когда рабочий процесс запускается и отправляет уведомление, например, при обнаружении проблемы.
 
-* To minimize noise, use the [problem trigger](/docs/analyze-explore-automate/workflows/trigger/event-trigger#davis-problem-trigger "Guide to creating workflow automation event triggers in Dynatrace Workflows.") to send one notification for each detected problem.
-* For advanced scenarios, use the [Davis event trigger](/docs/analyze-explore-automate/workflows/trigger/event-trigger#davis-event-trigger "Guide to creating workflow automation event triggers in Dynatrace Workflows.") or the [generic event trigger](/docs/analyze-explore-automate/workflows/trigger/event-trigger#event-trigger "Guide to creating workflow automation event triggers in Dynatrace Workflows.") to notify on specific events.
+* Чтобы минимизировать шум, используйте [триггер проблемы](/docs/analyze-explore-automate/workflows/trigger/event-trigger#davis-problem-trigger "Руководство по созданию триггеров событий автоматизации рабочих процессов в Dynatrace Workflows.") для отправки одного уведомления на каждую обнаруженную проблему.
+* Для продвинутых сценариев используйте [триггер события Davis](/docs/analyze-explore-automate/workflows/trigger/event-trigger#davis-event-trigger "Руководство по созданию триггеров событий автоматизации рабочих процессов в Dynatrace Workflows.") или [общий триггер события](/docs/analyze-explore-automate/workflows/trigger/event-trigger#event-trigger "Руководство по созданию триггеров событий автоматизации рабочих процессов в Dynatrace Workflows.") для уведомлений о конкретных событиях.
 
-You can configure trigger conditions to control which problems or events generate notifications. We recommend filtering based on the following attributes:
+Вы можете настроить условия триггера для управления тем, какие проблемы или события генерируют уведомления. Мы рекомендуем фильтрацию на основе следующих атрибутов:
 
-* [Primary Grail fields](/docs/semantic-dictionary/tags/primary-fields)
-* Security context
-* Custom attributes
+* [Основные поля Grail](/docs/semantic-dictionary/tags/primary-fields)
+* Контекст безопасности
+* Пользовательские атрибуты
 
-This approach ensures that you receive only relevant notifications.
+Этот подход гарантирует, что вы будете получать только релевантные уведомления.
 
-### Integration with external systems via Workflows connectors
+### Интеграция с внешними системами через коннекторы Workflows
 
-After configuring the trigger, define the workflow action that specifies where notifications are sent.
+После настройки триггера определите действие рабочего процесса, которое указывает, куда отправляются уведомления.
 
-Dynatrace supports a wide range of integrations, including:
+Dynatrace поддерживает широкий спектр интеграций, включая:
 
 * Email
 * Slack
 * Microsoft Teams
 * ServiceNow
 
-For a complete list, see [Workflows Connectors](/docs/analyze-explore-automate/workflows/actions "Use Dynatrace ready-made actions for your workflows and integrate Dynatrace with third-party systems.").
+Полный список см. в разделе [Коннекторы Workflows](/docs/analyze-explore-automate/workflows/actions "Используйте готовые действия Dynatrace для ваших рабочих процессов и интегрируйте Dynatrace со сторонними системами.").
 
-### Simple workflows vs standard workflows
+### Простые рабочие процессы и стандартные рабочие процессы
 
-Dynatrace provides two workflow types to support different use cases: simple workflows and standard workflows.
+Dynatrace предоставляет два типа рабочих процессов для поддержки различных сценариев использования: простые рабочие процессы и стандартные рабочие процессы.
 
-#### Simple workflows
+#### Простые рабочие процессы
 
-Simple workflows are designed for basic, single-task operations such as sending notifications. They're lightweight and don't consume workflow hours.
+Простые рабочие процессы предназначены для базовых, однозадачных операций, таких как отправка уведомлений. Они легковесны и не потребляют часы рабочих процессов.
 
-Examples include:
+Примеры включают:
 
-* Notifying on-call engineers about critical issues.
-* Alerting teams to service downtime or performance problems.
+* Уведомление дежурных инженеров о критических проблемах.
+* Оповещение команд о простое сервисов или проблемах производительности.
 
-#### Standard workflows
+#### Стандартные рабочие процессы
 
-Standard workflows support advanced scenarios with multiple tasks, task conditions, and escalation rules. They're suited for complex environments and multi-step automation.
+Стандартные рабочие процессы поддерживают продвинутые сценарии с несколькими задачами, условиями задач и правилами эскалации. Они подходят для сложных сред и многошаговой автоматизации.
 
-Examples include:
+Примеры включают:
 
-* Routing alerts to specific teams based on severity or issue type.
-* Escalating unresolved issues to higher-level teams.
-* Automating problem remediation processes.
+* Маршрутизация оповещений конкретным командам на основе серьёзности или типа инцидента.
+* Эскалация нерешённых проблем командам более высокого уровня.
+* Автоматизация процессов устранения проблем.
 
-## Related topics
+## Связанные темы
 
-* [Automated threat-alert triaging](/docs/secure/use-cases/automated-threat-alert-triaging "Use case scenario for automating threat-alert triaging with Dynatrace.")
-* [CSPM Notification Automation](/docs/secure/use-cases/notification-automation "Improve cloud security posture by automatically processing, triaging, enriching, and classifying incoming security alerts.")
-* [Set up alerts based on events extracted from logs](/docs/analyze-explore-automate/logs/lma-use-cases/lma-alert-log-based-events "How to create and configure Davis problems and alerts with events based on logs.")
-* [Set up custom alerts based on metrics extracted from logs](/docs/analyze-explore-automate/logs/lma-use-cases/lma-alert-log-based-metrics "How to create and configure Davis problems and custom alerts with metrics based on logs.")
+* [Автоматическая сортировка оповещений об угрозах](/docs/secure/use-cases/automated-threat-alert-triaging "Сценарий использования для автоматизации сортировки оповещений об угрозах с помощью Dynatrace.")
+* [Автоматизация уведомлений CSPM](/docs/secure/use-cases/notification-automation "Улучшите состояние безопасности облака путём автоматической обработки, сортировки, обогащения и классификации входящих оповещений безопасности.")
+* [Настройка оповещений на основе событий, извлечённых из журналов](/docs/analyze-explore-automate/logs/lma-use-cases/lma-alert-log-based-events "Как создать и настроить проблемы Davis и оповещения с событиями на основе журналов.")
+* [Настройка пользовательских оповещений на основе метрик, извлечённых из журналов](/docs/analyze-explore-automate/logs/lma-use-cases/lma-alert-log-based-metrics "Как создать и настроить проблемы Davis и пользовательские оповещения с метриками на основе журналов.")

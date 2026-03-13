@@ -1,54 +1,54 @@
 ---
-title: Workflow templates
+title: Шаблоны рабочих процессов
 source: https://www.dynatrace.com/docs/analyze-explore-automate/workflows/manage-workflows/workflows-templates
 scraped: 2026-03-06T21:34:39.204491
 ---
 
-# Workflow templates
+# Шаблоны рабочих процессов
 
-# Workflow templates
+# Шаблоны рабочих процессов
 
-* Latest Dynatrace
-* How-to guide
-* Published Feb 05, 2026
+* Последняя Dynatrace
+* Практическое руководство
+* Опубликовано 5 февраля 2026 г.
 
-Workflow templates give you ready-made workflow definitions for common automation scenarios.
-Use them to start new workflows quickly and then customize them for your use case.
+Шаблоны рабочих процессов предоставляют готовые определения рабочих процессов для типичных сценариев автоматизации.
+Используйте их для быстрого создания новых рабочих процессов и последующей настройки под ваш вариант использования.
 
-## How-to
+## Инструкции
 
-Here's what you can do with templates:
+Вот что вы можете сделать с шаблонами:
 
-* Create a workflow from a template.
-* Create a template from any workflow. Just export the workflow as a YAML file.
-* Create a workflow guide that explains prerequisites and configuration steps.
+* Создать рабочий процесс из шаблона.
+* Создать шаблон из любого рабочего процесса. Просто экспортируйте рабочий процесс как YAML-файл.
+* Создать руководство по рабочему процессу, объясняющее предварительные требования и шаги настройки.
 
-### Create a workflow from template
+### Создание рабочего процесса из шаблона
 
-You can create a workflow based on a template.
-For more information, see [Create workflow from pre-made template](/docs/analyze-explore-automate/workflows/building#pre-made-template "Create and edit workflows in Dynatrace Workflows.") or [Create workflow from YAML template](/docs/analyze-explore-automate/workflows/building#yaml-template "Create and edit workflows in Dynatrace Workflows.").
+Вы можете создать рабочий процесс на основе шаблона.
+Подробнее см. [Создание рабочего процесса из готового шаблона](/docs/analyze-explore-automate/workflows/building#pre-made-template "Создание и редактирование рабочих процессов в Dynatrace Workflows.") или [Создание рабочего процесса из YAML-шаблона](/docs/analyze-explore-automate/workflows/building#yaml-template "Создание и редактирование рабочих процессов в Dynatrace Workflows.").
 
-### Create a template
+### Создание шаблона
 
-You can create your own workflow template.
-To do so, create or modify a workflow and then export it as a template.
-For more information, see [Download a template](/docs/analyze-explore-automate/workflows/manage-workflows/workflows-download#download-workflow-template "Download your workflow or your existing workflow as a template for an easy backup, to use locally or to share it to upload on a different tenant.").
+Вы можете создать собственный шаблон рабочего процесса.
+Для этого создайте или измените рабочий процесс, а затем экспортируйте его как шаблон.
+Подробнее см. [Загрузка шаблона](/docs/analyze-explore-automate/workflows/manage-workflows/workflows-download#download-workflow-template "Загрузите ваш рабочий процесс или существующий рабочий процесс как шаблон для удобного резервного копирования, локального использования или совместного использования.").
 
-### Create a workflow guide
+### Создание руководства по рабочему процессу
 
-When you create a new workflow or template, you can include a guide that explains prerequisites and configuration steps.
-The guide will then be visible for anybody who uses the workflow or template.
-For more information, see [Workflow guide](/docs/analyze-explore-automate/workflows/building#workflow-guide "Create and edit workflows in Dynatrace Workflows.").
+При создании нового рабочего процесса или шаблона вы можете включить руководство, объясняющее предварительные требования и шаги настройки.
+Руководство будет видно всем, кто использует рабочий процесс или шаблон.
+Подробнее см. [Руководство по рабочему процессу](/docs/analyze-explore-automate/workflows/building#workflow-guide "Создание и редактирование рабочих процессов в Dynatrace Workflows.").
 
-## Next steps
+## Дальнейшие шаги
 
-Now that you know how to use workflow templates:
+Теперь, когда вы знаете, как использовать шаблоны рабочих процессов:
 
-* Explore the  [**Hub**](/docs/manage/hub "See the information about Dynatrace Hub.") to find apps that come with pre-made templates.
-* Use and modify workflow templates for your [use cases](/docs/analyze-explore-automate/workflows/use-cases "Explore common Workflows use cases in Dynatrace deployments.").
+* Исследуйте [**Hub**](/docs/manage/hub "Информация о Dynatrace Hub."), чтобы найти приложения с готовыми шаблонами.
+* Используйте и изменяйте шаблоны рабочих процессов для ваших [вариантов использования](/docs/analyze-explore-automate/workflows/use-cases "Изучите типичные варианты использования Workflows в развёртываниях Dynatrace.").
 
-## Related topics
+## Связанные темы
 
-* [Workflows quick start guide](/docs/analyze-explore-automate/workflows/quickstart "Build and run your first workflow.")
-* [Create workflows in Dynatrace Workflows](/docs/analyze-explore-automate/workflows/building "Create and edit workflows in Dynatrace Workflows.")
-* [Manage workflows](/docs/analyze-explore-automate/workflows/manage-workflows "Manage your workflows")
+* [Быстрый старт с Workflows](/docs/analyze-explore-automate/workflows/quickstart "Создайте и запустите ваш первый рабочий процесс.")
+* [Создание рабочих процессов в Dynatrace Workflows](/docs/analyze-explore-automate/workflows/building "Создание и редактирование рабочих процессов в Dynatrace Workflows.")
+* [Управление рабочими процессами](/docs/analyze-explore-automate/workflows/manage-workflows "Управление вашими рабочими процессами")

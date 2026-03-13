@@ -1,46 +1,46 @@
 ---
-title: Cisco UCS M-Series extension
+title: Расширение Cisco UCS M-Series
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/extensions/cisco-ucs-m-series
 scraped: 2026-03-06T21:26:37.150221
 ---
 
-# Cisco UCS M-Series extension
+# Расширение Cisco UCS M-Series
 
-# Cisco UCS M-Series extension
+# Расширение Cisco UCS M-Series
 
-* Latest Dynatrace
-* Extension
-* Published Feb 21, 2025
+* Последняя Dynatrace
+* Расширение
+* Опубликовано 21 февраля 2025 г.
 
-Get insights into your Cisco UCS M-Series devices.
+Получите информацию о ваших устройствах Cisco UCS M-Series.
 
-## Get started
+## Начало работы
 
-### Overview
+### Обзор
 
-Monitor your Cisco UCS M-Series devices with data collected through the [UCS Manager APIï»¿](https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/sw/api/b_ucs_api_book/b_ucs_api_book_chapter_00.html).
+Мониторинг устройств Cisco UCS M-Series с данными, собранными через [UCS Manager API](https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/sw/api/b_ucs_api_book/b_ucs_api_book_chapter_00.html).
 
-This extension collects infrastructure metrics to monitor the health and performance of your Cisco UCS M-Series devices and their components including CPU, fans, power supplies, interfaces and more.
+Это расширение собирает метрики инфраструктуры для мониторинга состояния и производительности устройств Cisco UCS M-Series и их компонентов, включая CPU, вентиляторы, блоки питания, интерфейсы и другие.
 
-### Use cases
+### Сценарии использования
 
-* Monitor chassis and hardware health signals, including CPU temperature/current, fan, fan module, PSU, memory array, storage controller, local disk, and switch card properties.
-* Track Ethernet traffic and error counters for UCS ports, including receive/transmit bytes/packets, pause/error/collision counters, and utilization/headroom metrics.
-* Observe Fabric Interconnect environmental and system metrics.
-* Analyze uplink and pool-level behavior through metrics for Ethernet, server, and network port pools.
-* Detect device anomalies and avoid outages.
+* Мониторинг сигналов состояния шасси и аппаратных компонентов, включая температуру/ток CPU, вентиляторы, модули вентиляторов, БП, массивы памяти, контроллеры хранения, локальные диски и свойства коммутационных плат.
+* Отслеживание трафика Ethernet и счётчиков ошибок для портов UCS, включая принятые/переданные байты/пакеты, счётчики пауз/ошибок/коллизий и метрики использования/запаса.
+* Наблюдение за метриками среды и системы Fabric Interconnect.
+* Анализ поведения аплинков и пулов через метрики для пулов Ethernet, серверных и сетевых портов.
+* Обнаружение аномалий устройств и предотвращение сбоев.
 
-### Compatibility information
+### Информация о совместимости
 
-* Dynatrace version 1.318+
-* Cisco UCS M-Series device with access to the Cisco UCS Manager XML API.
+* Dynatrace версии 1.318+
+* Устройство Cisco UCS M-Series с доступом к Cisco UCS Manager XML API.
 
-### Requirements
+### Требования
 
-* A user account with read-only privileges for UCS Manager XML API queries, provided to the extension as username/password.
-* Network access from ActiveGate to the UCS endpoint.
-* Ability for the configured user to perform API operations: `aaaLogin`, `configResolveClass`, `aaaLogout`.
-* The specific classes queried depend on enabled feature sets:
+* Учётная запись с правами только на чтение для запросов UCS Manager XML API, предоставленная расширению в виде имени пользователя/пароля.
+* Сетевой доступ от ActiveGate к конечной точке UCS.
+* Возможность для настроенного пользователя выполнять API-операции: `aaaLogin`, `configResolveClass`, `aaaLogout`.
+* Конкретные запрашиваемые классы зависят от включённых наборов функций:
 
   + M-Series CPU: `processorUnit`, `processorEnvStats`
   + M-Series Fan Module: `equipmentFanModule`, `equipmentFan`
@@ -61,18 +61,18 @@ This extension collects infrastructure metrics to monitor the health and perform
   + M-Series Service Profile: `lsServer`, `adaptorEthPortStats`, `adaptorVnicStats`
   + M-Series Switch Card: `equipmentSwitchCard`
 
-## Activation and setup
+## Активация и настройка
 
-Activate the extension in your environment from Dynatrace Hub, configure connection details for your UCS endpoint, and select the feature sets you want to collect.
+Активируйте расширение в вашей среде из Dynatrace Hub, настройте параметры подключения к вашей конечной точке UCS и выберите наборы функций для сбора.
 
-## Details
+## Подробности
 
-The extension package contains:
+Пакет расширения содержит:
 
-* Overview dashboards (Classic & Platform)
-* Analysis screens integrated with ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Infrastructure & Operations**
-* Unified analysis pages
-* Custom topology types extracted from metric dimensions:
+* Обзорные панели (классическая и платформенная)
+* Экраны анализа, интегрированные с ![Infrastructure & Operations](https://dt-cdn.net/images/infrasctucture-operations-highresolution-1025-07d1bc45b5.png "Infrastructure & Operations") **Infrastructure & Operations**
+* Унифицированные страницы анализа
+* Пользовательские типы топологии, извлечённые из размерностей метрик:
 
   + Cisco UCS M-Series CPU
   + Cisco UCS M-Series Fan Module
@@ -93,11 +93,11 @@ The extension package contains:
   + Cisco UCS M-Series Service Profile
   + Cisco UCS M-Series Switch Card
 
-### Licensing and costs
+### Лицензирование и стоимость
 
-#### DPS licensing
+#### Лицензирование DPS
 
-[DPS license consumption](/docs/license "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.") is based on metric data points ingested. The following formula provides an approximate annual ingest amount if all feature sets are enabled and the extension runs every minute:
+Потребление [лицензии DPS](/docs/license "О Dynatrace Platform Subscription (DPS) — модели лицензирования для всех возможностей Dynatrace.") основано на принимаемых точках данных метрик. Следующая формула даёт приблизительный годовой объём приёма при включении всех наборов функций и запуске расширения каждую минуту:
 
 ```
 (2 * # of CPUs)
@@ -175,9 +175,9 @@ The extension package contains:
 * 525,600 metric data points/year
 ```
 
-#### Classic licensing
+#### Классическое лицензирование
 
-For [Dynatrace classic licenses](/docs/license/monitoring-consumption-classic "Understand how Dynatrace monitoring consumption is calculated for classic licensing."), metric ingestion consumes Davis Data Units (DDUs) at the rate of 0.001 DDUs per metric data point.
-For details, see [DDUs for metrics](/docs/license/monitoring-consumption-classic/davis-data-units/metric-cost-calculation "Understand how to calculate Davis data unit consumption and costs related to monitored metrics.").
+Для [классических лицензий Dynatrace](/docs/license/monitoring-consumption-classic "Понимание расчёта потребления мониторинга Dynatrace для классического лицензирования.") приём метрик потребляет Davis Data Units (DDU) со скоростью 0,001 DDU на точку данных метрики.
+Подробнее см. [DDU для метрик](/docs/license/monitoring-consumption-classic/davis-data-units/metric-cost-calculation "Понимание расчёта потребления и стоимости Davis Data Units для мониторинга метрик.").
 
-To estimate annual DDU consumption, multiply the result of the formula above by 0.001.
+Для оценки годового потребления DDU умножьте результат формулы выше на 0,001.

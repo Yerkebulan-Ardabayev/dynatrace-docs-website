@@ -1,0 +1,230 @@
+---
+title: Select a snippet format in the New RUM Experience
+source: https://www.dynatrace.com/docs/observe/digital-experience/new-rum-experience/web-frontends/initial-setup/snippet-formats
+scraped: 2026-03-06T21:27:24.885857
+---
+
+# Выбор формата сниппета в New RUM Experience
+
+# Выбор формата сниппета в New RUM Experience
+
+* Latest Dynatrace
+* How-to guide
+* Updated on Jan 08, 2026
+
+RUM JavaScript -- будь то [автоматически внедренный](/docs/observe/digital-experience/new-rum-experience/web-frontends/initial-setup/set-up-auto-injected-frontend "Узнайте, как настроить автоматически внедряемый веб-фронтенд в New RUM Experience.") или [вручную вставленный](/docs/observe/digital-experience/new-rum-experience/web-frontends/initial-setup/set-up-agentless-monitoring "Узнайте, как настроить безагентный RUM для веб-фронтендов в New RUM Experience.") в ваше веб-приложение -- состоит из двух ключевых компонентов:
+
+* **Код мониторинга**: JavaScript-код, обеспечивающий возможности RUM, такие как захват пользовательских событий.
+* **Конфигурация**: конфигурация приложения, которая изначально используется кодом мониторинга. Позднее она обновляется через ответ RUM-маяка в случае изменений конфигурации.
+
+New RUM Experience предоставляет несколько форматов сниппетов, которые по-разному интегрируют эти компоненты в ваши страницы, каждый из которых предназначен для выполнения определённых требований.
+
+На этой странице [приведены рекомендации](#snippet-format-recommendations), которые помогут вам выбрать формат сниппета, наилучшим образом соответствующий вашим требованиям, а также [подробное описание каждого формата](#snippet-format-details).
+
+## Рекомендации по выбору формата сниппета
+
+Для большинства случаев использования мы рекомендуем следующее:
+
+* Используйте [JavaScript Tag](#js-tag) для ручной вставки.
+* Используйте [OneAgent JavaScript Tag](#oneagent-js-tag) для автоматического внедрения.
+
+Если вы хотите использовать функцию браузера Subresource Integrity (SRI) для проверки того, что код мониторинга не был изменён, используйте [OneAgent JavaScript tag with SRI](#oneagent-js-tag-sri) для ручной вставки и автоматического внедрения.
+
+Чтобы избежать блокирующего парсинг выполнения кода мониторинга, настройте параметр **script execution** выбранного формата сниппета на **async** или **defer**. Инструкции по настройке этого параметра приведены в документации для каждого отдельного формата сниппета ниже. Имейте в виду, что пока код мониторинга ещё не полностью загружен и инициализирован, некоторые тайминги и пользовательские события будут потеряны.
+
+## Доступные форматы сниппетов
+
+Ниже вы найдёте все форматы сниппетов, доступные в New RUM Experience, а также их параметры конфигурации. Обратите внимание, что и New RUM Experience, и RUM Classic используют один и тот же RUM JavaScript-сниппет. Когда New RUM Experience включён, код мониторинга содержит дополнительные модули, а сниппет -- расширенную конфигурацию. Однако базовый сниппет остаётся общим. В результате любые изменения, которые вы вносите в описанные ниже настройки для New RUM Experience, также применяются к RUM Classic.
+
+JavaScript tag
+
+OneAgent JavaScript tag
+
+OneAgent JavaScript tag with SRI
+
+Inline code
+
+**JavaScript tag** ссылается на внешний файл, содержащий как код мониторинга, так и конфигурацию. JavaScript tag доступен только для ручной вставки.
+
+[Получить JavaScript tag через API](/docs/dynatrace-api/environment-api/rum/rum-manual-insertion-tags/get-javascript-tag)
+
+##### Обновления
+
+Короткий срок кэширования внешнего файла обеспечивает регулярные автоматические обновления, что делает JavaScript tag идеальным выбором, если вы не хотите заботиться об обновлении вставленного сниппета после изменений конфигурации.
+
+##### Источник кода мониторинга
+
+Внешний файл загружается из Dynatrace CDN.
+
+##### Продолжительность кэширования
+
+Внешний файл, содержащий код мониторинга и конфигурацию, обновляется в соответствии с его сроком кэширования, который по умолчанию составляет один час и может быть настроен. Доступные значения варьируются от нескольких часов до нескольких дней, чтобы конфигурация обновлялась регулярно. Срок кэширования указывает, как долго браузеры могут кэшировать файл. Dynatrace CDN кэширует его в течение одного часа.
+
+Чтобы настроить продолжительность кэширования
+
+1. Перейдите в ![Experience Vitals](https://dt-cdn.net/images/experience-vitals-256-9999590b55.png "Experience Vitals") **Experience Vitals** > **Overview**.
+2. Выберите **Web**, чтобы просмотреть все веб-фронтенды.
+3. Выберите фронтенд, который хотите настроить.
+4. На вкладке **Settings** выберите **Manual insertion**.
+5. В разделе **JavaScript tag** используйте раскрывающийся список **Cache monitoring code and configuration for**, чтобы выбрать необходимую продолжительность кэширования.
+
+##### Выполнение скрипта
+
+По умолчанию код мониторинга загружается и выполняется браузером синхронно. Чтобы избежать блокирующего парсинг поведения, вы можете настроить добавление атрибутов `async` или `defer`.
+
+* С атрибутом `async` код мониторинга загружается параллельно с парсингом страницы и выполняется немедленно, как только становится доступен.
+* С атрибутом `defer` код мониторинга также загружается параллельно, но выполнение откладывается до завершения парсинга страницы.
+
+При использовании обоих атрибутов некоторые тайминги и пользовательские события будут потеряны, пока код мониторинга ещё не полностью загружен и инициализирован.
+
+Чтобы настроить выполнение скрипта
+
+1. Перейдите в ![Experience Vitals](https://dt-cdn.net/images/experience-vitals-256-9999590b55.png "Experience Vitals") **Experience Vitals** > **Overview**.
+2. Выберите **Web**, чтобы просмотреть все веб-фронтенды.
+3. Выберите фронтенд, который хотите настроить.
+4. На вкладке **Settings** выберите **Manual insertion**.
+5. В разделе **JavaScript tag** установите **Script execution attribute** на **async**, **defer** или **No attribute**.
+6. Скопируйте сниппет и вставьте его в вашу страницу.
+
+При получении JavaScript tag через API вы можете управлять выполнением скрипта, передав параметр. Подробнее см. [GET JavaScript tag](/docs/dynatrace-api/environment-api/rum/rum-manual-insertion-tags/get-javascript-tag "Получение последнего JavaScript tag для ручной вставки.").
+
+##### Добавление атрибута `crossorigin="anonymous"`
+
+Включено по умолчанию
+
+Внешний скрипт, на который ссылается JavaScript tag, загружается из Dynatrace CDN, что приводит к кросс-доменному запросу. Для сбора подробных сообщений об ошибках JavaScript и таймингов ресурсов W3C необходимо добавить атрибут `crossorigin="anonymous"` в тег скрипта.
+
+Чтобы включить добавление атрибута `crossorigin="anonymous"`
+
+1. Перейдите в ![Experience Vitals](https://dt-cdn.net/images/experience-vitals-256-9999590b55.png "Experience Vitals") **Experience Vitals** > **Overview**.
+2. Выберите **Web**, чтобы просмотреть все веб-фронтенды.
+3. Выберите фронтенд, который хотите настроить.
+4. На вкладке **Settings** выберите **Manual insertion**.
+5. В разделе **JavaScript tag** включите **Add crossorigin=anonymous attribute**.
+6. Скопируйте сниппет и вставьте его в вашу страницу.
+
+При получении JavaScript tag через API вы можете управлять добавлением атрибута `crossorigin="anonymous"`, передав параметр. Подробнее см. [GET JavaScript tag](/docs/dynatrace-api/environment-api/rum/rum-manual-insertion-tags/get-javascript-tag "Получение последнего JavaScript tag для ручной вставки.").
+
+**OneAgent JavaScript tag** включает конфигурацию и ссылается на внешний файл, содержащий код мониторинга. Он доступен как для ручной вставки, так и для автоматического внедрения.
+
+[Получить OneAgent JavaScript tag через API](/docs/dynatrace-api/environment-api/rum/rum-manual-insertion-tags/get-oneagent-javascript-tag)
+
+##### Обновления
+
+При ручной вставке OneAgent JavaScript tag его также необходимо вручную обновлять при каждом изменении конфигурации. Чтобы обеспечить актуальность, мы рекомендуем использовать его вместе с полностью автоматическими обновлениями через API. Использование OneAgent JavaScript tag из веб-интерфейса не рекомендуется, если своевременное обновление конфигурации не является критичным.
+
+В случае автоматического внедрения OneAgent всегда внедряет OneAgent JavaScript tag с текущей конфигурацией. Однако обратите внимание, что политика кэширования вашего приложения может влиять на то, как часто OneAgent получает возможность выполнить внедрение. Подробнее см. [Оптимизация заголовков управления кэшем](/docs/observe/digital-experience/web-applications/initial-setup/rum-injection#cache-header-optimization "Настройка автоматического внедрения RUM JavaScript в страницы ваших приложений").
+
+##### Источник кода мониторинга
+
+В случае безагентного мониторинга код мониторинга доставляется через Dynatrace CDN. В случае автоматического внедрения или [ручной вставки для страниц автоматически инструментируемого приложения](/docs/observe/digital-experience/web-applications/initial-setup/rum-injection#manual-insertion-using-oneagent "Настройка автоматического внедрения RUM JavaScript в страницы ваших приложений") файл по умолчанию доставляется OneAgent, инструментирующим ваше приложение. Также возможна загрузка из Dynatrace CDN; подробнее см. [Запрос кода мониторинга из Dynatrace CDN](/docs/observe/digital-experience/web-applications/additional-configuration/configure-monitoring-code-source#request-rum-monitoring-code-from-cdn "Настройка источника кода Real User Monitoring для ваших конкретных требований.").
+
+##### Продолжительность кэширования
+
+Как браузеры, так и Dynatrace CDN могут кэшировать код мониторинга до одного года. Такой длительный срок кэширования стал возможен благодаря встраиванию версии RUM JavaScript и хэша активных модулей в URL файла.
+
+##### Выполнение скрипта
+
+По умолчанию код мониторинга загружается и выполняется браузером синхронно. Чтобы избежать блокирующего парсинг поведения, вы можете настроить добавление атрибутов `async` или `defer`.
+
+* С атрибутом `async` код мониторинга загружается параллельно с парсингом страницы и выполняется немедленно, как только становится доступен.
+* С атрибутом `defer` код мониторинга также загружается параллельно, но выполнение откладывается до завершения парсинга страницы.
+
+При использовании обоих атрибутов некоторые тайминги и пользовательские события будут потеряны, пока код мониторинга ещё не полностью загружен и инициализирован.
+
+Чтобы настроить выполнение скрипта для автоматического внедрения
+
+1. Перейдите в ![Experience Vitals](https://dt-cdn.net/images/experience-vitals-256-9999590b55.png "Experience Vitals") **Experience Vitals** > **Overview**.
+2. Выберите **Web**, чтобы просмотреть все веб-фронтенды.
+3. Выберите фронтенд, который хотите настроить.
+4. На вкладке **Settings** выберите **Automatic injection**.
+5. Если **Snippet format** установлен на **OneAgent JavaScript tag**, становится доступен параметр **Script execution attribute**. Выберите **async**, **defer** или **No attribute** из раскрывающегося списка.
+6. Выберите **Save**.
+
+Чтобы настроить выполнение скрипта для ручной вставки
+
+1. Перейдите в ![Experience Vitals](https://dt-cdn.net/images/experience-vitals-256-9999590b55.png "Experience Vitals") **Experience Vitals** > **Overview**.
+2. Выберите **Web**, чтобы просмотреть все веб-фронтенды.
+3. Выберите фронтенд, который хотите настроить.
+4. На вкладке **Settings** выберите **Manual insertion**.
+5. В разделе **OneAgent JavaScript tag** установите **Script execution attribute** на **async**, **defer** или **No attribute**.
+6. Скопируйте сниппет и вставьте его в вашу страницу.
+
+При получении OneAgent JavaScript tag через API вы можете управлять выполнением скрипта, передав параметр. Подробнее см. [GET OneAgent JavaScript tag](/docs/dynatrace-api/environment-api/rum/rum-manual-insertion-tags/get-oneagent-javascript-tag "Получение последнего OneAgent JavaScript tag для ручной вставки.").
+
+**OneAgent JavaScript tag with SRI** позволяет использовать функцию браузера Subresource Integrity (SRI) для проверки того, что код мониторинга не был изменён, см. [Использование Subresource Integrity (SRI) в New RUM Experience](/docs/observe/digital-experience/new-rum-experience/web-frontends/initial-setup/subresource-integrity "Использование функции браузера Subresource Integrity (SRI) в New RUM Experience для обеспечения целостности кода Real User Monitoring."). Он включает конфигурацию, ссылку на внешний файл с кодом мониторинга и хэш целостности для этого кода мониторинга. Он поддерживается как для автоматического внедрения, так и для ручной вставки.
+
+[Получить OneAgent JavaScript tag with SRI через API](/docs/dynatrace-api/environment-api/rum/rum-manual-insertion-tags/get-oneagent-javascript-tag-with-sri)
+
+##### Обновления
+
+При ручной вставке OneAgent JavaScript tag with SRI его также необходимо вручную обновлять при каждом изменении конфигурации. Чтобы обеспечить актуальность, мы рекомендуем использовать его вместе с полностью автоматическими обновлениями через API. Использование OneAgent JavaScript tag with SRI из веб-интерфейса не рекомендуется, если своевременное обновление конфигурации не является критичным.
+
+В случае автоматического внедрения OneAgent всегда внедряет OneAgent JavaScript tag with SRI с текущей конфигурацией. Однако обратите внимание, что политика кэширования вашего приложения может влиять на то, как часто OneAgent получает возможность выполнить внедрение. Подробнее см. [Оптимизация заголовков управления кэшем](/docs/observe/digital-experience/web-applications/initial-setup/rum-injection#cache-header-optimization "Настройка автоматического внедрения RUM JavaScript в страницы ваших приложений").
+
+##### Источник кода мониторинга
+
+Код мониторинга всегда доставляется через Dynatrace CDN.
+
+##### Продолжительность кэширования
+
+Как браузеры, так и Dynatrace CDN могут кэшировать код мониторинга до одного года. Такой длительный срок кэширования стал возможен благодаря встраиванию версии RUM JavaScript и хэша активных модулей в URL файла.
+
+##### Выполнение скрипта
+
+По умолчанию код мониторинга загружается и выполняется браузером синхронно. Чтобы избежать блокирующего парсинг поведения, вы можете настроить добавление атрибутов `async` или `defer`.
+
+* С атрибутом `async` код мониторинга загружается параллельно с парсингом страницы и выполняется немедленно, как только становится доступен.
+* С атрибутом `defer` код мониторинга также загружается параллельно, но выполнение откладывается до завершения парсинга страницы.
+
+При использовании обоих атрибутов некоторые тайминги и пользовательские события будут потеряны, пока код мониторинга ещё не полностью загружен и инициализирован.
+
+Чтобы настроить выполнение скрипта для автоматического внедрения
+
+1. Перейдите в ![Experience Vitals](https://dt-cdn.net/images/experience-vitals-256-9999590b55.png "Experience Vitals") **Experience Vitals** > **Overview**.
+2. Выберите **Web**, чтобы просмотреть все веб-фронтенды.
+3. Выберите фронтенд, который хотите настроить.
+4. На вкладке **Settings** выберите **Automatic injection**.
+5. Если **Snippet format** установлен на **OneAgent JavaScript tag with SRI**, становится доступен параметр **Script execution attribute**. Выберите **async**, **defer** или **No attribute** из раскрывающегося списка.
+6. Выберите **Save**.
+
+Чтобы настроить выполнение скрипта для ручной вставки
+
+1. Перейдите в ![Experience Vitals](https://dt-cdn.net/images/experience-vitals-256-9999590b55.png "Experience Vitals") **Experience Vitals** > **Overview**.
+2. Выберите **Web**, чтобы просмотреть все веб-фронтенды.
+3. Выберите фронтенд, который хотите настроить.
+4. На вкладке **Settings** выберите **Manual insertion**.
+5. В разделе **OneAgent JavaScript tag with SRI** установите **Script execution attribute** на **async**, **defer** или **No attribute**.
+6. Скопируйте сниппет и вставьте его в вашу страницу.
+
+При получении OneAgent JavaScript tag with SRI через API вы можете управлять выполнением скрипта, передав параметр. Подробнее см. [GET OneAgent JavaScript tag with SRI](/docs/dynatrace-api/environment-api/rum/rum-manual-insertion-tags/get-oneagent-javascript-tag-with-sri "Получение последнего OneAgent JavaScript tag with SRI для ручной вставки.").
+
+**Inline code** содержит как конфигурацию, так и код мониторинга RUM, сводя к минимуму количество веб-запросов. Обратите внимание, что код мониторинга Session Replay Classic не встраивается, поэтому при использовании Session Replay Classic будет выполняться дополнительный запрос. Если ваш сайт состоит из множества отдельных страниц, использование встроенного кода может быть нецелесообразным, так как увеличивает размер каждого документа. Однако это может быть подходящим выбором для одностраничных приложений (SPA).
+
+[Получить inline code через API](/docs/dynatrace-api/environment-api/rum/rum-manual-insertion-tags/get-inline-code)
+
+##### Обновления
+
+При ручной вставке встроенного кода его также необходимо вручную обновлять при каждом изменении конфигурации. Чтобы обеспечить актуальность, мы рекомендуем использовать его вместе с полностью автоматическими обновлениями через API. Использование встроенного кода из веб-интерфейса не рекомендуется, если своевременное обновление конфигурации не является критичным.
+
+В случае автоматического внедрения OneAgent всегда внедряет встроенный код с текущей конфигурацией. Однако обратите внимание, что политика кэширования вашего приложения может влиять на то, как часто OneAgent получает возможность выполнить внедрение. Подробнее см. [Оптимизация заголовков управления кэшем](/docs/observe/digital-experience/web-applications/initial-setup/rum-injection#cache-header-optimization "Настройка автоматического внедрения RUM JavaScript в страницы ваших приложений").
+
+##### Источник кода мониторинга
+
+В случае безагентного мониторинга код мониторинга Session Replay Classic доставляется через Dynatrace CDN. В случае автоматического внедрения или [ручной вставки для страниц автоматически инструментируемого приложения](/docs/observe/digital-experience/web-applications/initial-setup/rum-injection#manual-insertion-using-oneagent "Настройка автоматического внедрения RUM JavaScript в страницы ваших приложений") он по умолчанию доставляется OneAgent, инструментирующим ваше приложение. Также возможна загрузка из Dynatrace CDN, см. [Запрос кода мониторинга из Dynatrace CDN](/docs/observe/digital-experience/web-applications/additional-configuration/configure-monitoring-code-source#request-rum-monitoring-code-from-cdn "Настройка источника кода Real User Monitoring для ваших конкретных требований.").
+
+##### Продолжительность кэширования
+
+Поскольку код мониторинга RUM встроен, его срок кэширования совпадает со сроком кэширования вашей страницы, который определяется настройками кэширования на вашем веб-сервере. Код мониторинга Session Replay Classic может кэшироваться до одного года как браузерами, так и Dynatrace CDN. Такой длительный срок кэширования стал возможен благодаря встраиванию версии RUM JavaScript в URL файла.
+
+##### Выполнение скрипта
+
+Код мониторинга загружается и выполняется браузером синхронно.
+
+## Связанные темы
+
+* [API тегов ручной вставки RUM](/docs/dynatrace-api/environment-api/rum/rum-manual-insertion-tags "Узнайте, как загрузить теги ручной вставки RUM через API")
+* [Использование Subresource Integrity (SRI) в New RUM Experience](/docs/observe/digital-experience/new-rum-experience/web-frontends/initial-setup/subresource-integrity "Использование функции браузера Subresource Integrity (SRI) в New RUM Experience для обеспечения целостности кода Real User Monitoring.")
+* [Настройка безагентного RUM в New RUM Experience](/docs/observe/digital-experience/new-rum-experience/web-frontends/initial-setup/set-up-agentless-monitoring "Узнайте, как настроить безагентный RUM для веб-фронтендов в New RUM Experience.")
+* [Настройка автоматически внедряемого фронтенда в New RUM Experience](/docs/observe/digital-experience/new-rum-experience/web-frontends/initial-setup/set-up-auto-injected-frontend "Узнайте, как настроить автоматически внедряемый веб-фронтенд в New RUM Experience.")
+* [Настройка автоматического внедрения в New RUM Experience](/docs/observe/digital-experience/new-rum-experience/web-frontends/initial-setup/configure-auto-injection "Настройка автоматического внедрения RUM JavaScript в страницы ваших фронтендов в New RUM Experience.")

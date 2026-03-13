@@ -1,47 +1,47 @@
 ---
-title: Use cases
+title: Сценарии использования
 source: https://www.dynatrace.com/docs/secure/use-cases
 scraped: 2026-03-06T21:34:30.748153
 ---
 
-# Use cases
+# Сценарии использования
 
-# Use cases
+# Сценарии использования
 
-* Latest Dynatrace
-* Overview
-* Updated on Jan 29, 2026
+* Последняя Dynatrace
+* Обзор
+* Обновлено 29 января 2026 г.
 
-With the power of [Grail](/docs/platform/grail "Insights on what and how you can query Dynatrace data.") and the [security data](/docs/secure/threat-observability/concepts#security-data "Basic concepts related to Threat Observability") ingested into it, various data analysis, reporting, and automation use cases can be implemented.
+Благодаря возможностям [Grail](/docs/platform/grail "Информация о том, какие данные Dynatrace и как можно запрашивать.") и [данным безопасности](/docs/secure/threat-observability/concepts#security-data "Основные концепции, связанные с Threat Observability"), поступающим в него, можно реализовать различные сценарии анализа данных, отчётности и автоматизации.
 
-## Incident response
+## Реагирование на инциденты
 
-* [Analyze Amazon API Gateway access logs with Investigations](/docs/secure/use-cases/analyze-aws-api-gateway-access-logs-with-security-investigator "Monitor and identify errors in your Amazon API Gateway access logs with Dynatrace.")
-* [Analyze AWS CloudTrail logs with Investigations](/docs/secure/use-cases/analyze-aws-cloudtrail-logs-with-security-investigator "Analyze CloudTrail logs and find potential security issues with Dynatrace.")
-* [Detect threats against your AWS Secrets with Investigations](/docs/secure/use-cases/detect-threats-against-aws-secrets-with-security-investigator "Monitor and identify potential threats against your AWS Secrets with Dynatrace.")
-* [Operationalize DQL query results with Investigations](/docs/secure/use-cases/operationalize-query-results "Build DQL queries from your query results faster and more conveniently with Dynatrace Investigations.")
-* [Resolve incidents faster with Investigations templates](/docs/secure/use-cases/resolve-incidents-faster-with-templates "Speed up your log-related investigations with Investigations templates.")
-* [Speed up incident response with Dynatrace Investigations reference time](/docs/secure/use-cases/speed-up-incident-response-with-reference-time "Enhance your log-related investigations with Dynatrace Investigations reference time.")
-* [Threat hunting and forensics](/docs/secure/use-cases/threat-hunting "Use case scenario for threat hunting and forensics with Investigations.")
+* [Анализ логов доступа Amazon API Gateway с помощью Investigations](/docs/secure/use-cases/analyze-aws-api-gateway-access-logs-with-security-investigator "Мониторинг и выявление ошибок в логах доступа Amazon API Gateway с помощью Dynatrace.")
+* [Анализ логов AWS CloudTrail с помощью Investigations](/docs/secure/use-cases/analyze-aws-cloudtrail-logs-with-security-investigator "Анализ логов CloudTrail и поиск потенциальных проблем безопасности с помощью Dynatrace.")
+* [Обнаружение угроз для ваших секретов AWS с помощью Investigations](/docs/secure/use-cases/detect-threats-against-aws-secrets-with-security-investigator "Мониторинг и выявление потенциальных угроз для ваших секретов AWS с помощью Dynatrace.")
+* [Операционализация результатов DQL-запросов с помощью Investigations](/docs/secure/use-cases/operationalize-query-results "Создание DQL-запросов из результатов запросов быстрее и удобнее с помощью Dynatrace Investigations.")
+* [Более быстрое решение инцидентов с шаблонами Investigations](/docs/secure/use-cases/resolve-incidents-faster-with-templates "Ускорение расследований, связанных с логами, с помощью шаблонов Investigations.")
+* [Ускорение реагирования на инциденты с помощью контрольного времени Dynatrace Investigations](/docs/secure/use-cases/speed-up-incident-response-with-reference-time "Улучшение расследований, связанных с логами, с помощью контрольного времени Dynatrace Investigations.")
+* [Поиск угроз и криминалистика](/docs/secure/use-cases/threat-hunting "Сценарий использования для поиска угроз и криминалистики с помощью Investigations.")
 
-## Security orchestration
+## Оркестрация безопасности
 
-* [Automate and orchestrate security findings](/docs/secure/use-cases/automate-and-orchestrate-security-findings "Regularly check for critical security findings and get automatic Jira tickets or Slack alerts.")
-* [Automated threat-alert triaging](/docs/secure/use-cases/automated-threat-alert-triaging "Use case scenario for automating threat-alert triaging with Dynatrace.")
-* [Detect threats in cloud-native environments using workflows](/docs/secure/use-cases/detect-threats-cloud-native-workflows "Monitor and identify threats in your cloud-native environments with Dynatrace.")
-* [Ingest and process custom security findings](/docs/secure/use-cases/ingest-and-process-custom-security-findings "Continuously ingest your container scan findings.")
-* [CSPM Notification Automation](/docs/secure/use-cases/notification-automation "Improve cloud security posture by automatically processing, triaging, enriching, and classifying incoming security alerts.")
+* [Автоматизация и оркестрация обнаруженных уязвимостей](/docs/secure/use-cases/automate-and-orchestrate-security-findings "Регулярная проверка критических обнаружений безопасности и автоматическое создание задач Jira или оповещений Slack.")
+* [Автоматизированная сортировка оповещений об угрозах](/docs/secure/use-cases/automated-threat-alert-triaging "Сценарий автоматизации сортировки оповещений об угрозах с помощью Dynatrace.")
+* [Обнаружение угроз в облачных средах с помощью рабочих процессов](/docs/secure/use-cases/detect-threats-cloud-native-workflows "Мониторинг и выявление угроз в ваших облачных средах с помощью Dynatrace.")
+* [Приём и обработка пользовательских обнаружений безопасности](/docs/secure/use-cases/ingest-and-process-custom-security-findings "Непрерывный приём результатов сканирования контейнеров.")
+* [Автоматизация уведомлений CSPM](/docs/secure/use-cases/notification-automation "Улучшение облачной безопасности за счёт автоматической обработки, сортировки, обогащения и классификации входящих оповещений безопасности.")
 
-## Security posture analysis
+## Анализ состояния безопасности
 
-* [Discover coverage gaps in security findings](/docs/secure/use-cases/discover-coverage-gaps-in-security-scans "Unveil blind spots in your Software Development Lifecycle (SDLC).")
-* [Monitor suspicious sign-in activity with Dynatrace](/docs/secure/use-cases/monitor-sign-in-activity "Analyze suspicious and malicious sign-in behaviors with Dynatrace.")
-* [Runtime contextualization of container findings](/docs/secure/use-cases/runtime-contextualization-of-container-findings "Triage critical vulnerability findings in production applications on containers with vulnerable container images.")
-* [Stay compliant with Security Posture Management](/docs/secure/use-cases/stay-compliant "Stay on top of your security measures, policies, and practices.")
-* [Visualize and analyze security findings](/docs/secure/use-cases/visualize-and-analyze-security-findings "Visualize, prioritize, and analyze ingested security findings.")
+* [Обнаружение пробелов в покрытии обнаружений безопасности](/docs/secure/use-cases/discover-coverage-gaps-in-security-scans "Выявление слепых зон в жизненном цикле разработки ПО (SDLC).")
+* [Мониторинг подозрительной активности входа в систему с помощью Dynatrace](/docs/secure/use-cases/monitor-sign-in-activity "Анализ подозрительного и вредоносного поведения при входе в систему с помощью Dynatrace.")
+* [Контекстуализация обнаружений контейнеров во время выполнения](/docs/secure/use-cases/runtime-contextualization-of-container-findings "Сортировка критических обнаружений уязвимостей в продуктивных приложениях на контейнерах с уязвимыми образами.")
+* [Соответствие требованиям с помощью Security Posture Management](/docs/secure/use-cases/stay-compliant "Контроль ваших мер безопасности, политик и практик.")
+* [Визуализация и анализ обнаружений безопасности](/docs/secure/use-cases/visualize-and-analyze-security-findings "Визуализация, приоритизация и анализ принятых обнаружений безопасности.")
 
-## AI-driven automation
+## Автоматизация на базе ИИ
 
-* [Automate vulnerability remediation with Atlassian Rovo Dev and Dynatrace](/docs/secure/use-cases/ai-remediation-atlassian-rovo-dev "Prioritize and remediate vulnerabilities with Atlassian Rovo Dev and Dynatrace.")
-* [Automate vulnerability remediation with GitHub Copilot and Dynatrace](/docs/secure/use-cases/ai-remediation-github-copilot "Automate vulnerability remediation using GitHub Copilot and Dynatrace runtime insights.")
-* [Automate cloud misconfiguration triaging and remediation with Kiro CLI and Dynatrace](/docs/secure/use-cases/ai-remediation-kiro-cli "Prioritize and remediate cloud misconfigurations with Dynatrace and Kiro CLI.")
+* [Автоматизация устранения уязвимостей с помощью Atlassian Rovo Dev и Dynatrace](/docs/secure/use-cases/ai-remediation-atlassian-rovo-dev "Приоритизация и устранение уязвимостей с помощью Atlassian Rovo Dev и Dynatrace.")
+* [Автоматизация устранения уязвимостей с помощью GitHub Copilot и Dynatrace](/docs/secure/use-cases/ai-remediation-github-copilot "Автоматизация устранения уязвимостей с использованием GitHub Copilot и инсайтов Dynatrace.")
+* [Автоматизация сортировки и устранения облачных неправильных конфигураций с помощью Kiro CLI и Dynatrace](/docs/secure/use-cases/ai-remediation-kiro-cli "Приоритизация и устранение облачных неправильных конфигураций с помощью Dynatrace и Kiro CLI.")

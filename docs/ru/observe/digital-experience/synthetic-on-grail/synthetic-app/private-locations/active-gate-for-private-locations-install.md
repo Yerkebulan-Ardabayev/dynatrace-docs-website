@@ -1,0 +1,40 @@
+---
+title: Install a Synthetic-enabled ActiveGate
+source: https://www.dynatrace.com/docs/observe/digital-experience/synthetic-on-grail/synthetic-app/private-locations/active-gate-for-private-locations-install
+scraped: 2026-03-06T21:27:09.113702
+---
+
+# Установка ActiveGate с поддержкой Synthetic
+
+# Установка ActiveGate с поддержкой Synthetic
+
+* Последняя версия Dynatrace
+* Практическое руководство
+* Обновлено 11 февраля 2026 г.
+
+ActiveGate с поддержкой Synthetic используется исключительно для запуска синтетических мониторов. При чистой установке ActiveGate для целей синтетического мониторинга все остальные функции ActiveGate отключаются, включая связь с OneAgent. Убедитесь, что хост, на котором устанавливается ActiveGate, имеет доступ к интернету.
+
+Установить ActiveGate с поддержкой Synthetic можно с помощью мастера **Install ActiveGate** в разделе ![Discovery & Coverage](https://dt-cdn.net/images/discovery-coverage-256-a20d5afa78.png "Discovery & Coverage") **Discovery & Coverage**.
+
+1. В поле **Purpose** выберите **Synthetic**.
+2. В поле **Deployment type** выберите операционную систему.
+3. Только для Linux В поле **Architecture** оставьте выбор по умолчанию: `x86`.
+4. [**Сгенерируйте токен**](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens "Узнайте о концепции токена доступа и его областях действия.") или введите существующий токен. Этот токен имеет область действия **Download OneAgent and ActiveGate installers** (`InstallerDownload`), которая позволяет загружать установщик ActiveGate. После ввода токен автоматически добавляется к командам загрузки и установки, которые затем отображаются в веб-интерфейсе.
+
+   Существующие токены можно найти на странице **Access tokens**. Обратите внимание, что токен отображается только один раз при создании, после чего хранится в зашифрованном виде и не может быть раскрыт. Рекомендуется сохранить токен после создания в менеджере паролей для повторного использования при необходимости.
+5. Необязательно Разверните раздел **Optional parameters** и:
+
+   * Используйте переключатель **Support browser monitors**, чтобы отключить поддержку браузерных мониторов. В этом случае Synthetic ActiveGate будет рассматриваться как [безбраузерный](/docs/observe/digital-experience/synthetic-on-grail/synthetic-app/private-locations#browserless "Узнайте, как управлять частными локациями в приложении Synthetic.").
+   * Назначьте ActiveGate частной локации Synthetic — выберите локацию из выпадающего списка или создайте новую. Вы также можете [назначить ActiveGate локации](/docs/observe/digital-experience/synthetic-on-grail/synthetic-app/private-locations#create-private-location "Узнайте, как управлять частными локациями в приложении Synthetic.") после установки при создании или редактировании локации.
+   * Назначьте ActiveGate в [**сетевую зону**](/docs/manage/network-zones "Узнайте, как работают сетевые зоны в Dynatrace.") и [**группу ActiveGate**](/docs/ingest-from/dynatrace-activegate/activegate-group "Изучите основные концепции групп ActiveGate."). Также можно создать новую сетевую зону и группу ActiveGate.
+6. Загрузите установщик на целевой хост.
+7. Только для Linux Рекомендуется **Проверка подписи** — выполните отображаемую команду на целевом хосте для загрузки файла сертификата и проверки установщика.
+8. Только для Linux Выберите дистрибутив Linux и следуйте инструкциям, которые предшествуют полю **Install ActiveGate as the privileged user**, если таковые имеются.
+9. Запустите установщик с командой, указанной в поле **Install ActiveGate as the privileged user**, а затем следуйте инструкциям, отображаемым в веб-интерфейсе.
+
+   Только для Linux Установщик автоматически загружает браузер и зависимости, необходимые для движка Synthetic. На Red Hat, Oracle Linux и Rocky Linux также необходимо включить репозитории, из которых установщик загружает зависимости. В качестве предварительного условия для включения проприетарных репозиториев на Red Hat необходимо зарегистрировать экземпляр Red Hat. Веб-интерфейс предоставляет все необходимые команды для этого, как показано в примере ниже.
+
+   Если управляемая веб-интерфейсом установка завершается ошибкой или вы предпочитаете самостоятельно подготовить хост для движка Synthetic, можно установить браузер и зависимости [вручную или из пользовательского репозитория](/docs/observe/digital-experience/synthetic-on-grail/synthetic-app/private-locations/install-chromium-for-linux "Узнайте, как установить Chromium для Linux вручную и из пользовательских репозиториев.").
+
+   ![Commands to install ActiveGate on Red Hat 9](https://dt-cdn.net/images/synth-ag-commands-red-hat-9-2025-04-24-813-39a89e370b.png)
+10. Нажмите **Show deployment status**, чтобы проверить установку ActiveGate.

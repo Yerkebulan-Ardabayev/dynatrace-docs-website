@@ -8,247 +8,243 @@ scraped: 2026-03-06T21:14:30.942740
 
 # Compliance Assistant
 
-* Latest Dynatrace
-* App
-* 3-min read
-* Updated on Feb 04, 2026
-* Preview
+* Последняя версия Dynatrace
+* Приложение
+* 3 мин. чтения
+* Обновлено 4 февраля 2026 г.
+* Предварительная версия
 
-![Compliance Assistant](https://dt-cdn.net/images/compliance-assistant-app-256-a136b783a7.png "Compliance Assistant") **Compliance Assistant** supports and helps you to:
+![Compliance Assistant](https://dt-cdn.net/images/compliance-assistant-app-256-a136b783a7.png "Compliance Assistant") **Compliance Assistant** поддерживает и помогает вам:
 
-* Track, manage, and automate compliance across your IT and business landscape.
-* Gain real-time visibility into compliance risks with regulations and certifications out-of-the-box.
-* Monitor compliance health across critical business processes to ensure continuous monitoring and automating incident classification.
+* Отслеживать, управлять и автоматизировать соответствие требованиям в ИТ и бизнес-ландшафте.
+* Получать актуальную видимость рисков соответствия с нормативными актами и сертификациями "из коробки".
+* Следить за состоянием соответствия в критически важных бизнес-процессах для обеспечения непрерывного мониторинга и автоматической классификации инцидентов.
 
-Prerequisites
+Предварительные требования
 
-### Installation
+### Установка
 
-Make sure the app is [installed in your environment](/docs/manage/hub#install "See the information about Dynatrace Hub.").
+Убедитесь, что приложение [установлено в вашей среде](/docs/manage/hub#install "Информация о Dynatrace Hub.").
 
-### Permissions
+### Разрешения
 
-The following table describes the required permissions.
+В следующей таблице описаны необходимые разрешения.
 
 storage:buckets:read
 
-Read buckets
+Чтение bucket'ов
 
 storage:events:read
 
-Read events
+Чтение событий
 
 storage:entities:read
 
-Read entities table
+Чтение таблицы сущностей
 
 storage:metrics:read
 
-Required for Istio discovery findings rule
+Требуется для правила обнаружения Istio findings
 
 storage:filter-segments:read
 
-Read filter-segments
+Чтение filter-segments
 
 settings:objects:read
 
-Required for reading Log ingest settings
+Требуется для чтения настроек приёма журналов
 
 settings:schemas:read
 
-Read settings schemas
+Чтение схем настроек
 
 state:app-states:read
 
-Required to read app state
+Требуется для чтения состояния приложения
 
 hub:catalog:read
 
-Required to read app version
+Требуется для чтения версии приложения
 
 storage:security.events:read
 
-Required for fetching security events
+Требуется для получения событий безопасности
 
-### Set up sources and applications
+### Настройка источников и приложений
 
-To take full advantage of ![Compliance Assistant](https://dt-cdn.net/images/compliance-assistant-app-256-a136b783a7.png "Compliance Assistant") **Compliance Assistant**, get started with [![Business Flow](https://dt-cdn.net/images/business-flow-480-362159ca2c.png "Business Flow") **Business Flow**](/docs/observe/business-observability/business-flow "Monitor and analyze critical business process flows. Track business key performance indicators (KPI), detect process anomalies, and prioritize optimization opportunities to improve business outcomes.") to monitor and analyze compliance-critical business processes.
+Чтобы в полной мере воспользоваться **Compliance Assistant** ![Compliance Assistant](https://dt-cdn.net/images/compliance-assistant-app-256-a136b783a7.png "Compliance Assistant"), начните с [![Business Flow](https://dt-cdn.net/images/business-flow-480-362159ca2c.png "Business Flow") **Business Flow**](/docs/observe/business-observability/business-flow "Мониторинг и анализ критически важных бизнес-процессов. Отслеживание ключевых показателей эффективности (KPI), обнаружение аномалий процессов и приоритизация возможностей оптимизации для улучшения бизнес-результатов.") для мониторинга и анализа бизнес-процессов, критически важных для соответствия требованиям.
 
-To maximize the value of risk management insights, set up data sources for [security events](/docs/secure/threat-observability/concepts#security-data "Basic concepts related to Threat Observability") from your monitored environment or from third-party sources. Security-related data includes [vulnerability events](/docs/secure/threat-observability/concepts#vuln-events "Basic concepts related to Threat Observability"), [compliance events](/docs/secure/threat-observability/concepts#compliance "Basic concepts related to Threat Observability"), and [detection finding events](/docs/secure/threat-observability/concepts#detection "Basic concepts related to Threat Observability").
+Чтобы максимизировать ценность данных об управлении рисками, настройте источники данных для [событий безопасности](/docs/secure/threat-observability/concepts#security-data "Базовые понятия, связанные с Threat Observability") из отслеживаемой среды или сторонних источников. Данные, связанные с безопасностью, включают [события уязвимостей](/docs/secure/threat-observability/concepts#vuln-events "Базовые понятия, связанные с Threat Observability"), [события соответствия](/docs/secure/threat-observability/concepts#compliance "Базовые понятия, связанные с Threat Observability") и [события обнаружения угроз](/docs/secure/threat-observability/concepts#detection "Базовые понятия, связанные с Threat Observability").
 
-![Gain visibility into compliance health across your IT and business landscape](https://cdn.hub.central.dynatrace.com/hub/console/dynatrace.compliance.assistant/media/afdf37e4-9501-479f-803b-cf3cbecf62c1.png)![Map critical business processes and surface compliance gaps with framework-specific signals](https://cdn.hub.central.dynatrace.com/hub/console/dynatrace.compliance.assistant/media/81eb7b08-1a02-4d32-aa27-f7d5bb137496.png)![Automatically detect and classify incidents based on regulatory thresholds and impact criteria](https://cdn.hub.central.dynatrace.com/hub/console/dynatrace.compliance.assistant/media/a5d01e06-ec63-40bd-811e-d764651b8024.png)
+![Получение видимости состояния соответствия в ИТ и бизнес-ландшафте](https://cdn.hub.central.dynatrace.com/hub/console/dynatrace.compliance.assistant/media/afdf37e4-9501-479f-803b-cf3cbecf62c1.png)![Картирование критических бизнес-процессов и выявление пробелов в соответствии с сигналами для конкретных фреймворков](https://cdn.hub.central.dynatrace.com/hub/console/dynatrace.compliance.assistant/media/81eb7b08-1a02-4d32-aa27-f7d5bb137496.png)![Автоматическое обнаружение и классификация инцидентов на основе нормативных порогов и критериев воздействия](https://cdn.hub.central.dynatrace.com/hub/console/dynatrace.compliance.assistant/media/a5d01e06-ec63-40bd-811e-d764651b8024.png)
 
-1 of 3Gain visibility into compliance health across your IT and business landscape
+1 из 3. Получение видимости состояния соответствия в ИТ и бизнес-ландшафте.
 
-## Get started
+## Начало работы
 
-![Compliance Assistant](https://dt-cdn.net/images/compliance-assistant-app-256-a136b783a7.png "Compliance Assistant") **Compliance Assistant** offers monitoring and automation capabilities streamlined to specific compliance frameworks. To start managing compliance, set up a [compliance framework](#compliance-framework) applicable to your organization.
+**Compliance Assistant** ![Compliance Assistant](https://dt-cdn.net/images/compliance-assistant-app-256-a136b783a7.png "Compliance Assistant") предлагает возможности мониторинга и автоматизации, адаптированные к конкретным фреймворкам соответствия. Для начала управления соответствием настройте [фреймворк соответствия](#compliance-framework), применимый к вашей организации.
 
-### Set up a compliance framework
+### Настройка фреймворка соответствия
 
-1. In Dynatrace, go to ![Compliance Assistant](https://dt-cdn.net/images/compliance-assistant-app-256-a136b783a7.png "Compliance Assistant") **Compliance Assistant**.
-2. Select **Set up framework**.
-3. To choose the compliance framework you want to monitor, select the relevant framework. Currently, **DORA** is the only available framework in ![Compliance Assistant](https://dt-cdn.net/images/compliance-assistant-app-256-a136b783a7.png "Compliance Assistant") **Compliance Assistant**.
-4. Select **Next**.
-5. To select critical or important functions (CIFs), select all compliance-critical business processes. If no CIFs are available, create a new [business process with configuration as an entity](/docs/observe/business-observability/business-flow/set-up-business-flow#set-a-business-flow-configuration-as-an-entity "Follow the instructions on how to successfully set up Business Flow.") in ![Business Flow](https://dt-cdn.net/images/business-flow-480-362159ca2c.png "Business Flow") **Business Flow**.
-6. Select **Next**.
-7. To take full advantage of the ICT risk management capabilities, verify whether data sources for [security events](/docs/secure/threat-observability/concepts#security-data "Basic concepts related to Threat Observability") are properly configured in your environment.
+1. В Dynatrace перейдите к **Compliance Assistant** ![Compliance Assistant](https://dt-cdn.net/images/compliance-assistant-app-256-a136b783a7.png "Compliance Assistant").
+2. Выберите **Set up framework** (Настроить фреймворк).
+3. Чтобы выбрать фреймворк соответствия для мониторинга, выберите нужный фреймворк. В настоящее время **DORA** — единственный доступный фреймворк в **Compliance Assistant** ![Compliance Assistant](https://dt-cdn.net/images/compliance-assistant-app-256-a136b783a7.png "Compliance Assistant").
+4. Выберите **Next** (Далее).
+5. Чтобы выбрать критически важные или важные функции (CIF), выберите все бизнес-процессы, критически важные для соответствия. Если CIF недоступны, создайте новый [бизнес-процесс с конфигурацией как сущность](/docs/observe/business-observability/business-flow/set-up-business-flow#set-a-business-flow-configuration-as-an-entity "Следуйте инструкциям по успешной настройке Business Flow.") в **Business Flow** ![Business Flow](https://dt-cdn.net/images/business-flow-480-362159ca2c.png "Business Flow").
+6. Выберите **Next** (Далее).
+7. Чтобы в полной мере воспользоваться возможностями управления рисками ИКТ, убедитесь, что источники данных для [событий безопасности](/docs/secure/threat-observability/concepts#security-data "Базовые понятия, связанные с Threat Observability") правильно настроены в вашей среде.
 
-#### If vulnerabilities aren't enabled
+#### Если уязвимости не включены
 
-1. Select **Set up RVA** to go to **Vulnerability Analytics: General settings** and enable [Runtime Vulnerabilities Analytics](/docs/secure/application-security/vulnerability-analytics "Monitor, visualize, analyze, and remediate third-party and code-level vulnerabilities, track the remediation progress, and create monitoring rules."). There are two tabs: **Third-party Vulnerability Analytics** and **Code-level Vulnerability Analytics**. You can enable one or more options there.
-2. To monitor third-party vulnerabilities, [enable third-party vulnerability detection](/docs/secure/application-security/vulnerability-analytics#tpv-detection "Monitor, visualize, analyze, and remediate third-party and code-level vulnerabilities, track the remediation progress, and create monitoring rules.").
-3. To monitor code-level vulnerabilities, [enable code-level vulnerability detection](/docs/secure/application-security/vulnerability-analytics#clv-detection "Monitor, visualize, analyze, and remediate third-party and code-level vulnerabilities, track the remediation progress, and create monitoring rules.").
-4. To integrate external security data into [Grail](/docs/platform/grail "Insights on what and how you can query Dynatrace data."), you can ingest [vulnerability events](/docs/secure/threat-observability/concepts#vuln-events "Basic concepts related to Threat Observability") from third-party products. For a list of supported integrations, see [Security integrations](/docs/secure/threat-observability/security-events-ingest "Ingest external security data into Grail.").
-5. Select **Done**.
+1. Выберите **Set up RVA** (Настроить RVA), чтобы перейти в **Vulnerability Analytics: General settings** и включить [Runtime Vulnerabilities Analytics](/docs/secure/application-security/vulnerability-analytics "Мониторинг, визуализация, анализ и устранение уязвимостей сторонних компонентов и на уровне кода, отслеживание прогресса устранения и создание правил мониторинга."). Там есть две вкладки: **Third-party Vulnerability Analytics** и **Code-level Vulnerability Analytics**. Вы можете включить одну или несколько опций.
+2. Для мониторинга уязвимостей сторонних компонентов [включите обнаружение сторонних уязвимостей](/docs/secure/application-security/vulnerability-analytics#tpv-detection "Мониторинг, визуализация, анализ и устранение уязвимостей сторонних компонентов и на уровне кода, отслеживание прогресса устранения и создание правил мониторинга.").
+3. Для мониторинга уязвимостей на уровне кода [включите обнаружение уязвимостей на уровне кода](/docs/secure/application-security/vulnerability-analytics#clv-detection "Мониторинг, визуализация, анализ и устранение уязвимостей сторонних компонентов и на уровне кода, отслеживание прогресса устранения и создание правил мониторинга.").
+4. Для интеграции внешних данных безопасности в [Grail](/docs/platform/grail "Информация о том, что и как можно запрашивать в данных Dynatrace.") можно принимать [события уязвимостей](/docs/secure/threat-observability/concepts#vuln-events "Базовые понятия, связанные с Threat Observability") из сторонних продуктов. Список поддерживаемых интеграций см. в [Security integrations](/docs/secure/threat-observability/security-events-ingest "Приём внешних данных безопасности в Grail.").
+5. Выберите **Done** (Готово).
 
-#### If security detection findings aren't enabled
+#### Если результаты обнаружения угроз безопасности не включены
 
-1. Select **Set up RAP** to go to ![Settings](https://dt-cdn.net/images/settings-icon-256-38e1321b51.webp "Settings") **Settings** > **Analyze and alert** > **Application security** > **Application protection** and [enable Runtime Application Protection](/docs/secure/application-security/application-protection#start "Set up and configure Dynatrace Runtime Application Protection to monitor attacks and attack-generated code-level vulnerabilities.").
-2. To integrate external security data into Grail, you can ingest [detection finding events](/docs/secure/threat-observability/concepts#detection "Basic concepts related to Threat Observability") from third-party products. For a list of supported integrations, see [Security integrations](/docs/secure/threat-observability/security-events-ingest "Ingest external security data into Grail.").
-3. Select **Done**.
+1. Выберите **Set up RAP** (Настроить RAP), чтобы перейти в ![Settings](https://dt-cdn.net/images/settings-icon-256-38e1321b51.webp "Settings") **Settings** > **Analyze and alert** > **Application security** > **Application protection** и [включить Runtime Application Protection](/docs/secure/application-security/application-protection#start "Настройка и конфигурирование Dynatrace Runtime Application Protection для мониторинга атак и уязвимостей на уровне кода, вызванных атаками.").
+2. Для интеграции внешних данных безопасности в Grail можно принимать [события обнаружения угроз](/docs/secure/threat-observability/concepts#detection "Базовые понятия, связанные с Threat Observability") из сторонних продуктов. Список поддерживаемых интеграций см. в [Security integrations](/docs/secure/threat-observability/security-events-ingest "Приём внешних данных безопасности в Grail.").
+3. Выберите **Done** (Готово).
 
-#### If ICT asset configuration rules aren't enabled
+#### Если правила конфигурации активов ИКТ не включены
 
-1. Select **Set up KSPM** to go to **Security Posture Management: Kubernetes** and [enable Security Posture Management](/docs/ingest-from/setup-on-k8s/deployment/security-posture-management#enable "Configure and enable Security Posture Management in Kubernetes.").
-2. To get started with Security Posture Management and configure the assessment scope, see [Get started with Security Posture Management](/docs/secure/xspm#get-started "Detect, manage, and take action on security and compliance findings."). To include DORA as a supported compliance standard in the assessment scope, go to ![Settings](https://dt-cdn.net/images/settings-icon-256-38e1321b51.webp "Settings") **Settings** > **Analyze and alert** > **Application security** > **Security Posture Management** and enable DORA.
-3. To integrate with external security data to ingest compliance findings, see [Security integrations](/docs/secure/threat-observability/security-events-ingest "Ingest external security data into Grail.").
-4. Select **Done**.
+1. Выберите **Set up KSPM** (Настроить KSPM), чтобы перейти в **Security Posture Management: Kubernetes** и [включить Security Posture Management](/docs/ingest-from/setup-on-k8s/deployment/security-posture-management#enable "Настройка и включение Security Posture Management в Kubernetes.").
+2. Для начала работы с Security Posture Management и настройки области оценки см. [Начало работы с Security Posture Management](/docs/secure/xspm#get-started "Обнаружение, управление и принятие мер по результатам безопасности и соответствия."). Чтобы включить DORA как поддерживаемый стандарт соответствия в области оценки, перейдите в ![Settings](https://dt-cdn.net/images/settings-icon-256-38e1321b51.webp "Settings") **Settings** > **Analyze and alert** > **Application security** > **Security Posture Management** и включите DORA.
+3. Для интеграции с внешними данными безопасности для приёма событий соответствия см. [Security integrations](/docs/secure/threat-observability/security-events-ingest "Приём внешних данных безопасности в Grail.").
+4. Выберите **Done** (Готово).
 
-### Remove a compliance framework
+### Удаление фреймворка соответствия
 
-1. Go to ![Settings](https://dt-cdn.net/images/settings-icon-256-38e1321b51.webp "Settings") **Settings** > **Apps** > ![Compliance Assistant](https://dt-cdn.net/images/compliance-assistant-app-256-a136b783a7.png "Compliance Assistant") **Compliance Assistant**.
-2. Under the relevant compliance framework, such as **DORA**, select  **Remove framework**.
-3. Select **Remove** to confirm. Be aware that removing a compliance framework impacts all ![Compliance Assistant](https://dt-cdn.net/images/compliance-assistant-app-256-a136b783a7.png "Compliance Assistant") **Compliance Assistant** users.
+1. Перейдите в ![Settings](https://dt-cdn.net/images/settings-icon-256-38e1321b51.webp "Settings") **Settings** > **Apps** > **Compliance Assistant** ![Compliance Assistant](https://dt-cdn.net/images/compliance-assistant-app-256-a136b783a7.png "Compliance Assistant").
+2. В разделе соответствующего фреймворка соответствия, например **DORA**, выберите **Remove framework** (Удалить фреймворк).
+3. Выберите **Remove** (Удалить) для подтверждения. Имейте в виду, что удаление фреймворка соответствия затрагивает всех пользователей **Compliance Assistant** ![Compliance Assistant](https://dt-cdn.net/images/compliance-assistant-app-256-a136b783a7.png "Compliance Assistant").
 
-### Manage compliance-critical business processes
+### Управление бизнес-процессами, критически важными для соответствия
 
+**Compliance Assistant** ![Compliance Assistant](https://dt-cdn.net/images/compliance-assistant-app-256-a136b783a7.png "Compliance Assistant") позволяет сопоставлять ИТ-активы, релевантные для соответствия, со сквозными бизнес-процессами. **Compliance Assistant** интегрируется с [![Business Flow](https://dt-cdn.net/images/business-flow-480-362159ca2c.png "Business Flow") **Business Flow**](/docs/observe/business-observability/business-flow "Мониторинг и анализ критически важных бизнес-процессов.") для выявления бизнес-процессов, критически важных для соответствия, [настроенных как сущность](/docs/observe/business-observability/business-flow/set-up-business-flow#set-a-business-flow-configuration-as-an-entity "Следуйте инструкциям по успешной настройке Business Flow.").
 
+#### Добавление критически важной или важной функции (CIF)
 
-![Compliance Assistant](https://dt-cdn.net/images/compliance-assistant-app-256-a136b783a7.png "Compliance Assistant") **Compliance Assistant** allows you to map compliance-relevant IT assets to end-to-end business processes. ![Compliance Assistant](https://dt-cdn.net/images/compliance-assistant-app-256-a136b783a7.png "Compliance Assistant") **Compliance Assistant** integrates with [![Business Flow](https://dt-cdn.net/images/business-flow-480-362159ca2c.png "Business Flow") **Business Flow**](/docs/observe/business-observability/business-flow "Monitor and analyze critical business process flows. Track business key performance indicators (KPI), detect process anomalies, and prioritize optimization opportunities to improve business outcomes.") to identify compliance-critical [business process with configuration as an entity](/docs/observe/business-observability/business-flow/set-up-business-flow#set-a-business-flow-configuration-as-an-entity "Follow the instructions on how to successfully set up Business Flow.").
+1. Перейдите в ![Settings](https://dt-cdn.net/images/settings-icon-256-38e1321b51.webp "Settings") **Settings** > **Apps** > **Compliance Assistant** ![Compliance Assistant](https://dt-cdn.net/images/compliance-assistant-app-256-a136b783a7.png "Compliance Assistant").
+2. В разделе фреймворка соответствия DORA выберите **Add CIFs** (Добавить CIF).
+3. В таблице выберите бизнес-процессы для добавления в качестве CIF.
+4. Выберите **Save** (Сохранить) для обновления фреймворка соответствия.
 
-#### To add a critical or important function (CIF)
+#### Удаление критически важной или важной функции (CIF)
 
-1. Go to ![Settings](https://dt-cdn.net/images/settings-icon-256-38e1321b51.webp "Settings") **Settings** > **Apps** > ![Compliance Assistant](https://dt-cdn.net/images/compliance-assistant-app-256-a136b783a7.png "Compliance Assistant") **Compliance Assistant**.
-2. Under the compliance framework DORA, select  **Add CIFs**.
-3. From the table, select business processes to add as CIFs.
-4. Select **Save** to update the compliance framework.
+1. Перейдите в ![Settings](https://dt-cdn.net/images/settings-icon-256-38e1321b51.webp "Settings") **Settings** > **Apps** > **Compliance Assistant** ![Compliance Assistant](https://dt-cdn.net/images/compliance-assistant-app-256-a136b783a7.png "Compliance Assistant").
+2. В разделе фреймворка соответствия DORA выберите значок меню того CIF, который нужно удалить.
+3. В меню выберите **Remove CIF** (Удалить CIF).
+4. Выберите **Remove** (Удалить) для подтверждения. Имейте в виду, что удаление CIF затрагивает всех пользователей **Compliance Assistant** ![Compliance Assistant](https://dt-cdn.net/images/compliance-assistant-app-256-a136b783a7.png "Compliance Assistant").
 
-#### To remove a critical or important function (CIF)
+#### Редактирование расчётной стоимости инцидента в минуту
 
-1. Go to ![Settings](https://dt-cdn.net/images/settings-icon-256-38e1321b51.webp "Settings") **Settings** > **Apps** > ![Compliance Assistant](https://dt-cdn.net/images/compliance-assistant-app-256-a136b783a7.png "Compliance Assistant") **Compliance Assistant**.
-2. Under the compliance framework DORA, select the menu icon of the CIF to remove.
-3. From the menu, select **Remove CIF**.
-4. Select **Remove** to confirm. Be aware that removing a CIF impacts all ![Compliance Assistant](https://dt-cdn.net/images/compliance-assistant-app-256-a136b783a7.png "Compliance Assistant") **Compliance Assistant** users.
+1. Перейдите в ![Settings](https://dt-cdn.net/images/settings-icon-256-38e1321b51.webp "Settings") **Settings** > **Apps** > **Compliance Assistant** ![Compliance Assistant](https://dt-cdn.net/images/compliance-assistant-app-256-a136b783a7.png "Compliance Assistant").
+2. В разделе фреймворка соответствия DORA выберите значок меню соответствующего CIF.
+3. В меню выберите **Edit incident cost/min** (Изменить стоимость инцидента/мин).
+4. Добавьте расчётную стоимость инцидента в минуту, используемую для расчёта экономического воздействия инцидентов, затрагивающих конкретный CIF.
+5. Выберите **Save** (Сохранить).
 
-#### To edit the estimated cost per minute of an incident
+### Управление инцидентами соответствия
 
-1. Go to ![Settings](https://dt-cdn.net/images/settings-icon-256-38e1321b51.webp "Settings") **Settings** > **Apps** > ![Compliance Assistant](https://dt-cdn.net/images/compliance-assistant-app-256-a136b783a7.png "Compliance Assistant") **Compliance Assistant**.
-2. Under the compliance framework DORA, select the menu icon of the relevant CIF.
-3. From the menu, select **Edit incident cost/min**.
-4. Add the estimated incident cost per minute to be used to calculate the economic impact of incidents impacting specific CIF.
-5. Select **Save**.
+**Compliance Assistant** ![Compliance Assistant](https://dt-cdn.net/images/compliance-assistant-app-256-a136b783a7.png "Compliance Assistant"):
 
-### Manage compliance incidents
+* Разработан для помощи в управлении инцидентами в соответствии с нормативными требованиями.
+* Автоматически классифицирует инциденты на основе нормативных порогов воздействия и ускоряет отчётность о крупных инцидентах в соответствии с нормативными сроками.
+* Упрощает оценку обнаруженных ИТ-системой инцидентов, затрагивающих бизнес-процессы, настроенные как CIF, разделяя их на [неклассифицированные проблемы](#unclassified-problems), [потенциальные крупные инциденты](#potential-major-incidents) и [классифицированные крупные инциденты](#classified-major-incidents).
 
-![Compliance Assistant](https://dt-cdn.net/images/compliance-assistant-app-256-a136b783a7.png "Compliance Assistant") **Compliance Assistant**
+#### Расследование и классификация потенциальных инцидентов соответствия
 
-* Is designed to help you manage incidents in line with compliance requirements.
-* Automatically classifies incidents based on regulatory impact thresholds and accelerates reporting of major incidents to align with regulatory deadlines.
-* Streamlines the assessment of IT-detected incidents affecting business processes configured as CIFs into [unclassified problems](#unclassified-problems), [potential major incidents](#potential-major-incidents), and [classified major incidents](#classified-major-incidents).
+1. Перейдите к **Compliance Assistant** ![Compliance Assistant](https://dt-cdn.net/images/compliance-assistant-app-256-a136b783a7.png "Compliance Assistant").
+2. В разделе **Incidents** (Инциденты) просмотрите таблицы [потенциальных крупных инцидентов](#potential-major-incidents) и [неклассифицированных проблем](#unclassified-problems).
+3. Выберите соответствующий инцидент для просмотра следующих сведений о любом активированном пороге классификации согласно Регламенту ЕС DORA:
 
-#### To investigate and classify potential compliance incidents
+   * Критически важные или важные функции (CIF), затронутые инцидентом.
+   * Продолжительность инцидента, рассчитанная на основе длительности основной проблемы в наносекундах. Порог существенности для данного критерия классификации достигается, когда продолжительность инцидента превышает 24 часа ([RTS по классификации инцидентов, связанных с ИКТ, и киберугроз](https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=OJ:L_202401772)).
+   * Экономическое воздействие инцидента рассчитывается на основе расчётной понесённой стоимости в минуту для затронутых CIF и продолжительности основной проблемы. Порог существенности для критерия классификации `Экономическое воздействие` достигается, когда затраты и потери финансовой организации из-за инцидента превысили или могут превысить €100 000 (RTS по классификации инцидентов, связанных с ИКТ, и киберугроз).
+4. Чтобы классифицировать инцидент как крупный в соответствии с EU DORA, в представлении сведений об инциденте выберите **Classify as major** (Классифицировать как крупный).
+5. Необязательно: добавьте комментарий для документирования своего решения. Этот комментарий добавляется к бизнес-событию классификации инцидента.
+6. Выберите **Confirm** (Подтвердить).
 
-1. Go to ![Compliance Assistant](https://dt-cdn.net/images/compliance-assistant-app-256-a136b783a7.png "Compliance Assistant") **Compliance Assistant**.
-2. See the **Incidents** section for tables of [potential major incidents](#potential-major-incidents) and [unclassified problems](#unclassified-problems).
-3. Select the relevant incident to view the following details on any triggered classification threshold according to the EU DORA Regulation:
+   * Имейте в виду, что классификация запускает приём бизнес-события с деталями классифицированного инцидента соответствия, процесс может занять несколько секунд.
+   * Классифицированный инцидент теперь доступен в **Compliance Assistant** ![Compliance Assistant](https://dt-cdn.net/images/compliance-assistant-app-256-a136b783a7.png "Compliance Assistant") > **Incidents** > **Classified incidents** (Классифицированные инциденты).
 
-   * Critical or important functions (CIFs) affected by the incident.
-   * Incident duration, calculated on the basis of the duration of the underlying problem in nanoseconds. The materiality threshold for the classification criterion is met when the duration of the incident is longer than 24 hours ([RTS on the classification of ICT-related incidents and cyber threatsï»¿](https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=OJ:L_202401772)).
-   * The economic impact of the incident is calculated on the basis of the estimated incurred cost per minute of the affected CIFs and the duration of the underlying problem. To learn more about configuring the estimated cost value per minute, see [Edit the estimated cost per minute of an incident](#to-edit-the-estimated-cost-per-minute-of-an-incident). The materiality threshold for the classification criterion `Economic impact` is met where the costs and losses incurred by the financial entity due to the incident have exceeded or are likely to exceed â¬100,000 (RTS on the classification of ICT-related incidents and cyber threats).
-4. To classify an incident as major in line with EU DORA, from the incident details view, select **Classify as major**.
-5. Optional: Add a comment to document your decision. This comment is added to the incident classification business event.
-6. Select **Confirm**.
+## Понятия
 
-   * Be aware that classification triggers ingestion of a business event with the details of the classified compliance incident and the process may take a few seconds.
-   * The classified incident is now available in ![Compliance Assistant](https://dt-cdn.net/images/compliance-assistant-app-256-a136b783a7.png "Compliance Assistant") **Compliance Assistant** > **Incidents** > **Classified incidents**.
+### Фреймворк соответствия
 
-## Concepts
+Фреймворк соответствия — это структурированный набор требований, руководящих принципов и лучших практик для поддержки организаций в выполнении нормативных и отраслевых стандартов.
 
-### Compliance framework
+**Compliance Assistant** ![Compliance Assistant](https://dt-cdn.net/images/compliance-assistant-app-256-a136b783a7.png "Compliance Assistant") объединяет данные и функциональные возможности, адаптированные к конкретному фреймворку соответствия. В настоящее время **Compliance Assistant** предлагает возможности мониторинга и автоматизации для поддержки соответствия [Регламенту ЕС DORA](https://eur-lex.europa.eu/eli/reg/2022/2554/oj/eng).
 
-A compliance framework is a structured set of requirements, guidelines, and best practices to support organizations in meeting regulatory and industry-specific standards.
+### Оценка Dynatrace в снимке соответствия
 
-![Compliance Assistant](https://dt-cdn.net/images/compliance-assistant-app-256-a136b783a7.png "Compliance Assistant") **Compliance Assistant** consolidates insights and functionalities tailored to a specific compliance framework. ![Compliance Assistant](https://dt-cdn.net/images/compliance-assistant-app-256-a136b783a7.png "Compliance Assistant") **Compliance Assistant** currently offers monitoring and automation capabilities supporting compliance with the [EU DORA Regulationï»¿](https://eur-lex.europa.eu/eli/reg/2022/2554/oj/eng).
+Актуальная многоуровневая оценка, суммирующая текущее состояние рисков ИКТ в отношении потенциальных инцидентов, результатов обнаружения угроз, уязвимостей и неправильных конфигураций. Эта оценка является ориентировочным показателем, основанным на текущих данных и логике уровней. Она является высокоуровневым индикатором на основе актуальных данных наблюдаемости и автоматизированных систем и не заменяет комплексные или официальные оценки соответствия.
 
-### Dynatrace score in compliance snapshot
+### Критически важные или важные функции (CIF)
 
-A real-time, tiered score summarizing your current ICT risk posture across potential incidents, security detection findings, vulnerabilities, and misconfigurations. This score is an indicative metric based on current data and tier logic. This score is a high-level indicator based on real-time observability and automated systems. It does not replace comprehensive or formal compliance assessments.
+Согласно [Регламенту ЕС DORA](https://eur-lex.europa.eu/eli/reg/2022/2554/oj/eng), финансовые организации должны выявлять, классифицировать и документировать бизнес-функции, поддерживаемые ИКТ, и их поддерживающие активы. CIF — это процессы, нарушение которых может существенно повлиять на финансовые результаты или непрерывность обслуживания.
 
-### Critical or important functions (CIFs)
+**Compliance Assistant** ![Compliance Assistant](https://dt-cdn.net/images/compliance-assistant-app-256-a136b783a7.png "Compliance Assistant") позволяет сопоставлять ИТ-активы, релевантные для соответствия, со сквозными бизнес-процессами. Интегрируясь с **Business Flow** ![Business Flow](https://dt-cdn.net/images/business-flow-480-362159ca2c.png "Business Flow"), вы можете выявлять бизнес-процессы, критически важные для соответствия, используя сущности Smartscape для расширенной видимости и контекста.
 
-According to the [EU DORA Regulationï»¿](https://eur-lex.europa.eu/eli/reg/2022/2554/oj/eng), financial entities must identify, classify, and document ICT-supported business functions and their supporting assets. CIFs are processeses that, if disrupted, could significantly impact financial performance or service continuity.
+### Неклассифицированные проблемы
 
-![Compliance Assistant](https://dt-cdn.net/images/compliance-assistant-app-256-a136b783a7.png "Compliance Assistant") **Compliance Assistant** allows you to map compliance-relevant IT assets to end-to-end business processes. By integrating with ![Business Flow](https://dt-cdn.net/images/business-flow-480-362159ca2c.png "Business Flow") **Business Flow**, you can identify compliance-critical business processes, leveraging Smartscape entities for enhanced visibility and context.
+[Инциденты, обнаруженные ИТ-системой](/docs/semantic-dictionary/model/davis "Знакомство с моделями семантического словаря, связанными с Davis AI."), затрагивают любой из бизнес-процессов, настроенных как CIF и отслеживаемых **Business Flow** ![Business Flow](https://dt-cdn.net/images/business-flow-480-362159ca2c.png "Business Flow"). Инциденты считаются неклассифицированными проблемами, когда менее одного порога существенности для классификации крупных инцидентов нарушается. В соответствии с Регламентом ЕС DORA необходимо оценить, затрагивает ли инцидент сервисы ИКТ или сети и информационные системы, поддерживающие CIF [(RTS по классификации инцидентов, связанных с ИКТ, и киберугроз)](https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=OJ:L_202401772).
 
-### Unclassified problems
+### Потенциальные крупные инциденты
 
-[IT-detected incidents](/docs/semantic-dictionary/model/davis "Get to know the Semantic Dictionary models related to Davis AI.") are affecting any of the business processes configured as CIFs that ![Business Flow](https://dt-cdn.net/images/business-flow-480-362159ca2c.png "Business Flow") **Business Flow** is monitoring. Incidents are considered unclassified problems when less than one of the materiality thresholds for the classification of major incidents is breached. In line with the EU DORA Regulation, it must be assessed whether an incident affects or has affected ICT services or network and information systems that support CIFs [(RTS on the classification of ICT-related incidents and cyber threats)ï»¿](https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=OJ:L_202401772).
+[Инциденты, обнаруженные ИТ-системой](/docs/semantic-dictionary/model/davis "Знакомство с моделями семантического словаря, связанными с Davis AI."), затрагивают любой из бизнес-процессов, настроенных как CIF и отслеживаемых **Business Flow** ![Business Flow](https://dt-cdn.net/images/business-flow-480-362159ca2c.png "Business Flow"). Инциденты считаются потенциальными крупными инцидентами, когда два или более отслеживаемых порога существенности для классификации крупных инцидентов нарушаются. В соответствии с Регламентом ЕС DORA инцидент считается крупным, когда выполняются два или более порога существенности ([RTS по классификации инцидентов, связанных с ИКТ, и киберугроз](https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=OJ:L_202401772)).
 
-### Potential major incidents
+### Классифицированные крупные инциденты
 
-[IT-detected incidents](/docs/semantic-dictionary/model/davis "Get to know the Semantic Dictionary models related to Davis AI.") are affecting any of the business processes configured as CIFs that ![Business Flow](https://dt-cdn.net/images/business-flow-480-362159ca2c.png "Business Flow") **Business Flow** is monitoring. Incidents are considered potential major incidents when two or more of the monitored materiality thresholds for the classification of major incidents are breached. In line with the EU DORA Regulation, an incident is considered major when two or more of the materiality thresholds are met ([RTS on the classification of ICT-related incidents and cyber threatsï»¿](https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=OJ:L_202401772)).
+[Инциденты, обнаруженные ИТ-системой](/docs/semantic-dictionary/model/davis "Знакомство с моделями семантического словаря, связанными с Davis AI."), затрагивают любой из бизнес-процессов, настроенных как CIF и отслеживаемых **Business Flow** ![Business Flow](https://dt-cdn.net/images/business-flow-480-362159ca2c.png "Business Flow"), и были вручную классифицированы как крупные в соответствии с Регламентом ЕС DORA. После классификации инцидента как крупного Dynatrace автоматически создаёт бизнес-событие со снимком инцидента соответствия. Подробнее о [событиях классификации инцидентов соответствия](/docs/semantic-dictionary/model/business-analytics "Знакомство с моделями семантического словаря, связанными с Business Observability.").
 
-### Classified major incidents
+### Уязвимости
 
+**Compliance Assistant** ![Compliance Assistant](https://dt-cdn.net/images/compliance-assistant-app-256-a136b783a7.png "Compliance Assistant") опирается на [результаты обнаружения уязвимостей](/docs/secure/threat-observability/concepts#vuln-events "Базовые понятия, связанные с Threat Observability") для проактивного снижения рисков до их эскалации в инциденты. В соответствии с Регламентом ЕС DORA организации обязаны непрерывно оценивать уязвимости. Результат обнаружения уязвимости — это событие безопасности, фиксирующее обнаруженную слабость в системе, программном компоненте или среде.
 
+### Результаты обнаружения угроз безопасности
 
-[IT-detected incidents](/docs/semantic-dictionary/model/davis "Get to know the Semantic Dictionary models related to Davis AI.") are affecting any of the business processes configured as CIFs that ![Business Flow](https://dt-cdn.net/images/business-flow-480-362159ca2c.png "Business Flow") **Business Flow** is monitoring and have been manually classified as major in line with the EU DORA Regulation. Once an incident is classified as major, Dynatrace automatically generates a business event with a snapshot of the compliance incident. Learn more about [Compliance incident classification events](/docs/semantic-dictionary/model/business-analytics "Get to know the Semantic Dictionary models related to Business Observability.").
+**Compliance Assistant** ![Compliance Assistant](https://dt-cdn.net/images/compliance-assistant-app-256-a136b783a7.png "Compliance Assistant") опирается на [события обнаружения угроз](/docs/secure/threat-observability/concepts#detection "Базовые понятия, связанные с Threat Observability") для помощи в приоритизации киберрисков. В соответствии с Регламентом ЕС DORA организации обязаны непрерывно оценивать киберугрозы ([RTS по структуре управления рисками ИКТ](https://eur-lex.europa.eu/eli/reg_del/2024/1774/oj/eng)). Событие обнаружения угроз генерируется при обнаружении подозрительной активности вокруг объекта.
 
-### Vulnerabilities
+### Результаты конфигурации активов ИКТ
 
-![Compliance Assistant](https://dt-cdn.net/images/compliance-assistant-app-256-a136b783a7.png "Compliance Assistant") **Compliance Assistant** relies on [vulnerability findings](/docs/secure/threat-observability/concepts#vuln-events "Basic concepts related to Threat Observability") to proactively mitigate risks before they escalate into incidents. In line with the EU DORA Regulation, organizations are required to assess vulnerabilities on a continuous basis. A vulnerability finding is a security event that highlights a detected weakness in a system, software component, or environment.
+**Compliance Assistant** ![Compliance Assistant](https://dt-cdn.net/images/compliance-assistant-app-256-a136b783a7.png "Compliance Assistant") опирается на [события соответствия](/docs/secure/threat-observability/concepts#compliance "Базовые понятия, связанные с Threat Observability") для обнаружения потенциальных неправильных конфигураций. В соответствии с Регламентом ЕС DORA организации обязаны определять безопасную базовую конфигурацию для активов ИКТ, которая минимизирует подверженность киберугрозам, и регулярно проверять эффективное применение этих базовых конфигураций ([RTS по структуре управления рисками ИКТ](https://eur-lex.europa.eu/eli/reg_del/2024/1774/oj/eng)). События соответствия представляют собой оценку ресурса в контексте правила, указанного в стандарте соответствия.
 
-### Security detection findings
+## Варианты использования
 
-![Compliance Assistant](https://dt-cdn.net/images/compliance-assistant-app-256-a136b783a7.png "Compliance Assistant") **Compliance Assistant** relies on [detection finding events](/docs/secure/threat-observability/concepts#detection "Basic concepts related to Threat Observability") to support in prioritizing cyber risks. In line with the EU DORA Regulation, organizations are required to assess cyber threats on a continuous basis ([RTS on ICT risk management frameworkï»¿](https://eur-lex.europa.eu/eli/reg_del/2024/1774/oj/eng)). A detection finding event is generated when suspicious activity is observed around an object.
+Compliance Assistant позволяет достигать соответствия и управлять им в рамках поддерживаемых фреймворков:
 
-### ICT asset configuration results
+* Выявлять и картировать ИТ-активы, релевантные для соответствия, путём анализа критически важных сквозных бизнес-процессов — способствуя межфункциональному согласованию ИТ, безопасности и бизнес-команд.
+* Непрерывно отслеживать статус соответствия в соответствии с выбранным фреймворком и выявлять риски с помощью актуальных данных об уязвимостях, результатах обнаружения угроз и неправильных конфигурациях.
+* Обнаруживать, классифицировать и ускорять отчётность об инцидентах, соответствующих нормативным порогам, автоматизируя шаги, необходимые для соблюдения жёстких нормативных сроков.
 
-![Compliance Assistant](https://dt-cdn.net/images/compliance-assistant-app-256-a136b783a7.png "Compliance Assistant") **Compliance Assistant** relies on [compliance events](/docs/secure/threat-observability/concepts#compliance "Basic concepts related to Threat Observability") to detect potential misconfigurations. In line with the EU DORA Regulation, organizations are required to identify a secure configuration baseline for ICT assets that minimizes exposure to cyber threats and regularly verify that those baselines are effectively deployed ([RTS on ICT risk management frameworkï»¿](https://eur-lex.europa.eu/eli/reg_del/2024/1774/oj/eng)). Compliance events represent the assessment of a resource in the context of the rule specified in the compliance standard.
+## Часто задаваемые вопросы
 
-## Use cases
+Как улучшить оценку Dynatrace в снимке соответствия?
 
-Compliance Assistant enables you to achieve and manage compliance across supported frameworks:
+Оценка Dynatrace — это актуальный индикатор, основанный на текущем состоянии рисков ИКТ и подверженный влиянию серьёзности выводов. Для улучшения оценки:
 
-* Identify and map compliance-relevant IT assets by analyzing critical end-to-end business processes â promoting cross-functional alignment between IT, security, and business teams.
-* Continuously track compliance status against a selected framework and detect risks using real-time data on vulnerabilities, detection findings, and misconfigurations.
-* Detect, classify, and accelerate reporting of incidents that meet regulatory thresholds, automating the steps needed to comply with tight regulatory deadlines.
+* Своевременно устраняйте потенциальные крупные инциденты и неклассифицированные проблемы.
+* Устраняйте результаты обнаружения угроз и уязвимости. Для просмотра результатов обнаружения угроз и запуска углублённого анализа см. [Получение аналитических данных](/docs/secure/threats-and-exploits/gain-insights "Подробный анализ результатов обнаружения угроз."). Чтобы узнать, как исправить обнаруженные уязвимости, см. [Как исправить обнаруженные уязвимости?](/docs/secure/faq#fix "Часто задаваемые вопросы о Dynatrace Application Security.").
+* Исправляйте неправильные конфигурации активов ИКТ, выявленные Security Posture Management. Рекомендации по исправлению выводов см. в [Соответствие требованиям с помощью Security Posture Management](/docs/secure/use-cases/stay-compliant "Соблюдение мер, политик и практик безопасности.").
+* Обеспечьте надлежащий мониторинг и защиту в режиме реального времени для критически важных или важных функций (CIF).
 
-## FAQ
+Как часто обновляются данные о критически важных или важных функциях (CIF) в **Compliance Assistant** ![Compliance Assistant](https://dt-cdn.net/images/compliance-assistant-app-256-a136b783a7.png "Compliance Assistant")?
 
-How can I improve the Dynatrace score in the compliance snapshot?
+Данные о KPI конверсий и ошибок по CIF обновляются на основе настроенной частоты генерации мониторинга KPI в **Business Flow** ![Business Flow](https://dt-cdn.net/images/business-flow-480-362159ca2c.png "Business Flow"). Временной горизонт оценки для отслеживаемых KPI критически важных или важных функций (CIF) также определяется при настройке бизнес-конфигурации как сущности.
 
-The Dynatrace score is a real-time indicator based on your current ICT risk posture and impacted by the severity of findings. To improve your score:
+Чтобы обеспечить надёжную оценку KPI и избежать пропуска данных из длительных процессов, установите временной горизонт оценки не менее чем в три-четыре раза превышающим среднюю продолжительность процесса (например, если средняя продолжительность CIF составляет 5 минут, установите окно не менее 15–20 минут).
 
-* Address potential major incidents and unclassified problems promptly.
-* Remediate security detection findings and vulnerabilities. To review security detection findings and initiate deeper analysis, see [Gain insights](/docs/secure/threats-and-exploits/gain-insights "Drill into detection findings for detailed information."). To learn more on how to fix detected vulnerabilities, see [How do I fix detected vulnerabilities?](/docs/secure/faq#fix "Frequently asked questions about Dynatrace Application Security.").
-* Fix ICT asset misconfigurations identified by Security Posture Management. For guidelines on how to fix findings, see [Stay compliant with Security Posture Management](/docs/secure/use-cases/stay-compliant "Stay on top of your security measures, policies, and practices.").
-* Ensure proper monitoring and real-time protection are enabled across your critical or important functions (CIFs).
+Почему настроенные критически важные или важные функции (CIF) не обновляются?
 
-How often are insights on critical or important functions (CIFs) updated in ![Compliance Assistant](https://dt-cdn.net/images/compliance-assistant-app-256-a136b783a7.png "Compliance Assistant") **Compliance Assistant**?
+Если вы недавно отредактировали или добавили [бизнес-процессы, настроенные как сущность](/docs/observe/business-observability/business-flow/set-up-business-flow#set-a-business-flow-configuration-as-an-entity "Следуйте инструкциям по успешной настройке Business Flow.") и выбрали любой из них в качестве CIF в **Compliance Assistant** ![Compliance Assistant](https://dt-cdn.net/images/compliance-assistant-app-256-a136b783a7.png "Compliance Assistant"), обновление KPI мониторинга этих бизнес-процессов может занять до максимальной определённой частоты в **Compliance Assistant**. Частоту мониторинга можно изменить в конфигурации бизнес-потока.
 
-Insights on conversions and errors KPIs on CIFs are updated on the basis of the configured generation frequency of the KPI monitoring in ![Business Flow](https://dt-cdn.net/images/business-flow-480-362159ca2c.png "Business Flow") **Business Flow**. The evaluation timeframe for the monitored KPIs of critical or important functions (CIFs) is also defined in setting up a business configuration as an entity.
+## Связанные темы
 
-To ensure reliable KPI evaluation and avoid missing data from longârunning processes, set the evaluation timeframe to at least three to four times the process's average duration (for example, if the average duration of the CIF is 5 minutes, set the window to at least 15â20 minutes).
-
-Why are the configured critical or important functions (CIFs) not updating?
-
-If you have recently edited or added [business processes configured as entity](/docs/observe/business-observability/business-flow/set-up-business-flow#set-a-business-flow-configuration-as-an-entity "Follow the instructions on how to successfully set up Business Flow.") and selected any of those as a CIF in ![Compliance Assistant](https://dt-cdn.net/images/compliance-assistant-app-256-a136b783a7.png "Compliance Assistant") **Compliance Assistant**, it may take up to the maximum defined frequency for the monitoring KPIs of those business processes to be updated in ![Compliance Assistant](https://dt-cdn.net/images/compliance-assistant-app-256-a136b783a7.png "Compliance Assistant") **Compliance Assistant**. You can adjust the monitoring frequency in the business flow configuration.
-
-## Related topics
-
-* [Business process monitoring](/docs/observe/business-observability/business-process-monitoring "Discover how to monitor business processes.")
-* [Runtime Application Protection](/docs/secure/application-security/application-protection "Set up and configure Dynatrace Runtime Application Protection to monitor attacks and attack-generated code-level vulnerabilities.")
-* [Security Posture Management](/docs/secure/application-security/spm "Assess, manage, and take action on misconfigurations and violations against security hardening guidelines and regulatory compliance standards.")
-* [Runtime Vulnerability Analytics](/docs/secure/application-security/vulnerability-analytics "Monitor, visualize, analyze, and remediate third-party and code-level vulnerabilities, track the remediation progress, and create monitoring rules.")
+* [Мониторинг бизнес-процессов](/docs/observe/business-observability/business-process-monitoring "Узнайте, как отслеживать бизнес-процессы.")
+* [Runtime Application Protection](/docs/secure/application-security/application-protection "Настройка и конфигурирование Dynatrace Runtime Application Protection для мониторинга атак и уязвимостей на уровне кода, вызванных атаками.")
+* [Security Posture Management](/docs/secure/application-security/spm "Оценка, управление и принятие мер по устранению неправильных конфигураций и нарушений стандартов безопасности и нормативных требований.")
+* [Runtime Vulnerability Analytics](/docs/secure/application-security/vulnerability-analytics "Мониторинг, визуализация, анализ и устранение уязвимостей сторонних компонентов и на уровне кода, отслеживание прогресса устранения и создание правил мониторинга.")

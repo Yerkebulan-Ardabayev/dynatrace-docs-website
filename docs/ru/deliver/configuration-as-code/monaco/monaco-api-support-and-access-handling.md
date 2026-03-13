@@ -1,98 +1,98 @@
 ---
-title: Monaco API support and access permission handling
+title: Поддержка API и управление правами доступа Monaco
 source: https://www.dynatrace.com/docs/deliver/configuration-as-code/monaco/monaco-api-support-and-access-handling
 scraped: 2026-03-06T21:29:49.923198
 ---
 
-# Monaco API support and access permission handling
+# Поддержка API и управление правами доступа Monaco
 
-# Monaco API support and access permission handling
+# Поддержка API и управление правами доступа Monaco
 
-* Latest Dynatrace
-* Reference
-* 1-min read
-* Updated on Oct 27, 2025
+* Последняя Dynatrace
+* Справочник
+* 1 мин. чтения
+* Обновлено 27 октября 2025 г.
 
-Dynatrace offers different options to authenticate API calls. Dynatrace Monaco supports the following authentication options:
+Dynatrace предлагает различные варианты аутентификации API-вызовов. Dynatrace Monaco поддерживает следующие варианты аутентификации:
 
-* Platform tokens
-* OAuth clients
+* Платформенные токены
+* OAuth-клиенты
 
-For details about Dynatrace Identity and Access Management (including platform tokens,API tokens, and OAuth clients), see [Tokens and OAuth clients](/docs/manage/identity-access-management/access-tokens-and-oauth-clients "Tokens and OAuth clients").
+Подробности об управлении идентификацией и доступом Dynatrace (включая платформенные токены, API-токены и OAuth-клиенты) см. в разделе [Токены и OAuth-клиенты](/docs/manage/identity-access-management/access-tokens-and-oauth-clients "Токены и OAuth-клиенты").
 
-## Create a platform token for the Dynatrace Monaco CLI
+## Создание платформенного токена для CLI Dynatrace Monaco
 
-To create a platform token, follow the steps described in [Create a platform token for the Dynatrace Monaco CLI](/docs/deliver/configuration-as-code/monaco/guides/create-platform-token "Create a platform token for Dynatrace Configuration as Code via Monaco.").
-Each available type of platform configuration requires specific [OAuth scopes](/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies/advanced/iam-policystatements "Complete reference of IAM policies and corresponding conditions across all Dynatrace services.").
+Для создания платформенного токена следуйте шагам, описанным в [Создание платформенного токена для CLI Dynatrace Monaco](/docs/deliver/configuration-as-code/monaco/guides/create-platform-token "Создание платформенного токена для Dynatrace Configuration as Code через Monaco.").
+Каждый доступный тип конфигурации платформы требует определённых [областей доступа (scopes) OAuth](/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies/advanced/iam-policystatements "Полный справочник политик IAM и соответствующих условий для всех сервисов Dynatrace.").
 
-## Create an OAuth client for the Dynatrace Monaco CLI
+## Создание OAuth-клиента для CLI Dynatrace Monaco
 
-To create an OAuth client, follow the steps described in [Create an OAuth2 client](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/oauth-clients#create-an-oauth2-client "Manage authentication and user permissions using OAuth clients.").
+Для создания OAuth-клиента следуйте шагам, описанным в [Создание OAuth2-клиента](/docs/manage/identity-access-management/access-tokens-and-oauth-clients/oauth-clients#create-an-oauth2-client "Управление аутентификацией и разрешениями пользователей с помощью OAuth-клиентов.").
 
-Each available type of platform configuration requires specific [OAuth scopes](/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies/advanced/iam-policystatements "Complete reference of IAM policies and corresponding conditions across all Dynatrace services.").
+Каждый доступный тип конфигурации платформы требует определённых [областей доступа (scopes) OAuth](/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies/advanced/iam-policystatements "Полный справочник политик IAM и соответствующих условий для всех сервисов Dynatrace.").
 
-To use the `automation:workflows:admin` scope, you need to do the following before creating the OAuth client.
+Для использования области `automation:workflows:admin` необходимо выполнить следующие действия перед созданием OAuth-клиента:
 
-1. Create a custom policy granting that scope.
-2. Bind a group to it.
-3. Assign your user to that group.
+1. Создайте пользовательскую политику, предоставляющую эту область.
+2. Привяжите к ней группу.
+3. Назначьте вашего пользователя в эту группу.
 
-For detailed information on managing policies, see [IAM policy reference](/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies/advanced/iam-policystatements "Complete reference of IAM policies and corresponding conditions across all Dynatrace services.").
+Подробную информацию об управлении политиками см. в [справочнике политик IAM](/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies/advanced/iam-policystatements "Полный справочник политик IAM и соответствующих условий для всех сервисов Dynatrace.").
 
-To manage OpenPipeline configurations, ensure that the user belongs to a group with the policy **Data Processing and Storage** assigned to it.
-Do this before creating the OAuth client.
+Для управления конфигурациями OpenPipeline убедитесь, что пользователь принадлежит к группе с назначенной политикой **Data Processing and Storage**.
+Сделайте это перед созданием OAuth-клиента.
 
-In addition to the scopes available to the OAuth client, permissions can be further limited via policies applied to the user's groups.
+В дополнение к областям доступа, доступным OAuth-клиенту, разрешения могут быть дополнительно ограничены через политики, применённые к группам пользователя.
 
-When working with a service user, ensure the service user's permissions match the OAuth scopes for all environments.
-For details on how permissions can be controlled, see [Working with policies](/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies "Working with policies").
+При работе с сервисным пользователем убедитесь, что разрешения сервисного пользователя соответствуют областям OAuth для всех сред.
+Подробности о контроле разрешений см. в [работе с политиками](/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies "Работа с политиками").
 
-To use your OAuth client:
+Для использования вашего OAuth-клиента:
 
-1. Follow the instructions for your operating system or CI/CD tool on how to make the client ID and secret available as environment variables.
-2. Reference the environment variables you have created in the OAuth section of your manifest file
-3. Dynatrace Monaco CLI will request OAuth access tokens using your client credentials to make authenticated API calls.
+1. Следуйте инструкциям для вашей операционной системы или CI/CD-инструмента по предоставлению ID клиента и секрета в качестве переменных окружения.
+2. Укажите ссылки на созданные переменные окружения в разделе OAuth вашего файла манифеста.
+3. CLI Dynatrace Monaco будет запрашивать токены доступа OAuth, используя ваши учётные данные клиента для выполнения аутентифицированных API-вызовов.
 
-## API coverage
+## Покрытие API
 
-Dynatrace Monaco supports the following configuration types:
+Dynatrace Monaco поддерживает следующие типы конфигурации:
 
 * Settings 2.0
-* Configuration APIs
-* Platform APIs
+* Configuration API
+* Platform API
 
-The specific configuration types are defined in the Monaco configuration YAML file.
+Конкретные типы конфигурации определяются в YAML-файле конфигурации Monaco.
 
 ### Settings 2.0
 
-Settings 2.0 resources require a classic Dynatrace API access token or OAuth credentials.
+Ресурсы Settings 2.0 требуют классический API-токен доступа Dynatrace или учётные данные OAuth.
 
-The Dynatrace Monaco CLI provides general support for any Settings 2.0 schema available in your environment.
-For information about schemas, see [Settings 2.0 - Available schemas](/docs/dynatrace-api/environment-api/settings/schemas "View the entire settings schemas table of your monitoring environment via the Dynatrace API.").
+CLI Dynatrace Monaco предоставляет общую поддержку для любой схемы Settings 2.0, доступной в вашей среде.
+Информацию о схемах см. в [Settings 2.0 — Доступные схемы](/docs/dynatrace-api/environment-api/settings/schemas "Просмотр полной таблицы схем настроек вашей среды мониторинга через Dynatrace API.").
 
-For latest Dynatrace, you will need the following OAuth scopes.
+Для последней версии Dynatrace вам потребуются следующие области OAuth.
 
-| Purpose | Scope |
+| Назначение | Область (Scope) |
 | --- | --- |
-| Manage Settings 2.0 objects and its all-users permission | `settings:objects:read`, `settings:objects:write` |
-| View Settings 2.0 schemas | `settings:schemas:read` |
+| Управление объектами Settings 2.0 и разрешениями для всех пользователей | `settings:objects:read`, `settings:objects:write` |
+| Просмотр схем Settings 2.0 | `settings:schemas:read` |
 
-For classic Dynatrace, you will need the following OAuth scopes.
+Для классического Dynatrace вам потребуются следующие области OAuth.
 
-| Purpose | Scope |
+| Назначение | Область (Scope) |
 | --- | --- |
-| Manage Settings 2.0 objects and its all-users permission | `settings.read`, `settings.write` |
+| Управление объектами Settings 2.0 и разрешениями для всех пользователей | `settings.read`, `settings.write` |
 
-### Supported platform API types
+### Поддерживаемые типы API платформы
 
-The Dynatrace platform provides a collection of [platform servicesï»¿](https://developer.dynatrace.com/plan/platform-services/), each with a specific area of responsibility.
-OAuth credentials are required to target platform APIs.
+Платформа Dynatrace предоставляет набор [платформенных сервисов](https://developer.dynatrace.com/plan/platform-services/), каждый из которых имеет определённую область ответственности.
+Для работы с API платформы требуются учётные данные OAuth.
 
-The Dynatrace Monaco CLI provides support for Dynatrace platform API types as described in the table below.
+CLI Dynatrace Monaco поддерживает типы API платформы Dynatrace, как описано в таблице ниже.
 
-### Account Management permissions
+### Разрешения управления аккаунтами
 
-To manage account resources, such as user management or policy handling, OAuth credentials require the following permissions:
+Для управления ресурсами аккаунта, такими как управление пользователями или обработка политик, учётные данные OAuth требуют следующие разрешения:
 
 * `account-idm-read`
 * `account-idm-write`
@@ -106,18 +106,18 @@ To manage account resources, such as user management or policy handling, OAuth c
 * `iam:boundaries:read`
 * `iam:boundaries:write`
 
-### Supported Configuration API types
+### Поддерживаемые типы Configuration API
 
-Configuration via the [Configuration API](/docs/dynatrace-api/configuration-api "Find out what you need to use the configuration section of the Dynatrace API.") requires an API access token.
-Dynatrace Monaco CLI provides support for most Configuration APIs, as described in the table below.
-This table provides:
+Конфигурация через [Configuration API](/docs/dynatrace-api/configuration-api "Узнайте, что необходимо для использования раздела конфигурации Dynatrace API.") требует токена доступа к API.
+CLI Dynatrace Monaco поддерживает большинство Configuration API, как описано в таблице ниже.
+В таблице представлены:
 
-* The supported configuration types.
-* Their API endpoints.
-* The access token permissions that are required to interact with any endpoint.
+* Поддерживаемые типы конфигурации.
+* Их конечные точки API.
+* Разрешения токена доступа, необходимые для взаимодействия с каждой конечной точкой.
 
-Note that most Configuration APIs are deprecated in favor of Settings 2.0, see [Settings 2.0](/docs/dynatrace-api/configuration-api "Find out what you need to use the configuration section of the Dynatrace API.").
+Обратите внимание, что большинство Configuration API устарели в пользу Settings 2.0, см. [Settings 2.0](/docs/dynatrace-api/configuration-api "Узнайте, что необходимо для использования раздела конфигурации Dynatrace API.").
 
-## Related topics
+## Связанные темы
 
-* [Monaco configuration YAML file - list of special configuration types](/docs/deliver/configuration-as-code/monaco/configuration/special-configuration-types-saas "This is a list of Monaco special configuration types.")
+* [YAML-файл конфигурации Monaco — список специальных типов конфигурации](/docs/deliver/configuration-as-code/monaco/configuration/special-configuration-types-saas "Список специальных типов конфигурации Monaco.")

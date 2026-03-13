@@ -1,74 +1,74 @@
 ---
-title: Send Slack notifications for problems
+title: Отправка Slack-уведомлений о проблемах
 source: https://www.dynatrace.com/docs/analyze-explore-automate/alerting-and-notifications/workflows-tutorial-problems-slack
 scraped: 2026-03-04T21:36:56.983118
 ---
 
-# Send Slack notifications for problems
+# Отправка Slack-уведомлений о проблемах
 
-# Send Slack notifications for problems
+# Отправка Slack-уведомлений о проблемах
 
-* Latest Dynatrace
-* Tutorial
-* 4-min read
-* Updated on Oct 19, 2025
+* Последняя Dynatrace
+* Учебное пособие
+* 4 мин. чтения
+* Обновлено 19 октября 2025 г.
 
-Problems are automatically opened by Dynatrace when anomalies or alert conditions are detected in your environment.
-In ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Workflows**, build a  simple workflow that listens to problems and automatically sends ![Slack Connector](https://dt-cdn.net/images/slack-for-workflows1-257-4ad7b09fd3.png "Slack Connector") Slack notifications whenever a new problem is triggered.
-This guide shows you how.
+Проблемы автоматически создаются в Dynatrace при обнаружении аномалий или условий оповещения в вашей среде.
+В ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Рабочих процессах** создайте простой рабочий процесс, который отслеживает проблемы и автоматически отправляет уведомления в ![Slack Connector](https://dt-cdn.net/images/slack-for-workflows1-257-4ad7b09fd3.png "Slack Connector") Slack при каждой новой проблеме.
+Это руководство покажет вам, как это сделать.
 
-## What will you learn
+## Что вы узнаете
 
-In this tutorial, you'll learn how to alert your team in real time by automatically messaging the details of a new problem to a specific Slack channel.
+В этом учебном пособии вы узнаете, как оповещать вашу команду в реальном времени, автоматически отправляя детали новой проблемы в определённый канал Slack.
 
-At a short glance, you will:
+Кратко, вы будете:
 
-1. [Create a simple workflow](/docs/analyze-explore-automate/workflows/simple-workflow#create-simple-workflow "Build and run a simple workflow.").
-2. Add an [event trigger](/docs/analyze-explore-automate/workflows/trigger/event-trigger "Guide to creating workflow automation event triggers in Dynatrace Workflows.") for  [Davis problems](/docs/analyze-explore-automate/workflows/trigger/event-trigger#davis-problem-trigger "Guide to creating workflow automation event triggers in Dynatrace Workflows.").
-3. Configure a [Slack message](/docs/analyze-explore-automate/workflows/actions/slack "Send messages to Slack Workspaces").
-4. Save and run the  workflow to get email notifications.
-5. Verify your  workflow is working as expected.
+1. [Создавать простой рабочий процесс](/docs/analyze-explore-automate/workflows/simple-workflow#create-simple-workflow "Создайте и запустите простой рабочий процесс.").
+2. Добавлять [триггер события](/docs/analyze-explore-automate/workflows/trigger/event-trigger "Руководство по созданию триггеров событий автоматизации рабочих процессов в Dynatrace Workflows.") для [проблем Davis](/docs/analyze-explore-automate/workflows/trigger/event-trigger#davis-problem-trigger "Руководство по созданию триггеров событий автоматизации рабочих процессов в Dynatrace Workflows.").
+3. Настроить [сообщение Slack](/docs/analyze-explore-automate/workflows/actions/slack "Отправка сообщений в рабочие пространства Slack").
+4. Сохранить и запустить рабочий процесс для получения уведомлений.
+5. Проверить, что ваш рабочий процесс работает как ожидалось.
 
-## Prerequisites
+## Предварительные требования
 
-* You should have permission to configure and run a  simple workflow.
-  For example, the permission granted with the default policy is for a [standard user](/docs/manage/identity-access-management/permission-management/default-policies "Dynatrace default policies reference").
-* You should select the necessary permissions in [authorization settings](/docs/analyze-explore-automate/workflows/security#authorization-settings "Guide on security aspects of workflow automation in Dynatrace Workflows").
+* У вас должно быть разрешение на настройку и запуск простого рабочего процесса.
+  Например, разрешение, предоставляемое политикой по умолчанию для [стандартного пользователя](/docs/manage/identity-access-management/permission-management/default-policies "Справочник по политикам Dynatrace по умолчанию").
+* Вы должны выбрать необходимые разрешения в [настройках авторизации](/docs/analyze-explore-automate/workflows/security#authorization-settings "Руководство по аспектам безопасности автоматизации рабочих процессов в Dynatrace Workflows").
 
-  + You should allow the required permissions to
+  + Вы должны разрешить необходимые права для
 
-    - Access ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Workflows**.
-    - Write and execute a workflow.
-      For more information, see [authorization settings](/docs/analyze-explore-automate/workflows/security#user-permission "Guide on security aspects of workflow automation in Dynatrace Workflows").
-* You have [set up Slack integration](/docs/analyze-explore-automate/workflows/actions/slack#setup-slack-integration "Send messages to Slack Workspaces").
+    - Доступа к ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Рабочим процессам**.
+    - Записи и выполнения рабочего процесса.
+      Дополнительную информацию см. в [настройках авторизации](/docs/analyze-explore-automate/workflows/security#user-permission "Руководство по аспектам безопасности автоматизации рабочих процессов в Dynatrace Workflows").
+* Вы [настроили интеграцию со Slack](/docs/analyze-explore-automate/workflows/actions/slack#setup-slack-integration "Отправка сообщений в рабочие пространства Slack").
 
-## Steps
+## Шаги
 
-1. [Create a simple workflow](/docs/analyze-explore-automate/workflows/simple-workflow#create-simple-workflow "Build and run a simple workflow.").
+1. [Создайте простой рабочий процесс](/docs/analyze-explore-automate/workflows/simple-workflow#create-simple-workflow "Создайте и запустите простой рабочий процесс.").
 
-   1. Go to ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Workflows**.
-   2. Select ![Add](https://dt-cdn.net/images/dashboards-app-menu-plus-7e9b7c3547.svg "Add") **Workflow** in the upper-right corner of the page.
-   3. Select the workflow title.
-      By default, it is `Untitled workflow`, and enter a meaningful name.
-      The workflow type is set to  simple workflow by default.
-2. Add an [event trigger](/docs/analyze-explore-automate/workflows/trigger/event-trigger "Guide to creating workflow automation event triggers in Dynatrace Workflows.") for  [Davis problems](/docs/analyze-explore-automate/workflows/trigger/event-trigger#davis-problem-trigger "Guide to creating workflow automation event triggers in Dynatrace Workflows.").
+   1. Перейдите в ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Рабочие процессы**.
+   2. Нажмите ![Add](https://dt-cdn.net/images/dashboards-app-menu-plus-7e9b7c3547.svg "Add") **Рабочий процесс** в верхнем правом углу страницы.
+   3. Выберите заголовок рабочего процесса.
+      По умолчанию это `Untitled workflow`, и введите понятное имя.
+      Тип рабочего процесса по умолчанию установлен как простой рабочий процесс.
+2. Добавьте [триггер события](/docs/analyze-explore-automate/workflows/trigger/event-trigger "Руководство по созданию триггеров событий автоматизации рабочих процессов в Dynatrace Workflows.") для [проблем Davis](/docs/analyze-explore-automate/workflows/trigger/event-trigger#davis-problem-trigger "Руководство по созданию триггеров событий автоматизации рабочих процессов в Dynatrace Workflows.").
 
-   1. In the **Select trigger** section, select a  [Davis problem trigger](/docs/analyze-explore-automate/workflows/trigger/event-trigger#davis-problem-trigger "Guide to creating workflow automation event triggers in Dynatrace Workflows.").
-   2. Set the **Problem state** to **active or closed**.
-      This option means that the problem can be both active or closed.
-      This setting causes the workflow to trigger twice, once when the problem becomes active and again when it is closed.
-   3. In the **Event category** drop-down list, select **Select all**.
-   4. Optional Select **Query past events** to see the most recent problem events that would have triggered this workflow.
-   5. Optional Enter **Entity tags** or **Additional custom filter query** to only trigger the workflow on the relevant problems.
-3. Configure a [Slack message](/docs/analyze-explore-automate/workflows/actions/slack "Send messages to Slack Workspaces").
+   1. В разделе **Выберите триггер** выберите [триггер проблемы Davis](/docs/analyze-explore-automate/workflows/trigger/event-trigger#davis-problem-trigger "Руководство по созданию триггеров событий автоматизации рабочих процессов в Dynatrace Workflows.").
+   2. Установите **Состояние проблемы** на **активная или закрытая**.
+      Эта опция означает, что проблема может быть как активной, так и закрытой.
+      Эта настройка заставляет рабочий процесс запускаться дважды: один раз, когда проблема становится активной, и ещё раз, когда она закрывается.
+   3. В выпадающем списке **Категория события** выберите **Выбрать все**.
+   4. Опционально — выберите **Запросить прошлые события**, чтобы увидеть самые последние события проблем, которые запустили бы этот рабочий процесс.
+   5. Опционально — введите **Теги сущностей** или **Дополнительный пользовательский запрос-фильтр**, чтобы запускать рабочий процесс только для релевантных проблем.
+3. Настройте [сообщение Slack](/docs/analyze-explore-automate/workflows/actions/slack "Отправка сообщений в рабочие пространства Slack").
 
-   1. Select ![Add](https://dt-cdn.net/images/dashboards-app-menu-plus-7e9b7c3547.svg "Add") **Add task** on the trigger node.
-   2. In the **Choose action** section, select ![Slack Connector](https://dt-cdn.net/images/slack-for-workflows1-257-4ad7b09fd3.png "Slack Connector") **Send message** action type.
-      Give the action type a meaningful title.
-   3. Select a pre-configured Slack connection.
-   4. Select a Slack connection from the **Connection** drop-down list.
-   5. Select a Slack channel for your message from the **Channel** drop-down list.
-   6. In the **Message** field, enter the following:
+   1. Нажмите ![Add](https://dt-cdn.net/images/dashboards-app-menu-plus-7e9b7c3547.svg "Add") **Добавить задачу** на узле триггера.
+   2. В разделе **Выберите действие** выберите тип действия ![Slack Connector](https://dt-cdn.net/images/slack-for-workflows1-257-4ad7b09fd3.png "Slack Connector") **Отправить сообщение**.
+      Дайте типу действия понятное название.
+   3. Выберите предварительно настроенное подключение Slack.
+   4. Выберите подключение Slack из выпадающего списка **Подключение**.
+   5. Выберите канал Slack для вашего сообщения из выпадающего списка **Канал**.
+   6. В поле **Сообщение** введите следующее:
 
       ```
       {
@@ -214,38 +214,38 @@ At a short glance, you will:
       }
       ```
 
-      This configuration uses event context placeholders to populate the Slack message with relevant problem details dynamically.
+      Эта конфигурация использует заполнители контекста события для динамического заполнения сообщения Slack соответствующими деталями проблемы.
 
-      The Davis problems trigger returns the problem record.
-      You can use any field from the problem record, stored in `dt.davis.problems`, in the Slack message.
-4. Save and run the  workflow to send out Slack notifications.
+      Триггер проблем Davis возвращает запись проблемы.
+      Вы можете использовать любое поле из записи проблемы, хранящейся в `dt.davis.problems`, в сообщении Slack.
+4. Сохраните и запустите рабочий процесс для отправки Slack-уведомлений.
 
-   1. Select  **Create draft**.
-   2. Select **Deploy**.
-   3. Select **Run** to see the selected problem event that will be used for the workflow.
-5. Verify that your  workflow is working as expected:
+   1. Нажмите **Создать черновик**.
+   2. Нажмите **Развернуть**.
+   3. Нажмите **Запустить**, чтобы увидеть выбранное событие проблемы, которое будет использоваться для рабочего процесса.
+5. Убедитесь, что ваш рабочий процесс работает как ожидалось:
 
-   1. Go to your workflow.
-   2. Select **Run**.
-   3. Select **Run** again to execute the workflow.
+   1. Перейдите к вашему рабочему процессу.
+   2. Нажмите **Запустить**.
+   3. Нажмите **Запустить** ещё раз для выполнения рабочего процесса.
 
-      Execution logs aren't available for a simple workflow.
-      If an error occurs, you can find the error details on the right in the task details pane.
+      Журналы выполнения недоступны для простого рабочего процесса.
+      Если произошла ошибка, вы можете найти детали ошибки справа в панели деталей задачи.
 
-## Conclusion
+## Заключение
 
-Youâve created a  simple workflow that sends Slack messages when problems are opened or closed.
-This setup helps to ensure that your team is immediately informed about critical issues in your environment.
+Вы создали простой рабочий процесс, который отправляет сообщения в Slack при открытии или закрытии проблем.
+Эта настройка помогает обеспечить немедленное информирование вашей команды о критических проблемах в вашей среде.
 
-You can extend this workflow by
+Вы можете расширить этот рабочий процесс:
 
-* Adding conditions to handle specific problem categories or severities.
-* Adding auto remediation steps to your workflow.
+* Добавив условия для обработки конкретных категорий или уровней серьёзности проблем.
+* Добавив шаги автоматического устранения в ваш рабочий процесс.
 
-This workflow is a great starting point for automating incident response and improving operational awareness.
+Этот рабочий процесс — отличная отправная точка для автоматизации реагирования на инциденты и повышения операционной осведомлённости.
 
-## Related topics
+## Связанные темы
 
-* [Create a simple workflow in Dynatrace Workflows](/docs/analyze-explore-automate/workflows/simple-workflow "Build and run a simple workflow.")
-* [Problems app](/docs/dynatrace-intelligence/davis-problems-app "Use the Problems app to quickly get to the root cause of incidents in your environment.")
-* [Slack Connector](/docs/analyze-explore-automate/workflows/actions/slack "Send messages to Slack Workspaces")
+* [Создание простого рабочего процесса в Dynatrace Workflows](/docs/analyze-explore-automate/workflows/simple-workflow "Создайте и запустите простой рабочий процесс.")
+* [Приложение Problems](/docs/dynatrace-intelligence/davis-problems-app "Используйте приложение Problems для быстрого определения коренной причины инцидентов в вашей среде.")
+* [Коннектор Slack](/docs/analyze-explore-automate/workflows/actions/slack "Отправка сообщений в рабочие пространства Slack")

@@ -1,0 +1,62 @@
+---
+title: Capture event and session properties for mobile frontends
+source: https://www.dynatrace.com/docs/observe/digital-experience/new-rum-experience/mobile-frontends/additional-configuration/event-and-session-properties
+scraped: 2026-03-06T21:28:07.516797
+---
+
+# Захват свойств событий и сессий для мобильных фронтендов
+
+# Захват свойств событий и сессий для мобильных фронтендов
+
+* Последняя версия Dynatrace
+* Практическое руководство
+* Обновлено 22 января 2026 г.
+
+Свойства событий и сессий позволяют прикреплять пользовательские пары «ключ–значение» к событиям пользователей и пользовательским сессиям с использованием пространств имён [`event_properties`](/docs/semantic-dictionary/model/rum/user-events#event-properties "Пользовательские события обеспечивают глубокую видимость и аналитику опыта, поведения, производительности и ошибок ваших клиентов и конечных пользователей в режиме реального времени.") и [`session_properties`](/docs/semantic-dictionary/model/rum/user-sessions#user-session-properties "Пользовательские сессии предоставляют сводку пользовательских событий одного клиента или конечного пользователя вашего приложения за ограниченный период времени.").
+
+## Перед отправкой свойств событий или сессий
+
+Свойства событий и сессий необходимо настроить до их использования. Входящие свойства событий и сессий, которые не настроены, отбрасываются в процессе приёма событий.
+
+Чтобы определить новое свойство:
+
+1. В разделе ![Experience Vitals](https://dt-cdn.net/images/experience-vitals-256-9999590b55.png "Experience Vitals") **Experience Vitals** выберите фронтенд, для которого вы хотите добавить свойство.
+2. Выберите вкладку **Settings**, затем выберите **Event and session properties**.
+3. Нажмите **Add** в разделе **Defined event properties** или **Defined session properties** в зависимости от типа создаваемого свойства.
+4. В поле **Field name** введите имя свойства (например, `cart.total_value`).
+5. Необязательно Чтобы сделать имя поля нечувствительным к регистру, включите параметр **Field name validation should be case-insensitive**.
+6. В списке **Datatype** выберите подходящий тип данных для свойства: `string`, `boolean` или `number`.
+
+Dynatrace автоматически добавляет к имени поля префикс `event_properties.` или `session_properties.` в зависимости от выбранного типа свойства. Например, имя поля `cart.total_value` станет `event_properties.cart.total_value`.
+
+## Как отправлять свойства
+
+Свойства событий и сессий можно отправлять через [новые RUM API](/docs/observe/digital-experience/new-rum-experience/mobile-frontends/new-rum-apis "Изучите новые API Real User Monitoring (RUM) для мобильных фронтендов, включая конфигурацию запуска, отчётность о событиях, обработку ошибок, отслеживание представлений и расширенные функции Dynatrace на базе Grail."):
+
+* Для добавления свойств событий используйте [`addEventModifier`](/docs/observe/digital-experience/new-rum-experience/mobile-frontends/new-rum-apis#add-event-modifier "Изучите новые API Real User Monitoring (RUM) для мобильных фронтендов, включая конфигурацию запуска, отчётность о событиях, обработку ошибок, отслеживание представлений и расширенные функции Dynatrace на базе Grail.").
+* Для отправки свойства сессии используйте [`sendSessionPropertyEvent`](/docs/observe/digital-experience/new-rum-experience/mobile-frontends/new-rum-apis#send-session-property-event "Изучите новые API Real User Monitoring (RUM) для мобильных фронтендов, включая конфигурацию запуска, отчётность о событиях, обработку ошибок, отслеживание представлений и расширенные функции Dynatrace на базе Grail.").
+
+## Ограничения
+
+* Именование
+
+  + Максимальная длина имени поля: 100 символов (включая префикс `event_properties.` / `session_properties.`).
+  + Допустимые символы в имени поля: A–Z, a–z, 0–9, нижнее подчёркивание `_` и точка `.`.
+  + За каждой точкой должен следовать буквенный символ.
+  + За каждым нижним подчёркиванием должен следовать буквенный символ или цифра.
+* Количество — максимально можно настроить 20 свойств событий и сессий.
+* Значения
+
+  + Значения должны быть примитивных типов (`String`, `Int`, `Long`, `Double`, `Boolean`).
+  + Для свойств событий и сессий типа данных `String` длина ограничена 1000 символами.
+
+Допустимые примеры:
+
+* `event_properties.purchase_state`
+* `event_properties.cart.total_value`
+* `session_properties.product_tier`
+* `session_properties.loyalty_status`
+
+## Связанные темы
+
+* [Новые RUM API для мобильных фронтендов](/docs/observe/digital-experience/new-rum-experience/mobile-frontends/new-rum-apis "Изучите новые API Real User Monitoring (RUM) для мобильных фронтендов, включая конфигурацию запуска, отчётность о событиях, обработку ошибок, отслеживание представлений и расширенные функции Dynatrace на базе Grail.")

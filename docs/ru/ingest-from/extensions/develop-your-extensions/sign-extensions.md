@@ -1,0 +1,67 @@
+---
+title: Sign extensions
+source: https://www.dynatrace.com/docs/ingest-from/extensions/develop-your-extensions/sign-extensions
+scraped: 2026-03-05T21:36:26.987234
+---
+
+# Подпись расширений
+
+# Подпись расширений
+
+* Latest Dynatrace
+* How-to guide
+* 2-min read
+* Updated on Oct 07, 2025
+
+Каждое расширение, загружаемое в среду Dynatrace, должно быть подписано, чтобы Dynatrace мог проверить подлинность и целостность расширения. После подписания расширения каждый хост, запускающий это расширение — будь то OneAgent или ActiveGate — должен иметь корневой сертификат, сохранённый в специальном каталоге.
+
+* В среде разработки у каждого разработчика должен быть уникальный конечный сертификат. Это обеспечивает прослеживаемость изменений.
+* В производственной среде каждое расширение должно быть подписано собственным конечным сертификатом. Это гарантирует подлинность каждого расширения.
+
+## Подпись расширения
+
+В зависимости от ваших потребностей выберите один из следующих методов для подписания и сборки расширения:
+
+* [`dt-extensions-sdk`ï»¿](https://dynatrace-extensions.github.io/dt-extensions-python-sdk/cli/sign.html) — универсальный инструмент командной строки Рекомендуется
+* [VSCode Extension](/docs/ingest-from/extensions/develop-your-extensions/addon-for-vscode "Introduction to the Dynatrace Extensions add-on for VS Code") — универсальный инструмент на основе редактора Рекомендуется
+* [Использование OpenSSL](/docs/ingest-from/extensions/develop-your-extensions/sign-extensions/manually-openssl "Sign an extension manually with OpenSSL.") — стандартная криптографическая библиотека для ручного управления
+
+Dynatrace CLI
+
+Вы также можете использовать Dynatrace CLI (`dt-cli`) для подписания расширения. Поскольку его функции полностью входят в состав `dt-extensions-sdk` CLI, используйте его только как более лёгкую альтернативу для сред CI/CD.
+
+Подробнее о [`dt-cli` на GitHubï»¿](https://github.com/dynatrace-oss/dt-cli).
+
+## Загрузка корневого сертификата
+
+Каждый хост, запускающий ваше расширение — будь то OneAgent или ActiveGate — должен иметь корневой сертификат, сохранённый в специальном каталоге. Этот шаг необходим для повышения безопасности фреймворка расширений.
+
+Выполняя это:
+
+* Вы проверяете подлинность распространяемых расширений
+* Вы предотвращаете возможное распространение вредоносных расширений злоумышленником, который мог получить контроль над вашей средой
+
+Для расширений JMX достаточно добавить сертификат в [хранилище учётных данных](/docs/manage/credential-vault "Store and manage credentials in the credential vault.") Dynatrace.
+При добавлении сертификата выберите область **Extension validation**.
+
+### Удалённые расширения
+
+Загрузите корневой сертификат на каждый хост ActiveGate в группе ActiveGate, выбранной для запуска ваших расширений.
+
+Сохраните файл сертификата `root.pem` в следующем расположении:
+
+* **Linux:**
+  `<CONFIG>/remotepluginmodule/agent/conf/certificates/` (по умолчанию: `/var/lib/dynatrace/remotepluginmodule/agent/conf/certificates/`)
+* **Windows:**
+  `%PROGRAMDATA%\dynatrace\remotepluginmodule\agent\conf\certificates`
+
+### Локальные расширения
+
+Загрузите корневой сертификат на каждый хост OneAgent или каждый хост OneAgent в группе хостов, выбранной для запуска ваших расширений.
+
+Сохраните файл сертификата `root.pem` в следующем расположении:
+
+* **Linux:**
+  `/var/lib/dynatrace/oneagent/agent/config/certificates`
+* **Windows:**
+  `%PROGRAMDATA%\dynatrace\oneagent\agent\config\certificates`

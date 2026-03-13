@@ -1,36 +1,36 @@
 ---
-title: Create a new Azure connection
+title: Создание нового подключения Azure
 source: https://www.dynatrace.com/docs/observe/infrastructure-observability/cloud-platform-monitoring/clouds-app/create-azure-connection
 scraped: 2026-03-06T21:24:55.181464
 ---
 
-# Create a new Azure connection
+# Создание нового подключения Azure
 
-# Create a new Azure connection
+# Создание нового подключения Azure
 
-* Latest Dynatrace
-* How-to guide
-* 1-min read
-* Published Aug 19, 2025
-* Preview
+* Последняя Dynatrace
+* Практическое руководство
+* 1 мин. чтения
+* Опубликовано 19 августа 2025 г.
+* Предварительная версия
 
-If this is the first time you are creating a connection, first see the [onboarding instructions](/docs/ingest-from/microsoft-azure-services/create-an-azure-connection/azure-connection-app-settings "Onboard your Azure environments and create Azure connections via the Settings app.") and its prerequisites.
+Если вы впервые создаёте подключение, сначала ознакомьтесь с [инструкциями по подключению](/docs/ingest-from/microsoft-azure-services/create-an-azure-connection/azure-connection-app-settings "Подключение сред Azure и создание подключений Azure через приложение Settings.") и предварительными требованиями.
 
-If you have an existing classic connection and want to start the new cloud platform monitoring, delete the classic connection first and only then create a new cloud connection for the respective Azure subscription.
+Если у вас уже есть классическое подключение и вы хотите начать использовать новый мониторинг облачной платформы, сначала удалите классическое подключение и только затем создайте новое облачное подключение для соответствующей подписки Azure.
 
-To set up a new Azure connection
+Для настройки нового подключения Azure
 
-1. Go to ![Clouds](https://dt-cdn.net/images/clouds-1025-170946931c.png "Clouds") **Clouds**.
-2. In the upper-right corner of the page, select  **Create connection** > **Azure (Preview)**.
+1. Перейдите в ![Clouds](https://dt-cdn.net/images/clouds-1025-170946931c.png "Clouds") **Clouds**.
+2. В правом верхнем углу страницы выберите **Создать подключение** > **Azure (предварительная версия)**.
 
-   Note: If it's your first cloud connection, you can also select **Create connection** > **Azure (Preview)** on the landing page.
-3. Follow the steps outlined in **New connection** to start the onboarding process for a new Azure cloud connection.
+   Примечание: Если это ваше первое облачное подключение, вы также можете выбрать **Создать подключение** > **Azure (предварительная версия)** на главной странице.
+3. Следуйте шагам, описанным в **Новое подключение**, чтобы начать процесс подключения нового облачного подключения Azure.
 
-   ![Clouds app - Create Azure connection](https://dt-cdn.net/images/azure-new-connection-3018-bf82e4297f.png)
-4. After youâve successfully created a new Azure connection, it takes up to 15 minutes to see your cloud inventory on the new **Explorer (Preview)** tab view within ![Clouds](https://dt-cdn.net/images/clouds-1025-170946931c.png "Clouds") **Clouds**.
-5. Optional Check the state and health of your cloud connection in ![Settings](https://dt-cdn.net/images/settings-icon-256-38e1321b51.webp "Settings") **Settings**.
+   ![Clouds app — Создание подключения Azure](https://dt-cdn.net/images/azure-new-connection-3018-bf82e4297f.png)
+4. После успешного создания нового подключения Azure может потребоваться до 15 минут, чтобы увидеть ваш облачный инвентарь на новой вкладке **Explorer (предварительная версия)** в ![Clouds](https://dt-cdn.net/images/clouds-1025-170946931c.png "Clouds") **Clouds**.
+5. Необязательно: проверьте состояние и работоспособность вашего облачного подключения в ![Settings](https://dt-cdn.net/images/settings-icon-256-38e1321b51.webp "Settings") **Settings**.
 
-   1. Go to ![Settings](https://dt-cdn.net/images/settings-icon-256-38e1321b51.webp "Settings") **Settings** > **Collect and capture** > **Cloud and virtualization**.
-   2. Select **Azure (Preview)**.
+   1. Перейдите в ![Settings](https://dt-cdn.net/images/settings-icon-256-38e1321b51.webp "Settings") **Settings** > **Сбор и фиксация** > **Облако и виртуализация**.
+   2. Выберите **Azure (предварительная версия)**.
 
-   ![Azure (Preview) Settings app](https://dt-cdn.net/images/azure-private-preview-settings-3014-b6b47c692c.png)
+   ![Настройки Azure (предварительная версия)](https://dt-cdn.net/images/azure-private-preview-settings-3014-b6b47c692c.png)

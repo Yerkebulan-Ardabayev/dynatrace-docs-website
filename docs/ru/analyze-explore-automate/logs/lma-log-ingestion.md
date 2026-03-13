@@ -1,0 +1,124 @@
+---
+title: Log ingestion
+source: https://www.dynatrace.com/docs/analyze-explore-automate/logs/lma-log-ingestion
+scraped: 2026-03-06T21:15:18.200005
+---
+
+# Приём логов
+
+# Приём логов
+
+* Последняя версия Dynatrace
+* Обзор
+* Время чтения: 6 мин
+* Обновлено 15 октября 2025 г.
+
+Приём логов — это процесс сбора данных логов из различных источников в инфраструктуре. Логи хранятся в хранилище данных Grail для анализа, автоматизации и мониторинга. Dynatrace упрощает этот процесс с помощью OneAgent, который автоматически обнаруживает логи и предлагает возможности централизованного управления. В бессерверных средах или там, где установка OneAgent невозможна, можно использовать API приёма логов (Logs Ingestion API).
+
+Ниже представлен обзор стратегий приёма логов, которые можно использовать с Dynatrace.
+
+[### OneAgent
+
+Рекомендуется
+
+Автоматический приём данных логов из различных источников.](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa "Ingest log data to Dynatrace using OneAgent and have Dynatrace transform it into meaningful log messages.")[### API приёма логов
+
+Настройте интеграцию API приёма логов для ваших сценариев использования.](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-api "Stream log data to Dynatrace using API and have Dynatrace transform it into meaningful log messages.")[![Syslog](https://dt-cdn.net/images/syslog-c85e9ae419.svg "Syslog")
+
+### Приём syslog через ActiveGate
+
+Приём логов syslog.](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-syslog "Ingest syslog log data to Dynatrace using ActiveGate and have Dynatrace transform it into meaningful log messages.")
+
+### Приём логов Kubernetes
+
+Dynatrace Log Monitoring позволяет собирать логи из систем оркестрации контейнеров Kubernetes с помощью OneAgent. [Приём логов Kubernetes через OneAgent](/docs/ingest-from/setup-on-k8s/deployment/k8s-log-monitoring "Manage your Kubernetes logs with Dynatrace.") включает встроенное маскирование конфиденциальных данных, привязку к сущностям и сохранение метаданных Kubernetes.
+
+Вы можете централизованно настраивать правила приёма OneAgent для всей среды Kubernetes. Применяя централизованные правила фильтрации, вы можете обеспечить приём только тех логов, которые релевантны для вашего сценария использования, сокращая затраты на обслуживание.
+
+* [Потоковая передача логов Kubernetes с помощью OneAgent](/docs/ingest-from/setup-on-k8s/deployment/k8s-log-monitoring "Manage your Kubernetes logs with Dynatrace.")
+* [Потоковая передача логов Kubernetes с помощью Fluent Bit](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa/lma-fluent-bit-logs-k8s "Integrate Fluent Bit in Kubernetes to stream logs to Dynatrace.")
+* [Потоковая передача логов Kubernetes с помощью Dynatrace OpenTelemetry Collector](/docs/ingest-from/opentelemetry/collector/use-cases/kubernetes/k8s-enrich "Configure the OpenTelemetry Collector to enrich OTLP requests with Kubernetes data.")
+* [Потоковая передача логов Kubernetes с помощью Logstash](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-stream-logs-with-logstash "Integrate Logstash to stream logs from nodes and pods to Dynatrace.")
+* [Потоковая передача логов Kubernetes с помощью Fluentd](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-stream-logs-fluentd-k8s "Integrate Fluentd with Dynatrace to stream logs from nodes and pods to Dynatrace.")
+
+### Экспорт телеметрических данных с помощью OpenTelemetry
+
+OpenTelemetry Protocol (OTLP) — это основной сетевой протокол для обмена телеметрическими данными между сервисами и приложениями, поддерживающими OpenTelemetry.
+
+Dynatrace предоставляет нативные OTLP-эндпоинты со следующими сервисами:
+
+* Платформа SaaS
+* Экземпляры ActiveGate
+* Установки OneAgent
+
+Кроме того, вы можете развернуть Collector в качестве промежуточного сервисного приложения для группировки запросов и повышения производительности сети или преобразования запросов перед их пересылкой в Dynatrace (например, для маскирования конфиденциальных данных).
+
+* [Экспорт OpenTelemetry через OTLP](/docs/ingest-from/opentelemetry/otlp-api "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.")
+
+### Пересылка данных логов из облачных платформ
+
+[Пересылка облачных логов](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-cloud-provider-log-forwarding "Configure AWS, Azure and Google Cloud log forwarding to stream log data to Dynatrace using API.") позволяет осуществлять потоковую передачу данных логов из различных облачных платформ непосредственно в Dynatrace. Доступны следующие интеграции:
+
+### AWS
+
+Используйте интеграцию с Amazon Data Firehose, перенаправление из Amazon S3 и прямую интеграцию с AWS Lambda для оптимизации затрат при настройке потоковых логов с Dynatrace.
+
+* [Потоковая передача логов через Amazon Data Firehose](/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-logs-ingest/lma-stream-logs-with-firehose "Amazon Data Firehose integration allows ingest of cloud logs directly, without additional infrastructure needed, and at higher throughput.")
+* [Потоковая передача логов из AWS S3](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-cloud-provider-log-forwarding#s3-log-ingestion "Configure AWS, Azure and Google Cloud log forwarding to stream log data to Dynatrace using API.")
+* [Сбор логов из функций AWS Lambda](/docs/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/collector "Collect logs from AWS Lambda functions")
+
+### Azure
+
+Потоковая передача логов из Azure Event Hubs в Dynatrace через экземпляр Azure Function App. Поддерживаются логи ресурсов и логи активности Azure. Dynatrace, приобретённый через Azure Marketplace, включает глубокую интеграцию с логами платформы Azure. Он предлагает упрощённую настройку через портал Azure и упрощает финансовые расчёты.
+
+* [Потоковая передача логов Azure из Azure Event Hubs](/docs/ingest-from/microsoft-azure-services/azure-integrations/set-up-log-forwarder-azure "Use Azure log forwarding to ingest Azure logs.")
+* [Логи через Azure Native Dynatrace Service](/docs/ingest-from/microsoft-azure-services/azure-platform/azure-native-integration "Set and configure your Dynatrace SaaS environment using Azure Marketplace.")
+
+### GCP
+
+Создайте подписку Pub/Sub для организации приёма метрик, логов, дашбордов и оповещений в Dynatrace. Это обеспечивает комплексное представление о состоянии вашей платформы Google Cloud, включая логи ресурсов и аудита.
+
+* [Настройка интеграции Dynatrace с GCP для метрик и логов](/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/deploy-k8 "Set up log and metric monitoring for GCP services on a new GKE Autopilot cluster.")
+
+### Потоковая передача данных логов с помощью лог-шипперов
+
+Лог-шиппер — это универсальный компонент, который можно легко интегрировать с API для сбора логов из различных источников и их пересылки в указанные пункты назначения. Ссылки ниже иллюстрируют поддерживаемые конфигурации, демонстрируя, как различные лог-шипперы могут быть адаптированы для различных потребностей развёртывания.
+
+* [Потоковая передача логов с помощью Fluent Bit](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-stream-logs-with-fluent-bit "Integrate Fluent Bit to stream logs to Dynatrace.")
+* [Потоковая передача логов с помощью Fluentd в Kubernetes](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-stream-logs-fluentd-k8s "Integrate Fluentd with Dynatrace to stream logs from nodes and pods to Dynatrace.")
+* [Потоковая передача логов с помощью Logstash](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-stream-logs-with-logstash "Integrate Logstash to stream logs from nodes and pods to Dynatrace.")
+
+### Потоковая передача логов с помощью Cribl
+
+Вы можете отправлять логи, метрики и трассировки в Dynatrace с помощью Cribl Stream через OpenTelemetry Protocol (OTLP) или только логи через Cribl Stream с использованием HTTP-назначения Dynatrace, интегрированного с API приёма логов.
+
+* [Потоковая передача логов с помощью Cribl](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-stream-logs-with-cribl "How to send logs, metrics, and traces from Cribl Stream to Dynatrace using OTLP or HTTP integration.")
+
+### Отправка логов с помощью Cloudflare
+
+Используйте Cloudflare Logpush для отправки логов непосредственно в Dynatrace.
+Настройте Logpush через панель управления Cloudflare или API.
+
+* [Отправка логов с помощью Cloudflare](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-push-logs-with-cloudflare "How to use Cloudflare Logpush to push logs directly to Dynatrace.")
+
+### Интеграции через Dynatrace Hub
+
+Dynatrace Hub — это маркетплейс расширений, интеграций и дополнений Dynatrace. Он предоставляет широкий спектр готовых решений для расширения возможностей Dynatrace. Вы можете найти различные интеграции для управления и аналитики логов в Dynatrace Hub.
+
+* [Dynatrace Hub (Log Management and Analytics)](https://www.dynatrace.com/hub/?filter=log-management-and-analytics)
+
+### Приём через расширения Dynatrace
+
+Логи — это данные наблюдаемости, которые [расширения Dynatrace](/docs/ingest-from/extensions "Learn how to create and manage Dynatrace Extensions.") собирают и пересылают в Grail вместе с другими сигналами мониторинга для обеспечения целостного представления о вашей технологии. [Расширения](/docs/ingest-from/extend-dynatrace/extend-logs "Learn how to extend log observability in Dynatrace.") расширяют данные наблюдаемости и аналитические возможности, упрощая настройку данных и интеграцию со сторонними системами.
+
+![log-extensions](https://dt-cdn.net/images/log-extensions-1980-76d7fc4317.png)
+
+Вы можете использовать локальный API-эндпоинт `http://localhost:<port>/v2/logs/ingest` для отправки локально полученных логов в Dynatrace через защищённый и аутентифицированный канал. Узнайте больше на странице [Расширения](/docs/ingest-from/extend-dynatrace/extend-logs/oneagent-log-ingest-api "Use the Dynatrace API to push locally retrieved logs to Dynatrace.").
+
+## Связанные темы
+
+* [Приём логов через OneAgent](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-oa "Ingest log data to Dynatrace using OneAgent and have Dynatrace transform it into meaningful log messages.")
+* [API приёма логов](/docs/analyze-explore-automate/logs/lma-log-ingestion/lma-log-ingestion-via-api "Stream log data to Dynatrace using API and have Dynatrace transform it into meaningful log messages.")
+* [API приёма логов OneAgent](/docs/ingest-from/extend-dynatrace/extend-logs/oneagent-log-ingest-api "Use the Dynatrace API to push locally retrieved logs to Dynatrace.")
+* [Обзор Log Management and Analytics в Dynatrace Hub](https://www.dynatrace.com/hub/?filter=log-management-and-analytics&internal_source=doc&internal_medium=link&internal_campaign=cross)
+* [Обработка логов с помощью OpenPipeline](/docs/analyze-explore-automate/logs/lma-log-processing/lma-openpipeline "Process logs using Dynatrace OpenPipeline.")
