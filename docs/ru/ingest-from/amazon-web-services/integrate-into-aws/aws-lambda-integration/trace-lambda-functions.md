@@ -117,7 +117,7 @@ Terraform - это популярное решение Infrastructure as Code (I
 
 Настройка и развертывание с помощью AWS SAM
 
-AWS Serverless Application Model (SAM) - это открытая框架 для построения серверных приложений.
+AWS Serverless Application Model (SAM) - это открытый фреймворк для построения серверных приложений.
 
 Если вы выберете этот метод, Dynatrace предоставит вам шаблон для определения функции AWS Lambda. Это включает в себя всю конфигурацию, необходимую для интеграции расширения Dynatrace AWS Lambda.
 
