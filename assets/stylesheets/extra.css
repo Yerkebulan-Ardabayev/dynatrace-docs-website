@@ -1,106 +1,387 @@
 /* ==========================================================================
-   DocFlow Design System — Dynatrace Documentation
-   Dark-first theme with purple/teal gradients
-   Inspired by DocFlow (React + Tailwind) design
+   DocFlow Design System v2 — Dynatrace Documentation
+   Full alignment with DocFlow (React + Tailwind) reference implementation
+   Dark-first theme | Purple primary | Teal accent | Frosted-glass header
    ========================================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
-/* === CSS CUSTOM PROPERTIES — DARK THEME (default) === */
+/* ==========================================================================
+   1. DESIGN TOKENS — DARK THEME (default)
+   Mapped from DocFlow HSL tokens → hex for MkDocs Material compatibility
+   ========================================================================== */
+
 :root,
 [data-md-color-scheme="slate"] {
-  /* Brand */
-  --md-primary-fg-color: #7c3aed;
-  --md-primary-fg-color--light: #8b5cf6;
-  --md-primary-fg-color--dark: #6d28d9;
-  --md-accent-fg-color: #00d4aa;
-  --md-accent-fg-color--transparent: rgba(0, 212, 170, 0.1);
+  /* --- Brand --- */
+  --md-primary-fg-color:            #7c3aed;  /* hsl(262, 52%, 47%) */
+  --md-primary-fg-color--light:     #8b5cf6;  /* lighter purple */
+  --md-primary-fg-color--dark:      #6d28d9;  /* darker purple */
+  --md-accent-fg-color:             #14b8a6;  /* hsl(167, 72%, 48%) */
+  --md-accent-fg-color--transparent:rgba(20, 184, 166, 0.1);
+
+  /* --- Backgrounds (from DocFlow HSL) --- */
+  --md-default-bg-color:            #15131f;  /* hsl(250, 15%, 8%) — main background */
+  --md-default-bg-color--light:     #1c1a28;  /* hsl(250, 14%, 11%) — card */
+  --md-default-bg-color--lighter:   #242236;  /* hsl(250, 14%, 15%) — secondary */
+  --md-default-bg-color--lightest:  #2d2b41;  /* hsl(250, 12%, 18%) — border fallback */
+
+  /* --- Text --- */
+  --md-default-fg-color:            #e1e0ec;  /* hsl(220, 20%, 90%) — primary text */
+  --md-default-fg-color--light:     #b3b0cc;  /* hsl(220, 20%, 85%) — secondary text */
+  --md-default-fg-color--lighter:   #7e7c98;  /* hsl(220, 10%, 55%) — muted text */
+  --md-default-fg-color--lightest:  #2d2b41;  /* hsl(250, 12%, 18%) — faintest */
+
+  /* --- Code --- */
+  --md-code-bg-color:               #110f1c;  /* hsl(250, 16%, 6%) — code-bg */
+  --md-code-fg-color:               #e1e0ec;
+  --md-code-hl-color:               rgba(124, 58, 237, 0.12);
+
+  /* --- Typeset --- */
+  --md-typeset-color:               #e1e0ec;
+  --md-typeset-a-color:             #14b8a6;
+
+  /* --- Footer --- */
+  --md-footer-bg-color:             #110f1c;
+  --md-footer-bg-color--dark:       #0c0a16;
+  --md-footer-fg-color:             #b3b0cc;
+  --md-footer-fg-color--light:      #7e7c98;
+  --md-footer-fg-color--lighter:    #2d2b41;
+
+  /* --- DocFlow Surfaces --- */
+  --docflow-surface-hover:          #23213a;  /* hsl(250, 14%, 16%) */
+  --docflow-surface-active:         #2f2650;  /* hsl(262, 30%, 18%) */
+  --docflow-border:                 #2d2b41;  /* hsl(250, 12%, 18%) */
+  --docflow-sidebar-bg:             #110f1c;  /* hsl(250, 16%, 6%) */
+  --docflow-card-bg:                #1c1a28;  /* hsl(250, 14%, 11%) */
+
+  /* --- Gradient & Glow --- */
+  --docflow-gradient:               linear-gradient(135deg, #00d4aa 0%, #7c3aed 100%);
+  --docflow-glow-primary:           rgba(124, 58, 237, 0.3);
+  --docflow-glow-accent:            rgba(20, 184, 166, 0.3);
+
+  /* --- Semantic Colors --- */
+  --docflow-info:                   #3b82f6;
+  --docflow-success:                #14b8a6;
+  --docflow-warning:                #f59e0b;
+  --docflow-danger:                 #ef4444;
+
+  /* --- Layout --- */
+  --docflow-nav-width:              280px;
+  --docflow-toc-width:              240px;
+  --docflow-header-height:          56px;
+  --docflow-radius:                 0.5rem;   /* 8px */
+  --docflow-radius-md:              0.375rem; /* 6px */
+  --docflow-radius-sm:              0.25rem;  /* 4px */
+}
+
+/* ==========================================================================
+   2. DESIGN TOKENS — LIGHT THEME
+   ========================================================================== */
+
+[data-md-color-scheme="default"] {
+  /* Brand — same primary, darker accent for contrast */
+  --md-primary-fg-color:            #7c3aed;
+  --md-primary-fg-color--light:     #8b5cf6;
+  --md-primary-fg-color--dark:      #6d28d9;
+  --md-accent-fg-color:             #0d9e7e;  /* hsl(167, 72%, 38%) */
+  --md-accent-fg-color--transparent:rgba(13, 158, 126, 0.1);
 
   /* Backgrounds */
-  --md-default-bg-color: #141218;
-  --md-default-bg-color--light: #1a1820;
-  --md-default-bg-color--lighter: #201e28;
-  --md-default-bg-color--lightest: #2a2834;
+  --md-default-bg-color:            #fafafa;  /* hsl(0, 0%, 98%) */
+  --md-default-bg-color--light:     #ffffff;  /* card */
+  --md-default-bg-color--lighter:   #f0f0f2;  /* secondary */
+  --md-default-bg-color--lightest:  #e0e0e5;  /* border fallback */
 
   /* Text */
-  --md-default-fg-color: #e2dff0;
-  --md-default-fg-color--light: #a8a4b8;
-  --md-default-fg-color--lighter: #7a7690;
-  --md-default-fg-color--lightest: #3d3a4a;
+  --md-default-fg-color:            #1f1f2e;  /* hsl(240, 10%, 15%) */
+  --md-default-fg-color--light:     #3d3d52;  /* hsl(240, 6%, 25%) */
+  --md-default-fg-color--lighter:   #6b6b80;  /* hsl(240, 4%, 46%) */
+  --md-default-fg-color--lightest:  #c0c0cc;
 
   /* Code */
-  --md-code-bg-color: #0f0d14;
-  --md-code-fg-color: #e2dff0;
-  --md-code-hl-color: rgba(124, 58, 237, 0.15);
+  --md-code-bg-color:               #f3f2f6;  /* hsl(240, 5%, 95%) */
 
   /* Typeset */
-  --md-typeset-color: #e2dff0;
-  --md-typeset-a-color: #00d4aa;
+  --md-typeset-a-color:             #0d9e7e;
 
   /* Footer */
-  --md-footer-bg-color: #0f0d14;
-  --md-footer-bg-color--dark: #0a0910;
-  --md-footer-fg-color: #a8a4b8;
-  --md-footer-fg-color--light: #7a7690;
-  --md-footer-fg-color--lighter: #3d3a4a;
+  --md-footer-bg-color:             #f0f0f2;
+  --md-footer-bg-color--dark:       #e8e8ec;
 
-  /* Gradient tokens */
-  --docflow-gradient: linear-gradient(135deg, #00d4aa 0%, #7c3aed 100%);
-  --docflow-glow-primary: rgba(124, 58, 237, 0.3);
-  --docflow-glow-accent: rgba(0, 212, 170, 0.3);
-  --docflow-surface-hover: #201e28;
-  --docflow-surface-active: rgba(124, 58, 237, 0.12);
-  --docflow-border: #2a2834;
-  --docflow-sidebar-bg: #0f0d14;
-  --docflow-card-bg: #1a1820;
+  /* Surfaces */
+  --docflow-surface-hover:          #eaeaf0;  /* hsl(240, 5%, 92%) */
+  --docflow-surface-active:         #eeecf5;  /* hsl(262, 20%, 94%) */
+  --docflow-border:                 #dddde5;  /* hsl(240, 6%, 88%) */
+  --docflow-sidebar-bg:             #ffffff;
+  --docflow-card-bg:                #ffffff;
+
+  /* Gradient & Glow */
+  --docflow-gradient:               linear-gradient(135deg, #0d9e7e 0%, #7c3aed 100%);
+  --docflow-glow-primary:           rgba(124, 58, 237, 0.15);
+  --docflow-glow-accent:            rgba(13, 158, 126, 0.15);
+
+  /* Footer light */
+  --md-footer-fg-color:             #3d3d52;
+  --md-footer-fg-color--light:      #6b6b80;
+  --md-footer-fg-color--lighter:    #c0c0cc;
+
+  /* Code */
+  --md-code-fg-color:               #1f1f2e;
+  --md-code-hl-color:               rgba(124, 58, 237, 0.08);
+
+  /* Typeset */
+  --md-typeset-color:               #1f1f2e;
 }
 
-/* === LIGHT THEME === */
-[data-md-color-scheme="default"] {
-  --md-primary-fg-color: #7c3aed;
-  --md-primary-fg-color--light: #8b5cf6;
-  --md-primary-fg-color--dark: #6d28d9;
-  --md-accent-fg-color: #059e7e;
-  --md-accent-fg-color--transparent: rgba(5, 158, 126, 0.1);
+/* ==========================================================================
+   2b. LIGHT THEME — Component-level overrides
+   ========================================================================== */
 
-  --md-default-bg-color: #fafafa;
-  --md-default-bg-color--light: #f5f5f5;
-  --md-default-bg-color--lighter: #eeeeee;
-  --md-default-bg-color--lightest: #e0e0e0;
-
-  --md-code-bg-color: #f5f3f8;
-
-  --md-typeset-a-color: #059e7e;
-
-  --docflow-gradient: linear-gradient(135deg, #059e7e 0%, #7c3aed 100%);
-  --docflow-glow-primary: rgba(124, 58, 237, 0.15);
-  --docflow-glow-accent: rgba(5, 158, 126, 0.15);
-  --docflow-surface-hover: #f0eef4;
-  --docflow-surface-active: rgba(124, 58, 237, 0.06);
-  --docflow-border: #e5e3eb;
-  --docflow-sidebar-bg: #ffffff;
-  --docflow-card-bg: #ffffff;
+/* Header — frosted white glass */
+[data-md-color-scheme="default"] .md-header {
+  background: rgba(255, 255, 255, 0.88) !important;
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border-bottom: 1px solid var(--docflow-border);
 }
 
-/* === GLOBAL === */
+/* Header text/icons visible on white */
+[data-md-color-scheme="default"] .md-header__topic .md-ellipsis {
+  color: #1f1f2e;
+}
+
+[data-md-color-scheme="default"] .md-header .md-icon {
+  color: #3d3d52;
+}
+
+/* Nav tabs — explicit dark text on white, no opacity trick */
+[data-md-color-scheme="default"] .md-tabs {
+  background: transparent !important;
+  border-bottom: 1px solid var(--docflow-border);
+}
+
+[data-md-color-scheme="default"] .md-tabs__link {
+  color: #6b6b80;
+  opacity: 1;
+}
+
+[data-md-color-scheme="default"] .md-tabs__link:hover {
+  color: #1f1f2e;
+  background: var(--docflow-surface-hover);
+}
+
+[data-md-color-scheme="default"] .md-tabs__link--active {
+  color: #1f1f2e;
+  background: var(--docflow-surface-active);
+  font-weight: 600;
+}
+
+/* Sidebar — white bg, visible borders and text */
+[data-md-color-scheme="default"] .md-sidebar {
+  background: var(--docflow-sidebar-bg);
+  border-right: 1px solid var(--docflow-border);
+}
+
+[data-md-color-scheme="default"] .md-nav__link {
+  color: #3d3d52;
+}
+
+[data-md-color-scheme="default"] .md-nav__link:hover {
+  color: #1f1f2e;
+  background: var(--docflow-surface-hover);
+}
+
+[data-md-color-scheme="default"] .md-nav__item--active > .md-nav__link {
+  color: var(--md-accent-fg-color);
+  background: var(--docflow-surface-active);
+}
+
+[data-md-color-scheme="default"] .md-nav__item--nested > .md-nav__link {
+  color: #1f1f2e;
+}
+
+/* Search — light bg with visible border */
+[data-md-color-scheme="default"] .md-search__form {
+  background: #ffffff !important;
+  border: 1px solid var(--docflow-border) !important;
+}
+
+[data-md-color-scheme="default"] .md-search__input {
+  color: #1f1f2e;
+}
+
+[data-md-color-scheme="default"] .md-search__input::placeholder {
+  color: #6b6b80;
+}
+
+/* Cards — white bg, visible border on light */
+[data-md-color-scheme="default"] .grid.cards > ul > li {
+  background: #ffffff;
+  border: 1px solid var(--docflow-border);
+}
+
+[data-md-color-scheme="default"] .grid.cards > ul > li:hover {
+  border-color: var(--md-primary-fg-color--light);
+  box-shadow: 0 0 20px -5px var(--docflow-glow-primary);
+}
+
+/* Code blocks — light code bg */
+[data-md-color-scheme="default"] .md-typeset code {
+  background: var(--md-code-bg-color);
+  color: #7c3aed;
+  border: 1px solid var(--docflow-border);
+}
+
+[data-md-color-scheme="default"] .md-typeset pre > code {
+  color: #1f1f2e;
+  border: none;
+}
+
+/* Admonitions — slightly more visible borders on light */
+[data-md-color-scheme="default"] .md-typeset .admonition,
+[data-md-color-scheme="default"] .md-typeset details {
+  background: #ffffff;
+}
+
+/* Tables — white bg headers on light */
+[data-md-color-scheme="default"] .md-typeset table:not([class]) th {
+  background: #f0f0f2;
+  color: #3d3d52;
+}
+
+/* TOC — visible text on light */
+[data-md-color-scheme="default"] .md-sidebar--secondary .md-nav__link {
+  color: #6b6b80;
+}
+
+[data-md-color-scheme="default"] .md-sidebar--secondary .md-nav__link:hover,
+[data-md-color-scheme="default"] .md-sidebar--secondary .md-nav__link--active {
+  color: var(--md-accent-fg-color);
+}
+
+/* Footer — light bg */
+[data-md-color-scheme="default"] .md-footer {
+  background: #f0f0f2;
+  border-top: 1px solid var(--docflow-border);
+}
+
+[data-md-color-scheme="default"] .md-footer-meta {
+  background: #e8e8ec;
+}
+
+/* Selection — lighter purple on light theme */
+[data-md-color-scheme="default"] ::selection {
+  background: rgba(124, 58, 237, 0.15);
+}
+
+/* Tabbed — light headers */
+[data-md-color-scheme="default"] .md-typeset .tabbed-labels {
+  background: #f0f0f2;
+}
+
+[data-md-color-scheme="default"] .md-typeset .tabbed-labels > label {
+  color: #6b6b80;
+}
+
+[data-md-color-scheme="default"] .md-typeset .tabbed-labels > label:hover {
+  color: #1f1f2e;
+}
+
+/* ==========================================================================
+   3. GLOBAL RESET & TYPOGRAPHY
+   ========================================================================== */
+
 body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, system-ui, sans-serif !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* === HEADER — Frosted glass === */
+.md-typeset {
+  font-size: 0.875rem;
+  line-height: 1.7;
+  color: var(--md-typeset-color);
+}
+
+/* --- Headings --- */
+.md-typeset h1 {
+  font-weight: 700;
+  font-size: 1.875em;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.25em;
+  line-height: 1.25;
+}
+
+.md-typeset h2 {
+  font-weight: 600;
+  font-size: 1.25em;
+  letter-spacing: -0.01em;
+  margin-top: 2.5em;
+  padding-bottom: 0.4em;
+  border-bottom: 1px solid var(--docflow-border);
+}
+
+.md-typeset h3 {
+  font-weight: 500;
+  font-size: 1.125em;
+  margin-top: 1.5em;
+}
+
+.md-typeset h4 {
+  font-weight: 500;
+  font-size: 1em;
+}
+
+/* First paragraph after h1 — subtitle style like DocFlow */
+.md-typeset h1 + p {
+  color: var(--md-default-fg-color--lighter);
+  font-size: 1.05em;
+  margin-bottom: 2em;
+}
+
+/* --- Links --- */
+.md-typeset a {
+  color: var(--md-accent-fg-color);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.md-typeset a:hover {
+  text-decoration: underline;
+}
+
+/* --- Selection --- */
+::selection {
+  background: rgba(124, 58, 237, 0.25);
+  color: inherit;
+}
+
+/* ==========================================================================
+   4. HEADER — Frosted glass (DocFlow: fixed, backdrop-blur-xl)
+   ========================================================================== */
+
 .md-header {
-  background: rgba(20, 18, 24, 0.8) !important;
+  background: rgba(21, 19, 31, 0.82) !important;
   backdrop-filter: blur(20px) saturate(180%);
   -webkit-backdrop-filter: blur(20px) saturate(180%);
   border-bottom: 1px solid var(--docflow-border);
   box-shadow: none !important;
+  height: var(--docflow-header-height);
 }
 
-[data-md-color-scheme="default"] .md-header {
-  background: rgba(255, 255, 255, 0.85) !important;
-  border-bottom: 1px solid var(--docflow-border);
+.md-header__inner {
+  height: var(--docflow-header-height);
+}
+
+/* Logo — gradient text like DocFlow DT badge */
+.md-header__topic:first-child .md-ellipsis {
+  background: var(--docflow-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 700;
+  font-size: 0.9rem;
 }
 
 .md-header__title {
@@ -108,50 +389,56 @@ body {
   letter-spacing: -0.01em;
 }
 
-/* Header logo gradient text */
-.md-header__topic:first-child .md-ellipsis {
-  background: var(--docflow-gradient);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  font-weight: 700;
-}
+/* ==========================================================================
+   5. NAVIGATION TABS (DocFlow: rounded buttons with active bg)
+   ========================================================================== */
 
-/* === NAVIGATION TABS === */
 .md-tabs {
   background: transparent !important;
   border-bottom: 1px solid var(--docflow-border);
 }
 
 .md-tabs__link {
-  font-size: 0.8rem;
+  font-size: 0.8125rem;
   font-weight: 500;
-  opacity: 0.65;
+  color: var(--md-default-fg-color--lighter);
   transition: all 0.2s ease;
+  padding: 0.375rem 0.75rem;
+  border-radius: var(--docflow-radius-md);
 }
 
-.md-tabs__link:hover,
+.md-tabs__link:hover {
+  color: var(--md-default-fg-color);
+  background: var(--docflow-surface-hover);
+}
+
 .md-tabs__link--active {
-  opacity: 1;
+  color: var(--md-default-fg-color);
+  background: var(--docflow-surface-active);
+  font-weight: 600;
 }
 
-.md-tabs__link--active {
-  border-bottom: 2px solid var(--md-accent-fg-color);
-}
+/* ==========================================================================
+   6. SIDEBAR (DocFlow: w-280, bg-sidebar, border-r, fixed)
+   ========================================================================== */
 
-/* === SIDEBAR === */
 .md-sidebar {
   background: var(--docflow-sidebar-bg);
   border-right: 1px solid var(--docflow-border);
 }
 
+.md-sidebar--primary {
+  width: var(--docflow-nav-width);
+}
+
+/* Nav links — DocFlow style with rounded hover states */
 .md-nav__link {
-  font-size: 0.82rem;
+  font-size: 0.8125rem;
   font-weight: 400;
-  border-radius: 6px;
-  padding: 0.35rem 0.65rem;
-  margin: 1px 4px;
-  transition: all 0.15s ease;
+  border-radius: var(--docflow-radius-md);
+  padding: 0.375rem 0.75rem;
+  margin: 1px 0.25rem;
+  transition: background 0.15s ease, color 0.15s ease;
 }
 
 .md-nav__link:hover {
@@ -159,26 +446,48 @@ body {
   color: var(--md-default-fg-color);
 }
 
+/* Active item — accent color + surface-active bg */
 .md-nav__item--active > .md-nav__link {
   background: var(--docflow-surface-active);
   color: var(--md-accent-fg-color);
   font-weight: 500;
 }
 
+/* Section headers — semibold like DocFlow parent items */
 .md-nav__item--nested > .md-nav__link {
   font-weight: 600;
-  font-size: 0.78rem;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-  color: var(--md-default-fg-color--lighter);
+  font-size: 0.8125rem;
+  color: var(--md-default-fg-color--light);
 }
 
-/* === SEARCH — Glowing on focus === */
+/* Chevron rotation for expanded sections */
+.md-nav__icon {
+  transition: transform 0.2s ease;
+}
+
+/* Sidebar scrollbar */
+.md-sidebar__scrollwrap::-webkit-scrollbar {
+  width: 4px;
+}
+
+.md-sidebar__scrollwrap::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.md-sidebar__scrollwrap::-webkit-scrollbar-thumb {
+  background: var(--docflow-border);
+  border-radius: 2px;
+}
+
+/* ==========================================================================
+   7. SEARCH — Glow on focus (DocFlow: rounded-lg, border, glow-primary)
+   ========================================================================== */
+
 .md-search__form {
-  border-radius: 10px !important;
+  border-radius: var(--docflow-radius) !important;
   border: 1px solid var(--docflow-border) !important;
-  background: var(--md-default-bg-color--light) !important;
-  transition: all 0.3s ease;
+  background: var(--md-default-bg-color--lighter) !important;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .md-search__form:focus-within {
@@ -191,146 +500,334 @@ body {
   font-size: 0.85rem;
 }
 
-/* === CONTENT === */
+.md-search__input::placeholder {
+  color: var(--md-default-fg-color--lighter);
+}
+
+/* Search results */
+.md-search-result .md-search-result__link {
+  border-radius: var(--docflow-radius-md);
+  transition: background 0.15s ease;
+}
+
+.md-search-result .md-search-result__link:hover {
+  background: var(--docflow-surface-hover);
+}
+
+/* ==========================================================================
+   8. BREADCRUMBS (navigation.path)
+   DocFlow: text-sm text-muted-foreground, hover:text-accent
+   ========================================================================== */
+
+.md-path {
+  font-size: 0.875rem;
+  margin-bottom: 1.5rem;
+}
+
+.md-path__link {
+  color: var(--md-default-fg-color--lighter);
+  transition: color 0.15s ease;
+}
+
+.md-path__link:hover {
+  color: var(--md-accent-fg-color);
+}
+
+.md-path__separator {
+  color: var(--md-default-fg-color--lightest);
+  margin: 0 0.25rem;
+}
+
+/* ==========================================================================
+   9. CONTENT AREA
+   DocFlow: max-w-3xl, px-6 lg:px-12, py-8
+   ========================================================================== */
+
 .md-content {
   max-width: 100%;
 }
 
-.md-typeset {
-  font-size: 0.88rem;
-  line-height: 1.7;
-  color: var(--md-default-fg-color);
+.md-content__inner {
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
 }
 
-.md-typeset h1 {
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  font-size: 2em;
-  margin-bottom: 0.5em;
+@media (min-width: 76.25em) {
+  .md-content__inner {
+    padding: 2rem 3rem;
+  }
 }
 
-.md-typeset h2 {
-  font-weight: 600;
-  letter-spacing: -0.01em;
-  margin-top: 2em;
-  padding-bottom: 0.4em;
-  border-bottom: 1px solid var(--docflow-border);
-}
+/* ==========================================================================
+   10. CODE — Dark terminal style
+   DocFlow: bg-code-bg, font-mono, rounded-lg, border, header bar
+   ========================================================================== */
 
-.md-typeset h3 {
-  font-weight: 600;
-}
-
-.md-typeset a {
-  color: var(--md-accent-fg-color);
-  text-decoration: none;
-  transition: color 0.15s ease;
-}
-
-.md-typeset a:hover {
-  text-decoration: underline;
-}
-
-/* === CODE BLOCKS — Dark terminal style === */
+/* Inline code */
 .md-typeset code {
   background: var(--md-code-bg-color);
   color: var(--md-accent-fg-color);
-  border-radius: 4px;
-  padding: 0.15em 0.4em;
+  border-radius: var(--docflow-radius-sm);
+  padding: 0.1em 0.4em;
   font-size: 0.85em;
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
   border: 1px solid var(--docflow-border);
 }
 
+/* Code blocks */
 .md-typeset pre {
-  border-radius: 10px;
+  border-radius: var(--docflow-radius);
   border: 1px solid var(--docflow-border);
   overflow: hidden;
+  margin: 1.5em 0;
 }
 
 .md-typeset pre > code {
   border: none;
   color: var(--md-code-fg-color);
-  font-size: 0.82rem;
+  font-size: 0.8125rem;
   line-height: 1.6;
+  padding: 1rem;
+  background: var(--md-code-bg-color);
 }
 
-.highlight .filename {
+/* Code block header (filename / language label) */
+.highlight .filename,
+.md-typeset .highlight > .filename {
   background: var(--md-code-bg-color);
   border-bottom: 1px solid var(--docflow-border);
   font-size: 0.75rem;
   font-weight: 500;
+  font-family: 'JetBrains Mono', monospace;
   color: var(--md-default-fg-color--lighter);
+  padding: 0.5rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
-/* === ADMONITIONS — Clean with left accent === */
+/* Copy button */
+.md-clipboard {
+  color: var(--md-default-fg-color--lighter) !important;
+  transition: color 0.15s ease;
+}
+
+.md-clipboard:hover {
+  color: var(--md-accent-fg-color) !important;
+}
+
+/* Code highlight line */
+.md-typeset .highlight .hll {
+  background: var(--md-code-hl-color);
+}
+
+/* Syntax highlighting — DocFlow-aligned palette */
+.highlight .c,
+.highlight .c1,
+.highlight .cm { color: #6b6b80; }           /* comments — muted */
+.highlight .k,
+.highlight .kd,
+.highlight .kn { color: #c084fc; }           /* keywords — light purple */
+.highlight .s,
+.highlight .s1,
+.highlight .s2 { color: #34d399; }           /* strings — green */
+.highlight .nf,
+.highlight .nb { color: #60a5fa; }           /* functions — blue */
+.highlight .mi,
+.highlight .mf { color: #fbbf24; }           /* numbers — amber */
+.highlight .o,
+.highlight .p  { color: var(--md-code-fg-color); }  /* operators */
+
+/* ==========================================================================
+   11. ADMONITIONS — Clean with left accent bar
+   DocFlow: rounded-lg, border + colored border-left-3px, icon, bg opacity 5%
+   ========================================================================== */
+
 .md-typeset .admonition,
 .md-typeset details {
   border: 1px solid var(--docflow-border);
-  border-radius: 10px;
+  border-radius: var(--docflow-radius);
   background: var(--docflow-card-bg);
   box-shadow: none;
   border-left: 3px solid;
   overflow: hidden;
+  margin: 1.5em 0;
+  font-size: 0.875rem;
 }
 
 .md-typeset .admonition-title,
-.md-typeset summary {
+.md-typeset details summary {
   background: transparent !important;
   font-weight: 600;
-  font-size: 0.85rem;
+  font-size: 0.8125rem;
+  border-bottom: none;
+  padding: 0.75rem 1rem;
 }
 
-.md-typeset .note {
+.md-typeset .admonition-title::before,
+.md-typeset details summary::before {
+  width: 1rem;
+  height: 1rem;
+}
+
+/* Note — primary purple */
+.md-typeset .note,
+.md-typeset .abstract,
+.md-typeset .summary {
   border-left-color: var(--md-primary-fg-color);
+  border-color: rgba(124, 58, 237, 0.2);
+  background: rgba(124, 58, 237, 0.04);
 }
 
+/* Tip / Success — accent teal */
 .md-typeset .tip,
-.md-typeset .success {
+.md-typeset .success,
+.md-typeset .check,
+.md-typeset .done {
   border-left-color: var(--md-accent-fg-color);
+  border-color: rgba(20, 184, 166, 0.2);
+  background: rgba(20, 184, 166, 0.04);
 }
 
-.md-typeset .warning {
-  border-left-color: #f59e0b;
+/* Warning / Caution — amber */
+.md-typeset .warning,
+.md-typeset .caution,
+.md-typeset .attention {
+  border-left-color: var(--docflow-warning);
+  border-color: rgba(245, 158, 11, 0.2);
+  background: rgba(245, 158, 11, 0.04);
 }
 
+/* Danger / Error / Bug — red */
 .md-typeset .danger,
-.md-typeset .bug {
-  border-left-color: #ef4444;
+.md-typeset .error,
+.md-typeset .bug,
+.md-typeset .failure,
+.md-typeset .fail {
+  border-left-color: var(--docflow-danger);
+  border-color: rgba(239, 68, 68, 0.2);
+  background: rgba(239, 68, 68, 0.04);
 }
 
-.md-typeset .info {
-  border-left-color: #3b82f6;
+/* Info — blue */
+.md-typeset .info,
+.md-typeset .todo {
+  border-left-color: var(--docflow-info);
+  border-color: rgba(59, 130, 246, 0.2);
+  background: rgba(59, 130, 246, 0.04);
 }
 
-/* === TABLES — Clean with hover === */
+/* Question — purple light */
+.md-typeset .question,
+.md-typeset .help,
+.md-typeset .faq {
+  border-left-color: var(--md-primary-fg-color--light);
+  border-color: rgba(139, 92, 246, 0.2);
+  background: rgba(139, 92, 246, 0.04);
+}
+
+/* Example / Quote */
+.md-typeset .example,
+.md-typeset .quote,
+.md-typeset .cite {
+  border-left-color: var(--md-default-fg-color--lighter);
+  border-color: var(--docflow-border);
+  background: var(--docflow-card-bg);
+}
+
+/* ==========================================================================
+   12. TABLES — Rounded, hover rows, secondary header
+   DocFlow: rounded-lg, bg-secondary header, divide-y, hover:bg-surface-hover
+   ========================================================================== */
+
 .md-typeset table:not([class]) {
   border: 1px solid var(--docflow-border);
-  border-radius: 10px;
+  border-radius: var(--docflow-radius);
   overflow: hidden;
-  font-size: 0.85rem;
+  font-size: 0.8125rem;
   border-collapse: separate;
   border-spacing: 0;
+  width: 100%;
+  margin: 1.5em 0;
 }
 
 .md-typeset table:not([class]) th {
   background: var(--md-default-bg-color--lighter);
-  font-weight: 600;
-  font-size: 0.8rem;
-  text-transform: uppercase;
-  letter-spacing: 0.03em;
+  font-weight: 500;
+  font-size: 0.8125rem;
   color: var(--md-default-fg-color--lighter);
   border-bottom: 1px solid var(--docflow-border);
+  padding: 0.75rem 1rem;
+  text-align: left;
 }
 
 .md-typeset table:not([class]) td {
   border-bottom: 1px solid var(--docflow-border);
+  padding: 0.75rem 1rem;
+  color: var(--md-default-fg-color);
 }
 
-.md-typeset table:not([class]) tr:hover td {
+.md-typeset table:not([class]) tr:last-child td {
+  border-bottom: none;
+}
+
+.md-typeset table:not([class]) tbody tr {
+  transition: background 0.15s ease;
+}
+
+.md-typeset table:not([class]) tbody tr:hover {
   background: var(--docflow-surface-hover);
 }
 
-/* === GRID CARDS — DocFlow card style === */
+/* ==========================================================================
+   13. TABS — DocFlow: active = accent border-bottom-2, bg-secondary header
+   ========================================================================== */
+
+.md-typeset .tabbed-set {
+  border: 1px solid var(--docflow-border);
+  border-radius: var(--docflow-radius);
+  overflow: hidden;
+  margin: 1.5em 0;
+}
+
+.md-typeset .tabbed-labels {
+  background: var(--md-default-bg-color--lighter);
+  border-bottom: 1px solid var(--docflow-border);
+}
+
+.md-typeset .tabbed-labels > label {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 0;
+  color: var(--md-default-fg-color--lighter);
+  transition: color 0.15s ease, background 0.15s ease;
+  border-bottom: 2px solid transparent;
+}
+
+.md-typeset .tabbed-labels > label:hover {
+  color: var(--md-default-fg-color);
+  background: var(--docflow-surface-hover);
+}
+
+/* Active tab indicator */
+.md-typeset .tabbed-labels > label.tabbed--active,
+.md-typeset [id^="__tabbed_"]:checked + label {
+  color: var(--md-accent-fg-color);
+  font-weight: 500;
+  border-bottom-color: var(--md-accent-fg-color);
+}
+
+/* Tab content */
+.md-typeset .tabbed-content {
+  padding: 0;
+}
+
+/* ==========================================================================
+   14. GRID CARDS — DocFlow card style
+   Hover: border-color change, shadow glow, translateY(-2px)
+   ========================================================================== */
+
 .grid.cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -350,8 +847,8 @@ body {
   padding: 1.5rem;
   background: var(--docflow-card-bg);
   border: 1px solid var(--docflow-border);
-  border-radius: 12px;
-  transition: all 0.25s ease;
+  border-radius: var(--docflow-radius);
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
   list-style: none;
 }
 
@@ -372,34 +869,75 @@ body {
   margin: 0.75em 0;
 }
 
-/* === TABS === */
-.md-typeset .tabbed-labels > label {
-  font-size: 0.82rem;
-  font-weight: 500;
-  border-radius: 6px 6px 0 0;
+/* ==========================================================================
+   15. TABLE OF CONTENTS (Right sidebar)
+   DocFlow: w-240, text-sm, active = accent + left border
+   ========================================================================== */
+
+.md-sidebar--secondary {
+  width: var(--docflow-toc-width);
 }
 
-.md-typeset .tabbed-labels > label:hover {
-  background: var(--docflow-surface-hover);
-}
-
-/* === TOC (Right sidebar) === */
-.md-sidebar--secondary .md-nav__link {
-  font-size: 0.78rem;
+/* TOC title */
+.md-sidebar--secondary .md-nav__title {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
   color: var(--md-default-fg-color--lighter);
+  padding-top: 2rem;
+}
+
+/* TOC links */
+.md-sidebar--secondary .md-nav__link {
+  font-size: 0.8125rem;
+  color: var(--md-default-fg-color--lighter);
+  padding: 0.25rem 0.75rem;
+  margin: 0;
+  border-left: 2px solid transparent;
+  border-radius: 0;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.md-sidebar--secondary .md-nav__link:hover {
+  color: var(--md-accent-fg-color);
+  background: transparent;
 }
 
 .md-sidebar--secondary .md-nav__link--active {
   color: var(--md-accent-fg-color);
   font-weight: 500;
+  border-left-color: var(--md-accent-fg-color);
+  background: transparent;
 }
 
-/* === FOOTER === */
+/* ==========================================================================
+   16. FOOTER & FOOTER NAV
+   DocFlow: border-top, prev/next links with hover:text-accent
+   ========================================================================== */
+
 .md-footer {
   border-top: 1px solid var(--docflow-border);
+  background: var(--md-footer-bg-color);
 }
 
-/* === SCROLLBAR === */
+.md-footer-nav__link {
+  transition: color 0.15s ease;
+}
+
+.md-footer-nav__link:hover {
+  color: var(--md-accent-fg-color);
+}
+
+.md-footer-meta {
+  background: var(--md-footer-bg-color--dark);
+}
+
+/* ==========================================================================
+   17. SCROLLBAR — Custom thin scrollbar
+   DocFlow: 6px, transparent track, border-color thumb
+   ========================================================================== */
+
 ::-webkit-scrollbar {
   width: 6px;
   height: 6px;
@@ -418,7 +956,11 @@ body {
   background: var(--md-default-fg-color--lighter);
 }
 
-/* === HOMEPAGE HERO === */
+/* ==========================================================================
+   18. HOMEPAGE HERO
+   Gradient text, centered layout
+   ========================================================================== */
+
 .md-typeset .hero-section {
   text-align: center;
   padding: 3rem 1rem 2rem;
@@ -437,13 +979,17 @@ body {
 }
 
 .md-typeset .hero-section p {
-  font-size: 1.15rem;
+  font-size: 1.125rem;
   color: var(--md-default-fg-color--light);
   max-width: 600px;
   margin: 0 auto;
 }
 
-/* === GROQ CHAT WIDGET === */
+/* ==========================================================================
+   19. GROQ CHAT WIDGET — DocFlow AI Chat
+   Gradient FAB, slide-up panel, message bubbles
+   ========================================================================== */
+
 #groq-chat-widget {
   position: fixed;
   right: 20px;
@@ -451,10 +997,11 @@ body {
   z-index: 1000;
 }
 
+/* FAB button */
 .chat-toggle {
   width: 56px;
   height: 56px;
-  border-radius: 16px;
+  border-radius: 1rem;
   background: var(--docflow-gradient);
   color: white;
   border: none;
@@ -464,7 +1011,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   font-size: 11px;
   font-weight: bold;
 }
@@ -485,6 +1032,7 @@ body {
   font-weight: 700;
 }
 
+/* Chat container */
 .chat-container {
   position: absolute;
   bottom: 68px;
@@ -492,16 +1040,23 @@ body {
   width: 390px;
   height: 500px;
   background: var(--md-default-bg-color);
-  border-radius: 16px;
+  border-radius: 1rem;
   box-shadow: 0 12px 48px rgba(0, 0, 0, 0.4);
   display: flex;
   flex-direction: column;
   border: 1px solid var(--docflow-border);
   overflow: hidden;
+  animation: docflow-chat-slide-up 0.3s ease-out;
 }
 
+@keyframes docflow-chat-slide-up {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Chat header */
 .chat-header {
-  padding: 14px 16px;
+  padding: 0.875rem 1rem;
   background: var(--docflow-gradient);
   color: white;
   display: flex;
@@ -512,7 +1067,7 @@ body {
 
 .chat-header h3 {
   margin: 0;
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 600;
   width: calc(100% - 30px);
 }
@@ -521,35 +1076,36 @@ body {
   background: none;
   border: none;
   color: white;
-  font-size: 22px;
+  font-size: 1.375rem;
   cursor: pointer;
   padding: 0;
   width: 26px;
   height: 26px;
   line-height: 1;
-  border-radius: 6px;
-  transition: background 0.15s;
+  border-radius: var(--docflow-radius-md);
+  transition: background 0.15s ease;
 }
 
 #chat-close:hover {
   background: rgba(255, 255, 255, 0.15);
 }
 
+/* Messages area */
 .chat-messages {
   flex: 1;
   overflow-y: auto;
-  padding: 14px;
+  padding: 0.875rem;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 0.625rem;
 }
 
 .message {
   max-width: 88%;
-  padding: 10px 14px;
-  border-radius: 12px;
+  padding: 0.625rem 0.875rem;
+  border-radius: 0.75rem;
   line-height: 1.5;
-  font-size: 13px;
+  font-size: 0.8125rem;
 }
 
 .user-message {
@@ -557,33 +1113,35 @@ body {
   background: var(--md-primary-fg-color);
   color: white;
   margin-left: auto;
-  border-bottom-right-radius: 4px;
+  border-bottom-right-radius: 0.25rem;
 }
 
 .bot-message {
   align-self: flex-start;
   background: var(--md-default-bg-color--lighter);
   color: var(--md-default-fg-color);
-  border-bottom-left-radius: 4px;
+  border-bottom-left-radius: 0.25rem;
 }
 
 .bot-message code {
   background: var(--md-code-bg-color);
-  padding: 2px 6px;
-  border-radius: 4px;
-  font-size: 12px;
+  padding: 0.125rem 0.375rem;
+  border-radius: var(--docflow-radius-sm);
+  font-size: 0.75rem;
   color: var(--md-accent-fg-color);
 }
 
+/* Loading animation */
 .loading {
   animation: docflow-pulse 1.5s ease-in-out infinite;
 }
 
 @keyframes docflow-pulse {
   0%, 100% { opacity: 1; }
-  50% { opacity: 0.4; }
+  50%      { opacity: 0.4; }
 }
 
+/* Error state */
 .error {
   background: #7f1d1d !important;
   color: #fca5a5 !important;
@@ -596,24 +1154,25 @@ body {
   border: 1px solid #fecaca;
 }
 
+/* Chat input */
 .chat-input-container {
-  padding: 12px;
+  padding: 0.75rem;
   border-top: 1px solid var(--docflow-border);
   display: flex;
-  gap: 8px;
+  gap: 0.5rem;
 }
 
 #chat-input {
   flex: 1;
-  padding: 10px 12px;
+  padding: 0.625rem 0.75rem;
   border: 1px solid var(--docflow-border);
-  border-radius: 10px;
+  border-radius: var(--docflow-radius);
   background: var(--md-default-bg-color--light);
   color: var(--md-default-fg-color);
   font-family: 'Inter', sans-serif;
-  font-size: 13px;
+  font-size: 0.8125rem;
   resize: none;
-  transition: border-color 0.2s, box-shadow 0.2s;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 #chat-input:focus {
@@ -623,15 +1182,15 @@ body {
 }
 
 #chat-send {
-  padding: 10px 16px;
+  padding: 0.625rem 1rem;
   background: var(--docflow-gradient);
   color: white;
   border: none;
-  border-radius: 10px;
+  border-radius: var(--docflow-radius);
   cursor: pointer;
   font-weight: 600;
-  font-size: 12px;
-  transition: all 0.2s;
+  font-size: 0.75rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 #chat-send:hover {
@@ -639,7 +1198,7 @@ body {
   box-shadow: 0 4px 12px var(--docflow-glow-accent);
 }
 
-/* Chat scrollbar */
+/* Chat messages scrollbar */
 .chat-messages::-webkit-scrollbar {
   width: 4px;
 }
@@ -649,7 +1208,10 @@ body {
   border-radius: 2px;
 }
 
-/* Mobile */
+/* ==========================================================================
+   20. RESPONSIVE — Mobile & Tablet
+   ========================================================================== */
+
 @media (max-width: 768px) {
   .chat-container {
     width: calc(100vw - 24px);
@@ -665,21 +1227,112 @@ body {
   .chat-toggle {
     width: 48px;
     height: 48px;
-    border-radius: 14px;
+    border-radius: 0.875rem;
+  }
+
+  .md-typeset h1 {
+    font-size: 1.5em;
+  }
+
+  .md-typeset .hero-section h1 {
+    font-size: 1.75rem;
+  }
+
+  .md-content__inner {
+    padding: 1.5rem 1rem;
   }
 }
 
-/* === SELECTION COLOR === */
-::selection {
-  background: rgba(124, 58, 237, 0.3);
-  color: inherit;
+/* ==========================================================================
+   21. ACCESSIBILITY — Reduced motion
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
 
-/* === SMOOTH TRANSITIONS === */
+/* Focus visible for keyboard navigation */
+:focus-visible {
+  outline: 2px solid var(--md-primary-fg-color);
+  outline-offset: 2px;
+  border-radius: var(--docflow-radius-sm);
+}
+
+/* ==========================================================================
+   22. SMOOTH TRANSITIONS — Global interactive elements
+   ========================================================================== */
+
 .md-nav__link,
 .md-tabs__link,
 .md-typeset a,
 .md-search__form,
-.grid.cards > ul > li {
+.grid.cards > ul > li,
+.md-footer-nav__link {
   transition: all 0.2s ease;
+}
+
+/* ==========================================================================
+   23. MISC FIXES — Material theme overrides
+   ========================================================================== */
+
+/* Remove default Material shadows */
+.md-typeset .admonition {
+  box-shadow: none;
+}
+
+/* Back to top button */
+.md-top {
+  background: var(--md-primary-fg-color);
+  color: white;
+  border-radius: var(--docflow-radius);
+  box-shadow: 0 4px 12px var(--docflow-glow-primary);
+}
+
+.md-top:hover {
+  background: var(--md-primary-fg-color--light);
+}
+
+/* Tag/label styling */
+.md-typeset .md-tag {
+  background: var(--md-default-bg-color--lighter);
+  border: 1px solid var(--docflow-border);
+  border-radius: var(--docflow-radius-sm);
+  font-size: 0.75rem;
+  padding: 0.15em 0.5em;
+}
+
+/* Horizontal rules */
+.md-typeset hr {
+  border-color: var(--docflow-border);
+}
+
+/* Blockquotes */
+.md-typeset blockquote {
+  border-left: 3px solid var(--docflow-border);
+  color: var(--md-default-fg-color--light);
+  padding: 0.5em 1em;
+  margin: 1.5em 0;
+}
+
+/* Definition lists */
+.md-typeset dt {
+  font-weight: 600;
+}
+
+/* Images */
+.md-typeset img {
+  border-radius: var(--docflow-radius);
+  border: 1px solid var(--docflow-border);
+}
+
+/* Footnotes */
+.md-typeset .footnote {
+  font-size: 0.8125rem;
+  color: var(--md-default-fg-color--lighter);
 }
