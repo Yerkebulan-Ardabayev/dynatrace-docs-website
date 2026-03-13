@@ -1,286 +1,188 @@
-# 🚀 Dynatrace Documentation - Локальная версия с AI
+# Dynatrace Documentation - Русская версия с AI-переводом
 
-Полнофункциональная локальная документация Dynatrace с **супер-быстрым AI-помощником** на базе Groq Llama 3.1 70B.
+Автоматизированная документация Dynatrace с переводом на русский через AI (Gemini, Groq, OpenRouter) и ежедневной синхронизацией.
 
-[![AI Chat](https://img.shields.io/badge/AI-Groq%20Llama%203.1%2070B-blue)](https://groq.com)
-[![Status](https://img.shields.io/badge/status-active-success)]()
-[![License](https://img.shields.io/badge/license-MIT-green)]()
+[![Deploy](https://github.com/Yerkebulan-Ardabayev/dynatrace-docs-website/actions/workflows/deploy.yml/badge.svg)](https://github.com/Yerkebulan-Ardabayev/dynatrace-docs-website/actions/workflows/deploy.yml)
+[![Update](https://github.com/Yerkebulan-Ardabayev/dynatrace-docs-website/actions/workflows/update-docs.yml/badge.svg)](https://github.com/Yerkebulan-Ardabayev/dynatrace-docs-website/actions/workflows/update-docs.yml)
 
-## ✨ Возможности
+**Сайт:** https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/
 
-- 🤖 **AI-ассистент Groq** - мгновенные ответы (0.5-1 сек)
-- 🌍 **Двуязычная документация** - английский и русский
-- ⚡ **Супер-быстрый перевод** - в 10 раз быстрее обычных AI
-- 🔄 **Автообновление** - ежедневная синхронизация с docs.dynatrace.com
-- 🏠 **Локальный сервер** - не нужен внешний хостинг
-- 🌐 **Доступ в сети** - делитесь с командой
-- 💰 **Бесплатно** - все функции 100% бесплатны
+## Что делает проект
 
-## 🎯 Быстрый старт
+- Скрейпит документацию с docs.dynatrace.com
+- Переводит на русский через AI (3 провайдера с fallback)
+- Публикует на GitHub Pages автоматически
+- Обновляется каждый день в 02:00 (Алматы)
 
-### Вариант 1: Полная автоматическая установка
+## Архитектура пайплайна
+
+```
+Scrape -> Diff -> Translate -> Nav Update -> Validate -> Deploy
+  |         |        |             |            |          |
+  v         v        v             v            v          v
+docs/en/  хеши    docs/ru/     mkdocs.yml   ссылки    gh-pages
+          контента  Gemini ->    en/ -> ru/   CJK
+                    Groq ->                   markdown
+                    OpenRouter
+```
+
+Все этапы работают в одном CI job (файлы не теряются между этапами).
+При исчерпании квоты API перевод останавливается gracefully - то что переведено деплоится, остальное переводится на следующий день.
+
+## Быстрый старт
+
+### Посмотреть сайт
+
+Просто откройте: https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/
+
+### Развернуть локально
 
 ```bash
-# Клонируйте репозиторий
 git clone https://github.com/Yerkebulan-Ardabayev/dynatrace-docs-website.git
 cd dynatrace-docs-website
-
-# Установите зависимости
 pip install -r requirements.txt
-
-# Получите бесплатный Groq API ключ на https://console.groq.com
-# Установите ключ
-set GROQ_API_KEY=gsk_your_key_here
-
-# Запустите полную установку (автоматически)
-python run_complete.py
+mkdocs serve
+# Открыть http://127.0.0.1:8000
 ```
 
-**Время:** ~40-50 минут (можно оставить на ночь)
-
-### Вариант 2: Ручная установка
+### Тонкий клон (экономия места на ноутбуке)
 
 ```bash
-# 1. Скачивание документации
-cd scripts
-python scrape_docs.py --max-pages 1000
+bash scripts/setup_thin_clone.sh \
+  https://github.com/Yerkebulan-Ardabayev/dynatrace-docs-website.git \
+  ~/docs-thin
 
-# 2. Организация файлов
-python organize_docs.py
-
-# 3. Перевод на русский (СУПЕР БЫСТРО!)
-python translate_docs_groq.py
-
-# 4. Сборка сайта
-cd ..
-mkdocs build
-
-# 5. Запуск сервера
-python local_server.py
-```
-
-## 📋 Требования
-
-- Python 3.8+
-- MkDocs Material
-- Groq API ключ (бесплатно)
-
-Установка зависимостей:
-```bash
+cd ~/docs-thin
 pip install -r requirements.txt
+mkdocs serve
 ```
 
-## 🔑 Настройка Groq API
+Sparse checkout загружает только `scripts/`, `docs/ru/`, конфиги. Без `docs/en/` и истории.
 
-### 1. Получите бесплатный ключ
+### Fork (своя копия с автообновлением)
 
-1. Перейдите на https://console.groq.com
-2. Создайте аккаунт (через GitHub/Google)
-3. Создайте API ключ
-4. Скопируйте ключ (начинается с `gsk_...`)
+1. Fork репозитория на GitHub
+2. Settings -> Secrets -> добавить `GEMINI_API_KEY`
+3. Settings -> Pages -> Source: `gh-pages` branch
+4. CI будет автоматически обновлять вашу копию
 
-### 2. Установите ключ
+## API ключи
 
-**Windows:**
-```cmd
-set GROQ_API_KEY=gsk_your_key_here
-```
+Для перевода нужен хотя бы один ключ (все бесплатные):
 
-**Linux/Mac:**
-```bash
-export GROQ_API_KEY=gsk_your_key_here
-```
+| Провайдер | Лимит | Где получить |
+|-----------|-------|-------------|
+| **Gemini** (основной) | 1500 req/day | https://aistudio.google.com/apikey |
+| **Groq** (резервный) | ~100K tokens/day | https://console.groq.com |
+| **OpenRouter** (запасной) | 50 req/day (free tier) | https://openrouter.ai/keys |
 
-**Или в файлах:**
-- `scripts/translate_docs_groq.py` (строка 16)
-- `docs/assets/javascripts/groq-chat.js` (строка 8)
-
-Подробная инструкция: [GROQ_SETUP.md](GROQ_SETUP.md)
-
-## 🚀 Использование
-
-### Запуск локального сервера
+### Настройка локально
 
 ```bash
-python local_server.py
+cp .env.example .env
+# Отредактировать .env:
+# GEMINI_API_KEY=your_key
+# GROQ_API_KEY=your_key
 ```
 
-Откройте в браузере: **http://localhost:5000**
+### Настройка в GitHub Actions
 
-### AI-ассистент
+```
+Repo -> Settings -> Secrets and variables -> Actions -> New repository secret:
+  GEMINI_API_KEY
+  GROQ_API_KEY
+  OPENROUTER_API_KEY  (опционально)
+```
 
-Нажмите кнопку **"AI ⚡"** в правом нижнем углу и задайте вопрос!
+## Запуск пайплайна
 
-Примеры вопросов:
-- "Как установить OneAgent?"
-- "Что такое Davis AI?"
-- "Как настроить мониторинг Kubernetes?"
+### Автоматически (CI/CD)
 
-### Автообновление
+Пайплайн запускается:
+- Каждый день в 02:00 (Алматы) / 21:00 UTC
+- Вручную: Actions -> Update & Translate Documentation -> Run workflow
 
-Запустите фоновое обновление (каждый день в 03:00):
+### Локально
 
 ```bash
-python auto_update.py
+# Полный пайплайн (scrape + translate + deploy)
+python scripts/sync_and_deploy.py
+
+# Только перевод (без скрейпинга)
+python scripts/sync_and_deploy.py --skip-scrape
+
+# Тестовый прогон (без push)
+python scripts/sync_and_deploy.py --dry-run
+
+# Принудительный переперевод
+python scripts/sync_and_deploy.py --force --skip-scrape
 ```
 
-Или обновите вручную:
+### CLI команды
+
 ```bash
-python finish_setup.py
+python scripts/pipeline/run_pipeline.py scrape --max-pages 100
+python scripts/pipeline/run_pipeline.py translate --target-lang ru
+python scripts/pipeline/run_pipeline.py validate
+python scripts/pipeline/run_pipeline.py nav-stats
+python scripts/pipeline/run_pipeline.py nav-upgrade --apply
+python scripts/pipeline/run_pipeline.py cache-stats
+python scripts/pipeline/run_pipeline.py cache-clean
 ```
 
-## 📊 Сравнение с другими решениями
-
-| Параметр | Наше решение | Gemini | Claude |
-|----------|--------------|--------|--------|
-| **Скорость AI** | ⚡ 0.5-1 сек | 🐢 3-5 сек | 🐢 2-3 сек |
-| **Перевод 1000 стр** | ⚡ 10-15 мин | 🐢 2 часа | 🐢 1.5 часа |
-| **Лимит запросов/мин** | 30 | 2 | 5 |
-| **Стоимость** | 💰 **Бесплатно** | 💰 Бесплатно | 💰 $3/1M |
-
-## 🗂️ Структура проекта
+## Структура проекта
 
 ```
 dynatrace-docs-website/
-│
-├── docs/                          # Исходная документация
-│   ├── en/                        # Английская версия
-│   ├── ru/                        # Русская версия (переведенная)
-│   └── assets/
-│       └── javascripts/
-│           └── groq-chat.js       # AI-чат виджет
-│
-├── scripts/                       # Скрипты
-│   ├── scrape_docs.py            # Скачивание документации
-│   ├── organize_docs.py          # Организация файлов
-│   └── translate_docs_groq.py    # Перевод через Groq
-│
-├── site/                         # Собранный сайт (HTML)
-│
-├── local_server.py               # Локальный Flask сервер
-├── auto_update.py                # Автообновление
-├── run_complete.py               # Полная автоустановка
-├── finish_setup.py               # Завершение установки
-│
-├── mkdocs.yml                    # Конфигурация MkDocs
-├── requirements.txt              # Python зависимости
-│
-├── README.md                     # Эта документация
-├── GROQ_SETUP.md                 # Подробная настройка Groq
-└── START_LOCAL.md                # Инструкция на русском
+├── docs/
+│   ├── en/                    # Английские доки (скрейпятся автоматически)
+│   ├── ru/                    # Русские доки (AI-перевод)
+│   ├── assets/                # Стили, скрипты, изображения
+│   └── index.md
+├── scripts/
+│   ├── pipeline/              # Модули пайплайна
+│   │   ├── config.py          # Конфигурация (пути, API, лимиты)
+│   │   ├── translator.py      # Мульти-провайдер перевод с fallback
+│   │   ├── cache_manager.py   # Кэш переводов (SHA256, TTL 30 дней)
+│   │   ├── validator.py       # Валидация (ссылки, CJK, markdown)
+│   │   ├── nav_updater.py     # Обновление навигации en/ -> ru/
+│   │   ├── terminology.py     # Словарь терминов (100+ записей)
+│   │   └── run_pipeline.py    # CLI точка входа
+│   ├── scrape_docs.py         # Скрейпер docs.dynatrace.com
+│   ├── sync_and_deploy.py     # Единый оркестратор пайплайна
+│   └── setup_thin_clone.sh    # Настройка тонкого клона
+├── .github/workflows/
+│   ├── update-docs.yml        # Ежедневный scrape + translate + deploy
+│   └── deploy.yml             # Deploy на push в main
+├── mkdocs.yml                 # Конфигурация MkDocs Material
+├── requirements.txt           # Python зависимости
+├── .gitattributes             # Git LFS для изображений
+└── .env.example               # Шаблон переменных окружения
 ```
 
-## ⚙️ Конфигурация
+## Как работает перевод
 
-### Изменить порт сервера
+1. **Diff по хешам** - переводятся только изменённые файлы
+2. **Fallback chain** - Gemini -> Groq -> OpenRouter (автоматическое переключение)
+3. **Graceful quota** - при исчерпании токенов: переведённое деплоится, остальное ждёт следующий день
+4. **Кэш** - SHA256 хеш контента, TTL 30 дней, повторный перевод не нужен
+5. **Терминология** - 100+ записей: Dynatrace, OneAgent, Davis остаются без перевода
+6. **Валидация** - проверка CJK-символов, битых ссылок, структуры markdown
 
-В `local_server.py` (строка 290):
-```python
-app.run(host='0.0.0.0', port=8080)  # Вместо 5000
-```
+## Требования
 
-### Изменить расписание автообновления
+- Python 3.8+
+- Git (с LFS для изображений)
+- Хотя бы один API ключ (Gemini / Groq / OpenRouter)
 
-В `auto_update.py` (строка 125):
-```python
-# Каждый день в 02:00
-schedule.every().day.at("02:00").do(update_documentation)
-
-# Или каждые 6 часов
-schedule.every(6).hours.do(update_documentation)
-```
-
-## 🌐 Доступ из сети
-
-### Узнать ваш IP
-
-**Windows:**
-```cmd
-ipconfig
-```
-
-Найдите строку **IPv4 Address**: `192.168.1.X`
-
-### Поделиться с коллегами
-
-Отправьте им ссылку: `http://192.168.1.X:5000`
-
-Все в вашей локальной сети смогут пользоваться!
-
-## 🔧 API Endpoints
-
-| Endpoint | Метод | Описание |
-|----------|-------|----------|
-| `/` | GET | Главная страница документации |
-| `/api/status` | GET | Статус сервера и документации |
-| `/api/update` | POST | Ручное обновление документации |
-
-### Примеры использования
-
-**Проверить статус:**
 ```bash
-curl http://localhost:5000/api/status
+pip install -r requirements.txt
 ```
 
-**Обновить документацию:**
-```bash
-curl -X POST http://localhost:5000/api/update
-```
+## Автор
 
-## 💡 Советы и рекомендации
+**Yerkebulan Ardabayev** - [@Yerkebulan-Ardabayev](https://github.com/Yerkebulan-Ardabayev)
 
-### Безопасность
+## Лицензия
 
-- ❌ **НЕ** коммитьте Groq API ключ в Git
-- ✅ Используйте переменные окружения
-- ✅ Добавьте `.env` в `.gitignore`
-
-### Оптимизация
-
-- Groq автоматически кеширует переводы
-- Повторные переводы мгновенны (из кеша)
-- Скачивание можно ограничить: `--max-pages 100`
-
-### Мониторинг использования
-
-Следите за лимитами Groq: https://console.groq.com/settings/limits
-
-## 📈 Статистика
-
-- **Страниц документации:** 1000+
-- **Языки:** Английский + Русский
-- **Покрытие перевода:** ~100%
-- **AI модель:** Llama 3.1 70B Versatile
-- **Скорость ответа:** 0.5-1 секунда
-
-## 🤝 Вклад в проект
-
-Приветствуются:
-- 🐛 Сообщения об ошибках
-- 💡 Предложения новых функций
-- 📝 Улучшения документации
-- 🔧 Pull requests
-
-## 📝 Лицензия
-
-MIT License - см. файл [LICENSE](LICENSE)
-
-## 🙏 Благодарности
-
-- [Dynatrace](https://dynatrace.com) - за отличную документацию
-- [Groq](https://groq.com) - за супер-быстрый AI
-- [MkDocs Material](https://squidfunk.github.io/mkdocs-material/) - за красивую тему
-
-## 📞 Контакты
-
-- **Автор:** Yerkebulan Ardabayev
-- **GitHub:** [@Yerkebulan-Ardabayev](https://github.com/Yerkebulan-Ardabayev)
-- **Репозиторий:** [dynatrace-docs-website](https://github.com/Yerkebulan-Ardabayev/dynatrace-docs-website)
-
-## ⭐ Star History
-
-Если проект полезен, поставьте звезду! ⭐
-
----
-
-**Сделано с ❤️ и Groq AI** 🚀
+MIT License
