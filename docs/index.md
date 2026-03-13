@@ -1,6 +1,10 @@
-# Dynatrace — Документация
+<div class="hero-section" markdown>
 
-Добро пожаловать в документацию **Dynatrace** (Managed + SaaS).
+# Dynatrace Документация
+
+Полная документация Dynatrace на русском языке с AI-помощником
+
+</div>
 
 ## Быстрый доступ
 
@@ -14,7 +18,7 @@
 
     [:octicons-arrow-right-24: Начать](ru/getting-started.md)
 
--   :material-server:{ .lg .middle } **Dynatrace Managed**
+-   :material-server-network:{ .lg .middle } **Dynatrace Managed**
 
     ---
 
@@ -22,13 +26,13 @@
 
     [:octicons-arrow-right-24: Managed](managed/)
 
--   :material-eye:{ .lg .middle } **Наблюдаемость**
+-   :material-eye-outline:{ .lg .middle } **Наблюдаемость**
 
     ---
 
     Инфраструктура, приложения, Kubernetes, цифровой опыт
 
-    [:octicons-arrow-right-24: Наблюдаемость](en/observe/infrastructure-observability.md)
+    [:octicons-arrow-right-24: Наблюдаемость](ru/observe/infrastructure-observability.md)
 
 -   :material-brain:{ .lg .middle } **Dynatrace Intelligence**
 
@@ -36,7 +40,7 @@
 
     Davis AI, обнаружение аномалий, Copilot
 
-    [:octicons-arrow-right-24: AI](en/dynatrace-intelligence/anomaly-detection.md)
+    [:octicons-arrow-right-24: Intelligence](ru/dynatrace-intelligence/anomaly-detection.md)
 
 -   :material-api:{ .lg .middle } **API Reference**
 
@@ -46,38 +50,29 @@
 
     [:octicons-arrow-right-24: API](ru/dynatrace-api.md)
 
--   :material-robot:{ .lg .middle } **AI Помощник**
+-   :material-robot-outline:{ .lg .middle } **AI Помощник**
 
     ---
 
-    Задавайте вопросы и получайте мгновенные ответы
+    Мгновенные ответы на вопросы по Dynatrace
 
     [:octicons-arrow-right-24: AI Помощник](ai/groq.md)
 
 </div>
 
-## Поиск
-
-Используйте **поиск** (++ctrl+k++) для быстрого нахождения нужной информации.
-
-## Структура документации
-
-| Раздел | Описание | Статус |
-|--------|----------|--------|
-| **Managed** | Установка, настройка, кластер, обновления | RU |
-| **Платформа** | Grail, OneAgent, AppEngine, DQL | EN |
-| **Наблюдаемость** | Инфраструктура, приложения, K8s | EN/RU |
-| **Dynatrace Intelligence** | Davis AI, обнаружение аномалий | EN |
-| **Анализ и автоматизация** | Дашборды, логи, workflows | EN |
-| **Deliver** | Monaco, Terraform, SLO, SRG | EN/RU |
-| **API** | REST API, Configuration API | RU |
-| **Что нового** | Release notes SaaS, OneAgent, ActiveGate | EN |
-
-!!! info "Перевод на русский"
-    Документация переводится поэтапно. Страницы, доступные на русском, помечены **RU**.
-    Остальные страницы доступны на английском языке.
-
 ---
+
+## Навигация
+
+| Раздел | Описание | Язык |
+|--------|----------|------|
+| **Managed** | Установка, настройка, кластер, обновления | :flag_ru: RU |
+| **Платформа** | Grail, OneAgent, AppEngine, DQL | :flag_gb: EN |
+| **Наблюдаемость** | Инфраструктура, приложения, K8s | :flag_ru: RU / :flag_gb: EN |
+| **Intelligence** | Davis AI, обнаружение аномалий | :flag_ru: RU |
+| **Анализ** | Дашборды, логи, workflows | :flag_ru: RU |
+| **Deliver** | Monaco, Terraform, SLO, SRG | :flag_ru: RU |
+| **API** | REST API, Configuration API | :flag_ru: RU |
 
 !!! tip "AI Помощник"
     Нажмите кнопку **AI** в правом нижнем углу для мгновенных ответов на вопросы!

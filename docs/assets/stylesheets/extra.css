@@ -1,239 +1,685 @@
-/* Groq Chat Widget Styles - COMPACT SIDEBAR VERSION */
+/* ==========================================================================
+   DocFlow Design System — Dynatrace Documentation
+   Dark-first theme with purple/teal gradients
+   Inspired by DocFlow (React + Tailwind) design
+   ========================================================================== */
 
-#groq-chat-widget {
-    position: fixed;
-    right: 20px;
-    bottom: 20px;
-    z-index: 1000;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* === CSS CUSTOM PROPERTIES — DARK THEME (default) === */
+:root,
+[data-md-color-scheme="slate"] {
+  /* Brand */
+  --md-primary-fg-color: #7c3aed;
+  --md-primary-fg-color--light: #8b5cf6;
+  --md-primary-fg-color--dark: #6d28d9;
+  --md-accent-fg-color: #00d4aa;
+  --md-accent-fg-color--transparent: rgba(0, 212, 170, 0.1);
+
+  /* Backgrounds */
+  --md-default-bg-color: #141218;
+  --md-default-bg-color--light: #1a1820;
+  --md-default-bg-color--lighter: #201e28;
+  --md-default-bg-color--lightest: #2a2834;
+
+  /* Text */
+  --md-default-fg-color: #e2dff0;
+  --md-default-fg-color--light: #a8a4b8;
+  --md-default-fg-color--lighter: #7a7690;
+  --md-default-fg-color--lightest: #3d3a4a;
+
+  /* Code */
+  --md-code-bg-color: #0f0d14;
+  --md-code-fg-color: #e2dff0;
+  --md-code-hl-color: rgba(124, 58, 237, 0.15);
+
+  /* Typeset */
+  --md-typeset-color: #e2dff0;
+  --md-typeset-a-color: #00d4aa;
+
+  /* Footer */
+  --md-footer-bg-color: #0f0d14;
+  --md-footer-bg-color--dark: #0a0910;
+  --md-footer-fg-color: #a8a4b8;
+  --md-footer-fg-color--light: #7a7690;
+  --md-footer-fg-color--lighter: #3d3a4a;
+
+  /* Gradient tokens */
+  --docflow-gradient: linear-gradient(135deg, #00d4aa 0%, #7c3aed 100%);
+  --docflow-glow-primary: rgba(124, 58, 237, 0.3);
+  --docflow-glow-accent: rgba(0, 212, 170, 0.3);
+  --docflow-surface-hover: #201e28;
+  --docflow-surface-active: rgba(124, 58, 237, 0.12);
+  --docflow-border: #2a2834;
+  --docflow-sidebar-bg: #0f0d14;
+  --docflow-card-bg: #1a1820;
 }
 
-/* Кнопка AI - заметная, справа внизу */
-.chat-toggle {
-    width: 56px;
-    height: 56px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, #00d4aa 0%, #7c3aed 100%);
-    color: white;
-    border: none;
-    cursor: pointer;
-    box-shadow: 0 4px 16px rgba(0, 212, 170, 0.5);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease;
-    font-size: 11px;
-    font-weight: bold;
+/* === LIGHT THEME === */
+[data-md-color-scheme="default"] {
+  --md-primary-fg-color: #7c3aed;
+  --md-primary-fg-color--light: #8b5cf6;
+  --md-primary-fg-color--dark: #6d28d9;
+  --md-accent-fg-color: #059e7e;
+  --md-accent-fg-color--transparent: rgba(5, 158, 126, 0.1);
+
+  --md-default-bg-color: #fafafa;
+  --md-default-bg-color--light: #f5f5f5;
+  --md-default-bg-color--lighter: #eeeeee;
+  --md-default-bg-color--lightest: #e0e0e0;
+
+  --md-code-bg-color: #f5f3f8;
+
+  --md-typeset-a-color: #059e7e;
+
+  --docflow-gradient: linear-gradient(135deg, #059e7e 0%, #7c3aed 100%);
+  --docflow-glow-primary: rgba(124, 58, 237, 0.15);
+  --docflow-glow-accent: rgba(5, 158, 126, 0.15);
+  --docflow-surface-hover: #f0eef4;
+  --docflow-surface-active: rgba(124, 58, 237, 0.06);
+  --docflow-border: #e5e3eb;
+  --docflow-sidebar-bg: #ffffff;
+  --docflow-card-bg: #ffffff;
 }
 
-.chat-toggle:hover {
-    transform: scale(1.1);
-    box-shadow: 0 6px 16px rgba(0, 212, 170, 0.6);
+/* === GLOBAL === */
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-.chat-toggle svg {
-    width: 24px;
-    height: 24px;
+/* === HEADER — Frosted glass === */
+.md-header {
+  background: rgba(20, 18, 24, 0.8) !important;
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border-bottom: 1px solid var(--docflow-border);
+  box-shadow: none !important;
 }
 
-.chat-toggle span {
-    font-size: 9px;
-    margin-top: 2px;
+[data-md-color-scheme="default"] .md-header {
+  background: rgba(255, 255, 255, 0.85) !important;
+  border-bottom: 1px solid var(--docflow-border);
 }
 
-/* Чат контейнер */
-.chat-container {
-    position: absolute;
-    bottom: 65px;
-    right: 0;
-    width: 380px;
-    height: 480px;
-    background: var(--md-default-bg-color);
-    border-radius: 12px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-    display: flex;
-    flex-direction: column;
-    border: 1px solid var(--md-default-fg-color--lightest);
+.md-header__title {
+  font-weight: 600;
+  letter-spacing: -0.01em;
 }
 
-.chat-header {
-    padding: 12px;
-    background: linear-gradient(135deg, #00d4aa 0%, #7c3aed 100%);
-    color: white;
-    border-radius: 12px 12px 0 0;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
+/* Header logo gradient text */
+.md-header__topic:first-child .md-ellipsis {
+  background: var(--docflow-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 700;
 }
 
-.chat-header h3 {
-    margin: 0;
-    font-size: 14px;
-    font-weight: 600;
-    width: calc(100% - 30px);
+/* === NAVIGATION TABS === */
+.md-tabs {
+  background: transparent !important;
+  border-bottom: 1px solid var(--docflow-border);
 }
 
-#chat-close {
-    background: none;
-    border: none;
-    color: white;
-    font-size: 20px;
-    cursor: pointer;
-    padding: 0;
-    width: 24px;
-    height: 24px;
-    line-height: 1;
+.md-tabs__link {
+  font-size: 0.8rem;
+  font-weight: 500;
+  opacity: 0.65;
+  transition: all 0.2s ease;
 }
 
-#chat-close:hover {
-    opacity: 0.8;
+.md-tabs__link:hover,
+.md-tabs__link--active {
+  opacity: 1;
 }
 
-.chat-messages {
-    flex: 1;
-    overflow-y: auto;
-    padding: 12px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+.md-tabs__link--active {
+  border-bottom: 2px solid var(--md-accent-fg-color);
 }
 
-.message {
-    max-width: 90%;
-    padding: 10px;
-    border-radius: 10px;
-    line-height: 1.4;
-    font-size: 13px;
+/* === SIDEBAR === */
+.md-sidebar {
+  background: var(--docflow-sidebar-bg);
+  border-right: 1px solid var(--docflow-border);
 }
 
-.user-message {
-    align-self: flex-end;
-    background: #7c3aed;
-    color: white;
-    margin-left: auto;
+.md-nav__link {
+  font-size: 0.82rem;
+  font-weight: 400;
+  border-radius: 6px;
+  padding: 0.35rem 0.65rem;
+  margin: 1px 4px;
+  transition: all 0.15s ease;
 }
 
-.bot-message {
-    align-self: flex-start;
-    background: var(--md-code-bg-color);
-    color: var(--md-default-fg-color);
+.md-nav__link:hover {
+  background: var(--docflow-surface-hover);
+  color: var(--md-default-fg-color);
 }
 
-.bot-message code {
-    background: rgba(0, 0, 0, 0.1);
-    padding: 2px 5px;
-    border-radius: 4px;
-    font-size: 12px;
+.md-nav__item--active > .md-nav__link {
+  background: var(--docflow-surface-active);
+  color: var(--md-accent-fg-color);
+  font-weight: 500;
 }
 
-.loading {
-    animation: pulse 1.5s ease-in-out infinite;
+.md-nav__item--nested > .md-nav__link {
+  font-weight: 600;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--md-default-fg-color--lighter);
 }
 
-@keyframes pulse {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.5; }
+/* === SEARCH — Glowing on focus === */
+.md-search__form {
+  border-radius: 10px !important;
+  border: 1px solid var(--docflow-border) !important;
+  background: var(--md-default-bg-color--light) !important;
+  transition: all 0.3s ease;
 }
 
-.error {
-    background: #ff6b6b !important;
-    color: white !important;
+.md-search__form:focus-within {
+  border-color: var(--md-primary-fg-color) !important;
+  box-shadow: 0 0 0 3px var(--docflow-glow-primary);
 }
 
-.chat-input-container {
-    padding: 10px;
-    border-top: 1px solid var(--md-default-fg-color--lightest);
-    display: flex;
-    gap: 6px;
+.md-search__input {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
 }
 
-#chat-input {
-    flex: 1;
-    padding: 8px;
-    border: 1px solid var(--md-default-fg-color--lightest);
-    border-radius: 8px;
-    background: var(--md-code-bg-color);
-    color: var(--md-default-fg-color);
-    font-family: inherit;
-    font-size: 13px;
-    resize: none;
+/* === CONTENT === */
+.md-content {
+  max-width: 100%;
 }
 
-#chat-input:focus {
-    outline: none;
-    border-color: #00d4aa;
+.md-typeset {
+  font-size: 0.88rem;
+  line-height: 1.7;
+  color: var(--md-default-fg-color);
 }
 
-#chat-send {
-    padding: 8px 14px;
-    background: linear-gradient(135deg, #00d4aa 0%, #7c3aed 100%);
-    color: white;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    font-weight: 600;
-    font-size: 12px;
-    transition: transform 0.2s;
+.md-typeset h1 {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  font-size: 2em;
+  margin-bottom: 0.5em;
 }
 
-#chat-send:hover {
-    transform: translateY(-2px);
+.md-typeset h2 {
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin-top: 2em;
+  padding-bottom: 0.4em;
+  border-bottom: 1px solid var(--docflow-border);
 }
 
-/* Mobile responsive */
-@media (max-width: 768px) {
-    .chat-container {
-        width: calc(100vw - 30px);
-        height: 400px;
-        right: 5px;
-    }
-
-    #groq-chat-widget {
-        right: 10px;
-        bottom: 15px;
-    }
-
-    .chat-toggle {
-        width: 48px;
-        height: 48px;
-    }
+.md-typeset h3 {
+  font-weight: 600;
 }
 
-/* Scrollbar */
-.chat-messages::-webkit-scrollbar {
-    width: 5px;
+.md-typeset a {
+  color: var(--md-accent-fg-color);
+  text-decoration: none;
+  transition: color 0.15s ease;
 }
 
-.chat-messages::-webkit-scrollbar-track {
-    background: transparent;
+.md-typeset a:hover {
+  text-decoration: underline;
 }
 
-.chat-messages::-webkit-scrollbar-thumb {
-    background: var(--md-default-fg-color--lightest);
-    border-radius: 3px;
+/* === CODE BLOCKS — Dark terminal style === */
+.md-typeset code {
+  background: var(--md-code-bg-color);
+  color: var(--md-accent-fg-color);
+  border-radius: 4px;
+  padding: 0.15em 0.4em;
+  font-size: 0.85em;
+  border: 1px solid var(--docflow-border);
 }
 
-/* Extra grid cards for homepage */
+.md-typeset pre {
+  border-radius: 10px;
+  border: 1px solid var(--docflow-border);
+  overflow: hidden;
+}
+
+.md-typeset pre > code {
+  border: none;
+  color: var(--md-code-fg-color);
+  font-size: 0.82rem;
+  line-height: 1.6;
+}
+
+.highlight .filename {
+  background: var(--md-code-bg-color);
+  border-bottom: 1px solid var(--docflow-border);
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--md-default-fg-color--lighter);
+}
+
+/* === ADMONITIONS — Clean with left accent === */
+.md-typeset .admonition,
+.md-typeset details {
+  border: 1px solid var(--docflow-border);
+  border-radius: 10px;
+  background: var(--docflow-card-bg);
+  box-shadow: none;
+  border-left: 3px solid;
+  overflow: hidden;
+}
+
+.md-typeset .admonition-title,
+.md-typeset summary {
+  background: transparent !important;
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+.md-typeset .note {
+  border-left-color: var(--md-primary-fg-color);
+}
+
+.md-typeset .tip,
+.md-typeset .success {
+  border-left-color: var(--md-accent-fg-color);
+}
+
+.md-typeset .warning {
+  border-left-color: #f59e0b;
+}
+
+.md-typeset .danger,
+.md-typeset .bug {
+  border-left-color: #ef4444;
+}
+
+.md-typeset .info {
+  border-left-color: #3b82f6;
+}
+
+/* === TABLES — Clean with hover === */
+.md-typeset table:not([class]) {
+  border: 1px solid var(--docflow-border);
+  border-radius: 10px;
+  overflow: hidden;
+  font-size: 0.85rem;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.md-typeset table:not([class]) th {
+  background: var(--md-default-bg-color--lighter);
+  font-weight: 600;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--md-default-fg-color--lighter);
+  border-bottom: 1px solid var(--docflow-border);
+}
+
+.md-typeset table:not([class]) td {
+  border-bottom: 1px solid var(--docflow-border);
+}
+
+.md-typeset table:not([class]) tr:hover td {
+  background: var(--docflow-surface-hover);
+}
+
+/* === GRID CARDS — DocFlow card style === */
 .grid.cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
 }
 
 .grid.cards > ul {
-    display: contents;
+  display: contents;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .grid.cards > ul > li {
-    display: block;
-    padding: 1rem;
-    background: var(--md-code-bg-color);
-    border-radius: 8px;
-    transition: transform 0.2s, box-shadow 0.2s;
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  background: var(--docflow-card-bg);
+  border: 1px solid var(--docflow-border);
+  border-radius: 12px;
+  transition: all 0.25s ease;
+  list-style: none;
 }
 
 .grid.cards > ul > li:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border-color: var(--md-primary-fg-color--light);
+  box-shadow: 0 0 20px -5px var(--docflow-glow-primary);
+  transform: translateY(-2px);
+}
+
+.grid.cards > ul > li p:first-of-type {
+  font-weight: 600;
+  font-size: 1rem;
+  margin-bottom: 0.5em;
+}
+
+.grid.cards > ul > li hr {
+  border-color: var(--docflow-border);
+  margin: 0.75em 0;
+}
+
+/* === TABS === */
+.md-typeset .tabbed-labels > label {
+  font-size: 0.82rem;
+  font-weight: 500;
+  border-radius: 6px 6px 0 0;
+}
+
+.md-typeset .tabbed-labels > label:hover {
+  background: var(--docflow-surface-hover);
+}
+
+/* === TOC (Right sidebar) === */
+.md-sidebar--secondary .md-nav__link {
+  font-size: 0.78rem;
+  color: var(--md-default-fg-color--lighter);
+}
+
+.md-sidebar--secondary .md-nav__link--active {
+  color: var(--md-accent-fg-color);
+  font-weight: 500;
+}
+
+/* === FOOTER === */
+.md-footer {
+  border-top: 1px solid var(--docflow-border);
+}
+
+/* === SCROLLBAR === */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--docflow-border);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--md-default-fg-color--lighter);
+}
+
+/* === HOMEPAGE HERO === */
+.md-typeset .hero-section {
+  text-align: center;
+  padding: 3rem 1rem 2rem;
+}
+
+.md-typeset .hero-section h1 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  background: var(--docflow-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  border-bottom: none;
+  margin-bottom: 0.5rem;
+}
+
+.md-typeset .hero-section p {
+  font-size: 1.15rem;
+  color: var(--md-default-fg-color--light);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* === GROQ CHAT WIDGET === */
+#groq-chat-widget {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 1000;
+}
+
+.chat-toggle {
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  background: var(--docflow-gradient);
+  color: white;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 16px var(--docflow-glow-accent);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  font-size: 11px;
+  font-weight: bold;
+}
+
+.chat-toggle:hover {
+  transform: scale(1.08);
+  box-shadow: 0 6px 24px var(--docflow-glow-accent);
+}
+
+.chat-toggle svg {
+  width: 22px;
+  height: 22px;
+}
+
+.chat-toggle span {
+  font-size: 9px;
+  margin-top: 2px;
+  font-weight: 700;
+}
+
+.chat-container {
+  position: absolute;
+  bottom: 68px;
+  right: 0;
+  width: 390px;
+  height: 500px;
+  background: var(--md-default-bg-color);
+  border-radius: 16px;
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--docflow-border);
+  overflow: hidden;
+}
+
+.chat-header {
+  padding: 14px 16px;
+  background: var(--docflow-gradient);
+  color: white;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.chat-header h3 {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+  width: calc(100% - 30px);
+}
+
+#chat-close {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 22px;
+  cursor: pointer;
+  padding: 0;
+  width: 26px;
+  height: 26px;
+  line-height: 1;
+  border-radius: 6px;
+  transition: background 0.15s;
+}
+
+#chat-close:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.chat-messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.message {
+  max-width: 88%;
+  padding: 10px 14px;
+  border-radius: 12px;
+  line-height: 1.5;
+  font-size: 13px;
+}
+
+.user-message {
+  align-self: flex-end;
+  background: var(--md-primary-fg-color);
+  color: white;
+  margin-left: auto;
+  border-bottom-right-radius: 4px;
+}
+
+.bot-message {
+  align-self: flex-start;
+  background: var(--md-default-bg-color--lighter);
+  color: var(--md-default-fg-color);
+  border-bottom-left-radius: 4px;
+}
+
+.bot-message code {
+  background: var(--md-code-bg-color);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 12px;
+  color: var(--md-accent-fg-color);
+}
+
+.loading {
+  animation: docflow-pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes docflow-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+.error {
+  background: #7f1d1d !important;
+  color: #fca5a5 !important;
+  border: 1px solid #dc2626;
+}
+
+[data-md-color-scheme="default"] .error {
+  background: #fef2f2 !important;
+  color: #dc2626 !important;
+  border: 1px solid #fecaca;
+}
+
+.chat-input-container {
+  padding: 12px;
+  border-top: 1px solid var(--docflow-border);
+  display: flex;
+  gap: 8px;
+}
+
+#chat-input {
+  flex: 1;
+  padding: 10px 12px;
+  border: 1px solid var(--docflow-border);
+  border-radius: 10px;
+  background: var(--md-default-bg-color--light);
+  color: var(--md-default-fg-color);
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  resize: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+#chat-input:focus {
+  outline: none;
+  border-color: var(--md-accent-fg-color);
+  box-shadow: 0 0 0 3px var(--docflow-glow-accent);
+}
+
+#chat-send {
+  padding: 10px 16px;
+  background: var(--docflow-gradient);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 12px;
+  transition: all 0.2s;
+}
+
+#chat-send:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px var(--docflow-glow-accent);
+}
+
+/* Chat scrollbar */
+.chat-messages::-webkit-scrollbar {
+  width: 4px;
+}
+
+.chat-messages::-webkit-scrollbar-thumb {
+  background: var(--docflow-border);
+  border-radius: 2px;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .chat-container {
+    width: calc(100vw - 24px);
+    height: 420px;
+    right: 2px;
+  }
+
+  #groq-chat-widget {
+    right: 10px;
+    bottom: 12px;
+  }
+
+  .chat-toggle {
+    width: 48px;
+    height: 48px;
+    border-radius: 14px;
+  }
+}
+
+/* === SELECTION COLOR === */
+::selection {
+  background: rgba(124, 58, 237, 0.3);
+  color: inherit;
+}
+
+/* === SMOOTH TRANSITIONS === */
+.md-nav__link,
+.md-tabs__link,
+.md-typeset a,
+.md-search__form,
+.grid.cards > ul > li {
+  transition: all 0.2s ease;
 }
