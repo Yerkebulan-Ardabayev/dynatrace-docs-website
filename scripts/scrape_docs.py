@@ -24,8 +24,8 @@ from tqdm import tqdm
 # Encoding fix
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
 
-# Configuration
-BASE_URL = "https://www.dynatrace.com/support/help/"
+# Configuration — use canonical docs URL (matches pipeline/config.py)
+BASE_URL = os.environ.get("DYNATRACE_DOCS_URL", "https://docs.dynatrace.com/")
 OUTPUT_DIR = Path("dynatrace-docs")
 CACHE_DIR = OUTPUT_DIR / ".cache"
 MAX_PAGES = None  # None = unlimited, or set number for testing
@@ -87,8 +87,8 @@ class DynatraceDocScraper:
         if 'dynatrace.com' not in parsed.netloc:
             return False
         
-        # Must have /docs/ or /support/help/ in path
-        if not ('/docs/' in url or '/support/help/' in url):
+        # Must be a documentation page
+        if not ('/docs/' in url or '/support/help/' in url or 'docs.dynatrace.com' in parsed.netloc):
             return False
         
         # Skip certain paths
@@ -167,11 +167,11 @@ scraped: {datetime.now().isoformat()}
         parsed = urlparse(url)
         path = parsed.path
         
-        # Remove leading /docs/ or /support/help/
-        if path.startswith('/docs/'):
-            relative_path = path[6:]  # Remove '/docs/'
-        elif path.startswith('/support/help/'):
-            relative_path = path[14:]  # Remove '/support/help/'
+        # Remove leading path prefixes to get relative path
+        for prefix in ['/docs/', '/support/help/']:
+            if path.startswith(prefix):
+                relative_path = path[len(prefix):]
+                break
         else:
             relative_path = path.strip('/')
         
